@@ -1,0 +1,249 @@
+@import url('https://fonts.cdnfonts.com/css/circular-std');
+
+* {
+    font-family: 'Circular Std', sans-serif;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+
+    background-size: cover;
+    background-position: center;
+
+}
+
+.stu-body {
+    background-color: #fff !important;
+    background-image: none;
+}
+
+.blue {
+    background: darkslateblue;
+
+}
+
+.dark-blue {
+    background: slateblue
+}
+
+.white {
+    color: white !important;
+}
+
+.login-box {
+    width: 360px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 40px 30px;
+    border-radius: 18px;
+}
+
+.login-signup {
+    height: 600px;
+}
+
+.login-login {
+    height: 450px;
+}
+
+.buttons {
+
+    width: 100%;
+    margin-top: 60px;
+    border: none;
+    outline: none;
+    height: 60px;
+    font-size: 20px !important;
+    border-radius: 20px;
+    color: #fff;
+    background-color: crimson;
+    text-decoration: none;
+    padding-top: 18px;
+}
+
+.buttons:hover {
+    cursor: pointer;
+    background-color: darkgoldenrod;
+    color: #000;
+}
+
+.stu-body1 {
+    display: flex;
+}
+
+.navigation {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.navigation-wrapper {
+    width: 100%;
+    display: flex;
+    background-image: radial-gradient(circle at 15.1% 50%, rgb(144, 17, 105) -20%, rgb(51, 0, 131) 100.2%);
+    border: 1px solid black;
+    margin: unset;
+    align-items: center;
+}
+
+.navigation-top {
+    background: darkslateblue !important;
+    border: 1px solid black;
+    border-left: none;
+}
+
+.navigation-top-content {
+    display: flex;
+    flex-direction: row;
+}
+
+.navigation-left {
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.navigation-right {
+    display: flex;
+    padding: 20px;
+}
+
+.nav-items-wrapper {
+    align-self: center;
+    display: flex;
+}
+
+.nav-link {
+    padding: 0;
+    color: white;
+    margin-right: 20px;
+}
+
+.nav-link:hover {
+    color: rgb(122, 122, 122);
+}
+
+.status {
+    color: goldenrod;
+}
+
+.nav-items {
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.nav-items:hover {
+    color: rgb(122, 122, 122);
+}
+
+.header {
+
+    margin: 0;
+
+    text-align: center;
+    font-size: 22px;
+    color: #fff;
+}
+
+.login {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.logout {
+    text-decoration: none;
+    color: #fff;
+}
+
+.login-box p {
+    margin-top: 20px !important;
+    font-weight: bold !important;
+}
+
+
+.login-box input {
+
+    width: 100%;
+    margin-bottom: 30px;
+
+
+}
+
+.login-box input[type="text"],
+input[type="password"] {
+
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 13px;
+
+
+}
+
+.login-signup input[type="text"],
+input[type="password"],
+input[type="email"] {
+    height: 20px;
+
+}
+
+
+
+.login-box input[type="submit"] {
+
+    border: none;
+    outline: none;
+    height: 40px;
+    font-size: 18px;
+    border-radius: 20px;
+    color: #fff;
+    background-color: goldenrod;
+
+}
+
+
+.login-box ::placeholder {
+
+    color: #fff;
+}
+
+
+.login-box input[type="submit"]:hover {
+
+    cursor: pointer;
+    background: darkgoldenrod;
+    color: #000;
+}
+
+.login-box a {
+    display: flex;
+    justify-content: center;
+
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+
+
+}
+
+.name {
+    color: white;
+}
