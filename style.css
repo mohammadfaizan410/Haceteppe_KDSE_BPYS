@@ -14,6 +14,7 @@ body {
 
 body {
 
+    background-image: radial-gradient(circle at 50.1% 50%, rgb(144, 17, 105) 0%, rgb(51, 0, 131) 100.2%);
     background-size: cover;
     background-position: center;
 
@@ -68,7 +69,7 @@ body {
     font-size: 20px !important;
     border-radius: 20px;
     color: #fff;
-    background-color: crimson;
+    background-color: goldenrod;
     text-decoration: none;
     padding-top: 18px;
 }
@@ -246,4 +247,18 @@ input[type="email"] {
 
 .name {
     color: white;
+}
+
+.td-patients {
+    color: white !important;
+}
+
+.patients-save-fields {
+    display: flex;
+
+}
+
+.patients-table {
+    margin-top: 50px;
+    background-image: radial-gradient(circle at 15.1% 50%, rgb(144, 17, 105) -20%, rgb(51, 0, 131) 100.2%);
 }
