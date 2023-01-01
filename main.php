@@ -29,7 +29,7 @@
             <a class="buttons" href="http://localhost/Hacettepe-KDSE-BPYS/login-teacher.php">Öğretmen Girişi</a>
             <a class="buttons" href="http://localhost/Hacettepe-KDSE-BPYS/login-student.php">Öğrenci Girişi</a>
 
-            <a class="buttons" href="http://localhost/Hacettepe-KDSE-BPYS/registration-nurse.php">Öğretmen Kaydı</a>
+            <a class="buttons" href="http://localhost/Hacettepe-KDSE-BPYS/registration-teacher.php">Öğretmen Kaydı</a>
             <a class="buttons" href="http://localhost/Hacettepe-KDSE-BPYS/registration-student.php">Öğrenci Kaydı</a>
         </div>
     </div>

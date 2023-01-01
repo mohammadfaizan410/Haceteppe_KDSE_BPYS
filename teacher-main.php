@@ -64,7 +64,7 @@ if (isset($_GET['logout'])) {
                                                                 ?></span></a>
                     <span class="status">Öğretmen</span>
 
-                    <a class="black" href="student-main.php?logout=true">Çıkış Yap</a>
+                    <a class="black" href="teacher-main.php?logout=true">Çıkış Yap</a>
 
                 </div>
             </div>

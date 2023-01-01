@@ -63,7 +63,7 @@ session_start()
                     success: function(data) {
                         alert(data)
                         if ($.trim(data) === "Successful") {
-                            setTimeout('window.location.href = "nurse-main.php"', 1000);
+                            setTimeout('window.location.href = "teacher-main.php"', 1000);
                         }
                     },
                     error: function(data) {
