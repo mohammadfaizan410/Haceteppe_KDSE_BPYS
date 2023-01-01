@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>e-BYRYS-KKDS</title>
+    <title>KDSE-BPYS</title>
 
 
     <link rel="icon" href="img/core-img/favicon.ico">
@@ -23,14 +23,14 @@
     <div class="login-box">
 
 
-        <h1 class="header">e-BYRYS-KKDS</h1>
+        <h1 class="header">KDSE-BPYS</h1>
 
         <div class="buttons-wrapper">
-            <a class="buttons" href="http://localhost/Hacettepe-e-BYRYS-KKDS/login-nurse.php">Hemşire Girişi</a>
-            <a class="buttons" href="http://localhost/Hacettepe-e-BYRYS-KKDS/login-student.php">Öğrenci Girişi</a>
+            <a class="buttons" href="http://localhost/Hacettepe-KDSE-BPYS/login-teacher.php">Öğretmen Girişi</a>
+            <a class="buttons" href="http://localhost/Hacettepe-KDSE-BPYS/login-student.php">Öğrenci Girişi</a>
 
-            <a class="buttons" href="http://localhost/Hacettepe-e-BYRYS-KKDS/registration-nurse.php">Hemşire Kaydı</a>
-            <a class="buttons" href="http://localhost/Hacettepe-e-BYRYS-KKDS/registration-student.php">Öğrenci Kaydı</a>
+            <a class="buttons" href="http://localhost/Hacettepe-KDSE-BPYS/registration-nurse.php">Öğretmen Kaydı</a>
+            <a class="buttons" href="http://localhost/Hacettepe-KDSE-BPYS/registration-student.php">Öğrenci Kaydı</a>
         </div>
     </div>
 

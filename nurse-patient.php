@@ -1,5 +1,5 @@
 <?php
-require_once("config-nurses.php");
+require_once("config-teachers.php");
 ?>
 <?php
 if (isset($_POST)) {

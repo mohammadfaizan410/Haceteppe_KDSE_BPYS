@@ -8,12 +8,12 @@ if (isset($_POST)) {
     $name = $_POST['name'];
     $surname = $_POST['surname'];
     $age = $_POST['age'];
-
+    $not = $_POST['not'];
 
     echo $name;
-    $sql = "INSERT INTO patients (id ,name, surname, age) VALUES(?,?,?,?)";
+    $sql = "INSERT INTO patients (id ,name, surname, age, notlar) VALUES(?,?,?,?,?)";
     $smtminsert = $db->prepare($sql);
-    $result = $smtminsert->execute([$id, $name, $surname, $age]);
+    $result = $smtminsert->execute([$id, $name, $surname, $age, $not]);
     if ($result) {
         echo 'success';
     } else {

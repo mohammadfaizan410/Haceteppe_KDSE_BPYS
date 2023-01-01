@@ -15,7 +15,7 @@ if (isset($_GET['logout'])) {
 
 <head>
     <meta charset="utf-8">
-    <title>e-BYRYS-KKDS</title>
+    <title>KDSE-BPYS</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -44,45 +44,39 @@ if (isset($_GET['logout'])) {
     <div class="stu-body1">
         <div class="navigation-wrapper">
             <div class="navigation-left">
-                <a href="index.html" class="nav-items">
-                    <h3 class=""><i class="fa fa-user-edit me-2"></i>e-BYRYS-KKDS</h3>
+                <a href="" class="">
+                    <h3 class=""><i class="fa fa-user-edit me-2"></i>KDSE-BPYS</h3>
                 </a>
 
             </div>
             <div class="navigation-right">
                 <div class="nav-items-wrapper">
                     <a href="formlar-student.php" id="formlar" class="nav-link nav-items formlar"> <i class="fa fa-table me-2 "></i>Formlar</a>
-                    <a href="chart.html" class="nav-link nav-items"><i class="fa fa-chart-bar me-2"></i>Sınavlar</a>
-                    <a href="widget.html" class="nav-link"><i class="fa fa-th me-2"></i>Öneriler</a>
-                    <a href="widget.html" class="nav-link"><i class="fa fa-comments me-2"></i>Mesajlar</a>
+                    <a href="" class="nav-link "><i class="fa fa-chart-bar me-2"></i>Sınavlar</a>
+                    <a href="" class="nav-link"><i class="fa fa-th me-2"></i>Öneriler</a>
+                    <a href="" class="nav-link"><i class="fa fa-comments me-2"></i>Mesajlar</a>
                 </div>
-                <div class="nav-item dropdown">
-                    <div class="ms-3">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <span class="d-none d-lg-inline-flex"><?php
-                                                                    echo '' . $_SESSION['userlogin']['name'] . ' ' . $_SESSION['userlogin']['surname'] . '';
-                                                                    ?></span></a>
-                        <span class="status">Student</span>
-                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">My Profile</a>
-                            <a href="#" class="dropdown-item">Settings</a>
-                            <a href="student-main.php?logout=true">Logout</a>
-                        </div>
-                    </div>
+                <div>
+
+                    <a href="#" class="nav-link " data-bs-toggle="dropdown">
+                        <span class="d-none d-lg-inline-flex"><?php
+                                                                echo '' . $_SESSION['userlogin']['name'] . ' ' . $_SESSION['userlogin']['surname'] . '';
+                                                                ?></span></a>
+                    <span class="status">Öğrenci</span>
+
+                    <a class="black" href="student-main.php?logout=true">Çıkış Yap</a>
+
                 </div>
-
-
-
-
-
-
             </div>
-            <div class="dropdown-menu ">
-                <a href="#" class="dropdown-item">My Profile</a>
-                <a href="#" class="dropdown-item">Settings</a>
-                <a href="student-main.php?logout=true">Logout</a>
-            </div>
+
+
+
+
+
+
         </div>
+
+    </div>
 
     </div>
     <div class="content" id="content">

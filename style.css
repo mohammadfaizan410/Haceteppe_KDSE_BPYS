@@ -14,7 +14,6 @@ body {
 
 body {
 
-    background-image: radial-gradient(circle at 50.1% 50%, rgb(144, 17, 105) 0%, rgb(51, 0, 131) 100.2%);
     background-size: cover;
     background-position: center;
 
@@ -37,6 +36,12 @@ body {
 .white {
     color: white !important;
 }
+
+.black {
+    color: black !important;
+}
+
+
 
 .login-box {
     width: 360px;
@@ -97,7 +102,7 @@ body {
 .navigation-wrapper {
     width: 100%;
     display: flex;
-    background-image: radial-gradient(circle at 15.1% 50%, rgb(144, 17, 105) -20%, rgb(51, 0, 131) 100.2%);
+    background-color: crimson !important;
     border: 1px solid black;
     margin: unset;
     align-items: center;
@@ -150,6 +155,28 @@ body {
 
 .nav-items:hover {
     color: rgb(122, 122, 122);
+}
+
+.nav-items:focus {
+    color: #000;
+}
+
+.form-control {
+    background-color: white !important;
+    margin-bottom: 20px;
+    width: 50%;
+    align-self: center;
+}
+
+.not {
+    height: 100px;
+}
+
+.submit {
+    height: 75px;
+    widows: 50%;
+    background-color: crimson !important;
+    color: white;
 }
 
 .header {
@@ -216,7 +243,7 @@ input[type="email"] {
     font-size: 18px;
     border-radius: 20px;
     color: #fff;
-    background-color: goldenrod;
+    background-color: crimson;
 
 }
 
@@ -241,7 +268,7 @@ input[type="email"] {
     text-decoration: none;
     font-size: 14px;
     color: #fff;
-
+    background-color: crimson;
 
 }
 
@@ -253,12 +280,17 @@ input[type="email"] {
     color: white !important;
 }
 
+.patients-save {
+    display: flex;
+}
+
 .patients-save-fields {
     display: flex;
-
+    flex-direction: column;
+    width: 80%;
 }
 
 .patients-table {
     margin-top: 50px;
-    background-image: radial-gradient(circle at 15.1% 50%, rgb(144, 17, 105) -20%, rgb(51, 0, 131) 100.2%);
+    background-color: crimson !important;
 }

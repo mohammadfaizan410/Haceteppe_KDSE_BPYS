@@ -1,5 +1,5 @@
 <?php
-require_once("config-nurses.php");
+require_once("config-teachers.php");
 session_start()
 
 ?>
@@ -55,7 +55,7 @@ session_start()
 
                 $.ajax({
                     type: 'POST',
-                    url: 'process-login-nurse.php',
+                    url: 'process-login-teacher.php',
                     data: {
                         email: email,
                         password: password

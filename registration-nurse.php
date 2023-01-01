@@ -1,5 +1,5 @@
 <?php
-require_once("config-nurses.php");
+require_once("config-teachers.php");
 session_start()
 
 ?>
@@ -12,7 +12,7 @@ session_start()
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>e-BYRYS-KKDS</title>
+    <title>KDSE-BPYS</title>
 
 
     <link rel="icon" href="img/core-img/favicon.ico">
@@ -34,7 +34,7 @@ session_start()
             $password = $_POST['password'];
 
             echo $name;
-            $sql = "INSERT INTO nurses (name, surname, email, password) VALUES(?,?,?,?)";
+            $sql = "INSERT INTO teachers (name, surname, email, password) VALUES(?,?,?,?)";
             $smtminsert = $db->prepare($sql);
             $result = $smtminsert->execute([$name, $surname, $email, $password]);
             if ($result) {
@@ -49,7 +49,7 @@ session_start()
         <form action="" method="post">
             <div class="login-box login-signup">
 
-                <h1 class="header">e-BYRYS-KKDS</h1>
+                <h1 class="header">KDSE-BPYS</h1>
                 <h2 class="login">Sign Up as Nurse</h2>
 
                 <p class="usernamelabel">Name</p>
@@ -89,7 +89,7 @@ session_start()
 
                     $.ajax({
                         type: 'POST',
-                        url: 'process-nurse.php',
+                        url: 'process-teachers.php',
                         data: {
                             name: name,
                             surname: surname,

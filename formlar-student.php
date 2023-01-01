@@ -44,7 +44,6 @@ if (isset($_GET['logout'])) {
     <div class="container-fluid pt-4 px-4">
         <?php
         require_once('config-students.php');
-        $name = "ata";
         $userid = $_SESSION['userlogin']['id'];
         //echo $userid;
         $sql = "SELECT * FROM  patients  WHERE id =" . $userid;
@@ -59,25 +58,28 @@ if (isset($_GET['logout'])) {
         ?>
         <div class="send-patient">
 
-            <div class=" patiens-save">
+            <div class=" patients-save">
                 <form action="" method="POST" class="patients-save-fields">
-                    <p class="usernamelabel">Patient Name</p>
-                    <input type="text" required name="name" id="name" placeholder="Enter name here">
+                    <p class="usernamelabel">Hasta Adı</p>
+                    <input type="text" class="form-control" required name="name" id="name" placeholder="Hasta Adı Giriniz">
 
-                    <p class="usernamelabel">Patient Surname</p>
-                    <input type="text" required name="surname" id="surname" placeholder="Enter surname here">
+                    <p class="usernamelabel">Hasta Soyadı</p>
+                    <input type="text" class="form-control" required name="surname" id="surname" placeholder="Hasta Soyadı Giriniz">
 
-                    <p class="usernamelabel">Patient Age</p>
-                    <input type="text" required name="age" id="age" placeholder="Enter patient age">
+                    <p class="usernamelabel">Hasta Yaşı</p>
+                    <input type="text" class="form-control" required name="age" id="age" placeholder="Hasta Yaşı Giriniz">
+
+                    <p class="usernamelabel">Notlar</p>
+                    <input type="text" class="form-control not" required name="not" id="not" placeholder="Not giriniz">
 
 
-                    <input type="submit" name="submit" id="submit" value="Save Patient">
+                    <input type="submit" class="form-control submit" name="submit" id="submit" value="Save Patient">
 
                 </form>
             </div>
             <div class="patients-table dark-blue text-center rounded p-4" id="patients-table">
                 <div class="d-flex align-items-center justify-content-between mb-4">
-                    <h6 class="mb-0">Patients</h6>
+                    <h6 class="mb-0">Hastalar</h6>
 
                 </div>
 
@@ -86,10 +88,10 @@ if (isset($_GET['logout'])) {
                         <thead>
                             <tr class="text-white">
 
-                                <th scope="col">Name</th>
-                                <th scope="col">Surname</th>
-                                <th scope="col">Age</th>
-                                <th scope="col"><input class="form-check-input" type="checkbox"></th>
+                                <th scope="col">İsim</th>
+                                <th scope="col">Soyisim</th>
+                                <th scope="col">Yaş</th>
+                                <th scope="col">Notlar</th>
 
                             </tr>
                         </thead>
@@ -105,7 +107,7 @@ if (isset($_GET['logout'])) {
                                     <td style='
                                     color: white;'>" . $value["age"] . "</td>
                                     <td style='
-                                    color: white;'><a class=\'btn btn-sm btn-primary\' href=\"\">Detail</a></td>
+                                    color: white;'> " . $value["notlar"] . " </td>
                                 </tr>"
 
                             ?>
@@ -132,6 +134,7 @@ if (isset($_GET['logout'])) {
                         var name = $('#name').val();
                         var surname = $('#surname').val();
                         var age = $('#age').val();
+                        var not = $('#not').val();
 
 
                         e.preventDefault()
@@ -144,6 +147,7 @@ if (isset($_GET['logout'])) {
                                 name: name,
                                 surname: surname,
                                 age: age,
+                                not: not
 
                             },
                             success: function(data) {

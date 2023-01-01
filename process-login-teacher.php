@@ -1,12 +1,12 @@
 <?php
 session_start();
 
-require_once('config-nurses.php');
+require_once('config-teachers.php');
 
 $email = $_POST['email'];
-$password = $_POST['password'];
+$password = sha1(($_POST['password']));
 
-$sql = "SELECT * FROM nurses WHERE email = ? AND password = ? LIMIT 1";
+$sql = "SELECT * FROM teachers WHERE email = ? AND password = ? LIMIT 1";
 $smtmselect = $db->prepare($sql);
 $result = $smtmselect->execute([$email, $password]);
 if ($result) {

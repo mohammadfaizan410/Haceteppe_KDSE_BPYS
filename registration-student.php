@@ -10,7 +10,7 @@ require_once("config-students.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>e-BYRYS-KKDS</title>
+    <title>KDSE-BPYS</title>
 
 
     <link rel="icon" href="img/core-img/favicon.ico">
@@ -31,7 +31,7 @@ require_once("config-students.php");
         <form action="" method="post">
             <div class="login-box login-signup">
 
-                <h1 class="header">e-BYRYS-KKDS</h1>
+                <h1 class="header">KDSE-BPYS</h1>
                 <h2 class="login">Sign Up as Student</h2>
 
                 <p class="usernamelabel">Name</p>
