@@ -19,6 +19,7 @@ session_start()
 
 
     <link rel="stylesheet" href="style.css">
+    <link href='https://css.gg/arrow-left-o.css' rel='stylesheet'>
 
 
 </head>
@@ -37,7 +38,7 @@ session_start()
                 <p class="labels">Şifre</p>
                 <input type="password" name="password" id="password" required placeholder="Şifre Giriniz">
                 <input type="submit" name="submit" id="login" value="Login">
-                <a href="#">Şifremi Unuttum</a>
+                <a href="main.php" class="lower-buttons" style="padding-top:10px"><i class="gg-arrow-left-o" style="margin: 0; margin-right: 20px;"></i>Ana Sayfaya Dön</a>
         </form>
 
     </div>

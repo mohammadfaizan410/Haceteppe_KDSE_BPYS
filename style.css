@@ -162,7 +162,7 @@ body {
 }
 
 .form-control {
-    background-color: white !important;
+    background-color: #d1d1d1 !important;
     margin-bottom: 20px;
     width: 50%;
     align-self: center;
@@ -293,4 +293,8 @@ input[type="email"] {
 .patients-table {
     margin-top: 50px;
     background-color: crimson !important;
+}
+
+.lower-buttons {
+    background: none !important;
 }
