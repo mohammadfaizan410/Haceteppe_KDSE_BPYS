@@ -51,9 +51,9 @@ if (isset($_GET['logout'])) {
             </div>
             <div class="navigation-right">
                 <div class="nav-items-wrapper">
-                    <a href="formlar-teacher.php" id="formlar" class="nav-link nav-items formlar"> <i class="fa fa-table me-2 "></i>Formlar</a>
+                    <a href="formlar-teacher.php" id="formlar" class="nav-link nav-items formlar"> <i class="fa fa-table me-2 "></i>Öğrenciler</a>
                     <a href="" class="nav-link "><i class="fa fa-chart-bar me-2"></i>Sınavlar</a>
-                    <a href="" class="nav-link"><i class="fa fa-th me-2"></i>Öneriler</a>
+                    <a href="" class="nav-link"><i class="fa fa-th me-2"></i>Formlar</a>
                     <a href="" class="nav-link"><i class="fa fa-comments me-2"></i>Mesajlar</a>
                 </div>
                 <div>

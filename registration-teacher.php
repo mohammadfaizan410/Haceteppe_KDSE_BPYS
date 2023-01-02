@@ -49,7 +49,7 @@ session_start()
             <div class="login-box login-signup">
 
                 <h1 class="header">KDSE-BPYS</h1>
-                <h2 class="login">Sign Up as Nurse</h2>
+                <h2 class="login">Öğretmen Kaydı</h2>
 
                 <p class="usernamelabel">İsim</p>
                 <input type="text" required name="name" id="name" placeholder="İsim Giriniz">
