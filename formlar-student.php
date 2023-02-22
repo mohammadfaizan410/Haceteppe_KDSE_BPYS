@@ -73,7 +73,7 @@ if (isset($_GET['logout'])) {
                     <input type="text" class="form-control not" required name="not" id="not" placeholder="Not giriniz">
 
 
-                    <input type="submit" class="form-control submit" name="submit" id="submit" value="Save Patient">
+                    <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
 
                 </form>
             </div>
