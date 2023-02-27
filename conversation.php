@@ -33,13 +33,13 @@ if (isset($_GET)) {
     <title>Document</title>
 </head>
 <body>
-    <div style=" position: relative; margin-left: auto; margin-right: auto; margin-bottom: 30px; height: 1000px; " class="conversation-box w-75 shadow border mt-5">
+    <div style=" position: absolute; margin-left:10%;  margin-bottom: 30px; height:90%; " class="conversation-box w-75 shadow border mt-5">
             <div class="title-box w-100 border shadow ">
                 <?php 
                 echo "<h3 class='p-4 ml-5'>$senderName $senderSurname</h3>";
                 ?>
             </div>
-            <div class="w-100 p-5" style="overflow-y: scroll; height:80%" >
+            <div class="w-100 p-5" id="scrollable" style="overflow-y: scroll; height:80%" >
                 <?php
             for($i = 0; $i < count($values) ; $i++){
                 if($values[$i]['sender_id'] == $_SESSION['userlogin']['id'] ){
@@ -119,6 +119,16 @@ if (isset($_GET)) {
             })
 
         })
+    </script>
+
+    <script>
+
+window.onload = function() {
+    console.log("hello there")
+    var element = document.getElementById("scrollable");
+    element.scrollTop = element.scrollHeight;
+}
+
     </script>
 </body>
 </html>
