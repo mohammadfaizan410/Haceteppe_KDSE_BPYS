@@ -59,7 +59,6 @@ if (isset($_GET)) {
 
     <script>
         window.onload = function() {
-                    console.log("hello")
                      var sender_id = <?php echo $senderId ?>;
                      var recipient_Id = <?php echo $recieverId ?>;
                      var senderName = <?php echo json_encode(ucfirst($senderName)) ?>;
@@ -80,7 +79,6 @@ if (isset($_GET)) {
                             userName : userName
                         },
                         success: function(data) {
-                            console.log(data)
                             $('#scrollable').html(data);
                             var element = document.getElementById("scrollable");
                             element.scrollTop = element.scrollHeight;
