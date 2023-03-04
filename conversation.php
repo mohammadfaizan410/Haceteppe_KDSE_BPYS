@@ -10,6 +10,7 @@ if (isset($_GET)) {
     $senderName = $_GET['name'];
     $senderSurname = $_GET['surname'];
      $userName = $_SESSION["userlogin"]['name'];
+     $userID = $_SESSION["userlogin"]['id'];
 
     $sql = "SELECT * FROM  messages  WHERE sender_id =" . $senderId . " AND  recipient_Id =" . $recieverId . " OR sender_id =" . $recieverId . " AND  recipient_Id =" . $senderId . " ORDER by sent_at";
     $smtmselect = $db->prepare($sql);
@@ -40,68 +41,138 @@ if (isset($_GET)) {
                 ?>
             </div>
             <div class="w-100 p-5" id="scrollable" style="overflow-y: scroll; height:80%" >
-                <?php
-            for($i = 0; $i < count($values) ; $i++){
-                if($values[$i]['sender_id'] == $_SESSION['userlogin']['id'] ){
-                    $message = $values[$i]['message'];
-                    $time = $values[$i]['sent_at'];
-                    echo "<div class='w-100 d-flex mb-1' style='justify-content: end;'>$userName  $time</div>";
-                    echo "<div class='d-flex p-3' style='justify-content: end;'><div class='border shadow p-2 w-50 mb-4'>$message</div></div>";
-                }
-                else{
-                    $message = $values[$i]['message'];
-                    $time = $values[$i]['sent_at'];
-                        echo "<div class='w-100 d-flex justify-content-start mb-1' style='justify-content: start;'>$senderName  $time</div>";
-                    echo "<div class='d-flex justify-content-start p-3''><div class='border shadow p-2 w-50 '>$message</div></div>";
-                }
-            }
-            ?>
+                   
+        </div>
+        <form action="" method="post" class="d-flex m-3" style="position: absolute; bottom: 0; width:90%; margin-top:30px">
+                <input type="text" class="form-control" name="message" id="messageInput" aria-describedby="emailHelp" placeholder="Enter message...">
+                <button type="submit" class="btn btn-primary" id="sendMessage">Send</button>
+        </form>
+            </div>
             <div >
                 <div class="mt-3"></div>
                 <p id="notEmpty" style="color:red"></p>
-                <form action="" method="post" class="d-flex m-3" style="position: absolute; bottom: 0; width:90%; margin-top:30px">
-                        <input type="text" class="form-control" name="message" id="messageInput" aria-describedby="emailHelp" placeholder="Enter message...">
-                        <button type="submit" class="btn btn-primary" id="sendMessage">Send</button>
-
-                </form>
-            </div>        
-            </div>
-            </div>
+            </div> 
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script>
+        window.onload = function() {
+                    console.log("hello")
+                     var sender_id = <?php echo $senderId ?>;
+                     var recipient_Id = <?php echo $recieverId ?>;
+                     var senderName = <?php echo json_encode(ucfirst($senderName)) ?>;
+                     var senderSurname = <?php echo json_encode(ucfirst($senderSurname)) ?>;
+                     var userName = <?php echo json_encode(ucfirst($userName)) ?>;
+                     var userID = <?php echo $userID ?>;
 
-        $(function() {
+                       
+                     $.ajax({
+                        type: 'POST',
+                        url: 'http://localhost/Hacettepe-KDSE-BPYS/updateConvo.php/',
+                        data: {
+                            sender_id: sender_id,
+                            recipient_id: recipient_Id,
+                            userID: userID,
+                            senderName: senderName,
+                            senderSurname: senderSurname,
+                            userName : userName
+                        },
+                        success: function(data) {
+                            console.log(data)
+                            $('#scrollable').html(data);
+                            var element = document.getElementById("scrollable");
+                            element.scrollTop = element.scrollHeight;
+                        },
+                        error: function(data) {
+                            Swal.fire({
+                                'title': 'Errors',
+                                'text': 'There were errors',
+                                'type': 'error'
+                            })
+                        }
+                    })
+                   
+
+        }
+
+        window.setInterval(() => {
+                     var sender_id = <?php echo $senderId ?>;
+                     var recipient_Id = <?php echo $recieverId ?>;
+                     var senderName = <?php echo json_encode(ucfirst($senderName)) ?>;
+                     var senderSurname = <?php echo json_encode(ucfirst($senderSurname)) ?>;
+                     var userName = <?php echo json_encode(ucfirst($userName)) ?>;
+                     var userID = <?php echo $userID ?>;
+  
+                     $.ajax({
+                        type: 'POST',
+                        url: 'http://localhost/Hacettepe-KDSE-BPYS/updateConvo.php/',
+                        data: {
+                            sender_id: sender_id,
+                            recipient_id: recipient_Id,
+                            userID: userID,
+                            senderName: senderName,
+                            senderSurname: senderSurname,
+                            userName : userName
+                        },
+                        success: function(data) {
+                            $('#scrollable').html(data);
+                            var element = document.getElementById("scrollable");
+                            element.scrollTop = element.scrollHeight;
+                        },
+                        error: function(data) {
+                            Swal.fire({
+                                'title': 'Errors',
+                                'text': 'There were errors',
+                                'type': 'error'
+                            })
+                        }
+                    })
+        }, 3000);
+
+        function pad(n){return n<10 ? '0'+n : n};
+
+        $(document).ready(function() {
             $('#sendMessage').click(function(e) {
-
                 e.preventDefault()
                 var valid = this.form.checkValidity();
                 if (valid) {
                     var currentTime = new Date();
-                    var dateTime = currentTime.getFullYear() + "-" + currentTime.getMonth() + "-" + currentTime.getDay() + " "  + currentTime.getHours() + ":"  + currentTime.getMinutes() + ":" + currentTime.getSeconds(); 
+                    var dateTime = currentTime.getFullYear() + "-" + pad(currentTime.getMonth() + 1) + "-" + pad(currentTime.getDay()) + " "  + currentTime.getHours() + ":"  + currentTime.getMinutes() + ":" + currentTime.getSeconds(); 
                     var message = $('#messageInput').val();
                      var sender_id = <?php echo $senderId ?>;
                      var recipient_Id = <?php echo $recieverId ?>;
-
-                     console.log(dateTime, message, sender_id, recipient_Id)
+                     var senderName = <?php echo json_encode( ucfirst($senderName)) ?>;
+                     var senderSurname = <?php echo json_encode(ucfirst($senderSurname)) ?>;
+                     var userName = <?php echo json_encode(ucfirst($userName)) ?>;
+                     var userID = <?php echo $userID ?>;
 
                     if(message===''){
                         document.getElementById("notEmpty").innerText = "Message cannot be empty!"
                     }
                     else{
-                        
-                        $('#messageInput').val("");
                         document.getElementById("notEmpty").innerText = "";
                        
                         $.ajax({
                         type: 'POST',
-                        url: 'http://localhost/Hacettepe-KDSE-BPYS/process-messages.php/?' + "sender_id=" + sender_id + "&recipient_id=" + recipient_Id + "&message=" + message + "&dateTime=" + dateTime,
+                        url: 'http://localhost/Hacettepe-KDSE-BPYS/process-messages.php/?',
                         data: {
+                            sender_id: sender_id,
+                            recipient_id: recipient_Id,
+                            message: message,
+                            sent_at : dateTime,
+                            senderName: senderName,
+                            senderSurname: senderSurname,
+                            userName: userName,
+                            userID : userID,
+
                         },
                         success: function(data) {
-                            window.location.reload();
+                            $('#messageInput').val("");
+                            $('#scrollable').append(data);
+                             var element = document.getElementById("scrollable");
+                            element.scrollTop = element.scrollHeight;
                         },
                         error: function(data) {
                             Swal.fire({
@@ -123,11 +194,6 @@ if (isset($_GET)) {
 
     <script>
 
-window.onload = function() {
-    console.log("hello there")
-    var element = document.getElementById("scrollable");
-    element.scrollTop = element.scrollHeight;
-}
 
     </script>
 </body>
