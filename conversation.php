@@ -118,8 +118,6 @@ if (isset($_GET)) {
                         },
                         success: function(data) {
                             $('#scrollable').html(data);
-                            var element = document.getElementById("scrollable");
-                            element.scrollTop = element.scrollHeight;
                         },
                         error: function(data) {
                             Swal.fire({
