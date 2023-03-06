@@ -12,16 +12,18 @@ if (isset($_POST["sender_id"])) {
     $senderSurname = $_POST["senderSurname"];
     $username = $_POST["userName"];
     $userId = $_POST['userID'];
+
+
     $sql = "INSERT INTO messages (sender_id, recipient_id, message, sent_at) VALUES (?,?,?,?)";
     $smtminsert = $db->prepare($sql);
     $result = $smtminsert->execute([$sender_id, $recipient_id, $message, $sent_at]);
 
     if ($result) {
         if($userId === $sender_id){
-            echo "<div class='d-flex w-100'><div class='w-100 d-flex flex-column flex-end align-items-end'><div class='d-flex w-50 mb-2 mt-3'>Me {$sent_at}</div><div class='d-flex w-50 shadow p-2 mb-2' style='font : 20px' >{$message}</div></div></div>" ;
+            echo "<div class='d-flex w-100'><div class='w-100 d-flex flex-column flex-end align-items-end'><div class='d-flex mb-2 mt-3'>Me {$sent_at}</div><div class='d-flex  shadow p-2 mb-2' style='font : 20px; background-color:#ffcccc; width:40%; border-radius: 5px' >{$message}</div></div></div>" ;
         }
            else{
-               echo "<div class='d-flex w-100'><div class='w-100 d-flex flex-column flex-start align-items-start'><div class='d-flex w-50 mb-2 mt-3'>{$senderName} {$sent_at}</div><div class='d-flex w-50 shadow p-2 mb-2' style='font : 20px' >{$message}</div></div></div>" ;
+               echo "<div class='d-flex w-100'><div class='w-100 d-flex flex-column flex-start align-items-start'><div class='d-flex w-50 mb-2 mt-3'>{$senderName} {$sent_at}</div><div class='d-flex shadow p-2 mb-2' style='font : 20px; background-color:#ffffff; width:40%; border-radius: 5px' >{$message}</div></div></div>" ;
             }
     }
     else {

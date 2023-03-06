@@ -53,8 +53,8 @@ require_once("config-messages.php");
   //     }
 
   ?>
-    <h1 class="text-center mt-5 mb-5">My messages</h1>
-    <div class="searchbar d-flex justify-content-center">
+    <h1 class="text-center mt-5 mb-5">Search a user</h1>
+    <div class="searchbar d-flex justify-content-center align-items-center">
       <input type="text" class="form-control w-50" placeholder="search for student or teacher by emailr" id="searchValue" aria-describedby="basic-addon1">
       <button class="btn btn-primary" id="submit-search" type="submit">search</button>
     </div>

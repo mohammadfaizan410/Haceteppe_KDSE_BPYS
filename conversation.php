@@ -35,12 +35,17 @@ if (isset($_GET)) {
 </head>
 <body>
     <div style=" position: absolute; margin-left:10%;  margin-bottom: 30px; height:90%; " class="conversation-box w-75 shadow border mt-5">
-            <div class="title-box w-100 border shadow ">
-                <?php 
-                echo "<h3 class='p-4 ml-5'>$senderName $senderSurname</h3>";
+
+            <div class="title-box w-100 border shadow">
+                <?php
+                $name = ucfirst($senderName);
+                $surname = ucfirst($senderSurname);
+                echo "<h3 class='p-4 ml-5'>$name $surname</h3>";
                 ?>
             </div>
-            <div class="w-100 p-5" id="scrollable" style="overflow-y: scroll; height:80%" >
+            <div class="d-flex" style="height: 80%">
+                <div class="p-5" id="scrollable" style="overflow-y: scroll; height:100%; width:100%" >
+            </div>
                    
         </div>
         <form action="" method="post" class="d-flex m-3" style="position: absolute; bottom: 0; width:90%; margin-top:30px">
@@ -91,7 +96,7 @@ if (isset($_GET)) {
                             })
                         }
                     })
-                   
+
 
         }
 
@@ -134,9 +139,11 @@ if (isset($_GET)) {
                 e.preventDefault()
                 var valid = this.form.checkValidity();
                 if (valid) {
-                    var currentTime = new Date();
-                    var dateTime = currentTime.getFullYear() + "-" + pad(currentTime.getMonth() + 1) + "-" + pad(currentTime.getDay()) + " "  + currentTime.getHours() + ":"  + currentTime.getMinutes() + ":" + currentTime.getSeconds(); 
-                    var message = $('#messageInput').val();
+                     var date = new Date();
+                     var current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate();
+                     var current_time = date.getHours()+":"+date.getMinutes()+":"+ date.getSeconds();
+                     var dateAndTime = current_date + " " + current_time;
+                     var message = $('#messageInput').val();
                      var sender_id = <?php echo $senderId ?>;
                      var recipient_Id = <?php echo $recieverId ?>;
                      var senderName = <?php echo json_encode( ucfirst($senderName)) ?>;
@@ -157,7 +164,7 @@ if (isset($_GET)) {
                             sender_id: sender_id,
                             recipient_id: recipient_Id,
                             message: message,
-                            sent_at : dateTime,
+                            sent_at : dateAndTime,
                             senderName: senderName,
                             senderSurname: senderSurname,
                             userName: userName,
@@ -167,7 +174,7 @@ if (isset($_GET)) {
                         success: function(data) {
                             $('#messageInput').val("");
                             $('#scrollable').append(data);
-                             var element = document.getElementById("scrollable");
+                            var element = document.getElementById("scrollable");
                             element.scrollTop = element.scrollHeight;
                         },
                         error: function(data) {
