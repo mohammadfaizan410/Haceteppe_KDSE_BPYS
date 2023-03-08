@@ -57,27 +57,276 @@ if (isset($_GET['logout'])) {
 
         ?>
         <div class="send-patient">
-
+            <h1 class="form-header">HASTA DEĞERLENDİRME FORMU</h1>
             <div class=" patients-save">
                 <form action="" method="POST" class="patients-save-fields">
-                    <p class="usernamelabel">Hasta Adı</p>
-                    <input type="text" class="form-control" required name="name" id="name" placeholder="Hasta Adı Giriniz">
+                    <!--       <p class="usernamelabel">Hasta Adı Soyadı</p>
+                    <input type="text" class="form-control" required name="name" id="name"
+                        placeholder="Hasta Adı Soyadı Giriniz">
 
                     <p class="usernamelabel">Hasta Soyadı</p>
-                    <input type="text" class="form-control" required name="surname" id="surname" placeholder="Hasta Soyadı Giriniz">
+                    <input type="text" class="form-control" required name="surname" id="surname"
+                        placeholder="Hasta Soyadı Giriniz">
 
                     <p class="usernamelabel">Hasta Yaşı</p>
-                    <input type="text" class="form-control" required name="age" id="age" placeholder="Hasta Yaşı Giriniz">
+                    <input type="text" class="form-control" required name="age" id="age"
+                        placeholder="Hasta Yaşı Giriniz">
 
                     <p class="usernamelabel">Notlar</p>
-                    <input type="text" class="form-control not" required name="not" id="not" placeholder="Not giriniz">
+                    <input type="text" class="form-control not" required name="not" id="not" placeholder="Not giriniz"> -->
+                    <div class="input-section-wrapper">
+
+                        <div class="input-section-item">
+                            <div class="input-section d-flex">
+                                <p class="usernamelabel">Hasta Adı Soyadı:</p>
+                                <input type="text" class="form-control" required name="name" id="name"
+                                    placeholder="Hasta Adı Soyadı Giriniz">
+                            </div>
+
+                            <div class="input-section d-flex">
+                                <p class="usernamelabel">Doğum Yeri:</p>
+                                <input type="text" class="form-control" required name="doğumyeri" id="doğumyeri"
+                                    placeholder="Doğum Yeri Giriniz">
+                            </div>
+
+                            <div class="input-section d-flex">
+                                <p class="usernamelabel">Doğum Tarihi:</p>
+                                <input type="date" class="form-control" required name="doğumtarihi" id="doğumtarihi"
+                                    placeholder="Hasta Adı Soyadı Giriniz">
+                            </div>
+
+                            <div class="input-section d-flex">
+
+                                <p class="usernamelabel">Cinsiyeti:</p>
+                                <div class="checkbox-wrapper d-flex">
+                                    <div class="checkboxes">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="cinsiyetradio"
+                                                id="cinsiyetradio" value="option1">
+                                            <label class="form-check-label" for="cinsiyetradio">
+                                                <span class="checkbox-header"> Erkek </span>
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="cinsiyetradio"
+                                                id="cinsiyetradio" value="option2">
+                                            <label class="form-check-label" for="cinsiyetradio">
+                                                <span class="checkbox-header"> Kadın </span>
+
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="input-section d-flex">
+                                <p class="usernamelabel">Medeni Durumu:</p>
+                                <input type="text" class="form-control" required name="medeni" id="medeni"
+                                    placeholder="Medeni Durumu Giriniz">
+                            </div>
+
+                            <div class="input-section d-flex">
+                                <p class="usernamelabel">Mesleği:</p>
+                                <input type="text" class="form-control" required name="meslek" id="meslek"
+                                    placeholder="Mesleği Durumu Giriniz">
+                            </div>
+
+                            <div class="input-section d-flex">
+                                <p class="usernamelabel">Eğitim Durumu:</p>
+                                <input type="text" class="form-control" required name="egitim" id="egitim"
+                                    placeholder="Eğitim Durumu Giriniz">
+                            </div>
+
+                        </div>
+
+                        <div class="input-section-item">
+                            <div class="input-section d-flex">
+                                <p class="usernamelabel">Protokol/Dosya No:</p>
+                                <input type="text" class="form-control" required name="dosyano" id="dosyano"
+                                    placeholder="Protokol/Dosya No Giriniz">
+                            </div>
+
+                            <div class="input-section d-flex">
+                                <p class="usernamelabel">Yatış Tarihi:</p>
+                                <input type="date" class="form-control" required name="yatistarihi" id="yatistarihi"
+                                    placeholder="Protokol/Dosya No Giriniz">
+                            </div>
+
+                            <div class="input-section d-flex">
+                                <p class="usernamelabel">Bölüm:</p>
+                                <input type="text" class="form-control" required name="bolum" id="bolum"
+                                    placeholder="Bölüm Giriniz">
+                            </div>
+
+                            <div class="input-section d-flex">
+                                <p class="usernamelabel">Tıbbi Tanı:</p>
+                                <input type="text" class="form-control" required name="tibbitani" id="tibbitani"
+                                    placeholder="Bölüm Giriniz">
+                            </div>
+
+                            <div class="input-section d-flex">
+                                <p class="usernamelabel">Doktor Adı Soyadı:</p>
+                                <input type="text" class="form-control" required name="doktorname" id="doktorname"
+                                    placeholder="Doktor Adı Soyadı Giriniz">
+                            </div>
 
 
+
+                            <div class="input-section d-flex">
+                                <p class="usernamelabel">Çocuk Sayısı:</p>
+                                <input type="text" class="form-control" required name="cocuksayi" id="cocuksayi"
+                                    placeholder="Çocuk Sayısı Giriniz">
+                            </div>
+
+                            <div class="input-section d-flex">
+
+                                <p class="usernamelabel">Sosyal Güvencesi:</p>
+                                <div class="checkbox-wrapper d-flex">
+                                    <div class="checkboxes">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="sosyalradio"
+                                                id="sosyalradio" value="option1">
+                                            <label class="form-check-label" for="sosyalradio">
+                                                <span class="checkbox-header"> Resmi </span>
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="sosyalradio"
+                                                id="sosyalradio" value="option2">
+                                            <label class="form-check-label" for="sosyalradio">
+                                                <span class="checkbox-header"> Ücretli </span>
+
+                                            </label>
+
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="sosyalradio"
+                                                id="sosyalradio" value="option3">
+                                            <label class="form-check-label" for="sosyalradio">
+                                                <span class="checkbox-header"> Diğer </span>
+
+                                            </label>
+                                            <input type="text" class="form-control" required name="diger" id="diger"
+                                                placeholder="Diğer">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-section d-flex">
+                        <p class="usernamelabel">Dili:</p>
+                        <input type="text" class="form-control" required name="dil" id="dil" placeholder="Dil Giriniz">
+
+                    </div>
+                    <div class="input-section d-flex">
+
+                        <p class="usernamelabel">Tercüman Gereksinimi:</p>
+                        <div class="checkbox-wrapper d-flex">
+                            <div class="checkboxes">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="sosyalradio" id="sosyalradio"
+                                        value="option1">
+                                    <label class="form-check-label" for="sosyalradio">
+                                        <span class="checkbox-header"> Yok </span>
+                                    </label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="sosyalradio" id="sosyalradio"
+                                        value="option2">
+                                    <label class="form-check-label" for="sosyalradio">
+                                        <span class="checkbox-header"> Var (Açıklayınız) </span>
+
+                                    </label>
+                                    <input type="text" class="form-control" required name="diger" id="diger"
+                                        placeholder="Diğer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-section d-flex">
+
+                        <p class="usernamelabel">Adres</p>
+                        <input type="text" class="form-control not" required name="adres" id="adres"
+                            placeholder="Adres giriniz">
+                    </div>
+
+                    <div class="input-section d-flex">
+
+                        <p class="usernamelabel">Bilgi Alınan Kişi:</p>
+                        <div class="checkbox-wrapper d-flex">
+                            <div class="checkboxes">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="bilgikisiradio"
+                                        id="bilgikisiradio" value="option1">
+                                    <label class="form-check-label" for="bilgikisiradio">
+                                        <span class="checkbox-header"> Kendisi </span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="bilgikisiradio"
+                                        id="bilgikisiradio" value="option2">
+                                    <label class="form-check-label" for="bilgikisiradio">
+                                        <span class="checkbox-header"> Dosya </span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="bilgikisiradio"
+                                        id="bilgikisiradio" value="option3">
+                                    <label class="form-check-label" for="bilgikisiradio">
+                                        <span class="checkbox-header"> Diğer </span>
+
+                                    </label>
+                                    <input type="text" class="form-control" required name="diger" id="diger"
+                                        placeholder="Diğer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-section d-flex">
+                        <p class="usernamelabel">Kol Bandı Rengi:</p>
+                        <input type="text" class="form-control" required name="kolbandi" id="kolbandi"
+                            placeholder="Kol Bandı Rengi Giriniz">
+                    </div>
+
+                    <div class="input-section d-flex">
+                        <p class="usernamelabel">Açıklayınız:</p>
+                        <input type="text" class="form-control" required name="kolbandiaciklama" id="kolbandiaciklama"
+                            placeholder="Açıklayınız">
+                    </div>
+
+                    <h1 class="form-header">Gerektiğinde Ulaşılabilecek Yakını</h1>
+
+                    <div class="input-section d-flex">
+                        <p class="usernamelabel">Adı Soyadı:</p>
+                        <input type="text" class="form-control" required name="adsoyadyakin" id="adsoyadyakin"
+                            placeholder="Adı Soyadı">
+                    </div>
+                    <div class="input-section d-flex">
+                        <p class="usernamelabel">Yakınlık Derecesi:</p>
+                        <input type="text" class="form-control" required name="yakinlikderece" id="yakinlikderece"
+                            placeholder="Yakınlık Derecesi">
+                    </div>
+                    <div class="input-section d-flex">
+                        <p class="usernamelabel">Telefon:</p>
+                        <input type="text" class="form-control" required name="telefonyakin" id="telefonyakin"
+                            placeholder="Telefon">
+                    </div>
+                    <div class="input-section d-flex">
+
+                        <p class="usernamelabel">Adres</p>
+                        <input type="text" class="form-control not" required name="adresyakin" id="adresyakin"
+                            placeholder="Adres giriniz">
+                    </div>
                     <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
 
                 </form>
             </div>
-            <div class="patients-table dark-blue text-center rounded p-4" id="patients-table">
+            <!-- <div class="patients-table dark-blue text-center rounded p-4" id="patients-table">
                 <div class="d-flex align-items-center justify-content-between mb-4">
                     <h6 class="mb-0">Hastalar</h6>
 
@@ -116,59 +365,59 @@ if (isset($_GET['logout'])) {
                         </tbody>
                     </table>
                 </div>
-            </div>
+            </div> -->
         </div>
         <script>
-            $(function() {
-                $('#submit').click(function(e) {
+        $(function() {
+            $('#submit').click(function(e) {
 
 
-                    var valid = this.form.checkValidity();
+                var valid = this.form.checkValidity();
 
-                    if (valid) {
-                        var id = <?php
+                if (valid) {
+                    var id = <?php
 
                                     $userid = $_SESSION['userlogin']['id'];
                                     echo $userid
                                     ?>;
-                        var name = $('#name').val();
-                        var surname = $('#surname').val();
-                        var age = $('#age').val();
-                        var not = $('#not').val();
+                    var name = $('#name').val();
+                    var surname = $('#surname').val();
+                    var age = $('#age').val();
+                    var not = $('#not').val();
 
 
-                        e.preventDefault()
+                    e.preventDefault()
 
-                        $.ajax({
-                            type: 'POST',
-                            url: 'student-patient.php',
-                            data: {
-                                id: id,
-                                name: name,
-                                surname: surname,
-                                age: age,
-                                not: not
+                    $.ajax({
+                        type: 'POST',
+                        url: 'student-patient.php',
+                        data: {
+                            id: id,
+                            name: name,
+                            surname: surname,
+                            age: age,
+                            not: not
 
-                            },
-                            success: function(data) {
-                                alert("Success");
-                                location.reload(true)
-                            },
-                            error: function(data) {
-                                Swal.fire({
-                                    'title': 'Errors',
-                                    'text': 'There were errors',
-                                    'type': 'error'
-                                })
-                            }
-                        })
+                        },
+                        success: function(data) {
+                            alert("Success");
+                            location.reload(true)
+                        },
+                        error: function(data) {
+                            Swal.fire({
+                                'title': 'Errors',
+                                'text': 'There were errors',
+                                'type': 'error'
+                            })
+                        }
+                    })
 
 
 
-                    }
-                })
+                }
+            })
 
-            });
+        });
         </script>
         <!-- JavaScript Libraries -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

@@ -1,10 +1,13 @@
 @import url('https://fonts.cdnfonts.com/css/circular-std');
 
 * {
-    font-family: 'Circular Std', sans-serif;
+    font-family: 'Circular', sans-serif;
     box-sizing: border-box;
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
+
+    font-style: normal;
+    text-decoration: none;
 }
 
 html,
@@ -16,12 +19,13 @@ body {
 
     background-size: cover;
     background-position: center;
-
+    color: #6C7293;
 }
 
 .stu-body {
-    background-color: #fff !important;
+    background-color: #dddddd !important;
     background-image: none;
+    display: flex;
 }
 
 .blue {
@@ -87,6 +91,13 @@ body {
 
 .stu-body1 {
     display: flex;
+    height: 100%;
+    max-width: 300px;
+    width: 100%;
+}
+
+h3 {
+    color: #246174;
 }
 
 .navigation {
@@ -101,9 +112,11 @@ body {
 
 .navigation-wrapper {
     width: 100%;
+    height: 100%;
     display: flex;
-    background-color: crimson !important;
-    border: 1px solid black;
+    flex-direction: column;
+    background-color: #FFFFFF !important;
+    box-shadow: -10px 0px 20px 20px rgb(112 144 176 / 18%);
     margin: unset;
     align-items: center;
 }
@@ -127,16 +140,20 @@ body {
 .navigation-right {
     display: flex;
     padding: 20px;
+    flex-direction: column;
 }
 
 .nav-items-wrapper {
     align-self: center;
     display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 30px;
 }
 
 .nav-link {
     padding: 0;
-    color: white;
+    color: #246174;
     margin-right: 20px;
 }
 
@@ -161,11 +178,18 @@ body {
     color: #000;
 }
 
+.content {
+    margin: unset;
+    width: 100%;
+}
+
 .form-control {
     background-color: #d1d1d1 !important;
-    margin-bottom: 20px;
     width: 50%;
     align-self: center;
+    border: 1px solid;
+    border-color: #246174;
+    box-shadow: 1px 1px 1px 1px #246174;
 }
 
 .not {
@@ -174,9 +198,10 @@ body {
 
 .submit {
     height: 75px;
-    widows: 50%;
-    background-color: crimson !important;
+
+    background-color: #246174 !important;
     color: white;
+    margin-top: 50px;
 }
 
 .header {
@@ -243,7 +268,7 @@ input[type="email"] {
     font-size: 18px;
     border-radius: 20px;
     color: #fff;
-    background-color: crimson;
+    background-color: #246174;
 
 }
 
@@ -268,7 +293,7 @@ input[type="email"] {
     text-decoration: none;
     font-size: 14px;
     color: #fff;
-    background-color: crimson;
+    background-color: #246174;
 
 }
 
@@ -282,6 +307,8 @@ input[type="email"] {
 
 .patients-save {
     display: flex;
+    margin-top: 50px;
+    justify-content: center;
 }
 
 .patients-save-fields {
@@ -292,9 +319,55 @@ input[type="email"] {
 
 .patients-table {
     margin-top: 50px;
-    background-color: crimson !important;
+    background-color: #246174 !important;
 }
 
 .lower-buttons {
     background: none !important;
+}
+
+.form-header {
+    font-weight: 700;
+    font-size: 36px;
+    color: #525770;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.checkboxes {
+    gap: 50px;
+}
+
+.patients-save-fields {
+    align-items: center;
+}
+
+.input-section {
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.usernamelabel {
+    margin-bottom: unset;
+    align-self: center;
+}
+
+.input-section-wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0px, 1fr));
+    gap: 50px;
+}
+
+.send-patient {
+    padding: 30px;
+    background: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 40px 40px 40px 40px rgb(112 144 176 / 18%);
 }
