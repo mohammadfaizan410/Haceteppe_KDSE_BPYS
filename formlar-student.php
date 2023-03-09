@@ -1037,8 +1037,103 @@ if (isset($_GET['logout'])) {
 
                     <h1 class="form-header">Hastalık Öyküsü</h1>
 
+                    <p class="usernamelabel">Geldiği Yer </p>
+
+                    <div class="checkbox-wrapper d-flex">
+                        <div class="checkboxes d-flex">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="yatisdurumuradio"
+                                    id="yatisdurumuradio" value="option1">
+                                <label class="form-check-label" for="yatisdurumuradio">
+                                    <span class="checkbox-header"> Yoğun Bakım </span>
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="yatisdurumuradio"
+                                    id="yatisdurumuradio" value="option1">
+                                <label class="form-check-label" for="yatisdurumuradio">
+                                    <span class="checkbox-header"> Poliklinik </span>
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="yatisdurumuradio"
+                                    id="yatisdurumuradio" value="option1">
+                                <label class="form-check-label" for="yatisdurumuradio">
+                                    <span class="checkbox-header"> Acil Servis </span>
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="yatisdurumuradio"
+                                    id="yatisdurumuradio" value="option1">
+                                <label class="form-check-label" for="yatisdurumuradio">
+                                    <span class="checkbox-header"> Ev </span>
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="yatisdurumuradio"
+                                    id="yatisdurumuradio" value="option2">
+                                <label class="form-check-label" for="yatisdurumuradio">
+                                    <span class="checkbox-header"> Diğer </span>
+
+                                </label>
+                                <input type="text" class="form-control" required name="yatisdiger" id="yatisdiger"
+                                    placeholder="Diğer">
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="usernamelabel"> Hastaneye Geliş Şekli </p>
+
+                    <div class="checkbox-wrapper d-flex">
+                        <div class="checkboxes d-flex">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="yatisdurumuradio"
+                                    id="yatisdurumuradio" value="option1">
+                                <label class="form-check-label" for="yatisdurumuradio">
+                                    <span class="checkbox-header"> Yürüyerek </span>
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="yatisdurumuradio"
+                                    id="yatisdurumuradio" value="option1">
+                                <label class="form-check-label" for="yatisdurumuradio">
+                                    <span class="checkbox-header"> Tekerlekli Sandalye </span>
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="yatisdurumuradio"
+                                    id="yatisdurumuradio" value="option1">
+                                <label class="form-check-label" for="yatisdurumuradio">
+                                    <span class="checkbox-header"> Sedye </span>
+                                </label>
+                            </div>
 
 
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="yatisdurumuradio"
+                                    id="yatisdurumuradio" value="option2">
+                                <label class="form-check-label" for="yatisdurumuradio">
+                                    <span class="checkbox-header"> Diğer </span>
+
+                                </label>
+                                <input type="text" class="form-control" required name="yatisdiger" id="yatisdiger"
+                                    placeholder="Diğer">
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="usernamelabel">Şikayetler</p>
+                    <input type="text" class="form-control not" required name="not" id="not" placeholder="Şikayetler">
+
+                    <p class="usernamelabel">Tıbbi Tanı</p>
+                    <input type="text" class="form-control not" required name="not" id="not" placeholder="Tıbbi Tanı">
 
                     <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
 
