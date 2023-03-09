@@ -371,3 +371,12 @@ input[type="email"] {
     border-radius: 15px;
     box-shadow: 40px 40px 40px 40px rgb(112 144 176 / 18%);
 }
+
+.ozgecmistable {
+    width: unset !important;
+    height: unset;
+}
+
+.ozgecmistable-wrapper {
+    margin-bottom: 50px;
+}
