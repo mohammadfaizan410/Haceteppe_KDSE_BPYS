@@ -380,3 +380,14 @@ input[type="email"] {
 .ozgecmistable-wrapper {
     margin-bottom: 50px;
 }
+
+.recetecheckbox {
+    display: flex;
+    gap: 10px;
+}
+
+.protezlertable {
+    width: 50%;
+    border: 1px solid;
+    border-color: #246174;
+}
