@@ -57,6 +57,8 @@ if (isset($_GET['logout'])) {
 
         ?>
         <div class="send-patient">
+            <span class='close closeBtn' id='closeBtn'>&times;</span>
+
             <h1 class="form-header">HASTA DEĞERLENDİRME FORMU</h1>
             <div class=" patients-save">
                 <form action="" method="POST" class="patients-save-fields">
@@ -1222,6 +1224,15 @@ if (isset($_GET['logout'])) {
         </div>
         <script>
         $(function() {
+            $('#closeBtn').click(function(e) {
+                $("#content").load("formlar-student.php");
+
+            })
+        });
+        </script>
+
+        <script>
+        $(function() {
             $('#submit').click(function(e) {
 
 
@@ -1270,10 +1281,10 @@ if (isset($_GET['logout'])) {
                 }
             })
 
-        });
+        }); <
+        /> <!--JavaScript Libraries-- > <
+        script src = "https://code.jquery.com/jquery-3.4.1.min.js" >
         </script>
-        <!-- JavaScript Libraries -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
         <script src="lib/chart/chart.min.js"></script>
         <script src="lib/easing/easing.min.js"></script>
