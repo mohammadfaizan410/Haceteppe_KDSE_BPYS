@@ -758,7 +758,14 @@ if (isset($_GET['logout'])) {
                         </tbody>
                     </table>
 
+
+
+                        
+
+
                     <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
+
+
 
                 </form>
             </div>
