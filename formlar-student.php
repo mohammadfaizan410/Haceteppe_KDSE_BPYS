@@ -59,78 +59,80 @@ if (isset($_GET['logout'])) {
         <div class="d-flex column">
             <a href="ozgecmis.php" class="form-items">Hasta Değerlendirme Formu</a>
             <a href="solunumgereksinimi.php" class="form-items">Solunum Gereksinimi</a>
+
+
         </div>
         <div class="content" id="content">
 
         </div>
         <script>
+        $(function() {
+            $.ajaxSetup({
+                cache: false
+            }); // disable caching for all requests.
+
+            // RAW Text/Html data from a file
+
             $(function() {
-                $.ajaxSetup({
-                    cache: false
-                }); // disable caching for all requests.
-
-                // RAW Text/Html data from a file
-
-                $(function() {
-                    $("a.form-items").on("click", function(e) {
-                        e.preventDefault();
-                        $("#content").load(this.href);
-                    })
+                $("a.form-items").on("click", function(e) {
+                    e.preventDefault();
+                    $("#content").load(this.href);
                 })
+            })
 
-            });
+        });
         </script>
         <script>
-            $(function() {
-                $('#submit').click(function(e) {
+        $(function() {
+            $('#submit').click(function(e) {
 
 
-                    var valid = this.form.checkValidity();
+                var valid = this.form.checkValidity();
 
-                    if (valid) {
-                        var id = <?php
+                if (valid) {
+                    var id = <?php
 
                                     $userid = $_SESSION['userlogin']['id'];
                                     echo $userid
                                     ?>;
-                        var name = $('#name').val();
-                        var surname = $('#surname').val();
-                        var age = $('#age').val();
-                        var not = $('#not').val();
+                    var name = $('#name').val();
+                    var surname = $('#surname').val();
+                    var age = $('#age').val();
+                    var not = $('#not').val();
 
 
-                        e.preventDefault()
+                    e.preventDefault()
 
-                        $.ajax({
-                            type: 'POST',
-                            url: 'student-patient.php',
-                            data: {
-                                id: id,
-                                name: name,
-                                surname: surname,
-                                age: age,
-                                not: not
+                    $.ajax({
+                        type: 'POST',
+                        url: 'student-patient.php',
+                        data: {
+                            id: id,
+                            name: name,
+                            surname: surname,
+                            age: age,
+                            not: not
 
-                            },
-                            success: function(data) {
-                                alert("Success");
-                                location.reload(true)
-                            },
-                            error: function(data) {
-                                Swal.fire({
-                                    'title': 'Errors',
-                                    'text': 'There were errors',
-                                    'type': 'error'
-                                })
-                            }
-                        })
+                        },
+                        success: function(data) {
+                            alert("Success");
+                            location.reload(true)
+                        },
+                        error: function(data) {
+                            Swal.fire({
+                                'title': 'Errors',
+                                'text': 'There were errors',
+                                'type': 'error'
+                            })
+                        }
+                    })
 
 
 
-                    }
-                })
+                }
+            })
 
-            });
+        });
         </script>
         <!-- JavaScript Libraries -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
