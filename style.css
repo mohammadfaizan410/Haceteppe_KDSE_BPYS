@@ -374,11 +374,10 @@ input[type="email"] {
 }
 
 .ozgecmistable {
-    width: unset !important;
+    width: 100% !important;
     height: unset;
 }
 
 .ozgecmistable-wrapper {
     margin-bottom: 50px;
 }
-

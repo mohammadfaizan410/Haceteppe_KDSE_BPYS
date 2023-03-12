@@ -56,65 +56,10 @@ if (isset($_GET['logout'])) {
         }
 
         ?>
-        <div class="send-patient">
-            <h1 class="form-header">HASTA DEĞERLENDİRME FORMU</h1>
-            <div class=" patients-save">
-                <form action="" method="POST" class="patients-save-fields">
-                    <!--       <p class="usernamelabel">Hasta Adı Soyadı</p>
-                    <input type="text" class="form-control" required name="name" id="name"
-                        placeholder="Hasta Adı Soyadı Giriniz">
+        <div class="d-flex column">
+            <a href="ozgecmis.php" class="form-items">Hasta Değerlendirme Formu</a>
+            <a href="solunumgereksinimi.php" class="form-items">Solunum Gereksinimi</a>
 
-                    <p class="usernamelabel">Hasta Soyadı</p>
-                    <input type="text" class="form-control" required name="surname" id="surname"
-                        placeholder="Hasta Soyadı Giriniz">
-
-                    <p class="usernamelabel">Hasta Yaşı</p>
-                    <input type="text" class="form-control" required name="age" id="age"
-                        placeholder="Hasta Yaşı Giriniz">
-
-                    <p class="usernamelabel">Notlar</p>
-                    <input type="text" class="form-control not" required name="not" id="not" placeholder="Not giriniz"> -->
-                    <div class="input-section-wrapper">
-
-                        <div class="input-section-item">
-                            <div class="input-section d-flex">
-                                <p class="usernamelabel">Hasta Adı Soyadı:</p>
-                                <input type="text" class="form-control" required name="name" id="name"
-                                    placeholder="Hasta Adı Soyadı Giriniz">
-                            </div>
-
-                            <div class="input-section d-flex">
-                                <p class="usernamelabel">Doğum Yeri:</p>
-                                <input type="text" class="form-control" required name="doğumyeri" id="doğumyeri"
-                                    placeholder="Doğum Yeri Giriniz">
-                            </div>
-
-                            <div class="input-section d-flex">
-                                <p class="usernamelabel">Doğum Tarihi:</p>
-                                <input type="date" class="form-control" required name="doğumtarihi" id="doğumtarihi"
-                                    placeholder="Hasta Adı Soyadı Giriniz">
-                            </div>
-
-                            <div class="input-section d-flex">
-
-                                <p class="usernamelabel">Cinsiyeti:</p>
-                                <div class="checkbox-wrapper d-flex">
-                                    <div class="checkboxes">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="cinsiyetradio"
-                                                id="cinsiyetradio" value="option1">
-                                            <label class="form-check-label" for="cinsiyetradio">
-                                                <span class="checkbox-header"> Erkek </span>
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="cinsiyetradio"
-                                                id="cinsiyetradio" value="option2">
-                                            <label class="form-check-label" for="cinsiyetradio">
-                                                <span class="checkbox-header"> Kadın </span>
-
-                                            </label>
-                                        </div>
 
                                     </div>
                                 </div>
@@ -758,14 +703,7 @@ if (isset($_GET['logout'])) {
                         </tbody>
                     </table>
 
-
-
-                        
-
-
                     <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
-
-
 
                 </form>
             </div>
@@ -810,6 +748,23 @@ if (isset($_GET['logout'])) {
                 </div>
             </div> -->
         </div>
+        <script>
+        $(function() {
+            $.ajaxSetup({
+                cache: false
+            }); // disable caching for all requests.
+
+            // RAW Text/Html data from a file
+
+            $(function() {
+                $("a.form-items").on("click", function(e) {
+                    e.preventDefault();
+                    $("#content").load(this.href);
+                })
+            })
+
+        });
+        </script>
         <script>
         $(function() {
             $('#submit').click(function(e) {
