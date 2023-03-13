@@ -43,7 +43,7 @@ if (isset($_GET['logout'])) {
 <body style="background-color:white">
     <div class="container-fluid pt-4 px-4">
         <?php
-        require_once('config-students.php');
+        require_once('../config-students.php');
         $userid = $_SESSION['userlogin']['id'];
         //echo $userid;
         $sql = "SELECT * FROM  patients  WHERE id =" . $userid;
@@ -66,16 +66,14 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio"
-                                value="option1">
+                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio" value="option1">
                             <label class="form-check-label" for="yatisdurumuradio">
                                 <span class="checkbox-header">Bağımsız</span>
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio"
-                                value="option2">
+                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio" value="option2">
                             <label class="form-check-label" for="yatisdurumuradio">
                                 <span class="checkbox-header"> Yarı bağımlı</span>
 
@@ -83,8 +81,7 @@ if (isset($_GET['logout'])) {
 
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio"
-                                value="option2">
+                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio" value="option2">
                             <label class="form-check-label" for="yatisdurumuradio">
                                 <span class="checkbox-header">Bağımlı</span>
 
@@ -100,16 +97,14 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio"
-                                value="option1">
+                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio" value="option1">
                             <label class="form-check-label" for="yatisdurumuradio">
                                 <span class="checkbox-header">Sorun Yok</span>
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio"
-                                value="option2">
+                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio" value="option2">
                             <label class="form-check-label" for="yatisdurumuradio">
                                 <span class="checkbox-header"> Sorun Var</span>
 
@@ -119,8 +114,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
                                                 <label class="form-check-label" for="inlineCheckbox1">Dispne </label>
                                             </div>
                                         </td>
@@ -129,8 +123,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
                                                 <label class="form-check-label" for="inlineCheckbox1">Hiperventilasyon
                                                 </label>
                                             </div>
@@ -141,8 +134,7 @@ if (isset($_GET['logout'])) {
 
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
-                                                    value="option2">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
                                                 <label class="form-check-label" for="inlineCheckbox1">Hipoventilasyon
                                                 </label>
                                             </div>
@@ -153,8 +145,7 @@ if (isset($_GET['logout'])) {
 
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
-                                                    value="option2">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
                                                 <label class="form-check-label" for="inlineCheckbox1">Takipne
                                                 </label>
                                             </div>
@@ -165,8 +156,7 @@ if (isset($_GET['logout'])) {
 
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
-                                                    value="option2">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
                                                 <label class="form-check-label" for="inlineCheckbox1">Bradipne
                                                 </label>
                                             </div>
@@ -177,8 +167,7 @@ if (isset($_GET['logout'])) {
 
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
-                                                    value="option2">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
                                                 <label class="form-check-label" for="inlineCheckbox1">Siyanoz
                                                 </label>
                                             </div>
@@ -189,12 +178,10 @@ if (isset($_GET['logout'])) {
 
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
-                                                    value="option2">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
                                                 <label class="form-check-label" for="inlineCheckbox1">Diğer
                                                 </label>
-                                                <input type="text" class="form-control ozgecmistable" required
-                                                    name="ozgecmistable1" id="ozgecmistable1" placeholder="Diğer">
+                                                <input type="text" class="form-control ozgecmistable" required name="ozgecmistable1" id="ozgecmistable1" placeholder="Diğer">
                                             </div>
                                         </td>
 
@@ -213,16 +200,14 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio"
-                                value="option1">
+                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio" value="option1">
                             <label class="form-check-label" for="yatisdurumuradio">
                                 <span class="checkbox-header">Sorun Yok</span>
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio"
-                                value="option2">
+                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio" value="option2">
                             <label class="form-check-label" for="yatisdurumuradio">
                                 <span class="checkbox-header"> Sorun Var</span>
 
@@ -232,10 +217,8 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1">
-                                                <label class="form-check-label"
-                                                    for="inlineCheckbox1">Trakeostomi</label>
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">Trakeostomi</label>
                                             </div>
                                         </td>
 
@@ -243,8 +226,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
                                                 <label class="form-check-label" for="inlineCheckbox1">Endotrakeal tüp
                                                 </label>
                                             </div>
@@ -266,16 +248,14 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio"
-                                value="option1">
+                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio" value="option1">
                             <label class="form-check-label" for="yatisdurumuradio">
                                 <span class="checkbox-header">Sorun Yok</span>
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio"
-                                value="option2">
+                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio" value="option2">
                             <label class="form-check-label" for="yatisdurumuradio">
                                 <span class="checkbox-header"> Sorun Var</span>
 
@@ -285,8 +265,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
                                                 <label class="form-check-label" for="inlineCheckbox1">Etkisiz</label>
                                             </div>
                                         </td>
@@ -296,12 +275,10 @@ if (isset($_GET['logout'])) {
 
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
-                                                    value="option2">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
                                                 <label class="form-check-label" for="inlineCheckbox1">Diğer
                                                 </label>
-                                                <input type="text" class="form-control ozgecmistable" required
-                                                    name="ozgecmistable1" id="ozgecmistable1" placeholder="Diğer">
+                                                <input type="text" class="form-control ozgecmistable" required name="ozgecmistable1" id="ozgecmistable1" placeholder="Diğer">
                                             </div>
                                         </td>
 
@@ -321,16 +298,14 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio"
-                                value="option1">
+                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio" value="option1">
                             <label class="form-check-label" for="yatisdurumuradio">
                                 <span class="checkbox-header">Sorun Yok</span>
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio"
-                                value="option2">
+                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio" value="option2">
                             <label class="form-check-label" for="yatisdurumuradio">
                                 <span class="checkbox-header"> Sorun Var</span>
 
@@ -340,8 +315,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
                                                 <label class="form-check-label" for="inlineCheckbox1">Etkisiz balgam
                                                     çıkartma</label>
                                             </div>
@@ -351,8 +325,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
                                                 <label class="form-check-label" for="inlineCheckbox1">Balgam
                                                     Çıkamama</label>
                                             </div>
@@ -362,8 +335,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
                                                 <label class="form-check-label" for="inlineCheckbox1">Aşırı kıvamlı
                                                     balgam</label>
                                             </div>
@@ -374,12 +346,10 @@ if (isset($_GET['logout'])) {
 
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
-                                                    value="option2">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
                                                 <label class="form-check-label" for="inlineCheckbox1">Diğer
                                                 </label>
-                                                <input type="text" class="form-control ozgecmistable" required
-                                                    name="ozgecmistable1" id="ozgecmistable1" placeholder="Diğer">
+                                                <input type="text" class="form-control ozgecmistable" required name="ozgecmistable1" id="ozgecmistable1" placeholder="Diğer">
                                             </div>
                                         </td>
 
@@ -399,16 +369,14 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio"
-                                value="option1">
+                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio" value="option1">
                             <label class="form-check-label" for="yatisdurumuradio">
                                 <span class="checkbox-header">Sorun Yok</span>
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio"
-                                value="option2">
+                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio" value="option2">
                             <label class="form-check-label" for="yatisdurumuradio">
                                 <span class="checkbox-header"> Sorun Var</span>
 
@@ -418,8 +386,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
                                                 <label class="form-check-label" for="inlineCheckbox1">Oro –
                                                     Nazofarengeal</label>
                                             </div>
@@ -429,8 +396,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
                                                 <label class="form-check-label" for="inlineCheckbox1">Trakeal</label>
                                             </div>
                                         </td>
@@ -452,16 +418,14 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio"
-                                value="option1">
+                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio" value="option1">
                             <label class="form-check-label" for="yatisdurumuradio">
                                 <span class="checkbox-header">Sorun Yok</span>
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio"
-                                value="option2">
+                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio" value="option2">
                             <label class="form-check-label" for="yatisdurumuradio">
                                 <span class="checkbox-header"> Sorun Var</span>
 
@@ -471,8 +435,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
                                                 <label class="form-check-label" for="inlineCheckbox1">Nazal mukoza
                                                     hiperemik</label>
                                             </div>
@@ -482,8 +445,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
                                                 <label class="form-check-label" for="inlineCheckbox1">Nazal septumda
                                                     deviasyon</label>
                                             </div>
@@ -493,8 +455,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
                                                 <label class="form-check-label" for="inlineCheckbox1">Nazal
                                                     kanama</label>
                                             </div>
@@ -504,8 +465,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
                                                 <label class="form-check-label" for="inlineCheckbox1">Nazal lezyon
                                                 </label>
                                             </div>
@@ -515,8 +475,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
                                                 <label class="form-check-label" for="inlineCheckbox1">Nazal
                                                     akıntı</label>
                                             </div>
@@ -527,12 +486,10 @@ if (isset($_GET['logout'])) {
 
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
-                                                    value="option2">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
                                                 <label class="form-check-label" for="inlineCheckbox1">Diğer
                                                 </label>
-                                                <input type="text" class="form-control ozgecmistable" required
-                                                    name="ozgecmistable1" id="ozgecmistable1" placeholder="Diğer">
+                                                <input type="text" class="form-control ozgecmistable" required name="ozgecmistable1" id="ozgecmistable1" placeholder="Diğer">
                                             </div>
                                         </td>
 
@@ -554,16 +511,14 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio"
-                                value="option1">
+                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio" value="option1">
                             <label class="form-check-label" for="yatisdurumuradio">
                                 <span class="checkbox-header">Sorun Yok</span>
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio"
-                                value="option2">
+                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio" value="option2">
                             <label class="form-check-label" for="yatisdurumuradio">
                                 <span class="checkbox-header"> Sorun Var</span>
 
@@ -573,8 +528,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
                                                 <label class="form-check-label" for="inlineCheckbox1">Şişlik</label>
                                             </div>
                                         </td>
@@ -586,13 +540,11 @@ if (isset($_GET['logout'])) {
 
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
-                                                    value="option2">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
                                                 <label class="form-check-label" for="inlineCheckbox1">Diğer
                                                 </label>
                                                 <p>Kitle
-                                                    <input type="text" class="form-control" required
-                                                        name="ozgecmistable1" id="ozgecmistable1" placeholder="">
+                                                    <input type="text" class="form-control" required name="ozgecmistable1" id="ozgecmistable1" placeholder="">
                                                     Özelliği
                                                 </p>
                                             </div>
@@ -614,16 +566,14 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio"
-                                value="option1">
+                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio" value="option1">
                             <label class="form-check-label" for="yatisdurumuradio">
                                 <span class="checkbox-header">Sorun Yok</span>
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio"
-                                value="option2">
+                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio" value="option2">
                             <label class="form-check-label" for="yatisdurumuradio">
                                 <span class="checkbox-header"> Sorun Var</span>
 
@@ -633,8 +583,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
                                                 <label class="form-check-label" for="inlineCheckbox1">Sağa Kayma</label>
                                             </div>
                                         </td>
@@ -644,8 +593,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
                                                 <label class="form-check-label" for="inlineCheckbox1">Sola Kayma</label>
                                             </div>
                                         </td>
@@ -667,16 +615,14 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio"
-                                value="option1">
+                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio" value="option1">
                             <label class="form-check-label" for="yatisdurumuradio">
                                 <span class="checkbox-header">Sorun Yok</span>
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio"
-                                value="option2">
+                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio" value="option2">
                             <label class="form-check-label" for="yatisdurumuradio">
                                 <span class="checkbox-header"> Sorun Var</span>
 
@@ -686,8 +632,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <label class="form-check-label" for="inlineCheckbox1">Yeri</label>
 
-                                        <input type="text" class="form-control" required name="ozgecmistable1"
-                                            id="ozgecmistable1" placeholder="Yeri">
+                                        <input type="text" class="form-control" required name="ozgecmistable1" id="ozgecmistable1" placeholder="Yeri">
 
 
                                     </tr>
@@ -708,8 +653,7 @@ if (isset($_GET['logout'])) {
                 <p class="usernamelabel">Diğer:</p>
 
 
-                <input type="text" class="form-control not" required name="ozgecmistable1" id="ozgecmistable1"
-                    placeholder="Yeri">
+                <input type="text" class="form-control not" required name="ozgecmistable1" id="ozgecmistable1" placeholder="Yeri">
 
             </div>
 
@@ -722,16 +666,14 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio"
-                                value="option1">
+                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio" value="option1">
                             <label class="form-check-label" for="yatisdurumuradio">
                                 <span class="checkbox-header">Sorun Yok</span>
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio"
-                                value="option2">
+                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio" value="option2">
                             <label class="form-check-label" for="yatisdurumuradio">
                                 <span class="checkbox-header"> Sorun Var</span>
 
@@ -749,16 +691,14 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio"
-                                value="option1">
+                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio" value="option1">
                             <label class="form-check-label" for="yatisdurumuradio">
                                 <span class="checkbox-header">Sorun Yok</span>
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio"
-                                value="option2">
+                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio" value="option2">
                             <label class="form-check-label" for="yatisdurumuradio">
                                 <span class="checkbox-header"> Sorun Var</span>
 
@@ -768,8 +708,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
                                                 <label class="form-check-label" for="inlineCheckbox1">Kifoz </label>
                                             </div>
                                         </td>
@@ -778,8 +717,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
                                                 <label class="form-check-label" for="inlineCheckbox1">Lordoz </label>
                                             </div>
                                         </td>
@@ -788,8 +726,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
                                                 <label class="form-check-label" for="inlineCheckbox1">Skolyoz</label>
                                             </div>
                                         </td>
@@ -813,16 +750,14 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio"
-                                value="option1">
+                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio" value="option1">
                             <label class="form-check-label" for="yatisdurumuradio">
                                 <span class="checkbox-header">Sorun Yok</span>
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio"
-                                value="option2">
+                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio" value="option2">
                             <label class="form-check-label" for="yatisdurumuradio">
                                 <span class="checkbox-header"> Sorun Var</span>
 
@@ -840,16 +775,14 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio"
-                                value="option1">
+                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio" value="option1">
                             <label class="form-check-label" for="yatisdurumuradio">
                                 <span class="checkbox-header">Sorun Yok</span>
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio"
-                                value="option2">
+                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio" value="option2">
                             <label class="form-check-label" for="yatisdurumuradio">
                                 <span class="checkbox-header"> Sorun Var</span>
 
@@ -859,12 +792,10 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
                                                 <label class="form-check-label" for="inlineCheckbox1">Krepitasyon /
                                                     Alanı
-                                                    <input type="text" class="form-control" required
-                                                        name="ozgecmistable1" id="ozgecmistable1" placeholder="">
+                                                    <input type="text" class="form-control" required name="ozgecmistable1" id="ozgecmistable1" placeholder="">
                                                 </label>
                                             </div>
                                         </td>
@@ -873,8 +804,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
                                                 <label class="form-check-label" for="inlineCheckbox1">Hassasiyet
                                                 </label>
                                             </div>
@@ -884,11 +814,9 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
                                                 <label class="form-check-label" for="inlineCheckbox1">Kitle/Özelliği
-                                                    <input type="text" class="form-control" required
-                                                        name="ozgecmistable1" id="ozgecmistable1" placeholder="">
+                                                    <input type="text" class="form-control" required name="ozgecmistable1" id="ozgecmistable1" placeholder="">
                                                 </label>
                                             </div>
                                         </td>
@@ -897,11 +825,9 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
                                                 <label class="form-check-label" for="inlineCheckbox1">Diğer
-                                                    <input type="text" class="form-control" required
-                                                        name="ozgecmistable1" id="ozgecmistable1" placeholder="">
+                                                    <input type="text" class="form-control" required name="ozgecmistable1" id="ozgecmistable1" placeholder="">
                                                 </label>
                                             </div>
                                         </td>
@@ -922,16 +848,14 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio"
-                                value="option1">
+                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio" value="option1">
                             <label class="form-check-label" for="yatisdurumuradio">
                                 <span class="checkbox-header">Sorun Yok</span>
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio"
-                                value="option2">
+                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio" value="option2">
                             <label class="form-check-label" for="yatisdurumuradio">
                                 <span class="checkbox-header"> Sorun Var</span>
 
@@ -941,8 +865,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
                                                 <label class="form-check-label" for="inlineCheckbox1">Fıçı Göğüs
                                                 </label>
                                             </div>
@@ -952,8 +875,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
                                                 <label class="form-check-label" for="inlineCheckbox1">Güvercin Göğüs
                                                 </label>
                                             </div>
@@ -963,8 +885,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
                                                 <label class="form-check-label" for="inlineCheckbox1">Kunduracı
                                                     Göğsü</label>
                                             </div>
@@ -986,52 +907,45 @@ if (isset($_GET['logout'])) {
             <div class="checkbox-wrapper d-flex">
                 <div class="checkboxes d-flex">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="yatisdurumuradio" id="yatisdurumuradio"
-                            value="option1">
+                        <input class="form-check-input" type="checkbox" name="yatisdurumuradio" id="yatisdurumuradio" value="option1">
                         <label class="form-check-label" for="yatisdurumuradio">
                             <span class="checkbox-header"> Triflow / Spirometre</span>
                         </label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="yatisdurumuradio" id="yatisdurumuradio"
-                            value="option1">
+                        <input class="form-check-input" type="checkbox" name="yatisdurumuradio" id="yatisdurumuradio" value="option1">
                         <label class="form-check-label" for="yatisdurumuradio">
                             <span class="checkbox-header"> Nebulizasyon </span>
                         </label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="yatisdurumuradio" id="yatisdurumuradio"
-                            value="option1">
+                        <input class="form-check-input" type="checkbox" name="yatisdurumuradio" id="yatisdurumuradio" value="option1">
                         <label class="form-check-label" for="yatisdurumuradio">
                             <span class="checkbox-header"> Derin Nefes Alma ve Öksürme Egzersizi</span>
                         </label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="yatisdurumuradio" id="yatisdurumuradio"
-                            value="option1">
+                        <input class="form-check-input" type="checkbox" name="yatisdurumuradio" id="yatisdurumuradio" value="option1">
                         <label class="form-check-label" for="yatisdurumuradio">
                             <span class="checkbox-header"> Soğuk buhar uygulama </span>
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="yatisdurumuradio" id="yatisdurumuradio"
-                            value="option1">
+                        <input class="form-check-input" type="checkbox" name="yatisdurumuradio" id="yatisdurumuradio" value="option1">
                         <label class="form-check-label" for="yatisdurumuradio">
                             <span class="checkbox-header"> Postural drenaj </span>
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="yatisdurumuradio" id="yatisdurumuradio"
-                            value="option2">
+                        <input class="form-check-input" type="checkbox" name="yatisdurumuradio" id="yatisdurumuradio" value="option2">
                         <label class="form-check-label" for="yatisdurumuradio">
                             <span class="checkbox-header"> Diğer </span>
 
                         </label>
-                        <input type="text" class="form-control" required name="yatisdiger" id="yatisdiger"
-                            placeholder="Diğer">
+                        <input type="text" class="form-control" required name="yatisdiger" id="yatisdiger" placeholder="Diğer">
                     </div>
                 </div>
             </div>
@@ -1083,66 +997,67 @@ if (isset($_GET['logout'])) {
             </div> -->
     </div>
     <script>
-    $(function() {
-        $('#closeBtn').click(function(e) {
-            $("#content").load("formlar-student.php");
+        $(function() {
+            $('#closeBtn').click(function(e) {
+                $("#content").load("formlar-student.php");
 
-        })
-    });
+            })
+        });
     </script>
 
     <script>
-    $(function() {
-        $('#submit').click(function(e) {
+        $(function() {
+            $('#submit').click(function(e) {
 
 
-            var valid = this.form.checkValidity();
+                var valid = this.form.checkValidity();
 
-            if (valid) {
-                var id = <?php
+                if (valid) {
+                    var id = <?php
 
                                 $userid = $_SESSION['userlogin']['id'];
                                 echo $userid
                                 ?>;
-                var name = $('#name').val();
-                var surname = $('#surname').val();
-                var age = $('#age').val();
-                var not = $('#not').val();
+                    var name = $('#name').val();
+                    var surname = $('#surname').val();
+                    var age = $('#age').val();
+                    var not = $('#not').val();
 
 
-                e.preventDefault()
+                    e.preventDefault()
 
-                $.ajax({
-                    type: 'POST',
-                    url: 'student-patient.php',
-                    data: {
-                        id: id,
-                        name: name,
-                        surname: surname,
-                        age: age,
-                        not: not
+                    $.ajax({
+                        type: 'POST',
+                        url: 'student-patient.php',
+                        data: {
+                            id: id,
+                            name: name,
+                            surname: surname,
+                            age: age,
+                            not: not
 
-                    },
-                    success: function(data) {
-                        alert("Success");
-                        location.reload(true)
-                    },
-                    error: function(data) {
-                        Swal.fire({
-                            'title': 'Errors',
-                            'text': 'There were errors',
-                            'type': 'error'
-                        })
-                    }
-                })
+                        },
+                        success: function(data) {
+                            alert("Success");
+                            location.reload(true)
+                        },
+                        error: function(data) {
+                            Swal.fire({
+                                'title': 'Errors',
+                                'text': 'There were errors',
+                                'type': 'error'
+                            })
+                        }
+                    })
 
 
 
-            }
-        })
+                }
+            })
 
-    }); </script>
-    <script src = "https://code.jquery.com/jquery-3.4.1.min.js" > </script>
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/chart/chart.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>

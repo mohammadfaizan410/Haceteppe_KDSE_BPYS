@@ -381,3 +381,7 @@ input[type="email"] {
 .ozgecmistable-wrapper {
     margin-bottom: 50px;
 }
+
+.column {
+    flex-direction: column;
+}

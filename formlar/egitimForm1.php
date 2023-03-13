@@ -43,7 +43,7 @@ if (isset($_GET['logout'])) {
 <body style="background-color:white">
     <div class="container-fluid pt-4 px-4">
         <?php
-        require_once('config-students.php');
+        require_once('../config-students.php');
         $userid = $_SESSION['userlogin']['id'];
         //echo $userid;
         $sql = "SELECT * FROM  patients  WHERE id =" . $userid;
@@ -60,112 +60,114 @@ if (isset($_GET['logout'])) {
             <span class='close closeBtn' id='closeBtn'>&times;</span>
             <h1 class="form-header">EĞİTİM GEREKSİNİMİ</h1>
 
-        <div class="input-section d-flex justify-content-between" >
-            <div>
-                <input type="radio" name="radio1">
-                <label for="radio1">Daha önce sağlık eğitimi</label>
-            </div>
+            <div class="input-section d-flex justify-content-between">
+                <div>
+                    <input type="radio" name="radio1">
+                    <label for="radio1">Daha önce sağlık eğitimi</label>
+                </div>
                 <p class="usernamelabel">Konusu</p>
                 <p class="usernamelabel">Kimden/Nereden aldı</p>
                 <p class="usernamelabel">Ne zaman aldı</p>
-        </div>
-        <div class="input-section d-flex justify-content-between">
+            </div>
+            <div class="input-section d-flex justify-content-between">
                 <div class="w-25"></div>
                 <input type="text" class="form-control">
                 <input type="text" class="form-control">
                 <input type="text" class="form-control">
-        </div>
-        <div class="input-section d-flex justify-content-between">
+            </div>
+            <div class="input-section d-flex justify-content-between">
                 <div class="w-25"></div>
                 <input type="text" class="form-control">
                 <input type="text" class="form-control">
                 <input type="text" class="form-control">
-        </div>
+            </div>
 
-        <div class="input-section d-flex">
+            <div class="input-section d-flex">
                 <p class="usernamelabel">Sağlığınız ile ilgili hangi konularda eğitim almak istersiniz:</p>
                 <input type="text" class="form-control">
-        </div>
+            </div>
 
-        <div>
+            <div>
                 <div class="d-flex align-items-center justify-content-start">
                     <input type="checkbox" name="checkbox1" class="p-2">
-                    <label class="p-2" for="checkbox1">Sağlık sorununuz olduğunda tıbbi tedavi ve bakım dışında başvurduğunuz herhangi bir kurum ya da yöntem var mı?</label>
+                    <label class="p-2" for="checkbox1">Sağlık sorununuz olduğunda tıbbi tedavi ve bakım dışında
+                        başvurduğunuz herhangi bir kurum ya da yöntem var mı?</label>
                 </div>
                 <div class="input-section d-flex">
                     <p class="usernamelabel">Açıklayınız:</p>
                     <input type="text" class="form-control">
                 </div>
+            </div>
+
+
         </div>
-
-
-</div>
-</div>
+    </div>
 
 
 
 
-            <script>
-                $(function () {
-                    $('#closeBtn').click(function (e) {
-                        $("#content").load("formlar-student.php");
+    <script>
+        $(function() {
+            $('#closeBtn').click(function(e) {
+                $("#content").load("formlar-student.php");
 
-                    })
-                });
-            </script>
+            })
+        });
+    </script>
 
-            <script>
-                $(function () {
-                    $('#submit').click(function (e) {
+    <script>
+        $(function() {
+            $('#submit').click(function(e) {
 
 
-                        var valid = this.form.checkValidity();
+                var valid = this.form.checkValidity();
 
-                        if (valid) {
-                            var id = <?php
+                if (valid) {
+                    var id = <?php
 
                                 $userid = $_SESSION['userlogin']['id'];
                                 echo $userid
                                 ?>;
-                            var name = $('#name').val();
-                            var surname = $('#surname').val();
-                            var age = $('#age').val();
-                            var not = $('#not').val();
+                    var name = $('#name').val();
+                    var surname = $('#surname').val();
+                    var age = $('#age').val();
+                    var not = $('#not').val();
 
 
-                            e.preventDefault()
+                    e.preventDefault()
 
-                            $.ajax({
-                                type: 'POST',
-                                url: 'student-patient.php',
-                                data: {
-                                    id: id,
-                                    name: name,
-                                    surname: surname,
-                                    age: age,
-                                    not: not
+                    $.ajax({
+                        type: 'POST',
+                        url: 'student-patient.php',
+                        data: {
+                            id: id,
+                            name: name,
+                            surname: surname,
+                            age: age,
+                            not: not
 
-                                },
-                                success: function (data) {
-                                    alert("Success");
-                                    location.reload(true)
-                                },
-                                error: function (data) {
-                                    Swal.fire({
-                                        'title': 'Errors',
-                                        'text': 'There were errors',
-                                        'type': 'error'
-                                    })
-                                }
+                        },
+                        success: function(data) {
+                            alert("Success");
+                            location.reload(true)
+                        },
+                        error: function(data) {
+                            Swal.fire({
+                                'title': 'Errors',
+                                'text': 'There were errors',
+                                'type': 'error'
                             })
-
-
-
                         }
                     })
 
-                });</script>
-    <script src = "https://code.jquery.com/jquery-3.4.1.min.js" > </script>
+
+
+                }
+            })
+
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/chart/chart.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
