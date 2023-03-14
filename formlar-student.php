@@ -58,20 +58,23 @@ if (isset($_GET['logout'])) {
         ?>
         <div class="d-flex column">
             <a href="./formlar/ozgecmis.php" class="form-items">Hasta Değerlendirme Formu</a>
-            <a href="formlar/solunumgereksinimi.php" class="form-items">Solunum Gereksinimi</a>
-            <a href="formlar/beslenmeGereksinimi.php" class="form-items">Beslenme Gereksinimi</a>
-            <a href="formlar/bosaltimform.php" class="form-items">Boşaltım Gereksinimi</a>
-            <a href="formlar/hareketForm1.php" class="form-items">Hareket Gereksinimi</a>
-            <a href="formlar/uykuForm1.php" class="form-items">Uyku Gereksinimi</a>
-            <a href="formlar/vucuduTemizForm1.php" class="form-items">Vücudu Temiz ve Bakımlı Tutma</a>
-            <a href="formlar/kateterForm1.php" class="form-items">Kateter / Dren</a>
-            <a href="formlar/iletisimForm1.php" class="form-items">İletişim Kurma Gereksinimi</a>
-            <a href="formlar/calismaForm1.php" class="form-items">
-                Çalışma, Üretme, Boş Zamanını Değerlendirme Gereksinimi
-            </a>
-            <a href="formlar/egitimForm1.php" class="form-items">Eğitim Gereksinimi</a>
-
-
+            <a href="./formlar/solunumgereksinimi.php" class="form-items">Solunum Gereksinimi</a>
+            <a href="./formlar/beslenmeGereksinimi.php" class="form-items">Beslenme Gereksinimi</a>
+            <a href="./formlar/bosaltimform.php" class="form-items">Boşaltım Gereksinimi</a>
+            <a href="./formlar/hareketForm1.php" class="form-items">Hareket Gereksinimi</a>
+            <a href="./formlar/uykuForm1.php" class="form-items">Uyku Gereksinimi</a>
+            <a href="./formlar/vucuduTemizForm1.php" class="form-items">Vücudu Temiz ve Bakımlı Tutma</a>
+            <a href="./formlar/kateterForm1.php" class="form-items">Kateter / Dren</a>
+            <a href="./formlar/iletisimForm1.php" class="form-items">İletişim Kurma Gereksinimi</a>
+            <a href="./formlar/calismaForm1.php" class="form-items">Çalışma, Üretme, Boş Zamanını Değerlendirme Gereksinimi</a>
+            <a href="./formlar/egitimForm1.php" class="form-items">Eğitim Gereksinimi</a>
+            <a href="./formlar/Form2.php" class="form-items">Form 2: Ağrı Tanılama</a>
+            <a href="./formlar/Form3.php" class="form-items">Form 3: Düşme Riski Değerlendirme</a>
+            <a href="./formlar/Form4.php" class="form-items">Form 4: Düşme Bildirimi</a>
+            <a href="./formlar/Form5.php" class="form-items">Form 5: Glaskow Koma Skalası</a>
+            <a href="./formlar/Form6.php" class="form-items">Form 6: Basınç Yarası Risk Değerlendirmesi</a>
+            <a href="./formlar/Form7.php" class="form-items">Form 7: Basınç Yarası</a>
+            <a href="./formlar/Form8.php" class="form-items">Form 8: Ödem Değerlendirme</a>
         </div>
     </div>
 
