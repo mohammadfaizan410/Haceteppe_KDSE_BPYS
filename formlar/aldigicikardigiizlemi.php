@@ -32,9 +32,7 @@
 			var cell9 = row.insertCell(8);
 			var cell10 = row.insertCell(9);
             var cell11 = row.insertCell(10);
-			var cell12 = row.insertCell(11);
-			var cell13 = row.insertCell(12);
-            var row = table.insertRow(13);
+            var row = table.insertRow(11);
 			cell1.contentEditable = true;
 			cell2.contentEditable = true;
 			cell3.contentEditable = true;
@@ -47,8 +45,7 @@
 			cell10.contentEditable = true;
             cell11.contentEditable = true;
 			cell12.contentEditable = true;
-			cell13.contentEditable = true;
-			cell14.contentEditable = true;
+		
 			
 		}
 	</script>
