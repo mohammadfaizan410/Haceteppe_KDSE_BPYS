@@ -75,6 +75,13 @@ if (isset($_GET['logout'])) {
             <a href="./formlar/Form6.php" class="form-items">Form 6: Basınç Yarası Risk Değerlendirmesi</a>
             <a href="./formlar/Form7.php" class="form-items">Form 7: Basınç Yarası</a>
             <a href="./formlar/Form8.php" class="form-items">Form 8: Ödem Değerlendirme</a>
+            <a href="./formlar/siviizlem.php" class="form-items">Sıvı İzlem</a>
+            <a href="./formlar/bakimplani.php" class="form-items">Bakım Planı</a>
+            <a href="./formlar/gunlukbakimuygulamalari.php" class="form-items">Günlük Bakım Uygulamaları</a>
+            <a href="./formlar/medikaltedavi.php" class="form-items">Medikal Tedavi</a>
+            <a href="./formlar/tetkiksonuclari.php" class="form-items">Tetkik Sonuçları</a>
+            <a href="./formlar/yasamsalbulgutakibi.php" class="form-items">Yaşamsal Bulgu Takibi</a>
+            <a href="./formlar/aldigicikardigiizlemi.php" class="form-items">Aldığı Çıkardığı İzlemi</a>
         </div>
     </div>
 
