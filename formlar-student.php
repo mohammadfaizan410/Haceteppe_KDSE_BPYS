@@ -56,78 +56,13 @@ if (isset($_GET['logout'])) {
         }
 
         ?>
-        <div class="d-flex column">
-            <a href="./formlar/ozgecmis.php" class="form-items">Hasta Değerlendirme Formu</a>
-            <a href="./formlar/solunumgereksinimi.php" class="form-items">Solunum Gereksinimi</a>
-            <a href="./formlar/beslenmeGereksinimi.php" class="form-items">Beslenme Gereksinimi</a>
-            <a href="./formlar/bosaltimform.php" class="form-items">Boşaltım Gereksinimi</a>
-            <a href="./formlar/hareketForm1.php" class="form-items">Hareket Gereksinimi</a>
-            <a href="./formlar/uykuForm1.php" class="form-items">Uyku Gereksinimi</a>
-            <a href="./formlar/vucuduTemizForm1.php" class="form-items">Vücudu Temiz ve Bakımlı Tutma</a>
-            <a href="./formlar/kateterForm1.php" class="form-items">Kateter / Dren</a>
-            <a href="./formlar/iletisimForm1.php" class="form-items">İletişim Kurma Gereksinimi</a>
-            <a href="./formlar/calismaForm1.php" class="form-items">Çalışma, Üretme, Boş Zamanını Değerlendirme Gereksinimi</a>
-            <a href="./formlar/egitimForm1.php" class="form-items">Eğitim Gereksinimi</a>
-            <a href="./formlar/Form2.php" class="form-items">Form 2: Ağrı Tanılama</a>
-            <a href="./formlar/Form3.php" class="form-items">Form 3: Düşme Riski Değerlendirme</a>
-            <a href="./formlar/Form4.php" class="form-items">Form 4: Düşme Bildirimi</a>
-            <a href="./formlar/Form5.php" class="form-items">Form 5: Glaskow Koma Skalası</a>
-            <a href="./formlar/Form6.php" class="form-items">Form 6: Basınç Yarası Risk Değerlendirmesi</a>
-            <a href="./formlar/Form7.php" class="form-items">Form 7: Basınç Yarası</a>
-            <a href="./formlar/Form8.php" class="form-items">Form 8: Ödem Değerlendirme</a>
-            <a href="./formlar/siviizlem.php" class="form-items">Sıvı İzlem</a>
-            <a href="./formlar/bakimplani.php" class="form-items">Bakım Planı</a>
-            <a href="./formlar/gunlukbakimuygulamalari.php" class="form-items">Günlük Bakım Uygulamaları</a>
-            <a href="./formlar/medikaltedavi.php" class="form-items">Medikal Tedavi</a>
-            <a href="./formlar/tetkiksonuclari.php" class="form-items">Tetkik Sonuçları</a>
-            <a href="./formlar/yasamsalbulgutakibi.php" class="form-items">Yaşamsal Bulgu Takibi</a>
-            <a href="./formlar/aldigicikardigiizlemi.php" class="form-items">Aldığı Çıkardığı İzlemi</a>
-        </div>
+
     </div>
 
 
 
     </div>
-    <!-- <div class="patients-table dark-blue text-center rounded p-4" id="patients-table">
-                <div class="d-flex align-items-center justify-content-between mb-4">
-                    <h6 class="mb-0">Hastalar</h6>
 
-                </div>
-
-                <div class="table-responsive">
-                    <table class="table text-start align-middle table-bordered table-hover mb-0">
-                        <thead>
-                            <tr class="text-white">
-
-                                <th scope="col">İsim</th>
-                                <th scope="col">Soyisim</th>
-                                <th scope="col">Yaş</th>
-                                <th scope="col">Notlar</th>
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach ($values as &$value)
-                                echo "
-                                <tr>
-                                   
-                                    <td style='
-                                    color: white;'>" . $value["name"] . "</td>
-                                    <td style='
-                                    color: white;'>" . $value["surname"] . "</td>
-                                    <td style='
-                                    color: white;'>" . $value["age"] . "</td>
-                                    <td style='
-                                    color: white;'> " . $value["notlar"] . " </td>
-                                </tr>"
-
-                            ?>
-
-
-                        </tbody>
-                    </table>
-                </div>
-            </div> -->
     </div>
     <script>
         $(function() {
@@ -136,6 +71,7 @@ if (isset($_GET['logout'])) {
             }); // disable caching for all requests.
 
             // RAW Text/Html data from a file
+            $("#content").load("form-navigation.php");
 
             $(function() {
                 $("a.form-items").on("click", function(e) {
@@ -210,7 +146,7 @@ if (isset($_GET['logout'])) {
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="main.js"></script>
+    <script src=""></script>
 </body>
 
 </html>

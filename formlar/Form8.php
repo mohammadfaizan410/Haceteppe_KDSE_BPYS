@@ -39,20 +39,22 @@ if (isset($_GET['logout'])) {
     <link href="style.css" rel="stylesheet">
 
     <style>
-        .send-patient{align-self: center;}
+        .send-patient {
+            align-self: center;
+        }
     </style>
 
 </head>
 
 <body>
-    <div class="container-fluid pt-4 px-4" >
-        <div class="send-patient" >
+    <div class="container-fluid pt-4 px-4">
+        <div class="send-patient">
             <span class='close closeBtn' id='closeBtn'>&times;</span>
             <h1 class="form-header">Ödem Değerlendirmesi</h1>
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
-                    <img src="./ödem.png" style="width:67%; height:auto;border: 1px solid;border-color: #246174; box-shadow:1px 1px 1px 1px #246174; border-radius: 20px;">
+                        <img src="./ödem.png" style="width:67%; height:auto;border: 1px solid;border-color: #246174; box-shadow:1px 1px 1px 1px #246174; border-radius: 20px;">
 
                         <div class="input-section d-flex" style="padding-top: 5%;">
                             <p class="usernamelabel">Değerlendirilen Alan:</p>
@@ -62,36 +64,36 @@ if (isset($_GET['logout'])) {
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Ödemin Şiddeti:</p>
                             <div class="form-check">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="ÖdemŞiddeti" id="ÖdemŞiddeti" value="option1">
-                                <label class="form-check-label" for="ÖdemŞiddeti">
-                                    <span class="checkbox-header">Ödem Yok</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="ÖdemŞiddeti" id="ÖdemŞiddeti" value="option1">
-                                <label class="form-check-label" for="ÖdemŞiddeti">
-                                    <span class="checkbox-header">+1</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="ÖdemŞiddeti" id="ÖdemŞiddeti" value="option1">
-                                <label class="form-check-label" for="ÖdemŞiddeti">
-                                    <span class="checkbox-header">+2</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="ÖdemŞiddeti" id="ÖdemŞiddeti" value="option1">
-                                <label class="form-check-label" for="ÖdemŞiddeti">
-                                    <span class="checkbox-header">+3</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="ÖdemŞiddeti" id="ÖdemŞiddeti" value="option1">
-                                <label class="form-check-label" for="ÖdemŞiddeti">
-                                    <span class="checkbox-header">+4</span>
-                                </label>
-                            </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="ÖdemŞiddeti" id="ÖdemŞiddeti" value="option1">
+                                    <label class="form-check-label" for="ÖdemŞiddeti">
+                                        <span class="checkbox-header">Ödem Yok</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="ÖdemŞiddeti" id="ÖdemŞiddeti" value="option1">
+                                    <label class="form-check-label" for="ÖdemŞiddeti">
+                                        <span class="checkbox-header">+1</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="ÖdemŞiddeti" id="ÖdemŞiddeti" value="option1">
+                                    <label class="form-check-label" for="ÖdemŞiddeti">
+                                        <span class="checkbox-header">+2</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="ÖdemŞiddeti" id="ÖdemŞiddeti" value="option1">
+                                    <label class="form-check-label" for="ÖdemŞiddeti">
+                                        <span class="checkbox-header">+3</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="ÖdemŞiddeti" id="ÖdemŞiddeti" value="option1">
+                                    <label class="form-check-label" for="ÖdemŞiddeti">
+                                        <span class="checkbox-header">+4</span>
+                                    </label>
+                                </div>
                             </div>
                         </div>
 
@@ -110,9 +112,9 @@ if (isset($_GET['logout'])) {
 
             })
         });
-        </script>
+    </script>
 
-        <script>
+    <script>
         $(function() {
             $('#submit').click(function(e) {
 
@@ -122,9 +124,9 @@ if (isset($_GET['logout'])) {
                 if (valid) {
                     var id = <?php
 
-                                    $userid = $_SESSION['userlogin']['id'];
-                                    echo $userid
-                                    ?>;
+                                $userid = $_SESSION['userlogin']['id'];
+                                echo $userid
+                                ?>;
                     var name = $('#name').val();
                     var surname = $('#surname').val();
                     var age = $('#age').val();
@@ -162,9 +164,9 @@ if (isset($_GET['logout'])) {
                 }
             })
 
-        }); 
-        </script>
-        <script src="main.js"></script>
+        });
+    </script>
+    <script src=""></script>
 </body>
 
 </html>

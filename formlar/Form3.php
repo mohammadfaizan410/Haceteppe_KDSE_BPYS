@@ -39,14 +39,16 @@ if (isset($_GET['logout'])) {
     <link href="style.css" rel="stylesheet">
 
     <style>
-        .send-patient{align-self: center;}
+        .send-patient {
+            align-self: center;
+        }
     </style>
 
 </head>
 
 <body>
-    <div class="container-fluid pt-4 px-4" >
-        <div class="send-patient" >
+    <div class="container-fluid pt-4 px-4">
+        <div class="send-patient">
             <span class='close closeBtn' id='closeBtn'>&times;</span>
             <h1 class="form-header">Düşme Riski Değerlendirmesi</h1>
             <div class="input-section-item">
@@ -135,59 +137,59 @@ if (isset($_GET['logout'])) {
 
                         <!--<div class="input-section-item">-->
 
-                            <div class="input-section d-flex" style="justify-content:space-around">
-                                <p class="usernamelabel" style="font-weight: bold;">Sandalyeden Kalkma Testi</p>
-                            </div>
+                        <div class="input-section d-flex" style="justify-content:space-around">
+                            <p class="usernamelabel" style="font-weight: bold;">Sandalyeden Kalkma Testi</p>
+                        </div>
 
-                            <div class="input-section d-flex" style="justify-content:space-between">
-                                <p class="usernamelabel">Kollarını Kullanmadan Kalkabiliyor:</p>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="test" id="test" value="option1">
-                                    <label class="form-check-label" for="test">
-                                        <span class="checkbox-header">(0 puan)</span>
-                                    </label>
-                                </div>
+                        <div class="input-section d-flex" style="justify-content:space-between">
+                            <p class="usernamelabel">Kollarını Kullanmadan Kalkabiliyor:</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="test" id="test" value="option1">
+                                <label class="form-check-label" for="test">
+                                    <span class="checkbox-header">(0 puan)</span>
+                                </label>
                             </div>
+                        </div>
 
-                            <div class="input-section d-flex" style="justify-content:space-between">
-                                <p class="usernamelabel">Kalkmak için sandalye kolluğunu kullanıyor ancak tek denemede kalkabiliyor:</p>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="test" id="test" value="option1">
-                                    <label class="form-check-label" for="test">
-                                        <span class="checkbox-header">(1 puan)</span>
-                                    </label>
-                                </div>
+                        <div class="input-section d-flex" style="justify-content:space-between">
+                            <p class="usernamelabel">Kalkmak için sandalye kolluğunu kullanıyor ancak tek denemede kalkabiliyor:</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="test" id="test" value="option1">
+                                <label class="form-check-label" for="test">
+                                    <span class="checkbox-header">(1 puan)</span>
+                                </label>
                             </div>
+                        </div>
 
-                            <div class="input-section d-flex" style="justify-content:space-between">
-                                <p class="usernamelabel">Kalkmak için sandalye kolluğunu kullanıyor ancak birden fazla denemede kalkabiliyor:</p>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="test" id="test" value="option1">
-                                    <label class="form-check-label" for="test">
-                                        <span class="checkbox-header">(3 puan)</span>
-                                    </label>
-                                </div>
+                        <div class="input-section d-flex" style="justify-content:space-between">
+                            <p class="usernamelabel">Kalkmak için sandalye kolluğunu kullanıyor ancak birden fazla denemede kalkabiliyor:</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="test" id="test" value="option1">
+                                <label class="form-check-label" for="test">
+                                    <span class="checkbox-header">(3 puan)</span>
+                                </label>
                             </div>
+                        </div>
 
-                            <div class="input-section d-flex" style="justify-content:space-between">
-                                <p class="usernamelabel">Yardım olmadan kalkamıyor:</p>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="test" id="test" value="option1">
-                                    <label class="form-check-label" for="test">
-                                        <span class="checkbox-header">(4 puan)</span>
-                                    </label>
-                                </div>
+                        <div class="input-section d-flex" style="justify-content:space-between">
+                            <p class="usernamelabel">Yardım olmadan kalkamıyor:</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="test" id="test" value="option1">
+                                <label class="form-check-label" for="test">
+                                    <span class="checkbox-header">(4 puan)</span>
+                                </label>
                             </div>
+                        </div>
 
-                            <div class="input-section d-flex" style="justify-content:space-between">
-                                <p class="usernamelabel" style="font-weight: bold;">Toplam:</p>
-                                <div class="form-check">
-                                    <output></output>
-                                </div>
+                        <div class="input-section d-flex" style="justify-content:space-between">
+                            <p class="usernamelabel" style="font-weight: bold;">Toplam:</p>
+                            <div class="form-check">
+                                <output></output>
                             </div>
-                            <div class="input-section-item"></div>
+                        </div>
+                        <div class="input-section-item"></div>
 
-                            <p style="padding-inline: 15% 15%;">*Alınan puan 5'den düşük ise haftada bir kez yeniden değerlendirme yapılır. Alınan puan 5 veya üzeri ise gün aşırı yeniden değerlendirme yapılır.</p>
+                        <p style="padding-inline: 15% 15%;">*Alınan puan 5'den düşük ise haftada bir kez yeniden değerlendirme yapılır. Alınan puan 5 veya üzeri ise gün aşırı yeniden değerlendirme yapılır.</p>
 
                         <!--</div>-->
 
@@ -208,9 +210,9 @@ if (isset($_GET['logout'])) {
 
             })
         });
-        </script>
+    </script>
 
-        <script>
+    <script>
         $(function() {
             $('#submit').click(function(e) {
 
@@ -220,9 +222,9 @@ if (isset($_GET['logout'])) {
                 if (valid) {
                     var id = <?php
 
-                                    $userid = $_SESSION['userlogin']['id'];
-                                    echo $userid
-                                    ?>;
+                                $userid = $_SESSION['userlogin']['id'];
+                                echo $userid
+                                ?>;
                     var name = $('#name').val();
                     var surname = $('#surname').val();
                     var age = $('#age').val();
@@ -260,9 +262,9 @@ if (isset($_GET['logout'])) {
                 }
             })
 
-        }); 
-        </script>
-        <script src="main.js"></script>
+        });
+    </script>
+    <script src=""></script>
 </body>
 
 </html>

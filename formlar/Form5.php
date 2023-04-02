@@ -39,14 +39,16 @@ if (isset($_GET['logout'])) {
     <link href="style.css" rel="stylesheet">
 
     <style>
-        .send-patient{align-self: center;}
+        .send-patient {
+            align-self: center;
+        }
     </style>
 
 </head>
 
 <body>
-    <div class="container-fluid pt-4 px-4" >
-        <div class="send-patient" >
+    <div class="container-fluid pt-4 px-4">
+        <div class="send-patient">
             <span class='close closeBtn' id='closeBtn'>&times;</span>
             <h1 class="form-header">Düşme Riski Değerlendirmesi</h1>
             <div class="input-section-item">
@@ -239,9 +241,9 @@ if (isset($_GET['logout'])) {
 
             })
         });
-        </script>
+    </script>
 
-        <script>
+    <script>
         $(function() {
             $('#submit').click(function(e) {
 
@@ -251,9 +253,9 @@ if (isset($_GET['logout'])) {
                 if (valid) {
                     var id = <?php
 
-                                    $userid = $_SESSION['userlogin']['id'];
-                                    echo $userid
-                                    ?>;
+                                $userid = $_SESSION['userlogin']['id'];
+                                echo $userid
+                                ?>;
                     var name = $('#name').val();
                     var surname = $('#surname').val();
                     var age = $('#age').val();
@@ -291,9 +293,9 @@ if (isset($_GET['logout'])) {
                 }
             })
 
-        }); 
-        </script>
-        <script src="main.js"></script>
+        });
+    </script>
+    <script src=""></script>
 </body>
 
 </html>

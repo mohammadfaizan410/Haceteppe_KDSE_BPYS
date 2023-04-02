@@ -39,14 +39,16 @@ if (isset($_GET['logout'])) {
     <link href="style.css" rel="stylesheet">
 
     <style>
-        .send-patient{align-self: center;}
+        .send-patient {
+            align-self: center;
+        }
     </style>
 
 </head>
 
 <body>
-    <div class="container-fluid pt-4 px-4" >
-        <div class="send-patient" >
+    <div class="container-fluid pt-4 px-4">
+        <div class="send-patient">
             <span class='close closeBtn' id='closeBtn'>&times;</span>
             <h1 class="form-header">Düşme Bildirimi</h1>
             <div class="input-section-item">
@@ -55,52 +57,52 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section d-flex" style="justify-content:space-between">
                             <p class="usernamelabel">Hasta Adı : </p>
-                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Hasta Adını Giriniz"> 
+                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Hasta Adını Giriniz">
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between">
                             <p class="usernamelabel">Cinsiyet : </p>
-                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Hasta Cinsiyetini Giriniz"> 
+                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Hasta Cinsiyetini Giriniz">
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between">
                             <p class="usernamelabel">Yaş : </p>
-                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Hasta Yaşını Giriniz"> 
+                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Hasta Yaşını Giriniz">
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between">
                             <p class="usernamelabel">Tıbbi Tanı : </p>
-                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Tıbbi Tanıyı Giriniz"> 
+                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Tıbbi Tanıyı Giriniz">
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between">
                             <p class="usernamelabel">Düşülen Yer : </p>
-                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Düşülen Yeri Giriniz"> 
+                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Düşülen Yeri Giriniz">
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between">
                             <p class="usernamelabel">Düşme Tarihi : </p>
-                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Düşme Tarihini Giriniz"> 
+                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Düşme Tarihini Giriniz">
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between">
                             <p class="usernamelabel">Düşme Saati : </p>
-                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Düşme Saatini Giriniz"> 
+                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Düşme Saatini Giriniz">
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between">
                             <p class="usernamelabel">Son Düşme Risk Skoru : </p>
-                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Risk Skorunu Giriniz"> 
+                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Risk Skorunu Giriniz">
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between">
                             <p class="usernamelabel">Yaralanma Durumu : </p>
-                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Yaralanma Durumunu Giriniz"> 
+                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Yaralanma Durumunu Giriniz">
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between">
                             <p class="usernamelabel">Yaralanma Şiddeti : </p>
-                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Yaralanma Şiddeti Giriniz"> 
+                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Yaralanma Şiddeti Giriniz">
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between">
@@ -126,18 +128,18 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between">
-                                <p class="usernamelabel">Düşme Öncesi Alınan Önlemler : </p>
-                                <input type="text" class="form-control" required name="diger" id="diger" placeholder="Alınan Önlemleri Giriniz"> 
+                            <p class="usernamelabel">Düşme Öncesi Alınan Önlemler : </p>
+                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Alınan Önlemleri Giriniz">
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between">
-                                <p class="usernamelabel">Düşme Öncesi Genel Durumu : </p>
-                                <input type="text" class="form-control" required name="diger" id="diger" placeholder="Genel Durumu Giriniz"> 
+                            <p class="usernamelabel">Düşme Öncesi Genel Durumu : </p>
+                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Genel Durumu Giriniz">
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between">
-                                <p class="usernamelabel">Düşme Sonrası Genel Durumu : </p>
-                                <input type="text" class="form-control" required name="diger" id="diger" placeholder="Genel Durumu Giriniz"> 
+                            <p class="usernamelabel">Düşme Sonrası Genel Durumu : </p>
+                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Genel Durumu Giriniz">
                         </div>
 
                         <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
@@ -155,9 +157,9 @@ if (isset($_GET['logout'])) {
 
             })
         });
-        </script>
+    </script>
 
-        <script>
+    <script>
         $(function() {
             $('#submit').click(function(e) {
 
@@ -167,9 +169,9 @@ if (isset($_GET['logout'])) {
                 if (valid) {
                     var id = <?php
 
-                                    $userid = $_SESSION['userlogin']['id'];
-                                    echo $userid
-                                    ?>;
+                                $userid = $_SESSION['userlogin']['id'];
+                                echo $userid
+                                ?>;
                     var name = $('#name').val();
                     var surname = $('#surname').val();
                     var age = $('#age').val();
@@ -207,9 +209,9 @@ if (isset($_GET['logout'])) {
                 }
             })
 
-        }); 
-        </script>
-        <script src="main.js"></script>
+        });
+    </script>
+    <script src=""></script>
 </body>
 
 </html>

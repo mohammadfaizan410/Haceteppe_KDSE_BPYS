@@ -45,12 +45,14 @@ if (isset($_GET['logout'])) {
         <?php
         require_once('config-students.php');
         $userid = $_SESSION['userlogin']['id'];
+        var_dump($userid);
         //echo $userid;
         $sql = "SELECT * FROM  patients  WHERE id =" . $userid;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         if ($result) {
             $values = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+            var_dump($values);
         } else {
             echo 'error';
         };
@@ -103,122 +105,122 @@ if (isset($_GET['logout'])) {
             </div>
         </div>
         <script>
-        $(function() {
-            $('#submit').click(function(e) {
+            $(function() {
+                $('#submit').click(function(e) {
 
 
-                var valid = this.form.checkValidity();
+                    var valid = this.form.checkValidity();
 
-                if (valid) {
-                    var id = <?php
+                    if (valid) {
+                        var id = <?php
 
                                     $userid = $_SESSION['userlogin']['id'];
                                     echo $userid
                                     ?>;
-                    var name = $('#name').val();
-                    var surname = $('#surname').val();
-                    var age = $('#age').val();
-                    var not = $('#not').val();
-                    var not = $('#not').val();
+                        var name = $('#name').val();
+                        var surname = $('#surname').val();
+                        var age = $('#age').val();
+                        var not = $('#not').val();
+                        var not = $('#not').val();
 
 
 
-                    var ele = document.getElementsByName('uyaranradio');
+                        var ele = document.getElementsByName('uyaranradio');
 
-                    for (i = 0; i < ele.length; i++) {
-                        if (ele[i].checked)
-                            var uyaran = ele[i].value;
+                        for (i = 0; i < ele.length; i++) {
+                            if (ele[i].checked)
+                                var uyaran = ele[i].value;
 
-                    }
-                    console.log(uyaran);
-
-                    var ele = document.getElementsByName('nemlilikradio');
-
-                    for (i = 0; i < ele.length; i++) {
-                        if (ele[i].checked)
-                            var nemlilik = ele[i].value;
-
-                    }
-                    console.log(nemlilik);
-
-                    var ele = document.getElementsByName('aktiviteradio');
-
-                    for (i = 0; i < ele.length; i++) {
-                        if (ele[i].checked)
-                            var aktivite = ele[i].value;
-
-                    }
-                    console.log(aktivite);
-
-                    var ele = document.getElementsByName('hareketradio');
-
-                    for (i = 0; i < ele.length; i++) {
-                        if (ele[i].checked)
-                            var hareket = ele[i].value;
-
-                    }
-                    console.log(hareket);
-
-                    var ele = document.getElementsByName('beslenmeradio');
-
-                    for (i = 0; i < ele.length; i++) {
-                        if (ele[i].checked)
-                            var beslenme = ele[i].value;
-
-                    }
-                    console.log(beslenme);
-
-                    var ele = document.getElementsByName('surtunmeradio');
-
-                    for (i = 0; i < ele.length; i++) {
-                        if (ele[i].checked)
-                            var surtunme = ele[i].value;
-
-                    }
-                    console.log(surtunme);
-                    e.preventDefault()
-
-                    $.ajax({
-                        type: 'POST',
-                        url: 'student-patient.php',
-                        data: {
-                            id: id,
-                            name: name,
-                            surname: surname,
-                            age: age,
-                            not: not,
-                            uyaran: uyaran,
-                            nemlilik: nemlilik,
-                            aktivite: aktivite,
-                            hareket: hareket,
-                            beslenme: beslenme,
-                            surtunme: surtunme
-                        },
-                        success: function(data) {
-                            alert("Success");
-                            location.reload(true)
-                        },
-                        error: function(data) {
-                            Swal.fire({
-                                'title': 'Errors',
-                                'text': 'There were errors',
-                                'type': 'error'
-                            })
                         }
-                    })
+                        console.log(uyaran);
+
+                        var ele = document.getElementsByName('nemlilikradio');
+
+                        for (i = 0; i < ele.length; i++) {
+                            if (ele[i].checked)
+                                var nemlilik = ele[i].value;
+
+                        }
+                        console.log(nemlilik);
+
+                        var ele = document.getElementsByName('aktiviteradio');
+
+                        for (i = 0; i < ele.length; i++) {
+                            if (ele[i].checked)
+                                var aktivite = ele[i].value;
+
+                        }
+                        console.log(aktivite);
+
+                        var ele = document.getElementsByName('hareketradio');
+
+                        for (i = 0; i < ele.length; i++) {
+                            if (ele[i].checked)
+                                var hareket = ele[i].value;
+
+                        }
+                        console.log(hareket);
+
+                        var ele = document.getElementsByName('beslenmeradio');
+
+                        for (i = 0; i < ele.length; i++) {
+                            if (ele[i].checked)
+                                var beslenme = ele[i].value;
+
+                        }
+                        console.log(beslenme);
+
+                        var ele = document.getElementsByName('surtunmeradio');
+
+                        for (i = 0; i < ele.length; i++) {
+                            if (ele[i].checked)
+                                var surtunme = ele[i].value;
+
+                        }
+                        console.log(surtunme);
+                        e.preventDefault()
+
+                        $.ajax({
+                            type: 'POST',
+                            url: 'student-patient.php',
+                            data: {
+                                id: id,
+                                name: name,
+                                surname: surname,
+                                age: age,
+                                not: not,
+                                uyaran: uyaran,
+                                nemlilik: nemlilik,
+                                aktivite: aktivite,
+                                hareket: hareket,
+                                beslenme: beslenme,
+                                surtunme: surtunme
+                            },
+                            success: function(data) {
+                                alert("Success");
+                                location.reload(true)
+                            },
+                            error: function(data) {
+                                Swal.fire({
+                                    'title': 'Errors',
+                                    'text': 'There were errors',
+                                    'type': 'error'
+                                })
+                            }
+                        })
 
 
 
-                }
-            })
+                    }
+                })
 
-        });
+            });
         </script>
         <script>
-        $(window).on('load', function() {
-            $("body").removeClass("preload");
+            $(window).on('load', function() {
+                $("body").removeClass("preload");
 
-        });
+            });
         </script>
         <!-- JavaScript Libraries -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -232,7 +234,7 @@ if (isset($_GET['logout'])) {
         <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
         <!-- Template Javascript -->
-        <script src="main.js"></script>
+        <script src=""></script>
 </body>
 
 </html>

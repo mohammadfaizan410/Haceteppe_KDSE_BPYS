@@ -39,106 +39,108 @@ if (isset($_GET['logout'])) {
     <link href="style.css" rel="stylesheet">
 
     <style>
-        .send-patient{align-self: center;}
+        .send-patient {
+            align-self: center;
+        }
     </style>
 
 </head>
 
 <body>
-    <div class="container-fluid pt-4 px-4" >
-        <div class="send-patient" >
-        <span class='close closeBtn' id='closeBtn'>&times;</span>
+    <div class="container-fluid pt-4 px-4">
+        <div class="send-patient">
+            <span class='close closeBtn' id='closeBtn'>&times;</span>
             <h1 class="form-header">Ağrı Değerlendirmesi</h1>
             <div class="input-section-item">
                 <div class="patients-save">
-                <form action="" method="POST" class="patients-save-fields">
-                <img src="./ağrı skalası.png" style="width:67%; height:auto;border: 1px solid;border-color: #246174; box-shadow:1px 1px 1px 1px #246174; border-radius: 20px;">
-                <div class="input-section d-flex" style="padding-top: 5%;">
-                    <p class="usernamelabel">Ağrının Şiddeti:</p>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="AgriSiddeti" id="AgriSiddeti" value="option1">
-                        <label class="form-check-label" for="AgriSiddeti">
-                            <span class="checkbox-header">0. Yok</span>
-                        </label>
+                    <form action="" method="POST" class="patients-save-fields">
+                        <img src="./ağrı skalası.png" style="width:67%; height:auto;border: 1px solid;border-color: #246174; box-shadow:1px 1px 1px 1px #246174; border-radius: 20px;">
+                        <div class="input-section d-flex" style="padding-top: 5%;">
+                            <p class="usernamelabel">Ağrının Şiddeti:</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="AgriSiddeti" id="AgriSiddeti" value="option1">
+                                <label class="form-check-label" for="AgriSiddeti">
+                                    <span class="checkbox-header">0. Yok</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="AgriSiddeti" id="AgriSiddeti" value="option1">
+                                <label class="form-check-label" for="AgriSiddeti">
+                                    <span class="checkbox-header">1-2. Çok Az</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="AgriSiddeti" id="AgriSiddeti" value="option1">
+                                <label class="form-check-label" for="AgriSiddeti">
+                                    <span class="checkbox-header">3-4. Biraz Fazla</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="AgriSiddeti" id="AgriSiddeti" value="option1">
+                                <label class="form-check-label" for="AgriSiddeti">
+                                    <span class="checkbox-header">5-6. Çok</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="AgriSiddeti" id="AgriSiddeti" value="option1">
+                                <label class="form-check-label" for="AgriSiddeti">
+                                    <span class="checkbox-header">7-8. Fazla</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="AgriSiddeti" id="AgriSiddeti" value="option1">
+                                <label class="form-check-label" for="AgriSiddeti">
+                                    <span class="checkbox-header">9-10. Dayanılmaz</span>
+                                </label>
+                            </div>
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="AgriSiddeti" id="AgriSiddeti" value="option1">
-                            <label class="form-check-label" for="AgriSiddeti">
-                                <span class="checkbox-header">1-2. Çok Az</span>
-                            </label>
+
+                        <div class="input-section d-flex">
+                            <p class="usernamelabel">Ağrının Süresi:</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="AgriSuresi" id="AgriSuresi" value="option1">
+                                <label class="form-check-label" for="AgriSuresi">
+                                    <span class="checkbox-header">6 Aydan Az</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="AgriSuresi" id="AgriSuresi" value="option1">
+                                <label class="form-check-label" for="AgriSuresi">
+                                    <span class="checkbox-header">6 Aydan Fazla</span>
+                                </label>
+                            </div>
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="AgriSiddeti" id="AgriSiddeti" value="option1">
-                            <label class="form-check-label" for="AgriSiddeti">
-                                <span class="checkbox-header">3-4. Biraz Fazla</span>
-                            </label>
+
+                        <div class="input-section d-flex">
+                            <p class="usernamelabel">Ağrının Yeri:</p>
+                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Ağrının Yerini Giriniz">
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="AgriSiddeti" id="AgriSiddeti" value="option1">
-                            <label class="form-check-label" for="AgriSiddeti">
-                                <span class="checkbox-header">5-6. Çok</span>
-                            </label>
+
+                        <div class="input-section d-flex">
+                            <p class="usernamelabel">Ağrının Karakteri:</p>
+                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Ağrının Karakterini Giriniz">
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="AgriSiddeti" id="AgriSiddeti" value="option1">
-                            <label class="form-check-label" for="AgriSiddeti">
-                                <span class="checkbox-header">7-8. Fazla</span>
-                            </label>
+
+                        <div class="input-section d-flex">
+                            <p class="usernamelabel">Ağrının Sıklığı:</p>
+                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Ağrının Sıklığını Giriniz">
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="AgriSiddeti" id="AgriSiddeti" value="option1">
-                            <label class="form-check-label" for="AgriSiddeti">
-                                <span class="checkbox-header">9-10. Dayanılmaz</span>
-                            </label>
+
+                        <div class="input-section d-flex">
+                            <p class="usernamelabel">Ağrıyı Arttıran Durumlar:</p>
+                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Ağrıyı Arttıran Durumları Giriniz">
                         </div>
+
+                        <div class="input-section d-flex">
+                            <p class="usernamelabel">Ağrıyı Azaltan Durumlar:</p>
+                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Ağrıyı Azaltan Durumları Giriniz">
+                        </div>
+
+                        <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
                 </div>
 
-                <div class="input-section d-flex">
-                    <p class="usernamelabel">Ağrının Süresi:</p>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="AgriSuresi" id="AgriSuresi" value="option1">
-                        <label class="form-check-label" for="AgriSuresi">
-                            <span class="checkbox-header">6 Aydan Az</span>
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="AgriSuresi" id="AgriSuresi" value="option1">
-                        <label class="form-check-label" for="AgriSuresi">
-                            <span class="checkbox-header">6 Aydan Fazla</span>
-                        </label>
-                    </div>
-                </div>  
-
-                <div class="input-section d-flex">
-                    <p class="usernamelabel">Ağrının Yeri:</p>
-                    <input type="text" class="form-control" required name="diger" id="diger" placeholder="Ağrının Yerini Giriniz">                        
-                </div>
-
-                <div class="input-section d-flex">
-                    <p class="usernamelabel">Ağrının Karakteri:</p>
-                    <input type="text" class="form-control" required name="diger" id="diger" placeholder="Ağrının Karakterini Giriniz"> 
-                </div>
-
-                <div class="input-section d-flex">
-                    <p class="usernamelabel">Ağrının Sıklığı:</p>
-                    <input type="text" class="form-control" required name="diger" id="diger" placeholder="Ağrının Sıklığını Giriniz"> 
-                </div>
-
-                <div class="input-section d-flex">
-                    <p class="usernamelabel">Ağrıyı Arttıran Durumlar:</p>
-                    <input type="text" class="form-control" required name="diger" id="diger" placeholder="Ağrıyı Arttıran Durumları Giriniz"> 
-                </div>
-
-                <div class="input-section d-flex">
-                    <p class="usernamelabel">Ağrıyı Azaltan Durumlar:</p>
-                    <input type="text" class="form-control" required name="diger" id="diger" placeholder="Ağrıyı Azaltan Durumları Giriniz"> 
-                </div>
-
-                <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
             </div>
-        
-        </div>
-        </form>
+            </form>
         </div>
     </div>
 
@@ -149,9 +151,9 @@ if (isset($_GET['logout'])) {
 
             })
         });
-        </script>
+    </script>
 
-        <script>
+    <script>
         $(function() {
             $('#submit').click(function(e) {
 
@@ -161,9 +163,9 @@ if (isset($_GET['logout'])) {
                 if (valid) {
                     var id = <?php
 
-                                    $userid = $_SESSION['userlogin']['id'];
-                                    echo $userid
-                                    ?>;
+                                $userid = $_SESSION['userlogin']['id'];
+                                echo $userid
+                                ?>;
                     var name = $('#name').val();
                     var surname = $('#surname').val();
                     var age = $('#age').val();
@@ -201,9 +203,9 @@ if (isset($_GET['logout'])) {
                 }
             })
 
-        }); 
-        </script>
-        <script src="main.js"></script>
+        });
+    </script>
+    <script src=""></script>
 </body>
 
 </html>

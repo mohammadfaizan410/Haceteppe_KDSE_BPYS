@@ -39,14 +39,16 @@ if (isset($_GET['logout'])) {
     <link href="style.css" rel="stylesheet">
 
     <style>
-        .send-patient{align-self: center;}
+        .send-patient {
+            align-self: center;
+        }
     </style>
 
 </head>
 
 <body>
-    <div class="container-fluid pt-4 px-4" >
-        <div class="send-patient" >
+    <div class="container-fluid pt-4 px-4">
+        <div class="send-patient">
             <span class='close closeBtn' id='closeBtn'>&times;</span>
             <h1 class="form-header">Basınç Yarası</h1>
             <div class="input-section-item">
@@ -58,9 +60,8 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="input-section d-flex">
-                                <p class="usernamelabel">Oluşma Tarihi:</p>
-                                <input type="date" class="form-control" required name="oluşmatarihi" id="oluşmatarihi"
-                                    placeholder="OluşmaTarihi">
+                            <p class="usernamelabel">Oluşma Tarihi:</p>
+                            <input type="date" class="form-control" required name="oluşmatarihi" id="oluşmatarihi" placeholder="OluşmaTarihi">
                         </div>
 
                         <div class="input-section d-flex">
@@ -85,18 +86,18 @@ if (isset($_GET['logout'])) {
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Boyut (cm):</p>
                             <div class="form-check">
-                            <div class="input-section d-flex">
-                                <p class="usernamelabel">Uzunluk:</p>
-                                <input type="text" class="form-control" required name="diger" id="diger" placeholder="Uzunluk Giriniz">
-                            </div>
-                            <div class="input-section d-flex">
-                                <p class="usernamelabel">Genişlik:</p>
-                                <input type="text" class="form-control" required name="diger" id="diger" placeholder="Genişlik Giriniz">
-                            </div>
-                            <div class="input-section d-flex">
-                                <p class="usernamelabel">Derinlik:</p>
-                                <input type="text" class="form-control" required name="diger" id="diger" placeholder="Derinlik Giriniz">
-                            </div>
+                                <div class="input-section d-flex">
+                                    <p class="usernamelabel">Uzunluk:</p>
+                                    <input type="text" class="form-control" required name="diger" id="diger" placeholder="Uzunluk Giriniz">
+                                </div>
+                                <div class="input-section d-flex">
+                                    <p class="usernamelabel">Genişlik:</p>
+                                    <input type="text" class="form-control" required name="diger" id="diger" placeholder="Genişlik Giriniz">
+                                </div>
+                                <div class="input-section d-flex">
+                                    <p class="usernamelabel">Derinlik:</p>
+                                    <input type="text" class="form-control" required name="diger" id="diger" placeholder="Derinlik Giriniz">
+                                </div>
                             </div>
                         </div>
 
@@ -108,57 +109,57 @@ if (isset($_GET['logout'])) {
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Yara görünümü:</p>
                             <div class="form-check">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="YaraGörünümü" id="YaraGörünümü" value="option1">
-                                <label class="form-check-label" for="YaraGörünümü">
-                                    <span class="checkbox-header">Nekrotik</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="YaraGörünümü" id="YaraGörünümü" value="option1">
-                                <label class="form-check-label" for="YaraGörünümü">
-                                    <span class="checkbox-header">Sarı Nekroz</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="YaraGörünümü" id="YaraGörünümü" value="option1">
-                                <label class="form-check-label" for="YaraGörünümü">
-                                    <span class="checkbox-header">Siyah Eskar</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="YaraGörünümü" id="YaraGörünümü" value="option1">
-                                <label class="form-check-label" for="YaraGörünümü">
-                                    <span class="checkbox-header">Kırmızı</span>
-                                </label>
-                            </div>
-                            </div>
-                            <div class="form-check">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="YaraGörünümü" id="YaraGörünümü" value="option1">
-                                <label class="form-check-label" for="YaraGörünümü">
-                                    <span class="checkbox-header">Mor</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="YaraGörünümü" id="YaraGörünümü" value="option1">
-                                <label class="form-check-label" for="YaraGörünümü">
-                                    <span class="checkbox-header">Granülasyon</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="YaraGörünümü" id="YaraGörünümü" value="option1">
-                                <label class="form-check-label" for="YaraGörünümü">
-                                    <span class="checkbox-header">Epitelizasyon</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="YaraGörünümü" id="YaraGörünümü" value="option1">
-                                <div class="input-section d-flex">
-                                    <p class="usernamelabel">Diğer:</p>
-                                    <input type="text" class="form-control" required name="diger" id="diger" placeholder="Diğer">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="YaraGörünümü" id="YaraGörünümü" value="option1">
+                                    <label class="form-check-label" for="YaraGörünümü">
+                                        <span class="checkbox-header">Nekrotik</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="YaraGörünümü" id="YaraGörünümü" value="option1">
+                                    <label class="form-check-label" for="YaraGörünümü">
+                                        <span class="checkbox-header">Sarı Nekroz</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="YaraGörünümü" id="YaraGörünümü" value="option1">
+                                    <label class="form-check-label" for="YaraGörünümü">
+                                        <span class="checkbox-header">Siyah Eskar</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="YaraGörünümü" id="YaraGörünümü" value="option1">
+                                    <label class="form-check-label" for="YaraGörünümü">
+                                        <span class="checkbox-header">Kırmızı</span>
+                                    </label>
                                 </div>
                             </div>
+                            <div class="form-check">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="YaraGörünümü" id="YaraGörünümü" value="option1">
+                                    <label class="form-check-label" for="YaraGörünümü">
+                                        <span class="checkbox-header">Mor</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="YaraGörünümü" id="YaraGörünümü" value="option1">
+                                    <label class="form-check-label" for="YaraGörünümü">
+                                        <span class="checkbox-header">Granülasyon</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="YaraGörünümü" id="YaraGörünümü" value="option1">
+                                    <label class="form-check-label" for="YaraGörünümü">
+                                        <span class="checkbox-header">Epitelizasyon</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="YaraGörünümü" id="YaraGörünümü" value="option1">
+                                    <div class="input-section d-flex">
+                                        <p class="usernamelabel">Diğer:</p>
+                                        <input type="text" class="form-control" required name="diger" id="diger" placeholder="Diğer">
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -214,8 +215,7 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">İyileşme Tarihi:</p>
-                            <input type="date" class="form-control" required name="oluşmatarihi" id="oluşmatarihi"
-                                    placeholder="İyileşmeTarihi">
+                            <input type="date" class="form-control" required name="oluşmatarihi" id="oluşmatarihi" placeholder="İyileşmeTarihi">
                         </div>
 
                         <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
@@ -233,9 +233,9 @@ if (isset($_GET['logout'])) {
 
             })
         });
-        </script>
+    </script>
 
-        <script>
+    <script>
         $(function() {
             $('#submit').click(function(e) {
 
@@ -245,9 +245,9 @@ if (isset($_GET['logout'])) {
                 if (valid) {
                     var id = <?php
 
-                                    $userid = $_SESSION['userlogin']['id'];
-                                    echo $userid
-                                    ?>;
+                                $userid = $_SESSION['userlogin']['id'];
+                                echo $userid
+                                ?>;
                     var name = $('#name').val();
                     var surname = $('#surname').val();
                     var age = $('#age').val();
@@ -285,9 +285,9 @@ if (isset($_GET['logout'])) {
                 }
             })
 
-        }); 
-        </script>
-        <script src="main.js"></script>
+        });
+    </script>
+    <script src=""></script>
 </body>
 
 </html>
