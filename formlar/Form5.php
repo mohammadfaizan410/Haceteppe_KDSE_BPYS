@@ -54,6 +54,14 @@ if (isset($_GET['logout'])) {
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
+                    <div class="input-section d-flex">
+                            <p class="usernamelabel">Patient Name:</p>
+                            <input type="text" class="form-control" required name="patient_name" id="diger" placeholder="Patient Name">
+                        </div>
+                `       <div class="input-section d-flex">
+                            <p class="usernamelabel">Patient ID:</p>
+                            <input type="text" class="form-control" required name="patient_id" id="diger" placeholder="Patient ID">
+                        </div>
 
                         <div class="input-section-item" style="justify-content:space-between; padding: 5%">
                             <p class="usernamelabel" style="font-weight: bold;">Gözleri Açabilme</p>
@@ -62,7 +70,7 @@ if (isset($_GET['logout'])) {
                         <div class="input-section d-flex" style="justify-content:space-between; padding-inline: 15% 15%;">
                             <p class="usernamelabel">Spontan Açabiliyor:</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="GözleriAçabilme" id="GözleriAçabilme" value="option1">
+                                <input class="form-check-input" type="radio" name="GözleriAçabilme" id="GözleriAçabilme" value="4">
                                 <label class="form-check-label" for="GözleriAçabilme">
                                     <span class="checkbox-header">(4 puan)</span>
                                 </label>
@@ -72,7 +80,7 @@ if (isset($_GET['logout'])) {
                         <div class="input-section d-flex" style="justify-content:space-between; padding-inline: 15% 15%;">
                             <p class="usernamelabel">Sözel Emirle Açabiliyor:</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="GözleriAçabilme" id="GözleriAçabilme" value="option1">
+                                <input class="form-check-input" type="radio" name="GözleriAçabilme" id="GözleriAçabilme" value="3">
                                 <label class="form-check-label" for="GözleriAçabilme">
                                     <span class="checkbox-header">(3 puan)</span>
                                 </label>
@@ -82,7 +90,7 @@ if (isset($_GET['logout'])) {
                         <div class="input-section d-flex" style="justify-content:space-between; padding-inline: 15% 15%;">
                             <p class="usernamelabel">Ağrılı Uyaranla Açabiliyor:</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="GözleriAçabilme" id="GözleriAçabilme" value="option1">
+                                <input class="form-check-input" type="radio" name="GözleriAçabilme" id="GözleriAçabilme" value="2">
                                 <label class="form-check-label" for="GözleriAçabilme">
                                     <span class="checkbox-header">(2 puan)</span>
                                 </label>
@@ -92,7 +100,7 @@ if (isset($_GET['logout'])) {
                         <div class="input-section d-flex" style="justify-content:space-between; padding-inline: 15% 15%;">
                             <p class="usernamelabel">Açmıyor:</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="GözleriAçabilme" id="GözleriAçabilme" value="option1">
+                                <input class="form-check-input" type="radio" name="GözleriAçabilme" id="GözleriAçabilme" value="1">
                                 <label class="form-check-label" for="GözleriAçabilme">
                                     <span class="checkbox-header">(1 puan)</span>
                                 </label>
@@ -106,7 +114,7 @@ if (isset($_GET['logout'])) {
                         <div class="input-section d-flex" style="justify-content:space-between; padding-inline: 15% 15%;">
                             <p class="usernamelabel">Emirler Uyuyor:</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="MotorCevap" id="MotorCevap" value="option1">
+                                <input class="form-check-input" type="radio" name="MotorCevap" id="MotorCevap" value="6">
                                 <label class="form-check-label" for="MotorCevap">
                                     <span class="checkbox-header">(6 puan)</span>
                                 </label>
@@ -116,7 +124,7 @@ if (isset($_GET['logout'])) {
                         <div class="input-section d-flex" style="justify-content:space-between; padding-inline: 15% 15%;">
                             <p class="usernamelabel">Ağrıya lokalize (Ağrılı uyaranı uzaklaştırmaya çalışıyor):</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="MotorCevap" id="MotorCevap" value="option1">
+                                <input class="form-check-input" type="radio" name="MotorCevap" id="MotorCevap" value="5">
                                 <label class="form-check-label" for="MotorCevap">
                                     <span class="checkbox-header">(5 puan)</span>
                                 </label>
@@ -126,7 +134,7 @@ if (isset($_GET['logout'])) {
                         <div class="input-section d-flex" style="justify-content:space-between; padding-inline: 15% 15%;">
                             <p class="usernamelabel">Çekme (Ekstremitesini ağrılı uyarandan uzaklaştırmaya/çekmeye çalışıyor):</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="MotorCevap" id="MotorCevap" value="option1">
+                                <input class="form-check-input" type="radio" name="MotorCevap" id="MotorCevap" value="4">
                                 <label class="form-check-label" for="MotorCevap">
                                     <span class="checkbox-header">(4 puan)</span>
                                 </label>
@@ -136,7 +144,7 @@ if (isset($_GET['logout'])) {
                         <div class="input-section d-flex" style="justify-content:space-between; padding-inline: 15% 15%;">
                             <p class="usernamelabel">Fleksiyon (Dekortike duruş):</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="MotorCevap" id="MotorCevap" value="option1">
+                                <input class="form-check-input" type="radio" name="MotorCevap" id="MotorCevap" value="3">
                                 <label class="form-check-label" for="MotorCevap">
                                     <span class="checkbox-header">(3 puan)</span>
                                 </label>
@@ -146,7 +154,7 @@ if (isset($_GET['logout'])) {
                         <div class="input-section d-flex" style="justify-content:space-between; padding-inline: 15% 15%;">
                             <p class="usernamelabel">Ekstansiyon (Deserebre duruş):</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="MotorCevap" id="MotorCevap" value="option1">
+                                <input class="form-check-input" type="radio" name="MotorCevap" id="MotorCevap" value="2">
                                 <label class="form-check-label" for="MotorCevap">
                                     <span class="checkbox-header">(2 puan)</span>
                                 </label>
@@ -156,7 +164,7 @@ if (isset($_GET['logout'])) {
                         <div class="input-section d-flex" style="justify-content:space-between; padding-inline: 15% 15%;">
                             <p class="usernamelabel">Tepki yok :</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="MotorCevap" id="MotorCevap" value="option1">
+                                <input class="form-check-input" type="radio" name="MotorCevap" id="MotorCevap" value="1">
                                 <label class="form-check-label" for="MotorCevap">
                                     <span class="checkbox-header">(1 puan)</span>
                                 </label>
@@ -170,7 +178,7 @@ if (isset($_GET['logout'])) {
                         <div class="input-section d-flex" style="justify-content:space-between; padding-inline: 15% 15%;">
                             <p class="usernamelabel">Oryante:</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="SözelTepki" id="SözelTepki" value="option1">
+                                <input class="form-check-input" type="radio" name="SözelTepki" id="SözelTepki" value="5">
                                 <label class="form-check-label" for="SözelTepki">
                                     <span class="checkbox-header">(5 puan)</span>
                                 </label>
@@ -180,7 +188,7 @@ if (isset($_GET['logout'])) {
                         <div class="input-section d-flex" style="justify-content:space-between; padding-inline: 15% 15%;">
                             <p class="usernamelabel">Konfüze (Cümle kuruyor ancak yanıtlar yanlış):</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="SözelTepki" id="SözelTepki" value="option1">
+                                <input class="form-check-input" type="radio" name="SözelTepki" id="SözelTepki" value="4">
                                 <label class="form-check-label" for="SözelTepki">
                                     <span class="checkbox-header">(4 puan)</span>
                                 </label>
@@ -190,7 +198,7 @@ if (isset($_GET['logout'])) {
                         <div class="input-section d-flex" style="justify-content:space-between; padding-inline: 15% 15%;">
                             <p class="usernamelabel">Uygunsuz cümleler (Bir ya da daha fazla yanlış yanıt):</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="SözelTepki" id="SözelTepki" value="option1">
+                                <input class="form-check-input" type="radio" name="SözelTepki" id="SözelTepki" value="3">
                                 <label class="form-check-label" for="SözelTepki">
                                     <span class="checkbox-header">(3 puan)</span>
                                 </label>
@@ -200,7 +208,7 @@ if (isset($_GET['logout'])) {
                         <div class="input-section d-flex" style="justify-content:space-between; padding-inline: 15% 15%;">
                             <p class="usernamelabel">Anlamsız sesler (Hasta mırıldanıyor, inliyor):</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="SözelTepki" id="SözelTepki" value="option1">
+                                <input class="form-check-input" type="radio" name="SözelTepki" id="SözelTepki" value="2">
                                 <label class="form-check-label" for="SözelTepki">
                                     <span class="checkbox-header">(2 puan)</span>
                                 </label>
@@ -210,7 +218,7 @@ if (isset($_GET['logout'])) {
                         <div class="input-section d-flex" style="justify-content:space-between; padding-inline: 15% 15%;">
                             <p class="usernamelabel">Tepki yok:</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="SözelTepki" id="SözelTepki" value="option1">
+                                <input class="form-check-input" type="radio" name="SözelTepki" id="SözelTepki" value="1">
                                 <label class="form-check-label" for="SözelTepki">
                                     <span class="checkbox-header">(1 puan)</span>
                                 </label>
@@ -246,7 +254,7 @@ if (isset($_GET['logout'])) {
     <script>
         $(function() {
             $('#submit').click(function(e) {
-
+                e.preventDefault()
 
                 var valid = this.form.checkValidity();
 
@@ -260,24 +268,41 @@ if (isset($_GET['logout'])) {
                     var surname = $('#surname').val();
                     var age = $('#age').val();
                     var not = $('#not').val();
+                    let form_num = 6;
+                    let yourDate = new Date()
+                    let patient_name = $("input[name='patient_name']").val();
+                    let patient_id = parseInt($("input[name='patient_id']").val());
+                    let creation_date =  yourDate.toISOString().split('T')[0];
+                    let updateDate = yourDate.toISOString().split('T')[0];
+                    let eye_opening_points =parseInt($("input[type='radio'][name='GözleriAçabilme']:checked").val());
+                    let motor_response_points  =parseInt($("input[type='radio'][name='MotorCevap']:checked").val());
+                    let verbal_response_points = parseInt($("input[type='radio'][name='SözelTepki']:checked").val());
+                    let total = eye_opening_points +motor_response_points +verbal_response_points;
 
 
-                    e.preventDefault()
 
                     $.ajax({
                         type: 'POST',
-                        url: 'student-patient.php',
+                        url: 'http://localhost/Hacettepe-KDSE-BPYS/submitOrUpdateForm5.php/',
                         data: {
                             id: id,
                             name: name,
                             surname: surname,
                             age: age,
-                            not: not
-
+                            not: not,
+                            form_num: form_num,
+                            patient_name: patient_name,
+                            patient_id: patient_id,
+                            creation_date: creation_date,
+                            updateDate: updateDate,
+                            eye_opening_points: eye_opening_points,
+                            motor_response_points: motor_response_points,
+                            verbal_response_points: verbal_response_points,
+                            total: total
                         },
                         success: function(data) {
+                            console.log(data)
                             alert("Success");
-                            location.reload(true)
                         },
                         error: function(data) {
                             Swal.fire({
