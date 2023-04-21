@@ -405,3 +405,32 @@ input[type="email"] {
     width: 130px;
     text-align: center;
 }
+
+.new-form {
+    width: 90%;
+    background-color: #246174;
+    height: 50px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    align-self: center;
+}
+
+.new-form-p {
+    margin: 0;
+    padding: 0;
+    align-self: center;
+    color: white;
+}
+
+.new-form-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.patients-table {
+    width: 90%;
+    align-self: center;
+}
