@@ -150,7 +150,7 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Ağrıyı Azaltan Durumlar:</p>
-                            <input type="text" class="form-control" required name="pain_decrease_factors 1-2" id="diger" placeholder="Ağrıyı Azaltan Durumları Giriniz">
+                            <input type="text" class="form-control" required name="pain_decrease_factors" id="diger" placeholder="Ağrıyı Azaltan Durumları Giriniz">
                         </div>
 
                         <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
