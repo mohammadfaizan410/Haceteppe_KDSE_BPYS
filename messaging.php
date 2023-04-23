@@ -117,7 +117,7 @@ require_once("config-messages.php");
         if (nameOrEmail !== "") {
           $.ajax({
             type: 'POST',
-            url: 'http://localhost/Hacettepe-KDSE-BPYS/process-search.php/?' + "nameOrEmail=" + nameOrEmail,
+            url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/process-search.php/?' + "nameOrEmail=" + nameOrEmail,
             data: {
             },
             success: function (data) {
