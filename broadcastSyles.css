@@ -1,0 +1,48 @@
+
+
+#broadcast-container{
+    display: none;
+    background-color: white;
+    width: 80%;
+    padding: 50px;
+    margin: 0 auto;
+}
+
+#multicast-container{
+    display: none;
+    background-color: white;
+    width: 80%;
+    padding: 50px;
+    margin: 0 auto;
+}
+#student-selection-container{
+    display: none;
+}
+
+.messagess{
+    display: block;
+    border-radius: 2%;
+    background-color: white;
+    width: 80%;
+    margin-top: 100px;
+    margin-left: 50px;
+}
+
+.message-wrapper{
+    border-radius: 1%;
+    background-color: grey;
+}
+.option{
+    margin-left: 50px;
+}
+.expanded-message{
+    display: none;
+    padding: 30px;
+    border-bottom: 2px solid grey;
+}
+.expanded-message div{
+    margin-top: 20px;
+}
+.listItem{
+    border-radius: 10px;
+}
