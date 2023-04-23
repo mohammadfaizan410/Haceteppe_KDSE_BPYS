@@ -51,12 +51,14 @@ if (isset($_GET['logout'])) {
             </div>
             <div class="navigation-right">
                 <div class="nav-items-wrapper">
-                    <a href="formlar-student.php" id="formlar" class="nav-link nav-items formlar"> <i class="fa fa-table me-2 "></i>Formlar</a>
-                    <a href="hastalar-student.php" id="formlar" class="nav-link nav-items formlar "> <i class="fa fa-table me-2 "></i>Hastalar</a>
+                    <a href="formlar-student.php" id="formlar" class="nav-link nav-items formlar"> <i
+                            class="fa fa-table me-2 "></i>Formlar</a>
+                    <a href="hastalar-student.php" id="formlar" class="nav-link nav-items formlar "> <i
+                            class="fa fa-table me-2 "></i>Hastalar</a>
                     <a href="" class="nav-link "><i class="fa fa-chart-bar me-2"></i>Sınavlar</a>
                     <a href="" class="nav-link"><i class="fa fa-th me-2"></i>Öneriler</a>
                     <a href="messaging.php" class="nav-link nav-items"><i class="fa fa-comments me-2"></i>Chat</a>
-                    <a href="http://localhost/Hacettepe-KDSE-BPYS/broadcast.php" class="nav-link nav-items"><i class="fa fa-comments me-2"></i>Messages</a>
+                    <a href="http://localhost/Hacettepe-KDSE-BPYS/broadcast.php" class="nav-link nav-items"><i class="fa fa-comments me-2"></i>Broadcast/Multicast</a>
                 </div>
                 <div>
 
@@ -85,22 +87,22 @@ if (isset($_GET['logout'])) {
 
     </div>
     <script>
+    $(function() {
+        $.ajaxSetup({
+            cache: false
+        }); // disable caching for all requests.
+        $("#content").load("formlar-student.php");
+
+        // RAW Text/Html data from a file
+
         $(function() {
-            $.ajaxSetup({
-                cache: false
-            }); // disable caching for all requests.
-            $("#content").load("formlar-student.php");
-
-            // RAW Text/Html data from a file
-
-            $(function() {
-                $("a.nav-items").on("click", function(e) {
-                    e.preventDefault();
-                    $("#content").load(this.href);
-                })
+            $("a.nav-items").on("click", function(e) {
+                e.preventDefault();
+                $("#content").load(this.href);
             })
+        })
 
-        });
+    });
     </script>
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

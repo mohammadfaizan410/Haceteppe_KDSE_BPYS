@@ -51,11 +51,11 @@ if (isset($_GET['logout'])) {
             </div>
             <div class="navigation-right">
                 <div class="nav-items-wrapper">
-                    <a href="http://localhost/Hacettepe-KDSE-BPYS/formlar-teacher.php" id="formlar" class="nav-link nav-items formlar"> <i class="fa fa-table me-2 "></i>Öğrenciler</a>
+                    <a href="http://18.159.134.238/Hacettepe-KDSE-BPYS/formlar-teacher.php" id="formlar" class="nav-link nav-items formlar"> <i class="fa fa-table me-2 "></i>Öğrenciler</a>
                     <a href="" class="nav-link "><i class="fa fa-chart-bar me-2"></i>Sınavlar</a>
                     <a href="" class="nav-link"><i class="fa fa-th me-2"></i>Formlar</a>
-                    <a href="http://localhost/Hacettepe-KDSE-BPYS/messaging.php" class="nav-link nav-items"><i class="fa fa-comments me-2"></i>Mesajlar</a>
-                    <a href="http://localhost/Hacettepe-KDSE-BPYS/broadcast.php" class="nav-link nav-items"><i class="fa fa-comments me-2"></i>myBroadCasts</a>
+                    <a href="http://18.159.134.238/Hacettepe-KDSE-BPYS/messaging.php" class="nav-link nav-items"><i class="fa fa-comments me-2"></i>Chats</a>
+                    <a href="http://18.159.134.238/Hacettepe-KDSE-BPYS/broadcast.php" class="nav-link nav-items"><i class="fa fa-comments me-2"></i>Broadcast/Multicast</a>
                 </div>
                 <div>
 
