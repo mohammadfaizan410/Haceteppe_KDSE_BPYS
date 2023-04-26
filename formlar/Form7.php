@@ -54,6 +54,14 @@ if (isset($_GET['logout'])) {
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
+                    <div class="input-section d-flex">
+                            <p class="usernamelabel">Patient Name:</p>
+                            <input type="text" class="form-control" required name="patient_name" id="diger" placeholder="Patient Name">
+                        </div>
+                `       <div class="input-section d-flex">
+                            <p class="usernamelabel">Patient ID:</p>
+                            <input type="text" class="form-control" required name="patient_id" id="diger" placeholder="Patient ID">
+                        </div>
 
                         <div class="input-section-item" style="justify-content:space-between; padding: 5%">
                             <p class="usernamelabel" style="font-weight: bold;">Değerlendirme Kriterleri</p>
@@ -61,12 +69,12 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Oluşma Tarihi:</p>
-                            <input type="date" class="form-control" required name="oluşmatarihi" id="oluşmatarihi" placeholder="OluşmaTarihi">
+                            <input type="date" class="form-control" required name="occurance_date" id="diger" placeholder="OluşmaTarihi">
                         </div>
 
                         <div class="input-section d-flex">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="servis" id="servis" value="option1">
+                                <input class="form-check-input" type="radio" name="servis" id="serviceWound" value="yes">
                                 <label class="form-check-label" for="servis">
                                     <span class="checkbox-header">Yara serviste oluşmadı</span>
                                 </label>
@@ -75,12 +83,12 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Yeri:</p>
-                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Yara Yerini Giriniz">
+                            <input type="text" class="form-control" required name="location" id="location" placeholder="Yara Yerini Giriniz">
                         </div>
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Evresi:</p>
-                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Yara Evresini Giriniz">
+                            <input type="text" class="form-control" required name="stage" id="stage" placeholder="Yara Evresini Giriniz">
                         </div>
 
                         <div class="input-section d-flex">
@@ -88,47 +96,47 @@ if (isset($_GET['logout'])) {
                             <div class="form-check">
                                 <div class="input-section d-flex">
                                     <p class="usernamelabel">Uzunluk:</p>
-                                    <input type="text" class="form-control" required name="diger" id="diger" placeholder="Uzunluk Giriniz">
+                                    <input type="text" class="form-control" required name="length" id="length" placeholder="Uzunluk Giriniz">
                                 </div>
                                 <div class="input-section d-flex">
                                     <p class="usernamelabel">Genişlik:</p>
-                                    <input type="text" class="form-control" required name="diger" id="diger" placeholder="Genişlik Giriniz">
+                                    <input type="text" class="form-control" required name="width" id="width" placeholder="Genişlik Giriniz">
                                 </div>
                                 <div class="input-section d-flex">
                                     <p class="usernamelabel">Derinlik:</p>
-                                    <input type="text" class="form-control" required name="diger" id="diger" placeholder="Derinlik Giriniz">
+                                    <input type="text" class="form-control" required name="depth" id="depth" placeholder="Derinlik Giriniz">
                                 </div>
                             </div>
                         </div>
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Yara eksudası:</p>
-                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Yara Eksudasını Giriniz">
+                            <input type="text" class="form-control" required name="diger" id="wound-exudate" placeholder="Yara Eksudasını Giriniz">
                         </div>
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Yara görünümü:</p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="YaraGörünümü" id="YaraGörünümü" value="option1">
+                                    <input class="form-check-input" type="radio" name="YaraGörünümü" id="YaraGörünümü" value="Nekrotik">
                                     <label class="form-check-label" for="YaraGörünümü">
                                         <span class="checkbox-header">Nekrotik</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="YaraGörünümü" id="YaraGörünümü" value="option1">
+                                    <input class="form-check-input" type="radio" name="YaraGörünümü" id="YaraGörünümü" value="Sarı Nekroz">
                                     <label class="form-check-label" for="YaraGörünümü">
                                         <span class="checkbox-header">Sarı Nekroz</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="YaraGörünümü" id="YaraGörünümü" value="option1">
+                                    <input class="form-check-input" type="radio" name="YaraGörünümü" id="YaraGörünümü" value="Siyah Eskar">
                                     <label class="form-check-label" for="YaraGörünümü">
                                         <span class="checkbox-header">Siyah Eskar</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="YaraGörünümü" id="YaraGörünümü" value="option1">
+                                    <input class="form-check-input" type="radio" name="YaraGörünümü" id="YaraGörünümü" value="Kırmızı">
                                     <label class="form-check-label" for="YaraGörünümü">
                                         <span class="checkbox-header">Kırmızı</span>
                                     </label>
@@ -136,28 +144,28 @@ if (isset($_GET['logout'])) {
                             </div>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="YaraGörünümü" id="YaraGörünümü" value="option1">
+                                    <input class="form-check-input" type="radio" name="YaraGörünümü" id="YaraGörünümü" value="Mor">
                                     <label class="form-check-label" for="YaraGörünümü">
                                         <span class="checkbox-header">Mor</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="YaraGörünümü" id="YaraGörünümü" value="option1">
+                                    <input class="form-check-input" type="radio" name="YaraGörünümü" id="YaraGörünümü" value="Granülasyon">
                                     <label class="form-check-label" for="YaraGörünümü">
                                         <span class="checkbox-header">Granülasyon</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="YaraGörünümü" id="YaraGörünümü" value="option1">
+                                    <input class="form-check-input" type="radio" name="YaraGörünümü" id="YaraGörünümü" value="Epitelizasyon">
                                     <label class="form-check-label" for="YaraGörünümü">
                                         <span class="checkbox-header">Epitelizasyon</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="YaraGörünümü" id="YaraGörünümü" value="option1">
+                                    <input class="form-check-input" type="radio" name="YaraGörünümü" id="YaraGörünümü" value="Diğer">
                                     <div class="input-section d-flex">
                                         <p class="usernamelabel">Diğer:</p>
-                                        <input type="text" class="form-control" required name="diger" id="diger" placeholder="Diğer">
+                                        <input type="text" class="form-control" required name="YaraGörünümüDiger" id="diger" placeholder="Diğer">
                                     </div>
                                 </div>
                             </div>
@@ -165,57 +173,57 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Yarada koku :</p>
-                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Koku Durumunu Giriniz">
+                            <input type="text" class="form-control" required name="odor" id="odor" placeholder="Koku Durumunu Giriniz">
                         </div>
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Yarada tünelleşme:</p>
-                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Tünelleşme Durumunu Giriniz">
+                            <input type="text" class="form-control" required name="tunnelling" id="tunnelling" placeholder="Tünelleşme Durumunu Giriniz">
                         </div>
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Yarada ödem:</p>
-                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Ödem Durumunu Giriniz">
+                            <input type="text" class="form-control" required name="edema" id="edema" placeholder="Ödem Durumunu Giriniz">
                         </div>
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Yara kenarında maserasyon:</p>
-                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Maserasyon Durumunu Giriniz">
+                            <input type="text" class="form-control" required name="maceration" id="maceration" placeholder="Maserasyon Durumunu Giriniz">
                         </div>
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Yara kenarında eritem:</p>
-                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Eritem Durumunu Giriniz">
+                            <input type="text" class="form-control" required name="erythema" id="erythema" placeholder="Eritem Durumunu Giriniz">
                         </div>
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Yara kenarı soyulmuş:</p>
-                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Sotulma Durumunu Giriniz">
+                            <input type="text" class="form-control" required name="peeling" id="peeling" placeholder="Sotulma Durumunu Giriniz">
                         </div>
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Yara kenarı kuru:</p>
-                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Kuruluk Durumunu Giriniz">
+                            <input type="text" class="form-control" required name="dryness" id="dryness" placeholder="Kuruluk Durumunu Giriniz">
                         </div>
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Yara bölgesinde ağrı:</p>
-                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Ağrı Durumunu Giriniz">
+                            <input type="text" class="form-control" required name="pain" id="pain" placeholder="Ağrı Durumunu Giriniz">
                         </div>
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Kullanılan Bakım Ürünleri:</p>
-                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Kullanılan Ürünleri Giriniz">
+                            <input type="text" class="form-control" required name="careProducts" id="careProducts" placeholder="Kullanılan Ürünleri Giriniz">
                         </div>
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Sonuç:</p>
-                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Sonucu Giriniz">
+                            <input type="text" class="form-control" required name="result" id="result" placeholder="Sonucu Giriniz">
                         </div>
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">İyileşme Tarihi:</p>
-                            <input type="date" class="form-control" required name="oluşmatarihi" id="oluşmatarihi" placeholder="İyileşmeTarihi">
+                            <input type="date" class="form-control" required name="healingDate" id="healingDate" placeholder="İyileşmeTarihi">
                         </div>
 
                         <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
@@ -236,41 +244,87 @@ if (isset($_GET['logout'])) {
     </script>
 
     <script>
-        $(function() {
+        $(function(){
+
             $('#submit').click(function(e) {
-
-
+                e.preventDefault();
+                console.log("hello from form 7x")
                 var valid = this.form.checkValidity();
+                if(valid){
 
-                if (valid) {
                     var id = <?php
-
-                                $userid = $_SESSION['userlogin']['id'];
-                                echo $userid
-                                ?>;
+                    $userid = $_SESSION['userlogin']['id'];
+                    echo $userid
+                    ?>;
                     var name = $('#name').val();
                     var surname = $('#surname').val();
                     var age = $('#age').val();
                     var not = $('#not').val();
-
-
-                    e.preventDefault()
-
+                    var studentId = $('#studentId').val();
+                    var formId = $('#formId').val();
+                    var formnum = 7;
+                    let patient_name = $("input[name='patient_name']").val();
+                    let patient_id = parseInt($("input[name='patient_id']").val());
+                    let yourDate = new Date()
+                    let creationDate = yourDate.toISOString().split('T')[0];
+                    let updateDate = yourDate.toISOString().split('T')[0];
+                    var occurance_date = $("input[name='occurance_date']").val();                    
+                    var service_wound = $("input[name='servis']").val();
+                    var location = $("input[name='location']").val();
+                    var stage = $("input[name='stage']").val();
+                    var length = $("input[name='length']").val();
+                    var width = $("input[name='width']").val();
+                    var depth = $("input[name='depth']").val();
+                    var dimentions = "" + length + 'cm/' + "" + width + 'cm/' + "" + depth + 'cm'; 
+                    var exudate = $('#wound-exudate').val();
+                    // var appearance_wound =$("input[type='radio'][name='YaraGörünümü']:checked").val() === "Diğer" ? $("input[name='YaraGörünümüDiger']").val() : $("input[type='radio'][name='YaraGörünümü']:checked").val();
+                    var appearance_wound =$("input[type='radio'][name='YaraGörünümü']:checked").val();
+                    var odor1 = $("input[name='odor']").val();
+                    var tunnelling1 = $("input[name='tunnelling']").val();
+                    var edema1 = $("input[name='edema']").val();
+                    var maceration1 = $("input[name='maceration']").val();
+                    var erythema1 = $("input[name='erythema']").val();
+                    var peeling1 = $("input[name='peeling']").val();
+                    var dryness1 = $("input[name='dryness']").val();
+                    var pain1 = $("input[name='pain']").val();
+                    var careProducts1 = $('#careProducts').val();
+                    var result1 = $("input[name='result']").val();
+                    var healingDate = $('#healingDate').val();
+                    
+                    
+                    console.log('after setting variables')
                     $.ajax({
                         type: 'POST',
-                        url: 'student-patient.php',
-                        data: {
-                            id: id,
+                        url: 'http://localhost/Hacettepe-KDSE-BPYS/submitOrUpdateForm7.php',
+                        data:JSON.stringify({
                             name: name,
-                            surname: surname,
-                            age: age,
-                            not: not
-
-                        },
+                            form_num: formnum,
+                            patient_name: patient_name,
+                            patient_id:patient_id,
+                            creation_date: creationDate,
+                            update_date: updateDate,
+                            occurance_date: occurance_date,
+                            service_wound: service_wound,
+                            location: location,
+                            stage: stage,
+                            dimentions: dimentions,
+                            wound_exudate: exudate,
+                            appearance_wound: appearance_wound,
+                            odor: odor1,
+                            tunnelling: tunnelling1,
+                            edema: edema1,
+                            maceration: maceration1,
+                            erythema: erythema1,
+                            peeling: peeling1,
+                            dryness: dryness1,
+                            pain: pain1,
+                            care_products: careProducts,
+                            result: result1,
+                            healing_date: healingDate 
+                        }),
                         success: function(data) {
-                            alert("Success");
-                            location.reload(true)
-                        },
+                                alert("Form successfully submitted!");
+                                },
                         error: function(data) {
                             Swal.fire({
                                 'title': 'Errors',
@@ -279,13 +333,12 @@ if (isset($_GET['logout'])) {
                             })
                         }
                     })
-
-
-
                 }
-            })
-
-        });
+                    
+                    
+                    
+                });
+            });
     </script>
     <script src=""></script>
 </body>

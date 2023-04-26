@@ -368,7 +368,7 @@ if (isset($_GET['logout'])) {
 
                 console.log("hello from form 6x")
                 var valid = this.form.checkValidity();
-
+                
                 if (valid) {
                     var id = <?php
 
@@ -400,7 +400,7 @@ if (isset($_GET['logout'])) {
 
                     $.ajax({
                         type: 'POST',
-                        url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/submitOrUpdateForm6.php/',
+                        url: 'http://localhost/Hacettepe-KDSE-BPYS/submitOrUpdateForm6.php/',
                         data: {
                             id: id,
                             name: name,

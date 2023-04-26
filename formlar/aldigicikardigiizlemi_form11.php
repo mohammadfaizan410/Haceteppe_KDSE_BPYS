@@ -174,6 +174,35 @@ if (isset($_GET['logout'])) {
                   let creationDate = yourDate.toISOString().split('T')[0];
                   let updateDate = yourDate.toISOString().split('T')[0];
 				  let time_range = $("input[type='radio'][name='time_range']:checked").val(); 
+				  let iv_input1 = parseInt($("input[name='iv_input1']").val())
+				  let iv_input2 = parseInt($("input[name='iv_input2']").val())
+				  let iv_input3 = parseInt($("input[name='iv_input3']").val())
+				  let iv_input4 = parseInt($("input[name='iv_input4']").val())
+				  let blood_product1 = parseInt($("input[name='blood_product1']").val())
+				  let blood_product2 = parseInt($("input[name='blood_product2']").val())
+				  let blood_product3 = parseInt($("input[name='blood_product3']").val())
+				  let blood_product4 = parseInt($("input[name='blood_product4']").val())
+				  let oral1 = parseInt($("input[name='oral1']").val())
+				  let oral2 = parseInt($("input[name='oral2']").val())
+				  let oral3 = parseInt($("input[name='oral3']").val())
+				  let oral4 = parseInt($("input[name='oral4']").val())
+				  let idrar_input1 =  parseInt($("input[name='idrar_input1']").val())
+				  let idrar_input2 =  parseInt($("input[name='idrar_input2']").val())
+				  let idrar_input3 =  parseInt($("input[name='idrar_input3']").val())
+				  let idrar_input4 =  parseInt($("input[name='idrar_input4']").val())
+			      let gaita_input1  = parseInt($("input[name='gaita_input1']").val())
+			      let gaita_input2  = parseInt($("input[name='gaita_input2']").val())
+			      let gaita_input3  = parseInt($("input[name='gaita_input3']").val())
+			      let gaita_input4  = parseInt($("input[name='gaita_input4']").val())
+				  let aldigi_total1 = iv_input1 + blood_product1 + oral1;
+				  let aldigi_total2 = iv_input2 + blood_product2 + oral2;
+				  let aldigi_total3 = iv_input3 + blood_product3 + oral3;
+				  let aldigi_total4 = iv_input4 + blood_product4 + oral4;
+				  let cikardigi_total1= idrar_input1 + gaita_input1;
+				  let cikardigi_total2= idrar_input2 + gaita_input2;
+				  let cikardigi_total3= idrar_input3 + gaita_input3;
+				  let cikardigi_total4= idrar_input4 + gaita_input4;
+				  let total = aldigi_total1 + aldigi_total2 + aldigi_total3 + aldigi_total4 +  cikardigi_total1 + cikardigi_total2 + cikardigi_total3 + cikardigi_total4;
 
                   $.ajax({
                       type: 'POST',

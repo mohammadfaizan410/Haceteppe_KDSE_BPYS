@@ -192,13 +192,11 @@ if (isset($_GET['logout'])) {
                         var valid = this.form.checkValidity();
 
                         if (valid) {
-                            var id = < ? php
+                            var id = "<?php
 
                             $userid = $_SESSION['userlogin']['id'];
-                            echo $userid
-                                ?
-                                >
-                            ;
+                            echo $userid;
+                                ?>"
                             var name = $('#name').val();
                             var surname = $('#surname').val();
                             var age = $('#age').val();
@@ -236,8 +234,7 @@ if (isset($_GET['logout'])) {
                         }
                     })
 
-                }); <
-                /> < !--JavaScript Libraries-- > <
+                }); </script> < !--JavaScript Libraries-- > <
                 script src = "https://code.jquery.com/jquery-3.4.1.min.js" >
             </script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>

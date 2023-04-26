@@ -157,7 +157,8 @@ if (isset($_GET['logout'])) {
                         $("#form-content").load("./formlar/ozgecmis.php");
                     }
                     if (i == 1) {
-                        $("#form-content").load("./formlar/solunumgereksinimi.php");
+                        $("#form-content").load("./formlar/aldigicikardigiizlemi_form11.php");
+
                     }
                     if (i == 2) {
                         $("#form-content").load("./formlar/beslenmeGereksinimi.php");
@@ -221,13 +222,13 @@ if (isset($_GET['logout'])) {
                         $("#form-content").load("./formlar/medikaltedavi.php");
                     }
                     if (i == 22) {
-                        $("#form-content").load("./formlar/tetkiksonuclari.php");
+                        $("#form-content").load("./formlar/tetkiksonuclari_form9.php");
                     }
                     if (i == 23) {
-                        $("#form-content").load("./formlar/yasamsalbulgutakibi.php");
+                        $("#form-content").load("./formlar/yasamsalbulgutakibi_form10.php");
                     }
                     if (i == 24) {
-                        $("#form-content").load("./formlar/aldigicikardigiizlemi.php");
+                        $("#form-content").load("./formlar/solunumgereksinimi.php");
                     }
                     window.scrollTo(0, 0)
                 }
@@ -243,7 +244,8 @@ if (isset($_GET['logout'])) {
                         $("#form-content").load("./formlar/ozgecmis.php");
                     }
                     if (i == 1) {
-                        $("#form-content").load("./formlar/solunumgereksinimi.php");
+                        $("#form-content").load("./formlar/aldigicikardigiizlemi_form11.php");
+
                     }
                     if (i == 2) {
                         $("#form-content").load("./formlar/beslenmeGereksinimi.php");
@@ -307,13 +309,13 @@ if (isset($_GET['logout'])) {
                         $("#form-content").load("./formlar/medikaltedavi.php");
                     }
                     if (i == 22) {
-                        $("#form-content").load("./formlar/tetkiksonuclari.php");
+                        $("#form-content").load("./formlar/tetkiksonuclari_form9.php");
                     }
                     if (i == 23) {
-                        $("#form-content").load("./formlar/yasamsalbulgutakibi.php");
+                        $("#form-content").load("./formlar/yasamsalbulgutakibi_form10.php");
                     }
                     if (i == 24) {
-                        $("#form-content").load("./formlar/aldigicikardigiizlemi.php");
+                        $("#form-content").load("./formlar/solunumgereksinimi.php");
                     }
                     window.scrollTo(0, 0)
                 } else if (i < 0) {

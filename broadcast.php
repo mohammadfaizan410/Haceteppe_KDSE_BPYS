@@ -29,12 +29,13 @@ if (isset($_SESSION['userlogin'])) {
 
 
   
-  <div class='option mt-5 p-3' ><h4 class='btn btn-primary w-50 p-4 text-start' id='sendToAll'>Send a message to all students</h4></div>
-  <div class='option mt-3 p-3' ><h4 class='btn btn-primary  w-50 p-4 text-start' id='sendToSome'>Send message to selected students</h4></div>
+  <div class='option mt-3 p-3' id='sendToAll' ><h4 class='btn btn-primary w-100 p-4 text-start dark-blue' style="background-color: slateblue;" >Send a message to all students</h4></div>
+  <div class='option mt-3 p-3' id='sendToSome' ><h4 class='btn btn-primary  w-100 p-4 text-start dark-blue' style="background-color: slateblue;" >Send message to selected students</h4></div>
+  <div class='option mt-3 p-3' id='showAllMessages'><h4 class='btn btn-primary  w-100 p-4 text-start dark-blue' style="background-color: slateblue;" >Show All Messages</h4></div>
   
   <div id="broadcast-container" class='mt-5'>
 
-    <div class="broadcastPrompt w-50 h-50  d-flex justify-content-center flex-column m-auto">
+    <div class="broadcastPrompt w-50 h-50 d-flex justify-content-center flex-column m-auto">
       <p>Enter Subject:</p>
       <input type="text" class="form-control mb-3" placeholder="Enter Subject" id="broadcastSubject"></input>
       <p>Enter Message:</p>
@@ -42,32 +43,32 @@ if (isset($_SESSION['userlogin'])) {
       id="broadcastMessage"> </textarea>
       <p id="error"></p>
       <div class="text-center m-auto p-3 w-50 d-flex justify-content-between" >
-        <div class="btn btn-primary p-3" id="sendBroadcast">Send</div>
-        <div class='btn btn-primary p-3' id='close-broadcast-container'>close</div>
+        <div class="btn btn-primary p-3" style="background-color: slateblue;" id="sendBroadcast">Send</div>
+        <div class='btn btn-primary p-3' style="background-color: slateblue;" id='close-broadcast-container'>close</div>
       </div>
     </div>
   </div>
-  <div id="multicast-container">
+  <div id="multicast-container" class='mt-5'>
     <div class="broadcastPrompt w-50 h-50 d-flex justify-content-center flex-column m-auto">
     <p>Enter Subject:</p>
     <input type="text" class="form-control mb-3" placeholder="Enter Subject" id="multicastSubject"></input>
     <p>Enter Message:</p>
     <textarea type='text-area' rows="10" class='form-control mb-5' placeholder="Enter Message"
     id="multicastMessage"> </textarea>
-    <div class='btn btn-primary mb-3' id='show-student-list'>Select Students</div>
+    <div class='btn btn-primary mb-3' style="background-color: slateblue;" id='show-student-list'>Select Students</div>
     <div id="student-selection-container">
       </div>
       <p id="multiCastError"></p>
       <div class=" text-center m-auto p-3 w-50 d-flex justify-content-between " >
-        <div class="btn btn-primary p-3" id="sendMulticast">Send</div>
-        <div class='btn btn-primary p-3' id='close-multicast-container'>close</div>
+        <div class="btn btn-primary p-3" style="background-color: slateblue;" id="sendMulticast">Send</div>
+        <div class='btn btn-primary p-3' style="background-color: slateblue;" id='close-multicast-container'>close</div>
       </div>
     </div>
   </div>
-  
-  <div class='messagess'>
-    <h4 id="messages-title" class=" d-flex flex-column mt-2 mb-4 p-3">My messages:</h4>
-    <div class="messages-container d-flex flex-column mt-2 p-3" id='messages-container'>
+  <div class='w-100 d-flex justify-content-center' id="message-parent">
+    <div class='messagess w-75' id="messagess">
+      <div class="messages-container d-flex flex-column w-100 ml-5 align-items-center" id='messages-container'>
+        </div>
       </div>
     </div>
     
@@ -77,77 +78,72 @@ if (isset($_SESSION['userlogin'])) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script>
-    var count = 0;
 
 
-  function showAllMessage(){
+              
+$('#showAllMessages').click(function (e) {
+    console.log("messages called")
     var email =  "<?php
                                   echo $myEmail
-                ?> ";
+                                  ?> "
     $.ajax({
-            type: 'POST',
-            url: 'http://localhost/Hacettepe-KDSE-BPYS/getAllBroadcasts.php/',
-            data: {
-              email : email,
-            },
-            success: function (data) {
-              if(count != JSON.parse(data).length){
-                count = JSON.parse(data).length;
-                $('#messages-container').html('');
-                let htmlString = '';
-                
-                JSON.parse(data).forEach(element => {
-                  htmlString += `
-                  <div>
-                  <div class='message-wrapper d-flex btn-primary mt-3'>
-                  <div class='m-3 w-25'>${element.name}  ${element.surname}</div>
-                  <div class='m-3 w-25'>${element.email}</div>
-                  <div class='m-3 w-25'>${element.message.slice(0,5)}....</div>
-                  <div class='m-3 w-25 btn btn-primary expand-message'>Show</div>
-                  </div>
-                  <div class='expanded-message'>
-                  <div>From: ${element.name}</div>
-                  <div>Email: ${element.email}</div>
-                  <div>Subject: ${element.subject}</div>
-                  <div>message: ${element.message}</div>
-                  </div>
-                  </div>`
+      type: 'POST',
+      url: 'http://localhost/Hacettepe-KDSE-BPYS/getAllBroadcasts.php/',
+      data: {
+        email : email,
+      },
+      success: function (data) {
+        console.log(data)
+          let htmlString = `<div class='option mt-3 p-3' id='closeAllMessages'><h4 class='btn btn-primary  w-100 p-4 text-start dark-blue' style="background-color: slateblue;" >Close All Messages</h4></div>`;
+            JSON.parse(data).forEach(element => {
+              htmlString += `
+              <div id='message_wrapper' class="mt-4 mb-4 w-75 border-bottom border-4" >
+              <div class='message-wrapper d-flex mt-3 text-white justify-content-around' >
+              <div class='m-3 w-25'>Name: ${element.name}  ${element.surname}</div>
+              <div class='m-3 w-25'>Email: ${element.email}</div>
+              </div>
+              <div class='message-details mt-4 mb-4'>
+                      <div class="p-3">From: ${element.name}  ${element.surname}</div>
+                      <div class="p-3">Email: ${element.email}</div>
+                      <div class="p-3">Subject: ${element.subject}</div>
+                      <div class="p-3">Message: ${element.message}</div>
+                      </div>
+                      </div>
+                      `
+                    })
+                    $('#messages-container').html(htmlString);
+                    
+                    
+                  },
+                  error: function (data) {
+                    Swal.fire({
+                      'title': 'Errors',
+                      'text': 'There were errors',
+                      'type': 'error'
+                    })
+                    console.log(data);
+                  }
                 })
-                $('#messages-container').html(htmlString);
-              }
-                
-              },
-              error: function (data) {
-              Swal.fire({
-                'title': 'Errors',
-                'text': 'There were errors',
-                'type': 'error'
-              })
-              console.log(data);
-            }
-          })
-  }
-  showAllMessage();
 
-  window.setInterval(() => showAllMessage(),2000)
 
-$(function(){
-  $(document).on('click', '.expand-message', function (e) { 
-    e.preventDefault();
-    $(this).closest('.message-wrapper').next('.expanded-message').toggle();
-    let text = $(this).text();
-    console.log(text)
-    if(text==="Show"){
-      $(this).text('Hide');
-    }else $(this).text('Show');
+    $('#broadcast-container').css('display', 'none');
+    $('#sendToSome').css('display', 'none');
+    $('#sendToAll').css('display', 'none');
+    $('#showAllMessages').css('display', 'none');
+    $('.messagess').css('display', 'block');
+    
   });
   
-$(document).on('click', '.nav-link', function (e) { 
-    e.preventDefault();
-    let link = $(this).attr('href');
-    $('.content').load(link);
-  });
+  $(document).on('click', '#closeAllMessages', function (e) {
+  e.preventDefault();
+  $('#showAll').css('display', 'flex');
+  $('#sendToSome').css('display', 'flex');
+  $('#sendToAll').css('display', 'flex');
+  $('#showAllMessages').css('display', 'block');
+  $('#closeAllMessages').css('display', 'none');
+  $('.messagess').css('display', 'none');
 });
+
 
 
 
@@ -156,9 +152,13 @@ $(document).on('click', '.nav-link', function (e) {
     let display = $('#broadcast-container').css('display');
     if(display === 'none')
     $('#broadcast-container').css('display', 'flex');
-    $('#showAll').css('display', 'none');
     $('#sendToSome').css('display', 'none');
     $('#sendToAll').css('display', 'none');
+    $('#showAllMessages').css('display', 'none');
+    $('#closeAllMessages').css('display', 'none');
+    $('.messagess').css('display', 'none');
+
+
   })
 
   $('#close-broadcast-container').click(function (e) {
@@ -168,7 +168,8 @@ $(document).on('click', '.nav-link', function (e) {
     $('#broadcast-container').css('display', 'none');
     $('#sendToSome').css('display', 'flex');
     $('#sendToAll').css('display', 'flex');
-    $('.messagess').css('display', 'block');
+    $('.messagess').css('display', 'none');
+    $('#showAllMessages').css('display', 'block');
 
   })
 
@@ -179,10 +180,10 @@ $(document).on('click', '.nav-link', function (e) {
     let display = $('#multicast-container').css('display');
     if(display === 'none')
     $('#multicast-container').css('display', 'flex');
-    $('#sendToSome').css('display', 'none');
     $('#sendToAll').css('display', 'none');
+    $('#sendToSome').css('display', 'none');
     $('.messagess').css('display', 'none');
-
+    $('#showAllMessages').css('display', 'none');
   })
 
   $('#close-multicast-container').click(function (e) {
@@ -192,10 +193,11 @@ $(document).on('click', '.nav-link', function (e) {
     $('#multicast-container').css('display', 'none');
     $('#sendToSome').css('display', 'flex');
     $('#sendToAll').css('display', 'flex');
+    $('#showAllMessages').css('display', 'block');
     $('#student-selection-container').html('');
     $('#student-selection-container').css('display', 'none');
     $('#student-selection-container').html('');
-    $('.messagess').css('display', 'block');
+    $('.messagess').css('display', 'none');
 
   })
 
@@ -204,6 +206,7 @@ $(document).on('click', '.nav-link', function (e) {
 
 
   $('#show-student-list').click(function (e) {
+    console.log('student list shown')
     e.preventDefault();
     $('#student-selection-container').css('display', 'block');
     var name = "<?php
@@ -238,6 +241,8 @@ $(document).on('click', '.nav-link', function (e) {
             }
           }) 
   })
+
+  
 
 
 
@@ -289,7 +294,9 @@ $(document).on('click', '.nav-link', function (e) {
               $('#student-selection-container').html('');
               $('#student-selection-container').css('display', 'none');
               $('#student-selection-container').html('');
-              $('.messagess').css('display', 'block');
+              $('.messagess').css('display', 'block')
+                $('#multicastSubject').val('')
+                $('#multicastMessage').val('');
             },
             error: function (data) {
               Swal.fire({
@@ -338,8 +345,8 @@ $(document).on('click', '.nav-link', function (e) {
               $('#sendToSome').css('display', 'flex');
               $('#sendToAll').css('display', 'flex');
               $('.messagess').css('display', 'block');
-
-
+              $('#broadcastSubject').val('');
+              $('#broadcastMessage').val('');
             },
             error: function (data) {
               Swal.fire({

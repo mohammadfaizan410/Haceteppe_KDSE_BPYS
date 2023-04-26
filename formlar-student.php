@@ -100,6 +100,7 @@ if (isset($_GET['logout'])) {
     </div>
     <script>
     $(function() {
+        
         $.ajaxSetup({
             cache: false
         }); // disable caching for all requests.

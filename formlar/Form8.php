@@ -55,41 +55,48 @@ if (isset($_GET['logout'])) {
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
                         <img src="./ödem.png" style="width:67%; height:auto;border: 1px solid;border-color: #246174; box-shadow:1px 1px 1px 1px #246174; border-radius: 20px;">
-
+                        <div class="input-section d-flex">
+                            <p class="usernamelabel">Patient Name:</p>
+                            <input type="text" class="form-control" required name="patient_name" id="diger" placeholder="Patient Name">
+                        </div>
+                `       <div class="input-section d-flex">
+                            <p class="usernamelabel">Patient ID:</p>
+                            <input type="text" class="form-control" required name="patient_id" id="diger" placeholder="Patient ID">
+                        </div>
                         <div class="input-section d-flex" style="padding-top: 5%;">
                             <p class="usernamelabel">Değerlendirilen Alan:</p>
-                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Değerlendirilen Alanı Giriniz">
+                            <input type="text" class="form-control" required name="assessed_area" id="diger" placeholder="Değerlendirilen Alanı Giriniz">
                         </div>
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Ödemin Şiddeti:</p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="ÖdemŞiddeti" id="ÖdemŞiddeti" value="option1">
+                                    <input class="form-check-input" type="radio" name="ÖdemŞiddeti" id="ÖdemŞiddeti" value="Ödem Yok">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">Ödem Yok</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="ÖdemŞiddeti" id="ÖdemŞiddeti" value="option1">
+                                    <input class="form-check-input" type="radio" name="ÖdemŞiddeti" id="ÖdemŞiddeti" value="1">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">+1</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="ÖdemŞiddeti" id="ÖdemŞiddeti" value="option1">
+                                    <input class="form-check-input" type="radio" name="ÖdemŞiddeti" id="ÖdemŞiddeti" value="2">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">+2</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="ÖdemŞiddeti" id="ÖdemŞiddeti" value="option1">
+                                    <input class="form-check-input" type="radio" name="ÖdemŞiddeti" id="ÖdemŞiddeti" value="3">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">+3</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="ÖdemŞiddeti" id="ÖdemŞiddeti" value="option1">
+                                    <input class="form-check-input" type="radio" name="ÖdemŞiddeti" id="ÖdemŞiddeti" value="4">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">+4</span>
                                     </label>
@@ -117,7 +124,7 @@ if (isset($_GET['logout'])) {
     <script>
         $(function() {
             $('#submit').click(function(e) {
-
+                e.preventDefault()
 
                 var valid = this.form.checkValidity();
 
@@ -131,31 +138,39 @@ if (isset($_GET['logout'])) {
                     var surname = $('#surname').val();
                     var age = $('#age').val();
                     var not = $('#not').val();
+                    let form_num = 8;
+                    let patient_name = $("input[name='patient_name']").val();
+                    let patient_id = parseInt($("input[name='patient_id']").val());
+                    let yourDate = new Date()
+                    let creationDate = yourDate.toISOString().split('T')[0];
+                    let updateDate = yourDate.toISOString().split('T')[0];
+                    let assessed_area = $("input[name='assessed_area']").val();
+                    let edema_severity = $("input[type='radio'][name='ÖdemŞiddeti']:checked").val();
 
-
-                    e.preventDefault()
 
                     $.ajax({
                         type: 'POST',
-                        url: 'student-patient.php',
+                        url: 'http://localhost/Hacettepe-KDSE-BPYS/submitOrUpdateForm8.php',
                         data: {
                             id: id,
                             name: name,
                             surname: surname,
                             age: age,
-                            not: not
-
+                            not: not,
+                            form_num:form_num,
+                            patient_id:patient_id,
+                            patient_name:patient_name,
+                            creation_date:creationDate,
+                            update_date :updateDate,
+                            assessed_area: assessed_area,
+                            edema_severity:edema_severity
                         },
                         success: function(data) {
+                            console.log(data);
                             alert("Success");
-                            location.reload(true)
                         },
                         error: function(data) {
-                            Swal.fire({
-                                'title': 'Errors',
-                                'text': 'There were errors',
-                                'type': 'error'
-                            })
+                            console.log(data)
                         }
                     })
 
