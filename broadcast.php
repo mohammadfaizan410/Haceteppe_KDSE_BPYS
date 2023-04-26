@@ -14,14 +14,12 @@ if (isset($_SESSION['userlogin'])) {
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./broadcastSyles.css">
 
-  <title>Document</title>
+    <title>Document</title>
 </head>
 
 <body>
@@ -71,10 +69,10 @@ if (isset($_SESSION['userlogin'])) {
         </div>
       </div>
     </div>
-    
-    
-    
-    
+
+
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script>
@@ -171,7 +169,7 @@ $('#showAllMessages').click(function (e) {
     $('.messagess').css('display', 'none');
     $('#showAllMessages').css('display', 'block');
 
-  })
+    })
 
 
 
@@ -199,7 +197,7 @@ $('#showAllMessages').click(function (e) {
     $('#student-selection-container').html('');
     $('.messagess').css('display', 'none');
 
-  })
+    })
 
 
 
@@ -212,37 +210,35 @@ $('#showAllMessages').click(function (e) {
     var name = "<?php
                                   echo $name
                 ?> ";
-    $.ajax({
+        $.ajax({
             type: 'POST',
             url: 'http://localhost/Hacettepe-KDSE-BPYS/getAllStudents.php/',
             data: {
-              name :name,
+                name: name,
             },
-            success: function (data) {
-              let htmlString = '';
-              console.log(JSON.parse(data));
-              JSON.parse(data).forEach(student => {
-                  htmlString += `<div class='listItem d-flex justify-content-between mt-3 p-3 btn-primary'>
+            success: function(data) {
+                let htmlString = '';
+                console.log(JSON.parse(data));
+                JSON.parse(data).forEach(student => {
+                    htmlString += `<div class='listItem d-flex justify-content-between mt-3 p-3 btn-primary'>
                       <div class='w-25 text-start'>${student.name}</div>
                       <div class='w-25  text-start'>${student.surname}</div>
                       <div class='w-50 text-start'>${student.email}</div>
                       <div class='btn-primary'><input type='checkbox' value='${student.email}' name='selected-student'></input></div>
                   </div>`
-              });
-              $('#student-selection-container').html(htmlString);
+                });
+                $('#student-selection-container').html(htmlString);
             },
-            error: function (data) {
-              Swal.fire({
-                'title': 'Errors',
-                'text': 'There were errors',
-                'type': 'error'
-              })
-              console.log(data);
+            error: function(data) {
+                Swal.fire({
+                    'title': 'Errors',
+                    'text': 'There were errors',
+                    'type': 'error'
+                })
+                console.log(data);
             }
-          }) 
-  })
-
-  
+        })
+    })
 
 
 
@@ -258,10 +254,10 @@ $('#showAllMessages').click(function (e) {
         var email =  "<?php
                                   echo $myEmail
                 ?> ";
-        var name = "<?php
+            var name = "<?php
                                   echo $name
                 ?> ";
-        var surname = "<?php
+            var surname = "<?php
                                   echo $surname
                 ?> ";
        if (subject == '' || message == ''){
@@ -311,18 +307,18 @@ $('#showAllMessages').click(function (e) {
     })
   });
 
-    $(function () {
-      $("#sendBroadcast").click(function (e) {
-        e.preventDefault();
-        var subject = $('#broadcastSubject').val();
-        var message = $('#broadcastMessage').val();
-        var email =  "<?php
+    $(function() {
+        $("#sendBroadcast").click(function(e) {
+            e.preventDefault();
+            var subject = $('#broadcastSubject').val();
+            var message = $('#broadcastMessage').val();
+            var email = "<?php
                                   echo $myEmail
                 ?> ";
-        var name = "<?php
+            var name = "<?php
                                   echo $name
                 ?> ";
-        var surname = "<?php
+            var surname = "<?php
                                   echo $surname
                 ?> ";
 
@@ -360,8 +356,7 @@ $('#showAllMessages').click(function (e) {
         }else $('#error').text('Fields cannot be empty!');
       })
     });
-
-  </script>
+    </script>
 
 
 </body>
