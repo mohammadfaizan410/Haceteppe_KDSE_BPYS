@@ -21,7 +21,6 @@ if(isset($_GET)){
         $values1 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
         $values2 = $smtmselect2->fetchAll(PDO::FETCH_ASSOC);
         $allValues = array_merge($values1, $values2);
-        
         echo json_encode($allValues);
     }
     else {

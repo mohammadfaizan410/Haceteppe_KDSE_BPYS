@@ -115,10 +115,11 @@ require_once("config-messages.php");
         if (nameOrEmail !== "") {
           $.ajax({
             type: 'POST',
-            url: 'http://localhost8/Hacettepe-KDSE-BPYS/process-search.php/?' + "nameOrEmail=" + nameOrEmail,
+            url: 'http://localhost/Hacettepe-KDSE-BPYS/process-search.php/?' + "nameOrEmail=" + nameOrEmail,
             data: {
             },
             success: function (data) {
+                console.log(data)
               var userid = "<?php
                                   echo $myUser
                 ?> ";
@@ -154,7 +155,6 @@ require_once("config-messages.php");
                         Swal.fire({
                             'title': 'Errors',
                             'text': 'There were errors',
-                            'type': 'error'
                         })
                         console.log(data);
                     }

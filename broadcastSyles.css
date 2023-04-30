@@ -35,3 +35,6 @@
 .listItem{
     border-radius: 10px;
 }
+#messages-container{
+    background-color: white;
+}
