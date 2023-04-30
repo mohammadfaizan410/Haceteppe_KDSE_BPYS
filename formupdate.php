@@ -76,12 +76,27 @@ foreach ($values as $value) {
                                     
                                     el.addEventListener('change', function handleChange(event) {
                                         console.log(event.target.value);
-                                      if (event.target.value === '2') {
-                                        $('#box').load('./formlar-review/Form2-review.php'); 
-                                        var myvalue = 'Hi';
-
-                                    } else {
-                                      }
+                                        if (event.target.value === '2') {
+                                            $('#box').load('./formlar-review/Form2-review.php'); 
+                                        } 
+                                        if (event.target.value === '3') {
+                                            $('#box').load('./formlar-review/Form3-review.php'); 
+                                        } 
+                                        if (event.target.value === '4') {
+                                            $('#box').load('./formlar-review/Form4-review.php'); 
+                                        } 
+                                        if (event.target.value === '5') {
+                                            $('#box').load('./formlar-review/Form5-review.php'); 
+                                        } 
+                                        if (event.target.value === '6') {
+                                            $('#box').load('./formlar-review/Form6-review.php'); 
+                                        }
+                                        if (event.target.value === '7') {
+                                            $('#box').load('./formlar-review/Form7-review.php'); 
+                                        }
+                                        if (event.target.value === '8') {
+                                            $('#box').load('./formlar-review/Form8-review.php'); 
+                                        }   
                                     });
 
                                    

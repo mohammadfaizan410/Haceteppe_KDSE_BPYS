@@ -39,9 +39,9 @@ if (isset($_GET['logout'])) {
     <link href="style.css" rel="stylesheet">
 
     <style>
-        .send-patient {
-            align-self: center;
-        }
+    .send-patient {
+        align-self: center;
+    }
     </style>
 
 </head>
@@ -54,24 +54,28 @@ if (isset($_GET['logout'])) {
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
-                    <div class="input-section d-flex">
+                        <div class="input-section d-flex">
                             <p class="usernamelabel">Patient Name:</p>
-                            <input type="text" class="form-control" required name="patient_name" id="diger" placeholder="Patient Name">
+                            <input type="text" class="form-control" required name="patient_name" id="diger"
+                                placeholder="Patient Name">
                         </div>
-                `       <div class="input-section d-flex">
+                        ` <div class="input-section d-flex">
                             <p class="usernamelabel">Patient ID:</p>
-                            <input type="text" class="form-control" required name="patient_id" id="diger" placeholder="Patient ID">
+                            <input type="text" class="form-control" required name="patient_id" id="diger"
+                                placeholder="Patient ID">
                         </div>
 
 
                         <div class="input-section-item" style="justify-content:space-between; padding: 5%">
-                            <p class="usernamelabel" style="font-weight: bold;">Risk Faktörleri (Uyaranın algılanması, basınca karşı oluşan rahatsızlığın algılanması)</p>
+                            <p class="usernamelabel" style="font-weight: bold;">Risk Faktörleri (Uyaranın algılanması,
+                                basınca karşı oluşan rahatsızlığın algılanması)</p>
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between;">
                             <p class="usernamelabel">Tamamen yetersiz (Ağrılı uyaranlara yanıt vermiyor):</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="RiskFaktörleri" id="RiskFaktörleri" value="1">
+                                <input class="form-check-input" type="radio" name="RiskFaktörleri" id="RiskFaktörleri"
+                                    value="1">
                                 <label class="form-check-label" for="RiskFaktörleri">
                                     <span class="checkbox-header">(1 puan)</span>
                                 </label>
@@ -81,7 +85,8 @@ if (isset($_GET['logout'])) {
                         <div class="input-section d-flex" style="justify-content:space-between;">
                             <p class="usernamelabel">Çok yetersiz (Yalnız ağrılı uyaranlara yanıt veriyor):</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="RiskFaktörleri" id="RiskFaktörleri" value="2">
+                                <input class="form-check-input" type="radio" name="RiskFaktörleri" id="RiskFaktörleri"
+                                    value="2">
                                 <label class="form-check-label" for="RiskFaktörleri">
                                     <span class="checkbox-header">(2 puan)</span>
                                 </label>
@@ -89,9 +94,11 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between;">
-                            <p class="usernamelabel">Biraz yeterli (Sözlü uyaranlara yanıt veriyor, sürekli iletişim kuramıyor, yatak içerisinde çevrilmesi gerekiyor):</p>
+                            <p class="usernamelabel">Biraz yeterli (Sözlü uyaranlara yanıt veriyor, sürekli iletişim
+                                kuramıyor, yatak içerisinde çevrilmesi gerekiyor):</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="RiskFaktörleri" id="RiskFaktörleri" value="3">
+                                <input class="form-check-input" type="radio" name="RiskFaktörleri" id="RiskFaktörleri"
+                                    value="3">
                                 <label class="form-check-label" for="RiskFaktörleri">
                                     <span class="checkbox-header">(3 puan)</span>
                                 </label>
@@ -99,9 +106,11 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between;">
-                            <p class="usernamelabel">Tamamen yeterli (Sözlü uyaranlara yanıt veriyor. Duyu kusuru yok):</p>
+                            <p class="usernamelabel">Tamamen yeterli (Sözlü uyaranlara yanıt veriyor. Duyu kusuru yok):
+                            </p>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="RiskFaktörleri" id="RiskFaktörleri" value="4">
+                                <input class="form-check-input" type="radio" name="RiskFaktörleri" id="RiskFaktörleri"
+                                    value="4">
                                 <label class="form-check-label" for="RiskFaktörleri">
                                     <span class="checkbox-header">(4 puan)</span>
                                 </label>
@@ -123,7 +132,8 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between;">
-                            <p class="usernamelabel">Çok ıslak (Deri çoğu zaman ıslak, her şiftte çarşafların en az bir kez değiştirilmesi gerekiyor):</p>
+                            <p class="usernamelabel">Çok ıslak (Deri çoğu zaman ıslak, her şiftte çarşafların en az bir
+                                kez değiştirilmesi gerekiyor):</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="nemlilik" id="nemlilik" value="2">
                                 <label class="form-check-label" for="nemlilik">
@@ -133,7 +143,8 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between;">
-                            <p class="usernamelabel">Bazen ıslak (Deri bazen ıslak, Çarşafların ıslandıkça değiştirilmesi gerekiyor):</p>
+                            <p class="usernamelabel">Bazen ıslak (Deri bazen ıslak, Çarşafların ıslandıkça
+                                değiştirilmesi gerekiyor):</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="nemlilik" id="nemlilik" value="3">
                                 <label class="form-check-label" for="nemlilik">
@@ -143,7 +154,8 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between;">
-                            <p class="usernamelabel">Nadiren ıslak (Deri genellikle kuru, Çarşafların rutin değişimini gerektirmekte):</p>
+                            <p class="usernamelabel">Nadiren ıslak (Deri genellikle kuru, Çarşafların rutin değişimini
+                                gerektirmekte):</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="nemlilik" id="nemlilik" value="4">
                                 <label class="form-check-label" for="nemlilik">
@@ -153,11 +165,13 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="input-section-item" style="justify-content:space-between; padding: 5%">
-                            <p class="usernamelabel" style="font-weight: bold;">Aktivite (Fiziksel aktivitenin derecesi)</p>
+                            <p class="usernamelabel" style="font-weight: bold;">Aktivite (Fiziksel aktivitenin derecesi)
+                            </p>
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between;">
-                            <p class="usernamelabel">Yatağa bağımlı (Her türlü bakım gereksinimi yatakta karşılanıyor):</p>
+                            <p class="usernamelabel">Yatağa bağımlı (Her türlü bakım gereksinimi yatakta karşılanıyor):
+                            </p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="aktivite" id="aktivite" value="1">
                                 <label class="form-check-label" for="aktivite">
@@ -167,7 +181,8 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between;">
-                            <p class="usernamelabel">Sandalyeye bağımlı <br>(Çok az yürüyebiliyor, sandalyeye oturabilmesi için yardım gerekiyor, kendi ağırlığını kaldırmakta güçlük çekiyor):</p>
+                            <p class="usernamelabel">Sandalyeye bağımlı <br>(Çok az yürüyebiliyor, sandalyeye
+                                oturabilmesi için yardım gerekiyor, kendi ağırlığını kaldırmakta güçlük çekiyor):</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="aktivite" id="aktivite" value="2">
                                 <label class="form-check-label" for="aktivite">
@@ -177,7 +192,8 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between;">
-                            <p class="usernamelabel">Bazen yürüyebiliyor <br>(Yardımla veya yardımsız kısa mesafede yürüyebiliyor, çoğu zaman yatakta veya sandalyede oturuyor):</p>
+                            <p class="usernamelabel">Bazen yürüyebiliyor <br>(Yardımla veya yardımsız kısa mesafede
+                                yürüyebiliyor, çoğu zaman yatakta veya sandalyede oturuyor):</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="aktivite" id="aktivite" value="3">
                                 <label class="form-check-label" for="aktivite">
@@ -187,7 +203,8 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between;">
-                            <p class="usernamelabel">Sık sık yürüyebiliyor (Günde en az iki defa oda dışına çıkabiliyor, oda içinde 2 saatte bir yürüyebiliyor):</p>
+                            <p class="usernamelabel">Sık sık yürüyebiliyor (Günde en az iki defa oda dışına çıkabiliyor,
+                                oda içinde 2 saatte bir yürüyebiliyor):</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="aktivite" id="aktivite" value="4">
                                 <label class="form-check-label" for="aktivite">
@@ -197,7 +214,8 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="input-section-item" style="justify-content:space-between; padding: 5%">
-                            <p class="usernamelabel" style="font-weight: bold;">Hareket (Pozisyonunu değiştirme ve kontrol edebilme)</p>
+                            <p class="usernamelabel" style="font-weight: bold;">Hareket (Pozisyonunu değiştirme ve
+                                kontrol edebilme)</p>
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between;">
@@ -211,7 +229,8 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between;">
-                            <p class="usernamelabel">Çok hareketsiz <br>(Vücut ve ekstremite pozisyonunda hafif değişiklik yapabiliyor, kendiliğinden pozisyonunu değiştiremiyor):</p>
+                            <p class="usernamelabel">Çok hareketsiz <br>(Vücut ve ekstremite pozisyonunda hafif
+                                değişiklik yapabiliyor, kendiliğinden pozisyonunu değiştiremiyor):</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="hareket" id="hareket" value="2">
                                 <label class="form-check-label" for="hareket">
@@ -221,7 +240,8 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between;">
-                            <p class="usernamelabel">Az hareketli (Vücut ve ekstremitelerinde sık ancak hafif değişiklik yapabiliyor):</p>
+                            <p class="usernamelabel">Az hareketli (Vücut ve ekstremitelerinde sık ancak hafif değişiklik
+                                yapabiliyor):</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="hareket" id="hareket" value="3">
                                 <label class="form-check-label" for="hareket">
@@ -245,7 +265,8 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between;">
-                            <p class="usernamelabel">Çok yetersiz (Asla öğünün tamamını yiyemiyor. Nadiren verilen yemeğin 1/3’ünü yiyebiliyor.
+                            <p class="usernamelabel">Çok yetersiz (Asla öğünün tamamını yiyemiyor. Nadiren verilen
+                                yemeğin 1/3’ünü yiyebiliyor.
                                 <br>İki öğün ya da daha az protein alabiliyor (Et ve süt ürünleri). Sıvı alımı az.
                                 <br>Ağızdan sıvı desteği alamıyor. 5 günden fazla süredir IV ve berrak diyet alıyor):
                             </p>
@@ -271,7 +292,8 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between;">
-                            <p class="usernamelabel">Yeterli (Verilen yemeğin yarısından fazlasını yiyebiliyor. Günde 4 kez protein alabiliyor.
+                            <p class="usernamelabel">Yeterli (Verilen yemeğin yarısından fazlasını yiyebiliyor. Günde 4
+                                kez protein alabiliyor.
                                 <br>Ara sıra yemeği reddediyor. Verilmişse ek diyeti yada TPN’İ alabiliyor):
                             </p>
                             <div class="form-check">
@@ -283,7 +305,8 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between;">
-                            <p class="usernamelabel">Çok iyi (Yemeğini çoğunlukla yiyor. Öğünleri reddetmiyor. Günde 4 defa protein alabiliyor.
+                            <p class="usernamelabel">Çok iyi (Yemeğini çoğunlukla yiyor. Öğünleri reddetmiyor. Günde 4
+                                defa protein alabiliyor.
                                 <br>Genellikle öğün aralarında yiyor. Ek gıda gerekmiyor):
                             </p>
                             <div class="form-check">
@@ -295,15 +318,18 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="input-section-item" style="justify-content:space-between; padding: 5%">
-                            <p class="usernamelabel" style="font-weight: bold;">Risk Faktörleri(Uyaranın algılanması, basınca karşı oluşan rahatsızlığın algılanması)</p>
+                            <p class="usernamelabel" style="font-weight: bold;">Risk Faktörleri(Uyaranın algılanması,
+                                basınca karşı oluşan rahatsızlığın algılanması)</p>
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between;">
                             <p class="usernamelabel">Sorun
-                                <br>(Hareket ederken çok fazla yardıma gereksinimi var. Çarşafta kaydırmaksızın tamamen kaldırılması olanaksız):
+                                <br>(Hareket ederken çok fazla yardıma gereksinimi var. Çarşafta kaydırmaksızın tamamen
+                                kaldırılması olanaksız):
                             </p>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="SurtunmeTahris" id="SurtunmeTahris" value="1">
+                                <input class="form-check-input" type="radio" name="SurtunmeTahris" id="SurtunmeTahris"
+                                    value="1">
                                 <label class="form-check-label" for="SurtunmeTahris">
                                     <span class="checkbox-header">(1 puan)</span>
                                 </label>
@@ -312,10 +338,12 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section d-flex" style="justify-content:space-between;">
                             <p class="usernamelabel">Olası sorun
-                                <br>(Çok az yardımla az ve güçsüz hareket edebiliyor. Hareket sırasında deri; çarşafa, sandalyeye sürtünüyor):
+                                <br>(Çok az yardımla az ve güçsüz hareket edebiliyor. Hareket sırasında deri; çarşafa,
+                                sandalyeye sürtünüyor):
                             </p>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="SurtunmeTahris" id="SurtunmeTahris" value="2">
+                                <input class="form-check-input" type="radio" name="SurtunmeTahris" id="SurtunmeTahris"
+                                    value="2">
                                 <label class="form-check-label" for="SurtunmeTahris">
                                     <span class="checkbox-header">(2 puan)</span>
                                 </label>
@@ -323,9 +351,11 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between;">
-                            <p class="usernamelabel">Sorun yok (Yatakta ve sandalyede bağımsız hareket edebiliyor. Kendini kaldırabilmek için yeterli kas gücü var):</p>
+                            <p class="usernamelabel">Sorun yok (Yatakta ve sandalyede bağımsız hareket edebiliyor.
+                                Kendini kaldırabilmek için yeterli kas gücü var):</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="SurtunmeTahris" id="SurtunmeTahris" value="3">
+                                <input class="form-check-input" type="radio" name="SurtunmeTahris" id="SurtunmeTahris"
+                                    value="3">
                                 <label class="form-check-label" for="SurtunmeTahris">
                                     <span class="checkbox-header">(3 puan)</span>
                                 </label>
@@ -353,95 +383,98 @@ if (isset($_GET['logout'])) {
 
 
     <script>
-        $(function() {
-            $('#closeBtn').click(function(e) {
-                $("#content").load("formlar-student.php");
+    $(function() {
+        $('#closeBtn').click(function(e) {
+            $("#content").load("formlar-student.php");
 
-            })
-        });
+        })
+    });
     </script>
 
     <script>
-        $(function() {
-            $('#submit').click(function(e) {
-                e.preventDefault()
+    $(function() {
+        $('#submit').click(function(e) {
+            e.preventDefault()
 
-                console.log("hello from form 6x")
-                var valid = this.form.checkValidity();
-                
-                if (valid) {
-                    var id = <?php
+            console.log("hello from form 6x")
+            var valid = this.form.checkValidity();
+
+            if (valid) {
+                var id = <?php
 
                                 $userid = $_SESSION['userlogin']['id'];
                                 echo $userid
                                 ?>;
-                    var name = $('#name').val();
-                    var surname = $('#surname').val();
-                    var age = $('#age').val();
-                    var not = $('#not').val();
-                    let form_num = 6;
-                    let yourDate = new Date()
-                    let patient_name = $("input[name='patient_name']").val();
-                    let patient_id = parseInt($("input[name='patient_id']").val());
-                    let creation_date =  yourDate.toISOString().split('T')[0];
-                    let update_date = yourDate.toISOString().split('T')[0];
-                    let sensory_perception = parseInt($("input[type='radio'][name='RiskFaktörleri']:checked").val());
-                    let moisture = parseInt($("input[type='radio'][name='nemlilik']:checked").val());
-                    let activity = parseInt($("input[type='radio'][name='aktivite']:checked").val());
-                    let mobility = parseInt($("input[type='radio'][name='hareket']:checked").val());
-                    let nutrition = parseInt($("input[type='radio'][name='beslenme']:checked").val());
-                    let discomfort = parseInt($("input[type='radio'][name='SurtunmeTahris']:checked").val());
-                    let total =sensory_perception +mobility +activity+ moisture + nutrition+ discomfort;
-                    let risk;
-                    if(total <= 12) risk = "no-risk"; 
-                    else if ( total <= 14) risk = "medium"; 
-                    else  risk = "high-risk"; 
+                var name = $('#name').val();
+                var surname = $('#surname').val();
+                var age = $('#age').val();
+                var not = $('#not').val();
+                let form_num = 6;
+                let yourDate = new Date()
+                let patient_name = $("input[name='patient_name']").val();
+                let patient_id = parseInt($("input[name='patient_id']").val());
+                let creation_date = yourDate.toISOString().split('T')[0];
+                let update_date = yourDate.toISOString().split('T')[0];
+                let sensory_perception = parseInt($(
+                    "input[type='radio'][name='RiskFaktörleri']:checked").val());
+                let moisture = parseInt($("input[type='radio'][name='nemlilik']:checked").val());
+                let activity = parseInt($("input[type='radio'][name='aktivite']:checked").val());
+                let mobility = parseInt($("input[type='radio'][name='hareket']:checked").val());
+                let nutrition = parseInt($("input[type='radio'][name='beslenme']:checked").val());
+                let discomfort = parseInt($("input[type='radio'][name='SurtunmeTahris']:checked")
+            .val());
+                let total = sensory_perception + mobility + activity + moisture + nutrition +
+                discomfort;
+                let risk;
+                if (total <= 12) risk = "Risk Yok";
+                else if (total <= 14) risk = "Orta Risk";
+                else risk = "Yüksek Risk";
 
 
-                    $.ajax({
-                        type: 'POST',
-                        url: 'http://localhost/Hacettepe-KDSE-BPYS/submitOrUpdateForm6.php/',
-                        data: {
-                            id: id,
-                            name: name,
-                            surname: surname,
-                            age: age,
-                            not: not,
-                            form_num :form_num,
-                            patient_name:patient_name,
-                            patient_id:patient_id,
-                            creation_date:creation_date,
-                            update_date:update_date,
-                            sensory_perception:sensory_perception,
-                            moisture:moisture,
-                            activity:activity,
-                            mobility:mobility,
-                            nutrition:nutrition,
-                            discomfort:discomfort,
-                            total:total,
-                            risk :risk
-                            
-
-                        },
-                        success: function(data) {
-                            console.log(data)
-                            alert("Success");
-                        },
-                        error: function(data) {
-                            Swal.fire({
-                                'title': 'Errors',
-                                'text': 'There were errors',
-                                'type': 'error'
-                            })
-                        }
-                    })
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://localhost/Hacettepe-KDSE-BPYS/submitOrUpdateForm6.php/',
+                    data: {
+                        id: id,
+                        name: name,
+                        surname: surname,
+                        age: age,
+                        not: not,
+                        form_num: form_num,
+                        patient_name: patient_name,
+                        patient_id: patient_id,
+                        creation_date: creation_date,
+                        update_date: update_date,
+                        sensory_perception: sensory_perception,
+                        moisture: moisture,
+                        activity: activity,
+                        mobility: mobility,
+                        nutrition: nutrition,
+                        discomfort: discomfort,
+                        total: total,
+                        risk: risk
 
 
+                    },
+                    success: function(data) {
+                        console.log(data)
+                        alert("Success");
+                    },
+                    error: function(data) {
+                        Swal.fire({
+                            'title': 'Errors',
+                            'text': 'There were errors',
+                            'type': 'error'
+                        })
+                    }
+                })
 
-                }
-            })
 
-        });
+
+            }
+        })
+
+    });
     </script>
     <script src=""></script>
 </body>
