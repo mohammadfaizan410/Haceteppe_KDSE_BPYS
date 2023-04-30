@@ -64,7 +64,7 @@ if (isset($_SESSION['userlogin'])) {
     </div>
   </div>
   <div class='w-100 d-flex justify-content-center' id="message-parent">
-    <div class='messagess w-75' id="messagess">
+    <div class='messagess w-75' id="messagess"  style="background-color: white; font-size: 16px; margin-top : 20px;">
       <div class="messages-container d-flex flex-column w-100 ml-5 align-items-center" id='messages-container'>
         </div>
       </div>
@@ -95,16 +95,14 @@ $('#showAllMessages').click(function (e) {
           let htmlString = `<div class='option mt-3 p-3' id='closeAllMessages'><h4 class='btn btn-primary  w-100 p-4 text-start dark-blue' style="background-color: slateblue;" >Close All Messages</h4></div>`;
             JSON.parse(data).forEach(element => {
               htmlString += `
-              <div id='message_wrapper' class="mt-4 mb-4 w-75 border-bottom border-4" >
-              <div class='message-wrapper d-flex mt-3 text-white justify-content-around' >
-              <div class='m-3 w-25'>Name: ${element.name}  ${element.surname}</div>
-              <div class='m-3 w-25'>Email: ${element.email}</div>
+              <div id='message_wrapper' class="mt-4 mb-4 w-lg-75" >
+              <div class='message-wrapper d-flex mt-3 justify-content-around' >
+              <div class='m-3 w-50 ' >Name: ${element.name}  ${element.surname}</div>
+              <div class='m-3 w-50'>Email: ${element.email}</div>
               </div>
-              <div class='message-details mt-4 mb-4'>
-                      <div class="p-3">From: ${element.name}  ${element.surname}</div>
-                      <div class="p-3">Email: ${element.email}</div>
-                      <div class="p-3">Subject: ${element.subject}</div>
-                      <div class="p-3">Message: ${element.message}</div>
+              <div class='message-details mt-4 mb-4 d-flex flex-column w-lg-75'>
+                      <div class="p-3 w-l-100">Subject: ${element.subject}</div>
+                      <div class="p-3 w-l-100">Message: asdasjdhkhasdkjaskjdaskhdkhaskhdhsdjsakhjdkashmdhaskjldavhsgdkjlasvhdghkjlasnbhdijaslkndbasjk,ndmavshjdnmabsvhdkjasmbhdjkasdhjkasmn</div>
                       </div>
                       </div>
                       `

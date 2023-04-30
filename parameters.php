@@ -357,7 +357,6 @@ foreach ($values as $value) {
                                     }
                                 }
                                 }
-                    
-                                
+                                            
                             </script>";
 }
