@@ -4,12 +4,35 @@ require_once("config-students.php");
 <?php
 
 if (isset($_POST["patient_name"])) {
+    if(isset($_POST['isUpdate'])){
+        $stmt = $db->prepare("UPDATE form9 SET
+        patient_name = ?,
+        update_date = ?,
+        date = ?,
+        examination_type = ?,
+        examination_result = ?,
+        referance_value = ?
+        WHERE form_id = ?");
 
-    $sql = "SELECT * FROM form9 WHERE patient_id = ?";
-    $smtmselect = $db->prepare($sql);
-    $result = $smtmselect->execute([$_POST["patient_id"]]);
-    if ($result) {
-            $stmt = $db->prepare("INSERT INTO form9 (
+    $stmt->execute([
+        $_POST["patient_name"],
+        $_POST["creation_date"],   
+        $_POST["date"],   
+        $_POST["examination_type"],
+        $_POST["examination_result"],
+        $_POST["referance_value"],
+        $_POST["form_id"],
+    ]);
+        echo "successfully updated";
+
+        }
+        else{
+            
+            $sql = "SELECT * FROM form9 WHERE patient_id = ?";
+            $smtmselect = $db->prepare($sql);
+            $result = $smtmselect->execute([$_POST["patient_id"]]);
+            if ($result) {
+                $stmt = $db->prepare("INSERT INTO form9 (
                 form_num,
                 patient_name,
                 patient_id,
@@ -21,21 +44,22 @@ if (isset($_POST["patient_name"])) {
                 referance_value
             ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
 $stmt->execute([
-        $_POST["form_num"],
-        $_POST["patient_name"],
-        $_POST["patient_id"],
-        $_POST["creation_date"],
-        $_POST["update_date"],   
-        $_POST["date"],   
-        $_POST["examination_type"],
-        $_POST["examination_result"],
-        $_POST["referance_value"],
+    $_POST["form_num"],
+    $_POST["patient_name"],
+    $_POST["patient_id"],
+    $_POST["creation_date"],
+    $_POST["update_date"],   
+    $_POST["date"],   
+    $_POST["examination_type"],
+    $_POST["examination_result"],
+    $_POST["referance_value"],
 ]);
-        
-    } else{
 
-        echo "Error.";
-    }
+} else{
+    
+    echo "Error.";
+}
+}
 }
 else{
     echo "Error.";

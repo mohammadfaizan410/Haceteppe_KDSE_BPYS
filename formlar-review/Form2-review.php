@@ -10,8 +10,10 @@ if (isset($_GET['logout'])) {
     header("Location: main.php");
 }
 require_once('../config-students.php');
+
 $userid = $_SESSION['userlogin']['id'];
-$sql = "SELECT * FROM form2";
+$form_id = $_GET['form_id'];
+$sql = "SELECT * FROM form2 where form_id= $form_id";
 $smtmselect = $db->prepare($sql);
 $result = $smtmselect->execute();
 if ($result) {
@@ -49,10 +51,10 @@ if ($result) {
     <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="../bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="style.css" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
     <style>
@@ -83,7 +85,7 @@ if ($result) {
 
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
-                        <img src="./ağrı skalası.png"
+                        <img src="../ağrı skalası.png"
                             style="width:67%; height:auto;border: 1px solid;border-color: #246174; box-shadow:1px 1px 1px 1px #246174; border-radius: 20px;">
                         <div class="input-section d-flex" style="padding-top: 5%;">
                             <p class="usernamelabel">Ağrının Şiddeti:</p>

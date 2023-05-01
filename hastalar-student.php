@@ -52,7 +52,6 @@ if (isset($_GET['logout'])) {
         $result = $smtmselect->execute();
         if ($result) {
             $values = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
-            var_dump($values);
         } else {
             echo 'error';
         };

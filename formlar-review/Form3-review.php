@@ -46,7 +46,7 @@ if ($result) {
     <link href="bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="style.css" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet">
 
     <style>
     .send-patient {

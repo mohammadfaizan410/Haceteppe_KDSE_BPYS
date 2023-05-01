@@ -18,18 +18,25 @@ if (isset($_GET['logout'])) {
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <meta content="" name="keywords">
 <meta content="" name="description">
-<!-- Favicon -->
-<link href="img/favicon.ico" rel="icon">
+ <!-- Favicon -->
+ <link href="img/favicon.ico" rel="icon">
+
+
 <!-- Icon Font Stylesheet -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
 <!-- Libraries Stylesheet -->
 <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
 <!-- Customized Bootstrap Stylesheet -->
-<link href="bootstrap.min.css" rel="stylesheet">
+<link href="../bootstrap.min.css" rel="stylesheet">
+
 <!-- Template Stylesheet -->
-<link href="style.css" rel="stylesheet">
+<link href="../style.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
    <style>
 		table {
 			border-collapse: collapse;
@@ -49,6 +56,19 @@ if (isset($_GET['logout'])) {
     }
 	</style>
   		<body>
+          <?php
+        require_once('../config-students.php');
+        $userid = $_SESSION['userlogin']['id'];
+        $form_id = $_GET['form_id'];
+        $sql = "SELECT * FROM form10 where form_id= $form_id";
+        $smtmselect = $db->prepare($sql);
+        $result = $smtmselect->execute();
+        if ($result) {
+            $form10 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            echo 'error';
+        }
+    ?>
 		  <div class="container-fluid pt-4 px-4">
             <div class="send-patient">
             <span class='close closeBtn' id='closeBtn'>&times;</span>
@@ -58,19 +78,20 @@ if (isset($_GET['logout'])) {
                     <form action="" method="POST" class="patients-save-fields">
                     <div class="input-section d-flex">
                             <p class="usernamelabel">Patient Name:</p>
-                            <input type="text" class="form-control" required name="patient_name" id="diger" placeholder="Patient Name">
+                            <input type="text" class="form-control" required value=<?php echo $form10[0]['patient_name'];?> name="patient_name" id="diger" placeholder="Patient Name">
                         </div>
                 `       <div class="input-section d-flex">
                             <p class="usernamelabel">Patient ID:</p>
-                            <input type="text" class="form-control" required name="patient_id" id="diger" placeholder="Patient ID">
+                            <input type="text" class="form-control" value=<?php echo $form10[0]['patient_id'];?> required name="patient_id" id="diger" placeholder="Patient ID">
                         </div>
                 `       <div class="input-section d-flex">
                             <p class="usernamelabel">Saat:</p>
-                            <input type="time" class="form-control" required name="time" id="diger" placeholder="Saat">
+                            <input type="time" class="form-control" value=<?php echo $form10[0]['time'];?> required name="time" id="diger" placeholder="Saat">
                         </div>
+                        
                 `       <div class="input-section d-flex">
                             <p class="usernamelabel">Vücut Sıcaklığı:</p>
-                            <input type="text" class="form-control" required name="body_temperature" id="diger" placeholder="Vücut Sıcaklığı">
+                            <input type="text" class="form-control" required  value=<?php echo $form10[0]['body_temperature'];?> name="body_temperature" id="diger" placeholder="Vücut Sıcaklığı">
                         </div>
 						<div class="input-section d-flex">
                             <p class="usernamelabel">Ölçüm yeri: </p>
@@ -94,7 +115,7 @@ if (isset($_GET['logout'])) {
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="measurement_location" id="measurement_location" value="Rektal">
+                                    <input class="form-check-input" type="radio"  name="measurement_location" id="measurement_location" value="Rektal">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">Rektal</span>
                                     </label>
@@ -112,7 +133,7 @@ if (isset($_GET['logout'])) {
                             <p class="usernamelabel">Nabız yeri: </p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="heartrate_location" id="heartrate_location" value="Apikal *">
+                                    <input class="form-check-input" type="radio" name="heartrate_location"  id="heartrate_location" value="Apikal">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">Apikal</span>
                                     </label>
@@ -128,7 +149,7 @@ if (isset($_GET['logout'])) {
 
 						<div class="input-section d-flex">
                             <p class="usernamelabel">Nabız hızı:</p>
-                            <input type="text" class="form-control" required name="heart_rate" id="diger" placeholder="Nabız hızı">
+                            <input type="text" class="form-control" value=<?php echo $form10[0]['heart_rate'];?> required name="heart_rate" id="diger" placeholder="Nabız hızı">
                         </div>
 						
 
@@ -170,7 +191,7 @@ if (isset($_GET['logout'])) {
 
 						<div class="input-section d-flex">
                             <p class="usernamelabel">Solunum sayısı:</p>
-                            <input type="text" class="form-control" required name="respiratory_rate" id="diger" placeholder="Solunum sayısı">
+                            <input type="text" class="form-control" <?php echo $form10[0]['respiratory_rate'];?> required name="respiratory_rate" id="diger" placeholder="Solunum sayısı">
                         </div>
 
 						<div class="input-section d-flex">
@@ -201,7 +222,7 @@ if (isset($_GET['logout'])) {
 
 						<div class="input-section d-flex">
                             <p class="usernamelabel">Kan basıncı:</p>
-                            <input type="text" class="form-control" required name="blood_pressure" id="diger" placeholder="Tetkik Sonucu">
+                            <input type="text" class="form-control" required  value=<?php echo $form10[0]['blood_pressure'];?> name="blood_pressure" id="diger" placeholder="Tetkik Sonucu">
                         </div>
 
 						<div class="input-section d-flex">
@@ -283,7 +304,7 @@ if (isset($_GET['logout'])) {
 
 						<div class="input-section d-flex">
                             <p class="usernamelabel">SPO2 (%):</p>
-                            <input type="text" class="form-control" required name="spo2_percentage" id="diger" placeholder="SPO2 (%)">
+                            <input type="text" class="form-control" required name="spo2_percentage" value=<?php echo $form10[0]['spo2_percentage'];?> id="diger" placeholder="SPO2 (%)">
                         </div>
 						<div class="input-section" id="o2-delivery-container">
                             <p class="usernamelabel">Günlük Günlük Kilo Takibi Yapiliyor mi?</p>
@@ -298,15 +319,57 @@ if (isset($_GET['logout'])) {
                         </div>
 						<div class="input-section" id="kilo_yapiliyor">
                             <p class="usernamelabel">Günlük Kilo Takibi:</p>
-                            <input type="text" class="form-control"  name="weight_input" id="diger" placeholder="Günlük Kilo Takibi">
+                            <input type="text" class="form-control"  value=<?php echo $form10[0]['weight_input'];?> name="weight_input" id="diger" placeholder="Günlük Kilo Takibi">
                         </div>
-							<input class="form-control submit" name="submit" id="submit" value="Submit and enter new entry">
+							<input class="form-control submit" type="submit" name="submit" id="submit" value="Update">
                     </form>
                 </div>
             </div>
         </div>
     </div>
     <script>
+    //preselecting inputs
+                $('input[name="measurement_location"]').each(function() {
+            if ($(this).val() === "<?php echo $form10[0]['measurement_location']; ?>") {
+                $(this).prop('checked', true);
+            }
+        });
+                $('input[name="heartrate_nature"]').each(function() {
+            if ($(this).val() === "<?php echo $form10[0]['heartrate_nature']; ?>") {
+                $(this).prop('checked', true);
+            }
+        });
+        
+                $('input[name="respiratory_nature"]').each(function() {
+            if ($(this).val() === "<?php echo $form10[0]['respiratory_nature']; ?>") {
+                $(this).prop('checked', true);
+            }
+        });
+    
+                $('input[name="bp_measurement_location"]').each(function() {
+            if ($(this).val() === "<?php echo $form10[0]['bp_measurement_location']; ?>") {
+                $(this).prop('checked', true);
+            }
+        });
+
+                $('input[name="o2_status"]').each(function() {
+            if ($(this).val() === "<?php echo $form10[0]['o2_status']; ?>") {
+                $(this).prop('checked', true);
+            }
+        });
+                $('input[name="heartrate_location"]').each(function() {
+            if ($(this).val() === "<?php echo $form10[0]['heartrate_location']; ?>") {
+                $(this).prop('checked', true);
+            }
+        });
+                $('input[name="o2_method"]').each(function() {
+            if ($(this).val() === "<?php echo $form10[0]['o2_method']; ?>") {
+                $(this).prop('checked', true);
+            }
+        });
+
+
+
       $(function() {
           $('#closeBtn').click(function(e) {
               $("#content").load("formlar-student.php");
@@ -317,7 +380,6 @@ if (isset($_GET['logout'])) {
 	const radioBtn = document.getElementById("o2_method_diger");
 	const inputField = document.getElementById("o2_method_diger_input");
 	radioBtn.addEventListener("change", function() {
-		console.log(this.checked)
   if (this.checked) {
     inputField.disabled = false;
   } else {
@@ -329,7 +391,12 @@ $('#o2_method_1').change(function (e) {
 	inputField.disabled = true;
 
 });
+
 $('#o2-delivery-container').css("display", 'none')
+if($("input[type='radio'][name='o2_status']:checked").val() === 'Aliyor'){
+    $('#o2-delivery-container').css("display", 'flex')
+
+}
 $('#kilo_yapiliyor').css("display", 'flex')
 $('#o2_status_alm').change(function (e) { 
 	e.preventDefault();
@@ -353,17 +420,21 @@ $('#weight_input_toggle').change(function (e) {
 
 </script>
 <script>
+
+
+
+
       $(function() {
           $('#submit').click(function(e) {
               e.preventDefault()
-              console.log("clicked")
-              var valid = this.form.checkValidity();
-
-              if (valid) {
+        
+              
+                  console.log("values initialized")
                   var id = <?php
                   $userid = $_SESSION['userlogin']['id'];
                   echo $userid
                   ?>;
+                   var form_id = <?php echo $form_id ?>;
                   var name = $('#name').val();
                   var surname = $('#surname').val();
                   var age = $('#age').val();
@@ -378,7 +449,7 @@ $('#weight_input_toggle').change(function (e) {
                   let body_temperature = $("input[name='body_temperature']").val();
 				  let heart_rate = $("input[name='heart_rate']").val();
 				  let heartrate_nature = $("input[type='radio'][name='heartrate_nature']:checked").val();
-                  let heartrate_location = $("input[type='radio'][name='heartrate_location']:checked").val();
+				  let heartrate_location = $("input[type='radio'][name='heartrate_location']:checked").val();
 				  let respiratory_rate = $("input[name='respiratory_rate']").val();
 				  let respiratory_nature = $("input[type='radio'][name='respiratory_nature']:checked").val();
 				  let blood_pressure = $("input[name='blood_pressure']").val();
@@ -404,6 +475,8 @@ $('#weight_input_toggle').change(function (e) {
                       type: 'POST',
                       url: 'http://localhost/Hacettepe-KDSE-BPYS/submitOrUpdateYasamsal_form10.php',
                       data: {
+                          isUpdate: true,
+                          form_id :form_id,
                           id: id,
                           name: name,
                           surname: surname,
@@ -417,9 +490,9 @@ $('#weight_input_toggle').change(function (e) {
                           time:time,
 						  body_temperature:body_temperature,
 						  heart_rate:heart_rate,
-                          heartrate_location: heartrate_location,
-						  heartrate_nature:heartrate_nature,
-						  heartrate_respiratory:heartrate_nature,
+						  heartrate_location:heartrate_location,
+						  respiratory_nature:respiratory_nature,
+						  heartrate_nature:respiratory_nature,
 						  respiratory_rate:respiratory_rate,
 						  blood_pressure:blood_pressure,
 						  bp_measurement_location:bp_measurement_location,
@@ -436,7 +509,7 @@ $('#weight_input_toggle').change(function (e) {
                           console.log(data)
                       }
                   })
-              }
+              
           })
 
       });
