@@ -171,43 +171,43 @@ if (isset($_GET['logout'])) {
                                 foreach( $currentTableAllForms as $currentKey => $form){
                                      
                                         if($key ===  'table1_data') {
-                                            echo '<a class="nav-items mt-2" style="color : white;" href="http://localhost/Hacettepe-KDSE-BPYS/formlar-review/Form2-review.php?form_id=' . $form["form_id"] . '"><p>this is a form from form2</p></a>';
+                                            echo '<div><a class="nav-items" style="color : white;" href="http://localhost/Hacettepe-KDSE-BPYS/formlar-review/Form2-review.php?form_id=' . $form["form_id"] . '"><p>Form2  Date:' .$form["update_date"].' </p></a></div>';
                                         }
                                         if($key ===  'table2_data') {
 
-                                            echo '<a class="nav-items mt-2" style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/formlar-review/Form3-review.php?form_id=' . $form["form_id"] . '"><p>this is a form from form3</p></a>';
+                                            echo '<div><a class="nav-items" style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/formlar-review/Form3-review.php?form_id=' . $form["form_id"] . '"><p>form3   Date:' .$form["update_date"].'</p></a></div>';
                                         }
                                         if($key ===  'table3_data') {
 
-                                            echo '<a class="nav-items mt-2" style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/formlar-review/Form4-review.php?form_id=' . $form["form_id"] . '"><p>this is a form from form4</p></a>';
+                                            echo '<div><a class="nav-items" style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/formlar-review/Form4-review.php?form_id=' . $form["form_id"] . '"><p>form4   Date:' .$form["update_date"].'</p></a></div>';
                                         }
                                         if($key ===  'table4_data') {
 
-                                            echo '<a class="nav-items mt-2" style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/formlar-review/Form5-review.php?form_id=' . $form["form_id"] . '"><p>this is a form from form5</p></a>';
+                                            echo '<div><a class="nav-items" style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/formlar-review/Form5-review.php?form_id=' . $form["form_id"] . '"><p>form5   Date:' .$form["update_date"].'</p></a></div>';
                                         }
                                         if($key ===  'table5_data') {
 
-                                            echo '<a class="nav-items mt-2" style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/formlar-review/Form6-review.php?form_id=' . $form["form_id"] . '"><p>this is a form from form6</p></a>';
+                                            echo '<div><a class="nav-items" style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/formlar-review/Form6-review.php?form_id=' . $form["form_id"] . '"><p>form6   Date:' .$form["update_date"].'</p></a></div>';
                                         }
                                         if($key ===  'table6_data') {
 
-                                            echo '<a class="nav-items mt-2" style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/formlar-review/Form7-review.php?form_id=' . $form["form_id"] . '"><p>this is a form from form7</p></a>';
+                                            echo '<div><a class="nav-items" style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/formlar-review/Form7-review.php?form_id=' . $form["form_id"] . '"><p>form7   Date:' .$form["update_date"].'</p></a></div>';
                                         }
                                         if($key ===  'table7_data') {
 
-                                            echo '<a class="nav-items mt-2" style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/formlar-review/Form8-review.php?form_id=' . $form["form_id"] . '"><p>this is a form from form8</p></a>';
+                                            echo '<div><a class="nav-items" style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/formlar-review/Form8-review.php?form_id=' . $form["form_id"] . '"><p>form8   Date:' .$form["update_date"].'</p></a></div>';
                                         }
                                         if($key ===  'table8_data') {
 
-                                            echo '<a class="nav-items mt-2" style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/formlar-review/Form9-review.php?form_id=' . $form["form_id"] . '"><p>this is a form from form9</p></a>';
+                                            echo '<div><a class="nav-items" style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/formlar-review/Form9-review.php?form_id=' . $form["form_id"] . '"><p>form9  Date:' .$form["update_date"].'</p></a></div>';
                                         }
                                         if($key ===  'table9_data') {
 
-                                            echo '<a class="nav-items mt-2" style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/formlar-review/Form10-review.php?form_id=' . $form["form_id"] . '"><p>this is a form from form10</p></a>';
+                                            echo '<div><a class="nav-items" style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/formlar-review/Form10-review.php?form_id=' . $form["form_id"] . '"><p>form10  Date:' .$form["update_date"].'</p></a></div>';
                                         }
                                         if($key ===  'table1-_data') {
 
-                                            echo '<a class="nav-items mt-2" style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/formlar-review/Form11-review.php?form_id=' . $form["form_id"] . '"><p>this is a form from form11</p></a>';
+                                            echo '<div><a class="nav-items" style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/formlar-review/Form11-review.php?form_id=' . $form["form_id"] . '"><p>form11   Date:' .$form["update_date"].'</p></a></div>';
                                         }
                                 }
                                 ;
@@ -222,14 +222,15 @@ if (isset($_GET['logout'])) {
                 </div>
                 <div class="table-responsive">
                     <h1 class='mb-5'>Create New Form</h1>
-                            <div><a class="nav-items" style="color: white;" href="http://localhost/Hacettepe-KDSE-BPYS/formlar/Form2.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 2</a></div>
-                           <div><a class="nav-items" style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/formlar/Form3.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 3</a></div>
-                           <div><a class="nav-items" style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/formlar/Form4.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 4</a></div>
-                           <div><a class="nav-items" style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/formlar/Form5.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 5</a></div>
-                           <div><a class="nav-items" style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/formlar/Form6.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 6</a></div>
-                           <div><a class="nav-items" style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/formlar/Form7.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 7</a></div>
-                           <div><a class="nav-items" style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/formlar/Form8.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 8</a></div>
-                           <div><a class="nav-items" style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/formlar/tetkiksonuclari_form9.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 9</a></div>
+                            <div class="mt-3"><a class="nav-items" style="color: white;" href="http://localhost/Hacettepe-KDSE-BPYS/formlar/Form2.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 2</a></div>
+                           <div class="mt-3"><a class="nav-items" style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/formlar/Form3.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 3</a></div>
+                           <div class="mt-3"><a class="nav-items" style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/formlar/Form4.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 4</a></div>
+                           <div class="mt-3"><a class="nav-items" style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/formlar/Form5.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 5</a></div>
+                           <div class="mt-3"><a class="nav-items" style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/formlar/Form6.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 6</a></div>
+                           <div class="mt-3"><a class="nav-items" style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/formlar/Form7.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 7</a></div>
+                           <div class="mt-3"><a class="nav-items" style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/formlar/Form8.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 8</a></div>
+                           <div class="mt-3"><a class="nav-items" style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/formlar/tetkiksonuclari_form9.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 9</a></div>
+                           <div class="mt-3"><a class="nav-items" style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/formlar/yasamsalbulgutakibi_form10.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 9</a></div>
                         </thead>
                         <tbody>
                         </tbody>
