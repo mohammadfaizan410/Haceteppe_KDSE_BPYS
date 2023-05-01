@@ -58,7 +58,7 @@ if (isset($_GET['logout'])) {
                     <a href="" class="nav-link "><i class="fa fa-chart-bar me-2"></i>Sınavlar</a>
                     <a href="" class="nav-link"><i class="fa fa-th me-2"></i>Öneriler</a>
                     <a href="messaging.php" class="nav-link nav-items"><i class="fa fa-comments me-2"></i>Chat</a>
-                    <a href="http://localhost/Hacettepe-KDSE-BPYS/broadcast.php" class="nav-link nav-items"><i class="fa fa-comments me-2"></i>Broadcast/Multicast</a>
+                    <a href="http://18.159.134.238/Hacettepe-KDSE-BPYS/broadcast.php" class="nav-link nav-items"><i class="fa fa-comments me-2"></i>Broadcast/Multicast</a>
                     <a class="nav-link nav-items" href="http://localhost/Hacettepe-KDSE-BPYS/updateForms/showAllPatients.php"><i class="fa fa-comments me-2"></i>Show all Patients</a>
 
                 </div>

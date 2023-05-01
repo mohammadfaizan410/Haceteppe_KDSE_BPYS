@@ -222,7 +222,7 @@ if (isset($_GET['logout'])) {
 
                 $.ajax({
                     type: 'POST',
-                    url: 'http://localhost/Hacettepe-KDSE-BPYS/submitOrUpdateForm2.php/',
+                    url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/submitOrUpdateForm2.php/',
                     data: {
                         patient_name: patient_name,
                         patient_id: patient_id,
