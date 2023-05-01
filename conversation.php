@@ -74,7 +74,7 @@ if (isset($_GET)) {
                        
                      $.ajax({
                         type: 'POST',
-                        url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/updateConvo.php/',
+                        url: 'http://localhost/Hacettepe-KDSE-BPYS/updateConvo.php/',
                         data: {
                             sender_id: sender_id,
                             recipient_id: recipient_Id,
@@ -110,7 +110,7 @@ if (isset($_GET)) {
   
                      $.ajax({
                         type: 'POST',
-                        url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/updateConvo.php/',
+                        url: 'http://localhost/Hacettepe-KDSE-BPYS/updateConvo.php/',
                         data: {
                             sender_id: sender_id,
                             recipient_id: recipient_Id,

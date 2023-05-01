@@ -56,15 +56,6 @@ if (isset($_GET['logout'])) {
             echo 'error';
         };
 
-        // $sql = "SELECT * FROM  vakalar";
-        // $smtmselect = $db->prepare($sql);
-        // $result = $smtmselect->execute();
-        // if ($result) {
-        //     $vakalar = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
-        // } else {
-        //     echo 'error';
-        // }
-
         ?>
         <div class="send-patient">
 
@@ -89,7 +80,7 @@ if (isset($_GET['logout'])) {
 
                             </tr>
                             <?php
-                           if(isset($values)){
+                           if(isset($values) && count($values) > 0){
                             foreach ($values as $key => $value) {
                                 echo '<tr>                            
                                     <td scope="col" style="color : white;">'.$value['name'].'</td>

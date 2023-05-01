@@ -83,7 +83,7 @@ require_once("config-messages.php");
             if (subject !== '' && message !== '') {
                 $.ajax({
                     type: 'POST',
-                    url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/sendBroadcast.php/',
+                    url: 'http://localhost/Hacettepe-KDSE-BPYS/sendBroadcast.php/',
                     data: {
                         email: email,
                         name: name,
@@ -115,7 +115,7 @@ require_once("config-messages.php");
         if (nameOrEmail !== "") {
           $.ajax({
             type: 'POST',
-            url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/process-search.php/?' + "nameOrEmail=" + nameOrEmail,
+            url: 'http://localhost/Hacettepe-KDSE-BPYS/process-search.php/?' + "nameOrEmail=" + nameOrEmail,
             data: {
             },
             success: function (data) {

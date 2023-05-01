@@ -389,7 +389,7 @@ if ($result) {
 
                 $.ajax({
                     type: 'POST',
-                    url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/submitOrUpdateForm3.php',
+                    url: 'http://localhost/Hacettepe-KDSE-BPYS/submitOrUpdateForm3.php',
                     data: {
                         form_num: form_num,
                         patient_name: patient_name,
