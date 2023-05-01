@@ -56,7 +56,7 @@ if (isset($_GET['logout'])) {
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
-                    <div class="input-section d-flex">
+                    	<div class="input-section d-flex">
                             <p class="usernamelabel">Uygulama Saati:</p>
                             <input type="text" class="form-control" required name="applicationTime" id="diger" placeholder="Application Time">
                         </div>

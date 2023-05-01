@@ -1,23 +1,36 @@
+<?php
+session_start();
+if (!isset($_SESSION['userlogin'])) {
+    header("Location: login-student.php");
+}
+
+if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION);
+    header("Location: main.php");
+}
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="utf-8">
-    <title>Bakım Planı</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
-
-
-</head>
-
-<body style="background-color:white">
-    <div class="container-fluid pt-4 px-4">
-        <div class="send-patient ta-center">
-            <span class='close closeBtn' id='closeBtn'>&times;</span>
-			<html>
-	<head>
-	<title>Bakım Planı</title>
-	<style>
+<meta charset="utf-8">
+<title>e-BYRYS-KKDS</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="" name="keywords">
+<meta content="" name="description">
+<!-- Favicon -->
+<link href="img/favicon.ico" rel="icon">
+<!-- Icon Font Stylesheet -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+<!-- Libraries Stylesheet -->
+<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+<link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+<!-- Customized Bootstrap Stylesheet -->
+<link href="bootstrap.min.css" rel="stylesheet">
+<!-- Template Stylesheet -->
+<link href="style.css" rel="stylesheet">
+   <style>
 		table {
 			border-collapse: collapse;
 		}
@@ -31,42 +44,122 @@
     h1 {
             text-align: center;
     }
-    td{
-      height: 300px;
-    }
     tr, td{
       width: 200px;
     }
 	</style>
-</head>
-<body>
-    <h1>Bakım Planı</h1>
-	<table id="myTable">
-		<thead>
-			<tr>
-				<th colspan="1">Sorun ve Sorunla İlgili Veriler</th>
-                <th colspan="1">Sorun</th>
-                <th colspan="1">Amaç</th>
-                <th colspan="1">Planlama</th>
-                <th colspan="1">Uygulama</th>
-                <th colspan="1">Değerlendirme</th>
-			</tr>
-		</thead>
-		<tbody>
-				<td contenteditable="true"></td>
-				<td contenteditable="true"></td>
-				<td contenteditable="true"></td>
-				<td contenteditable="true"></td>
-				<td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-			</tr>
-		</tbody>
-	</table>
-</body>
-</html>
- 
-</body>
+  		<body>
+		  <div class="container-fluid pt-4 px-4">
+            <div class="send-patient">
+            <span class='close closeBtn' id='closeBtn'>&times;</span>
+            <h1 class="form-header">BAKIM Planı</h1>
+            <div class="input-section-item">
+                <div class="patients-save">
+                    <form action="" method="POST" class="patients-save-fields">
+                    <div class="input-section d-flex">
+                            <p class="usernamelabel">Sorunla İlişkili Veriler:</p>
+                            <input type="text" class="form-control" required name="problem_info" id="diger" placeholder="problem_info">
+                        </div>
+                `       <div class="input-section d-flex">
+                            <p class="usernamelabel">Hemşirelik Tanıları:</p>
+                            <input type="text" class="form-control" required name="nurse_description" id="diger" placeholder="nurse_description">
+                        </div>
+						<div class="input-section d-flex">
+                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <input type="text" class="form-control" required name="noc_output" id="diger" placeholder="noc_output">
+                        </div>
+						<div class="input-section d-flex">
+                            <p class="usernamelabel">NOC Gösterge:</p>
+                            <input type="text" class="form-control" required name="noc_indicator" id="diger" placeholder="noc_indicator">
+                        </div>
+						<div class="input-section d-flex">
+                            <p class="usernamelabel">Hemşirelik Girişimleri:</p>
+                            <input type="text" class="form-control" required name="nurse_attempt" id="diger" placeholder="nurse_attempt">
+                        </div>
+						<div class="input-section d-flex">
+                            <p class="usernamelabel">Değerlendirme:</p>
+                            <input type="text" class="form-control" required name="evaluation" id="diger" placeholder="evaluation">
+                        </div>
+						
+                    </form>
+                </div>
+            </div>
+        </div>
 
-</html>
-<!DOCTYPE html>
+	
+    </div>
+    <script>
+      $(function() {
+          $('#closeBtn').click(function(e) {
+              $("#content").load("formlar-student.php");
 
+          })
+      });
+  </script>
+<script>
+      $(function() {
+          $('#submit').click(function(e) {
+              e.preventDefault()
+              console.log("clicked")
+              var valid = this.form.checkValidity();
+
+              if (valid) {
+                  var id = <?php
+                  $userid = $_SESSION['userlogin']['id'];
+                  echo $userid
+                  ?>;
+                  var name = $('#name').val();
+                  var surname = $('#surname').val();
+                  var age = $('#age').val();
+                  var not = $('#not').val();
+                  let form_num = 15;
+				  let applicationTime = new Time()
+                  let applicationDescription = $("input[name='applicationDescription']").val();
+                  let patient_id = parseInt($("input[name='patient_id']").val());
+                  let creationDate = yourDate.toISOString().split('T')[0];
+                  let updateDate = yourDate.toISOString().split('T')[0];
+                  let date = $("input[name='date']").val();
+                  let uygulamaOption =  $("input[type='radio'][name='uygulamaOption']:checked").val()
+                  let examination_result = $("input[name='tektikOption']").val();
+                  let referance_value = $("input[name='referance_value']").val();
+                  console.log("values initiated")
+
+                  $.ajax({
+                      type: 'POST',
+                      url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/submitOrUpdateTektik_form9.php',
+                      data: {
+                          id: id,
+                          name: name,
+                          surname: surname,
+                          age: age,
+                          not: not,
+                          form_num:form_num,
+                          patient_id:patient_id,
+                          patient_name:patient_name,
+                          creation_date:creationDate,
+                          update_date :updateDate,
+                          date :date,
+                          examination_type: examination_type,
+                          examination_result:examination_result,
+                          referance_value:referance_value
+                      },
+                      success: function(data) {
+                          console.log(data);
+                          alert("Success");
+                      },
+                      error: function(data) {
+                          console.log(data)
+                      }
+                  })
+
+
+
+              }
+          })
+
+      });
+  </script>
+      <script src=""></script>
+      </body>
+
+     </html>
