@@ -10,8 +10,8 @@ if (isset($_POST["patient_name"])) {
     $result = $smtmselect->execute([$_POST["patient_id"]]);
     if ($result) {
             $stmt = $db->prepare("INSERT INTO form9 (
-                application_time
-                application_description
+                application_time,
+                application_description,
                 applicationType
             ) VALUES (?, ?, ?)");
 $stmt->execute([

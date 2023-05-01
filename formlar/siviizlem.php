@@ -52,96 +52,41 @@ if (isset($_GET['logout'])) {
 		  <div class="container-fluid pt-4 px-4">
             <div class="send-patient">
             <span class='close closeBtn' id='closeBtn'>&times;</span>
-            <h1 class="form-header">ALDIĞI ÇIKARDIĞI İZLEMİ</h1> 
+            <h1 class="form-header">Medikal Tedavi</h1>
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
                     <div class="input-section d-flex">
-                            <p class="usernamelabel">Patient Name:</p>
-                            <input type="text" class="form-control" required name="patient_name" id="diger" placeholder="Patient Name">
+                            <p class="usernamelabel">Sıvının Cinsi:</p>
+                            <input type="text" class="form-control" required name="delivery_date" id="diger" placeholder="delivery_date">
                         </div>
                 `       <div class="input-section d-flex">
-                            <p class="usernamelabel">Patient ID:</p>
-                            <input type="text" class="form-control" required name="patient_id" id="diger" placeholder="Patient ID">
-                        </div>
-                `       
-						<div class="input-section d-flex">
-                            <p class="usernamelabel">zaman aralığını seçin: </p>
-                            <div class="form-check">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="time_range" id="time_range" value="08.00-16.00">
-                                    <label class="form-check-label" for="ÖdemŞiddeti">
-                                        <span class="checkbox-header">08.00-16.00</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="time_range" id="time_range" value="16.00-24.00">
-                                    <label class="form-check-label" for="ÖdemŞiddeti">
-                                        <span class="checkbox-header">16.00-24.00</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="time_range" id="time_range" value="24.00-08.00">
-                                    <label class="form-check-label" for="ÖdemŞiddeti">
-                                        <span class="checkbox-header">24.00-08.00</span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-						<h2 class="form-header">Aldığı</h2> 
-						<div class="input-section d-flex">
-                            <p class="usernamelabel">IV:</p>
-							<div class='d-flex flex-column w-75'>
-								<input type="number" class="form-control mt-2" required name="iv_input1" id="diger" placeholder="IV input">
-								<input type="number" class="form-control mt-2" required name="iv_input2" id="diger" placeholder="IV input">
-								<input type="number" class="form-control mt-2" required name="iv_input3" id="diger" placeholder="IV input">
-								<input type="number" class="form-control mt-2" required name="iv_input4" id="diger" placeholder="IV input">
-							</div>
+                            <p class="usernamelabel">Saat:</p>
+                            <input type="text" class="form-control" required name="delivery_time" id="diger" placeholder="delivery_time">
                         </div>
 						<div class="input-section d-flex">
-                            <p class="usernamelabel">Kan Ürünü:</p>
-							<div class='d-flex flex-column w-75'>
-								<input type="number" class="form-control mt-2" required name="blood_product1" id="diger" placeholder="IV input">
-								<input type="number" class="form-control mt-2" required name="blood_product2" id="diger" placeholder="IV input">
-								<input type="number" class="form-control mt-2" required name="blood_product3" id="diger" placeholder="IV input">
-								<input type="number" class="form-control mt-2" required name="blood_product4" id="diger" placeholder="IV input">
-							</div>
+                            <p class="usernamelabel">İlacın Adı:</p>
+                            <input type="text" class="form-control" required name="medicine_name" id="diger" placeholder="medicine_name">
                         </div>
 						<div class="input-section d-flex">
-                            <p class="usernamelabel">Oral:</p>
-							<div class='d-flex flex-column w-75'>
-								<input type="number" class="form-control mt-2" required name="oral1" id="diger" placeholder="IV input">
-								<input type="number" class="form-control mt-2" required name="oral2" id="diger" placeholder="IV input">
-								<input type="number" class="form-control mt-2" required name="oral3" id="diger" placeholder="IV input">
-								<input type="number" class="form-control mt-2" required name="oral4" id="diger" placeholder="IV input">
-							</div>
-                        </div>
-
-
-						<h2 class="form-header">Çıkardığı</h2> 
-						<div class="input-section d-flex">
-                            <p class="usernamelabel">İdrar:</p>
-							<div class='d-flex flex-column w-75'>
-								<input type="number" class="form-control mt-2" required name="idrar_input1" id="diger" placeholder="IV input">
-								<input type="number" class="form-control mt-2" required name="idrar_input2" id="diger" placeholder="IV input">
-								<input type="number" class="form-control mt-2" required name="idrar_input3" id="diger" placeholder="IV input">
-								<input type="number" class="form-control mt-2" required name="idrar_input4" id="diger" placeholder="IV input">
-							</div>
+                            <p class="usernamelabel">İlacın Dozu:</p>
+                            <input type="text" class="form-control" required name="medicine_dose" id="diger" placeholder="medicine_dose">
                         </div>
 						<div class="input-section d-flex">
-                            <p class="usernamelabel">Gaita :</p>
-							<div class='d-flex flex-column w-75'>
-								<input type="number" class="form-control mt-2" required name="gaita_input1" id="diger" placeholder="IV input">
-								<input type="number" class="form-control mt-2" required name="gaita_input2" id="diger" placeholder="IV input">
-								<input type="number" class="form-control mt-2" required name="gaita_input3" id="diger" placeholder="IV input">
-								<input type="number" class="form-control mt-2" required name="gaita_input4" id="diger" placeholder="IV input">
-							</div>
+                            <p class="usernamelabel">İlacın Yolu:</p>
+                            <input type="text" class="form-control" required name="delivery_method" id="diger" placeholder="delivery_method">
                         </div>
-							<input class="form-control submit" type="submit" name="submit" id="submit" value="Submit and enter new entry">
+						<div class="input-section d-flex">
+                            <p class="usernamelabel">Uygulama Zamanı:</p>
+                            <input type="text" class="form-control" required name="treatment_timeRange" id="diger" placeholder="treatment_timeRange">
+                        </div>
+						
                     </form>
                 </div>
             </div>
         </div>
+
+	
     </div>
     <script>
       $(function() {
@@ -150,7 +95,7 @@ if (isset($_GET['logout'])) {
 
           })
       });
-</script>
+  </script>
 <script>
       $(function() {
           $('#submit').click(function(e) {
@@ -167,17 +112,21 @@ if (isset($_GET['logout'])) {
                   var surname = $('#surname').val();
                   var age = $('#age').val();
                   var not = $('#not').val();
-                  let form_num = 10;
-                  let patient_name = $("input[name='patient_name']").val();
+                  let form_num = 15;
+				  let applicationTime = new Time()
+                  let applicationDescription = $("input[name='applicationDescription']").val();
                   let patient_id = parseInt($("input[name='patient_id']").val());
-                  let yourDate = new Date()
                   let creationDate = yourDate.toISOString().split('T')[0];
                   let updateDate = yourDate.toISOString().split('T')[0];
-				  let time_range = $("input[type='radio'][name='time_range']:checked").val(); 
+                  let date = $("input[name='date']").val();
+                  let uygulamaOption =  $("input[type='radio'][name='uygulamaOption']:checked").val()
+                  let examination_result = $("input[name='tektikOption']").val();
+                  let referance_value = $("input[name='referance_value']").val();
+                  console.log("values initiated")
 
                   $.ajax({
                       type: 'POST',
-                      url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/submitOrUpdateAldigi_form11.php',
+                      url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/submitOrUpdateTektik_form13.php',
                       data: {
                           id: id,
                           name: name,
@@ -189,41 +138,22 @@ if (isset($_GET['logout'])) {
                           patient_name:patient_name,
                           creation_date:creationDate,
                           update_date :updateDate,
-                          time_range:time_range,
-						  iv_input1:iv_input1,
-						  iv_input2:iv_input2,
-						  iv_input3:iv_input3,
-						  iv_input4:iv_input4,
-						  blood_product1:blood_product1,
-						  blood_product2:blood_product2,
-						  blood_product3:blood_product3,
-						  blood_product4:blood_product4,
-						  idrar_input1:idrar_input1,
-						  idrar_input2:idrar_input2,
-						  idrar_input3:idrar_input3,
-						  idrar_input4:idrar_input4,
-						  gaita_input1:gaita_input1,
-						  gaita_input2:gaita_input2,
-						  gaita_input3:gaita_input3,
-						  gaita_input4:gaita_input4,
-						  aldigi_total1:aldigi_total1,
-						  aldigi_total2:aldigi_total2,
-						  aldigi_total3:aldigi_total3,
-						  aldigi_total4:aldigi_total4,
-						  cikardigi_total1: cikardigi_total1,
-						  cikardigi_total2: cikardigi_total2,
-						  cikardigi_total3: cikardigi_total3,
-						  cikardigi_total4: cikardigi_total4,
-						  total : total
+                          date :date,
+                          examination_type: examination_type,
+                          examination_result:examination_result,
+                          referance_value:referance_value
                       },
                       success: function(data) {
                           console.log(data);
                           alert("Success");
                       },
                       error: function(data) {
-                          console.log(data);
+                          console.log(data)
                       }
                   })
+
+
+
               }
           })
 
