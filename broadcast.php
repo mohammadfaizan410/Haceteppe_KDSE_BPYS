@@ -86,7 +86,7 @@ $('#showAllMessages').click(function (e) {
                                   ?> "
     $.ajax({
       type: 'POST',
-      url: 'http://localhost/Hacettepe-KDSE-BPYS/getAllBroadcasts.php/',
+      url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/getAllBroadcasts.php/',
       data: {
         email : email,
       },
@@ -210,7 +210,7 @@ $('#showAllMessages').click(function (e) {
                 ?> ";
         $.ajax({
             type: 'POST',
-            url: 'http://localhost/Hacettepe-KDSE-BPYS/getAllStudents.php/',
+            url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/getAllStudents.php/',
             data: {
                 name: name,
             },
@@ -270,7 +270,7 @@ $('#showAllMessages').click(function (e) {
         $('#error').text('');
           $.ajax({
             type: 'POST',
-            url: 'http://localhost/Hacettepe-KDSE-BPYS/processMulticast.php/',
+            url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/processMulticast.php/',
             data: {
               email : email,
               name :name,
@@ -324,7 +324,7 @@ $('#showAllMessages').click(function (e) {
           $('#error').text('');
           $.ajax({
             type: 'POST',
-            url: 'http://localhost/Hacettepe-KDSE-BPYS/processBroadcast.php/',
+            url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/processBroadcast.php/',
             data: {
               email : email,
               name :name,
