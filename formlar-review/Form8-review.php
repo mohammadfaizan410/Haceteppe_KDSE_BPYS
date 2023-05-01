@@ -11,7 +11,8 @@ if (isset($_GET['logout'])) {
 }
 require_once('../config-students.php');
 $userid = $_SESSION['userlogin']['id'];
-$sql = "SELECT * FROM form8";
+$form_id = $_GET['form_id'];
+$sql = "SELECT * FROM form8 where form_id= $form_id";
 $smtmselect = $db->prepare($sql);
 $result = $smtmselect->execute();
 if ($result) {
@@ -175,6 +176,7 @@ if ($result) {
             var valid = this.form.checkValidity();
 
             if (valid) {
+                var form_id = <?php echo $form_id ?>;
                 var id = <?php
 
                                 $userid = $_SESSION['userlogin']['id'];
@@ -198,6 +200,8 @@ if ($result) {
                     type: 'POST',
                     url: 'http://localhost/Hacettepe-KDSE-BPYS/submitOrUpdateForm8.php',
                     data: {
+                        isUpdate : true,
+                          form_id: form_id,
                         id: id,
                         name: name,
                         surname: surname,

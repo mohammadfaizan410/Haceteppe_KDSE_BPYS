@@ -33,9 +33,6 @@ if (isset($_GET['logout'])) {
     <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
     <link href="style.css" rel="stylesheet">
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="bootstrap.min.css" rel="stylesheet">
-
     <!-- Template Stylesheet -->
 
 </head>
@@ -80,16 +77,18 @@ if (isset($_GET['logout'])) {
 
                             </tr>
                             <?php
-                           if(isset($values) && count($values) > 0){
+                          if(isset($values) && count($values) > 0){
                             foreach ($values as $key => $value) {
+                                $fullName = $value['name'] . " " . $value['surname'];
                                 echo '<tr>                            
-                                    <td scope="col" style="color : white;">'.$value['name'].'</td>
-                                    <td scope="col" style="color : white;">'.$value['surname'].'</td>
-                                    <td scope="col" style="color : white;">'.$value['age'].'</td>
-                                    <td scope="col" ><a style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/updateForms/showAllForms.php?name="'.$value["name"].'&surname='.$value["name"].'&patient_id='.$value["patient_id"].'>Show Forms</a>
+                                    <td scope="col" style="color: white;">'.$value['name'].'</td>
+                                    <td scope="col" style="color: white;">'.$value['surname'].'</td>
+                                    <td scope="col" style="color: white;">'.$value['age'].'</td>
+                                    <td scope="col"><a style="color: white;" class="showallforms" href="#" data-patient-id="'.$value['patient_id'].'" data-patient-name="'.$fullName.'">Show Forms</a></td>
                                 </tr>';
                             }
-                        } 
+                        
+                        }
                             ?>
                         </thead>
                         <tbody>
@@ -110,6 +109,18 @@ if (isset($_GET['logout'])) {
         <script src="lib/tempusdominus/js/moment.min.js"></script>
         <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
         <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+        <script>
+       $(function() {
+        $("a.showallforms").on("click", function(e) {
+        e.preventDefault();
+        var patient_id = $(this).data("patient-id");
+        var patient_name = $(this).data("patient-name");
+        var url = "http://localhost/Hacettepe-KDSE-BPYS/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
+        $("#content").load(url);
+    });
+});
+        </script>
 
         <!-- Template Javascript -->
         <script src=""></script>

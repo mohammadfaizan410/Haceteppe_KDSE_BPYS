@@ -31,12 +31,13 @@ if (isset($_GET['logout'])) {
     <!-- Libraries Stylesheet -->
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="../bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="style.css" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet">
 
     <style>
         .send-patient {
@@ -115,7 +116,7 @@ if (isset($_GET['logout'])) {
     <script>
         $(function() {
             $('#closeBtn').click(function(e) {
-                $("#content").load("formlar-student.php");
+                window.location.href = "javascript:history.go(-1)";
 
             })
         });
@@ -139,8 +140,13 @@ if (isset($_GET['logout'])) {
                     var age = $('#age').val();
                     var not = $('#not').val();
                     let form_num = 8;
-                    let patient_name = $("input[name='patient_name']").val();
-                    let patient_id = parseInt($("input[name='patient_id']").val());
+                     let patient_name = "<?php
+            echo urldecode($_GET['patient_name']);
+                  ?>";
+                    var patient_id = <?php
+                  $userid = $_GET['patient_id'];
+                  echo $userid
+                  ?>;
                     let yourDate = new Date()
                     let creationDate = yourDate.toISOString().split('T')[0];
                     let updateDate = yourDate.toISOString().split('T')[0];
@@ -168,6 +174,8 @@ if (isset($_GET['logout'])) {
                         success: function(data) {
                             console.log(data);
                             alert("Success");
+                            window.location.href = "javascript:history.go(-1)";
+
                         },
                         error: function(data) {
                             console.log(data)

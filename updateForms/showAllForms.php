@@ -44,7 +44,8 @@ if (isset($_GET['logout'])) {
     <div class="container-fluid pt-4 px-4">
         <?php
         require_once('../config-students.php');
-        $userid = $_SESSION['userlogin']['id'];
+        $userid = $_GET['patient_id'];
+        $patient_name = $_GET['patient_name'];
         //echo $userid;
         $sql = "SELECT * FROM  form2  WHERE patient_id =" . $userid;
         $smtmselect = $db->prepare($sql);
@@ -214,6 +215,21 @@ if (isset($_GET['logout'])) {
                         } 
 
                             ?>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-responsive">
+                    <h1 class='mb-5'>Create New Form</h1>
+                            <div><a class="nav-items" style="color: white;" href="http://localhost/Hacettepe-KDSE-BPYS/formlar/Form2.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 2</a></div>
+                           <div><a class="nav-items" style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/formlar/Form3.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 3</a></div>
+                           <div><a class="nav-items" style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/formlar/Form4.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 4</a></div>
+                           <div><a class="nav-items" style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/formlar/Form5.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 5</a></div>
+                           <div><a class="nav-items" style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/formlar/Form6.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 6</a></div>
+                           <div><a class="nav-items" style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/formlar/Form7.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 7</a></div>
+                           <div><a class="nav-items" style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/formlar/Form8.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 8</a></div>
+                           <div><a class="nav-items" style="color : white;"  href="http://localhost/Hacettepe-KDSE-BPYS/formlar/tetkiksonuclari_form9.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 9</a></div>
                         </thead>
                         <tbody>
                         </tbody>

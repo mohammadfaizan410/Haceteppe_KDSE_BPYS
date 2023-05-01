@@ -11,7 +11,8 @@ if (isset($_GET['logout'])) {
 }
 require_once('../config-students.php');
 $userid = $_SESSION['userlogin']['id'];
-$sql = "SELECT * FROM form3";
+$form_id = $_GET['form_id'];
+$sql = "SELECT * FROM form3 where form_id= $form_id";
 $smtmselect = $db->prepare($sql);
 $result = $smtmselect->execute();
 if ($result) {
@@ -41,9 +42,10 @@ if ($result) {
     <!-- Libraries Stylesheet -->
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="../bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
     <link href="../style.css" rel="stylesheet">
@@ -358,6 +360,8 @@ if ($result) {
             var valid = this.form.checkValidity();
 
             if (valid) {
+                var form_id = <?php echo $form_id ?>;
+
                 var id = <?php
 
                                 $userid = $_SESSION['userlogin']['id'];
@@ -391,6 +395,8 @@ if ($result) {
                     type: 'POST',
                     url: 'http://localhost/Hacettepe-KDSE-BPYS/submitOrUpdateForm3.php',
                     data: {
+                        isUpdate : true,
+                          form_id: form_id,
                         form_num: form_num,
                         patient_name: patient_name,
                         patient_id: patient_id,

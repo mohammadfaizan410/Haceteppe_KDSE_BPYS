@@ -60,6 +60,7 @@ if (isset($_GET['logout'])) {
                     <a href="messaging.php" class="nav-link nav-items"><i class="fa fa-comments me-2"></i>Chat</a>
                     <a href="http://localhost/Hacettepe-KDSE-BPYS/broadcast.php" class="nav-link nav-items"><i class="fa fa-comments me-2"></i>Broadcast/Multicast</a>
                     <a class="nav-link nav-items" href="http://localhost/Hacettepe-KDSE-BPYS/updateForms/showAllPatients.php"><i class="fa fa-comments me-2"></i>Show all Patients</a>
+                    <a class="nav-link nav-items" href="http://localhost/Hacettepe-KDSE-BPYS/addNewPatient.php"><i class="fa fa-comments me-2"></i>Add new Patient</a>
 
                 </div>
                 <div>
