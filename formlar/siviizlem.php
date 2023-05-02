@@ -8,6 +8,8 @@ if (isset($_GET['logout'])) {
     session_destroy();
     unset($_SESSION);
     header("Location: main.php");
+    var_dump("there should be patientID below");
+    var_dump($_GET['patient_id']);
 }
 ?>
 <!DOCTYPE html>
@@ -85,6 +87,7 @@ if (isset($_GET['logout'])) {
 	
     </div>
     <script>
+            console.log("<?php echo $_GET['patient_id'];?>");
       $(function() {
           $('#closeBtn').click(function(e) {
               $("#content").load("formlar-student.php");
@@ -100,10 +103,13 @@ if (isset($_GET['logout'])) {
               var valid = this.form.checkValidity();
 
               if (valid) {
-                  var id = <?php
-                  $userid = $_SESSION['userlogin']['id'];
+                let patient_name = "<?php
+                    echo urldecode($_GET['patient_name']);
+                ?>";
+                var patient_id = <?php
+                  $userid = $_GET['patient_id'];
                   echo $userid
-                  ?>;
+                ?>;
                   var name = $('#name').val();
                   var surname = $('#surname').val();
                   var age = $('#age').val();
