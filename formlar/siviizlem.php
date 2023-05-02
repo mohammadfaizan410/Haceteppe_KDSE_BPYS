@@ -52,35 +52,30 @@ if (isset($_GET['logout'])) {
 		  <div class="container-fluid pt-4 px-4">
             <div class="send-patient">
             <span class='close closeBtn' id='closeBtn'>&times;</span>
-            <h1 class="form-header">Medikal Tedavi</h1>
+            <h1 class="form-header">Sıvı İzlem</h1>
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
                     <div class="input-section d-flex">
                             <p class="usernamelabel">Sıvının Cinsi:</p>
-                            <input type="text" class="form-control" required name="delivery_date" id="diger" placeholder="delivery_date">
+                            <input type="text" class="form-control" required name="liquid_type" id="diger" placeholder="liquid_type">
                         </div>
                 `       <div class="input-section d-flex">
+                            <p class="usernamelabel">Sıvının Hızı:</p>
+                            <input type="text" class="form-control" required name="liquid_velocity" id="diger" placeholder="liquid_velocity">
+                        </div>
+						<div class="input-section d-flex">
                             <p class="usernamelabel">Saat:</p>
                             <input type="text" class="form-control" required name="delivery_time" id="diger" placeholder="delivery_time">
                         </div>
 						<div class="input-section d-flex">
-                            <p class="usernamelabel">İlacın Adı:</p>
-                            <input type="text" class="form-control" required name="medicine_name" id="diger" placeholder="medicine_name">
+                            <p class="usernamelabel">Seviye:</p>
+                            <input type="text" class="form-control" required name="liquid_level" id="diger" placeholder="liquid_level">
                         </div>
 						<div class="input-section d-flex">
-                            <p class="usernamelabel">İlacın Dozu:</p>
-                            <input type="text" class="form-control" required name="medicine_dose" id="diger" placeholder="medicine_dose">
+                            <p class="usernamelabel">Giden:</p>
+                            <input type="text" class="form-control" required name="liquid_sent" id="diger" placeholder="liquid_sent">
                         </div>
-						<div class="input-section d-flex">
-                            <p class="usernamelabel">İlacın Yolu:</p>
-                            <input type="text" class="form-control" required name="delivery_method" id="diger" placeholder="delivery_method">
-                        </div>
-						<div class="input-section d-flex">
-                            <p class="usernamelabel">Uygulama Zamanı:</p>
-                            <input type="text" class="form-control" required name="treatment_timeRange" id="diger" placeholder="treatment_timeRange">
-                        </div>
-						
                     </form>
                 </div>
             </div>
