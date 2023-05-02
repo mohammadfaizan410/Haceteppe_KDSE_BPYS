@@ -198,7 +198,7 @@ if (isset($_GET['logout'])) {
 
                   $.ajax({
                       type: 'POST',
-                      url: 'http://localhost/Hacettepe-KDSE-BPYS/submitOrUpdateTektik_form9.php',
+                      url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/submitOrUpdateTektik_form9.php',
                       data: {
                           isUpdate: true,
                           form_id :form_id,

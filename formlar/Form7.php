@@ -286,7 +286,7 @@ if (isset($_GET['logout'])) {
                     console.log('after setting variables')
                     $.ajax({
                         type: 'POST',
-                        url: 'http://localhost/Hacettepe-KDSE-BPYS/submitOrUpdateForm7.php',
+                        url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/submitOrUpdateForm7.php',
                         data:JSON.stringify({
                             name: name,
                             form_num: formnum,

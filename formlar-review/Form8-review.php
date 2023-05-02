@@ -198,7 +198,7 @@ if ($result) {
 
                 $.ajax({
                     type: 'POST',
-                    url: 'http://localhost/Hacettepe-KDSE-BPYS/submitOrUpdateForm8.php',
+                    url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/submitOrUpdateForm8.php',
                     data: {
                         isUpdate : true,
                           form_id: form_id,

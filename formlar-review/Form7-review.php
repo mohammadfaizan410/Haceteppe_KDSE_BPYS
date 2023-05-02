@@ -343,7 +343,7 @@ if ($result) {
                     console.log('after setting variables')
                     $.ajax({
                         type: 'POST',
-                        url: 'http://localhost/Hacettepe-KDSE-BPYS/submitOrUpdateForm7.php',
+                        url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/submitOrUpdateForm7.php',
                         data: JSON.stringify({
                             isUpdate : true,
                           form_id: form_id,

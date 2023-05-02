@@ -211,7 +211,7 @@ if (isset($_GET['logout'])) {
 
                   $.ajax({
                       type: 'POST',
-                      url: 'http://localhost/Hacettepe-KDSE-BPYS/submitOrUpdateAldigi_form11.php',
+                      url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/submitOrUpdateAldigi_form11.php',
                       data: {
                           id: id,
                           name: name,

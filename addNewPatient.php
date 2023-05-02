@@ -96,7 +96,7 @@ if (isset($_GET['logout'])) {
         $(function() {
             $("a.showallforms").on("click", function(e) {
                 e.preventDefault();
-                $("#content").load("http://localhost/Hacettepe-KDSE-BPYS/updateForms/processAddPatient.php");
+                $("#content").load("http://18.159.134.238/Hacettepe-KDSE-BPYS/updateForms/processAddPatient.php");
             })
         });
 
@@ -116,7 +116,7 @@ if (isset($_GET['logout'])) {
 
                 $.ajax({
                     type: 'POST',
-                    url: 'http://localhost/Hacettepe-KDSE-BPYS/processAddPatient.php/',
+                    url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/processAddPatient.php/',
                     data: {
                         patient_name: patient_name,
                         patient_surname:patient_surname,
