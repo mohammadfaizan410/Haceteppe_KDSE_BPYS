@@ -113,10 +113,11 @@ if (isset($_GET['logout'])) {
                   let patient_id = parseInt($("input[name='patient_id']").val());
                   let creationDate = yourDate.toISOString().split('T')[0];
                   let updateDate = yourDate.toISOString().split('T')[0];
-                  let date = $("input[name='date']").val();
-                  let uygulamaOption =  $("input[type='radio'][name='uygulamaOption']:checked").val()
-                  let examination_result = $("input[name='tektikOption']").val();
-                  let referance_value = $("input[name='referance_value']").val();
+                  let liquid_type = $("input[name='liquid_type']").val();
+                  let liquid_velocity = $("input[name='liquid_velocity']").val();
+                  let delivery_time = $("input[name='delivery_time']").val();
+                  let liquid_level = $("input[name='liquid_level']").val();
+                  let liquid_sent = $("input[name='liquid_sent']").val();
                   console.log("values initiated")
 
                   $.ajax({
@@ -133,10 +134,11 @@ if (isset($_GET['logout'])) {
                           patient_name:patient_name,
                           creation_date:creationDate,
                           update_date :updateDate,
-                          date :date,
-                          examination_type: examination_type,
-                          examination_result:examination_result,
-                          referance_value:referance_value
+                          liquid_type :liquid_type,
+                          liquid_velocity: liquid_velocity,
+                          delivery_time:delivery_time,
+                          liquid_level:liquid_level,
+                          liquid_sent: liquid_sent
                       },
                       success: function(data) {
                           console.log(data);

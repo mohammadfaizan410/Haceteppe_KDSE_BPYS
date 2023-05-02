@@ -118,10 +118,12 @@ if (isset($_GET['logout'])) {
                   let patient_id = parseInt($("input[name='patient_id']").val());
                   let creationDate = yourDate.toISOString().split('T')[0];
                   let updateDate = yourDate.toISOString().split('T')[0];
-                  let date = $("input[name='date']").val();
-                  let uygulamaOption =  $("input[type='radio'][name='uygulamaOption']:checked").val()
-                  let examination_result = $("input[name='tektikOption']").val();
-                  let referance_value = $("input[name='referance_value']").val();
+                  let problem_info = $("input[name='problem_info']").val();
+                  let nurse_description = $("input[name='nurse_description']").val();
+                  let noc_output = $("input[name='noc_output']").val();
+                  let noc_indicator = $("input[name='noc_indicator']").val();
+                  let nurse_attempt = $("input[name='nurse_attempt']").val();
+                  let evaluation = $("input[name='evaluation']").val();
                   console.log("values initiated")
 
                   $.ajax({
@@ -138,10 +140,12 @@ if (isset($_GET['logout'])) {
                           patient_name:patient_name,
                           creation_date:creationDate,
                           update_date :updateDate,
-                          date :date,
-                          examination_type: examination_type,
-                          examination_result:examination_result,
-                          referance_value:referance_value
+                          problem_info: problem_info,
+                          nurse_description: nurse_description,
+                          noc_output: noc_output,
+                          noc_indicator: noc_indicator,
+                          nurse_attempt: nurse_attempt,
+                          evaluation: evaluation
                       },
                       success: function(data) {
                           console.log(data);

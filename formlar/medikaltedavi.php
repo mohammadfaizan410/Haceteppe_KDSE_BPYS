@@ -118,10 +118,12 @@ if (isset($_GET['logout'])) {
                   let patient_id = parseInt($("input[name='patient_id']").val());
                   let creationDate = yourDate.toISOString().split('T')[0];
                   let updateDate = yourDate.toISOString().split('T')[0];
-                  let date = $("input[name='date']").val();
-                  let uygulamaOption =  $("input[type='radio'][name='uygulamaOption']:checked").val()
-                  let examination_result = $("input[name='tektikOption']").val();
-                  let referance_value = $("input[name='referance_value']").val();
+                  let delivery_date = $("input[name='delivery_date']").val();
+                  let delivery_time = $("input[name='delivery_time']").val();
+                  let medicine_name = $("input[name='medicine_name']").val();
+                  let medicine_dose = $("input[name='medicine_dose']").val();
+                  let delivery_method = $("input[name='delivery_method']").val();
+                  let treatment_timeRange = $("input[name='treatment_timeRange']").val();
                   console.log("values initiated")
 
                   $.ajax({
@@ -138,10 +140,12 @@ if (isset($_GET['logout'])) {
                           patient_name:patient_name,
                           creation_date:creationDate,
                           update_date :updateDate,
-                          date :date,
-                          examination_type: examination_type,
-                          examination_result:examination_result,
-                          referance_value:referance_value
+                          delivery_date :delivery_date,
+                          delivery_time: delivery_time,
+                          medicine_name: medicine_name,
+                          medicine_dose: medicine_dose,
+                          delivery_method: delivery_method,
+                          treatment_timeRange: treatment_timeRange
                       },
                       success: function(data) {
                           console.log(data);
