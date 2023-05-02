@@ -190,7 +190,7 @@ if (isset($_GET['logout'])) {
 
                             </div>
                         </div>
-							<input class="form-control submit" name="submit" id="submit" value="Done">
+						<input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
                     </form>
                 </div>
             </div>
@@ -236,7 +236,7 @@ if (isset($_GET['logout'])) {
 
                   $.ajax({
                       type: 'POST',
-                      url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/submitOrUpdateTektik_form15.php',
+                      url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/submitOrUpdateGunlukbakim_form15.php',
                       data: {
                           id: id,
                           name: name,

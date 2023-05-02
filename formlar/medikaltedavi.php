@@ -80,7 +80,7 @@ if (isset($_GET['logout'])) {
                             <p class="usernamelabel">Uygulama Zamanı:</p>
                             <input type="text" class="form-control" required name="treatment_timeRange" id="diger" placeholder="treatment_timeRange">
                         </div>
-						
+						<input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
                     </form>
                 </div>
             </div>
@@ -128,7 +128,7 @@ if (isset($_GET['logout'])) {
 
                   $.ajax({
                       type: 'POST',
-                      url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/submitOrUpdateTektik_form13.php',
+                      url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/submitOrUpdateMedikal_form13.php',
                       data: {
                           id: id,
                           name: name,
