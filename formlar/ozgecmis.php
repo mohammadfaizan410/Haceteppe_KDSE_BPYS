@@ -1161,7 +1161,7 @@ if (isset($_GET['logout'])) {
 
                     $.ajax({
                         type: 'POST',
-                        url: 'http://localhost/KDSE-BPYS/SubmitOrUpdateForm1_Ozgecmis.php/',
+                        url: 'http://18.159.134.238/KDSE-BPYS/SubmitOrUpdateForm1_Ozgecmis.php/',
                         data: {
                            ad_soyad:ad_soyad,
                            dogum_yeri:dogum_yeri,

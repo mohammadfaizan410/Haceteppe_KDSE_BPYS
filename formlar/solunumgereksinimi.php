@@ -1077,7 +1077,7 @@ if (isset($_GET['logout'])) {
 
                     $.ajax({
                         type: 'POST',
-                        url: 'http://localhost/KDSE-BPYS/SubmitOrUpdateForm1_SolunumGereksinimi.php/',
+                        url: 'http://18.159.134.238/KDSE-BPYS/SubmitOrUpdateForm1_SolunumGereksinimi.php/',
                         data: {
                             yatisdurumuradio:yatisdurumuradio,
                             SolunumSorunu:SolunumSorunu,
