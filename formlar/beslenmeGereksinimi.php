@@ -62,23 +62,23 @@ if (isset($_GET['logout'])) {
             <h1 class="form-header">BESLENME GEREKSİNİMİ</h1>
             <div class="input-section d-flex">
                 <p class="usernamelabel">Günlük öğün sayısı/zamanı </p>
-                <input type="text" class="form-control" required name="OgunSayisi" id="OgunSayisi">
+                <input type="text" class="form-control" required name="OgunSayisi" id="OgunSayisi" maxlength="30">
             </div>
             <div class="input-section d-flex">
                 <p class="usernamelabel">Ağırlıklı olarak tükettiğiniz besinler nelerdir?</p>
-                <input type="text" class="form-control" required name="TukettigiBesin" id="TukettigiBesin">
+                <input type="text" class="form-control" required name="TukettigiBesin" id="TukettigiBesin"maxlength="100">
             </div>
             <div class="input-section d-flex">
                 <p class="usernamelabel">Sıklıkla kullandığınız pişirme yöntemleri nelerdir? </p>
-                <input type="text" class="form-control" required name="PisirmeYontemi" id="PisirmeYontemi">
+                <input type="text" class="form-control" required name="PisirmeYontemi" id="PisirmeYontemi" maxlength="100">
             </div>
 
             <div class="input-section d-flex ">
-                <p class="usernamelabel p-2">Boy: </p>
-                <input type="text" class="form-control" required name="Boy" id="Boy">
+                <p class="usernamelabel p-2">Boy (cm): </p>
+                <input type="int" class="form-control" required name="Boy" id="Boy" maxlength="3">
 
-                <p class="usernamelabel p-2">Kilo:</p>
-                <input type="text" class="form-control" required name="Kilo" id="Kilo">
+                <p class="usernamelabel p-2">Kilo :</p>
+                <input type="number" class="form-control" required name="Kilo" id="Kilo" step='0.1'maxlength="5">
 
                 <p class="usernamelabel p-2">BKİ ( kg/m2 ):</p>
                 <input type="text" class="form-control" required name="BKI" id="BKI">
@@ -159,7 +159,7 @@ if (isset($_GET['logout'])) {
                                                 <label class="form-check-label" for="Ozel">Özel
                                                     Diyet(Açıklayınız):
                                                 </label>
-                                                <input type="text" class="form-control ozgecmistable" required name="OzelDiyet" id="OzelDiyet">
+                                                <input type="text" class="form-control ozgecmistable" required name="OzelDiyet" id="OzelDiyet" maxlength="100">
                                             </div>
                                         </td>
 
@@ -174,7 +174,7 @@ if (isset($_GET['logout'])) {
             <div class="input-section d-flex">
                 <p class="usernamelabel">Sıvı Tüketimi</p>
                 <div>
-                    Miktarı<input type="text" class="form-control" required name="SiviTuketimi" id="SiviTuketimi">
+                    Miktarı<input type="text" class="form-control" required name="SiviTuketimi" id="SiviTuketimi" maxlength="6">
                     ml.
                 </div>
             </div>
@@ -899,7 +899,7 @@ Diğer">
                                     <label class="form-check-label" for="Herniasyon">
                                         <span class="checkbox-header"> Var. Yeri</span>
                                     </label>
-                                    <input type="text" class="form-control diger" name="HDiger" id="HDiger">
+                                    <input type="text" class="form-control diger" name="HDiger" id="HDiger" maxlength="40">
                                 </div>
 
                             </div>
@@ -982,7 +982,7 @@ Diğer">
                                     <label class="form-check-label" for="Kitle">
                                         <span class="checkbox-header">Yeri</span>
                                     </label>
-                                    <input type="text" class="form-control diger" name="YDiger" id="YDiger">
+                                    <input type="text" class="form-control diger" name="YDiger" id="YDiger" maxlength="40">
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="Kitle" id="Kitle" value="Buyuklugu">
@@ -1067,7 +1067,7 @@ Diğer">
                                     <label class="form-check-label" for="Stria">
                                         <span class="checkbox-header"> Var.Açıklama</span>
                                     </label>
-                                    <input type="text" class="form-control diger" name="SDiger">
+                                    <input type="text" class="form-control diger" name="SDiger" maxlength="30">
 
                                 </div>
 

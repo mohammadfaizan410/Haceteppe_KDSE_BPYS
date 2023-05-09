@@ -58,11 +58,11 @@ if (isset($_GET['logout'])) {
                     <form action="" method="POST" class="patients-save-fields">
                     <div class="input-section d-flex">
                             <p class="usernamelabel">Patient Name:</p>
-                            <input type="text" class="form-control" required name="patient_name" id="diger" placeholder="Patient Name">
+                            <input type="text" class="form-control" required name="patient_name" id="diger" placeholder="Patient Name" maxlength="25">
                         </div>
                 `       <div class="input-section d-flex">
                             <p class="usernamelabel">Patient ID:</p>
-                            <input type="text" class="form-control" required name="patient_id" id="diger" placeholder="Patient ID">
+                            <input type="text" class="form-control" required name="patient_id" id="diger" placeholder="Patient ID" maxlength="25">
                         </div>
                 `       
 						<div class="input-section d-flex">
@@ -92,28 +92,28 @@ if (isset($_GET['logout'])) {
 						<div class="input-section d-flex">
                             <p class="usernamelabel">IV:</p>
 							<div class='d-flex flex-column w-75'>
-								<input type="number" class="form-control mt-2" required name="iv_input1" id="diger" placeholder="IV input">
-								<input type="number" class="form-control mt-2" required name="iv_input2" id="diger" placeholder="IV input">
-								<input type="number" class="form-control mt-2" required name="iv_input3" id="diger" placeholder="IV input">
-								<input type="number" class="form-control mt-2" required name="iv_input4" id="diger" placeholder="IV input">
+								<input type="number" class="form-control mt-2" required name="iv_input1" id="diger" placeholder="IV input" maxlength="5">
+								<input type="number" class="form-control mt-2" required name="iv_input2" id="diger" placeholder="IV input" maxlength="5">
+								<input type="number" class="form-control mt-2" required name="iv_input3" id="diger" placeholder="IV input" maxlength="5"> 
+								<input type="number" class="form-control mt-2" required name="iv_input4" id="diger" placeholder="IV input" maxlength="5">
 							</div>
                         </div>
 						<div class="input-section d-flex">
                             <p class="usernamelabel">Kan Ürünü:</p>
 							<div class='d-flex flex-column w-75'>
-								<input type="number" class="form-control mt-2" required name="blood_product1" id="diger" placeholder="IV input">
-								<input type="number" class="form-control mt-2" required name="blood_product2" id="diger" placeholder="IV input">
-								<input type="number" class="form-control mt-2" required name="blood_product3" id="diger" placeholder="IV input">
-								<input type="number" class="form-control mt-2" required name="blood_product4" id="diger" placeholder="IV input">
+								<input type="number" class="form-control mt-2" required name="blood_product1" id="diger" placeholder="IV input" maxlength="5">
+								<input type="number" class="form-control mt-2" required name="blood_product2" id="diger" placeholder="IV input" maxlength="5">
+								<input type="number" class="form-control mt-2" required name="blood_product3" id="diger" placeholder="IV input" maxlength="5">
+								<input type="number" class="form-control mt-2" required name="blood_product4" id="diger" placeholder="IV input" maxlength="5">
 							</div>
                         </div>
 						<div class="input-section d-flex">
                             <p class="usernamelabel">Oral:</p>
 							<div class='d-flex flex-column w-75'>
-								<input type="number" class="form-control mt-2" required name="oral1" id="diger" placeholder="IV input">
-								<input type="number" class="form-control mt-2" required name="oral2" id="diger" placeholder="IV input">
-								<input type="number" class="form-control mt-2" required name="oral3" id="diger" placeholder="IV input">
-								<input type="number" class="form-control mt-2" required name="oral4" id="diger" placeholder="IV input">
+								<input type="number" class="form-control mt-2" required name="oral1" id="diger" placeholder="IV input" maxlength="5">
+								<input type="number" class="form-control mt-2" required name="oral2" id="diger" placeholder="IV input" maxlength="5">
+								<input type="number" class="form-control mt-2" required name="oral3" id="diger" placeholder="IV input" maxlength="5">
+								<input type="number" class="form-control mt-2" required name="oral4" id="diger" placeholder="IV input" maxlength="5">
 							</div>
                         </div>
 
@@ -122,19 +122,19 @@ if (isset($_GET['logout'])) {
 						<div class="input-section d-flex">
                             <p class="usernamelabel">İdrar:</p>
 							<div class='d-flex flex-column w-75'>
-								<input type="number" class="form-control mt-2" required name="idrar_input1" id="diger" placeholder="IV input">
-								<input type="number" class="form-control mt-2" required name="idrar_input2" id="diger" placeholder="IV input">
-								<input type="number" class="form-control mt-2" required name="idrar_input3" id="diger" placeholder="IV input">
-								<input type="number" class="form-control mt-2" required name="idrar_input4" id="diger" placeholder="IV input">
+								<input type="number" class="form-control mt-2" required name="idrar_input1" id="diger" placeholder="IV input" maxlength="5">
+								<input type="number" class="form-control mt-2" required name="idrar_input2" id="diger" placeholder="IV input" maxlength="5">
+								<input type="number" class="form-control mt-2" required name="idrar_input3" id="diger" placeholder="IV input" maxlength="5">
+								<input type="number" class="form-control mt-2" required name="idrar_input4" id="diger" placeholder="IV input" maxlength="5">
 							</div>
                         </div>
 						<div class="input-section d-flex">
                             <p class="usernamelabel">Gaita :</p>
 							<div class='d-flex flex-column w-75'>
-								<input type="number" class="form-control mt-2" required name="gaita_input1" id="diger" placeholder="IV input">
-								<input type="number" class="form-control mt-2" required name="gaita_input2" id="diger" placeholder="IV input">
-								<input type="number" class="form-control mt-2" required name="gaita_input3" id="diger" placeholder="IV input">
-								<input type="number" class="form-control mt-2" required name="gaita_input4" id="diger" placeholder="IV input">
+								<input type="number" class="form-control mt-2" required name="gaita_input1" id="diger" placeholder="IV input" maxlength="5">
+								<input type="number" class="form-control mt-2" required name="gaita_input2" id="diger" placeholder="IV input" maxlength="5">
+								<input type="number" class="form-control mt-2" required name="gaita_input3" id="diger" placeholder="IV input" maxlength="5">
+								<input type="number" class="form-control mt-2" required name="gaita_input4" id="diger" placeholder="IV input" maxlength="5">
 							</div>
                         </div>
 							<input class="form-control submit" type="submit" name="submit" id="submit" value="Submit and enter new entry">
