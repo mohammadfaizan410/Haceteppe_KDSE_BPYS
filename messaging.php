@@ -1,5 +1,6 @@
 <?php
 session_start();
+$base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
 if (isset($_SESSION['userlogin'])) {
 }
 $myUser = $_SESSION['userlogin']['id'];
@@ -83,7 +84,7 @@ require_once("config-messages.php");
             if (subject !== '' && message !== '') {
                 $.ajax({
                     type: 'POST',
-                    url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/sendBroadcast.php/',
+                    url: './sendBroadcast.php/',
                     data: {
                         email: email,
                         name: name,
@@ -115,7 +116,7 @@ require_once("config-messages.php");
         if (nameOrEmail !== "") {
           $.ajax({
             type: 'POST',
-            url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/process-search.php/?' + "nameOrEmail=" + nameOrEmail,
+            url: './process-search.php/?' + "nameOrEmail=" + nameOrEmail,
             data: {
             },
             success: function (data) {

@@ -1,5 +1,6 @@
 <?php
 session_start();
+$base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
 require_once("config-messages.php");
 if (isset($_SESSION['userlogin'])) {
     $myUser = $_SESSION['userlogin']['id'];
@@ -86,7 +87,7 @@ $('#showAllMessages').click(function (e) {
                                   ?> "
     $.ajax({
       type: 'POST',
-      url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/getAllBroadcasts.php/',
+      url: '<?php echo $base_url; ?>/getAllBroadcasts.php/',
       data: {
         email : email,
       },
@@ -102,7 +103,7 @@ $('#showAllMessages').click(function (e) {
               </div>
               <div class='message-details mt-4 mb-4 d-flex flex-column w-lg-75'>
                       <div class="p-3 w-l-100">Subject: ${element.subject}</div>
-                      <div class="p-3 w-l-100">Message: asdasjdhkhasdkjaskjdaskhdkhaskhdhsdjsakhjdkashmdhaskjldavhsgdkjlasvhdghkjlasnbhdijaslkndbasjk,ndmavshjdnmabsvhdkjasmbhdjkasdhjkasmn</div>
+                      <div class="p-3 w-l-100">Message: ${element.message}</div>
                       </div>
                       </div>
                       `
@@ -208,11 +209,15 @@ $('#showAllMessages').click(function (e) {
     var name = "<?php
                                   echo $name
                 ?> ";
+                 var email =  "<?php
+                                  echo $myEmail
+                ?> ";
         $.ajax({
             type: 'POST',
-            url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/getAllStudents.php/',
+            url: '<?php echo $base_url; ?>/getAllStudents.php/',
             data: {
                 name: name,
+                email: email
             },
             success: function(data) {
                 let htmlString = '';
@@ -270,7 +275,7 @@ $('#showAllMessages').click(function (e) {
         $('#error').text('');
           $.ajax({
             type: 'POST',
-            url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/processMulticast.php/',
+            url: '<?php echo $base_url; ?>/processMulticast.php/',
             data: {
               email : email,
               name :name,
@@ -324,7 +329,7 @@ $('#showAllMessages').click(function (e) {
           $('#error').text('');
           $.ajax({
             type: 'POST',
-            url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/processBroadcast.php/',
+            url: '<?php echo $base_url; ?>/processBroadcast.php/',
             data: {
               email : email,
               name :name,

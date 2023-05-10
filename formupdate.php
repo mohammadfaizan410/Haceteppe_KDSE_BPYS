@@ -1,4 +1,6 @@
 <?php
+$base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
+
 foreach ($values as $value) {
 
 

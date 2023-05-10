@@ -1,5 +1,7 @@
 <?php
 require_once("config-students.php");
+$base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
+
 ?>
 <?php
 

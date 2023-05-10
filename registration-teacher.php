@@ -1,5 +1,7 @@
 <?php
 require_once("config-teachers.php");
+$base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
+
 session_start()
 
 ?>

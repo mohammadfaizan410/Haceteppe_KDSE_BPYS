@@ -1,5 +1,7 @@
 <?php
 session_start();
+$base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
+
 if (!isset($_SESSION['userlogin'])) {
     header("Location: login-student.php");
 }
@@ -154,81 +156,81 @@ if (isset($_GET['logout'])) {
                 if (i <= 25 && i >= 0) {
                     i += 1;
                     if (i == 0) {
-                        $("#form-content").load("./formlar/ozgecmis.php");
+                        $("#form-content").load("<?php echo $base_url; ?>/formlar/ozgecmis.php");
                     }
                     if (i == 1) {
-                        $("#form-content").load("./formlar/aldigicikardigiizlemi_form11.php");
+                        $("#form-content").load("<?php echo $base_url; ?>/formlar/aldigicikardigiizlemi_form11.php");
 
                     }
                     if (i == 2) {
-                        $("#form-content").load("./formlar/beslenmeGereksinimi.php");
+                        $("#form-content").load("<?php echo $base_url; ?>/formlar/beslenmeGereksinimi.php");
                     }
                     if (i == 3) {
-                        $("#form-content").load("./formlar/bosaltimform.php");
+                        $("#form-content").load("<?php echo $base_url; ?>/formlar/bosaltimform.php");
                     }
                     if (i == 4) {
-                        $("#form-content").load("./formlar/hareketForm1.php");
+                        $("#form-content").load("<?php echo $base_url; ?>/formlar/hareketForm1.php");
                     }
                     if (i == 5) {
-                        $("#form-content").load("./formlar/uykuForm1.php");
+                        $("#form-content").load("<?php echo $base_url; ?>/formlar/uykuForm1.php");
                     }
                     if (i == 6) {
-                        $("#form-content").load("./formlar/vucuduTemizForm1.php");
+                        $("#form-content").load("<?php echo $base_url; ?>/formlar/vucuduTemizForm1.php");
                     }
                     if (i == 7) {
-                        $("#form-content").load("./formlar/kateterForm1.php");
+                        $("#form-content").load("<?php echo $base_url; ?>/formlar/kateterForm1.php");
                     }
                     if (i == 8) {
-                        $("#form-content").load("./formlar/iletisimForm1.php");
+                        $("#form-content").load("<?php echo $base_url; ?>/formlar/iletisimForm1.php");
                     }
                     if (i == 9) {
-                        $("#form-content").load("./formlar/calismaForm1.php");
+                        $("#form-content").load("<?php echo $base_url; ?>/formlar/calismaForm1.php");
                     }
                     if (i == 10) {
-                        $("#form-content").load("./formlar/egitimForm1.php");
+                        $("#form-content").load("<?php echo $base_url; ?>/formlar/egitimForm1.php");
                     }
                     if (i == 11) {
-                        $("#form-content").load("./formlar/Form2.php");
+                        $("#form-content").load("<?php echo $base_url; ?>/formlar/Form2.php");
                     }
                     if (i == 12) {
-                        $("#form-content").load("./formlar/Form3.php");
+                        $("#form-content").load("<?php echo $base_url; ?>/formlar/Form3.php");
                     }
                     if (i == 13) {
-                        $("#form-content").load("./formlar/Form4.php");
+                        $("#form-content").load("<?php echo $base_url; ?>/formlar/Form4.php");
                     }
                     if (i == 14) {
-                        $("#form-content").load("./formlar/Form5.php");
+                        $("#form-content").load("<?php echo $base_url; ?>/formlar/Form5.php");
                     }
                     if (i == 15) {
-                        $("#form-content").load("./formlar/Form6.php");
+                        $("#form-content").load("<?php echo $base_url; ?>/formlar/Form6.php");
                     }
 
                     if (i == 16) {
-                        $("#form-content").load("./formlar/Form7.php");
+                        $("#form-content").load("<?php echo $base_url; ?>/formlar/Form7.php");
                     }
                     if (i == 17) {
-                        $("#form-content").load("./formlar/Form8.php");
+                        $("#form-content").load("<?php echo $base_url; ?>/formlar/Form8.php");
                     }
                     if (i == 18) {
-                        $("#form-content").load("./formlar/siviizlem.php");
+                        $("#form-content").load("<?php echo $base_url; ?>/formlar/siviizlem.php");
                     }
                     if (i == 19) {
-                        $("#form-content").load("./formlar/bakimplani.php");
+                        $("#form-content").load("<?php echo $base_url; ?>/formlar/bakimplani.php");
                     }
                     if (i == 20) {
-                        $("#form-content").load("./formlar/gunlukbakimuygulamalari.php");
+                        $("#form-content").load("<?php echo $base_url; ?>/formlar/gunlukbakimuygulamalari.php");
                     }
                     if (i == 21) {
-                        $("#form-content").load("./formlar/medikaltedavi.php");
+                        $("#form-content").load("<?php echo $base_url; ?>/formlar/medikaltedavi.php");
                     }
                     if (i == 22) {
-                        $("#form-content").load("./formlar/tetkiksonuclari_form9.php");
+                        $("#form-content").load("<?php echo $base_url; ?>/formlar/tetkiksonuclari_form9.php");
                     }
                     if (i == 23) {
-                        $("#form-content").load("./formlar/yasamsalbulgutakibi_form10.php");
+                        $("#form-content").load("<?php echo $base_url; ?>/formlar/yasamsalbulgutakibi_form10.php");
                     }
                     if (i == 24) {
-                        $("#form-content").load("./formlar/solunumgereksinimi.php");
+                        $("#form-content").load("<?php echo $base_url; ?>/formlar/solunumgereksinimi.php");
                     }
                     window.scrollTo(0, 0)
                 }

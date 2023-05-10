@@ -1,5 +1,6 @@
 <?php
 session_start();
+$base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
 if (!isset($_SESSION['userlogin'])) {
     header("Location: login-student.php");
 }
@@ -230,7 +231,7 @@ if (isset($_GET['logout'])) {
 
                   $.ajax({
                       type: 'POST',
-                      url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/submitOrUpdateAldigi_form11.php',
+                      url: '<?php echo $base_url; ?>/submitOrUpdateAldigi_form11.php',
                       data: {
                           isUpdate : true,
                           form_id: form_id,

@@ -1,5 +1,7 @@
 <?php
 session_start();
+$base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
+
 if (!isset($_SESSION['userlogin'])) {
     header("Location: login-student.php");
 }
@@ -116,11 +118,11 @@ if (isset($_GET['logout'])) {
         e.preventDefault();
         var patient_id = $(this).data("patient-id");
         var patient_name = $(this).data("patient-name");
-        var url = "http://18.159.134.238/Hacettepe-KDSE-BPYS/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
+        var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
         $("#content").load(url);
     });
 });
-        </script>
+</script>
 
         <!-- Template Javascript -->
         <script src=""></script>

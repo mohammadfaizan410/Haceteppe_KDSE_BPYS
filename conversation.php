@@ -1,5 +1,7 @@
 <?php
 session_start();
+$base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
+
 if (isset($_SESSION['userlogin'])) {
 }
 $myUser = $_SESSION['userlogin']['id'];
@@ -74,7 +76,7 @@ if (isset($_GET)) {
                        
                      $.ajax({
                         type: 'POST',
-                        url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/updateConvo.php/',
+                        url: '<?php echo $base_url; ?>/updateConvo.php/',
                         data: {
                             sender_id: sender_id,
                             recipient_id: recipient_Id,
@@ -110,7 +112,7 @@ if (isset($_GET)) {
   
                      $.ajax({
                         type: 'POST',
-                        url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/updateConvo.php/',
+                        url: '<?php echo $base_url; ?>/updateConvo.php/',
                         data: {
                             sender_id: sender_id,
                             recipient_id: recipient_Id,
@@ -159,7 +161,7 @@ if (isset($_GET)) {
                        
                         $.ajax({
                         type: 'POST',
-                        url: '18.159.134.238/Hacettepe-KDSE-BPYS/process-messages.php/?',
+                        url: '<?php echo $base_url; ?>/process-messages.php/?',
                         data: {
                             sender_id: sender_id,
                             recipient_id: recipient_Id,

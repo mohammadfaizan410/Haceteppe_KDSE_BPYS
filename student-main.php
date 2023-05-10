@@ -1,5 +1,6 @@
 <?php
 session_start();
+$base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
 if (!isset($_SESSION['userlogin'])) {
     header("Location: login-student.php");
 }
@@ -58,9 +59,9 @@ if (isset($_GET['logout'])) {
                     <a href="" class="nav-link "><i class="fa fa-chart-bar me-2"></i>Sınavlar</a>
                     <a href="" class="nav-link"><i class="fa fa-th me-2"></i>Öneriler</a>
                     <a href="messaging.php" class="nav-link nav-items"><i class="fa fa-comments me-2"></i>Chat</a>
-                    <a href="http://18.159.134.238/Hacettepe-KDSE-BPYS/broadcast.php" class="nav-link nav-items"><i class="fa fa-comments me-2"></i>Broadcast/Multicast</a>
-                    <a class="nav-link nav-items" href="http://18.159.134.238/Hacettepe-KDSE-BPYS/updateForms/showAllPatients.php"><i class="fa fa-comments me-2"></i>Show all Patients</a>
-                    <a class="nav-link nav-items" href="http://18.159.134.238/Hacettepe-KDSE-BPYS/addNewPatient.php"><i class="fa fa-comments me-2"></i>Add new Patient</a>
+                    <a href="./broadcast.php" class="nav-link nav-items"><i class="fa fa-comments me-2"></i>Broadcast/Multicast</a>
+                    <a class="nav-link nav-items" href="./updateForms/showAllPatients.php"><i class="fa fa-comments me-2"></i>Show all Patients</a>
+                    <a class="nav-link nav-items" href="./addNewPatient.php"><i class="fa fa-comments me-2"></i>Add new Patient</a>
 
                 </div>
                 <div>

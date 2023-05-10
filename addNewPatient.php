@@ -1,5 +1,7 @@
 <?php
 session_start();
+$base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
+
 if (!isset($_SESSION['userlogin'])) {
     header("Location: login-student.php");
 }
@@ -96,7 +98,7 @@ if (isset($_GET['logout'])) {
         $(function() {
             $("a.showallforms").on("click", function(e) {
                 e.preventDefault();
-                $("#content").load("http://18.159.134.238/Hacettepe-KDSE-BPYS/updateForms/processAddPatient.php");
+                $("#content").load("./showAllForms.php");
             })
         });
 
@@ -116,7 +118,7 @@ if (isset($_GET['logout'])) {
 
                 $.ajax({
                     type: 'POST',
-                    url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/processAddPatient.php/',
+                    url: '<?php echo $base_url; ?>/processAddPatient.php/',
                     data: {
                         patient_name: patient_name,
                         patient_surname:patient_surname,
