@@ -310,7 +310,7 @@ if (isset($_GET['logout'])) {
                             peeling: peeling1,
                             dryness: dryness1,
                             pain: pain1,
-                            care_products: careProducts,
+                            care_products: careProducts1,
                             result: result1,
                             healing_date: healingDate 
                         }),
