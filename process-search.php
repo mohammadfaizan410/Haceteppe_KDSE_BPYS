@@ -1,10 +1,9 @@
 <?php
 session_start();
 $base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
-
 if (isset($_SESSION['userlogin'])) {
 }
-require_once("config-messages.php");
+require_once("config-students.php");
 ?>
 
 

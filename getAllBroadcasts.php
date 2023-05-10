@@ -1,7 +1,7 @@
 <?php
 
 $base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
-require_once($base_url."/config-messages.php");
+require_once("config-students.php");
 
 if(isset($_POST['email'])){
     $user_email = $_POST['email'];
