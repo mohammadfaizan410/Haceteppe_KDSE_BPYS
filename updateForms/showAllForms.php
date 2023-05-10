@@ -172,42 +172,42 @@ if (isset($_GET['logout'])) {
                                 foreach( $currentTableAllForms as $currentKey => $form){
                                      
                                         if($key ===  'table1_data') {
-                                            echo '<div><a class="nav-items" style="color : white;" href="'.$base_url.'"/formlar-review/Form2-review.php?form_id=' . $form["form_id"] . '"><p>Form2  Date:' .$form["update_date"].' </p></a></div>';
+                                            echo '<div><a class="nav-items" style="color : white;" href="'.$base_url.'/formlar-review/Form2-review.php?form_id=' . $form["form_id"] . '"><p>Form2  Date:' .$form["update_date"].' </p></a></div>';
                                         }
                                         if($key ===  'table2_data') {
 
-                                            echo '<div><a class="nav-items" style="color : white;"  href="'.$base_url.'/formlar-review/Form3-review.php?form_id=' . $form["form_id"] . '"><p>form3   Date:' .$form["update_date"].'</p></a></div>';
+                                            echo '<div><a class="nav-items" style="color : white;" href="'.$base_url.'/formlar-review/Form3-review.php?form_id=' . $form["form_id"] . '"><p>Form3  Date:' .$form["update_date"].' </p></a></div>';
                                         }
                                         if($key ===  'table3_data') {
 
-                                            echo '<div><a class="nav-items" style="color : white;"  href'.$base_url.'/formlar-review/Form4-review.php?form_id=' . $form["form_id"] . '"><p>form4   Date:' .$form["update_date"].'</p></a></div>';
+                                            echo '<div><a class="nav-items" style="color : white;"  href="'.$base_url.'/formlar-review/Form4-review.php?form_id=' . $form["form_id"] . '"><p>Form4   Date:' .$form["update_date"].'</p></a></div>';
                                         }
                                         if($key ===  'table4_data') {
 
-                                            echo '<div><a class="nav-items" style="color : white;"  href="'.$base_url.'/formlar-review/Form5-review.php?form_id=' . $form["form_id"] . '"><p>form5   Date:' .$form["update_date"].'</p></a></div>';
+                                            echo '<div><a class="nav-items" style="color : white;"  href="'.$base_url.'/formlar-review/Form5-review.php?form_id=' . $form["form_id"] . '"><p>Form5   Date:' .$form["update_date"].'</p></a></div>';
                                         }
                                         if($key ===  'table5_data') {
 
-                                            echo '<div><a class="nav-items" style="color : white;"  href="'.$base_url.'/formlar-review/Form6-review.php?form_id=' . $form["form_id"] . '"><p>form6   Date:' .$form["update_date"].'</p></a></div>';
+                                            echo '<div><a class="nav-items" style="color : white;"  href="'.$base_url.'/formlar-review/Form6-review.php?form_id=' . $form["form_id"] . '"><p>Form6   Date:' .$form["update_date"].'</p></a></div>';
                                         }
                                         if($key ===  'table6_data') {
 
-                                            echo '<div><a class="nav-items" style="color : white;"  href="'.$base_url.'/formlar-review/Form7-review.php?form_id=' . $form["form_id"] . '"><p>form7   Date:' .$form["update_date"].'</p></a></div>';
+                                            echo '<div><a class="nav-items" style="color : white;"  href="'.$base_url.'/formlar-review/Form7-review.php?form_id=' . $form["form_id"] . '"><p>Form7   Date:' .$form["update_date"].'</p></a></div>';
                                         }
                                         if($key ===  'table7_data') {
 
-                                            echo '<div><a class="nav-items" style="color : white;"  href="'.$base_url.'/formlar-review/Form8-review.php?form_id=' . $form["form_id"] . '"><p>form8   Date:' .$form["update_date"].'</p></a></div>';
+                                            echo '<div><a class="nav-items" style="color : white;"  href="'.$base_url.'/formlar-review/Form8-review.php?form_id=' . $form["form_id"] . '"><p>Form8   Date:' .$form["update_date"].'</p></a></div>';
                                         }
                                         if($key ===  'table8_data') {
 
-                                            echo '<div><a class="nav-items" style="color : white;"  href="'.$base_url.'/formlar-review/Form9-review.php?form_id=' . $form["form_id"] . '"><p>form9  Date:' .$form["update_date"].'</p></a></div>';
+                                            echo '<div><a class="nav-items" style="color : white;"  href="'.$base_url.'/formlar-review/Form9-review.php?form_id=' . $form["form_id"] . '"><p>Form9  Date:' .$form["update_date"].'</p></a></div>';
                                         }
                                         if($key ===  'table9_data') {
 
-                                            echo '<div><a class="nav-items" style="color : white;"  href="'.$base_url.'/formlar-review/Form10-review.php?form_id=' . $form["form_id"] . '"><p>form10  Date:' .$form["update_date"].'</p></a></div>';
+                                            echo '<div><a class="nav-items" style="color : white;"  href="'.$base_url.'/formlar-review/Form10-review.php?form_id=' . $form["form_id"] . '"><p>Form10  Date:' .$form["update_date"].'</p></a></div>';
                                         }
                                         if($key ===  'table1-_data') {
-                                            echo '<div><a class="nav-items" style="color : white;"  href="'.$base_url.'/formlar-review/Form11-review.php?form_id=' . $form["form_id"] . '"><p>form11   Date:' .$form["update_date"].'</p></a></div>';
+                                            echo '<div><a class="nav-items" style="color : white;"  href="'.$base_url.'/formlar-review/Form11-review.php?form_id=' . $form["form_id"] . '"><p>Form11   Date:' .$form["update_date"].'</p></a></div>';
                                         }
                                 }
                                 ;

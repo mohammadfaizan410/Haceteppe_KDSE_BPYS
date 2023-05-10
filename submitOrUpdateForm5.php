@@ -7,7 +7,7 @@ if (isset($_POST["patient_name"])) {
             $stmt = $db->prepare("UPDATE form5 SET 
                         patient_name = ?,
                         form_num = ?,
-                        updateDate = ?,
+                        update_date = ?,
                         eye_opening_points = ?,
                         motor_response_points = ?,
                         verbal_response_points = ?,
@@ -34,7 +34,7 @@ $stmt->execute([
                 patient_id,
                 form_num,
                 creation_date,
-                updateDate,
+                update_date,
                 eye_opening_points,
                 motor_response_points,
                 verbal_response_points,

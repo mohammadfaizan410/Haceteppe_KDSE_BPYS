@@ -1,9 +1,11 @@
 <?php
+
+use function PHPSTORM_META\type;
+
 require_once("config-students.php");
 ?>
 <?php
 $data = json_decode(file_get_contents('php://input'), true);
-
 $healing_date = date('Y-m-d', strtotime($data["healing_date"]));
 if (isset($data["patient_name"])) {
     if (isset($data["isUpdate"])){
