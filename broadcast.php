@@ -1,7 +1,7 @@
 <?php
 session_start();
 $base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
-require_once("config-messages.php");
+require_once($base_url."/config-messages.php");
 if (isset($_SESSION['userlogin'])) {
     $myUser = $_SESSION['userlogin']['id'];
     $myEmail = $_SESSION['userlogin']['email'];
