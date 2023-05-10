@@ -251,6 +251,8 @@ if ($result) {
             var valid = this.form.checkValidity();
 
             if (valid) {
+                var form_id = <?php echo $form_id ?>;
+
                 var id = <?php
 
                                 $userid = $_SESSION['userlogin']['id'];
@@ -282,10 +284,12 @@ if ($result) {
 
                 $.ajax({
                     type: 'POST',
-                    url: 'http://localhost/Hacettepe-KDSE-BPYS/submitOrUpdateForm2.php/',
+                    url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/submitOrUpdateForm2.php/',
                     data: {
                         isUpdate: true,
                         form_id: form_id,
+                        isUpdate : true,
+                          form_id: form_id,
                         patient_name: patient_name,
                         patient_id: patient_id,
                         form_num: fileNo,

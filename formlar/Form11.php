@@ -168,8 +168,13 @@ if (isset($_GET['logout'])) {
                   var age = $('#age').val();
                   var not = $('#not').val();
                   let form_num = 10;
-                  let patient_name = $("input[name='patient_name']").val();
-                  let patient_id = parseInt($("input[name='patient_id']").val());
+                  let patient_name ="<?php
+            echo urldecode($_GET['patient_name']);
+                  ?>";
+                  let patient_id =  <?php
+                  $userid = $_GET['patient_id'];
+                  echo $userid
+                  ?>;
                   let yourDate = new Date()
                   let creationDate = yourDate.toISOString().split('T')[0];
                   let updateDate = yourDate.toISOString().split('T')[0];
@@ -206,7 +211,7 @@ if (isset($_GET['logout'])) {
 
                   $.ajax({
                       type: 'POST',
-                      url: 'http://localhost/Hacettepe-KDSE-BPYS/submitOrUpdateAldigi_form11.php',
+                      url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/submitOrUpdateAldigi_form11.php',
                       data: {
                           id: id,
                           name: name,

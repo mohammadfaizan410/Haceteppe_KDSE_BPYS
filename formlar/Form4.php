@@ -31,12 +31,14 @@ if (isset($_GET['logout'])) {
     <!-- Libraries Stylesheet -->
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="bootstrap.min.css" rel="stylesheet">
+     <!-- Customized Bootstrap Stylesheet -->
+     <link href="../bootstrap.min.css" rel="stylesheet">
 
-    <!-- Template Stylesheet -->
-    <link href="style.css" rel="stylesheet">
+<!-- Template Stylesheet -->
+<link href="../style.css" rel="stylesheet">
+
 
     <style>
         .send-patient {
@@ -54,16 +56,6 @@ if (isset($_GET['logout'])) {
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
-
-                    <div class="input-section d-flex">
-                            <p class="usernamelabel">Patient Name:</p>
-                            <input type="text" class="form-control" required name="patient_name" id="diger" placeholder="Patient Name">
-                        </div>
-                `       <div class="input-section d-flex">
-                            <p class="usernamelabel">Patient ID:</p>
-                            <input type="text" class="form-control" required name="patient_id" id="diger" placeholder="Patient ID">
-                        </div>
-
                         <div class="input-section d-flex" style="justify-content:space-between">
                             <p class="usernamelabel">Cinsiyet : </p>
                             <input type="text" class="form-control" required name="patient_gender" id="diger" placeholder="Hasta Cinsiyetini Giriniz">
@@ -157,7 +149,7 @@ if (isset($_GET['logout'])) {
     <script>
         $(function() {
             $('#closeBtn').click(function(e) {
-                $("#content").load("formlar-student.php");
+                window.location.href = "javascript:history.go(-1)";
 
             })
         });
@@ -171,18 +163,18 @@ if (isset($_GET['logout'])) {
                 var valid = this.form.checkValidity();
 
                 if (valid) {
-                    var id = <?php
-
-                                $userid = $_SESSION['userlogin']['id'];
-                                echo $userid
-                                ?>;
                     var name = $('#name').val();
                     var surname = $('#surname').val();
                     var age = $('#age').val();
                     var not = $('#not').val();
                     let form_num = 4;
-                    let patient_name = $("input[name='patient_name']").val();
-                    let patient_id = parseInt($("input[name='patient_id']").val());
+                    let patient_name = "<?php
+            echo urldecode($_GET['patient_name']);
+                  ?>";
+                    var patient_id = <?php
+                  $userid = $_GET['patient_id'];
+                  echo $userid
+                  ?>;
                     let patient_gender = $("input[name='patient_gender']").val();
                     let yourDate = new Date()
                     let creation_date =  yourDate.toISOString().split('T')[0];
@@ -207,9 +199,8 @@ if (isset($_GET['logout'])) {
 
                     $.ajax({
                         type: 'POST',
-                        url: 'http://localhost/Hacettepe-KDSE-BPYS/submitOrUpdateForm4.php/',
+                        url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/submitOrUpdateForm4.php/',
                         data: {
-                            id: id,
                             name: name,
                             surname: surname,
                             age: age,
@@ -235,6 +226,8 @@ if (isset($_GET['logout'])) {
                         success: function(data) {
                             console.log(data)
                             alert("Success");
+                            window.location.href = "javascript:history.go(-1)";
+
                         },
                         error: function(data) {
                             Swal.fire({

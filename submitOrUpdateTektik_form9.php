@@ -26,12 +26,7 @@ if (isset($_POST["patient_name"])) {
         echo "successfully updated";
 
         }
-        else{
-            
-            $sql = "SELECT * FROM form9 WHERE patient_id = ?";
-            $smtmselect = $db->prepare($sql);
-            $result = $smtmselect->execute([$_POST["patient_id"]]);
-            if ($result) {
+        else{    
                 $stmt = $db->prepare("INSERT INTO form9 (
                 form_num,
                 patient_name,
@@ -55,10 +50,6 @@ $stmt->execute([
     $_POST["referance_value"],
 ]);
 
-} else{
-    
-    echo "Error.";
-}
 }
 }
 else{

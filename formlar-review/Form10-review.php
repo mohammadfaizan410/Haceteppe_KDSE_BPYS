@@ -473,7 +473,7 @@ $('#weight_input_toggle').change(function (e) {
 
                   $.ajax({
                       type: 'POST',
-                      url: 'http://localhost/Hacettepe-KDSE-BPYS/submitOrUpdateYasamsal_form10.php',
+                      url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/submitOrUpdateYasamsal_form10.php',
                       data: {
                           isUpdate: true,
                           form_id :form_id,

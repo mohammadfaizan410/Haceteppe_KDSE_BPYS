@@ -4,16 +4,11 @@ require_once("config-students.php");
 <?php
 $data = json_decode(file_get_contents('php://input'), true);
 
+$healing_date = date('Y-m-d', strtotime($data["healing_date"]));
 if (isset($data["patient_name"])) {
-    $sql = "SELECT * FROM form7 WHERE patient_id = ?";
-    $smtmselect = $db->prepare($sql);
-    $result = $smtmselect->execute([$data["patient_id"]]);
-    $healing_date = date('Y-m-d', strtotime($data["healing_date"]));
+    if (isset($data["isUpdate"])){
 
-    if ($result) {
-        $values = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
-        if (count($values) > 0) {
-            $stmt = $db->prepare("UPDATE form7 SET 
+        $stmt = $db->prepare("UPDATE form7 SET 
                     update_date = ?,
                     occurance_date = ?,
                     service_wound  = ?,
@@ -33,9 +28,9 @@ if (isset($data["patient_name"])) {
                     careProducts = ?,
                     result = ?,
                     healing_date = ?
-                      WHERE patient_id = ?");
+                      WHERE form_id = ?");
 
-                    $stmt->execute([
+$stmt->execute([
                         $data["update_date"],
                         $data["occurance_date"],                                    
                         $data["service_wound"],
@@ -55,15 +50,15 @@ if (isset($data["patient_name"])) {
                         $data["care_products"],
                         $data["result"],
                         $healing_date,
-                        $data["patient_id"],
-                                ]);
-
-           
-            echo  "Successfully updated form 7";
-        }
-        else {
-
-            $stmt = $db->prepare("INSERT INTO form7 (
+                        $data["form_id"],
+                    ]);
+                    
+                    
+                    echo  "Successfully updated form 7";
+                }
+                else {
+                    
+                    $stmt = $db->prepare("INSERT INTO form7 (
                 form_num,
                 patient_name,
                 patient_id,
@@ -88,41 +83,38 @@ if (isset($data["patient_name"])) {
                 result,
                 healing_date
             ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-
-$stmt->execute([
-    $data["form_num"],
-    $data["patient_name"],
-    $data["patient_id"],
-    $data["creation_date"],
-    $data["update_date"],
-    $data["occurance_date"],                                    
-    $data["service_wound"],
-    $data["location"],
-    $data["stage"],
-    $data["dimentions"],
-    $data["wound_exudate"],
-    $data["appearance_wound"],
-    $data["odor"],
-    $data["tunnelling"],
-    $data["edema"],
-    $data["maceration"],
-    $data["erythema"],
-    $data["peeling"],
-    $data["dryness"],
-    $data["pain"],
-    $data["care_products"],
-    $data["result"],
-    $healing_date,
-]);
-
-           
-            echo "Successfully inserted into form7";
-        }
-    } else{
-
-        echo "Error.";
-    }
+            
+    $stmt->execute([
+        $data["form_num"],
+        $data["patient_name"],
+        $data["patient_id"],
+        $data["creation_date"],
+        $data["update_date"],
+        $data["occurance_date"],                                    
+        $data["service_wound"],
+        $data["location"],
+        $data["stage"],
+        $data["dimentions"],
+        $data["wound_exudate"],
+        $data["appearance_wound"],
+        $data["odor"],
+        $data["tunnelling"],
+        $data["edema"],
+        $data["maceration"],
+        $data["erythema"],
+        $data["peeling"],
+        $data["dryness"],
+        $data["pain"],
+        $data["care_products"],
+        $data["result"],
+        $healing_date,
+    ]);
+    
+    
+    echo "Successfully inserted into form7";
 }
+}
+
 else{
     echo "Error.";
 }

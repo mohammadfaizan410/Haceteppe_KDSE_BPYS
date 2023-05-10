@@ -8,6 +8,8 @@ if (isset($_GET['logout'])) {
     session_destroy();
     unset($_SESSION);
     header("Location: main.php");
+    var_dump("there should be patientID below");
+    var_dump($_GET['patient_id']);
 }
 ?>
 <!DOCTYPE html>
@@ -15,40 +17,46 @@ if (isset($_GET['logout'])) {
 <head>
 <meta charset="utf-8">
 <title>e-BYRYS-KKDS</title>
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<meta content="" name="keywords">
-<meta content="" name="description">
-<!-- Favicon -->
-<link href="img/favicon.ico" rel="icon">
+  <!-- Favicon -->
+  <link href="img/favicon.ico" rel="icon">
+
+
 <!-- Icon Font Stylesheet -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
 <!-- Libraries Stylesheet -->
 <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
 <!-- Customized Bootstrap Stylesheet -->
-<link href="bootstrap.min.css" rel="stylesheet">
+<link href="../bootstrap.min.css" rel="stylesheet">
+
 <!-- Template Stylesheet -->
-<link href="style.css" rel="stylesheet">
-   <style>
-		table {
-			border-collapse: collapse;
-		}
-		th, td {
-			border: 1px solid black;
-			padding: 10px;
-		}
-		th {
-			background-color: #eee;
-		}
-    h1 {
-            text-align: center;
-    }
-    tr, td{
-      width: 200px;
-    }
-	</style>
-  		<body>
+<link href="../style.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+<style>
+	table {
+		border-collapse: collapse;
+	}
+	th, td {
+		border: 1px solid black;
+		padding: 10px;
+	}
+	th {
+		background-color: #eee;
+	}
+	h1 {
+		text-align: center;
+	}
+	tr, td{
+		width: 200px;
+	}
+</style>
+</head>
+    <body>
+
 		  <div class="container-fluid pt-4 px-4">
             <div class="send-patient">
             <span class='close closeBtn' id='closeBtn'>&times;</span>
@@ -60,11 +68,7 @@ if (isset($_GET['logout'])) {
                             <p class="usernamelabel">Patient Name:</p>
                             <input type="text" class="form-control" required name="patient_name" id="diger" placeholder="Patient Name">
                         </div>
-                `       <div class="input-section d-flex">
-                            <p class="usernamelabel">Patient ID:</p>
-                            <input type="text" class="form-control" required name="patient_id" id="diger" placeholder="Patient ID">
-                        </div>
-                `       <div class="input-section d-flex">
+                       <div class="input-section d-flex">
                             <p class="usernamelabel">Date:</p>
                             <input type="date" class="form-control" required name="date" id="diger" placeholder="Patient ID">
                         </div>
@@ -123,7 +127,7 @@ if (isset($_GET['logout'])) {
                             <p class="usernamelabel">Referans Değeri  :</p>
                             <input type="text" class="form-control" required name="referance_value" id="diger" placeholder="Referans Değeri">
                         </div>
-							<input class="form-control submit" name="submit" id="submit" value="Done">
+							<input class="form-control submit" type="submit" name="submit" id="submit" value="Submit">
                     </form>
                 </div>
             </div>
@@ -131,7 +135,10 @@ if (isset($_GET['logout'])) {
 
 	
     </div>
+    </body>
+
     <script>
+            console.log("<?php echo $_GET['patient_id'];?>");
       $(function() {
           $('#closeBtn').click(function(e) {
               $("#content").load("formlar-student.php");
@@ -142,13 +149,15 @@ if (isset($_GET['logout'])) {
 <script>
       $(function() {
           $('#submit').click(function(e) {
-              e.preventDefault()
               console.log("clicked")
+              e.preventDefault()
               var valid = this.form.checkValidity();
-
               if (valid) {
-                  var id = <?php
-                  $userid = $_SESSION['userlogin']['id'];
+                let patient_name = "<?php
+            echo urldecode($_GET['patient_name']);
+                  ?>";
+                    var patient_id = <?php
+                  $userid = $_GET['patient_id'];
                   echo $userid
                   ?>;
                   var name = $('#name').val();
@@ -156,22 +165,19 @@ if (isset($_GET['logout'])) {
                   var age = $('#age').val();
                   var not = $('#not').val();
                   let form_num = 9;
-                  let patient_name = $("input[name='patient_name']").val();
-                  let patient_id = parseInt($("input[name='patient_id']").val());
                   let yourDate = new Date()
                   let creationDate = yourDate.toISOString().split('T')[0];
                   let updateDate = yourDate.toISOString().split('T')[0];
                   let date = $("input[name='date']").val();
-                  let examination_type =  $("input[type='radio'][name='examination_type']:checked").val()
-                  let examination_result = $("input[name='tektikOption']").val();
+                  let examination_type =  $("input[type='radio'][name='tektikOption']:checked").val()
+                  let examination_result = $("input[name='examination_result']").val();
                   let referance_value = $("input[name='referance_value']").val();
                   console.log("values initiated")
 
                   $.ajax({
                       type: 'POST',
-                      url: 'http://localhost/Hacettepe-KDSE-BPYS/submitOrUpdateTektik_form9.php',
+                      url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/submitOrUpdateTektik_form9.php',
                       data: {
-                          id: id,
                           name: name,
                           surname: surname,
                           age: age,
@@ -194,15 +200,9 @@ if (isset($_GET['logout'])) {
                           console.log(data)
                       }
                   })
-
-
-
-              }
+                }
           })
 
       });
   </script>
-      <script src=""></script>
-      </body>
-
      </html>

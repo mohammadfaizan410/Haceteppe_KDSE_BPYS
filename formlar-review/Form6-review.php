@@ -11,7 +11,8 @@ if (isset($_GET['logout'])) {
 }
 require_once('../config-students.php');
 $userid = $_SESSION['userlogin']['id'];
-$sql = "SELECT * FROM form6";
+$form_id = $_GET['form_id'];
+$sql = "SELECT * FROM form6 where form_id= $form_id";
 $smtmselect = $db->prepare($sql);
 $result = $smtmselect->execute();
 if ($result) {
@@ -43,10 +44,11 @@ if ($result) {
     <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="../bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
     <!-- Template Stylesheet -->
-    <link href="style.css" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet">
 
     <style>
     .send-patient {
@@ -401,7 +403,7 @@ if ($result) {
         })
     });
 
-    var sensory_perception = "<?php echo $form6[0]['sensory_perception']; ?>"
+    var sensory_perception = "<?php echo strval($form6[0]['sensory_perception']); ?>"
     if (sensory_perception == "1") {
         console.log(sensory_perception);
 
@@ -538,6 +540,8 @@ if ($result) {
             var valid = this.form.checkValidity();
 
             if (valid) {
+                var form_id = <?php echo $form_id ?>;
+
                 var id = <?php
 
                                 $userid = $_SESSION['userlogin']['id'];
@@ -572,7 +576,7 @@ if ($result) {
 
                 $.ajax({
                     type: 'POST',
-                    url: 'http://localhost/Hacettepe-KDSE-BPYS/submitOrUpdateForm6.php/',
+                    url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/submitOrUpdateForm6.php/',
                     data: {
                         isUpdate: true,
                         form_id: form_id,

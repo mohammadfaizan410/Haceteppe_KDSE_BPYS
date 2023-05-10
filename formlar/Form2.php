@@ -39,10 +39,10 @@ if (isset($_GET['logout'])) {
     <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="../bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="style.css" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
     <style>
@@ -180,7 +180,7 @@ if (isset($_GET['logout'])) {
     <script>
     $(function() {
         $('#closeBtn').click(function(e) {
-            $("#content").load("formlar-student.php");
+            window.location.href = "javascript:history.go(-1)";
 
         })
     });
@@ -189,20 +189,22 @@ if (isset($_GET['logout'])) {
     <script>
     $(function() {
         $('#submit').click(function(e) {
-            var valid = this.form.checkValidity();
-
+            e.preventDefault()
+            let patient_name = "<?php
+            echo urldecode($_GET['patient_name']);
+                  ?>";
+                  console.log(patient_name)
+                  var valid = this.form.checkValidity();
             if (valid) {
-                var id = <?php
-
-                    $userid = $_SESSION['userlogin']['id'];
-                    echo $userid
-                    ?>;
                 let name = $('#name').val();
                 let surname = $('#surname').val();
                 let age = $('#age').val();
                 let not = $('#not').val();
-                let patient_name = $("input[name='patient_name']").val();
-                let patient_id = parseInt($("input[name='patient_id']").val());
+               
+                var patient_id = <?php
+                  $userid = $_GET['patient_id'];
+                  echo $userid
+                  ?>;
                 let yourDate = new Date()
                 let creation_date = yourDate.toISOString().split('T')[0];
                 let updateDate = yourDate.toISOString().split('T')[0];
@@ -218,14 +220,13 @@ if (isset($_GET['logout'])) {
                 console.log(pain_decrease_factors)
 
 
-                e.preventDefault()
 
                 $.ajax({
                     type: 'POST',
-                    url: 'http://localhost/Hacettepe-KDSE-BPYS/submitOrUpdateForm2.php/',
+                    url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/submitOrUpdateForm2.php/',
                     data: {
-                        patient_name: patient_name,
                         patient_id: patient_id,
+                        patient_name: patient_name,
                         form_num: fileNo,
                         creation_date: creation_date,
                         update_date: updateDate,
@@ -256,7 +257,6 @@ if (isset($_GET['logout'])) {
 
     });
     </script>
-    <script src=""></script>
 </body>
 
 </html>

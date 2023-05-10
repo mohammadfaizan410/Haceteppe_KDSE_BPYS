@@ -11,7 +11,8 @@ if (isset($_GET['logout'])) {
 }
 require_once('../config-students.php');
 $userid = $_SESSION['userlogin']['id'];
-$sql = "SELECT * FROM form7";
+$form_id = $_GET['form_id'];
+$sql = "SELECT * FROM form7 where form_id= $form_id";
 $smtmselect = $db->prepare($sql);
 $result = $smtmselect->execute();
 if ($result) {
@@ -297,6 +298,7 @@ if ($result) {
                 console.log("hello from form 7x")
                 var valid = this.form.checkValidity();
                 if (valid) {
+                    var form_id = <?php echo $form_id ?>;
 
                     var id = <?php
                                 $userid = $_SESSION['userlogin']['id'];
@@ -343,7 +345,7 @@ if ($result) {
                     console.log('after setting variables')
                     $.ajax({
                         type: 'POST',
-                        url: 'http://localhost/Hacettepe-KDSE-BPYS/submitOrUpdateForm7.php',
+                        url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/submitOrUpdateForm7.php',
                         data: JSON.stringify({
                             isUpdate: true,
                             form_id: form_id,
