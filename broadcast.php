@@ -296,7 +296,7 @@ $('#showAllMessages').click(function (e) {
               $('.messagess').css('display', 'none');
               $('#showAllMessages').css('display', 'block');
               $('#multicastSubject').val('')
-                $('#multicastMessage').val('');
+              $('#multicastMessage').val('');
             },
             error: function (data) {
               Swal.fire({
