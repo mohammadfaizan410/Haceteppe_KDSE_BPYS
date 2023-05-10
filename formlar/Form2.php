@@ -62,12 +62,12 @@ if (isset($_GET['logout'])) {
                 <div class="input-section d-flex">
                     <p class="usernamelabel">Patient Name:</p>
                     <input type="text" class="form-control" required name="patient_name" id="diger"
-                        placeholder="Patient Name">
+                        placeholder="Patient Name" maxlength="25">
                 </div>
                 <div class="input-section d-flex">
                     <p class="usernamelabel">Patient ID:</p>
                     <input type="text" class="form-control" required name="patient_id" id="diger"
-                        placeholder="Patient ID">
+                        placeholder="Patient ID" maxlength="20">
                 </div>
 
 
@@ -142,31 +142,31 @@ if (isset($_GET['logout'])) {
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Ağrının Yeri:</p>
                             <input type="text" class="form-control" required name="pain_location" id="pain_location"
-                                placeholder="Ağrının Yerini Giriniz">
+                                placeholder="Ağrının Yerini Giriniz" maxlength="100">
                         </div>
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Ağrının Karakteri:</p>
                             <input type="text" class="form-control" required name="pain_character" id="diger"
-                                placeholder="Ağrının Karakterini Giriniz">
+                                placeholder="Ağrının Karakterini Giriniz" maxlength="100">
                         </div>
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Ağrının Sıklığı:</p>
                             <input type="text" class="form-control" required name="pain_frequency" id="diger"
-                                placeholder="Ağrının Sıklığını Giriniz">
+                                placeholder="Ağrının Sıklığını Giriniz" maxlength="50">
                         </div>
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Ağrıyı Arttıran Durumlar:</p>
                             <input type="text" class="form-control" required name="pain_increase_factors" id="diger"
-                                placeholder="Ağrıyı Arttıran Durumları Giriniz">
+                                placeholder="Ağrıyı Arttıran Durumları Giriniz" maxlength="50">
                         </div>
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Ağrıyı Azaltan Durumlar:</p>
                             <input type="text" class="form-control" required name="pain_decrease_factors" id="diger"
-                                placeholder="Ağrıyı Azaltan Durumları Giriniz">
+                                placeholder="Ağrıyı Azaltan Durumları Giriniz" maxlength="50">
                         </div>
 
                         <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">

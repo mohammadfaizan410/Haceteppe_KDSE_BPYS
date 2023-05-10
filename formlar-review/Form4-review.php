@@ -233,6 +233,7 @@ if ($result) {
                                 $userid = $_SESSION['userlogin']['id'];
                                 echo $userid
                                 ?>;
+                var form_id = <?php echo $form_id ?>;
                 var name = $('#name').val();
                 var surname = $('#surname').val();
                 var age = $('#age').val();
@@ -264,8 +265,10 @@ if ($result) {
 
                 $.ajax({
                     type: 'POST',
-                    url: 'http://18.159.134.238/Hacettepe-KDSE-BPYS/submitOrUpdateForm4.php/',
+                    url: 'http://localhost/Hacettepe-KDSE-BPYS/submitOrUpdateForm4.php/',
                     data: {
+                        isUpdate: true,
+                        form_id: form_id,
                         id: id,
                         name: name,
                         surname: surname,
@@ -287,6 +290,7 @@ if ($result) {
                         pre_fall_precautions: pre_fall_precautions,
                         pre_fall_general_condition: pre_fall_general_condition,
                         post_fall_general_condition: post_fall_general_condition
+
 
                     },
                     success: function(data) {

@@ -363,6 +363,7 @@ if ($result) {
                                 $userid = $_SESSION['userlogin']['id'];
                                 echo $userid
                                 ?>;
+                var form_id = <?php echo $form_id ?>;
                 let name = $('#name').val();
                 let surname = $('#surname').val();
                 let age = $('#age').val();
@@ -391,6 +392,8 @@ if ($result) {
                     type: 'POST',
                     url: 'http://localhost/Hacettepe-KDSE-BPYS/submitOrUpdateForm3.php',
                     data: {
+                        isUpdate: true,
+                        form_id: form_id,
                         form_num: form_num,
                         patient_name: patient_name,
                         patient_id: patient_id,

@@ -302,6 +302,7 @@ if ($result) {
                                 $userid = $_SESSION['userlogin']['id'];
                                 echo $userid
                                 ?>;
+                    var form_id = <?php echo $form_id ?>;
                     var name = $('#name').val();
                     var surname = $('#surname').val();
                     var age = $('#age').val();
@@ -338,11 +339,14 @@ if ($result) {
                     var healingDate = $('#healingDate').val();
 
 
+
                     console.log('after setting variables')
                     $.ajax({
                         type: 'POST',
                         url: 'http://localhost/Hacettepe-KDSE-BPYS/submitOrUpdateForm7.php',
                         data: JSON.stringify({
+                            isUpdate: true,
+                            form_id: form_id,
                             name: name,
                             form_num: formnum,
                             patient_name: patient_name,
