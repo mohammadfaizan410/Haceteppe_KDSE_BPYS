@@ -5,7 +5,7 @@ require_once("./config-messages.php");
 
 if(isset($_POST['email'])){
     $user_email = $_POST['email'];
-    $sql = "SELECT * FROM broadcast WHERE to_email = :to_email order by id desc";
+    $sql = "SELECT * FROM broadcast WHERE to_email = 'fai@gmail.com' order by id desc";
     $stmt = $db->prepare($sql);
     $stmt->bindParam(':to_email', $user_email);
     $stmt->execute();
