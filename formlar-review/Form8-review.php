@@ -43,13 +43,13 @@ if ($result) {
     <!-- Libraries Stylesheet -->
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="../bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="style.css" rel="stylesheet">
-
+    <link href="../style.css" rel="stylesheet">
     <style>
     .send-patient {
         align-self: center;

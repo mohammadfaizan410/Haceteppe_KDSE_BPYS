@@ -231,7 +231,7 @@ if (isset($_GET['logout'])) {
                            <div class="mt-3"><a class="nav-items" style="color : white;"  href="<?php echo $base_url; ?>/formlar/Form8.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 8</a></div>
                            <div class="mt-3"><a class="nav-items" style="color : white;"  href="<?php echo $base_url; ?>/formlar/tetkiksonuclari_form9.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 9</a></div>
                            <div class="mt-3"><a class="nav-items" style="color : white;"  href="<?php echo $base_url; ?>/formlar/yasamsalbulgutakibi_form10.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 10</a></div>
-                           <div class="mt-3"><a class="nav-items" style="color : white;"  href="<?php echo $base_url; ?>/formlar/yasamsalbulgutakibi_form10.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 10</a></div>
+                           <div class="mt-3"><a class="nav-items" style="color : white;"  href="<?php echo $base_url; ?>/formlar/Form11.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 11</a></div>
                         </thead>
                         <tbody>
                         </tbody>
