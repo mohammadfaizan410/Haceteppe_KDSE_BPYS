@@ -5,6 +5,7 @@ require_once("config-students.php");
 
 if(isset($_POST['email'])){
     $user_email = $_POST['email'];
+    var_dump($user_email);
     $sql = "SELECT * FROM broadcast WHERE to_email = :to_email order by id desc";
     $stmt = $db->prepare($sql);
     $stmt->bindParam(':to_email', $user_email);
