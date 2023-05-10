@@ -293,8 +293,9 @@ $('#showAllMessages').click(function (e) {
               $('#student-selection-container').html('');
               $('#student-selection-container').css('display', 'none');
               $('#student-selection-container').html('');
-              $('.messagess').css('display', 'block')
-                $('#multicastSubject').val('')
+              $('.messagess').css('display', 'none');
+              $('#showAllMessages').css('display', 'block');
+              $('#multicastSubject').val('')
                 $('#multicastMessage').val('');
             },
             error: function (data) {
@@ -343,7 +344,8 @@ $('#showAllMessages').click(function (e) {
               $('#showAll').css('display', 'flex');
               $('#sendToSome').css('display', 'flex');
               $('#sendToAll').css('display', 'flex');
-              $('.messagess').css('display', 'block');
+              $('.messagess').css('display', 'none');
+              $('#showAllMessages').css('display', 'block');
               $('#broadcastSubject').val('');
               $('#broadcastMessage').val('');
             },
