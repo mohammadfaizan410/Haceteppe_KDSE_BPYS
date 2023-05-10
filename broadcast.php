@@ -87,7 +87,7 @@ $('#showAllMessages').click(function (e) {
                                   ?> "
     $.ajax({
       type: 'POST',
-      url: '<?php echo $base_url; ?>/getAllBroadcasts.php/',
+      url: '<?php echo $base_url; ?>/getAllBroadcasts.php',
       data: {
         email : email,
       },
