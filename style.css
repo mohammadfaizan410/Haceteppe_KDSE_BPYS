@@ -48,7 +48,7 @@ body {
 
 
 .login-box {
-    width: 360px;
+    width: 599px;
     background: rgba(0, 0, 0, 0.5);
     color: #fff;
     top: 50%;
@@ -60,13 +60,6 @@ body {
     border-radius: 18px;
 }
 
-.login-signup {
-    height: 600px;
-}
-
-.login-login {
-    height: 450px;
-}
 
 .buttons {
 

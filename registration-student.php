@@ -1,5 +1,7 @@
 <?php
 session_start();
+$base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
+
 $message = '';
 if (isset($_SESSION['email_alert'])) {
     $message = 'Email Already Existed';
@@ -22,39 +24,17 @@ require_once("config-students.php");
     <link rel="icon" href="img/core-img/favicon.ico">
 
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
     <link href='https://css.gg/arrow-left-o.css' rel='stylesheet'>
 
 </head>
 
 <body>
 
-    <div id="validation-box">
-        <form action="" method="post">
-            <div class="login-box login-login" style= 'width : 50%;'>
-
-                <h1 class="header">KDSE-BPYS</h1>
-                <h2 class="login">An email was sent to you, please enter the code</h2>
-
-                <p class="labels">Kodu</p>
-                <input type="text" required name="code" id="code" placeholder="enter code">
-                <input type="submit" name="submit" id="validate" value="Giriş Yap">
-                <button class='btn btn-primary' id="sendEmail">Send again</button>
-                <a href="main.php" class="lower-buttons" style="padding-top:10px"><i class="gg-arrow-left-o"
-                        style="margin: 0; margin-right: 20px;"></i>Ana Sayfaya Dön</a>
-</div>
-        </form>
-
-    </div>
-
-
-
         <form action="" method="post">
             <div class="login-box login-signup" id="registrationForm">
-
                 <h1 class="header">e-BYRYS-KKDS</h1>
                 <h2 class="login">Sign Up as Student</h2>
-                <h3><?php echo $message; ?></h3>
 
                 <p class="usernamelabel">İsim</p>
                 <input type="text" required name="name" id="name" placeholder="İsim Giriniz">
@@ -63,238 +43,93 @@ require_once("config-students.php");
                 <input type="text" required name="surname" id="surname" placeholder="Soyisim Giriniz">
 
                 <p class="usernamelabel">E-mail</p>
-                <input type="email" required name="email" id="email" placeholder="E-mail Giriniz"
-                    oninput="sanitizeEmail()">
-                <span id="email-error" style="display:none; color:red;">Lütfen geçerli bir e-posta adresi
-                    giriniz.</span>
+                <input type="email" required name="email" id="email" placeholder="E-mail Giriniz">
+
 
                 <p class="passwordlabel">Şifre</p>
-                <input type="password" name="password" id="password" required placeholder="Şifre Giriniz" minlength="6"
-                  oninput="checkPasswordMatch(); sanitizePassword()">
-                <span id="password-error" style="display:none; color:red;">Şifre en az 6 karakter uzunluğunda
-                    olmalıdır.</span>
+                <input type="password" name="password" id="password" required placeholder="Şifre Giriniz" minlength="6">
+
                 <p class="passwordlabel">Şifreyi Tekrar Girin</p>
                 <input type="password" name="confirm-password" id="confirm-password" required placeholder="Şifreyi Tekrar Girin"
-                    minlength="6" oninput="checkPasswordMatch()">
-                <span id="confirm-password-error" style="display:none; color:red;">Şifreler eşleşmiyor.</span>
-
-
+                    minlength="6">
+                <span id="error" style="color: red;"></span>
                 <input type="submit" name="submit" id="register" value="Kayıt Ol">
                 <a href="main.php" class="lower-buttons" style="padding-top:10px"><i class="gg-arrow-left-o"
                         style="margin: 0; margin-right: 20px;"></i>Ana Sayfaya Dön</a>
+            </div>
         </form>
-
+        </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-              document.getElementById("register").style.display = 'none';
+        $("#register").click(function (e) { 
+          e.preventDefault();
+          const name = $("#name").val();
+          const surname = $("#surname").val();
+          const email = $("#email").val();
+          const password = $("#password").val();
+          const confirmPass = $("#confirm-password").val();
+          const passRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}$/;
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-        var emailCode = '';
-
-
-        function sendEmail(){
-                    var name = $('#name').val();
-                    var surname = $('#surname').val();
-                    var email = $('#email').val();
-                    var password = $('#password').val();
-                    
-                    $.ajax({
-                                type: "POST",
-                                url: "sendEmail.php",
-                                data: {
-                                    name: name,
-                                    surname: surname,
-                                    email: email,
-                                    password: password
-                                },
-                                success: function (response) {
-                                        $("#registrationForm").css("display", 'none');
-                                        $("#validation-box").css("display", 'block');
-                                       emailCode = response;
-                                },
-                                error :function(response){
-                                    console.log(response)
-                                }
-                            });   
-        }
-
-        $(function() {
-
-                                $('#validate').click(function(e) {
-                                e.preventDefault();
-                                var name = $('#name').val();
-                                var surname = $('#surname').val();
-                                var email = $('#email').val();
-                                var password = $('#password').val();
-                                                
-                                        if(emailCode === $("#code").val()){
-                                            $.ajax({
-                                        type: 'POST',
-                                        url: 'process-student.php',
-                                        data: {
-                                            name: name,
-                                            surname: surname,
-                                            email: email,
-                                            password: password
-                                        },
-                                        success: function(data) {
-                                         
-                                            alert("registration successfull")
-                                            window.location.href= './login-student.php';
-                                        },
-                                        error: function(data) {
-                                            console.log("Resgitration was not complete",data)
-                                            alert("Could not be registered!");
-                                        }
-                                    })
-                                                    } 
-                                                    else {
-                                                        alert("codes do not match")
-                                                    };
-                                                    
-                                            })
-                                        });
-
-
-     $("#validation-box").css("display", 'none');
-
-        $(function() {
-            $('#register').click(function(e) {
-                e.preventDefault()
-                    sendEmail();
-            })
-        })
-    
-
-        $("#sendEmail").click(function (e) { 
-            e.preventDefault();
-            alert("Code sent again, check your email!") 
-            sendEmail();
-        });
-
-    </script>
-    <script>
-        function isEmailExist(email, callback) {
-            $.ajax({
-                type: "POST",
-                url: "checkEmailTeacher.php",
-                data: {
-                email: email,
-                },
-                success: function(response) {
-                var isPresent = (response === 'exists');
-                callback(isPresent);
-                },
-                error: function(response) {
-                callback(false);
-                }
-            });
+          $("#error").text("");
+          //check form validity
+          if(name === ""){
+            $("#error").text("Name cannot be empty");
+          }
+          else if(surname == ""){
+            $("#error").text("Surname cannot be empty");
+          }
+          else if(email == ""){
+            $("#error").text("email cannot be empty");
+          }
+          else if(!emailRegex.test(email)){
+            $("#error").text("Email is not in correct format!");
+          }
+          else if(password == ""){
+            $("#error").text("password fields cannot be empty");
+          }
+          else if(confirmPass == ""){
+            $("#error").text("Passowrd fields cannot be empty");
+          }
+          else if(confirmPass !== password){
+            $("#error").text("Passowrds do not match");
+          }
+          else if(confirmPass === password && !passRegex.test(password)){
+            $("#error").text("one digit, one lowercase letter, one uppercase letter and be between 8 and 20 characters long");
+          }
+          else{
+            $.ajax({  
+            type: "POST",
+            url: "<?php echo $base_url; ?>/process-student.php",
+            data: {
+              name : name,
+              surname:surname,
+              email:email,
+              password:password,
+            },
+            success: function (response) {
+              console.log(response);
+              alert("Successfull");
+              window.location.assign("<?php echo $base_url; ?>/main.php")
+            },
+            error : function(response){
+              console.log(response);
+              alert("Error : Server Error");
             }
-
-    </script>
-    <script>
-    function sanitizePassword() {
-  var passwordInput = document.getElementById("password");
-  passwordInput.value = passwordInput.value.replace(/[^a-zA-Z0-9_-]/g, '');
-
-  var passwordError = document.getElementById("password-error");
-  var emailInput = document.getElementById("email");
-  var emailError = document.getElementById("email-error");
-
-  // Check if email is valid
-  if (!isValidEmail(emailInput.value)) {
-    emailError.style.display = "inline";
-    document.getElementById("register").style.display = 'none';
-    return;
-  } else {
-    emailError.style.display = "none";
-  }
-
-  // Check if email is present in the database
-  isEmailExist(emailInput.value, function(isPresent) {
-    if (isPresent) {
-      emailError.innerText =  "Bu e-posta adresi zaten kayıtlı. Lütfen farklı bir e-posta adresi seçin.";
-      emailInput.setCustomValidity(
-        "Bu e-posta adresi zaten kayıtlı. Lütfen farklı bir e-posta adresi seçin.");
-      emailError.style.display = "block";
-      document.getElementById("register").style.display = 'none';
-    } else {
-      emailInput.setCustomValidity("");
-      emailError.style.display = "none";
-
-      // Check if password is valid
-      if (passwordInput.value.length < 6) {
-        passwordError.style.display = "inline";
-        document.getElementById("register").style.display = 'none';
-      } else {
-        passwordError.style.display = "none";
-        document.getElementById("register").style.display = 'block';
-      }
-    }
-  });
-}
-function checkPasswordMatch() {
-  var password = document.getElementById("password").value;
-  var confirmPassword = document.getElementById("confirm-password").value;
-  var confirmError = document.getElementById("confirm-password-error");
-  var submitButton = document.getElementById("register");
-
-  if (password === confirmPassword && password !== "" && confirmPassword !== "") {
-    confirmError.style.display = "none";
-    submitButton.disabled = false;
-  } else {
-    confirmError.style.display = "block";
-    submitButton.disabled = true;
-  }
-}
-    </script>
-    <script>
-    function sanitizeEmail() {
-  var emailInput = document.getElementById("email");
-  emailInput.value = emailInput.value.replace(/[^a-zA-Z0-9@._-]/g, '');
-  var emailError = document.getElementById("email-error");
-  var passwordInput = document.getElementById("password");
-  var passwordError = document.getElementById("password-error");
-
-  // Check if email is valid
-  if (!isValidEmail(emailInput.value)) {
-    emailError.style.display = "inline";
-    document.getElementById("register").style.display = 'none';
-    return;
-  } else {
-    emailError.style.display = "none";
-  }
-
-  // Check if email is present in the database
-  isEmailExist(emailInput.value, function(isPresent) {
-    if (isPresent) {
-      emailError.innerText =  "Bu e-posta adresi zaten kayıtlı. Lütfen farklı bir e-posta adresi seçin.";
-      emailInput.setCustomValidity(
-        "Bu e-posta adresi zaten kayıtlı. Lütfen farklı bir e-posta adresi seçin.");
-      emailError.style.display = "block";
-      document.getElementById("register").style.display = 'none';
-    } else {
-      emailInput.setCustomValidity("");
-      emailError.style.display = "none";
-
-      // Check if password is valid
-      if (passwordInput.value.length < 6) {
-        passwordError.style.display = "inline";
-        document.getElementById("register").style.display = 'none';
-      } else {
-        passwordError.style.display = "none";
-        document.getElementById("register").style.display = 'block';
-      }
-    }
-  });
-}
-    function isValidEmail(email) {
-        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    }
+          });
+          
+          
+          }
    
-</script>
 
-</body>
+
+
+  
+          
+        });
+    </script>
+  
+
 
 </html>
