@@ -240,7 +240,7 @@ class PHPMailer
      * The hostname to use in the Message-ID header and as default HELO string.
      * If empty, PHPMailer attempts to find one with, in order,
      * $_SERVER['SERVER_NAME'], gethostname(), php_uname('n'), or the value
-     * '18.159.134.238.localdomain'.
+     * 'localhost.localdomain'.
      *
      * @see PHPMailer::$Helo
      *
@@ -280,7 +280,7 @@ class PHPMailer
      *
      * @var string
      */
-    public $Host = '18.159.134.238';
+    public $Host = 'localhost';
 
     /**
      * The default SMTP server port.
@@ -2118,7 +2118,7 @@ class PHPMailer
         $this->smtp->setDebugOutput($this->Debugoutput);
         $this->smtp->setVerp($this->do_verp);
         if ($this->Host === null) {
-            $this->Host = '18.159.134.238';
+            $this->Host = 'localhost';
         }
         $hosts = explode(';', $this->Host);
         $lastexception = null;
@@ -4089,7 +4089,7 @@ class PHPMailer
 
     /**
      * Get the server hostname.
-     * Returns '18.159.134.238.localdomain' if unknown.
+     * Returns 'localhost.localdomain' if unknown.
      *
      * @return string
      */
@@ -4106,7 +4106,7 @@ class PHPMailer
             $result = php_uname('n');
         }
         if (!static::isValidHost($result)) {
-            return '18.159.134.238.localdomain';
+            return 'localhost.localdomain';
         }
 
         return $result;

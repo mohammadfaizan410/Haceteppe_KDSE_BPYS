@@ -29,7 +29,29 @@ require_once("config-students.php");
 
 </head>
 
+
+
 <body>
+
+<div id="validation-box">
+        <form action="" method="post">
+            <div class="login-box login-login" style= 'width : 50%;'>
+
+                <h1 class="header">e-BYRYS-KKDS</h1>
+                <h2 class="login">An email was sent to you, please enter the code</h2>
+
+                <p class="labels">Kodu</p>
+                <input type="text" required name="code" id="code" placeholder="enter code">
+                <input type="submit" name="submit" id="validate" value="Giriş Yap">
+                <button class='btn btn-primary' id="sendEmail">Send again</button>
+                <a href="main.php" class="lower-buttons" style="padding-top:10px"><i class="gg-arrow-left-o"
+                        style="margin: 0; margin-right: 20px;"></i>Ana Sayfaya Dön</a>
+</div>
+        </form>
+
+    </div>
+
+
 
         <form action="" method="post">
             <div class="login-box login-signup" id="registrationForm">
@@ -62,6 +84,13 @@ require_once("config-students.php");
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
+
+      $("#validation-box").css("display", "none");
+    </script>
+
+    <script>
+                          var code = '';
+
         $("#register").click(function (e) { 
           e.preventDefault();
           const name = $("#name").val();
@@ -96,38 +125,76 @@ require_once("config-students.php");
             $("#error").text("Passowrds do not match");
           }
           else if(confirmPass === password && !passRegex.test(password)){
-            $("#error").text("one digit, one lowercase letter, one uppercase letter and be between 8 and 20 characters long");
+            $("#error").text("Passwords must contain one digit, one lowercase letter, one uppercase letter and be between 8 and 20 characters long");
           }
           else{
-            $.ajax({  
-            type: "POST",
-            url: "<?php echo $base_url; ?>/process-student.php",
-            data: {
-              name : name,
-              surname:surname,
-              email:email,
-              password:password,
-            },
-            success: function (response) {
-              console.log(response);
-              alert("Successfull");
-              window.location.assign("<?php echo $base_url; ?>/main.php")
-            },
-            error : function(response){
-              console.log(response);
-              alert("Error : Server Error");
-            }
-          });
-          
-          
-          }
-   
-
-
-
-  
-          
+            $.ajax({
+              type: "POST",
+              url: "<?php echo $base_url; ?>/checkEmailAll.php",
+              data:{
+                email :email
+              },
+              success: function (response) {
+                  if(trim(response) == 'exists' ){
+                    $("#error").text("The email you entered already exists!");
+                  }
+                  //email dosent exist
+                  else{
+                    $("#validation-box").css("display", "block");
+                    $("#registrationForm").css("display", "none");
+                    $.ajax({
+                      type: "POST",
+                      url: "<?php echo $base_url; ?>/sendEmail.php",
+                      data: {
+                        email : email
+                      },
+                      success: function (response) {
+                        code = response;
+                      },
+                      error:function(response){
+                        alert("Error : server could not send email");
+                      }
+                    });
+                  }
+              },
+              error : function (respose) { 
+                alert("error : Server error")
+               }
+            });
+          }  
         });
+
+
+        
+        $("#validate").click(function (e) { 
+                      e.preventDefault();                
+                      var codeEntered = $("#code").val();
+                      if(codeEntered === code){
+                               
+                      $.ajax({  
+                            type: "POST",
+                            url: "<?php echo $base_url; ?>/process-student.php",
+                            data: {
+                                name : name,
+                                surname:surname,
+                                email:email,
+                                password:password,
+                              },
+                              success: function (response) {
+                                  console.log(response);
+                                  alert("Successfull");
+                                  window.location.assign("<?php echo $base_url; ?>/main.php")
+                                },
+                                error : function(response){
+                                    console.log(response);
+                                    alert("Error : Server Error");
+                                  }
+                                });
+                      }else{
+                        alert("codes do not match!")
+                      }
+                            });
+          
     </script>
   
 
