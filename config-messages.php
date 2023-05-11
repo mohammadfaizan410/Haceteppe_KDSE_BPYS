@@ -1,4 +1,3 @@
-
 <?php
 $db_user = "admin";
 $db_pass = "12345678";
