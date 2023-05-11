@@ -1,5 +1,6 @@
 <?php
 session_start();
+$base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
 $message = '';
 if (isset($_SESSION['email_alert'])) {
     $message = 'Email Already Existed';
@@ -118,13 +119,7 @@ require_once("config-students.php");
           });
           
           
-          }
-   
-
-
-
-  
-          
+          }   
         });
 
 </script>
