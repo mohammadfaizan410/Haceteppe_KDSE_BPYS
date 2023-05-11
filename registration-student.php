@@ -142,6 +142,7 @@ require_once("config-students.php");
                   else{
                     $("#validation-box").css("display", "block");
                     $("#registrationForm").css("display", "none");
+                    console.log("<?php echo $base_url; ?>/sendEmailCode.php")
                     $.ajax({
                       type: "POST",
                       url: "<?php echo $base_url; ?>/sendEmailCode.php",
@@ -158,7 +159,7 @@ require_once("config-students.php");
                     });
                   }
               },
-              error : function (respose) { 
+              error : function (response) { 
                 alert("error : Server error")
                }
             });
