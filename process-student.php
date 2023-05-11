@@ -1,7 +1,6 @@
+
 <?php
 require_once("config-students.php");
-?>
-<?php
 if (isset($_POST)) {
     $name = $_POST['name'];
     $surname = $_POST['surname'];

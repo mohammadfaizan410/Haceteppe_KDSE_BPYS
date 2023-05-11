@@ -89,7 +89,7 @@ require_once("config-students.php");
     </script>
 
     <script>
-                          var code = '';
+        var code = '';
 
         $("#register").click(function (e) { 
           e.preventDefault();
@@ -153,10 +153,53 @@ require_once("config-students.php");
                         code = response;
                       },
                       error:function(response){
-                        console.log(response)
                         alert("Error : server could not send email");
                       }
                     });
+
+                    $("#sendEmail").click(function (e) { 
+                      e.preventDefault();
+                      $.ajax({
+                        type: "POST",
+                        url: "<?php echo $base_url; ?>/sendEmailCode.php",
+                        data: {
+                        email : email
+                      },
+                        success: function (response) {
+                          code = response;
+                          alert("code sent again, check your email!");
+                        },
+                        error:function(response){
+                        alert("Error : server could not send email");
+                      }
+                      });
+                    });
+
+                    $("#validate").click(function (e) { 
+                      e.preventDefault();            
+                      var codeEntered = $("#code").val();
+                      if(codeEntered == code){ 
+                      $.ajax({  
+                            type: "POST",
+                            url: "<?php echo $base_url; ?>/process-student.php",
+                            data: {
+                                name : name,
+                                surname:surname,
+                                email:email,
+                                password:password,
+                              },
+                              success: function (response) {
+                                  alert("Successfull");
+                                  window.location.assign("<?php echo $base_url; ?>/main.php")
+                                },
+                                error : function(response){
+                                    alert("Error : Server Error");
+                                  }
+                                });
+                      }else{
+                        alert("codes do not match!")
+                      }
+                            });
                   }
               },
               error : function (response) { 
@@ -168,34 +211,7 @@ require_once("config-students.php");
 
 
         
-        $("#validate").click(function (e) { 
-                      e.preventDefault();                
-                      var codeEntered = $("#code").val();
-                      if(codeEntered === code){
-                               
-                      $.ajax({  
-                            type: "POST",
-                            url: "<?php echo $base_url; ?>/process-student.php",
-                            data: {
-                                name : name,
-                                surname:surname,
-                                email:email,
-                                password:password,
-                              },
-                              success: function (response) {
-                                  console.log(response);
-                                  alert("Successfull");
-                                  window.location.assign("<?php echo $base_url; ?>/main.php")
-                                },
-                                error : function(response){
-                                    console.log(response);
-                                    alert("Error : Server Error");
-                                  }
-                                });
-                      }else{
-                        alert("codes do not match!")
-                      }
-                            });
+       
           
     </script>
   
