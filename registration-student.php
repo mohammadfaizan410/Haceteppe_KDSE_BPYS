@@ -152,6 +152,7 @@ require_once("config-students.php");
                         code = response;
                       },
                       error:function(response){
+                        console.log(response)
                         alert("Error : server could not send email");
                       }
                     });
