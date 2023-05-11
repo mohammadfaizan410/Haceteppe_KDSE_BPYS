@@ -77,11 +77,11 @@ if (isset($_GET['logout'])) {
                     <form action="" method="POST" class="patients-save-fields">
                     <div class="input-section d-flex">
                             <p class="usernamelabel">Patient Name:</p>
-                            <input type="text" class="form-control" value=<?php echo $form9[0]['patient_name'];?> required name="patient_name" id="diger" placeholder="Patient Name">
+                            <input type="text" class="form-control" value=<?php echo $form9[0]['patient_name'];?> required name="patient_name" id="diger" placeholder="Patient Name" disabled>
                         </div>
                 `       <div class="input-section d-flex">
                             <p class="usernamelabel">Patient ID:</p>
-                            <input type="text" class="form-control" value=<?php echo $form9[0]['patient_id'];?> required name="patient_id" id="diger" placeholder="Patient ID">
+                            <input type="text" class="form-control" value=<?php echo $form9[0]['patient_id'];?> required name="patient_id" id="diger" placeholder="Patient ID" disabled>
                         </div>
                 `       <div class="input-section d-flex">
                             <p class="usernamelabel">Date:</p>

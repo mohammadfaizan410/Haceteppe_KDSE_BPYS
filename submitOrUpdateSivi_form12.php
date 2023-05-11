@@ -12,7 +12,7 @@ if (isset($_POST["patient_name"])) {
         liquid_type = ?,
         liquid_velocity = ?,
         delivery_time = ?,
-        liquid_level = ?
+        liquid_level = ?,
         liquid_sent = ?
         WHERE form_id = ?");
 

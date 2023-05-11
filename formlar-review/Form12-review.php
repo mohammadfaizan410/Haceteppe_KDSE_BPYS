@@ -9,8 +9,17 @@ if (isset($_GET['logout'])) {
     session_destroy();
     unset($_SESSION);
     header("Location: main.php");
-    var_dump("there should be patientID below");
-    var_dump($_GET['patient_id']);
+}
+require_once('../config-students.php');
+$userid = $_SESSION['userlogin']['id'];
+$form_id = $_GET['form_id'];
+$sql = "SELECT * FROM form12 where form_id= $form_id";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+if ($result) {
+    $form12 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+} else {
+    echo 'error';
 }
 ?>
 <!DOCTYPE html>
@@ -62,24 +71,32 @@ if (isset($_GET['logout'])) {
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
                     <div class="input-section d-flex">
+                            <p class="usernamelabel">Patient Name:</p>
+                            <input type="text" class="form-control"  value="<?php echo $form12[0]['patient_name']; ?>" required name="patient_name" id="diger" placeholder="Patient Name" disabled>
+                        </div>
+                `       <div class="input-section d-flex">
+                            <p class="usernamelabel">Patient ID:</p>
+                            <input type="text" class="form-control" value="<?php echo $form12[0]['patient_id']; ?>" required name="patient_id" id="diger" placeholder="Patient ID" disabled>
+                        </div>
+                    <div class="input-section d-flex">
                             <p class="usernamelabel">Sıvının Cinsi:</p>
-                            <input type="text" class="form-control" required name="liquid_type" id="diger" placeholder="liquid_type">
+                            <input type="text" class="form-control" required name="liquid_type" id="diger" placeholder="liquid_type" value="<?php echo $form12[0]['liquid_type']; ?>">
                         </div>
                 `       <div class="input-section d-flex">
                             <p class="usernamelabel">Sıvının Hızı:</p>
-                            <input type="text" class="form-control" required name="liquid_velocity" id="diger" placeholder="liquid_velocity">
+                            <input type="text" class="form-control" required name="liquid_velocity" id="diger" placeholder="liquid_velocity" value="<?php echo $form12[0]['liquid_velocity']; ?>">
                         </div>
 						<div class="input-section d-flex">
                             <p class="usernamelabel">Saat:</p>
-                            <input type="text" class="form-control" required name="delivery_time" id="diger" placeholder="delivery_time">
+                            <input type="text" class="form-control" required name="delivery_time" id="diger" placeholder="delivery_time" value="<?php echo $form12[0]['delivery_time']; ?>">
                         </div>
 						<div class="input-section d-flex">
                             <p class="usernamelabel">Seviye:</p>
-                            <input type="text" class="form-control" required name="liquid_level" id="diger" placeholder="liquid_level">
+                            <input type="text" class="form-control" required name="liquid_level" id="diger" placeholder="liquid_level" value="<?php echo $form12[0]['liquid_level']; ?>">
                         </div>
 						<div class="input-section d-flex">
                             <p class="usernamelabel">Giden:</p>
-                            <input type="text" class="form-control" required name="liquid_sent" id="diger" placeholder="liquid_sent">
+                            <input type="text" class="form-control" required name="liquid_sent" id="diger" placeholder="liquid_sent" value="<?php echo $form12[0]['liquid_sent']; ?>">
                         </div>
                         <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
                     </form>
@@ -90,7 +107,6 @@ if (isset($_GET['logout'])) {
 	
     </div>
     <script>
-            console.log("<?php echo $_GET['patient_id'];?>");
       $(function() {
           $('#closeBtn').click(function(e) {
               $("#content").load("formlar-student.php");
@@ -104,15 +120,11 @@ if (isset($_GET['logout'])) {
               e.preventDefault()
               console.log("clicked")
               var valid = this.form.checkValidity();
-
+              
               if (valid) {
-                let patient_name = "<?php
-                    echo urldecode($_GET['patient_name']);
-                ?>";
-                var patient_id = <?php
-                  $userid = $_GET['patient_id'];
-                  echo $userid
-                ?>;
+                  var form_id = <?php echo $form_id ?>;
+                let patient_name = $("input[name='patient_name']").val();
+                  let patient_id = parseInt($("input[name='patient_id']").val());
                   var name = $('#name').val();
                   var surname = $('#surname').val();
                   var age = $('#age').val();
@@ -132,6 +144,8 @@ if (isset($_GET['logout'])) {
                       type: 'POST',
                       url: '<?php echo $base_url; ?>/submitOrUpdateSivi_form12.php',
                       data: {
+                          isUpdate: true,
+                          form_id: form_id,
                           form_num:form_num,
                           patient_id:patient_id,
                           patient_name:patient_name,

@@ -60,15 +60,6 @@ if (isset($_GET['logout'])) {
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
-                    <div class="input-section d-flex">
-                            <p class="usernamelabel">Patient Name:</p>
-                            <input type="text" class="form-control" required name="patient_name" id="diger" placeholder="Patient Name" maxlength="25">
-                        </div>
-                `       <div class="input-section d-flex">
-                            <p class="usernamelabel">Patient ID:</p>
-                            <input type="text" class="form-control" required name="patient_id" id="diger" placeholder="Patient ID" maxlength="25">
-                        </div>
-                `       
 						<div class="input-section d-flex">
                             <p class="usernamelabel">zaman aralığını seçin: </p>
                             <div class="form-check">
@@ -232,6 +223,10 @@ if (isset($_GET['logout'])) {
 						  iv_input2:iv_input2,
 						  iv_input3:iv_input3,
 						  iv_input4:iv_input4,
+                          oral1 : oral1,
+                          oral2:oral2,
+                          oral3: oral3,
+                          oral4: oral4,
 						  blood_product1:blood_product1,
 						  blood_product2:blood_product2,
 						  blood_product3:blood_product3,

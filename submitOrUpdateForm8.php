@@ -5,11 +5,11 @@ require_once("config-students.php");
 
 if (isset($_POST["patient_name"])) {
     if(isset($_POST['isUpdate'])){
-        $stmt = $db->prepare("UPDATE form9 SET
+        $stmt = $db->prepare("UPDATE form8 SET
         patient_name = ?,
         update_date = ?,
         assessed_area = ?,
-        edema_severity = ?,
+        edema_severity = ?
         WHERE form_id = ?");
 
     $stmt->execute([

@@ -75,12 +75,12 @@ if ($result) {
                 <div class="input-section d-flex">
                     <p class="usernamelabel">Patient Name:</p>
                     <input type="text" class="form-control" required name="patient_name" id="diger"
-                        placeholder="Patient Name" value="<?php echo $form2[0]['patient_name']; ?>">
+                        placeholder="Patient Name" value="<?php echo $form2[0]['patient_name']; ?>" disabled>
                 </div>
                 <div class="input-section d-flex">
                     <p class="usernamelabel">Patient ID:</p>
                     <input type="text" class="form-control" required name="patient_id" id="diger"
-                        placeholder="Patient ID" value="<?php echo $form2[0]['patient_id']; ?>">
+                        placeholder="Patient ID" value="<?php echo $form2[0]['patient_id']; ?>" disabled>
                 </div>
 
 

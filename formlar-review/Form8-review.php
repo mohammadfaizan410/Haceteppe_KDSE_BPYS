@@ -66,17 +66,17 @@ if ($result) {
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
-                        <img src="./ödem.png"
+                        <img src="../ödem.png"
                             style="width:67%; height:auto;border: 1px solid;border-color: #246174; box-shadow:1px 1px 1px 1px #246174; border-radius: 20px;">
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Patient Name:</p>
                             <input type="text" class="form-control" required name="patient_name" id="diger"
-                                placeholder="Patient Name" value="<?php echo $form8[0]['patient_name']; ?>">
+                                placeholder="Patient Name" value="<?php echo $form8[0]['patient_name']; ?>" disabled>
                         </div>
                         ` <div class="input-section d-flex">
                             <p class="usernamelabel">Patient ID:</p>
                             <input type="text" class="form-control" required name="patient_id" id="diger"
-                                placeholder="Patient ID" value="<?php echo $form8[0]['patient_id']; ?>">
+                                placeholder="Patient ID" value="<?php echo $form8[0]['patient_id']; ?>" disabled>
                         </div>
                         <div class="input-section d-flex" style="padding-top: 5%;">
                             <p class="usernamelabel">Değerlendirilen Alan:</p>

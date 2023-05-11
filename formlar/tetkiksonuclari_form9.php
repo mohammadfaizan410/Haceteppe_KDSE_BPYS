@@ -65,10 +65,6 @@ if (isset($_GET['logout'])) {
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
-                    <div class="input-section d-flex">
-                            <p class="usernamelabel">Patient Name:</p>
-                            <input type="text" class="form-control" required name="patient_name" id="diger" placeholder="Patient Name">
-                        </div>
                        <div class="input-section d-flex">
                             <p class="usernamelabel">Date:</p>
                             <input type="date" class="form-control" required name="date" id="diger" placeholder="Patient ID">

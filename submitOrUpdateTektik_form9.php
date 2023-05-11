@@ -49,10 +49,10 @@ $stmt->execute([
     $_POST["examination_result"],
     $_POST["referance_value"],
 ]);
-
+        echo "successfully inserted";
 }
 }
 else{
-    echo "Error.";
+    echo "Error";
 }
 ?>

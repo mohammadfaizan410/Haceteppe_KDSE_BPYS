@@ -60,19 +60,11 @@ if (isset($_GET['logout'])) {
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
-                    <div class="input-section d-flex">
-                            <p class="usernamelabel">Patient Name:</p>
-                            <input type="text" class="form-control" required name="patient_name" id="diger" placeholder="Patient Name">
-                        </div>
-                `       <div class="input-section d-flex">
-                            <p class="usernamelabel">Patient ID:</p>
-                            <input type="text" class="form-control" required name="patient_id" id="diger" placeholder="Patient ID">
-                        </div>
-                `       <div class="input-section d-flex">
+                       <div class="input-section d-flex">
                             <p class="usernamelabel">Saat:</p>
                             <input type="time" class="form-control" required name="time" id="diger" placeholder="Saat">
                         </div>
-                `       <div class="input-section d-flex">
+                       <div class="input-section d-flex">
                             <p class="usernamelabel">Vücut Sıcaklığı:</p>
                             <input type="text" class="form-control" required name="body_temperature" id="diger" placeholder="Vücut Sıcaklığı">
                         </div>

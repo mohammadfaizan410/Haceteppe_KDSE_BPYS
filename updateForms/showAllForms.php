@@ -138,6 +138,24 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
+        $sql = "SELECT * FROM  form11 WHERE patient_id =" . $userid;
+        $smtmselect = $db->prepare($sql);
+        $result = $smtmselect->execute();
+        $values = [];
+        if ($result) {
+            $values10 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            echo 'error';
+        };
+        $sql = "SELECT * FROM  form12 WHERE patient_id =" . $userid;
+        $smtmselect = $db->prepare($sql);
+        $result = $smtmselect->execute();
+        $values = [];
+        if ($result) {
+            $values11 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            echo 'error';
+        };
 
         $allForms = [
             'table1_data' => $values1,
@@ -150,6 +168,7 @@ if (isset($_GET['logout'])) {
             'table8_data' => $values8,
             'table9_data' => $values9,
             'table10_data' => $values10,
+            'table11_data' => $values11,
         ];
 
         ?>
@@ -206,8 +225,11 @@ if (isset($_GET['logout'])) {
 
                                             echo '<div><a class="nav-items" style="color : white;"  href="'.$base_url.'/formlar-review/Form10-review.php?form_id=' . $form["form_id"] . '"><p>Form10  Date:' .$form["update_date"].'</p></a></div>';
                                         }
-                                        if($key ===  'table1-_data') {
+                                        if($key ===  'table10_data') {
                                             echo '<div><a class="nav-items" style="color : white;"  href="'.$base_url.'/formlar-review/Form11-review.php?form_id=' . $form["form_id"] . '"><p>Form11   Date:' .$form["update_date"].'</p></a></div>';
+                                        }
+                                        if($key ===  'table11_data') {
+                                            echo '<div><a class="nav-items" style="color : white;"  href="'.$base_url.'/formlar-review/Form12-review.php?form_id=' . $form["form_id"] . '"><p>Form12   Date:' .$form["update_date"].'</p></a></div>';
                                         }
                                 }
                                 ;
@@ -232,6 +254,7 @@ if (isset($_GET['logout'])) {
                            <div class="mt-3"><a class="nav-items" style="color : white;"  href="<?php echo $base_url; ?>/formlar/tetkiksonuclari_form9.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 9</a></div>
                            <div class="mt-3"><a class="nav-items" style="color : white;"  href="<?php echo $base_url; ?>/formlar/yasamsalbulgutakibi_form10.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 10</a></div>
                            <div class="mt-3"><a class="nav-items" style="color : white;"  href="<?php echo $base_url; ?>/formlar/Form11.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 11</a></div>
+                           <div class="mt-3"><a class="nav-items" style="color : white;"  href="<?php echo $base_url; ?>/formlar/siviizlem.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 12</a></div>
                         </thead>
                         <tbody>
                         </tbody>
