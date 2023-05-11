@@ -1,7 +1,10 @@
 <?php
+session_start();
+$message = '';
+if (isset($_SESSION['email_alert'])) {
+    $message = 'Email Already Existed';
+}
 require_once("config-students.php");
-$base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,6 +18,7 @@ $base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
     <title>KDSE-BPYS</title>
 
 
+
     <link rel="icon" href="img/core-img/favicon.ico">
 
 
@@ -25,12 +29,32 @@ $base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
 
 <body>
 
-    <div>
+    <div id="validation-box">
         <form action="" method="post">
-            <div class="login-box login-signup">
+            <div class="login-box login-login" style= 'width : 50%;'>
 
                 <h1 class="header">KDSE-BPYS</h1>
+                <h2 class="login">An email was sent to you, please enter the code</h2>
+
+                <p class="labels">Kodu</p>
+                <input type="text" required name="code" id="code" placeholder="enter code">
+                <input type="submit" name="submit" id="validate" value="Giriş Yap">
+                <button class='btn btn-primary' id="sendEmail">Send again</button>
+                <a href="main.php" class="lower-buttons" style="padding-top:10px"><i class="gg-arrow-left-o"
+                        style="margin: 0; margin-right: 20px;"></i>Ana Sayfaya Dön</a>
+</div>
+        </form>
+
+    </div>
+
+
+
+        <form action="" method="post">
+            <div class="login-box login-signup" id="registrationForm">
+
+                <h1 class="header">e-BYRYS-KKDS</h1>
                 <h2 class="login">Sign Up as Student</h2>
+                <h3><?php echo $message; ?></h3>
 
                 <p class="usernamelabel">İsim</p>
                 <input type="text" required name="name" id="name" placeholder="İsim Giriniz">
@@ -46,68 +70,127 @@ $base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
 
                 <p class="passwordlabel">Şifre</p>
                 <input type="password" name="password" id="password" required placeholder="Şifre Giriniz" minlength="6"
-                    oninput="sanitizePassword()">
+                  oninput="checkPasswordMatch(); sanitizePassword()">
                 <span id="password-error" style="display:none; color:red;">Şifre en az 6 karakter uzunluğunda
                     olmalıdır.</span>
+                <p class="passwordlabel">Şifreyi Tekrar Girin</p>
+                <input type="password" name="confirm-password" id="confirm-password" required placeholder="Şifreyi Tekrar Girin"
+                    minlength="6" oninput="checkPasswordMatch()">
+                <span id="confirm-password-error" style="display:none; color:red;">Şifreler eşleşmiyor.</span>
+
 
                 <input type="submit" name="submit" id="register" value="Kayıt Ol">
-                <a href="main.php" class="lower-buttons" style="padding-top:10px"><i class="gg-arrow-left-o" style="margin: 0; margin-right: 20px;"></i>Ana Sayfaya Dön</a>
+                <a href="main.php" class="lower-buttons" style="padding-top:10px"><i class="gg-arrow-left-o"
+                        style="margin: 0; margin-right: 20px;"></i>Ana Sayfaya Dön</a>
         </form>
 
-    </div>
-    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        $(function() {
-            $('#register').click(function(e) {
+              document.getElementById("register").style.display = 'none';
 
-                var valid = this.form.checkValidity();
+        var emailCode = '';
 
-                if (valid) {
 
+        function sendEmail(){
                     var name = $('#name').val();
                     var surname = $('#surname').val();
                     var email = $('#email').val();
                     var password = $('#password').val();
-
-                    e.preventDefault()
-
+                    
                     $.ajax({
-                        type: 'POST',
-                        url: 'process-student.php',
-                        data: {
-                            name: name,
-                            surname: surname,
-                            email: email,
-                            password: password
-                        },
-                        success: function(data) {
-                            Swal.fire({
-                                'title': 'Success',
-                                'text': data,
-                                'type': 'success'
-                            })
-                            setTimeout('window.location.href = "main.php"', 1000);
+                                type: "POST",
+                                url: "sendEmail.php",
+                                data: {
+                                    name: name,
+                                    surname: surname,
+                                    email: email,
+                                    password: password
+                                },
+                                success: function (response) {
+                                        $("#registrationForm").css("display", 'none');
+                                        $("#validation-box").css("display", 'block');
+                                       emailCode = response;
+                                },
+                                error :function(response){
+                                    console.log(response)
+                                }
+                            });   
+        }
 
-                        },
-                        error: function(data) {
-                            Swal.fire({
-                                'title': 'Errors',
-                                'text': 'There were errors',
-                                'type': 'error'
-                            })
-                        }
-                    })
+        $(function() {
+
+                                $('#validate').click(function(e) {
+                                e.preventDefault();
+                                var name = $('#name').val();
+                                var surname = $('#surname').val();
+                                var email = $('#email').val();
+                                var password = $('#password').val();
+                                                
+                                        if(emailCode === $("#code").val()){
+                                            $.ajax({
+                                        type: 'POST',
+                                        url: 'process-student.php',
+                                        data: {
+                                            name: name,
+                                            surname: surname,
+                                            email: email,
+                                            password: password
+                                        },
+                                        success: function(data) {
+                                         
+                                            alert("registration successfull")
+                                            window.location.href= './login-student.php';
+                                        },
+                                        error: function(data) {
+                                            console.log("Resgitration was not complete",data)
+                                            alert("Could not be registered!");
+                                        }
+                                    })
+                                                    } 
+                                                    else {
+                                                        alert("codes do not match")
+                                                    };
+                                                    
+                                            })
+                                        });
 
 
-                } else {
+     $("#validation-box").css("display", 'none');
 
-                }
-
+        $(function() {
+            $('#register').click(function(e) {
+                e.preventDefault()
+                    sendEmail();
             })
-
         })
+    
+
+        $("#sendEmail").click(function (e) { 
+            e.preventDefault();
+            alert("Code sent again, check your email!") 
+            sendEmail();
+        });
+
+    </script>
+    <script>
+        function isEmailExist(email, callback) {
+            $.ajax({
+                type: "POST",
+                url: "checkEmailTeacher.php",
+                data: {
+                email: email,
+                },
+                success: function(response) {
+                var isPresent = (response === 'exists');
+                callback(isPresent);
+                },
+                error: function(response) {
+                callback(false);
+                }
+            });
+            }
+
     </script>
     <script>
     function sanitizePassword() {
@@ -150,9 +233,23 @@ $base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
     }
   });
 }
+function checkPasswordMatch() {
+  var password = document.getElementById("password").value;
+  var confirmPassword = document.getElementById("confirm-password").value;
+  var confirmError = document.getElementById("confirm-password-error");
+  var submitButton = document.getElementById("register");
+
+  if (password === confirmPassword && password !== "" && confirmPassword !== "") {
+    confirmError.style.display = "none";
+    submitButton.disabled = false;
+  } else {
+    confirmError.style.display = "block";
+    submitButton.disabled = true;
+  }
+}
     </script>
     <script>
-   function sanitizeEmail() {
+    function sanitizeEmail() {
   var emailInput = document.getElementById("email");
   emailInput.value = emailInput.value.replace(/[^a-zA-Z0-9@._-]/g, '');
   var emailError = document.getElementById("email-error");
@@ -197,6 +294,7 @@ $base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
     }
    
 </script>
+
 </body>
 
 </html>

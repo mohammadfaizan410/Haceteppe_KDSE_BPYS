@@ -1,7 +1,5 @@
 <?php
-require_once("config-students.php");
-$base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
-
+require_once("config-teachers.php");
 ?>
 <?php
 if (isset($_POST)) {
@@ -14,9 +12,9 @@ if (isset($_POST)) {
     $smtminsert = $db->prepare($sql);
     $result = $smtminsert->execute([$name, $surname, $email, $password]);
     if ($result) {
-        echo 'success';
+        echo 'Başarılı';
     } else {
-        echo 'error';
+        echo 'Hata';
     }
 } else
     echo 'no data';
