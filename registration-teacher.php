@@ -51,6 +51,7 @@ require_once("config-students.php");
             <input type="password" name="confirm-password" id="confirm-password" required placeholder="Şifreyi Tekrar Girin"
                minlength="6" >
                 <input type="submit" name="submit" id="register" value="Kayıt Ol">
+                <span id="error" style="color: red;"></span>
                 <a href="main.php" class="lower-buttons" style="padding-top:10px"><i class="gg-arrow-left-o"
                         style="margin: 0; margin-right: 20px;"></i>Ana Sayfaya Dön</a>
             </div>
@@ -100,7 +101,7 @@ require_once("config-students.php");
           else{
             $.ajax({  
             type: "POST",
-            url: "<?php echo $base_url; ?>/process-teacher.php",
+            url: "<?php echo $base_url; ?>/process-teachers.php",
             data: {
               name : name,
               surname:surname,
