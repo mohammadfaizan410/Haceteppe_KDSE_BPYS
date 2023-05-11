@@ -135,7 +135,7 @@ require_once("config-students.php");
                 email :email
               },
               success: function (response) {
-                  if(trim(response) == 'exists' ){
+                  if(response == 'exists' ){
                     $("#error").text("The email you entered already exists!");
                   }
                   //email dosent exist
