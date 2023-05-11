@@ -1,7 +1,5 @@
 <?php
 require_once("config-students.php");
-$base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
-
 ?>
 <?php
 if (isset($_POST)) {
@@ -9,14 +7,17 @@ if (isset($_POST)) {
     $surname = $_POST['surname'];
     $email = $_POST['email'];
     $password = sha1(($_POST['password']));
+    
+
+
 
     $sql = "INSERT INTO students (name, surname, email, password) VALUES(?,?,?,?)";
     $smtminsert = $db->prepare($sql);
     $result = $smtminsert->execute([$name, $surname, $email, $password]);
     if ($result) {
-        echo 'success';
+        echo 'Başarılı';
     } else {
-        echo 'error';
+        echo 'Hata';
     }
 } else
     echo 'no data';
