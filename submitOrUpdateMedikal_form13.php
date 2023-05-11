@@ -4,12 +4,30 @@ require_once("config-students.php");
 <?php
 
 if (isset($_POST["patient_name"])) {
-
-    $sql = "SELECT * FROM form13 WHERE patient_id = ?";
-    $smtmselect = $db->prepare($sql);
-    $result = $smtmselect->execute([$_POST["patient_id"]]);
-    if ($result) {
-            $stmt = $db->prepare("INSERT INTO form13 (
+    if (isset($_POST['isUpdate'])) {
+        $stmt = $db->prepare("UPDATE form13
+        SET
+        update_date = ?,
+        delivery_date = ?,
+        delivery_time = ?,
+        medicine_name = ?,
+        medicine_dose = ?,
+        delivery_method = ?,
+        treatment_timeRange = ?
+        WHERE form_id = ?");
+        $stmt->execute([
+            $_POST["creation_date"],
+            $_POST["delivery_date"],
+            $_POST["delivery_time"],
+            $_POST["medicine_name"],
+            $_POST["medicine_dose"],
+            $_POST["delivery_method"],
+            $_POST["treatment_timeRange"],
+            $_POST["form_id"]
+        ]);
+        echo "successfully updated";
+    } else {
+        $stmt = $db->prepare("INSERT INTO form13 (
                 form_num,
                 patient_name,
                 patient_id,
@@ -22,23 +40,20 @@ if (isset($_POST["patient_name"])) {
                 delivery_method,
                 treatment_timeRange
             ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-$stmt->execute([
-        $_POST["form_num"],
-        $_POST["patient_name"],
-        $_POST["patient_id"],
-        $_POST["creation_date"],
-        $_POST["update_date"],    
-        $_POST["delivery_date"],
-        $_POST["delivery_time"],
-        $_POST["medicine_name"],
-        $_POST["medicine_dose"],
-        $_POST["delivery_method"],
-        $_POST["treatment_timeRange"]
-]);
-        
-    } else{
-
-        echo "Error.";
+        $stmt->execute([
+            $_POST["form_num"],
+            $_POST["patient_name"],
+            $_POST["patient_id"],
+            $_POST["creation_date"],
+            $_POST["update_date"],
+            $_POST["delivery_date"],
+            $_POST["delivery_time"],
+            $_POST["medicine_name"],
+            $_POST["medicine_dose"],
+            $_POST["delivery_method"],
+            $_POST["treatment_timeRange"]
+        ]);
+        echo "successFully inserted";
     }
 }
 else{

@@ -10,6 +10,17 @@ if (isset($_GET['logout'])) {
     unset($_SESSION);
     header("Location: main.php");
 }
+require_once('../config-students.php');
+$userid = $_SESSION['userlogin']['id'];
+$form_id = $_GET['form_id'];
+$sql = "SELECT * FROM form13 where form_id= $form_id";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+if ($result) {
+    $form13 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+} else {
+    echo 'error';
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -59,25 +70,33 @@ if (isset($_GET['logout'])) {
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
+                    <div class="input-section d-flex">
+                            <p class="usernamelabel">Patient Name:</p>
+                            <input type="text" class="form-control"  value="<?php echo $form13[0]['patient_name']; ?>" required name="patient_name" id="diger" placeholder="Patient Name" disabled>
+                        </div>
+                `       <div class="input-section d-flex">
+                            <p class="usernamelabel">Patient ID:</p>
+                            <input type="text" class="form-control" value="<?php echo $form13[0]['patient_id']; ?>" required name="patient_id" id="diger" placeholder="Patient ID" disabled>
+                        </div>
                        <div class="input-section d-flex">
                             <p class="usernamelabel">Saat:</p>
-                            <input type="time" class="form-control" required name="delivery_time" id="diger" placeholder="delivery_time">
+                            <input type="time" class="form-control" required name="delivery_time" id="diger" placeholder="delivery_time" value="<?php echo $form13[0]['delivery_time']; ?>">
                         </div>
 						<div class="input-section d-flex">
                             <p class="usernamelabel">İlacın Adı:</p>
-                            <input type="text" class="form-control" required name="medicine_name" id="diger" placeholder="medicine_name">
+                            <input type="text" class="form-control" required name="medicine_name" id="diger" placeholder="medicine_name" value="<?php echo $form13[0]['medicine_name']; ?>">
                         </div>
 						<div class="input-section d-flex">
                             <p class="usernamelabel">İlacın Dozu:</p>
-                            <input type="text" class="form-control" required name="medicine_dose" id="diger" placeholder="medicine_dose">
+                            <input type="text" class="form-control" required name="medicine_dose" id="diger" placeholder="medicine_dose" value="<?php echo $form13[0]['medicine_dose']; ?>">
                         </div>
 						<div class="input-section d-flex">
                             <p class="usernamelabel">İlacın Yolu:</p>
-                            <input type="text" class="form-control" required name="delivery_method" id="diger" placeholder="delivery_method">
+                            <input type="text" class="form-control" required name="delivery_method" id="diger" placeholder="delivery_method" value="<?php echo $form13[0]['delivery_method']; ?>">
                         </div>
 						<div class="input-section d-flex">
                             <p class="usernamelabel">Uygulama Zamanı:</p>
-                            <input type="text" class="form-control" required name="treatment_timeRange" id="diger" placeholder="treatment_timeRange">
+                            <input type="text" class="form-control" required name="treatment_timeRange" id="diger" placeholder="treatment_timeRange" value="<?php echo $form13[0]['treatment_timeRange']; ?>"> 
                         </div>
 						<input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
                     </form>
@@ -107,13 +126,10 @@ if (isset($_GET['logout'])) {
                   $userid = $_SESSION['userlogin']['id'];
                   echo $userid
                   ?>;
-                let patient_name ="<?php
-            echo urldecode($_GET['patient_name']);
-                  ?>";
-                  let patient_id =  <?php
-                  $userid = $_GET['patient_id'];
-                  echo $userid
-                  ?>;
+                                    var form_id = <?php echo $form_id ?>;
+
+                 let patient_name = $("input[name='patient_name']").val();
+                  let patient_id = parseInt($("input[name='patient_id']").val());
                   var name = $('#name').val();
                   var surname = $('#surname').val();
                   var age = $('#age').val();
@@ -135,7 +151,9 @@ if (isset($_GET['logout'])) {
                       type: 'POST',
                       url: '<?php echo $base_url; ?>/submitOrUpdateMedikal_form13.php',
                       data: {
+                            isUpdate : true,
                           id: id,
+                          form_id: form_id,
                           name: name,
                           surname: surname,
                           age: age,

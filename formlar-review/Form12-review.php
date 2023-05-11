@@ -123,7 +123,7 @@ if ($result) {
               
               if (valid) {
                   var form_id = <?php echo $form_id ?>;
-                let patient_name = $("input[name='patient_name']").val();
+                    let patient_name = $("input[name='patient_name']").val();
                   let patient_id = parseInt($("input[name='patient_id']").val());
                   var name = $('#name').val();
                   var surname = $('#surname').val();

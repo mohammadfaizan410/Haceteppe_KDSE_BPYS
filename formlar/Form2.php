@@ -191,10 +191,7 @@ if (isset($_GET['logout'])) {
     $(function() {
         $('#submit').click(function(e) {
             e.preventDefault()
-            let patient_name = "<?php
-            echo urldecode($_GET['patient_name']);
-                  ?>";
-                  console.log(patient_name)
+           
                   var valid = this.form.checkValidity();
             if (valid) {
                 let name = $('#name').val();
@@ -206,6 +203,9 @@ if (isset($_GET['logout'])) {
                   $userid = $_GET['patient_id'];
                   echo $userid
                   ?>;
+                   let patient_name = "<?php
+            echo urldecode($_GET['patient_name']);
+                  ?>";
                 let yourDate = new Date()
                 let creation_date = yourDate.toISOString().split('T')[0];
                 let updateDate = yourDate.toISOString().split('T')[0];

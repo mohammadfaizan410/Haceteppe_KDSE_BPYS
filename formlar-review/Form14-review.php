@@ -10,6 +10,17 @@ if (isset($_GET['logout'])) {
     unset($_SESSION);
     header("Location: main.php");
 }
+require_once('../config-students.php');
+$userid = $_SESSION['userlogin']['id'];
+$form_id = $_GET['form_id'];
+$sql = "SELECT * FROM form14 where form_id= $form_id";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+if ($result) {
+    $form14 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+} else {
+    echo 'error';
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -60,28 +71,36 @@ if (isset($_GET['logout'])) {
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
                     <div class="input-section d-flex">
+                            <p class="usernamelabel">Patient Name:</p>
+                            <input type="text" class="form-control"  value="<?php echo $form14[0]['patient_name']; ?>" required name="patient_name" id="diger" placeholder="Patient Name" disabled>
+                        </div>
+                `       <div class="input-section d-flex">
+                            <p class="usernamelabel">Patient ID:</p>
+                            <input type="text" class="form-control" value="<?php echo $form14[0]['patient_id']; ?>" required name="patient_id" id="diger" placeholder="Patient ID" disabled>
+                        </div>
+                        <div class="input-section d-flex">
                             <p class="usernamelabel">Sorunla İlişkili Veriler:</p>
-                            <input type="text" class="form-control" required name="problem_info" id="diger" placeholder="problem_info" maxlength="100">
+                            <input type="text" class="form-control" required name="problem_info" id="diger" placeholder="problem_info" maxlength="100" value="<?php echo $form14[0]['problem_info']; ?>">
                         </div>
                 `       <div class="input-section d-flex">
                             <p class="usernamelabel">Hemşirelik Tanıları:</p>
-                            <input type="text" class="form-control" required name="nurse_description" id="diger" placeholder="nurse_description" maxlength="250">
+                            <input type="text" class="form-control" required name="nurse_description" id="diger" placeholder="nurse_description" maxlength="250" value="<?php echo $form14[0]['nurse_description']; ?>">
                         </div>
 						<div class="input-section d-flex">
                             <p class="usernamelabel">NOC Çıktıları:</p>
-                            <input type="text" class="form-control" required name="noc_output" id="diger" placeholder="noc_output" maxlength="250">
+                            <input type="text" class="form-control" required name="noc_output" id="diger" placeholder="noc_output" maxlength="250" value="<?php echo $form14[0]['noc_output']; ?>">
                         </div>
 						<div class="input-section d-flex">
                             <p class="usernamelabel">NOC Gösterge:</p>
-                            <input type="text" class="form-control" required name="noc_indicator" id="diger" placeholder="noc_indicator" maxlength="250">
+                            <input type="text" class="form-control" required name="noc_indicator" id="diger" placeholder="noc_indicator" maxlength="250" value="<?php echo $form14[0]['noc_indicator']; ?>">
                         </div>
 						<div class="input-section d-flex">
                             <p class="usernamelabel">Hemşirelik Girişimleri:</p>
-                            <input type="text" class="form-control" required name="nurse_attempt" id="diger" placeholder="nurse_attempt" maxlength="250">
+                            <input type="text" class="form-control" required name="nurse_attempt" id="diger" placeholder="nurse_attempt" maxlength="250" value="<?php echo $form14[0]['nurse_attempt']; ?>">
                         </div>
 						<div class="input-section d-flex">
                             <p class="usernamelabel">Değerlendirme:</p>
-                            <input type="text" class="form-control" required name="evaluation" id="diger" placeholder="evaluation" maxlength="250">
+                            <input type="text" class="form-control" required name="evaluation" id="diger" placeholder="evaluation" maxlength="250" value="<?php echo $form14[0]['evaluation']; ?>">
                         </div>
 						<input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
                     </form>
@@ -107,6 +126,7 @@ if (isset($_GET['logout'])) {
               var valid = this.form.checkValidity();
 
               if (valid) {
+                 var form_id = <?php echo $form_id ?>;
                   var id = <?php
                   $userid = $_SESSION['userlogin']['id'];
                   echo $userid
@@ -115,14 +135,9 @@ if (isset($_GET['logout'])) {
                   var surname = $('#surname').val();
                   var age = $('#age').val();
                   var not = $('#not').val();
-                  let form_num = 15;
-                  var patient_id = <?php
-                  $userid = $_GET['patient_id'];
-                  echo $userid
-                  ?>;
-                   let patient_name = "<?php
-                  echo urldecode($_GET['patient_name']);
-                  ?>";
+                  let form_num = 14;
+                  let patient_name = $("input[name='patient_name']").val();
+                  let patient_id = parseInt($("input[name='patient_id']").val());
                   let yourDate = new Date();
                   let creationDate = yourDate.toISOString().split('T')[0];
                   let updateDate = yourDate.toISOString().split('T')[0];
@@ -138,11 +153,9 @@ if (isset($_GET['logout'])) {
                       type: 'POST',
                       url: '<?php echo $base_url; ?>/submitOrUpdateBakimPlani_form14.php',
                       data: {
+                          isUpdate: true,
                           id: id,
-                          name: name,
-                          surname: surname,
-                          age: age,
-                          not: not,
+                          form_id:form_id,
                           form_num:form_num,
                           patient_id:patient_id,
                           patient_name:patient_name,
