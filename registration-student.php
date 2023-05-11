@@ -130,7 +130,7 @@ require_once("config-students.php");
           else{
             $.ajax({
               type: "POST",
-              url: "<?php echo $base_url; ?>/checkEmailAll.php",
+              url: "<?php echo $base_url; ?>/checEmailAll.php",
               data:{
                 email :email
               },
