@@ -144,7 +144,7 @@ require_once("config-students.php");
                     $("#registrationForm").css("display", "none");
                     $.ajax({
                       type: "POST",
-                      url: "<?php echo $base_url; ?>/sendEmail.php",
+                      url: "<?php echo $base_url; ?>/sendEmailCode.php",
                       data: {
                         email : email
                       },
