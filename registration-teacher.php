@@ -15,7 +15,7 @@ require_once("config-students.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>e-BYRYS-KKDS</title>
+    <title>KDSE-BPYS</title>
 
 
 
@@ -33,7 +33,7 @@ require_once("config-students.php");
         <form action="" method="post">
             <div class="login-box login-login" style= 'width : 50%;'>
 
-                <h1 class="header">e-BYRYS-KKDS</h1>
+                <h1 class="header">KDSE-BPYS</h1>
                 <h2 class="login">An email was sent to you, please enter the code</h2>
 
                 <p class="labels">Kodu</p>
