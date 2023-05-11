@@ -272,7 +272,7 @@ if (isset($_GET['logout'])) {
                     let verbal_response_points = parseInt($("input[type='radio'][name='SözelTepki']:checked").val());
                     let total = eye_opening_points +motor_response_points +verbal_response_points;
 
-
+                    console.log(creation_date,updateDate,eye_opening_points,motor_response_points,verbal_response_points,total);
 
                     $.ajax({
                         type: 'POST',

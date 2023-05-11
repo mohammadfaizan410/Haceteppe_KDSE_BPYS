@@ -43,12 +43,13 @@ if ($result) {
     <!-- Libraries Stylesheet -->
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="../bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="style.css" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet">
 
     <style>
         .send-patient {
@@ -248,7 +249,10 @@ if ($result) {
         });
 
         var wound_apperance = "<?php echo $form7[0]['wound_appearance']; ?>"
-        console.log(wound_apperance)
+        console.log($("#serviceWound").val())
+        if($("#serviceWound").val() == "<?php echo$form7[0]['service_wound']; ?>"){
+            $("#serviceWound").attr("checked", "checked");
+        }
         if (wound_apperance == "Nekrotik") {
             console.log(wound_apperance);
 
@@ -286,9 +290,9 @@ if ($result) {
         }
         if (wound_apperance == "Diğer") {
             console.log(wound_apperance);
-
             document.getElementById('diger').setAttribute('checked', 'checked');
         }
+
     </script>
 
     <script>

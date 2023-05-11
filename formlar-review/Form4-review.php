@@ -198,8 +198,7 @@ if ($result) {
     <script>
     $(function() {
         $('#closeBtn').click(function(e) {
-            $("#content").load("formlar-student.php");
-
+            window.location.assign("<?php echo $base_url; ?>/student-main.php")
         })
     });
 
