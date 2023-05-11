@@ -1,8 +1,10 @@
 <?php
+echo "file accessed";
 require_once("config-students.php");
 require_once './lib/PHPMailer/src/PHPMailer.php';
 require_once './lib/PHPMailer/src/SMTP.php';
 require_once './lib/PHPMailer/src/Exception.php';
+
 if (isset($_POST)) { 
     $email = $_POST['email'];
     function generateRandomCode($length = 8) {
