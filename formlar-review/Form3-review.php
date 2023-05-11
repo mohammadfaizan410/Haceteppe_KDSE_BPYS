@@ -123,7 +123,7 @@ if ($result) {
                             <p class="usernamelabel">Baş dönmesi:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="dizziness_point"
-                                    id="dizziness_point" value="option1">
+                                    id="dizziness_point" value="1">
                                 <label class="form-check-label" for="RiskFactor">
                                     <span class="checkbox-header">(1 puan)</span>
                                 </label>
@@ -380,8 +380,7 @@ if ($result) {
                 let creation_date = yourDate.toISOString().split('T')[0];
                 let updateDate = yourDate.toISOString().split('T')[0];
                 let confusion_point = parseInt($("input[name='confusion_point']").val());
-                let symtomatic_depression_point = parseInt($(
-                    "input[name='symtomatic_depression_point']").val());
+                let symtomatic_depression_point = parseInt($("input[name='symtomatic_depression_point']").val());
                 let evacuation_trouble = parseInt($("input[name='evacuation_trouble']").val());
                 let dizziness_point = parseInt($("input[name='dizziness_point']").val());
                 let gender_point = parseInt($("input[name='gender_point']").val());
