@@ -60,18 +60,6 @@ if (isset($_GET['logout'])) {
             <span class='close closeBtn' id='closeBtn'>&times;</span>
             <h1 class="form-header">Ağrı Değerlendirmesi</h1>
             <div class="input-section-item">
-                <div class="input-section d-flex">
-                    <p class="usernamelabel">Patient Name:</p>
-                    <input type="text" class="form-control" required name="patient_name" id="diger"
-                        placeholder="Patient Name" maxlength="25">
-                </div>
-                <div class="input-section d-flex">
-                    <p class="usernamelabel">Patient ID:</p>
-                    <input type="text" class="form-control" required name="patient_id" id="diger"
-                        placeholder="Patient ID" maxlength="20">
-                </div>
-
-
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
                         <img src="./ağrı skalası.png"
@@ -181,7 +169,15 @@ if (isset($_GET['logout'])) {
     <script>
     $(function() {
         $('#closeBtn').click(function(e) {
-            window.location.href = "javascript:history.go(-1)";
+            let patient_id = <?php
+                  $userid = $_GET['patient_id'];
+                  echo $userid
+                  ?>;
+                   let patient_name = "<?php
+            echo urldecode($_GET['patient_name']);
+                  ?>";
+          var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
+            $("#content").load(url);
 
         })
     });
@@ -241,6 +237,8 @@ if (isset($_GET['logout'])) {
                     },
                     success: function(data) {
                         alert(data);
+                        let url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
+                        $("#content").load(url);
                     },
                     error: function(data) {
                         Swal.fire({

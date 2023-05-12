@@ -107,12 +107,20 @@ if (isset($_GET['logout'])) {
 
 
     <script>
-        $(function() {
-            $('#closeBtn').click(function(e) {
-                window.location.href = "javascript:history.go(-1)";
+         $(function() {
+        $('#closeBtn').click(function(e) {
+            let patient_id = <?php
+                  $userid = $_GET['patient_id'];
+                  echo $userid
+                  ?>;
+                   let patient_name = "<?php
+            echo urldecode($_GET['patient_name']);
+                  ?>";
+          var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
+            $("#content").load(url);
 
-            })
-        });
+        })
+    });
     </script>
 
     <script>
@@ -165,10 +173,9 @@ if (isset($_GET['logout'])) {
                             edema_severity:edema_severity
                         },
                         success: function(data) {
-                            console.log(data);
-                            alert("Success");
-                            window.location.href = "javascript:history.go(-1)";
-
+                            alert(data);
+                        let url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
+                        $("#content").load(url);
                         },
                         error: function(data) {
                             console.log(data)

@@ -330,6 +330,17 @@ if (isset($_GET['logout'])) {
         </div>
     </div>
     <script>
+           $(function() {
+        $('#closeBtn').click(function(e) {
+            let patient_name = $("input[name='patient_name']").val();
+            let patient_id = parseInt($("input[name='patient_id']").val());
+            var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
+            $("#content").load(url);
+
+        })
+    });
+
+
     //preselecting inputs
                 $('input[name="measurement_location"]').each(function() {
             if ($(this).val() === "<?php echo $form10[0]['measurement_location']; ?>") {
@@ -504,8 +515,9 @@ $('#weight_input_toggle').change(function (e) {
 						  weight_input:weight_input
                       },
                       success: function(data) {
-                          console.log(data);
-                          alert("Success");
+                        alert(data);
+                        let url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
+                        $("#content").load(url);
                       },
                       error: function(data) {
                           console.log(data)

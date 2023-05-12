@@ -241,12 +241,15 @@ if ($result) {
 
 
     <script>
-        $(function() {
-            $('#closeBtn').click(function(e) {
-                $("#content").load("formlar-student.php");
+          $(function() {
+        $('#closeBtn').click(function(e) {
+            let patient_name = $("input[name='patient_name']").val();
+            let patient_id = parseInt($("input[name='patient_id']").val());
+            var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
+            $("#content").load(url);
 
-            })
-        });
+        })
+    });
 
         var wound_apperance = "<?php echo $form7[0]['wound_appearance']; ?>"
         console.log($("#serviceWound").val())
@@ -380,7 +383,9 @@ if ($result) {
                             healing_date: healingDate
                         }),
                         success: function(data) {
-                            alert("Form successfully submitted!");
+                            alert(data);
+                        let url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
+                        $("#content").load(url);
                         },
                         error: function(data) {
                             Swal.fire({
