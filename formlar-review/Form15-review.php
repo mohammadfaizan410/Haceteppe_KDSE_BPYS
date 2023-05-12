@@ -82,12 +82,14 @@ if ($result) {
                             <p class="usernamelabel">Uygulamalar</p>
                             <input type="text" class="form-control" required name="applications" id="diger" placeholder="applications" maxlength="100" value="<?php echo $form15[0]['applications']; ?>">
                         </div>
-                    <label for="saat">Uygulama Saati</label>
-                    <input type="time" required name="hours" id="diger" placeholder="hours"  value="<?php echo $form15[0]['hours']; ?>">
-                    <br>
-                    <label for="aciklama">Açıklama:</label>
-                    <<input type="text" required name="description" id="diger" placeholder="description"  value="<?php echo $form15[0]['description']; ?>">
-                    <br>
+                        <div class="input-section d-flex">
+                            <p class="usernamelabel">Saat :</p>
+                            <input type="time" class="form-control" required name="hours" id="diger" value="<?php echo $form15[0]['hours']; ?>">
+                        </div>
+                        <div class="input-section d-flex">
+                            <p class="usernamelabel">Açıklama Giriniz</p>
+                            <input type="text" class="form-control" required name="description" id="diger" placeholder="Açıklama Giriniz" maxlength="250" value="<?php echo $form15[0]['description']; ?>">
+                        </div>
                     <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
                     </form>
                 </div>

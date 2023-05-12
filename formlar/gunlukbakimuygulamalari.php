@@ -59,36 +59,18 @@ if (isset($_GET['logout'])) {
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
-                    <label for="applications">Uygulama Seçiniz:</label>
-                    <select id="applications" name="applications">
-                        <option value="Ağız bakımı">Ağız bakımı</option>
-                        <option value="Yüz bakımı">Yüz bakımı</option>
-                        <option value="El Bakımı">El Bakımı</option>
-                        <option value="Ayak bakımı">Ayak bakımı</option>
-                        <option value="Vücut bakımı/Perine Bakımı">Vücut bakımı/Perine Bakımı</option>
-                        <option value="Genel Vücut Banyosu">Genel Vücut Banyosu</option>
-                        <option value="Saç bakımı">Saç bakımı</option>
-                        <option value="NG bakımı">NG bakımı</option>
-                        <option value="PEG bakımı">PEG bakımı</option>
-                        <option value="Gastrik Rezidü Takibi">Gastrik Rezidü Takibi</option>
-                        <option value="Mesane katatetizasyonu bakımı">Mesane katatetizasyonu bakımı</option>
-                        <option value="Damar yolu bakımı">Damar yolu bakımı</option>
-                        <option value="SVK bakımı">SVK bakımı</option>
-                        <option value="Yara bakımı">Yara bakımı</option>
-                        <option value="Dren Bakımı">Dren Bakımı</option>
-                        <option value="Dren takibi">Dren takibi</option>
-                        <option value="Kanama izlemi">Kanama izlemi</option>
-                        <option value="Ekstremite Elevasyonu">Ekstremite Elevasyonu</option>
-                        <option value="Sıcak uygulama">Sıcak uygulama</option>
-                        <option value="Soğuk uygulama">Soğuk uygulama</option>
-                    </select>
-                    <br>
-                    <label for="saat">Uygulama Saati</label>
-                    <input type="time" id="hours" name="hours">
-                    <br>
-                    <label for="aciklama">Açıklama:</label>
-                    <input type="text" id="description" name="description">
-                    <br>
+                    <div class="input-section d-flex">
+                            <p class="usernamelabel">Uygulama Giriniz</p>
+                            <input type="text" class="form-control" required name="applications" id="diger" placeholder="Uygulama Giriniz" maxlength="100">
+                        </div>
+                        <div class="input-section d-flex">
+                            <p class="usernamelabel">Saat :</p>
+                            <input type="time" class="form-control" required name="hours" id="diger">
+                        </div>
+                        <div class="input-section d-flex">
+                            <p class="usernamelabel">Açıklama Giriniz</p>
+                            <input type="text" class="form-control" required name="description" id="diger" placeholder="Açıklama Giriniz" maxlength="250">
+                        </div>
                     <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
                     </form>
                 </div>
