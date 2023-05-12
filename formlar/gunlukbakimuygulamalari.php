@@ -89,6 +89,7 @@ if (isset($_GET['logout'])) {
                     <label for="aciklama">Açıklama:</label>
                     <input type="text" id="aciklama" name="aciklama">
                     <br>
+                    <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
                     </form>
                 </div>
             </div>
