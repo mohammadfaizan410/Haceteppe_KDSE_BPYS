@@ -72,31 +72,25 @@ if (isset($_GET['logout'])) {
             </div>
             <div class="input-section d-flex justify-content-between">
                 <div class="w-25"></div>
-                <input type="text" class="form-control">
-                <input type="text" class="form-control">
-                <input type="text" class="form-control">
-            </div>
-            <div class="input-section d-flex justify-content-between">
-                <div class="w-25"></div>
-                <input type="text" class="form-control">
-                <input type="text" class="form-control">
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" required name="Konu" id="Konu">
+                <input type="text" class="form-control" required name="Nerden" id="Nerden">
+                <input type="text" class="form-control" required name="NeZaman" id="NeZaman">
             </div>
 
             <div class="input-section d-flex">
                 <p class="usernamelabel">Sağlığınız ile ilgili hangi konularda eğitim almak istersiniz:</p>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" required name="EgitimIstegi" id="EgitimIstegi">
             </div>
 
             <div>
                 <div class="d-flex align-items-center justify-content-start">
-                    <input type="checkbox" name="checkbox1" class="p-2">
-                    <label class="p-2" for="checkbox1">Sağlık sorununuz olduğunda tıbbi tedavi ve bakım dışında
+                    <input type="checkbox" name="TedaviBasvurusu" class="p-2">
+                    <label class="p-2" for="TedaviBasvurusu">Sağlık sorununuz olduğunda tıbbi tedavi ve bakım dışında
                         başvurduğunuz herhangi bir kurum ya da yöntem var mı?</label>
                 </div>
                 <div class="input-section d-flex">
                     <p class="usernamelabel">Açıklayınız:</p>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" required name="TedaviBasvurusuDiger" id="TedaviBasvurusuDiger">
                 </div>
             </div>
 
@@ -129,23 +123,28 @@ if (isset($_GET['logout'])) {
                                 $userid = $_SESSION['userlogin']['id'];
                                 echo $userid
                                 ?>;
-                    var name = $('#name').val();
-                    var surname = $('#surname').val();
-                    var age = $('#age').val();
-                    var not = $('#not').val();
+                    var radio1 = $("input[name='radio1']:checked").val();
+                    let Konu = $("input[name='Konu']").val();
+                    let Nerden = $("input[name='Nerden']").val();
+                    let NeZaman = $("input[name='NeZaman']").val();
+                    let EgitimIstegi = $("input[name='EgitimIstegi']").val();
+                    let TedaviBasvurusu = $("input[name='TedaviBasvurusu']").val();
+                    let TedaviBasvurusuDiger = $("input[name='TedaviBasvurusuDiger']").val();
 
 
                     e.preventDefault()
 
                     $.ajax({
                         type: 'POST',
-                        url: '<?php echo $base_url; ?>student-patient.php',
+                        url: 'student-patient.php',
                         data: {
-                            id: id,
-                            name: name,
-                            surname: surname,
-                            age: age,
-                            not: not
+                            radio1: radio1,
+                            Konu: Konu,
+                            Nerden: Nerden,
+                            NeZaman: NeZaman,
+                            EgitimIstegi: EgitimIstegi,
+                            TedaviBasvurusu: TedaviBasvurusu,
+                            TedaviBasvurusuDiger: TedaviBasvurusuDiger
 
                         },
                         success: function(data) {
