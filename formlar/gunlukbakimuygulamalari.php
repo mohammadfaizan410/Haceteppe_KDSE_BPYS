@@ -10,13 +10,6 @@ if (isset($_GET['logout'])) {
     unset($_SESSION);
     header("Location: main.php");
 }
-$applications = array();
-$result = $mysqli->query("SELECT DISTINCT applications FROM form15");
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $applications[] = $row["applications"];
-    }
-}
 ?>
 <!DOCTYPE html>
 <html>
@@ -67,10 +60,27 @@ if ($result->num_rows > 0) {
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
                     <label for="uygulamalar">Uygulama Seçiniz:</label>
-                    <select id="uygulamalar" name="uygulamalar">
-                        <?php foreach ($applications as $application) { ?>
-                            <option value="<?php echo $application; ?>"><?php echo $application; ?></option>
-                        <?php } ?>
+                    <<select id="uygulamalar" name="uygulamalar">
+                        <option value="Ağız bakımı">Ağız bakımı</option>
+                        <option value="Yüz bakımı">Yüz bakımı</option>
+                        <option value="El Bakımı">El Bakımı</option>
+                        <option value="Ayak bakımı">Ayak bakımı</option>
+                        <option value="Vücut bakımı/Perine Bakımı">Vücut bakımı/Perine Bakımı</option>
+                        <option value="Genel Vücut Banyosu">Genel Vücut Banyosu</option>
+                        <option value="Saç bakımı">Saç bakımı</option>
+                        <option value="NG bakımı">NG bakımı</option>
+                        <option value="PEG bakımı">PEG bakımı</option>
+                        <option value="Gastrik Rezidü Takibi">Gastrik Rezidü Takibi</option>
+                        <option value="Mesane katatetizasyonu bakımı">Mesane katatetizasyonu bakımı</option>
+                        <option value="Damar yolu bakımı">Damar yolu bakımı</option>
+                        <option value="SVK bakımı">SVK bakımı</option>
+                        <option value="Yara bakımı">Yara bakımı</option>
+                        <option value="Dren Bakımı">Dren Bakımı</option>
+                        <option value="Dren takibi">Dren takibi</option>
+                        <option value="Kanama izlemi">Kanama izlemi</option>
+                        <option value="Ekstremite Elevasyonu">Ekstremite Elevasyonu</option>
+                        <option value="Sıcak uygulama">Sıcak uygulama</option>
+                        <option value="Soğuk uygulama">Soğuk uygulama</option>
                     </select>
                     <br>
                     <label for="saat">Uygulama Saati</label>
