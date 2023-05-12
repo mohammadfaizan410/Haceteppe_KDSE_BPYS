@@ -60,7 +60,7 @@ if (isset($_GET['logout'])) {
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
                     <label for="uygulamalar">Uygulama Seçiniz:</label>
-                    <<select id="uygulamalar" name="uygulamalar">
+                    <select id="uygulamalar" name="uygulamalar">
                         <option value="Ağız bakımı">Ağız bakımı</option>
                         <option value="Yüz bakımı">Yüz bakımı</option>
                         <option value="El Bakımı">El Bakımı</option>
