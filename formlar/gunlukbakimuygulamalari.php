@@ -10,6 +10,13 @@ if (isset($_GET['logout'])) {
     unset($_SESSION);
     header("Location: main.php");
 }
+$applications = array();
+$result = $mysqli->query("SELECT DISTINCT applications FROM form15");
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $applications[] = $row["applications"];
+    }
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -28,9 +35,11 @@ if (isset($_GET['logout'])) {
 <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 <!-- Customized Bootstrap Stylesheet -->
-<link href="bootstrap.min.css" rel="stylesheet">
+<link href="../bootstrap.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
 <!-- Template Stylesheet -->
-<link href="style.css" rel="stylesheet">
+<link href="../style.css" rel="stylesheet">
    <style>
 		table {
 			border-collapse: collapse;
@@ -53,145 +62,23 @@ if (isset($_GET['logout'])) {
 		  <div class="container-fluid pt-4 px-4">
             <div class="send-patient">
             <span class='close closeBtn' id='closeBtn'>&times;</span>
-            <h1 class="form-header">GÜNLÜK BAKIM UYGULAMALARI</h1>
+            <h1 class="form-header">Günlük Bakım Planı</h1>
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
-                    	<div class="input-section d-flex">
-                            <p class="usernamelabel">Uygulama Saati:</p>
-                            <input type="text" class="form-control" required name="applicationTime" id="diger" placeholder="Application Time">
-                        </div>
-                `       <div class="input-section d-flex">
-                            <p class="usernamelabel">Uygulama Açıklaması:</p>
-                            <input type="text" class="form-control" required name="applicationDescription" id="diger" placeholder="Application Description">
-                        </div>
-						<div class="input-section d-flex">
-                            <p class="usernamelabel">Uygulama Adı </p>
-                            <div class="form-check">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="uygulamaOption" id="ÖdemŞiddeti" value="Ağız Bakımı">
-                                    <label class="form-check-label" for="ÖdemŞiddeti">
-                                        <span class="checkbox-header">Ağız Bakımı</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="uygulamaOption" id="ÖdemŞiddeti" value="Yüz Bakımı">
-                                    <label class="form-check-label" for="ÖdemŞiddeti">
-                                        <span class="checkbox-header">Yüz Bakımı</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="uygulamaOption" id="ÖdemŞiddeti" value="El Bakımı">
-                                    <label class="form-check-label" for="ÖdemŞiddeti">
-                                        <span class="checkbox-header">El Bakımı</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="uygulamaOption" id="ÖdemŞiddeti" value="Ayak Bakımı">
-                                    <label class="form-check-label" for="ÖdemŞiddeti">
-                                        <span class="checkbox-header">Ayak Bakımı</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="uygulamaOption" id="ÖdemŞiddeti" value="Vücut/Perine Bakımı">
-                                    <label class="form-check-label" for="ÖdemŞiddeti">
-                                        <span class="checkbox-header">Vücut/Perine Bakımı</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="uygulamaOption" id="ÖdemŞiddeti" value="Genel Vücut Banyosu">
-                                    <label class="form-check-label" for="ÖdemŞiddeti">
-                                        <span class="checkbox-header">Genel Vücut Banyosu</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="uygulamaOption" id="ÖdemŞiddeti" value="Saç Bakımı">
-                                    <label class="form-check-label" for="ÖdemŞiddeti">
-                                        <span class="checkbox-header">Saç Bakımı</span>
-                                    </label>
-                                </div>
-								<div class="form-check">
-                                    <input class="form-check-input" type="radio" name="uygulamaOption" id="ÖdemŞiddeti" value="NG Bakımı">
-                                    <label class="form-check-label" for="ÖdemŞiddeti">
-                                        <span class="checkbox-header">NG Bakımı</span>
-                                    </label>
-                                </div>
-								<div class="form-check">
-                                    <input class="form-check-input" type="radio" name="uygulamaOption" id="ÖdemŞiddeti" value="PEG bakımı">
-                                    <label class="form-check-label" for="ÖdemŞiddeti">
-                                        <span class="checkbox-header">PEG bakımı</span>
-                                    </label>
-                                </div>
-								<div class="form-check">
-                                    <input class="form-check-input" type="radio" name="uygulamaOption" id="ÖdemŞiddeti" value="Gastrik Rezidü Takibi">
-                                    <label class="form-check-label" for="ÖdemŞiddeti">
-                                        <span class="checkbox-header">Gastrik Rezidü Takibi</span>
-                                    </label>
-                                </div>
-								<div class="form-check">
-                                    <input class="form-check-input" type="radio" name="uygulamaOption" id="ÖdemŞiddeti" value="Mesane katatetizasyonu Bakımı">
-                                    <label class="form-check-label" for="ÖdemŞiddeti">
-                                        <span class="checkbox-header">Mesane katatetizasyonu Bakımı</span>
-                                    </label>
-                                </div>
-								<div class="form-check">
-                                    <input class="form-check-input" type="radio" name="uygulamaOption" id="ÖdemŞiddeti" value="Damar yolu bakımı">
-                                    <label class="form-check-label" for="ÖdemŞiddeti">
-                                        <span class="checkbox-header">Damar yolu bakımı</span>
-                                    </label>
-                                </div>
-								<div class="form-check">
-                                    <input class="form-check-input" type="radio" name="uygulamaOption" id="ÖdemŞiddeti" value="SVK bakımı">
-                                    <label class="form-check-label" for="ÖdemŞiddeti">
-                                        <span class="checkbox-header">SVK bakımı</span>
-                                    </label>
-                                </div>
-								<div class="form-check">
-                                    <input class="form-check-input" type="radio" name="uygulamaOption" id="ÖdemŞiddeti" value="Yara bakımı">
-                                    <label class="form-check-label" for="ÖdemŞiddeti">
-                                        <span class="checkbox-header">Yara bakımı</span>
-                                    </label>
-                                </div>
-								<div class="form-check">
-                                    <input class="form-check-input" type="radio" name="uygulamaOption" id="ÖdemŞiddeti" value="Dren Bakımı">
-                                    <label class="form-check-label" for="ÖdemŞiddeti">
-                                        <span class="checkbox-header">Dren Bakımı</span>
-                                    </label>
-                                </div>
-								<div class="form-check">
-                                    <input class="form-check-input" type="radio" name="uygulamaOption" id="ÖdemŞiddeti" value="Dren takibi">
-                                    <label class="form-check-label" for="ÖdemŞiddeti">
-                                        <span class="checkbox-header">Dren takibi</span>
-                                    </label>
-                                </div>
-								<div class="form-check">
-                                    <input class="form-check-input" type="radio" name="uygulamaOption" id="ÖdemŞiddeti" value="Kanama izlemi">
-                                    <label class="form-check-label" for="ÖdemŞiddeti">
-                                        <span class="checkbox-header">Kanama izlemi</span>
-                                    </label>
-                                </div>
-								<div class="form-check">
-                                    <input class="form-check-input" type="radio" name="uygulamaOption" id="ÖdemŞiddeti" value="Ekstremite Elevasyonu">
-                                    <label class="form-check-label" for="ÖdemŞiddeti">
-                                        <span class="checkbox-header">Ekstremite Elevasyonu</span>
-                                    </label>
-                                </div>
-								<div class="form-check">
-                                    <input class="form-check-input" type="radio" name="uygulamaOption" id="ÖdemŞiddeti" value="Sıcak uygulama">
-                                    <label class="form-check-label" for="ÖdemŞiddeti">
-                                        <span class="checkbox-header">Sıcak uygulama</span>
-                                    </label>
-                                </div>
-								<div class="form-check">
-                                    <input class="form-check-input" type="radio" name="uygulamaOption" id="ÖdemŞiddeti" value="Soğuk Uygulama">
-                                    <label class="form-check-label" for="ÖdemŞiddeti">
-                                        <span class="checkbox-header">Soğuk Uygulama</span>
-                                    </label>
-                                </div>
-
-                            </div>
-                        </div>
-						<input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
+                    <label for="uygulamalar">Uygulama Seçiniz:</label>
+                    <select id="uygulamalar" name="uygulamalar">
+                        <?php foreach ($applications as $application) { ?>
+                            <option value="<?php echo $application; ?>"><?php echo $application; ?></option>
+                        <?php } ?>
+                    </select>
+                    <br>
+                    <label for="saat">Uygulama Saati</label>
+                    <input type="time" id="hours" name="hours">
+                    <br>
+                    <label for="aciklama">Açıklama:</label>
+                    <input type="text" id="aciklama" name="aciklama">
+                    <br>
                     </form>
                 </div>
             </div>
@@ -224,20 +111,24 @@ if (isset($_GET['logout'])) {
                   var age = $('#age').val();
                   var not = $('#not').val();
                   let form_num = 15;
-				  let applicationTime = new Time()
-                  let applicationDescription = $("input[name='applicationDescription']").val();
-                  let patient_id = parseInt($("input[name='patient_id']").val());
+                  var patient_id = <?php
+                  $userid = $_GET['patient_id'];
+                  echo $userid
+                  ?>;
+                   let patient_name = "<?php
+                  echo urldecode($_GET['patient_name']);
+                  ?>";
+                  let yourDate = new Date();
                   let creationDate = yourDate.toISOString().split('T')[0];
                   let updateDate = yourDate.toISOString().split('T')[0];
-                  let applicationTime = $("input[name='applicationTime']").val();
-                  let applicationDescription = $("input[name='applicationDescription']").val();
-                  let uygulamaOption =  $("input[type='radio'][name='uygulamaOption']:checked").val()
-                  
+                  let applications = $("input[name='applications']").val();
+                  let hours = $("input[name='hours']").val();
+                  let description = $("input[name='description']").val();
                   console.log("values initiated")
 
                   $.ajax({
                       type: 'POST',
-                      url: '<?php echo $base_url; ?>/submitOrUpdateGunlukbakim_form15.php',
+                      url: '<?php echo $base_url; ?>/submitOrUpdateGunlukBakimPlani_form15.php',
                       data: {
                           id: id,
                           name: name,
@@ -249,9 +140,9 @@ if (isset($_GET['logout'])) {
                           patient_name:patient_name,
                           creation_date:creationDate,
                           update_date :updateDate,
-                          applicationTime: applicationTime
-                          applicationDescription: applicationDescription
-                          uygulamaOption: uygulamaOption
+                          applications: applications,
+                          hours: hours,
+                          description: description
                       },
                       success: function(data) {
                           console.log(data);
