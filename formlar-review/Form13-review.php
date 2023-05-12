@@ -174,7 +174,7 @@ if ($result) {
                           treatment_timeRange: treatment_timeRange
                       },
                       success: function(data) {
-                        alert(data);
+                        alert("SuccessFully Updated!");
                         let url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
                         $("#content").load(url);
                       },

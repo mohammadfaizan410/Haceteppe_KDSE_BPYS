@@ -99,7 +99,6 @@ if (isset($_GET['logout'])) {
       $(function() {
           $('#submit').click(function(e) {
               e.preventDefault()
-              console.log("clicked")
               var valid = this.form.checkValidity();
 
               if (valid) {
@@ -129,7 +128,7 @@ if (isset($_GET['logout'])) {
 
                   $.ajax({
                       type: 'POST',
-                      url: '<?php echo $base_url; ?>/submitOrUpdateGunlukBakimPlani_form15.php',
+                      url: '<?php echo $base_url; ?>/submitOrUpdateGunlukbakim_form15.php',
                       data: {
                           id: id,
                           name: name,
@@ -146,7 +145,8 @@ if (isset($_GET['logout'])) {
                           description: description
                       },
                       success: function(data) {
-                        alert(data);
+                        console.log(data);
+                        alert("SuccessFully Inserted!");
                         let url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
                         $("#content").load(url);
                       },

@@ -173,7 +173,7 @@ if (isset($_GET['logout'])) {
                             edema_severity:edema_severity
                         },
                         success: function(data) {
-                            alert(data);
+                            alert("SuccessFully Inserted!");
                         let url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
                         $("#content").load(url);
                         },

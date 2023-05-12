@@ -13,11 +13,11 @@ if (isset($_GET['logout'])) {
 require_once('../config-students.php');
 $userid = $_SESSION['userlogin']['id'];
 $form_id = $_GET['form_id'];
-$sql = "SELECT * FROM form14 where form_id= $form_id";
+$sql = "SELECT * FROM form15 where form_id= $form_id";
 $smtmselect = $db->prepare($sql);
 $result = $smtmselect->execute();
 if ($result) {
-    $form14 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+    $form15 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
 } else {
     echo 'error';
 }
@@ -121,30 +121,27 @@ if ($result) {
                   $userid = $_SESSION['userlogin']['id'];
                   echo $userid
                   ?>;
+                     var form_id = <?php echo $form_id ?>;
                   var name = $('#name').val();
                   var surname = $('#surname').val();
                   var age = $('#age').val();
                   var not = $('#not').val();
                   let form_num = 15;
-                  var patient_id = <?php
-                  $userid = $_GET['patient_id'];
-                  echo $userid
-                  ?>;
-                   let patient_name = "<?php
-                  echo urldecode($_GET['patient_name']);
-                  ?>";
+                  let patient_name = $("input[name='patient_name']").val();
+                  let patient_id = parseInt($("input[name='patient_id']").val());
                   let yourDate = new Date();
                   let creationDate = yourDate.toISOString().split('T')[0];
                   let updateDate = yourDate.toISOString().split('T')[0];
                   let applications = $("input[name='applications']").val();
                   let hours = $("input[name='hours']").val();
                   let description = $("input[name='description']").val();
-                  console.log("values initiated")
 
                   $.ajax({
                       type: 'POST',
-                      url: '<?php echo $base_url; ?>/submitOrUpdateGunlukBakimPlani_form15.php',
+                      url: '<?php echo $base_url; ?>/submitOrUpdateGunlukbakim_form15.php',
                       data: {
+                          isUpdate: true,
+                          form_id:form_id,
                           id: id,
                           name: name,
                           surname: surname,
@@ -160,7 +157,8 @@ if ($result) {
                           description: description
                       },
                       success: function(data) {
-                        alert(data);
+                        console.log(data);
+                        alert("SuccessFully Updated!");
                         let url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
                         $("#content").load(url);
                       },

@@ -7,28 +7,25 @@ $base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
 
 if (isset($_POST["patient_name"])) {
     if(isset($_POST["isUpdate"])){        
-        $stmt = $db->prepare("UPDATE form14 SET
+        $stmt = $db->prepare("UPDATE form15 SET
         update_date = ?,
         applications = ?,
         hours = ?,
-        description = ?,
+        description = ?
         WHERE form_id = ?");
-$stmt->execute([
-    $_POST["creation_date"],
-    $_POST["applications"],
-    $_POST["hours"],
-    $_POST["description"],
-    $_POST["form_id"]
-]);
+        $stmt->execute([
+            $_POST["creation_date"],
+            $_POST["applications"],
+            $_POST["hours"],
+            $_POST["description"],
+            $_POST["form_id"]
+        ]);
 
         echo "successfully updated!";
     }
     else{
 
-        
-        
-        
-        $stmt = $db->prepare("INSERT INTO form14 (
+        $stmt = $db->prepare("INSERT INTO form15 (
                 form_num,
                 patient_name,
                 patient_id,
