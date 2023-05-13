@@ -3,7 +3,7 @@ session_start();
 $base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
 
 if (!isset($_SESSION['userlogin'])) {
-    header("Location: login-student.php");
+    header("Location: main.php");
 }
 
 if (isset($_GET['logout'])) {

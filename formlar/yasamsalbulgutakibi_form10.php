@@ -2,7 +2,7 @@
 session_start();
 $base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
 if (!isset($_SESSION['userlogin'])) {
-    header("Location: login-student.php");
+    header("Location: main.php");
 }
 
 if (isset($_GET['logout'])) {
@@ -303,20 +303,7 @@ if (isset($_GET['logout'])) {
         </div>
     </div>
     <script>
-      $(function() {
-        $('#closeBtn').click(function(e) {
-            let patient_id = <?php
-                  $userid = $_GET['patient_id'];
-                  echo $userid
-                  ?>;
-                   let patient_name = "<?php
-            echo urldecode($_GET['patient_name']);
-                  ?>";
-          var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
-            $("#content").load(url);
-
-        })
-    });
+     
 	const radioBtn = document.getElementById("o2_method_diger");
 	const inputField = document.getElementById("o2_method_diger_input");
 	radioBtn.addEventListener("change", function() {
@@ -356,6 +343,21 @@ $('#weight_input_toggle').change(function (e) {
 
 </script>
 <script>
+ $(function() {
+        $('#closeBtn').click(function(e) {
+            let patient_id = <?php
+                  $userid = $_GET['patient_id'];
+                  echo $userid
+                  ?>;
+                   let patient_name = "<?php
+            echo urldecode($_GET['patient_name']);
+                  ?>";
+          var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
+            $("#content").load(url);
+        })
+    });
+
+
       $(function() {
           $('#submit').click(function(e) {
               e.preventDefault()

@@ -20,7 +20,7 @@ if (isset($_POST)) {
                                     UykuSorunDiger,
                                     UykuyaDalmaAliskanligi,
                                     UykuyuEtkileyenFaktorler
-                WHERE SDiger = ?");
+                WHERE form_id = ?");
 
 $stmt->execute([
     $_POST["UykuSuresi"],

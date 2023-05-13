@@ -2,7 +2,7 @@
 session_start();
 $base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
 if (!isset($_SESSION['userlogin'])) {
-    header("Location: login-student.php");
+    header("Location: main.php");
 }
 
 if (isset($_GET['logout'])) {
@@ -297,6 +297,7 @@ if (isset($_GET['logout'])) {
                            <div class="mt-3"><a class="nav-items newForm" style="color : white;"  href="<?php echo $base_url; ?>/formlar/medikaltedavi.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 13</a></div>
                            <div class="mt-3"><a class="nav-items newForm" style="color : white;"  href="<?php echo $base_url; ?>/formlar/bakimplani.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 14</a></div>
                            <div class="mt-3"><a class="nav-items newForm" style="color : white;"  href="<?php echo $base_url; ?>/formlar/gunlukbakimuygulamalari.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 15</a></div>
+                           <div class="mt-3"><a class="nav-items newForm" style="color : white;"  href="<?php echo $base_url; ?>/formlar/beslenmeGereksinimi_form1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form1_beslenme</a></div>
                         </thead>
                         <tbody>
                         </tbody>
