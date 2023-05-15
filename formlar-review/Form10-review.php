@@ -78,7 +78,8 @@ if (isset($_GET['logout'])) {
     } else {
         echo 'error';
     }
-    var_dump($form10)
+    var_dump($form10);
+    var_dump((int) $form10[0]['respiratory_rate']);
     ?>
     <div class="container-fluid pt-4 px-4">
         <div class="send-patient">
@@ -226,7 +227,7 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <script>
-                        var respiratory_rate = <?php echo $form10[0]['respiratory_rate'] ?>
+                        var respiratory_rate = <?php intval($form10[0]['respiratory_rate'])  ?>
                         console.log(respiratory_rate)
                         if (parseInt(respiratory_rate) < 16) {
                             <?php echo "<div class='tanı1-warning'>
