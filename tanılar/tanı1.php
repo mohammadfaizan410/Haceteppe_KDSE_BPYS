@@ -433,15 +433,15 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                 let noc_output = "Hastanın oksijen satürasyonun %95’in üzerinde olması"
                 let noc_indicator = $("input[type='radio'][name='noc_indicator']:checked").val();
                 console.log(noc_indicator);
-                let evaluation = "test";
+                let evaluation = "";
                 if (noc_indicator == "5: Hastanın oksijen satürasyonunda bozulma yok") {
-                    let evaluation =
+                    evaluation +=
                         "Sorun çözümlendi:5 gösterge seçildiyse;yeni günde bakım planına bu tanıyı taşımayacak"
                 } else {
-                    let evaluation =
+                    evaluation +=
                         "Sorun devam ediyor: 1-4 gösterge seçildiyse; yeni günde bakım planında tanımlı tanı olacak."
                 }
-                let nurse_attempt = "test"
+                let nurse_attempt = ""
 
                 var l1 = document.getElementById("nurse_attempt1");
                 var l2 = document.getElementById("nurse_attempt2");
@@ -492,67 +492,67 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                 }
                 if (l1.checked == true) {
                     var pl5 = document.getElementById("nurse_attempt5").value;
-                    nurse_attempt + pl5 + ",";
+                    nurse_attempt += pl5 + ",";
                 }
                 if (l1.checked == true) {
                     var pl6 = document.getElementById("nurse_attempt6").value;
-                    nurse_attempt + pl6 + ",";
+                    nurse_attempt += pl6 + ",";
                 }
                 if (l1.checked == true) {
                     var pl7 = document.getElementById("nurse_attempt7").value;
-                    nurse_attempt + pl7 + ",";
+                    nurse_attempt += pl7 + ",";
                 }
                 if (l1.checked == true) {
                     var pl8 = document.getElementById("nurse_attempt8").value;
-                    nurse_attempt + pl8 + ",";
+                    nurse_attempt += pl8 + ",";
                 }
                 if (l1.checked == true) {
                     var pl9 = document.getElementById("nurse_attempt9").value;
-                    nurse_attempt + pl9 + ",";
+                    nurse_attempt += pl9 + ",";
                 }
                 if (l1.checked == true) {
                     var pl10 = document.getElementById("nurse_attempt10").value;
-                    nurse_attempt + pl10 + ",";
+                    nurse_attempt += pl10 + ",";
                 }
                 if (l1.checked == true) {
                     var pl11 = document.getElementById("nurse_attempt11").value;
-                    nurse_attempt + pl11 + ",";
+                    nurse_attempt += pl11 + ",";
                 }
                 if (l1.checked == true) {
                     var pl12 = document.getElementById("nurse_attempt12").value;
-                    nurse_attempt + pl12 + ",";
+                    nurse_attempt += pl12 + ",";
                 }
                 if (l1.checked == true) {
                     var pl13 = document.getElementById("nurse_attempt13").value;
-                    nurse_attempt + pl13 + ",";
+                    nurse_attempt += pl13 + ",";
                 }
                 if (l1.checked == true) {
                     var pl14 = document.getElementById("nurse_attempt14").value;
-                    nurse_attempt + pl14 + ",";
+                    nurse_attempt += pl14 + ",";
                 }
                 if (l1.checked == true) {
                     var pl15 = document.getElementById("nurse_attempt15").value;
-                    nurse_attempt + pl15 + ",";
+                    nurse_attempt += pl15 + ",";
                 }
                 if (l1.checked == true) {
                     var pl16 = document.getElementById("nurse_attempt16").value;
-                    nurse_attempt + pl16 + ",";
+                    nurse_attempt += pl16 + ",";
                 }
                 if (l1.checked == true) {
                     var pl17 = document.getElementById("nurse_attempt17").value;
-                    nurse_attempt + pl17 + ",";
+                    nurse_attempt += pl17 + ",";
                 }
                 if (l1.checked == true) {
                     var pl18 = document.getElementById("nurse_attempt18").value;
-                    nurse_attempt + pl18 + ",";
+                    nurse_attempt += pl18 + ",";
                 }
                 if (l1.checked == true) {
                     var pl19 = document.getElementById("nurse_attempt19").value;
-                    nurse_attempt + pl19 + ",";
+                    nurse_attempt += pl19 + ",";
                 }
                 if (l1.checked == true) {
                     var pl20 = document.getElementById("nurse_attempt20").value;
-                    nurse_attempt + pl20 + ",";
+                    nurse_attempt += pl20 + ",";
                 }
                 console.log(nurse_attempt);
                 //$("input[name='nurse_attempt']").val();
