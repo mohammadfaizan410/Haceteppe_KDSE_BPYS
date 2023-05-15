@@ -387,7 +387,7 @@ if (isset($_GET['logout'])) {
     var tanı_respiratory_rate = parseInt($("input[name='respiratory_rate']").val());
     var tanı_heart_rate = parseInt($("input[name='heart_rate']").val());
     var tanı_spo2_percentage = parseInt($("input[name='spo2_percentage']").val());
-    var tanı_o2_status = String($("input[type='radio'][name='o2_status']:checked").val());
+    var tanı_o2_status = <?php echo $form10[0]['o2_status']; ?>
     var tanı_respiratory_nature = $("input[type='radio'][name='respiratory_nature']:checked").val();
     console.log("AAAAAA");
     console.log($("input[type='radio'][name='o2_status']:checked").val())
