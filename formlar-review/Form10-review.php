@@ -79,7 +79,7 @@ if (isset($_GET['logout'])) {
         echo 'error';
     }
     var_dump($form10);
-    var_dump((int) $form10[0]['respiratory_rate']);
+    $respiratory_rate = (int) $form10[0]['respiratory_rate'];
     ?>
     <div class="container-fluid pt-4 px-4">
         <div class="send-patient">
@@ -225,15 +225,15 @@ if (isset($_GET['logout'])) {
                             <input type="text" class="form-control" value=<?php echo $form10[0]['respiratory_rate']; ?>
                                 required name="respiratory_rate" id="diger" placeholder="Solunum sayısı">
                         </div>
-
+                        <div class='tanı1-warning' id="tanı1-warning">
+                            <p>Gaz Değişiminde Bozulma Tanısı Eklemek İster Misiniz?</p>
+                            <a class='addtanı' href='#'>Ekle</a>
+                        </div>
                         <script>
-                        var respiratory_rate = <?php intval($form10[0]['respiratory_rate'])  ?>
+                        var respiratory_rate = <?php $respiratory_rate ?>
                         console.log(respiratory_rate)
                         if (parseInt(respiratory_rate) < 16) {
-                            <?php echo "<div class='tanı1-warning'>
-                                            <p>Gaz Değişiminde Bozulma Tanısı Eklemek İster Misiniz?</p>
-                                            <a class='addtanı' href='#'>Ekle</a>
-                                        </div>"; ?>
+                            $('#tanı1-warning').css("display", "block");
                             $(function() {
                                 $("a.addtanı").on("click", function(e) {
                                     e.preventDefault();
@@ -242,6 +242,8 @@ if (isset($_GET['logout'])) {
                                     // $("#content").load(url);
                                 });
                             });
+                        } else {
+                            $('#tanı1-warning').css("display", "none");
                         }
                         </script>
                         <div class="input-section d-flex">
