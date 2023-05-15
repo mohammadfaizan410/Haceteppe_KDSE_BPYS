@@ -388,15 +388,14 @@ if (isset($_GET['logout'])) {
     var tanı_heart_rate = parseInt($("input[name='heart_rate']").val());
     var tanı_spo2_percentage = parseInt($("input[name='spo2_percentage']").val());
     var tanı_o2_status = '<?php echo $form10[0]['o2_status']; ?>'
-    var tanı_respiratory_nature = $("input[type='radio'][name='respiratory_nature']:checked").val();
+    var tanı_respiratory_nature = '<?php echo $form10[0]['respiratory_nature']; ?>'
     console.log("AAAAAA");
     console.log($("input[type='radio'][name='o2_status']:checked").val())
-    console.log(tanı_o2_status);
+    console.log(tanı_respiratory_nature);
 
-    // || tanı_respiratory_nature === "Derin" || tanı_respiratory_nature ===
-    //     "Yüzeyel"
     if (tanı_respiratory_rate < 16 || tanı_respiratory_rate > 20 || tanı_heart_rate > 100 || tanı_spo2_percentage <
-        95 || tanı_o2_status == "Aliyor") {
+        95 || tanı_o2_status == "Aliyor" || tanı_respiratory_nature === "Derin" || tanı_respiratory_nature === "Yüzeyel"
+    ) {
         $('#tanı1-warning').css("display", "block");
         $(function() {
             $("a.addtanı").on("click", function(e) {
