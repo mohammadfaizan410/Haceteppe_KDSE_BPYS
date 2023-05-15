@@ -432,7 +432,8 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                 let nurse_description = "Gaz değişiminde bozulma"
                 let noc_output = "Hastanın oksijen satürasyonun %95’in üzerinde olması"
                 let noc_indicator = $("input[type='radio'][name='noc_indicator']:checked").val();
-                if (noc_indicator = "5: Hastanın oksijen satürasyonunda bozulma yok") {
+                console.log(noc_indicator);
+                if (noc_indicator == "5: Hastanın oksijen satürasyonunda bozulma yok") {
                     let evaluation =
                         "Sorun çözümlendi:5 gösterge seçildiyse;yeni günde bakım planına bu tanıyı taşımayacak"
                 } else {
