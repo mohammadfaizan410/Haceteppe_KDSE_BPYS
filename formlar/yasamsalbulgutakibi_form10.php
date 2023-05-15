@@ -13,6 +13,7 @@ if (isset($_GET['logout'])) {
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="utf-8">
 <title>e-BYRYS-KKDS</title>
@@ -43,57 +44,66 @@ if (isset($_GET['logout'])) {
 			background-color: #eee;
 		}
     h1 {
-            text-align: center;
+        text-align: center;
     }
-    tr, td{
-      width: 200px;
+
+    tr,
+    td {
+        width: 200px;
     }
-	</style>
-  		<body>
-		  <div class="container-fluid pt-4 px-4">
-            <div class="send-patient">
+    </style>
+
+<body>
+    <div class="container-fluid pt-4 px-4">
+        <div class="send-patient">
             <span class='close closeBtn' id='closeBtn'>&times;</span>
             <h1 class="form-header">YAŞAMSAL BULGU TAKİBİİ</h1>
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
-                       <div class="input-section d-flex">
+                        <div class="input-section d-flex">
                             <p class="usernamelabel">Saat:</p>
                             <input type="time" class="form-control" required name="time" id="diger" placeholder="Saat">
                         </div>
-                       <div class="input-section d-flex">
+                        <div class="input-section d-flex">
                             <p class="usernamelabel">Vücut Sıcaklığı:</p>
-                            <input type="text" class="form-control" required name="body_temperature" id="diger" placeholder="Vücut Sıcaklığı">
+                            <input type="text" class="form-control" required name="body_temperature" id="diger"
+                                placeholder="Vücut Sıcaklığı">
                         </div>
-						<div class="input-section d-flex">
+                        <div class="input-section d-flex">
                             <p class="usernamelabel">Ölçüm yeri: </p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="measurement_location" id="measurement_location" value="Timpanik*">
+                                    <input class="form-check-input" type="radio" name="measurement_location"
+                                        id="measurement_location" value="Timpanik*">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">Timpanik</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="measurement_location" id="measurement_location" value="Axillar">
+                                    <input class="form-check-input" type="radio" name="measurement_location"
+                                        id="measurement_location" value="Axillar">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">Axillar</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="measurement_location" id="measurement_location" value="Oral">
+                                    <input class="form-check-input" type="radio" name="measurement_location"
+                                        id="measurement_location" value="Oral">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">Oral</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="measurement_location" id="measurement_location" value="Rektal">
+                                    <input class="form-check-input" type="radio" name="measurement_location"
+                                        id="measurement_location" value="Rektal">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">Rektal</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="measurement_location" id="measurement_location" value="Temporal">
+                                    <input class="form-check-input" type="radio" name="measurement_location"
+                                        id="measurement_location" value="Temporal">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">Temporal</span>
                                     </label>
@@ -101,167 +111,189 @@ if (isset($_GET['logout'])) {
                             </div>
                         </div>
 
-						<div class="input-section d-flex">
+                        <div class="input-section d-flex">
                             <p class="usernamelabel">Nabız yeri: </p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="heartrate_location" id="heartrate_location" value="Apikal *">
+                                    <input class="form-check-input" type="radio" name="heartrate_location"
+                                        id="heartrate_location" value="Apikal *">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">Apikal</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="heartrate_location" id="heartrate_location" value="Periferik">
+                                    <input class="form-check-input" type="radio" name="heartrate_location"
+                                        id="heartrate_location" value="Periferik">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">Periferik</span>
                                     </label>
                                 </div>
-							</div>
-						</div>
-
-						<div class="input-section d-flex">
-                            <p class="usernamelabel">Nabız hızı:</p>
-                            <input type="text" class="form-control" required name="heart_rate" id="diger" placeholder="Nabız hızı">
+                            </div>
                         </div>
-						
 
-						<div class="input-section d-flex">
+                        <div class="input-section d-flex">
+                            <p class="usernamelabel">Nabız hızı:</p>
+                            <input type="text" class="form-control" required name="heart_rate" id="diger"
+                                placeholder="Nabız hızı">
+                        </div>
+
+
+                        <div class="input-section d-flex">
                             <p class="usernamelabel">Nabız niteliği: </p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="heartrate_nature" id="heartrate_nature" value="Dolgun">
+                                    <input class="form-check-input" type="radio" name="heartrate_nature"
+                                        id="heartrate_nature" value="Dolgun">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">Dolgun</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="heartrate_nature" id="heartrate_nature" value="Zayıf">
+                                    <input class="form-check-input" type="radio" name="heartrate_nature"
+                                        id="heartrate_nature" value="Zayıf">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">Zayıf</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="heartrate_nature" id="heartrate_nature" value="Düzenli">
+                                    <input class="form-check-input" type="radio" name="heartrate_nature"
+                                        id="heartrate_nature" value="Düzenli">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">Düzenli</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="heartrate_nature" id="heartrate_nature" value="Düzensiz">
+                                    <input class="form-check-input" type="radio" name="heartrate_nature"
+                                        id="heartrate_nature" value="Düzensiz">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">Düzensiz</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="heartrate_nature" id="heartrate_nature" value="Yok">
+                                    <input class="form-check-input" type="radio" name="heartrate_nature"
+                                        id="heartrate_nature" value="Yok">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">Yok</span>
                                     </label>
                                 </div>
-							</div>
-						</div>
-
-						<div class="input-section d-flex">
-                            <p class="usernamelabel">Solunum sayısı:</p>
-                            <input type="text" class="form-control" required name="respiratory_rate" id="diger" placeholder="Solunum sayısı">
+                            </div>
                         </div>
 
-						<div class="input-section d-flex">
+                        <div class="input-section d-flex">
+                            <p class="usernamelabel">Solunum sayısı:</p>
+                            <input type="text" class="form-control" required name="respiratory_rate" id="diger"
+                                placeholder="Solunum sayısı">
+                        </div>
+
+                        <div class="input-section d-flex">
                             <p class="usernamelabel">Solunum Özelliği: </p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="respiratory_nature" id="breathing_nature" value="Normal">
+                                    <input class="form-check-input" type="radio" name="respiratory_nature"
+                                        id="breathing_nature" value="Normal">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">Normal</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="respiratory_nature" id="breathing_nature" value="Derin">
+                                    <input class="form-check-input" type="radio" name="respiratory_nature"
+                                        id="breathing_nature" value="Derin">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">Derin</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="respiratory_nature" id="breathing_nature" value="Yüzeyel">
+                                    <input class="form-check-input" type="radio" name="respiratory_nature"
+                                        id="breathing_nature" value="Yüzeyel">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">Yüzeyel</span>
                                     </label>
                                 </div>
-							</div>
-						</div>
-						
-
-
-						<div class="input-section d-flex">
-                            <p class="usernamelabel">Kan basıncı:</p>
-                            <input type="text" class="form-control" required name="blood_pressure" id="diger" placeholder="Tetkik Sonucu">
+                            </div>
                         </div>
 
-						<div class="input-section d-flex">
+
+
+                        <div class="input-section d-flex">
+                            <p class="usernamelabel">Kan basıncı:</p>
+                            <input type="text" class="form-control" required name="blood_pressure" id="diger"
+                                placeholder="Tetkik Sonucu">
+                        </div>
+
+                        <div class="input-section d-flex">
                             <p class="usernamelabel">KB Ölçüm yeri: </p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="bp_measurement_location" id="bp_measurement_location" value="Brakial(Sağ)">
+                                    <input class="form-check-input" type="radio" name="bp_measurement_location"
+                                        id="bp_measurement_location" value="Brakial(Sağ)">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">Brakial(Sağ)</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="bp_measurement_location" id="bp_measurement_location" value="Brakial(Sol)">
+                                    <input class="form-check-input" type="radio" name="bp_measurement_location"
+                                        id="bp_measurement_location" value="Brakial(Sol)">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">Brakial(Sol)</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="bp_measurement_location" id="bp_measurement_location" value="Popliteal(Sağ)">
+                                    <input class="form-check-input" type="radio" name="bp_measurement_location"
+                                        id="bp_measurement_location" value="Popliteal(Sağ)">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">Popliteal(Sağ)</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="bp_measurement_location" id="bp_measurement_location" value="Popliteal(Sol)">
+                                    <input class="form-check-input" type="radio" name="bp_measurement_location"
+                                        id="bp_measurement_location" value="Popliteal(Sol)">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">Popliteal(Sol)</span>
                                     </label>
                                 </div>
-							</div>
-						</div>
+                            </div>
+                        </div>
 
-						<div class="input-section d-flex">
+                        <div class="input-section d-flex">
                             <p class="usernamelabel">O2 verme durum: </p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="o2_status" id="o2_status_alm" value="Almıyor">
+                                    <input class="form-check-input" type="radio" name="o2_status" id="o2_status_alm"
+                                        value="Almıyor">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">Almıyor</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="o2_status" id="o2_status_al" value="Aliyor">
+                                    <input class="form-check-input" type="radio" name="o2_status" id="o2_status_al"
+                                        value="Aliyor">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">Aliyor</span>
                                     </label>
                                 </div>
-							</div>
+                            </div>
 
-						</div>
-						<div class="input-section" id="o2-delivery-container">
+                        </div>
+                        <div class="input-section" id="o2-delivery-container">
                             <p class="usernamelabel">O2 verme Yöntemi: </p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="o2_method" id="o2_method_1" value="O2 maske">
+                                    <input class="form-check-input" type="radio" name="o2_method" id="o2_method_1"
+                                        value="O2 maske">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">O2 maske</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="o2_method" id="o2_method_2" value="Nazal kanül">
+                                    <input class="form-check-input" type="radio" name="o2_method" id="o2_method_2"
+                                        value="Nazal kanül">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">Nazal kanül</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="o2_method" id="o2_method_diger" value="Diğer">
+                                    <input class="form-check-input" type="radio" name="o2_method" id="o2_method_diger"
+                                        value="Diğer">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">Diğer</span>
                                     </label>
@@ -269,29 +301,32 @@ if (isset($_GET['logout'])) {
                            			<input type="text" class="form-control" required name="o2_method_diger" id="o2_method_diger_input" placeholder="Yöntemi">
                        				 </div>
                                 </div>
-							</div>
+                            </div>
 
-						</div>
-
-
-						<div class="input-section d-flex">
-                            <p class="usernamelabel">SPO2 (%):</p>
-                            <input type="text" class="form-control" required name="spo2_percentage" id="diger" placeholder="SPO2 (%)">
                         </div>
-						<div class="input-section" id="o2-delivery-container">
+
+
+                        <div class="input-section d-flex">
+                            <p class="usernamelabel">SPO2 (%):</p>
+                            <input type="text" class="form-control" required name="spo2_percentage" id="diger"
+                                placeholder="SPO2 (%)">
+                        </div>
+                        <div class="input-section" id="o2-delivery-container">
                             <p class="usernamelabel">Günlük Günlük Kilo Takibi Yapiliyor mi?</p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox"  id="weight_input_toggle" value="O2 maske">
+                                    <input class="form-check-input" type="checkbox" id="weight_input_toggle"
+                                        value="O2 maske">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">Yapilmiyorum</span>
                                     </label>
                                 </div>
-                        	</div>
+                            </div>
                         </div>
-						<div class="input-section" id="kilo_yapiliyor">
+                        <div class="input-section" id="kilo_yapiliyor">
                             <p class="usernamelabel">Günlük Kilo Takibi:</p>
-                            <input type="text" class="form-control"  name="weight_input" id="diger" placeholder="Günlük Kilo Takibi">
+                            <input type="text" class="form-control" name="weight_input" id="diger"
+                                placeholder="Günlük Kilo Takibi">
                         </div>
 							<input class="form-control submit" type='submit' name="submit" id="submit" value="Submit">
                     </form>
@@ -363,8 +398,9 @@ if (isset($_GET['logout'])) {
 					}
 				  };
 
-				  let spo2_percentage = $("input[name='spo2_percentage']").val();
-				let weight_input = $('#kilo_yapiliyor').css("display") === 'flex' ? $("input[name='weight_input']").val() : 'Yapilmiyorum';
+                let spo2_percentage = $("input[name='spo2_percentage']").val();
+                let weight_input = $('#kilo_yapiliyor').css("display") === 'flex' ? $(
+                    "input[name='weight_input']").val() : 'Yapilmiyorum';
 
                   $.ajax({
                       type: 'POST',
@@ -408,9 +444,9 @@ if (isset($_GET['logout'])) {
               
           })
 
-      });
-  </script>
-      <script src=""></script>
-      </body>
+    });
+    </script>
+    <script src=""></script>
+</body>
 
-     </html>
+</html>
