@@ -16,6 +16,7 @@ if (isset($_POST["patient_name"])) {
         respiratory_rate = ?,
         blood_pressure = ?,
         bp_measurement_location = ?,
+        measurement_location = ?,
         o2_status = ?,
         o2_method = ?,
         spo2_percentage = ?,
@@ -33,6 +34,7 @@ $result = $stmt->execute([
     $_POST["respiratory_rate"],
     $_POST["blood_pressure"],
     $_POST["bp_measurement_location"],
+    $_POST["measurement_location"],
     $_POST["o2_status"],
     $_POST["o2_method"],
     $_POST["spo2_percentage"],
@@ -61,12 +63,13 @@ else{
                 heartrate_nature,
                 respiratory_rate,
                 blood_pressure,
+                measurement_location,
                 bp_measurement_location,
                 o2_status,
                 o2_method,
                 spo2_percentage,
                 weight_input
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 $result = $stmt->execute([
     $_POST["form_num"],
     $_POST["patient_name"],
@@ -81,6 +84,7 @@ $result = $stmt->execute([
     $_POST["heartrate_nature"],
     $_POST["respiratory_rate"],
     $_POST["blood_pressure"],
+    $_POST["measurement_location"],
     $_POST["bp_measurement_location"],
     $_POST["o2_status"],
     $_POST["o2_method"],
@@ -88,9 +92,9 @@ $result = $stmt->execute([
     $_POST["weight_input"],
 ]);
     if($result){
-            echo "Successfully insert!";
+            echo "Successfully inserted!";
     }else{
-            echo "Error: could not insert!";
+            echo "Error: could not inserted!";
     }
 }
 }

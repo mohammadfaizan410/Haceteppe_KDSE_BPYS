@@ -21,7 +21,7 @@ if (isset($_POST["patient_name"])) {
                         risk= ?
                       WHERE form_id = ?");
 
-$stmt->execute([
+$result = $stmt->execute([
     $_POST["form_num"],
     $_POST["patient_name"],
     $_POST["creation_date"],
@@ -37,9 +37,13 @@ $stmt->execute([
     $_POST["form_id"]
 ]);
 
-
-echo  "Successfully updated form 6";
-}
+if($result){
+    echo "Successfully Updated!";
+    }
+    else{
+    echo $result;
+    }
+  }
 else {
     
     $stmt = $db->prepare("INSERT into form6 (
@@ -74,10 +78,13 @@ else {
                                     $_POST["risk"]
                                 ]);
 
-           
-            echo "Successfully inserted into form6";
-        }
-    
+                                if($result){
+                                    echo "Successfully Inserted!";
+                                    }
+                                    else{
+                                    echo $result;
+                                    }
+                                  }
 }
 else{
     echo "Error.";

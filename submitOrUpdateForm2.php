@@ -16,7 +16,7 @@ if (isset($_POST)) {
         pain_decrease_factors = ?
         WHERE form_id = ?");
 
-      $stmt->execute([
+    $result =  $stmt->execute([
         $_POST["creation_date"],
         $_POST["pain_intensity"],
         $_POST["pain_duration"],
@@ -27,6 +27,12 @@ if (isset($_POST)) {
         $_POST["pain_decrease_factors"],
         $_POST["form_id"]
       ]);
+      if($result){
+      echo "Successfully Updated!";
+      }
+      else{
+      echo $result;
+      }
     }
     else{
 
@@ -46,7 +52,7 @@ if (isset($_POST)) {
                 pain_decrease_factors
               ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)");
               
-              $stmt->execute([
+          $result =    $stmt->execute([
                 $_POST["patient_name"],
                 $_POST["patient_id"],
                 $_POST["form_num"],
@@ -60,8 +66,13 @@ if (isset($_POST)) {
                 $_POST["pain_increase_factors"],
                 $_POST["pain_decrease_factors"]
               ]);
-              echo "succesfully inserted";
-            }
+              if($result){
+                echo "Successfully Inserted!";
+                }
+                else{
+                echo $result;
+                }
+              }
           }
             
             else{

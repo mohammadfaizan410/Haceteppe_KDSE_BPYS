@@ -193,7 +193,7 @@ if (isset($_GET['logout'])) {
 
 						<div class="input-section d-flex">
                             <p class="usernamelabel">Solunum sayısı:</p>
-                            <input type="text" class="form-control" <?php echo $form10[0]['respiratory_rate'];?> required name="respiratory_rate" id="diger" placeholder="Solunum sayısı">
+                            <input type="text" class="form-control"  value = '<?php echo $form10[0]['respiratory_rate'];?>' required name="respiratory_rate" id="diger" placeholder="Solunum sayısı">
                         </div>
 
 						<div class="input-section d-flex">
@@ -341,14 +341,16 @@ if (isset($_GET['logout'])) {
     });
 
 
-    //preselecting inputs
                 $('input[name="measurement_location"]').each(function() {
             if ($(this).val() === "<?php echo $form10[0]['measurement_location']; ?>") {
                 $(this).prop('checked', true);
             }
         });
                 $('input[name="heartrate_nature"]').each(function() {
-            if ($(this).val() === "<?php echo $form10[0]['heartrate_nature']; ?>") {
+                    console.log("from the form","<?php echo $form10[0]['heartrate_nature']; ?>")
+                    console.log($(this).val())
+
+            if ($(this).val() == "<?php echo $form10[0]['heartrate_nature']; ?>") {
                 $(this).prop('checked', true);
             }
         });
@@ -365,7 +367,7 @@ if (isset($_GET['logout'])) {
             }
         });
 
-                $('input[name="o2_status"]').each(function() {
+            $('input[name="o2_status"]').each(function() {
             if ($(this).val() === "<?php echo $form10[0]['o2_status']; ?>") {
                 $(this).prop('checked', true);
             }
@@ -389,47 +391,6 @@ if (isset($_GET['logout'])) {
 
           })
       });
-
-	const radioBtn = document.getElementById("o2_method_diger");
-	const inputField = document.getElementById("o2_method_diger_input");
-	radioBtn.addEventListener("change", function() {
-  if (this.checked) {
-    inputField.disabled = false;
-  } else {
-    inputField.disabled = true;
-  }
-});
-$('#o2_method_1').change(function (e) { 
-	e.preventDefault();
-	inputField.disabled = true;
-
-});
-
-$('#o2-delivery-container').css("display", 'none')
-if($("input[type='radio'][name='o2_status']:checked").val() === 'Aliyor'){
-    $('#o2-delivery-container').css("display", 'flex')
-
-}
-$('#kilo_yapiliyor').css("display", 'flex')
-$('#o2_status_alm').change(function (e) { 
-	e.preventDefault();
-	$('#o2-delivery-container').css("display", 'none')
-	
-});
-
-$('#o2_status_al').change(function (e) { 
-	e.preventDefault();
-	$('#o2-delivery-container').css("display", 'flex')
-
-});
-$('#weight_input_toggle').change(function (e) { 
-	e.preventDefault();
-	if($('#weight_input_toggle').is(":checked"))
-	$('#kilo_yapiliyor').css("display", 'none');
-	else 	$('#kilo_yapiliyor').css("display", 'flex')
-
-
-});
 
 </script>
 <script>
@@ -455,23 +416,24 @@ $('#weight_input_toggle').change(function (e) {
                   let form_num = 10;
                   let patient_name = $("input[name='patient_name']").val();
                   let patient_id = parseInt($("input[name='patient_id']").val());
-                  let yourDate = new Date()
+                   let yourDate = new Date()
                   let creationDate = yourDate.toISOString().split('T')[0];
                   let updateDate = yourDate.toISOString().split('T')[0];
 				  let time = $("input[name='time']").val();
                   let body_temperature = $("input[name='body_temperature']").val();
 				  let heart_rate = $("input[name='heart_rate']").val();
 				  let heartrate_nature = $("input[type='radio'][name='heartrate_nature']:checked").val();
-				  let heartrate_location = $("input[type='radio'][name='heartrate_location']:checked").val();
+                  let heartrate_location = $("input[type='radio'][name='heartrate_location']:checked").val();
 				  let respiratory_rate = $("input[name='respiratory_rate']").val();
 				  let respiratory_nature = $("input[type='radio'][name='respiratory_nature']:checked").val();
 				  let blood_pressure = $("input[name='blood_pressure']").val();
 				  let bp_measurement_location = $("input[type='radio'][name='bp_measurement_location']:checked").val();
 				  let o2_status = $("input[type='radio'][name='o2_status']:checked").val();
 				  let o2_method = '';
+                  let measurement_location =$("input[type='radio'][name='measurement_location']:checked").val();
 				 
 				  if(o2_status === "Almıyor"){
-					o2_method = "Almıyor";
+					o2_method = "Almıyor";  
 				  }else{
 					if($("input[type='radio'][name='o2_method']:checked").val()==="Diğer"){
 						o2_method =  $("input[name='o2_method_diger']").val();
@@ -481,8 +443,9 @@ $('#weight_input_toggle').change(function (e) {
 					}
 				  };
 
-				  let spo2_percentage = $("input[name='spo2_percentage']").val();
-				let weight_input = $('#kilo_yapiliyor').css("display") === 'flex' ? $("input[name='weight_input']").val() : 'Yapilmiyorum';
+                let spo2_percentage = $("input[name='spo2_percentage']").val();
+                let weight_input = $('#kilo_yapiliyor').css("display") === 'flex' ? $(
+                    "input[name='weight_input']").val() : 'Yapilmiyorum';
 
                   $.ajax({
                       type: 'POST',
@@ -505,10 +468,11 @@ $('#weight_input_toggle').change(function (e) {
 						  heart_rate:heart_rate,
 						  heartrate_location:heartrate_location,
 						  respiratory_nature:respiratory_nature,
-						  heartrate_nature:respiratory_nature,
+						  heartrate_nature:heartrate_nature,
 						  respiratory_rate:respiratory_rate,
 						  blood_pressure:blood_pressure,
 						  bp_measurement_location:bp_measurement_location,
+                          measurement_location : measurement_location,
 						  o2_status:o2_status,
 						  o2_method:o2_method,
 						  spo2_percentage:spo2_percentage,

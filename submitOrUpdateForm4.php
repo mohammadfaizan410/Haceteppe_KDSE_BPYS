@@ -22,7 +22,7 @@ if (isset($_POST["patient_name"])) {
                     post_fall_general_condition = ?
                   WHERE form_id = ?");
 
-$stmt->execute([
+$result = $stmt->execute([
             $_POST["patient_name"],
             $_POST["creation_date"],
             $_POST["patient_gender"],
@@ -40,12 +40,17 @@ $stmt->execute([
             $_POST["form_id"]
         ]);
         
-        echo  "successfully updated";
-    } 
-else{
-
-    
-    $stmt = $db->prepare("INSERT INTO form4 (
+        if($result){
+            echo "Successfully Updated!";
+            }
+            else{
+            echo $result;
+            }
+        } 
+        else{
+            
+            
+            $stmt = $db->prepare("INSERT INTO form4 (
                 patient_name,
                 patient_id,
                 patient_gender,
@@ -64,7 +69,7 @@ else{
                 post_fall_general_condition
             ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-$stmt->execute([
+$result = $stmt->execute([
     $_POST["patient_name"],
     $_POST["patient_id"],
     $_POST["patient_gender"],
@@ -83,8 +88,13 @@ $stmt->execute([
     $_POST["post_fall_general_condition"]
 ]);
 
-echo "Successfully inserted.";
-}
+if($result){
+    echo "Successfully Inserted!";
+    }
+    else{
+    echo $result;
+    }
+  }
 }
 else {
     echo "Error.";

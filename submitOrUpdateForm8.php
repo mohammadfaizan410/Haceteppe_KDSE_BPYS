@@ -12,16 +12,20 @@ if (isset($_POST["patient_name"])) {
         edema_severity = ?
         WHERE form_id = ?");
 
-    $stmt->execute([
+   $result =  $stmt->execute([
         $_POST["patient_name"],
         $_POST["creation_date"],   
         $_POST["assessed_area"],   
         $_POST["edema_severity"],
         $_POST["form_id"],
     ]);
-        echo "successfully updated";
-
+    if($result){
+        echo "Successfully Updated!";
         }
+        else{
+        echo $result;
+        }
+      }
     
 else{
 
@@ -34,7 +38,7 @@ else{
                 assessed_area,
                 edema_severity
             ) VALUES (?, ?, ?, ?, ?, ?, ?)");
-$stmt->execute([
+$result = $stmt->execute([
     $_POST["form_num"],
     $_POST["patient_name"],
     $_POST["patient_id"],
@@ -45,8 +49,13 @@ $stmt->execute([
 ]);
 
 
-echo "Successfully inserted into form8";
-}
+if($result){
+    echo "Successfully Inserted!";
+    }
+    else{
+    echo $result;
+    }
+  }
 }
 
 else{

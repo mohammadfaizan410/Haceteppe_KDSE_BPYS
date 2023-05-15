@@ -16,7 +16,7 @@ if (isset($_POST["patient_name"])) {
         liquid_sent = ?
         WHERE form_id = ?");
 
-    $stmt->execute([
+    $result = $stmt->execute([
         $_POST["patient_name"],
         $_POST["creation_date"],   
         $_POST["liquid_type"],   
@@ -26,9 +26,13 @@ if (isset($_POST["patient_name"])) {
         $_POST["liquid_sent"],
         $_POST["form_id"]
     ]);
-        echo "successfully updated";
-
+    if($result){
+        echo "Successfully Updated!";
         }
+        else{
+        echo $result;
+        }
+      }
         else{    
                 $stmt = $db->prepare("INSERT INTO form12 (
                 form_num,
@@ -42,7 +46,7 @@ if (isset($_POST["patient_name"])) {
                 liquid_level,
                 liquid_sent
             ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-$stmt->execute([
+$result =  $stmt->execute([
     $_POST["form_num"],
     $_POST["patient_name"],
     $_POST["patient_id"],
@@ -54,8 +58,13 @@ $stmt->execute([
     $_POST["liquid_level"],
     $_POST["liquid_sent"]
 ]);
-
-}
+if($result){
+    echo "Successfully Inserted!";
+    }
+    else{
+    echo $result;
+    }
+  }
 }
 else{
     echo "Error.";

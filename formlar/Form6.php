@@ -460,7 +460,7 @@ if (isset($_GET['logout'])) {
 
                     },
                     success: function(data) {
-                        alert("SuccessFully Inserted!");
+                        alert(data);
                         let url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
                         $("#content").load(url);
                     },

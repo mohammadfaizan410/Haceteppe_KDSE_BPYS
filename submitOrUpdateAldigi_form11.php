@@ -41,7 +41,7 @@ if (isset($_POST["patient_name"])) {
                 total = ?
                 WHERE form_id = ?");
 
-    $stmt->execute([
+   $result =  $stmt->execute([
     $_POST["creation_date"],   
     $_POST["time_range"],   
     $_POST["iv_input1"],   
@@ -75,13 +75,16 @@ if (isset($_POST["patient_name"])) {
     $_POST["total"],
     $_POST["form_id"]
     ]);
-        echo "successfully updated";
-
+    if($result){
+        echo "Successfully Updated!";
         }
-
+        else{
+        echo $result;
+        }
+      }
 else{
 
-        $stmt = $db->prepare("INSERT INTO form11 (
+      $result =   $stmt = $db->prepare("INSERT INTO form11 (
                 form_num,
                 patient_name,
                 patient_id,
@@ -155,8 +158,13 @@ $stmt->execute([
     $_POST["cikardigi_total4"],
     $_POST["total"],
 ]);
-            echo "successfully inserted!!";
-}
+if($result){
+    echo "Successfully Inserted!";
+    }
+    else{
+    echo $result;
+    }
+  }
 }
 else{
     echo "Error.";

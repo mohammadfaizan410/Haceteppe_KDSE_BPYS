@@ -19,7 +19,7 @@ if (isset($_POST["patient_name"])) {
                         total = ?
                       WHERE form_id = ?");
 
-                    $stmt->execute([
+                 $result=    $stmt->execute([
                                     $_POST["creation_date"],
                                     $_POST["confusion_point"],                                    
                                     $_POST["symtomatic_depression_point"],
@@ -34,10 +34,15 @@ if (isset($_POST["patient_name"])) {
                                 ]);
 
            
-            echo  "successfully updated";
-        }
-
-            $stmt = $db->prepare("INSERT into form3 (
+                                if($result){
+                                    echo "Successfully Updated!";
+                                    }
+                                    else{
+                                    echo $result;
+                                    }
+                                }
+                                
+                                $stmt = $db->prepare("INSERT into form3 (
                 patient_name,
                 patient_id,
                 form_num,
@@ -54,7 +59,7 @@ if (isset($_POST["patient_name"])) {
                 total
                 ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-                    $stmt->execute([
+$result =   $stmt->execute([
                                     $_POST["patient_name"],
                                     $_POST["patient_id"],
                                     $_POST["form_num"],
@@ -70,11 +75,16 @@ if (isset($_POST["patient_name"])) {
                                     $_POST["arm_chair_point"],
                                     $_POST["total"]
                                 ]);
-
-           
-            echo "succesfully inserted";
-        }
-else{
-    echo 'error' ;
+                                
+                                
+                                if($result){
+                                    echo "Successfully Inserted!";
+                                }
+                                else{
+                                    echo $result;
+                                }
+                            }
+                                else{
+                                    echo 'error' ;
 }
 ?>

@@ -116,7 +116,7 @@ if (isset($_GET['logout'])) {
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="heartrate_location"
-                                        id="heartrate_location" value="Apikal *">
+                                        id="heartrate_location" value="Apikal">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">Apikal</span>
                                     </label>
@@ -386,6 +386,7 @@ if (isset($_GET['logout'])) {
 				  let bp_measurement_location = $("input[type='radio'][name='bp_measurement_location']:checked").val();
 				  let o2_status = $("input[type='radio'][name='o2_status']:checked").val();
 				  let o2_method = '';
+                  let measurement_location =$("input[type='radio'][name='measurement_location']:checked").val();
 				 
 				  if(o2_status === "Almıyor"){
 					o2_method = "Almıyor";
@@ -425,6 +426,7 @@ if (isset($_GET['logout'])) {
 						  heartrate_respiratory:heartrate_nature,
 						  respiratory_rate:respiratory_rate,
 						  blood_pressure:blood_pressure,
+                          measurement_location:measurement_location,
 						  bp_measurement_location:bp_measurement_location,
 						  o2_status:o2_status,
 						  o2_method:o2_method,

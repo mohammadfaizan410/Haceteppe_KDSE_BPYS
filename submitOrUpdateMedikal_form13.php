@@ -15,7 +15,7 @@ if (isset($_POST["patient_name"])) {
         delivery_method = ?,
         treatment_timeRange = ?
         WHERE form_id = ?");
-        $stmt->execute([
+       $result=  $stmt->execute([
             $_POST["creation_date"],
             $_POST["delivery_date"],
             $_POST["delivery_time"],
@@ -25,8 +25,13 @@ if (isset($_POST["patient_name"])) {
             $_POST["treatment_timeRange"],
             $_POST["form_id"]
         ]);
-        echo "successfully updated";
-    } else {
+        if($result){
+            echo "Successfully Updated!";
+            }
+            else{
+            echo $result;
+            }
+          } else {
         $stmt = $db->prepare("INSERT INTO form13 (
                 form_num,
                 patient_name,
@@ -40,7 +45,7 @@ if (isset($_POST["patient_name"])) {
                 delivery_method,
                 treatment_timeRange
             ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->execute([
+       $result =  $stmt->execute([
             $_POST["form_num"],
             $_POST["patient_name"],
             $_POST["patient_id"],
@@ -53,8 +58,13 @@ if (isset($_POST["patient_name"])) {
             $_POST["delivery_method"],
             $_POST["treatment_timeRange"]
         ]);
-        echo "successFully inserted";
-    }
+        if($result){
+            echo "Successfully Inserted!";
+            }
+            else{
+            echo $result;
+            }
+          }
 }
 else{
     echo "Error.";

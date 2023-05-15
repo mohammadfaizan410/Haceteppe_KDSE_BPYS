@@ -13,7 +13,7 @@ if (isset($_POST["patient_name"])) {
         hours = ?,
         description = ?
         WHERE form_id = ?");
-        $stmt->execute([
+       $result =  $stmt->execute([
             $_POST["creation_date"],
             $_POST["applications"],
             $_POST["hours"],
@@ -21,11 +21,16 @@ if (isset($_POST["patient_name"])) {
             $_POST["form_id"]
         ]);
 
-        echo "successfully updated!";
-    }
+        if($result){
+            echo "Successfully Updated!";
+            }
+            else{
+            echo $result;
+            }
+          }
     else{
 
-        $stmt = $db->prepare("INSERT INTO form15 (
+      $result =  $stmt = $db->prepare("INSERT INTO form15 (
                 form_num,
                 patient_name,
                 patient_id,
@@ -45,9 +50,13 @@ if (isset($_POST["patient_name"])) {
         $_POST["hours"],
         $_POST["description"]
     ]);
-    echo "successfully inserted!";
-    
-}
+    if($result){
+        echo "Successfully Inserted!";
+        }
+        else{
+        echo $result;
+        }
+      }
 }
 else{
     echo "Error.";

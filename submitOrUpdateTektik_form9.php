@@ -14,7 +14,7 @@ if (isset($_POST["patient_name"])) {
         referance_value = ?
         WHERE form_id = ?");
 
-    $stmt->execute([
+   $result =  $stmt->execute([
         $_POST["patient_name"],
         $_POST["creation_date"],   
         $_POST["date"],   
@@ -23,9 +23,13 @@ if (isset($_POST["patient_name"])) {
         $_POST["referance_value"],
         $_POST["form_id"],
     ]);
-        echo "successfully updated";
-
+    if($result){
+        echo "Successfully Updated!";
         }
+        else{
+        echo $result;
+        }
+      }
         else{    
                 $stmt = $db->prepare("INSERT INTO form9 (
                 form_num,
@@ -38,7 +42,7 @@ if (isset($_POST["patient_name"])) {
                 examination_result,
                 referance_value
             ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-$stmt->execute([
+$result = $stmt->execute([
     $_POST["form_num"],
     $_POST["patient_name"],
     $_POST["patient_id"],
@@ -49,8 +53,13 @@ $stmt->execute([
     $_POST["examination_result"],
     $_POST["referance_value"],
 ]);
-        echo "successfully inserted";
-}
+if($result){
+    echo "Successfully Inserted!";
+    }
+    else{
+    echo $result;
+    }
+  }
 }
 else{
     echo "Error";

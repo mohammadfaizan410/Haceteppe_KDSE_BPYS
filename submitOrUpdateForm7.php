@@ -32,7 +32,7 @@ if (isset($data["patient_name"])) {
                     healing_date = ?
                       WHERE form_id = ?");
 
-$stmt->execute([
+$result = $stmt->execute([
                         $data["update_date"],
                         $data["occurance_date"],                                    
                         $data["service_wound"],
@@ -55,9 +55,13 @@ $stmt->execute([
                         $data["form_id"],
                     ]);
                     
-                    
-                    echo  "Successfully updated form 7";
-                }
+                    if($result){
+                        echo "Successfully Updated!";
+                        }
+                        else{
+                        echo $result;
+                        }
+                      }
                 else {
                     
                     $stmt = $db->prepare("INSERT INTO form7 (
@@ -86,7 +90,7 @@ $stmt->execute([
                 healing_date
             ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             
-    $stmt->execute([
+    $result =$stmt->execute([
         $data["form_num"],
         $data["patient_name"],
         $data["patient_id"],
@@ -112,9 +116,13 @@ $stmt->execute([
         $healing_date,
     ]);
     
-    
-    echo "Successfully inserted into form7";
-}
+    if($result){
+        echo "Successfully Inserted!";
+        }
+        else{
+        echo $result;
+        }
+      }
 }
 
 else{
