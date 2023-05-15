@@ -16,7 +16,7 @@ if (isset($_GET['logout'])) {
 
 <head>
     <meta charset="utf-8">
-    <title>e-BYRYS-KKDS</title>
+    <title>KDSE-BPYS</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -29,13 +29,12 @@ if (isset($_GET['logout'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="../bootstrap.min.css" rel="stylesheet">
+
 
     <!-- Template Stylesheet -->
     <link href="../style.css" rel="stylesheet">
@@ -79,6 +78,7 @@ if (isset($_GET['logout'])) {
         echo 'error';
     }
     var_dump($form10);
+    var_dump((int) $form10[0]['respiratory_rate']);
     $respiratory_rate = (int) $form10[0]['respiratory_rate'];
     ?>
     <div class="container-fluid pt-4 px-4">
@@ -382,6 +382,8 @@ if (isset($_GET['logout'])) {
         </div>
     </div>
     <script>
+    var respiratory_rate = parseInt($("input[name='respiratory_rate']").val());
+    console.log(respiratory_rate);
     console.log(<?php $respiratory_rate ?>);
     if (<?php $respiratory_rate ?> < 16) {
         $('#tanı1-warning').css("display", "block");
