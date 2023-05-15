@@ -136,7 +136,7 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
 
                         </div>
 
-                        <div class="input-section d-flex">
+                        <div class="input-section d-flex" style="flex-direction: column;">
                             <p class="usernamelabel">Hemşirelik Girişimleri:</p>
 
                             <div class="form-check">
