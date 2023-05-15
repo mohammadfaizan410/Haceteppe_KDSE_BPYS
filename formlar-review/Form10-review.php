@@ -405,10 +405,10 @@ if (isset($_GET['logout'])) {
                 let patient_id = parseInt($("input[name='patient_id']").val());
                 var url = "<?php echo $base_url; ?>/tanılar/tanı1.php?patient_id=" + patient_id +
                     "&patient_name=" + encodeURIComponent(patient_name) + "&tanı_respiratory_rate=" +
-                    tanı_respiratory_rate + "&tanı_heart_rate" + tanı_heart_rate +
-                    "&tanı_spo2_percentage" +
-                    tanı_spo2_percentage + "&tanı_o2_status" + tanı_o2_status +
-                    "&tanı_respiratory_nature" +
+                    tanı_respiratory_rate + "&tanı_heart_rate=" + tanı_heart_rate +
+                    "&tanı_spo2_percentage=" +
+                    tanı_spo2_percentage + "&tanı_o2_status=" + tanı_o2_status +
+                    "&tanı_respiratory_nature=" +
                     tanı_respiratory_nature;
                 $("#content").load(url);
             });
