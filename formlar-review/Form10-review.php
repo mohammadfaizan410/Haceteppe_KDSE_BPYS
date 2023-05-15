@@ -78,6 +78,7 @@ if (isset($_GET['logout'])) {
     } else {
         echo 'error';
     }
+    var_dump($form10)
     ?>
     <div class="container-fluid pt-4 px-4">
         <div class="send-patient">
