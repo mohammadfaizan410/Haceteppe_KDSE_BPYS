@@ -101,26 +101,11 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
 
     </div>
     <script>
-    var tanı_respiratory_rate = <?php
-
-                                    echo $tanı_respiratory_rate
-                                    ?>;
-    var tanı_heart_rate = <?php
-
-                                echo $tanı_heart_rate
-                                ?>;
-    var tanı_spo2_percentage = <?php
-
-                                    echo $tanı_spo2_percentage
-                                    ?>;
-    var tanı_o2_status = <?php
-
-                                echo $tanı_o2_status
-                                ?>;
-    var tanı_respiratory_nature = <?php
-
-                                        echo $tanı_respiratory_nature
-                                        ?>;
+    var tanı_respiratory_rate = <?= json_encode($tanı_respiratory_rate, JSON_UNESCAPED_UNICODE); ?>;;
+    var tanı_heart_rate = <?= json_encode($tanı_heart_rate, JSON_UNESCAPED_UNICODE); ?>;
+    var tanı_spo2_percentage = <?= json_encode($tanı_spo2_percentage, JSON_UNESCAPED_UNICODE); ?>;
+    var tanı_o2_status = <?= json_encode($tanı_o2_status, JSON_UNESCAPED_UNICODE); ?>;
+    var tanı_respiratory_nature = <?= json_encode($tanı_respiratory_nature, JSON_UNESCAPED_UNICODE); ?>;
     console.log("TANITANITANITANI");
     console.log(tanı_respiratory_rate);
     console.log(tanı_heart_rate);
