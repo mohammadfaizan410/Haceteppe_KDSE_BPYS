@@ -391,11 +391,11 @@ if (isset($_GET['logout'])) {
     var tanı_respiratory_nature = $("input[type='radio'][name='respiratory_nature']:checked").val();
     console.log("AAAAAA");
     console.log(tanı_spo2_percentage);
-    // || tanı_spo2_percentage <
-    //95 || tanı_o2_status === "Aliyor" || tanı_respiratory_nature === "Derin" || tanı_respiratory_nature ===
+
+    // || tanı_respiratory_nature === "Derin" || tanı_respiratory_nature ===
     //     "Yüzeyel"
     if (tanı_respiratory_rate < 16 || tanı_respiratory_rate > 20 || tanı_heart_rate > 100 || tanı_spo2_percentage <
-        95) {
+        95 || tanı_o2_status === "Aliyor") {
         $('#tanı1-warning').css("display", "block");
         $(function() {
             $("a.addtanı").on("click", function(e) {
