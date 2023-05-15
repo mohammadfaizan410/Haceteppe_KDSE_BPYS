@@ -138,13 +138,169 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Hemşirelik Girişimleri:</p>
-                            <input type="text" class="form-control" required name="nurse_attempt" id="diger"
-                                placeholder="nurse_attempt" maxlength="250">
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt"
+                                    value="Yaşamsal bulgu takibi yapılır">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Yaşamsal bulgu takibi yapılır</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt"
+                                    value="Pulse oksimetre ile oksijen satürasyonu izlenir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Pulse oksimetre ile oksijen satürasyonu izlenir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt"
+                                    value="Solunum sesleri, hızı, derinliği, efor düzeyi değerlendirilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Solunum sesleri, hızı, derinliği, efor düzeyi
+                                        değerlendirilir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt"
+                                    value="Hasta solukluk, siyanoz gibi bulgular açısından değerlendirilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Hasta solukluk, siyanoz gibi bulgular açısından
+                                        değerlendirilir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt"
+                                    value="Hastanın bilinç durumu değerlendirilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Hastanın bilinç durumu değerlendirilir </span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt"
+                                    value="Hastanın ventilasyon potansiyelini en yüksek düzeye çıkartmak için hastaya uygun pozisyon verilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Hastanın ventilasyon potansiyelini en yüksek düzeye
+                                        çıkartmak için hastaya uygun pozisyon verilir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt"
+                                    value="Gerektiğinde istemde yer alan oksijen tedavisi uygulanır">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Gerektiğinde istemde yer alan oksijen tedavisi
+                                        uygulanır</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt"
+                                    value="Kan gazı sonuçları izlenir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Kan gazı sonuçları izlenir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt"
+                                    value="Serum elektrolit düzeyleri izlenir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Serum elektrolit düzeyleri izlenir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt"
+                                    value="Uygun sıklıkta ağız bakımı uygulanır">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Uygun sıklıkta ağız bakımı uygulanır</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt"
+                                    value="Yeterli hidrasyon sağlanır">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Yeterli hidrasyon sağlanır</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt"
+                                    value="Hastanın aspirasyon ihtiyacı değerlendirilir, gerektiğinde aspire edilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Hastanın aspirasyon ihtiyacı değerlendirilir,
+                                        gerektiğinde aspire edilir</span>
+                                </label>
+                            </div>
+                            <p class="usernamelabel">Eğitim:</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt"
+                                    value="Hasta ve bakım verenlerine destek ekipmanlarının (kondansatör, oksijen maskesi, spirometre gibi) kullanımı öğretilir.">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Hasta ve bakım verenlerine destek ekipmanlarının
+                                        (kondansatör, oksijen maskesi, spirometre gibi) kullanımı öğretilir.</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt"
+                                    value="Hasta ve bakım verenlerine uygulanan tedaviler hakkında bilgi verilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Hasta ve bakım verenlerine uygulanan tedaviler
+                                        hakkında bilgi verilir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt"
+                                    value="Hasta ve bakım verenlerine solunum ve rahatlama teknikleri hakkında bilgi verilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Hasta ve bakım verenlerine solunum ve rahatlama
+                                        teknikleri hakkında bilgi verilir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt"
+                                    value="Hasta ve bakım verenlerine etkili öksürme eğitimi verilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Hasta ve bakım verenlerine etkili öksürme eğitimi
+                                        verilir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt"
+                                    value="Hasta ve bakım verenlerine istem yapılan inhalerlerin kullanımı konusunda eğitim verilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Hasta ve bakım verenlerine istem yapılan inhalerlerin
+                                        kullanımı konusunda eğitim verilir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt"
+                                    value="Anksiyeteyi azaltmak ve kontrol duygusunu arttırmak için hastaya uygulanacak girişimlerden önce açıklama yapılır">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Anksiyeteyi azaltmak ve kontrol duygusunu arttırmak
+                                        için hastaya uygulanacak girişimlerden önce açıklama yapılır</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt"
+                                    value="İstem yapılan ilaçlar (analjezikler, bronkodilatörler, antiaritmikler, aeresoller, steroidler gibi) uygulanır">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">İstem yapılan ilaçlar (analjezikler, bronkodilatörler,
+                                        antiaritmikler, aeresoller, steroidler gibi) uygulanır</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt"
+                                    value="Mekanik ventilasyon uygulanma ihtimali için gerekli hazırlıklar yapılır">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Mekanik ventilasyon uygulanma ihtimali için gerekli
+                                        hazırlıklar yapılır</span>
+                                </label>
+                            </div>
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Değerlendirme:</p>
-                            <input type="text" class="form-control" required name="evaluation" id="diger"
-                                placeholder="evaluation" maxlength="250">
+                            <p class="tanıdescription"> Sorun devam ediyor: 1-4 gösterge seçildiyse; yeni günde bakım
+                                planında tanımlı tanı olacak. </p>
+                            <p class="tanıdescription"> Sorun çözümlendi:
+                                5 gösterge seçildiyse; yeni günde bakım planına bu tanıyı taşımayacak
+                            </p>
                         </div>
                         <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
                     </form>
@@ -267,6 +423,13 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                 let nurse_description = "Gaz değişiminde bozulma"
                 let noc_output = "Hastanın oksijen satürasyonun %95’in üzerinde olması"
                 let noc_indicator = $("input[type='radio'][name='noc_indicator']:checked").val();
+                if (noc_indicator = "5: Hastanın oksijen satürasyonunda bozulma yok") {
+                    let evaluation =
+                        "Sorun çözümlendi:5 gösterge seçildiyse;yeni günde bakım planına bu tanıyı taşımayacak"
+                } else {
+                    let evaluation =
+                        "Sorun devam ediyor: 1-4 gösterge seçildiyse; yeni günde bakım planında tanımlı tanı olacak."
+                }
                 let nurse_attempt = $("input[name='nurse_attempt']").val();
                 let evaluation = $("input[name='evaluation']").val();
                 console.log("values initiated")
