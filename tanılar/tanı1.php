@@ -463,17 +463,27 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                 var l18 = document.getElementById("nurse_attempt18");
                 var l19 = document.getElementById("nurse_attempt19");
                 var l20 = document.getElementById("nurse_attempt20");
+                console.log(l1);
+                console.log(l2);
+                console.log(l3);
+                console.log(l4);
+                console.log(l5);
+                console.log(l6);
+                console.log(l7);
 
                 if (l1.checked == true) {
                     var pl1 = document.getElementById("nurse_attempt1").value;
+                    console.log(pl1);
                     nurse_attempt + pl1 + ",";
                 }
                 if (l1.checked == true) {
                     var pl2 = document.getElementById("nurse_attempt2").value;
+                    console.log(pl2);
                     nurse_attempt + pl2 + ",";
                 }
                 if (l1.checked == true) {
                     var pl3 = document.getElementById("nurse_attempt3").value;
+                    console.log(pl3);
                     nurse_attempt + pl3 + ",";
                 }
                 if (l1.checked == true) {
