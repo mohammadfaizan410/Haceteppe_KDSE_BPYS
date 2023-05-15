@@ -124,7 +124,7 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator"" id="
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="
                                         noc_indicator" value="5: Hastanın oksijen satürasyonunda bozulma yok ">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">5: Hastanın oksijen satürasyonunda bozulma yok
@@ -135,11 +135,7 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                             </div>
 
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">NOC Gösterge:</p>
-                            <input type="text" class="form-control" required name="noc_indicator" id="diger"
-                                placeholder="noc_indicator" maxlength="250">
-                        </div>
+
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Hemşirelik Girişimleri:</p>
                             <input type="text" class="form-control" required name="nurse_attempt" id="diger"
@@ -218,6 +214,9 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
     } else {
         $('#field_respiratory_nature').css("color", "red");
     }
+
+    var matchedfields_string = respiratory_rate_string + " , " + heart_rate_string + " , " + spo2_percentage_string +
+        " , " + o2_status_string + " , " + respiratory_nature_string
     </script>
 
     <script>
