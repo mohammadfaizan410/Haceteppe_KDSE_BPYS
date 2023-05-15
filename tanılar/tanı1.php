@@ -58,6 +58,37 @@ if (isset($_GET['logout'])) {
         width: 200px;
     }
     </style>
+    <script>
+    var tanı_respiratory_rate = <?php
+                                    $tanı_respiratory_rate = $_GET['tanı_respiratory_rate'];
+                                    echo $tanı_respiratory_rate
+                                    ?>;
+    var tanı_heart_rate = <?php
+                                $tanı_heart_rate = $_GET['tanı_heart_rate'];
+                                echo $tanı_heart_rate
+                                ?>;
+    var tanı_spo2_percentage = <?php
+                                    $tanı_spo2_percentage = $_GET['tanı_spo2_percentage'];
+                                    echo $tanı_spo2_percentage
+                                    ?>;
+    var tanı_o2_status = <?php
+                                $tanı_o2_status = $_GET['tanı_o2_status'];
+                                echo $tanı_o2_status
+                                ?>;
+    var tanı_respiratory_nature = <?php
+                                        $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
+                                        echo $tanı_respiratory_nature
+                                        ?>;
+    console.log(tanı_respiratory_rate)
+    console.log(tanı_heart_rate)
+    console.log(tanı_spo2_percentage)
+    console.log(tanı_o2_status)
+    console.log(tanı_respiratory_nature)
+    var matchedfields = document.getElementById('matchedfields');
+    var matchedfields_string = tanı_respiratory_rate + tanı_heart_rate + tanı_spo2_percentage + tanı_o2_status +
+        tanı_respiratory_nature;
+    matchedfields.innerHTML = matchedfields_string
+    </script>
 
 <body>
     <div class="container-fluid pt-4 px-4">
@@ -69,8 +100,7 @@ if (isset($_GET['logout'])) {
                     <form action="" method="POST" class="patients-save-fields">
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Sorunla İlişkili Veriler:</p>
-                            <input type="text" class="form-control" required name="problem_info" id="diger"
-                                placeholder="problem_info" maxlength="100">
+                            <p class="matchedfields" id="matchedfields"></p>
                         </div>
                         ` <div class="input-section d-flex">
                             <p class="usernamelabel">Hemşirelik Tanıları:</p>
@@ -104,33 +134,7 @@ if (isset($_GET['logout'])) {
 
 
     </div>
-    <script>
-    var tanı_respiratory_rate = <?php
-                                    $tanı_respiratory_rate = $_GET['tanı_respiratory_rate'];
-                                    echo $tanı_respiratory_rate
-                                    ?>;
-    var tanı_heart_rate = <?php
-                                $tanı_heart_rate = $_GET['tanı_heart_rate'];
-                                echo $tanı_heart_rate
-                                ?>;
-    var tanı_spo2_percentage = <?php
-                                    $tanı_spo2_percentage = $_GET['tanı_spo2_percentage'];
-                                    echo $tanı_spo2_percentage
-                                    ?>;
-    var tanı_o2_status = <?php
-                                $tanı_o2_status = $_GET['tanı_o2_status'];
-                                echo $tanı_o2_status
-                                ?>;
-    var tanı_respiratory_nature = <?php
-                                        $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
-                                        echo $tanı_respiratory_nature
-                                        ?>;
-    console.log(tanı_respiratory_rate)
-    console.log(tanı_heart_rate)
-    console.log(tanı_spo2_percentage)
-    console.log(tanı_o2_status)
-    console.log(tanı_respiratory_nature)
-    </script>
+
     <script>
     $(function() {
         $('#closeBtn').click(function(e) {
@@ -175,7 +179,7 @@ if (isset($_GET['logout'])) {
                 let yourDate = new Date();
                 let creationDate = yourDate.toISOString().split('T')[0];
                 let updateDate = yourDate.toISOString().split('T')[0];
-                let problem_info = $("input[name='problem_info']").val();
+                let problem_info = matchedfields_string
                 let nurse_description = "Gaz değişiminde bozulma"
                 let noc_output = $("input[name='noc_output']").val();
                 let noc_indicator = $("input[name='noc_indicator']").val();
