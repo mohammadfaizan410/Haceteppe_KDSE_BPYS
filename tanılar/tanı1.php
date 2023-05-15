@@ -10,6 +10,12 @@ if (isset($_GET['logout'])) {
     unset($_SESSION);
     header("Location: main.php");
 }
+var_dump($_GET);
+$tanı_respiratory_rate = $_GET['tanı_respiratory_rate'];
+$tanı_heart_rate = $_GET['tanı_heart_rate'];
+$tanı_spo2_percentage = $_GET['tanı_spo2_percentage'];
+$tanı_o2_status = $_GET['tanı_o2_status'];
+$tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,16 +26,7 @@ if (isset($_GET['logout'])) {
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="../bootstrap.min.css" rel="stylesheet">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
     <!-- Template Stylesheet -->
@@ -58,38 +55,6 @@ if (isset($_GET['logout'])) {
         width: 200px;
     }
     </style>
-    <script>
-    var tanı_respiratory_rate = <?php
-                                    $tanı_respiratory_rate = $_GET['tanı_respiratory_rate'];
-                                    echo $tanı_respiratory_rate
-                                    ?>;
-    var tanı_heart_rate = <?php
-                                $tanı_heart_rate = $_GET['tanı_heart_rate'];
-                                echo $tanı_heart_rate
-                                ?>;
-    var tanı_spo2_percentage = <?php
-                                    $tanı_spo2_percentage = $_GET['tanı_spo2_percentage'];
-                                    echo $tanı_spo2_percentage
-                                    ?>;
-    var tanı_o2_status = <?php
-                                $tanı_o2_status = $_GET['tanı_o2_status'];
-                                echo $tanı_o2_status
-                                ?>;
-    var tanı_respiratory_nature = <?php
-                                        $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
-                                        echo $tanı_respiratory_nature
-                                        ?>;
-    console.log("TANITANITANITANI")
-    console.log(tanı_respiratory_rate)
-    console.log(tanı_heart_rate)
-    console.log(tanı_spo2_percentage)
-    console.log(tanı_o2_status)
-    console.log(tanı_respiratory_nature)
-    var matchedfields = document.getElementById('matchedfields');
-    var matchedfields_string = tanı_respiratory_rate + tanı_heart_rate + tanı_spo2_percentage + tanı_o2_status +
-        tanı_respiratory_nature;
-    matchedfields.innerHTML = matchedfields_string
-    </script>
 
 <body>
     <div class="container-fluid pt-4 px-4">
@@ -135,6 +100,38 @@ if (isset($_GET['logout'])) {
 
 
     </div>
+    <script>
+    var tanı_respiratory_rate = <?php
+
+                                    echo $tanı_respiratory_rate
+                                    ?>;
+    var tanı_heart_rate = <?php
+
+                                echo $tanı_heart_rate
+                                ?>;
+    var tanı_spo2_percentage = <?php
+
+                                    echo $tanı_spo2_percentage
+                                    ?>;
+    var tanı_o2_status = <?php
+
+                                echo $tanı_o2_status
+                                ?>;
+    var tanı_respiratory_nature = <?php
+
+                                        echo $tanı_respiratory_nature
+                                        ?>;
+    console.log("TANITANITANITANI");
+    console.log(tanı_respiratory_rate);
+    console.log(tanı_heart_rate);
+    console.log(tanı_spo2_percentage);
+    console.log(tanı_o2_status);
+    console.log(tanı_respiratory_nature);
+    var matchedfields = document.getElementById('matchedfields');
+    var matchedfields_string = tanı_respiratory_rate + tanı_heart_rate + tanı_spo2_percentage + tanı_o2_status +
+        tanı_respiratory_nature;
+    matchedfields.innerHTML = matchedfields_string;
+    </script>
 
     <script>
     $(function() {
