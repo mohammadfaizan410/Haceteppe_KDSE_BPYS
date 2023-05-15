@@ -373,7 +373,8 @@ if (isset($_GET['logout'])) {
                                 name="weight_input" id="diger" placeholder="Günlük Kilo Takibi">
                         </div>
                         <div class='tanı1-warning' id="tanı1-warning">
-                            <p>Gaz Değişiminde Bozulma Tanısı Eklemek İster Misiniz?</p>
+                            <p>Girdileriniz Gaz Değişiminde Bozulma Tanısı ile uyuşuyor bu tanıyı eklemek ister misiniz?
+                            </p>
                             <a class='addtanı' href='#'>Ekle</a>
                         </div>
                         <input class="form-control submit" type="submit" name="submit" id="submit" value="Güncelle">
@@ -383,10 +384,16 @@ if (isset($_GET['logout'])) {
         </div>
     </div>
     <script>
-    var respiratory_rate = parseInt($("input[name='respiratory_rate']").val());
+    var tanı_respiratory_rate = parseInt($("input[name='respiratory_rate']").val());
+    var tanı_heart_rate = parseInt($("input[name='heart_rate']").val());
+    var tanı_spo2_percentage = parseInt($("input[name='spo2_percentage']").val());
+    let tanı_o2_status = $("input[type='radio'][name='o2_status']:checked").val();
+    let respiratory_nature = $("input[type='radio'][name='respiratory_nature']:checked").val();
     console.log("AAAAAA");
-    console.log(respiratory_rate);
-    if (respiratory_rate < 16 || respiratory_rate > 20) {
+    console.log(tanı_respiratory_rate);
+    if (tanı_respiratory_rate < 16 || tanı_respiratory_rate > 20 || tanı_heart_rate > 100 || tanı_spo2_percentage <
+        95 || tanı_o2_status === "Aliyor" || tanı_respiratory_nature === "Derin" || tanı_respiratory_nature ===
+        "Yüzeyel") {
         $('#tanı1-warning').css("display", "block");
         $(function() {
             $("a.addtanı").on("click", function(e) {
