@@ -66,7 +66,15 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                     <form action="" method="POST" class="patients-save-fields">
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Sorunla İlişkili Veriler:</p>
-                            <p class="matchedfields" id="matchedfields"></p>
+                            <div class="matchedfields-wrapper">
+                                <p class="matchedfields" id="field_respiratory_rate"></p>
+                                <p class="matchedfields" id="field_heart_rate"></p>
+                                <p class="matchedfields" id="field_spo2_percentage"></p>
+                                <p class="matchedfields" id="field_o2_status"></p>
+                                <p class="matchedfields" id="field_respiratory_nature"></p>
+
+                            </div>
+
                         </div>
                         ` <div class="input-section d-flex">
                             <p class="usernamelabel">Hemşirelik Tanıları:</p>
@@ -106,16 +114,60 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
     var tanı_spo2_percentage = <?= json_encode($tanı_spo2_percentage, JSON_UNESCAPED_UNICODE); ?>;
     var tanı_o2_status = <?= json_encode($tanı_o2_status, JSON_UNESCAPED_UNICODE); ?>;
     var tanı_respiratory_nature = <?= json_encode($tanı_respiratory_nature, JSON_UNESCAPED_UNICODE); ?>;
+
     console.log("TANITANITANITANI");
     console.log(tanı_respiratory_rate);
     console.log(tanı_heart_rate);
     console.log(tanı_spo2_percentage);
     console.log(tanı_o2_status);
     console.log(tanı_respiratory_nature);
-    var matchedfields = document.getElementById('matchedfields');
-    var matchedfields_string = tanı_respiratory_rate + tanı_heart_rate + tanı_spo2_percentage + tanı_o2_status +
-        tanı_respiratory_nature;
-    matchedfields.innerHTML = matchedfields_string;
+
+    var field_respiratory_rate = document.getElementById('field_respiratory_rate');
+    var field_heart_rate = document.getElementById('field_heart_rate');
+    var field_spo2_percentage = document.getElementById('field_spo2_percentage');
+    var field_o2_status = document.getElementById('field_o2_status');
+    var field_respiratory_nature = document.getElementById('field_respiratory_nature');
+
+    var respiratory_rate_string = "Solunum Hızı: " + tanı_respiratory_rate;
+    field_respiratory_rate.innerHTML = respiratory_rate_string;
+
+    var heart_rate_string = "Nabız Hızı: " + tanı_heart_rate;
+    field_heart_rate.innerHTML = heart_rate_string;
+
+    var spo2_percentage_string = "SpO2: " + tanı_spo2_percentage;
+    field_spo2_percentage.innerHTML = spo2_percentage_string;
+
+    var o2_status_string = "O2 Tedavisi: " + tanı_o2_status;
+    field_o2_status.innerHTML = o2_status_string;
+
+    var respiratory_nature_string = "Solunumun Özelliği: " + tanı_respiratory_nature;
+    field_respiratory_nature.innerHTML = respiratory_nature_string;
+
+    if (tanı_respiratory_rate < 16 || tanı_respiratory_rate > 20) {
+        $('#matchedfields').css("color", "green");
+    } else {
+        $('#matchedfields').css("color", "red");
+    }
+    if (tanı_heart_rate > 100) {
+        $('#matchedfields').css("color", "green");
+    } else {
+        $('#matchedfields').css("color", "red");
+    }
+    if (tanı_spo2_percentage < 95) {
+        $('#matchedfields').css("color", "green");
+    } else {
+        $('#matchedfields').css("color", "red");
+    }
+    if (tanı_o2_status == "Aliyor") {
+        $('#matchedfields').css("color", "green");
+    } else {
+        $('#matchedfields').css("color", "red");
+    }
+    if (tanı_respiratory_nature === "Derin" || tanı_respiratory_nature === "Yüzeyel") {
+        $('#matchedfields').css("color", "green");
+    } else {
+        $('#matchedfields').css("color", "red");
+    }
     </script>
 
     <script>
