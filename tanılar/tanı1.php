@@ -79,6 +79,7 @@ if (isset($_GET['logout'])) {
                                         $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                                         echo $tanı_respiratory_nature
                                         ?>;
+    console.log("TANITANITANITANI")
     console.log(tanı_respiratory_rate)
     console.log(tanı_heart_rate)
     console.log(tanı_spo2_percentage)
