@@ -401,6 +401,8 @@ if (isset($_GET['logout'])) {
             $("a.addtanı").on("click", function(e) {
                 e.preventDefault();
                 console.log("tanı111111");
+                let patient_name = $("input[name='patient_name']").val();
+                let patient_id = parseInt($("input[name='patient_id']").val());
                 var url = "<?php echo $base_url; ?>/tanılar/tanı1.php?patient_id=" + patient_id +
                     "&patient_name=" + encodeURIComponent(patient_name);
                 $("#content").load(url);
