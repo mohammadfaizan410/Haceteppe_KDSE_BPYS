@@ -227,7 +227,8 @@ if (isset($_GET['logout'])) {
 
                         <script>
                         var respiratory_rate = <?php echo $form10[0]['respiratory_rate'] ?>
-                        if (respiratory_rate < 16) {
+                        console.log(respiratory_rate)
+                        if (parseInt(respiratory_rate) < 16) {
                             <?php echo "<div class='tanı1-warning'>
                                             <p>Gaz Değişiminde Bozulma Tanısı Eklemek İster Misiniz?</p>
                                             <a class='addtanı' href='#'>Ekle</a>
