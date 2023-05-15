@@ -383,21 +383,22 @@ if (isset($_GET['logout'])) {
     </div>
     <script>
     var respiratory_rate = parseInt($("input[name='respiratory_rate']").val());
+    console.log("AAAAAA");
     console.log(respiratory_rate);
     console.log(<?php $respiratory_rate ?>);
-    if (<?php $respiratory_rate ?> < 16) {
-        $('#tanı1-warning').css("display", "block");
-        $(function() {
-            $("a.addtanı").on("click", function(e) {
-                e.preventDefault();
-                console.log("tanı111111");
-                // var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php";
-                // $("#content").load(url);
-            });
-        });
-    } else {
-        $('#tanı1-warning').css("display", "none");
-    }
+    // if (<?php $respiratory_rate ?> < 16) {
+    //     $('#tanı1-warning').css("display", "block");
+    //     $(function() {
+    //         $("a.addtanı").on("click", function(e) {
+    //             e.preventDefault();
+    //             console.log("tanı111111");
+    //             // var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php";
+    //             // $("#content").load(url);
+    //         });
+    //     });
+    // } else {
+    //     $('#tanı1-warning').css("display", "none");
+    // }
     </script>
     <script>
     $(function() {
