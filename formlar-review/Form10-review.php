@@ -382,9 +382,8 @@ if (isset($_GET['logout'])) {
         </div>
     </div>
     <script>
-    var respiratory_rate = <?php echo $respiratory_rate ?>
-    console.log(respiratory_rate)
-    if (parseInt(respiratory_rate) < 16) {
+    console.log(<?php $respiratory_rate ?>);
+    if (<?php $respiratory_rate ?> < 16) {
         $('#tanı1-warning').css("display", "block");
         $(function() {
             $("a.addtanı").on("click", function(e) {
