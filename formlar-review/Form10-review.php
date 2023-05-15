@@ -229,23 +229,7 @@ if (isset($_GET['logout'])) {
                             <p>Gaz Değişiminde Bozulma Tanısı Eklemek İster Misiniz?</p>
                             <a class='addtanı' href='#'>Ekle</a>
                         </div>
-                        <script>
-                        var respiratory_rate = <?php $respiratory_rate ?>
-                        console.log(respiratory_rate)
-                        if (parseInt(respiratory_rate) < 16) {
-                            $('#tanı1-warning').css("display", "block");
-                            $(function() {
-                                $("a.addtanı").on("click", function(e) {
-                                    e.preventDefault();
-                                    console.log("tanı111111");
-                                    // var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php";
-                                    // $("#content").load(url);
-                                });
-                            });
-                        } else {
-                            $('#tanı1-warning').css("display", "none");
-                        }
-                        </script>
+
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Solunum Özelliği: </p>
                             <div class="form-check">
@@ -391,12 +375,29 @@ if (isset($_GET['logout'])) {
                             <input type="text" class="form-control" value=<?php echo $form10[0]['weight_input']; ?>
                                 name="weight_input" id="diger" placeholder="Günlük Kilo Takibi">
                         </div>
-                        <input class="form-control submit" type="submit" name="submit" id="submit" value="Update">
+                        <input class="form-control submit" type="submit" name="submit" id="submit" value="Güncelle">
                     </form>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+    var respiratory_rate = <?php echo $respiratory_rate ?>
+    console.log(respiratory_rate)
+    if (parseInt(respiratory_rate) < 16) {
+        $('#tanı1-warning').css("display", "block");
+        $(function() {
+            $("a.addtanı").on("click", function(e) {
+                e.preventDefault();
+                console.log("tanı111111");
+                // var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php";
+                // $("#content").load(url);
+            });
+        });
+    } else {
+        $('#tanı1-warning').css("display", "none");
+    }
+    </script>
     <script>
     $(function() {
         $('#closeBtn').click(function(e) {
