@@ -144,29 +144,29 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
     field_respiratory_nature.innerHTML = respiratory_nature_string;
 
     if (tanı_respiratory_rate < 16 || tanı_respiratory_rate > 20) {
-        $('#matchedfields').css("color", "green");
+        $('#field_respiratory_rate').css("color", "green");
     } else {
-        $('#matchedfields').css("color", "red");
+        $('#field_respiratory_rate').css("color", "red");
     }
     if (tanı_heart_rate > 100) {
-        $('#matchedfields').css("color", "green");
+        $('#field_heart_rate').css("color", "green");
     } else {
-        $('#matchedfields').css("color", "red");
+        $('#field_heart_rate').css("color", "red");
     }
     if (tanı_spo2_percentage < 95) {
-        $('#matchedfields').css("color", "green");
+        $('#field_spo2_percentage').css("color", "green");
     } else {
-        $('#matchedfields').css("color", "red");
+        $('#field_spo2_percentage').css("color", "red");
     }
     if (tanı_o2_status == "Aliyor") {
-        $('#matchedfields').css("color", "green");
+        $('#field_o2_status').css("color", "green");
     } else {
-        $('#matchedfields').css("color", "red");
+        $('#field_o2_status').css("color", "red");
     }
     if (tanı_respiratory_nature === "Derin" || tanı_respiratory_nature === "Yüzeyel") {
-        $('#matchedfields').css("color", "green");
+        $('#field_respiratory_nature').css("color", "green");
     } else {
-        $('#matchedfields').css("color", "red");
+        $('#field_respiratory_nature').css("color", "red");
     }
     </script>
 
