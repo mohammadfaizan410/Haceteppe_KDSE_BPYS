@@ -224,6 +224,22 @@ if (isset($_GET['logout'])) {
                                 required name="respiratory_rate" id="diger" placeholder="Solunum sayısı">
                         </div>
 
+                        <script>
+                        if (<?php echo $form10[0]['respiratory_rate'] ?> < 16) {
+                            <?php echo "<div class='tanı1-warning'>
+                                            <p>Gaz Değişiminde Bozulma Tanısı Eklemek İster Misiniz?</p>
+                                            <a class='addtanı' href='#'>Ekle</a>
+                                        </div>"; ?>
+                            $(function() {
+                                $("a.addtanı").on("click", function(e) {
+                                    e.preventDefault();
+                                    console.log("tanı111111");
+                                    // var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php";
+                                    // $("#content").load(url);
+                                });
+                            });
+                        }
+                        </script>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Solunum Özelliği: </p>
                             <div class="form-check">
