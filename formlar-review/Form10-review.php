@@ -401,8 +401,9 @@ if (isset($_GET['logout'])) {
             $("a.addtanı").on("click", function(e) {
                 e.preventDefault();
                 console.log("tanı111111");
-                // var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php";
-                // $("#content").load(url);
+                var url = "<?php echo $base_url; ?>/tanılar/tanı1.php?patient_id=" + patient_id +
+                    "&patient_name=" + encodeURIComponent(patient_name);
+                $("#content").load(url);
             });
         });
     } else {
