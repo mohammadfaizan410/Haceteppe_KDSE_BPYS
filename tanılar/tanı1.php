@@ -82,8 +82,58 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">NOC Çıktıları:</p>
-                            <input type="text" class="form-control" required name="noc_output" id="diger"
-                                placeholder="noc_output" maxlength="250">
+                            <p class="tanıdescription">Hastanın oksijen satürasyonun %95’in üzerinde olması</p>
+                        </div>
+                        <div class="input-section" id="o2-delivery-container">
+                            <p class="usernamelabel">NOC Gösterge: </p>
+                            <div class="form-check">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator"
+                                        id="noc_indicator"
+                                        value="1: Hastanın oksijen satürasyonunda çok şiddetli düzeyde bozulma var">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">1: Hastanın oksijen satürasyonunda çok şiddetli
+                                            düzeyde bozulma var </span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator"
+                                        id="noc_indicator"
+                                        value="2: Hastanın oksijen satürasyonunda şiddetli düzeyde bozulma var ">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">2: Hastanın oksijen satürasyonunda şiddetli
+                                            düzeyde bozulma var </span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator"
+                                        id="noc_indicator"
+                                        value="3: Hastanın oksijen satürasyonunda orta düzeyde bozulma var  ">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">3: Hastanın oksijen satürasyonunda orta düzeyde
+                                            bozulma var </span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator"
+                                        id="noc_indicator"
+                                        value="4 : Hastanın oksijen satürasyonunda hafif düzeyde bozulma var">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">4 : Hastanın oksijen satürasyonunda hafif düzeyde
+                                            bozulma var </span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator"" id="
+                                        noc_indicator" value="5: Hastanın oksijen satürasyonunda bozulma yok ">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">5: Hastanın oksijen satürasyonunda bozulma yok
+                                        </span>
+                                    </label>
+                                </div>
+
+                            </div>
+
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">NOC Gösterge:</p>
@@ -216,8 +266,8 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                 let updateDate = yourDate.toISOString().split('T')[0];
                 let problem_info = matchedfields_string
                 let nurse_description = "Gaz değişiminde bozulma"
-                let noc_output = $("input[name='noc_output']").val();
-                let noc_indicator = $("input[name='noc_indicator']").val();
+                let noc_output = "Hastanın oksijen satürasyonun %95’in üzerinde olması"
+                let noc_indicator = $("input[type='radio'][name='noc_indicator']:checked").val();
                 let nurse_attempt = $("input[name='nurse_attempt']").val();
                 let evaluation = $("input[name='evaluation']").val();
                 console.log("values initiated")
