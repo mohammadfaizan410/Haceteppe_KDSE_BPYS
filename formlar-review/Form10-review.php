@@ -222,7 +222,9 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Solunum sayısı:</p>
-                            <input type="text" class="form-control"  value = '<?php echo $form10[0]['respiratory_rate'];?>' required name="respiratory_rate" id="diger" placeholder="Solunum sayısı">
+                            <input type="text" class="form-control"
+                                value='<?php echo $form10[0]['respiratory_rate']; ?>' required name="respiratory_rate"
+                                id="diger" placeholder="Solunum sayısı">
                         </div>
 
                         <div class="input-section d-flex">
@@ -370,6 +372,11 @@ if (isset($_GET['logout'])) {
                             <input type="text" class="form-control" value=<?php echo $form10[0]['weight_input']; ?>
                                 name="weight_input" id="diger" placeholder="Günlük Kilo Takibi">
                         </div>
+                        <div class='tanı1-warning' id="tanı1-warning">
+                            <p>Girdileriniz Gaz Değişiminde Bozulma Tanısı ile uyuşuyor bu tanıyı eklemek ister misiniz?
+                            </p>
+                            <a class='addtanı' href='#'>Ekle</a>
+                        </div>
                         <input class="form-control submit" type="submit" name="submit" id="submit" value="Güncelle">
                     </form>
                 </div>
@@ -377,17 +384,33 @@ if (isset($_GET['logout'])) {
         </div>
     </div>
     <script>
-    var respiratory_rate = parseInt($("input[name='respiratory_rate']").val());
+    var tanı_respiratory_rate = parseInt($("input[name='respiratory_rate']").val());
+    var tanı_heart_rate = parseInt($("input[name='heart_rate']").val());
+    var tanı_spo2_percentage = parseInt($("input[name='spo2_percentage']").val());
+    var tanı_o2_status = '<?php echo $form10[0]['o2_status']; ?>'
+    var tanı_respiratory_nature = '<?php echo $form10[0]['respiratory_nature']; ?>'
     console.log("AAAAAA");
-    console.log(respiratory_rate);
-    if (respiratory_rate < 16 || respiratory_rate > 20) {
+    console.log($("input[type='radio'][name='o2_status']:checked").val())
+    console.log(tanı_respiratory_nature);
+
+    if (tanı_respiratory_rate < 16 || tanı_respiratory_rate > 20 || tanı_heart_rate > 100 || tanı_spo2_percentage <
+        95 || tanı_o2_status == "Aliyor" || tanı_respiratory_nature === "Derin" || tanı_respiratory_nature === "Yüzeyel"
+    ) {
         $('#tanı1-warning').css("display", "block");
         $(function() {
             $("a.addtanı").on("click", function(e) {
                 e.preventDefault();
                 console.log("tanı111111");
-                // var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php";
-                // $("#content").load(url);
+                let patient_name = $("input[name='patient_name']").val();
+                let patient_id = parseInt($("input[name='patient_id']").val());
+                var url = "<?php echo $base_url; ?>/tanılar/tanı1.php?patient_id=" + patient_id +
+                    "&patient_name=" + encodeURIComponent(patient_name) + "&tanı_respiratory_rate=" +
+                    tanı_respiratory_rate + "&tanı_heart_rate=" + tanı_heart_rate +
+                    "&tanı_spo2_percentage=" +
+                    tanı_spo2_percentage + "&tanı_o2_status=" + tanı_o2_status +
+                    "&tanı_respiratory_nature=" +
+                    tanı_respiratory_nature;
+                $("#content").load(url);
             });
         });
     } else {
@@ -431,21 +454,21 @@ if (isset($_GET['logout'])) {
         }
     });
 
-            $('input[name="o2_status"]').each(function() {
-            if ($(this).val() === "<?php echo $form10[0]['o2_status']; ?>") {
-                $(this).prop('checked', true);
-            }
-        });
-                $('input[name="heartrate_location"]').each(function() {
-            if ($(this).val() === "<?php echo $form10[0]['heartrate_location']; ?>") {
-                $(this).prop('checked', true);
-            }
-        });
-                $('input[name="o2_method"]').each(function() {
-            if ($(this).val() === "<?php echo $form10[0]['o2_method']; ?>") {
-                $(this).prop('checked', true);
-            }
-        });
+    $('input[name="o2_status"]').each(function() {
+        if ($(this).val() === "<?php echo $form10[0]['o2_status']; ?>") {
+            $(this).prop('checked', true);
+        }
+    });
+    $('input[name="heartrate_location"]').each(function() {
+        if ($(this).val() === "<?php echo $form10[0]['heartrate_location']; ?>") {
+            $(this).prop('checked', true);
+        }
+    });
+    $('input[name="o2_method"]').each(function() {
+        if ($(this).val() === "<?php echo $form10[0]['o2_method']; ?>") {
+            $(this).prop('checked', true);
+        }
+    });
 
 
 
@@ -455,104 +478,102 @@ if (isset($_GET['logout'])) {
 
         })
     });
+    </script>
+    <script>
+    $(function() {
+        $('#submit').click(function(e) {
+            e.preventDefault()
 
-</script>
-<script>
 
+            console.log("values initialized")
+            var id = <?php
+                            $userid = $_SESSION['userlogin']['id'];
+                            echo $userid
+                            ?>;
+            var form_id = <?php echo $form_id ?>;
+            var name = $('#name').val();
+            var surname = $('#surname').val();
+            var age = $('#age').val();
+            var not = $('#not').val();
+            let form_num = 10;
+            let patient_name = $("input[name='patient_name']").val();
+            let patient_id = parseInt($("input[name='patient_id']").val());
+            let yourDate = new Date()
+            let creationDate = yourDate.toISOString().split('T')[0];
+            let updateDate = yourDate.toISOString().split('T')[0];
+            let time = $("input[name='time']").val();
+            let body_temperature = $("input[name='body_temperature']").val();
+            let heart_rate = $("input[name='heart_rate']").val();
+            let heartrate_nature = $("input[type='radio'][name='heartrate_nature']:checked").val();
+            let heartrate_location = $("input[type='radio'][name='heartrate_location']:checked").val();
+            let respiratory_rate = $("input[name='respiratory_rate']").val();
+            let respiratory_nature = $("input[type='radio'][name='respiratory_nature']:checked").val();
+            let blood_pressure = $("input[name='blood_pressure']").val();
+            let bp_measurement_location = $(
+                "input[type='radio'][name='bp_measurement_location']:checked").val();
+            let o2_status = $("input[type='radio'][name='o2_status']:checked").val();
+            let o2_method = '';
+            let measurement_location = $("input[type='radio'][name='measurement_location']:checked")
+                .val();
 
+            if (o2_status === "Almıyor") {
+                o2_method = "Almıyor";
+            } else {
+                if ($("input[type='radio'][name='o2_method']:checked").val() === "Diğer") {
+                    o2_method = $("input[name='o2_method_diger']").val();
+                } else {
+                    o2_method = $("input[type='radio'][name='o2_method']:checked").val();
+                }
+            };
 
+            let spo2_percentage = $("input[name='spo2_percentage']").val();
+            let weight_input = $('#kilo_yapiliyor').css("display") === 'flex' ? $(
+                "input[name='weight_input']").val() : 'Yapilmiyorum';
 
-      $(function() {
-          $('#submit').click(function(e) {
-              e.preventDefault()
-        
-              
-                  console.log("values initialized")
-                  var id = <?php
-                  $userid = $_SESSION['userlogin']['id'];
-                  echo $userid
-                  ?>;
-                   var form_id = <?php echo $form_id ?>;
-                  var name = $('#name').val();
-                  var surname = $('#surname').val();
-                  var age = $('#age').val();
-                  var not = $('#not').val();
-                  let form_num = 10;
-                  let patient_name = $("input[name='patient_name']").val();
-                  let patient_id = parseInt($("input[name='patient_id']").val());
-                   let yourDate = new Date()
-                  let creationDate = yourDate.toISOString().split('T')[0];
-                  let updateDate = yourDate.toISOString().split('T')[0];
-				  let time = $("input[name='time']").val();
-                  let body_temperature = $("input[name='body_temperature']").val();
-				  let heart_rate = $("input[name='heart_rate']").val();
-				  let heartrate_nature = $("input[type='radio'][name='heartrate_nature']:checked").val();
-                  let heartrate_location = $("input[type='radio'][name='heartrate_location']:checked").val();
-				  let respiratory_rate = $("input[name='respiratory_rate']").val();
-				  let respiratory_nature = $("input[type='radio'][name='respiratory_nature']:checked").val();
-				  let blood_pressure = $("input[name='blood_pressure']").val();
-				  let bp_measurement_location = $("input[type='radio'][name='bp_measurement_location']:checked").val();
-				  let o2_status = $("input[type='radio'][name='o2_status']:checked").val();
-				  let o2_method = '';
-                  let measurement_location =$("input[type='radio'][name='measurement_location']:checked").val();
-				 
-				  if(o2_status === "Almıyor"){
-					o2_method = "Almıyor";  
-				  }else{
-					if($("input[type='radio'][name='o2_method']:checked").val()==="Diğer"){
-						o2_method =  $("input[name='o2_method_diger']").val();
-					}
-					else{
-						o2_method = $("input[type='radio'][name='o2_method']:checked").val();
-					}
-				  };
+            $.ajax({
+                type: 'POST',
+                url: '<?php echo $base_url; ?>/submitOrUpdateYasamsal_form10.php',
+                data: {
+                    isUpdate: true,
+                    form_id: form_id,
+                    id: id,
+                    name: name,
+                    surname: surname,
+                    age: age,
+                    not: not,
+                    form_num: form_num,
+                    patient_id: patient_id,
+                    patient_name: patient_name,
+                    creation_date: creationDate,
+                    update_date: updateDate,
+                    time: time,
+                    body_temperature: body_temperature,
+                    heart_rate: heart_rate,
+                    heartrate_location: heartrate_location,
+                    respiratory_nature: respiratory_nature,
+                    heartrate_nature: heartrate_nature,
+                    respiratory_rate: respiratory_rate,
+                    blood_pressure: blood_pressure,
+                    bp_measurement_location: bp_measurement_location,
+                    measurement_location: measurement_location,
+                    o2_status: o2_status,
+                    o2_method: o2_method,
+                    spo2_percentage: spo2_percentage,
+                    weight_input: weight_input
+                },
+                success: function(data) {
+                    alert("SuccessFully Updated!");
+                    let url =
+                        "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
+                        patient_id + "&patient_name=" + encodeURIComponent(patient_name);
+                    $("#content").load(url);
+                },
+                error: function(data) {
+                    console.log(data)
+                }
+            })
 
-                let spo2_percentage = $("input[name='spo2_percentage']").val();
-                let weight_input = $('#kilo_yapiliyor').css("display") === 'flex' ? $(
-                    "input[name='weight_input']").val() : 'Yapilmiyorum';
-
-                  $.ajax({
-                      type: 'POST',
-                      url: '<?php echo $base_url; ?>/submitOrUpdateYasamsal_form10.php',
-                      data: {
-                          isUpdate: true,
-                          form_id :form_id,
-                          id: id,
-                          name: name,
-                          surname: surname,
-                          age: age,
-                          not: not,
-                          form_num:form_num,
-                          patient_id:patient_id,
-                          patient_name:patient_name,
-                          creation_date:creationDate,
-                          update_date :updateDate,
-                          time:time,
-						  body_temperature:body_temperature,
-						  heart_rate:heart_rate,
-						  heartrate_location:heartrate_location,
-						  respiratory_nature:respiratory_nature,
-						  heartrate_nature:heartrate_nature,
-						  respiratory_rate:respiratory_rate,
-						  blood_pressure:blood_pressure,
-						  bp_measurement_location:bp_measurement_location,
-                          measurement_location : measurement_location,
-						  o2_status:o2_status,
-						  o2_method:o2_method,
-						  spo2_percentage:spo2_percentage,
-						  weight_input:weight_input
-                      },
-                      success: function(data) {
-                        alert("SuccessFully Updated!");
-                        let url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
-                        $("#content").load(url);
-                      },
-                      error: function(data) {
-                          console.log(data)
-                      }
-                  })
-              
-          })
+        })
 
     });
     </script>
