@@ -390,6 +390,7 @@ if (isset($_GET['logout'])) {
     var tanı_o2_status = $("input[type='radio'][name='o2_status']:checked").val();
     var tanı_respiratory_nature = $("input[type='radio'][name='respiratory_nature']:checked").val();
     console.log("AAAAAA");
+    console.log($("input[type='radio'][name='o2_status']:checked").val())
     console.log(tanı_o2_status);
 
     // || tanı_respiratory_nature === "Derin" || tanı_respiratory_nature ===
