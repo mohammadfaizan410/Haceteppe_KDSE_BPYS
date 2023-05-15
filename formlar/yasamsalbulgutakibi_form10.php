@@ -20,7 +20,6 @@ if (isset($_GET['logout'])) {
 <meta content="" name="keywords">
 <meta content="" name="description">
 <!-- Favicon -->
-<link href="img/favicon.ico" rel="icon">
 <!-- Icon Font Stylesheet -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -28,12 +27,10 @@ if (isset($_GET['logout'])) {
 <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 <link href="../lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
   <!-- Customized Bootstrap Stylesheet -->
-  <link href="../bootstrap.min.css" rel="stylesheet">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
 
 <!-- Template Stylesheet -->
-<link href="../style.css" rel="stylesheet">
    <style>
 		table {
 			border-collapse: collapse;
@@ -269,7 +266,7 @@ if (isset($_GET['logout'])) {
                                         <span class="checkbox-header">Diğer</span>
                                     </label>
 									<div class="input-section d-flex">
-                           			<input type="text" class="form-control" required disabled name="o2_method_diger" id="o2_method_diger_input" placeholder="Yöntemi">
+                           			<input type="text" class="form-control" required name="o2_method_diger" id="o2_method_diger_input" placeholder="Yöntemi">
                        				 </div>
                                 </div>
 							</div>
@@ -296,59 +293,22 @@ if (isset($_GET['logout'])) {
                             <p class="usernamelabel">Günlük Kilo Takibi:</p>
                             <input type="text" class="form-control"  name="weight_input" id="diger" placeholder="Günlük Kilo Takibi">
                         </div>
-							<input class="form-control submit" name="submit" id="submit" value="Submit and enter new entry">
+							<input class="form-control submit" type='submit' name="submit" id="submit" value="Submit">
                     </form>
                 </div>
             </div>
         </div>
     </div>
     <script>
-     
-	const radioBtn = document.getElementById("o2_method_diger");
-	const inputField = document.getElementById("o2_method_diger_input");
-	radioBtn.addEventListener("change", function() {
-		console.log(this.checked)
-  if (this.checked) {
-    inputField.disabled = false;
-  } else {
-    inputField.disabled = true;
-  }
-});
-$('#o2_method_1').change(function (e) { 
-	e.preventDefault();
-	inputField.disabled = true;
-
-});
-$('#o2-delivery-container').css("display", 'none')
-$('#kilo_yapiliyor').css("display", 'flex')
-$('#o2_status_alm').change(function (e) { 
-	e.preventDefault();
-	$('#o2-delivery-container').css("display", 'none')
-	
-});
-
-$('#o2_status_al').change(function (e) { 
-	e.preventDefault();
-	$('#o2-delivery-container').css("display", 'flex')
-
-});
-$('#weight_input_toggle').change(function (e) { 
-	e.preventDefault();
-	if($('#weight_input_toggle').is(":checked"))
-	$('#kilo_yapiliyor').css("display", 'none');
-	else 	$('#kilo_yapiliyor').css("display", 'flex')
-
-
-});
 
 </script>
 <script>
  $(function() {
         $('#closeBtn').click(function(e) {
-            let patient_id = <?php
+            let patient_id = "<?php
                   $userid = $_GET['patient_id'];
                   echo $userid
-                  ?>;
+                  ?>";
                    let patient_name = "<?php
             echo urldecode($_GET['patient_name']);
                   ?>";
@@ -361,10 +321,6 @@ $('#weight_input_toggle').change(function (e) {
       $(function() {
           $('#submit').click(function(e) {
               e.preventDefault()
-              console.log("clicked")
-              var valid = this.form.checkValidity();
-
-              if (valid) {
                   var id = <?php
                   $userid = $_SESSION['userlogin']['id'];
                   echo $userid
@@ -425,6 +381,7 @@ $('#weight_input_toggle').change(function (e) {
                           creation_date:creationDate,
                           update_date :updateDate,
                           time:time,
+                          respiratory_nature: respiratory_nature,
 						  body_temperature:body_temperature,
 						  heart_rate:heart_rate,
                           heartrate_location: heartrate_location,
@@ -439,15 +396,16 @@ $('#weight_input_toggle').change(function (e) {
 						  weight_input:weight_input
                       },
                       success: function(data) {
-                        alert("SuccessFully Inserted!");
+                        alert(data);
                         let url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
                         $("#content").load(url);
                       },
                       error: function(data) {
-                          console.log(data)
+                          console.log(data);
+                          alert(data);
                       }
                   })
-              }
+              
           })
 
       });

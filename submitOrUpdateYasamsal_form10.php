@@ -1,7 +1,6 @@
+
 <?php
-require_once("config-students.php");
-?>
-<?php
+require_once("./config-students.php");
 
 if (isset($_POST["patient_name"])) {
 
@@ -23,7 +22,7 @@ if (isset($_POST["patient_name"])) {
         weight_input = ?
         WHERE form_id = ?");
 
-$stmt->execute([
+$result = $stmt->execute([
     $_POST["creation_date"],   
     $_POST["time"],   
     $_POST["body_temperature"],   
@@ -40,14 +39,14 @@ $stmt->execute([
     $_POST["weight_input"],
     $_POST["form_id"],
 ]);
-        echo 'succesfully updated';
+if($result){
+    echo $result;
+}else{
+    echo "Error could not update data!";
+}
         }
 
 else{
-    $sql = "SELECT * FROM form10 WHERE patient_id = ?";
-    $smtmselect = $db->prepare($sql);
-    $result = $smtmselect->execute([$_POST["patient_id"]]);
-    if ($result) {
             $stmt = $db->prepare("INSERT INTO form10 (
                 form_num,
                 patient_name,
@@ -68,7 +67,7 @@ else{
                 spo2_percentage,
                 weight_input
             ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-$stmt->execute([
+$result = $stmt->execute([
     $_POST["form_num"],
     $_POST["patient_name"],
     $_POST["patient_id"],
@@ -88,11 +87,15 @@ $stmt->execute([
     $_POST["spo2_percentage"],
     $_POST["weight_input"],
 ]);
-            echo "succesfully inserted";
+    if($result){
+            echo "Successfully insert!";
+    }else{
+            echo "Error: could not insert!";
+    }
 }
 }
-}
+
 else{
-    echo "Error.";
+    echo "Error: Post data not set!";
 }
 ?>
