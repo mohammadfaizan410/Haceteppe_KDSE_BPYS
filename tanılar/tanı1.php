@@ -433,6 +433,7 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                 }
                 let nurse_attempt = "";
                 let nurse_education = '';
+                console.log("before if stmts")
 
                 var l1 = document.getElementById("nurse_attempt1");
                 var l2 = document.getElementById("nurse_attempt2");
@@ -454,6 +455,7 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                 var l18 = document.getElementById("nurse_attempt18");
                 var l19 = document.getElementById("nurse_attempt19");
                 var l20 = document.getElementById("nurse_attempt20");
+                console.log("before if stmts")
 
                 if (l1.checked == true) {
                     var pl1 = document.getElementById("nurse_attempt1").value;
