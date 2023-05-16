@@ -291,7 +291,7 @@ if (isset($_GET['logout'])) {
                 </div>
                 <?php
 
-                foreach ($allForms as $key => $currentTableAllForms) {
+                foreach ($tani1 as $tani1) {
                     echo '<div class="mt-3"><a class="nav-items review btn btn-success" style="color: white;"
                         href="<?php echo $base_url; ?>/taniReview/tani1Review.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Tanı
                 </a>
