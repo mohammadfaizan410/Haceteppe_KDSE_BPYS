@@ -396,9 +396,8 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
     <script>
     $(function() {
         $('#submit').click(function(e) {
-            console.log("submit clicked")
             e.preventDefault()
-
+            console.log("submit clicked")
                 var id = <?php
                                 $userid = $_SESSION['userlogin']['id'];
                                 echo $userid
@@ -423,6 +422,8 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                 let noc_output = "Hastanın oksijen satürasyonun %95’in üzerinde olması"
                 let noc_indicator = $("input[type='radio'][name='noc_indicator']:checked").val();
                 let evaluation = "";
+                console.log("values init")
+
                 if (noc_indicator == "5: Hastanın oksijen satürasyonunda bozulma yok") {
                     evaluation +=
                         "Sorun çözümlendi:5 gösterge seçildiyse;yeni günde bakım planına bu tanıyı taşımayacak"
@@ -537,6 +538,8 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                     var pl20 = document.getElementById("nurse_attempt20").value;
                     nurse_education += pl20 + "/";
                 }
+                console.log("after if stmts")
+
                 console.log(nurse_attempt);
 
                 $.ajax({
@@ -561,6 +564,7 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                         matchedfields_string: matchedfields_string,
                     },
                     success: function(data) {
+                        console.log("something happened")
                         alert(data);
                         let url =
                             "<?php echo $base_url; ?>/taniReview/tani1Review.php?patient_id=" +
