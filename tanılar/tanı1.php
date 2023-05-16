@@ -398,9 +398,7 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
         $('#submit').click(function(e) {
             console.log("submit clicked")
             e.preventDefault()
-            var valid = this.form.checkValidity();
 
-            if (valid) {
                 var id = <?php
                                 $userid = $_SESSION['userlogin']['id'];
                                 echo $userid
@@ -576,7 +574,6 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                 });
             }
         }
-    }
         });
     });
     </script>
