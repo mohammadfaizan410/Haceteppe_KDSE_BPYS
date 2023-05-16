@@ -184,6 +184,16 @@ if (isset($_GET['logout'])) {
             echo 'error';
         };
 
+        $sql = "SELECT * FROM  tani1 WHERE patient_id =" . $userid;
+        $smtmselect = $db->prepare($sql);
+        $result = $smtmselect->execute();
+        $values = [];
+        if ($result) {
+            $tani1 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            echo 'error';
+        };
+
         $allForms = [
             'table1_data' => $values1,
             'table2_data' => $values2,
@@ -212,10 +222,9 @@ if (isset($_GET['logout'])) {
                     <h6 class="mb-0 darkcyan table-title">Hasta Listesi / Öneriler</h6>
 
                 </div>
-
                 <div class="table-responsive">
                     <h1 class='mb-5'>Submitted forms</h1>
-                            <?php
+                    <?php
                            if(isset($allForms)){
                             foreach ($allForms as $key => $currentTableAllForms) {
                                 foreach( $currentTableAllForms as $currentKey => $form){
@@ -276,63 +285,117 @@ if (isset($_GET['logout'])) {
                         }
 
                             ?>
-                        </thead>
-                        <tbody>
-                        </tbody>
+                    </thead>
+                    <tbody>
+                    </tbody>
                     </table>
                 </div>
+                <div class="mt-3"><a class="nav-items newForm" style="color: white;"
+                        href="<?php echo $base_url; ?>/taniReview/tani1Review.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Tanı
+                        1</a></div>
+
                 <div class="table-responsive">
                     <h1 class='mb-5'>Create New Form</h1>
-                            <div class="mt-3"><a class="nav-items newForm" style="color: white;"  href="<?php echo $base_url; ?>/formlar/Form2.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 2</a></div>
-                           <div class="mt-3"><a class="nav-items newForm" style="color : white;"  href="<?php echo $base_url; ?>/formlar/Form3.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 3</a></div>
-                           <div class="mt-3"><a class="nav-items newForm" style="color : white;"  href="<?php echo $base_url; ?>/formlar/Form4.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 4</a></div>
-                           <div class="mt-3"><a class="nav-items newForm" style="color : white;"  href="<?php echo $base_url; ?>/formlar/Form5.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 5</a></div>
-                           <div class="mt-3"><a class="nav-items newForm" style="color : white;"  href="<?php echo $base_url; ?>/formlar/Form6.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 6</a></div>
-                           <div class="mt-3"><a class="nav-items newForm" style="color : white;"  href="<?php echo $base_url; ?>/formlar/Form7.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 7</a></div>
-                           <div class="mt-3"><a class="nav-items newForm" style="color : white;"  href="<?php echo $base_url; ?>/formlar/Form8.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 8</a></div>
-                           <div class="mt-3"><a class="nav-items newForm" style="color : white;"  href="<?php echo $base_url; ?>/formlar/tetkiksonuclari_form9.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 9</a></div>
-                           <div class="mt-3"><a class="nav-items newForm" style="color : white;"  href="<?php echo $base_url; ?>/formlar/yasamsalbulgutakibi_form10.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 10</a></div>
-                           <div class="mt-3"><a class="nav-items newForm" style="color : white;"  href="<?php echo $base_url; ?>/formlar/Form11.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 11</a></div>
-                           <div class="mt-3"><a class="nav-items newForm" style="color : white;"  href="<?php echo $base_url; ?>/formlar/siviizlem.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 12</a></div>
-                           <div class="mt-3"><a class="nav-items newForm" style="color : white;"  href="<?php echo $base_url; ?>/formlar/medikaltedavi.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 13</a></div>
-                           <div class="mt-3"><a class="nav-items newForm" style="color : white;"  href="<?php echo $base_url; ?>/formlar/bakimplani.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 14</a></div>
-                           <div class="mt-3"><a class="nav-items newForm" style="color : white;"  href="<?php echo $base_url; ?>/formlar/gunlukbakimuygulamalari.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 15</a></div>
-                           <div class="mt-3"><a class="nav-items newForm" style="color : white;"  href="<?php echo $base_url; ?>/formlar/beslenmeGereksinimi_form1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form1_beslenme</a></div>
-                           <div class="mt-3"><a class="nav-items newForm" style="color : white;"  href="<?php echo $base_url; ?>/formlar/bosaltimForm1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">bosaltimForm1</a></div>
-                           <div class="mt-3"><a class="nav-items newForm" style="color : white;"  href="<?php echo $base_url; ?>/formlar/calismaForm1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">calismaForm1</a></div>
-                           <div class="mt-3"><a class="nav-items newForm" style="color : white;"  href="<?php echo $base_url; ?>/formlar/egitimForm1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">egitimForm1</a></div>
-                           <div class="mt-3"><a class="nav-items newForm" style="color : white;"  href="<?php echo $base_url; ?>/formlar/hareketForm1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">hareketForm1</a></div>
-                           <div class="mt-3"><a class="nav-items newForm" style="color : white;"  href="<?php echo $base_url; ?>/formlar/iletisimForm1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">iletisimForm1</a></div>
-                           <div class="mt-3"><a class="nav-items newForm" style="color : white;"  href="<?php echo $base_url; ?>/formlar/kateterForm1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">kateterForm1</a></div>
-                           <div class="mt-3"><a class="nav-items newForm" style="color : white;"  href="<?php echo $base_url; ?>/formlar/ozgecmis_form1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">ozgecmis_form1</a></div>
-                           <div class="mt-3"><a class="nav-items newForm" style="color : white;"  href="<?php echo $base_url; ?>/formlar/solunumgereksinimi_form1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">solunumgereksinimi_form1</a></div>
-                           <div class="mt-3"><a class="nav-items newForm" style="color : white;"  href="<?php echo $base_url; ?>/formlar/uykuForm1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">uykuForm1</a></div>
-                           <div class="mt-3"><a class="nav-items newForm" style="color : white;"  href="<?php echo $base_url; ?>/formlar/vucuduTemizForm1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">vucuduTemizForm1</a></div>
-                        </thead>
-                        <tbody>
-                        </tbody>
+                    <div class="mt-3"><a class="nav-items newForm" style="color: white;"
+                            href="<?php echo $base_url; ?>/formlar/Form2.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
+                            2</a></div>
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
+                            href="<?php echo $base_url; ?>/formlar/Form3.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
+                            3</a></div>
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
+                            href="<?php echo $base_url; ?>/formlar/Form4.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
+                            4</a></div>
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
+                            href="<?php echo $base_url; ?>/formlar/Form5.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
+                            5</a></div>
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
+                            href="<?php echo $base_url; ?>/formlar/Form6.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
+                            6</a></div>
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
+                            href="<?php echo $base_url; ?>/formlar/Form7.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
+                            7</a></div>
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
+                            href="<?php echo $base_url; ?>/formlar/Form8.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
+                            8</a></div>
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
+                            href="<?php echo $base_url; ?>/formlar/tetkiksonuclari_form9.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
+                            9</a></div>
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
+                            href="<?php echo $base_url; ?>/formlar/yasamsalbulgutakibi_form10.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
+                            10</a></div>
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
+                            href="<?php echo $base_url; ?>/formlar/Form11.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
+                            11</a></div>
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
+                            href="<?php echo $base_url; ?>/formlar/siviizlem.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
+                            12</a></div>
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
+                            href="<?php echo $base_url; ?>/formlar/medikaltedavi.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
+                            13</a></div>
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
+                            href="<?php echo $base_url; ?>/formlar/bakimplani.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
+                            14</a></div>
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
+                            href="<?php echo $base_url; ?>/formlar/gunlukbakimuygulamalari.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
+                            15</a></div>
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
+                            href="<?php echo $base_url; ?>/formlar/beslenmeGereksinimi_form1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form1_beslenme</a>
+                    </div>
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
+                            href="<?php echo $base_url; ?>/formlar/bosaltimForm1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">bosaltimForm1</a>
+                    </div>
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
+                            href="<?php echo $base_url; ?>/formlar/calismaForm1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">calismaForm1</a>
+                    </div>
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
+                            href="<?php echo $base_url; ?>/formlar/egitimForm1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">egitimForm1</a>
+                    </div>
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
+                            href="<?php echo $base_url; ?>/formlar/hareketForm1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">hareketForm1</a>
+                    </div>
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
+                            href="<?php echo $base_url; ?>/formlar/iletisimForm1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">iletisimForm1</a>
+                    </div>
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
+                            href="<?php echo $base_url; ?>/formlar/kateterForm1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">kateterForm1</a>
+                    </div>
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
+                            href="<?php echo $base_url; ?>/formlar/ozgecmis_form1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">ozgecmis_form1</a>
+                    </div>
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
+                            href="<?php echo $base_url; ?>/formlar/solunumgereksinimi_form1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">solunumgereksinimi_form1</a>
+                    </div>
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
+                            href="<?php echo $base_url; ?>/formlar/uykuForm1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">uykuForm1</a>
+                    </div>
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
+                            href="<?php echo $base_url; ?>/formlar/vucuduTemizForm1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">vucuduTemizForm1</a>
+                    </div>
+                    </thead>
+                    <tbody>
+                    </tbody>
                     </table>
                 </div>
             </div>
-        </div>          
+        </div>
         <script>
-           $(function() {
+        $(function() {
             $("a.review").on("click", function(e) {
                 e.preventDefault();
                 $("#content").load(this.href);
             })
         })
-           $(function() {
+        $(function() {
             $("a.newForm").on("click", function(e) {
                 e.preventDefault();
                 $("#content").load(this.href);
             })
         })
         </script>
-         <script>
+        <script>
 
 
-    </script>
+        </script>
         <!-- JavaScript Libraries -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
