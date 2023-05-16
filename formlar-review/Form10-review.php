@@ -77,8 +77,6 @@ if (isset($_GET['logout'])) {
     } else {
         echo 'error';
     }
-    var_dump($form10);
-    var_dump((int) $form10[0]['respiratory_rate']);
     $respiratory_rate = (int) $form10[0]['respiratory_rate'];
     ?>
     <div class="container-fluid pt-4 px-4">
