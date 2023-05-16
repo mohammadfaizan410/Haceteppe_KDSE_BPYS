@@ -10,7 +10,7 @@ if (isset($_GET['logout'])) {
     unset($_SESSION);
     header("Location: main.php");
 }
-require_once("config-students.php");
+require_once("../config-students.php");
 if(isset($_GET['patient_id'])){
     $patient_id = $_GET['patient_id'];
     $stmt = $db->prepare("SELECT * from tani1 where patient_id = ?");
