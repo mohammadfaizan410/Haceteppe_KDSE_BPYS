@@ -396,6 +396,7 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
     <script>
     $(function() {
         $('#submit').click(function(e) {
+            console.log("submit clicked")
             e.preventDefault()
             var valid = this.form.checkValidity();
 
@@ -563,7 +564,6 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                     },
                     success: function(data) {
                         alert(data);
-                    
                         let url =
                             "<?php echo $base_url; ?>/taniReview/tani1Review.php?patient_id=" +
                             patient_id + "&patient_name=" + encodeURIComponent(
