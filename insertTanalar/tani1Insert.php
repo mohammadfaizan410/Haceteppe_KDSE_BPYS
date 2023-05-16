@@ -1,5 +1,6 @@
 <?php
 require_once("config-students.php");
+echo "hello there";
 if(isset($_POST)){
     $patient_id = $_POST['patient_id'];
     $patient_name = $_POST['patient_name'];
