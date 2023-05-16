@@ -273,7 +273,7 @@ if (isset($_GET['logout'])) {
                                 }
                                 ;
                             }
-                        } 
+                        }
 
                             ?>
                         </thead>
