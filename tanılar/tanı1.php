@@ -433,7 +433,6 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                 }
                 let nurse_attempt = "";
                 let nurse_education = '';
-                console.log("before if stmts")
 
                 var l1 = document.getElementById("nurse_attempt1");
                 var l2 = document.getElementById("nurse_attempt2");
@@ -455,7 +454,6 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                 var l18 = document.getElementById("nurse_attempt18");
                 var l19 = document.getElementById("nurse_attempt19");
                 var l20 = document.getElementById("nurse_attempt20");
-                console.log("before if stmts")
 
                 if (l1.checked == true) {
                     var pl1 = document.getElementById("nurse_attempt1").value;
@@ -525,24 +523,19 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                     var pl17 = document.getElementById("nurse_attempt17").value;
                     nurse_education += pl17 + "/";
                 }
-                if (l18.checked == true) 
                 if (l18.checked == true) {
                     var pl18 = document.getElementById("nurse_attempt18").value;
                     nurse_education += pl18 + "/";
                 }
                 if (l19.checked == true) {
-                if (l19.checked == true) {
                     var pl19 = document.getElementById("nurse_attempt19").value;
                     nurse_education += pl19 + "/";
                 }
                 if (l20.checked == true) {
-                if (l20.checked == true) {
                     var pl20 = document.getElementById("nurse_attempt20").value;
                     nurse_education += pl20 + "/";
                 }
-                console.log("after if stmts")
 
-                console.log(nurse_attempt);
 
                 $.ajax({
                     type: 'POST',
