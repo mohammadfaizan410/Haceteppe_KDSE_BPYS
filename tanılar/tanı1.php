@@ -571,10 +571,8 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                         console.log(data)
                     }
                 });
-            }
-        }
+            })
         });
-    });
     </script>
 
 </body>
