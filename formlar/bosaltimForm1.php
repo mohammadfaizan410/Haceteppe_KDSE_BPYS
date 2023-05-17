@@ -615,8 +615,8 @@ if (isset($_GET['logout'])) {
                         </div>
                     </div>
                 </div>
-                                    <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
             </div>
+                        <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
 
             <script>
                 $(function() {
