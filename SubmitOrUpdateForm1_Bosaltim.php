@@ -4,13 +4,10 @@ require_once("config-students.php");
 
 <?php
 if (isset($_POST)) {
-    $sql = "SELECT * FROM  form1_solunumgereksinimi  WHERE SDiger =" . $_POST["SDiger"];
-    $smtmselect = $db->prepare($sql);
-    $result = $smtmselect->execute();
-    if ($result) {
+        if(isset($_POST['isUpdate'])){
         $values = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
         if (count($values) > 0) {
-            $stmt = $db->prepare("UPDATE form1_beslenmegereksinimi SET
+            $stmt = $db->prepare("UPDATE bosaltimForm1 SET
                            Bağımsız1,
                            YarıBağımlı1,
                            Bağımlı1,
@@ -57,7 +54,7 @@ if (isset($_POST)) {
                            Sistostomi,
                            IdrarRengi,
                            IdrarBerrakligi
-                WHERE SDiger = ?");
+                WHERE form_id = ?");
 
 $stmt->execute([
     $_POST["Bağımsız1"],
@@ -107,8 +104,13 @@ $stmt->execute([
     $_POST["IdrarRengi"],
     $_POST["IdrarBerrakligi"]
             ]);
-            echo  "successfully updated";
-        }
+            if($result){
+                echo "Successfully Updated!";
+                }
+                else{
+                echo $result;
+                }
+            }
         else {
             $stmt = $db->prepare("INSERT INTO form1_solunumgereksinimi (
                            Bağımsız1,
@@ -207,11 +209,13 @@ $stmt->execute([
         $_POST["IdrarRengi"],
         $_POST["IdrarBerrakligi"]
               ]);
-            echo "succesfully inserted";
+              if($result){
+                echo "Successfully Inserted!";
+                }
+                else{
+                    echo $result;
+                    }
         }
-    } else{
-
-        echo "error";
     }
 }
 else{
