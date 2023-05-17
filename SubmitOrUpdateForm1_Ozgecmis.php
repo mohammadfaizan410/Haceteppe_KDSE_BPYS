@@ -204,7 +204,12 @@ $stmt->execute([
                 $_POST["Sikayetler"],
                 $_POST["TibbiTani"]
             ]);
-            echo  "successfully updated";
+            if($result){
+                echo "Successfully Updated!";
+                }
+                else{
+                echo $result;
+                }
         }
         else {
             $stmt = $db->prepare("INSERT INTO form1_ozgecmis (
@@ -406,7 +411,12 @@ $stmt->execute([
         $_POST["Sikayetler"],
         $_POST["TibbiTani"]
               ]);
-            echo "succesfully inserted";
+              if($result){
+                echo "Successfully Inserted!";
+                }
+                else{
+                echo $result;
+                }
         }
     } else{
 
