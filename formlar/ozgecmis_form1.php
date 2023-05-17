@@ -1055,11 +1055,17 @@ if (isset($_GET['logout'])) {
                 var valid = this.form.checkValidity();
 
                 if (valid) {
-                    var id = <?php
-
-                    $userid = $_SESSION['userlogin']['id'];
-                    echo $userid
-                    ?>;
+                let surname = $('#surname').val();
+                let age = $('#age').val();
+                let not = $('#not').val();
+               
+                var patient_id = <?php
+                  $userid = $_GET['patient_id'];
+                  echo $userid
+                  ?>;
+                   let patient_name = "<?php
+            echo urldecode($_GET['patient_name']);
+                  ?>";
                     let ad_soyad = $("input[name='ad_soyad']").val();
                     let dogum_yeri = $("input[name='dogum_yeri']").val();
                     let yas = parseInt($("input[name='yas']").val());
@@ -1264,6 +1270,8 @@ if (isset($_GET['logout'])) {
                         },
                         success: function(data) {
                             alert(data);
+                            let url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
+                            $("#content").load(url);
                         },
                         error: function(data) {
                             Swal.fire({
