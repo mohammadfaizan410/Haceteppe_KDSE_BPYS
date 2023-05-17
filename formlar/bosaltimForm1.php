@@ -634,10 +634,17 @@ if (isset($_GET['logout'])) {
                         var valid = this.form.checkValidity();
 
                         if (valid) {
-                            var id = <?php
-                                        $userid = $_SESSION['userlogin']['id'];
-                                        echo $userid
-                                        ?>;
+                let surname = $('#surname').val();
+                let age = $('#age').val();
+                let not = $('#not').val();
+               
+                var patient_id = <?php
+                  $userid = $_GET['patient_id'];
+                  echo $userid
+                  ?>;
+                   let patient_name = "<?php
+            echo urldecode($_GET['patient_name']);
+                  ?>";
                     let stoolEmptyingHelp = $("input[type='radio'][name='stoolEmptyingHelp']:checked").val();
                     let hospitalStoolEmptyingFrequency =  $("input[name='hospitalStoolEmptyingFrequency']").val();
                     let hospitalStoolEmptyingDate =  $("input[name='hospitalStoolEmptyingDate']").val();
@@ -689,7 +696,7 @@ if (isset($_GET['logout'])) {
 
                             $.ajax({
                                 type: 'POST',
-                                url: '<?php echo $base_url; ?>student-patient.php',
+                                url: '<?php echo $base_url; ?>/SubmitOrUpdateForm1_Bosaltim.php',
                                 data: {
                            Bağımsız1:Bağımsız1,
                            YarıBağımlı1:YarıBağımlı1,
@@ -742,6 +749,9 @@ if (isset($_GET['logout'])) {
                                 success: function(data) {
                                     alert("Success");
                                     location.reload(true)
+                                    alert(data);
+                                    let url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
+                                    $("#content").load(url);
                                 },
                                 error: function(data) {
                                     Swal.fire({
