@@ -7,7 +7,7 @@ if (isset($_POST)) {
         if(isset($_POST['isUpdate'])){
         $values = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
         if (count($values) > 0) {
-            $stmt = $db->prepare("UPDATE bosaltimForm1 SET
+            $stmt = $db->prepare("UPDATE form1_bosaltim SET
                            Bağımsız1,
                            YarıBağımlı1,
                            Bağımlı1,
@@ -112,7 +112,7 @@ $stmt->execute([
                 }
             }
         else {
-            $stmt = $db->prepare("INSERT INTO form1_solunumgereksinimi (
+            $stmt = $db->prepare("INSERT INTO form1_bosaltim (
                            Bağımsız1,
                            YarıBağımlı1,
                            Bağımlı1,
