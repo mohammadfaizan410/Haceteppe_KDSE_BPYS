@@ -4,13 +4,8 @@ require_once("config-students.php");
 
 <?php
 if (isset($_POST)) {
-    $sql = "SELECT * FROM  form1_ozgecmis  WHERE protocol_file_no =" . $_POST["protocol_file_no"];
-    $smtmselect = $db->prepare($sql);
-    $result = $smtmselect->execute();
-    if ($result) {
-        $values = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
-        if (count($values) > 0) {
-            $stmt = $db->prepare("UPDATE form1_ozgecmis SET
+    if (isset($_POST['isUpdate'])) {
+        $stmt = $db->prepare("UPDATE form1_ozgecmis SET
                 ad_soyad = ?,
                 dogum_yeri = ?,
                 yas = ?,
@@ -108,7 +103,7 @@ if (isset($_POST)) {
                 gelis_diger = ?,
                 Sikayetler = ?,
                 TibbiTani = ?
-                WHERE protocol_file_no = ?");
+                WHERE form_id = ?");
 
 $stmt->execute([
                 $_POST["ad_soyad"],
@@ -417,8 +412,4 @@ $stmt->execute([
 
         echo "error";
     }
-}
-else{
-    echo "error";
-}
 ?>
