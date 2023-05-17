@@ -1168,7 +1168,7 @@ if (isset($_GET['logout'])) {
 
                     $.ajax({
                         type: 'POST',
-                        url: '<?php echo $base_url; ?>SubmitOrUpdateForm1_Ozgecmis.php/',
+                        url: '<?php echo $base_url; ?>/SubmitOrUpdateForm1_Ozgecmis.php',
                         data: {
                            ad_soyad:ad_soyad,
                            dogum_yeri:dogum_yeri,
