@@ -40,12 +40,22 @@ if (isset($_GET['logout'])) {
     <link href="style.css" rel="stylesheet">
 
 </head>
-<style>
-    .input-section{
-        border-bottom: 2px solid black;
-        padding: 50px;
-    }
-</style>
+<body style="background-color:white">
+    <div class="container-fluid pt-4 px-4">
+        <?php
+        require_once('../config-students.php');
+        $userid = $_SESSION['userlogin']['id'];
+        //echo $userid;
+        $sql = "SELECT * FROM  patients  WHERE id =" . $userid;
+        $smtmselect = $db->prepare($sql);
+        $result = $smtmselect->execute();
+        if ($result) {
+            $values = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            echo 'error';
+        }
+
+        ?>
 <div class="send-patient ta-center">
             <span class='close closeBtn' id='closeBtn'>&times;</span>
             <h1 class="form-header">BOŞALTIM GEREKSİNİMİ </h1>
