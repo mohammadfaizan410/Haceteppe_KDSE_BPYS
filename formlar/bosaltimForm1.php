@@ -623,7 +623,7 @@ if (isset($_GET['logout'])) {
         $('#submit').click(function(e) {
             e.preventDefault()
            
-                  var valid = this.form.checkValidity();
+                  //var valid = this.form.checkValidity();
             if (valid) {
                 let name = $('#name').val();
                 let surname = $('#surname').val();
