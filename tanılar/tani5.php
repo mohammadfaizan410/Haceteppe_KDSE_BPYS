@@ -689,7 +689,7 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                     console.log("something happened")
                     alert(data);
                     let url =
-                        "<?php echo $base_url; ?>/taniReview/tani1Review.php?patient_id=" +
+                        "<?php echo $base_url; ?>/taniReview/tani5Review.php?patient_id=" +
                         patient_id + "&patient_name=" + encodeURIComponent(
                             patient_name);
                     $("#content").load(url);

@@ -13,10 +13,10 @@ if (isset($_GET['logout'])) {
 require_once("../config-students.php");
 if (isset($_GET['patient_id'])) {
     $patient_id = $_GET['patient_id'];
-    $stmt = $db->prepare("SELECT * from tani1 where patient_id = ?");
+    $stmt = $db->prepare("SELECT * from tani7 where patient_id = ?");
     $result = $stmt->execute([$patient_id]);
     if ($result) {
-        $tani1Data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $taniData = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
 
@@ -36,28 +36,28 @@ if (isset($_GET['patient_id'])) {
     <!-- Template Stylesheet -->
     <link href="../style.css" rel="stylesheet">
     <style>
-    table {
-        border-collapse: collapse;
-    }
+        table {
+            border-collapse: collapse;
+        }
 
-    th,
-    td {
-        border: 1px solid black;
-        padding: 10px;
-    }
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
 
-    th {
-        background-color: #eee;
-    }
+        th {
+            background-color: #eee;
+        }
 
-    h1 {
-        text-align: center;
-    }
+        h1 {
+            text-align: center;
+        }
 
-    tr,
-    td {
-        width: 200px;
-    }
+        tr,
+        td {
+            width: 200px;
+        }
     </style>
 </head>
 
@@ -74,7 +74,7 @@ if (isset($_GET['patient_id'])) {
                             <div class="matchedfields-wrapper">
                                 <?php
                                 $innerHtml = '';
-                                $fieldsArray = explode("/", $tani1Data[0]["matchedfields_string"]);
+                                $fieldsArray = explode("/", $taniData[0]["matchedfields_string"]);
                                 foreach ($fieldsArray as $key => $value) {
                                     if (preg_match("/NaN/", $value)) {
                                         $innerHtml .= "<p style='color:red;'>$value</p>";
@@ -89,22 +89,20 @@ if (isset($_GET['patient_id'])) {
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Hemşirelik Tanıları:</p>
-                            <p class="tanıdescription">Gaz değişiminde bozulma </p>
+                            <p class="tanıdescription">Akut ağrı </p>
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın oksijen satürasyonun %95’in üzerinde olması</p>
+                            <p class="tanıdescription">Hastanın ağrısı olmadığını ifade etmesi </p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
                             <p class="usernamelabel">NOC Gösterge: </p>
                             <div class="form-check">
                                 <div class="form-check">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator"
-                                            disabled id="noc_indicator" checked>
+                                        <input class="form-check-input" type="radio" required name="noc_indicator" disabled id="noc_indicator" checked>
                                         <label class="form-check-label" for="noc_indicator">
-                                            <span
-                                                class="checkbox-header"><?php echo "$taniData[0]['noc_indicator']" ?></span>
+                                            <span class="checkbox-header"><?php echo "$taniData[0]['noc_indicator']" ?></span>
                                         </label>
                                     </div>
 
@@ -115,7 +113,7 @@ if (isset($_GET['patient_id'])) {
                         <div class="input-section d-flex" style="flex-direction: column;">
                             <p class="usernamelabel">Hemşirelik Girişimleri:</p>
                             <?php
-                            $nurse_attempt = explode("/", $tani1Data[0]['nurse_attempt']);
+                            $nurse_attempt = explode("/", $taniData[0]['nurse_attempt']);
                             foreach ($nurse_attempt as $value) {
                                 $trimmed_value = trim($value);
                                 if (!empty($trimmed_value)) {
@@ -131,7 +129,7 @@ if (isset($_GET['patient_id'])) {
                         <div class="input-section d-flex" style="flex-direction: column;">
                             <p class="usernamelabel">Eğitim:</p>
                             <?php
-                            $nurse_education = explode("/", $tani1Data[0]['nurse_education']);
+                            $nurse_education = explode("/", $taniData[0]['nurse_education']);
                             foreach ($nurse_education as $value) {
                                 $trimmed_value = trim($value);
                                 if (!empty($trimmed_value)) {
@@ -144,23 +142,36 @@ if (isset($_GET['patient_id'])) {
                             }
                             ?>
                         </div>
-
+                        <div class="input-section d-flex" style="flex-direction: column;">
+                            <p class="usernamelabel">İş Birliği Gerektiren Uygulamalar:</p>
+                            <?php
+                            $coop_attempt = explode("/", $taniData[0]['coop_attempt']);
+                            foreach ($coop_attempt as $value) {
+                                $trimmed_value = trim($value);
+                                if (!empty($trimmed_value)) {
+                                    echo "<div class='form-check'>
+                                        <label class='form-check-label' for='nurse_attempt'>
+                                            <span class='checkbox-header'>&#x2713; " . $trimmed_value . "</span>
+                                        </label>
+                                      </div>";
+                                }
+                            }
+                            ?>
+                        </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Değerlendirme:</p>
                             <div class="input-section d-flex">
                                 <p class="usernamelabel">NOC Çıktıları:</p>
-                                <p class="tanıdescription">Hastanın oksijen satürasyonun %95’in üzerinde olması</p>
+                                <p class="tanıdescription">Hastanın ağrısı olmadığını ifade etmesi </p>
                             </div>
                             <div class="input-section" id="o2-delivery-container">
                                 <p class="usernamelabel">NOC Gösterge: </p>
                                 <div class="form-check">
                                     <div class="form-check">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" required
-                                                name="noc_indicator_after" disabled id="noc_indicator_after" checked>
+                                            <input class="form-check-input" type="radio" required name="noc_indicator_after" disabled id="noc_indicator_after" checked>
                                             <label class="form-check-label" for="noc_indicator_after">
-                                                <span
-                                                    class="checkbox-header"><?php echo "$taniData[0]['noc_indicator_after']" ?></span>
+                                                <span class="checkbox-header"><?php echo "$taniData[0]['noc_indicator_after']" ?></span>
                                             </label>
                                         </div>
 
@@ -181,12 +192,12 @@ if (isset($_GET['patient_id'])) {
         </div>
     </div>
     <script>
-    const noc_indicator = document.querySelectorAll("#noc_indicator");
-    noc_indicator.forEach(function(radio) {
-        if (radio.value === "something") {
-            radio.checked = true;
-        }
-    });
+        const noc_indicator = document.querySelectorAll("#noc_indicator");
+        noc_indicator.forEach(function(radio) {
+            if (radio.value === "something") {
+                radio.checked = true;
+            }
+        });
     </script>
 </body>
 
