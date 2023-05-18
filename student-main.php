@@ -53,10 +53,8 @@ if (isset($_GET['logout'])) {
             <div class="navigation-right">
                 <div class="nav-items-wrapper">
                     <a href="messaging.php" class="nav-link nav-items"><i class="fa fa-comments me-2"></i>Chat</a>
-                    <a href="./broadcast.php" class="nav-link nav-items"><i
-                            class="fa fa-comments me-2"></i>Broadcast/Multicast</a>
-                    <a class="nav-link nav-items" href="./updateForms/showAllPatients.php"><i
-                            class="fa fa-comments me-2"></i>Show all Patients</a>
+                    <a href="./broadcast.php" class="nav-link nav-items"><i class="fa fa-comments me-2"></i>Broadcast/Multicast</a>
+                    <a class="nav-link nav-items" href="./updateForms/showAllPatients.php"><i class="fa fa-comments me-2"></i>Show all Patients</a>
                     <a class="nav-link nav-items" href="./addNewPatient.php"><i class="fa fa-comments me-2"></i>Add new
                         Patient</a>
 
@@ -65,8 +63,8 @@ if (isset($_GET['logout'])) {
 
                     <a href="#" class="nav-link " data-bs-toggle="dropdown">
                         <span class="d-lg-inline-flex"><?php
-                                                                echo '' . $_SESSION['userlogin']['name'] . ' ' . $_SESSION['userlogin']['surname'] . '';
-                                                                ?></span></a>
+                                                        echo '' . $_SESSION['userlogin']['name'] . ' ' . $_SESSION['userlogin']['surname'] . '';
+                                                        ?></span></a>
                     <span class="status">Öğrenci</span>
 
                     <a class="black" href="student-main.php?logout=true">Çıkış Yap</a>
@@ -82,28 +80,32 @@ if (isset($_GET['logout'])) {
         </div>
 
     </div>
-
+    <div class="stu-body1 stu-hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
     </div>
     <div class="content" id="content">
 
     </div>
     <script>
-    $(function() {
-        $.ajaxSetup({
-            cache: false
-        }); // disable caching for all requests.
-        $("#content").load("./updateForms/showAllPatients.php");
-
-        // RAW Text/Html data from a file
-
         $(function() {
-            $("a.nav-items").on("click", function(e) {
-                e.preventDefault();
-                $("#content").load(this.href);
-            })
-        })
+            $.ajaxSetup({
+                cache: false
+            }); // disable caching for all requests.
+            $("#content").load("./updateForms/showAllPatients.php");
 
-    });
+            // RAW Text/Html data from a file
+
+            $(function() {
+                $("a.nav-items").on("click", function(e) {
+                    e.preventDefault();
+                    $("#content").load(this.href);
+                })
+            })
+
+        });
     </script>
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

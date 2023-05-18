@@ -567,12 +567,29 @@ input[type="email"] {
     align-self: center;
 }
 
+.stu-hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+}
+
 @media screen and (max-width: 900px) {
-    .navigation-wrapper {
-        width: unset;
+    .stu-body1 {
+        width: 10%;
     }
 
-    .stu-body1 {
-        width: unset;
+    .navigation-wrapper {
+        display: none;
     }
+
+    .stu-hamburger {
+        display: block;
+    }
+
 }
