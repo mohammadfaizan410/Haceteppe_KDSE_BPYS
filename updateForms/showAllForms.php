@@ -223,153 +223,126 @@ if (isset($_GET['logout'])) {
 
                 </div>
                 <div class="table-responsive">
-                    <h1 class='mb-5'>Submitted forms</h1>
+                    <h1 class='mb-5'>Girili Formlar</h1>
                     <?php
-                           if(isset($allForms)){
-                            foreach ($allForms as $key => $currentTableAllForms) {
-                                foreach( $currentTableAllForms as $currentKey => $form){
-                                     
-                                        if($key ===  'table1_data') {
-                                            echo '<div><a class="nav-items review btn btn-success" style="color : white;" href="'.$base_url.'/formlar-review/Form2-review.php?form_id=' . $form["form_id"] . '"><p>Form2  Date:' .$form["update_date"].' </p></a></div>';
-                                        }
-                                        if($key ===  'table2_data') {
+                    if (isset($allForms)) {
+                        foreach ($allForms as $key => $currentTableAllForms) {
+                            foreach ($currentTableAllForms as $currentKey => $form) {
 
-                                            echo '<div><a class="nav-items review btn btn-success" style="color : white;" href="'.$base_url.'/formlar-review/Form3-review.php?form_id=' . $form["form_id"] . '"><p>Form3  Date:' .$form["update_date"].' </p></a></div>';
-                                        }
-                                        if($key ===  'table3_data') {
-
-                                            echo '<div><a class="nav-items review btn btn-success" style="color : white;"  href="'.$base_url.'/formlar-review/Form4-review.php?form_id=' . $form["form_id"] . '"><p>Form4   Date:' .$form["update_date"].'</p></a></div>';
-                                        }
-                                        if($key ===  'table4_data') {
-
-                                            echo '<div><a class="nav-items review btn btn-success" style="color : white;"  href="'.$base_url.'/formlar-review/Form5-review.php?form_id=' . $form["form_id"] . '"><p>Form5   Date:' .$form["update_date"].'</p></a></div>';
-                                        }
-                                        if($key ===  'table5_data') {
-
-                                            echo '<div><a class="nav-items review btn btn-success" style="color : white;"  href="'.$base_url.'/formlar-review/Form6-review.php?form_id=' . $form["form_id"] . '"><p>Form6   Date:' .$form["update_date"].'</p></a></div>';
-                                        }
-                                        if($key ===  'table6_data') {
-
-                                            echo '<div><a class="nav-items review btn btn-success" style="color : white;"  href="'.$base_url.'/formlar-review/Form7-review.php?form_id=' . $form["form_id"] . '"><p>Form7   Date:' .$form["update_date"].'</p></a></div>';
-                                        }
-                                        if($key ===  'table7_data') {
-
-                                            echo '<div><a class="nav-items review btn btn-success" style="color : white;"  href="'.$base_url.'/formlar-review/Form8-review.php?form_id=' . $form["form_id"] . '"><p>Form8   Date:' .$form["update_date"].'</p></a></div>';
-                                        }
-                                        if($key ===  'table8_data') {
-
-                                            echo '<div><a class="nav-items review btn btn-success" style="color : white;"  href="'.$base_url.'/formlar-review/Form9-review.php?form_id=' . $form["form_id"] . '"><p>Form9  Date:' .$form["update_date"].'</p></a></div>';
-                                        }
-                                        if($key ===  'table9_data') {
-
-                                            echo '<div><a class="nav-items review btn btn-success" style="color : white;"  href="'.$base_url.'/formlar-review/Form10-review.php?form_id=' . $form["form_id"] . '"><p>Form10  Date:' .$form["update_date"].'</p></a></div>';
-                                        }
-                                        if($key ===  'table10_data') {
-                                            echo '<div><a class="nav-items review btn btn-success" style="color : white;"  href="'.$base_url.'/formlar-review/Form11-review.php?form_id=' . $form["form_id"] . '"><p>Form11   Date:' .$form["update_date"].'</p></a></div>';
-                                        }
-                                        if($key ===  'table11_data') {
-                                            echo '<div><a class="nav-items review btn btn-success" style="color : white;"  href="'.$base_url.'/formlar-review/Form12-review.php?form_id=' . $form["form_id"] . '"><p>Form12   Date:' .$form["update_date"].'</p></a></div>';
-                                        }
-                                        if($key ===  'table12_data') {
-                                            echo '<div><a class="nav-items review btn btn-success" style="color : white;"  href="'.$base_url.'/formlar-review/Form13-review.php?form_id=' . $form["form_id"] . '"><p>Form13   Date:' .$form["update_date"].'</p></a></div>';
-                                        }
-                                        if($key ===  'table13_data') {
-                                            echo '<div><a class="nav-items review btn btn-success" style="color : white;"  href="'.$base_url.'/formlar-review/Form14-review.php?form_id=' . $form["form_id"] . '"><p>Form14   Date:' .$form["update_date"].'</p></a></div>';
-                                        }
-                                        if($key ===  'table14_data') {
-                                            echo '<div><a class="nav-items review btn btn-success" style="color : white;"  href="'.$base_url.'/formlar-review/Form15-review.php?form_id=' . $form["form_id"] . '"><p>Form15   Date:' .$form["update_date"].'</p></a></div>';
-                                        }
+                                if ($key ===  'table1_data') {
+                                    echo '<div><a class="nav-items review btn btn-success" style="color : white;" href="' . $base_url . '/formlar-review/Form2-review.php?form_id=' . $form["form_id"] . '"><p>Form2  Date:' . $form["update_date"] . ' </p></a></div>';
                                 }
-                                ;
-                            }
-                        }
+                                if ($key ===  'table2_data') {
 
-                            ?>
+                                    echo '<div><a class="nav-items review btn btn-success" style="color : white;" href="' . $base_url . '/formlar-review/Form3-review.php?form_id=' . $form["form_id"] . '"><p>Form3  Date:' . $form["update_date"] . ' </p></a></div>';
+                                }
+                                if ($key ===  'table3_data') {
+
+                                    echo '<div><a class="nav-items review btn btn-success" style="color : white;"  href="' . $base_url . '/formlar-review/Form4-review.php?form_id=' . $form["form_id"] . '"><p>Form4   Date:' . $form["update_date"] . '</p></a></div>';
+                                }
+                                if ($key ===  'table4_data') {
+
+                                    echo '<div><a class="nav-items review btn btn-success" style="color : white;"  href="' . $base_url . '/formlar-review/Form5-review.php?form_id=' . $form["form_id"] . '"><p>Form5   Date:' . $form["update_date"] . '</p></a></div>';
+                                }
+                                if ($key ===  'table5_data') {
+
+                                    echo '<div><a class="nav-items review btn btn-success" style="color : white;"  href="' . $base_url . '/formlar-review/Form6-review.php?form_id=' . $form["form_id"] . '"><p>Form6   Date:' . $form["update_date"] . '</p></a></div>';
+                                }
+                                if ($key ===  'table6_data') {
+
+                                    echo '<div><a class="nav-items review btn btn-success" style="color : white;"  href="' . $base_url . '/formlar-review/Form7-review.php?form_id=' . $form["form_id"] . '"><p>Form7   Date:' . $form["update_date"] . '</p></a></div>';
+                                }
+                                if ($key ===  'table7_data') {
+
+                                    echo '<div><a class="nav-items review btn btn-success" style="color : white;"  href="' . $base_url . '/formlar-review/Form8-review.php?form_id=' . $form["form_id"] . '"><p>Form8   Date:' . $form["update_date"] . '</p></a></div>';
+                                }
+                                if ($key ===  'table8_data') {
+
+                                    echo '<div><a class="nav-items review btn btn-success" style="color : white;"  href="' . $base_url . '/formlar-review/Form9-review.php?form_id=' . $form["form_id"] . '"><p>Form9  Date:' . $form["update_date"] . '</p></a></div>';
+                                }
+                                if ($key ===  'table9_data') {
+
+                                    echo '<div><a class="nav-items review btn btn-success" style="color : white;"  href="' . $base_url . '/formlar-review/Form10-review.php?form_id=' . $form["form_id"] . '"><p>Form10  Date:' . $form["update_date"] . '</p></a></div>';
+                                }
+                                if ($key ===  'table10_data') {
+                                    echo '<div><a class="nav-items review btn btn-success" style="color : white;"  href="' . $base_url . '/formlar-review/Form11-review.php?form_id=' . $form["form_id"] . '"><p>Form11   Date:' . $form["update_date"] . '</p></a></div>';
+                                }
+                                if ($key ===  'table11_data') {
+                                    echo '<div><a class="nav-items review btn btn-success" style="color : white;"  href="' . $base_url . '/formlar-review/Form12-review.php?form_id=' . $form["form_id"] . '"><p>Form12   Date:' . $form["update_date"] . '</p></a></div>';
+                                }
+                                if ($key ===  'table12_data') {
+                                    echo '<div><a class="nav-items review btn btn-success" style="color : white;"  href="' . $base_url . '/formlar-review/Form13-review.php?form_id=' . $form["form_id"] . '"><p>Form13   Date:' . $form["update_date"] . '</p></a></div>';
+                                }
+                                if ($key ===  'table13_data') {
+                                    echo '<div><a class="nav-items review btn btn-success" style="color : white;"  href="' . $base_url . '/formlar-review/Form14-review.php?form_id=' . $form["form_id"] . '"><p>Form14   Date:' . $form["update_date"] . '</p></a></div>';
+                                }
+                                if ($key ===  'table14_data') {
+                                    echo '<div><a class="nav-items review btn btn-success" style="color : white;"  href="' . $base_url . '/formlar-review/Form15-review.php?form_id=' . $form["form_id"] . '"><p>Form15   Date:' . $form["update_date"] . '</p></a></div>';
+                                }
+                            };
+                        }
+                    }
+
+                    ?>
                     </thead>
                     <tbody>
                     </tbody>
                     </table>
                 </div>
-                <div class="mt-3"><a class="nav-items newForm" style="color: white;"
-                        href="<?php echo $base_url; ?>/taniReview/tani1Review.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Tanı
+                <div class="mt-3"><a class="nav-items newForm" style="color: white;" href="<?php echo $base_url; ?>/taniReview/tani1Review.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Tanı
                         1</a></div>
 
                 <div class="table-responsive">
-                    <h1 class='mb-5'>Create New Form</h1>
-                    <div class="mt-3"><a class="nav-items newForm" style="color: white;"
-                            href="<?php echo $base_url; ?>/formlar/Form2.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
+                    <h1 class='mb-5'>Yeni Form Doldur</h1>
+                    <div class="mt-3"><a class="nav-items newForm" style="color: white;" href="<?php echo $base_url; ?>/formlar/Form2.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
                             2</a></div>
-                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
-                            href="<?php echo $base_url; ?>/formlar/Form3.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;" href="<?php echo $base_url; ?>/formlar/Form3.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
                             3</a></div>
-                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
-                            href="<?php echo $base_url; ?>/formlar/Form4.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;" href="<?php echo $base_url; ?>/formlar/Form4.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
                             4</a></div>
-                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
-                            href="<?php echo $base_url; ?>/formlar/Form5.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;" href="<?php echo $base_url; ?>/formlar/Form5.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
                             5</a></div>
-                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
-                            href="<?php echo $base_url; ?>/formlar/Form6.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;" href="<?php echo $base_url; ?>/formlar/Form6.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
                             6</a></div>
-                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
-                            href="<?php echo $base_url; ?>/formlar/Form7.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;" href="<?php echo $base_url; ?>/formlar/Form7.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
                             7</a></div>
-                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
-                            href="<?php echo $base_url; ?>/formlar/Form8.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;" href="<?php echo $base_url; ?>/formlar/Form8.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
                             8</a></div>
-                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
-                            href="<?php echo $base_url; ?>/formlar/tetkiksonuclari_form9.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;" href="<?php echo $base_url; ?>/formlar/tetkiksonuclari_form9.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
                             9</a></div>
-                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
-                            href="<?php echo $base_url; ?>/formlar/yasamsalbulgutakibi_form10.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;" href="<?php echo $base_url; ?>/formlar/yasamsalbulgutakibi_form10.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
                             10</a></div>
-                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
-                            href="<?php echo $base_url; ?>/formlar/Form11.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;" href="<?php echo $base_url; ?>/formlar/Form11.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
                             11</a></div>
-                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
-                            href="<?php echo $base_url; ?>/formlar/siviizlem.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;" href="<?php echo $base_url; ?>/formlar/siviizlem.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
                             12</a></div>
-                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
-                            href="<?php echo $base_url; ?>/formlar/medikaltedavi.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;" href="<?php echo $base_url; ?>/formlar/medikaltedavi.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
                             13</a></div>
-                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
-                            href="<?php echo $base_url; ?>/formlar/bakimplani.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;" href="<?php echo $base_url; ?>/formlar/bakimplani.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
                             14</a></div>
-                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
-                            href="<?php echo $base_url; ?>/formlar/gunlukbakimuygulamalari.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;" href="<?php echo $base_url; ?>/formlar/gunlukbakimuygulamalari.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
                             15</a></div>
-                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
-                            href="<?php echo $base_url; ?>/formlar/beslenmeGereksinimi_form1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form1_beslenme</a>
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;" href="<?php echo $base_url; ?>/formlar/beslenmeGereksinimi_form1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form1_beslenme</a>
                     </div>
-                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
-                            href="<?php echo $base_url; ?>/formlar/bosaltimForm1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">bosaltimForm1</a>
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;" href="<?php echo $base_url; ?>/formlar/bosaltimForm1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">bosaltimForm1</a>
                     </div>
-                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
-                            href="<?php echo $base_url; ?>/formlar/calismaForm1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">calismaForm1</a>
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;" href="<?php echo $base_url; ?>/formlar/calismaForm1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">calismaForm1</a>
                     </div>
-                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
-                            href="<?php echo $base_url; ?>/formlar/egitimForm1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">egitimForm1</a>
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;" href="<?php echo $base_url; ?>/formlar/egitimForm1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">egitimForm1</a>
                     </div>
-                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
-                            href="<?php echo $base_url; ?>/formlar/hareketForm1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">hareketForm1</a>
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;" href="<?php echo $base_url; ?>/formlar/hareketForm1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">hareketForm1</a>
                     </div>
-                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
-                            href="<?php echo $base_url; ?>/formlar/iletisimForm1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">iletisimForm1</a>
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;" href="<?php echo $base_url; ?>/formlar/iletisimForm1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">iletisimForm1</a>
                     </div>
-                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
-                            href="<?php echo $base_url; ?>/formlar/kateterForm1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">kateterForm1</a>
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;" href="<?php echo $base_url; ?>/formlar/kateterForm1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">kateterForm1</a>
                     </div>
-                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
-                            href="<?php echo $base_url; ?>/formlar/ozgecmis_form1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">ozgecmis_form1</a>
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;" href="<?php echo $base_url; ?>/formlar/ozgecmis_form1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">ozgecmis_form1</a>
                     </div>
-                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
-                            href="<?php echo $base_url; ?>/formlar/solunumgereksinimi_form1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">solunumgereksinimi_form1</a>
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;" href="<?php echo $base_url; ?>/formlar/solunumgereksinimi_form1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">solunumgereksinimi_form1</a>
                     </div>
-                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
-                            href="<?php echo $base_url; ?>/formlar/uykuForm1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">uykuForm1</a>
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;" href="<?php echo $base_url; ?>/formlar/uykuForm1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">uykuForm1</a>
                     </div>
-                    <div class="mt-3"><a class="nav-items newForm" style="color : white;"
-                            href="<?php echo $base_url; ?>/formlar/vucuduTemizForm1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">vucuduTemizForm1</a>
+                    <div class="mt-3"><a class="nav-items newForm" style="color : white;" href="<?php echo $base_url; ?>/formlar/vucuduTemizForm1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">vucuduTemizForm1</a>
                     </div>
                     </thead>
                     <tbody>
@@ -379,18 +352,18 @@ if (isset($_GET['logout'])) {
             </div>
         </div>
         <script>
-        $(function() {
-            $("a.review").on("click", function(e) {
-                e.preventDefault();
-                $("#content").load(this.href);
+            $(function() {
+                $("a.review").on("click", function(e) {
+                    e.preventDefault();
+                    $("#content").load(this.href);
+                })
             })
-        })
-        $(function() {
-            $("a.newForm").on("click", function(e) {
-                e.preventDefault();
-                $("#content").load(this.href);
+            $(function() {
+                $("a.newForm").on("click", function(e) {
+                    e.preventDefault();
+                    $("#content").load(this.href);
+                })
             })
-        })
         </script>
         <script>
 

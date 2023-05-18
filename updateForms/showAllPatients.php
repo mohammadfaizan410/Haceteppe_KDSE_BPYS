@@ -79,18 +79,17 @@ if (isset($_GET['logout'])) {
 
                             </tr>
                             <?php
-                          if(isset($values) && count($values) > 0){
-                            foreach ($values as $key => $value) {
-                                $fullName = $value['name'] . " " . $value['surname'];
-                                echo '<tr>                            
-                                    <td scope="col" style="color: white;">'.$value['name'].'</td>
-                                    <td scope="col" style="color: white;">'.$value['surname'].'</td>
-                                    <td scope="col" style="color: white;">'.$value['age'].'</td>
-                                    <td scope="col"><a style="color: white;" class="showallforms" href="#" data-patient-id="'.$value['patient_id'].'" data-patient-name="'.$fullName.'">Show Forms</a></td>
+                            if (isset($values) && count($values) > 0) {
+                                foreach ($values as $key => $value) {
+                                    $fullName = $value['name'] . " " . $value['surname'];
+                                    echo '<tr>                            
+                                    <td scope="col" style="color: white;">' . $value['name'] . '</td>
+                                    <td scope="col" style="color: white;">' . $value['surname'] . '</td>
+                                    <td scope="col" style="color: white;">' . $value['age'] . '</td>
+                                    <td scope="col"><a style="color: white;" class="showallforms" href="#" data-patient-id="' . $value['patient_id'] . '" data-patient-name="' . $fullName . '">Formları Görüntüle</a></td>
                                 </tr>';
+                                }
                             }
-                        
-                        }
                             ?>
                         </thead>
                         <tbody>
@@ -99,8 +98,8 @@ if (isset($_GET['logout'])) {
                 </div>
             </div>
         </div>
-     <script>
-     </script>
+        <script>
+        </script>
         <!-- JavaScript Libraries -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -113,16 +112,17 @@ if (isset($_GET['logout'])) {
         <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
         <script>
-       $(function() {
-        $("a.showallforms").on("click", function(e) {
-        e.preventDefault();
-        var patient_id = $(this).data("patient-id");
-        var patient_name = $(this).data("patient-name");
-        var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
-        $("#content").load(url);
-    });
-});
-</script>
+            $(function() {
+                $("a.showallforms").on("click", function(e) {
+                    e.preventDefault();
+                    var patient_id = $(this).data("patient-id");
+                    var patient_name = $(this).data("patient-name");
+                    var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
+                        patient_id + "&patient_name=" + encodeURIComponent(patient_name);
+                    $("#content").load(url);
+                });
+            });
+        </script>
 
         <!-- Template Javascript -->
         <script src=""></script>
