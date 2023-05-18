@@ -8,6 +8,10 @@
 
     font-style: normal;
     text-decoration: none;
+    -webkit-transition: all 0.5s ease-in;
+    -moz-transition: all 0.5s ease-in;
+    -o-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;
 }
 
 html,
@@ -570,9 +574,17 @@ input[type="email"] {
 @media screen and (max-width: 900px) {
     .navigation-wrapper {
         width: unset;
+        -webkit-transition: all 0.5s ease-in;
+        -moz-transition: all 0.5s ease-in;
+        -o-transition: all 0.5s ease-in;
+        transition: all 0.5s ease-in;
     }
 
     .stu-body1 {
         width: unset;
+        -webkit-transition: all 0.5s ease-in;
+        -moz-transition: all 0.5s ease-in;
+        -o-transition: all 0.5s ease-in;
+        transition: all 0.5s ease-in;
     }
 }
