@@ -52,9 +52,9 @@ if ($result) {
     <link href="../style.css" rel="stylesheet">
 
     <style>
-        .send-patient {
-            align-self: center;
-        }
+    .send-patient {
+        align-self: center;
+    }
     </style>
 
 </head>
@@ -69,11 +69,13 @@ if ($result) {
                     <form action="" method="POST" class="patients-save-fields">
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Patient Name:</p>
-                            <input type="text" class="form-control" required name="patient_name" id="diger" placeholder="Patient Name" value="<?php echo $form7[0]['patient_name']; ?>" disabled>
+                            <input type="text" class="form-control" required name="patient_name" id="diger"
+                                placeholder="Patient Name" value="<?php echo $form7[0]['patient_name']; ?>" disabled>
                         </div>
-                        ` <div class="input-section d-flex">
+                        <div class="input-section d-flex">
                             <p class="usernamelabel">Patient ID:</p>
-                            <input type="text" class="form-control" required name="patient_id" id="diger" placeholder="Patient ID" value="<?php echo $form7[0]['patient_id']; ?>" disabled>
+                            <input type="text" class="form-control" required name="patient_id" id="diger"
+                                placeholder="Patient ID" value="<?php echo $form7[0]['patient_id']; ?>" disabled>
                         </div>
 
                         <div class="input-section-item" style="justify-content:space-between; padding: 5%">
@@ -82,12 +84,14 @@ if ($result) {
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Oluşma Tarihi:</p>
-                            <input type="date" class="form-control" required name="occurance_date" id="diger" placeholder="OluşmaTarihi" value="<?php echo $form7[0]['occurance_date']; ?>">
+                            <input type="date" class="form-control" required name="occurance_date" id="diger"
+                                placeholder="OluşmaTarihi" value="<?php echo $form7[0]['occurance_date']; ?>">
                         </div>
 
                         <div class="input-section d-flex">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="servis" id="serviceWound" value="yes">
+                                <input class="form-check-input" type="radio" name="servis" id="serviceWound"
+                                    value="yes">
                                 <label class="form-check-label" for="servis">
                                     <span class="checkbox-header">Yara serviste oluşmadı</span>
                                 </label>
@@ -96,12 +100,14 @@ if ($result) {
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Yeri:</p>
-                            <input type="text" class="form-control" required name="location" id="location" placeholder="Yara Yerini Giriniz" value="<?php echo $form7[0]['location']; ?>">
+                            <input type="text" class="form-control" required name="location" id="location"
+                                placeholder="Yara Yerini Giriniz" value="<?php echo $form7[0]['location']; ?>">
                         </div>
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Evresi:</p>
-                            <input type="text" class="form-control" required name="stage" id="stage" placeholder="Yara Evresini Giriniz" value="<?php echo $form7[0]['stage']; ?>">
+                            <input type="text" class="form-control" required name="stage" id="stage"
+                                placeholder="Yara Evresini Giriniz" value="<?php echo $form7[0]['stage']; ?>">
                         </div>
 
                         <div class="input-section d-flex">
@@ -109,7 +115,8 @@ if ($result) {
                             <div class="form-check">
                                 <div class="input-section d-flex">
 
-                                    <input type="text" class="form-control" required name="length" id="length" placeholder="Uzunluk Giriniz" value="<?php echo $form7[0]['dimentions']; ?>">
+                                    <input type="text" class="form-control" required name="length" id="length"
+                                        placeholder="Uzunluk Giriniz" value="<?php echo $form7[0]['dimentions']; ?>">
                                 </div>
 
                             </div>
@@ -117,32 +124,37 @@ if ($result) {
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Yara eksudası:</p>
-                            <input type="text" class="form-control" required name="diger" id="wound-exudate" placeholder="Yara Eksudasını Giriniz" value="<?php echo $form7[0]['wound_exudate']; ?>">
+                            <input type="text" class="form-control" required name="diger" id="wound-exudate"
+                                placeholder="Yara Eksudasını Giriniz" value="<?php echo $form7[0]['wound_exudate']; ?>">
                         </div>
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Yara görünümü:</p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="YaraGörünümü" id="Nekrotik" value="Nekrotik">
+                                    <input class="form-check-input" type="radio" name="YaraGörünümü" id="Nekrotik"
+                                        value="Nekrotik">
                                     <label class="form-check-label" for="YaraGörünümü">
                                         <span class="checkbox-header">Nekrotik</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="YaraGörünümü" id="SarıNekroz" value="Sarı Nekroz">
+                                    <input class="form-check-input" type="radio" name="YaraGörünümü" id="SarıNekroz"
+                                        value="Sarı Nekroz">
                                     <label class="form-check-label" for="YaraGörünümü">
                                         <span class="checkbox-header">Sarı Nekroz</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="YaraGörünümü" id="SiyahEskar" value="Siyah Eskar">
+                                    <input class="form-check-input" type="radio" name="YaraGörünümü" id="SiyahEskar"
+                                        value="Siyah Eskar">
                                     <label class="form-check-label" for="YaraGörünümü">
                                         <span class="checkbox-header">Siyah Eskar</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="YaraGörünümü" id="Kırmızı" value="Kırmızı">
+                                    <input class="form-check-input" type="radio" name="YaraGörünümü" id="Kırmızı"
+                                        value="Kırmızı">
                                     <label class="form-check-label" for="YaraGörünümü">
                                         <span class="checkbox-header">Kırmızı</span>
                                     </label>
@@ -150,28 +162,33 @@ if ($result) {
                             </div>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="YaraGörünümü" id="Mor" value="Mor">
+                                    <input class="form-check-input" type="radio" name="YaraGörünümü" id="Mor"
+                                        value="Mor">
                                     <label class="form-check-label" for="YaraGörünümü">
                                         <span class="checkbox-header">Mor</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="YaraGörünümü" id="Granülasyon" value="Granülasyon">
+                                    <input class="form-check-input" type="radio" name="YaraGörünümü" id="Granülasyon"
+                                        value="Granülasyon">
                                     <label class="form-check-label" for="YaraGörünümü">
                                         <span class="checkbox-header">Granülasyon</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="YaraGörünümü" id="Epitelizasyon" value="Epitelizasyon">
+                                    <input class="form-check-input" type="radio" name="YaraGörünümü" id="Epitelizasyon"
+                                        value="Epitelizasyon">
                                     <label class="form-check-label" for="YaraGörünümü">
                                         <span class="checkbox-header">Epitelizasyon</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="YaraGörünümü" id="YaraGörünümü" value="Diğer">
+                                    <input class="form-check-input" type="radio" name="YaraGörünümü" id="YaraGörünümü"
+                                        value="Diğer">
                                     <div class="input-section d-flex">
                                         <p class="usernamelabel">Diğer:</p>
-                                        <input type="text" class="form-control" required name="YaraGörünümüDiger" id="diger" placeholder="Diğer">
+                                        <input type="text" class="form-control" required name="YaraGörünümüDiger"
+                                            id="diger" placeholder="Diğer">
                                     </div>
                                 </div>
                             </div>
@@ -179,57 +196,71 @@ if ($result) {
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Yarada koku :</p>
-                            <input type="text" class="form-control" required name="odor" id="odor" placeholder="Koku Durumunu Giriniz" value="<?php echo $form7[0]['odor']; ?>">
+                            <input type="text" class="form-control" required name="odor" id="odor"
+                                placeholder="Koku Durumunu Giriniz" value="<?php echo $form7[0]['odor']; ?>">
                         </div>
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Yarada tünelleşme:</p>
-                            <input type="text" class="form-control" required name="tunnelling" id="tunnelling" placeholder="Tünelleşme Durumunu Giriniz" value="<?php echo $form7[0]['tunnelling']; ?>">
+                            <input type="text" class="form-control" required name="tunnelling" id="tunnelling"
+                                placeholder="Tünelleşme Durumunu Giriniz"
+                                value="<?php echo $form7[0]['tunnelling']; ?>">
                         </div>
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Yarada ödem:</p>
-                            <input type="text" class="form-control" required name="edema" id="edema" placeholder="Ödem Durumunu Giriniz" value="<?php echo $form7[0]['edema']; ?>">
+                            <input type="text" class="form-control" required name="edema" id="edema"
+                                placeholder="Ödem Durumunu Giriniz" value="<?php echo $form7[0]['edema']; ?>">
                         </div>
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Yara kenarında maserasyon:</p>
-                            <input type="text" class="form-control" required name="maceration" id="maceration" placeholder="Maserasyon Durumunu Giriniz" value="<?php echo $form7[0]['maceration']; ?>">
+                            <input type="text" class="form-control" required name="maceration" id="maceration"
+                                placeholder="Maserasyon Durumunu Giriniz"
+                                value="<?php echo $form7[0]['maceration']; ?>">
                         </div>
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Yara kenarında eritem:</p>
-                            <input type="text" class="form-control" required name="erythema" id="erythema" placeholder="Eritem Durumunu Giriniz" value="<?php echo $form7[0]['erythema']; ?>">
+                            <input type="text" class="form-control" required name="erythema" id="erythema"
+                                placeholder="Eritem Durumunu Giriniz" value="<?php echo $form7[0]['erythema']; ?>">
                         </div>
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Yara kenarı soyulmuş:</p>
-                            <input type="text" class="form-control" required name="peeling" id="peeling" placeholder="Soyulma Durumunu Giriniz" value="<?php echo $form7[0]['peeling']; ?>">
+                            <input type="text" class="form-control" required name="peeling" id="peeling"
+                                placeholder="Soyulma Durumunu Giriniz" value="<?php echo $form7[0]['peeling']; ?>">
                         </div>
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Yara kenarı kuru:</p>
-                            <input type="text" class="form-control" required name="dryness" id="dryness" placeholder="Kuruluk Durumunu Giriniz" value="<?php echo $form7[0]['dryness']; ?>">
+                            <input type="text" class="form-control" required name="dryness" id="dryness"
+                                placeholder="Kuruluk Durumunu Giriniz" value="<?php echo $form7[0]['dryness']; ?>">
                         </div>
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Yara bölgesinde ağrı:</p>
-                            <input type="text" class="form-control" required name="pain" id="pain" placeholder="Ağrı Durumunu Giriniz" value="<?php echo $form7[0]['pain']; ?>">
+                            <input type="text" class="form-control" required name="pain" id="pain"
+                                placeholder="Ağrı Durumunu Giriniz" value="<?php echo $form7[0]['pain']; ?>">
                         </div>
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Kullanılan Bakım Ürünleri:</p>
-                            <input type="text" class="form-control" required name="careProducts" id="careProducts" placeholder="Kullanılan Ürünleri Giriniz" value="<?php echo $form7[0]['careProducts']; ?>">
+                            <input type="text" class="form-control" required name="careProducts" id="careProducts"
+                                placeholder="Kullanılan Ürünleri Giriniz"
+                                value="<?php echo $form7[0]['careProducts']; ?>">
                         </div>
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Sonuç:</p>
-                            <input type="text" class="form-control" required name="result" id="result" placeholder="Sonucu Giriniz" value="<?php echo $form7[0]['result']; ?>">
+                            <input type="text" class="form-control" required name="result" id="result"
+                                placeholder="Sonucu Giriniz" value="<?php echo $form7[0]['result']; ?>">
                         </div>
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">İyileşme Tarihi:</p>
-                            <input type="date" class="form-control" required name="healingDate" id="healingDate" placeholder="İyileşmeTarihi" value="<?php echo $form7[0]['healing_date']; ?>">
+                            <input type="date" class="form-control" required name="healingDate" id="healingDate"
+                                placeholder="İyileşmeTarihi" value="<?php echo $form7[0]['healing_date']; ?>">
                         </div>
 
                         <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
@@ -241,166 +272,169 @@ if ($result) {
 
 
     <script>
-          $(function() {
+    $(function() {
         $('#closeBtn').click(function(e) {
             let patient_name = $("input[name='patient_name']").val();
             let patient_id = parseInt($("input[name='patient_id']").val());
-            var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
+            var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
+                "&patient_name=" + encodeURIComponent(patient_name);
             $("#content").load(url);
 
         })
     });
 
-        var wound_apperance = "<?php echo $form7[0]['wound_appearance']; ?>"
-        console.log($("#serviceWound").val())
-        if($("#serviceWound").val() == "<?php echo$form7[0]['service_wound']; ?>"){
-            $("#serviceWound").attr("checked", "checked");
-        }
-        if (wound_apperance == "Nekrotik") {
-            console.log(wound_apperance);
+    var wound_apperance = "<?php echo $form7[0]['wound_appearance']; ?>"
+    console.log($("#serviceWound").val())
+    if ($("#serviceWound").val() == "<?php echo$form7[0]['service_wound']; ?>") {
+        $("#serviceWound").attr("checked", "checked");
+    }
+    if (wound_apperance == "Nekrotik") {
+        console.log(wound_apperance);
 
-            document.getElementById('Nekrotik').setAttribute('checked', 'checked');
-        }
-        if (wound_apperance.slice(0, 3) == "Sar") {
-            console.log(wound_apperance);
+        document.getElementById('Nekrotik').setAttribute('checked', 'checked');
+    }
+    if (wound_apperance.slice(0, 3) == "Sar") {
+        console.log(wound_apperance);
 
-            document.getElementById('SarıNekroz').setAttribute('checked', 'checked');
-        }
-        if (wound_apperance == "Siyah Eskar") {
-            console.log(wound_apperance);
+        document.getElementById('SarıNekroz').setAttribute('checked', 'checked');
+    }
+    if (wound_apperance == "Siyah Eskar") {
+        console.log(wound_apperance);
 
-            document.getElementById('SiyahEskar').setAttribute('checked', 'checked');
-        }
-        if (wound_apperance == "Kırmızı") {
-            console.log(wound_apperance);
+        document.getElementById('SiyahEskar').setAttribute('checked', 'checked');
+    }
+    if (wound_apperance == "Kırmızı") {
+        console.log(wound_apperance);
 
-            document.getElementById('Kırmızı').setAttribute('checked', 'checked');
-        }
-        if (wound_apperance == "Mor") {
-            console.log(wound_apperance);
+        document.getElementById('Kırmızı').setAttribute('checked', 'checked');
+    }
+    if (wound_apperance == "Mor") {
+        console.log(wound_apperance);
 
-            document.getElementById('Mor').setAttribute('checked', 'checked');
-        }
-        if (wound_apperance == "Granülasyon") {
-            console.log(wound_apperance);
+        document.getElementById('Mor').setAttribute('checked', 'checked');
+    }
+    if (wound_apperance == "Granülasyon") {
+        console.log(wound_apperance);
 
-            document.getElementById('Granülasyon').setAttribute('checked', 'checked');
-        }
-        if (wound_apperance == "Epitelizasyon") {
-            console.log(wound_apperance);
+        document.getElementById('Granülasyon').setAttribute('checked', 'checked');
+    }
+    if (wound_apperance == "Epitelizasyon") {
+        console.log(wound_apperance);
 
-            document.getElementById('Epitelizasyon').setAttribute('checked', 'checked');
-        }
-        if (wound_apperance == "Diğer") {
-            console.log(wound_apperance);
-            document.getElementById('diger').setAttribute('checked', 'checked');
-        }
-
+        document.getElementById('Epitelizasyon').setAttribute('checked', 'checked');
+    }
+    if (wound_apperance == "Diğer") {
+        console.log(wound_apperance);
+        document.getElementById('diger').setAttribute('checked', 'checked');
+    }
     </script>
 
     <script>
-        $(function() {
+    $(function() {
 
-            $('#submit').click(function(e) {
-                e.preventDefault();
-                console.log("hello from form 7x")
-                var valid = this.form.checkValidity();
-                if (valid) {
-                    var form_id = <?php echo $form_id ?>;
+        $('#submit').click(function(e) {
+            e.preventDefault();
+            console.log("hello from form 7x")
+            var valid = this.form.checkValidity();
+            if (valid) {
+                var form_id = <?php echo $form_id ?>;
 
-                    var id = <?php
+                var id = <?php
                                 $userid = $_SESSION['userlogin']['id'];
                                 echo $userid
                                 ?>;
-                    var form_id = <?php echo $form_id ?>;
-                    var name = $('#name').val();
-                    var surname = $('#surname').val();
-                    var age = $('#age').val();
-                    var not = $('#not').val();
-                    var studentId = $('#studentId').val();
-                    var formId = $('#formId').val();
-                    var formnum = 7;
-                    let patient_name = $("input[name='patient_name']").val();
-                    let patient_id = parseInt($("input[name='patient_id']").val());
-                    let yourDate = new Date()
-                    let creationDate = yourDate.toISOString().split('T')[0];
-                    let updateDate = yourDate.toISOString().split('T')[0];
-                    var occurance_date = $("input[name='occurance_date']").val();
-                    var service_wound = $("input[name='servis']").val();
-                    var location = $("input[name='location']").val();
-                    var stage = $("input[name='stage']").val();
-                    var length = $("input[name='length']").val();
-                    var width = $("input[name='width']").val();
-                    var depth = $("input[name='depth']").val();
-                    var dimentions = "" + length + 'cm/' + "" + width + 'cm/' + "" + depth + 'cm';
-                    var exudate = $('#wound-exudate').val();
-                    // var appearance_wound =$("input[type='radio'][name='YaraGörünümü']:checked").val() === "Diğer" ? $("input[name='YaraGörünümüDiger']").val() : $("input[type='radio'][name='YaraGörünümü']:checked").val();
-                    var appearance_wound = $("input[type='radio'][name='YaraGörünümü']:checked").val();
-                    var odor1 = $("input[name='odor']").val();
-                    var tunnelling1 = $("input[name='tunnelling']").val();
-                    var edema1 = $("input[name='edema']").val();
-                    var maceration1 = $("input[name='maceration']").val();
-                    var erythema1 = $("input[name='erythema']").val();
-                    var peeling1 = $("input[name='peeling']").val();
-                    var dryness1 = $("input[name='dryness']").val();
-                    var pain1 = $("input[name='pain']").val();
-                    var careProducts1 = $('#careProducts').val();
-                    var result1 = $("input[name='result']").val();
-                    var healingDate = $('#healingDate').val();
+                var form_id = <?php echo $form_id ?>;
+                var name = $('#name').val();
+                var surname = $('#surname').val();
+                var age = $('#age').val();
+                var not = $('#not').val();
+                var studentId = $('#studentId').val();
+                var formId = $('#formId').val();
+                var formnum = 7;
+                let patient_name = $("input[name='patient_name']").val();
+                let patient_id = parseInt($("input[name='patient_id']").val());
+                let yourDate = new Date()
+                let creationDate = yourDate.toISOString().split('T')[0];
+                let updateDate = yourDate.toISOString().split('T')[0];
+                var occurance_date = $("input[name='occurance_date']").val();
+                var service_wound = $("input[name='servis']").val();
+                var location = $("input[name='location']").val();
+                var stage = $("input[name='stage']").val();
+                var length = $("input[name='length']").val();
+                var width = $("input[name='width']").val();
+                var depth = $("input[name='depth']").val();
+                var dimentions = "" + length + 'cm/' + "" + width + 'cm/' + "" + depth + 'cm';
+                var exudate = $('#wound-exudate').val();
+                // var appearance_wound =$("input[type='radio'][name='YaraGörünümü']:checked").val() === "Diğer" ? $("input[name='YaraGörünümüDiger']").val() : $("input[type='radio'][name='YaraGörünümü']:checked").val();
+                var appearance_wound = $("input[type='radio'][name='YaraGörünümü']:checked").val();
+                var odor1 = $("input[name='odor']").val();
+                var tunnelling1 = $("input[name='tunnelling']").val();
+                var edema1 = $("input[name='edema']").val();
+                var maceration1 = $("input[name='maceration']").val();
+                var erythema1 = $("input[name='erythema']").val();
+                var peeling1 = $("input[name='peeling']").val();
+                var dryness1 = $("input[name='dryness']").val();
+                var pain1 = $("input[name='pain']").val();
+                var careProducts1 = $('#careProducts').val();
+                var result1 = $("input[name='result']").val();
+                var healingDate = $('#healingDate').val();
 
 
 
-                    console.log('after setting variables')
-                    $.ajax({
-                        type: 'POST',
-                        url: '<?php echo $base_url; ?>/submitOrUpdateForm7.php',
-                        data: JSON.stringify({
-                            isUpdate: true,
-                            form_id: form_id,
-                            name: name,
-                            form_num: formnum,
-                            patient_name: patient_name,
-                            patient_id: patient_id,
-                            creation_date: creationDate,
-                            update_date: updateDate,
-                            occurance_date: occurance_date,
-                            service_wound: service_wound,
-                            location: location,
-                            stage: stage,
-                            dimentions: dimentions,
-                            wound_exudate: exudate,
-                            appearance_wound: appearance_wound,
-                            odor: odor1,
-                            tunnelling: tunnelling1,
-                            edema: edema1,
-                            maceration: maceration1,
-                            erythema: erythema1,
-                            peeling: peeling1,
-                            dryness: dryness1,
-                            pain: pain1,
-                            care_products: careProducts,
-                            result: result1,
-                            healing_date: healingDate
-                        }),
-                        success: function(data) {
-                            alert("SuccessFully Updated!");
-                        let url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
+                console.log('after setting variables')
+                $.ajax({
+                    type: 'POST',
+                    url: '<?php echo $base_url; ?>/submitOrUpdateForm7.php',
+                    data: JSON.stringify({
+                        isUpdate: true,
+                        form_id: form_id,
+                        name: name,
+                        form_num: formnum,
+                        patient_name: patient_name,
+                        patient_id: patient_id,
+                        creation_date: creationDate,
+                        update_date: updateDate,
+                        occurance_date: occurance_date,
+                        service_wound: service_wound,
+                        location: location,
+                        stage: stage,
+                        dimentions: dimentions,
+                        wound_exudate: exudate,
+                        appearance_wound: appearance_wound,
+                        odor: odor1,
+                        tunnelling: tunnelling1,
+                        edema: edema1,
+                        maceration: maceration1,
+                        erythema: erythema1,
+                        peeling: peeling1,
+                        dryness: dryness1,
+                        pain: pain1,
+                        care_products: careProducts,
+                        result: result1,
+                        healing_date: healingDate
+                    }),
+                    success: function(data) {
+                        alert("SuccessFully Updated!");
+                        let url =
+                            "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
+                            patient_id + "&patient_name=" + encodeURIComponent(
+                            patient_name);
                         $("#content").load(url);
-                        },
-                        error: function(data) {
-                            Swal.fire({
-                                'title': 'Errors',
-                                'text': 'There were errors',
-                                'type': 'error'
-                            })
-                        }
-                    })
-                }
+                    },
+                    error: function(data) {
+                        Swal.fire({
+                            'title': 'Errors',
+                            'text': 'There were errors',
+                            'type': 'error'
+                        })
+                    }
+                })
+            }
 
 
 
-            });
         });
+    });
     </script>
     <script src=""></script>
 </body>

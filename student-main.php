@@ -53,13 +53,12 @@ if (isset($_GET['logout'])) {
             </div>
             <div class=" navigation-right">
                 <div class="nav-items-wrapper">
-                    <a href="messaging.php" class="nav-link nav-items"><i class="fa fa-comments me-2"></i>Chat</a>
-                    <a href="./broadcast.php" class="nav-link nav-items"><i
-                            class="fa fa-comments me-2"></i>Broadcast/Multicast</a>
+                    <a href="messaging.php" class="nav-link nav-items"><i class="fa fa-comments me-2"></i>Mesajlar</a>
+                    <a href="./broadcast.php" class="nav-link nav-items"><i class="fa fa-comments me-2"></i>Forum</a>
                     <a class="nav-link nav-items" href="./updateForms/showAllPatients.php"><i
-                            class="fa fa-comments me-2"></i>Show all Patients</a>
-                    <a class="nav-link nav-items" href="./addNewPatient.php"><i class="fa fa-comments me-2"></i>Add new
-                        Patient</a>
+                            class="fa fa-comments me-2"></i>Tüm hastaları göster</a>
+                    <a class="nav-link nav-items" href="./addNewPatient.php"><i class="fa fa-comments me-2"></i>Yeni
+                        hasta ekle</a>
 
                 </div>
                 <div>
@@ -100,28 +99,39 @@ if (isset($_GET['logout'])) {
 
         const hamburger = document.getElementById('stu-hamburger');
         console.log(hamburger);
-        hamburger.style.display = 'none';
+        hamburger.classList.remove("d-block-resp");
+        hamburger.classList.add("d-none-resp");
 
         const stubody1 = document.getElementById('stu-body1');
         console.log(stubody1);
-        stubody1.style.display = 'block';
+        stubody1.classList.remove("d-none-resp");
+        stubody1.classList.add("d-block-resp");
 
         const navwrapper = document.getElementById('navigation-wrapper');
         console.log(stubody1);
-        navwrapper.style.display = 'block';
+        navwrapper.classList.remove("d-none-resp");
+        navwrapper.classList.add("d-block-resp");
+
+        const closebtn = document.getElementById('closeBtn');
+        console.log(stubody1);
+        closebtn.classList.remove("d-none-resp");
+        closebtn.classList.add("d-block-resp");
     };
     $("#closeBtn").on("click", function(e) {
         const hamburger = document.getElementById('stu-hamburger');
         console.log(hamburger);
-        hamburger.style.display = 'block';
+        hamburger.classList.remove("d-none-resp");
+        hamburger.classList.add("d-block-resp");
 
         const stubody1 = document.getElementById('stu-body1');
         console.log(stubody1);
-        stubody1.style.display = 'none';
+        stubody1.classList.remove("d-block-resp");
+        stubody1.classList.add("d-none-resp");
 
         const navwrapper = document.getElementById('navigation-wrapper');
         console.log(stubody1);
-        navwrapper.style.display = 'none';
+        navwrapper.classList.remove("d-block-resp");
+        navwrapper.classList.add("d-none-resp");
     })
     </script>
     <script>

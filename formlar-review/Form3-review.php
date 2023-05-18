@@ -52,9 +52,9 @@ if ($result) {
     <link href="../style.css" rel="stylesheet">
 
     <style>
-    .send-patient {
-        align-self: center;
-    }
+        .send-patient {
+            align-self: center;
+        }
     </style>
 
 </head>
@@ -72,13 +72,11 @@ if ($result) {
                         <!--<div class="input-section-item">-->
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Patient Name:</p>
-                            <input type="text" class="form-control" required name="patient_name" id="diger"
-                                placeholder="Patient Name" value="<?php echo $form3[0]['patient_name']; ?>" disabled>
+                            <input type="text" class="form-control" required name="patient_name" id="diger" placeholder="Patient Name" value="<?php echo $form3[0]['patient_name']; ?>" disabled>
                         </div>
-                        ` <div class="input-section d-flex">
+                        <div class="input-section d-flex">
                             <p class="usernamelabel">Patient ID:</p>
-                            <input type="text" class="form-control" required name="patient_id" id="diger"
-                                placeholder="Patient ID" value="<?php echo $form3[0]['patient_id']; ?>" disabled>
+                            <input type="text" class="form-control" required name="patient_id" id="diger" placeholder="Patient ID" value="<?php echo $form3[0]['patient_id']; ?>" disabled>
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between">
@@ -89,8 +87,7 @@ if ($result) {
                         <div class="input-section d-flex" style="justify-content:space-between">
                             <p class="usernamelabel">Konfüzyon / Dezoryantasyon: </p>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="confusion_point"
-                                    id="confusionpoint" value="4">
+                                <input class="form-check-input" type="checkbox" name="confusion_point" id="confusionpoint" value="4">
                                 <label class="form-check-label" for="RiskFactor">
                                     <span class="checkbox-header">(4 puan)</span>
                                 </label>
@@ -100,8 +97,7 @@ if ($result) {
                         <div class="input-section d-flex" style="justify-content:space-between">
                             <p class="usernamelabel">Semptomatik Depresyon:</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="symtomatic_depression_point"
-                                    id="symtomatic_depression_point" value="2">
+                                <input class="form-check-input" type="checkbox" name="symtomatic_depression_point" id="symtomatic_depression_point" value="2">
                                 <label class="form-check-label" for="RiskFactor">
                                     <span class="checkbox-header">(2 puan)</span>
                                 </label>
@@ -111,8 +107,7 @@ if ($result) {
                         <div class="input-section d-flex" style="justify-content:space-between">
                             <p class="usernamelabel">Boşaltım ihtiyacında sorun:</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="evacuation_trouble"
-                                    id="evacuation_trouble" value="1">
+                                <input class="form-check-input" type="checkbox" name="evacuation_trouble" id="evacuation_trouble" value="1">
                                 <label class="form-check-label" for="RiskFactor">
                                     <span class="checkbox-header">(1 puan)</span>
                                 </label>
@@ -122,8 +117,7 @@ if ($result) {
                         <div class="input-section d-flex" style="justify-content:space-between">
                             <p class="usernamelabel">Baş dönmesi:</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="dizziness_point"
-                                    id="dizziness_point" value="1">
+                                <input class="form-check-input" type="checkbox" name="dizziness_point" id="dizziness_point" value="1">
                                 <label class="form-check-label" for="RiskFactor">
                                     <span class="checkbox-header">(1 puan)</span>
                                 </label>
@@ -133,8 +127,7 @@ if ($result) {
                         <div class="input-section d-flex" style="justify-content:space-between">
                             <p class="usernamelabel">Cinsiyet (erkek):</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="gender_point" id="gender_point"
-                                    value="1">
+                                <input class="form-check-input" type="checkbox" name="gender_point" id="gender_point" value="1">
                                 <label class="form-check-label" for="RiskFactor">
                                     <span class="checkbox-header">(1 puan)</span>
                                 </label>
@@ -144,8 +137,7 @@ if ($result) {
                         <div class="input-section d-flex" style="justify-content:space-between">
                             <p class="usernamelabel">Antiepileptik Grubu İlaç Alımı:</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="epilepsy_drug_point"
-                                    id="epilepsy_drug_point" value="2">
+                                <input class="form-check-input" type="checkbox" name="epilepsy_drug_point" id="epilepsy_drug_point" value="2">
                                 <label class="form-check-label" for="RiskFactor">
                                     <span class="checkbox-header">(2 puan)</span>
                                 </label>
@@ -155,8 +147,7 @@ if ($result) {
                         <div class="input-section d-flex" style="justify-content:space-between">
                             <p class="usernamelabel">Benzodiazepin Grubu İlaç Alımı:</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="benzo_drug_point"
-                                    id="benzo_drug_point" value="1">
+                                <input class="form-check-input" type="checkbox" name="benzo_drug_point" id="benzo_drug_point" value="1">
                                 <label class="form-check-label" for="RiskFactor">
                                     <span class="checkbox-header">(1 puan)</span>
                                 </label>
@@ -174,8 +165,7 @@ if ($result) {
                         <div class="input-section d-flex" style="justify-content:space-between">
                             <p class="usernamelabel">Kollarını Kullanmadan Kalkabiliyor:</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="get_up_without_arm" id="chair1"
-                                    value="0">
+                                <input class="form-check-input" type="radio" name="get_up_without_arm" id="chair1" value="0">
                                 <label class="form-check-label" for="test">
                                     <span class="checkbox-header">(0 puan)</span>
                                 </label>
@@ -240,201 +230,206 @@ if ($result) {
 
 
     <script>
-    $(function() {
-        $('#closeBtn').click(function(e) {
-            let patient_name = $("input[name='patient_name']").val();
-            let patient_id = parseInt($("input[name='patient_id']").val());
-            var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
-            $("#content").load(url);
+        $(function() {
+            $('#closeBtn').click(function(e) {
+                let patient_name = $("input[name='patient_name']").val();
+                let patient_id = parseInt($("input[name='patient_id']").val());
+                var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
+                    "&patient_name=" + encodeURIComponent(patient_name);
+                $("#content").load(url);
 
-        })
-    });
+            })
+        });
 
-    var confusionpoint = "<?php echo $form3[0]['confusion_point']; ?>"
-    if (confusionpoint == "4") {
-        console.log(confusionpoint);
+        var confusionpoint = "<?php echo $form3[0]['confusion_point']; ?>"
+        if (confusionpoint == "4") {
+            console.log(confusionpoint);
 
-        document.getElementById('confusionpoint').setAttribute('checked', 'checked');
-    }
-    if (confusionpoint == "") {
-        console.log(confusionpoint);
+            document.getElementById('confusionpoint').setAttribute('checked', 'checked');
+        }
+        if (confusionpoint == "") {
+            console.log(confusionpoint);
 
-        document.getElementById('confusionpoint').setAttribute('checked', '');
-    }
+            document.getElementById('confusionpoint').setAttribute('checked', '');
+        }
 
-    var symtomatic_depression_point = "<?php echo $form3[0]['symtomatic_depression_point']; ?>"
-    if (symtomatic_depression_point == "2") {
-        console.log(symtomatic_depression_point);
+        var symtomatic_depression_point = "<?php echo $form3[0]['symtomatic_depression_point']; ?>"
+        if (symtomatic_depression_point == "2") {
+            console.log(symtomatic_depression_point);
 
-        document.getElementById('symtomatic_depression_point').setAttribute('checked', 'checked');
-    }
-    if (confusionpoint == "") {
-        console.log(symtomatic_depression_point);
+            document.getElementById('symtomatic_depression_point').setAttribute('checked', 'checked');
+        }
+        if (confusionpoint == "") {
+            console.log(symtomatic_depression_point);
 
-        document.getElementById('symtomatic_depression_point').setAttribute('checked', '');
-    }
+            document.getElementById('symtomatic_depression_point').setAttribute('checked', '');
+        }
 
-    var evacuation_trouble = "<?php echo $form3[0]['evacuation_trouble']; ?>"
-    if (evacuation_trouble == "1") {
-        console.log(evacuation_trouble);
+        var evacuation_trouble = "<?php echo $form3[0]['evacuation_trouble']; ?>"
+        if (evacuation_trouble == "1") {
+            console.log(evacuation_trouble);
 
-        document.getElementById('evacuation_trouble').setAttribute('checked', 'checked');
-    }
-    if (evacuation_trouble == "") {
-        console.log(evacuation_trouble);
+            document.getElementById('evacuation_trouble').setAttribute('checked', 'checked');
+        }
+        if (evacuation_trouble == "") {
+            console.log(evacuation_trouble);
 
-        document.getElementById('evacuation_trouble').setAttribute('checked', '');
-    }
+            document.getElementById('evacuation_trouble').setAttribute('checked', '');
+        }
 
-    var dizziness_point = "<?php echo $form3[0]['dizziness_point']; ?>"
-    if (dizziness_point == "1") {
-        console.log(dizziness_point);
+        var dizziness_point = "<?php echo $form3[0]['dizziness_point']; ?>"
+        if (dizziness_point == "1") {
+            console.log(dizziness_point);
 
-        document.getElementById('dizziness_point').setAttribute('checked', 'checked');
-    }
-    if (dizziness_point == "") {
-        console.log(dizziness_point);
+            document.getElementById('dizziness_point').setAttribute('checked', 'checked');
+        }
+        if (dizziness_point == "") {
+            console.log(dizziness_point);
 
-        document.getElementById('dizziness_point').setAttribute('checked', '');
-    }
+            document.getElementById('dizziness_point').setAttribute('checked', '');
+        }
 
-    var gender_point = "<?php echo $form3[0]['gender_point']; ?>"
-    if (gender_point == "1") {
-        console.log(gender_point);
+        var gender_point = "<?php echo $form3[0]['gender_point']; ?>"
+        if (gender_point == "1") {
+            console.log(gender_point);
 
-        document.getElementById('gender_point').setAttribute('checked', 'checked');
-    }
-    if (gender_point == "") {
-        console.log(gender_point);
+            document.getElementById('gender_point').setAttribute('checked', 'checked');
+        }
+        if (gender_point == "") {
+            console.log(gender_point);
 
-        document.getElementById('gender_point').setAttribute('checked', '');
-    }
-    var epilepsy_drug_point = "<?php echo $form3[0]['epilepsy_drug_point']; ?>"
-    if (epilepsy_drug_point == "2") {
-        console.log(epilepsy_drug_point);
+            document.getElementById('gender_point').setAttribute('checked', '');
+        }
+        var epilepsy_drug_point = "<?php echo $form3[0]['epilepsy_drug_point']; ?>"
+        if (epilepsy_drug_point == "2") {
+            console.log(epilepsy_drug_point);
 
-        document.getElementById('epilepsy_drug_point').setAttribute('checked', 'checked');
-    }
-    if (epilepsy_drug_point == "") {
-        console.log(epilepsy_drug_point);
+            document.getElementById('epilepsy_drug_point').setAttribute('checked', 'checked');
+        }
+        if (epilepsy_drug_point == "") {
+            console.log(epilepsy_drug_point);
 
-        document.getElementById('epilepsy_drug_point').setAttribute('checked', '');
-    }
+            document.getElementById('epilepsy_drug_point').setAttribute('checked', '');
+        }
 
-    var benzo_drug_point = "<?php echo $form3[0]['benzo_drug_point']; ?>"
-    if (benzo_drug_point == "1") {
-        console.log(benzo_drug_point);
+        var benzo_drug_point = "<?php echo $form3[0]['benzo_drug_point']; ?>"
+        if (benzo_drug_point == "1") {
+            console.log(benzo_drug_point);
 
-        document.getElementById('benzo_drug_point').setAttribute('checked', 'checked');
-    }
-    if (benzo_drug_point == "") {
-        console.log(benzo_drug_point);
+            document.getElementById('benzo_drug_point').setAttribute('checked', 'checked');
+        }
+        if (benzo_drug_point == "") {
+            console.log(benzo_drug_point);
 
-        document.getElementById('benzo_drug_point').setAttribute('checked', '');
-    }
+            document.getElementById('benzo_drug_point').setAttribute('checked', '');
+        }
 
-    var arm_chair_point = "<?php echo $form3[0]['arm_chair_point']; ?>"
-    if (arm_chair_point == "0") {
-        console.log(arm_chair_point);
+        var arm_chair_point = "<?php echo $form3[0]['arm_chair_point']; ?>"
+        if (arm_chair_point == "0") {
+            console.log(arm_chair_point);
 
-        document.getElementById('chair1').setAttribute('checked', 'checked');
-    }
-    if (arm_chair_point == "1") {
-        console.log(arm_chair_point);
+            document.getElementById('chair1').setAttribute('checked', 'checked');
+        }
+        if (arm_chair_point == "1") {
+            console.log(arm_chair_point);
 
-        document.getElementById('chair2').setAttribute('checked', 'checked');
-    }
-    if (arm_chair_point == "3") {
-        console.log(arm_chair_point);
+            document.getElementById('chair2').setAttribute('checked', 'checked');
+        }
+        if (arm_chair_point == "3") {
+            console.log(arm_chair_point);
 
-        document.getElementById('chair3').setAttribute('checked', 'checked');
-    }
-    if (arm_chair_point == "4") {
-        console.log(arm_chair_point);
+            document.getElementById('chair3').setAttribute('checked', 'checked');
+        }
+        if (arm_chair_point == "4") {
+            console.log(arm_chair_point);
 
-        document.getElementById('chair4').setAttribute('checked', 'checked');
-    }
+            document.getElementById('chair4').setAttribute('checked', 'checked');
+        }
     </script>
 
     <script>
-    $(function() {
-        $('#submit').click(function(e) {
-            console.log("inside ")
-            e.preventDefault();
-            var valid = this.form.checkValidity();
+        $(function() {
+            $('#submit').click(function(e) {
+                console.log("inside ")
+                e.preventDefault();
+                var valid = this.form.checkValidity();
 
-            if (valid) {
-                var form_id = <?php echo $form_id ?>;
+                if (valid) {
+                    var form_id = <?php echo $form_id ?>;
 
-                var id = <?php
+                    var id = <?php
 
                                 $userid = $_SESSION['userlogin']['id'];
                                 echo $userid
                                 ?>;
-                var form_id = <?php echo $form_id ?>;
-                let name = $('#name').val();
-                let surname = $('#surname').val();
-                let age = $('#age').val();
-                let not = $('#not').val();
-                let form_num = 3;
-                let patient_name = $("input[name='patient_name']").val();
-                let patient_id = parseInt($("input[name='patient_id']").val());
-                let yourDate = new Date()
-                let creation_date = yourDate.toISOString().split('T')[0];
-                let updateDate = yourDate.toISOString().split('T')[0];
-                let confusion_point = parseInt($("input[name='confusion_point']").val());
-                let symtomatic_depression_point = parseInt($("input[name='symtomatic_depression_point']").val());
-                let evacuation_trouble = parseInt($("input[name='evacuation_trouble']").val());
-                let dizziness_point = parseInt($("input[name='dizziness_point']").val());
-                let gender_point = parseInt($("input[name='gender_point']").val());
-                let epilepsy_drug_point = parseInt($("input[name='epilepsy_drug_point']").val());
-                let benzo_drug_point = parseInt($("input[name='benzo_drug_point']").val());
-                let arm_chair_point = parseInt($("input[type='radio'][name='test']:checked").val());
-                let total = confusion_point + symtomatic_depression_point + evacuation_trouble +
-                    dizziness_point + gender_point + epilepsy_drug_point + benzo_drug_point;
+                    var form_id = <?php echo $form_id ?>;
+                    let name = $('#name').val();
+                    let surname = $('#surname').val();
+                    let age = $('#age').val();
+                    let not = $('#not').val();
+                    let form_num = 3;
+                    let patient_name = $("input[name='patient_name']").val();
+                    let patient_id = parseInt($("input[name='patient_id']").val());
+                    let yourDate = new Date()
+                    let creation_date = yourDate.toISOString().split('T')[0];
+                    let updateDate = yourDate.toISOString().split('T')[0];
+                    let confusion_point = parseInt($("input[name='confusion_point']").val());
+                    let symtomatic_depression_point = parseInt($(
+                        "input[name='symtomatic_depression_point']").val());
+                    let evacuation_trouble = parseInt($("input[name='evacuation_trouble']").val());
+                    let dizziness_point = parseInt($("input[name='dizziness_point']").val());
+                    let gender_point = parseInt($("input[name='gender_point']").val());
+                    let epilepsy_drug_point = parseInt($("input[name='epilepsy_drug_point']").val());
+                    let benzo_drug_point = parseInt($("input[name='benzo_drug_point']").val());
+                    let arm_chair_point = parseInt($("input[type='radio'][name='test']:checked").val());
+                    let total = confusion_point + symtomatic_depression_point + evacuation_trouble +
+                        dizziness_point + gender_point + epilepsy_drug_point + benzo_drug_point;
 
 
 
-                $.ajax({
-                    type: 'POST',
-                    url: '<?php echo $base_url; ?>/submitOrUpdateForm3.php',
-                    data: {
-                        isUpdate: true,
-                        form_id: form_id,
-                        form_num: form_num,
-                        patient_name: patient_name,
-                        patient_id: patient_id,
-                        creation_date: creation_date,
-                        update_date: updateDate,
-                        confusion_point: confusion_point,
-                        symtomatic_depression_point: symtomatic_depression_point,
-                        evacuation_trouble: evacuation_trouble,
-                        dizziness_point: dizziness_point,
-                        gender_point: gender_point,
-                        epilepsy_drug_point: epilepsy_drug_point,
-                        benzo_drug_point: benzo_drug_point,
-                        arm_chair_point: arm_chair_point,
-                        total: total,
-                    },
-                    success: function(data) {
-                        alert("SuccessFully Updated!");
-                        let url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
-                        $("#content").load(url);
-                    },
-                    error: function(data) {
-                        Swal.fire({
-                            'title': 'Errors',
-                            'text': 'There were errors',
-                            'type': 'error'
-                        })
-                    }
-                })
+                    $.ajax({
+                        type: 'POST',
+                        url: '<?php echo $base_url; ?>/submitOrUpdateForm3.php',
+                        data: {
+                            isUpdate: true,
+                            form_id: form_id,
+                            form_num: form_num,
+                            patient_name: patient_name,
+                            patient_id: patient_id,
+                            creation_date: creation_date,
+                            update_date: updateDate,
+                            confusion_point: confusion_point,
+                            symtomatic_depression_point: symtomatic_depression_point,
+                            evacuation_trouble: evacuation_trouble,
+                            dizziness_point: dizziness_point,
+                            gender_point: gender_point,
+                            epilepsy_drug_point: epilepsy_drug_point,
+                            benzo_drug_point: benzo_drug_point,
+                            arm_chair_point: arm_chair_point,
+                            total: total,
+                        },
+                        success: function(data) {
+                            alert("SuccessFully Updated!");
+                            let url =
+                                "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
+                                patient_id + "&patient_name=" + encodeURIComponent(
+                                    patient_name);
+                            $("#content").load(url);
+                        },
+                        error: function(data) {
+                            Swal.fire({
+                                'title': 'Errors',
+                                'text': 'There were errors',
+                                'type': 'error'
+                            })
+                        }
+                    })
 
 
 
-            }
+                }
+            })
         })
-    })
     </script>
     <script src=""></script>
 </body>

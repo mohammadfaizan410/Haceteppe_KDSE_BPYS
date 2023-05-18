@@ -52,9 +52,9 @@ if ($result) {
     <link href="../style.css" rel="stylesheet">
 
     <style>
-    .send-patient {
-        align-self: center;
-    }
+        .send-patient {
+            align-self: center;
+        }
     </style>
 
 </head>
@@ -69,13 +69,11 @@ if ($result) {
                     <form action="" method="POST" class="patients-save-fields">
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Patient Name:</p>
-                            <input type="text" class="form-control" required name="patient_name" id="diger"
-                                placeholder="Patient Name" value="<?php echo $form6[0]['patient_name']; ?>" disabled>
+                            <input type="text" class="form-control" required name="patient_name" id="diger" placeholder="Patient Name" value="<?php echo $form6[0]['patient_name']; ?>" disabled>
                         </div>
-                        ` <div class="input-section d-flex">
+                        <div class="input-section d-flex">
                             <p class="usernamelabel">Patient ID:</p>
-                            <input type="text" class="form-control" required name="patient_id" id="diger"
-                                placeholder="Patient ID" value="<?php echo $form6[0]['patient_id']; ?>" disabled>
+                            <input type="text" class="form-control" required name="patient_id" id="diger" placeholder="Patient ID" value="<?php echo $form6[0]['patient_id']; ?>" disabled>
                         </div>
 
 
@@ -87,8 +85,7 @@ if ($result) {
                         <div class="input-section d-flex" style="justify-content:space-between;">
                             <p class="usernamelabel">Tamamen yetersiz (Ağrılı uyaranlara yanıt vermiyor):</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="RiskFaktörleri" id="RiskFaktörleri1"
-                                    value="1">
+                                <input class="form-check-input" type="radio" name="RiskFaktörleri" id="RiskFaktörleri1" value="1">
                                 <label class="form-check-label" for="RiskFaktörleri">
                                     <span class="checkbox-header">(1 puan)</span>
                                 </label>
@@ -98,8 +95,7 @@ if ($result) {
                         <div class="input-section d-flex" style="justify-content:space-between;">
                             <p class="usernamelabel">Çok yetersiz (Yalnız ağrılı uyaranlara yanıt veriyor):</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="RiskFaktörleri" id="RiskFaktörleri2"
-                                    value="2">
+                                <input class="form-check-input" type="radio" name="RiskFaktörleri" id="RiskFaktörleri2" value="2">
                                 <label class="form-check-label" for="RiskFaktörleri">
                                     <span class="checkbox-header">(2 puan)</span>
                                 </label>
@@ -110,8 +106,7 @@ if ($result) {
                             <p class="usernamelabel">Biraz yeterli (Sözlü uyaranlara yanıt veriyor, sürekli iletişim
                                 kuramıyor, yatak içerisinde çevrilmesi gerekiyor):</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="RiskFaktörleri" id="RiskFaktörleri3"
-                                    value="3">
+                                <input class="form-check-input" type="radio" name="RiskFaktörleri" id="RiskFaktörleri3" value="3">
                                 <label class="form-check-label" for="RiskFaktörleri">
                                     <span class="checkbox-header">(3 puan)</span>
                                 </label>
@@ -122,8 +117,7 @@ if ($result) {
                             <p class="usernamelabel">Tamamen yeterli (Sözlü uyaranlara yanıt veriyor. Duyu kusuru yok):
                             </p>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="RiskFaktörleri" id="RiskFaktörleri4"
-                                    value="4">
+                                <input class="form-check-input" type="radio" name="RiskFaktörleri" id="RiskFaktörleri4" value="4">
                                 <label class="form-check-label" for="RiskFaktörleri">
                                     <span class="checkbox-header">(4 puan)</span>
                                 </label>
@@ -341,8 +335,7 @@ if ($result) {
                                 kaldırılması olanaksız):
                             </p>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="SurtunmeTahris" id="SurtunmeTahris1"
-                                    value="1">
+                                <input class="form-check-input" type="radio" name="SurtunmeTahris" id="SurtunmeTahris1" value="1">
                                 <label class="form-check-label" for="SurtunmeTahris">
                                     <span class="checkbox-header">(1 puan)</span>
                                 </label>
@@ -355,8 +348,7 @@ if ($result) {
                                 sandalyeye sürtünüyor):
                             </p>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="SurtunmeTahris" id="SurtunmeTahris2"
-                                    value="2">
+                                <input class="form-check-input" type="radio" name="SurtunmeTahris" id="SurtunmeTahris2" value="2">
                                 <label class="form-check-label" for="SurtunmeTahris">
                                     <span class="checkbox-header">(2 puan)</span>
                                 </label>
@@ -367,8 +359,7 @@ if ($result) {
                             <p class="usernamelabel">Sorun yok (Yatakta ve sandalyede bağımsız hareket edebiliyor.
                                 Kendini kaldırabilmek için yeterli kas gücü var):</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="SurtunmeTahris" id="SurtunmeTahris3"
-                                    value="3">
+                                <input class="form-check-input" type="radio" name="SurtunmeTahris" id="SurtunmeTahris3" value="3">
                                 <label class="form-check-label" for="SurtunmeTahris">
                                     <span class="checkbox-header">(3 puan)</span>
                                 </label>
@@ -397,236 +388,240 @@ if ($result) {
 
 
     <script>
-    $(function() {
         $(function() {
-        $('#closeBtn').click(function(e) {
-            let patient_name = $("input[name='patient_name']").val();
-            let patient_id = parseInt($("input[name='patient_id']").val());
-            var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
-            $("#content").load(url);
+            $(function() {
+                $('#closeBtn').click(function(e) {
+                    let patient_name = $("input[name='patient_name']").val();
+                    let patient_id = parseInt($("input[name='patient_id']").val());
+                    var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
+                        patient_id + "&patient_name=" + encodeURIComponent(patient_name);
+                    $("#content").load(url);
 
-        })
-    });
-    });
+                })
+            });
+        });
 
-    var sensory_perception = "<?php echo strval($form6[0]['sensory_perception']); ?>"
-    if (sensory_perception == "1") {
-        console.log(sensory_perception);
+        var sensory_perception = "<?php echo strval($form6[0]['sensory_perception']); ?>"
+        if (sensory_perception == "1") {
+            console.log(sensory_perception);
 
-        document.getElementById('RiskFaktörleri1').setAttribute('checked', 'checked');
-    }
-    if (sensory_perception == "2") {
-        console.log(sensory_perception);
+            document.getElementById('RiskFaktörleri1').setAttribute('checked', 'checked');
+        }
+        if (sensory_perception == "2") {
+            console.log(sensory_perception);
 
-        document.getElementById('RiskFaktörleri2').setAttribute('checked', 'checked');
-    }
-    if (sensory_perception == "3") {
-        console.log(sensory_perception);
+            document.getElementById('RiskFaktörleri2').setAttribute('checked', 'checked');
+        }
+        if (sensory_perception == "3") {
+            console.log(sensory_perception);
 
-        document.getElementById('RiskFaktörleri3').setAttribute('checked', 'checked');
-    }
-    if (sensory_perception == "4") {
-        console.log(sensory_perception);
+            document.getElementById('RiskFaktörleri3').setAttribute('checked', 'checked');
+        }
+        if (sensory_perception == "4") {
+            console.log(sensory_perception);
 
-        document.getElementById('RiskFaktörleri4').setAttribute('checked', 'checked');
-    }
+            document.getElementById('RiskFaktörleri4').setAttribute('checked', 'checked');
+        }
 
-    var moisture = "<?php echo $form6[0]['moisture']; ?>"
-    if (moisture == "1") {
-        console.log(moisture);
+        var moisture = "<?php echo $form6[0]['moisture']; ?>"
+        if (moisture == "1") {
+            console.log(moisture);
 
-        document.getElementById('nemlilik1').setAttribute('checked', 'checked');
-    }
-    if (moisture == "2") {
-        console.log(moisture);
+            document.getElementById('nemlilik1').setAttribute('checked', 'checked');
+        }
+        if (moisture == "2") {
+            console.log(moisture);
 
-        document.getElementById('nemlilik2').setAttribute('checked', 'checked');
-    }
-    if (moisture == "3") {
-        console.log(moisture);
+            document.getElementById('nemlilik2').setAttribute('checked', 'checked');
+        }
+        if (moisture == "3") {
+            console.log(moisture);
 
-        document.getElementById('nemlilik3').setAttribute('checked', 'checked');
-    }
-    if (moisture == "4") {
-        console.log(moisture);
+            document.getElementById('nemlilik3').setAttribute('checked', 'checked');
+        }
+        if (moisture == "4") {
+            console.log(moisture);
 
-        document.getElementById('nemlilik4').setAttribute('checked', 'checked');
-    }
+            document.getElementById('nemlilik4').setAttribute('checked', 'checked');
+        }
 
-    var activity = "<?php echo $form6[0]['activity']; ?>"
-    if (activity == "1") {
-        console.log(activity);
+        var activity = "<?php echo $form6[0]['activity']; ?>"
+        if (activity == "1") {
+            console.log(activity);
 
-        document.getElementById('aktivite1').setAttribute('checked', 'checked');
-    }
-    if (activity == "2") {
-        console.log(activity);
+            document.getElementById('aktivite1').setAttribute('checked', 'checked');
+        }
+        if (activity == "2") {
+            console.log(activity);
 
-        document.getElementById('aktivite2').setAttribute('checked', 'checked');
-    }
-    if (activity == "3") {
-        console.log(activity);
+            document.getElementById('aktivite2').setAttribute('checked', 'checked');
+        }
+        if (activity == "3") {
+            console.log(activity);
 
-        document.getElementById('aktivite3').setAttribute('checked', 'checked');
-    }
-    if (activity == "4") {
-        console.log(activity);
+            document.getElementById('aktivite3').setAttribute('checked', 'checked');
+        }
+        if (activity == "4") {
+            console.log(activity);
 
-        document.getElementById('aktivite4').setAttribute('checked', 'checked');
-    }
+            document.getElementById('aktivite4').setAttribute('checked', 'checked');
+        }
 
-    var mobility = "<?php echo $form6[0]['mobility']; ?>"
-    if (mobility == "1") {
-        console.log(mobility);
+        var mobility = "<?php echo $form6[0]['mobility']; ?>"
+        if (mobility == "1") {
+            console.log(mobility);
 
-        document.getElementById('hareket1').setAttribute('checked', 'checked');
-    }
-    if (mobility == "2") {
-        console.log(mobility);
+            document.getElementById('hareket1').setAttribute('checked', 'checked');
+        }
+        if (mobility == "2") {
+            console.log(mobility);
 
-        document.getElementById('hareket2').setAttribute('checked', 'checked');
-    }
-    if (mobility == "3") {
-        console.log(mobility);
+            document.getElementById('hareket2').setAttribute('checked', 'checked');
+        }
+        if (mobility == "3") {
+            console.log(mobility);
 
-        document.getElementById('hareket3').setAttribute('checked', 'checked');
-    }
-    if (mobility == "4") {
-        console.log(mobility);
+            document.getElementById('hareket3').setAttribute('checked', 'checked');
+        }
+        if (mobility == "4") {
+            console.log(mobility);
 
-        document.getElementById('hareket4').setAttribute('checked', 'checked');
-    }
+            document.getElementById('hareket4').setAttribute('checked', 'checked');
+        }
 
-    var nutrition = "<?php echo $form6[0]['nutrition']; ?>"
-    if (nutrition == "1") {
-        console.log(nutrition);
+        var nutrition = "<?php echo $form6[0]['nutrition']; ?>"
+        if (nutrition == "1") {
+            console.log(nutrition);
 
-        document.getElementById('beslenme1').setAttribute('checked', 'checked');
-    }
-    if (nutrition == "2") {
-        console.log(nutrition);
+            document.getElementById('beslenme1').setAttribute('checked', 'checked');
+        }
+        if (nutrition == "2") {
+            console.log(nutrition);
 
-        document.getElementById('beslenme2').setAttribute('checked', 'checked');
-    }
-    if (nutrition == "3") {
-        console.log(nutrition);
+            document.getElementById('beslenme2').setAttribute('checked', 'checked');
+        }
+        if (nutrition == "3") {
+            console.log(nutrition);
 
-        document.getElementById('beslenme3').setAttribute('checked', 'checked');
-    }
-    if (nutrition == "4") {
-        console.log(nutrition);
+            document.getElementById('beslenme3').setAttribute('checked', 'checked');
+        }
+        if (nutrition == "4") {
+            console.log(nutrition);
 
-        document.getElementById('beslenme4').setAttribute('checked', 'checked');
-    }
+            document.getElementById('beslenme4').setAttribute('checked', 'checked');
+        }
 
-    var discomfort = "<?php echo $form6[0]['discomfort']; ?>"
-    if (discomfort == "1") {
-        console.log(discomfort);
+        var discomfort = "<?php echo $form6[0]['discomfort']; ?>"
+        if (discomfort == "1") {
+            console.log(discomfort);
 
-        document.getElementById('SurtunmeTahris1').setAttribute('checked', 'checked');
-    }
-    if (discomfort == "2") {
-        console.log(discomfort);
+            document.getElementById('SurtunmeTahris1').setAttribute('checked', 'checked');
+        }
+        if (discomfort == "2") {
+            console.log(discomfort);
 
-        document.getElementById('SurtunmeTahris2').setAttribute('checked', 'checked');
-    }
-    if (discomfort == "3") {
-        console.log(discomfort);
+            document.getElementById('SurtunmeTahris2').setAttribute('checked', 'checked');
+        }
+        if (discomfort == "3") {
+            console.log(discomfort);
 
-        document.getElementById('SurtunmeTahris3').setAttribute('checked', 'checked');
-    }
+            document.getElementById('SurtunmeTahris3').setAttribute('checked', 'checked');
+        }
     </script>
 
     <script>
-    $(function() {
-        $('#submit').click(function(e) {
-            e.preventDefault()
+        $(function() {
+            $('#submit').click(function(e) {
+                e.preventDefault()
 
-            console.log("hello from form 6x")
-            var valid = this.form.checkValidity();
+                console.log("hello from form 6x")
+                var valid = this.form.checkValidity();
 
-            if (valid) {
-                var form_id = <?php echo $form_id ?>;
+                if (valid) {
+                    var form_id = <?php echo $form_id ?>;
 
-                var id = <?php
+                    var id = <?php
 
                                 $userid = $_SESSION['userlogin']['id'];
                                 echo $userid
                                 ?>;
-                var form_id = <?php echo $form_id ?>;
-                var name = $('#name').val();
-                var surname = $('#surname').val();
-                var age = $('#age').val();
-                var not = $('#not').val();
-                let form_num = 6;
-                let yourDate = new Date()
-                let patient_name = $("input[name='patient_name']").val();
-                let patient_id = parseInt($("input[name='patient_id']").val());
-                let creation_date = yourDate.toISOString().split('T')[0];
-                let update_date = yourDate.toISOString().split('T')[0];
-                let sensory_perception = parseInt($(
-                    "input[type='radio'][name='RiskFaktörleri']:checked").val());
-                let moisture = parseInt($("input[type='radio'][name='nemlilik']:checked").val());
-                let activity = parseInt($("input[type='radio'][name='aktivite']:checked").val());
-                let mobility = parseInt($("input[type='radio'][name='hareket']:checked").val());
-                let nutrition = parseInt($("input[type='radio'][name='beslenme']:checked").val());
-                let discomfort = parseInt($("input[type='radio'][name='SurtunmeTahris']:checked")
-                    .val());
-                let total = sensory_perception + mobility + activity + moisture + nutrition +
-                    discomfort;
-                let risk;
-                if (total <= 12) risk = "no-risk";
-                else if (total <= 14) risk = "medium";
-                else risk = "high-risk";
+                    var form_id = <?php echo $form_id ?>;
+                    var name = $('#name').val();
+                    var surname = $('#surname').val();
+                    var age = $('#age').val();
+                    var not = $('#not').val();
+                    let form_num = 6;
+                    let yourDate = new Date()
+                    let patient_name = $("input[name='patient_name']").val();
+                    let patient_id = parseInt($("input[name='patient_id']").val());
+                    let creation_date = yourDate.toISOString().split('T')[0];
+                    let update_date = yourDate.toISOString().split('T')[0];
+                    let sensory_perception = parseInt($(
+                        "input[type='radio'][name='RiskFaktörleri']:checked").val());
+                    let moisture = parseInt($("input[type='radio'][name='nemlilik']:checked").val());
+                    let activity = parseInt($("input[type='radio'][name='aktivite']:checked").val());
+                    let mobility = parseInt($("input[type='radio'][name='hareket']:checked").val());
+                    let nutrition = parseInt($("input[type='radio'][name='beslenme']:checked").val());
+                    let discomfort = parseInt($("input[type='radio'][name='SurtunmeTahris']:checked")
+                        .val());
+                    let total = sensory_perception + mobility + activity + moisture + nutrition +
+                        discomfort;
+                    let risk;
+                    if (total <= 12) risk = "no-risk";
+                    else if (total <= 14) risk = "medium";
+                    else risk = "high-risk";
 
 
-                $.ajax({
-                    type: 'POST',
-                    url: '<?php echo $base_url; ?>/submitOrUpdateForm6.php/',
-                    data: {
-                        isUpdate: true,
-                        form_id: form_id,
-                        id: id,
-                        name: name,
-                        surname: surname,
-                        age: age,
-                        not: not,
-                        form_num: form_num,
-                        patient_name: patient_name,
-                        patient_id: patient_id,
-                        creation_date: creation_date,
-                        update_date: update_date,
-                        sensory_perception: sensory_perception,
-                        moisture: moisture,
-                        activity: activity,
-                        mobility: mobility,
-                        nutrition: nutrition,
-                        discomfort: discomfort,
-                        total: total,
-                        risk: risk
+                    $.ajax({
+                        type: 'POST',
+                        url: '<?php echo $base_url; ?>/submitOrUpdateForm6.php/',
+                        data: {
+                            isUpdate: true,
+                            form_id: form_id,
+                            id: id,
+                            name: name,
+                            surname: surname,
+                            age: age,
+                            not: not,
+                            form_num: form_num,
+                            patient_name: patient_name,
+                            patient_id: patient_id,
+                            creation_date: creation_date,
+                            update_date: update_date,
+                            sensory_perception: sensory_perception,
+                            moisture: moisture,
+                            activity: activity,
+                            mobility: mobility,
+                            nutrition: nutrition,
+                            discomfort: discomfort,
+                            total: total,
+                            risk: risk
 
 
-                    },
-                    success: function(data) {
-                        alert("SuccessFully Updated!");
-                        let url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
-                        $("#content").load(url);
-                    },
-                    error: function(data) {
-                        Swal.fire({
-                            'title': 'Errors',
-                            'text': 'There were errors',
-                            'type': 'error'
-                        })
-                    }
-                })
+                        },
+                        success: function(data) {
+                            alert("SuccessFully Updated!");
+                            let url =
+                                "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
+                                patient_id + "&patient_name=" + encodeURIComponent(
+                                    patient_name);
+                            $("#content").load(url);
+                        },
+                        error: function(data) {
+                            Swal.fire({
+                                'title': 'Errors',
+                                'text': 'There were errors',
+                                'type': 'error'
+                            })
+                        }
+                    })
 
 
 
-            }
-        })
+                }
+            })
 
-    });
+        });
     </script>
     <script src=""></script>
 </body>

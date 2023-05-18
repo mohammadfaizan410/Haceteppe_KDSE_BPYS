@@ -32,28 +32,28 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
     <!-- Template Stylesheet -->
     <link href="../style.css" rel="stylesheet">
     <style>
-    table {
-        border-collapse: collapse;
-    }
+        table {
+            border-collapse: collapse;
+        }
 
-    th,
-    td {
-        border: 1px solid black;
-        padding: 10px;
-    }
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
 
-    th {
-        background-color: #eee;
-    }
+        th {
+            background-color: #eee;
+        }
 
-    h1 {
-        text-align: center;
-    }
+        h1 {
+            text-align: center;
+        }
 
-    tr,
-    td {
-        width: 200px;
-    }
+        tr,
+        td {
+            width: 200px;
+        }
     </style>
 
 <body>
@@ -76,7 +76,7 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                             </div>
 
                         </div>
-                        ` <div class="input-section d-flex">
+                        <div class="input-section d-flex">
                             <p class="usernamelabel">Hemşirelik Tanıları:</p>
                             <p class="tanıdescription">Gaz değişiminde bozulma </p>
                         </div>
@@ -88,36 +88,28 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                             <p class="usernamelabel">NOC Gösterge: </p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator"
-                                        id="noc_indicator"
-                                        value="1: Hastanın oksijen satürasyonunda çok şiddetli düzeyde bozulma var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1: Hastanın oksijen satürasyonunda çok şiddetli düzeyde bozulma var">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">1: Hastanın oksijen satürasyonunda çok şiddetli
                                             düzeyde bozulma var </span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator"
-                                        id="noc_indicator"
-                                        value="2: Hastanın oksijen satürasyonunda şiddetli düzeyde bozulma var ">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2: Hastanın oksijen satürasyonunda şiddetli düzeyde bozulma var ">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">2: Hastanın oksijen satürasyonunda şiddetli
                                             düzeyde bozulma var </span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator"
-                                        id="noc_indicator"
-                                        value="3: Hastanın oksijen satürasyonunda orta düzeyde bozulma var  ">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3: Hastanın oksijen satürasyonunda orta düzeyde bozulma var  ">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">3: Hastanın oksijen satürasyonunda orta düzeyde
                                             bozulma var </span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator"
-                                        id="noc_indicator"
-                                        value="4 : Hastanın oksijen satürasyonunda hafif düzeyde bozulma var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4 : Hastanın oksijen satürasyonunda hafif düzeyde bozulma var">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">4 : Hastanın oksijen satürasyonunda hafif düzeyde
                                             bozulma var </span>
@@ -140,90 +132,77 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                             <p class="usernamelabel">Hemşirelik Girişimleri:</p>
 
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt1"
-                                    value="Yaşamsal bulgu takibi yapılır">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt1" value="Yaşamsal bulgu takibi yapılır">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Yaşamsal bulgu takibi yapılır</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt2"
-                                    value="Pulse oksimetre ile oksijen satürasyonu izlenir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt2" value="Pulse oksimetre ile oksijen satürasyonu izlenir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Pulse oksimetre ile oksijen satürasyonu izlenir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt3"
-                                    value="Solunum sesleri, hızı, derinliği, efor düzeyi değerlendirilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt3" value="Solunum sesleri, hızı, derinliği, efor düzeyi değerlendirilir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Solunum sesleri, hızı, derinliği, efor düzeyi
                                         değerlendirilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt4"
-                                    value="Hasta solukluk, siyanoz gibi bulgular açısından değerlendirilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt4" value="Hasta solukluk, siyanoz gibi bulgular açısından değerlendirilir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Hasta solukluk, siyanoz gibi bulgular açısından
                                         değerlendirilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt5"
-                                    value="Hastanın bilinç durumu değerlendirilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt5" value="Hastanın bilinç durumu değerlendirilir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Hastanın bilinç durumu değerlendirilir </span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt6"
-                                    value="Hastanın ventilasyon potansiyelini en yüksek düzeye çıkartmak için hastaya uygun pozisyon verilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt6" value="Hastanın ventilasyon potansiyelini en yüksek düzeye çıkartmak için hastaya uygun pozisyon verilir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Hastanın ventilasyon potansiyelini en yüksek düzeye
                                         çıkartmak için hastaya uygun pozisyon verilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt7"
-                                    value="Gerektiğinde istemde yer alan oksijen tedavisi uygulanır">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt7" value="Gerektiğinde istemde yer alan oksijen tedavisi uygulanır">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Gerektiğinde istemde yer alan oksijen tedavisi
                                         uygulanır</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt8"
-                                    value="Kan gazı sonuçları izlenir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt8" value="Kan gazı sonuçları izlenir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Kan gazı sonuçları izlenir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt9"
-                                    value="Serum elektrolit düzeyleri izlenir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt9" value="Serum elektrolit düzeyleri izlenir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Serum elektrolit düzeyleri izlenir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                    id="nurse_attempt10" value="Uygun sıklıkta ağız bakımı uygulanır">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt10" value="Uygun sıklıkta ağız bakımı uygulanır">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Uygun sıklıkta ağız bakımı uygulanır</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                    id="nurse_attempt11" value="Yeterli hidrasyon sağlanır">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt11" value="Yeterli hidrasyon sağlanır">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Yeterli hidrasyon sağlanır</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                    id="nurse_attempt12"
-                                    value="Hastanın aspirasyon ihtiyacı değerlendirilir, gerektiğinde aspire edilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt12" value="Hastanın aspirasyon ihtiyacı değerlendirilir, gerektiğinde aspire edilir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Hastanın aspirasyon ihtiyacı değerlendirilir,
                                         gerektiğinde aspire edilir</span>
@@ -231,72 +210,56 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                             </div>
                             <p class="usernamelabel">Eğitim:</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                    id="nurse_attempt13"
-                                    value="Hasta ve bakım verenlerine destek ekipmanlarının (kondansatör, oksijen maskesi, spirometre gibi) kullanımı öğretilir.">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt13" value="Hasta ve bakım verenlerine destek ekipmanlarının (kondansatör, oksijen maskesi, spirometre gibi) kullanımı öğretilir.">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Hasta ve bakım verenlerine destek ekipmanlarının
                                         (kondansatör, oksijen maskesi, spirometre gibi) kullanımı öğretilir.</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                    id="nurse_attempt14"
-                                    value="Hasta ve bakım verenlerine uygulanan tedaviler hakkında bilgi verilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt14" value="Hasta ve bakım verenlerine uygulanan tedaviler hakkında bilgi verilir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Hasta ve bakım verenlerine uygulanan tedaviler
                                         hakkında bilgi verilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                    id="nurse_attempt15"
-                                    value="Hasta ve bakım verenlerine solunum ve rahatlama teknikleri hakkında bilgi verilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt15" value="Hasta ve bakım verenlerine solunum ve rahatlama teknikleri hakkında bilgi verilir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Hasta ve bakım verenlerine solunum ve rahatlama
                                         teknikleri hakkında bilgi verilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                    id="nurse_attempt16"
-                                    value="Hasta ve bakım verenlerine etkili öksürme eğitimi verilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt16" value="Hasta ve bakım verenlerine etkili öksürme eğitimi verilir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Hasta ve bakım verenlerine etkili öksürme eğitimi
                                         verilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                    id="nurse_attempt17"
-                                    value="Hasta ve bakım verenlerine istem yapılan inhalerlerin kullanımı konusunda eğitim verilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt17" value="Hasta ve bakım verenlerine istem yapılan inhalerlerin kullanımı konusunda eğitim verilir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Hasta ve bakım verenlerine istem yapılan inhalerlerin
                                         kullanımı konusunda eğitim verilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                    id="nurse_attempt18"
-                                    value="Anksiyeteyi azaltmak ve kontrol duygusunu arttırmak için hastaya uygulanacak girişimlerden önce açıklama yapılır">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt18" value="Anksiyeteyi azaltmak ve kontrol duygusunu arttırmak için hastaya uygulanacak girişimlerden önce açıklama yapılır">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Anksiyeteyi azaltmak ve kontrol duygusunu arttırmak
                                         için hastaya uygulanacak girişimlerden önce açıklama yapılır</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                    id="nurse_attempt19"
-                                    value="İstem yapılan ilaçlar (analjezikler, bronkodilatörler, antiaritmikler, aeresoller, steroidler gibi) uygulanır">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt19" value="İstem yapılan ilaçlar (analjezikler, bronkodilatörler, antiaritmikler, aeresoller, steroidler gibi) uygulanır">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">İstem yapılan ilaçlar (analjezikler, bronkodilatörler,
                                         antiaritmikler, aeresoller, steroidler gibi) uygulanır</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                    id="nurse_attempt20"
-                                    value="Mekanik ventilasyon uygulanma ihtimali için gerekli hazırlıklar yapılır">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt20" value="Mekanik ventilasyon uygulanma ihtimali için gerekli hazırlıklar yapılır">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Mekanik ventilasyon uygulanma ihtimali için gerekli
                                         hazırlıklar yapılır</span>
@@ -320,100 +283,100 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
 
     </div>
     <script>
-    var tanı_respiratory_rate = <?= json_encode($tanı_respiratory_rate, JSON_UNESCAPED_UNICODE); ?>;;
-    var tanı_heart_rate = <?= json_encode($tanı_heart_rate, JSON_UNESCAPED_UNICODE); ?>;
-    var tanı_spo2_percentage = <?= json_encode($tanı_spo2_percentage, JSON_UNESCAPED_UNICODE); ?>;
-    var tanı_o2_status = <?= json_encode($tanı_o2_status, JSON_UNESCAPED_UNICODE); ?>;
-    var tanı_respiratory_nature = <?= json_encode($tanı_respiratory_nature, JSON_UNESCAPED_UNICODE); ?>;
-    var field_respiratory_rate = document.getElementById('field_respiratory_rate');
-    var field_heart_rate = document.getElementById('field_heart_rate');
-    var field_spo2_percentage = document.getElementById('field_spo2_percentage');
-    var field_o2_status = document.getElementById('field_o2_status');
-    var field_respiratory_nature = document.getElementById('field_respiratory_nature');
+        var tanı_respiratory_rate = <?= json_encode($tanı_respiratory_rate, JSON_UNESCAPED_UNICODE); ?>;;
+        var tanı_heart_rate = <?= json_encode($tanı_heart_rate, JSON_UNESCAPED_UNICODE); ?>;
+        var tanı_spo2_percentage = <?= json_encode($tanı_spo2_percentage, JSON_UNESCAPED_UNICODE); ?>;
+        var tanı_o2_status = <?= json_encode($tanı_o2_status, JSON_UNESCAPED_UNICODE); ?>;
+        var tanı_respiratory_nature = <?= json_encode($tanı_respiratory_nature, JSON_UNESCAPED_UNICODE); ?>;
+        var field_respiratory_rate = document.getElementById('field_respiratory_rate');
+        var field_heart_rate = document.getElementById('field_heart_rate');
+        var field_spo2_percentage = document.getElementById('field_spo2_percentage');
+        var field_o2_status = document.getElementById('field_o2_status');
+        var field_respiratory_nature = document.getElementById('field_respiratory_nature');
 
-    var respiratory_rate_string = "Solunum Hızı: " + tanı_respiratory_rate;
-    field_respiratory_rate.innerHTML = respiratory_rate_string;
+        var respiratory_rate_string = "Solunum Hızı: " + tanı_respiratory_rate;
+        field_respiratory_rate.innerHTML = respiratory_rate_string;
 
-    var heart_rate_string = "Nabız Hızı: " + tanı_heart_rate;
-    field_heart_rate.innerHTML = heart_rate_string;
+        var heart_rate_string = "Nabız Hızı: " + tanı_heart_rate;
+        field_heart_rate.innerHTML = heart_rate_string;
 
-    var spo2_percentage_string = "SpO2: " + tanı_spo2_percentage;
-    field_spo2_percentage.innerHTML = spo2_percentage_string;
+        var spo2_percentage_string = "SpO2: " + tanı_spo2_percentage;
+        field_spo2_percentage.innerHTML = spo2_percentage_string;
 
-    var o2_status_string = "O2 Tedavisi: " + tanı_o2_status;
-    field_o2_status.innerHTML = o2_status_string;
+        var o2_status_string = "O2 Tedavisi: " + tanı_o2_status;
+        field_o2_status.innerHTML = o2_status_string;
 
-    var respiratory_nature_string = "Solunumun Özelliği: " + tanı_respiratory_nature;
-    field_respiratory_nature.innerHTML = respiratory_nature_string;
+        var respiratory_nature_string = "Solunumun Özelliği: " + tanı_respiratory_nature;
+        field_respiratory_nature.innerHTML = respiratory_nature_string;
 
-    if (tanı_respiratory_rate < 16 || tanı_respiratory_rate > 20) {
-        $('#field_respiratory_rate').css("color", "green");
-    } else {
-        $('#field_respiratory_rate').css("color", "red");
-    }
-    if (tanı_heart_rate > 100) {
-        $('#field_heart_rate').css("color", "green");
-    } else {
-        $('#field_heart_rate').css("color", "red");
-    }
-    if (tanı_spo2_percentage < 95) {
-        $('#field_spo2_percentage').css("color", "green");
-    } else {
-        $('#field_spo2_percentage').css("color", "red");
-    }
-    if (tanı_o2_status == "Aliyor") {
-        $('#field_o2_status').css("color", "green");
-    } else {
-        $('#field_o2_status').css("color", "red");
-    }
-    if (tanı_respiratory_nature === "Derin" || tanı_respiratory_nature === "Yüzeyel") {
-        $('#field_respiratory_nature').css("color", "green");
-    } else {
-        $('#field_respiratory_nature').css("color", "red");
-    }
+        if (tanı_respiratory_rate < 16 || tanı_respiratory_rate > 20) {
+            $('#field_respiratory_rate').css("color", "green");
+        } else {
+            $('#field_respiratory_rate').css("color", "red");
+        }
+        if (tanı_heart_rate > 100) {
+            $('#field_heart_rate').css("color", "green");
+        } else {
+            $('#field_heart_rate').css("color", "red");
+        }
+        if (tanı_spo2_percentage < 95) {
+            $('#field_spo2_percentage').css("color", "green");
+        } else {
+            $('#field_spo2_percentage').css("color", "red");
+        }
+        if (tanı_o2_status == "Aliyor") {
+            $('#field_o2_status').css("color", "green");
+        } else {
+            $('#field_o2_status').css("color", "red");
+        }
+        if (tanı_respiratory_nature === "Derin" || tanı_respiratory_nature === "Yüzeyel") {
+            $('#field_respiratory_nature').css("color", "green");
+        } else {
+            $('#field_respiratory_nature').css("color", "red");
+        }
 
-    var matchedfields_string = respiratory_rate_string + " / " + heart_rate_string + " / " + spo2_percentage_string +
-        " / " + o2_status_string + " / " + respiratory_nature_string;
+        var matchedfields_string = respiratory_rate_string + " / " + heart_rate_string + " / " + spo2_percentage_string +
+            " / " + o2_status_string + " / " + respiratory_nature_string;
     </script>
 
     <script>
-    $(function() {
-        $('#closeBtn').click(function(e) {
-            let patient_id = <?php
+        $(function() {
+            $('#closeBtn').click(function(e) {
+                let patient_id = <?php
                                     $userid = $_GET['patient_id'];
                                     echo $userid
                                     ?>;
-            let patient_name = "<?php
+                let patient_name = "<?php
                                     echo urldecode($_GET['patient_name']);
                                     ?>";
-            var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
-                "&patient_name=" + encodeURIComponent(patient_name);
-            $("#content").load(url);
+                var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
+                    "&patient_name=" + encodeURIComponent(patient_name);
+                $("#content").load(url);
 
-        })
-    });
+            })
+        });
     </script>
     <script>
-    $(function() {
-        $('#submit').click(function(e) {
-            e.preventDefault()
-            console.log("submit clicked")
+        $(function() {
+            $('#submit').click(function(e) {
+                e.preventDefault()
+                console.log("submit clicked")
                 var id = <?php
-                                $userid = $_SESSION['userlogin']['id'];
-                                echo $userid
-                                ?>;
+                            $userid = $_SESSION['userlogin']['id'];
+                            echo $userid
+                            ?>;
                 var name = $('#name').val();
                 var surname = $('#surname').val();
                 var age = $('#age').val();
                 var not = $('#not').val();
                 let form_num = 15;
                 var patient_id = <?php
-                                        $userid = $_GET['patient_id'];
-                                        echo $userid
-                                        ?>;
+                                    $userid = $_GET['patient_id'];
+                                    echo $userid
+                                    ?>;
                 let patient_name = "<?php
-                                        echo urldecode($_GET['patient_name']);
-                                        ?>";
+                                    echo urldecode($_GET['patient_name']);
+                                    ?>";
                 let yourDate = new Date();
                 let creationDate = yourDate.toISOString().split('T')[0];
                 let updateDate = yourDate.toISOString().split('T')[0];
@@ -554,7 +517,7 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                         noc_output: noc_output,
                         noc_indicator: noc_indicator,
                         nurse_attempt: nurse_attempt,
-                        nurse_education :nurse_education,
+                        nurse_education: nurse_education,
                         evaluation: evaluation,
                         matchedfields_string: matchedfields_string,
                     },
