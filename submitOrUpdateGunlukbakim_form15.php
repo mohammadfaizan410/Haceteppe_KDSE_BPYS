@@ -6,14 +6,14 @@ $base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
 <?php
 
 if (isset($_POST["patient_name"])) {
-    if(isset($_POST["isUpdate"])){        
+    if (isset($_POST["isUpdate"])) {
         $stmt = $db->prepare("UPDATE form15 SET
         update_date = ?,
         applications = ?,
         hours = ?,
         description = ?
         WHERE form_id = ?");
-       $result =  $stmt->execute([
+        $result =  $stmt->execute([
             $_POST["creation_date"],
             $_POST["applications"],
             $_POST["hours"],
@@ -21,16 +21,14 @@ if (isset($_POST["patient_name"])) {
             $_POST["form_id"]
         ]);
 
-        if($result){
-            echo "Successfully Updated!";
-            }
-            else{
+        if ($result) {
+            echo "Güncelleme Başarılı!";
+        } else {
             echo $result;
-            }
-          }
-    else{
+        }
+    } else {
 
-      $result =  $stmt = $db->prepare("INSERT INTO form15 (
+        $result =  $stmt = $db->prepare("INSERT INTO form15 (
                 form_num,
                 patient_name,
                 patient_id,
@@ -40,25 +38,23 @@ if (isset($_POST["patient_name"])) {
                 hours,
                 description
             ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->execute([
-        $_POST["form_num"],
-        $_POST["patient_name"],
-        $_POST["patient_id"],
-        $_POST["creation_date"],
-        $_POST["update_date"],
-        $_POST["applications"],
-        $_POST["hours"],
-        $_POST["description"]
-    ]);
-    if($result){
-        echo "Successfully Inserted!";
+        $stmt->execute([
+            $_POST["form_num"],
+            $_POST["patient_name"],
+            $_POST["patient_id"],
+            $_POST["creation_date"],
+            $_POST["update_date"],
+            $_POST["applications"],
+            $_POST["hours"],
+            $_POST["description"]
+        ]);
+        if ($result) {
+            echo "Ekleme Başarılı";
+        } else {
+            echo $result;
         }
-        else{
-        echo $result;
-        }
-      }
-}
-else{
+    }
+} else {
     echo "Error.";
 }
 ?>

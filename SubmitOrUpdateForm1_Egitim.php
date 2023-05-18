@@ -20,18 +20,17 @@ if (isset($_POST)) {
                             TedaviBasvurusuDiger
                 WHERE SDiger = ?");
 
-$stmt->execute([
-    $_POST["radio1"],
-    $_POST["Konu"],
-    $_POST["Nerden"],
-    $_POST["NeZaman"],
-    $_POST["EgitimIstegi"],
-    $_POST["TedaviBasvurusu"],
-    $_POST["TedaviBasvurusuDiger"]
+            $stmt->execute([
+                $_POST["radio1"],
+                $_POST["Konu"],
+                $_POST["Nerden"],
+                $_POST["NeZaman"],
+                $_POST["EgitimIstegi"],
+                $_POST["TedaviBasvurusu"],
+                $_POST["TedaviBasvurusuDiger"]
             ]);
-            echo  "successfully updated";
-        }
-        else {
+            echo  "Güncelleme Başarılı!";
+        } else {
             $stmt = $db->prepare("INSERT INTO form1_solunumgereksinimi (
                             radio1,
                             Konu,
@@ -41,24 +40,23 @@ $stmt->execute([
                             TedaviBasvurusu,
                             TedaviBasvurusuDiger
               ) VALUES (?, ?, ?, ?, ?, ?, ?)");
-              
-    $stmt->execute([
-        $_POST["radio1"],
-        $_POST["Konu"],
-        $_POST["Nerden"],
-        $_POST["NeZaman"],
-        $_POST["EgitimIstegi"],
-        $_POST["TedaviBasvurusu"],
-        $_POST["TedaviBasvurusuDiger"]
-              ]);
+
+            $stmt->execute([
+                $_POST["radio1"],
+                $_POST["Konu"],
+                $_POST["Nerden"],
+                $_POST["NeZaman"],
+                $_POST["EgitimIstegi"],
+                $_POST["TedaviBasvurusu"],
+                $_POST["TedaviBasvurusuDiger"]
+            ]);
             echo "succesfully inserted";
         }
-    } else{
+    } else {
 
         echo "error";
     }
-}
-else{
+} else {
     echo "error";
 }
 ?>

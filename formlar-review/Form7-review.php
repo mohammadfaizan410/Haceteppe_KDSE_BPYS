@@ -71,7 +71,7 @@ if ($result) {
                             <p class="usernamelabel">Patient Name:</p>
                             <input type="text" class="form-control" required name="patient_name" id="diger" placeholder="Patient Name" value="<?php echo $form7[0]['patient_name']; ?>" disabled>
                         </div>
-                        ` <div class="input-section d-flex">
+                        <div class="input-section d-flex">
                             <p class="usernamelabel">Patient ID:</p>
                             <input type="text" class="form-control" required name="patient_id" id="diger" placeholder="Patient ID" value="<?php echo $form7[0]['patient_id']; ?>" disabled>
                         </div>
@@ -241,19 +241,20 @@ if ($result) {
 
 
     <script>
-          $(function() {
-        $('#closeBtn').click(function(e) {
-            let patient_name = $("input[name='patient_name']").val();
-            let patient_id = parseInt($("input[name='patient_id']").val());
-            var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
-            $("#content").load(url);
+        $(function() {
+            $('#closeBtn').click(function(e) {
+                let patient_name = $("input[name='patient_name']").val();
+                let patient_id = parseInt($("input[name='patient_id']").val());
+                var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
+                    "&patient_name=" + encodeURIComponent(patient_name);
+                $("#content").load(url);
 
-        })
-    });
+            })
+        });
 
         var wound_apperance = "<?php echo $form7[0]['wound_appearance']; ?>"
         console.log($("#serviceWound").val())
-        if($("#serviceWound").val() == "<?php echo$form7[0]['service_wound']; ?>"){
+        if ($("#serviceWound").val() == "<?php echo $form7[0]['service_wound']; ?>") {
             $("#serviceWound").attr("checked", "checked");
         }
         if (wound_apperance == "Nekrotik") {
@@ -295,7 +296,6 @@ if ($result) {
             console.log(wound_apperance);
             document.getElementById('diger').setAttribute('checked', 'checked');
         }
-
     </script>
 
     <script>
@@ -383,9 +383,12 @@ if ($result) {
                             healing_date: healingDate
                         }),
                         success: function(data) {
-                            alert("SuccessFully Updated!");
-                        let url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
-                        $("#content").load(url);
+                            alert("Güncelleme Başarılı!");
+                            let url =
+                                "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
+                                patient_id + "&patient_name=" + encodeURIComponent(
+                                    patient_name);
+                            $("#content").load(url);
                         },
                         error: function(data) {
                             Swal.fire({

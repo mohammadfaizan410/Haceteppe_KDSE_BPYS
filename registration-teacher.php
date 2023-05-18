@@ -29,9 +29,9 @@ require_once("config-students.php");
 </head>
 
 <body>
-<div id="validation-box">
+    <div id="validation-box">
         <form action="" method="post">
-            <div class="login-box login-login" style= 'width : 50%;'>
+            <div class="login-box login-login" style='width : 50%;'>
 
                 <h1 class="header">e-BYRYS-KKDS</h1>
                 <h2 class="login">An email was sent to you, please enter the code</h2>
@@ -42,14 +42,14 @@ require_once("config-students.php");
                 <button class='btn btn-primary' id="sendEmail">Send again</button>
                 <a href="main.php" class="lower-buttons" style="padding-top:10px"><i class="gg-arrow-left-o"
                         style="margin: 0; margin-right: 20px;"></i>Ana Sayfaya Dön</a>
-</div>
+            </div>
         </form>
 
     </div>
 
 
-        <form action="" method="post">
-            <div class="login-box login-signup" id="registrationForm">
+    <form action="" method="post">
+        <div class="login-box login-signup" id="registrationForm">
 
             <h2 class="login">Öğretmen Kaydı</h2>
 
@@ -65,27 +65,26 @@ require_once("config-students.php");
             <p class="passwordlabel">Şifre</p>
             <input type="password" name="password" id="password" required placeholder="Şifre Giriniz" minlength="6">
             <p class="passwordlabel">Şifreyi Tekrar Girin</p>
-            <input type="password" name="confirm-password" id="confirm-password" required placeholder="Şifreyi Tekrar Girin"
-               minlength="6" >
-                <input type="submit" name="submit" id="register" value="Kayıt Ol">
-                <span id="error" style="color: red;"></span>
-                <a href="main.php" class="lower-buttons" style="padding-top:10px"><i class="gg-arrow-left-o"
-                        style="margin: 0; margin-right: 20px;"></i>Ana Sayfaya Dön</a>
-            </div>
-        </form>
+            <input type="password" name="confirm-password" id="confirm-password" required
+                placeholder="Şifreyi Tekrar Girin" minlength="6">
+            <input type="submit" name="submit" id="register" value="Kayıt Ol">
+            <span id="error" style="color: red;"></span>
+            <a href="main.php" class="lower-buttons" style="padding-top:10px"><i class="gg-arrow-left-o"
+                    style="margin: 0; margin-right: 20px;"></i>Ana Sayfaya Dön</a>
+        </div>
+    </form>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 <script>
-
 $("#validation-box").css("display", "none");
 </script>
 
 <script>
-  var code = '';
+var code = '';
 
-  $("#register").click(function (e) { 
+$("#register").click(function(e) {
     e.preventDefault();
     const name = $("#name").val();
     const surname = $("#surname").val();
@@ -97,117 +96,107 @@ $("#validation-box").css("display", "none");
 
     $("#error").text("");
     //check form validity
-    if(name === ""){
-      $("#error").text("Name cannot be empty");
-    }
-    else if(surname == ""){
-      $("#error").text("Surname cannot be empty");
-    }
-    else if(email == ""){
-      $("#error").text("email cannot be empty");
-    }
-    else if(!emailRegex.test(email)){
-      $("#error").text("Email is not in correct format!");
-    }
-    else if(password == ""){
-      $("#error").text("password fields cannot be empty");
-    }
-    else if(confirmPass == ""){
-      $("#error").text("Passowrd fields cannot be empty");
-    }
-    else if(confirmPass !== password){
-      $("#error").text("Passowrds do not match");
-    }
-    else if(confirmPass === password && !passRegex.test(password)){
-      $("#error").text("Passwords must contain one digit, one lowercase letter, one uppercase letter and be between 8 and 20 characters long");
-    }
-    else{
-      $.ajax({
-        type: "POST",
-        url: "<?php echo $base_url; ?>/checEmailAll.php",
-        data:{
-          email :email
-        },
-        success: function (response) {
-            if(response == 'exists' ){
-              $("#error").text("The email you entered already exists!");
-            }
-            //email dosent exist
-            else{
-              $("#validation-box").css("display", "block");
-              $("#registrationForm").css("display", "none");
-              console.log("<?php echo $base_url; ?>/sendEmailCode.php")
-              $.ajax({
-                type: "POST",
-                url: "<?php echo $base_url; ?>/sendEmailCode.php",
-                data: {
-                  email : email
-                },
-                success: function (response) {
-                  code = response;
-                },
-                error:function(response){
-                  console.log(response)
-                  alert("Error : server could not send email");
+    if (name === "") {
+        $("#error").text("Name cannot be empty");
+    } else if (surname == "") {
+        $("#error").text("Surname cannot be empty");
+    } else if (email == "") {
+        $("#error").text("email cannot be empty");
+    } else if (!emailRegex.test(email)) {
+        $("#error").text("Email is not in correct format!");
+    } else if (password == "") {
+        $("#error").text("password fields cannot be empty");
+    } else if (confirmPass == "") {
+        $("#error").text("Passowrd fields cannot be empty");
+    } else if (confirmPass !== password) {
+        $("#error").text("Passowrds do not match");
+    } else if (confirmPass === password && !passRegex.test(password)) {
+        $("#error").text(
+            "Passwords must contain one digit, one lowercase letter, one uppercase letter and be between 8 and 20 characters long"
+            );
+    } else {
+        $.ajax({
+            type: "POST",
+            url: "<?php echo $base_url; ?>/checEmailAll.php",
+            data: {
+                email: email
+            },
+            success: function(response) {
+                if (response == 'exists') {
+                    $("#error").text("The email you entered already exists!");
                 }
-              });
-
-              $("#sendEmail").click(function (e) { 
-                      e.preventDefault();
-                      $.ajax({
+                //email dosent exist
+                else {
+                    $("#validation-box").css("display", "block");
+                    $("#registrationForm").css("display", "none");
+                    console.log("<?php echo $base_url; ?>/sendEmailCode.php")
+                    $.ajax({
                         type: "POST",
                         url: "<?php echo $base_url; ?>/sendEmailCode.php",
                         data: {
-                        email : email
-                      },
-                        success: function (response) {
-                          code = response;
-                          alert("code sent again, check your email!")
+                            email: email
                         },
-                        error:function(response){
-                        alert("Error : server could not send email");
-                      }
-                      });
+                        success: function(response) {
+                            code = response;
+                        },
+                        error: function(response) {
+                            console.log(response)
+                            alert("Error : server could not send email");
+                        }
                     });
 
-              $("#validate").click(function (e) { 
-                e.preventDefault();            
-                var codeEntered = $("#code").val();
-                if(codeEntered == code){ 
-                $.ajax({  
-                      type: "POST",
-                      url: "<?php echo $base_url; ?>/process-teachers.php",
-                      data: {
-                          name : name,
-                          surname:surname,
-                          email:email,
-                          password:password,
-                        },
-                        success: function (response) {
-                            alert("Successfull");
-                            window.location.assign("<?php echo $base_url; ?>/main.php")
-                          },
-                          error : function(response){
-                              alert("Error : Server Error");
+                    $("#sendEmail").click(function(e) {
+                        e.preventDefault();
+                        $.ajax({
+                            type: "POST",
+                            url: "<?php echo $base_url; ?>/sendEmailCode.php",
+                            data: {
+                                email: email
+                            },
+                            success: function(response) {
+                                code = response;
+                                alert("code sent again, check your email!")
+                            },
+                            error: function(response) {
+                                alert("Error : server could not send email");
                             }
-                          });
-                }else{
-                  alert("Codes do not match!")
+                        });
+                    });
+
+                    $("#validate").click(function(e) {
+                        e.preventDefault();
+                        var codeEntered = $("#code").val();
+                        if (codeEntered == code) {
+                            $.ajax({
+                                type: "POST",
+                                url: "<?php echo $base_url; ?>/process-teachers.php",
+                                data: {
+                                    name: name,
+                                    surname: surname,
+                                    email: email,
+                                    password: password,
+                                },
+                                success: function(response) {
+                                    alert("Başarılı");
+                                    window.location.assign(
+                                        "<?php echo $base_url; ?>/main.php")
+                                },
+                                error: function(response) {
+                                    alert("Error : Server Error");
+                                }
+                            });
+                        } else {
+                            alert("Codes do not match!")
+                        }
+                    });
                 }
-                      });
+            },
+            error: function(response) {
+                alert("error : Server error")
             }
-        },
-        error : function (response) { 
-          alert("error : Server error")
-         }
-      });
-    }  
-  });
-
-
-  
- 
-    
+        });
+    }
+});
 </script>
 
 </html>

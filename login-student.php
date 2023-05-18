@@ -41,44 +41,46 @@ if (isset($_SESSION['userlogin'])) {
                 <p class="labels">Şifre</p>
                 <input type="password" name="password" id="password" required placeholder="Şifre Giriniz">
                 <input type="submit" name="submit" id="login" value="Login">
-                <a href="main.php" class="lower-buttons" style="padding-top:10px"><i class="gg-arrow-left-o" style="margin: 0; margin-right: 20px;"></i>Ana Sayfaya Dön</a>
+                <a href="main.php" class="lower-buttons" style="padding-top:10px"><i class="gg-arrow-left-o"
+                        style="margin: 0; margin-right: 20px;"></i>Ana Sayfaya Dön</a>
         </form>
 
     </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>,
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>,
     <script>
-        $(function() {
-            $('#login').click(function(e) {
-                var valid = this.form.checkValidity();
+    $(function() {
+        $('#login').click(function(e) {
+            var valid = this.form.checkValidity();
 
-                if (valid) {
-                    var email = $('#email').val();
-                    var password = $('#password').val();
-                    console.log(email)
-                }
-                e.preventDefault();
+            if (valid) {
+                var email = $('#email').val();
+                var password = $('#password').val();
+                console.log(email)
+            }
+            e.preventDefault();
 
-                $.ajax({
-                    type: 'POST',
-                    url: 'process-login-student.php',
-                    data: {
-                        email: email,
-                        password: password
-                    },
-                    success: function(data) {
-                        alert(data)
-                        if ($.trim(data) === "Successful") {
-                            setTimeout('window.location.href = "student-main.php"', 1000);
-                        }
-                    },
-                    error: function(data) {
-                        alert('error');
+            $.ajax({
+                type: 'POST',
+                url: 'process-login-student.php',
+                data: {
+                    email: email,
+                    password: password
+                },
+                success: function(data) {
+                    alert(data)
+                    if ($.trim(data) === "Başarılı") {
+                        setTimeout('window.location.href = "student-main.php"', 1000);
                     }
-                })
-
+                },
+                error: function(data) {
+                    alert('error');
+                }
             })
+
         })
+    })
     </script>
 </body>
 

@@ -28,26 +28,25 @@ if (isset($_POST)) {
                                     HastaneAktiviteDiger
                 WHERE SDiger = ?");
 
-$stmt->execute([
-    $_POST["DuzenliCalisma"],
-    $_POST["CalismiyorSure"],
-    $_POST["CalisiyorSure"],
-    $_POST["IsIzni"],
-    $_POST["IsIzniDiger"],
-    $_POST["MeslekRiski"],
-    $_POST["MeslekRiskiDiger"],
-    $_POST["AileBireyleri"],
-    $_POST["AileBireyleriDiger"],
-    $_POST["CocukSayisi"],
-    $_POST["CocukSayisiDiger"],
-    $_POST["AileRolu"],
-    $_POST["Hobi"],
-    $_POST["HastaneAktivite"],
-    $_POST["HastaneAktiviteDiger"]
+            $stmt->execute([
+                $_POST["DuzenliCalisma"],
+                $_POST["CalismiyorSure"],
+                $_POST["CalisiyorSure"],
+                $_POST["IsIzni"],
+                $_POST["IsIzniDiger"],
+                $_POST["MeslekRiski"],
+                $_POST["MeslekRiskiDiger"],
+                $_POST["AileBireyleri"],
+                $_POST["AileBireyleriDiger"],
+                $_POST["CocukSayisi"],
+                $_POST["CocukSayisiDiger"],
+                $_POST["AileRolu"],
+                $_POST["Hobi"],
+                $_POST["HastaneAktivite"],
+                $_POST["HastaneAktiviteDiger"]
             ]);
-            echo  "successfully updated";
-        }
-        else {
+            echo  "Güncelleme Başarılı!";
+        } else {
             $stmt = $db->prepare("INSERT INTO form1_solunumgereksinimi (
                                     DuzenliCalisma,
                                     CalismiyorSure,
@@ -65,32 +64,31 @@ $stmt->execute([
                                     HastaneAktivite,
                                     HastaneAktiviteDiger
               ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-              
-    $stmt->execute([
-        $_POST["DuzenliCalisma"],
-        $_POST["CalismiyorSure"],
-        $_POST["CalisiyorSure"],
-        $_POST["IsIzni"],
-        $_POST["IsIzniDiger"],
-        $_POST["MeslekRiski"],
-        $_POST["MeslekRiskiDiger"],
-        $_POST["AileBireyleri"],
-        $_POST["AileBireyleriDiger"],
-        $_POST["CocukSayisi"],
-        $_POST["CocukSayisiDiger"],
-        $_POST["AileRolu"],
-        $_POST["Hobi"],
-        $_POST["HastaneAktivite"],
-        $_POST["HastaneAktiviteDiger"]
-              ]);
+
+            $stmt->execute([
+                $_POST["DuzenliCalisma"],
+                $_POST["CalismiyorSure"],
+                $_POST["CalisiyorSure"],
+                $_POST["IsIzni"],
+                $_POST["IsIzniDiger"],
+                $_POST["MeslekRiski"],
+                $_POST["MeslekRiskiDiger"],
+                $_POST["AileBireyleri"],
+                $_POST["AileBireyleriDiger"],
+                $_POST["CocukSayisi"],
+                $_POST["CocukSayisiDiger"],
+                $_POST["AileRolu"],
+                $_POST["Hobi"],
+                $_POST["HastaneAktivite"],
+                $_POST["HastaneAktiviteDiger"]
+            ]);
             echo "succesfully inserted";
         }
-    } else{
+    } else {
 
         echo "error";
     }
-}
-else{
+} else {
     echo "error";
 }
 ?>

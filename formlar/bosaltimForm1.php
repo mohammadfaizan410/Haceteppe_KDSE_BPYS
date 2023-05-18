@@ -40,35 +40,13 @@ if (isset($_GET['logout'])) {
     <link href="style.css" rel="stylesheet">
 
 </head>
-<style>
-    .input-section{
-        border-bottom: 2px solid black;
-        padding: 50px;
-    }
-</style>
-<body style="background-color:white">
-    <div class="container-fluid pt-4 px-4">
-        <?php
-        require_once('../config-students.php');
-        $userid = $_SESSION['userlogin']['id'];
-        //echo $userid;
-        $sql = "SELECT * FROM  patients  WHERE id =" . $userid;
-        $smtmselect = $db->prepare($sql);
-        $result = $smtmselect->execute();
-        if ($result) {
-            $values = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
-        } else {
-            echo 'error';
-        }
-
-        ?>
 <div class="send-patient ta-center">
             <span class='close closeBtn' id='closeBtn'>&times;</span>
             <h1 class="form-header">BOŞALTIM GEREKSİNİMİ </h1>
-
+            <div class=" patients-save">
+                <form action="" method="" class="patients-save-fields">
 
             <h3>BAĞIRSAK BOŞALTIMI</h3>
-
             <div class="input-section d-flex">
                 <p class="usernamelabel">Bağırsak boşaltımını karşılamada </p>
                 <div class="checkbox-wrapper d-flex">
@@ -80,8 +58,8 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" name='stoolEmptyingHelp' type="radio" id="Bağımsız1" value="Bağımsız">
-                                                <label class="form-check-label" for="Bağımsız1">Bağımsız
+                                                <input class="form-check-input" name='stoolEmptyingHelp' type="radio" name="protezlertable" id="protezlertable" value="Bağımsız">
+                                                <label class="form-check-label" for="protezlertable">Bağımsız
                                                 </label>
                                             </div>
                                         </td>
@@ -91,8 +69,8 @@ if (isset($_GET['logout'])) {
 
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" name='stoolEmptyingHelp' type="radio" id="YarıBağımlı1" value="Yarı bağımlı">
-                                                <label class="form-check-label" for="YarıBağımlı1">Yarı bağımlı
+                                                <input class="form-check-input" name='stoolEmptyingHelp' type="radio" name="protezlertable" id="protezlertable" value="Yarı bağımlı">
+                                                <label class="form-check-label" for="protezlertable">Yarı bağımlı
                                                 </label>
                                             </div>
                                         </td>
@@ -102,8 +80,8 @@ if (isset($_GET['logout'])) {
 
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" name='stoolEmptyingHelp' type="radio" id="Bağımlı1" value="Bağımlı">
-                                                <label class="form-check-label" for="Bağımlı1">Bağımlı
+                                                <input class="form-check-input" name='stoolEmptyingHelp' type="radio" name="protezlertable" id="protezlertable" value="Bağımlı">
+                                                <label class="form-check-label" for="protezlertable">Bağımlı
                                                 </label>
                                             </div>
                                         </td>
@@ -140,7 +118,7 @@ if (isset($_GET['logout'])) {
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="BoşaltımSorun" id="BoşaltımSorun" value="Var">
                             <label class="form-check-label" for="BoşaltımSorun">
-                                <span class="checkbox-header"> Var</span>
+                                <span class="checkbox-header">Sorun Var</span>
 
                             </label>
                             <table class="ozgecmistable-wrapper">
@@ -333,8 +311,8 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="Bağımsız" value="Bağımsız">
-                                                <label class="form-check-label" for="Bağımsız">Bağımsız
+                                                <input class="form-check-input" type="radio" name="protezlertable2" id="protezlertable2" value="Bağımsız">
+                                                <label class="form-check-label" for="protezlertable2">Bağımsız
                                                 </label>
                                             </div>
                                         </td>
@@ -344,8 +322,8 @@ if (isset($_GET['logout'])) {
 
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="YarıBağımlı" value="Yarı bağımlı">
-                                                <label class="form-check-label" for="YarıBağımlı">Yarı bağımlı
+                                                <input class="form-check-input" type="radio" name="protezlertable2" id="protezlertable2" value="Yarı bağımlı">
+                                                <label class="form-check-label" for="protezlertable2">Yarı bağımlı
                                                 </label>
                                             </div>
                                         </td>
@@ -355,8 +333,8 @@ if (isset($_GET['logout'])) {
 
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="Bağımlı" value="Bağımlı">
-                                                <label class="form-check-label" for="Bağımlı">Bağımlı
+                                                <input class="form-check-input" type="radio" name="protezlertable2" id="protezlertable2" value="Bağımlı">
+                                                <label class="form-check-label" for="protezlertable2">Bağımlı
                                                 </label>
                                             </div>
                                         </td>
@@ -616,39 +594,66 @@ if (isset($_GET['logout'])) {
                     </div>
                 </div>
             </div>
+                        <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
+                </form>
+         </div>
+    </div>
+    <script>
+    $(function() {
+        $('#closeBtn').click(function(e) {
+            let patient_id = <?php
+                  $userid = $_GET['patient_id'];
+                  echo $userid
+                  ?>;
+                   let patient_name = "<?php
+            echo urldecode($_GET['patient_name']);
+                  ?>";
+          var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
+            $("#content").load(url);
 
-            <script>
-                $(function() {
-                    $('#closeBtn').click(function(e) {
-                        $("#content").load("formlar-student.php");
+        })
+    });
+    </script>
 
-                    })
-                });
-            </script>
+    <script>
+        $(function() {
+            $('#submit').click(function(e) {
+                var valid = this.form.checkValidity();
 
-            <script>
-                $(function() {
-                    $('#submit').click(function(e) {
-
-
-                        var valid = this.form.checkValidity();
-
-                        if (valid) {
-                            var id = <?php
-                                        $userid = $_SESSION['userlogin']['id'];
-                                        echo $userid
-                                        ?>;
-                    let stoolEmptyingHelp = $("input[type='radio'][name='stoolEmptyingHelp']:checked").val();
-                    let hospitalStoolEmptyingFrequency =  $("input[name='hospitalStoolEmptyingFrequency']").val();
-                    let hospitalStoolEmptyingDate =  $("input[name='hospitalStoolEmptyingDate']").val();
-                    let BoşaltımSorun = '';
-                    if($("input[name='BoşaltımSorun']:checked").val() === "Var"){
-                        BoşaltımSorun = $('input[name="excretionProblems"]:checked').map(function() {
-                                            return this.value;
-                                            }).get().join(',');
-                    }else[
-                        BoşaltımSorun = 'Sorun yok'
-                    ]
+                if (valid) {
+                let surname = $('#surname').val();
+                let age = $('#age').val();
+                let not = $('#not').val();
+               
+                var patient_id = <?php
+                  $userid = $_GET['patient_id'];
+                  echo $userid
+                  ?>;
+                   let patient_name = "<?php
+            echo urldecode($_GET['patient_name']);
+                  ?>";
+                    //let stoolEmptyingHelp = $("input[type='radio'][name='stoolEmptyingHelp']:checked").val();
+                    //let hospitalStoolEmptyingFrequency =  $("input[name='hospitalStoolEmptyingFrequency']").val();
+                    //let hospitalStoolEmptyingDate =  $("input[name='hospitalStoolEmptyingDate']").val();
+                    //let BoşaltımSorun = '';
+                    //if($("input[name='BoşaltımSorun']:checked").val() === "Var"){
+                        //BoşaltımSorun = $('input[name="excretionProblems"]:checked').map(function() {
+                                            //return this.value;
+                                            //}).get().join(',');
+                    //}else[
+                        //BoşaltımSorun = 'Sorun yok'
+                    //]
+                    let protezlertable = $("input[type='radio'][name='protezlertable']:checked").val();
+                    let sikligi = $("input[name='sikligi']").val();
+                    let zamani = $("input[name='zamani']").val();
+                    let BoşaltımSorun = $("input[type='radio'][name='BoşaltımSorun']:checked").val();
+                    let Konstipasyon = $("input[name='Konstipasyon']").val();
+                    let Diare = $("input[name='Diare']").val();
+                    let Distansiyon = $("input[name='Distansiyon']").val();
+                    let Fekal = $("input[name='Fekal']").val();
+                    let Hemoroid = $("input[name='Hemoroid']").val();
+                    let Dışkı = $("input[name='Dışkı']").val();
+                    let BagirsakDiğer = $("input[name='BagirsakDiğer']").val();
                     let bagirsak_sesleri = $("input[name='bagirsak_sesleri']").val();
                     let defekasyon_zamani = $("input[name='defekasyon_zamani']").val();
                     let defekasyon_tekrari = $("input[name='defekasyon_tekrari']").val();
@@ -689,11 +694,9 @@ if (isset($_GET['logout'])) {
 
                             $.ajax({
                                 type: 'POST',
-                                url: '<?php echo $base_url; ?>student-patient.php',
+                                url: '<?php echo $base_url; ?>/SubmitOrUpdateForm1_Bosaltim.php',
                                 data: {
-                           Bağımsız1:Bağımsız1,
-                           YarıBağımlı1:YarıBağımlı1,
-                           Bağımlı1:Bağımlı1,
+                           protezlertable:protezlertable,
                            sikligi:sikligi,
                            zamani:zamani,
                            BoşaltımSorun:BoşaltımSorun,
@@ -719,9 +722,7 @@ if (isset($_GET['logout'])) {
                            Koku:Koku,
                            Dışkı_sızıntısı:Dışkı_sızıntısı,
                            Deri_irritasyonu:Deri_irritasyonu,
-                           Bağımsız:Bağımsız,
-                           YarıBağımlı:YarıBağımlı,
-                           Bağımlı:Bağımlı,
+                           protezlertable2:protezlertable2,
                            BoşaltımdaSorun:BoşaltımdaSorun,
                            Üriner_inkontinans1:Üriner_inkontinans1,
                            Dizüri1:Dizüri1,
@@ -742,6 +743,9 @@ if (isset($_GET['logout'])) {
                                 success: function(data) {
                                     alert("Success");
                                     location.reload(true)
+                                    alert(data);
+                                    let url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
+                                    $("#content").load(url);
                                 },
                                 error: function(data) {
                                     Swal.fire({
@@ -749,25 +753,18 @@ if (isset($_GET['logout'])) {
                                         'text': 'There were errors',
                                         'type': 'error'
                                     })
-                                }
-                            })
+                    }
+                })
 
 
 
-                        }
-                    })
+            }
+        })
 
-                });
+    });
             </script>
-            <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-            <script src="lib/chart/chart.min.js"></script>
-            <script src="lib/easing/easing.min.js"></script>
-            <script src="lib/waypoints/waypoints.min.js"></script>
-            <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-            <script src="lib/tempusdominus/js/moment.min.js"></script>
-            <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-            <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+ 
+
 
             <!-- Template Javascript -->
             <script src=""></script>

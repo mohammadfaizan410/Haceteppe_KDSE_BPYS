@@ -26,24 +26,23 @@ if (isset($_POST)) {
                                     DigerTakılmaTarihi
                 WHERE SDiger = ?");
 
-$stmt->execute([
-    $_POST["venöz_kateter"],
-    $_POST["PYeri"],
-    $_POST["PSayısı"],
-    $_POST["PTakılmaTarihi"],
-    $_POST["SYeri"],
-    $_POST["SSayısı"],
-    $_POST["STakılmaTarihi"],
-    $_POST["DYeri"],
-    $_POST["DSayısı"],
-    $_POST["DTakılmaTarihi"],
-    $_POST["DigerYeri"],
-    $_POST["DigerSayısı"],
-    $_POST["DigerTakılmaTarihi"]
+            $stmt->execute([
+                $_POST["venöz_kateter"],
+                $_POST["PYeri"],
+                $_POST["PSayısı"],
+                $_POST["PTakılmaTarihi"],
+                $_POST["SYeri"],
+                $_POST["SSayısı"],
+                $_POST["STakılmaTarihi"],
+                $_POST["DYeri"],
+                $_POST["DSayısı"],
+                $_POST["DTakılmaTarihi"],
+                $_POST["DigerYeri"],
+                $_POST["DigerSayısı"],
+                $_POST["DigerTakılmaTarihi"]
             ]);
-            echo  "successfully updated";
-        }
-        else {
+            echo  "Güncelleme Başarılı!";
+        } else {
             $stmt = $db->prepare("INSERT INTO form1_solunumgereksinimi (
                                     venöz_kateter,
                                     PYeri,
@@ -59,30 +58,29 @@ $stmt->execute([
                                     DigerSayısı,
                                     DigerTakılmaTarihi
               ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-              
-    $stmt->execute([
-        $_POST["venöz_kateter"],
-        $_POST["PYeri"],
-        $_POST["PSayısı"],
-        $_POST["PTakılmaTarihi"],
-        $_POST["SYeri"],
-        $_POST["SSayısı"],
-        $_POST["STakılmaTarihi"],
-        $_POST["DYeri"],
-        $_POST["DSayısı"],
-        $_POST["DTakılmaTarihi"],
-        $_POST["DigerYeri"],
-        $_POST["DigerSayısı"],
-        $_POST["DigerTakılmaTarihi"]
-              ]);
+
+            $stmt->execute([
+                $_POST["venöz_kateter"],
+                $_POST["PYeri"],
+                $_POST["PSayısı"],
+                $_POST["PTakılmaTarihi"],
+                $_POST["SYeri"],
+                $_POST["SSayısı"],
+                $_POST["STakılmaTarihi"],
+                $_POST["DYeri"],
+                $_POST["DSayısı"],
+                $_POST["DTakılmaTarihi"],
+                $_POST["DigerYeri"],
+                $_POST["DigerSayısı"],
+                $_POST["DigerTakılmaTarihi"]
+            ]);
             echo "succesfully inserted";
         }
-    } else{
+    } else {
 
         echo "error";
     }
-}
-else{
+} else {
     echo "error";
 }
 ?>

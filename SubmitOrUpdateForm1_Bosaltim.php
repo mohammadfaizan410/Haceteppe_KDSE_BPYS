@@ -4,16 +4,11 @@ require_once("config-students.php");
 
 <?php
 if (isset($_POST)) {
-    $sql = "SELECT * FROM  form1_solunumgereksinimi  WHERE SDiger =" . $_POST["SDiger"];
-    $smtmselect = $db->prepare($sql);
-    $result = $smtmselect->execute();
-    if ($result) {
+    if (isset($_POST['isUpdate'])) {
         $values = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
         if (count($values) > 0) {
-            $stmt = $db->prepare("UPDATE form1_beslenmegereksinimi SET
-                           Bağımsız1,
-                           YarıBağımlı1,
-                           Bağımlı1,
+            $stmt = $db->prepare("UPDATE bosaltimForm1 SET
+                           protezlertable,
                            sikligi,
                            zamani,
                            BoşaltımSorun,
@@ -26,6 +21,7 @@ if (isset($_POST)) {
                            BagirsakDiğer,
                            bagirsak_sesleri,
                            defekasyon_zamani,
+                           DefaksiyonSikligi,
                            BoşaltımŞekli,
                            Kolostom,
                            StomaRengi,
@@ -39,9 +35,7 @@ if (isset($_POST)) {
                            Koku,
                            Dışkı_sızıntısı,
                            Deri_irritasyonu,
-                           Bağımsız,
-                           YarıBağımlı,
-                           Bağımlı,
+                           protezlertable2,
                            BoşaltımdaSorun,
                            Üriner_inkontinans1,
                            Dizüri1,
@@ -57,63 +51,60 @@ if (isset($_POST)) {
                            Sistostomi,
                            IdrarRengi,
                            IdrarBerrakligi
-                WHERE SDiger = ?");
+                WHERE form_id = ?");
 
-$stmt->execute([
-    $_POST["Bağımsız1"],
-    $_POST["YarıBağımlı1"],
-    $_POST["Bağımlı1"],
-    $_POST["sikligi"],
-    $_POST["zamani"],
-    $_POST["BoşaltımSorun"],
-    $_POST["Konstipasyon"],
-    $_POST["Diare"],
-    $_POST["Distansiyon"],
-    $_POST["Fekal"],
-    $_POST["Hemoroid"],
-    $_POST["Dışkı"],
-    $_POST["BagirsakDiğer"],
-    $_POST["bagirsak_sesleri"],
-    $_POST["defekasyon_zamani"],
-    $_POST["BoşaltımŞekli"],
-    $_POST["Kolostom"],
-    $_POST["StomaRengi"],
-    $_POST["Gaz1"],
-    $_POST["Koku1"],
-    $_POST["DışkıSızıntısı1"],
-    $_POST["Deri_irritasyonu1"],
-    $_POST["İleostomi"],
-    $_POST["StomanınRengi"],
-    $_POST["Gaz"],
-    $_POST["Koku"],
-    $_POST["Dışkı_sızıntısı"],
-    $_POST["Deri_irritasyonu"],
-    $_POST["Bağımsız"],
-    $_POST["YarıBağımlı"],
-    $_POST["Bağımlı"],
-    $_POST["BoşaltımdaSorun"],
-    $_POST["Üriner_inkontinans1"],
-    $_POST["Dizüri1"],
-    $_POST["UrinerDiğer"],
-    $_POST["Mesane_kateterizasyonu"],
-    $_POST["mesane_takilma_tarihi"],
-    $_POST["Üriner_inkontinans"],
-    $_POST["Dizüri"],
-    $_POST["Uriner_diger"],
-    $_POST["Üreterestomi"],
-    $_POST["sağ"],
-    $_POST["sol"],
-    $_POST["Sistostomi"],
-    $_POST["IdrarRengi"],
-    $_POST["IdrarBerrakligi"]
+            $stmt->execute([
+                $_POST["protezlertable"],
+                $_POST["sikligi"],
+                $_POST["zamani"],
+                $_POST["BoşaltımSorun"],
+                $_POST["Konstipasyon"],
+                $_POST["Diare"],
+                $_POST["Distansiyon"],
+                $_POST["Fekal"],
+                $_POST["Hemoroid"],
+                $_POST["Dışkı"],
+                $_POST["BagirsakDiğer"],
+                $_POST["bagirsak_sesleri"],
+                $_POST["defekasyon_zamani"],
+                $_POST["BoşaltımŞekli"],
+                $_POST["Kolostom"],
+                $_POST["StomaRengi"],
+                $_POST["Gaz1"],
+                $_POST["Koku1"],
+                $_POST["DışkıSızıntısı1"],
+                $_POST["Deri_irritasyonu1"],
+                $_POST["İleostomi"],
+                $_POST["StomanınRengi"],
+                $_POST["Gaz"],
+                $_POST["Koku"],
+                $_POST["Dışkı_sızıntısı"],
+                $_POST["Deri_irritasyonu"],
+                $_POST["protezlertable2"],
+                $_POST["BoşaltımdaSorun"],
+                $_POST["Üriner_inkontinans1"],
+                $_POST["Dizüri1"],
+                $_POST["UrinerDiğer"],
+                $_POST["Mesane_kateterizasyonu"],
+                $_POST["mesane_takilma_tarihi"],
+                $_POST["Üriner_inkontinans"],
+                $_POST["Dizüri"],
+                $_POST["Uriner_diger"],
+                $_POST["Üreterestomi"],
+                $_POST["sağ"],
+                $_POST["sol"],
+                $_POST["Sistostomi"],
+                $_POST["IdrarRengi"],
+                $_POST["IdrarBerrakligi"]
             ]);
-            echo  "successfully updated";
-        }
-        else {
-            $stmt = $db->prepare("INSERT INTO form1_solunumgereksinimi (
-                           Bağımsız1,
-                           YarıBağımlı1,
-                           Bağımlı1,
+            if ($result) {
+                echo "Güncelleme Başarılı!";
+            } else {
+                echo $result;
+            }
+        } else {
+            $stmt = $db->prepare("INSERT INTO bosaltimForm1 (
+                           protezlertable,
                            sikligi,
                            zamani,
                            BoşaltımSorun,
@@ -126,6 +117,7 @@ $stmt->execute([
                            BagirsakDiğer,
                            bagirsak_sesleri,
                            defekasyon_zamani,
+                           DefaksiyonSikligi,
                            BoşaltımŞekli,
                            Kolostom,
                            StomaRengi,
@@ -139,9 +131,7 @@ $stmt->execute([
                            Koku,
                            Dışkı_sızıntısı,
                            Deri_irritasyonu,
-                           Bağımsız,
-                           YarıBağımlı,
-                           Bağımlı,
+                           protezlertable2,
                            BoşaltımdaSorun,
                            Üriner_inkontinans1,
                            Dizüri1,
@@ -157,64 +147,60 @@ $stmt->execute([
                            Sistostomi,
                            IdrarRengi,
                            IdrarBerrakligi
-              ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-              
-    $stmt->execute([
-        $_POST["Bağımsız1"],
-        $_POST["YarıBağımlı1"],
-        $_POST["Bağımlı1"],
-        $_POST["sikligi"],
-        $_POST["zamani"],
-        $_POST["BoşaltımSorun"],
-        $_POST["Konstipasyon"],
-        $_POST["Diare"],
-        $_POST["Distansiyon"],
-        $_POST["Fekal"],
-        $_POST["Hemoroid"],
-        $_POST["Dışkı"],
-        $_POST["BagirsakDiğer"],
-        $_POST["bagirsak_sesleri"],
-        $_POST["defekasyon_zamani"],
-        $_POST["BoşaltımŞekli"],
-        $_POST["Kolostom"],
-        $_POST["StomaRengi"],
-        $_POST["Gaz1"],
-        $_POST["Koku1"],
-        $_POST["DışkıSızıntısı1"],
-        $_POST["Deri_irritasyonu1"],
-        $_POST["İleostomi"],
-        $_POST["StomanınRengi"],
-        $_POST["Gaz"],
-        $_POST["Koku"],
-        $_POST["Dışkı_sızıntısı"],
-        $_POST["Deri_irritasyonu"],
-        $_POST["Bağımsız"],
-        $_POST["YarıBağımlı"],
-        $_POST["Bağımlı"],
-        $_POST["BoşaltımdaSorun"],
-        $_POST["Üriner_inkontinans1"],
-        $_POST["Dizüri1"],
-        $_POST["UrinerDiğer"],
-        $_POST["Mesane_kateterizasyonu"],
-        $_POST["mesane_takilma_tarihi"],
-        $_POST["Üriner_inkontinans"],
-        $_POST["Dizüri"],
-        $_POST["Uriner_diger"],
-        $_POST["Üreterestomi"],
-        $_POST["sağ"],
-        $_POST["sol"],
-        $_POST["Sistostomi"],
-        $_POST["IdrarRengi"],
-        $_POST["IdrarBerrakligi"]
-              ]);
-            echo "succesfully inserted";
-        }
-    } else{
+              ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-        echo "error";
+            $stmt->execute([
+                $_POST["protezlertable"],
+                $_POST["sikligi"],
+                $_POST["zamani"],
+                $_POST["BoşaltımSorun"],
+                $_POST["Konstipasyon"],
+                $_POST["Diare"],
+                $_POST["Distansiyon"],
+                $_POST["Fekal"],
+                $_POST["Hemoroid"],
+                $_POST["Dışkı"],
+                $_POST["BagirsakDiğer"],
+                $_POST["bagirsak_sesleri"],
+                $_POST["defekasyon_zamani"],
+                $_POST["BoşaltımŞekli"],
+                $_POST["Kolostom"],
+                $_POST["StomaRengi"],
+                $_POST["Gaz1"],
+                $_POST["Koku1"],
+                $_POST["DışkıSızıntısı1"],
+                $_POST["Deri_irritasyonu1"],
+                $_POST["İleostomi"],
+                $_POST["StomanınRengi"],
+                $_POST["Gaz"],
+                $_POST["Koku"],
+                $_POST["Dışkı_sızıntısı"],
+                $_POST["Deri_irritasyonu"],
+                $_POST["protezlertable2"],
+                $_POST["BoşaltımdaSorun"],
+                $_POST["Üriner_inkontinans1"],
+                $_POST["Dizüri1"],
+                $_POST["UrinerDiğer"],
+                $_POST["Mesane_kateterizasyonu"],
+                $_POST["mesane_takilma_tarihi"],
+                $_POST["Üriner_inkontinans"],
+                $_POST["Dizüri"],
+                $_POST["Uriner_diger"],
+                $_POST["Üreterestomi"],
+                $_POST["sağ"],
+                $_POST["sol"],
+                $_POST["Sistostomi"],
+                $_POST["IdrarRengi"],
+                $_POST["IdrarBerrakligi"]
+            ]);
+            if ($result) {
+                echo "Ekleme Başarılı";
+            } else {
+                echo $result;
+            }
+        }
     }
-}
-else{
+} else {
     echo "error";
 }
 ?>

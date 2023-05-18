@@ -48,7 +48,8 @@ body {
 
 
 .login-box {
-    width: 599px;
+    max-width: 599px;
+    width: 90%;
     background: rgba(0, 0, 0, 0.5);
     color: #fff;
     top: 50%;
@@ -58,6 +59,9 @@ body {
     box-sizing: border-box;
     padding: 40px 30px;
     border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
@@ -80,6 +84,10 @@ body {
     cursor: pointer;
     background-color: darkgoldenrod;
     color: #000 !important;
+}
+
+.buttons-wrapper {
+    width: 100%;
 }
 
 .stu-body1 {
@@ -127,7 +135,6 @@ h3 {
 
 .navigation-left {
     padding: 20px;
-    margin-top: 10px;
 }
 
 .navigation-right {
@@ -301,7 +308,6 @@ input[type="email"] {
 
 .patients-save {
     display: flex;
-    margin-top: 50px;
     justify-content: center;
 }
 
@@ -312,7 +318,6 @@ input[type="email"] {
 }
 
 .patients-table {
-    margin-top: 50px;
     background-color: #246174 !important;
 }
 
@@ -424,7 +429,6 @@ input[type="email"] {
 }
 
 .patients-table {
-    width: 90%;
     align-self: center;
 }
 
@@ -568,4 +572,109 @@ input[type="email"] {
 .form-selection {
     display: flex;
     align-self: center;
+}
+
+.stu-hamburger {
+    display: none;
+    height: 100%;
+    max-width: 300px;
+    width: 15%;
+    background-color: white;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #246174;
+}
+
+.hamburger-wrapper {
+
+    padding: 20px;
+    cursor: pointer;
+
+}
+
+.closehamburger {
+    display: none;
+    position: relative;
+    color: red;
+    font-size: 40px;
+    top: -50px;
+    cursor: pointer;
+}
+
+.table-head {
+    color: white;
+}
+
+.broadcastPrompt {
+    width: 100% !important;
+    margin: unset !important;
+}
+
+.hacettepelogo {
+    height: 110px;
+    width: 160px;
+    margin-top: -20px;
+}
+
+@media screen and (max-width: 900px) {
+    .table-head {
+        font-size: 14px;
+    }
+
+    .stu-body1 {
+        display: none;
+        position: absolute;
+    }
+
+    .navigation-wrapper {
+        display: none;
+    }
+
+    .stu-hamburger {
+        display: block;
+    }
+
+    .d-none-resp {
+        display: none;
+    }
+
+    .d-block-resp {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .send-patient {
+        padding: 20px;
+    }
+
+    .patients-table {
+        padding: 20px !important;
+    }
+
+    .table-head {
+        font-size: 12px;
+    }
+
+    .px-4 {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+
+    .form-header {
+        font-size: 22px;
+    }
+
+    .usernamelabel {
+        font-size: 12px;
+    }
+
+    .form-control {
+        font-size: 12px;
+    }
 }

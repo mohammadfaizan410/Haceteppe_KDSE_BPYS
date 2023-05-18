@@ -43,20 +43,6 @@ if (isset($_GET['logout'])) {
 
 <body style="background-color:white">
     <div class="container-fluid pt-4 px-4">
-        <?php
-        require_once('../config-students.php');
-        $userid = $_SESSION['userlogin']['id'];
-        //echo $userid;
-        $sql = "SELECT * FROM  patients  WHERE id =" . $userid;
-        $smtmselect = $db->prepare($sql);
-        $result = $smtmselect->execute();
-        if ($result) {
-            $values = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
-        } else {
-            echo 'error';
-        }
-
-        ?>
         <div class="send-patient ta-center">
             <span class='close closeBtn' id='closeBtn'>&times;</span>
             <h1 class="form-header">UYKU GEREKSİNİMİ</h1>
@@ -72,16 +58,16 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="UykuSorun" id="UykuSorun" value="Yok">
+                            <input class="form-check-input" type="radio" name="UykuSorun" id="UykuSorun" value="Sorun Yok">
                             <label class="form-check-label" for="UykuSorun">
-                                <span class="checkbox-header">Yok</span>
+                                <span class="checkbox-header">Sorun Yok</span>
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="UykuSorun" id="UykuSorun" value="Var">
+                            <input class="form-check-input" type="radio" name="UykuSorun" id="UykuSorun" value="Sorun Var">
                             <label class="form-check-label" for="UykuSorun">
-                                <span class="checkbox-header">Var</span>
+                                <span class="checkbox-header">Sorun Var</span>
 
                             </label>
                             <table class="ozgecmistable-wrapper">
@@ -91,8 +77,7 @@ if (isset($_GET['logout'])) {
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="GündüzUykusu" value="GündüUykusu">
-                                                <label class="form-check-label" for="GündüzUykusU>Gündüz uykusu
-                                                </label>
+                                                <label class="form-check-label" for="GündüzUykusU>Gündüz uykus </label>
                                             </div>
                                         </td>
 
@@ -101,8 +86,7 @@ if (isset($_GET['logout'])) {
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="UykudanYorgun" value="Uykudan yorgun">
-                                                <label class="form-check-label" for="UykudanYorgun">Uykudan yorgun
-                                                    kalkma</label>
+                                                <label class="form-check-label" for="UykudanYorgun">Uykudan yorgun kalkma</label>
                                             </div>
                                         </td>
 
@@ -156,45 +140,68 @@ if (isset($_GET['logout'])) {
             </div>
 
 
+    <script>
+    $(function() {
+        $('#closeBtn').click(function(e) {
+            let patient_id = <?php
+                  $userid = $_GET['patient_id'];
+                  echo $userid
+                  ?>;
+                   let patient_name = "<?php
+            echo urldecode($_GET['patient_name']);
+                  ?>";
+          var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
+            $("#content").load(url);
+
+        })
+    });
+    </script>
+
             <script>
-                $(function() {
-                    $('#closeBtn').click(function(e) {
-                        $("#content").load("formlar-student.php");
-
-                    })
-                });
-            </script>
-
-            <script>
-                $(function() {
-                    $('#submit').click(function(e) {
-
-
-                        var valid = this.form.checkValidity();
-
-                        if (valid) {
-                            var id = <?php
-
-                                        $userid = $_SESSION['userlogin']['id'];
-                                        echo $userid
-                                        ?>;
+    $(function() {
+        $('#submit').click(function(e) {
+            e.preventDefault()
+           
+                  var valid = this.form.checkValidity();
+            if (valid) {
+                let name = $('#name').val();
+                let surname = $('#surname').val();
+                let age = $('#age').val();
+                let not = $('#not').val();
+               
+                var patient_id = <?php
+                  $userid = $_GET['patient_id'];
+                  echo $userid
+                  ?>;
+                   let patient_name = "<?php
+            echo urldecode($_GET['patient_name']);
+                  ?>";
+                            let yourDate = new Date()
+                            let creation_date = yourDate.toISOString().split('T')[0];
+                            let updateDate = yourDate.toISOString().split('T')[0];
+                            let fileNo = 160;
                             let UykuSuresi = $("input[name='UykuSuresi']").val();
-                            let UykuSorun = parseInt($("input[name='UykuSorun']:checked").val());
-                            let GündüzUykusu = $("input[type='radio'][name='GündüzUykusu']").val();
-                            let UykudanYorgun = $("input[type='radio'][name='UykudanYorgun']").val();
-                            let UyumaGüçlüğü = $("input[type='radio'][name='UyumaGüçlüğü']").val();
-                            let UykununBölünmesi = $("input[type='radio'][name='UykununBölünmesi']").val();
-                            let UykuSorunDiger = $("input[type='radio'][name='UykuSorunDiger']").val();
-                            let UykuyaDalmaAliskanligi = $("input[type='radio'][name='UykuyaDalmaAliskanligi']").val();
-                            let UykuyuEtkileyenFaktorler = $("input[type='radio'][name='UykuyuEtkileyenFaktorler']").val();
+                            let UykuSorun = parseInt($("input[type='radio'][name='UykuSorun']:checked").val());
+                            let GündüzUykusu = $("input[name='GündüzUykusu']").val();
+                            let UykudanYorgun = $("input[name='UykudanYorgun']").val();
+                            let UyumaGüçlüğü = $("input[name='UyumaGüçlüğü']").val();
+                            let UykununBölünmesi = $("input[name='UykununBölünmesi']").val();
+                            let UykuSorunDiger = $("input[name='UykuSorunDiger']").val();
+                            let UykuyaDalmaAliskanligi = $("input[name='UykuyaDalmaAliskanligi']").val();
+                            let UykuyuEtkileyenFaktorler = $("input[name='UykuyuEtkileyenFaktorler']").val();
 
 
                             e.preventDefault()
 
                             $.ajax({
                                 type: 'POST',
-                                url: 'student-patient.php',
+                                url: '<?php echo $base_url; ?>/submitOrUpdateForm1_Uyku.php',
                                 data: {
+                                    patient_id: patient_id,
+                                    patient_name: patient_name,
+                                    form_num: fileNo,
+                                    creation_date: creation_date,
+                                    update_date: updateDate,
                                     UykuSuresi: UykuSuresi,
                                     UykuSorun: UykuSorun,
                                     GündüzUykusu: GündüzUykusu,
@@ -207,8 +214,9 @@ if (isset($_GET['logout'])) {
 
                                 },
                                 success: function(data) {
-                                    alert("Success");
-                                    location.reload(true)
+                                    alert(data);
+                                    let url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
+                                    $("#content").load(url);
                                 },
                                 error: function(data) {
                                     Swal.fire({
@@ -226,15 +234,7 @@ if (isset($_GET['logout'])) {
 
                 });
             </script>
-            <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-            <script src="lib/chart/chart.min.js"></script>
-            <script src="lib/easing/easing.min.js"></script>
-            <script src="lib/waypoints/waypoints.min.js"></script>
-            <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-            <script src="lib/tempusdominus/js/moment.min.js"></script>
-            <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-            <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
 
             <!-- Template Javascript -->
             <script src=""></script>

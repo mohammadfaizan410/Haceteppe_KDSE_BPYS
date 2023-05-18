@@ -25,23 +25,22 @@ if (isset($_POST)) {
                            yurume
                 WHERE SDiger = ?");
 
-$stmt->execute([
-    $_POST["HareketAliskanligi"],
-    $_POST["EgzersizDurumu"],
-    $_POST["ROM_egzersizi"],
-    $_POST["ROM_egzersizi_diger"],
-    $_POST["HareketIstegi"],
-    $_POST["Yorgunluk"],
-    $_POST["Huzursuzluk"],
-    $_POST["HDiğer"],
-    $_POST["giyinme_soyunma"],
-    $_POST["pozisyon_degistirme"],
-    $_POST["AyağaKalkma"],
-    $_POST["yurume"]
+            $stmt->execute([
+                $_POST["HareketAliskanligi"],
+                $_POST["EgzersizDurumu"],
+                $_POST["ROM_egzersizi"],
+                $_POST["ROM_egzersizi_diger"],
+                $_POST["HareketIstegi"],
+                $_POST["Yorgunluk"],
+                $_POST["Huzursuzluk"],
+                $_POST["HDiğer"],
+                $_POST["giyinme_soyunma"],
+                $_POST["pozisyon_degistirme"],
+                $_POST["AyağaKalkma"],
+                $_POST["yurume"]
             ]);
-            echo  "successfully updated";
-        }
-        else {
+            echo  "Güncelleme Başarılı!";
+        } else {
             $stmt = $db->prepare("INSERT INTO form1_solunumgereksinimi (
                            HareketAliskanligi,
                            EgzersizDurumu,
@@ -56,29 +55,28 @@ $stmt->execute([
                            AyağaKalkma,
                            yurume
               ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-              
-    $stmt->execute([
-        $_POST["HareketAliskanligi"],
-        $_POST["EgzersizDurumu"],
-        $_POST["ROM_egzersizi"],
-        $_POST["ROM_egzersizi_diger"],
-        $_POST["HareketIstegi"],
-        $_POST["Yorgunluk"],
-        $_POST["Huzursuzluk"],
-        $_POST["HDiğer"],
-        $_POST["giyinme_soyunma"],
-        $_POST["pozisyon_degistirme"],
-        $_POST["AyağaKalkma"],
-        $_POST["yurume"]
-              ]);
+
+            $stmt->execute([
+                $_POST["HareketAliskanligi"],
+                $_POST["EgzersizDurumu"],
+                $_POST["ROM_egzersizi"],
+                $_POST["ROM_egzersizi_diger"],
+                $_POST["HareketIstegi"],
+                $_POST["Yorgunluk"],
+                $_POST["Huzursuzluk"],
+                $_POST["HDiğer"],
+                $_POST["giyinme_soyunma"],
+                $_POST["pozisyon_degistirme"],
+                $_POST["AyağaKalkma"],
+                $_POST["yurume"]
+            ]);
             echo "succesfully inserted";
         }
-    } else{
+    } else {
 
         echo "error";
     }
-}
-else{
+} else {
     echo "error";
 }
 ?>

@@ -40,61 +40,57 @@ if (isset($_GET['logout'])) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
     <style>
-    .send-patient {
-        align-self: center;
-    }
+        .send-patient {
+            align-self: center;
+        }
     </style>
 
 </head>
 
 <body style="background-color:white">
     <div class="container-fluid pt-4 px-4">
-    <div class="container-fluid pt-4 px-4">
-        <div class="send-patient">
-            <span class='close closeBtn' id='closeBtn'>&times;</span>
-        <h1 class="form-header">Add a new Patient</h1>
-            <div class="input-section-item">
-                <div class="patients-save">
-                    <form action="" method="POST" class="patients-save-fields">
-                       
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Patient Name:</p>
-                            <input type="text" class="form-control" required name="name" id="diger"
-                                placeholder="Patient Name">
-                        </div>
-                        ` <div class="input-section d-flex">
-                            <p class="usernamelabel">Patient Surname:</p>
-                            <input type="text" class="form-control" required name="surname" id="diger"
-                                placeholder="Patient Surname" >
-                        </div>
-                        <div class="input-section d-flex" style="padding-top: 5%;">
-                            <p class="usernamelabel">Patient Age:</p>
-                            <input type="text" class="form-control" required name="age" id="diger"
-                                placeholder="Age">
-                        </div>
-                        </div>
+        <div class="container-fluid pt-4 px-4">
+            <div class="send-patient">
+                <h1 class="form-header">Yeni Hasta Ekle</h1>
+                <div class="input-section-item">
+                    <div class="patients-save">
+                        <form action="" method="POST" class="patients-save-fields">
 
-                        <input type="submit" class="form-control submit m-auto" name="submit" id="submit" value="Kaydet">
+                            <div class="input-section d-flex">
+                                <p class="usernamelabel">Hasta Adı:</p>
+                                <input type="text" class="form-control" required name="name" id="diger" placeholder="Patient Name">
+                            </div>
+                            <div class="input-section d-flex">
+                                <p class="usernamelabel">Hasta Soyadı:</p>
+                                <input type="text" class="form-control" required name="surname" id="diger" placeholder="Patient Surname">
+                            </div>
+                            <div class="input-section d-flex" style="padding-top: 5%;">
+                                <p class="usernamelabel">Hasta Doğum Tarihi:</p>
+                                <input type="date" class="form-control" required name="age" id="date" placeholder="Hasta Doğum Tarihi">
+                            </div>
+                    </div>
+
+                    <input type="submit" class="form-control submit m-auto" name="submit" id="submit" value="Kaydet">
                     </form>
                 </div>
             </div>
         </div>
     </div>
-        </div>
-     <script>
-     </script>
-        <!-- JavaScript Libraries -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/chart/chart.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
-        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-        <script src="lib/tempusdominus/js/moment.min.js"></script>
-        <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-        <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    </div>
+    <script>
+    </script>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/chart/chart.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
-        <script>
+    <script>
         $(function() {
             $("a.showallforms").on("click", function(e) {
                 e.preventDefault();
@@ -103,17 +99,35 @@ if (isset($_GET['logout'])) {
         });
 
         $(function() {
-        $('#submit').click(function(e) {
-            e.preventDefault();
+            $('#submit').click(function(e) {
+                e.preventDefault();
                 var id = <?php
 
-                                $userid = $_SESSION['userlogin']['id'];
-                                echo $userid
-                                ?>;
+                            $userid = $_SESSION['userlogin']['id'];
+                            echo $userid
+                            ?>;
                 let patient_name = $("input[name='name']").val();
                 let patient_surname = $("input[name='surname']").val();
                 let patient_id = parseInt($("input[name='patient_id']").val());
-                let patient_age = parseInt($("input[name='age']").val());
+
+                var minAge = 18;
+                var today = new Date()
+                //Calculates age from given Birth Date in the form//
+
+                givenDate = new Date(today);
+                var dt1 = document.getElementById('date').value;
+                var birthDate = new Date(dt1);
+                var years = (givenDate.getFullYear() - birthDate.getFullYear());
+
+                if (givenDate.getMonth() < birthDate.getMonth() ||
+                    givenDate.getMonth() == birthDate.getMonth() && givenDate.getDate() < birthDate
+                    .getDate()) {
+                    years--;
+                }
+
+                console.log(years);
+
+                let patient_age = years
                 e.preventDefault()
 
                 $.ajax({
@@ -121,10 +135,10 @@ if (isset($_GET['logout'])) {
                     url: '<?php echo $base_url; ?>/processAddPatient.php/',
                     data: {
                         patient_name: patient_name,
-                        patient_surname:patient_surname,
+                        patient_surname: patient_surname,
                         id: id,
-                        patient_age:patient_age
-                     
+                        patient_age: patient_age
+
                     },
                     success: function(data) {
                         alert(data);
@@ -140,14 +154,14 @@ if (isset($_GET['logout'])) {
 
 
 
-            
-        })
 
-    });
-        </script>
+            })
 
-        <!-- Template Javascript -->
-        <script src=""></script>
+        });
+    </script>
+
+    <!-- Template Javascript -->
+    <script src=""></script>
 </body>
 
 </html>
