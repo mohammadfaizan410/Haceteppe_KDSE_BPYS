@@ -63,7 +63,7 @@ if (isset($_GET['logout'])) {
 
             <h3>BAĞIRSAK BOŞALTIMI</h3>
             <div class=" patients-save">
-                <form action="" method="" class="patients-save-fields">
+                <form action="" method="POST" class="patients-save-fields">
             <div class="input-section d-flex">
                 <p class="usernamelabel">Bağırsak boşaltımını karşılamada </p>
                 <div class="checkbox-wrapper d-flex">
