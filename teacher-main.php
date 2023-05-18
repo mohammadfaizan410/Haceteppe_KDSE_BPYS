@@ -51,6 +51,7 @@ if (isset($_GET['logout'])) {
                 <a href="" class="">
                     <h3 class=""><i class="fa fa-user-edit me-2"></i>KDSE-BPYS</h3>
                 </a>
+                <span class='close closehamburger' id='closeBtn'>&times;</span>
 
             </div>
             <div class="navigation-right">
