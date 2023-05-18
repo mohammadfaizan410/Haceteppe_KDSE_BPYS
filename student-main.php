@@ -42,15 +42,16 @@ if (isset($_GET['logout'])) {
 </head>
 
 <body class="stu-body">
-    <div class="stu-body1">
-        <div class="navigation-wrapper">
+    <div class="stu-body1" id="stu-body1">
+        <div class="navigation-wrapper" id="navigation-wrapper">
             <div class="navigation-left">
                 <a href="" class="">
                     <h3 class=""><i class="fa fa-user-edit me-2"></i>KDSE-BPYS</h3>
                 </a>
+                <span class='close closehamburger' id='closeBtn'>&times;</span>
 
             </div>
-            <div class="navigation-right">
+            <div class=" navigation-right">
                 <div class="nav-items-wrapper">
                     <a href="messaging.php" class="nav-link nav-items"><i class="fa fa-comments me-2"></i>Chat</a>
                     <a href="./broadcast.php" class="nav-link nav-items"><i
@@ -82,15 +83,47 @@ if (isset($_GET['logout'])) {
         </div>
 
     </div>
-    <div class="stu-hamburger">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
+
+    <div class="stu-hamburger" id="stu-hamburger">
+        <div class="hamburger-wrapper" id="hamburger-wrapper" onclick="hamburger()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
     </div>
     </div>
     <div class="content" id="content">
 
     </div>
+    <script>
+    function hamburger() {
+
+        const hamburger = document.getElementById('stu-hamburger');
+        console.log(hamburger);
+        hamburger.style.display = 'none';
+
+        const stubody1 = document.getElementById('stu-body1');
+        console.log(stubody1);
+        stubody1.style.display = 'block';
+
+        const navwrapper = document.getElementById('navigation-wrapper');
+        console.log(stubody1);
+        navwrapper.style.display = 'block';
+    };
+    $("#closeBtn").on("click", function(e) {
+        const hamburger = document.getElementById('stu-hamburger');
+        console.log(hamburger);
+        hamburger.style.display = 'block';
+
+        const stubody1 = document.getElementById('stu-body1');
+        console.log(stubody1);
+        stubody1.style.display = 'none';
+
+        const navwrapper = document.getElementById('navigation-wrapper');
+        console.log(stubody1);
+        navwrapper.style.display = 'none';
+    })
+    </script>
     <script>
     $(function() {
         $.ajaxSetup({
