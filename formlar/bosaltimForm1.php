@@ -40,30 +40,13 @@ if (isset($_GET['logout'])) {
     <link href="style.css" rel="stylesheet">
 
 </head>
-<body style="background-color:white">
-    <div class="container-fluid pt-4 px-4">
-        <?php
-        require_once('../config-students.php');
-        $userid = $_SESSION['userlogin']['id'];
-        //echo $userid;
-        $sql = "SELECT * FROM  patients  WHERE id =" . $userid;
-        $smtmselect = $db->prepare($sql);
-        $result = $smtmselect->execute();
-        if ($result) {
-            $values = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
-        } else {
-            echo 'error';
-        }
-
-        ?>
 <div class="send-patient ta-center">
             <span class='close closeBtn' id='closeBtn'>&times;</span>
             <h1 class="form-header">BOŞALTIM GEREKSİNİMİ </h1>
-
+            <div class=" patients-save">
+                <form action="" method="" class="patients-save-fields">
 
             <h3>BAĞIRSAK BOŞALTIMI</h3>
-            <div class=" patients-save">
-                <form action="" method="POST" class="patients-save-fields">
             <div class="input-section d-flex">
                 <p class="usernamelabel">Bağırsak boşaltımını karşılamada </p>
                 <div class="checkbox-wrapper d-flex">
@@ -614,41 +597,32 @@ if (isset($_GET['logout'])) {
                         <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
                 </form>
          </div>
+    </div>
     <script>
-    $(function() {
-        $('#closeBtn').click(function(e) {
-            let patient_id = <?php
-                  $userid = $_GET['patient_id'];
-                  echo $userid
-                  ?>;
-                   let patient_name = "<?php
-            echo urldecode($_GET['patient_name']);
-                  ?>";
-          var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
-            $("#content").load(url);
+        $(function() {
+            $('#closeBtn').click(function(e) {
+                $("#content").load("formlar-student.php");
 
-        })
-    });
+            })
+        });
     </script>
-    
+
     <script>
-    $(function() {
-        $('#submit').click(function(e) {
-            e.preventDefault()
-           
-                  //var valid = this.form.checkValidity();
-            //if (valid) {
-                //let name = $('#name').val();
-                //let surname = $('#surname').val();
-                //let age = $('#age').val();
-                //let not = $('#not').val();
+        $(function() {
+            $('#submit').click(function(e) {
+                var valid = this.form.checkValidity();
+
+                if (valid) {
+                let surname = $('#surname').val();
+                let age = $('#age').val();
+                let not = $('#not').val();
                
                 var patient_id = <?php
                   $userid = $_GET['patient_id'];
                   echo $userid
                   ?>;
                    let patient_name = "<?php
-                   echo urldecode($_GET['patient_name']);
+            echo urldecode($_GET['patient_name']);
                   ?>";
                     //let stoolEmptyingHelp = $("input[type='radio'][name='stoolEmptyingHelp']:checked").val();
                     //let hospitalStoolEmptyingFrequency =  $("input[name='hospitalStoolEmptyingFrequency']").val();
@@ -771,16 +745,17 @@ if (isset($_GET['logout'])) {
                                         'text': 'There were errors',
                                         'type': 'error'
                                     })
-                                }
-                            })
+                    }
+                })
 
 
 
-                        }
-                    })
+            }
+        })
 
-                });
+    });
             </script>
+ 
 
 
             <!-- Template Javascript -->
