@@ -53,11 +53,12 @@ if (isset($_GET['logout'])) {
             </div>
             <div class="navigation-right">
                 <div class="nav-items-wrapper">
-                    <a href="./formlar-teacher.php" id="formlar" class="nav-link nav-items formlar"> <i class="fa fa-table me-2 "></i>Öğrenciler</a>
-                    <a href="" class="nav-link "><i class="fa fa-chart-bar me-2"></i>Sınavlar</a>
+                    <a href="./formlar-teacher.php" id="formlar" class="nav-link nav-items formlar"> <i
+                            class="fa fa-table me-2 "></i>Öğrenciler</a>
                     <a href="" class="nav-link"><i class="fa fa-th me-2"></i>Formlar</a>
                     <a href="./messaging.php" class="nav-link nav-items"><i class="fa fa-comments me-2"></i>Mesajlar</a>
-                    <a href="./broadcast.php" class="nav-link nav-items"><i class="fa fa-comments me-2"></i>myBroadCasts</a>
+                    <a href="./broadcast.php" class="nav-link nav-items"><i class="fa fa-comments me-2"></i>Forum (Toplu
+                        Mesajlar)</a>
                 </div>
                 <div>
 
@@ -82,25 +83,73 @@ if (isset($_GET['logout'])) {
     </div>
 
     </div>
+    <div class="stu-hamburger" id="stu-hamburger">
+        <div class="hamburger-wrapper" id="hamburger-wrapper" onclick="hamburger()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+    </div>
     <div class="content" id="content">
 
     </div>
     <script>
+    function hamburger() {
+
+        const hamburger = document.getElementById('stu-hamburger');
+        console.log(hamburger);
+        hamburger.classList.remove("d-block-resp");
+        hamburger.classList.add("d-none-resp");
+
+        const stubody1 = document.getElementById('stu-body1');
+        console.log(stubody1);
+        stubody1.classList.remove("d-none-resp");
+        stubody1.classList.add("d-block-resp");
+
+        const navwrapper = document.getElementById('navigation-wrapper');
+        console.log(stubody1);
+        navwrapper.classList.remove("d-none-resp");
+        navwrapper.classList.add("d-block-resp");
+
+        const closebtn = document.getElementById('closeBtn');
+        console.log(stubody1);
+        closebtn.classList.remove("d-none-resp");
+        closebtn.classList.add("d-block-resp");
+    };
+    $("#closeBtn").on("click", function(e) {
+        const hamburger = document.getElementById('stu-hamburger');
+        console.log(hamburger);
+        hamburger.classList.remove("d-none-resp");
+        hamburger.classList.add("d-block-resp");
+
+        const stubody1 = document.getElementById('stu-body1');
+        console.log(stubody1);
+        stubody1.classList.remove("d-block-resp");
+        stubody1.classList.add("d-none-resp");
+
+        const navwrapper = document.getElementById('navigation-wrapper');
+        console.log(stubody1);
+        navwrapper.classList.remove("d-block-resp");
+        navwrapper.classList.add("d-none-resp");
+    })
+    </script>
+    <script>
+    $(function() {
+        $.ajaxSetup({
+            cache: false
+        }); // disable caching for all requests.
+
+        // RAW Text/Html data from a file
+
         $(function() {
-            $.ajaxSetup({
-                cache: false
-            }); // disable caching for all requests.
-
-            // RAW Text/Html data from a file
-
-            $(function() {
-                $("a.nav-items").on("click", function(e) {
-                    e.preventDefault();
-                    $("#content").load(this.href);
-                })
+            $("a.nav-items").on("click", function(e) {
+                e.preventDefault();
+                $("#content").load(this.href);
             })
+        })
 
-        });
+    });
     </script>
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

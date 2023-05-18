@@ -46,11 +46,10 @@ if (isset($_SESSION['userlogin'])) {
     <div id="broadcast-container" class='mt-5'>
 
         <div class="broadcastPrompt w-50 h-50 d-flex justify-content-center flex-column m-auto">
-            <p>Enter Subject:</p>
-            <input type="text" class="form-control mb-3" placeholder="Enter Subject" id="broadcastSubject"></input>
+            <p>Konu Giriniz:</p>
+            <input type="text" class="form-control mb-3" placeholder="Konu Giriniz" id="broadcastSubject"></input>
             <p>Mesaj Yazınız:</p>
-            <textarea type='text-area' rows="10" class='form-control mb-5' placeholder="Mesaj Yazınız"
-                id="broadcastMessage"> </textarea>
+            <textarea type='text-area' rows="10" class='form-control mb-5' placeholder="Mesaj Yazınız" id="broadcastMessage"> </textarea>
             <p id="error"></p>
             <div class="text-center m-auto p-3 w-50 d-flex justify-content-between">
                 <div class="btn btn-primary p-3" style="background-color: slateblue;" id="sendBroadcast">Gönder</div>
@@ -61,11 +60,10 @@ if (isset($_SESSION['userlogin'])) {
     </div>
     <div id="multicast-container" class='mt-5'>
         <div class="broadcastPrompt w-50 h-50 d-flex justify-content-center flex-column m-auto">
-            <p>Enter Subject:</p>
-            <input type="text" class="form-control mb-3" placeholder="Enter Subject" id="multicastSubject"></input>
+            <p>Konu Giriniz:</p>
+            <input type="text" class="form-control mb-3" placeholder="Konu Giriniz" id="multicastSubject"></input>
             <p>Mesaj Yazınız:</p>
-            <textarea type='text-area' rows="10" class='form-control mb-5' placeholder="Mesaj Yazınız"
-                id="multicastMessage"> </textarea>
+            <textarea type='text-area' rows="10" class='form-control mb-5' placeholder="Mesaj Yazınız" id="multicastMessage"> </textarea>
             <div class='btn btn-primary mb-3' style="background-color: slateblue;" id='show-student-list'>Öğrencileri
                 Seçiniz</div>
             <div id="student-selection-container">
@@ -90,23 +88,23 @@ if (isset($_SESSION['userlogin'])) {
 
 
     <script>
-    $('#showAllMessages').click(function(e) {
-        console.log("messages called")
-        var email = "<?php
+        $('#showAllMessages').click(function(e) {
+            console.log("messages called")
+            var email = "<?php
                             echo $myEmail
                             ?> "
-        $.ajax({
-            type: 'POST',
-            url: '<?php echo $base_url; ?>/getAllBroadcasts.php',
-            data: {
-                email: email,
-            },
-            success: function(data) {
-                console.log(data)
-                let htmlString =
-                    `<div class='option mt-3 p-3' id='closeAllMessages'><h4 class='btn btn-primary  w-100 p-4 text-start dark-blue' style="background-color: slateblue;" >Close All Messages</h4></div>`;
-                JSON.parse(data).forEach(element => {
-                    htmlString += `
+            $.ajax({
+                type: 'POST',
+                url: '<?php echo $base_url; ?>/getAllBroadcasts.php',
+                data: {
+                    email: email,
+                },
+                success: function(data) {
+                    console.log(data)
+                    let htmlString =
+                        `<div class='option mt-3 p-3' id='closeAllMessages'><h4 class='btn btn-primary  w-100 p-4 text-start dark-blue' style="background-color: slateblue;" >Kapat</h4></div>`;
+                    JSON.parse(data).forEach(element => {
+                        htmlString += `
               <div id='message_wrapper' class="mt-4 mb-4 w-lg-75" >
               <div class='message-wrapper d-flex mt-3 justify-content-around' >
               <div class='m-3 w-50 ' >Name: ${element.name}  ${element.surname}</div>
@@ -118,256 +116,256 @@ if (isset($_SESSION['userlogin'])) {
                       </div>
                       </div>
                       `
-                })
-                $('#messages-container').html(htmlString);
+                    })
+                    $('#messages-container').html(htmlString);
 
 
-            },
-            error: function(data) {
-                Swal.fire({
-                    'title': 'Errors',
-                    'text': 'There were errors',
-                    'type': 'error'
-                })
-                console.log(data);
-            }
+                },
+                error: function(data) {
+                    Swal.fire({
+                        'title': 'Errors',
+                        'text': 'There were errors',
+                        'type': 'error'
+                    })
+                    console.log(data);
+                }
+            })
+
+
+            $('#broadcast-container').css('display', 'none');
+            $('#sendToSome').css('display', 'none');
+            $('#sendToAll').css('display', 'none');
+            $('#showAllMessages').css('display', 'none');
+            $('.messagess').css('display', 'block');
+
+        });
+
+        $(document).on('click', '#closeAllMessages', function(e) {
+            e.preventDefault();
+            $('#showAll').css('display', 'flex');
+            $('#sendToSome').css('display', 'flex');
+            $('#sendToAll').css('display', 'flex');
+            $('#showAllMessages').css('display', 'block');
+            $('#closeAllMessages').css('display', 'none');
+            $('.messagess').css('display', 'none');
+        });
+
+
+
+
+        $('#sendToAll').click(function(e) {
+            e.preventDefault();
+            let display = $('#broadcast-container').css('display');
+            if (display === 'none')
+                $('#broadcast-container').css('display', 'flex');
+            $('#sendToSome').css('display', 'none');
+            $('#sendToAll').css('display', 'none');
+            $('#showAllMessages').css('display', 'none');
+            $('#closeAllMessages').css('display', 'none');
+            $('.messagess').css('display', 'none');
+
+
+        })
+
+        $('#close-broadcast-container').click(function(e) {
+            e.preventDefault();
+            let display = $('#broadcast-container').css('display');
+            if (display === 'flex')
+                $('#broadcast-container').css('display', 'none');
+            $('#sendToSome').css('display', 'flex');
+            $('#sendToAll').css('display', 'flex');
+            $('.messagess').css('display', 'none');
+            $('#showAllMessages').css('display', 'block');
+
         })
 
 
-        $('#broadcast-container').css('display', 'none');
-        $('#sendToSome').css('display', 'none');
-        $('#sendToAll').css('display', 'none');
-        $('#showAllMessages').css('display', 'none');
-        $('.messagess').css('display', 'block');
 
-    });
+        $('#sendToSome').click(function(e) {
+            e.preventDefault();
+            let display = $('#multicast-container').css('display');
+            if (display === 'none')
+                $('#multicast-container').css('display', 'flex');
+            $('#sendToAll').css('display', 'none');
+            $('#sendToSome').css('display', 'none');
+            $('.messagess').css('display', 'none');
+            $('#showAllMessages').css('display', 'none');
+        })
 
-    $(document).on('click', '#closeAllMessages', function(e) {
-        e.preventDefault();
-        $('#showAll').css('display', 'flex');
-        $('#sendToSome').css('display', 'flex');
-        $('#sendToAll').css('display', 'flex');
-        $('#showAllMessages').css('display', 'block');
-        $('#closeAllMessages').css('display', 'none');
-        $('.messagess').css('display', 'none');
-    });
+        $('#close-multicast-container').click(function(e) {
+            e.preventDefault();
+            let display = $('#multicast-container').css('display');
+            if (display === 'flex')
+                $('#multicast-container').css('display', 'none');
+            $('#sendToSome').css('display', 'flex');
+            $('#sendToAll').css('display', 'flex');
+            $('#showAllMessages').css('display', 'block');
+            $('#student-selection-container').html('');
+            $('#student-selection-container').css('display', 'none');
+            $('#student-selection-container').html('');
+            $('.messagess').css('display', 'none');
 
-
-
-
-    $('#sendToAll').click(function(e) {
-        e.preventDefault();
-        let display = $('#broadcast-container').css('display');
-        if (display === 'none')
-            $('#broadcast-container').css('display', 'flex');
-        $('#sendToSome').css('display', 'none');
-        $('#sendToAll').css('display', 'none');
-        $('#showAllMessages').css('display', 'none');
-        $('#closeAllMessages').css('display', 'none');
-        $('.messagess').css('display', 'none');
-
-
-    })
-
-    $('#close-broadcast-container').click(function(e) {
-        e.preventDefault();
-        let display = $('#broadcast-container').css('display');
-        if (display === 'flex')
-            $('#broadcast-container').css('display', 'none');
-        $('#sendToSome').css('display', 'flex');
-        $('#sendToAll').css('display', 'flex');
-        $('.messagess').css('display', 'none');
-        $('#showAllMessages').css('display', 'block');
-
-    })
-
-
-
-    $('#sendToSome').click(function(e) {
-        e.preventDefault();
-        let display = $('#multicast-container').css('display');
-        if (display === 'none')
-            $('#multicast-container').css('display', 'flex');
-        $('#sendToAll').css('display', 'none');
-        $('#sendToSome').css('display', 'none');
-        $('.messagess').css('display', 'none');
-        $('#showAllMessages').css('display', 'none');
-    })
-
-    $('#close-multicast-container').click(function(e) {
-        e.preventDefault();
-        let display = $('#multicast-container').css('display');
-        if (display === 'flex')
-            $('#multicast-container').css('display', 'none');
-        $('#sendToSome').css('display', 'flex');
-        $('#sendToAll').css('display', 'flex');
-        $('#showAllMessages').css('display', 'block');
-        $('#student-selection-container').html('');
-        $('#student-selection-container').css('display', 'none');
-        $('#student-selection-container').html('');
-        $('.messagess').css('display', 'none');
-
-    })
+        })
 
 
 
 
 
-    $('#show-student-list').click(function(e) {
-        console.log('student list shown')
-        e.preventDefault();
-        $('#student-selection-container').css('display', 'block');
-        var name = "<?php
+        $('#show-student-list').click(function(e) {
+            console.log('student list shown')
+            e.preventDefault();
+            $('#student-selection-container').css('display', 'block');
+            var name = "<?php
                         echo $name
                         ?> ";
-        var email = "<?php
+            var email = "<?php
                             echo $myEmail
                             ?> ";
-        $.ajax({
-            type: 'POST',
-            url: '<?php echo $base_url; ?>/getAllStudents.php/',
-            data: {
-                name: name,
-                email: email
-            },
-            success: function(data) {
-                let htmlString = '';
-                console.log(JSON.parse(data));
-                JSON.parse(data).forEach(student => {
-                    htmlString += `<div class='listItem d-flex justify-content-between mt-3 p-3 btn-primary'>
+            $.ajax({
+                type: 'POST',
+                url: '<?php echo $base_url; ?>/getAllStudents.php/',
+                data: {
+                    name: name,
+                    email: email
+                },
+                success: function(data) {
+                    let htmlString = '';
+                    console.log(JSON.parse(data));
+                    JSON.parse(data).forEach(student => {
+                        htmlString += `<div class='listItem d-flex justify-content-between mt-3 p-3 btn-primary'>
                       <div class='w-25 text-start'>${student.name}</div>
                       <div class='w-25  text-start'>${student.surname}</div>
                       <div class='w-50 text-start'>${student.email}</div>
                       <div class='btn-primary'><input type='checkbox' value='${student.email}' name='selected-student'></input></div>
                   </div>`
+                    });
+                    $('#student-selection-container').html(htmlString);
+                },
+                error: function(data) {
+                    Swal.fire({
+                        'title': 'Errors',
+                        'text': 'There were errors',
+                        'type': 'error'
+                    })
+                    console.log(data);
+                }
+            })
+        })
+
+
+
+        $(function() {
+            $('#sendMulticast').click(function(e) {
+                e.preventDefault();
+                const emailList = [];
+                $("input:checkbox[name=selected-student]:checked").each(function() {
+                    emailList.push($(this).val());
                 });
-                $('#student-selection-container').html(htmlString);
-            },
-            error: function(data) {
-                Swal.fire({
-                    'title': 'Errors',
-                    'text': 'There were errors',
-                    'type': 'error'
-                })
-                console.log(data);
-            }
-        })
-    })
-
-
-
-    $(function() {
-        $('#sendMulticast').click(function(e) {
-            e.preventDefault();
-            const emailList = [];
-            $("input:checkbox[name=selected-student]:checked").each(function() {
-                emailList.push($(this).val());
-            });
-            var subject = $('#multicastSubject').val();
-            var message = $('#multicastMessage').val();
-            var email = "<?php
+                var subject = $('#multicastSubject').val();
+                var message = $('#multicastMessage').val();
+                var email = "<?php
                                 echo $myEmail
                                 ?> ";
-            var name = "<?php
+                var name = "<?php
                             echo $name
                             ?> ";
-            var surname = "<?php
+                var surname = "<?php
                                 echo $surname
                                 ?> ";
-            if (subject == '' || message == '') {
-                $('#multiCastError').text('Fields cannot be empty!')
-            } else if (emailList.length < 1) {
-                $('#multiCastError').text('No students selected!')
-            } else {
-                $('#error').text('');
-                $.ajax({
-                    type: 'POST',
-                    url: '<?php echo $base_url; ?>/processMulticast.php/',
-                    data: {
-                        email: email,
-                        name: name,
-                        surname: surname,
-                        subject: subject,
-                        message: message,
-                        emailList: emailList
-                    },
-                    success: function(data) {
-                        alert('your message has been sent!');
-                        $('#multicast-container').css('display', 'none');
-                        $('#showAll').css('display', 'flex');
-                        $('#sendToSome').css('display', 'flex');
-                        $('#sendToAll').css('display', 'flex');
-                        $('#student-selection-container').html('');
-                        $('#student-selection-container').css('display', 'none');
-                        $('#student-selection-container').html('');
-                        $('.messagess').css('display', 'none');
-                        $('#showAllMessages').css('display', 'block');
-                        $('#multicastSubject').val('')
-                        $('#multicastMessage').val('');
-                    },
-                    error: function(data) {
-                        Swal.fire({
-                            'title': 'Errors',
-                            'text': 'There were errors',
-                            'type': 'error'
-                        })
-                        console.log(data);
-                    }
-                })
-            }
-        })
-    });
+                if (subject == '' || message == '') {
+                    $('#multiCastError').text('Fields cannot be empty!')
+                } else if (emailList.length < 1) {
+                    $('#multiCastError').text('No students selected!')
+                } else {
+                    $('#error').text('');
+                    $.ajax({
+                        type: 'POST',
+                        url: '<?php echo $base_url; ?>/processMulticast.php/',
+                        data: {
+                            email: email,
+                            name: name,
+                            surname: surname,
+                            subject: subject,
+                            message: message,
+                            emailList: emailList
+                        },
+                        success: function(data) {
+                            alert('your message has been sent!');
+                            $('#multicast-container').css('display', 'none');
+                            $('#showAll').css('display', 'flex');
+                            $('#sendToSome').css('display', 'flex');
+                            $('#sendToAll').css('display', 'flex');
+                            $('#student-selection-container').html('');
+                            $('#student-selection-container').css('display', 'none');
+                            $('#student-selection-container').html('');
+                            $('.messagess').css('display', 'none');
+                            $('#showAllMessages').css('display', 'block');
+                            $('#multicastSubject').val('')
+                            $('#multicastMessage').val('');
+                        },
+                        error: function(data) {
+                            Swal.fire({
+                                'title': 'Errors',
+                                'text': 'There were errors',
+                                'type': 'error'
+                            })
+                            console.log(data);
+                        }
+                    })
+                }
+            })
+        });
 
-    $(function() {
-        $("#sendBroadcast").click(function(e) {
-            e.preventDefault();
-            var subject = $('#broadcastSubject').val();
-            var message = $('#broadcastMessage').val();
-            var email = "<?php
+        $(function() {
+            $("#sendBroadcast").click(function(e) {
+                e.preventDefault();
+                var subject = $('#broadcastSubject').val();
+                var message = $('#broadcastMessage').val();
+                var email = "<?php
                                 echo $myEmail
                                 ?> ";
-            var name = "<?php
+                var name = "<?php
                             echo $name
                             ?> ";
-            var surname = "<?php
+                var surname = "<?php
                                 echo $surname
                                 ?> ";
 
-            if (subject !== '' && message !== '') {
-                $('#error').text('');
-                $.ajax({
-                    type: 'POST',
-                    url: '<?php echo $base_url; ?>/processBroadcast.php/',
-                    data: {
-                        email: email,
-                        name: name,
-                        surname: surname,
-                        subject: subject,
-                        message: message
-                    },
-                    success: function(data) {
-                        alert('your broadcast has been sent!');
-                        $('#broadcast-container').css('display', 'none');
-                        $('#showAll').css('display', 'flex');
-                        $('#sendToSome').css('display', 'flex');
-                        $('#sendToAll').css('display', 'flex');
-                        $('.messagess').css('display', 'none');
-                        $('#showAllMessages').css('display', 'block');
-                        $('#broadcastSubject').val('');
-                        $('#broadcastMessage').val('');
-                    },
-                    error: function(data) {
-                        Swal.fire({
-                            'title': 'Errors',
-                            'text': 'There were errors',
-                            'type': 'error'
-                        })
-                        console.log(data);
-                    }
-                })
-            } else $('#error').text('Fields cannot be empty!');
-        })
-    });
+                if (subject !== '' && message !== '') {
+                    $('#error').text('');
+                    $.ajax({
+                        type: 'POST',
+                        url: '<?php echo $base_url; ?>/processBroadcast.php/',
+                        data: {
+                            email: email,
+                            name: name,
+                            surname: surname,
+                            subject: subject,
+                            message: message
+                        },
+                        success: function(data) {
+                            alert('your broadcast has been sent!');
+                            $('#broadcast-container').css('display', 'none');
+                            $('#showAll').css('display', 'flex');
+                            $('#sendToSome').css('display', 'flex');
+                            $('#sendToAll').css('display', 'flex');
+                            $('.messagess').css('display', 'none');
+                            $('#showAllMessages').css('display', 'block');
+                            $('#broadcastSubject').val('');
+                            $('#broadcastMessage').val('');
+                        },
+                        error: function(data) {
+                            Swal.fire({
+                                'title': 'Errors',
+                                'text': 'There were errors',
+                                'type': 'error'
+                            })
+                            console.log(data);
+                        }
+                    })
+                } else $('#error').text('Fields cannot be empty!');
+            })
+        });
     </script>
 
 

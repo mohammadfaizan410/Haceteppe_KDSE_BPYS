@@ -602,6 +602,11 @@ input[type="email"] {
     color: white;
 }
 
+.broadcastPrompt {
+    width: 100%;
+    margin: unset;
+}
+
 @media screen and (max-width: 900px) {
     .table-head {
         font-size: 14px;
