@@ -4,13 +4,9 @@ require_once("config-students.php");
 
 <?php
 if (isset($_POST)) {
-    $sql = "SELECT * FROM  form1_solunumgereksinimi  WHERE SDiger =" . $_POST["SDiger"];
-    $smtmselect = $db->prepare($sql);
-    $result = $smtmselect->execute();
-    if ($result) {
-        $values = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
-        if (count($values) > 0) {
-            $stmt = $db->prepare("UPDATE form1_beslenmegereksinimi SET
+    if (isset($_POST['isUpdate'])) {
+            $stmt = $db->prepare("UPDATE uykuForm1 SET
+                                    update_date,
                                     UykuSuresi,
                                     UykuSorun,
                                     GündüzUykusu,
@@ -22,20 +18,33 @@ if (isset($_POST)) {
                                     UykuyuEtkileyenFaktorler
                 WHERE form_id = ?");
 
-            $stmt->execute([
-                $_POST["UykuSuresi"],
-                $_POST["UykuSorun"],
-                $_POST["GündüzUykusu"],
-                $_POST["UykudanYorgun"],
-                $_POST["UyumaGüçlüğü"],
-                $_POST["UykununBölünmesi"],
-                $_POST["UykuSorunDiger"],
-                $_POST["UykuyaDalmaAliskanligi"],
-                $_POST["UykuyuEtkileyenFaktorler"]
+$stmt->execute([
+    $_POST["creation_date"],
+    $_POST["UykuSuresi"],
+    $_POST["UykuSorun"],
+    $_POST["GündüzUykusu"],
+    $_POST["UykudanYorgun"],
+    $_POST["UyumaGüçlüğü"],
+    $_POST["UykununBölünmesi"],
+    $_POST["UykuSorunDiger"],
+    $_POST["UykuyaDalmaAliskanligi"],
+    $_POST["UykuyuEtkileyenFaktorler"],
+    $_POST["form_id"]
             ]);
-            echo  "Güncelleme Başarılı!";
-        } else {
-            $stmt = $db->prepare("INSERT INTO form1_solunumgereksinimi (
+      if($result){
+      echo "Successfully Updated!";
+      }
+      else{
+      echo $result;
+      }
+    }
+        else {
+            $stmt = $db->prepare("INSERT INTO uykuForm1 (
+                                    patient_name,
+                                    patient_id,
+                                    form_num,
+                                    creation_date,
+                                    update_date,
                                     UykuSuresi,
                                     UykuSorun,
                                     GündüzUykusu,
@@ -45,26 +54,34 @@ if (isset($_POST)) {
                                     UykuSorunDiger,
                                     UykuyaDalmaAliskanligi,
                                     UykuyuEtkileyenFaktorler
-              ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-
-            $stmt->execute([
-                $_POST["UykuSuresi"],
-                $_POST["UykuSorun"],
-                $_POST["GündüzUykusu"],
-                $_POST["UykudanYorgun"],
-                $_POST["UyumaGüçlüğü"],
-                $_POST["UykununBölünmesi"],
-                $_POST["UykuSorunDiger"],
-                $_POST["UykuyaDalmaAliskanligi"],
-                $_POST["UykuyuEtkileyenFaktorler"]
-            ]);
-            echo "succesfully inserted";
-        }
-    } else {
+              ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+              
+    $stmt->execute([
+        $_POST["patient_name"],
+        $_POST["patient_id"],
+        $_POST["form_num"],
+        $_POST["creation_date"],
+        $_POST["update_date"],
+        $_POST["UykuSuresi"],
+        $_POST["UykuSorun"],
+        $_POST["GündüzUykusu"],
+        $_POST["UykudanYorgun"],
+        $_POST["UyumaGüçlüğü"],
+        $_POST["UykununBölünmesi"],
+        $_POST["UykuSorunDiger"],
+        $_POST["UykuyaDalmaAliskanligi"],
+        $_POST["UykuyuEtkileyenFaktorler"]
+              ]);
+              if($result){
+                echo "Successfully Inserted!";
+                }
+                else{
+                echo $result;
+                }
+              }
+          }
+    } else{
 
         echo "error";
     }
-} else {
-    echo "error";
-}
 ?>
