@@ -43,20 +43,6 @@ if (isset($_GET['logout'])) {
 
 <body style="background-color:white">
     <div class="container-fluid pt-4 px-4">
-        <?php
-        require_once('../config-students.php');
-        $userid = $_SESSION['userlogin']['id'];
-        //echo $userid;
-        $sql = "SELECT * FROM  patients  WHERE id =" . $userid;
-        $smtmselect = $db->prepare($sql);
-        $result = $smtmselect->execute();
-        if ($result) {
-            $values = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
-        } else {
-            echo 'error';
-        }
-
-        ?>
         <div class="send-patient ta-center">
             <span class='close closeBtn' id='closeBtn'>&times;</span>
             <h1 class="form-header">UYKU GEREKSİNİMİ</h1>
@@ -190,6 +176,10 @@ if (isset($_GET['logout'])) {
                    let patient_name = "<?php
             echo urldecode($_GET['patient_name']);
                   ?>";
+                            let yourDate = new Date()
+                            let creation_date = yourDate.toISOString().split('T')[0];
+                            let updateDate = yourDate.toISOString().split('T')[0];
+                            let fileNo = 160;
                             let UykuSuresi = $("input[name='UykuSuresi']").val();
                             let UykuSorun = parseInt($("input[type='radio'][name='UykuSorun']:checked").val());
                             let GündüzUykusu = $("input[name='GündüzUykusu']").val();
@@ -207,6 +197,11 @@ if (isset($_GET['logout'])) {
                                 type: 'POST',
                                 url: '<?php echo $base_url; ?>/submitOrUpdateForm1_Uyku.php',
                                 data: {
+                                    patient_id: patient_id,
+                                    patient_name: patient_name,
+                                    form_num: fileNo,
+                                    creation_date: creation_date,
+                                    update_date: updateDate,
                                     UykuSuresi: UykuSuresi,
                                     UykuSorun: UykuSorun,
                                     GündüzUykusu: GündüzUykusu,
