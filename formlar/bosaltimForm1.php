@@ -46,22 +46,6 @@ if (isset($_GET['logout'])) {
         padding: 50px;
     }
 </style>
-<body style="background-color:white">
-    <div class="container-fluid pt-4 px-4">
-        <?php
-        require_once('../config-students.php');
-        $userid = $_SESSION['userlogin']['id'];
-        //echo $userid;
-        $sql = "SELECT * FROM  patients  WHERE id =" . $userid;
-        $smtmselect = $db->prepare($sql);
-        $result = $smtmselect->execute();
-        if ($result) {
-            $values = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
-        } else {
-            echo 'error';
-        }
-
-        ?>
 <div class="send-patient ta-center">
             <span class='close closeBtn' id='closeBtn'>&times;</span>
             <h1 class="form-header">BOŞALTIM GEREKSİNİMİ </h1>
@@ -617,22 +601,31 @@ if (isset($_GET['logout'])) {
                 </div>
             </div>
                         <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
+    <script>
+    $(function() {
+        $('#closeBtn').click(function(e) {
+            let patient_id = <?php
+                  $userid = $_GET['patient_id'];
+                  echo $userid
+                  ?>;
+                   let patient_name = "<?php
+            echo urldecode($_GET['patient_name']);
+                  ?>";
+          var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
+            $("#content").load(url);
 
-            <script>
-                $(function() {
-                    $('#closeBtn').click(function(e) {
-                        $("#content").load("formlar-student.php");
-
-                    })
-                });
-            </script>
-
-            <script>
-        $(function() {
-            $('#submit').click(function(e) {
-                var valid = this.form.checkValidity();
-
-                if (valid) {
+        })
+    });
+    </script>
+    
+    <script>
+    $(function() {
+        $('#submit').click(function(e) {
+            e.preventDefault()
+           
+                  var valid = this.form.checkValidity();
+            if (valid) {
+                let name = $('#name').val();
                 let surname = $('#surname').val();
                 let age = $('#age').val();
                 let not = $('#not').val();
@@ -642,22 +635,19 @@ if (isset($_GET['logout'])) {
                   echo $userid
                   ?>;
                    let patient_name = "<?php
-            echo urldecode($_GET['patient_name']);
+                   echo urldecode($_GET['patient_name']);
                   ?>";
-                   let patient_name = "<?php
-            echo urldecode($_GET['patient_name']);
-                  ?>";
-                    <!--let stoolEmptyingHelp = $("input[type='radio'][name='stoolEmptyingHelp']:checked").val();
-                    let hospitalStoolEmptyingFrequency =  $("input[name='hospitalStoolEmptyingFrequency']").val();
-                    let hospitalStoolEmptyingDate =  $("input[name='hospitalStoolEmptyingDate']").val();
-                    let BoşaltımSorun = '';
-                    if($("input[name='BoşaltımSorun']:checked").val() === "Var"){
-                        BoşaltımSorun = $('input[name="excretionProblems"]:checked').map(function() {
-                                            return this.value;
-                                            }).get().join(',');
-                    }else[
-                        BoşaltımSorun = 'Sorun yok'
-                    ]-->
+                    //let stoolEmptyingHelp = $("input[type='radio'][name='stoolEmptyingHelp']:checked").val();
+                    //let hospitalStoolEmptyingFrequency =  $("input[name='hospitalStoolEmptyingFrequency']").val();
+                    //let hospitalStoolEmptyingDate =  $("input[name='hospitalStoolEmptyingDate']").val();
+                    //let BoşaltımSorun = '';
+                    //if($("input[name='BoşaltımSorun']:checked").val() === "Var"){
+                        //BoşaltımSorun = $('input[name="excretionProblems"]:checked').map(function() {
+                                            //return this.value;
+                                            //}).get().join(',');
+                    //}else[
+                        //BoşaltımSorun = 'Sorun yok'
+                    //]
                     let protezlertable = $("input[type='radio'][name='protezlertable']:checked").val();
                     let sikligi = $("input[name='sikligi']").val();
                     let zamani = $("input[name='zamani']").val();
