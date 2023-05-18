@@ -46,6 +46,8 @@ if (isset($_GET['logout'])) {
     <div class="stu-body1">
         <div class="navigation-wrapper">
             <div class="navigation-left">
+                <object class="hacettepelogo" data="hacettepelogo.svg" width="300" height="300"> </object>
+
                 <a href="" class="">
                     <h3 class=""><i class="fa fa-user-edit me-2"></i>KDSE-BPYS</h3>
                 </a>

@@ -45,6 +45,7 @@ if (isset($_GET['logout'])) {
     <div class="stu-body1" id="stu-body1">
         <div class="navigation-wrapper" id="navigation-wrapper">
             <div class="navigation-left">
+                <object class="hacettepelogo" data="hacettepelogo.svg" width="300" height="300"> </object>
                 <a href="" class="">
                     <h3 class=""><i class="fa fa-user-edit me-2"></i>KDSE-BPYS</h3>
                 </a>
@@ -55,8 +56,7 @@ if (isset($_GET['logout'])) {
                 <div class="nav-items-wrapper">
                     <a href="messaging.php" class="nav-link nav-items"><i class="fa fa-comments me-2"></i>Mesajlar</a>
                     <a href="./broadcast.php" class="nav-link nav-items"><i class="fa fa-comments me-2"></i>Forum</a>
-                    <a class="nav-link nav-items" href="./updateForms/showAllPatients.php"><i
-                            class="fa fa-comments me-2"></i>Tüm hastaları göster</a>
+                    <a class="nav-link nav-items" href="./updateForms/showAllPatients.php"><i class="fa fa-comments me-2"></i>Tüm hastaları göster</a>
                     <a class="nav-link nav-items" href="./addNewPatient.php"><i class="fa fa-comments me-2"></i>Yeni
                         hasta ekle</a>
 
@@ -95,62 +95,62 @@ if (isset($_GET['logout'])) {
 
     </div>
     <script>
-    function hamburger() {
+        function hamburger() {
 
-        const hamburger = document.getElementById('stu-hamburger');
-        console.log(hamburger);
-        hamburger.classList.remove("d-block-resp");
-        hamburger.classList.add("d-none-resp");
+            const hamburger = document.getElementById('stu-hamburger');
+            console.log(hamburger);
+            hamburger.classList.remove("d-block-resp");
+            hamburger.classList.add("d-none-resp");
 
-        const stubody1 = document.getElementById('stu-body1');
-        console.log(stubody1);
-        stubody1.classList.remove("d-none-resp");
-        stubody1.classList.add("d-block-resp");
+            const stubody1 = document.getElementById('stu-body1');
+            console.log(stubody1);
+            stubody1.classList.remove("d-none-resp");
+            stubody1.classList.add("d-block-resp");
 
-        const navwrapper = document.getElementById('navigation-wrapper');
-        console.log(stubody1);
-        navwrapper.classList.remove("d-none-resp");
-        navwrapper.classList.add("d-block-resp");
+            const navwrapper = document.getElementById('navigation-wrapper');
+            console.log(stubody1);
+            navwrapper.classList.remove("d-none-resp");
+            navwrapper.classList.add("d-block-resp");
 
-        const closebtn = document.getElementById('closeBtn');
-        console.log(stubody1);
-        closebtn.classList.remove("d-none-resp");
-        closebtn.classList.add("d-block-resp");
-    };
-    $("#closeBtn").on("click", function(e) {
-        const hamburger = document.getElementById('stu-hamburger');
-        console.log(hamburger);
-        hamburger.classList.remove("d-none-resp");
-        hamburger.classList.add("d-block-resp");
+            const closebtn = document.getElementById('closeBtn');
+            console.log(stubody1);
+            closebtn.classList.remove("d-none-resp");
+            closebtn.classList.add("d-block-resp");
+        };
+        $("#closeBtn").on("click", function(e) {
+            const hamburger = document.getElementById('stu-hamburger');
+            console.log(hamburger);
+            hamburger.classList.remove("d-none-resp");
+            hamburger.classList.add("d-block-resp");
 
-        const stubody1 = document.getElementById('stu-body1');
-        console.log(stubody1);
-        stubody1.classList.remove("d-block-resp");
-        stubody1.classList.add("d-none-resp");
+            const stubody1 = document.getElementById('stu-body1');
+            console.log(stubody1);
+            stubody1.classList.remove("d-block-resp");
+            stubody1.classList.add("d-none-resp");
 
-        const navwrapper = document.getElementById('navigation-wrapper');
-        console.log(stubody1);
-        navwrapper.classList.remove("d-block-resp");
-        navwrapper.classList.add("d-none-resp");
-    })
+            const navwrapper = document.getElementById('navigation-wrapper');
+            console.log(stubody1);
+            navwrapper.classList.remove("d-block-resp");
+            navwrapper.classList.add("d-none-resp");
+        })
     </script>
     <script>
-    $(function() {
-        $.ajaxSetup({
-            cache: false
-        }); // disable caching for all requests.
-        $("#content").load("./updateForms/showAllPatients.php");
-
-        // RAW Text/Html data from a file
-
         $(function() {
-            $("a.nav-items").on("click", function(e) {
-                e.preventDefault();
-                $("#content").load(this.href);
-            })
-        })
+            $.ajaxSetup({
+                cache: false
+            }); // disable caching for all requests.
+            $("#content").load("./updateForms/showAllPatients.php");
 
-    });
+            // RAW Text/Html data from a file
+
+            $(function() {
+                $("a.nav-items").on("click", function(e) {
+                    e.preventDefault();
+                    $("#content").load(this.href);
+                })
+            })
+
+        });
     </script>
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

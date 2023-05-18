@@ -607,6 +607,12 @@ input[type="email"] {
     margin: unset !important;
 }
 
+.hacettepelogo {
+    height: 110px;
+    width: 160px;
+    margin-top: -20px;
+}
+
 @media screen and (max-width: 900px) {
     .table-head {
         font-size: 14px;
