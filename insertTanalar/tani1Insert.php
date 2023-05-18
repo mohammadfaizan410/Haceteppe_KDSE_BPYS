@@ -24,7 +24,7 @@ if(isset($_POST)){
         WHERE patient_id = ?");
         $result = $stmt->execute([$update_date, $problem_info, $nurse_description, $noc_output, $noc_indicator, $nurse_attempt, $nurse_education, $evaluation, $matchedfields_string, $patient_id]); 
         if($result) {
-        echo "Successfully updated!";
+        echo "Güncelleme Başarılı!";
         } else {
         echo "Error: " . $stmt->errorInfo()[2];
         }
@@ -56,4 +56,3 @@ matchedfields_string
 }else{
     echo " Error: Post data not set";
 }
-?>

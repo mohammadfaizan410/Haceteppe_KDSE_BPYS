@@ -28,26 +28,25 @@ if (isset($_POST)) {
                                     TedaviyiKabullenmeDiger
                 WHERE SDiger = ?");
 
-$stmt->execute([
-    $_POST["IletisimEngeli"],
-    $_POST["IletisimEngeliDiger"],
-    $_POST["refakatci"],
-    $_POST["refakatciDiger"],
-    $_POST["UlasmaSikinti"],
-    $_POST["UlasmaSikintiDiger"],
-    $_POST["PersonelleIletisim"],
-    $_POST["PersonelleIletisimDiger"],
-    $_POST["BakımaKatılma"],
-    $_POST["İstekli1"],
-    $_POST["İsteksiz1"],
-    $_POST["İstekli"],
-    $_POST["İsteksiz"],
-    $_POST["TedaviyiKabullenme"],
-    $_POST["TedaviyiKabullenmeDiger"]
+            $stmt->execute([
+                $_POST["IletisimEngeli"],
+                $_POST["IletisimEngeliDiger"],
+                $_POST["refakatci"],
+                $_POST["refakatciDiger"],
+                $_POST["UlasmaSikinti"],
+                $_POST["UlasmaSikintiDiger"],
+                $_POST["PersonelleIletisim"],
+                $_POST["PersonelleIletisimDiger"],
+                $_POST["BakımaKatılma"],
+                $_POST["İstekli1"],
+                $_POST["İsteksiz1"],
+                $_POST["İstekli"],
+                $_POST["İsteksiz"],
+                $_POST["TedaviyiKabullenme"],
+                $_POST["TedaviyiKabullenmeDiger"]
             ]);
-            echo  "successfully updated";
-        }
-        else {
+            echo  "Güncelleme Başarılı!";
+        } else {
             $stmt = $db->prepare("INSERT INTO form1_solunumgereksinimi (
                                     IletisimEngeli,
                                     IletisimEngeliDiger,
@@ -65,32 +64,31 @@ $stmt->execute([
                                     TedaviyiKabullenme,
                                     TedaviyiKabullenmeDiger
               ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-              
-    $stmt->execute([
-        $_POST["IletisimEngeli"],
-        $_POST["IletisimEngeliDiger"],
-        $_POST["refakatci"],
-        $_POST["refakatciDiger"],
-        $_POST["UlasmaSikinti"],
-        $_POST["UlasmaSikintiDiger"],
-        $_POST["PersonelleIletisim"],
-        $_POST["PersonelleIletisimDiger"],
-        $_POST["BakımaKatılma"],
-        $_POST["İstekli1"],
-        $_POST["İsteksiz1"],
-        $_POST["İstekli"],
-        $_POST["İsteksiz"],
-        $_POST["TedaviyiKabullenme"],
-        $_POST["TedaviyiKabullenmeDiger"]
-              ]);
+
+            $stmt->execute([
+                $_POST["IletisimEngeli"],
+                $_POST["IletisimEngeliDiger"],
+                $_POST["refakatci"],
+                $_POST["refakatciDiger"],
+                $_POST["UlasmaSikinti"],
+                $_POST["UlasmaSikintiDiger"],
+                $_POST["PersonelleIletisim"],
+                $_POST["PersonelleIletisimDiger"],
+                $_POST["BakımaKatılma"],
+                $_POST["İstekli1"],
+                $_POST["İsteksiz1"],
+                $_POST["İstekli"],
+                $_POST["İsteksiz"],
+                $_POST["TedaviyiKabullenme"],
+                $_POST["TedaviyiKabullenmeDiger"]
+            ]);
             echo "succesfully inserted";
         }
-    } else{
+    } else {
 
         echo "error";
     }
-}
-else{
+} else {
     echo "error";
 }
 ?>

@@ -22,20 +22,19 @@ if (isset($_POST)) {
                                     UykuyuEtkileyenFaktorler
                 WHERE form_id = ?");
 
-$stmt->execute([
-    $_POST["UykuSuresi"],
-    $_POST["UykuSorun"],
-    $_POST["GündüzUykusu"],
-    $_POST["UykudanYorgun"],
-    $_POST["UyumaGüçlüğü"],
-    $_POST["UykununBölünmesi"],
-    $_POST["UykuSorunDiger"],
-    $_POST["UykuyaDalmaAliskanligi"],
-    $_POST["UykuyuEtkileyenFaktorler"]
+            $stmt->execute([
+                $_POST["UykuSuresi"],
+                $_POST["UykuSorun"],
+                $_POST["GündüzUykusu"],
+                $_POST["UykudanYorgun"],
+                $_POST["UyumaGüçlüğü"],
+                $_POST["UykununBölünmesi"],
+                $_POST["UykuSorunDiger"],
+                $_POST["UykuyaDalmaAliskanligi"],
+                $_POST["UykuyuEtkileyenFaktorler"]
             ]);
-            echo  "successfully updated";
-        }
-        else {
+            echo  "Güncelleme Başarılı!";
+        } else {
             $stmt = $db->prepare("INSERT INTO form1_solunumgereksinimi (
                                     UykuSuresi,
                                     UykuSorun,
@@ -47,26 +46,25 @@ $stmt->execute([
                                     UykuyaDalmaAliskanligi,
                                     UykuyuEtkileyenFaktorler
               ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-              
-    $stmt->execute([
-        $_POST["UykuSuresi"],
-        $_POST["UykuSorun"],
-        $_POST["GündüzUykusu"],
-        $_POST["UykudanYorgun"],
-        $_POST["UyumaGüçlüğü"],
-        $_POST["UykununBölünmesi"],
-        $_POST["UykuSorunDiger"],
-        $_POST["UykuyaDalmaAliskanligi"],
-        $_POST["UykuyuEtkileyenFaktorler"]
-              ]);
+
+            $stmt->execute([
+                $_POST["UykuSuresi"],
+                $_POST["UykuSorun"],
+                $_POST["GündüzUykusu"],
+                $_POST["UykudanYorgun"],
+                $_POST["UyumaGüçlüğü"],
+                $_POST["UykununBölünmesi"],
+                $_POST["UykuSorunDiger"],
+                $_POST["UykuyaDalmaAliskanligi"],
+                $_POST["UykuyuEtkileyenFaktorler"]
+            ]);
             echo "succesfully inserted";
         }
-    } else{
+    } else {
 
         echo "error";
     }
-}
-else{
+} else {
     echo "error";
 }
 ?>

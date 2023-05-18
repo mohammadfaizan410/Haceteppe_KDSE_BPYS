@@ -521,7 +521,7 @@ if (isset($_GET['logout'])) {
                         weight_input: weight_input
                     },
                     success: function(data) {
-                        alert("SuccessFully Updated!");
+                        alert("Güncelleme Başarılı!");
                         let url =
                             "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
                             patient_id + "&patient_name=" + encodeURIComponent(patient_name);

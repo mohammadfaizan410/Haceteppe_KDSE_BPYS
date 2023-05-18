@@ -29,7 +29,7 @@ if (isset($_POST)) {
         WHERE patient_id = ?");
         $result = $stmt->execute([$update_date, $problem_info, $nurse_description, $noc_output, $noc_indicator, $noc_indicator2, $nurse_attempt, $nurse_education, $coop_attempt, $noc_indicator_after, $noc_indicator2_after,  $evaluation, $matchedfields_string, $patient_id]);
         if ($result) {
-            echo "Successfully updated!";
+            echo "Güncelleme Başarılı!";
         } else {
             echo "Error: " . $stmt->errorInfo()[2];
         }

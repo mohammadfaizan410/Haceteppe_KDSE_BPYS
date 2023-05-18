@@ -139,7 +139,7 @@ $stmt->execute([
     $_POST["Stria"],
     $_POST["SDiger"]
             ]);
-            echo  "successfully updated";
+            echo  "Güncelleme Başarılı!";
         }
         else {
             $stmt = $db->prepare("INSERT INTO form1_solunumgereksinimi (

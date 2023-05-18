@@ -13,7 +13,7 @@ if ($result) {
     $user = $smtmselect->fetch(PDO::FETCH_ASSOC);
     if ($smtmselect->rowCount() > 0) {
         $_SESSION['userlogin'] = $user;
-        echo 'Successful';
+        echo 'Başarılı';
     } else {
         echo 'Wrong e-mail or password';
     }
