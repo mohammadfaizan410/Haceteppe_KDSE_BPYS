@@ -16,7 +16,7 @@ if (isset($_GET['logout'])) {
 
 <head>
     <meta charset="utf-8">
-    <title>e-BYRYS-KKDS</title>
+    <title>KDSE-BPYS</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -107,20 +107,20 @@ if (isset($_GET['logout'])) {
 
 
     <script>
-         $(function() {
-        $('#closeBtn').click(function(e) {
-            let patient_id = <?php
-                  $userid = $_GET['patient_id'];
-                  echo $userid
-                  ?>;
-                   let patient_name = "<?php
-            echo urldecode($_GET['patient_name']);
-                  ?>";
-          var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
-            $("#content").load(url);
+        $(function() {
+            $('#closeBtn').click(function(e) {
+                let patient_id = <?php
+                                    $userid = $_GET['patient_id'];
+                                    echo $userid
+                                    ?>;
+                let patient_name = "<?php
+                                    echo urldecode($_GET['patient_name']);
+                                    ?>";
+                var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
+                $("#content").load(url);
 
-        })
-    });
+            })
+        });
     </script>
 
     <script>
@@ -141,13 +141,13 @@ if (isset($_GET['logout'])) {
                     var age = $('#age').val();
                     var not = $('#not').val();
                     let form_num = 8;
-                     let patient_name = "<?php
-            echo urldecode($_GET['patient_name']);
-                  ?>";
+                    let patient_name = "<?php
+                                        echo urldecode($_GET['patient_name']);
+                                        ?>";
                     var patient_id = <?php
-                  $userid = $_GET['patient_id'];
-                  echo $userid
-                  ?>;
+                                        $userid = $_GET['patient_id'];
+                                        echo $userid
+                                        ?>;
                     let yourDate = new Date()
                     let creationDate = yourDate.toISOString().split('T')[0];
                     let updateDate = yourDate.toISOString().split('T')[0];
@@ -164,18 +164,18 @@ if (isset($_GET['logout'])) {
                             surname: surname,
                             age: age,
                             not: not,
-                            form_num:form_num,
-                            patient_id:patient_id,
-                            patient_name:patient_name,
-                            creation_date:creationDate,
-                            update_date :updateDate,
+                            form_num: form_num,
+                            patient_id: patient_id,
+                            patient_name: patient_name,
+                            creation_date: creationDate,
+                            update_date: updateDate,
                             assessed_area: assessed_area,
-                            edema_severity:edema_severity
+                            edema_severity: edema_severity
                         },
                         success: function(data) {
                             alert(data);
-                        let url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
-                        $("#content").load(url);
+                            let url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
+                            $("#content").load(url);
                         },
                         error: function(data) {
                             console.log(data)

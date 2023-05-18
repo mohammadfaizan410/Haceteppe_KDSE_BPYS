@@ -16,7 +16,7 @@ if (isset($_GET['logout'])) {
 
 <head>
     <meta charset="utf-8">
-    <title>e-BYRYS-KKDS</title>
+    <title>KDSE-BPYS</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -232,89 +232,89 @@ if (isset($_GET['logout'])) {
         });
     </script>
 
-<script>
-                $(function() {
-                    $('#closeBtn').click(function(e) {
-                        $("#content").load("formlar-student.php");
+    <script>
+        $(function() {
+            $('#closeBtn').click(function(e) {
+                $("#content").load("formlar-student.php");
 
-                    })
-                });
-            </script>
+            })
+        });
+    </script>
 
-            <script>
-                $(function() {
-                    $('#submit').click(function(e) {
-
-
-                        var valid = this.form.checkValidity();
-
-                        if (valid) {
-                            var id = <?php
-
-                                        $userid = $_SESSION['userlogin']['id'];
-                                        echo $userid
-                                        ?>;
-                            let DuzenliCalisma = $("input[name='DuzenliCalisma']:checked").val();
-                            let CalismiyorSure = $("input[type='radio'][name='CalismiyorSure']").val();
-                            let CalisiyorSure = $("input[type='radio'][name='CalisiyorSure']").val();
-                            let IsIzni = $("input[type='radio'][name='IsIzni']:checked").val();
-                            let IsIzniDiger = $("input[type='radio'][name='IsIzniDiger']").val();
-                            let MeslekRiski = $("input[type='radio'][name='MeslekRiski']:checked").val();
-                            let MeslekRiskiDiger = $("input[type='radio'][name='MeslekRiskiDiger']").val();
-                            let AileBireyleri = $("input[type='radio'][name='AileBireyleri']:checked").val();
-                            let AileBireyleriDiger = $("input[type='radio'][name='AileBireyleriDiger']").val();
-                            let CocukSayisi = $("input[type='radio'][name='CocukSayisi']:checked").val();
-                            let CocukSayisiDiger = $("input[type='radio'][name='CocukSayisiDiger']").val();
-                            let AileRolu = $("input[type='radio'][name='AileRolu']").val();
-                            let Hobi = $("input[type='radio'][name='Hobi']").val();
-                            let HastaneAktivite = $("input[type='radio'][name='HastaneAktivite']:checked").val();
-                            let HastaneAktiviteDiger = $("input[type='radio'][name='HastaneAktiviteDiger']").val();
+    <script>
+        $(function() {
+            $('#submit').click(function(e) {
 
 
+                var valid = this.form.checkValidity();
 
-                            e.preventDefault()
+                if (valid) {
+                    var id = <?php
 
-                            $.ajax({
-                                type: 'POST',
-                                url: 'student-patient.php',
-                                data: {
-                                    DuzenliCalisma: DuzenliCalisma,
-                                    CalismiyorSure: CalismiyorSure,
-                                    CalisiyorSure: CalisiyorSure,
-                                    IsIzni: IsIzni,
-                                    IsIzniDiger: IsIzniDiger,
-                                    MeslekRiski: MeslekRiski,
-                                    MeslekRiskiDiger: MeslekRiskiDiger,
-                                    AileBireyleri: AileBireyleri,
-                                    AileBireyleriDiger: AileBireyleriDiger,
-                                    CocukSayisi: CocukSayisi,
-                                    CocukSayisiDiger: CocukSayisiDiger,
-                                    AileRolu: AileRolu,
-                                    Hobi: Hobi,
-                                    HastaneAktivite: HastaneAktivite,
-                                    HastaneAktiviteDiger:HastaneAktiviteDiger
+                                $userid = $_SESSION['userlogin']['id'];
+                                echo $userid
+                                ?>;
+                    let DuzenliCalisma = $("input[name='DuzenliCalisma']:checked").val();
+                    let CalismiyorSure = $("input[type='radio'][name='CalismiyorSure']").val();
+                    let CalisiyorSure = $("input[type='radio'][name='CalisiyorSure']").val();
+                    let IsIzni = $("input[type='radio'][name='IsIzni']:checked").val();
+                    let IsIzniDiger = $("input[type='radio'][name='IsIzniDiger']").val();
+                    let MeslekRiski = $("input[type='radio'][name='MeslekRiski']:checked").val();
+                    let MeslekRiskiDiger = $("input[type='radio'][name='MeslekRiskiDiger']").val();
+                    let AileBireyleri = $("input[type='radio'][name='AileBireyleri']:checked").val();
+                    let AileBireyleriDiger = $("input[type='radio'][name='AileBireyleriDiger']").val();
+                    let CocukSayisi = $("input[type='radio'][name='CocukSayisi']:checked").val();
+                    let CocukSayisiDiger = $("input[type='radio'][name='CocukSayisiDiger']").val();
+                    let AileRolu = $("input[type='radio'][name='AileRolu']").val();
+                    let Hobi = $("input[type='radio'][name='Hobi']").val();
+                    let HastaneAktivite = $("input[type='radio'][name='HastaneAktivite']:checked").val();
+                    let HastaneAktiviteDiger = $("input[type='radio'][name='HastaneAktiviteDiger']").val();
 
-                                },
-                                success: function(data) {
-                                    alert("Success");
-                                    location.reload(true)
-                                },
-                                error: function(data) {
-                                    Swal.fire({
-                                        'title': 'Errors',
-                                        'text': 'There were errors',
-                                        'type': 'error'
-                                    })
-                                }
+
+
+                    e.preventDefault()
+
+                    $.ajax({
+                        type: 'POST',
+                        url: 'student-patient.php',
+                        data: {
+                            DuzenliCalisma: DuzenliCalisma,
+                            CalismiyorSure: CalismiyorSure,
+                            CalisiyorSure: CalisiyorSure,
+                            IsIzni: IsIzni,
+                            IsIzniDiger: IsIzniDiger,
+                            MeslekRiski: MeslekRiski,
+                            MeslekRiskiDiger: MeslekRiskiDiger,
+                            AileBireyleri: AileBireyleri,
+                            AileBireyleriDiger: AileBireyleriDiger,
+                            CocukSayisi: CocukSayisi,
+                            CocukSayisiDiger: CocukSayisiDiger,
+                            AileRolu: AileRolu,
+                            Hobi: Hobi,
+                            HastaneAktivite: HastaneAktivite,
+                            HastaneAktiviteDiger: HastaneAktiviteDiger
+
+                        },
+                        success: function(data) {
+                            alert("Success");
+                            location.reload(true)
+                        },
+                        error: function(data) {
+                            Swal.fire({
+                                'title': 'Errors',
+                                'text': 'There were errors',
+                                'type': 'error'
                             })
-
-
-
                         }
                     })
 
-                });
-            </script>
+
+
+                }
+            })
+
+        });
+    </script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/chart/chart.min.js"></script>

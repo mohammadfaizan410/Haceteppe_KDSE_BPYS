@@ -26,7 +26,7 @@ $Hb   = isset($_GET['Hb  ']) ? $_GET['Hb '] : "NaN";
 
 <head>
     <meta charset="utf-8">
-    <title>e-BYRYS-KKDS</title>
+    <title>KDSE-BPYS</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -36,28 +36,28 @@ $Hb   = isset($_GET['Hb  ']) ? $_GET['Hb '] : "NaN";
     <!-- Template Stylesheet -->
     <link href="../style.css" rel="stylesheet">
     <style>
-    table {
-        border-collapse: collapse;
-    }
+        table {
+            border-collapse: collapse;
+        }
 
-    th,
-    td {
-        border: 1px solid black;
-        padding: 10px;
-    }
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
 
-    th {
-        background-color: #eee;
-    }
+        th {
+            background-color: #eee;
+        }
 
-    h1 {
-        text-align: center;
-    }
+        h1 {
+            text-align: center;
+        }
 
-    tr,
-    td {
-        width: 200px;
-    }
+        tr,
+        td {
+            width: 200px;
+        }
     </style>
 
 <body>
@@ -71,27 +71,27 @@ $Hb   = isset($_GET['Hb  ']) ? $_GET['Hb '] : "NaN";
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Sorunla İlişkili Veriler:</p>
                             <div class="matchedfields-wrapper">
-                                <?php         
-                                echo "<p class='matchedfields' id='Dispne' style='".($Dispne == 'NaN' ? 'color: red' : 'color:blue ' )."'>Ortalama uyku süresi: ".$Dispne."</p>";
-                                echo "<p class='matchedfields' id='systolic_bp' style='".($systolic_bp == 'NaN' ? 'color:red ' : 'color: blue' )."'>Uykuda sorun:".$systolic_bp."</p>";
-                                echo "<p class='matchedfields' id='diastolic_bp' style='".($diastolic_bp == 'NaN' ? 'color:red ' : 'color: blue' )."'>Huzursuzluk:".$diastolic_bp."</p>";
-                                echo "<p class='matchedfields' id='pulse_rate' style='".($pulse_rate == 'NaN' ? 'color:red ' : 'color: blue' )."'> Rahatsızlık :".$pulse_rate."</p>";
-                                echo "<p class='matchedfields' id='fatigue' style='".($fatigue == 'NaN' ? 'color:red ' : 'color: blue' )."'>Kaşıntı :".$fatigue."</p>";
+                                <?php
+                                echo "<p class='matchedfields' id='Dispne' style='" . ($Dispne == 'NaN' ? 'color: red' : 'color:blue ') . "'>Ortalama uyku süresi: " . $Dispne . "</p>";
+                                echo "<p class='matchedfields' id='systolic_bp' style='" . ($systolic_bp == 'NaN' ? 'color:red ' : 'color: blue') . "'>Uykuda sorun:" . $systolic_bp . "</p>";
+                                echo "<p class='matchedfields' id='diastolic_bp' style='" . ($diastolic_bp == 'NaN' ? 'color:red ' : 'color: blue') . "'>Huzursuzluk:" . $diastolic_bp . "</p>";
+                                echo "<p class='matchedfields' id='pulse_rate' style='" . ($pulse_rate == 'NaN' ? 'color:red ' : 'color: blue') . "'> Rahatsızlık :" . $pulse_rate . "</p>";
+                                echo "<p class='matchedfields' id='fatigue' style='" . ($fatigue == 'NaN' ? 'color:red ' : 'color: blue') . "'>Kaşıntı :" . $fatigue . "</p>";
                                 ?>
                             </div>
 
                         </div>
-                         <div class="input-section d-flex">
+                        <div class="input-section d-flex">
                             <p class="usernamelabel">Hemşirelik Tanıları:</p>
                             <p class="tanıdescription">Yorgunluk</p>
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın kendini yorgun hissetmediğini ifade etmesi  </p>
+                            <p class="tanıdescription">Hastanın kendini yorgun hissetmediğini ifade etmesi </p>
                         </div>
-                        
 
- 
+
+
 
 
 
@@ -99,33 +99,25 @@ $Hb   = isset($_GET['Hb  ']) ? $_GET['Hb '] : "NaN";
                             <p class="usernamelabel">NOC Gösterge: </p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator"
-                                        id="noc_indicator"
-                                        value="1: Hasta sürekli yorgun hissettiğini ifade ediyor">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1: Hasta sürekli yorgun hissettiğini ifade ediyor">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">1: Hasta sürekli yorgun hissettiğini ifade ediyor</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator"
-                                        id="noc_indicator"
-                                        value="2: Hasta sık sık yorgun hissettiğini ifade ediyor">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2: Hasta sık sık yorgun hissettiğini ifade ediyor">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">2: Hasta sık sık yorgun hissettiğini ifade ediyor</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator"
-                                        id="noc_indicator"
-                                        value="3: Hasta bazen yorgun hissettiğini ifade ediyor">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3: Hasta bazen yorgun hissettiğini ifade ediyor">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">3: Hasta bazen yorgun hissettiğini ifade ediyor</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator"
-                                        id="noc_indicator"
-                                        value="4: Hasta nadiren yorgun hissettiğini ifade ediyor">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4: Hasta nadiren yorgun hissettiğini ifade ediyor">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">4: Hasta nadiren yorgun hissettiğini ifade ediyor</span>
                                     </label>
@@ -146,155 +138,127 @@ $Hb   = isset($_GET['Hb  ']) ? $_GET['Hb '] : "NaN";
                             <p class="usernamelabel">Hemşirelik Girişimleri:</p>
 
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt1"
-                                    value="Yorgunluğun yaşam kalitesi üzerine etkisi belirlenir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt1" value="Yorgunluğun yaşam kalitesi üzerine etkisi belirlenir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Yorgunluğun yaşam kalitesi üzerine etkisi belirlenir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt2"
-                                    value="Hasta aşırı fiziksel ve duygusal yorgunluk belirtileri açısından değerlendirilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt2" value="Hasta aşırı fiziksel ve duygusal yorgunluk belirtileri açısından değerlendirilir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Hasta aşırı fiziksel ve duygusal yorgunluk belirtileri açısından değerlendirilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt3"
-                                    value="Hastanın aktiviteye verdiği kardiyorespiratuar yanıt (taşikardi, aritmi, dispne, terleme, solukluk, kan basıncı değişimleri, solunum sayısı) gözlemlenir ">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt3" value="Hastanın aktiviteye verdiği kardiyorespiratuar yanıt (taşikardi, aritmi, dispne, terleme, solukluk, kan basıncı değişimleri, solunum sayısı) gözlemlenir ">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Hastanın aktiviteye verdiği kardiyorespiratuar yanıt (taşikardi, aritmi, dispne, terleme, solukluk, kan basıncı değişimleri, solunum sayısı) gözlemlenir </span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt4"
-                                    value="Uyku süresi ve kalitesi değerlendirilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt4" value="Uyku süresi ve kalitesi değerlendirilir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Uyku süresi ve kalitesi değerlendirilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt5"
-                                    value="Yeterli enerji sağlamak için besin alımı değerlendirilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt5" value="Yeterli enerji sağlamak için besin alımı değerlendirilir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Yeterli enerji sağlamak için besin alımı değerlendirilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt6"
-                                    value="Rahatlamayı kolaylaştırmak için çevresel uyaranlar kısıtlanır">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt6" value="Rahatlamayı kolaylaştırmak için çevresel uyaranlar kısıtlanır">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Rahatlamayı kolaylaştırmak için çevresel uyaranlar kısıtlanır</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt7"
-                                    value="Belirlenen dinlenme aralığında aktivite kısıtlaması ve yatak istirahati sağlanır">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt7" value="Belirlenen dinlenme aralığında aktivite kısıtlaması ve yatak istirahati sağlanır">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Belirlenen dinlenme aralığında aktivite kısıtlaması ve yatak istirahati sağlanır</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt8"
-                                    value="Rahatlamayı sağlayacak aktiviteler (kitap okuma, iletişim kurma, müzik dinleme, puzzle yapma gibi) belirlenir ">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt8" value="Rahatlamayı sağlayacak aktiviteler (kitap okuma, iletişim kurma, müzik dinleme, puzzle yapma gibi) belirlenir ">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Rahatlamayı sağlayacak aktiviteler (kitap okuma, iletişim kurma, müzik dinleme, puzzle yapma gibi) belirlenir </span>
                                 </label>
                             </div>
-                            
+
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt9"
-                                    value="Gerekli ise ziyaretçi kısıtlanır">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt9" value="Gerekli ise ziyaretçi kısıtlanır">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Gerekli ise ziyaretçi kısıtlanır</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt10"
-                                value="Kullanılan ilaçların yorgunluk üzerine etkisi değerlendirilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt10" value="Kullanılan ilaçların yorgunluk üzerine etkisi değerlendirilir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Kullanılan ilaçların yorgunluk üzerine etkisi değerlendirilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                id="nurse_attempt11"
-                                value="Hasta ve bakım verenleri yorgunluk kaynaklı yaşam tarzı değişiklikleri için duygularını ifade etmeleri konusunda teşvik edilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt11" value="Hasta ve bakım verenleri yorgunluk kaynaklı yaşam tarzı değişiklikleri için duygularını ifade etmeleri konusunda teşvik edilir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Hasta ve bakım verenleri yorgunluk kaynaklı yaşam tarzı değişiklikleri için duygularını ifade etmeleri konusunda teşvik edilir</span>
                                 </label>
                             </div>
-                            
+
                             <p class="usernamelabel">Eğitim:</p>
-                            
+
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                    id="nurse_attempt12"
-                                    value="Hasta ve bakım verenlerine aktiviteyi azaltmayı gerektirecek yorgunluk belirti ve bulguları hakkında bilgilendirilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt12" value="Hasta ve bakım verenlerine aktiviteyi azaltmayı gerektirecek yorgunluk belirti ve bulguları hakkında bilgilendirilir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Hasta ve bakım verenlerine aktiviteyi azaltmayı gerektirecek yorgunluk belirti ve bulguları hakkında bilgilendirilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                    id="nurse_attempt13"
-                                    value="Hasta ve bakım verenlerine yorgunluğu yönetmek için aktiviteleri önceliklendirme ve zaman yönetimi hakkında bilgi verilir">
-                                    <label class="form-check-label" for="nurse_attempt">
-                                        <span class="checkbox-header">Hasta ve bakım verenlerine yorgunluğu yönetmek için aktiviteleri önceliklendirme ve zaman yönetimi hakkında bilgi verilir</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                        id="nurse_attempt14"
-                                        value="Hasta ve bakım verenlerine yorgunluk ve hastalık süreci arasındaki ilişki hakkında bilgilendirilir">
-                                    <label class="form-check-label" for="nurse_attempt">
-                                        <span class="checkbox-header">Hasta ve bakım verenlerine yorgunluk ve hastalık süreci arasındaki ilişki hakkında bilgilendirilir</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                        id="nurse_attempt15"
-                                        value="Rahatlamayı sağlamak için sakinleştirici aktiviteler (okuma, iletişim kurma, puzzle yapma gibi) önerilir">
-                                    <label class="form-check-label" for="nurse_attempt">
-                                        <span class="checkbox-header">Rahatlamayı sağlamak için sakinleştirici aktiviteler (okuma, iletişim kurma, puzzle yapma gibi) önerilir</span>
-                                    </label>
-                                </div>
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt13" value="Hasta ve bakım verenlerine yorgunluğu yönetmek için aktiviteleri önceliklendirme ve zaman yönetimi hakkında bilgi verilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Hasta ve bakım verenlerine yorgunluğu yönetmek için aktiviteleri önceliklendirme ve zaman yönetimi hakkında bilgi verilir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt14" value="Hasta ve bakım verenlerine yorgunluk ve hastalık süreci arasındaki ilişki hakkında bilgilendirilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Hasta ve bakım verenlerine yorgunluk ve hastalık süreci arasındaki ilişki hakkında bilgilendirilir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt15" value="Rahatlamayı sağlamak için sakinleştirici aktiviteler (okuma, iletişim kurma, puzzle yapma gibi) önerilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Rahatlamayı sağlamak için sakinleştirici aktiviteler (okuma, iletişim kurma, puzzle yapma gibi) önerilir</span>
+                                </label>
+                            </div>
 
-                                <p class="usernamelabel">İŞ BİRLİĞİ GEREKTİREN UYGULAMALAR</p>
-                                
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                        id="nurse_attempt16"
-                                        value="Kontraendike olmadıkça, beslenme planına yüksek enerjili yiyeceklerin tüketiminin arttırılması için diyetisyenle işbirliği yapılır">
-                                    <label class="form-check-label" for="nurse_attempt">
-                                        <span class="checkbox-header">Kontraendike olmadıkça, beslenme planına yüksek enerjili yiyeceklerin tüketiminin arttırılması için diyetisyenle işbirliği yapılır</span>
-                                    </label>
-                                </div>
-                                
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                        id="nurse_attempt17"
-                                        value="Yorgunluk hastanın ilişkilerini önemli ölçüde etkiliyorsa psikiyatrik destek almaya yönlendirilir">
-                                    <label class="form-check-label" for="nurse_attempt">
-                                        <span class="checkbox-header">Yorgunluk hastanın ilişkilerini önemli ölçüde etkiliyorsa psikiyatrik destek almaya yönlendirilir</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                        id="nurse_attempt18"
-                                        value="Yorgunluk aile sürecinde bozulmaya neden oluyorsa aile terapisine yönlendirilir">
-                                    <label class="form-check-label" for="nurse_attempt">
-                                        <span class="checkbox-header">Yorgunluk aile sürecinde bozulmaya neden oluyorsa aile terapisine yönlendirilir</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                        id="nurse_attempt19"
-                                        value="İstemde yer alan ilaçlar (analjezikler, antidepresanlar) uygulanır">
-                                    <label class="form-check-label" for="nurse_attempt">
-                                        <span class="checkbox-header">İstemde yer alan ilaçlar (analjezikler, antidepresanlar) uygulanır</span>
-                                    </label>
-                                </div>
+                            <p class="usernamelabel">İŞ BİRLİĞİ GEREKTİREN UYGULAMALAR</p>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt16" value="Kontraendike olmadıkça, beslenme planına yüksek enerjili yiyeceklerin tüketiminin arttırılması için diyetisyenle işbirliği yapılır">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Kontraendike olmadıkça, beslenme planına yüksek enerjili yiyeceklerin tüketiminin arttırılması için diyetisyenle işbirliği yapılır</span>
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt17" value="Yorgunluk hastanın ilişkilerini önemli ölçüde etkiliyorsa psikiyatrik destek almaya yönlendirilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Yorgunluk hastanın ilişkilerini önemli ölçüde etkiliyorsa psikiyatrik destek almaya yönlendirilir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt18" value="Yorgunluk aile sürecinde bozulmaya neden oluyorsa aile terapisine yönlendirilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Yorgunluk aile sürecinde bozulmaya neden oluyorsa aile terapisine yönlendirilir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt19" value="İstemde yer alan ilaçlar (analjezikler, antidepresanlar) uygulanır">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">İstemde yer alan ilaçlar (analjezikler, antidepresanlar) uygulanır</span>
+                                </label>
+                            </div>
 
                         </div>
                         <div class="input-section d-flex">
@@ -312,53 +276,53 @@ $Hb   = isset($_GET['Hb  ']) ? $_GET['Hb '] : "NaN";
 
     </div>
     <script>
-    var fatigue = document.getElementById('fatigue').innerText;
-    var sleeping_problem = document.getElementById('sleeping_problem').innerText;
-    var hct = document.getElementById('hct').innerText;
-    var Hb = document.getElementById('Hb').innerText;
-  
-    var matchedfields_string = fatigue + " / " + sleeping_problem + " / " + hct +
-        " / " + Hb;
+        var fatigue = document.getElementById('fatigue').innerText;
+        var sleeping_problem = document.getElementById('sleeping_problem').innerText;
+        var hct = document.getElementById('hct').innerText;
+        var Hb = document.getElementById('Hb').innerText;
+
+        var matchedfields_string = fatigue + " / " + sleeping_problem + " / " + hct +
+            " / " + Hb;
     </script>
 
     <script>
-    $(function() {
-        $('#closeBtn').click(function(e) {
-            let patient_id = <?php
+        $(function() {
+            $('#closeBtn').click(function(e) {
+                let patient_id = <?php
                                     $userid = $_GET['patient_id'];
                                     echo $userid
                                     ?>;
-            let patient_name = "<?php
+                let patient_name = "<?php
                                     echo urldecode($_GET['patient_name']);
                                     ?>";
-            var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
-                "&patient_name=" + encodeURIComponent(patient_name);
-            $("#content").load(url);
+                var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
+                    "&patient_name=" + encodeURIComponent(patient_name);
+                $("#content").load(url);
 
-        })
-    });
+            })
+        });
     </script>
     <script>
-    $(function() {
-        $('#submit').click(function(e) {
-            e.preventDefault()
-            console.log("submit clicked")
+        $(function() {
+            $('#submit').click(function(e) {
+                e.preventDefault()
+                console.log("submit clicked")
                 var id = <?php
-                                $userid = $_SESSION['userlogin']['id'];
-                                echo $userid
-                                ?>;
+                            $userid = $_SESSION['userlogin']['id'];
+                            echo $userid
+                            ?>;
                 var name = $('#name').val();
                 var surname = $('#surname').val();
                 var age = $('#age').val();
                 var not = $('#not').val();
                 let form_num = 15;
                 var patient_id = <?php
-                                        $userid = $_GET['patient_id'];
-                                        echo $userid
-                                        ?>;
+                                    $userid = $_GET['patient_id'];
+                                    echo $userid
+                                    ?>;
                 let patient_name = "<?php
-                                        echo urldecode($_GET['patient_name']);
-                                        ?>";
+                                    echo urldecode($_GET['patient_name']);
+                                    ?>";
                 let yourDate = new Date();
                 let creationDate = yourDate.toISOString().split('T')[0];
                 let updateDate = yourDate.toISOString().split('T')[0];
@@ -495,7 +459,7 @@ $Hb   = isset($_GET['Hb  ']) ? $_GET['Hb '] : "NaN";
                         noc_output: noc_output,
                         noc_indicator: noc_indicator,
                         nurse_attempt: nurse_attempt,
-                        nurse_education :nurse_education,
+                        nurse_education: nurse_education,
                         collaborative_applications: collaborative_applications,
                         evaluation: evaluation,
                         matchedfields_string: matchedfields_string,

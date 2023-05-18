@@ -16,7 +16,7 @@ if (isset($_GET['logout'])) {
 
 <head>
     <meta charset="utf-8">
-    <title>e-BYRYS-KKDS</title>
+    <title>KDSE-BPYS</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -34,11 +34,11 @@ if (isset($_GET['logout'])) {
     <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
-     <!-- Customized Bootstrap Stylesheet -->
-     <link href="../bootstrap.min.css" rel="stylesheet">
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../bootstrap.min.css" rel="stylesheet">
 
-<!-- Template Stylesheet -->
-<link href="../style.css" rel="stylesheet">
+    <!-- Template Stylesheet -->
+    <link href="../style.css" rel="stylesheet">
 
 
     <style>
@@ -149,19 +149,19 @@ if (isset($_GET['logout'])) {
 
     <script>
         $(function() {
-        $('#closeBtn').click(function(e) {
-            let patient_id = <?php
-                  $userid = $_GET['patient_id'];
-                  echo $userid
-                  ?>;
-                   let patient_name = "<?php
-            echo urldecode($_GET['patient_name']);
-                  ?>";
-          var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
-            $("#content").load(url);
+            $('#closeBtn').click(function(e) {
+                let patient_id = <?php
+                                    $userid = $_GET['patient_id'];
+                                    echo $userid
+                                    ?>;
+                let patient_name = "<?php
+                                    echo urldecode($_GET['patient_name']);
+                                    ?>";
+                var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
+                $("#content").load(url);
 
-        })
-    });
+            })
+        });
     </script>
 
     <script>
@@ -178,29 +178,29 @@ if (isset($_GET['logout'])) {
                     var not = $('#not').val();
                     let form_num = 4;
                     let patient_name = "<?php
-            echo urldecode($_GET['patient_name']);
-                  ?>";
+                                        echo urldecode($_GET['patient_name']);
+                                        ?>";
                     var patient_id = <?php
-                  $userid = $_GET['patient_id'];
-                  echo $userid
-                  ?>;
+                                        $userid = $_GET['patient_id'];
+                                        echo $userid
+                                        ?>;
                     let patient_gender = $("input[name='patient_gender']").val();
                     let yourDate = new Date()
-                    let creation_date =  yourDate.toISOString().split('T')[0];
+                    let creation_date = yourDate.toISOString().split('T')[0];
                     let updateDate = yourDate.toISOString().split('T')[0];
                     let medical_diagnosis = $("input[name='medical_diagnosis']").val();
                     let place_of_fall = $("input[name='place_of_fall']").val();
-                    let fall_date  = $("input[name='fall_date']").val();
-                    let fall_time   = $("input[name='fall_time']").val();
-                    let last_fall_risk_score   = $("input[name='last_fall_risk_score']").val();
+                    let fall_date = $("input[name='fall_date']").val();
+                    let fall_time = $("input[name='fall_time']").val();
+                    let last_fall_risk_score = $("input[name='last_fall_risk_score']").val();
                     let injury_status = $("input[name='injury_status']").val();
                     let injury_severity = $("input[name='injury_severity']").val();
-                    let fall_cause  = $("input[type='radio'][name='DüşmeNedeni']:checked").val();
+                    let fall_cause = $("input[type='radio'][name='DüşmeNedeni']:checked").val();
                     let pre_fall_precautions = $("input[name='pre_fall_precautions']").val();
-                    let pre_fall_general_condition  = $("input[name='pre_fall_general_condition']").val();
-                    let post_fall_general_condition   = $("input[name='post_fall_general_condition']").val();
+                    let pre_fall_general_condition = $("input[name='pre_fall_general_condition']").val();
+                    let post_fall_general_condition = $("input[name='post_fall_general_condition']").val();
 
-                    
+
 
 
 
@@ -234,8 +234,8 @@ if (isset($_GET['logout'])) {
                         },
                         success: function(data) {
                             alert(data);
-                        let url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
-                        $("#content").load(url);
+                            let url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
+                            $("#content").load(url);
 
                         },
                         error: function(data) {

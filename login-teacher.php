@@ -13,7 +13,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>e-BYRYS-KKDS</title>
+    <title>KDSE-BPYS</title>
 
 
     <link rel="icon" href="img/core-img/favicon.ico">
@@ -31,7 +31,7 @@ session_start();
         <form action="" method="post">
             <div class="login-box login-login">
 
-                <h1 class="header">e-BYRYS-KKDS</h1>
+                <h1 class="header">KDSE-BPYS</h1>
                 <h2 class="login">Hemşire Girişi</h2>
 
                 <p class="labels">Mail</p>
@@ -39,44 +39,42 @@ session_start();
                 <p class="labels">Şifre</p>
                 <input type="password" name="password" id="password" required placeholder="Şifre Giriniz">
                 <input type="submit" name="submit" id="login" value="Login">
-                <a href="main.php" class="lower-buttons" style="padding-top:10px"><i class="gg-arrow-left-o"
-                        style="margin: 0; margin-right: 20px;"></i>Ana Sayfaya Dön</a>
+                <a href="main.php" class="lower-buttons" style="padding-top:10px"><i class="gg-arrow-left-o" style="margin: 0; margin-right: 20px;"></i>Ana Sayfaya Dön</a>
         </form>
 
     </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
-        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>,
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>,
     <script>
-    $(function() {
-        $('#login').click(function(e) {
+        $(function() {
+            $('#login').click(function(e) {
 
-            var email = $('#email').val();
-            var password = $('#password').val();
-            console.log(email)
+                var email = $('#email').val();
+                var password = $('#password').val();
+                console.log(email)
 
-            e.preventDefault();
+                e.preventDefault();
 
-            $.ajax({
-                type: 'POST',
-                url: 'process-login-teacher.php',
-                data: {
-                    email: email,
-                    password: password
-                },
-                success: function(data) {
-                    alert(data)
-                    if ($.trim(data) === "Başarılı") {
-                        setTimeout('window.location.href = "teacher-main.php"', 1000);
+                $.ajax({
+                    type: 'POST',
+                    url: 'process-login-teacher.php',
+                    data: {
+                        email: email,
+                        password: password
+                    },
+                    success: function(data) {
+                        alert(data)
+                        if ($.trim(data) === "Başarılı") {
+                            setTimeout('window.location.href = "teacher-main.php"', 1000);
+                        }
+                    },
+                    error: function(data) {
+                        alert('error');
                     }
-                },
-                error: function(data) {
-                    alert('error');
-                }
-            })
+                })
 
+            })
         })
-    })
     </script>
 </body>
 

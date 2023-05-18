@@ -27,7 +27,7 @@ $family_history = isset($_GET['family_history']) ? $_GET['family_history'] : 'Na
 
 <head>
     <meta charset="utf-8">
-    <title>e-BYRYS-KKDS</title>
+    <title>KDSE-BPYS</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -37,28 +37,28 @@ $family_history = isset($_GET['family_history']) ? $_GET['family_history'] : 'Na
     <!-- Template Stylesheet -->
     <link href="../style.css" rel="stylesheet">
     <style>
-    table {
-        border-collapse: collapse;
-    }
+        table {
+            border-collapse: collapse;
+        }
 
-    th,
-    td {
-        border: 1px solid black;
-        padding: 10px;
-    }
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
 
-    th {
-        background-color: #eee;
-    }
+        th {
+            background-color: #eee;
+        }
 
-    h1 {
-        text-align: center;
-    }
+        h1 {
+            text-align: center;
+        }
 
-    tr,
-    td {
-        width: 200px;
-    }
+        tr,
+        td {
+            width: 200px;
+        }
     </style>
 
 <body>
@@ -72,17 +72,17 @@ $family_history = isset($_GET['family_history']) ? $_GET['family_history'] : 'Na
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Sorunla İlişkili Veriler:</p>
                             <div class="matchedfields-wrapper">
-                                <?php         
-                                echo "<p class='matchedfields' id='BKI' style='".($BKI == 'NaN' ? 'color: red' : 'color:blue ' )."'>BKİ: ".$BKI."</p>";
-                                echo "<p class='matchedfields' id='permitted_food_consumption' style='".($permitted_food_consumption == 'NaN' ? 'color:red ' : 'color: blue' )."'>Günlük olarak izin verilen besinlerin tüketimi:".$permitted_food_consumption."</p>";
-                                echo "<p class='matchedfields' id='sleeping_problem' style='".($sleeping_problem == 'NaN' ? 'color: red' : 'color: blue' )."' >Uykuda sorun:".$sleeping_problem."</p>";
-                                echo "<p class='matchedfields' id='exercise_habit' style='".($exercise_habit == 'NaN' ? 'color: red' : 'color: blue' )."'>Egzersiz yapma alışkanlığı:".$exercise_habit."</p>";
-                                echo "<p class='matchedfields' id='family_history' style='".($family_history == 'NaN' ? 'color: red' : 'color: blue' )."'>Soy Geçmiş: ".$family_history."</p>";
+                                <?php
+                                echo "<p class='matchedfields' id='BKI' style='" . ($BKI == 'NaN' ? 'color: red' : 'color:blue ') . "'>BKİ: " . $BKI . "</p>";
+                                echo "<p class='matchedfields' id='permitted_food_consumption' style='" . ($permitted_food_consumption == 'NaN' ? 'color:red ' : 'color: blue') . "'>Günlük olarak izin verilen besinlerin tüketimi:" . $permitted_food_consumption . "</p>";
+                                echo "<p class='matchedfields' id='sleeping_problem' style='" . ($sleeping_problem == 'NaN' ? 'color: red' : 'color: blue') . "' >Uykuda sorun:" . $sleeping_problem . "</p>";
+                                echo "<p class='matchedfields' id='exercise_habit' style='" . ($exercise_habit == 'NaN' ? 'color: red' : 'color: blue') . "'>Egzersiz yapma alışkanlığı:" . $exercise_habit . "</p>";
+                                echo "<p class='matchedfields' id='family_history' style='" . ($family_history == 'NaN' ? 'color: red' : 'color: blue') . "'>Soy Geçmiş: " . $family_history . "</p>";
                                 ?>
                             </div>
 
                         </div>
-                         <div class="input-section d-flex">
+                        <div class="input-section d-flex">
                             <p class="usernamelabel">Hemşirelik Tanıları:</p>
                             <p class="tanıdescription">Fazla kilo </p>
                         </div>
@@ -90,9 +90,9 @@ $family_history = isset($_GET['family_history']) ? $_GET['family_history'] : 'Na
                             <p class="usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hastanın günlük olarak izin verilen besinleri tüketmesi </p>
                         </div>
-                        
 
- 
+
+
 
 
 
@@ -100,33 +100,25 @@ $family_history = isset($_GET['family_history']) ? $_GET['family_history'] : 'Na
                             <p class="usernamelabel">NOC Gösterge: </p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator"
-                                        id="noc_indicator"
-                                        value="1: Hastanın sürekli izin verilenden daha fazla besin tüketimi var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1: Hastanın sürekli izin verilenden daha fazla besin tüketimi var">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">1: Hastanın sürekli izin verilenden daha fazla besin tüketimi var</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator"
-                                        id="noc_indicator"
-                                        value="2: Hastanın sık sık izin verilenden daha fazla besin tüketimi var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2: Hastanın sık sık izin verilenden daha fazla besin tüketimi var">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">2: Hastanın sık sık izin verilenden daha fazla besin tüketimi var</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator"
-                                        id="noc_indicator"
-                                        value="3: Hastanın bazen izin verilenden daha fazla besin tüketimi var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3: Hastanın bazen izin verilenden daha fazla besin tüketimi var">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">3: Hastanın bazen izin verilenden daha fazla besin tüketimi var</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator"
-                                        id="noc_indicator"
-                                        value="4: Hastanın nadiren izin verilenden daha fazla besin tüketimi var ">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4: Hastanın nadiren izin verilenden daha fazla besin tüketimi var ">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">4: Hastanın nadiren izin verilenden daha fazla besin tüketimi var </span>
                                     </label>
@@ -147,182 +139,163 @@ $family_history = isset($_GET['family_history']) ? $_GET['family_history'] : 'Na
                             <p class="usernamelabel">Hemşirelik Girişimleri:</p>
 
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt1"
-                                    value="Hastanın ne zaman, nerede, ne yediği ile ilgili bir günlük tutması için teşvik edilir ve geçerli yeme kalıpları tanımlanır   ">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt1" value="Hastanın ne zaman, nerede, ne yediği ile ilgili bir günlük tutması için teşvik edilir ve geçerli yeme kalıpları tanımlanır   ">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Hastanın ne zaman, nerede, ne yediği ile ilgili bir günlük tutması için teşvik edilir ve geçerli yeme kalıpları tanımlanır</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt2"
-                                    value="Kaydedilmiş besin içerikleri ve kalori alımı izlenir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt2" value="Kaydedilmiş besin içerikleri ve kalori alımı izlenir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Kaydedilmiş besin içerikleri ve kalori alımı izlenir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt3"
-                                    value="Hasta ile beraber verilmesi istenen kilo belirlenir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt3" value="Hasta ile beraber verilmesi istenen kilo belirlenir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">HHasta ile beraber verilmesi istenen kilo belirlenir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt4"
-                                    value="Kilo vermek için haftalık bir hedef belirlenir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt4" value="Kilo vermek için haftalık bir hedef belirlenir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Kilo vermek için haftalık bir hedef belirlenir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt5"
-                                    value="Haftalık kilo takibi yapılır">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt5" value="Haftalık kilo takibi yapılır">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Haftalık kilo takibi yapılır</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt6"
-                                    value="Tolere edebileceği ölçüde düzenli egzersiz yapması konusunda hasta teşvik edilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt6" value="Tolere edebileceği ölçüde düzenli egzersiz yapması konusunda hasta teşvik edilir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Tolere edebileceği ölçüde düzenli egzersiz yapması konusunda hasta teşvik edilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt7"
-                                    value="Hastayla güvene dayalı, destekleyici bir ilişki kurulur">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt7" value="Hastayla güvene dayalı, destekleyici bir ilişki kurulur">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Hastayla güvene dayalı, destekleyici bir ilişki kurulur</span>
                                 </label>
                             </div>
-                            
+
                         </div>
-                            <div class="input-section d-flex">
+                        <div class="input-section d-flex">
                             <p class="usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hastanın bağırsak seslerinin normal sınırlarda olması </p>
                         </div>
-                        
-                    
 
 
 
-                            <p class="usernamelabel">Eğitim:</p>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt8"
-                                    id="nurse_attempt8"
-                                    value="Dengeli beslenmek için beslenme ilkeleri ve besin pramitleri hakkında bilgi verilir">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Dengeli beslenmek için beslenme ilkeleri ve besin pramitleri hakkında bilgi verilir </span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt9"
-                                    id="nurse_attempt9"
-                                    value="Kompleks karbonhidratlar ve proteinlerden oluşan bir diyet izlemesi ve basit şekerler, fast food, kafein ve yumuşak içeceklerden kaçınması gerektiği anlatılır">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Kompleks karbonhidratlar ve proteinlerden oluşan bir diyet izlemesi ve basit şekerler, fast food, kafein ve yumuşak içeceklerden kaçınması gerektiği anlatılır</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt10"
-                                    id="nurse_attempt10"
-                                    value="Besin tüketimini arttırabileceği için, hastaya okuma, tv izleme gibi aktivitelerle birlikte yemek yememesi konusunda bilgi verilir">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Besin tüketimini arttırabileceği için, hastaya okuma, tv izleme gibi aktivitelerle birlikte yemek yememesi konusunda bilgi verilir</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt11"
-                                    id="nurse_attempt11"
-                                    value="Hastaya ve bakım verenlerine alkol tüketiminin gıda emilimi üzerine etkisi hakkında bilgi verilir">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hastaya ve bakım verenlerine alkol tüketiminin gıda emilimi üzerine etkisi hakkında bilgi verilir</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt12"
-                                    id="nurse_attempt12"
-                                    value="Hastaya ve bakım verenlerine obezite ya da yeme bozukluğuyla ilişkili olabilecek fiziksel problemler hakkında bilgi verilir">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hastaya ve bakım verenlerine obezite ya da yeme bozukluğuyla ilişkili olabilecek fiziksel problemler hakkında bilgi verilir</span>
-                                </label>
-                            </div>
 
-                            <p class="usernamelabel">İŞ BİRLİĞİ GEREKTİREN UYGULAMALAR</p>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt13"
-                                    id="nurse_attempt13"
-                                    value="Beslenme ihtiyaçlarını karşılamak için gerekli kalori sayısı ve besin tipleri diyetisyenle birlikte belirlenir">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Beslenme ihtiyaçlarını karşılamak için gerekli kalori sayısı ve besin tipleri diyetisyenle birlikte belirlenir</span>
-                                </label>
-                            </div>
+
+                        <p class="usernamelabel">Eğitim:</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="nurse_attempt8" id="nurse_attempt8" value="Dengeli beslenmek için beslenme ilkeleri ve besin pramitleri hakkında bilgi verilir">
+                            <label class="form-check-label" for="nurse_attempt">
+                                <span class="checkbox-header">Dengeli beslenmek için beslenme ilkeleri ve besin pramitleri hakkında bilgi verilir </span>
+                            </label>
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Değerlendirme:</p>
-                            <p class="tanıdescription"> Sorun devam ediyor: 1-4 gösterge seçildiyse; yeni günde bakım planında tanımlı tanı olacak.</p>
-                            <p class="tanıdescription"> Sorun çözümlendi:
-                                5 gösterge seçildiyse; yeni günde bakım planına bu tanıyı taşımayacak
-                            </p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="nurse_attempt9" id="nurse_attempt9" value="Kompleks karbonhidratlar ve proteinlerden oluşan bir diyet izlemesi ve basit şekerler, fast food, kafein ve yumuşak içeceklerden kaçınması gerektiği anlatılır">
+                            <label class="form-check-label" for="nurse_attempt">
+                                <span class="checkbox-header">Kompleks karbonhidratlar ve proteinlerden oluşan bir diyet izlemesi ve basit şekerler, fast food, kafein ve yumuşak içeceklerden kaçınması gerektiği anlatılır</span>
+                            </label>
                         </div>
-                    </form>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="nurse_attempt10" id="nurse_attempt10" value="Besin tüketimini arttırabileceği için, hastaya okuma, tv izleme gibi aktivitelerle birlikte yemek yememesi konusunda bilgi verilir">
+                            <label class="form-check-label" for="nurse_attempt">
+                                <span class="checkbox-header">Besin tüketimini arttırabileceği için, hastaya okuma, tv izleme gibi aktivitelerle birlikte yemek yememesi konusunda bilgi verilir</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="nurse_attempt11" id="nurse_attempt11" value="Hastaya ve bakım verenlerine alkol tüketiminin gıda emilimi üzerine etkisi hakkında bilgi verilir">
+                            <label class="form-check-label" for="nurse_attempt">
+                                <span class="checkbox-header">Hastaya ve bakım verenlerine alkol tüketiminin gıda emilimi üzerine etkisi hakkında bilgi verilir</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="nurse_attempt12" id="nurse_attempt12" value="Hastaya ve bakım verenlerine obezite ya da yeme bozukluğuyla ilişkili olabilecek fiziksel problemler hakkında bilgi verilir">
+                            <label class="form-check-label" for="nurse_attempt">
+                                <span class="checkbox-header">Hastaya ve bakım verenlerine obezite ya da yeme bozukluğuyla ilişkili olabilecek fiziksel problemler hakkında bilgi verilir</span>
+                            </label>
+                        </div>
+
+                        <p class="usernamelabel">İŞ BİRLİĞİ GEREKTİREN UYGULAMALAR</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="nurse_attempt13" id="nurse_attempt13" value="Beslenme ihtiyaçlarını karşılamak için gerekli kalori sayısı ve besin tipleri diyetisyenle birlikte belirlenir">
+                            <label class="form-check-label" for="nurse_attempt">
+                                <span class="checkbox-header">Beslenme ihtiyaçlarını karşılamak için gerekli kalori sayısı ve besin tipleri diyetisyenle birlikte belirlenir</span>
+                            </label>
+                        </div>
                 </div>
+                <div class="input-section d-flex">
+                    <p class="usernamelabel">Değerlendirme:</p>
+                    <p class="tanıdescription"> Sorun devam ediyor: 1-4 gösterge seçildiyse; yeni günde bakım planında tanımlı tanı olacak.</p>
+                    <p class="tanıdescription"> Sorun çözümlendi:
+                        5 gösterge seçildiyse; yeni günde bakım planına bu tanıyı taşımayacak
+                    </p>
+                </div>
+                </form>
             </div>
         </div>
+    </div>
 
 
     </div>
     <script>
-    var BKI = document.getElementById('BKI').innerText;
-    var permitted_food = document.getElementById('permitted_food').innerText;
-    var nutrition_problem = document.getElementById('nutrition_problem').innerText;
-    var excretion_problem = document.getElementById('excretion_problem').innerText;
-    var language_problem = document.getElementById('language_problem').innerText;
-    var ingestion_problem = document.getElementById('ingestion_problem').innerText;
-    var feeding_problem = document.getElementById('feeding_problem').innerText;
+        var BKI = document.getElementById('BKI').innerText;
+        var permitted_food = document.getElementById('permitted_food').innerText;
+        var nutrition_problem = document.getElementById('nutrition_problem').innerText;
+        var excretion_problem = document.getElementById('excretion_problem').innerText;
+        var language_problem = document.getElementById('language_problem').innerText;
+        var ingestion_problem = document.getElementById('ingestion_problem').innerText;
+        var feeding_problem = document.getElementById('feeding_problem').innerText;
 
-    var matchedfields_string = BKI + " / " + permitted_food + " / " + nutrition_problem +
-        " / " + excretion_problem + " / " + language_problem + "/" + language_problem + "/" +ingestion_problem + "/" +  feeding_problem;
+        var matchedfields_string = BKI + " / " + permitted_food + " / " + nutrition_problem +
+            " / " + excretion_problem + " / " + language_problem + "/" + language_problem + "/" + ingestion_problem + "/" + feeding_problem;
     </script>
 
     <script>
-    $(function() {
-        $('#closeBtn').click(function(e) {
-            let patient_id = <?php
+        $(function() {
+            $('#closeBtn').click(function(e) {
+                let patient_id = <?php
                                     $userid = $_GET['patient_id'];
                                     echo $userid
                                     ?>;
-            let patient_name = "<?php
+                let patient_name = "<?php
                                     echo urldecode($_GET['patient_name']);
                                     ?>";
-            var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
-                "&patient_name=" + encodeURIComponent(patient_name);
-            $("#content").load(url);
+                var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
+                    "&patient_name=" + encodeURIComponent(patient_name);
+                $("#content").load(url);
 
-        })
-    });
+            })
+        });
     </script>
     <script>
-    $(function() {
-        $('#submit').click(function(e) {
-            e.preventDefault()
-            console.log("submit clicked")
+        $(function() {
+            $('#submit').click(function(e) {
+                e.preventDefault()
+                console.log("submit clicked")
                 var id = <?php
-                                $userid = $_SESSION['userlogin']['id'];
-                                echo $userid
-                                ?>;
+                            $userid = $_SESSION['userlogin']['id'];
+                            echo $userid
+                            ?>;
                 var name = $('#name').val();
                 var surname = $('#surname').val();
                 var age = $('#age').val();
                 var not = $('#not').val();
                 let form_num = 15;
                 var patient_id = <?php
-                                        $userid = $_GET['patient_id'];
-                                        echo $userid
-                                        ?>;
+                                    $userid = $_GET['patient_id'];
+                                    echo $userid
+                                    ?>;
                 let patient_name = "<?php
-                                        echo urldecode($_GET['patient_name']);
-                                        ?>";
+                                    echo urldecode($_GET['patient_name']);
+                                    ?>";
                 let yourDate = new Date();
                 let creationDate = yourDate.toISOString().split('T')[0];
                 let updateDate = yourDate.toISOString().split('T')[0];
@@ -427,7 +400,7 @@ $family_history = isset($_GET['family_history']) ? $_GET['family_history'] : 'Na
                         noc_output: noc_output,
                         noc_indicator: noc_indicator,
                         nurse_attempt: nurse_attempt,
-                        nurse_education :nurse_education,
+                        nurse_education: nurse_education,
                         collaborative_applications: collaborative_applications,
                         evaluation: evaluation,
                         matchedfields_string: matchedfields_string,

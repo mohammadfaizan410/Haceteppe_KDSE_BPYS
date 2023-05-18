@@ -16,7 +16,7 @@ if (isset($_GET['logout'])) {
 
 <head>
     <meta charset="utf-8">
-    <title>e-BYRYS-KKDS</title>
+    <title>KDSE-BPYS</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -34,11 +34,11 @@ if (isset($_GET['logout'])) {
     <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
-   <!-- Customized Bootstrap Stylesheet -->
-   <link href="../bootstrap.min.css" rel="stylesheet">
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../bootstrap.min.css" rel="stylesheet">
 
-<!-- Template Stylesheet -->
-<link href="../style.css" rel="stylesheet">
+    <!-- Template Stylesheet -->
+    <link href="../style.css" rel="stylesheet">
 
 
     <style>
@@ -238,19 +238,19 @@ if (isset($_GET['logout'])) {
 
     <script>
         $(function() {
-        $('#closeBtn').click(function(e) {
-            let patient_id = <?php
-                  $userid = $_GET['patient_id'];
-                  echo $userid
-                  ?>;
-                   let patient_name = "<?php
-            echo urldecode($_GET['patient_name']);
-                  ?>";
-          var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
-            $("#content").load(url);
+            $('#closeBtn').click(function(e) {
+                let patient_id = <?php
+                                    $userid = $_GET['patient_id'];
+                                    echo $userid
+                                    ?>;
+                let patient_name = "<?php
+                                    echo urldecode($_GET['patient_name']);
+                                    ?>";
+                var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
+                $("#content").load(url);
 
-        })
-    });
+            })
+        });
     </script>
 
     <script>
@@ -268,20 +268,20 @@ if (isset($_GET['logout'])) {
                     let form_num = 6;
                     let yourDate = new Date()
                     let patient_name = "<?php
-            echo urldecode($_GET['patient_name']);
-                  ?>";
+                                        echo urldecode($_GET['patient_name']);
+                                        ?>";
                     var patient_id = <?php
-                  $userid = $_GET['patient_id'];
-                  echo $userid
-                  ?>;
-                    let creation_date =  yourDate.toISOString().split('T')[0];
+                                        $userid = $_GET['patient_id'];
+                                        echo $userid
+                                        ?>;
+                    let creation_date = yourDate.toISOString().split('T')[0];
                     let updateDate = yourDate.toISOString().split('T')[0];
-                    let eye_opening_points =parseInt($("input[type='radio'][name='GözleriAçabilme']:checked").val());
-                    let motor_response_points  =parseInt($("input[type='radio'][name='MotorCevap']:checked").val());
+                    let eye_opening_points = parseInt($("input[type='radio'][name='GözleriAçabilme']:checked").val());
+                    let motor_response_points = parseInt($("input[type='radio'][name='MotorCevap']:checked").val());
                     let verbal_response_points = parseInt($("input[type='radio'][name='SözelTepki']:checked").val());
-                    let total = eye_opening_points +motor_response_points +verbal_response_points;
+                    let total = eye_opening_points + motor_response_points + verbal_response_points;
 
-                    console.log(creation_date,updateDate,eye_opening_points,motor_response_points,verbal_response_points,total);
+                    console.log(creation_date, updateDate, eye_opening_points, motor_response_points, verbal_response_points, total);
 
                     $.ajax({
                         type: 'POST',
@@ -303,8 +303,8 @@ if (isset($_GET['logout'])) {
                         },
                         success: function(data) {
                             alert(data);
-                        let url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
-                        $("#content").load(url);
+                            let url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
+                            $("#content").load(url);
                         },
                         error: function(data) {
                             Swal.fire({
