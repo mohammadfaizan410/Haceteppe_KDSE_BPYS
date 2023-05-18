@@ -60,6 +60,7 @@ if(isset($_GET['patient_id'])){
     }
     </style>
 </head>
+
 <body>
     <div class="container-fluid pt-4 px-4">
         <div class="send-patient">
@@ -71,7 +72,7 @@ if(isset($_GET['patient_id'])){
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Sorunla İlişkili Veriler:</p>
                             <div class="matchedfields-wrapper">
-                            <?php
+                                <?php
                             $innerHtml = '';
                             $fieldsArray = explode("/", $tani1Data[0]["matchedfields_string"]);
                             foreach ($fieldsArray as $key => $value) {
@@ -86,7 +87,7 @@ if(isset($_GET['patient_id'])){
                             </div>
 
                         </div>
-                         <div class="input-section d-flex">
+                        <div class="input-section d-flex">
                             <p class="usernamelabel">Hemşirelik Tanıları:</p>
                             <p class="tanıdescription">Gaz değişiminde bozulma </p>
                         </div>
@@ -98,7 +99,7 @@ if(isset($_GET['patient_id'])){
                             <p class="usernamelabel">NOC Gösterge: </p>
                             <div class="form-check">
                                 <div class="form-check">
-                                <?php
+                                    <?php
                                 $value = "1: Hastanın oksijen satürasyonunda çok şiddetli düzeyde bozulma var";
                                 $checked = "";
                                 if (trim($tani1Data[0]['noc_indicator']) === trim($value)) {
@@ -106,15 +107,14 @@ if(isset($_GET['patient_id'])){
                                 }
                                  ?>
                                     <input class="form-check-input" type="radio" required name="noc_indicator" disabled
-                                        id="noc_indicator"
-                                        value="<?= $value ?>" <?= $checked ?>>
+                                        id="noc_indicator" value="<?= $value ?>" <?= $checked ?>>
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">1: Hastanın oksijen satürasyonunda çok şiddetli
                                             düzeyde bozulma var </span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                <?php
+                                    <?php
                                 $value = "2: Hastanın oksijen satürasyonunda şiddetli düzeyde bozulma var";
                                 $checked = "";
                                 if (trim($tani1Data[0]['noc_indicator']) === trim($value)) {
@@ -122,15 +122,14 @@ if(isset($_GET['patient_id'])){
                                 }
                                  ?>
                                     <input class="form-check-input" type="radio" required name="noc_indicator" disabled
-                                        id="noc_indicator"
-                                        value="<?= $value ?>" <?= $checked ?>>
+                                        id="noc_indicator" value="<?= $value ?>" <?= $checked ?>>
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">2: Hastanın oksijen satürasyonunda şiddetli
                                             düzeyde bozulma var </span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                <?php
+                                    <?php
                                 $value = "3: Hastanın oksijen satürasyonunda orta düzeyde bozulma var";
                                 $checked = "";
                                 if (trim($tani1Data[0]['noc_indicator']) === trim($value)) {
@@ -138,15 +137,14 @@ if(isset($_GET['patient_id'])){
                                 }
                                  ?>
                                     <input class="form-check-input" type="radio" required name="noc_indicator" disabled
-                                        id="noc_indicator"
-                                        value="<?= $value ?>" <?= $checked ?>>
+                                        id="noc_indicator" value="<?= $value ?>" <?= $checked ?>>
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">3: Hastanın oksijen satürasyonunda orta düzeyde
                                             bozulma var </span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                <?php
+                                    <?php
                                 $value = "4 : Hastanın oksijen satürasyonunda hafif düzeyde bozulma var";
                                 $checked = "";
                                 if (trim($tani1Data[0]['noc_indicator']) === trim($value)) {
@@ -154,22 +152,22 @@ if(isset($_GET['patient_id'])){
                                 }
                                  ?>
                                     <input class="form-check-input" type="radio" required name="noc_indicator" disabled
-                                        id="noc_indicator"
-                                        value="<?= $value ?>" <?= $checked ?>>
+                                        id="noc_indicator" value="<?= $value ?>" <?= $checked ?>>
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">4 : Hastanın oksijen satürasyonunda hafif düzeyde
                                             bozulma var </span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                <?php
+                                    <?php
                                 $value = "5: Hastanın oksijen satürasyonunda bozulma yok ";
                                 $checked = "";
                                 if (trim($tani1Data[0]['noc_indicator']) === trim($value)) {
                                     $checked = "checked";
                                 }
                                  ?>
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" disabled id="
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" disabled
+                                        id="
                                         noc_indicator" value="<?= $value ?>" <?= $checked ?>>
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">5: Hastanın oksijen satürasyonunda bozulma yok
@@ -198,8 +196,8 @@ if(isset($_GET['patient_id'])){
                                         ?>
                         </div>
                         <div class="input-section d-flex" style="flex-direction: column;">
-                        <p class="usernamelabel">Eğitim:</p>
-                        <?php
+                            <p class="usernamelabel">Eğitim:</p>
+                            <?php
                                 $nurse_education = explode("/", $tani1Data[0]['nurse_education']);
                                 foreach ($nurse_education as $value) {
                                     $trimmed_value = trim($value);
@@ -212,10 +210,101 @@ if(isset($_GET['patient_id'])){
                                     }
                                 } 
                                         ?>
-                                                    </div>
+                        </div>
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Değerlendirme:</p>
+                            <div class="input-section d-flex">
+                                <p class="usernamelabel">NOC Çıktıları:</p>
+                                <p class="tanıdescription">Hastanın oksijen satürasyonun %95’in üzerinde olması</p>
+                            </div>
+                            <div class="input-section" id="o2-delivery-container">
+                                <p class="usernamelabel">NOC Gösterge: </p>
+                                <div class="form-check">
+                                    <div class="form-check">
+                                        <?php
+                                $value = "1: Hastanın oksijen satürasyonunda çok şiddetli düzeyde bozulma var";
+                                $checked = "";
+                                if (trim($tani1Data[0]['noc_indicator_after']) === trim($value)) {
+                                    $checked = "checked";
+                                }
+                                 ?>
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after"
+                                            disabled id="noc_indicator_after" value="<?= $value ?>" <?= $checked ?>>
+                                        <label class="form-check-label" for="noc_indicator_after">
+                                            <span class="checkbox-header">1: Hastanın oksijen satürasyonunda çok
+                                                şiddetli
+                                                düzeyde bozulma var </span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <?php
+                                $value = "2: Hastanın oksijen satürasyonunda şiddetli düzeyde bozulma var";
+                                $checked = "";
+                                if (trim($tani1Data[0]['noc_indicator_after']) === trim($value)) {
+                                    $checked = "checked";
+                                }
+                                 ?>
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after"
+                                            disabled id="noc_indicator_after" value="<?= $value ?>" <?= $checked ?>>
+                                        <label class="form-check-label" for="noc_indicator_after">
+                                            <span class="checkbox-header">2: Hastanın oksijen satürasyonunda şiddetli
+                                                düzeyde bozulma var </span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <?php
+                                $value = "3: Hastanın oksijen satürasyonunda orta düzeyde bozulma var";
+                                $checked = "";
+                                if (trim($tani1Data[0]['noc_indicator_after']) === trim($value)) {
+                                    $checked = "checked";
+                                }
+                                 ?>
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after"
+                                            disabled id="noc_indicator_after" value="<?= $value ?>" <?= $checked ?>>
+                                        <label class="form-check-label" for="noc_indicator_after">
+                                            <span class="checkbox-header">3: Hastanın oksijen satürasyonunda orta
+                                                düzeyde
+                                                bozulma var </span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <?php
+                                $value = "4 : Hastanın oksijen satürasyonunda hafif düzeyde bozulma var";
+                                $checked = "";
+                                if (trim($tani1Data[0]['noc_indicator_after']) === trim($value)) {
+                                    $checked = "checked";
+                                }
+                                 ?>
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after"
+                                            disabled id="noc_indicator_after" value="<?= $value ?>" <?= $checked ?>>
+                                        <label class="form-check-label" for="noc_indicator_after">
+                                            <span class="checkbox-header">4 : Hastanın oksijen satürasyonunda hafif
+                                                düzeyde
+                                                bozulma var </span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <?php
+                                $value = "5: Hastanın oksijen satürasyonunda bozulma yok ";
+                                $checked = "";
+                                if (trim($tani1Data[0]['noc_indicator_after']) === trim($value)) {
+                                    $checked = "checked";
+                                }
+                                 ?>
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after"
+                                            disabled id="
+                                        noc_indicator_after" value="<?= $value ?>" <?= $checked ?>>
+                                        <label class="form-check-label" for="noc_indicator_after">
+                                            <span class="checkbox-header">5: Hastanın oksijen satürasyonunda bozulma yok
+                                            </span>
+                                        </label>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
                             <p class="tanıdescription"> Sorun devam ediyor: 1-4 gösterge seçildiyse; yeni günde bakım
                                 planında tanımlı tanı olacak. </p>
                             <p class="tanıdescription"> Sorun çözümlendi:
@@ -229,14 +318,13 @@ if(isset($_GET['patient_id'])){
         </div>
     </div>
     <script>
-      const noc_indicator = document.querySelectorAll("#noc_indicator");
+    const noc_indicator = document.querySelectorAll("#noc_indicator");
     noc_indicator.forEach(function(radio) {
-    if (radio.value === "something") {
-        radio.checked = true;
-    }
+        if (radio.value === "something") {
+            radio.checked = true;
+        }
     });
-
-
     </script>
 </body>
+
 </html>

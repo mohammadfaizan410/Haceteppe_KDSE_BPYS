@@ -614,7 +614,16 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
             let problem_info = matchedfields_string
             let nurse_description = "Gaz değişiminde bozulma"
             let noc_output = "Hastanın oksijen satürasyonun %95’in üzerinde olması"
-            let noc_indicator2_after = $("input[type='radio'][name='noc_indicator']:checked").val();
+
+            let noc_indicator = $("input[type='radio'][name='noc_indicator']:checked").val();
+
+            let noc_indicator_after = $("input[type='radio'][name='noc_indicator_after']:checked")
+        .val();
+
+            let noc_indicator2 = $("input[type='radio'][name='noc_indicator2']:checked").val();
+
+            let noc_indicator2_after = $("input[type='radio'][name='noc_indicator2_after']:checked")
+                .val();
             let evaluation =
                 "Sorun çözümlendi:5 gösterge seçildiyse;yeni günde bakım planına bu tanıyı taşımayacak Sorun devam ediyor: 1-4 gösterge seçildiyse; yeni günde bakım planında tanımlı tanı olacak.";
             console.log("values init")
@@ -762,6 +771,9 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                     nurse_description: nurse_description,
                     noc_output: noc_output,
                     noc_indicator: noc_indicator,
+                    noc_indicator2: noc_indicator2,
+                    noc_indicator_after: noc_indicator_after,
+                    noc_indicator2_after: noc_indicator2_after,
                     nurse_attempt: nurse_attempt,
                     nurse_education: nurse_education,
                     coop_attempt: coop_attempt,
