@@ -624,11 +624,11 @@ if (isset($_GET['logout'])) {
             e.preventDefault()
            
                   //var valid = this.form.checkValidity();
-            if (valid) {
-                let name = $('#name').val();
-                let surname = $('#surname').val();
-                let age = $('#age').val();
-                let not = $('#not').val();
+            //if (valid) {
+                //let name = $('#name').val();
+                //let surname = $('#surname').val();
+                //let age = $('#age').val();
+                //let not = $('#not').val();
                
                 var patient_id = <?php
                   $userid = $_GET['patient_id'];
