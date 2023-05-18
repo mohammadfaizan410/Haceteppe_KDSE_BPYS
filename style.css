@@ -570,6 +570,10 @@ input[type="email"] {
 .stu-hamburger {
     display: none;
     cursor: pointer;
+    height: 100%;
+    max-width: 300px;
+    width: 100%;
+    background-color: white;
 }
 
 .bar {
@@ -577,6 +581,7 @@ input[type="email"] {
     width: 25px;
     height: 3px;
     margin: 5px auto;
+    background-color: #246174;
 }
 
 @media screen and (max-width: 900px) {
