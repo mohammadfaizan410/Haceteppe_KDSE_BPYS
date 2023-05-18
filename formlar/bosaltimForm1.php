@@ -628,13 +628,11 @@ if (isset($_GET['logout'])) {
             </script>
 
             <script>
-                $(function() {
-                    $('#submit').click(function(e) {
+        $(function() {
+            $('#submit').click(function(e) {
+                var valid = this.form.checkValidity();
 
-
-                        var valid = this.form.checkValidity();
-
-                        if (valid) {
+                if (valid) {
                 let surname = $('#surname').val();
                 let age = $('#age').val();
                 let not = $('#not').val();
@@ -643,6 +641,9 @@ if (isset($_GET['logout'])) {
                   $userid = $_GET['patient_id'];
                   echo $userid
                   ?>;
+                   let patient_name = "<?php
+            echo urldecode($_GET['patient_name']);
+                  ?>";
                    let patient_name = "<?php
             echo urldecode($_GET['patient_name']);
                   ?>";
