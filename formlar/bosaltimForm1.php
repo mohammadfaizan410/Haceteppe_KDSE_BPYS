@@ -80,8 +80,8 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" name='stoolEmptyingHelp' type="radio" id="Bağımsız1" value="Bağımsız">
-                                                <label class="form-check-label" for="Bağımsız1">Bağımsız
+                                                <input class="form-check-input" name='stoolEmptyingHelp' type="radio" name="protezlertable" id="protezlertable" value="Bağımsız">
+                                                <label class="form-check-label" for="protezlertable">Bağımsız
                                                 </label>
                                             </div>
                                         </td>
@@ -91,8 +91,8 @@ if (isset($_GET['logout'])) {
 
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" name='stoolEmptyingHelp' type="radio" id="YarıBağımlı1" value="Yarı bağımlı">
-                                                <label class="form-check-label" for="YarıBağımlı1">Yarı bağımlı
+                                                <input class="form-check-input" name='stoolEmptyingHelp' type="radio" name="protezlertable" id="protezlertable" value="Yarı bağımlı">
+                                                <label class="form-check-label" for="protezlertable">Yarı bağımlı
                                                 </label>
                                             </div>
                                         </td>
@@ -102,8 +102,8 @@ if (isset($_GET['logout'])) {
 
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" name='stoolEmptyingHelp' type="radio" id="Bağımlı1" value="Bağımlı">
-                                                <label class="form-check-label" for="Bağımlı1">Bağımlı
+                                                <input class="form-check-input" name='stoolEmptyingHelp' type="radio" name="protezlertable" id="protezlertable" value="Bağımlı">
+                                                <label class="form-check-label" for="protezlertable">Bağımlı
                                                 </label>
                                             </div>
                                         </td>
@@ -140,7 +140,7 @@ if (isset($_GET['logout'])) {
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="BoşaltımSorun" id="BoşaltımSorun" value="Var">
                             <label class="form-check-label" for="BoşaltımSorun">
-                                <span class="checkbox-header"> Var</span>
+                                <span class="checkbox-header">Sorun Var</span>
 
                             </label>
                             <table class="ozgecmistable-wrapper">
@@ -333,8 +333,8 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="Bağımsız" value="Bağımsız">
-                                                <label class="form-check-label" for="Bağımsız">Bağımsız
+                                                <input class="form-check-input" type="radio" name="protezlertable2" id="protezlertable2" value="Bağımsız">
+                                                <label class="form-check-label" for="protezlertable2">Bağımsız
                                                 </label>
                                             </div>
                                         </td>
@@ -344,8 +344,8 @@ if (isset($_GET['logout'])) {
 
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="YarıBağımlı" value="Yarı bağımlı">
-                                                <label class="form-check-label" for="YarıBağımlı">Yarı bağımlı
+                                                <input class="form-check-input" type="radio" name="protezlertable2" id="protezlertable2" value="Yarı bağımlı">
+                                                <label class="form-check-label" for="protezlertable2">Yarı bağımlı
                                                 </label>
                                             </div>
                                         </td>
@@ -355,8 +355,8 @@ if (isset($_GET['logout'])) {
 
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="Bağımlı" value="Bağımlı">
-                                                <label class="form-check-label" for="Bağımlı">Bağımlı
+                                                <input class="form-check-input" type="radio" name="protezlertable2" id="protezlertable2" value="Bağımlı">
+                                                <label class="form-check-label" for="protezlertable2">Bağımlı
                                                 </label>
                                             </div>
                                         </td>
