@@ -646,7 +646,7 @@ if (isset($_GET['logout'])) {
                    let patient_name = "<?php
             echo urldecode($_GET['patient_name']);
                   ?>";
-                    let stoolEmptyingHelp = $("input[type='radio'][name='stoolEmptyingHelp']:checked").val();
+                    <!--let stoolEmptyingHelp = $("input[type='radio'][name='stoolEmptyingHelp']:checked").val();
                     let hospitalStoolEmptyingFrequency =  $("input[name='hospitalStoolEmptyingFrequency']").val();
                     let hospitalStoolEmptyingDate =  $("input[name='hospitalStoolEmptyingDate']").val();
                     let BoşaltımSorun = '';
@@ -656,7 +656,18 @@ if (isset($_GET['logout'])) {
                                             }).get().join(',');
                     }else[
                         BoşaltımSorun = 'Sorun yok'
-                    ]
+                    ]-->
+                    let protezlertable = $("input[type='radio'][name='protezlertable']:checked").val();
+                    let sikligi = $("input[name='sikligi']").val();
+                    let zamani = $("input[name='zamani']").val();
+                    let BoşaltımSorun = $("input[type='radio'][name='BoşaltımSorun']:checked").val();
+                    let Konstipasyon = $("input[name='Konstipasyon']").val();
+                    let Diare = $("input[name='Diare']").val();
+                    let Distansiyon = $("input[name='Distansiyon']").val();
+                    let Fekal = $("input[name='Fekal']").val();
+                    let Hemoroid = $("input[name='Hemoroid']").val();
+                    let Dışkı = $("input[name='Dışkı']").val();
+                    let BagirsakDiğer = $("input[name='BagirsakDiğer']").val();
                     let bagirsak_sesleri = $("input[name='bagirsak_sesleri']").val();
                     let defekasyon_zamani = $("input[name='defekasyon_zamani']").val();
                     let defekasyon_tekrari = $("input[name='defekasyon_tekrari']").val();
@@ -699,9 +710,7 @@ if (isset($_GET['logout'])) {
                                 type: 'POST',
                                 url: '<?php echo $base_url; ?>/SubmitOrUpdateForm1_Bosaltim.php',
                                 data: {
-                           Bağımsız1:Bağımsız1,
-                           YarıBağımlı1:YarıBağımlı1,
-                           Bağımlı1:Bağımlı1,
+                           protezlertable:protezlertable,
                            sikligi:sikligi,
                            zamani:zamani,
                            BoşaltımSorun:BoşaltımSorun,
@@ -727,9 +736,7 @@ if (isset($_GET['logout'])) {
                            Koku:Koku,
                            Dışkı_sızıntısı:Dışkı_sızıntısı,
                            Deri_irritasyonu:Deri_irritasyonu,
-                           Bağımsız:Bağımsız,
-                           YarıBağımlı:YarıBağımlı,
-                           Bağımlı:Bağımlı,
+                           protezlertable2:protezlertable2,
                            BoşaltımdaSorun:BoşaltımdaSorun,
                            Üriner_inkontinans1:Üriner_inkontinans1,
                            Dizüri1:Dizüri1,
