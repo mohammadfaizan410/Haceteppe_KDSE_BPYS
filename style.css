@@ -301,7 +301,6 @@ input[type="email"] {
 
 .patients-save {
     display: flex;
-    margin-top: 50px;
     justify-content: center;
 }
 
@@ -312,7 +311,6 @@ input[type="email"] {
 }
 
 .patients-table {
-    margin-top: 50px;
     background-color: #246174 !important;
 }
 
@@ -424,7 +422,6 @@ input[type="email"] {
 }
 
 .patients-table {
-    width: 90%;
     align-self: center;
 }
 
@@ -568,4 +565,14 @@ input[type="email"] {
 .form-selection {
     display: flex;
     align-self: center;
+}
+
+@media screen and (max-width: 900px) {
+    .navigation-wrapper {
+        width: unset;
+    }
+
+    .stu-body1 {
+        width: unset;
+    }
 }

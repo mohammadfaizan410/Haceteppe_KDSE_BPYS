@@ -53,15 +53,18 @@ if (isset($_GET['logout'])) {
             <div class="navigation-right">
                 <div class="nav-items-wrapper">
                     <a href="messaging.php" class="nav-link nav-items"><i class="fa fa-comments me-2"></i>Chat</a>
-                    <a href="./broadcast.php" class="nav-link nav-items"><i class="fa fa-comments me-2"></i>Broadcast/Multicast</a>
-                    <a class="nav-link nav-items" href="./updateForms/showAllPatients.php"><i class="fa fa-comments me-2"></i>Show all Patients</a>
-                    <a class="nav-link nav-items" href="./addNewPatient.php"><i class="fa fa-comments me-2"></i>Add new Patient</a>
+                    <a href="./broadcast.php" class="nav-link nav-items"><i
+                            class="fa fa-comments me-2"></i>Broadcast/Multicast</a>
+                    <a class="nav-link nav-items" href="./updateForms/showAllPatients.php"><i
+                            class="fa fa-comments me-2"></i>Show all Patients</a>
+                    <a class="nav-link nav-items" href="./addNewPatient.php"><i class="fa fa-comments me-2"></i>Add new
+                        Patient</a>
 
                 </div>
                 <div>
 
                     <a href="#" class="nav-link " data-bs-toggle="dropdown">
-                        <span class="d-none d-lg-inline-flex"><?php
+                        <span class="d-lg-inline-flex"><?php
                                                                 echo '' . $_SESSION['userlogin']['name'] . ' ' . $_SESSION['userlogin']['surname'] . '';
                                                                 ?></span></a>
                     <span class="status">Öğrenci</span>
