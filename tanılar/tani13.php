@@ -354,13 +354,11 @@ $family_history = isset($_GET['family_history']) ? $_GET['family_history'] : 'Na
                                         echo $userid
                                         ?>;
                                     $userid = $_GET['patient_id'];
-                                    echo $userid
-                                    ?>;
+                                   
                 let patient_name = "<?php
                                         echo urldecode(isset($_GET['patient_name']) ? $_GET['patient_name'] : "test");
                                         ?>";
-                                    echo urldecode($_GET['patient_name']);
-                                    ?>";
+                                 
                 let yourDate = new Date();
                 let creationDate = yourDate.toISOString().split('T')[0];
                 let updateDate = yourDate.toISOString().split('T')[0];
