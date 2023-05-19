@@ -95,7 +95,7 @@ if (isset($_GET['logout'])) {
                         <div class="input-section d-flex">
                             <p class="usernamelabel">IV:</p>
                             <div class='d-flex flex-column w-75'>
-                                <input type="number" class="form-control mt-2" required name="iv_input1" id="diger" placeholder="IV input" maxlength="5">
+                                <input type="number" class="form-control mt-2" required name="iv_input1" id="diger" placeholder="IV input" min = "0" max = "5">
                                 <input type="number" class="form-control mt-2" required name="iv_input2" id="diger" placeholder="IV input" maxlength="5">
                                 <input type="number" class="form-control mt-2" required name="iv_input3" id="diger" placeholder="IV input" maxlength="5">
                                 <input type="number" class="form-control mt-2" required name="iv_input4" id="diger" placeholder="IV input" maxlength="5">
