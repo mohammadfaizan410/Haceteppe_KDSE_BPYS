@@ -84,12 +84,7 @@ if ($result) {
                             <p class="usernamelabel">Cinsiyet : </p>
                             <input type="text" class="form-control" required name="patient_gender" id="diger" placeholder="Hasta Cinsiyetini Giriniz" value="<?php echo $form4[0]['patient_gender']; ?>">
                         </div>
-
-                        <div class="input-section d-flex" style="justify-content:space-between">
-                            <p class="usernamelabel">Yaş : </p>
-                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Hasta Yaşını Giriniz">
-                        </div>
-
+                        
                         <div class="input-section d-flex" style="justify-content:space-between">
                             <p class="usernamelabel">Tıbbi Tanı : </p>
                             <input type="text" class="form-control" required name="medical_diagnosis" id="diger" placeholder="Tıbbi Tanıyı Giriniz" value="<?php echo $form4[0]['medical_diagnosis']; ?>">
