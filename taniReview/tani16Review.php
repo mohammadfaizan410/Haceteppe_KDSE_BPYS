@@ -73,17 +73,17 @@ if (isset($_GET['patient_id'])) {
                             <p class="usernamelabel">Sorunla İlişkili Veriler:</p>
                             <div class="matchedfields-wrapper">
                                 <?php
-                                $innerHtml = '';
-                                $fieldsArray = explode("/", $tani14Data[0]["matchedfields_string"]);
-                                foreach ($fieldsArray as $key => $value) {
-                                    if (preg_match("/NaN/", $value)) {
-                                        $innerHtml .= "<p style='color:red;'>$value</p>";
-                                    } else {
-                                        $innerHtml .= "<p>$value</p>";
-                                    }
-                                };
-                                echo $innerHtml;
-                                ?>
+                            $innerHtml = '';
+                            $fieldsArray = explode("/", $tani16Data[0]["matchedfields_string"]);
+                            foreach ($fieldsArray as $key => $value) {
+                                if(preg_match("/NaN/", $value)){
+                                    $innerHtml .= "<p style='color:red;'>$value</p>";
+                                }else{
+                                    $innerHtml .= "<p>$value</p>";
+                                }
+                            };
+                            echo $innerHtml;
+                        ?>
                             </div>
 
                         </div>
@@ -101,7 +101,7 @@ if (isset($_GET['patient_id'])) {
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator" disabled id="noc_indicator" checked>
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header"><?php echo "$tani16Data[0]['noc_indicator']" ?></span>
+                                        <span class="checkbox-header"><?php echo $tani16Data[0]['noc_indicator'] ?></span>
                                     </label>
                                 </div>
 
@@ -109,7 +109,25 @@ if (isset($_GET['patient_id'])) {
                             </div>
 
                         </div>
+                        <div class="input-section d-flex">
+                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p class="tanıdescription">Hastada ağız kokusunun olmaması</p>
+                        </div>
+                        <div class="input-section" id="o2-delivery-container">
+                            <p class="usernamelabel">NOC Gösterge: </p>
+                            <div class="form-check">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator2" disabled
+                                        id="noc_indicator" checked>
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header"><?php echo $tani16Data[0]['noc_indicator2']?></span>
+                                    </label>
+                                </div>
+                               
 
+                            </div>
+
+                        </div>
                         <div class="input-section d-flex" style="flex-direction: column;">
                             <p class="usernamelabel">Hemşirelik Girişimleri:</p>
                             <?php
@@ -126,24 +144,7 @@ if (isset($_GET['patient_id'])) {
                             }
                             ?>
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastada ağız kokusunun olmaması</p>
-                        </div>
-                        <div class="input-section" id="o2-delivery-container">
-                            <p class="usernamelabel">NOC Gösterge: </p>
-                            <div class="form-check">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" disabled id="noc_indicator" checked>
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header"><?php echo "$tani16Data[0]['noc_indicator2']" ?></span>
-                                    </label>
-                                </div>
-
-
-                            </div>
-
-                        </div>
+                     
                         <div class="input-section d-flex" style="flex-direction: column;">
                             <p class="usernamelabel">Eğitim:</p>
                             <?php
@@ -177,12 +178,43 @@ if (isset($_GET['patient_id'])) {
                             ?>
                         </div>
 
+                        <div class="input-section d-flex" id="o2-delivery-container">
+                        <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p class="tanıdescription">Hastanın muköz membran bütünlüğünün sağlanması </p>
+                            <div class="form-check">
+                                <p class="usernamelabel">NOC Gösterge: </p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" disabled
+                                        id="noc_indicator" checked>
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header"><?php echo $tani16Data[0]['noc_indicator_after']?></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p class="tanıdescription">Hastada ağız kokusunun olmaması</p>
+                         <div class="input-section d-flex" id="o2-delivery-container">
+                             <div class="form-check">
+                                <p class="usernamelabel">NOC Gösterge: </p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after2" disabled
+                                        id="noc_indicator" checked>
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header"><?php echo $tani16Data[0]['noc_indicator_after2']?></span>
+                                    </label>
+                                </div>
+                               
 
+                            </div>
+
+                        </div>
+                        </div>
+                        
+                            </div>
+                                            </form>
                 </div>
-                </form>
             </div>
         </div>
-    </div>
     </div>
     <script>
     </script>

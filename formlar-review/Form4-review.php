@@ -86,11 +86,6 @@ if ($result) {
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between">
-                            <p class="usernamelabel">Yaş : </p>
-                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Hasta Yaşını Giriniz">
-                        </div>
-
-                        <div class="input-section d-flex" style="justify-content:space-between">
                             <p class="usernamelabel">Tıbbi Tanı : </p>
                             <input type="text" class="form-control" required name="medical_diagnosis" id="diger" placeholder="Tıbbi Tanıyı Giriniz" value="<?php echo $form4[0]['medical_diagnosis']; ?>">
                         </div>
@@ -112,7 +107,7 @@ if ($result) {
 
                         <div class="input-section d-flex" style="justify-content:space-between">
                             <p class="usernamelabel">Son Düşme Risk Skoru : </p>
-                            <input type="text" class="form-control" required name="last_fall_risk_score" id="diger" placeholder="Risk Skorunu Giriniz" value="<?php echo $form4[0]['last_fall_risk_score']; ?>">
+                            <input type="number" class="form-control" required name="last_fall_risk_score" id="diger" placeholder="Risk Skorunu Giriniz" value="<?php echo $form4[0]['last_fall_risk_score']; ?>">
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between">

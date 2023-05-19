@@ -73,19 +73,19 @@ if (isset($_GET['logout'])) {
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">İlacın Adı:</p>
-                            <input type="text" class="form-control" required name="medicine_name" id="diger" placeholder="medicine_name">
+                            <input type="text" class="form-control" required name="medicine_name" id="diger" placeholder="medicine_name" maxlength = "200">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">İlacın Dozu:</p>
-                            <input type="text" class="form-control" required name="medicine_dose" id="diger" placeholder="medicine_dose">
+                            <input type="text" class="form-control" required name="medicine_dose" id="diger" placeholder="medicine_dose" maxlength = "200">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">İlacın Yolu:</p>
-                            <input type="text" class="form-control" required name="delivery_method" id="diger" placeholder="delivery_method">
+                            <input type="text" class="form-control" required name="delivery_method" id="diger" placeholder="delivery_method" maxlength = "200">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Uygulama Zamanı:</p>
-                            <input type="text" class="form-control" required name="treatment_timeRange" id="diger" placeholder="treatment_timeRange">
+                            <input type="text" class="form-control" required name="treatment_timeRange" id="diger" placeholder="treatment_timeRange" maxlength = "200">
                         </div>
                         <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
                     </form>

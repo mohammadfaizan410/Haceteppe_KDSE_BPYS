@@ -71,7 +71,7 @@ if (isset($_GET['logout'])) {
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Vücut Sıcaklığı:</p>
-                            <input type="text" class="form-control" required name="body_temperature" id="diger" placeholder="Vücut Sıcaklığı">
+                            <input type="number" class="form-control" required name="body_temperature" id="diger" placeholder="Vücut Sıcaklığı" min = "0" max = "100">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Ölçüm yeri: </p>
@@ -129,7 +129,7 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Nabız hızı:</p>
-                            <input type="text" class="form-control" required name="heart_rate" id="diger" placeholder="Nabız hızı">
+                            <input type="number" class="form-control" required name="heart_rate" id="diger" placeholder="Nabız hızı" min = "0" max = "500">
                         </div>
 
 
@@ -171,7 +171,7 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Solunum sayısı:</p>
-                            <input type="text" class="form-control" required name="respiratory_rate" id="diger" placeholder="Solunum sayısı">
+                            <input type="number" class="form-control" required name="respiratory_rate" id="diger" placeholder="Solunum sayısı" min = "0" max = "1000">
                         </div>
 
                         <div class="input-section d-flex">
@@ -202,7 +202,7 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Kan basıncı:</p>
-                            <input type="text" class="form-control" required name="blood_pressure" id="diger" placeholder="Tetkik Sonucu">
+                            <input type="text" class="form-control" required name="blood_pressure" id="diger" placeholder="Tetkik Sonucu" maxlength = "7">
                         </div>
 
                         <div class="input-section d-flex">
@@ -284,7 +284,7 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">SPO2 (%):</p>
-                            <input type="text" class="form-control" required name="spo2_percentage" id="diger" placeholder="SPO2 (%)">
+                            <input type="number" class="form-control" required name="spo2_percentage" id="diger" placeholder="SPO2 (%)" min = "0" max = "100">
                         </div>
                         <div class="input-section" id="o2-delivery-container">
                             <p class="usernamelabel">Günlük Günlük Kilo Takibi Yapiliyor mi?</p>
@@ -292,16 +292,16 @@ if (isset($_GET['logout'])) {
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="weight_input_toggle" value="O2 maske">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
-                                        <span class="checkbox-header">Yapilmiyorum</span>
+                                        <span class="checkbox-header">Yapilmiyor</span>
                                     </label>
                                 </div>
                             </div>
                         </div>
                         <div class="input-section" id="kilo_yapiliyor">
                             <p class="usernamelabel">Günlük Kilo Takibi:</p>
-                            <input type="text" class="form-control" name="weight_input" id="diger" placeholder="Günlük Kilo Takibi">
+                            <input type="text" class="form-control" name="weight_input" id="diger" placeholder="Günlük Kilo Takibi" maxlength = "200">
                         </div>
-                        <input class="form-control submit" type='submit' name="submit" id="submit" value="Submit">
+                        <input class="form-control submit" type='submit' name="submit" id="submit" value="Submit" >
                     </form>
                 </div>
             </div>
@@ -373,7 +373,7 @@ if (isset($_GET['logout'])) {
 
                 let spo2_percentage = $("input[name='spo2_percentage']").val();
                 let weight_input = $('#kilo_yapiliyor').css("display") === 'flex' ? $(
-                    "input[name='weight_input']").val() : 'Yapilmiyorum';
+                    "input[name='weight_input']").val() : 'Yapilmiyor';
 
                 $.ajax({
                     type: 'POST',

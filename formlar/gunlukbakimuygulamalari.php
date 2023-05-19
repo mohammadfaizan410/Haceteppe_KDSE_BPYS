@@ -69,7 +69,7 @@ if (isset($_GET['logout'])) {
                     <form action="" method="POST" class="patients-save-fields">
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Uygulama Giriniz</p>
-                            <input type="text" class="form-control" required name="applications" id="diger" placeholder="Uygulama Giriniz" maxlength="100">
+                            <input type="text" class="form-control" required name="applications" id="diger" placeholder="Uygulama Giriniz" maxlength="200">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Saat :</p>
@@ -77,7 +77,7 @@ if (isset($_GET['logout'])) {
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Açıklama Giriniz</p>
-                            <input type="text" class="form-control" required name="description" id="diger" placeholder="Açıklama Giriniz" maxlength="250">
+                            <input type="text" class="form-control" required name="description" id="diger" placeholder="Açıklama Giriniz" maxlength="2000">
                         </div>
                         <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
                     </form>

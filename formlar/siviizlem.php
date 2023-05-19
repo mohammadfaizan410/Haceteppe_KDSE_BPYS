@@ -71,23 +71,23 @@ if (isset($_GET['logout'])) {
                     <form action="" method="POST" class="patients-save-fields">
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Sıvının Cinsi:</p>
-                            <input type="text" class="form-control" required name="liquid_type" id="diger" placeholder="liquid_type">
+                            <input type="text" class="form-control" required name="liquid_type" id="diger" placeholder="liquid_type" maxlength = "200">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Sıvının Hızı:</p>
-                            <input type="text" class="form-control" required name="liquid_velocity" id="diger" placeholder="liquid_velocity">
+                            <input type="text" class="form-control" required name="liquid_velocity" id="diger" placeholder="liquid_velocity" maxlength = "200">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Saat:</p>
-                            <input type="text" class="form-control" required name="delivery_time" id="diger" placeholder="delivery_time">
+                            <input type="time" class="form-control" required name="delivery_time" id="diger" placeholder="delivery_time">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Seviye:</p>
-                            <input type="text" class="form-control" required name="liquid_level" id="diger" placeholder="liquid_level">
+                            <input type="text" class="form-control" required name="liquid_level" id="diger" placeholder="liquid_level" maxlength = "200">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Giden:</p>
-                            <input type="text" class="form-control" required name="liquid_sent" id="diger" placeholder="liquid_sent">
+                            <input type="text" class="form-control" required name="liquid_sent" id="diger" placeholder="liquid_sent" maxlength = "200">
                         </div>
                         <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
                     </form>

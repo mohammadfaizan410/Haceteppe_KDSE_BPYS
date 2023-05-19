@@ -59,7 +59,6 @@ if (isset($_GET['logout'])) {
                     <a class="nav-link nav-items" href="./updateForms/showAllPatients.php"><i class="fa fa-comments me-2"></i>Tüm hastaları göster</a>
                     <a class="nav-link nav-items" href="./addNewPatient.php"><i class="fa fa-comments me-2"></i>Yeni
                         hasta ekle</a>
-
                 </div>
                 <div>
 
