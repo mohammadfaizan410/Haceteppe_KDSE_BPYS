@@ -19,6 +19,7 @@ if (isset($_GET['patient_id'])) {
         $tani1Data = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
+var_dump($tani1Data);
 
 ?>
 <!DOCTYPE html>
@@ -160,7 +161,7 @@ if (isset($_GET['patient_id'])) {
                                                 name="noc_indicator_after" disabled id="noc_indicator_after" checked>
                                             <label class="form-check-label" for="noc_indicator_after">
                                                 <span
-                                                    class="checkbox-header"><?php echo $tani1Data[0]['noc_indicator_after'] ?></span>
+                                                    class="checkbox-header"><?php echo "$taniData[0]['noc_indicator_after']" ?></span>
                                             </label>
                                         </div>
 

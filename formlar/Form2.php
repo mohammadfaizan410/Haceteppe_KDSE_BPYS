@@ -126,22 +126,22 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Ağrının Karakteri:</p>
-                            <input type="text" class="form-control" required name="pain_character" id="diger" placeholder="Ağrının Karakterini Giriniz" maxlength="100">
+                            <input type="text" class="form-control" required name="pain_character" id="diger" placeholder="Ağrının Karakterini Giriniz" maxlength="500">
                         </div>
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Ağrının Sıklığı:</p>
-                            <input type="text" class="form-control" required name="pain_frequency" id="diger" placeholder="Ağrının Sıklığını Giriniz" maxlength="50">
+                            <input type="text" class="form-control" required name="pain_frequency" id="diger" placeholder="Ağrının Sıklığını Giriniz" maxlength="200">
                         </div>
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Ağrıyı Arttıran Durumlar:</p>
-                            <input type="text" class="form-control" required name="pain_increase_factors" id="diger" placeholder="Ağrıyı Arttıran Durumları Giriniz" maxlength="50">
+                            <input type="text" class="form-control" required name="pain_increase_factors" id="diger" placeholder="Ağrıyı Arttıran Durumları Giriniz" maxlength="500">
                         </div>
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Ağrıyı Azaltan Durumlar:</p>
-                            <input type="text" class="form-control" required name="pain_decrease_factors" id="diger" placeholder="Ağrıyı Azaltan Durumları Giriniz" maxlength="50">
+                            <input type="text" class="form-control" required name="pain_decrease_factors" id="diger" placeholder="Ağrıyı Azaltan Durumları Giriniz" maxlength="500">
                         </div>
 
                         <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
