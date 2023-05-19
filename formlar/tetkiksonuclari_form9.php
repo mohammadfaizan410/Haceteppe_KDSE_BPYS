@@ -126,11 +126,11 @@ if (isset($_GET['logout'])) {
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Tetkik Sonucu :</p>
-                            <input type="text" class="form-control" required name="examination_result" id="diger" placeholder="Tetkik Sonucu" maxlenght = "2000">
+                            <input type="text" class="form-control" required name="examination_result" id="diger" placeholder="Tetkik Sonucu" maxlength = "2000">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Referans Değeri :</p>
-                            <input type="text" class="form-control" required name="referance_value" id="diger" placeholder="Referans Değeri" maxlenght="5">
+                            <input type="text" class="form-control" required name="referance_value" id="diger" placeholder="Referans Değeri" maxlength="5">
                         </div>
                         <input class="form-control submit" type="submit" name="submit" id="submit" value="Submit">
                     </form>
