@@ -467,15 +467,6 @@ if (isset($_GET['logout'])) {
             $(this).prop('checked', true);
         }
     });
-
-
-
-    $(function() {
-        $('#closeBtn').click(function(e) {
-            $("#content").load("formlar-student.php");
-
-        })
-    });
     </script>
     <script>
     $(function() {
