@@ -40,10 +40,10 @@ if (isset($_GET['logout'])) {
     <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="../bootstrap.min.css" rel="stylesheet">
+    <link href="./bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="../style.css" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
     <style>
@@ -57,7 +57,7 @@ if (isset($_GET['logout'])) {
 <body>
     <div class="container-fluid pt-4 px-4">
         <div class="send-patient">
-            <span class='close closeBtn' id='closeBtn'>&times;</span>
+            <span class='close closeBtn' id='closeBtn1' >&times;</span>
             <h1 class="form-header">Ağrı Değerlendirmesi</h1>
             <div class="input-section-item">
                 <div class="patients-save">
@@ -153,8 +153,9 @@ if (isset($_GET['logout'])) {
     </div>
 
     <script>
-        $(function() {
-            $('#closeBtn').click(function(e) {
+            $('#closeBtn1').click(function(e) {
+                e.preventDefault();
+                console.log("close btn clicked");
                 let patient_id = <?php
                                     $userid = $_GET['patient_id'];
                                     echo $userid
@@ -164,16 +165,13 @@ if (isset($_GET['logout'])) {
                                     ?>";
                 var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
                 $("#content").load(url);
-
             })
-        });
     </script>
 
     <script>
         $(function() {
             $('#submit').click(function(e) {
                 e.preventDefault()
-
                 var valid = this.form.checkValidity();
                 if (valid) {
                     let name = $('#name').val();

@@ -9,7 +9,6 @@ if (isset($_POST)) {
     $noc_output = $_POST['noc_output'];
     $noc_indicator = $_POST['noc_indicator'];
     $noc_indicator_after = $_POST['noc_indicator_after'];
-
     $nurse_attempt = $_POST['nurse_attempt'];
     $nurse_education = $_POST['nurse_education'];
     $evaluation = $_POST['evaluation'];

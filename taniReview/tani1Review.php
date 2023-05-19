@@ -64,7 +64,7 @@ if (isset($_GET['patient_id'])) {
 <body>
     <div class="container-fluid pt-4 px-4">
         <div class="send-patient">
-            <span class='close closeBtn' id='closeBtn'>&times;</span>
+            <span class='close closeBtn' id='closeBtn1'>&times;</span>
             <h1 class="form-header">Bakım Planı</h1>
             <div class="input-section-item">
                 <div class="patients-save">
@@ -104,7 +104,7 @@ if (isset($_GET['patient_id'])) {
                                             disabled id="noc_indicator" checked>
                                         <label class="form-check-label" for="noc_indicator">
                                             <span
-                                                class="checkbox-header"><?php echo "$taniData[0]['noc_indicator']" ?></span>
+                                                class="checkbox-header"><?php echo $tani1Data[0]['noc_indicator'] ?></span>
                                         </label>
                                     </div>
 
@@ -160,7 +160,7 @@ if (isset($_GET['patient_id'])) {
                                                 name="noc_indicator_after" disabled id="noc_indicator_after" checked>
                                             <label class="form-check-label" for="noc_indicator_after">
                                                 <span
-                                                    class="checkbox-header"><?php echo "$taniData[0]['noc_indicator_after']" ?></span>
+                                                    class="checkbox-header"><?php echo $tani1Data[0]['noc_indicator_after'] ?></span>
                                             </label>
                                         </div>
 

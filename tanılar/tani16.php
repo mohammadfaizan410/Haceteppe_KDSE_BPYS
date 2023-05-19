@@ -65,7 +65,7 @@ $hospital_environment_factors = isset($_GET['hospital_environment_factors']) ? $
 <body>
     <div class="container-fluid pt-4 px-4">
         <div class="send-patient">
-            <span class='close closeBtn' id='closeBtn'>&times;</span>
+            <span class='close closeBtn' id='closeBtn1'>&times;</span>
             <h1 class="form-header">Bakım Planı</h1>
             <div class="input-section-item">
                 <div class="patients-save">
@@ -408,7 +408,7 @@ $hospital_environment_factors = isset($_GET['hospital_environment_factors']) ? $
 
     <script>
         $(function() {
-            $('#closeBtn').click(function(e) {
+            $('#closeBtn1').click(function(e) {
                 let patient_id = <?php
                                     $userid = $_GET['patient_id'];
                                     echo $userid

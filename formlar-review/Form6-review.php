@@ -62,7 +62,7 @@ if ($result) {
 <body>
     <div class="container-fluid pt-4 px-4">
         <div class="send-patient">
-            <span class='close closeBtn' id='closeBtn'>&times;</span>
+            <span class='close closeBtn' id='closeBtn1'>&times;</span>
             <h1 class="form-header">Braden Bası Yarası Risk Değerlendirme Aracı (> 5 Yaş)</h1>
             <div class="input-section-item">
                 <div class="patients-save">
@@ -390,7 +390,7 @@ if ($result) {
     <script>
         $(function() {
             $(function() {
-                $('#closeBtn').click(function(e) {
+                $('#closeBtn1').click(function(e) {
                     let patient_name = $("input[name='patient_name']").val();
                     let patient_id = parseInt($("input[name='patient_id']").val());
                     var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
