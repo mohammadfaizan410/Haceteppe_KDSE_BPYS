@@ -16,7 +16,7 @@ if (isset($_GET['logout'])) {
 
 <head>
     <meta charset="utf-8">
-    <title>e-BYRYS-KKDS</title>
+    <title>KDSE-BPYS</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -80,7 +80,7 @@ if (isset($_GET['logout'])) {
                     <div class="input-section-wrapper">
 
                         <div class="input-section-item">
-                            
+
                             <div class="input-section d-flex">
                                 <p class="usernamelabel">Hasta Adı Soyadı:</p>
                                 <input type="text" class="form-control" name="ad_soyad" id="ad_soyad" placeholder="Hasta Adı Soyadı Giriniz">
@@ -140,7 +140,7 @@ if (isset($_GET['logout'])) {
 
                         </div>
 
-                       <div class="input-section-item">
+                        <div class="input-section-item">
                             <div class="input-section d-flex">
                                 <p class="usernamelabel">Protokol/Dosya No:</p>
                                 <input type="text" class="form-control" required name="protocol_file_no" id="protocol_file_no" placeholder="Protokol/Dosya No Giriniz">
@@ -1026,10 +1026,10 @@ if (isset($_GET['logout'])) {
                     <input type="text" class="form-control not" required name="TibbiTani" id="TibbiTani" placeholder="Tıbbi Tanı">
 
                     <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
-                </div>
-                </form>
             </div>
-            
+            </form>
+        </div>
+
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
         <script src="lib/chart/chart.min.js"></script>
@@ -1041,254 +1041,254 @@ if (isset($_GET['logout'])) {
         <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
         <script>
-        $(function() {
-            $('#closeBtn').click(function(e) {
-                $("#content").load("formlar-student.php");
+            $(function() {
+                $('#closeBtn').click(function(e) {
+                    $("#content").load("formlar-student.php");
 
-            })
-        });
-    </script>
+                })
+            });
+        </script>
 
-    <script>
-        $(function() {
-            $('#submit').click(function(e) {
-                var valid = this.form.checkValidity();
+        <script>
+            $(function() {
+                $('#submit').click(function(e) {
+                    var valid = this.form.checkValidity();
 
-                if (valid) {
-                let surname = $('#surname').val();
-                let age = $('#age').val();
-                let not = $('#not').val();
-               
-                var patient_id = <?php
-                  $userid = $_GET['patient_id'];
-                  echo $userid
-                  ?>;
-                   let patient_name = "<?php
-            echo urldecode($_GET['patient_name']);
-                  ?>";
-                    let ad_soyad = $("input[name='ad_soyad']").val();
-                    let dogum_yeri = $("input[name='dogum_yeri']").val();
-                    let yas = parseInt($("input[name='yas']").val());
-                    let cinsiyet = $("input[type='radio'][name='cinsiyet']:checked").val();
-                    let medeni_durum = $("input[name='medeni_durum']").val();
-                    let meslek = $("input[name='meslek']").val();
-                    let egitim_durumu = $("input[name='egitim_durumu']").val();
-                    let protocol_file_no = $("input[name='protocol_file_no']").val();
-                    let yatis_tarihi = $("input[name='yatis_tarihi']").val();
-                    let bolum = $("input[name='bolum']").val();
-                    let tibbi_tani = $("input[name='tibbi_tani']").val();
-                    let doktor_ad_soyad = $("input[name='doktor_ad_soyad']").val();
-                    let cocuk_sayisi = $("input[name='cocuk_sayisi']").val();
-                    let sosyal_guvencesi = $("input[type='radio'][name='sosyal_guvencesi']:checked").val();
-                    let sosyal_guvence_diger = $("input[name='sosyal_guvence_diger']").val();
-                    let dil = $("input[name='dil']").val();
-                    let TercumanGereksinimi = $("input[type='radio'][name='TercumanGereksinimi']:checked").val();
-                    let t_diger = $("input[name='t_diger']").val();
-                    let TransfuzyonYapilma = $("input[type='radio'][name='TransfuzyonYapilma']:checked").val();
-                    let yatisdiger = $("input[name='yatisdiger']").val();
-                    let TransfuzyonReaksiyonu = $("input[type='radio'][name='TransfuzyonReaksiyonu']:checked").val();
-                    let reaksiyon_diger = $("input[name='reaksiyon_diger']").val();
-                    let BilgiKisisi = $("input[type='radio'][name='BilgiKisisi']:checked").val();
-                    let kisi_diger = $("input[name='kisi_diger']").val();
-                    let kolbandi = $("input[name='kolbandi']").val();
-                    let kolbandiaciklama = $("input[name='kolbandiaciklama']").val();
-                    let adsoyadyakin = $("input[name='adsoyadyakin']").val();
-                    let yakinlikderece = $("input[name='yakinlikderece']").val();
-                    let telefonyakin = $("input[name='telefonyakin']").val();
-                    let adresyakin = $("input[name='adresyakin']").val();
-                    let YatisDurumu = $("input[name='YatisDurumu']:checked").val();
-                    let yatis_durumu_diger = $("input[name='yatis_durumu_diger']").val();
-                    let yatis_yili = $("input[name='yatis_yili']").val();
-                    let yatis_suresi = $("input[name='yatis_suresi']").val();
-                    let yatis_nedeni = $("input[name='yatis_nedeni']").val();
-                    let GetirdigiHastaliklar = $("input[name='GetirdigiHastaliklar']:checked").val();
-                    let hastalik_diger = $("input[name='hastalik_diger']").val();
-                    let GetirdigiAmeliyatlar = $("input[name='GetirdigiAmeliyatlar']:checked").val();
-                    let ameliyat_diger = $("input[name='ameliyat_diger']").val();
-                    let GetirdigiKazalar = $("input[name='GetirdigiKazalar']:checked").val();
-                    let kaza_diger = $("input[name='kaza_diger']").val();
-                    let BulasiciHastalik = $("input[name='BulasiciHastalik']:checked").val();
-                    let bulasici_diger = $("input[name='bulasici_diger']").val();
-                    let AlerjikReaksiyon = $("input[name='AlerjikReaksiyon']:checked").val();
-                    let alerji_diger = $("input[name='alerji_diger']").val();
-                    let Allerjen = $("input[name='Allerjen']").val();
-                    let Belirtiler = $("input[name='Belirtiler']").val();
-                    let Tedavi = $("input[name='Tedavi']").val();
-                    let KullanilanIlaclar = $("input[name='KullanilanIlaclar']:checked").val();
-                    let ilaclar_diger = $("input[name='ilaclar_diger']").val();
-                    let IlacAdi = $("input[name='IlacAdi']").val();
-                    let Recete = $("input[name='Recete']:checked").val();
-                    let KullanimSuresi = $("input[name='KullanimSuresi']").val();
-                    let Dozu = $("input[name='Dozu']").val();
-                    let Sikligi = $("input[name='Sikligi']").val();
-                    let AlinisYolu = $("input[name='AlinisYolu']").val();
-                    let Suresi = $("input[name='Suresi']").val();
-                    let KullandigiAraclar = $("input[name='KullandigiAraclar']:checked").val();
-                    let araclar_diger = $("input[name='araclar_diger']").val();
-                    let Gozluk = $("input[name='Gozluk']").val();
-                    let KontaktLens = $("input[name='KontaktLens']").val();
-                    let IsitmeCihazi = $("input[name='IsitmeCihazi']").val();
-                    let Sag = $("input[name='Sag']").val();
-                    let Sol = $("input[name='Sol']").val();
-                    let DisProtezi = $("input[name='DisProtezi']").val();
-                    let TekerlekliSandalye = $("input[name='TekerlekliSandalye']").val();
-                    let Baston = $("input[name='Baston']").val();
-                    let Yurutec = $("input[name='Yurutec']").val();
-                    let KoltukDegnegi = $("input[name='KoltukDegnegi']").val();
-                    let protez_diger = $("input[name='protez_diger']").val();
-                    let Aliskanliklar = $("input[name='Aliskanliklar']:checked").val();
-                    let aliskanlik_diger = $("input[name='aliskanlik_diger']").val();
-                    let Sigara = $("input[name='Sigara']").val();
-                    let SMiktar = $("input[name='SMiktar']").val();
-                    let SKullanimSureci = $("input[name='SKullanimSureci']").val();
-                    let Alkol = $("input[name='Alkol']").val();
-                    let AMiktar = $("input[name='AMiktar']").val();
-                    let AKullanimSureci = $("input[name='AKullanimSureci']").val();
-                    let Cay = $("input[name='Cay']").val();
-                    let CMiktar = $("input[name='CMiktar']").val();
-                    let CKullanimSureci = $("input[name='CKullanimSureci']").val();
-                    let Kahve = $("input[name='Kahve']").val();
-                    let KMiktar = $("input[name='KMiktar']").val();
-                    let KKullanimSureci = $("input[name='KKullanimSureci']").val();
-                    let DDiger = $("input[name='DDiger']").val();
-                    let DMiktar = $("input[name='DMiktar']").val();
-                    let DKullanimSureci = $("input[name='DKullanimSureci']").val();
-                    let AileviSaglik = $("input[name='AileviSaglik']:checked").val();
-                    let ailevi_diger = $("input[name='ailevi_diger']").val();
-                    let YakinlikDerecesi = $("input[name='YakinlikDerecesi']").val();
-                    let Tanisi = $("input[name='Tanisi']").val();
-                    let GeldigiYer = $("input[name='GeldigiYer']:checked").val();
-                    let yer_diger = $("input[name='yer_diger']").val();
-                    let GelisSekli = $("input[name='GelisSekli']:checked").val();
-                    let gelis_diger = $("input[name='gelis_diger']").val();
-                    let Sikayetler = $("input[name='Sikayetler']").val();
-                    let TibbiTani = $("input[name='TibbiTani']").val();
+                    if (valid) {
+                        let surname = $('#surname').val();
+                        let age = $('#age').val();
+                        let not = $('#not').val();
 
-                    e.preventDefault()
+                        var patient_id = <?php
+                                            $userid = $_GET['patient_id'];
+                                            echo $userid
+                                            ?>;
+                        let patient_name = "<?php
+                                            echo urldecode($_GET['patient_name']);
+                                            ?>";
+                        let ad_soyad = $("input[name='ad_soyad']").val();
+                        let dogum_yeri = $("input[name='dogum_yeri']").val();
+                        let yas = parseInt($("input[name='yas']").val());
+                        let cinsiyet = $("input[type='radio'][name='cinsiyet']:checked").val();
+                        let medeni_durum = $("input[name='medeni_durum']").val();
+                        let meslek = $("input[name='meslek']").val();
+                        let egitim_durumu = $("input[name='egitim_durumu']").val();
+                        let protocol_file_no = $("input[name='protocol_file_no']").val();
+                        let yatis_tarihi = $("input[name='yatis_tarihi']").val();
+                        let bolum = $("input[name='bolum']").val();
+                        let tibbi_tani = $("input[name='tibbi_tani']").val();
+                        let doktor_ad_soyad = $("input[name='doktor_ad_soyad']").val();
+                        let cocuk_sayisi = $("input[name='cocuk_sayisi']").val();
+                        let sosyal_guvencesi = $("input[type='radio'][name='sosyal_guvencesi']:checked").val();
+                        let sosyal_guvence_diger = $("input[name='sosyal_guvence_diger']").val();
+                        let dil = $("input[name='dil']").val();
+                        let TercumanGereksinimi = $("input[type='radio'][name='TercumanGereksinimi']:checked").val();
+                        let t_diger = $("input[name='t_diger']").val();
+                        let TransfuzyonYapilma = $("input[type='radio'][name='TransfuzyonYapilma']:checked").val();
+                        let yatisdiger = $("input[name='yatisdiger']").val();
+                        let TransfuzyonReaksiyonu = $("input[type='radio'][name='TransfuzyonReaksiyonu']:checked").val();
+                        let reaksiyon_diger = $("input[name='reaksiyon_diger']").val();
+                        let BilgiKisisi = $("input[type='radio'][name='BilgiKisisi']:checked").val();
+                        let kisi_diger = $("input[name='kisi_diger']").val();
+                        let kolbandi = $("input[name='kolbandi']").val();
+                        let kolbandiaciklama = $("input[name='kolbandiaciklama']").val();
+                        let adsoyadyakin = $("input[name='adsoyadyakin']").val();
+                        let yakinlikderece = $("input[name='yakinlikderece']").val();
+                        let telefonyakin = $("input[name='telefonyakin']").val();
+                        let adresyakin = $("input[name='adresyakin']").val();
+                        let YatisDurumu = $("input[name='YatisDurumu']:checked").val();
+                        let yatis_durumu_diger = $("input[name='yatis_durumu_diger']").val();
+                        let yatis_yili = $("input[name='yatis_yili']").val();
+                        let yatis_suresi = $("input[name='yatis_suresi']").val();
+                        let yatis_nedeni = $("input[name='yatis_nedeni']").val();
+                        let GetirdigiHastaliklar = $("input[name='GetirdigiHastaliklar']:checked").val();
+                        let hastalik_diger = $("input[name='hastalik_diger']").val();
+                        let GetirdigiAmeliyatlar = $("input[name='GetirdigiAmeliyatlar']:checked").val();
+                        let ameliyat_diger = $("input[name='ameliyat_diger']").val();
+                        let GetirdigiKazalar = $("input[name='GetirdigiKazalar']:checked").val();
+                        let kaza_diger = $("input[name='kaza_diger']").val();
+                        let BulasiciHastalik = $("input[name='BulasiciHastalik']:checked").val();
+                        let bulasici_diger = $("input[name='bulasici_diger']").val();
+                        let AlerjikReaksiyon = $("input[name='AlerjikReaksiyon']:checked").val();
+                        let alerji_diger = $("input[name='alerji_diger']").val();
+                        let Allerjen = $("input[name='Allerjen']").val();
+                        let Belirtiler = $("input[name='Belirtiler']").val();
+                        let Tedavi = $("input[name='Tedavi']").val();
+                        let KullanilanIlaclar = $("input[name='KullanilanIlaclar']:checked").val();
+                        let ilaclar_diger = $("input[name='ilaclar_diger']").val();
+                        let IlacAdi = $("input[name='IlacAdi']").val();
+                        let Recete = $("input[name='Recete']:checked").val();
+                        let KullanimSuresi = $("input[name='KullanimSuresi']").val();
+                        let Dozu = $("input[name='Dozu']").val();
+                        let Sikligi = $("input[name='Sikligi']").val();
+                        let AlinisYolu = $("input[name='AlinisYolu']").val();
+                        let Suresi = $("input[name='Suresi']").val();
+                        let KullandigiAraclar = $("input[name='KullandigiAraclar']:checked").val();
+                        let araclar_diger = $("input[name='araclar_diger']").val();
+                        let Gozluk = $("input[name='Gozluk']").val();
+                        let KontaktLens = $("input[name='KontaktLens']").val();
+                        let IsitmeCihazi = $("input[name='IsitmeCihazi']").val();
+                        let Sag = $("input[name='Sag']").val();
+                        let Sol = $("input[name='Sol']").val();
+                        let DisProtezi = $("input[name='DisProtezi']").val();
+                        let TekerlekliSandalye = $("input[name='TekerlekliSandalye']").val();
+                        let Baston = $("input[name='Baston']").val();
+                        let Yurutec = $("input[name='Yurutec']").val();
+                        let KoltukDegnegi = $("input[name='KoltukDegnegi']").val();
+                        let protez_diger = $("input[name='protez_diger']").val();
+                        let Aliskanliklar = $("input[name='Aliskanliklar']:checked").val();
+                        let aliskanlik_diger = $("input[name='aliskanlik_diger']").val();
+                        let Sigara = $("input[name='Sigara']").val();
+                        let SMiktar = $("input[name='SMiktar']").val();
+                        let SKullanimSureci = $("input[name='SKullanimSureci']").val();
+                        let Alkol = $("input[name='Alkol']").val();
+                        let AMiktar = $("input[name='AMiktar']").val();
+                        let AKullanimSureci = $("input[name='AKullanimSureci']").val();
+                        let Cay = $("input[name='Cay']").val();
+                        let CMiktar = $("input[name='CMiktar']").val();
+                        let CKullanimSureci = $("input[name='CKullanimSureci']").val();
+                        let Kahve = $("input[name='Kahve']").val();
+                        let KMiktar = $("input[name='KMiktar']").val();
+                        let KKullanimSureci = $("input[name='KKullanimSureci']").val();
+                        let DDiger = $("input[name='DDiger']").val();
+                        let DMiktar = $("input[name='DMiktar']").val();
+                        let DKullanimSureci = $("input[name='DKullanimSureci']").val();
+                        let AileviSaglik = $("input[name='AileviSaglik']:checked").val();
+                        let ailevi_diger = $("input[name='ailevi_diger']").val();
+                        let YakinlikDerecesi = $("input[name='YakinlikDerecesi']").val();
+                        let Tanisi = $("input[name='Tanisi']").val();
+                        let GeldigiYer = $("input[name='GeldigiYer']:checked").val();
+                        let yer_diger = $("input[name='yer_diger']").val();
+                        let GelisSekli = $("input[name='GelisSekli']:checked").val();
+                        let gelis_diger = $("input[name='gelis_diger']").val();
+                        let Sikayetler = $("input[name='Sikayetler']").val();
+                        let TibbiTani = $("input[name='TibbiTani']").val();
 
-                    $.ajax({
-                        type: 'POST',
-                        url: '<?php echo $base_url; ?>/SubmitOrUpdateForm1_Ozgecmis.php',
-                        data: {
-                           ad_soyad:ad_soyad,
-                           dogum_yeri:dogum_yeri,
-                           yas:yas,
-                           cinsiyet:cinsiyet,
-                           medeni_durum:medeni_durum,
-                           meslek:meslek,
-                           egitim_durumu:egitim_durumu,
-                           protocol_file_no:protocol_file_no,
-                           yatis_tarihi:yatis_tarihi,
-                           bolum:bolum,
-                           tibbi_tani:tibbi_tani,
-                           doktor_ad_soyad:doktor_ad_soyad,
-                           cocuk_sayisi:cocuk_sayisi,
-                           sosyal_guvencesi:sosyal_guvencesi,
-                           sosyal_guvence_diger:sosyal_guvence_diger,
-                           dil:dil,
-                           TercumanGereksinimi:TercumanGereksinimi,
-                           t_diger:t_diger,
-                           TransfuzyonYapilma:TransfuzyonYapilma,
-                           yatisdiger:yatisdiger,
-                           TransfuzyonReaksiyonu:TransfuzyonReaksiyonu,
-                           reaksiyon_diger:reaksiyon_diger,
-                           BilgiKisisi:BilgiKisisi,
-                           kisi_diger:kisi_diger,
-                           kolbandi:kolbandi,
-                           kolbandiaciklama:kolbandiaciklama,
-                           adsoyadyakin:adsoyadyakin,
-                           yakinlikderece:yakinlikderece,
-                           telefonyakin:telefonyakin,
-                           adresyakin:adresyakin,
-                           YatisDurumu:YatisDurumu,
-                           yatis_durumu_diger:yatis_durumu_diger,
-                           yatis_yili:yatis_yili,
-                           yatis_suresi:yatis_suresi,
-                           yatis_nedeni:yatis_nedeni,
-                           GetirdigiHastaliklar:GetirdigiHastaliklar,
-                           hastalik_diger:hastalik_diger,
-                           GetirdigiAmeliyatlar:GetirdigiAmeliyatlar,
-                           ameliyat_diger:ameliyat_diger,
-                           GetirdigiKazalar:GetirdigiKazalar,
-                           kaza_diger:kaza_diger,
-                           BulasiciHastalik:BulasiciHastalik,
-                           bulasici_diger:bulasici_diger,
-                           AlerjikReaksiyon:AlerjikReaksiyon,
-                           alerji_diger:alerji_diger,
-                           Allerjen:Allerjen,
-                           Belirtiler:Belirtiler,
-                           Tedavi:Tedavi,
-                           KullanilanIlaclar:KullanilanIlaclar,
-                           ilaclar_diger:ilaclar_diger,
-                           IlacAdi:IlacAdi,
-                           Recete:Recete,
-                           KullanimSuresi:KullanimSuresi,
-                           Dozu:Dozu,
-                           Sikligi:Sikligi,
-                           AlinisYolu:AlinisYolu,
-                           Suresi:Suresi,
-                           KullandigiAraclar:KullandigiAraclar,
-                           araclar_diger:araclar_diger,
-                           Gozluk:Gozluk,
-                           KontaktLens:KontaktLens,
-                           IsitmeCihazi:IsitmeCihazi,
-                           Sag:Sag,
-                           Sol:Sol,
-                           DisProtezi:DisProtezi,
-                           TekerlekliSandalye:TekerlekliSandalye,
-                           Baston:Baston,
-                           Yurutec:Yurutec,
-                           KoltukDegnegi:KoltukDegnegi,
-                           protez_diger:protez_diger,
-                           Aliskanliklar:Aliskanliklar,
-                           aliskanlik_diger:aliskanlik_diger,
-                           Sigara:Sigara,
-                           SMiktar:SMiktar,
-                           SKullanimSureci:SKullanimSureci,
-                           Alkol:Alkol,
-                           AMiktar:AMiktar,
-                           AKullanimSureci:AKullanimSureci,
-                           Cay:Cay,
-                           CMiktar:CMiktar,
-                           CKullanimSureci:CKullanimSureci,
-                           Kahve:Kahve,
-                           KMiktar:KMiktar,
-                           KKullanimSureci:KKullanimSureci,
-                           DDiger:DDiger,
-                           DMiktar:DMiktar,
-                           DKullanimSureci:DKullanimSureci,
-                           AileviSaglik:AileviSaglik,
-                           ailevi_diger:ailevi_diger,
-                           YakinlikDerecesi:YakinlikDerecesi,
-                           Tanisi:Tanisi,
-                           GeldigiYer:GeldigiYer,
-                           yer_diger:yer_diger,
-                           GelisSekli:GelisSekli,
-                           gelis_diger:gelis_diger,
-                           Sikayetler:Sikayetler,
-                           TibbiTani:TibbiTani
-                        },
-                        success: function(data) {
-                            alert(data);
-                            let url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
-                            $("#content").load(url);
-                        },
-                        error: function(data) {
-                            Swal.fire({
-                                'title': 'Errors',
-                                'text': 'There were errors',
-                                'type': 'error'
-                            })
-                        }
-                    })
+                        e.preventDefault()
+
+                        $.ajax({
+                            type: 'POST',
+                            url: '<?php echo $base_url; ?>/SubmitOrUpdateForm1_Ozgecmis.php',
+                            data: {
+                                ad_soyad: ad_soyad,
+                                dogum_yeri: dogum_yeri,
+                                yas: yas,
+                                cinsiyet: cinsiyet,
+                                medeni_durum: medeni_durum,
+                                meslek: meslek,
+                                egitim_durumu: egitim_durumu,
+                                protocol_file_no: protocol_file_no,
+                                yatis_tarihi: yatis_tarihi,
+                                bolum: bolum,
+                                tibbi_tani: tibbi_tani,
+                                doktor_ad_soyad: doktor_ad_soyad,
+                                cocuk_sayisi: cocuk_sayisi,
+                                sosyal_guvencesi: sosyal_guvencesi,
+                                sosyal_guvence_diger: sosyal_guvence_diger,
+                                dil: dil,
+                                TercumanGereksinimi: TercumanGereksinimi,
+                                t_diger: t_diger,
+                                TransfuzyonYapilma: TransfuzyonYapilma,
+                                yatisdiger: yatisdiger,
+                                TransfuzyonReaksiyonu: TransfuzyonReaksiyonu,
+                                reaksiyon_diger: reaksiyon_diger,
+                                BilgiKisisi: BilgiKisisi,
+                                kisi_diger: kisi_diger,
+                                kolbandi: kolbandi,
+                                kolbandiaciklama: kolbandiaciklama,
+                                adsoyadyakin: adsoyadyakin,
+                                yakinlikderece: yakinlikderece,
+                                telefonyakin: telefonyakin,
+                                adresyakin: adresyakin,
+                                YatisDurumu: YatisDurumu,
+                                yatis_durumu_diger: yatis_durumu_diger,
+                                yatis_yili: yatis_yili,
+                                yatis_suresi: yatis_suresi,
+                                yatis_nedeni: yatis_nedeni,
+                                GetirdigiHastaliklar: GetirdigiHastaliklar,
+                                hastalik_diger: hastalik_diger,
+                                GetirdigiAmeliyatlar: GetirdigiAmeliyatlar,
+                                ameliyat_diger: ameliyat_diger,
+                                GetirdigiKazalar: GetirdigiKazalar,
+                                kaza_diger: kaza_diger,
+                                BulasiciHastalik: BulasiciHastalik,
+                                bulasici_diger: bulasici_diger,
+                                AlerjikReaksiyon: AlerjikReaksiyon,
+                                alerji_diger: alerji_diger,
+                                Allerjen: Allerjen,
+                                Belirtiler: Belirtiler,
+                                Tedavi: Tedavi,
+                                KullanilanIlaclar: KullanilanIlaclar,
+                                ilaclar_diger: ilaclar_diger,
+                                IlacAdi: IlacAdi,
+                                Recete: Recete,
+                                KullanimSuresi: KullanimSuresi,
+                                Dozu: Dozu,
+                                Sikligi: Sikligi,
+                                AlinisYolu: AlinisYolu,
+                                Suresi: Suresi,
+                                KullandigiAraclar: KullandigiAraclar,
+                                araclar_diger: araclar_diger,
+                                Gozluk: Gozluk,
+                                KontaktLens: KontaktLens,
+                                IsitmeCihazi: IsitmeCihazi,
+                                Sag: Sag,
+                                Sol: Sol,
+                                DisProtezi: DisProtezi,
+                                TekerlekliSandalye: TekerlekliSandalye,
+                                Baston: Baston,
+                                Yurutec: Yurutec,
+                                KoltukDegnegi: KoltukDegnegi,
+                                protez_diger: protez_diger,
+                                Aliskanliklar: Aliskanliklar,
+                                aliskanlik_diger: aliskanlik_diger,
+                                Sigara: Sigara,
+                                SMiktar: SMiktar,
+                                SKullanimSureci: SKullanimSureci,
+                                Alkol: Alkol,
+                                AMiktar: AMiktar,
+                                AKullanimSureci: AKullanimSureci,
+                                Cay: Cay,
+                                CMiktar: CMiktar,
+                                CKullanimSureci: CKullanimSureci,
+                                Kahve: Kahve,
+                                KMiktar: KMiktar,
+                                KKullanimSureci: KKullanimSureci,
+                                DDiger: DDiger,
+                                DMiktar: DMiktar,
+                                DKullanimSureci: DKullanimSureci,
+                                AileviSaglik: AileviSaglik,
+                                ailevi_diger: ailevi_diger,
+                                YakinlikDerecesi: YakinlikDerecesi,
+                                Tanisi: Tanisi,
+                                GeldigiYer: GeldigiYer,
+                                yer_diger: yer_diger,
+                                GelisSekli: GelisSekli,
+                                gelis_diger: gelis_diger,
+                                Sikayetler: Sikayetler,
+                                TibbiTani: TibbiTani
+                            },
+                            success: function(data) {
+                                alert(data);
+                                let url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
+                                $("#content").load(url);
+                            },
+                            error: function(data) {
+                                Swal.fire({
+                                    'title': 'Errors',
+                                    'text': 'There were errors',
+                                    'type': 'error'
+                                })
+                            }
+                        })
 
 
 
-                }
-            })
+                    }
+                })
 
-        });
-    </script>
+            });
+        </script>
         <!-- Template Javascript -->
         <script src=""></script>
 </body>

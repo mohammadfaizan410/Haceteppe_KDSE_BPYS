@@ -29,7 +29,7 @@ $pain_duration  = isset($_GET['pain_duration ']) ? $_GET['pain_duration '] : "Na
 
 <head>
     <meta charset="utf-8">
-    <title>e-BYRYS-KKDS</title>
+    <title>KDSE-BPYS</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -39,28 +39,28 @@ $pain_duration  = isset($_GET['pain_duration ']) ? $_GET['pain_duration '] : "Na
     <!-- Template Stylesheet -->
     <link href="../style.css" rel="stylesheet">
     <style>
-    table {
-        border-collapse: collapse;
-    }
+        table {
+            border-collapse: collapse;
+        }
 
-    th,
-    td {
-        border: 1px solid black;
-        padding: 10px;
-    }
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
 
-    th {
-        background-color: #eee;
-    }
+        th {
+            background-color: #eee;
+        }
 
-    h1 {
-        text-align: center;
-    }
+        h1 {
+            text-align: center;
+        }
 
-    tr,
-    td {
-        width: 200px;
-    }
+        tr,
+        td {
+            width: 200px;
+        }
     </style>
 
 <body>
@@ -86,7 +86,7 @@ $pain_duration  = isset($_GET['pain_duration ']) ? $_GET['pain_duration '] : "Na
                             </div>
 
                         </div>
-                         <div class="input-section d-flex">
+                        <div class="input-section d-flex">
                             <p class="usernamelabel">Hemşirelik Tanıları:</p>
                             <p class="tanıdescription">Konforda bozulma </p>
                         </div>
@@ -94,9 +94,9 @@ $pain_duration  = isset($_GET['pain_duration ']) ? $_GET['pain_duration '] : "Na
                             <p class="usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hastanın rahat olduğunu ifade etmesi </p>
                         </div>
-                        
 
- 
+
+
 
 
 
@@ -104,33 +104,25 @@ $pain_duration  = isset($_GET['pain_duration ']) ? $_GET['pain_duration '] : "Na
                             <p class="usernamelabel">NOC Gösterge: </p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator"
-                                        id="noc_indicator"
-                                        value="1: Hastanın gece uykusunda sürekli bölünme var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1: Hastanın gece uykusunda sürekli bölünme var">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">1: Hasta sürekli rahatsız olduğunu ifade eder</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator"
-                                        id="noc_indicator"
-                                        value="2: Hasta sık sık rahatsız olduğunu ifade eder">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2: Hasta sık sık rahatsız olduğunu ifade eder">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">2: Hasta sık sık rahatsız olduğunu ifade eder</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator"
-                                        id="noc_indicator"
-                                        value="3: Hasta bazen rahatsız olduğunu ifade eder">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3: Hasta bazen rahatsız olduğunu ifade eder">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">3: Hasta bazen rahatsız olduğunu ifade eder</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator"
-                                        id="noc_indicator"
-                                        value="4: Hastanın gece uykusunda nadiren bölünme var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4: Hastanın gece uykusunda nadiren bölünme var">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">4: Hasta nadiren rahatsız olduğunu ifade eder</span>
                                     </label>
@@ -151,169 +143,137 @@ $pain_duration  = isset($_GET['pain_duration ']) ? $_GET['pain_duration '] : "Na
                             <p class="usernamelabel">Hemşirelik Girişimleri:</p>
 
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt1"
-                                    value="Konforda bozulmanın nedenleri belirlenir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt1" value="Konforda bozulmanın nedenleri belirlenir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Konforda bozulmanın nedenleri belirlenir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt2"
-                                    value="Tehlikeler nedeniyle çevre güvenlik yönünden izlenir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt2" value="Tehlikeler nedeniyle çevre güvenlik yönünden izlenir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Tehlikeler nedeniyle çevre güvenlik yönünden izlenir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt3"
-                                    value="Hastanın yeterli ve ulaşılabilir destek sistemlerinin varlığı değerlendirilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt3" value="Hastanın yeterli ve ulaşılabilir destek sistemlerinin varlığı değerlendirilir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Hastanın yeterli ve ulaşılabilir destek sistemlerinin varlığı değerlendirilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt4"
-                                    value="Hastanın davranışları üzerindeki (davranış değişikliği yapma isteği, davranışlarının yararına dair düşüncesi, davranış değişikliği için algıladığı engeller vb) öz yeterliliği değerlendirilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt4" value="Hastanın davranışları üzerindeki (davranış değişikliği yapma isteği, davranışlarının yararına dair düşüncesi, davranış değişikliği için algıladığı engeller vb) öz yeterliliği değerlendirilir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Hastanın davranışları üzerindeki (davranış değişikliği yapma isteği, davranışlarının yararına dair düşüncesi, davranış değişikliği için algıladığı engeller vb) öz yeterliliği değerlendirilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt5"
-                                    value="Hastanın pozisyonu en az 2 saatte bir değiştirilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt5" value="Hastanın pozisyonu en az 2 saatte bir değiştirilir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Hastanın pozisyonu en az 2 saatte bir değiştirilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt6"
-                                    value="Oda ısısı mümkünse ılık ya da soğuk olarak ayarlanır">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt6" value="Oda ısısı mümkünse ılık ya da soğuk olarak ayarlanır">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Oda ısısı mümkünse ılık ya da soğuk olarak ayarlanır</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt7"
-                                    value="Mümkün oldukça çevredeki gürültü en aza indirilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt7" value="Mümkün oldukça çevredeki gürültü en aza indirilir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Mümkün oldukça çevredeki gürültü en aza indirilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt8"
-                                    value="Hasta tercihleri doğrultusunda odanın aydınlatması ayarlanır ve hastanın gözüne direk ışık gelmesi engellenir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt8" value="Hasta tercihleri doğrultusunda odanın aydınlatması ayarlanır ve hastanın gözüne direk ışık gelmesi engellenir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Hasta tercihleri doğrultusunda odanın aydınlatması ayarlanır ve hastanın gözüne direk ışık gelmesi engellenir</span>
                                 </label>
                             </div>
-                            
+
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt9"
-                                    value="Yatak içerisinde hareket edemeyen hastaların konforunu sağlamak için yardımcı araçlardan (yastık, battaniye, koruyucu araçlar) yararlanılır">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt9" value="Yatak içerisinde hareket edemeyen hastaların konforunu sağlamak için yardımcı araçlardan (yastık, battaniye, koruyucu araçlar) yararlanılır">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Yatak içerisinde hareket edemeyen hastaların konforunu sağlamak için yardımcı araçlardan (yastık, battaniye, koruyucu araçlar) yararlanılır</span>
                                 </label>
                             </div>
-                            
+
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt10"
-                                value="Odanın temizliği sağlanır, gereksiz araç-gereçler ortamdan uzaklaştırılır">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt10" value="Odanın temizliği sağlanır, gereksiz araç-gereçler ortamdan uzaklaştırılır">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Odanın temizliği sağlanır, gereksiz araç-gereçler ortamdan uzaklaştırılır</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                id="nurse_attempt11"
-                                value="Ağrıyı gidermek için non farmakolojik yöntemler kullanılır">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt11" value="Ağrıyı gidermek için non farmakolojik yöntemler kullanılır">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Ağrıyı gidermek için non farmakolojik yöntemler kullanılır</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                    id="nurse_attempt12"
-                                    value="Kaşıntı nedeniyle hastanın kendine zarar vermemesi için tırnakları kesilir ve törpülenir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt12" value="Kaşıntı nedeniyle hastanın kendine zarar vermemesi için tırnakları kesilir ve törpülenir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Kaşıntı nedeniyle hastanın kendine zarar vermemesi için tırnakları kesilir ve törpülenir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                    id="nurse_attempt13"
-                                    value="Uykuyu engelleyen yiyecek ve içecekleri (kahve, kola, çay gibi) yatma zamanında tüketmemesi söylenir">
-                                    <label class="form-check-label" for="nurse_attempt">
-                                        <span class="checkbox-header">Kontraendike değilse hasta oral sıvı alımı konusunda desteklenir</span>
-                                    </label>
-                                </div>
-                                
-                                <p class="usernamelabel">Eğitim:</p>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                        id="nurse_attempt14"
-                                        value="Hastaya ve bakım verenlerine uygun gevşeme teknikleri öğretilip, uygulatılır">
-                                    <label class="form-check-label" for="nurse_attempt">
-                                        <span class="checkbox-header">Hastaya ve bakım verenlerine uygun gevşeme teknikleri öğretilip, uygulatılır</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                        id="nurse_attempt15"
-                                        value="Hastaya ve bakım verenlerine, hastanın cildini kaşıyarak tahriş etmemesi konusunda bilgi verilir">
-                                    <label class="form-check-label" for="nurse_attempt">
-                                        <span class="checkbox-header">Hastaya ve bakım verenlerine, hastanın cildini kaşıyarak tahriş etmemesi konusunda bilgi verilir</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                        id="nurse_attempt16"
-                                        value="Hastaya ve bakım verenlerine, çamaşırlar yıkanırken 2 kez durulanması ve yumuşatıcı kullanılmaması konusunda bilgi verilir">
-                                    <label class="form-check-label" for="nurse_attempt">
-                                        <span class="checkbox-header">Hastaya ve bakım verenlerine, çamaşırlar yıkanırken 2 kez durulanması ve yumuşatıcı kullanılmaması konusunda bilgi verilir</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                        id="nurse_attempt17"
-                                        value="Kaşıntıyı rahatlatması için soğuk su ile banyo yapması ya da duş alması önerilir">
-                                    <label class="form-check-label" for="nurse_attempt">
-                                        <span class="checkbox-header">Kaşıntıyı rahatlatması için soğuk su ile banyo yapması ya da duş alması önerilir</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                        id="nurse_attempt18"
-                                        value="Kontranedike değilse, cildin nemlendirilmesi için kremler, losyonlar önerilir">
-                                    <label class="form-check-label" for="nurse_attempt">
-                                        <span class="checkbox-header">Kontranedike değilse, cildin nemlendirilmesi için kremler, losyonlar önerilir</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                        id="nurse_attempt19"
-                                        value="Cilde temas eden kıyafetlerin pamuklu olması önerilir ve cildi tahriş edebilecek kaba kumaşların kullanılmaması gerektiği anlatılır">
-                                    <label class="form-check-label" for="nurse_attempt">
-                                        <span class="checkbox-header">Cilde temas eden kıyafetlerin pamuklu olması önerilir ve cildi tahriş edebilecek kaba kumaşların kullanılmaması gerektiği anlatılır</span>
-                                    </label>
-                                </div>
-                                
-                                <p class="usernamelabel">İŞ BİRLİĞİ GEREKTİREN UYGULAMALAR</p>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                        id="nurse_attempt20"
-                                        value="İstemde yer alan farmakolojik yöntemler (analjezikler, kortikosteroid kremler, anksiyolitikler, antihistaminikler, antifungal ilaçlar) uygulanır">
-                                    <label class="form-check-label" for="nurse_attempt">
-                                        <span class="checkbox-header">İstemde yer alan farmakolojik yöntemler (analjezikler, kortikosteroid kremler, anksiyolitikler, antihistaminikler, antifungal ilaçlar) uygulanır</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                        id="nurse_attempt21"
-                                        value="Gerekirse alerji testi yaptırılması için hekimle görüşülür. ">
-                                    <label class="form-check-label" for="nurse_attempt">
-                                        <span class="checkbox-header">Gerekirse alerji testi yaptırılması için hekimle görüşülür. </span>
-                                    </label>
-                                </div>
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt13" value="Uykuyu engelleyen yiyecek ve içecekleri (kahve, kola, çay gibi) yatma zamanında tüketmemesi söylenir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Kontraendike değilse hasta oral sıvı alımı konusunda desteklenir</span>
+                                </label>
+                            </div>
+
+                            <p class="usernamelabel">Eğitim:</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt14" value="Hastaya ve bakım verenlerine uygun gevşeme teknikleri öğretilip, uygulatılır">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Hastaya ve bakım verenlerine uygun gevşeme teknikleri öğretilip, uygulatılır</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt15" value="Hastaya ve bakım verenlerine, hastanın cildini kaşıyarak tahriş etmemesi konusunda bilgi verilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Hastaya ve bakım verenlerine, hastanın cildini kaşıyarak tahriş etmemesi konusunda bilgi verilir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt16" value="Hastaya ve bakım verenlerine, çamaşırlar yıkanırken 2 kez durulanması ve yumuşatıcı kullanılmaması konusunda bilgi verilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Hastaya ve bakım verenlerine, çamaşırlar yıkanırken 2 kez durulanması ve yumuşatıcı kullanılmaması konusunda bilgi verilir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt17" value="Kaşıntıyı rahatlatması için soğuk su ile banyo yapması ya da duş alması önerilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Kaşıntıyı rahatlatması için soğuk su ile banyo yapması ya da duş alması önerilir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt18" value="Kontranedike değilse, cildin nemlendirilmesi için kremler, losyonlar önerilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Kontranedike değilse, cildin nemlendirilmesi için kremler, losyonlar önerilir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt19" value="Cilde temas eden kıyafetlerin pamuklu olması önerilir ve cildi tahriş edebilecek kaba kumaşların kullanılmaması gerektiği anlatılır">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Cilde temas eden kıyafetlerin pamuklu olması önerilir ve cildi tahriş edebilecek kaba kumaşların kullanılmaması gerektiği anlatılır</span>
+                                </label>
+                            </div>
+
+                            <p class="usernamelabel">İŞ BİRLİĞİ GEREKTİREN UYGULAMALAR</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt20" value="İstemde yer alan farmakolojik yöntemler (analjezikler, kortikosteroid kremler, anksiyolitikler, antihistaminikler, antifungal ilaçlar) uygulanır">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">İstemde yer alan farmakolojik yöntemler (analjezikler, kortikosteroid kremler, anksiyolitikler, antihistaminikler, antifungal ilaçlar) uygulanır</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt21" value="Gerekirse alerji testi yaptırılması için hekimle görüşülür. ">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Gerekirse alerji testi yaptırılması için hekimle görüşülür. </span>
+                                </label>
+                            </div>
 
                         </div>
                         <div class="input-section d-flex">
@@ -390,55 +350,55 @@ $pain_duration  = isset($_GET['pain_duration ']) ? $_GET['pain_duration '] : "Na
 
     </div>
     <script>
-    var average_sleep_time = document.getElementById('average_sleep_time').innerText;
-    var sleep_problem = document.getElementById('sleep_problem').innerText;
-    var restlessness = document.getElementById('restlessness').innerText;
-    var Discomfort = document.getElementById('Discomfort').innerText;
-    var Itching = document.getElementById('Itching').innerText;
-    var feeding_problem = document.getElementById('feeding_problem').innerText;
-    var pain_duration = document.getElementById('pain_duration').innerText;
-    var matchedfields_string = average_sleep_time + " / " + sleep_problem + " / " + restlessness +
-        " / " + Discomfort + " / " + Itching + "/" + feeding_problem + "/" + pain_duration + "/";
+        var average_sleep_time = document.getElementById('average_sleep_time').innerText;
+        var sleep_problem = document.getElementById('sleep_problem').innerText;
+        var restlessness = document.getElementById('restlessness').innerText;
+        var Discomfort = document.getElementById('Discomfort').innerText;
+        var Itching = document.getElementById('Itching').innerText;
+        var feeding_problem = document.getElementById('feeding_problem').innerText;
+        var pain_duration = document.getElementById('pain_duration').innerText;
+        var matchedfields_string = average_sleep_time + " / " + sleep_problem + " / " + restlessness +
+            " / " + Discomfort + " / " + Itching + "/" + feeding_problem + "/" + pain_duration + "/";
     </script>
 
     <script>
-    $(function() {
-        $('#closeBtn').click(function(e) {
-            let patient_id = <?php
+        $(function() {
+            $('#closeBtn').click(function(e) {
+                let patient_id = <?php
                                     $userid = $_GET['patient_id'];
                                     echo $userid
                                     ?>;
-            let patient_name = "<?php
+                let patient_name = "<?php
                                     echo urldecode($_GET['patient_name']);
                                     ?>";
-            var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
-                "&patient_name=" + encodeURIComponent(patient_name);
-            $("#content").load(url);
+                var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
+                    "&patient_name=" + encodeURIComponent(patient_name);
+                $("#content").load(url);
 
-        })
-    });
+            })
+        });
     </script>
     <script>
-    $(function() {
-        $('#submit').click(function(e) {
-            e.preventDefault()
-            console.log("submit clicked")
+        $(function() {
+            $('#submit').click(function(e) {
+                e.preventDefault()
+                console.log("submit clicked")
                 var id = <?php
-                                $userid = $_SESSION['userlogin']['id'];
-                                echo $userid
-                                ?>;
+                            $userid = $_SESSION['userlogin']['id'];
+                            echo $userid
+                            ?>;
                 var name = $('#name').val();
                 var surname = $('#surname').val();
                 var age = $('#age').val();
                 var not = $('#not').val();
                 let form_num = 15;
                 var patient_id = <?php
-                                        $userid = isset($_GET['patient_id']) ?$_GET['patient_id'] : 20;
-                                        echo $userid
-                                        ?>;
+                                    $userid = $_GET['patient_id'];
+                                    echo $userid
+                                    ?>;
                 let patient_name = "<?php
-                                        echo urldecode(isset($_GET['patient_name']) ? $_GET['patient_name'] : "test");
-                                        ?>";
+                                    echo urldecode($_GET['patient_name']);
+                                    ?>";
                 let yourDate = new Date();
                 let creationDate = yourDate.toISOString().split('T')[0];
                 let updateDate = yourDate.toISOString().split('T')[0];
@@ -587,7 +547,7 @@ $pain_duration  = isset($_GET['pain_duration ']) ? $_GET['pain_duration '] : "Na
                         noc_indicator: noc_indicator,
                         noc_indicator_after:noc_indicator_after,
                         nurse_attempt: nurse_attempt,
-                        nurse_education :nurse_education,
+                        nurse_education: nurse_education,
                         collaborative_applications: collaborative_applications,
                         evaluation: evaluation,
                         matchedfields_string: matchedfields_string,

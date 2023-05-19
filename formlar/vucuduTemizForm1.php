@@ -16,7 +16,7 @@ if (isset($_GET['logout'])) {
 
 <head>
     <meta charset="utf-8">
-    <title>e-BYRYS-KKDS</title>
+    <title>KDSE-BPYS</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -1069,74 +1069,74 @@ if (isset($_GET['logout'])) {
                                         $userid = $_SESSION['userlogin']['id'];
                                         echo $userid
                                         ?>;
-                    let VucutTemizligi = $("input[name='VucutTemizligi']:checked").val();
-                    let BanyoSikligi = $("input[name='BanyoSikligi']").val();
-                    let BanyoSekli = parseInt($("input[name='BanyoSekli']:checked").val());
-                    let SuSicakligi = $("input[type='radio'][name='SuSicakligi']:checked").val();
-                    let TemizlikUrunu = $("input[name='TemizlikUrunu']:checked").val();
-                    let TemizlikUrunuDiger = $("input[name='TemizlikUrunuDiger']").val();
-                    let STemizlikUrunu = $("input[name='STemizlikUrunu']:checked").val();
-                    let BanyoSonrasi = $("input[name='BanyoSonrasi']:checked").val();
-                    let AgizBakimSikligi = $("input[name='AgizBakimSikligi']").val();
-                    let AgizBakimSekli = $("input[name='AgizBakimSekli']").val();
-                    let AgizBakimMalzeme = $("input[name='AgizBakimMalzeme']").val();
-                    let TirnakBakimSikligi = $("input[name='TirnakBakimSikligi']").val();
-                    let TirnakBakimSekli = $("input[type='radio'][name='TirnakBakimSekli']").val();
-                    let TirnakBakimMalzeme = $("input[name='TirnakBakimMalzeme']").val();
-                    let ElYikamaSikligi = $("input[name='ElYikamaSikligi']").val();
-                    let ElYikamaSekli = $("input[type='radio'][name='ElYikamaSekli']").val();
-                    let ElYikamaMalzeme = $("input[name='ElYikamaMalzeme']").val();
-                    let PerineBakimSikligi = $("input[type='radio'][name='PerineBakimSikligi']").val();
-                    let PerineBakimSekli = $("input[name='PerineBakimSekli']").val();
-                    let PerineBakimMalzeme = $("input[type='radio'][name='PerineBakimMalzeme']").val();
-                    let MenstrualHijyen = $("input[name='MenstrualHijyen']").val();
-                    let MHSüresi = $("input[type='radio'][name='MHSüresi']").val();
-                    let MKUrun = $("input[name='MKUrun']:checked").val();
-                    let HPDegistirmeSikligi = $("input[name='HPDegistirmeSikligi']").val();
-                    let BezDegistirmeSikligi = $("input[name='BezDegistirmeSikligi']").val();
-                    let DigerDegistirmeSikligi = $("input[name='DigerDegistirmeSikligi']").val();
-                    let DeriRenkDegisimi = $("input[name='DeriRenkDegisimi']:checked").val();
-                    let Sari = $("input[name='Sari']").val();
-                    let Soluk1 = $("input[name='Soluk1']").val();
-                    let Kızarıklık = $("input[name='Kızarıklık']").val();
-                    let Siyanoz = $("input[name='Siyanoz']").val();
-                    let RenkKaybı = $("input[name='RenkKaybı']").val();
-                    let PigmentasyonArtışı = $("input[name='PigmentasyonArtışı']").val();
-                    let Nemlilik = $("input[name='Nemlilik']:checked").val();
-                    let IsiDegisimi = $("input[name='IsiDegisimi']:checked").val();
-                    let DerininYapisi = $("input[name='DerininYapisi']:checked").val();
-                    let DeriTurgoru = $("input[name='DeriTurgoru']:checked").val();
-                    let DerideSorun = $("input[name='DerideSorun']:checked").val();
-                    let Makül = $("input[name='Makül']:checked").val();
-                    let Papül = $("input[name='Papül']").val();
-                    let Vezikül = $("input[name='Vezikül']").val();
-                    let Peteşi = $("input[name='Peteşi']").val();
-                    let Purpura = $("input[name='Purpura']").val();
-                    let SacKil = $("input[name='SacKil']:checked").val();
-                    let Yağlı = $("input[name='Yağlı']").val();
-                    let Kuru = $("input[name='Kuru']").val();
-                    let Sert = $("input[name='Sert']").val();
-                    let Yumuşak = $("input[name='Yumuşak']").val();
-                    let Dağılımı = $("input[name='Dağılımı']:checked").val();
-                    let Alopesia = $("input[name='Alopesia']").val();
-                    let Seyrek = $("input[name='Seyrek']").val();
-                    let Tüylenmede = $("input[name='Tüylenmede']").val();
-                    let SacDeri = $("input[name='SacDeri']:checked").val();
-                    let Kuruma = $("input[name='Kuruma']").val();
-                    let Yağlanma = $("input[name='Yağlanma']").val();
-                    let Kepeklenme = $("input[name='Kepeklenme']").val();
-                    let Parazit = $("input[name='Parazit']").val();
-                    let Kitle = $("input[name='Kitle']").val();
-                    let TirnakRengi = $("input[name='TirnakRengi']:checked").val();
-                    let Siyanotik = $("input[name='Siyanotik']").val();
-                    let Soluk = $("input[name='Soluk']").val();
-                    let Sarı = $("input[name='Sarı']").val();
-                    let sekli = $("input[name='sekli']:checked").val();
-                    let Çomaklaşma = $("input[name='Çomaklaşma']").val();
-                    let BeyazLekeler = $("input[name='BeyazLekeler']").val();
-                    let Paronişya = $("input[name='Paronişya']").val();
-                    let Diğer = $("input[name='Diğer']").val();
-                    let KapillerDolum = $("input[name='KapillerDolum']:checked").val();
+                            let VucutTemizligi = $("input[name='VucutTemizligi']:checked").val();
+                            let BanyoSikligi = $("input[name='BanyoSikligi']").val();
+                            let BanyoSekli = parseInt($("input[name='BanyoSekli']:checked").val());
+                            let SuSicakligi = $("input[type='radio'][name='SuSicakligi']:checked").val();
+                            let TemizlikUrunu = $("input[name='TemizlikUrunu']:checked").val();
+                            let TemizlikUrunuDiger = $("input[name='TemizlikUrunuDiger']").val();
+                            let STemizlikUrunu = $("input[name='STemizlikUrunu']:checked").val();
+                            let BanyoSonrasi = $("input[name='BanyoSonrasi']:checked").val();
+                            let AgizBakimSikligi = $("input[name='AgizBakimSikligi']").val();
+                            let AgizBakimSekli = $("input[name='AgizBakimSekli']").val();
+                            let AgizBakimMalzeme = $("input[name='AgizBakimMalzeme']").val();
+                            let TirnakBakimSikligi = $("input[name='TirnakBakimSikligi']").val();
+                            let TirnakBakimSekli = $("input[type='radio'][name='TirnakBakimSekli']").val();
+                            let TirnakBakimMalzeme = $("input[name='TirnakBakimMalzeme']").val();
+                            let ElYikamaSikligi = $("input[name='ElYikamaSikligi']").val();
+                            let ElYikamaSekli = $("input[type='radio'][name='ElYikamaSekli']").val();
+                            let ElYikamaMalzeme = $("input[name='ElYikamaMalzeme']").val();
+                            let PerineBakimSikligi = $("input[type='radio'][name='PerineBakimSikligi']").val();
+                            let PerineBakimSekli = $("input[name='PerineBakimSekli']").val();
+                            let PerineBakimMalzeme = $("input[type='radio'][name='PerineBakimMalzeme']").val();
+                            let MenstrualHijyen = $("input[name='MenstrualHijyen']").val();
+                            let MHSüresi = $("input[type='radio'][name='MHSüresi']").val();
+                            let MKUrun = $("input[name='MKUrun']:checked").val();
+                            let HPDegistirmeSikligi = $("input[name='HPDegistirmeSikligi']").val();
+                            let BezDegistirmeSikligi = $("input[name='BezDegistirmeSikligi']").val();
+                            let DigerDegistirmeSikligi = $("input[name='DigerDegistirmeSikligi']").val();
+                            let DeriRenkDegisimi = $("input[name='DeriRenkDegisimi']:checked").val();
+                            let Sari = $("input[name='Sari']").val();
+                            let Soluk1 = $("input[name='Soluk1']").val();
+                            let Kızarıklık = $("input[name='Kızarıklık']").val();
+                            let Siyanoz = $("input[name='Siyanoz']").val();
+                            let RenkKaybı = $("input[name='RenkKaybı']").val();
+                            let PigmentasyonArtışı = $("input[name='PigmentasyonArtışı']").val();
+                            let Nemlilik = $("input[name='Nemlilik']:checked").val();
+                            let IsiDegisimi = $("input[name='IsiDegisimi']:checked").val();
+                            let DerininYapisi = $("input[name='DerininYapisi']:checked").val();
+                            let DeriTurgoru = $("input[name='DeriTurgoru']:checked").val();
+                            let DerideSorun = $("input[name='DerideSorun']:checked").val();
+                            let Makül = $("input[name='Makül']:checked").val();
+                            let Papül = $("input[name='Papül']").val();
+                            let Vezikül = $("input[name='Vezikül']").val();
+                            let Peteşi = $("input[name='Peteşi']").val();
+                            let Purpura = $("input[name='Purpura']").val();
+                            let SacKil = $("input[name='SacKil']:checked").val();
+                            let Yağlı = $("input[name='Yağlı']").val();
+                            let Kuru = $("input[name='Kuru']").val();
+                            let Sert = $("input[name='Sert']").val();
+                            let Yumuşak = $("input[name='Yumuşak']").val();
+                            let Dağılımı = $("input[name='Dağılımı']:checked").val();
+                            let Alopesia = $("input[name='Alopesia']").val();
+                            let Seyrek = $("input[name='Seyrek']").val();
+                            let Tüylenmede = $("input[name='Tüylenmede']").val();
+                            let SacDeri = $("input[name='SacDeri']:checked").val();
+                            let Kuruma = $("input[name='Kuruma']").val();
+                            let Yağlanma = $("input[name='Yağlanma']").val();
+                            let Kepeklenme = $("input[name='Kepeklenme']").val();
+                            let Parazit = $("input[name='Parazit']").val();
+                            let Kitle = $("input[name='Kitle']").val();
+                            let TirnakRengi = $("input[name='TirnakRengi']:checked").val();
+                            let Siyanotik = $("input[name='Siyanotik']").val();
+                            let Soluk = $("input[name='Soluk']").val();
+                            let Sarı = $("input[name='Sarı']").val();
+                            let sekli = $("input[name='sekli']:checked").val();
+                            let Çomaklaşma = $("input[name='Çomaklaşma']").val();
+                            let BeyazLekeler = $("input[name='BeyazLekeler']").val();
+                            let Paronişya = $("input[name='Paronişya']").val();
+                            let Diğer = $("input[name='Diğer']").val();
+                            let KapillerDolum = $("input[name='KapillerDolum']:checked").val();
 
 
                             e.preventDefault()
@@ -1145,74 +1145,74 @@ if (isset($_GET['logout'])) {
                                 type: 'POST',
                                 url: '<?php echo $base_url; ?>/student-patient.php',
                                 data: {
-                           VucutTemizligi:VucutTemizligi,
-                           BanyoSikligi:BanyoSikligi,
-                           BanyoSekli:BanyoSekli,
-                           SuSicakligi:SuSicakligi,
-                           TemizlikUrunu:TemizlikUrunu,
-                           TemizlikUrunuDiger:TemizlikUrunuDiger,
-                           STemizlikUrunu:STemizlikUrunu,
-                           BanyoSonrasi:BanyoSonrasi,
-                           AgizBakimSikligi:AgizBakimSikligi,
-                           AgizBakimSekli:AgizBakimSekli,
-                           AgizBakimMalzeme:AgizBakimMalzeme,
-                           TirnakBakimSikligi:TirnakBakimSikligi,
-                           TirnakBakimSekli:TirnakBakimSekli,
-                           TirnakBakimMalzeme:TirnakBakimMalzeme,
-                           ElYikamaSikligi:ElYikamaSikligi,
-                           ElYikamaSekli:ElYikamaSekli,
-                           ElYikamaMalzeme:ElYikamaMalzeme,
-                           PerineBakimSikligi:PerineBakimSikligi,
-                           PerineBakimSekli:PerineBakimSekli,
-                           PerineBakimMalzeme:PerineBakimMalzeme,
-                           MenstrualHijyen:MenstrualHijyen,
-                           MHSüresi:MHSüresi,
-                           MKUrun:MKUrun,
-                           HPDegistirmeSikligi:HPDegistirmeSikligi,
-                           BezDegistirmeSikligi:BezDegistirmeSikligi,
-                           DigerDegistirmeSikligi:DigerDegistirmeSikligi,
-                           DeriRenkDegisimi:DeriRenkDegisimi,
-                           Sari:Sari,
-                           Soluk1:Soluk1,
-                           Kızarıklık:Kızarıklık,
-                           Siyanoz:Siyanoz,
-                           RenkKaybı:RenkKaybı,
-                           PigmentasyonArtışı:PigmentasyonArtışı,
-                           Nemlilik:Nemlilik,
-                           IsiDegisimi:IsiDegisimi,
-                           DerininYapisi:DerininYapisi,
-                           DeriTurgoru:DeriTurgoru,
-                           DerideSorun:DerideSorun,
-                           Makül:Makül,
-                           Papül:Papül,
-                           Vezikül:Vezikül,
-                           Peteşi:Peteşi,
-                           Purpura:Purpura,
-                           SacKil:SacKil,
-                           Yağlı:Yağlı,
-                           Kuru:Kuru,
-                           Sert:Sert,
-                           Yumuşak:Yumuşak,
-                           Dağılımı:Dağılımı,
-                           Alopesia:Alopesia,
-                           Seyrek:Seyrek,
-                           Tüylenmede:Tüylenmede,
-                           SacDeri:SacDeri,
-                           Kuruma:Kuruma,
-                           Yağlanma:Yağlanma,
-                           Kepeklenme:Kepeklenme,
-                           Parazit:Parazit,
-                           Kitle:Kitle,
-                           TirnakRengi:TirnakRengi,
-                           Siyanotik:Siyanotik,
-                           Soluk:Soluk,
-                           Sarı:Sarı,
-                           sekli:sekli,
-                           Çomaklaşma:Çomaklaşma,
-                           BeyazLekeler:BeyazLekeler,
-                           Paronişya:Paronişya,
-                           Diğer:Diğer,
-                           KapillerDolum:KapillerDolum,
+                                    VucutTemizligi: VucutTemizligi,
+                                    BanyoSikligi: BanyoSikligi,
+                                    BanyoSekli: BanyoSekli,
+                                    SuSicakligi: SuSicakligi,
+                                    TemizlikUrunu: TemizlikUrunu,
+                                    TemizlikUrunuDiger: TemizlikUrunuDiger,
+                                    STemizlikUrunu: STemizlikUrunu,
+                                    BanyoSonrasi: BanyoSonrasi,
+                                    AgizBakimSikligi: AgizBakimSikligi,
+                                    AgizBakimSekli: AgizBakimSekli,
+                                    AgizBakimMalzeme: AgizBakimMalzeme,
+                                    TirnakBakimSikligi: TirnakBakimSikligi,
+                                    TirnakBakimSekli: TirnakBakimSekli,
+                                    TirnakBakimMalzeme: TirnakBakimMalzeme,
+                                    ElYikamaSikligi: ElYikamaSikligi,
+                                    ElYikamaSekli: ElYikamaSekli,
+                                    ElYikamaMalzeme: ElYikamaMalzeme,
+                                    PerineBakimSikligi: PerineBakimSikligi,
+                                    PerineBakimSekli: PerineBakimSekli,
+                                    PerineBakimMalzeme: PerineBakimMalzeme,
+                                    MenstrualHijyen: MenstrualHijyen,
+                                    MHSüresi: MHSüresi,
+                                    MKUrun: MKUrun,
+                                    HPDegistirmeSikligi: HPDegistirmeSikligi,
+                                    BezDegistirmeSikligi: BezDegistirmeSikligi,
+                                    DigerDegistirmeSikligi: DigerDegistirmeSikligi,
+                                    DeriRenkDegisimi: DeriRenkDegisimi,
+                                    Sari: Sari,
+                                    Soluk1: Soluk1,
+                                    Kızarıklık: Kızarıklık,
+                                    Siyanoz: Siyanoz,
+                                    RenkKaybı: RenkKaybı,
+                                    PigmentasyonArtışı: PigmentasyonArtışı,
+                                    Nemlilik: Nemlilik,
+                                    IsiDegisimi: IsiDegisimi,
+                                    DerininYapisi: DerininYapisi,
+                                    DeriTurgoru: DeriTurgoru,
+                                    DerideSorun: DerideSorun,
+                                    Makül: Makül,
+                                    Papül: Papül,
+                                    Vezikül: Vezikül,
+                                    Peteşi: Peteşi,
+                                    Purpura: Purpura,
+                                    SacKil: SacKil,
+                                    Yağlı: Yağlı,
+                                    Kuru: Kuru,
+                                    Sert: Sert,
+                                    Yumuşak: Yumuşak,
+                                    Dağılımı: Dağılımı,
+                                    Alopesia: Alopesia,
+                                    Seyrek: Seyrek,
+                                    Tüylenmede: Tüylenmede,
+                                    SacDeri: SacDeri,
+                                    Kuruma: Kuruma,
+                                    Yağlanma: Yağlanma,
+                                    Kepeklenme: Kepeklenme,
+                                    Parazit: Parazit,
+                                    Kitle: Kitle,
+                                    TirnakRengi: TirnakRengi,
+                                    Siyanotik: Siyanotik,
+                                    Soluk: Soluk,
+                                    Sarı: Sarı,
+                                    sekli: sekli,
+                                    Çomaklaşma: Çomaklaşma,
+                                    BeyazLekeler: BeyazLekeler,
+                                    Paronişya: Paronişya,
+                                    Diğer: Diğer,
+                                    KapillerDolum: KapillerDolum,
 
                                 },
                                 success: function(data) {

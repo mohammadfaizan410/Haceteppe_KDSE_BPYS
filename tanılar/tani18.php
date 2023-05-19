@@ -31,7 +31,7 @@ $crutch_use  = isset($_GET['crutch_use ']) ? $_GET['crutch_use '] : "NaN";
 
 <head>
     <meta charset="utf-8">
-    <title>e-BYRYS-KKDS</title>
+    <title>KDSE-BPYS</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -41,28 +41,28 @@ $crutch_use  = isset($_GET['crutch_use ']) ? $_GET['crutch_use '] : "NaN";
     <!-- Template Stylesheet -->
     <link href="../style.css" rel="stylesheet">
     <style>
-    table {
-        border-collapse: collapse;
-    }
+        table {
+            border-collapse: collapse;
+        }
 
-    th,
-    td {
-        border: 1px solid black;
-        padding: 10px;
-    }
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
 
-    th {
-        background-color: #eee;
-    }
+        th {
+            background-color: #eee;
+        }
 
-    h1 {
-        text-align: center;
-    }
+        h1 {
+            text-align: center;
+        }
 
-    tr,
-    td {
-        width: 200px;
-    }
+        tr,
+        td {
+            width: 200px;
+        }
     </style>
 
 <body>
@@ -90,17 +90,17 @@ $crutch_use  = isset($_GET['crutch_use ']) ? $_GET['crutch_use '] : "NaN";
                             </div>
 
                         </div>
-                         <div class="input-section d-flex">
+                        <div class="input-section d-flex">
                             <p class="usernamelabel">Hemşirelik Tanıları:</p>
-                            <p class="tanıdescription">Fiziksel mobilitede bozulma   </p>
+                            <p class="tanıdescription">Fiziksel mobilitede bozulma </p>
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın etkili bir şekilde mobilize olması  </p>
+                            <p class="tanıdescription">Hastanın etkili bir şekilde mobilize olması </p>
                         </div>
-                        
 
- 
+
+
 
 
 
@@ -108,33 +108,25 @@ $crutch_use  = isset($_GET['crutch_use ']) ? $_GET['crutch_use '] : "NaN";
                             <p class="usernamelabel">NOC Gösterge: </p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator"
-                                        id="noc_indicator"
-                                        value="1: Hasta hiç mobilize olmuyor">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1: Hasta hiç mobilize olmuyor">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">1: Hasta hiç mobilize olmuyor </span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator"
-                                        id="noc_indicator"
-                                        value="2: Hasta nadiren mobilize oluyor">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2: Hasta nadiren mobilize oluyor">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">2: Hasta nadiren mobilize oluyor</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator"
-                                        id="noc_indicator"
-                                        value="3: Hasta bazen mobilizi oluyor">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3: Hasta bazen mobilizi oluyor">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">3: Hasta bazen mobilizi oluyor </span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator"
-                                        id="noc_indicator"
-                                        value="4: Hasta sık sık mobilize oluyor ">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4: Hasta sık sık mobilize oluyor ">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">4: Hasta sık sık mobilize oluyor </span>
                                     </label>
@@ -143,7 +135,7 @@ $crutch_use  = isset($_GET['crutch_use ']) ? $_GET['crutch_use '] : "NaN";
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="
                                         noc_indicator" value="5:Hastanın mobilizasyonunda sorun yok">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">5:Hastanın mobilizasyonunda sorun yok  
+                                        <span class="checkbox-header">5:Hastanın mobilizasyonunda sorun yok
                                         </span>
                                     </label>
                                 </div>
@@ -155,153 +147,125 @@ $crutch_use  = isset($_GET['crutch_use ']) ? $_GET['crutch_use '] : "NaN";
                             <p class="usernamelabel">Hemşirelik Girişimleri:</p>
 
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt1"
-                                    value="Günlük yaşam aktivitelerini yerine getirme konusunda hastanın bağımsızlığı desteklenir, gerektiğinde yardımcı olunur">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt1" value="Günlük yaşam aktivitelerini yerine getirme konusunda hastanın bağımsızlığı desteklenir, gerektiğinde yardımcı olunur">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Günlük yaşam aktivitelerini yerine getirme konusunda hastanın bağımsızlığı desteklenir, gerektiğinde yardımcı olunur</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt2"
-                                    value="Gerekmesi halinde hastaya tüm mobilizasyon süreçlerinde danışmanlık ve destek sağlanır">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt2" value="Gerekmesi halinde hastaya tüm mobilizasyon süreçlerinde danışmanlık ve destek sağlanır">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Gerekmesi halinde hastaya tüm mobilizasyon süreçlerinde danışmanlık ve destek sağlanır</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt3"
-                                    value="Hemşire çağrı cihazı hastanın ulaşabileceği bir yere yerleştirilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt3" value="Hemşire çağrı cihazı hastanın ulaşabileceği bir yere yerleştirilir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Hemşire çağrı cihazı hastanın ulaşabileceği bir yere yerleştirilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt4"
-                                    value="Hastanın tolere etme durumuna göre yatak dışında geçirilen zaman arttırılır">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt4" value="Hastanın tolere etme durumuna göre yatak dışında geçirilen zaman arttırılır">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Hastanın tolere etme durumuna göre yatak dışında geçirilen zaman arttırılır</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt5"
-                                    value="Uzun süreli yatak istirahati sonrası ilk kalkışta, önce birkaç dakika yatağın kenarında oturması, daha sonra ayağa kalkması sağlanır.">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt5" value="Uzun süreli yatak istirahati sonrası ilk kalkışta, önce birkaç dakika yatağın kenarında oturması, daha sonra ayağa kalkması sağlanır.">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Uzun süreli yatak istirahati sonrası ilk kalkışta, önce birkaç dakika yatağın kenarında oturması, daha sonra ayağa kalkması sağlanır.</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt6"
-                                    value="Hasta yürüyemiyorsa, tekerlekli sandalye/normal sandalyeye oturması sağlanarak, yatak dışına geçmesine yardımcı olunur">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt6" value="Hasta yürüyemiyorsa, tekerlekli sandalye/normal sandalyeye oturması sağlanarak, yatak dışına geçmesine yardımcı olunur">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Hasta yürüyemiyorsa, tekerlekli sandalye/normal sandalyeye oturması sağlanarak, yatak dışına geçmesine yardımcı olunur</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt7"
-                                    value="Sürekli yatak içerisinde olan hasta için uygun yatak ve araç gereç kullanılır">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt7" value="Sürekli yatak içerisinde olan hasta için uygun yatak ve araç gereç kullanılır">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Sürekli yatak içerisinde olan hasta için uygun yatak ve araç gereç kullanılır</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt8"
-                                    value="İmmobil bir hastaya belirli programa göre en az 2 saatte bir pozisyon verilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt8" value="İmmobil bir hastaya belirli programa göre en az 2 saatte bir pozisyon verilir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">İmmobil bir hastaya belirli programa göre en az 2 saatte bir pozisyon verilir</span>
                                 </label>
                             </div>
-                            
+
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt9"
-                                    value="Aktivite sürecinde olumlu destek sağlanır">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt9" value="Aktivite sürecinde olumlu destek sağlanır">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Aktivite sürecinde olumlu destek sağlanır</span>
                                 </label>
                             </div>
-                            
+
                             <p class="usernamelabel">Eğitim:</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt10"
-                                value="Kas gücünü korumak ve geliştirmek için aktif ve pasif ROM egzersizleri konusunda bilgilendirilir ve yapması konusunda hasta desteklenir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt10" value="Kas gücünü korumak ve geliştirmek için aktif ve pasif ROM egzersizleri konusunda bilgilendirilir ve yapması konusunda hasta desteklenir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Kas gücünü korumak ve geliştirmek için aktif ve pasif ROM egzersizleri konusunda bilgilendirilir ve yapması konusunda hasta desteklenir</span>
                                 </label>
                             </div>
-                            
+
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                id="nurse_attempt11"
-                                value="Üst ekstremitenin gücünü korumak ve geliştirmek için uygun egzersizler konusunda bilgi verilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt11" value="Üst ekstremitenin gücünü korumak ve geliştirmek için uygun egzersizler konusunda bilgi verilir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Üst ekstremitenin gücünü korumak ve geliştirmek için uygun egzersizler konusunda bilgi verilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                    id="nurse_attempt12"
-                                    value="Yürüyüş için kaymayan ve destekleyici ayakkabı kullanımı için bilgilendirilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt12" value="Yürüyüş için kaymayan ve destekleyici ayakkabı kullanımı için bilgilendirilir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Yürüyüş için kaymayan ve destekleyici ayakkabı kullanımı için bilgilendirilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                    id="nurse_attempt13"
-                                    value="Herhangi bir aktivite sırasında postürün ve vücut mekaniğinin nasıl korunacağı konusunda bilgi verilir">
-                                    <label class="form-check-label" for="nurse_attempt">
-                                        <span class="checkbox-header">Herhangi bir aktivite sırasında postürün ve vücut mekaniğinin nasıl korunacağı konusunda bilgi verilir</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                        id="nurse_attempt14"
-                                        value="Mobiliteye yardımcı araç gereçlerin (baston, yürüteç, koltuk değneği, tekerlekli sandalye) kullanımı gözlemlenir ve gerekli ise kullanımla ilgili eğitim verilir">
-                                    <label class="form-check-label" for="nurse_attempt">
-                                        <span class="checkbox-header">Mobiliteye yardımcı araç gereçlerin (baston, yürüteç, koltuk değneği, tekerlekli sandalye) kullanımı gözlemlenir ve gerekli ise kullanımla ilgili eğitim verilir</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                        id="nurse_attempt15"
-                                        value="Hastaya ve bakım verenlerine, hastanın cildini kaşıyarak tahriş etmemesi konusunda bilgi verilir">
-                                    <label class="form-check-label" for="nurse_attempt">
-                                        <span class="checkbox-header">Hastaya ve bakım verenlerine, hastanın cildini kaşıyarak tahriş etmemesi konusunda bilgi verilir</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                        id="nurse_attempt16"
-                                        value="Güvenli transfer ve ambulasyon konusunda eğitim verilir">
-                                    <label class="form-check-label" for="nurse_attempt">
-                                        <span class="checkbox-header">Güvenli transfer ve ambulasyon konusunda eğitim verilir</span>
-                                    </label>
-                                </div>
-                                
-                                <p class="usernamelabel">İŞ BİRLİĞİ GEREKTİREN UYGULAMALAR</p>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                        id="nurse_attempt17"
-                                        value="Bir egzersiz programı oluşturmak için fizyoterapistle işbirliği yapılır">
-                                    <label class="form-check-label" for="nurse_attempt">
-                                        <span class="checkbox-header">Bir egzersiz programı oluşturmak için fizyoterapistle işbirliği yapılır  </span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                        id="nurse_attempt18"
-                                        value="Hareketliliği geliştirmek ve korumak için bir plan geliştirmede iş terapisti ve fizyoretapistle iş birliği yapılır">
-                                    <label class="form-check-label" for="nurse_attempt">
-                                        <span class="checkbox-header">Hareketliliği geliştirmek ve korumak için bir plan geliştirmede iş terapisti ve fizyoretapistle iş birliği yapılır</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                        id="nurse_attempt19"
-                                        value="İstemde yer alan ilaçlar gerektiğinde (analjezikler) uygulanır">
-                                    <label class="form-check-label" for="nurse_attempt">
-                                        <span class="checkbox-header">İstemde yer alan ilaçlar gerektiğinde (analjezikler) uygulanır</span>
-                                    </label>
-                                </div>
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt13" value="Herhangi bir aktivite sırasında postürün ve vücut mekaniğinin nasıl korunacağı konusunda bilgi verilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Herhangi bir aktivite sırasında postürün ve vücut mekaniğinin nasıl korunacağı konusunda bilgi verilir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt14" value="Mobiliteye yardımcı araç gereçlerin (baston, yürüteç, koltuk değneği, tekerlekli sandalye) kullanımı gözlemlenir ve gerekli ise kullanımla ilgili eğitim verilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Mobiliteye yardımcı araç gereçlerin (baston, yürüteç, koltuk değneği, tekerlekli sandalye) kullanımı gözlemlenir ve gerekli ise kullanımla ilgili eğitim verilir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt15" value="Hastaya ve bakım verenlerine, hastanın cildini kaşıyarak tahriş etmemesi konusunda bilgi verilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Hastaya ve bakım verenlerine, hastanın cildini kaşıyarak tahriş etmemesi konusunda bilgi verilir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt16" value="Güvenli transfer ve ambulasyon konusunda eğitim verilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Güvenli transfer ve ambulasyon konusunda eğitim verilir</span>
+                                </label>
+                            </div>
+
+                            <p class="usernamelabel">İŞ BİRLİĞİ GEREKTİREN UYGULAMALAR</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt17" value="Bir egzersiz programı oluşturmak için fizyoterapistle işbirliği yapılır">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Bir egzersiz programı oluşturmak için fizyoterapistle işbirliği yapılır </span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt18" value="Hareketliliği geliştirmek ve korumak için bir plan geliştirmede iş terapisti ve fizyoretapistle iş birliği yapılır">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Hareketliliği geliştirmek ve korumak için bir plan geliştirmede iş terapisti ve fizyoretapistle iş birliği yapılır</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt19" value="İstemde yer alan ilaçlar gerektiğinde (analjezikler) uygulanır">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">İstemde yer alan ilaçlar gerektiğinde (analjezikler) uygulanır</span>
+                                </label>
+                            </div>
 
                         </div>
                         <div class="input-section d-flex">
@@ -377,58 +341,57 @@ $crutch_use  = isset($_GET['crutch_use ']) ? $_GET['crutch_use '] : "NaN";
 
     </div>
     <script>
-
-    var changing_position = document.getElementById('changing_position').innerText;
-    var standing_up = document.getElementById('standing_up').innerText;
-    var walking = document.getElementById('walking').innerText;
-    var changing_clothes = document.getElementById('changing_clothes').innerText;
-    var cleaning_body = document.getElementById('cleaning_body').innerText;
-    var wheelchair_use = document.getElementById('wheelchair_use').innerText;
-    var cane_use = document.getElementById('cane_use').innerText;
-    var walker_use = document.getElementById('walker_use').innerText;
-    var crutch_use = document.getElementById('crutch_use').innerText;
-    var matchedfields_string = changing_position + " / " + standing_up + " / " + walking +
-        " / " + changing_clothes + " / " + cleaning_body + "/" + wheelchair_use + "/" + cane_use + "/" + walker_use + "/" + crutch_use;
+        var changing_position = document.getElementById('changing_position').innerText;
+        var standing_up = document.getElementById('standing_up').innerText;
+        var walking = document.getElementById('walking').innerText;
+        var changing_clothes = document.getElementById('changing_clothes').innerText;
+        var cleaning_body = document.getElementById('cleaning_body').innerText;
+        var wheelchair_use = document.getElementById('wheelchair_use').innerText;
+        var cane_use = document.getElementById('cane_use').innerText;
+        var walker_use = document.getElementById('walker_use').innerText;
+        var crutch_use = document.getElementById('crutch_use').innerText;
+        var matchedfields_string = changing_position + " / " + standing_up + " / " + walking +
+            " / " + changing_clothes + " / " + cleaning_body + "/" + wheelchair_use + "/" + cane_use + "/" + walker_use + "/" + crutch_use;
     </script>
 
     <script>
-    $(function() {
-        $('#closeBtn').click(function(e) {
-            let patient_id = <?php
+        $(function() {
+            $('#closeBtn').click(function(e) {
+                let patient_id = <?php
                                     $userid = $_GET['patient_id'];
                                     echo $userid
                                     ?>;
-            let patient_name = "<?php
+                let patient_name = "<?php
                                     echo urldecode($_GET['patient_name']);
                                     ?>";
-            var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
-                "&patient_name=" + encodeURIComponent(patient_name);
-            $("#content").load(url);
+                var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
+                    "&patient_name=" + encodeURIComponent(patient_name);
+                $("#content").load(url);
 
-        })
-    });
+            })
+        });
     </script>
     <script>
-    $(function() {
-        $('#submit').click(function(e) {
-            e.preventDefault()
-            console.log("submit clicked")
+        $(function() {
+            $('#submit').click(function(e) {
+                e.preventDefault()
+                console.log("submit clicked")
                 var id = <?php
-                                $userid = $_SESSION['userlogin']['id'];
-                                echo $userid
-                                ?>;
+                            $userid = $_SESSION['userlogin']['id'];
+                            echo $userid
+                            ?>;
                 var name = $('#name').val();
                 var surname = $('#surname').val();
                 var age = $('#age').val();
                 var not = $('#not').val();
                 let form_num = 15;
                 var patient_id = <?php
-                                        $userid = isset($_GET['patient_id']) ?$_GET['patient_id'] : 20;
-                                        echo $userid
-                                        ?>;
+                                    $userid = $_GET['patient_id'];
+                                    echo $userid
+                                    ?>;
                 let patient_name = "<?php
-                                        echo urldecode(isset($_GET['patient_name']) ? $_GET['patient_name'] : "test");
-                                        ?>";
+                                    echo urldecode($_GET['patient_name']);
+                                    ?>";
                 let yourDate = new Date();
                 let creationDate = yourDate.toISOString().split('T')[0];
                 let updateDate = yourDate.toISOString().split('T')[0];
@@ -567,7 +530,7 @@ $crutch_use  = isset($_GET['crutch_use ']) ? $_GET['crutch_use '] : "NaN";
                         noc_indicator: noc_indicator,
                         noc_indicator_after:noc_indicator_after,
                         nurse_attempt: nurse_attempt,
-                        nurse_education :nurse_education,
+                        nurse_education: nurse_education,
                         collaborative_applications: collaborative_applications,
                         evaluation: evaluation,
                         matchedfields_string: matchedfields_string,

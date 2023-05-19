@@ -16,7 +16,7 @@ if (isset($_GET['logout'])) {
 
 <head>
     <meta charset="utf-8">
-    <title>e-BYRYS-KKDS</title>
+    <title>KDSE-BPYS</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -248,7 +248,7 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes">
                         <div class="form-check">
-                        <input class="form-check-input" type="radio" name="AyağaKalkma" id="AyağaKalkma" value="Bağımsız">
+                            <input class="form-check-input" type="radio" name="AyağaKalkma" id="AyağaKalkma" value="Bağımsız">
                             <label class="form-check-label" for="AyağaKalkma">
                                 <span class="checkbox-header">Bağımsız </span>
                             </label>
@@ -277,7 +277,7 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes">
                         <div class="form-check">
-                        <input class="form-check-input" type="radio" name="yurume" id="yurume" value="Bağımsız">
+                            <input class="form-check-input" type="radio" name="yurume" id="yurume" value="Bağımsız">
                             <label class="form-check-label" for="yurume">
                                 <span class="checkbox-header">Bağımsız </span>
                             </label>
@@ -324,18 +324,18 @@ if (isset($_GET['logout'])) {
                                         $userid = $_SESSION['userlogin']['id'];
                                         echo $userid
                                         ?>;
-                    let HareketAliskanligi = parseInt($("input[name='HareketAliskanligi']").val());
-                    let EgzersizDurumu = $("input[type='radio'][name='EgzersizDurumu']:checked").val();
-                    let ROM_egzersizi = $("input[name='ROM_egzersizi']").val();
-                    let ROM_egzersizi_diger = $("input[name='ROM_egzersizi_diger']:checked").val();
-                    let HareketIstegi = $("input[name='HareketIstegi']:checked").val();
-                    let Yorgunluk = $("input[name='Yorgunluk']").val();
-                    let Huzursuzluk = $("input[name='Huzursuzluk']").val();
-                    let HDiğer = $("input[name='HDiğer']").val();
-                    let giyinme_soyunma = $("input[name='giyinme_soyunma']:checked").val();
-                    let pozisyon_degistirme = $("input[name='pozisyon_degistirme']:checked").val();
-                    let AyağaKalkma = $("input[name='AyağaKalkma']:checked").val();
-                    let yurume = $("input[name='yurume']:checked").val();
+                            let HareketAliskanligi = parseInt($("input[name='HareketAliskanligi']").val());
+                            let EgzersizDurumu = $("input[type='radio'][name='EgzersizDurumu']:checked").val();
+                            let ROM_egzersizi = $("input[name='ROM_egzersizi']").val();
+                            let ROM_egzersizi_diger = $("input[name='ROM_egzersizi_diger']:checked").val();
+                            let HareketIstegi = $("input[name='HareketIstegi']:checked").val();
+                            let Yorgunluk = $("input[name='Yorgunluk']").val();
+                            let Huzursuzluk = $("input[name='Huzursuzluk']").val();
+                            let HDiğer = $("input[name='HDiğer']").val();
+                            let giyinme_soyunma = $("input[name='giyinme_soyunma']:checked").val();
+                            let pozisyon_degistirme = $("input[name='pozisyon_degistirme']:checked").val();
+                            let AyağaKalkma = $("input[name='AyağaKalkma']:checked").val();
+                            let yurume = $("input[name='yurume']:checked").val();
 
 
                             e.preventDefault()
@@ -344,18 +344,18 @@ if (isset($_GET['logout'])) {
                                 type: 'POST',
                                 url: '<?php echo $base_url; ?>/student-patient.php',
                                 data: {
-                           HareketAliskanligi:HareketAliskanligi,
-                           EgzersizDurumu:EgzersizDurumu,
-                           ROM_egzersizi:ROM_egzersizi,
-                           ROM_egzersizi_diger:ROM_egzersizi_diger,
-                           HareketIstegi:HareketIstegi,
-                           Yorgunluk:Yorgunluk,
-                           Huzursuzluk:Huzursuzluk,
-                           HDiğer:HDiğer,
-                           giyinme_soyunma:giyinme_soyunma,
-                           pozisyon_degistirme:pozisyon_degistirme,
-                           AyağaKalkma:AyağaKalkma,
-                           yurume:yurume,
+                                    HareketAliskanligi: HareketAliskanligi,
+                                    EgzersizDurumu: EgzersizDurumu,
+                                    ROM_egzersizi: ROM_egzersizi,
+                                    ROM_egzersizi_diger: ROM_egzersizi_diger,
+                                    HareketIstegi: HareketIstegi,
+                                    Yorgunluk: Yorgunluk,
+                                    Huzursuzluk: Huzursuzluk,
+                                    HDiğer: HDiğer,
+                                    giyinme_soyunma: giyinme_soyunma,
+                                    pozisyon_degistirme: pozisyon_degistirme,
+                                    AyağaKalkma: AyağaKalkma,
+                                    yurume: yurume,
 
                                 },
                                 success: function(data) {

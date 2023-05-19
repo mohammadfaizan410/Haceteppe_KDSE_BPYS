@@ -16,7 +16,7 @@ if (isset($_GET['logout'])) {
 
 <head>
     <meta charset="utf-8">
-    <title>e-BYRYS-KKDS</title>
+    <title>KDSE-BPYS</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -83,11 +83,11 @@ if (isset($_GET['logout'])) {
 
                                     </tr>
                                     <tr>
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="UykudanYorgun" value="Uykudan yorgun">
-                                                <label class="form-check-label" for="UykudanYorgun">Uykudan yorgun kalkma</label>
-                                            </div>
+                                        <td class=" protezlertable">
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="checkbox" id="UykudanYorgun" value="Uykudan yorgun">
+                                                        <label class="form-check-label" for="UykudanYorgun">Uykudan yorgun kalkma</label>
+                                                    </div>
                                         </td>
 
                                     </tr>
@@ -140,42 +140,42 @@ if (isset($_GET['logout'])) {
             </div>
 
 
-    <script>
-    $(function() {
-        $('#closeBtn').click(function(e) {
-            let patient_id = <?php
-                  $userid = $_GET['patient_id'];
-                  echo $userid
-                  ?>;
-                   let patient_name = "<?php
-            echo urldecode($_GET['patient_name']);
-                  ?>";
-          var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
-            $("#content").load(url);
+            <script>
+                $(function() {
+                    $('#closeBtn').click(function(e) {
+                        let patient_id = <?php
+                                            $userid = $_GET['patient_id'];
+                                            echo $userid
+                                            ?>;
+                        let patient_name = "<?php
+                                            echo urldecode($_GET['patient_name']);
+                                            ?>";
+                        var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
+                        $("#content").load(url);
 
-        })
-    });
-    </script>
+                    })
+                });
+            </script>
 
             <script>
-    $(function() {
-        $('#submit').click(function(e) {
-            e.preventDefault()
-           
-                  var valid = this.form.checkValidity();
-            if (valid) {
-                let name = $('#name').val();
-                let surname = $('#surname').val();
-                let age = $('#age').val();
-                let not = $('#not').val();
-               
-                var patient_id = <?php
-                  $userid = $_GET['patient_id'];
-                  echo $userid
-                  ?>;
-                   let patient_name = "<?php
-            echo urldecode($_GET['patient_name']);
-                  ?>";
+                $(function() {
+                    $('#submit').click(function(e) {
+                        e.preventDefault()
+
+                        var valid = this.form.checkValidity();
+                        if (valid) {
+                            let name = $('#name').val();
+                            let surname = $('#surname').val();
+                            let age = $('#age').val();
+                            let not = $('#not').val();
+
+                            var patient_id = <?php
+                                                $userid = $_GET['patient_id'];
+                                                echo $userid
+                                                ?>;
+                            let patient_name = "<?php
+                                                echo urldecode($_GET['patient_name']);
+                                                ?>";
                             let yourDate = new Date()
                             let creation_date = yourDate.toISOString().split('T')[0];
                             let updateDate = yourDate.toISOString().split('T')[0];

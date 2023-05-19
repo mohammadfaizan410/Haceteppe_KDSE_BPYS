@@ -29,7 +29,7 @@ $oral_care = isset($_GET['oral_care']) ? $_GET['oral_care'] : "NaN";
 
 <head>
     <meta charset="utf-8">
-    <title>e-BYRYS-KKDS</title>
+    <title>KDSE-BPYS</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -39,28 +39,28 @@ $oral_care = isset($_GET['oral_care']) ? $_GET['oral_care'] : "NaN";
     <!-- Template Stylesheet -->
     <link href="../style.css" rel="stylesheet">
     <style>
-    table {
-        border-collapse: collapse;
-    }
+        table {
+            border-collapse: collapse;
+        }
 
-    th,
-    td {
-        border: 1px solid black;
-        padding: 10px;
-    }
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
 
-    th {
-        background-color: #eee;
-    }
+        th {
+            background-color: #eee;
+        }
 
-    h1 {
-        text-align: center;
-    }
+        h1 {
+            text-align: center;
+        }
 
-    tr,
-    td {
-        width: 200px;
-    }
+        tr,
+        td {
+            width: 200px;
+        }
     </style>
 
 <body>
@@ -74,18 +74,18 @@ $oral_care = isset($_GET['oral_care']) ? $_GET['oral_care'] : "NaN";
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Sorunla İlişkili Veriler:</p>
                             <div class="matchedfields-wrapper">
-                                <?php         
-                                echo "<p class='matchedfields' id='language_problem' style='".($language_problem == 'NaN' ? 'color: red' : 'color:blue ' )."'>Dilde sorun: ".$language_problem."</p>";
-                                echo "<p class='matchedfields' id='ingestion_problems' style='".($ingestion_problems == 'NaN' ? 'color:red ' : 'color: blue' )."'>Yeme ve yutma güçlüğü:".$ingestion_problems."</p>";
-                                echo "<p class='matchedfields' id='lip_condition' style='".($lip_condition == 'NaN' ? 'color:red ' : 'color: blue' )."'>Dudakların rengi ve yapısı:".$lip_condition."</p>";
-                                echo "<p class='matchedfields' id='mucous_condition' style='".($mucous_condition == 'NaN' ? 'color:red ' : 'color: blue' )."'> Ağız mukozasında sorun:".$mucous_condition."</p>";
-                                echo "<p class='matchedfields' id='mouth_condition' style='".($mouth_condition == 'NaN' ? 'color:red ' : 'color: blue' )."'>Dişler ve diş etlerinde sorun:".$mouth_condition."</p>";
-                                echo "<p class='matchedfields' id='oral_care' style='".($oral_care == 'NaN' ? 'color:red ' : 'color: blue' )."'>Ağız bakımı :".$oral_care."</p>";
+                                <?php
+                                echo "<p class='matchedfields' id='language_problem' style='" . ($language_problem == 'NaN' ? 'color: red' : 'color:blue ') . "'>Dilde sorun: " . $language_problem . "</p>";
+                                echo "<p class='matchedfields' id='ingestion_problems' style='" . ($ingestion_problems == 'NaN' ? 'color:red ' : 'color: blue') . "'>Yeme ve yutma güçlüğü:" . $ingestion_problems . "</p>";
+                                echo "<p class='matchedfields' id='lip_condition' style='" . ($lip_condition == 'NaN' ? 'color:red ' : 'color: blue') . "'>Dudakların rengi ve yapısı:" . $lip_condition . "</p>";
+                                echo "<p class='matchedfields' id='mucous_condition' style='" . ($mucous_condition == 'NaN' ? 'color:red ' : 'color: blue') . "'> Ağız mukozasında sorun:" . $mucous_condition . "</p>";
+                                echo "<p class='matchedfields' id='mouth_condition' style='" . ($mouth_condition == 'NaN' ? 'color:red ' : 'color: blue') . "'>Dişler ve diş etlerinde sorun:" . $mouth_condition . "</p>";
+                                echo "<p class='matchedfields' id='oral_care' style='" . ($oral_care == 'NaN' ? 'color:red ' : 'color: blue') . "'>Ağız bakımı :" . $oral_care . "</p>";
                                 ?>
                             </div>
 
                         </div>
-                         <div class="input-section d-flex">
+                        <div class="input-section d-flex">
                             <p class="usernamelabel">Hemşirelik Tanıları:</p>
                             <p class="tanıdescription">Oral mukoz membranda bozulma </p>
                         </div>
@@ -97,33 +97,25 @@ $oral_care = isset($_GET['oral_care']) ? $_GET['oral_care'] : "NaN";
                             <p class="usernamelabel">NOC Gösterge: </p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator"
-                                        id="noc_indicator"
-                                        value="1: Hastanın muköz membranlarında çok şiddetli düzeyde bozulma var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1: Hastanın muköz membranlarında çok şiddetli düzeyde bozulma var">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">1: Hastanın muköz membranlarında çok şiddetli düzeyde bozulma var</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator"
-                                        id="noc_indicator"
-                                        value="2: Hastanın muköz membranlarında şiddetli  düzeyde bozulma var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2: Hastanın muköz membranlarında şiddetli  düzeyde bozulma var">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">2: Hastanın muköz membranlarında şiddetli  düzeyde bozulma var</span>
+                                        <span class="checkbox-header">2: Hastanın muköz membranlarında şiddetli düzeyde bozulma var</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator"
-                                        id="noc_indicator"
-                                        value="3: Hastanın muköz membranlarında orta düzeyde bozulma var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3: Hastanın muköz membranlarında orta düzeyde bozulma var">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">3: Hastanın muköz membranlarında orta düzeyde bozulma var</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator"
-                                        id="noc_indicator"
-                                        value="4: Hastanın muköz membranlarında hafif düzeyde bozulma var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4: Hastanın muköz membranlarında hafif düzeyde bozulma var">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">4: Hastanın muköz membranlarında hafif düzeyde bozulma var</span>
                                     </label>
@@ -147,33 +139,25 @@ $oral_care = isset($_GET['oral_care']) ? $_GET['oral_care'] : "NaN";
                             <p class="usernamelabel">NOC Gösterge: </p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator2"
-                                        id="noc_indicator"
-                                        value="1: Hastada şiddetli ağız kokusu var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator2" id="noc_indicator" value="1: Hastada şiddetli ağız kokusu var">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">1: Hastada şiddetli ağız kokusu var</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator2"
-                                        id="noc_indicator"
-                                        value="2: Hastada ciddi ağız kokusu var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator2" id="noc_indicator" value="2: Hastada ciddi ağız kokusu var">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">2: Hastada ciddi ağız kokusu var</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator2"
-                                        id="noc_indicator"
-                                        value="3: Hastada orta düzeyde ağız kokusu var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator2" id="noc_indicator" value="3: Hastada orta düzeyde ağız kokusu var">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">3: Hastada orta düzeyde ağız kokusu var</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator2"
-                                        id="noc_indicator"
-                                        value="4: Hastada hafif ağız kokusu var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator2" id="noc_indicator" value="4: Hastada hafif ağız kokusu var">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">4: Hastada hafif ağız kokusu var</span>
                                     </label>
@@ -182,7 +166,7 @@ $oral_care = isset($_GET['oral_care']) ? $_GET['oral_care'] : "NaN";
                                     <input class="form-check-input" type="radio" required name="noc_indicator2" id="
                                         noc_indicator" value="5: Hastada ağız kokusu yok ">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">5: Hastada ağız kokusu yok 
+                                        <span class="checkbox-header">5: Hastada ağız kokusu yok
                                         </span>
                                     </label>
                                 </div>
@@ -194,132 +178,108 @@ $oral_care = isset($_GET['oral_care']) ? $_GET['oral_care'] : "NaN";
                             <p class="usernamelabel">Hemşirelik Girişimleri:</p>
 
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt1"
-                                    value="Ağız ve ağız içi yapıları (dudaklar, dil, mukoz memranlar, dişler, dişetleri, diş protezleri) değerlendirilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt1" value="Ağız ve ağız içi yapıları (dudaklar, dil, mukoz memranlar, dişler, dişetleri, diş protezleri) değerlendirilir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Ağız ve ağız içi yapıları (dudaklar, dil, mukoz memranlar, dişler, dişetleri, diş protezleri) değerlendirilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt2"
-                                    value="Hastanın tat alma, yutma, ses kalitesi ve konforu değerlendirilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt2" value="Hastanın tat alma, yutma, ses kalitesi ve konforu değerlendirilir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Hastanın tat alma, yutma, ses kalitesi ve konforu değerlendirilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt3"
-                                    value="Hastanın ağız hijyeni alışkanlığı ve uygulamaları değerlendirilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt3" value="Hastanın ağız hijyeni alışkanlığı ve uygulamaları değerlendirilir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Hastanın ağız hijyeni alışkanlığı ve uygulamaları değerlendirilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt4"
-                                    value="Hasta yemek öncesi ve yemek sonrası ağız bakımını uygulaması için desteklenir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt4" value="Hasta yemek öncesi ve yemek sonrası ağız bakımını uygulaması için desteklenir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Hasta yemek öncesi ve yemek sonrası ağız bakımını uygulaması için desteklenir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt5"
-                                    value="Bilinci kapalı ya da ağız bakımını kendi kendine yerine getiremeyen hastalara uygun sıklıkta ağız bakımı uygulanır">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt5" value="Bilinci kapalı ya da ağız bakımını kendi kendine yerine getiremeyen hastalara uygun sıklıkta ağız bakımı uygulanır">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Bilinci kapalı ya da ağız bakımını kendi kendine yerine getiremeyen hastalara uygun sıklıkta ağız bakımı uygulanırr</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt6"
-                                    value="Baharatlı, tuzlu, asitli, kuru, pürüzlü veya sert gıdaların tüketilmemesi sağlanır">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt6" value="Baharatlı, tuzlu, asitli, kuru, pürüzlü veya sert gıdaların tüketilmemesi sağlanır">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Baharatlı, tuzlu, asitli, kuru, pürüzlü veya sert gıdaların tüketilmemesi sağlanır</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt7"
-                                    value="Şiddetli stomatit varlığında takma dişler çıkartılır">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt7" value="Şiddetli stomatit varlığında takma dişler çıkartılır">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Şiddetli stomatit varlığında takma dişler çıkartılır</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt8"
-                                    value="Sıvı alımının arttırılması konusunda hasta desteklenir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt8" value="Sıvı alımının arttırılması konusunda hasta desteklenir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Sıvı alımının arttırılması konusunda hasta desteklenir</span>
                                 </label>
                             </div>
-                            
-                            
+
+
                             <p class="usernamelabel">Eğitim:</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt9"
-                                    value="Normal ağız ve diş sağlığını sağlamak için, ağız bakımı konusunda bilgi verilir: Yumuşak kıllı diş fırçası ya da tek kullanımlık ağız bakım süngerleri kullanımı gibi.">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt9" value="Normal ağız ve diş sağlığını sağlamak için, ağız bakımı konusunda bilgi verilir: Yumuşak kıllı diş fırçası ya da tek kullanımlık ağız bakım süngerleri kullanımı gibi.">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Normal ağız ve diş sağlığını sağlamak için, ağız bakımı konusunda bilgi verilir: Yumuşak kıllı diş fırçası ya da tek kullanımlık ağız bakım süngerleri kullanımı gibi.</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt10"
-                                    value="Kilo verme, diyetin devamlılığı, geliştirilmiş yeme davranışları ve egzersiz için olumlu destek sağlanır">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt10" value="Kilo verme, diyetin devamlılığı, geliştirilmiş yeme davranışları ve egzersiz için olumlu destek sağlanır">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Kilo verme, diyetin devamlılığı, geliştirilmiş yeme davranışları ve egzersiz için olumlu destek sağlanır</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                    id="nurse_attempt11"
-                                    value="Gliserin, alkol ve diğer kurutucu ajan içeren ağız bakım ürünlerinin kullanılmaması konusunda hasta bilgilendirilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt11" value="Gliserin, alkol ve diğer kurutucu ajan içeren ağız bakım ürünlerinin kullanılmaması konusunda hasta bilgilendirilir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Gliserin, alkol ve diğer kurutucu ajan içeren ağız bakım ürünlerinin kullanılmaması konusunda hasta bilgilendirilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                    id="nurse_attempt12"
-                                    value="Şekerli ürünlerin tüketiminden ve sakız kullanımından uzak durması konusunda bilgi verilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt12" value="Şekerli ürünlerin tüketiminden ve sakız kullanımından uzak durması konusunda bilgi verilir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Şekerli ürünlerin tüketiminden ve sakız kullanımından uzak durması konusunda bilgi verilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                    id="nurse_attempt13"
-                                    value="İrritasyon ve yanıkları önlemek için tüketmemesi gereken besinler (çok sıcak/çok soğuk besinler, acı ve baharatlı besinler) konusunda bilgi verilir ve rahatsızlığı azaltmak için besinleri ılık olarak tüketmesi önerilir ">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt13" value="İrritasyon ve yanıkları önlemek için tüketmemesi gereken besinler (çok sıcak/çok soğuk besinler, acı ve baharatlı besinler) konusunda bilgi verilir ve rahatsızlığı azaltmak için besinleri ılık olarak tüketmesi önerilir ">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">İrritasyon ve yanıkları önlemek için tüketmemesi gereken besinler (çok sıcak/çok soğuk besinler, acı ve baharatlı besinler) konusunda bilgi verilir ve rahatsızlığı azaltmak için besinleri ılık olarak tüketmesi önerilir </span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                    id="nurse_attempt14"
-                                    value="Diyet danışmanlığı, egzersiz programları, yardımlaşma grupları gibi destek kaynakları hakkında bilgi verilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt14" value="Diyet danışmanlığı, egzersiz programları, yardımlaşma grupları gibi destek kaynakları hakkında bilgi verilir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Stomatit bulgu ve semptomları konusunda ve ne zaman sağlık kurumuna başvurması gerektiği konusunda bilgi verilir</span>
                                 </label>
                             </div>
-                            
+
                             <p class="usernamelabel">İŞ BİRLİĞİ GEREKTİREN UYGULAMALAR</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                    id="nurse_attempt15"
-                                    value="Hastanın dengeli bir diyetle besin alımı için diyetisyenle işbirliği yapılır">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt15" value="Hastanın dengeli bir diyetle besin alımı için diyetisyenle işbirliği yapılır">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Hastanın dengeli bir diyetle besin alımı için diyetisyenle işbirliği yapılır</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                    id="nurse_attempt16"
-                                    value="Mantar enfeksiyonu varsa antifungal gargara ya da oral lokal anestezik kullanımı için hekimle görüşülürr">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt16" value="Mantar enfeksiyonu varsa antifungal gargara ya da oral lokal anestezik kullanımı için hekimle görüşülürr">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Mantar enfeksiyonu varsa antifungal gargara ya da oral lokal anestezik kullanımı için hekimle görüşülür</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt"
-                                    id="nurse_attempt17"
-                                    value="İstem yapılan ilaçlar (analjezik, anestetik, antimikrobiyal, anti-inflamatuar vb) uygulanır">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt17" value="İstem yapılan ilaçlar (analjezik, anestetik, antimikrobiyal, anti-inflamatuar vb) uygulanır">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">İstem yapılan ilaçlar (analjezik, anestetik, antimikrobiyal, anti-inflamatuar vb) uygulanır</span>
                                 </label>
@@ -443,55 +403,55 @@ $oral_care = isset($_GET['oral_care']) ? $_GET['oral_care'] : "NaN";
 
     </div>
     <script>
-    var language_problem = document.getElementById('language_problem').innerText;
-    var ingestion_problems = document.getElementById('ingestion_problems').innerText;
-    var lip_condition = document.getElementById('lip_condition').innerText;
-    var mucous_condition = document.getElementById('mucous_condition').innerText;
-    var mouth_condition = document.getElementById('mouth_condition').innerText;
-    var oral_care = document.getElementById('oral_care').innerText;
+        var language_problem = document.getElementById('language_problem').innerText;
+        var ingestion_problems = document.getElementById('ingestion_problems').innerText;
+        var lip_condition = document.getElementById('lip_condition').innerText;
+        var mucous_condition = document.getElementById('mucous_condition').innerText;
+        var mouth_condition = document.getElementById('mouth_condition').innerText;
+        var oral_care = document.getElementById('oral_care').innerText;
 
-    var matchedfields_string = language_problem + " / " + ingestion_problems + " / " + lip_condition +
-        " / " + mucous_condition + " / " + mouth_condition + "/" + oral_care + "/";
+        var matchedfields_string = language_problem + " / " + ingestion_problems + " / " + lip_condition +
+            " / " + mucous_condition + " / " + mouth_condition + "/" + oral_care + "/";
     </script>
 
     <script>
-    $(function() {
-        $('#closeBtn').click(function(e) {
-            let patient_id = <?php
+        $(function() {
+            $('#closeBtn').click(function(e) {
+                let patient_id = <?php
                                     $userid = $_GET['patient_id'];
                                     echo $userid
                                     ?>;
-            let patient_name = "<?php
+                let patient_name = "<?php
                                     echo urldecode($_GET['patient_name']);
                                     ?>";
-            var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
-                "&patient_name=" + encodeURIComponent(patient_name);
-            $("#content").load(url);
+                var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
+                    "&patient_name=" + encodeURIComponent(patient_name);
+                $("#content").load(url);
 
-        })
-    });
+            })
+        });
     </script>
     <script>
-    $(function() {
-        $('#submit').click(function(e) {
-            e.preventDefault()
-            console.log("submit clicked")
+        $(function() {
+            $('#submit').click(function(e) {
+                e.preventDefault()
+                console.log("submit clicked")
                 var id = <?php
-                                $userid = $_SESSION['userlogin']['id'];
-                                echo $userid
-                                ?>;
+                            $userid = $_SESSION['userlogin']['id'];
+                            echo $userid
+                            ?>;
                 var name = $('#name').val();
                 var surname = $('#surname').val();
                 var age = $('#age').val();
                 var not = $('#not').val();
                 let form_num = 15;
                 var patient_id = <?php
-                                        $userid = isset($_GET['patient_id']) ?$_GET['patient_id'] : 20;
-                                        echo $userid
-                                        ?>;
+                                    $userid = $_GET['patient_id'];
+                                    echo $userid
+                                    ?>;
                 let patient_name = "<?php
-                                        echo urldecode(isset($_GET['patient_name']) ? $_GET['patient_name'] : "test");
-                                        ?>";
+                                    echo urldecode($_GET['patient_name']);
+                                    ?>";
                 let yourDate = new Date();
                 let creationDate = yourDate.toISOString().split('T')[0];
                 let updateDate = yourDate.toISOString().split('T')[0];
@@ -621,7 +581,7 @@ $oral_care = isset($_GET['oral_care']) ? $_GET['oral_care'] : "NaN";
                         noc_indicator_after:noc_indicator_after,
                         noc_indicator_after2 : noc_indicator_after2,
                         nurse_attempt: nurse_attempt,
-                        nurse_education :nurse_education,
+                        nurse_education: nurse_education,
                         collaborative_applications: collaborative_applications,
                         evaluation: evaluation,
                         matchedfields_string: matchedfields_string,

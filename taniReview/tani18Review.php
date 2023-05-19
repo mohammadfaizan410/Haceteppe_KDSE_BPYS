@@ -11,11 +11,11 @@ if (isset($_GET['logout'])) {
     header("Location: main.php");
 }
 require_once("../config-students.php");
-if(isset($_GET['patient_id'])){
+if (isset($_GET['patient_id'])) {
     $patient_id = $_GET['patient_id'];
     $stmt = $db->prepare("SELECT * from tani18 where patient_id = ?");
     $result = $stmt->execute([$patient_id]);
-    if($result){
+    if ($result) {
         $tani18Data = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
@@ -26,7 +26,7 @@ if(isset($_GET['patient_id'])){
 
 <head>
     <meta charset="utf-8">
-    <title>e-BYRYS-KKDS</title>
+    <title>KDSE-BPYS</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -36,28 +36,28 @@ if(isset($_GET['patient_id'])){
     <!-- Template Stylesheet -->
     <link href="../style.css" rel="stylesheet">
     <style>
-    table {
-        border-collapse: collapse;
-    }
+        table {
+            border-collapse: collapse;
+        }
 
-    th,
-    td {
-        border: 1px solid black;
-        padding: 10px;
-    }
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
 
-    th {
-        background-color: #eee;
-    }
+        th {
+            background-color: #eee;
+        }
 
-    h1 {
-        text-align: center;
-    }
+        h1 {
+            text-align: center;
+        }
 
-    tr,
-    td {
-        width: 200px;
-    }
+        tr,
+        td {
+            width: 200px;
+        }
     </style>
 </head>
 
@@ -73,23 +73,23 @@ if(isset($_GET['patient_id'])){
                             <p class="usernamelabel">Sorunla İlişkili Veriler:</p>
                             <div class="matchedfields-wrapper">
                                 <?php
-                            $innerHtml = '';
-                            $fieldsArray = explode("/", $tani18Data[0]["matchedfields_string"]);
-                            foreach ($fieldsArray as $key => $value) {
-                                if(preg_match("/NaN/", $value)){
-                                    $innerHtml .= "<p style='color:red;'>$value</p>";
-                                }else{
-                                    $innerHtml .= "<p>$value</p>";
-                                }
-                            };
-                            echo $innerHtml;
-                        ?>
+                                $innerHtml = '';
+                                $fieldsArray = explode("/", $tani18Data[0]["matchedfields_string"]);
+                                foreach ($fieldsArray as $key => $value) {
+                                    if (preg_match("/NaN/", $value)) {
+                                        $innerHtml .= "<p style='color:red;'>$value</p>";
+                                    } else {
+                                        $innerHtml .= "<p>$value</p>";
+                                    }
+                                };
+                                echo $innerHtml;
+                                ?>
                             </div>
 
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Hemşirelik Tanıları:</p>
-                            <p class="tanıdescription">Fiziksel mobilitede bozulma   </p>
+                            <p class="tanıdescription">Fiziksel mobilitede bozulma </p>
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">NOC Çıktıları:</p>
@@ -99,65 +99,64 @@ if(isset($_GET['patient_id'])){
                             <p class="usernamelabel">NOC Gösterge: </p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" disabled
-                                        id="noc_indicator" checked>
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" disabled id="noc_indicator" checked>
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header"><?php echo $tani18Data[0]['noc_indicator']?></span>
                                     </label>
                                 </div>
-                               
+
 
                             </div>
 
                         </div>
-                        
+
                         <div class="input-section d-flex" style="flex-direction: column;">
                             <p class="usernamelabel">Hemşirelik Girişimleri:</p>
                             <?php
-                                $nurse_attempt = explode("/", $tani18Data[0]['nurse_attempt']);
-                                foreach ($nurse_attempt as $value) {
-                                    $trimmed_value = trim($value);
-                                    if (!empty($trimmed_value)) {
-                                        echo "<div class='form-check'>
+                            $nurse_attempt = explode("/", $tani18Data[0]['nurse_attempt']);
+                            foreach ($nurse_attempt as $value) {
+                                $trimmed_value = trim($value);
+                                if (!empty($trimmed_value)) {
+                                    echo "<div class='form-check'>
                                         <label class='form-check-label' for='nurse_attempt'>
                                         <span class='checkbox-header'>&#x2713; " . $trimmed_value . "</span>
                                         </label>
                                         </div>";
-                                    }
-                                } 
-                                ?>
+                                }
+                            }
+                            ?>
                         </div>
                         <div class="input-section d-flex" style="flex-direction: column;">
                             <p class="usernamelabel">Eğitim:</p>
                             <?php
-                                $nurse_education = explode("/", $tani18Data[0]['nurse_education']);
-                                foreach ($nurse_education as $value) {
-                                    $trimmed_value = trim($value);
-                                    if (!empty($trimmed_value)) {
-                                        echo "<div class='form-check'>
+                            $nurse_education = explode("/", $tani18Data[0]['nurse_education']);
+                            foreach ($nurse_education as $value) {
+                                $trimmed_value = trim($value);
+                                if (!empty($trimmed_value)) {
+                                    echo "<div class='form-check'>
                                         <label class='form-check-label' for='nurse_attempt'>
                                             <span class='checkbox-header'>&#x2713; " . $trimmed_value . "</span>
                                         </label>
                                       </div>";
-                                    }
-                                } 
-                                        ?>
+                                }
+                            }
+                            ?>
                         </div>
                         <div class="input-section d-flex" style="flex-direction: column;">
                             <p class="usernamelabel">İŞ BİRLİĞİ GEREKTİREN UYGULAMALAR:</p>
                             <?php
-                                $collaborative_applications = explode("/", $tani18Data[0]['collaborative_applications']);
-                                foreach ($collaborative_applications as $value) {
-                                    $trimmed_value = trim($value);
-                                    if (!empty($trimmed_value)) {
-                                        echo "<div class='form-check'>
+                            $collaborative_applications = explode("/", $tani18Data[0]['collaborative_applications']);
+                            foreach ($collaborative_applications as $value) {
+                                $trimmed_value = trim($value);
+                                if (!empty($trimmed_value)) {
+                                    echo "<div class='form-check'>
                                         <label class='form-check-label' for='nurse_attempt'>
                                             <span class='checkbox-header'>&#x2713; " . $trimmed_value . "</span>
                                         </label>
                                       </div>";
-                                    }
-                                } 
-                                        ?>
+                                }
+                            }
+                            ?>
                         </div>
                 
                         <div class="input-section" id="o2-delivery-container">

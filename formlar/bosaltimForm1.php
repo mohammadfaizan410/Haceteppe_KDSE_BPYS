@@ -16,7 +16,7 @@ if (isset($_GET['logout'])) {
 
 <head>
     <meta charset="utf-8">
-    <title>e-BYRYS-KKDS</title>
+    <title>KDSE-BPYS</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -41,10 +41,10 @@ if (isset($_GET['logout'])) {
 
 </head>
 <div class="send-patient ta-center">
-            <span class='close closeBtn' id='closeBtn'>&times;</span>
-            <h1 class="form-header">BOŞALTIM GEREKSİNİMİ </h1>
-            <div class=" patients-save">
-                <form action="" method="" class="patients-save-fields">
+    <span class='close closeBtn' id='closeBtn'>&times;</span>
+    <h1 class="form-header">BOŞALTIM GEREKSİNİMİ </h1>
+    <div class=" patients-save">
+        <form action="" method="" class="patients-save-fields">
 
             <h3>BAĞIRSAK BOŞALTIMI</h3>
             <div class="input-section d-flex">
@@ -135,7 +135,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" name="excretionProblems"  type="checkbox" id="Diare" value="Diare">
+                                                <input class="form-check-input" name="excretionProblems" type="checkbox" id="Diare" value="Diare">
                                                 <label class="form-check-label" for="Diare">Diare </label>
                                             </div>
                                         </td>
@@ -144,7 +144,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" name="excretionProblems"  type="checkbox" id="Distansiyon" value="Distansiyon">
+                                                <input class="form-check-input" name="excretionProblems" type="checkbox" id="Distansiyon" value="Distansiyon">
                                                 <label class="form-check-label" for="Distansiyon">Distansiyon</label>
                                             </div>
                                         </td>
@@ -153,7 +153,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" name="excretionProblems"  type="checkbox" id="Fekal" value="Fekal">
+                                                <input class="form-check-input" name="excretionProblems" type="checkbox" id="Fekal" value="Fekal">
                                                 <label class="form-check-label" for="Fekal">Fekal
                                                     inkontinans</label>
                                             </div>
@@ -163,7 +163,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" name="excretionProblems"  type="checkbox" id="Hemoroid" value="Hemoroid">
+                                                <input class="form-check-input" name="excretionProblems" type="checkbox" id="Hemoroid" value="Hemoroid">
                                                 <label class="form-check-label" for="Hemoroid">Hemoroid</label>
                                             </div>
                                         </td>
@@ -172,7 +172,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" name="excretionProblems"  type="checkbox" id="Dışkı" value="Dışkı">
+                                                <input class="form-check-input" name="excretionProblems" type="checkbox" id="Dışkı" value="Dışkı">
                                                 <label class="form-check-label" for="Dışkı">Dışkı tıkacı</label>
                                             </div>
                                         </td>
@@ -211,91 +211,91 @@ if (isset($_GET['logout'])) {
                                 <span class="checkbox-header">Sorun Yok</span>
                             </label>
                         </div>
-                        </div>
-                        </div>
-                        <div class="form-check d-flex ">
-                            <input class="form-check-input" type="radio" name="BoşaltımŞekli" id="BoşaltımŞekli" value="Var">
-                            <label class="form-check-label " for="BoşaltımŞekli">
-                                <span class="checkbox-header p-3">Sorun Var</span>
-                            </label>
-                            </div>
-   
-                            <table class="ozgecmistable-wrapper p-2">
-                                <tbody>
-                                    <tr>
-                                        <td class="protezlertable">
-                                        <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" id="Kolostom" value="Kolostom">
-                                                    <label class="form-check-label" for="Kolostom">Kolostom</label>
-                                                </div>
-                                            <div class="d-flex">
-                                                
-                                                <div>
-                                                    <div class="form-check">
-                                                        <label class="form-check-label" for="StomaRengi">Stomanın Rengi: </label>
-                                                        <input type="text" class="diger form-control" required name="StomaRengi" id="StomaRengi">
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" id="Gaz1" value="Gaz">
-                                                        <label class="form-check-label" for="Gaz1">Gaz</label>
-                                                    </div>
-                                                    <div class="form-check ">
-                                                        <input class="form-check-input" type="checkbox" id="Koku1" value="Koku">
-                                                        <label class="form-check-label" for="Koku1">Koku</label>
-                                                    </div>
-                                                    <div class="form-check ">
-                                                        <input class="form-check-input" type="checkbox" id="DışkıSızıntısı" value="Dışkı sızıntısı">
-                                                        <label class="form-check-label" for="DışkıSızıntısı1">Dışkı sızıntısı</label>
-                                                    </div>
-                                                    <div class="form-check ">
-                                                        <input class="form-check-input" type="checkbox" id="Deri_irritasyonu" value="Deri irritasyonu">
-                                                        <label class="form-check-label" for="Deri_irritasyonu1">Deri irritasyonu</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="protezlertable">
-                                        <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" id="İleostomi" value="İleostomi">
-                                                    <label class="form-check-label" for="İleostomi">İleostomi</label>
-                                            </div>
-                                            <div class="d-flex">
-                                                
-                                                <div>
-                                                    <div class="form-check">
-                                                        <label class="form-check-label" for="StomanınRengi">Stomanın Rengi: </label>
-                                                        <input type="text" class="diger form-control" required name="StomanınRengi" id="StomanınRengi">
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" id="Gaz" value="Gaz">
-                                                        <label class="form-check-label" for="Gaz">Gaz:</label>
-                                                    </div>
-                                                    <div class="form-check ">
-                                                        <input class="form-check-input" type="checkbox" id="Koku" value="Koku">
-                                                        <label class="form-check-label" for="Koku">Koku</label>
-                                                    </div>
-                                                    <div class="form-check ">
-                                                        <input class="form-check-input" type="checkbox" id="Dışkı_sızıntısı" value="Dışkı sızıntısı">
-                                                        <label class="form-check-label" for="Dışkı_sızıntısı">Dışkı sızıntısı</label>
-                                                    </div>
-                                                    <div class="form-check ">
-                                                        <input class="form-check-input" type="checkbox" id="Deri_irritasyonu" value="Deri irritasyonu">
-                                                        <label class="form-check-label" for="Deri_irritasyonu">Deri irritasyonu</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
+                    </div>
+                </div>
+                <div class="form-check d-flex ">
+                    <input class="form-check-input" type="radio" name="BoşaltımŞekli" id="BoşaltımŞekli" value="Var">
+                    <label class="form-check-label " for="BoşaltımŞekli">
+                        <span class="checkbox-header p-3">Sorun Var</span>
+                    </label>
+                </div>
+
+                <table class="ozgecmistable-wrapper p-2">
+                    <tbody>
+                        <tr>
+                            <td class="protezlertable">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="Kolostom" value="Kolostom">
+                                    <label class="form-check-label" for="Kolostom">Kolostom</label>
+                                </div>
+                                <div class="d-flex">
+
+                                    <div>
+                                        <div class="form-check">
+                                            <label class="form-check-label" for="StomaRengi">Stomanın Rengi: </label>
+                                            <input type="text" class="diger form-control" required name="StomaRengi" id="StomaRengi">
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="Gaz1" value="Gaz">
+                                            <label class="form-check-label" for="Gaz1">Gaz</label>
+                                        </div>
+                                        <div class="form-check ">
+                                            <input class="form-check-input" type="checkbox" id="Koku1" value="Koku">
+                                            <label class="form-check-label" for="Koku1">Koku</label>
+                                        </div>
+                                        <div class="form-check ">
+                                            <input class="form-check-input" type="checkbox" id="DışkıSızıntısı" value="Dışkı sızıntısı">
+                                            <label class="form-check-label" for="DışkıSızıntısı1">Dışkı sızıntısı</label>
+                                        </div>
+                                        <div class="form-check ">
+                                            <input class="form-check-input" type="checkbox" id="Deri_irritasyonu" value="Deri irritasyonu">
+                                            <label class="form-check-label" for="Deri_irritasyonu1">Deri irritasyonu</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="protezlertable">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="İleostomi" value="İleostomi">
+                                    <label class="form-check-label" for="İleostomi">İleostomi</label>
+                                </div>
+                                <div class="d-flex">
+
+                                    <div>
+                                        <div class="form-check">
+                                            <label class="form-check-label" for="StomanınRengi">Stomanın Rengi: </label>
+                                            <input type="text" class="diger form-control" required name="StomanınRengi" id="StomanınRengi">
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="Gaz" value="Gaz">
+                                            <label class="form-check-label" for="Gaz">Gaz:</label>
+                                        </div>
+                                        <div class="form-check ">
+                                            <input class="form-check-input" type="checkbox" id="Koku" value="Koku">
+                                            <label class="form-check-label" for="Koku">Koku</label>
+                                        </div>
+                                        <div class="form-check ">
+                                            <input class="form-check-input" type="checkbox" id="Dışkı_sızıntısı" value="Dışkı sızıntısı">
+                                            <label class="form-check-label" for="Dışkı_sızıntısı">Dışkı sızıntısı</label>
+                                        </div>
+                                        <div class="form-check ">
+                                            <input class="form-check-input" type="checkbox" id="Deri_irritasyonu" value="Deri irritasyonu">
+                                            <label class="form-check-label" for="Deri_irritasyonu">Deri irritasyonu</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
 
 
 
-                                </tbody>
-                            </table>
+                    </tbody>
+                </table>
 
-             
-                
+
+
             </div>
 
 
@@ -594,165 +594,165 @@ if (isset($_GET['logout'])) {
                     </div>
                 </div>
             </div>
-                        <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
-                </form>
-         </div>
+            <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
+        </form>
     </div>
-    <script>
+</div>
+<script>
     $(function() {
         $('#closeBtn').click(function(e) {
             let patient_id = <?php
-                  $userid = $_GET['patient_id'];
-                  echo $userid
-                  ?>;
-                   let patient_name = "<?php
-            echo urldecode($_GET['patient_name']);
-                  ?>";
-          var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
+                                $userid = $_GET['patient_id'];
+                                echo $userid
+                                ?>;
+            let patient_name = "<?php
+                                echo urldecode($_GET['patient_name']);
+                                ?>";
+            var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
             $("#content").load(url);
 
         })
     });
-    </script>
+</script>
 
-    <script>
-        $(function() {
-            $('#submit').click(function(e) {
-                var valid = this.form.checkValidity();
+<script>
+    $(function() {
+        $('#submit').click(function(e) {
+            var valid = this.form.checkValidity();
 
-                if (valid) {
+            if (valid) {
                 let surname = $('#surname').val();
                 let age = $('#age').val();
                 let not = $('#not').val();
-               
+
                 var patient_id = <?php
-                  $userid = $_GET['patient_id'];
-                  echo $userid
-                  ?>;
-                   let patient_name = "<?php
-            echo urldecode($_GET['patient_name']);
-                  ?>";
-                    //let stoolEmptyingHelp = $("input[type='radio'][name='stoolEmptyingHelp']:checked").val();
-                    //let hospitalStoolEmptyingFrequency =  $("input[name='hospitalStoolEmptyingFrequency']").val();
-                    //let hospitalStoolEmptyingDate =  $("input[name='hospitalStoolEmptyingDate']").val();
-                    //let BoşaltımSorun = '';
-                    //if($("input[name='BoşaltımSorun']:checked").val() === "Var"){
-                        //BoşaltımSorun = $('input[name="excretionProblems"]:checked').map(function() {
-                                            //return this.value;
-                                            //}).get().join(',');
-                    //}else[
-                        //BoşaltımSorun = 'Sorun yok'
-                    //]
-                    let protezlertable = $("input[type='radio'][name='protezlertable']:checked").val();
-                    let sikligi = $("input[name='sikligi']").val();
-                    let zamani = $("input[name='zamani']").val();
-                    let BoşaltımSorun = $("input[type='radio'][name='BoşaltımSorun']:checked").val();
-                    let Konstipasyon = $("input[name='Konstipasyon']").val();
-                    let Diare = $("input[name='Diare']").val();
-                    let Distansiyon = $("input[name='Distansiyon']").val();
-                    let Fekal = $("input[name='Fekal']").val();
-                    let Hemoroid = $("input[name='Hemoroid']").val();
-                    let Dışkı = $("input[name='Dışkı']").val();
-                    let BagirsakDiğer = $("input[name='BagirsakDiğer']").val();
-                    let bagirsak_sesleri = $("input[name='bagirsak_sesleri']").val();
-                    let defekasyon_zamani = $("input[name='defekasyon_zamani']").val();
-                    let defekasyon_tekrari = $("input[name='defekasyon_tekrari']").val();
-                    let BoşaltımŞekli = $("input[type='radio'][name='BoşaltımŞekli']:checked").val();
-                    let Kolostom = $("input[name='Kolostom']").val();
-                    let StomaRengi = $("input[type='radio'][name='StomaRengi']").val();
-                    let Gaz1 = $("input[name='Gaz1']").val();
-                    let Koku1 = $("input[type='radio'][name='Koku1']").val();
-                    let DışkıSızıntısı1 = $("input[name='DışkıSızıntısı1']").val();
-                    let Deri_irritasyonu1 = $("input[type='radio'][name='Deri_irritasyonu1']").val();
-                    let İleostomi = $("input[name='İleostomi']").val();
-                    let StomanınRengi = $("input[name='StomanınRengi']").val();
-                    let Gaz = $("input[name='Gaz']").val();
-                    let Koku = $("input[name='Koku']").val();
-                    let Dışkı_sızıntısı = $("input[name='Dışkı_sızıntısı']").val();
-                    let Deri_irritasyonu = $("input[name='Deri_irritasyonu']").val();
-                    let Bağımsız = $("input[name='Bağımsız']").val();
-                    let YarıBağımlı = $("input[name='YarıBağımlı']").val();
-                    let Bağımlı = $("input[name='Bağımlı']").val();
-                    let BoşaltımdaSorun = $("input[name='BoşaltımdaSorun']:checked").val();
-                    let Üriner_inkontinans1 = $("input[name='Üriner_inkontinans']").val();
-                    let Dizüri1 = $("input[name='Dizüri1']").val();
-                    let UrinerDiğer = $("input[name='UrinerDiğer']").val();
-                    let Mesane_kateterizasyonu = $("input[name='Mesane_kateterizasyonu']:checked").val();
-                    let mesane_takilma_tarihi = $("input[name='mesane_takilma_tarihi']").val();
-                    let Üriner_inkontinans = $("input[name='Üriner_inkontinans']").val();
-                    let Dizüri = $("input[name='Dizüri']").val();
-                    let Uriner_diger = $("input[name='Uriner_diger']").val();
-                    let Üreterestomi = $("input[name='Üreterestomi']:checked").val();
-                    let sağ = $("input[name='sağ']").val();
-                    let sol = $("input[name='sol']").val();
-                    let Sistostomi = $("input[name='Sistostomi']:checked").val();
-                    let IdrarRengi = $("input[name='IdrarRengi']:checked").val();
-                    let IdrarBerrakligi = $("input[name='IdrarBerrakligi']").val();
+                                    $userid = $_GET['patient_id'];
+                                    echo $userid
+                                    ?>;
+                let patient_name = "<?php
+                                    echo urldecode($_GET['patient_name']);
+                                    ?>";
+                //let stoolEmptyingHelp = $("input[type='radio'][name='stoolEmptyingHelp']:checked").val();
+                //let hospitalStoolEmptyingFrequency =  $("input[name='hospitalStoolEmptyingFrequency']").val();
+                //let hospitalStoolEmptyingDate =  $("input[name='hospitalStoolEmptyingDate']").val();
+                //let BoşaltımSorun = '';
+                //if($("input[name='BoşaltımSorun']:checked").val() === "Var"){
+                //BoşaltımSorun = $('input[name="excretionProblems"]:checked').map(function() {
+                //return this.value;
+                //}).get().join(',');
+                //}else[
+                //BoşaltımSorun = 'Sorun yok'
+                //]
+                let protezlertable = $("input[type='radio'][name='protezlertable']:checked").val();
+                let sikligi = $("input[name='sikligi']").val();
+                let zamani = $("input[name='zamani']").val();
+                let BoşaltımSorun = $("input[type='radio'][name='BoşaltımSorun']:checked").val();
+                let Konstipasyon = $("input[name='Konstipasyon']").val();
+                let Diare = $("input[name='Diare']").val();
+                let Distansiyon = $("input[name='Distansiyon']").val();
+                let Fekal = $("input[name='Fekal']").val();
+                let Hemoroid = $("input[name='Hemoroid']").val();
+                let Dışkı = $("input[name='Dışkı']").val();
+                let BagirsakDiğer = $("input[name='BagirsakDiğer']").val();
+                let bagirsak_sesleri = $("input[name='bagirsak_sesleri']").val();
+                let defekasyon_zamani = $("input[name='defekasyon_zamani']").val();
+                let defekasyon_tekrari = $("input[name='defekasyon_tekrari']").val();
+                let BoşaltımŞekli = $("input[type='radio'][name='BoşaltımŞekli']:checked").val();
+                let Kolostom = $("input[name='Kolostom']").val();
+                let StomaRengi = $("input[type='radio'][name='StomaRengi']").val();
+                let Gaz1 = $("input[name='Gaz1']").val();
+                let Koku1 = $("input[type='radio'][name='Koku1']").val();
+                let DışkıSızıntısı1 = $("input[name='DışkıSızıntısı1']").val();
+                let Deri_irritasyonu1 = $("input[type='radio'][name='Deri_irritasyonu1']").val();
+                let İleostomi = $("input[name='İleostomi']").val();
+                let StomanınRengi = $("input[name='StomanınRengi']").val();
+                let Gaz = $("input[name='Gaz']").val();
+                let Koku = $("input[name='Koku']").val();
+                let Dışkı_sızıntısı = $("input[name='Dışkı_sızıntısı']").val();
+                let Deri_irritasyonu = $("input[name='Deri_irritasyonu']").val();
+                let Bağımsız = $("input[name='Bağımsız']").val();
+                let YarıBağımlı = $("input[name='YarıBağımlı']").val();
+                let Bağımlı = $("input[name='Bağımlı']").val();
+                let BoşaltımdaSorun = $("input[name='BoşaltımdaSorun']:checked").val();
+                let Üriner_inkontinans1 = $("input[name='Üriner_inkontinans']").val();
+                let Dizüri1 = $("input[name='Dizüri1']").val();
+                let UrinerDiğer = $("input[name='UrinerDiğer']").val();
+                let Mesane_kateterizasyonu = $("input[name='Mesane_kateterizasyonu']:checked").val();
+                let mesane_takilma_tarihi = $("input[name='mesane_takilma_tarihi']").val();
+                let Üriner_inkontinans = $("input[name='Üriner_inkontinans']").val();
+                let Dizüri = $("input[name='Dizüri']").val();
+                let Uriner_diger = $("input[name='Uriner_diger']").val();
+                let Üreterestomi = $("input[name='Üreterestomi']:checked").val();
+                let sağ = $("input[name='sağ']").val();
+                let sol = $("input[name='sol']").val();
+                let Sistostomi = $("input[name='Sistostomi']:checked").val();
+                let IdrarRengi = $("input[name='IdrarRengi']:checked").val();
+                let IdrarBerrakligi = $("input[name='IdrarBerrakligi']").val();
 
 
-                            e.preventDefault()
+                e.preventDefault()
 
-                            $.ajax({
-                                type: 'POST',
-                                url: '<?php echo $base_url; ?>/SubmitOrUpdateForm1_Bosaltim.php',
-                                data: {
-                           protezlertable:protezlertable,
-                           sikligi:sikligi,
-                           zamani:zamani,
-                           BoşaltımSorun:BoşaltımSorun,
-                           Konstipasyon:Konstipasyon,
-                           Diare:Diare,
-                           Distansiyon:Distansiyon,
-                           Fekal:Fekal,
-                           Hemoroid:Hemoroid,
-                           Dışkı:Dışkı,
-                           BagirsakDiğer:BagirsakDiğer,
-                           bagirsak_sesleri:bagirsak_sesleri,
-                           defekasyon_zamani:defekasyon_zamani,
-                           BoşaltımŞekli:BoşaltımŞekli,
-                           Kolostom:Kolostom,
-                           StomaRengi:StomaRengi,
-                           Gaz1:Gaz1,
-                           Koku1:Koku1,
-                           DışkıSızıntısı1:DışkıSızıntısı1,
-                           Deri_irritasyonu1:Deri_irritasyonu1,
-                           İleostomi:İleostomi,
-                           StomanınRengi:StomanınRengi,
-                           Gaz:Gaz,
-                           Koku:Koku,
-                           Dışkı_sızıntısı:Dışkı_sızıntısı,
-                           Deri_irritasyonu:Deri_irritasyonu,
-                           protezlertable2:protezlertable2,
-                           BoşaltımdaSorun:BoşaltımdaSorun,
-                           Üriner_inkontinans1:Üriner_inkontinans1,
-                           Dizüri1:Dizüri1,
-                           UrinerDiğer:UrinerDiğer,
-                           Mesane_kateterizasyonu:Mesane_kateterizasyonu,
-                           mesane_takilma_tarihi:mesane_takilma_tarihi,
-                           Üriner_inkontinans:Üriner_inkontinans,
-                           Dizüri:Dizüri,
-                           Uriner_diger:Uriner_diger,
-                           Üreterestomi:Üreterestomi,
-                           sağ:sağ,
-                           sol:sol,
-                           Sistostomi:Sistostomi,
-                           IdrarRengi:IdrarRengi,
-                           IdrarBerrakligi:IdrarBerrakligi,
+                $.ajax({
+                    type: 'POST',
+                    url: '<?php echo $base_url; ?>/SubmitOrUpdateForm1_Bosaltim.php',
+                    data: {
+                        protezlertable: protezlertable,
+                        sikligi: sikligi,
+                        zamani: zamani,
+                        BoşaltımSorun: BoşaltımSorun,
+                        Konstipasyon: Konstipasyon,
+                        Diare: Diare,
+                        Distansiyon: Distansiyon,
+                        Fekal: Fekal,
+                        Hemoroid: Hemoroid,
+                        Dışkı: Dışkı,
+                        BagirsakDiğer: BagirsakDiğer,
+                        bagirsak_sesleri: bagirsak_sesleri,
+                        defekasyon_zamani: defekasyon_zamani,
+                        BoşaltımŞekli: BoşaltımŞekli,
+                        Kolostom: Kolostom,
+                        StomaRengi: StomaRengi,
+                        Gaz1: Gaz1,
+                        Koku1: Koku1,
+                        DışkıSızıntısı1: DışkıSızıntısı1,
+                        Deri_irritasyonu1: Deri_irritasyonu1,
+                        İleostomi: İleostomi,
+                        StomanınRengi: StomanınRengi,
+                        Gaz: Gaz,
+                        Koku: Koku,
+                        Dışkı_sızıntısı: Dışkı_sızıntısı,
+                        Deri_irritasyonu: Deri_irritasyonu,
+                        protezlertable2: protezlertable2,
+                        BoşaltımdaSorun: BoşaltımdaSorun,
+                        Üriner_inkontinans1: Üriner_inkontinans1,
+                        Dizüri1: Dizüri1,
+                        UrinerDiğer: UrinerDiğer,
+                        Mesane_kateterizasyonu: Mesane_kateterizasyonu,
+                        mesane_takilma_tarihi: mesane_takilma_tarihi,
+                        Üriner_inkontinans: Üriner_inkontinans,
+                        Dizüri: Dizüri,
+                        Uriner_diger: Uriner_diger,
+                        Üreterestomi: Üreterestomi,
+                        sağ: sağ,
+                        sol: sol,
+                        Sistostomi: Sistostomi,
+                        IdrarRengi: IdrarRengi,
+                        IdrarBerrakligi: IdrarBerrakligi,
 
-                                },
-                                success: function(data) {
-                                    alert("Success");
-                                    location.reload(true)
-                                    alert(data);
-                                    let url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
-                                    $("#content").load(url);
-                                },
-                                error: function(data) {
-                                    Swal.fire({
-                                        'title': 'Errors',
-                                        'text': 'There were errors',
-                                        'type': 'error'
-                                    })
+                    },
+                    success: function(data) {
+                        alert("Success");
+                        location.reload(true)
+                        alert(data);
+                        let url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
+                        $("#content").load(url);
+                    },
+                    error: function(data) {
+                        Swal.fire({
+                            'title': 'Errors',
+                            'text': 'There were errors',
+                            'type': 'error'
+                        })
                     }
                 })
 
@@ -762,12 +762,12 @@ if (isset($_GET['logout'])) {
         })
 
     });
-            </script>
- 
+</script>
 
 
-            <!-- Template Javascript -->
-            <script src=""></script>
+
+<!-- Template Javascript -->
+<script src=""></script>
 </body>
 
 </html>

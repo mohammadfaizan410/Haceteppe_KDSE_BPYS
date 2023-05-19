@@ -16,7 +16,7 @@ if (isset($_GET['logout'])) {
 
 <head>
     <meta charset="utf-8">
-    <title>e-BYRYS-KKDS</title>
+    <title>KDSE-BPYS</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -230,115 +230,115 @@ if (isset($_GET['logout'])) {
 
     <script>
         $(function() {
-        $('#closeBtn').click(function(e) {
-            let patient_id = <?php
-                  $userid = $_GET['patient_id'];
-                  echo $userid
-                  ?>;
-                   let patient_name = "<?php
-            echo urldecode($_GET['patient_name']);
-                  ?>";
-          var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
-            $("#content").load(url);
+            $('#closeBtn').click(function(e) {
+                let patient_id = <?php
+                                    $userid = $_GET['patient_id'];
+                                    echo $userid
+                                    ?>;
+                let patient_name = "<?php
+                                    echo urldecode($_GET['patient_name']);
+                                    ?>";
+                var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
+                $("#content").load(url);
 
-        })
-    });
+            })
+        });
     </script>
 
     <script>
-        $(function(){
+        $(function() {
 
             $('#submit').click(function(e) {
                 e.preventDefault();
                 console.log("hello from form 7x")
-                    var name = $('#name').val();
-                    var surname = $('#surname').val();
-                    var age = $('#age').val();
-                    var not = $('#not').val();
-                    var studentId = $('#studentId').val();
-                    var formId = $('#formId').val();
-                    var formnum = 7;
-                    let patient_name = "<?php
-                echo urldecode($_GET['patient_name']);
-                  ?>";
-                    var patient_id ="<?php
-                  $userid = $_GET['patient_id'];
-                  echo $userid
-                  ?>";
-                    let yourDate = new Date()
-                    let creationDate = yourDate.toISOString().split('T')[0];
-                    let updateDate = yourDate.toISOString().split('T')[0];
-                    var occurance_date = $("input[name='occurance_date']").val();                    
-                    var service_wound = $("input[name='servis']").val();
-                    var location = $("input[name='location']").val();
-                    var stage = $("input[name='stage']").val();
-                    var length = $("input[name='length']").val();
-                    var width = $("input[name='width']").val();
-                    var depth = $("input[name='depth']").val();
-                    var dimentions = "" + length + 'cm/' + "" + width + 'cm/' + "" + depth + 'cm'; 
-                    var exudate = $('#wound-exudate').val();
-                    // var appearance_wound =$("input[type='radio'][name='YaraGörünümü']:checked").val() === "Diğer" ? $("input[name='YaraGörünümüDiger']").val() : $("input[type='radio'][name='YaraGörünümü']:checked").val();
-                    var appearance_wound =$("input[type='radio'][name='YaraGörünümü']:checked").val();
-                    var odor1 = $("input[name='odor']").val();
-                    var tunnelling1 = $("input[name='tunnelling']").val();
-                    var edema1 = $("input[name='edema']").val();
-                    var maceration1 = $("input[name='maceration']").val();
-                    var erythema1 = $("input[name='erythema']").val();
-                    var peeling1 = $("input[name='peeling']").val();
-                    var dryness1 = $("input[name='dryness']").val();
-                    var pain1 = $("input[name='pain']").val();
-                    var careProducts1 = $('#careProducts').val();
-                    var result1 = $("input[name='result']").val();
-                    var healingDate = $('#healingDate').val();
-                    
-                    
-                    console.log('after setting variables')
-                    $.ajax({
-                        type: 'POST',
-                        url: '<?php echo $base_url; ?>/submitOrUpdateForm7.php',
-                        data:JSON.stringify({
-                            name: name,
-                            form_num: formnum,
-                            patient_name: patient_name,
-                            patient_id:patient_id,
-                            creation_date: creationDate,
-                            update_date: updateDate,
-                            occurance_date: occurance_date,
-                            service_wound: service_wound,
-                            location: location,
-                            stage: stage,
-                            dimentions: dimentions,
-                            wound_exudate: exudate,
-                            appearance_wound: appearance_wound,
-                            odor: odor1,
-                            tunnelling: tunnelling1,
-                            edema: edema1,
-                            maceration: maceration1,
-                            erythema: erythema1,
-                            peeling: peeling1,
-                            dryness: dryness1,
-                            pain: pain1,
-                            care_products: careProducts1,
-                            result: result1,
-                            healing_date: healingDate 
-                        }),
-                        success: function(data) {
-                            alert(data);
+                var name = $('#name').val();
+                var surname = $('#surname').val();
+                var age = $('#age').val();
+                var not = $('#not').val();
+                var studentId = $('#studentId').val();
+                var formId = $('#formId').val();
+                var formnum = 7;
+                let patient_name = "<?php
+                                    echo urldecode($_GET['patient_name']);
+                                    ?>";
+                var patient_id = "<?php
+                                    $userid = $_GET['patient_id'];
+                                    echo $userid
+                                    ?>";
+                let yourDate = new Date()
+                let creationDate = yourDate.toISOString().split('T')[0];
+                let updateDate = yourDate.toISOString().split('T')[0];
+                var occurance_date = $("input[name='occurance_date']").val();
+                var service_wound = $("input[name='servis']").val();
+                var location = $("input[name='location']").val();
+                var stage = $("input[name='stage']").val();
+                var length = $("input[name='length']").val();
+                var width = $("input[name='width']").val();
+                var depth = $("input[name='depth']").val();
+                var dimentions = "" + length + 'cm/' + "" + width + 'cm/' + "" + depth + 'cm';
+                var exudate = $('#wound-exudate').val();
+                // var appearance_wound =$("input[type='radio'][name='YaraGörünümü']:checked").val() === "Diğer" ? $("input[name='YaraGörünümüDiger']").val() : $("input[type='radio'][name='YaraGörünümü']:checked").val();
+                var appearance_wound = $("input[type='radio'][name='YaraGörünümü']:checked").val();
+                var odor1 = $("input[name='odor']").val();
+                var tunnelling1 = $("input[name='tunnelling']").val();
+                var edema1 = $("input[name='edema']").val();
+                var maceration1 = $("input[name='maceration']").val();
+                var erythema1 = $("input[name='erythema']").val();
+                var peeling1 = $("input[name='peeling']").val();
+                var dryness1 = $("input[name='dryness']").val();
+                var pain1 = $("input[name='pain']").val();
+                var careProducts1 = $('#careProducts').val();
+                var result1 = $("input[name='result']").val();
+                var healingDate = $('#healingDate').val();
+
+
+                console.log('after setting variables')
+                $.ajax({
+                    type: 'POST',
+                    url: '<?php echo $base_url; ?>/submitOrUpdateForm7.php',
+                    data: JSON.stringify({
+                        name: name,
+                        form_num: formnum,
+                        patient_name: patient_name,
+                        patient_id: patient_id,
+                        creation_date: creationDate,
+                        update_date: updateDate,
+                        occurance_date: occurance_date,
+                        service_wound: service_wound,
+                        location: location,
+                        stage: stage,
+                        dimentions: dimentions,
+                        wound_exudate: exudate,
+                        appearance_wound: appearance_wound,
+                        odor: odor1,
+                        tunnelling: tunnelling1,
+                        edema: edema1,
+                        maceration: maceration1,
+                        erythema: erythema1,
+                        peeling: peeling1,
+                        dryness: dryness1,
+                        pain: pain1,
+                        care_products: careProducts1,
+                        result: result1,
+                        healing_date: healingDate
+                    }),
+                    success: function(data) {
+                        alert(data);
                         let url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
                         $("#content").load(url);
 
-                                },
-                        error: function(data) {
-                            Swal.fire({
-                                'title': 'Errors',
-                                'text': 'There were errors',
-                                'type': 'error'
-                            })
-                        }
-                    })            
-                    
-                });
+                    },
+                    error: function(data) {
+                        Swal.fire({
+                            'title': 'Errors',
+                            'text': 'There were errors',
+                            'type': 'error'
+                        })
+                    }
+                })
+
             });
+        });
     </script>
     <script src=""></script>
 </body>

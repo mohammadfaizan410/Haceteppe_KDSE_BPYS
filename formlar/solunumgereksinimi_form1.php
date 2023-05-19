@@ -16,7 +16,7 @@ if (isset($_GET['logout'])) {
 
 <head>
     <meta charset="utf-8">
-    <title>e-BYRYS-KKDS</title>
+    <title>KDSE-BPYS</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -999,7 +999,7 @@ if (isset($_GET['logout'])) {
         });
     </script>
 
-<script>
+    <script>
         $(function() {
             $('#submit').click(function(e) {
                 var valid = this.form.checkValidity();
@@ -1007,9 +1007,9 @@ if (isset($_GET['logout'])) {
                 if (valid) {
                     var id = <?php
 
-                    $userid = $_SESSION['userlogin']['id'];
-                    echo $userid
-                    ?>;
+                                $userid = $_SESSION['userlogin']['id'];
+                                echo $userid
+                                ?>;
                     let yatisdurumuradio = $("input[type='radio'][name='yatisdurumuradio']:checked").val();
                     let SolunumSorunu = $("input[name='SolunumSorunu']:checked").val();
                     let Dispne = $("input[name='Dispne']").val();
@@ -1073,76 +1073,76 @@ if (isset($_GET['logout'])) {
                     let Kunduracı = $("input[name='Kunduracı']").val();
                     let SolunumSistemiUygilamasi = $("input[name='SolunumSistemiUygilamasi']").val();
                     let SolunumUygulamasi_diger = $("input[name='SolunumUygulamasi_diger']").val();
-                   
+
                     e.preventDefault()
 
                     $.ajax({
                         type: 'POST',
                         url: '<?php echo $base_url; ?>/SubmitOrUpdateForm1_SolunumGereksinimi.php/',
                         data: {
-                            yatisdurumuradio:yatisdurumuradio,
-                            SolunumSorunu:SolunumSorunu,
-                            Dispne:Dispne,
-                            Hiperventilasyon:Hiperventilasyon,
-                            Hipoventilasyon:Hipoventilasyon,
-                            Takipne:Takipne,
-                            Bradipne:Bradipne,
-                            Siyanoz:Siyanoz,
-                            Diğer:Diğer,
-                            solunum_diger:solunum_diger,
-                            SolunumYolu:SolunumYolu,
-                            Trakeostomi:Trakeostomi,
-                            EndotrakealTüp:EndotrakealTüp,
-                            Oksurme:Oksurme,
-                            Etkisiz:Etkisiz,
-                            OksurmeDiğer:OksurmeDiğer,
-                            oksurme_diger:oksurme_diger,
-                            Balgam:Balgam,
-                            EtkisizBalgam:EtkisizBalgam,
-                            NormalBalgam:NormalBalgam,
-                            AşırıKıvamlı:AşırıKıvamlı,
-                            BalgamDiğer:BalgamDiğer,
-                            balgam_diger:balgam_diger,
-                            AspirasyonIhtiyaci:AspirasyonIhtiyaci,
-                            Oro_Nazofarengeal:Oro_Nazofarengeal,
-                            Trakeal:Trakeal,
-                            BurunMuayenesi:BurunMuayenesi,
-                            NazalMukoza:NazalMukoza,
-                            NazalSeptumda:NazalSeptumda,
-                            NazalKanama:NazalKanama,
-                            NazalLezyon:NazalLezyon,
-                            NazalAkinti:NazalAkinti,
-                            NazalDiger:NazalDiger,
-                            nazal_diger:nazal_diger,
-                            TiroidBezi:TiroidBezi,
-                            Sislik:Sislik,
-                            TiroidDiger:TiroidDiger,
-                            Trakea:Trakea,
-                            SagaKayma:SagaKayma,
-                            SolaKayma:SolaKayma,
-                            LenfNodlari:LenfNodlari,
-                            Yeri:Yeri,
-                            NodYeri:NodYeri,
-                            NodDiger:NodDiger,
-                            SkapulaSimatrikligi:SkapulaSimatrikligi,
-                            OmurgaDeform:OmurgaDeform,
-                            Kifoz:Kifoz,
-                            Lordoz:Lordoz,
-                            Skolyoz:Skolyoz,
-                            GogusHareketleri:GogusHareketleri,
-                            GogusKafesinde:GogusKafesinde,
-                            KrepitasyonAlani:KrepitasyonAlani,
-                            Krepitasyon_Alani:Krepitasyon_Alani,
-                            Hassasiyet:Hassasiyet,
-                            Kitle_Ozelligi:Kitle_Ozelligi,
-                            KitleDiger:KitleDiger,
-                            Kitle_Diger:Kitle_Diger,
-                            GogusDeformitesi:GogusDeformitesi,
-                            FiciGogus:FiciGogus,
-                            GuvercinGogus:GuvercinGogus,
-                            Kunduracı:Kunduracı,
-                            SolunumSistemiUygilamasi:SolunumSistemiUygilamasi,
-                            SolunumUygulamasi_diger:SolunumUygulamasi_diger,
+                            yatisdurumuradio: yatisdurumuradio,
+                            SolunumSorunu: SolunumSorunu,
+                            Dispne: Dispne,
+                            Hiperventilasyon: Hiperventilasyon,
+                            Hipoventilasyon: Hipoventilasyon,
+                            Takipne: Takipne,
+                            Bradipne: Bradipne,
+                            Siyanoz: Siyanoz,
+                            Diğer: Diğer,
+                            solunum_diger: solunum_diger,
+                            SolunumYolu: SolunumYolu,
+                            Trakeostomi: Trakeostomi,
+                            EndotrakealTüp: EndotrakealTüp,
+                            Oksurme: Oksurme,
+                            Etkisiz: Etkisiz,
+                            OksurmeDiğer: OksurmeDiğer,
+                            oksurme_diger: oksurme_diger,
+                            Balgam: Balgam,
+                            EtkisizBalgam: EtkisizBalgam,
+                            NormalBalgam: NormalBalgam,
+                            AşırıKıvamlı: AşırıKıvamlı,
+                            BalgamDiğer: BalgamDiğer,
+                            balgam_diger: balgam_diger,
+                            AspirasyonIhtiyaci: AspirasyonIhtiyaci,
+                            Oro_Nazofarengeal: Oro_Nazofarengeal,
+                            Trakeal: Trakeal,
+                            BurunMuayenesi: BurunMuayenesi,
+                            NazalMukoza: NazalMukoza,
+                            NazalSeptumda: NazalSeptumda,
+                            NazalKanama: NazalKanama,
+                            NazalLezyon: NazalLezyon,
+                            NazalAkinti: NazalAkinti,
+                            NazalDiger: NazalDiger,
+                            nazal_diger: nazal_diger,
+                            TiroidBezi: TiroidBezi,
+                            Sislik: Sislik,
+                            TiroidDiger: TiroidDiger,
+                            Trakea: Trakea,
+                            SagaKayma: SagaKayma,
+                            SolaKayma: SolaKayma,
+                            LenfNodlari: LenfNodlari,
+                            Yeri: Yeri,
+                            NodYeri: NodYeri,
+                            NodDiger: NodDiger,
+                            SkapulaSimatrikligi: SkapulaSimatrikligi,
+                            OmurgaDeform: OmurgaDeform,
+                            Kifoz: Kifoz,
+                            Lordoz: Lordoz,
+                            Skolyoz: Skolyoz,
+                            GogusHareketleri: GogusHareketleri,
+                            GogusKafesinde: GogusKafesinde,
+                            KrepitasyonAlani: KrepitasyonAlani,
+                            Krepitasyon_Alani: Krepitasyon_Alani,
+                            Hassasiyet: Hassasiyet,
+                            Kitle_Ozelligi: Kitle_Ozelligi,
+                            KitleDiger: KitleDiger,
+                            Kitle_Diger: Kitle_Diger,
+                            GogusDeformitesi: GogusDeformitesi,
+                            FiciGogus: FiciGogus,
+                            GuvercinGogus: GuvercinGogus,
+                            Kunduracı: Kunduracı,
+                            SolunumSistemiUygilamasi: SolunumSistemiUygilamasi,
+                            SolunumUygulamasi_diger: SolunumUygulamasi_diger,
                         },
                         success: function(data) {
                             alert(data);

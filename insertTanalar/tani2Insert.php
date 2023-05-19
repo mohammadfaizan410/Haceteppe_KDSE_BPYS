@@ -8,12 +8,12 @@ if (isset($_POST)) {
     $nurse_description = $_POST['nurse_description'];
     $noc_output = $_POST['noc_output'];
     $noc_indicator = $_POST['noc_indicator'];
-    $noc_indicator = $_POST['noc_indicator2'];
+    $noc_indicator2 = $_POST['noc_indicator2'];
     $nurse_attempt = $_POST['nurse_attempt'];
     $nurse_education = $_POST['nurse_education'];
     $coop_attempt = $_POST['coop_attempt'];
     $noc_indicator = $_POST['noc_indicator_after'];
-    $noc_indicator = $_POST['noc_indicator2_after'];
+    $noc_indicator2_after = $_POST['noc_indicator2_after'];
 
     $evaluation = $_POST['evaluation'];
     $matchedfields_string = $_POST['matchedfields_string'];

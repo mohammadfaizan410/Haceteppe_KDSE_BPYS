@@ -16,7 +16,7 @@ if (isset($_GET['logout'])) {
 
 <head>
     <meta charset="utf-8">
-    <title>e-BYRYS-KKDS</title>
+    <title>KDSE-BPYS</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -67,7 +67,7 @@ if (isset($_GET['logout'])) {
             </div>
             <div class="input-section d-flex">
                 <p class="usernamelabel">Ağırlıklı olarak tükettiğiniz besinler nelerdir?</p>
-                <input type="text" class="form-control" required name="TukettigiBesin" id="TukettigiBesin"maxlength="100">
+                <input type="text" class="form-control" required name="TukettigiBesin" id="TukettigiBesin" maxlength="100">
             </div>
             <div class="input-section d-flex">
                 <p class="usernamelabel">Sıklıkla kullandığınız pişirme yöntemleri nelerdir? </p>
@@ -79,7 +79,7 @@ if (isset($_GET['logout'])) {
                 <input type="int" class="form-control" required name="Boy" id="Boy" maxlength="3">
 
                 <p class="usernamelabel p-2">Kilo :</p>
-                <input type="number" class="form-control" required name="Kilo" id="Kilo" step='0.1'maxlength="5">
+                <input type="number" class="form-control" required name="Kilo" id="Kilo" step='0.1' maxlength="5">
 
                 <p class="usernamelabel p-2">BKİ ( kg/m2 ):</p>
                 <input type="text" class="form-control" required name="BKI" id="BKI">
@@ -145,7 +145,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" name ='Diyet' type="radio" id="NormalDiyet" value="Normal Diyet">
+                                                <input class="form-check-input" name='Diyet' type="radio" id="NormalDiyet" value="Normal Diyet">
                                                 <label class="form-check-label" for="NormalDiyet">Normal Diyet
                                                 </label>
                                             </div>
@@ -156,7 +156,7 @@ if (isset($_GET['logout'])) {
 
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" name ='Diyet' type="radio" id="Ozel" value="Ozel">
+                                                <input class="form-check-input" name='Diyet' type="radio" id="Ozel" value="Ozel">
                                                 <label class="form-check-label" for="Ozel">Özel
                                                     Diyet(Açıklayınız):
                                                 </label>
@@ -234,7 +234,7 @@ if (isset($_GET['logout'])) {
 
                                     </tr>
                                     <tr>
-                                        <td class="protezlertable" >
+                                        <td class="protezlertable">
                                             <div class="d-flex" id="Orogastrik-td">
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" name="probe-type" type="radio" id="Orogastrik" value="Orogastrik">
@@ -248,7 +248,7 @@ if (isset($_GET['logout'])) {
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="protezlertable" >
+                                        <td class="protezlertable">
                                             <div class="d-flex" id="Gastrostomi-td">
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" name="probe-type" type="radio" id="Gastrostomi" value="Gastrostomi">
@@ -780,7 +780,7 @@ if (isset($_GET['logout'])) {
                                             <tr>
                                                 <td class="protezlertable">
                                                     <div class="form-check form-check-inline">
-                                                        <input class="form-check-input"  type="checkbox" id="TOdem" value="Ödem">
+                                                        <input class="form-check-input" type="checkbox" id="TOdem" value="Ödem">
                                                         <label class="form-check-label" for="TOdem">Ödem
                                                             (Sağ/sol)</label>
                                                     </div>
@@ -1006,7 +1006,7 @@ if (isset($_GET['logout'])) {
                             <div class="checkbox-wrapper d-flex">
                                 <div class="checkboxes d-flex">
                                     <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="KarinDerisi" id="KarinDerisi" value="Pigmentasyon">
+                                        <input class="form-check-input" type="radio" name="KarinDerisi" id="KarinDerisi" value="Pigmentasyon">
                                         <label class="form-check-label" for="KarinDerisi">
                                             <span class="checkbox-header">Pigmentasyon</span>
                                         </label>
@@ -1075,11 +1075,11 @@ if (isset($_GET['logout'])) {
                 $('input[type="text"][name="GastrostomiTarihi"]').prop('disabled', true);
                 $('input[type="text"][name="JejunostomiTarihi"]').prop('disabled', true);
                 $('input[type="radio"][name="şekli"]').on('change', function() {
-                    if ($(this).val()==='Sonda') {
-                    $('#sonda-table :input').prop('disabled', false);
-                    }else{
-                    $('#sonda-table :input').prop('disabled', true);
-                    $('input[type="radio"][name="nazal"]').prop('disabled', true);
+                    if ($(this).val() === 'Sonda') {
+                        $('#sonda-table :input').prop('disabled', false);
+                    } else {
+                        $('#sonda-table :input').prop('disabled', true);
+                        $('input[type="radio"][name="nazal"]').prop('disabled', true);
                         $('input[type="text"][name="OrogastrikTakilmaTarihi"]').val('')
                         $('input[type="text"][name="GastrostomiTarihi"]').val('');
                         $('input[type="text"][name="JejunostomiTarihi"]').val('');
@@ -1093,32 +1093,32 @@ if (isset($_GET['logout'])) {
                     }
                 });
                 $('input[type="radio"][name="probe-type"]').on('change', function() {
-                    if ($(this).val()==='Nazogastrik') {
+                    if ($(this).val() === 'Nazogastrik') {
                         $('input[type="radio"][name="nazal"]').prop('disabled', false);
                         $('input[type="text"][name="OrogastrikTakilmaTarihi"]').prop('disabled', true);
                         $('input[type="text"][name="GastrostomiTarihi"]').prop('disabled', true);
                         $('input[type="text"][name="JejunostomiTarihi"]').prop('disabled', true);
                     }
-                    if ($(this).val()==='Orogastrik') {
+                    if ($(this).val() === 'Orogastrik') {
                         $('input[type="radio"][name="nazal"]').prop('disabled', true);
                         $('input[type="text"][name="OrogastrikTakilmaTarihi"]').prop('disabled', false);
                         $('input[type="text"][name="GastrostomiTarihi"]').prop('disabled', true);
                         $('input[type="text"][name="JejunostomiTarihi"]').prop('disabled', true);
                     }
-                    if ($(this).val()==='Gastrostomi') {
+                    if ($(this).val() === 'Gastrostomi') {
                         $('input[type="radio"][name="nazal"]').prop('disabled', true);
                         $('input[type="text"][name="OrogastrikTakilmaTarihi"]').prop('disabled', true);
                         $('input[type="text"][name="GastrostomiTarihi"]').prop('disabled', false);
                         $('input[type="text"][name="JejunostomiTarihi"]').prop('disabled', true);
                     }
-                    if ($(this).val()==='Jejunostomi') {
+                    if ($(this).val() === 'Jejunostomi') {
                         $('input[type="radio"][name="nazal"]').prop('disabled', true);
                         $('input[type="text"][name="OrogastrikTakilmaTarihi"]').prop('disabled', true);
                         $('input[type="text"][name="GastrostomiTarihi"]').prop('disabled', true);
                         $('input[type="text"][name="JejunostomiTarihi"]').prop('disabled', false);
                     }
 
-                    });
+                });
             </script>
 
             <script>
@@ -1145,105 +1145,105 @@ if (isset($_GET['logout'])) {
                             var BeslenmeSekli = $('input[name=şekli]:checked').val();
                             var passageTarihi = 'sonda-yok';
                             var probeType = 'probe-yok';
-                            if(BeslenmeSekli === 'Sonda'){  
-                                if($('input[name=probe-type]:checked').val() === 'Nazogastrik'){
-                                    if($('input[name=nazal]:checked').val() === 'Sag Nazal'){
-                                        probeType  = "Nazogastrik" + ", Sag Nazal";
+                            if (BeslenmeSekli === 'Sonda') {
+                                if ($('input[name=probe-type]:checked').val() === 'Nazogastrik') {
+                                    if ($('input[name=nazal]:checked').val() === 'Sag Nazal') {
+                                        probeType = "Nazogastrik" + ", Sag Nazal";
                                         passageTarihi = $('#PasajTakilmaTarihi1').val();
-                                    }else{
-                                        probeType  = "Nazogastrik" + ", Sol Nazal";
+                                    } else {
+                                        probeType = "Nazogastrik" + ", Sol Nazal";
                                         passageTarihi = $('#PasajTakilmaTarihi2').val();
                                     }
                                 }
-                                if($('input[name=probe-type]:checked').val() === 'Orogastrik'){
+                                if ($('input[name=probe-type]:checked').val() === 'Orogastrik') {
                                     probeType = "Orogastrik";
                                     passageTarihi = $('#OrogastrikTakilmaTarihi').val();
                                 }
-                                if($('input[name=probe-type]:checked').val() === 'Gastrostomi'){
+                                if ($('input[name=probe-type]:checked').val() === 'Gastrostomi') {
                                     probeType = "Gastrostomi";
                                     passageTarihi = $('#GastrostomiTarihi').val();
                                 }
-                                if($('input[name=probe-type]:checked').val() === 'Jejunostomi'){
+                                if ($('input[name=probe-type]:checked').val() === 'Jejunostomi') {
                                     probeType = "Jejunostomi";
                                     passageTarihi = $('#JejunostomiTarihi').val();
                                 }
                             }
-                            var NazogastrikRadio = $('input[name=NazogastrikRadio]:checked').val()   
+                            var NazogastrikRadio = $('input[name=NazogastrikRadio]:checked').val()
                             var cignemeRadio = $('input[name=cignemeRadio]:checked').val()
                             var beslenmeIlgili = '';
-                            if($('input[name=beslenmeIlgili]:checked').val()==="Var"){
-                                    beslenmeIlgili = $('input[name="beslenmeIlgiliOptions"]:checked').map(function() {
-                                            return this.value;
-                                            }).get().join(',');
-                            }else{
+                            if ($('input[name=beslenmeIlgili]:checked').val() === "Var") {
+                                beslenmeIlgili = $('input[name="beslenmeIlgiliOptions"]:checked').map(function() {
+                                    return this.value;
+                                }).get().join(',');
+                            } else {
                                 beslenmeIlgili = 'Sorun Yok';
                             }
                             var dudaklarinDurum = '';
-                            if($('input[name=dudaklarinDurum]:checked').val()==="Var"){
-                                    dudaklarinDurum = $('input[name="dudaklarinDurumOptions"]:checked').map(function() {
-                                            return this.value;
-                                            }).get().join(',');
-                            }else{
+                            if ($('input[name=dudaklarinDurum]:checked').val() === "Var") {
+                                dudaklarinDurum = $('input[name="dudaklarinDurumOptions"]:checked').map(function() {
+                                    return this.value;
+                                }).get().join(',');
+                            } else {
                                 dudaklarinDurum = 'Sorun Yok';
                             }
                             var AgizMukozasi = '';
-                            if($('input[name=AgizMukozasi]:checked').val()==="Var"){
-                                    AgizMukozasi = $('input[name="AgizMukozasiOptions"]:checked').map(function() {
-                                            return this.value;
-                                            }).get().join(',');
-                            }else{
+                            if ($('input[name=AgizMukozasi]:checked').val() === "Var") {
+                                AgizMukozasi = $('input[name="AgizMukozasiOptions"]:checked').map(function() {
+                                    return this.value;
+                                }).get().join(',');
+                            } else {
                                 AgizMukozasi = 'Sorun Yok';
                             }
                             var DislerDisEtleri = '';
-                            if($('input[name=DislerDisEtleri]:checked').val()==="Var"){
-                                 DislerDisEtleri = $('input[name="DislerDisEtleriOptions"]:checked').map(function() {
-                                            return this.value;
-                                            }).get().join(',');
-                            }else{
+                            if ($('input[name=DislerDisEtleri]:checked').val() === "Var") {
+                                DislerDisEtleri = $('input[name="DislerDisEtleriOptions"]:checked').map(function() {
+                                    return this.value;
+                                }).get().join(',');
+                            } else {
                                 DislerDisEtleri = 'Sorun Yok';
                             }
                             var DilDurum = '';
-                            if($('input[name=DilDurum]:checked').val()==="Var"){
+                            if ($('input[name=DilDurum]:checked').val() === "Var") {
                                 DilDurum = $('input[name="DilDurumOptions"]:checked').map(function() {
-                                            return this.value;
-                                            }).get().join(',');
-                            }else{
+                                    return this.value;
+                                }).get().join(',');
+                            } else {
                                 DilDurum = 'Sorun Yok';
                             }
                             var FarenksDurum = '';
-                            if($('input[name=FarenksDurum]:checked').val()==="Var"){
+                            if ($('input[name=FarenksDurum]:checked').val() === "Var") {
                                 FarenksDurum = $('input[name="FarenksDurumOptions"]:checked').map(function() {
-                                            return this.value;
-                                            }).get().join(',');
-                            }else{
+                                    return this.value;
+                                }).get().join(',');
+                            } else {
                                 FarenksDurum = 'Sorun Yok';
                             }
                             var TonsilaDurum = '';
-                            if($('input[name=TonsilaDurum]:checked').val()==="Var"){
+                            if ($('input[name=TonsilaDurum]:checked').val() === "Var") {
                                 TonsilaDurum = $('input[name="TonsilaDurumOptions"]:checked').map(function() {
-                                            return this.value;
-                                            }).get().join(',');
-                            }else{
+                                    return this.value;
+                                }).get().join(',');
+                            } else {
                                 TonsilaDurum = 'Sorun Yok';
                             }
-                            var AbdominalHassasiyet = $('input[name=TonsilaDurum]:checked').val()==="Var" ? "Sorun var" : "Sorun Yok";
+                            var AbdominalHassasiyet = $('input[name=TonsilaDurum]:checked').val() === "Var" ? "Sorun var" : "Sorun Yok";
                             var AbdominalKontür = $('input[name=AbdominalKontür]:checked').val()
                             var Herniasyon = $('input[name=Herniasyon]:checked').val() === "Yok" ? "Sorun Yok" : $('#HDiger').val();
                             var Umbilikus = $('input[name=Umbilikus]:checked').val()
                             var AbdomenDokuntu = $('input[name=AbdomenDokuntu]:checked').val()
                             var Asit = $('#Asit').val();
                             var Kitle = '';
-                            if($('input[name=Kitle]:checked').val() === "Yeri") {
+                            if ($('input[name=Kitle]:checked').val() === "Yeri") {
                                 $('#YDiger').val();
                             }
-                            if($('input[name=Kitle]:checked').val() === "Buyuklugu") {
+                            if ($('input[name=Kitle]:checked').val() === "Buyuklugu") {
                                 $('#BDiger').val();
                             }
-                            if($('input[name=Kitle]:checked').val() === "Ozelligi") {
+                            if ($('input[name=Kitle]:checked').val() === "Ozelligi") {
                                 $('#ODiger').val();
                             }
                             var KarinDerisi = $('input[name=KarinDerisi]:checked').val()
-                            
+
                             var Stria = $('input[name=Stria]:checked').val() === 'Var' ? $('input[name=StriaDiger]').val() : "Stria Yok";
 
                             e.preventDefault()
