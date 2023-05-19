@@ -12,6 +12,7 @@ if (isset($_POST)) {
 
     $nurse_attempt = $_POST['nurse_attempt'];
     $nurse_education = $_POST['nurse_education'];
+    $coop_attempt = $_POST['coop_attempt'];
     $evaluation = $_POST['evaluation'];
     $matchedfields_string = $_POST['matchedfields_string'];
 
@@ -22,9 +23,9 @@ if (isset($_POST)) {
 
     if ($rowCount > 0) {
         $stmt = $db->prepare("UPDATE tani8 
-        SET date = ?, problem_info = ?, nurse_description = ?, noc_output = ?, noc_indicator = ?, noc_indicator_after = ?, nurse_attempt = ?, nurse_education = ?, evaluation = ?, matchedfields_string = ?
+        SET date = ?, problem_info = ?, nurse_description = ?, noc_output = ?, noc_indicator = ?, noc_indicator_after = ?, nurse_attempt = ?, nurse_education = ?, coop_attempt = ?, evaluation = ?, matchedfields_string = ?
         WHERE patient_id = ?");
-        $result = $stmt->execute([$update_date, $problem_info, $nurse_description, $noc_output, $noc_indicator, $noc_indicator_after, $nurse_attempt, $nurse_education, $evaluation, $matchedfields_string, $patient_id]);
+        $result = $stmt->execute([$update_date, $problem_info, $nurse_description, $noc_output, $noc_indicator, $noc_indicator_after, $nurse_attempt, $nurse_education, $coop_attempt, $evaluation, $matchedfields_string, $patient_id]);
         if ($result) {
             echo "Güncelleme Başarılı!";
         } else {
@@ -43,10 +44,11 @@ noc_indicator,
 noc_indicator_after,
 nurse_attempt,
 nurse_education,
+coop_attempt,
 evaluation,
 matchedfields_string
-) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        $result = $stmt->execute([$patient_id, $patient_name, $update_date, $problem_info, $nurse_description, $noc_output, $noc_indicator, $noc_indicator_after, $nurse_attempt, $nurse_education, $evaluation, $matchedfields_string]);
+) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $result = $stmt->execute([$patient_id, $patient_name, $update_date, $problem_info, $nurse_description, $noc_output, $noc_indicator, $noc_indicator_after, $nurse_attempt, $nurse_education, $coop_attempt, $evaluation, $matchedfields_string]);
         if ($result) {
             echo "succesfully inserted!";
         } else {
