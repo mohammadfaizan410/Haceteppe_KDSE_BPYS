@@ -161,7 +161,7 @@ var_dump($tani1Data);
                                                 name="noc_indicator_after" disabled id="noc_indicator_after" checked>
                                             <label class="form-check-label" for="noc_indicator_after">
                                                 <span
-                                                    class="checkbox-header"><?php echo "$taniData[0]['noc_indicator_after']" ?></span>
+                                                    class="checkbox-header"><?php echo $taniData[0]['noc_indicator_after'] ?></span>
                                             </label>
                                         </div>
 
