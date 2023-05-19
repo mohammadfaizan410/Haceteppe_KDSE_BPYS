@@ -316,7 +316,7 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
 
     <script>
         $(function() {
-            $('#closeBtn').click(function(e) {
+            $('#closeBtn1').click(function(e) {
                 let patient_id = <?php
                                     $userid = $_GET['patient_id'];
                                     echo $userid

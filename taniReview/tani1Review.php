@@ -182,6 +182,23 @@ var_dump($tani1Data);
         </div>
     </div>
     <script>
+        $(function() {
+            $('#closeBtn1').click(function(e) {
+                let patient_id = <?php
+                                    $userid = $_GET['patient_id'];
+                                    echo $userid
+                                    ?>;
+                let patient_name = "<?php
+                                    echo urldecode($_GET['patient_name']);
+                                    ?>";
+                var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
+                    "&patient_name=" + encodeURIComponent(patient_name);
+                $("#content").load(url);
+
+            })
+        });
+    </script>
+    <script>
     </script>
 </body>
 
