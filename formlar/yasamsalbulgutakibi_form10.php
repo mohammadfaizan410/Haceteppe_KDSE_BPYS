@@ -71,7 +71,7 @@ if (isset($_GET['logout'])) {
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Vücut Sıcaklığı:</p>
-                            <input type="number" class="form-control" required name="body_temperature" id="diger" placeholder="Vücut Sıcaklığı" maxlength = "5">
+                            <input type="number" class="form-control" required name="body_temperature" id="diger" placeholder="Vücut Sıcaklığı" min = "0" max = "100">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Ölçüm yeri: </p>
@@ -129,7 +129,7 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Nabız hızı:</p>
-                            <input type="number" class="form-control" required name="heart_rate" id="diger" placeholder="Nabız hızı" maxlength = "5">
+                            <input type="number" class="form-control" required name="heart_rate" id="diger" placeholder="Nabız hızı" min = "0" max = "500">
                         </div>
 
 
@@ -171,7 +171,7 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Solunum sayısı:</p>
-                            <input type="number" class="form-control" required name="respiratory_rate" id="diger" placeholder="Solunum sayısı" maxlength = "7">
+                            <input type="number" class="form-control" required name="respiratory_rate" id="diger" placeholder="Solunum sayısı" min = "0" max = "1000">
                         </div>
 
                         <div class="input-section d-flex">
@@ -202,7 +202,7 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Kan basıncı:</p>
-                            <input type="number" class="form-control" required name="blood_pressure" id="diger" placeholder="Tetkik Sonucu" maxlength = "5">
+                            <input type="text" class="form-control" required name="blood_pressure" id="diger" placeholder="Tetkik Sonucu" maxlength = "7">
                         </div>
 
                         <div class="input-section d-flex">
@@ -284,7 +284,7 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">SPO2 (%):</p>
-                            <input type="number" class="form-control" required name="spo2_percentage" id="diger" placeholder="SPO2 (%)" maxlength = "5">
+                            <input type="number" class="form-control" required name="spo2_percentage" id="diger" placeholder="SPO2 (%)" min = "0" max = "100">
                         </div>
                         <div class="input-section" id="o2-delivery-container">
                             <p class="usernamelabel">Günlük Günlük Kilo Takibi Yapiliyor mi?</p>

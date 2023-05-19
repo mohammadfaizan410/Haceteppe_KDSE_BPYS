@@ -90,15 +90,15 @@ if (isset($_GET['logout'])) {
                             <div class="form-check">
                                 <div class="input-section d-flex">
                                     <p class="usernamelabel">Uzunluk:</p>
-                                    <input type="number" class="form-control" required name="length" id="length" placeholder="Uzunluk Giriniz" maxlength = "3">
+                                    <input type="number" class="form-control" required name="length" id="length" placeholder="Uzunluk Giriniz" min = "0" max = "1000">
                                 </div>
                                 <div class="input-section d-flex">
                                     <p class="usernamelabel">Genişlik:</p>
-                                    <input type="number" class="form-control" required name="width" id="width" placeholder="Genişlik Giriniz" maxlength = "3">
+                                    <input type="number" class="form-control" required name="width" id="width" placeholder="Genişlik Giriniz" min = "0" max = "1000" >
                                 </div>
                                 <div class="input-section d-flex">
                                     <p class="usernamelabel">Derinlik:</p>
-                                    <input type="number" class="form-control" required name="depth" id="depth" placeholder="Derinlik Giriniz" maxlength = "3">
+                                    <input type="number" class="form-control" required name="depth" id="depth" placeholder="Derinlik Giriniz" min = "0" max = "1000">
                                 </div>
                             </div>
                         </div>
