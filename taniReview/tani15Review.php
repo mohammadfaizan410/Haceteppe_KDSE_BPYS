@@ -64,7 +64,7 @@ if (isset($_GET['patient_id'])) {
 <body>
     <div class="container-fluid pt-4 px-4">
         <div class="send-patient">
-            <span class='close closeBtn' id='closeBtn'>&times;</span>
+            <span class='close closeBtn' id='closeBtn1'>&times;</span>
             <h1 class="form-header">Bakım Planı</h1>
             <div class="input-section-item">
                 <div class="patients-save">
@@ -221,6 +221,23 @@ if (isset($_GET['patient_id'])) {
         </div>
     </div>
     <script>
+    </script>
+      <script>
+        $(function() {
+            $('#closeBtn1').click(function(e) {
+                let patient_id = <?php
+                                    $userid = $_GET['patient_id'];
+                                    echo $userid
+                                    ?>;
+                let patient_name = "<?php
+                                    echo urldecode($_GET['patient_name']);
+                                    ?>";
+                var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
+                    "&patient_name=" + encodeURIComponent(patient_name);
+                $("#content").load(url);
+
+            })
+        });
     </script>
 </body>
 
