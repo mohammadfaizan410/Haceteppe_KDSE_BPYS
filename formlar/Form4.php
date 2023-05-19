@@ -84,7 +84,7 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section d-flex" style="justify-content:space-between">
                             <p class="usernamelabel">Son Düşme Risk Skoru : </p>
-                            <input type="int" class="form-control" required name="last_fall_risk_score" id="diger" placeholder="Risk Skorunu Giriniz" maxlength = "10">
+                            <input type="number" class="form-control" required name="last_fall_risk_score" id="diger" placeholder="Risk Skorunu Giriniz" maxlength = "10">
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between">
