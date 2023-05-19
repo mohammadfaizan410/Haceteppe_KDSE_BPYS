@@ -69,27 +69,27 @@ if (isset($_GET['logout'])) {
                     <form action="" method="POST" class="patients-save-fields">
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Sorunla İlişkili Veriler:</p>
-                            <input type="text" class="form-control" required name="problem_info" id="diger" placeholder="problem_info" maxlength="100">
+                            <input type="text" class="form-control" required name="problem_info" id="diger" placeholder="problem_info" maxlength="5000">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Hemşirelik Tanıları:</p>
-                            <input type="text" class="form-control" required name="nurse_description" id="diger" placeholder="nurse_description" maxlength="250">
+                            <input type="text" class="form-control" required name="nurse_description" id="diger" placeholder="nurse_description" maxlength="5000">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">NOC Çıktıları:</p>
-                            <input type="text" class="form-control" required name="noc_output" id="diger" placeholder="noc_output" maxlength="250">
+                            <input type="text" class="form-control" required name="noc_output" id="diger" placeholder="noc_output" maxlength="200">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">NOC Gösterge:</p>
-                            <input type="text" class="form-control" required name="noc_indicator" id="diger" placeholder="noc_indicator" maxlength="250">
+                            <input type="text" class="form-control" required name="noc_indicator" id="diger" placeholder="noc_indicator" maxlength="200">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Hemşirelik Girişimleri:</p>
-                            <input type="text" class="form-control" required name="nurse_attempt" id="diger" placeholder="nurse_attempt" maxlength="250">
+                            <input type="text" class="form-control" required name="nurse_attempt" id="diger" placeholder="nurse_attempt" maxlength="200">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Değerlendirme:</p>
-                            <input type="text" class="form-control" required name="evaluation" id="diger" placeholder="evaluation" maxlength="250">
+                            <input type="text" class="form-control" required name="evaluation" id="diger" placeholder="evaluation" maxlength="200">
                         </div>
                         <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
                     </form>
