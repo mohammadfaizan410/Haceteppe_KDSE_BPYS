@@ -93,12 +93,6 @@ $oral_care = isset($_GET['oral_care']) ? $_GET['oral_care'] : "NaN";
                             <p class="usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hastanın muköz membran bütünlüğünün sağlanması</p>
                         </div>
-                        
-
- 
-
-
-
                         <div class="input-section" id="o2-delivery-container">
                             <p class="usernamelabel">NOC Gösterge: </p>
                             <div class="form-check">
@@ -333,11 +327,114 @@ $oral_care = isset($_GET['oral_care']) ? $_GET['oral_care'] : "NaN";
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Değerlendirme:</p>
+                            <div class="input-section d-flex">
+                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p class="tanıdescription">Hastanın muköz membran bütünlüğünün sağlanması</p>
+                        </div>
+                        <div class="input-section" id="o2-delivery-container">
+                            <p class="usernamelabel">NOC Gösterge: </p>
+                            <div class="form-check">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
+                                        id="noc_indicator"
+                                        value="1: Hastanın muköz membranlarında çok şiddetli düzeyde bozulma var">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">1: Hastanın muköz membranlarında çok şiddetli düzeyde bozulma var</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
+                                        id="noc_indicator"
+                                        value="2: Hastanın muköz membranlarında şiddetli  düzeyde bozulma var">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">2: Hastanın muköz membranlarında şiddetli  düzeyde bozulma var</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
+                                        id="noc_indicator"
+                                        value="3: Hastanın muköz membranlarında orta düzeyde bozulma var">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">3: Hastanın muköz membranlarında orta düzeyde bozulma var</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
+                                        id="noc_indicator"
+                                        value="4: Hastanın muköz membranlarında hafif düzeyde bozulma var">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">4: Hastanın muköz membranlarında hafif düzeyde bozulma var</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="
+                                        noc_indicator" value="5: Hastanın muköz membranlarında bozulma yok">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">5: Hastanın muköz membranlarında bozulma yok
+                                        </span>
+                                    </label>
+                                </div>
+
+                            </div>
+                            
+                        </div>
+                        <div class="input-section d-flex">
+                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p class="tanıdescription">Hastada ağız kokusunun olmaması</p>
+                        </div>
+                        <div class="input-section" id="o2-delivery-container">
+                            <p class="usernamelabel">NOC Gösterge: </p>
+                            <div class="form-check">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after2"
+                                        id="noc_indicator"
+                                        value="1: Hastada şiddetli ağız kokusu var">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">1: Hastada şiddetli ağız kokusu var</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after2"
+                                        id="noc_indicator"
+                                        value="2: Hastada ciddi ağız kokusu var">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">2: Hastada ciddi ağız kokusu var</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after2"
+                                        id="noc_indicator"
+                                        value="3: Hastada orta düzeyde ağız kokusu var">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">3: Hastada orta düzeyde ağız kokusu var</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after2"
+                                        id="noc_indicator"
+                                        value="4: Hastada hafif ağız kokusu var">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">4: Hastada hafif ağız kokusu var</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after2" id="
+                                        noc_indicator" value="5: Hastada ağız kokusu yok ">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">5: Hastada ağız kokusu yok 
+                                        </span>
+                                    </label>
+                                </div>
+
+                            </div>
+                        </div>
                             <p class="tanıdescription"> Sorun devam ediyor: 1-4 gösterge seçildiyse; yeni günde bakım planında tanımlı tanı olacak.</p>
                             <p class="tanıdescription"> Sorun çözümlendi:
                                 5 gösterge seçildiyse; yeni günde bakım planına bu tanıyı taşımayacak
                             </p>
                         </div>
+                        <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
+
                     </form>
                 </div>
             </div>
@@ -389,11 +486,11 @@ $oral_care = isset($_GET['oral_care']) ? $_GET['oral_care'] : "NaN";
                 var not = $('#not').val();
                 let form_num = 15;
                 var patient_id = <?php
-                                        $userid = $_GET['patient_id'];
+                                        $userid = isset($_GET['patient_id']) ?$_GET['patient_id'] : 20;
                                         echo $userid
                                         ?>;
                 let patient_name = "<?php
-                                        echo urldecode($_GET['patient_name']);
+                                        echo urldecode(isset($_GET['patient_name']) ? $_GET['patient_name'] : "test");
                                         ?>";
                 let yourDate = new Date();
                 let creationDate = yourDate.toISOString().split('T')[0];
@@ -403,6 +500,8 @@ $oral_care = isset($_GET['oral_care']) ? $_GET['oral_care'] : "NaN";
                 let noc_output = "Hastanın oksijen satürasyonun %95’in üzerinde olması"
                 let noc_indicator = $("input[type='radio'][name='noc_indicator']:checked").val();
                 let noc_indicator2 = $("input[type='radio'][name='noc_indicator2']:checked").val();
+                let noc_indicator_after = $("input[type='radio'][name='noc_indicator_after']:checked").val();
+                let noc_indicator_after2 = $("input[type='radio'][name='noc_indicator_after2']:checked").val();
                 let evaluation = "";
                 console.log("values init")
 
@@ -505,7 +604,7 @@ $oral_care = isset($_GET['oral_care']) ? $_GET['oral_care'] : "NaN";
 
                 $.ajax({
                     type: 'POST',
-                    url: '<?php echo $base_url; ?>/insertTanalar/tani14Insert.php',
+                    url: '<?php echo $base_url; ?>/insertTanalar/tani15Insert.php',
                     data: {
                         name: name,
                         surname: surname,
@@ -519,6 +618,8 @@ $oral_care = isset($_GET['oral_care']) ? $_GET['oral_care'] : "NaN";
                         nurse_description: nurse_description,
                         noc_output: noc_output,
                         noc_indicator: noc_indicator,
+                        noc_indicator_after:noc_indicator_after,
+                        noc_indicator_after2 : noc_indicator_after2,
                         nurse_attempt: nurse_attempt,
                         nurse_education :nurse_education,
                         collaborative_applications: collaborative_applications,
@@ -529,7 +630,7 @@ $oral_care = isset($_GET['oral_care']) ? $_GET['oral_care'] : "NaN";
                         console.log("something happened")
                         alert(data);
                         let url =
-                            "<?php echo $base_url; ?>/taniReview/tani14Review.php?patient_id=" +
+                            "<?php echo $base_url; ?>/taniReview/tani15Review.php?patient_id=" +
                             patient_id + "&patient_name=" + encodeURIComponent(
                                 patient_name);
                         $("#content").load(url);

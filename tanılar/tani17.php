@@ -77,7 +77,7 @@ $pain_duration  = isset($_GET['pain_duration ']) ? $_GET['pain_duration '] : "Na
                                 <?php         
                                 echo "<p class='matchedfields' id='average_sleep_time' style='".($average_sleep_time == 'NaN' ? 'color: red' : 'color:blue ' )."'>Ortalama uyku süresi: ".$average_sleep_time."</p>";
                                 echo "<p class='matchedfields' id='sleep_problem' style='".($sleep_problem == 'NaN' ? 'color:red ' : 'color: blue' )."'>Uykuda sorun:".$sleep_problem."</p>";
-                                echo "<p class='matchedfields' id='restlessness' style='".($restlessness == 'NaN' ? 'color:red ' : 'color: blue' )."'>Huzursuzluk:".$lip_condition."</p>";
+                                echo "<p class='matchedfields' id='restlessness' style='".($restlessness == 'NaN' ? 'color:red ' : 'color: blue' )."'>Huzursuzluk:".$restlessness."</p>";
                                 echo "<p class='matchedfields' id='Discomfort' style='".($Discomfort == 'NaN' ? 'color:red ' : 'color: blue' )."'> Rahatsızlık :".$Discomfort."</p>";
                                 echo "<p class='matchedfields' id='Itching' style='".($Itching == 'NaN' ? 'color:red ' : 'color: blue' )."'>Kaşıntı :".$Itching."</p>";
                                 echo "<p class='matchedfields' id='feeding_problem' style='".($feeding_problem == 'NaN' ? 'color:red ' : 'color: blue' )."'>Beslenmede Sorun:".$feeding_problem."</p>";
@@ -318,11 +318,70 @@ $pain_duration  = isset($_GET['pain_duration ']) ? $_GET['pain_duration '] : "Na
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Değerlendirme:</p>
+                            <div class="input-section d-flex">
+                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p class="tanıdescription">Hastanın rahat olduğunu ifade etmesi </p>
+                        </div>
+                        
+
+ 
+
+
+
+                        <div class="input-section" id="o2-delivery-container">
+                            <p class="usernamelabel">NOC Gösterge: </p>
+                            <div class="form-check">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
+                                        id="noc_indicator"
+                                        value="1: Hastanın gece uykusunda sürekli bölünme var">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">1: Hasta sürekli rahatsız olduğunu ifade eder</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
+                                        id="noc_indicator"
+                                        value="2: Hasta sık sık rahatsız olduğunu ifade eder">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">2: Hasta sık sık rahatsız olduğunu ifade eder</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
+                                        id="noc_indicator"
+                                        value="3: Hasta bazen rahatsız olduğunu ifade eder">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">3: Hasta bazen rahatsız olduğunu ifade eder</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
+                                        id="noc_indicator"
+                                        value="4: Hastanın gece uykusunda nadiren bölünme var">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">4: Hasta nadiren rahatsız olduğunu ifade eder</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="
+                                        noc_indicator" value="5: Hastanın gece uykusunda bölünme yok">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">5: Hasta rahat olduğunu ifade eder
+                                        </span>
+                                    </label>
+                                </div>
+
+                            </div>
+                        </div>
+
                             <p class="tanıdescription"> Sorun devam ediyor: 1-4 gösterge seçildiyse; yeni günde bakım planında tanımlı tanı olacak.</p>
                             <p class="tanıdescription"> Sorun çözümlendi:
                                 5 gösterge seçildiyse; yeni günde bakım planına bu tanıyı taşımayacak
                             </p>
                         </div>
+                        <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
+
                     </form>
                 </div>
             </div>
@@ -374,11 +433,11 @@ $pain_duration  = isset($_GET['pain_duration ']) ? $_GET['pain_duration '] : "Na
                 var not = $('#not').val();
                 let form_num = 15;
                 var patient_id = <?php
-                                        $userid = $_GET['patient_id'];
+                                        $userid = isset($_GET['patient_id']) ?$_GET['patient_id'] : 20;
                                         echo $userid
                                         ?>;
                 let patient_name = "<?php
-                                        echo urldecode($_GET['patient_name']);
+                                        echo urldecode(isset($_GET['patient_name']) ? $_GET['patient_name'] : "test");
                                         ?>";
                 let yourDate = new Date();
                 let creationDate = yourDate.toISOString().split('T')[0];
@@ -388,6 +447,7 @@ $pain_duration  = isset($_GET['pain_duration ']) ? $_GET['pain_duration '] : "Na
                 let noc_output = "Hastanın oksijen satürasyonun %95’in üzerinde olması"
                 let noc_indicator = $("input[type='radio'][name='noc_indicator']:checked").val();
                 let noc_indicator2 = $("input[type='radio'][name='noc_indicator2']:checked").val();
+                let noc_indicator_after = $("input[type='radio'][name='noc_indicator_after']:checked").val();
                 let evaluation = "";
                 console.log("values init")
 
@@ -511,7 +571,7 @@ $pain_duration  = isset($_GET['pain_duration ']) ? $_GET['pain_duration '] : "Na
 
                 $.ajax({
                     type: 'POST',
-                    url: '<?php echo $base_url; ?>/insertTanalar/tani14Insert.php',
+                    url: '<?php echo $base_url; ?>/insertTanalar/tani17Insert.php',
                     data: {
                         name: name,
                         surname: surname,
@@ -525,6 +585,7 @@ $pain_duration  = isset($_GET['pain_duration ']) ? $_GET['pain_duration '] : "Na
                         nurse_description: nurse_description,
                         noc_output: noc_output,
                         noc_indicator: noc_indicator,
+                        noc_indicator_after:noc_indicator_after,
                         nurse_attempt: nurse_attempt,
                         nurse_education :nurse_education,
                         collaborative_applications: collaborative_applications,
@@ -535,7 +596,7 @@ $pain_duration  = isset($_GET['pain_duration ']) ? $_GET['pain_duration '] : "Na
                         console.log("something happened")
                         alert(data);
                         let url =
-                            "<?php echo $base_url; ?>/taniReview/tani14Review.php?patient_id=" +
+                            "<?php echo $base_url; ?>/taniReview/tani17Review.php?patient_id=" +
                             patient_id + "&patient_name=" + encodeURIComponent(
                                 patient_name);
                         $("#content").load(url);

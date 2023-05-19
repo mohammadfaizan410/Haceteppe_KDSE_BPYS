@@ -91,16 +91,15 @@ $feeding_problem = isset($_GET['feeding_problem']) ? $_GET['feeding_problem'] : 
                             <p class="usernamelabel">Hemşirelik Tanıları:</p>
                             <p class="tanıdescription">Konstipasyon</p>
                         </div>
+
+
+
+
+
                         <div class="input-section d-flex">
                             <p class="usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hastanın gaitasının normal özellikte olması </p>
                         </div>
-                        
-
- 
-
-
-
                         <div class="input-section" id="o2-delivery-container">
                             <p class="usernamelabel">NOC Gösterge: </p>
                             <div class="form-check">
@@ -300,15 +299,6 @@ $feeding_problem = isset($_GET['feeding_problem']) ? $_GET['feeding_problem'] : 
                             </div>
                             
 
-                            <div class="input-section d-flex">
-                            <p class="usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın bağırsak seslerinin normal sınırlarda olması </p>
-                        </div>
-                        
-                    
-
-
-
                             <p class="usernamelabel">Eğitim:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt22"
@@ -395,6 +385,54 @@ $feeding_problem = isset($_GET['feeding_problem']) ? $_GET['feeding_problem'] : 
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Değerlendirme:</p>
+                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p class="tanıdescription">Hastanın gaitasının normal özellikte olması </p>
+                            <div class="" id="o2-delivery-container">
+                            <p class="usernamelabel">NOC Gösterge: </p>
+                            <div class="form-check">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
+                                        id="noc_indicator"
+                                        value="1: Hastanın sürekli izin verilenden daha az besin tüketimi var">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">1: Hastanın sürekli izin verilenden daha az besin tüketimi var</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
+                                        id="noc_indicator"
+                                        value="2: Hastanın sık sık izin verilenden daha az besin tüketimi var">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">2: Hastanın sık sık izin verilenden daha az besin tüketimi var</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
+                                        id="noc_indicator"
+                                        value="3: Hastanın bazen izin verilenden daha az besin tüketimi var">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">3: Hastanın bazen izin verilenden daha az besin tüketimi var</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
+                                        id="noc_indicator"
+                                        value="4: Hastanın nadiren izin verilenden daha az besin tüketimi var">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">4: Hastanın nadiren izin verilenden daha az besin tüketimi var</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="
+                                        noc_indicator" value="5: Hasta günlük olarak izin verilen besinlerin tamamını tüketir ">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">5: Hasta günlük olarak izin verilen besinlerin tamamını tüketir 
+                                        </span>
+                                    </label>
+                                </div>
+
+                            </div>
+                        </div>
                             <p class="tanıdescription"> Sorun devam ediyor: 1-4 gösterge seçildiyse; yeni günde bakım planında tanımlı tanı olacak.</p>
                             <p class="tanıdescription"> Sorun çözümlendi:
                                 5 gösterge seçildiyse; yeni günde bakım planına bu tanıyı taşımayacak
@@ -453,11 +491,11 @@ $feeding_problem = isset($_GET['feeding_problem']) ? $_GET['feeding_problem'] : 
                 var not = $('#not').val();
                 let form_num = 15;
                 var patient_id = <?php
-                                        $userid = $_GET['patient_id'];
+                                        $userid = isset($_GET['patient_id']) ?$_GET['patient_id'] : 20;
                                         echo $userid
                                         ?>;
                 let patient_name = "<?php
-                                        echo urldecode($_GET['patient_name']);
+                                        echo urldecode(isset($_GET['patient_name']) ? $_GET['patient_name'] : "test");
                                         ?>";
                 let yourDate = new Date();
                 let creationDate = yourDate.toISOString().split('T')[0];
@@ -466,6 +504,7 @@ $feeding_problem = isset($_GET['feeding_problem']) ? $_GET['feeding_problem'] : 
                 let nurse_description = "Gaz değişiminde bozulma"
                 let noc_output = "Hastanın oksijen satürasyonun %95’in üzerinde olması"
                 let noc_indicator = $("input[type='radio'][name='noc_indicator']:checked").val();
+                let noc_indicator_after = $("input[type='radio'][name='noc_indicator_after']:checked").val();
                 let evaluation = "";
                 console.log("values init")
 
@@ -609,7 +648,7 @@ $feeding_problem = isset($_GET['feeding_problem']) ? $_GET['feeding_problem'] : 
                     nurse_education += pl24 + "/";
                 }
                 if (l25.checked == true) {
-                    var pl15 = document.getElementById("nurse_attempt25").value;
+                    var pl25 = document.getElementById("nurse_attempt25").value;
                     nurse_education += pl25 + "/";
                 }
                 if (l26.checked == true) {
@@ -618,28 +657,28 @@ $feeding_problem = isset($_GET['feeding_problem']) ? $_GET['feeding_problem'] : 
                 }
                 if (l27.checked == true) {
                     var pl27 = document.getElementById("nurse_attempt27").value;
-                    collaborative_applications += pl15 + "/";
+                    collaborative_applications += pl27 + "/";
                 }
                 if (l28.checked == true) {
                     var pl28 = document.getElementById("nurse_attempt28").value;
-                    collaborative_applications += pl15 + "/";
+                    collaborative_applications += pl28 + "/";
                 }
                 if (l29.checked == true) {
                     var pl29 = document.getElementById("nurse_attempt29").value;
-                    collaborative_applications += pl15 + "/";
+                    collaborative_applications += pl29 + "/";
                 }
                 if (l30.checked == true) {
                     var pl30 = document.getElementById("nurse_attempt30").value;
-                    collaborative_applications += pl15 + "/";
+                    collaborative_applications += pl30 + "/";
                 }
                 if (l31.checked == true) {
                     var pl31 = document.getElementById("nurse_attempt31").value;
-                    collaborative_applications += pl15 + "/";
+                    collaborative_applications += pl31 + "/";
                 }
 
                 $.ajax({
                     type: 'POST',
-                    url: '<?php echo $base_url; ?>/insertTanalar/tani1Insert.php',
+                    url: '<?php echo $base_url; ?>/insertTanalar/tani12Insert.php',
                     data: {
                         name: name,
                         surname: surname,
@@ -653,6 +692,7 @@ $feeding_problem = isset($_GET['feeding_problem']) ? $_GET['feeding_problem'] : 
                         nurse_description: nurse_description,
                         noc_output: noc_output,
                         noc_indicator: noc_indicator,
+                        noc_indicator_after:noc_indicator_after,
                         nurse_attempt: nurse_attempt,
                         nurse_education :nurse_education,
                         collaborative_applications: collaborative_applications,

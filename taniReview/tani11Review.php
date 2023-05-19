@@ -12,7 +12,7 @@ if (isset($_GET['logout'])) {
 }
 require_once("../config-students.php");
 if(isset($_GET['patient_id'])){
-    $patient_id = $_GET['patient_id'];
+    $patient_id = isset($_GET['patient_id']) ? $_GET['patient_id'] : 10 ;
     $stmt = $db->prepare("SELECT * from tani11 where patient_id = ?");
     $result = $stmt->execute([$patient_id]);
     if($result){
@@ -99,10 +99,10 @@ if(isset($_GET['patient_id'])){
                             <p class="usernamelabel">NOC Gösterge: </p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" disabled
-                                        id="noc_indicator" checked>
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" checked  disabled
+                                        id="noc_indicator" >
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header"><?php echo "$tani11Data[0]['noc_indicator']"?></span>
+                                        <span class="checkbox-header"><?php echo $tani11Data[0]['noc_indicator']?></span>
                                     </label>
                                 </div>
                                
@@ -120,10 +120,10 @@ if(isset($_GET['patient_id'])){
                             <div class="form-check">
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator2" disabled
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" disabled
                                         id="noc_indicator" checked>
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header"><?php echo "$tani11Data[0]['noc_indicator2']"?></span>
+                                        <span class="checkbox-header"><?php echo $tani11Data[0]['noc_indicator2']?></span>
                                     </label>
                                 </div>
 
@@ -176,7 +176,46 @@ if(isset($_GET['patient_id'])){
                                     }
                                 } 
                                         ?>
-                        </div>                        
+                        </div>
+                        <div class='input-section d-flex'>
+
+                            <div class="input-section d-flex">
+                                <p class="usernamelabel">NOC Çıktıları:</p>
+                                <p class="tanıdescription">Hastanın solunum örüntüsünün normal olması </p>
+                            </div>
+                            <div class="input-section" id="o2-delivery-container">
+                            <p class="usernamelabel">NOC Gösterge: </p>
+                            <div class="form-check">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" disabled
+                                    id="noc_indicator" checked>
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header"><?php echo $tani11Data[0]['noc_indicator_after']?></span>
+                                    </label>
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                        <div class="input-section d-flex">
+                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p class="tanıdescription">Hastanın solunum hızının ve ritminin normal olması</p>
+                        </div>
+                        <div class="input-section" id="o2-delivery-container">
+                            <p class="usernamelabel">NOC Gösterge: </p>
+                            <div class="form-check">
+                            <div class="form-check">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator2" disabled
+                                        id="noc_indicator" checked>
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header"><?php echo $tani11Data[0]['noc_indicator_after2']?></span>
+                                    </label>
+                                </div>
+
+                            </div>
+                        </div>
+                        </div>
                             </div>
                     </form>
                 </div>

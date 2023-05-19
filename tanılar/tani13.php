@@ -196,11 +196,7 @@ $family_history = isset($_GET['family_history']) ? $_GET['family_history'] : 'Na
                                 </label>
                             </div>
                             
-                        </div>
-                            <div class="input-section d-flex">
-                            <p class="usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın bağırsak seslerinin normal sınırlarda olması </p>
-                        </div>
+
                         
                     
 
@@ -258,13 +254,77 @@ $family_history = isset($_GET['family_history']) ? $_GET['family_history'] : 'Na
                                 </label>
                             </div>
                         </div>
-                        <div class="input-section d-flex">
+                  
+                        
+
+ 
+
+
+
+                        <div class="input-section d-flex justify-content-between align-items-start" id="o2-delivery-container">
+                        <div class="input-section d-flex ">
                             <p class="usernamelabel">Değerlendirme:</p>
-                            <p class="tanıdescription"> Sorun devam ediyor: 1-4 gösterge seçildiyse; yeni günde bakım planında tanımlı tanı olacak.</p>
+                            <div class="input-section d-flex">
+                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p class="tanıdescription">Hastanın günlük olarak izin verilen besinleri tüketmesi </p>
+                        </div>
+                            <div>
+                                <p class="usernamelabel">NOC Gösterge: </p>
+                            </div>
+                            <div class="form-check">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
+                                        id="noc_indicator"
+                                        value="1: Hastanın sürekli izin verilenden daha fazla besin tüketimi var">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">1: Hastanın sürekli izin verilenden daha fazla besin tüketimi var</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
+                                        id="noc_indicator"
+                                        value="2: Hastanın sık sık izin verilenden daha fazla besin tüketimi var">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">2: Hastanın sık sık izin verilenden daha fazla besin tüketimi var</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
+                                        id="noc_indicator"
+                                        value="3: Hastanın bazen izin verilenden daha fazla besin tüketimi var">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">3: Hastanın bazen izin verilenden daha fazla besin tüketimi var</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
+                                        id="noc_indicator"
+                                        value="4: Hastanın nadiren izin verilenden daha fazla besin tüketimi var ">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">4: Hastanın nadiren izin verilenden daha fazla besin tüketimi var </span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="
+                                        noc_indicator" value="5: Hasta günlük olarak izin verilen besinlerin tamamını tüketir">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">5: Hasta günlük olarak izin verilen besinlerin tamamını tüketir
+                                        </span>
+                                    </label>
+                                </div>
+
+                            </div>
+
+                            
+                        </div>
+                        <p class="tanıdescription"> Sorun devam ediyor: 1-4 gösterge seçildiyse; yeni günde bakım planında tanımlı tanı olacak.</p>
                             <p class="tanıdescription"> Sorun çözümlendi:
                                 5 gösterge seçildiyse; yeni günde bakım planına bu tanıyı taşımayacak
                             </p>
+                           
                         </div>
+                        <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
+
                     </form>
                 </div>
             </div>
@@ -273,17 +333,15 @@ $family_history = isset($_GET['family_history']) ? $_GET['family_history'] : 'Na
 
     </div>
     <script>
-    var BKI = document.getElementById('BKI').innerText;
-    var permitted_food = document.getElementById('permitted_food').innerText;
-    var nutrition_problem = document.getElementById('nutrition_problem').innerText;
-    var excretion_problem = document.getElementById('excretion_problem').innerText;
-    var language_problem = document.getElementById('language_problem').innerText;
-    var ingestion_problem = document.getElementById('ingestion_problem').innerText;
-    var feeding_problem = document.getElementById('feeding_problem').innerText;
 
-    var matchedfields_string = BKI + " / " + permitted_food + " / " + nutrition_problem +
-        " / " + excretion_problem + " / " + language_problem + "/" + language_problem + "/" +ingestion_problem + "/" +  feeding_problem;
-    </script>
+    var BKI = document.getElementById('BKI').innerText;
+    var permitted_food_consumption = document.getElementById('permitted_food_consumption').innerText;
+    var sleeping_problem = document.getElementById('sleeping_problem').innerText;
+    var exercise_habit = document.getElementById('exercise_habit').innerText;
+    var family_history = document.getElementById('family_history').innerText;
+
+    var matchedfields_string = BKI + " / " + permitted_food_consumption + " / " + sleeping_problem + " / " + exercise_habit + "/" + family_history;
+</script>
 
     <script>
     $(function() {
@@ -317,11 +375,11 @@ $family_history = isset($_GET['family_history']) ? $_GET['family_history'] : 'Na
                 var not = $('#not').val();
                 let form_num = 15;
                 var patient_id = <?php
-                                        $userid = $_GET['patient_id'];
+                                        $userid = isset($_GET['patient_id']) ? $_GET['patient_id'] : 20;
                                         echo $userid
                                         ?>;
                 let patient_name = "<?php
-                                        echo urldecode($_GET['patient_name']);
+                                        echo urldecode(isset($_GET['patient_name']) ? $_GET['patient_name'] : "test");
                                         ?>";
                 let yourDate = new Date();
                 let creationDate = yourDate.toISOString().split('T')[0];
@@ -330,6 +388,7 @@ $family_history = isset($_GET['family_history']) ? $_GET['family_history'] : 'Na
                 let nurse_description = "Gaz değişiminde bozulma"
                 let noc_output = "Hastanın oksijen satürasyonun %95’in üzerinde olması"
                 let noc_indicator = $("input[type='radio'][name='noc_indicator']:checked").val();
+                let noc_indicator_after = $("input[type='radio'][name='noc_indicator_after']:checked").val();
                 let evaluation = "";
                 console.log("values init")
 
@@ -412,7 +471,7 @@ $family_history = isset($_GET['family_history']) ? $_GET['family_history'] : 'Na
 
                 $.ajax({
                     type: 'POST',
-                    url: '<?php echo $base_url; ?>/insertTanalar/tani1Insert.php',
+                    url: '<?php echo $base_url; ?>/insertTanalar/tani13Insert.php',
                     data: {
                         name: name,
                         surname: surname,
@@ -426,6 +485,7 @@ $family_history = isset($_GET['family_history']) ? $_GET['family_history'] : 'Na
                         nurse_description: nurse_description,
                         noc_output: noc_output,
                         noc_indicator: noc_indicator,
+                        noc_indicator_after:noc_indicator_after,
                         nurse_attempt: nurse_attempt,
                         nurse_education :nurse_education,
                         collaborative_applications: collaborative_applications,
@@ -436,7 +496,7 @@ $family_history = isset($_GET['family_history']) ? $_GET['family_history'] : 'Na
                         console.log("something happened")
                         alert(data);
                         let url =
-                            "<?php echo $base_url; ?>/taniReview/tani12Review.php?patient_id=" +
+                            "<?php echo $base_url; ?>/taniReview/tani13Review.php?patient_id=" +
                             patient_id + "&patient_name=" + encodeURIComponent(
                                 patient_name);
                         $("#content").load(url);

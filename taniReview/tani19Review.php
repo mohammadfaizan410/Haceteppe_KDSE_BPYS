@@ -102,7 +102,7 @@ if(isset($_GET['patient_id'])){
                                     <input class="form-check-input" type="radio" required name="noc_indicator" disabled
                                         id="noc_indicator" checked>
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header"><?php echo "$tani19Data[0]['noc_indicator']"?></span>
+                                        <span class="checkbox-header"><?php echo $tani19Data[0]['noc_indicator']?></span>
                                     </label>
                                 </div>
                                
@@ -160,7 +160,24 @@ if(isset($_GET['patient_id'])){
                                         ?>
                         </div>
                 
-                        
+                    
+                        <div class="input-section d-flex" id="o2-delivery-container">
+                        <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p class="tanıdescription">Hastanın aktivite toleransı göstermesi  </p>
+                            <p class="usernamelabel">NOC Gösterge: </p>
+                            <div class="form-check">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" disabled
+                                        id="noc_indicator" checked>
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header"><?php echo $tani19Data[0]['noc_indicator_after']?></span>
+                                    </label>
+                                </div>
+                               
+
+                            </div>
+
+                        </div>
                             </div>
                                             </form>
                 </div>

@@ -9,6 +9,8 @@ if (isset($_POST)) {
     $noc_output = $_POST['noc_output'];
     $noc_indicator = $_POST['noc_indicator'];
     $noc_indicator2 = $_POST['noc_indicator2'];
+    $noc_indicator_after = $_POST['noc_indicator_after'];
+    $noc_indicator_after2 = $_POST['noc_indicator_after2'];
     $nurse_attempt = $_POST['nurse_attempt'];
     $nurse_education = $_POST['nurse_education'];
     $collaborative_applications = $_POST['collaborative_applications'];
@@ -22,33 +24,36 @@ if (isset($_POST)) {
 
     if ($rowCount > 0) {
         $stmt = $db->prepare("UPDATE tani11 
-        SET date = ?, problem_info = ?, nurse_description = ?, noc_output = ?, noc_indicator = ?,noc_indicator2 = ?, nurse_attempt = ?, nurse_education = ?, collaborative_applications = ?, evaluation = ?, matchedfields_string = ?
+        SET update_date = ?, problem_info = ?, nurse_description = ?, noc_output = ?, noc_indicator = ?,noc_indicator2 = ?, noc_indicator_after=?, noc_indicator_after2= ?, nurse_attempt = ?, nurse_education = ?, collaborative_applications = ?, evaluation = ?, matchedfields_string = ?
         WHERE patient_id = ?");
-        $result = $stmt->execute([$update_date, $problem_info, $nurse_description, $noc_output, $noc_indicator, $noc_indicator2, $nurse_attempt, $nurse_education,$collaborative_applications, $evaluation, $matchedfields_string, $patient_id]);
+        $result = $stmt->execute([$update_date, $problem_info, $nurse_description, $noc_output, $noc_indicator, $noc_indicator2, $noc_indicator_after, $noc_indicator_after2, $nurse_attempt, $nurse_education,$collaborative_applications, $evaluation, $matchedfields_string, $patient_id]);
         if ($result) {
             echo "Successfully updated!";
         } else {
             echo "Error: " . $stmt->errorInfo()[2];
         }
     } else {
-        $stmt = $db->prepare("INSERT into tani11 
+        $stmt = $db->prepare("INSERT into tani11
 (
 patient_id,
 patient_name,
-date,
+update_date,
 problem_info,
 nurse_description,
 noc_output,
 noc_indicator,
 noc_indicator2,
+noc_indicator_after,
+noc_indicator_after2,
 nurse_attempt,
 nurse_education,
+collaborative_applications,
 evaluation,
 matchedfields_string
-) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)");
-        $result = $stmt->execute([$patient_id, $patient_name, $update_date, $problem_info, $nurse_description, $noc_output, $noc_indicator, $noc_indicator2, $nurse_attempt, $nurse_education,$collaborative_applications, $evaluation, $matchedfields_string]);
+) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?,?)");
+        $result = $stmt->execute([$patient_id, $patient_name, $update_date, $problem_info, $nurse_description, $noc_output, $noc_indicator, $noc_indicator2,$noc_indicator_after, $noc_indicator_after2, $nurse_attempt, $nurse_education,$collaborative_applications, $evaluation, $matchedfields_string]);
         if ($result) {
-            echo "succesfully inserted!";
+            echo $result;
         } else {
             echo $result;
         }

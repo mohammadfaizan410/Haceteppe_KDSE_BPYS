@@ -72,11 +72,10 @@ $Hb   = isset($_GET['Hb  ']) ? $_GET['Hb '] : "NaN";
                             <p class="usernamelabel">Sorunla İlişkili Veriler:</p>
                             <div class="matchedfields-wrapper">
                                 <?php         
-                                echo "<p class='matchedfields' id='Dispne' style='".($Dispne == 'NaN' ? 'color: red' : 'color:blue ' )."'>Ortalama uyku süresi: ".$Dispne."</p>";
-                                echo "<p class='matchedfields' id='systolic_bp' style='".($systolic_bp == 'NaN' ? 'color:red ' : 'color: blue' )."'>Uykuda sorun:".$systolic_bp."</p>";
-                                echo "<p class='matchedfields' id='diastolic_bp' style='".($diastolic_bp == 'NaN' ? 'color:red ' : 'color: blue' )."'>Huzursuzluk:".$diastolic_bp."</p>";
-                                echo "<p class='matchedfields' id='pulse_rate' style='".($pulse_rate == 'NaN' ? 'color:red ' : 'color: blue' )."'> Rahatsızlık :".$pulse_rate."</p>";
-                                echo "<p class='matchedfields' id='fatigue' style='".($fatigue == 'NaN' ? 'color:red ' : 'color: blue' )."'>Kaşıntı :".$fatigue."</p>";
+                                echo "<p class='matchedfields' id='fatigue' style='".($fatigue == 'NaN' ? 'color: red' : 'color:blue ' )."'>Ortalama uyku süresi: ".$fatigue."</p>";
+                                echo "<p class='matchedfields' id='sleeping_problem' style='".($sleeping_problem == 'NaN' ? 'color:red ' : 'color: blue' )."'>Uykuda sorun:".$sleeping_problem."</p>";
+                                echo "<p class='matchedfields' id='hct' style='".($hct == 'NaN' ? 'color:red ' : 'color: blue' )."'>Huzursuzluk:".$hct."</p>";
+                                echo "<p class='matchedfields' id='Hb' style='".($Hb == 'NaN' ? 'color:red ' : 'color: blue' )."'> Rahatsızlık :".$Hb."</p>";
                                 ?>
                             </div>
 
@@ -299,11 +298,68 @@ $Hb   = isset($_GET['Hb  ']) ? $_GET['Hb '] : "NaN";
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Değerlendirme:</p>
+                            <div class="input-section d-flex">
+                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p class="tanıdescription">Hastanın kendini yorgun hissetmediğini ifade etmesi  </p>
+                        </div>
+                        
+
+ 
+
+
+
+                        <div class="input-section" id="o2-delivery-container">
+                            <p class="usernamelabel">NOC Gösterge: </p>
+                            <div class="form-check">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
+                                        id="noc_indicator"
+                                        value="1: Hasta sürekli yorgun hissettiğini ifade ediyor">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">1: Hasta sürekli yorgun hissettiğini ifade ediyor</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
+                                        id="noc_indicator"
+                                        value="2: Hasta sık sık yorgun hissettiğini ifade ediyor">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">2: Hasta sık sık yorgun hissettiğini ifade ediyor</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
+                                        id="noc_indicator"
+                                        value="3: Hasta bazen yorgun hissettiğini ifade ediyor">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">3: Hasta bazen yorgun hissettiğini ifade ediyor</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
+                                        id="noc_indicator"
+                                        value="4: Hasta nadiren yorgun hissettiğini ifade ediyor">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">4: Hasta nadiren yorgun hissettiğini ifade ediyor</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="
+                                        noc_indicator" value="5: Hasta yorgun hissetmediğini ifade ediyor">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">5: Hasta yorgun hissetmediğini ifade ediyor
+                                        </span>
+                                    </label>
+                                </div>
+
+                            </div>
+                        </div>
                             <p class="tanıdescription"> Sorun devam ediyor: 1-4 gösterge seçildiyse; yeni günde bakım planında tanımlı tanı olacak.</p>
                             <p class="tanıdescription"> Sorun çözümlendi:
                                 5 gösterge seçildiyse; yeni günde bakım planına bu tanıyı taşımayacak
                             </p>
                         </div>
+                        <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
                     </form>
                 </div>
             </div>
@@ -353,11 +409,11 @@ $Hb   = isset($_GET['Hb  ']) ? $_GET['Hb '] : "NaN";
                 var not = $('#not').val();
                 let form_num = 15;
                 var patient_id = <?php
-                                        $userid = $_GET['patient_id'];
+                                        $userid = isset($_GET['patient_id']) ?$_GET['patient_id'] : 20;
                                         echo $userid
                                         ?>;
                 let patient_name = "<?php
-                                        echo urldecode($_GET['patient_name']);
+                                        echo urldecode(isset($_GET['patient_name']) ? $_GET['patient_name'] : "test");
                                         ?>";
                 let yourDate = new Date();
                 let creationDate = yourDate.toISOString().split('T')[0];
@@ -366,6 +422,7 @@ $Hb   = isset($_GET['Hb  ']) ? $_GET['Hb '] : "NaN";
                 let nurse_description = "Gaz değişiminde bozulma"
                 let noc_output = "Hastanın oksijen satürasyonun %95’in üzerinde olması"
                 let noc_indicator = $("input[type='radio'][name='noc_indicator']:checked").val();
+                let noc_indicator_after = $("input[type='radio'][name='noc_indicator_after']:checked").val();
                 let evaluation = "";
                 console.log("values init")
 
@@ -494,6 +551,7 @@ $Hb   = isset($_GET['Hb  ']) ? $_GET['Hb '] : "NaN";
                         nurse_description: nurse_description,
                         noc_output: noc_output,
                         noc_indicator: noc_indicator,
+                        noc_indicator_after: noc_indicator_after,
                         nurse_attempt: nurse_attempt,
                         nurse_education :nurse_education,
                         collaborative_applications: collaborative_applications,
