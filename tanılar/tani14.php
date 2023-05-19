@@ -80,6 +80,8 @@ $permitted_food_consumption = isset($_GET['permitted_food_consumption']) ? $_GET
                             <p class="usernamelabel">Hemşirelik Tanıları:</p>
                             <p class="tanıdescription">Obezite </p>
                         </div>
+                       
+                       
                         <div class="input-section d-flex">
                             <p class="usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hastanın kilo verme isteğini sözel olarak ifade etmesi</p>
@@ -234,13 +236,77 @@ $permitted_food_consumption = isset($_GET['permitted_food_consumption']) ? $_GET
                                 </label>
                             </div>
                         </div>
+
+
+
+
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Değerlendirme:</p>
+                            
+                        <div class="input-section d-flex">
+                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p class="tanıdescription">Hastanın kilo verme isteğini sözel olarak ifade etmesi</p>
+                        </div>
+                        
+
+ 
+
+
+
+                        <div class="input-section" id="o2-delivery-container">
+                            <p class="usernamelabel">NOC Gösterge: </p>
+
+                            <div class="form-check">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
+                                        id="noc_indicator"
+                                        value="1: Hastanın kilo vermeyle ilgili bir isteği yok">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">1: Hastanın kilo vermeyle ilgili bir isteği yok</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
+                                        id="noc_indicator"
+                                        value="2: Hasta kilo vermeyle ilgili isteğini nadiren dile getiriyor">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">2: Hasta kilo vermeyle ilgili isteğini nadiren dile getiriyor</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
+                                        id="noc_indicator"
+                                        value="3: Hasta kilo vermeyle ilgili isteğini bazen dile getiriyor">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">3: Hasta kilo vermeyle ilgili isteğini bazen dile getiriyor</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
+                                        id="noc_indicator"
+                                        value="4: Hasta kilo vermeyle ilgili isteğini sık sık dile getiriyor">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">4: Hasta kilo vermeyle ilgili isteğini sık sık dile getiriyor</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="
+                                        noc_indicator" value="5: Hasta kilo vermeyle ilgili isteğini sürekli dile getiriyor">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">5: Hasta kilo vermeyle ilgili isteğini sürekli dile getiriyor
+                                        </span>
+                                    </label>
+                                </div>
+
+                            </div>
+                        </div>
                             <p class="tanıdescription"> Sorun devam ediyor: 1-4 gösterge seçildiyse; yeni günde bakım planında tanımlı tanı olacak.</p>
                             <p class="tanıdescription"> Sorun çözümlendi:
                                 5 gösterge seçildiyse; yeni günde bakım planına bu tanıyı taşımayacak
                             </p>
                         </div>
+                        <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
+
                     </form>
                 </div>
             </div>
@@ -301,6 +367,7 @@ $permitted_food_consumption = isset($_GET['permitted_food_consumption']) ? $_GET
                 let nurse_description = "Gaz değişiminde bozulma"
                 let noc_output = "Hastanın oksijen satürasyonun %95’in üzerinde olması"
                 let noc_indicator = $("input[type='radio'][name='noc_indicator']:checked").val();
+                let noc_indicator_after = $("input[type='radio'][name='noc_indicator_after']:checked").val();
                 let evaluation = "";
                 console.log("values init")
 
@@ -412,6 +479,7 @@ $permitted_food_consumption = isset($_GET['permitted_food_consumption']) ? $_GET
                         nurse_description: nurse_description,
                         noc_output: noc_output,
                         noc_indicator: noc_indicator,
+                        noc_indicator_after:noc_indicator_after,
                         nurse_attempt: nurse_attempt,
                         nurse_education: nurse_education,
                         collaborative_applications: collaborative_applications,

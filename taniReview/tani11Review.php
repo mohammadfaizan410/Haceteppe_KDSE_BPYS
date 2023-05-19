@@ -117,13 +117,14 @@ if (isset($_GET['patient_id'])) {
                         <div class="input-section" id="o2-delivery-container">
                             <p class="usernamelabel">NOC Gösterge: </p>
                             <div class="form-check">
+                            <div class="form-check">
                                 <div class="form-check">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator2" disabled id="noc_indicator" checked>
-                                        <label class="form-check-label" for="noc_indicator">
-                                            <span class="checkbox-header"><?php echo "$tani11Data[0]['noc_indicator2']" ?></span>
-                                        </label>
-                                    </div>
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" disabled
+                                        id="noc_indicator" checked>
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header"><?php echo $tani11Data[0]['noc_indicator2']?></span>
+                                    </label>
+                                </div>
 
                                 </div>
                             </div>
@@ -172,10 +173,49 @@ if (isset($_GET['patient_id'])) {
                                         </label>
                                       </div>";
                                     }
-                                }
-                                ?>
+                                } 
+                                        ?>
+                        </div>
+                        <div class='input-section d-flex'>
+
+                            <div class="input-section d-flex">
+                                <p class="usernamelabel">NOC Çıktıları:</p>
+                                <p class="tanıdescription">Hastanın solunum örüntüsünün normal olması </p>
+                            </div>
+                            <div class="input-section" id="o2-delivery-container">
+                            <p class="usernamelabel">NOC Gösterge: </p>
+                            <div class="form-check">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" disabled
+                                    id="noc_indicator" checked>
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header"><?php echo $tani11Data[0]['noc_indicator_after']?></span>
+                                    </label>
+                                </div>
+                                
+                                
                             </div>
                         </div>
+                        <div class="input-section d-flex">
+                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p class="tanıdescription">Hastanın solunum hızının ve ritminin normal olması</p>
+                        </div>
+                        <div class="input-section" id="o2-delivery-container">
+                            <p class="usernamelabel">NOC Gösterge: </p>
+                            <div class="form-check">
+                            <div class="form-check">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator2" disabled
+                                        id="noc_indicator" checked>
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header"><?php echo $tani11Data[0]['noc_indicator_after2']?></span>
+                                    </label>
+                                </div>
+
+                            </div>
+                        </div>
+                        </div>
+                            </div>
                     </form>
                 </div>
             </div>

@@ -76,16 +76,16 @@ $crutch_use  = isset($_GET['crutch_use ']) ? $_GET['crutch_use '] : "NaN";
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Sorunla İlişkili Veriler:</p>
                             <div class="matchedfields-wrapper">
-                                <?php
-                                echo "<p class='matchedfields' id='changing_position' style='" . ($changing_position == 'NaN' ? 'color: red' : 'color:blue ') . "'>Ortalama uyku süresi: " . $changing_position . "</p>";
-                                echo "<p class='matchedfields' id='standing_up' style='" . ($standing_up == 'NaN' ? 'color:red ' : 'color: blue') . "'>Uykuda sorun:" . $standing_up . "</p>";
-                                echo "<p class='matchedfields' id='restlessness' style='" . ($walking == 'NaN' ? 'color:red ' : 'color: blue') . "'>Huzursuzluk:" . $walking . "</p>";
-                                echo "<p class='matchedfields' id='changing_clothes' style='" . ($changing_clothes == 'NaN' ? 'color:red ' : 'color: blue') . "'> Rahatsızlık :" . $changing_clothes . "</p>";
-                                echo "<p class='matchedfields' id='cleaning_body' style='" . ($cleaning_body == 'NaN' ? 'color:red ' : 'color: blue') . "'>Kaşıntı :" . $cleaning_body . "</p>";
-                                echo "<p class='matchedfields' id='wheelchair_use' style='" . ($wheelchair_use == 'NaN' ? 'color:red ' : 'color: blue') . "'>Beslenmede Sorun:" . $wheelchair_use . "</p>";
-                                echo "<p class='matchedfields' id='cane_use' style='" . ($cane_use == 'NaN' ? 'color:red ' : 'color: blue') . "'>Ağrının süresi :" . $cane_use . "</p>";
-                                echo "<p class='matchedfields' id='walker_use' style='" . ($walker_use == 'NaN' ? 'color:red ' : 'color: blue') . "'>Ağrının süresi :" . $walker_use . "</p>";
-                                echo "<p class='matchedfields' id='crutch_use' style='" . ($crutch_use == 'NaN' ? 'color:red ' : 'color: blue') . "'>Ağrının süresi :" . $crutch_use . "</p>";
+                                <?php         
+                                echo "<p class='matchedfields' id='changing_position' style='".($changing_position == 'NaN' ? 'color: red' : 'color:blue ' )."'>Ortalama uyku süresi: ".$changing_position."</p>";
+                                echo "<p class='matchedfields' id='standing_up' style='".($standing_up == 'NaN' ? 'color:red ' : 'color: blue' )."'>Uykuda sorun:".$standing_up."</p>";
+                                echo "<p class='matchedfields' id='walking' style='".($walking == 'NaN' ? 'color:red ' : 'color: blue' )."'>Huzursuzluk:".$walking."</p>";
+                                echo "<p class='matchedfields' id='changing_clothes' style='".($changing_clothes == 'NaN' ? 'color:red ' : 'color: blue' )."'> Rahatsızlık :".$changing_clothes."</p>";
+                                echo "<p class='matchedfields' id='cleaning_body' style='".($cleaning_body == 'NaN' ? 'color:red ' : 'color: blue' )."'>Kaşıntı :".$cleaning_body."</p>";
+                                echo "<p class='matchedfields' id='wheelchair_use' style='".($wheelchair_use == 'NaN' ? 'color:red ' : 'color: blue' )."'>Beslenmede Sorun:".$wheelchair_use."</p>";
+                                echo "<p class='matchedfields' id='cane_use' style='".($cane_use == 'NaN' ? 'color:red ' : 'color: blue' )."'>Ağrının süresi :".$cane_use."</p>";
+                                echo "<p class='matchedfields' id='walker_use' style='".($walker_use == 'NaN' ? 'color:red ' : 'color: blue' )."'>Ağrının süresi :".$walker_use."</p>";
+                                echo "<p class='matchedfields' id='crutch_use' style='".($crutch_use == 'NaN' ? 'color:red ' : 'color: blue' )."'>Ağrının süresi :".$crutch_use."</p>";
                                 ?>
                             </div>
 
@@ -270,11 +270,69 @@ $crutch_use  = isset($_GET['crutch_use ']) ? $_GET['crutch_use '] : "NaN";
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Değerlendirme:</p>
+                            <div class="input-section d-flex">
+                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p class="tanıdescription">Hastanın etkili bir şekilde mobilize olması  </p>
+                        </div>
+                        
+
+ 
+
+
+
+                        <div class="input-section" id="o2-delivery-container">
+                            <p class="usernamelabel">NOC Gösterge: </p>
+                            <div class="form-check">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
+                                        id="noc_indicator"
+                                        value="1: Hasta hiç mobilize olmuyor">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">1: Hasta hiç mobilize olmuyor </span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
+                                        id="noc_indicator"
+                                        value="2: Hasta nadiren mobilize oluyor">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">2: Hasta nadiren mobilize oluyor</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
+                                        id="noc_indicator"
+                                        value="3: Hasta bazen mobilizi oluyor">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">3: Hasta bazen mobilizi oluyor </span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
+                                        id="noc_indicator"
+                                        value="4: Hasta sık sık mobilize oluyor ">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">4: Hasta sık sık mobilize oluyor </span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="
+                                        noc_indicator" value="5:Hastanın mobilizasyonunda sorun yok">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">5:Hastanın mobilizasyonunda sorun yok  
+                                        </span>
+                                    </label>
+                                </div>
+
+                            </div>
+                        </div>
                             <p class="tanıdescription"> Sorun devam ediyor: 1-4 gösterge seçildiyse; yeni günde bakım planında tanımlı tanı olacak.</p>
                             <p class="tanıdescription"> Sorun çözümlendi:
                                 5 gösterge seçildiyse; yeni günde bakım planına bu tanıyı taşımayacak
                             </p>
                         </div>
+                        <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
+
                     </form>
                 </div>
             </div>
@@ -341,6 +399,7 @@ $crutch_use  = isset($_GET['crutch_use ']) ? $_GET['crutch_use '] : "NaN";
                 let nurse_description = "Gaz değişiminde bozulma"
                 let noc_output = "Hastanın oksijen satürasyonun %95’in üzerinde olması"
                 let noc_indicator = $("input[type='radio'][name='noc_indicator']:checked").val();
+                let noc_indicator_after = $("input[type='radio'][name='noc_indicator_after']:checked").val();
                 let evaluation = "";
                 console.log("values init")
 
@@ -455,7 +514,7 @@ $crutch_use  = isset($_GET['crutch_use ']) ? $_GET['crutch_use '] : "NaN";
 
                 $.ajax({
                     type: 'POST',
-                    url: '<?php echo $base_url; ?>/insertTanalar/tani14Insert.php',
+                    url: '<?php echo $base_url; ?>/insertTanalar/tani18Insert.php',
                     data: {
                         name: name,
                         surname: surname,
@@ -469,6 +528,7 @@ $crutch_use  = isset($_GET['crutch_use ']) ? $_GET['crutch_use '] : "NaN";
                         nurse_description: nurse_description,
                         noc_output: noc_output,
                         noc_indicator: noc_indicator,
+                        noc_indicator_after:noc_indicator_after,
                         nurse_attempt: nurse_attempt,
                         nurse_education: nurse_education,
                         collaborative_applications: collaborative_applications,

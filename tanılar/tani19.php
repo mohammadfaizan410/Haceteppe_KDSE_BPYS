@@ -286,11 +286,69 @@ $fatigue  = isset($_GET['fatigue ']) ? $_GET['fatigue '] : "NaN";
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Değerlendirme:</p>
+                            <div class="input-section d-flex">
+                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p class="tanıdescription">Hastanın aktivite toleransı göstermesi  </p>
+                        </div>
+                        
+
+ 
+
+
+
+                        <div class="input-section" id="o2-delivery-container">
+                            <p class="usernamelabel">NOC Gösterge: </p>
+                            <div class="form-check">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
+                                        id="noc_indicator"
+                                        value="1:Hastanın aktiviteye toleransı yok">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">1:Hastanın aktiviteye toleransı yok</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
+                                        id="noc_indicator"
+                                        value="2:Hastanın aktiviteye toleransı sık sık yok">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">2:Hastanın aktiviteye toleransı sık sık yok</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
+                                        id="noc_indicator"
+                                        value="3:Hastanın aktiviteye toleransı bazen yok">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">3:Hastanın aktiviteye toleransı bazen yok</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
+                                        id="noc_indicator"
+                                        value="4:Hastanın aktiviteye toleransı nadiren yok">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">4:Hastanın aktiviteye toleransı nadiren yok</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="
+                                        noc_indicator" value="5: Hastanın aktivite toleransı var">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">5: Hastanın aktivite toleransı var 
+                                        </span>
+                                    </label>
+                                </div>
+
+                            </div>
+                        </div>
                             <p class="tanıdescription"> Sorun devam ediyor: 1-4 gösterge seçildiyse; yeni günde bakım planında tanımlı tanı olacak.</p>
                             <p class="tanıdescription"> Sorun çözümlendi:
                                 5 gösterge seçildiyse; yeni günde bakım planına bu tanıyı taşımayacak
                             </p>
                         </div>
+                        <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
+
                     </form>
                 </div>
             </div>
@@ -299,17 +357,14 @@ $fatigue  = isset($_GET['fatigue ']) ? $_GET['fatigue '] : "NaN";
 
     </div>
     <script>
-        var changing_position = document.getElementById('changing_position').innerText;
-        var standing_up = document.getElementById('standing_up').innerText;
-        var walking = document.getElementById('walking').innerText;
-        var changing_clothes = document.getElementById('changing_clothes').innerText;
-        var cleaning_body = document.getElementById('cleaning_body').innerText;
-        var wheelchair_use = document.getElementById('wheelchair_use').innerText;
-        var cane_use = document.getElementById('cane_use').innerText;
-        var walker_use = document.getElementById('walker_use').innerText;
-        var crutch_use = document.getElementById('crutch_use').innerText;
-        var matchedfields_string = changing_position + " / " + standing_up + " / " + walking +
-            " / " + changing_clothes + " / " + cleaning_body + "/" + wheelchair_use + "/" + cane_use + "/" + walker_use + "/" + crutch_use;
+    var Dispne = document.getElementById('Dispne').innerText;
+    var systolic_bp = document.getElementById('systolic_bp').innerText;
+    var diastolic_bp = document.getElementById('diastolic_bp').innerText;
+    var pulse_rate = document.getElementById('pulse_rate').innerText;
+    var fatigue = document.getElementById('fatigue').innerText;
+   
+    var matchedfields_string = Dispne + " / " + systolic_bp + " / " + diastolic_bp +
+        " / " + pulse_rate + " / " + fatigue;
     </script>
 
     <script>
@@ -353,10 +408,11 @@ $fatigue  = isset($_GET['fatigue ']) ? $_GET['fatigue '] : "NaN";
                 let yourDate = new Date();
                 let creationDate = yourDate.toISOString().split('T')[0];
                 let updateDate = yourDate.toISOString().split('T')[0];
-                let problem_info = matchedfields_string
+                let problem_info = matchedfields_string;
                 let nurse_description = "Gaz değişiminde bozulma"
                 let noc_output = "Hastanın oksijen satürasyonun %95’in üzerinde olması"
                 let noc_indicator = $("input[type='radio'][name='noc_indicator']:checked").val();
+                let noc_indicator_after = $("input[type='radio'][name='noc_indicator_after']:checked").val();
                 let evaluation = "";
                 console.log("values init")
 
@@ -490,7 +546,7 @@ $fatigue  = isset($_GET['fatigue ']) ? $_GET['fatigue '] : "NaN";
 
                 $.ajax({
                     type: 'POST',
-                    url: '<?php echo $base_url; ?>/insertTanalar/tani14Insert.php',
+                    url: '<?php echo $base_url; ?>/insertTanalar/tani19Insert.php',
                     data: {
                         name: name,
                         surname: surname,
@@ -504,6 +560,7 @@ $fatigue  = isset($_GET['fatigue ']) ? $_GET['fatigue '] : "NaN";
                         nurse_description: nurse_description,
                         noc_output: noc_output,
                         noc_indicator: noc_indicator,
+                        noc_indicator_after:noc_indicator_after,
                         nurse_attempt: nurse_attempt,
                         nurse_education: nurse_education,
                         collaborative_applications: collaborative_applications,
@@ -514,7 +571,7 @@ $fatigue  = isset($_GET['fatigue ']) ? $_GET['fatigue '] : "NaN";
                         console.log("something happened")
                         alert(data);
                         let url =
-                            "<?php echo $base_url; ?>/taniReview/tani18Review.php?patient_id=" +
+                            "<?php echo $base_url; ?>/taniReview/tani19Review.php?patient_id=" +
                             patient_id + "&patient_name=" + encodeURIComponent(
                                 patient_name);
                         $("#content").load(url);
