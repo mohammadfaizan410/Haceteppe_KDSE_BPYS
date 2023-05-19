@@ -441,9 +441,6 @@ $hospital_environment_factors = isset($_GET['hospital_environment_factors']) ? $
                                         $userid = isset($_GET['patient_id']) ?$_GET['patient_id'] : 20;
                                         echo $userid
                                         ?>;
-                                    $userid = $_GET['patient_id'];
-                                    echo $userid
-                                    ?>;
                 let patient_name = "<?php
                                     echo urldecode($_GET['patient_name']);
                                     ?>";
