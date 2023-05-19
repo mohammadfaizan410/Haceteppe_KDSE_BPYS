@@ -19,6 +19,7 @@ if (isset($_GET['patient_id'])) {
         $tani1Data = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
+var_dump($tani1Data);
 
 ?>
 <!DOCTYPE html>
@@ -36,28 +37,28 @@ if (isset($_GET['patient_id'])) {
     <!-- Template Stylesheet -->
     <link href="../style.css" rel="stylesheet">
     <style>
-    table {
-        border-collapse: collapse;
-    }
+        table {
+            border-collapse: collapse;
+        }
 
-    th,
-    td {
-        border: 1px solid black;
-        padding: 10px;
-    }
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
 
-    th {
-        background-color: #eee;
-    }
+        th {
+            background-color: #eee;
+        }
 
-    h1 {
-        text-align: center;
-    }
+        h1 {
+            text-align: center;
+        }
 
-    tr,
-    td {
-        width: 200px;
-    }
+        tr,
+        td {
+            width: 200px;
+        }
     </style>
 </head>
 
@@ -100,11 +101,9 @@ if (isset($_GET['patient_id'])) {
                             <div class="form-check">
                                 <div class="form-check">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator"
-                                            disabled id="noc_indicator" checked>
+                                        <input class="form-check-input" type="radio" required name="noc_indicator" disabled id="noc_indicator" checked>
                                         <label class="form-check-label" for="noc_indicator">
-                                            <span
-                                                class="checkbox-header"><?php echo "$taniData[0]['noc_indicator']" ?></span>
+                                            <span class="checkbox-header"><?php echo "$taniData[0]['noc_indicator']" ?></span>
                                         </label>
                                     </div>
 
@@ -156,11 +155,9 @@ if (isset($_GET['patient_id'])) {
                                 <div class="form-check">
                                     <div class="form-check">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" required
-                                                name="noc_indicator_after" disabled id="noc_indicator_after" checked>
+                                            <input class="form-check-input" type="radio" required name="noc_indicator_after" disabled id="noc_indicator_after" checked>
                                             <label class="form-check-label" for="noc_indicator_after">
-                                                <span
-                                                    class="checkbox-header"><?php echo "$taniData[0]['noc_indicator_after']" ?></span>
+                                                <span class="checkbox-header"><?php echo "$taniData[0]['noc_indicator_after']" ?></span>
                                             </label>
                                         </div>
 
@@ -181,12 +178,12 @@ if (isset($_GET['patient_id'])) {
         </div>
     </div>
     <script>
-    const noc_indicator = document.querySelectorAll("#noc_indicator");
-    noc_indicator.forEach(function(radio) {
-        if (radio.value === "something") {
-            radio.checked = true;
-        }
-    });
+        const noc_indicator = document.querySelectorAll("#noc_indicator");
+        noc_indicator.forEach(function(radio) {
+            if (radio.value === "something") {
+                radio.checked = true;
+            }
+        });
     </script>
 </body>
 
