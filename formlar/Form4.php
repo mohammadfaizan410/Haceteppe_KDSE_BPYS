@@ -59,22 +59,17 @@ if (isset($_GET['logout'])) {
                     <form action="" method="POST" class="patients-save-fields">
                         <div class="input-section d-flex" style="justify-content:space-between">
                             <p class="usernamelabel">Cinsiyet : </p>
-                            <input type="text" class="form-control" required name="patient_gender" id="diger" placeholder="Hasta Cinsiyetini Giriniz">
-                        </div>
-
-                        <div class="input-section d-flex" style="justify-content:space-between">
-                            <p class="usernamelabel">Yaş : </p>
-                            <input type="text" class="form-control" required name="diger" id="diger" placeholder="Hasta Yaşını Giriniz">
+                            <input type="text" class="form-control" required name="patient_gender" id="diger" placeholder="Hasta Cinsiyetini Giriniz" maxlength = "10">
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between">
                             <p class="usernamelabel">Tıbbi Tanı : </p>
-                            <input type="text" class="form-control" required name="medical_diagnosis" id="diger" placeholder="Tıbbi Tanıyı Giriniz">
+                            <input type="text" class="form-control" required name="medical_diagnosis" id="diger" placeholder="Tıbbi Tanıyı Giriniz" maxlength = "255">
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between">
                             <p class="usernamelabel">Düşülen Yer : </p>
-                            <input type="text" class="form-control" required name="place_of_fall" id="diger" placeholder="Düşülen Yeri Giriniz">
+                            <input type="text" class="form-control" required name="place_of_fall" id="diger" placeholder="Düşülen Yeri Giriniz" maxlength = "255">
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between">
@@ -89,17 +84,17 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section d-flex" style="justify-content:space-between">
                             <p class="usernamelabel">Son Düşme Risk Skoru : </p>
-                            <input type="text" class="form-control" required name="last_fall_risk_score" id="diger" placeholder="Risk Skorunu Giriniz">
+                            <input type="int" class="form-control" required name="last_fall_risk_score" id="diger" placeholder="Risk Skorunu Giriniz" maxlength = "10">
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between">
                             <p class="usernamelabel">Yaralanma Durumu : </p>
-                            <input type="text" class="form-control" required name="injury_status" id="diger" placeholder="Yaralanma Durumunu Giriniz">
+                            <input type="text" class="form-control" required name="injury_status" id="diger" placeholder="Yaralanma Durumunu Giriniz" maxlength = "255">
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between">
                             <p class="usernamelabel">Yaralanma Şiddeti : </p>
-                            <input type="text" class="form-control" required name="injury_severity" id="diger" placeholder="Yaralanma Şiddeti Giriniz">
+                            <input type="text" class="form-control" required name="injury_severity" id="diger" placeholder="Yaralanma Şiddeti Giriniz" maxlength = "255">
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between">
@@ -126,17 +121,17 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section d-flex" style="justify-content:space-between">
                             <p class="usernamelabel">Düşme Öncesi Alınan Önlemler : </p>
-                            <input type="text" class="form-control" required name="pre_fall_precautions" id="diger" placeholder="Alınan Önlemleri Giriniz">
+                            <input type="text" class="form-control" required name="pre_fall_precautions" id="diger" placeholder="Alınan Önlemleri Giriniz" maxlength = "255">
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between">
                             <p class="usernamelabel">Düşme Öncesi Genel Durumu : </p>
-                            <input type="text" class="form-control" required name="pre_fall_general_condition" id="diger" placeholder="Genel Durumu Giriniz">
+                            <input type="text" class="form-control" required name="pre_fall_general_condition" id="diger" placeholder="Genel Durumu Giriniz" maxlength = "255">
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between">
                             <p class="usernamelabel">Düşme Sonrası Genel Durumu : </p>
-                            <input type="text" class="form-control" required name="post_fall_general_condition" id="diger" placeholder="Genel Durumu Giriniz">
+                            <input type="text" class="form-control" required name="post_fall_general_condition" id="diger" placeholder="Genel Durumu Giriniz" maxlength = "255">
                         </div>
 
                         <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">

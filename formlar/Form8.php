@@ -59,7 +59,7 @@ if (isset($_GET['logout'])) {
                         <img src="../ödem.png" style="width:67%; height:auto;border: 1px solid;border-color: #246174; box-shadow:1px 1px 1px 1px #246174; border-radius: 20px;">
                         <div class="input-section d-flex" style="padding-top: 5%;">
                             <p class="usernamelabel">Değerlendirilen Alan:</p>
-                            <input type="text" class="form-control" required name="assessed_area" id="diger" placeholder="Değerlendirilen Alanı Giriniz">
+                            <input type="text" class="form-control" required name="assessed_area" id="diger" placeholder="Değerlendirilen Alanı Giriniz" maxlength = "2000">
                         </div>
 
                         <div class="input-section d-flex">

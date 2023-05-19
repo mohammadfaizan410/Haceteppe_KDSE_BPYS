@@ -47,9 +47,9 @@ if (isset($_SESSION['userlogin'])) {
 
         <div class="broadcastPrompt w-50 h-50 d-flex justify-content-center flex-column m-auto">
             <p>Konu Giriniz:</p>
-            <input type="text" class="form-control mb-3" placeholder="Konu Giriniz" id="broadcastSubject"></input>
+            <input type="text" class="form-control mb-3" placeholder="Konu Giriniz" id="broadcastSubject" maxlength = "200"></input>
             <p>Mesaj Yazınız:</p>
-            <textarea type='text-area' rows="10" class='form-control mb-5' placeholder="Mesaj Yazınız" id="broadcastMessage"> </textarea>
+            <textarea type='text-area' rows="10" class='form-control mb-5' placeholder="Mesaj Yazınız" id="broadcastMessage" maxlength = "10000"> </textarea>
             <p id="error"></p>
             <div class="text-center m-auto p-3 w-50 d-flex justify-content-between">
                 <div class="btn btn-primary p-3" style="background-color: slateblue;" id="sendBroadcast">Gönder</div>
@@ -61,9 +61,9 @@ if (isset($_SESSION['userlogin'])) {
     <div id="multicast-container" class='mt-5'>
         <div class="broadcastPrompt w-50 h-50 d-flex justify-content-center flex-column m-auto">
             <p>Konu Giriniz:</p>
-            <input type="text" class="form-control mb-3" placeholder="Konu Giriniz" id="multicastSubject"></input>
+            <input type="text" class="form-control mb-3" placeholder="Konu Giriniz" id="multicastSubject" maxlength = "200"></input>
             <p>Mesaj Yazınız:</p>
-            <textarea type='text-area' rows="10" class='form-control mb-5' placeholder="Mesaj Yazınız" id="multicastMessage"> </textarea>
+            <textarea type='text-area' rows="10" class='form-control mb-5' placeholder="Mesaj Yazınız" id="multicastMessage" maxlength = "10000"> </textarea>
             <div class='btn btn-primary mb-3' style="background-color: slateblue;" id='show-student-list'>Öğrencileri
                 Seçiniz</div>
             <div id="student-selection-container">
