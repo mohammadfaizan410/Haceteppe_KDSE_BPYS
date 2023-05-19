@@ -71,7 +71,7 @@ if (isset($_GET['logout'])) {
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Vücut Sıcaklığı:</p>
-                            <input type="text" class="form-control" required name="body_temperature" pattern="[0-9]+(\.[0-9]+)?" step="any" id="diger" placeholder="Vücut Sıcaklığı" maxlength = "5">
+                            <input type="number" class="form-control" required name="body_temperature" id="diger" placeholder="Vücut Sıcaklığı" maxlength = "5">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Ölçüm yeri: </p>
@@ -292,7 +292,7 @@ if (isset($_GET['logout'])) {
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="weight_input_toggle" value="O2 maske">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
-                                        <span class="checkbox-header">Yapilmiyorum</span>
+                                        <span class="checkbox-header">Yapilmiyor</span>
                                     </label>
                                 </div>
                             </div>
@@ -373,7 +373,7 @@ if (isset($_GET['logout'])) {
 
                 let spo2_percentage = $("input[name='spo2_percentage']").val();
                 let weight_input = $('#kilo_yapiliyor').css("display") === 'flex' ? $(
-                    "input[name='weight_input']").val() : 'Yapilmiyorum';
+                    "input[name='weight_input']").val() : 'Yapilmiyor';
 
                 $.ajax({
                     type: 'POST',
