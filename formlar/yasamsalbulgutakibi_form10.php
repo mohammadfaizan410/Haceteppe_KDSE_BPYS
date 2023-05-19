@@ -129,7 +129,7 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Nabız hızı:</p>
-                            <input type="int" class="form-control" required name="heart_rate" pattern="[0-9]+(\.[0-9]+)?" step="any" id="diger" placeholder="Nabız hızı" maxlength = "5">
+                            <input type="number" class="form-control" required name="heart_rate" id="diger" placeholder="Nabız hızı" maxlength = "5">
                         </div>
 
 
@@ -171,7 +171,7 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Solunum sayısı:</p>
-                            <input type="text" class="form-control" required name="respiratory_rate" pattern="[0-9]+(\.[0-9]+)?" step="any" id="diger" placeholder="Solunum sayısı" maxlength = "7">
+                            <input type="number" class="form-control" required name="respiratory_rate" id="diger" placeholder="Solunum sayısı" maxlength = "7">
                         </div>
 
                         <div class="input-section d-flex">
@@ -202,7 +202,7 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Kan basıncı:</p>
-                            <input type="text" class="form-control" required name="blood_pressure" pattern="[0-9]+(\.[0-9]+)?" step="any" id="diger" placeholder="Tetkik Sonucu" maxlength = "5">
+                            <input type="number" class="form-control" required name="blood_pressure" id="diger" placeholder="Tetkik Sonucu" maxlength = "5">
                         </div>
 
                         <div class="input-section d-flex">
@@ -284,7 +284,7 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">SPO2 (%):</p>
-                            <input type="text" class="form-control" required name="spo2_percentage" pattern="[0-9]+(\.[0-9]+)?%" step="any" id="diger" placeholder="SPO2 (%)" maxlength = "5">
+                            <input type="number" class="form-control" required name="spo2_percentage" id="diger" placeholder="SPO2 (%)" maxlength = "5">
                         </div>
                         <div class="input-section" id="o2-delivery-container">
                             <p class="usernamelabel">Günlük Günlük Kilo Takibi Yapiliyor mi?</p>
@@ -299,9 +299,9 @@ if (isset($_GET['logout'])) {
                         </div>
                         <div class="input-section" id="kilo_yapiliyor">
                             <p class="usernamelabel">Günlük Kilo Takibi:</p>
-                            <input type="text" class="form-control" name="weight_input" id="diger" placeholder="Günlük Kilo Takibi">
+                            <input type="text" class="form-control" name="weight_input" id="diger" placeholder="Günlük Kilo Takibi" maxlength = "200">
                         </div>
-                        <input class="form-control submit" type='submit' pattern="[0-9]+(\.[0-9]+)?" step="any" name="submit" id="submit" value="Submit" maxlength = "5">
+                        <input class="form-control submit" type='submit' name="submit" id="submit" value="Submit" >
                     </form>
                 </div>
             </div>
