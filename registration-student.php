@@ -40,11 +40,11 @@ require_once("config-students.php");
         <h1 class="header">KDSE-BPYS</h1>
         <h2 class="login">E-Posta gönderildi, lütfen kodu giriniz!</h2>
 
-        <p class="labels">Kodu</p>
+        <p class="labels">Kod</p>
         <input type="text" required name="code" id="code" placeholder="Kodu Giriniz">
         <input type="submit" name="submit" id="validate" value="Giriş Yap">
         <button class='resend' id="sendEmail">Tekrar Gönder</button>
-        <a href="main.php" class="lower-buttons" style="padding-top:10px"><i class="gg-arrow-left-o" style="margin: 0; margin-right: 20px;"></i>Ana Sayfaya Dön</a>
+        <a href="main.php" class="lower-buttons" style="padding-top:10px"></i>Ana Sayfaya Dön</a>
       </div>
     </form>
 
