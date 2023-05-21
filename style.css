@@ -747,6 +747,15 @@ input[type="email"] {
     box-shadow: 40px 40px 40px 40px rgb(112 144 176 / 18%);
 }
 
+.resend {
+    background-color: #246174 !important;
+    border: none;
+    height: 40px;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 14px;
+    padding: 12px;
+}
 
 @media screen and (max-width: 768px) {
     .table-head {

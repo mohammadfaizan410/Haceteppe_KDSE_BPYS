@@ -37,9 +37,9 @@ require_once("config-students.php");
                 <h2 class="login">E-Posta gönderildi, lütfen kodu giriniz!</h2>
 
                 <p class="labels">Kodu</p>
-                <input type="text" required name="code" id="code" placeholder="enter code">
+                <input type="text" required name="code" id="code" placeholder="Kodu Giriniz">
                 <input type="submit" name="submit" id="validate" value="Giriş Yap">
-                <button class='btn btn-primary' id="sendEmail">Send again</button>
+                <button class='resend' id="sendEmail">Tekrar Gönder</button>
                 <a href="main.php" class="lower-buttons" style="padding-top:10px"><i class="gg-arrow-left-o"
                         style="margin: 0; margin-right: 20px;"></i>Ana Sayfaya Dön</a>
             </div>
@@ -157,7 +157,7 @@ $("#register").click(function(e) {
                                 code = response;
                                 alert(
                                     "Kod tekrar yollandı, e-postanızı kontrol ediniz!"
-                                    )
+                                )
                             },
                             error: function(response) {
                                 alert("Error : Server E-Posta Gönderemedi");
