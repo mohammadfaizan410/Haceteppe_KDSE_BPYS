@@ -25,17 +25,6 @@ if (isset($_GET['logout'])) {
     <link href="img/favicon.ico" rel="icon">
 
 
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="bootstrap.min.css" rel="stylesheet">
-
     <!-- Template Stylesheet -->
     <link href="style.css" rel="stylesheet">
 
@@ -86,7 +75,8 @@ if (isset($_GET['logout'])) {
                                         <td class=" protezlertable">
                                                     <div class="form-check form-check-inline">
                                                         <input class="form-check-input" type="checkbox" id="UykudanYorgun" value="Uykudan yorgun">
-                                                        <label class="form-check-label" for="UykudanYorgun">Uykudan yorgun kalkma</label>
+                                                        <label class="form-check-label" for="UykudanYorgun">Uykudan
+                                                            yorgun kalkma</label>
                                                     </div>
                                         </td>
 
@@ -104,7 +94,8 @@ if (isset($_GET['logout'])) {
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="UykununBölünmesi" value="Uykunun Bölünmesi">
-                                                <label class="form-check-label" for="UykununBölünmesi">Uykunun Bölünmesi</label>
+                                                <label class="form-check-label" for="UykununBölünmesi">Uykunun
+                                                    Bölünmesi</label>
                                             </div>
                                         </td>
 
@@ -150,7 +141,8 @@ if (isset($_GET['logout'])) {
                         let patient_name = "<?php
                                             echo urldecode($_GET['patient_name']);
                                             ?>";
-                        var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
+                        var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
+                            patient_id + "&patient_name=" + encodeURIComponent(patient_name);
                         $("#content").load(url);
 
                     })
@@ -181,14 +173,16 @@ if (isset($_GET['logout'])) {
                             let updateDate = yourDate.toISOString().split('T')[0];
                             let fileNo = 160;
                             let UykuSuresi = $("input[name='UykuSuresi']").val();
-                            let UykuSorun = parseInt($("input[type='radio'][name='UykuSorun']:checked").val());
+                            let UykuSorun = parseInt($("input[type='radio'][name='UykuSorun']:checked")
+                                .val());
                             let GündüzUykusu = $("input[name='GündüzUykusu']").val();
                             let UykudanYorgun = $("input[name='UykudanYorgun']").val();
                             let UyumaGüçlüğü = $("input[name='UyumaGüçlüğü']").val();
                             let UykununBölünmesi = $("input[name='UykununBölünmesi']").val();
                             let UykuSorunDiger = $("input[name='UykuSorunDiger']").val();
                             let UykuyaDalmaAliskanligi = $("input[name='UykuyaDalmaAliskanligi']").val();
-                            let UykuyuEtkileyenFaktorler = $("input[name='UykuyuEtkileyenFaktorler']").val();
+                            let UykuyuEtkileyenFaktorler = $("input[name='UykuyuEtkileyenFaktorler']")
+                                .val();
 
 
                             e.preventDefault()
@@ -215,7 +209,10 @@ if (isset($_GET['logout'])) {
                                 },
                                 success: function(data) {
                                     alert(data);
-                                    let url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
+                                    let url =
+                                        "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
+                                        patient_id + "&patient_name=" + encodeURIComponent(
+                                            patient_name);
                                     $("#content").load(url);
                                 },
                                 error: function(data) {

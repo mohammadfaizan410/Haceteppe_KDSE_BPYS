@@ -36,19 +36,6 @@ if ($result) {
     <link href="img/favicon.ico" rel="icon">
 
 
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="../bootstrap.min.css" rel="stylesheet">
-
     <!-- Template Stylesheet -->
     <link href="../style.css" rel="stylesheet">
 
@@ -122,26 +109,27 @@ if ($result) {
 
                         <div class="input-section d-flex" style="justify-content:space-between">
                             <p class="usernamelabel">Düşme Nedeni : </p>
-                            <div>
-                                <input class="form-check-input" type="radio" name="DüşmeNedeni" id="DüşmeNedeni1" value="Bireysel">
-                                <label class="form-check-label" for="DüşmeNedeni">
-                                    <span class="checkbox-header">Bireysel</span>
-                                </label>
-                            </div>
-                            <div>
-                                <input class="form-check-input" type="radio" name="DüşmeNedeni" id="DüşmeNedeni2" value="Kurumsal">
-                                <label class="form-check-label" for="DüşmeNedeni">
-                                    <span class="checkbox-header">Kurumsal</span>
-                                </label>
-                            </div>
-                            <div>
-                                <input class="form-check-input" type="radio" name="DüşmeNedeni" id="DüşmeNedeni3" value="Tanı ve Tedavi Prosedürleri">
-                                <label class="form-check-label" for="DüşmeNedeni">
-                                    <span class="checkbox-header">Tanı ve Tedavi Prosedürleri</span>
-                                </label>
+                            <div class="checkbox-wrapper">
+                                <div>
+                                    <input class="form-check-input" type="radio" name="DüşmeNedeni" id="DüşmeNedeni1" value="Bireysel">
+                                    <label class="form-check-label" for="DüşmeNedeni">
+                                        <span class="checkbox-header">Bireysel</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <input class="form-check-input" type="radio" name="DüşmeNedeni" id="DüşmeNedeni2" value="Kurumsal">
+                                    <label class="form-check-label" for="DüşmeNedeni">
+                                        <span class="checkbox-header">Kurumsal</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <input class="form-check-input" type="radio" name="DüşmeNedeni" id="DüşmeNedeni3" value="Tanı ve Tedavi Prosedürleri">
+                                    <label class="form-check-label" for="DüşmeNedeni">
+                                        <span class="checkbox-header">Tanı ve Tedavi Prosedürleri</span>
+                                    </label>
+                                </div>
                             </div>
                         </div>
-
                         <div class="input-section d-flex" style="justify-content:space-between">
                             <p class="usernamelabel">Düşme Öncesi Alınan Önlemler : </p>
                             <input type="text" class="form-control" required name="pre_fall_precautions" id="diger" placeholder="Alınan Önlemleri Giriniz" value="<?php echo $form4[0]['pre_fall_precautions']; ?>">

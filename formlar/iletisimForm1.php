@@ -25,16 +25,6 @@ if (isset($_GET['logout'])) {
     <link href="img/favicon.ico" rel="icon">
 
 
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
     <link href="style.css" rel="stylesheet">
@@ -68,18 +58,21 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="IletisimEngeli" id="IletisimEngeli" value="Yok">
+                            <input class="form-check-input" type="radio" name="IletisimEngeli" id="IletisimEngeli"
+                                value="Yok">
                             <label class="form-check-label" for="IletisimEngeli">
                                 <span class="checkbox-header">Yok</span>
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="IletisimEngeli" id="IletisimEngeli" value="Var">
+                            <input class="form-check-input" type="radio" name="IletisimEngeli" id="IletisimEngeli"
+                                value="Var">
                             <label class="form-check-label" for="IletisimEngeli">
                                 <span class="checkbox-header">Var: (Açıklayınız)</span>
                             </label>
-                            <input type="text" class="form-control diger" name="IletisimEngeliDiger" id="IletisimEngeliDiger">
+                            <input type="text" class="form-control diger" name="IletisimEngeliDiger"
+                                id="IletisimEngeliDiger">
                         </div>
                     </div>
                 </div>
@@ -110,18 +103,21 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="UlasmaSikinti" id="UlasmaSikinti" value="Yok">
+                            <input class="form-check-input" type="radio" name="UlasmaSikinti" id="UlasmaSikinti"
+                                value="Yok">
                             <label class="form-check-label" for="UlasmaSikinti">
                                 <span class="checkbox-header">Yok</span>
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="UlasmaSikinti" id="UlasmaSikinti" value="Var">
+                            <input class="form-check-input" type="radio" name="UlasmaSikinti" id="UlasmaSikinti"
+                                value="Var">
                             <label class="form-check-label" for="UlasmaSikinti">
                                 <span class="checkbox-header">Var: (Açıklayınız)</span>
                             </label>
-                            <input type="text" class="form-control diger" name="UlasmaSikintiDiger" id="UlasmaSikintiDiger">
+                            <input type="text" class="form-control diger" name="UlasmaSikintiDiger"
+                                id="UlasmaSikintiDiger">
                         </div>
                     </div>
                 </div>
@@ -131,18 +127,21 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="PersonelleIletisim" id="PersonelleIletisim" value="Yok">
+                            <input class="form-check-input" type="radio" name="PersonelleIletisim"
+                                id="PersonelleIletisim" value="Yok">
                             <label class="form-check-label" for="PersonelleIletisim">
                                 <span class="checkbox-header">Yok</span>
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="PersonelleIletisim" id="PersonelleIletisim" value="Var">
+                            <input class="form-check-input" type="radio" name="PersonelleIletisim"
+                                id="PersonelleIletisim" value="Var">
                             <label class="form-check-label" for="PersonelleIletisim">
                                 <span class="checkbox-header">Var: (Açıklayınız)</span>
                             </label>
-                            <input type="text" class="form-control diger" name="PersonelleIletisimDiger" id="PersonelleIletisimDiger">
+                            <input type="text" class="form-control diger" name="PersonelleIletisimDiger"
+                                id="PersonelleIletisimDiger">
                         </div>
                     </div>
                 </div>
@@ -158,7 +157,8 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="BakımaKatılma" id="BakımaKatılma" value="Katılmıyor">
+                            <input class="form-check-input" type="radio" name="BakımaKatılma" id="BakımaKatılma"
+                                value="Katılmıyor">
                             <label class="form-check-label" for="BakımaKatılma">
                                 <span class="checkbox-header">Katılmıyor </span>
                             </label>
@@ -169,7 +169,8 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="İstekli1" value="İstekli">
+                                                <input class="form-check-input" type="checkbox" id="İstekli1"
+                                                    value="İstekli">
                                                 <label class="form-check-label" for="İstekli1">İstekli </label>
                                             </div>
                                         </td>
@@ -178,7 +179,8 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="İsteksiz1" value="İsteksiz">
+                                                <input class="form-check-input" type="checkbox" id="İsteksiz1"
+                                                    value="İsteksiz">
                                                 <label class="form-check-label" for="İsteksiz1">İsteksiz </label>
                                             </div>
                                         </td>
@@ -189,7 +191,8 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="BakımaKatılma" id="BakımaKatılma" value="Katılıyor">
+                            <input class="form-check-input" type="radio" name="BakımaKatılma" id="BakımaKatılma"
+                                value="Katılıyor">
                             <label class="form-check-label" for="BakımaKatılma">
                                 <span class="checkbox-header"> Katılıyor</span>
 
@@ -200,7 +203,8 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="İstekli" value="İstekli">
+                                                <input class="form-check-input" type="checkbox" id="İstekli"
+                                                    value="İstekli">
                                                 <label class="form-check-label" for="İstekli">İstekli</label>
                                             </div>
                                         </td>
@@ -209,7 +213,8 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="İsteksiz" value="İsteksiz">
+                                                <input class="form-check-input" type="checkbox" id="İsteksiz"
+                                                    value="İsteksiz">
                                                 <label class="form-check-label" for="İsteksiz">İsteksiz </label>
                                             </div>
                                         </td>
@@ -233,105 +238,116 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="TedaviyiKabullenme " id="TedaviyiKabullenme " value="Kabul ediyor">
+                            <input class="form-check-input" type="radio" name="TedaviyiKabullenme "
+                                id="TedaviyiKabullenme " value="Kabul ediyor">
                             <label class="form-check-label" for="TedaviyiKabullenme ">
                                 <span class="checkbox-header">Kabul ediyor </span>
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="TedaviyiKabullenme " id="TedaviyiKabullenme " value="Kabul etmiyor">
+                            <input class="form-check-input" type="radio" name="TedaviyiKabullenme "
+                                id="TedaviyiKabullenme " value="Kabul etmiyor">
                             <label class="form-check-label" for="TedaviyiKabullenme ">
                                 <span class="checkbox-header">Kabul etmiyor (Açıklayınız)</span>
                             </label>
-                            <input type="text" class="form-control diger" name="TedaviyiKabullenmeDiger " id="TedaviyiKabullenmeDiger ">
+                            <input type="text" class="form-control diger" name="TedaviyiKabullenmeDiger "
+                                id="TedaviyiKabullenmeDiger ">
                         </div>
                     </div>
                 </div>
             </div>
             <script>
-                $(function() {
-                    $('#closeBtn').click(function(e) {
-                        $("#content").load("formlar-student.php");
+            $(function() {
+                $('#closeBtn').click(function(e) {
+                    $("#content").load("formlar-student.php");
 
-                    })
-                });
+                })
+            });
             </script>
 
             <script>
-                $(function() {
-                    $('#submit').click(function(e) {
+            $(function() {
+                $('#submit').click(function(e) {
 
 
-                        var valid = this.form.checkValidity();
+                    var valid = this.form.checkValidity();
 
-                        if (valid) {
-                            var id = <?php
+                    if (valid) {
+                        var id = <?php
 
                                         $userid = $_SESSION['userlogin']['id'];
                                         echo $userid
                                         ?>;
-                            let IletisimEngeli = $("input[name='IletisimEngeli']:checked").val();
-                            let IletisimEngeliDiger = $("input[type='radio'][name='IletisimEngeliDiger']").val();
-                            let refakatci = $("input[type='radio'][name='refakatci']:checked").val();
-                            let refakatciDiger = $("input[type='radio'][name='refakatciDiger']").val();
-                            let UlasmaSikinti = $("input[type='radio'][name='UlasmaSikinti']:checked").val();
-                            let UlasmaSikintiDiger = $("input[type='radio'][name='UlasmaSikintiDiger']").val();
-                            let PersonelleIletisim = $("input[type='radio'][name='PersonelleIletisim']:checked").val();
-                            let PersonelleIletisimDiger = $("input[type='radio'][name='PersonelleIletisimDiger']").val();
-                            let BakımaKatılma = $("input[type='radio'][name='BakımaKatılma']:checked").val();
-                            let İstekli1 = $("input[type='radio'][name='İstekli1']").val();
-                            let İsteksiz1 = $("input[type='radio'][name='İsteksiz1']").val();
-                            let İstekli = $("input[type='radio'][name='İstekli']").val();
-                            let İsteksiz = $("input[type='radio'][name='İsteksiz']").val();
-                            let TedaviyiKabullenme = $("input[type='radio'][name='TedaviyiKabullenme']:checked").val();
-                            let TedaviyiKabullenmeDiger = $("input[type='radio'][name='TedaviyiKabullenmeDiger']").val();
+                        let IletisimEngeli = $("input[name='IletisimEngeli']:checked").val();
+                        let IletisimEngeliDiger = $("input[type='radio'][name='IletisimEngeliDiger']")
+                            .val();
+                        let refakatci = $("input[type='radio'][name='refakatci']:checked").val();
+                        let refakatciDiger = $("input[type='radio'][name='refakatciDiger']").val();
+                        let UlasmaSikinti = $("input[type='radio'][name='UlasmaSikinti']:checked")
+                    .val();
+                        let UlasmaSikintiDiger = $("input[type='radio'][name='UlasmaSikintiDiger']")
+                            .val();
+                        let PersonelleIletisim = $(
+                            "input[type='radio'][name='PersonelleIletisim']:checked").val();
+                        let PersonelleIletisimDiger = $(
+                            "input[type='radio'][name='PersonelleIletisimDiger']").val();
+                        let BakımaKatılma = $("input[type='radio'][name='BakımaKatılma']:checked")
+                    .val();
+                        let İstekli1 = $("input[type='radio'][name='İstekli1']").val();
+                        let İsteksiz1 = $("input[type='radio'][name='İsteksiz1']").val();
+                        let İstekli = $("input[type='radio'][name='İstekli']").val();
+                        let İsteksiz = $("input[type='radio'][name='İsteksiz']").val();
+                        let TedaviyiKabullenme = $(
+                            "input[type='radio'][name='TedaviyiKabullenme']:checked").val();
+                        let TedaviyiKabullenmeDiger = $(
+                            "input[type='radio'][name='TedaviyiKabullenmeDiger']").val();
 
 
 
 
-                            e.preventDefault()
+                        e.preventDefault()
 
-                            $.ajax({
-                                type: 'POST',
-                                url: 'student-patient.php',
-                                data: {
-                                    IletisimEngeli: IletisimEngeli,
-                                    IletisimEngeliDiger: IletisimEngeliDiger,
-                                    refakatci: refakatci,
-                                    refakatciDiger: refakatciDiger,
-                                    UlasmaSikinti: UlasmaSikinti,
-                                    UlasmaSikintiDiger: UlasmaSikintiDiger,
-                                    PersonelleIletisim: PersonelleIletisim,
-                                    PersonelleIletisimDiger: PersonelleIletisimDiger,
-                                    BakımaKatılma: BakımaKatılma,
-                                    İstekli1: İstekli1,
-                                    İsteksiz1: İsteksiz1,
-                                    İstekli: İstekli,
-                                    İsteksiz: İsteksiz,
-                                    TedaviyiKabullenme: TedaviyiKabullenme,
-                                    TedaviyiKabullenmeDiger: TedaviyiKabullenmeDiger,
+                        $.ajax({
+                            type: 'POST',
+                            url: 'student-patient.php',
+                            data: {
+                                IletisimEngeli: IletisimEngeli,
+                                IletisimEngeliDiger: IletisimEngeliDiger,
+                                refakatci: refakatci,
+                                refakatciDiger: refakatciDiger,
+                                UlasmaSikinti: UlasmaSikinti,
+                                UlasmaSikintiDiger: UlasmaSikintiDiger,
+                                PersonelleIletisim: PersonelleIletisim,
+                                PersonelleIletisimDiger: PersonelleIletisimDiger,
+                                BakımaKatılma: BakımaKatılma,
+                                İstekli1: İstekli1,
+                                İsteksiz1: İsteksiz1,
+                                İstekli: İstekli,
+                                İsteksiz: İsteksiz,
+                                TedaviyiKabullenme: TedaviyiKabullenme,
+                                TedaviyiKabullenmeDiger: TedaviyiKabullenmeDiger,
 
-                                },
-                                success: function(data) {
-                                    alert("Success");
-                                    location.reload(true)
-                                },
-                                error: function(data) {
-                                    Swal.fire({
-                                        'title': 'Errors',
-                                        'text': 'There were errors',
-                                        'type': 'error'
-                                    })
-                                }
-                            })
+                            },
+                            success: function(data) {
+                                alert("Success");
+                                location.reload(true)
+                            },
+                            error: function(data) {
+                                Swal.fire({
+                                    'title': 'Errors',
+                                    'text': 'There were errors',
+                                    'type': 'error'
+                                })
+                            }
+                        })
 
 
 
-                        }
-                    })
+                    }
+                })
 
-                });
+            });
             </script>
             <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>

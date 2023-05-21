@@ -1,18 +1,32 @@
 #broadcast-container {
     display: none;
     background-color: white;
-    width: 80%;
-    padding: 50px;
+    width: 90%;
+    padding: 20px;
     margin: 0 auto;
+
+
+    border-radius: 15px;
+    box-shadow: 40px 40px 40px 40px rgb(112 144 176 / 18%);
 }
 
 #multicast-container {
     display: none;
     background-color: white;
-    width: 80%;
-    padding: 50px;
+    width: 90%;
+    padding: 20px;
     margin: 0 auto;
     margin-top: 50px;
+
+
+
+    border-radius: 15px;
+    box-shadow: 40px 40px 40px 40px rgb(112 144 176 / 18%);
+}
+
+.mt-5 {
+    padding: 20px !important;
+
 }
 
 #student-selection-container {

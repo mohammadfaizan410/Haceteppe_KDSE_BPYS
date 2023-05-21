@@ -139,251 +139,255 @@ if (isset($_GET['logout'])) {
             </div> -->
     </div>
     <script>
+    $(function() {
+        $.ajaxSetup({
+            cache: false
+        }); // disable caching for all requests.
+
+        // RAW Text/Html data from a file
+        var i = 0;
+        $("#form-content").load("./formlar/ozgecmis.php");
+
+        $("#next-btn").on("click", function(e) {
+            console.log("nexxttt");
+            console.log(i);
+
+            e.preventDefault();
+            if (i <= 25 && i >= 0) {
+                i += 1;
+                if (i == 0) {
+                    $("#form-content").load("<?php echo $base_url; ?>/formlar/ozgecmis.php");
+                }
+                if (i == 1) {
+                    $("#form-content").load(
+                        "<?php echo $base_url; ?>/formlar/aldigicikardigiizlemi_form11.php");
+
+                }
+                if (i == 2) {
+                    $("#form-content").load("<?php echo $base_url; ?>/formlar/beslenmeGereksinimi.php");
+                }
+                if (i == 3) {
+                    $("#form-content").load("<?php echo $base_url; ?>/formlar/bosaltimform.php");
+                }
+                if (i == 4) {
+                    $("#form-content").load("<?php echo $base_url; ?>/formlar/hareketForm1.php");
+                }
+                if (i == 5) {
+                    $("#form-content").load("<?php echo $base_url; ?>/formlar/uykuForm1.php");
+                }
+                if (i == 6) {
+                    $("#form-content").load("<?php echo $base_url; ?>/formlar/vucuduTemizForm1.php");
+                }
+                if (i == 7) {
+                    $("#form-content").load("<?php echo $base_url; ?>/formlar/kateterForm1.php");
+                }
+                if (i == 8) {
+                    $("#form-content").load("<?php echo $base_url; ?>/formlar/iletisimForm1.php");
+                }
+                if (i == 9) {
+                    $("#form-content").load("<?php echo $base_url; ?>/formlar/calismaForm1.php");
+                }
+                if (i == 10) {
+                    $("#form-content").load("<?php echo $base_url; ?>/formlar/egitimForm1.php");
+                }
+                if (i == 11) {
+                    $("#form-content").load("<?php echo $base_url; ?>/formlar/Form2.php");
+                }
+                if (i == 12) {
+                    $("#form-content").load("<?php echo $base_url; ?>/formlar/Form3.php");
+                }
+                if (i == 13) {
+                    $("#form-content").load("<?php echo $base_url; ?>/formlar/Form4.php");
+                }
+                if (i == 14) {
+                    $("#form-content").load("<?php echo $base_url; ?>/formlar/Form5.php");
+                }
+                if (i == 15) {
+                    $("#form-content").load("<?php echo $base_url; ?>/formlar/Form6.php");
+                }
+
+                if (i == 16) {
+                    $("#form-content").load("<?php echo $base_url; ?>/formlar/Form7.php");
+                }
+                if (i == 17) {
+                    $("#form-content").load("<?php echo $base_url; ?>/formlar/Form8.php");
+                }
+                if (i == 18) {
+                    $("#form-content").load("<?php echo $base_url; ?>/formlar/siviizlem.php");
+                }
+                if (i == 19) {
+                    $("#form-content").load("<?php echo $base_url; ?>/formlar/bakimplani.php");
+                }
+                if (i == 20) {
+                    $("#form-content").load(
+                        "<?php echo $base_url; ?>/formlar/gunlukbakimuygulamalari.php");
+                }
+                if (i == 21) {
+                    $("#form-content").load("<?php echo $base_url; ?>/formlar/medikaltedavi.php");
+                }
+                if (i == 22) {
+                    $("#form-content").load(
+                        "<?php echo $base_url; ?>/formlar/tetkiksonuclari_form9.php");
+                }
+                if (i == 23) {
+                    $("#form-content").load(
+                        "<?php echo $base_url; ?>/formlar/yasamsalbulgutakibi_form10.php");
+                }
+                if (i == 24) {
+                    $("#form-content").load("<?php echo $base_url; ?>/formlar/solunumgereksinimi.php");
+                }
+                window.scrollTo(0, 0)
+            }
+        })
+
+        $("#prev-btn").on("click", function(e) {
+            console.log("prevv");
+            console.log(i);
+            e.preventDefault();
+            if (i <= 25 && i > 0) {
+                i -= 1;
+                if (i == 0) {
+                    $("#form-content").load("./formlar/ozgecmis.php");
+                }
+                if (i == 1) {
+                    $("#form-content").load("./formlar/aldigicikardigiizlemi_form11.php");
+
+                }
+                if (i == 2) {
+                    $("#form-content").load("./formlar/beslenmeGereksinimi.php");
+                }
+                if (i == 3) {
+                    $("#form-content").load("./formlar/bosaltimform.php");
+                }
+                if (i == 4) {
+                    $("#form-content").load("./formlar/hareketForm1.php");
+                }
+                if (i == 5) {
+                    $("#form-content").load("./formlar/uykuForm1.php");
+                }
+                if (i == 6) {
+                    $("#form-content").load("./formlar/vucuduTemizForm1.php");
+                }
+                if (i == 7) {
+                    $("#form-content").load("./formlar/kateterForm1.php");
+                }
+                if (i == 8) {
+                    $("#form-content").load("./formlar/iletisimForm1.php");
+                }
+                if (i == 9) {
+                    $("#form-content").load("./formlar/calismaForm1.php");
+                }
+                if (i == 10) {
+                    $("#form-content").load("./formlar/egitimForm1.php");
+                }
+                if (i == 11) {
+                    $("#form-content").load("./formlar/Form2.php");
+                }
+                if (i == 12) {
+                    $("#form-content").load("./formlar/Form3.php");
+                }
+                if (i == 13) {
+                    $("#form-content").load("./formlar/Form4.php");
+                }
+                if (i == 14) {
+                    $("#form-content").load("./formlar/Form5.php");
+                }
+                if (i == 15) {
+                    $("#form-content").load("./formlar/Form6.php");
+                }
+
+                if (i == 16) {
+                    $("#form-content").load("./formlar/Form7.php");
+                }
+                if (i == 17) {
+                    $("#form-content").load("./formlar/Form8.php");
+                }
+                if (i == 18) {
+                    $("#form-content").load("./formlar/siviizlem.php");
+                }
+                if (i == 19) {
+                    $("#form-content").load("./formlar/bakimplani.php");
+                }
+                if (i == 20) {
+                    $("#form-content").load("./formlar/gunlukbakimuygulamalari.php");
+                }
+                if (i == 21) {
+                    $("#form-content").load("./formlar/medikaltedavi.php");
+                }
+                if (i == 22) {
+                    $("#form-content").load("./formlar/tetkiksonuclari_form9.php");
+                }
+                if (i == 23) {
+                    $("#form-content").load("./formlar/yasamsalbulgutakibi_form10.php");
+                }
+                if (i == 24) {
+                    $("#form-content").load("./formlar/solunumgereksinimi.php");
+                }
+                window.scrollTo(0, 0)
+            } else if (i < 0) {
+                alert("geri gidemezsiniz")
+            }
+        })
         $(function() {
-            $.ajaxSetup({
-                cache: false
-            }); // disable caching for all requests.
-
-            // RAW Text/Html data from a file
-            var i = 0;
-            $("#form-content").load("./formlar/ozgecmis.php");
-
-            $("#next-btn").on("click", function(e) {
-                console.log("nexxttt");
-                console.log(i);
-
+            $("a.form-items").on("click", function(e) {
                 e.preventDefault();
-                if (i <= 25 && i >= 0) {
-                    i += 1;
-                    if (i == 0) {
-                        $("#form-content").load("<?php echo $base_url; ?>/formlar/ozgecmis.php");
-                    }
-                    if (i == 1) {
-                        $("#form-content").load("<?php echo $base_url; ?>/formlar/aldigicikardigiizlemi_form11.php");
-
-                    }
-                    if (i == 2) {
-                        $("#form-content").load("<?php echo $base_url; ?>/formlar/beslenmeGereksinimi.php");
-                    }
-                    if (i == 3) {
-                        $("#form-content").load("<?php echo $base_url; ?>/formlar/bosaltimform.php");
-                    }
-                    if (i == 4) {
-                        $("#form-content").load("<?php echo $base_url; ?>/formlar/hareketForm1.php");
-                    }
-                    if (i == 5) {
-                        $("#form-content").load("<?php echo $base_url; ?>/formlar/uykuForm1.php");
-                    }
-                    if (i == 6) {
-                        $("#form-content").load("<?php echo $base_url; ?>/formlar/vucuduTemizForm1.php");
-                    }
-                    if (i == 7) {
-                        $("#form-content").load("<?php echo $base_url; ?>/formlar/kateterForm1.php");
-                    }
-                    if (i == 8) {
-                        $("#form-content").load("<?php echo $base_url; ?>/formlar/iletisimForm1.php");
-                    }
-                    if (i == 9) {
-                        $("#form-content").load("<?php echo $base_url; ?>/formlar/calismaForm1.php");
-                    }
-                    if (i == 10) {
-                        $("#form-content").load("<?php echo $base_url; ?>/formlar/egitimForm1.php");
-                    }
-                    if (i == 11) {
-                        $("#form-content").load("<?php echo $base_url; ?>/formlar/Form2.php");
-                    }
-                    if (i == 12) {
-                        $("#form-content").load("<?php echo $base_url; ?>/formlar/Form3.php");
-                    }
-                    if (i == 13) {
-                        $("#form-content").load("<?php echo $base_url; ?>/formlar/Form4.php");
-                    }
-                    if (i == 14) {
-                        $("#form-content").load("<?php echo $base_url; ?>/formlar/Form5.php");
-                    }
-                    if (i == 15) {
-                        $("#form-content").load("<?php echo $base_url; ?>/formlar/Form6.php");
-                    }
-
-                    if (i == 16) {
-                        $("#form-content").load("<?php echo $base_url; ?>/formlar/Form7.php");
-                    }
-                    if (i == 17) {
-                        $("#form-content").load("<?php echo $base_url; ?>/formlar/Form8.php");
-                    }
-                    if (i == 18) {
-                        $("#form-content").load("<?php echo $base_url; ?>/formlar/siviizlem.php");
-                    }
-                    if (i == 19) {
-                        $("#form-content").load("<?php echo $base_url; ?>/formlar/bakimplani.php");
-                    }
-                    if (i == 20) {
-                        $("#form-content").load("<?php echo $base_url; ?>/formlar/gunlukbakimuygulamalari.php");
-                    }
-                    if (i == 21) {
-                        $("#form-content").load("<?php echo $base_url; ?>/formlar/medikaltedavi.php");
-                    }
-                    if (i == 22) {
-                        $("#form-content").load("<?php echo $base_url; ?>/formlar/tetkiksonuclari_form9.php");
-                    }
-                    if (i == 23) {
-                        $("#form-content").load("<?php echo $base_url; ?>/formlar/yasamsalbulgutakibi_form10.php");
-                    }
-                    if (i == 24) {
-                        $("#form-content").load("<?php echo $base_url; ?>/formlar/solunumgereksinimi.php");
-                    }
-                    window.scrollTo(0, 0)
-                }
+                $("#content").load(this.href);
             })
+        })
 
-            $("#prev-btn").on("click", function(e) {
-                console.log("prevv");
-                console.log(i);
-                e.preventDefault();
-                if (i <= 25 && i > 0) {
-                    i -= 1;
-                    if (i == 0) {
-                        $("#form-content").load("./formlar/ozgecmis.php");
-                    }
-                    if (i == 1) {
-                        $("#form-content").load("./formlar/aldigicikardigiizlemi_form11.php");
-
-                    }
-                    if (i == 2) {
-                        $("#form-content").load("./formlar/beslenmeGereksinimi.php");
-                    }
-                    if (i == 3) {
-                        $("#form-content").load("./formlar/bosaltimform.php");
-                    }
-                    if (i == 4) {
-                        $("#form-content").load("./formlar/hareketForm1.php");
-                    }
-                    if (i == 5) {
-                        $("#form-content").load("./formlar/uykuForm1.php");
-                    }
-                    if (i == 6) {
-                        $("#form-content").load("./formlar/vucuduTemizForm1.php");
-                    }
-                    if (i == 7) {
-                        $("#form-content").load("./formlar/kateterForm1.php");
-                    }
-                    if (i == 8) {
-                        $("#form-content").load("./formlar/iletisimForm1.php");
-                    }
-                    if (i == 9) {
-                        $("#form-content").load("./formlar/calismaForm1.php");
-                    }
-                    if (i == 10) {
-                        $("#form-content").load("./formlar/egitimForm1.php");
-                    }
-                    if (i == 11) {
-                        $("#form-content").load("./formlar/Form2.php");
-                    }
-                    if (i == 12) {
-                        $("#form-content").load("./formlar/Form3.php");
-                    }
-                    if (i == 13) {
-                        $("#form-content").load("./formlar/Form4.php");
-                    }
-                    if (i == 14) {
-                        $("#form-content").load("./formlar/Form5.php");
-                    }
-                    if (i == 15) {
-                        $("#form-content").load("./formlar/Form6.php");
-                    }
-
-                    if (i == 16) {
-                        $("#form-content").load("./formlar/Form7.php");
-                    }
-                    if (i == 17) {
-                        $("#form-content").load("./formlar/Form8.php");
-                    }
-                    if (i == 18) {
-                        $("#form-content").load("./formlar/siviizlem.php");
-                    }
-                    if (i == 19) {
-                        $("#form-content").load("./formlar/bakimplani.php");
-                    }
-                    if (i == 20) {
-                        $("#form-content").load("./formlar/gunlukbakimuygulamalari.php");
-                    }
-                    if (i == 21) {
-                        $("#form-content").load("./formlar/medikaltedavi.php");
-                    }
-                    if (i == 22) {
-                        $("#form-content").load("./formlar/tetkiksonuclari_form9.php");
-                    }
-                    if (i == 23) {
-                        $("#form-content").load("./formlar/yasamsalbulgutakibi_form10.php");
-                    }
-                    if (i == 24) {
-                        $("#form-content").load("./formlar/solunumgereksinimi.php");
-                    }
-                    window.scrollTo(0, 0)
-                } else if (i < 0) {
-                    alert("geri gidemezsiniz")
-                }
-            })
-            $(function() {
-                $("a.form-items").on("click", function(e) {
-                    e.preventDefault();
-                    $("#content").load(this.href);
-                })
-            })
-
-        });
+    });
     </script>
     <script>
-        $(function() {
-            $('#submit').click(function(e) {
+    $(function() {
+        $('#submit').click(function(e) {
 
 
-                var valid = this.form.checkValidity();
+            var valid = this.form.checkValidity();
 
-                if (valid) {
-                    var id = <?php
+            if (valid) {
+                var id = <?php
 
                                 $userid = $_SESSION['userlogin']['id'];
                                 echo $userid
                                 ?>;
-                    var name = $('#name').val();
-                    var surname = $('#surname').val();
-                    var age = $('#age').val();
-                    var not = $('#not').val();
+                var name = $('#name').val();
+                var surname = $('#surname').val();
+                var age = $('#age').val();
+                var not = $('#not').val();
 
 
-                    e.preventDefault()
+                e.preventDefault()
 
-                    $.ajax({
-                        type: 'POST',
-                        url: 'student-patient.php',
-                        data: {
-                            id: id,
-                            name: name,
-                            surname: surname,
-                            age: age,
-                            not: not
+                $.ajax({
+                    type: 'POST',
+                    url: 'student-patient.php',
+                    data: {
+                        id: id,
+                        name: name,
+                        surname: surname,
+                        age: age,
+                        not: not
 
-                        },
-                        success: function(data) {
-                            alert("Success");
-                            location.reload(true)
-                        },
-                        error: function(data) {
-                            Swal.fire({
-                                'title': 'Errors',
-                                'text': 'There were errors',
-                                'type': 'error'
-                            })
-                        }
-                    })
+                    },
+                    success: function(data) {
+                        alert("Başarılı");
+                        location.reload(true)
+                    },
+                    error: function(data) {
+                        Swal.fire({
+                            'title': 'Errors',
+                            'text': 'There were errors',
+                            'type': 'error'
+                        })
+                    }
+                })
 
 
 
-                }
-            })
+            }
+        })
 
-        });
+    });
     </script>
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

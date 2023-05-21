@@ -36,19 +36,6 @@ if ($result) {
     <link href="img/favicon.ico" rel="icon">
 
 
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="../bootstrap.min.css" rel="stylesheet">
-
     <!-- Template Stylesheet -->
     <link href="../style.css" rel="stylesheet">
 
@@ -77,11 +64,11 @@ if ($result) {
                             <input type="text" class="form-control" required name="patient_id" id="diger" placeholder="Patient ID" value="<?php echo $form5[0]['patient_id']; ?>" disabled>
                         </div>
 
-                        <div class="input-section-item" style="justify-content:space-between; padding: 5%">
+                        <div class="input-section-item" style="">
                             <p class="usernamelabel" style="font-weight: bold;">Gözleri Açabilme</p>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between; padding-inline: 15% 15%;">
+                        <div class="input-section d-flex" style="">
                             <p class="usernamelabel">Spontan Açabiliyor:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="GözleriAçabilme" id="GözleriAçabilme1" value="4">
@@ -91,7 +78,7 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between; padding-inline: 15% 15%;">
+                        <div class="input-section d-flex" style="">
                             <p class="usernamelabel">Sözel Emirle Açabiliyor:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="GözleriAçabilme" id="GözleriAçabilme2" value="3">
@@ -101,7 +88,7 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between; padding-inline: 15% 15%;">
+                        <div class="input-section d-flex" style="">
                             <p class="usernamelabel">Ağrılı Uyaranla Açabiliyor:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="GözleriAçabilme" id="GözleriAçabilme3" value="2">
@@ -111,7 +98,7 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between; padding-inline: 15% 15%;">
+                        <div class="input-section d-flex" style="">
                             <p class="usernamelabel">Açmıyor:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="GözleriAçabilme" id="GözleriAçabilme4" value="1">
@@ -125,7 +112,7 @@ if ($result) {
                             <p class="usernamelabel" style="font-weight: bold;">Motor Cevap</p>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between; padding-inline: 15% 15%;">
+                        <div class="input-section d-flex" style="">
                             <p class="usernamelabel">Emirler Uyuyor:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="MotorCevap" id="MotorCevap1" value="6">
@@ -135,7 +122,7 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between; padding-inline: 15% 15%;">
+                        <div class="input-section d-flex" style="">
                             <p class="usernamelabel">Ağrıya lokalize (Ağrılı uyaranı uzaklaştırmaya çalışıyor):</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="MotorCevap" id="MotorCevap2" value="5">
@@ -145,7 +132,7 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between; padding-inline: 15% 15%;">
+                        <div class="input-section d-flex" style="">
                             <p class="usernamelabel">Çekme (Ekstremitesini ağrılı uyarandan uzaklaştırmaya/çekmeye
                                 çalışıyor):</p>
                             <div class="form-check">
@@ -156,7 +143,7 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between; padding-inline: 15% 15%;">
+                        <div class="input-section d-flex" style="">
                             <p class="usernamelabel">Fleksiyon (Dekortike duruş):</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="MotorCevap" id="MotorCevap4" value="3">
@@ -166,7 +153,7 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between; padding-inline: 15% 15%;">
+                        <div class="input-section d-flex" style="">
                             <p class="usernamelabel">Ekstansiyon (Deserebre duruş):</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="MotorCevap" id="MotorCevap5" value="2">
@@ -176,7 +163,7 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between; padding-inline: 15% 15%;">
+                        <div class="input-section d-flex" style="">
                             <p class="usernamelabel">Tepki yok :</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="MotorCevap" id="MotorCevap6" value="1">
@@ -190,7 +177,7 @@ if ($result) {
                             <p class="usernamelabel" style="font-weight: bold;">Sözel Tepki</p>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between; padding-inline: 15% 15%;">
+                        <div class="input-section d-flex" style="">
                             <p class="usernamelabel">Oryante:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="SözelTepki" id="SözelTepki1" value="5">
@@ -200,7 +187,7 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between; padding-inline: 15% 15%;">
+                        <div class="input-section d-flex" style="">
                             <p class="usernamelabel">Konfüze (Cümle kuruyor ancak yanıtlar yanlış):</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="SözelTepki" id="SözelTepki2" value="4">
@@ -210,7 +197,7 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between; padding-inline: 15% 15%;">
+                        <div class="input-section d-flex" style="">
                             <p class="usernamelabel">Uygunsuz cümleler (Bir ya da daha fazla yanlış yanıt):</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="SözelTepki" id="SözelTepki3" value="3">
@@ -220,7 +207,7 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between; padding-inline: 15% 15%;">
+                        <div class="input-section d-flex" style="">
                             <p class="usernamelabel">Anlamsız sesler (Hasta mırıldanıyor, inliyor):</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="SözelTepki" id="SözelTepki4" value="2">
@@ -230,7 +217,7 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between; padding-inline: 15% 15%;">
+                        <div class="input-section d-flex" style="">
                             <p class="usernamelabel">Tepki yok:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="SözelTepki" id="SözelTepki5" value="1">
@@ -240,7 +227,7 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between; padding-inline: 15% 15%;">
+                        <div class="input-section d-flex" style="">
                             <p class="usernamelabel" style="font-weight: bold;">Toplam:
                                 <?php echo $form5[0]['total']; ?></p>
                             <div class="form-check">

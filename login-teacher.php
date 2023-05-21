@@ -34,11 +34,11 @@ session_start();
                 <h1 class="header">KDSE-BPYS</h1>
                 <h2 class="login">Hemşire Girişi</h2>
 
-                <p class="labels">Mail</p>
-                <input type="text" required name="email" id="email" placeholder="Mail Giriniz">
+                <p class="labels">E-Posta</p>
+                <input type="text" required name="email" id="email" placeholder="E-Posta Giriniz">
                 <p class="labels">Şifre</p>
                 <input type="password" name="password" id="password" required placeholder="Şifre Giriniz">
-                <input type="submit" name="submit" id="login" value="Login">
+                <input type="submit" name="submit" id="login" value="Giriş Yap">
                 <a href="main.php" class="lower-buttons" style="padding-top:10px"><i class="gg-arrow-left-o" style="margin: 0; margin-right: 20px;"></i>Ana Sayfaya Dön</a>
         </form>
 

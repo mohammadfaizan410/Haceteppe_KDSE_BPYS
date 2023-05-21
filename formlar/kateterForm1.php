@@ -25,17 +25,6 @@ if (isset($_GET['logout'])) {
     <link href="img/favicon.ico" rel="icon">
 
 
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="bootstrap.min.css" rel="stylesheet">
-
     <!-- Template Stylesheet -->
     <link href="style.css" rel="stylesheet">
 
@@ -75,7 +64,8 @@ if (isset($_GET['logout'])) {
 
                         <div class="checkboxes w-25">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="venöz_kateter" id="venöz_kateter" value="Periferik venöz kateter ">
+                                <input class="form-check-input" type="radio" name="venöz_kateter" id="venöz_kateter"
+                                    value="Periferik venöz kateter ">
                                 <label class="form-check-label" for="venöz_kateter">
                                     <span class="checkbox-header">Periferik venöz kateter </span>
                                 </label>
@@ -91,7 +81,8 @@ if (isset($_GET['logout'])) {
 
                         <div class="checkboxes w-25">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="venöz_kateter" id="venöz_kateter" value="Santral venöz kateter">
+                                <input class="form-check-input" type="radio" name="venöz_kateter" id="venöz_kateter"
+                                    value="Santral venöz kateter">
                                 <label class="form-check-label" for="venöz_kateter">
                                     <span class="checkbox-header">Santral venöz kateter </span>
                                 </label>
@@ -107,7 +98,8 @@ if (isset($_GET['logout'])) {
 
                         <div class="checkboxes w-25">
                             <div class="form-check ">
-                                <input class="form-check-input" type="radio" name="venöz_kateter" id="venöz_kateter" value="option1">
+                                <input class="form-check-input" type="radio" name="venöz_kateter" id="venöz_kateter"
+                                    value="option1">
                                 <label class="form-check-label" for="venöz_kateter">
                                     <span class="checkbox-header">Dren </span>
                                 </label>
@@ -123,7 +115,8 @@ if (isset($_GET['logout'])) {
 
                         <div class="checkboxes w-25">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="venöz_kateter" id="venöz_kateter" value="Diğer">
+                                <input class="form-check-input" type="radio" name="venöz_kateter" id="venöz_kateter"
+                                    value="Diğer">
                                 <label class="form-check-label" for="venöz_kateter">
                                     <span class="checkbox-header">Diğer</span>
                                 </label>
@@ -137,83 +130,84 @@ if (isset($_GET['logout'])) {
             </div>
 
             <script>
-                $(function() {
-                    $('#closeBtn').click(function(e) {
-                        $("#content").load("formlar-student.php");
+            $(function() {
+                $('#closeBtn').click(function(e) {
+                    $("#content").load("formlar-student.php");
 
-                    })
-                });
+                })
+            });
             </script>
 
             <script>
-                $(function() {
-                    $('#submit').click(function(e) {
+            $(function() {
+                $('#submit').click(function(e) {
 
 
-                        var valid = this.form.checkValidity();
+                    var valid = this.form.checkValidity();
 
-                        if (valid) {
-                            var id = <?php
+                    if (valid) {
+                        var id = <?php
 
                                         $userid = $_SESSION['userlogin']['id'];
                                         echo $userid
                                         ?>;
-                            let venöz_kateter = $("input[name='venöz_kateter']:checked").val();
-                            let PYeri = $("input[type='radio'][name='PYeri']").val();
-                            let PSayısı = $("input[type='radio'][name='PSayısı']").val();
-                            let PTakılmaTarihi = $("input[type='radio'][name='PTakılmaTarihi']").val();
-                            let SYeri = $("input[type='radio'][name='SYeri']").val();
-                            let SSayısı = $("input[type='radio'][name='SSayısı']").val();
-                            let STakılmaTarihi = $("input[type='radio'][name='STakılmaTarihi']").val();
-                            let DYeri = $("input[type='radio'][name='DYeri']").val();
-                            let DSayısı = $("input[type='radio'][name='DSayısı']").val();
-                            let DTakılmaTarihi = $("input[type='radio'][name='DTakılmaTarihi']").val();
-                            let DigerYeri = $("input[type='radio'][name='DigerYeri']").val();
-                            let DigerSayısı = $("input[type='radio'][name='DigerSayısı']").val();
-                            let DigerTakılmaTarihi = $("input[type='radio'][name='DigerTakılmaTarihi']").val();
+                        let venöz_kateter = $("input[name='venöz_kateter']:checked").val();
+                        let PYeri = $("input[type='radio'][name='PYeri']").val();
+                        let PSayısı = $("input[type='radio'][name='PSayısı']").val();
+                        let PTakılmaTarihi = $("input[type='radio'][name='PTakılmaTarihi']").val();
+                        let SYeri = $("input[type='radio'][name='SYeri']").val();
+                        let SSayısı = $("input[type='radio'][name='SSayısı']").val();
+                        let STakılmaTarihi = $("input[type='radio'][name='STakılmaTarihi']").val();
+                        let DYeri = $("input[type='radio'][name='DYeri']").val();
+                        let DSayısı = $("input[type='radio'][name='DSayısı']").val();
+                        let DTakılmaTarihi = $("input[type='radio'][name='DTakılmaTarihi']").val();
+                        let DigerYeri = $("input[type='radio'][name='DigerYeri']").val();
+                        let DigerSayısı = $("input[type='radio'][name='DigerSayısı']").val();
+                        let DigerTakılmaTarihi = $("input[type='radio'][name='DigerTakılmaTarihi']")
+                            .val();
 
 
 
-                            e.preventDefault()
+                        e.preventDefault()
 
-                            $.ajax({
-                                type: 'POST',
-                                url: 'student-patient.php',
-                                data: {
-                                    venöz_kateter: venöz_kateter,
-                                    PYeri: PYeri,
-                                    PSayısı: PSayısı,
-                                    PTakılmaTarihi: PTakılmaTarihi,
-                                    SYeri: SYeri,
-                                    SSayısı: SSayısı,
-                                    STakılmaTarihi: STakılmaTarihi,
-                                    DYeri: DYeri,
-                                    DSayısı: DSayısı,
-                                    DTakılmaTarihi: DTakılmaTarihi,
-                                    DigerYeri: DigerYeri,
-                                    DigerSayısı: DigerSayısı,
-                                    DigerTakılmaTarihi: DigerTakılmaTarihi
+                        $.ajax({
+                            type: 'POST',
+                            url: 'student-patient.php',
+                            data: {
+                                venöz_kateter: venöz_kateter,
+                                PYeri: PYeri,
+                                PSayısı: PSayısı,
+                                PTakılmaTarihi: PTakılmaTarihi,
+                                SYeri: SYeri,
+                                SSayısı: SSayısı,
+                                STakılmaTarihi: STakılmaTarihi,
+                                DYeri: DYeri,
+                                DSayısı: DSayısı,
+                                DTakılmaTarihi: DTakılmaTarihi,
+                                DigerYeri: DigerYeri,
+                                DigerSayısı: DigerSayısı,
+                                DigerTakılmaTarihi: DigerTakılmaTarihi
 
-                                },
-                                success: function(data) {
-                                    alert("Success");
-                                    location.reload(true)
-                                },
-                                error: function(data) {
-                                    Swal.fire({
-                                        'title': 'Errors',
-                                        'text': 'There were errors',
-                                        'type': 'error'
-                                    })
-                                }
-                            })
+                            },
+                            success: function(data) {
+                                alert("Başarılı");
+                                location.reload(true)
+                            },
+                            error: function(data) {
+                                Swal.fire({
+                                    'title': 'Errors',
+                                    'text': 'There were errors',
+                                    'type': 'error'
+                                })
+                            }
+                        })
 
 
 
-                        }
-                    })
+                    }
+                })
 
-                });
+            });
             </script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
             <script src="lib/chart/chart.min.js"></script>

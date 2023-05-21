@@ -26,9 +26,9 @@ if (isset($_POST)) {
         $stmt = $db->prepare("UPDATE tani16 
         SET update_date = ?, problem_info = ?, nurse_description = ?, noc_output = ?, noc_indicator = ?,noc_indicator2 = ?, noc_indicator_after=?, noc_indicator_after2=?,nurse_attempt = ?, nurse_education = ?, collaborative_applications = ?, evaluation = ?, matchedfields_string = ?
         WHERE patient_id = ?");
-        $result = $stmt->execute([$update_date, $problem_info, $nurse_description, $noc_output, $noc_indicator,$noc_indicator2,$noc_indicator_after,$noc_indicator_after2, $nurse_attempt, $nurse_education,$collaborative_applications, $evaluation, $matchedfields_string, $patient_id]);
+        $result = $stmt->execute([$update_date, $problem_info, $nurse_description, $noc_output, $noc_indicator, $noc_indicator2, $noc_indicator_after, $noc_indicator_after2, $nurse_attempt, $nurse_education, $collaborative_applications, $evaluation, $matchedfields_string, $patient_id]);
         if ($result) {
-            echo "Successfully updated!";
+            echo "Güncelleme Başarılı";
         } else {
             echo "Error: " . $stmt->errorInfo()[2];
         }
@@ -51,7 +51,7 @@ collaborative_applications,
 evaluation,
 matchedfields_string
 ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?)");
-        $result = $stmt->execute([$patient_id, $patient_name, $update_date, $problem_info, $nurse_description, $noc_output, $noc_indicator,$noc_indicator2, $noc_indicator_after,$noc_indicator_after2, $nurse_attempt, $nurse_education,$collaborative_applications, $evaluation, $matchedfields_string]);
+        $result = $stmt->execute([$patient_id, $patient_name, $update_date, $problem_info, $nurse_description, $noc_output, $noc_indicator, $noc_indicator2, $noc_indicator_after, $noc_indicator_after2, $nurse_attempt, $nurse_education, $collaborative_applications, $evaluation, $matchedfields_string]);
         if ($result) {
             echo "succesfully inserted!";
         } else {

@@ -38,12 +38,12 @@ require_once("config-students.php");
       <div class="login-box login-login" style='width : 50%;'>
 
         <h1 class="header">KDSE-BPYS</h1>
-        <h2 class="login">An email was sent to you, please enter the code</h2>
+        <h2 class="login">E-Posta gönderildi, lütfen kodu giriniz!</h2>
 
         <p class="labels">Kodu</p>
         <input type="text" required name="code" id="code" placeholder="enter code">
         <input type="submit" name="submit" id="validate" value="Giriş Yap">
-        <button class='btn btn-primary' id="sendEmail">Send again</button>
+        <button class='btn btn-primary' id="sendEmail">Tekrar Gönder</button>
         <a href="main.php" class="lower-buttons" style="padding-top:10px"><i class="gg-arrow-left-o" style="margin: 0; margin-right: 20px;"></i>Ana Sayfaya Dön</a>
       </div>
     </form>
@@ -55,7 +55,7 @@ require_once("config-students.php");
   <form action="" method="post">
     <div class="login-box login-signup" id="registrationForm">
       <h1 class="header">KDSE-BPYS</h1>
-      <h2 class="login">Sign Up as Student</h2>
+      <h2 class="login">Öğrenci Kaydı</h2>
 
       <p class="usernamelabel">İsim</p>
       <input type="text" required name="name" id="name" placeholder="İsim Giriniz">
@@ -63,8 +63,8 @@ require_once("config-students.php");
       <p class="usernamelabel">Soyisim</p>
       <input type="text" required name="surname" id="surname" placeholder="Soyisim Giriniz">
 
-      <p class="usernamelabel">E-mail</p>
-      <input type="email" required name="email" id="email" placeholder="E-mail Giriniz">
+      <p class="usernamelabel">E-Posta</p>
+      <input type="email" required name="email" id="email" placeholder="E-Posta Giriniz">
 
 
       <p class="passwordlabel">Şifre</p>
@@ -100,22 +100,22 @@ require_once("config-students.php");
     $("#error").text("");
     //check form validity
     if (name === "") {
-      $("#error").text("Name cannot be empty");
+      $("#error").text("Adı boş olamaz!");
     } else if (surname == "") {
-      $("#error").text("Surname cannot be empty");
+      $("#error").text("Soyadı boş olamaz!");
     } else if (email == "") {
-      $("#error").text("email cannot be empty");
+      $("#error").text("E-Posta boş olamaz!");
     } else if (!emailRegex.test(email)) {
-      $("#error").text("Email is not in correct format!");
+      $("#error").text("E-Posta doğru formatta değil!");
     } else if (password == "") {
-      $("#error").text("password fields cannot be empty");
+      $("#error").text("Şifre boş olamaz!");
     } else if (confirmPass == "") {
-      $("#error").text("Passowrd fields cannot be empty");
+      $("#error").text("Şifre boş olamaz!");
     } else if (confirmPass !== password) {
-      $("#error").text("Passowrds do not match");
+      $("#error").text("Şifreler eşleşmiyor!");
     } else if (confirmPass === password && !passRegex.test(password)) {
       $("#error").text(
-        "Passwords must contain one digit, one lowercase letter, one uppercase letter and be between 8 and 20 characters long"
+        "Şifre 1 sayı, 1 küçük harf, 1 büyük harf içermeli ve 8 ile 20 karakter uzunluğunda olmalı!"
       );
     } else {
       $.ajax({
@@ -126,7 +126,7 @@ require_once("config-students.php");
         },
         success: function(response) {
           if (response == 'exists') {
-            $("#error").text("The email you entered already exists!");
+            $("#error").text("Girdiğiniz e-posta zaten kayıtlı!");
           }
           //email dosent exist
           else {
@@ -143,7 +143,7 @@ require_once("config-students.php");
                 code = response;
               },
               error: function(response) {
-                alert("Error : server could not send email");
+                alert("Error : Server E-Posta Gönderemedi");
               }
             });
 
@@ -157,10 +157,12 @@ require_once("config-students.php");
                 },
                 success: function(response) {
                   code = response;
-                  alert("code sent again, check your email!");
+                  alert(
+                    "Kod tekrar yollandı, e-postanızı kontrol ediniz!"
+                  );
                 },
                 error: function(response) {
-                  alert("Error : server could not send email");
+                  alert("Error : Server E-Posta Gönderemedi");
                 }
               });
             });
@@ -188,7 +190,7 @@ require_once("config-students.php");
                   }
                 });
               } else {
-                alert("codes do not match!")
+                alert("Kodlar eşleşmiyor!")
               }
             });
           }

@@ -90,7 +90,8 @@ if (isset($_GET['logout'])) {
                 </div>
                 <div class="input-section d-flex">
                     <p class="usernamelabel">Açıklayınız:</p>
-                    <input type="text" class="form-control" required name="TedaviBasvurusuDiger" id="TedaviBasvurusuDiger">
+                    <input type="text" class="form-control" required name="TedaviBasvurusuDiger"
+                        id="TedaviBasvurusuDiger">
                 </div>
             </div>
 
@@ -102,70 +103,70 @@ if (isset($_GET['logout'])) {
 
 
     <script>
-        $(function() {
-            $('#closeBtn').click(function(e) {
-                $("#content").load("formlar-student.php");
+    $(function() {
+        $('#closeBtn').click(function(e) {
+            $("#content").load("formlar-student.php");
 
-            })
-        });
+        })
+    });
     </script>
 
     <script>
-        $(function() {
-            $('#submit').click(function(e) {
+    $(function() {
+        $('#submit').click(function(e) {
 
 
-                var valid = this.form.checkValidity();
+            var valid = this.form.checkValidity();
 
-                if (valid) {
-                    var id = <?php
+            if (valid) {
+                var id = <?php
 
                                 $userid = $_SESSION['userlogin']['id'];
                                 echo $userid
                                 ?>;
-                    var radio1 = $("input[name='radio1']:checked").val();
-                    let Konu = $("input[name='Konu']").val();
-                    let Nerden = $("input[name='Nerden']").val();
-                    let NeZaman = $("input[name='NeZaman']").val();
-                    let EgitimIstegi = $("input[name='EgitimIstegi']").val();
-                    let TedaviBasvurusu = $("input[name='TedaviBasvurusu']").val();
-                    let TedaviBasvurusuDiger = $("input[name='TedaviBasvurusuDiger']").val();
+                var radio1 = $("input[name='radio1']:checked").val();
+                let Konu = $("input[name='Konu']").val();
+                let Nerden = $("input[name='Nerden']").val();
+                let NeZaman = $("input[name='NeZaman']").val();
+                let EgitimIstegi = $("input[name='EgitimIstegi']").val();
+                let TedaviBasvurusu = $("input[name='TedaviBasvurusu']").val();
+                let TedaviBasvurusuDiger = $("input[name='TedaviBasvurusuDiger']").val();
 
 
-                    e.preventDefault()
+                e.preventDefault()
 
-                    $.ajax({
-                        type: 'POST',
-                        url: 'student-patient.php',
-                        data: {
-                            radio1: radio1,
-                            Konu: Konu,
-                            Nerden: Nerden,
-                            NeZaman: NeZaman,
-                            EgitimIstegi: EgitimIstegi,
-                            TedaviBasvurusu: TedaviBasvurusu,
-                            TedaviBasvurusuDiger: TedaviBasvurusuDiger
+                $.ajax({
+                    type: 'POST',
+                    url: 'student-patient.php',
+                    data: {
+                        radio1: radio1,
+                        Konu: Konu,
+                        Nerden: Nerden,
+                        NeZaman: NeZaman,
+                        EgitimIstegi: EgitimIstegi,
+                        TedaviBasvurusu: TedaviBasvurusu,
+                        TedaviBasvurusuDiger: TedaviBasvurusuDiger
 
-                        },
-                        success: function(data) {
-                            alert("Success");
-                            location.reload(true)
-                        },
-                        error: function(data) {
-                            Swal.fire({
-                                'title': 'Errors',
-                                'text': 'There were errors',
-                                'type': 'error'
-                            })
-                        }
-                    })
+                    },
+                    success: function(data) {
+                        alert("Başarılı");
+                        location.reload(true)
+                    },
+                    error: function(data) {
+                        Swal.fire({
+                            'title': 'Errors',
+                            'text': 'There were errors',
+                            'type': 'error'
+                        })
+                    }
+                })
 
 
 
-                }
-            })
+            }
+        })
 
-        });
+    });
     </script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>

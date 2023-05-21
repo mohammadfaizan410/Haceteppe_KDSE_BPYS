@@ -57,8 +57,8 @@ require_once("config-messages.php");
 
     ?>
     <h1 class="text-center mt-5 mb-5 form-header">Öğretmen veya Öğrenci Ara</h1>
-    <div class="searchbar d-flex justify-content-center align-items-center">
-        <input type="text" class="form-control w-50" placeholder="Mail ile öğretmen veya Öğrenci Sorgula" id="searchValue" aria-describedby="basic-addon1" maxlength = "100">
+    <div class="searchbar d-flex justify-content-center align-items-center" style="gap: 20px">
+        <input type="text" class="form-control w-50" placeholder="E-Posta ile Öğretmen veya Öğrenci Sorgula" id="searchValue" aria-describedby="basic-addon1" maxlength="100">
         <button class="btn btn-primary" id="submit-search" type="submit">Ara</button>
     </div>
     <div class="searchResults">

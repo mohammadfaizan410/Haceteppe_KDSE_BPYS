@@ -5,7 +5,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-
+    font-size: 14px;
     font-style: normal;
     text-decoration: none;
 }
@@ -112,7 +112,7 @@ h3 {
 }
 
 .navigation-wrapper {
-    width: 100%;
+    width: 90%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -135,6 +135,16 @@ h3 {
 
 .navigation-left {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hemsire-fakulte {
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: -25px;
 }
 
 .navigation-right {
@@ -185,11 +195,12 @@ h3 {
 
 .form-control {
     background-color: #d1d1d1 !important;
-    width: 50%;
+    width: 50% !important;
     align-self: center;
     border: 1px solid;
     border-color: #246174;
     box-shadow: 1px 1px 1px 1px #246174;
+
 }
 
 .not {
@@ -314,7 +325,7 @@ input[type="email"] {
 .patients-save-fields {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 100%;
 }
 
 .patients-table {
@@ -483,11 +494,10 @@ input[type="email"] {
 
 .closeBtn {
 
-    position: absolute;
     color: red;
     font-size: 50px;
-    right: 20px;
-    top: 0;
+    right: 50px;
+    top: 40px;
     cursor: pointer;
 
 }
@@ -599,10 +609,11 @@ input[type="email"] {
 
 .closehamburger {
     display: none;
-    position: relative;
+    position: absolute;
     color: red;
     font-size: 40px;
-    top: -50px;
+    top: 0px;
+    right: 50px;
     cursor: pointer;
 }
 
@@ -621,7 +632,123 @@ input[type="email"] {
     margin-top: -20px;
 }
 
-@media screen and (max-width: 900px) {
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    margin-right: auto;
+}
+
+.user-info-lower {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.red {
+    color: red !important;
+}
+
+.fa-comments-patient:before {
+    content: "\f4ff";
+}
+
+.entered-forms-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    min-height: 225px;
+    margin-bottom: 20px;
+}
+
+.entered-forms {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    justify-content: center;
+}
+
+.entered-forms-button {
+    color: white;
+    width: 60%;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    border-color: white;
+    border: 1px solid !important;
+    border-radius: 8px !important;
+    background-color: #345b66 !important;
+    box-shadow: 1px 7px 14px 3px rgba(0, 0, 0, 0.75);
+}
+
+.entered-forms-p {
+    margin: unset;
+}
+
+.entered-forms-header {
+    font-size: 24px;
+    margin-bottom: 30px !important;
+}
+
+.addtanı {
+    color: white;
+    width: 100%;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    border-color: white;
+    border: 1px solid !important;
+    border-radius: 8px;
+    background-color: #246174 !important;
+
+}
+
+.newForm {
+    color: black !important;
+    width: 60%;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    border-color: white;
+    border: 1px solid !important;
+    border-radius: 8px !important;
+    background-color: white !important;
+    box-shadow: 1px 7px 14px 3px rgba(0, 0, 0, 0.75);
+}
+
+.white {
+    color: white !important;
+}
+
+#broadcast-container {
+    display: none;
+    background-color: white;
+    width: 90%;
+    padding: 20px;
+    margin: 0 auto;
+
+
+    border-radius: 15px;
+    box-shadow: 40px 40px 40px 40px rgb(112 144 176 / 18%);
+}
+
+#multicast-container {
+    display: none;
+    background-color: white;
+    width: 90%;
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: 50px;
+
+
+
+    border-radius: 15px;
+    box-shadow: 40px 40px 40px 40px rgb(112 144 176 / 18%);
+}
+
+
+@media screen and (max-width: 768px) {
     .table-head {
         font-size: 14px;
     }
@@ -646,9 +773,17 @@ input[type="email"] {
     .d-block-resp {
         display: block;
     }
+
+    .user-info {
+        padding-left: 40px;
+    }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 768px) {
+    * {
+        font-size: 12px;
+    }
+
     .send-patient {
         padding: 20px;
     }
@@ -676,5 +811,31 @@ input[type="email"] {
 
     .form-control {
         font-size: 12px;
+    }
+
+    .table-title {
+        font-size: 18px;
+    }
+
+    .entered-forms-header {
+        font-size: 20px;
+        margin-bottom: 20px !important;
+    }
+
+    .entered-forms-p {
+        font-size: 12px;
+    }
+
+    .entered-forms-button {
+        color: white;
+        width: 80%;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        border-color: white;
+        border: 1px solid !important;
+        background-color: #345b66 !important;
+        box-shadow: 4px 2px 19px 0px rgba(0, 0, 0, 0.75);
+        margin: unset;
     }
 }

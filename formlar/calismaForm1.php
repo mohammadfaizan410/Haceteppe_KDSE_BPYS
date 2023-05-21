@@ -66,7 +66,8 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="DuzenliCalisma" id="DuzenliCalisma" value="Çalışmıyor">
+                            <input class="form-check-input" type="radio" name="DuzenliCalisma" id="DuzenliCalisma"
+                                value="Çalışmıyor">
                             <label class="form-check-label" for="DuzenliCalisma">
                                 <span class="checkbox-header">Çalışmıyor</span>
                             </label>
@@ -80,7 +81,8 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="DuzenliCalisma" id="DuzenliCalisma" value="Çalışıyor">
+                            <input class="form-check-input" type="radio" name="DuzenliCalisma" id="DuzenliCalisma"
+                                value="Çalışıyor">
                             <label class="form-check-label" for="DuzenliCalisma">
                                 <span class="checkbox-header">Çalışıyor </span>
                             </label>
@@ -122,13 +124,15 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="MeslekRiski" id="MeslekRiski" value="Yok">
+                            <input class="form-check-input" type="radio" name="MeslekRiski" id="MeslekRiski"
+                                value="Yok">
                             <label class="form-check-label" for="MeslekRiski">
                                 <span class="checkbox-header">Yok</span>
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="MeslekRiski" id="MeslekRiski" value="Var">
+                            <input class="form-check-input" type="radio" name="MeslekRiski" id="MeslekRiski"
+                                value="Var">
                             <label class="form-check-label" for="MeslekRiski">
                                 <span class="checkbox-header">Var: (Açıklayınız)</span>
                             </label>
@@ -142,11 +146,13 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="AileBireyleri" id="AileBireyleri" value="option1">
+                            <input class="form-check-input" type="radio" name="AileBireyleri" id="AileBireyleri"
+                                value="option1">
                             <label class="form-check-label" for="AileBireyleri">
                                 <span class="checkbox-header">Belirtiniz:</span>
                             </label>
-                            <input type="text" class="form-control diger" name="AileBireyleriDiger" id="AileBireyleriDiger">
+                            <input type="text" class="form-control diger" name="AileBireyleriDiger"
+                                id="AileBireyleriDiger">
                         </div>
                     </div>
                 </div>
@@ -156,7 +162,8 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="CocukSayisi" id="CocukSayisi" value="option1">
+                            <input class="form-check-input" type="radio" name="CocukSayisi" id="CocukSayisi"
+                                value="option1">
                             <label class="form-check-label" for="CocukSayisi">
                                 <span class="checkbox-header">Belirtiniz:</span>
                             </label>
@@ -181,41 +188,48 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes ">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="HastaneAktivite" id="HastaneAktivite" value="TV izleme">
+                            <input class="form-check-input" type="radio" name="HastaneAktivite" id="HastaneAktivite"
+                                value="TV izleme">
                             <label class="form-check-label" for="HastaneAktivite">
                                 <span class="checkbox-header">TV izleme</span>
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="HastaneAktivite" id="HastaneAktivite" value="Gazete, kitap, dergi vs. okuma">
+                            <input class="form-check-input" type="radio" name="HastaneAktivite" id="HastaneAktivite"
+                                value="Gazete, kitap, dergi vs. okuma">
                             <label class="form-check-label" for="HastaneAktivite">
                                 <span class="checkbox-header">Gazete, kitap, dergi vs. okuma </span>
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="HastaneAktivite" id="HastaneAktivite" value="Sohbet etme">
+                            <input class="form-check-input" type="radio" name="HastaneAktivite" id="HastaneAktivite"
+                                value="Sohbet etme">
                             <label class="form-check-label" for="HastaneAktivite">
                                 <span class="checkbox-header">Sohbet etme </span>
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="HastaneAktivite" id="HastaneAktivite" value="El işi vs">
+                            <input class="form-check-input" type="radio" name="HastaneAktivite" id="HastaneAktivite"
+                                value="El işi vs">
                             <label class="form-check-label" for="HastaneAktivite">
                                 <span class="checkbox-header">El işi vs </span>
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="HastaneAktivite" id="HastaneAktivite" value="Radyo dinleme">
+                            <input class="form-check-input" type="radio" name="HastaneAktivite" id="HastaneAktivite"
+                                value="Radyo dinleme">
                             <label class="form-check-label" for="HastaneAktivite">
                                 <span class="checkbox-header">Radyo dinleme </span>
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="HastaneAktivite" id="HastaneAktivite" value="Diğer">
+                            <input class="form-check-input" type="radio" name="HastaneAktivite" id="HastaneAktivite"
+                                value="Diğer">
                             <label class="form-check-label" for="HastaneAktivite">
                                 <span class="checkbox-header">Diğer: </span>
                             </label>
-                            <input type="text" class="form-control diger" name="HastaneAktiviteDiger" id="HastaneAktiviteDiger">
+                            <input type="text" class="form-control diger" name="HastaneAktiviteDiger"
+                                id="HastaneAktiviteDiger">
                         </div>
                     </div>
                 </div>
@@ -224,96 +238,96 @@ if (isset($_GET['logout'])) {
     </div>
 
     <script>
-        $(function() {
-            $('#closeBtn').click(function(e) {
-                $("#content").load("formlar-student.php");
+    $(function() {
+        $('#closeBtn').click(function(e) {
+            $("#content").load("formlar-student.php");
 
-            })
-        });
+        })
+    });
     </script>
 
     <script>
-        $(function() {
-            $('#closeBtn').click(function(e) {
-                $("#content").load("formlar-student.php");
+    $(function() {
+        $('#closeBtn').click(function(e) {
+            $("#content").load("formlar-student.php");
 
-            })
-        });
+        })
+    });
     </script>
 
     <script>
-        $(function() {
-            $('#submit').click(function(e) {
+    $(function() {
+        $('#submit').click(function(e) {
 
 
-                var valid = this.form.checkValidity();
+            var valid = this.form.checkValidity();
 
-                if (valid) {
-                    var id = <?php
+            if (valid) {
+                var id = <?php
 
                                 $userid = $_SESSION['userlogin']['id'];
                                 echo $userid
                                 ?>;
-                    let DuzenliCalisma = $("input[name='DuzenliCalisma']:checked").val();
-                    let CalismiyorSure = $("input[type='radio'][name='CalismiyorSure']").val();
-                    let CalisiyorSure = $("input[type='radio'][name='CalisiyorSure']").val();
-                    let IsIzni = $("input[type='radio'][name='IsIzni']:checked").val();
-                    let IsIzniDiger = $("input[type='radio'][name='IsIzniDiger']").val();
-                    let MeslekRiski = $("input[type='radio'][name='MeslekRiski']:checked").val();
-                    let MeslekRiskiDiger = $("input[type='radio'][name='MeslekRiskiDiger']").val();
-                    let AileBireyleri = $("input[type='radio'][name='AileBireyleri']:checked").val();
-                    let AileBireyleriDiger = $("input[type='radio'][name='AileBireyleriDiger']").val();
-                    let CocukSayisi = $("input[type='radio'][name='CocukSayisi']:checked").val();
-                    let CocukSayisiDiger = $("input[type='radio'][name='CocukSayisiDiger']").val();
-                    let AileRolu = $("input[type='radio'][name='AileRolu']").val();
-                    let Hobi = $("input[type='radio'][name='Hobi']").val();
-                    let HastaneAktivite = $("input[type='radio'][name='HastaneAktivite']:checked").val();
-                    let HastaneAktiviteDiger = $("input[type='radio'][name='HastaneAktiviteDiger']").val();
+                let DuzenliCalisma = $("input[name='DuzenliCalisma']:checked").val();
+                let CalismiyorSure = $("input[type='radio'][name='CalismiyorSure']").val();
+                let CalisiyorSure = $("input[type='radio'][name='CalisiyorSure']").val();
+                let IsIzni = $("input[type='radio'][name='IsIzni']:checked").val();
+                let IsIzniDiger = $("input[type='radio'][name='IsIzniDiger']").val();
+                let MeslekRiski = $("input[type='radio'][name='MeslekRiski']:checked").val();
+                let MeslekRiskiDiger = $("input[type='radio'][name='MeslekRiskiDiger']").val();
+                let AileBireyleri = $("input[type='radio'][name='AileBireyleri']:checked").val();
+                let AileBireyleriDiger = $("input[type='radio'][name='AileBireyleriDiger']").val();
+                let CocukSayisi = $("input[type='radio'][name='CocukSayisi']:checked").val();
+                let CocukSayisiDiger = $("input[type='radio'][name='CocukSayisiDiger']").val();
+                let AileRolu = $("input[type='radio'][name='AileRolu']").val();
+                let Hobi = $("input[type='radio'][name='Hobi']").val();
+                let HastaneAktivite = $("input[type='radio'][name='HastaneAktivite']:checked").val();
+                let HastaneAktiviteDiger = $("input[type='radio'][name='HastaneAktiviteDiger']").val();
 
 
 
-                    e.preventDefault()
+                e.preventDefault()
 
-                    $.ajax({
-                        type: 'POST',
-                        url: 'student-patient.php',
-                        data: {
-                            DuzenliCalisma: DuzenliCalisma,
-                            CalismiyorSure: CalismiyorSure,
-                            CalisiyorSure: CalisiyorSure,
-                            IsIzni: IsIzni,
-                            IsIzniDiger: IsIzniDiger,
-                            MeslekRiski: MeslekRiski,
-                            MeslekRiskiDiger: MeslekRiskiDiger,
-                            AileBireyleri: AileBireyleri,
-                            AileBireyleriDiger: AileBireyleriDiger,
-                            CocukSayisi: CocukSayisi,
-                            CocukSayisiDiger: CocukSayisiDiger,
-                            AileRolu: AileRolu,
-                            Hobi: Hobi,
-                            HastaneAktivite: HastaneAktivite,
-                            HastaneAktiviteDiger: HastaneAktiviteDiger
+                $.ajax({
+                    type: 'POST',
+                    url: 'student-patient.php',
+                    data: {
+                        DuzenliCalisma: DuzenliCalisma,
+                        CalismiyorSure: CalismiyorSure,
+                        CalisiyorSure: CalisiyorSure,
+                        IsIzni: IsIzni,
+                        IsIzniDiger: IsIzniDiger,
+                        MeslekRiski: MeslekRiski,
+                        MeslekRiskiDiger: MeslekRiskiDiger,
+                        AileBireyleri: AileBireyleri,
+                        AileBireyleriDiger: AileBireyleriDiger,
+                        CocukSayisi: CocukSayisi,
+                        CocukSayisiDiger: CocukSayisiDiger,
+                        AileRolu: AileRolu,
+                        Hobi: Hobi,
+                        HastaneAktivite: HastaneAktivite,
+                        HastaneAktiviteDiger: HastaneAktiviteDiger
 
-                        },
-                        success: function(data) {
-                            alert("Success");
-                            location.reload(true)
-                        },
-                        error: function(data) {
-                            Swal.fire({
-                                'title': 'Errors',
-                                'text': 'There were errors',
-                                'type': 'error'
-                            })
-                        }
-                    })
+                    },
+                    success: function(data) {
+                        alert("Başarılı");
+                        location.reload(true)
+                    },
+                    error: function(data) {
+                        Swal.fire({
+                            'title': 'Errors',
+                            'text': 'There were errors',
+                            'type': 'error'
+                        })
+                    }
+                })
 
 
 
-                }
-            })
+            }
+        })
 
-        });
+    });
     </script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>

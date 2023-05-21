@@ -74,7 +74,7 @@ if (isset($_GET['logout'])) {
 
                                 <th scope="col">İsim</th>
                                 <th scope="col">Soyisim</th>
-                                <th scope="col">E-mail</th>
+                                <th scope="col">E-Posta</th>
 
                             </tr>
                         </thead>
@@ -132,7 +132,7 @@ if (isset($_GET['logout'])) {
 
                             },
                             success: function(data) {
-                                alert("Success");
+                                alert("Başarılı");
                                 location.reload(true)
                             },
                             error: function(data) {
