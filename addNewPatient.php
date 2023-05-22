@@ -58,11 +58,11 @@ if (isset($_GET['logout'])) {
 
                             <div class="input-section d-flex">
                                 <p class="usernamelabel">Hasta Adı:</p>
-                                <input type="text" class="form-control" required name="name" id="diger" placeholder="Patient Name" maxlength = "25">
+                                <input type="text" class="form-control" required name="name" id="diger" placeholder="Hasta Adı" maxlength = "25">
                             </div>
                             <div class="input-section d-flex">
                                 <p class="usernamelabel">Hasta Soyadı:</p>
-                                <input type="text" class="form-control" required name="surname" id="diger" placeholder="Patient Surname" maxlength = "25">
+                                <input type="text" class="form-control" required name="surname" id="diger" placeholder="Hasta Soyadı" maxlength = "25">
                             </div>
                             <div class="input-section d-flex" style="padding-top: 5%;">
                                 <p class="usernamelabel">Hasta Doğum Tarihi:</p>
