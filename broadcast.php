@@ -318,7 +318,7 @@ if (isset($_SESSION['userlogin'])) {
                         emailList: emailList
                     },
                     success: function(data) {
-                        alert('your message has been sent!');
+                        alert('Mesajınız gönderildi.');
                         $('#multicast-container').css('display', 'none');
                         $('#showAll').css('display', 'flex');
                         $('#sendToSome').css('display', 'flex');
@@ -372,7 +372,7 @@ if (isset($_SESSION['userlogin'])) {
                         message: message
                     },
                     success: function(data) {
-                        alert('your broadcast has been sent!');
+                        alert('Bütün öğrencilere mesajınız gönderildi.');
                         $('#broadcast-container').css('display', 'none');
                         $('#showAll').css('display', 'flex');
                         $('#sendToSome').css('display', 'flex');
