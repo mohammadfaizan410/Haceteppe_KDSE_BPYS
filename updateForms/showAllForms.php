@@ -302,7 +302,7 @@ if (isset($_GET['logout'])) {
                     <h1 class='mb-5 entered-forms-header'>Yeni Form Doldur</h1>
                     <div class="entered-forms-wrapper">
                          <div class="mt-3 entered-forms"><a class="nav-items newForm" style="color: white;"
-                                href="">Form 1</a></div>
+                                href="<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form 1</a></div>
                         <div class="mt-3 entered-forms"><a class="nav-items newForm" style="color: white;"
                                 href="<?php echo $base_url; ?>/formlar/Form2.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
                                 2</a></div>
