@@ -19,7 +19,7 @@ if (isset($_POST)) {
                 $_POST["patient_surname"],
                 $_POST["patient_age"],
               ]);
-            echo "succesfully inserted";
+            echo "Başarıyla kaydedildi!";
         }
 else{
     echo "error";
