@@ -761,6 +761,12 @@ input[type="email"] {
     padding: 12px;
 }
 
+.taniReview {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 @media screen and (max-width: 768px) {
     .table-head {
         font-size: 14px;

@@ -96,7 +96,7 @@ if (isset($_GET['patient_id'])) {
                             <p class="usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hastanın oksijen satürasyonun %95’in üzerinde olması</p>
                         </div>
-                        <div class="input-section" id="o2-delivery-container">
+                        <div class="input-section taniReview" id="o2-delivery-container">
                             <p class="usernamelabel">NOC Gösterge: </p>
                             <div class="form-check">
                                 <div class="form-check">
@@ -144,13 +144,13 @@ if (isset($_GET['patient_id'])) {
                             ?>
                         </div>
 
-                        <div class="input-section d-flex">
+                        <div class="input-section d-flex taniReview">
                             <p class="usernamelabel">Değerlendirme:</p>
                             <div class="input-section d-flex">
                                 <p class="usernamelabel">NOC Çıktıları:</p>
                                 <p class="tanıdescription">Hastanın oksijen satürasyonun %95’in üzerinde olması</p>
                             </div>
-                            <div class="input-section" id="o2-delivery-container">
+                            <div class="input-section taniReview" id="o2-delivery-container">
                                 <p class="usernamelabel">NOC Gösterge: </p>
                                 <div class="form-check">
                                     <div class="form-check">
