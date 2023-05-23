@@ -47,7 +47,7 @@ matchedfields_string
 ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         $result = $stmt->execute([$patient_id, $patient_name, $update_date, $problem_info, $nurse_description, $noc_output, $noc_indicator, $noc_indicator_after, $nurse_attempt, $nurse_education, $evaluation, $matchedfields_string]);
         if ($result) {
-            echo "succesfully inserted!";
+            echo "Başarıyla yüklendi!";
         } else {
             echo $result;
         }
