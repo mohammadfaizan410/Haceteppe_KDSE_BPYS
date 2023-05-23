@@ -588,7 +588,6 @@ input[type="email"] {
     display: none;
     height: 100%;
     max-width: 300px;
-    width: 15%;
     background-color: white;
 }
 
@@ -630,6 +629,11 @@ input[type="email"] {
     height: 110px;
     width: 160px;
     margin-top: -20px;
+}
+
+.hacettepelogo-wrapper {
+    display: flex;
+    flex-direction: column;
 }
 
 .user-info {
