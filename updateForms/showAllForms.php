@@ -220,7 +220,7 @@ if (isset($_GET['logout'])) {
 
                 </div>
                 <div class="table-responsive">
-                    <h1 class='mb-5 entered-forms-header'>Girili Formlar</h1>
+                    <h1 class='mb-5 entered-forms-header'>Doldurulmuş Formlar</h1>
                     <div class="entered-forms-wrapper">
                         <?php
                         if (isset($allForms)) {
@@ -289,7 +289,7 @@ if (isset($_GET['logout'])) {
                     </table>
                 </div>
                 <div class="table-responsive">
-                    <h1 class='mb-5 entered-forms-header'>Girili Tanılar</h1>
+                    <h1 class='mb-5 entered-forms-header'>Doldurulmuş Tanılar</h1>
                     <div class="entered-forms-wrapper">
                         <div class="mt-3 entered-forms"><a class="nav-items entered-forms-button" style="color: white;"
                                 href="<?php echo $base_url; ?>/taniReview/tani1Review.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Tanı
