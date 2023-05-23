@@ -26,7 +26,10 @@ $base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
 
 
     <div class="login-box">
-        <object class="hacettepelogo" data="hacettepelogo.svg" width="300" height="300"> </object>
+        <div class="hacettepelogo-wrapper">
+            <object class="hacettepelogo" data="hacettepelogo.svg" width="300" height="300"> </object>
+            <p class="hemsire-fakulte">Hemşirelik Fakültesi</p>
+        </div>
 
 
         <h1 class="header">KDSE-BPYS</h1>
