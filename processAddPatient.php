@@ -1,5 +1,5 @@
 <?php
-$base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
+echo "hello";
 require_once("config-students.php");
 
 ?>
@@ -19,7 +19,7 @@ if (isset($_POST)) {
                 $_POST["patient_surname"],
                 $_POST["patient_age"],
               ]);
-            echo "Başarıyla kaydedildi!";
+            echo "succesfully inserted";
         }
 else{
     echo "error";
