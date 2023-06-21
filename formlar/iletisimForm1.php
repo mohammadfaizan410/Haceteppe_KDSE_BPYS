@@ -58,7 +58,7 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="IletisimEngeli" id="IletisimEngeli"
+                            <input class="form-check-input" type="radio" name="communicationProblem" id="IletisimEngeli"
                                 value="Yok">
                             <label class="form-check-label" for="IletisimEngeli">
                                 <span class="checkbox-header">Yok</span>
@@ -66,12 +66,12 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="IletisimEngeli" id="IletisimEngeli"
+                            <input class="form-check-input" type="radio" name="communicationProblem" id="IletisimEngeli"
                                 value="Var">
                             <label class="form-check-label" for="IletisimEngeli">
                                 <span class="checkbox-header">Var: (Açıklayınız)</span>
                             </label>
-                            <input type="text" class="form-control diger" name="IletisimEngeliDiger"
+                            <input type="text" class="form-control diger" disabled name="communicationProblemInput"
                                 id="IletisimEngeliDiger">
                         </div>
                     </div>
@@ -82,18 +82,18 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="refakatci" id="refakatci" value="Yok">
+                            <input class="form-check-input" type="radio" name="companion" id="refakatci" value="Yok">
                             <label class="form-check-label" for="refakatci">
                                 <span class="checkbox-header">Yok</span>
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="refakatci" id="refakatci" value="Var">
+                            <input class="form-check-input" type="radio" name="companion" id="refakatci" value="Var">
                             <label class="form-check-label" for="refakatci">
                                 <span class="checkbox-header">Var: (Açıklayınız)</span>
                             </label>
-                            <input type="text" class="form-control diger" name="refakatciDiger" id="refakatciDiger">
+                            <input type="text" class="form-control diger" disabled name="companionInput" id="refakatciDiger">
                         </div>
                     </div>
                 </div>
@@ -103,7 +103,7 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="UlasmaSikinti" id="UlasmaSikinti"
+                            <input class="form-check-input" type="radio" name="reachTrouble" id="UlasmaSikinti"
                                 value="Yok">
                             <label class="form-check-label" for="UlasmaSikinti">
                                 <span class="checkbox-header">Yok</span>
@@ -111,12 +111,12 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="UlasmaSikinti" id="UlasmaSikinti"
+                            <input class="form-check-input" type="radio" name="reachTrouble" id="UlasmaSikinti"
                                 value="Var">
                             <label class="form-check-label" for="UlasmaSikinti">
                                 <span class="checkbox-header">Var: (Açıklayınız)</span>
                             </label>
-                            <input type="text" class="form-control diger" name="UlasmaSikintiDiger"
+                            <input type="text" class="form-control diger" name="reachTroubleInput" disabled
                                 id="UlasmaSikintiDiger">
                         </div>
                     </div>
@@ -127,7 +127,7 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="PersonelleIletisim"
+                            <input class="form-check-input" type="radio" name="contactingStaffTrouble"
                                 id="PersonelleIletisim" value="Yok">
                             <label class="form-check-label" for="PersonelleIletisim">
                                 <span class="checkbox-header">Yok</span>
@@ -135,12 +135,12 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="PersonelleIletisim"
+                            <input class="form-check-input" type="radio" name="contactingStaffTrouble"
                                 id="PersonelleIletisim" value="Var">
                             <label class="form-check-label" for="PersonelleIletisim">
                                 <span class="checkbox-header">Var: (Açıklayınız)</span>
                             </label>
-                            <input type="text" class="form-control diger" name="PersonelleIletisimDiger"
+                            <input type="text" class="form-control diger" name="contactingStaffTroubleInput" disabled
                                 id="PersonelleIletisimDiger">
                         </div>
                     </div>
@@ -157,7 +157,7 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="BakımaKatılma" id="BakımaKatılma"
+                            <input class="form-check-input" type="radio" name="careAcceptance" id="BakımaKatılma"
                                 value="Katılmıyor">
                             <label class="form-check-label" for="BakımaKatılma">
                                 <span class="checkbox-header">Katılmıyor </span>
@@ -169,9 +169,9 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="İstekli1"
-                                                    value="İstekli">
-                                                <label class="form-check-label" for="İstekli1">İstekli </label>
+                                                <input class="form-check-input" type="radio" id="İstekli1" disabled
+                                                    value="İstekli" name="careAcceptanceNon">
+                                                <label class="form-check-label"  for="İstekli1">İstekli </label>
                                             </div>
                                         </td>
 
@@ -179,9 +179,9 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="İsteksiz1"
-                                                    value="İsteksiz">
-                                                <label class="form-check-label" for="İsteksiz1">İsteksiz </label>
+                                                <input class="form-check-input" type="radio" id="İsteksiz1" disabled
+                                                    value="İsteksiz" name="careAcceptanceNon"> 
+                                                <label class="form-check-label"  for="İsteksiz1">İsteksiz </label>
                                             </div>
                                         </td>
 
@@ -191,7 +191,7 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="BakımaKatılma" id="BakımaKatılma"
+                            <input class="form-check-input" type="radio" name="careAcceptance" id="BakımaKatılma"
                                 value="Katılıyor">
                             <label class="form-check-label" for="BakımaKatılma">
                                 <span class="checkbox-header"> Katılıyor</span>
@@ -203,9 +203,9 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="İstekli"
+                                                <input class="form-check-input" name="careAcceptanceWilling" type="radio" id="İstekli" disabled
                                                     value="İstekli">
-                                                <label class="form-check-label" for="İstekli">İstekli</label>
+                                                <label class="form-check-label"  for="İstekli">İstekli</label>
                                             </div>
                                         </td>
 
@@ -213,9 +213,9 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="İsteksiz"
+                                                <input class="form-check-input" disabled name="careAcceptanceWilling" type="radio" id="İsteksiz"
                                                     value="İsteksiz">
-                                                <label class="form-check-label" for="İsteksiz">İsteksiz </label>
+                                                <label class="form-check-label"  for="İsteksiz">İsteksiz </label>
                                             </div>
                                         </td>
 
@@ -238,7 +238,7 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="TedaviyiKabullenme "
+                            <input class="form-check-input" type="radio" name="treatmentAcceptance"
                                 id="TedaviyiKabullenme " value="Kabul ediyor">
                             <label class="form-check-label" for="TedaviyiKabullenme ">
                                 <span class="checkbox-header">Kabul ediyor </span>
@@ -246,16 +246,17 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="TedaviyiKabullenme "
+                            <input class="form-check-input" type="radio" name="treatmentAcceptance"
                                 id="TedaviyiKabullenme " value="Kabul etmiyor">
                             <label class="form-check-label" for="TedaviyiKabullenme ">
                                 <span class="checkbox-header">Kabul etmiyor (Açıklayınız)</span>
                             </label>
-                            <input type="text" class="form-control diger" name="TedaviyiKabullenmeDiger "
+                            <input type="text" class="form-control diger" name="treatmentAcceptanceInput" disabled
                                 id="TedaviyiKabullenmeDiger ">
                         </div>
                     </div>
                 </div>
+                <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
             </div>
             <script>
             $(function() {
@@ -264,6 +265,70 @@ if (isset($_GET['logout'])) {
 
                 })
             });
+
+
+            // $('.form-check-input[name="inHospitalExercise"]').change(function() {
+            //     console.log($(this).val());
+            //     if ($(this).val() === 'Evet') {
+            //         $('input[name="exerciseType"]').prop('disabled', false);
+            //     } else {
+            //         $('input[name="exerciseType"]').prop('disabled', true);
+            //     }
+            //     });
+
+            $('.form-check-input[name="communicationProblem"]').change(function(){
+                if($(this).val() === 'Var'){
+                    $('input[name="communicationProblemInput"]').prop('disabled', false);
+                }else{
+                    $('input[name="communicationProblemInput"]').prop('disabled', true);
+                }
+            })
+
+            $('.form-check-input[name="companion"]').change(function(){
+                if($(this).val() === 'Var'){
+                    $('input[name="companionInput"]').prop('disabled', false);
+                }else{
+                    $('input[name="companionInput"]').prop('disabled', true);
+                }
+            })
+
+            $('.form-check-input[name="reachTrouble"]').change(function(){
+                if($(this).val() === 'Var'){
+                    $('input[name="reachTroubleInput"]').prop('disabled', false);
+                }else{
+                    $('input[name="reachTroubleInput"]').prop('disabled', true);
+                }
+            })
+
+            $('.form-check-input[name="contactingStaffTrouble"]').change(function(){
+                if($(this).val() === 'Var'){
+                    $('input[name="contactingStaffTroubleInput"]').prop('disabled', false);
+                }else{
+                    $('input[name="contactingStaffTroubleInput"]').prop('disabled', true);
+                }
+            })
+
+            $('.form-check-input[name="treatmentAcceptance"]').change(function(){
+                if($(this).val() === 'Kabul etmiyor'){
+                    $('input[name="treatmentAcceptanceInput"]').prop('disabled', false);
+                }else{
+                    $('input[name="treatmentAcceptanceInput"]').prop('disabled', true);
+                }
+            })
+
+
+            $('.form-check-input[name="careAcceptance"]').change(function(){
+                if($(this).val() === 'Katılıyor'){
+                    $('input[name="careAcceptanceWilling"]').prop('disabled', false);
+                    $('input[name="careAcceptanceNon"]').prop('disabled', true);
+
+                }else{
+                    $('input[name="careAcceptanceWilling"]').prop('disabled', true);
+                    $('input[name="careAcceptanceNon"]').prop('disabled', false);
+                }
+            })
+
+
             </script>
 
             <script>
@@ -271,67 +336,63 @@ if (isset($_GET['logout'])) {
                 $('#submit').click(function(e) {
 
 
-                    var valid = this.form.checkValidity();
 
-                    if (valid) {
-                        var id = <?php
+                        let age = $('#age').val();
+                            let not = $('#not').val();
 
-                                        $userid = $_SESSION['userlogin']['id'];
-                                        echo $userid
-                                        ?>;
-                        let IletisimEngeli = $("input[name='IletisimEngeli']:checked").val();
-                        let IletisimEngeliDiger = $("input[type='radio'][name='IletisimEngeliDiger']")
-                            .val();
-                        let refakatci = $("input[type='radio'][name='refakatci']:checked").val();
-                        let refakatciDiger = $("input[type='radio'][name='refakatciDiger']").val();
-                        let UlasmaSikinti = $("input[type='radio'][name='UlasmaSikinti']:checked")
-                    .val();
-                        let UlasmaSikintiDiger = $("input[type='radio'][name='UlasmaSikintiDiger']")
-                            .val();
-                        let PersonelleIletisim = $(
-                            "input[type='radio'][name='PersonelleIletisim']:checked").val();
-                        let PersonelleIletisimDiger = $(
-                            "input[type='radio'][name='PersonelleIletisimDiger']").val();
-                        let BakımaKatılma = $("input[type='radio'][name='BakımaKatılma']:checked")
-                    .val();
-                        let İstekli1 = $("input[type='radio'][name='İstekli1']").val();
-                        let İsteksiz1 = $("input[type='radio'][name='İsteksiz1']").val();
-                        let İstekli = $("input[type='radio'][name='İstekli']").val();
-                        let İsteksiz = $("input[type='radio'][name='İsteksiz']").val();
-                        let TedaviyiKabullenme = $(
-                            "input[type='radio'][name='TedaviyiKabullenme']:checked").val();
-                        let TedaviyiKabullenmeDiger = $(
-                            "input[type='radio'][name='TedaviyiKabullenmeDiger']").val();
+                            var patient_id = <?php
+                                                $userid = $_GET['patient_id'];
+                                                echo $userid
+                                                ?>;
+                            let patient_name = "<?php
+                                                echo urldecode($_GET['patient_name']);
+                                                ?>";
+                            let yourDate = new Date()
+                            let creation_date = yourDate.toISOString().split('T')[0];
+                            let updateDate = yourDate.toISOString().split('T')[0];
+                            // let movementProblem = $('.form-check-input[name="movementProblem"]:checked').val() === "Var" ? $('.form-check-input[name="movementProblemDesc"]:checked').map(function() {
+                            //     return $(this).val();
+                            // }).get().join("/") : "Sorun Yok";
+                            let communicationProblem = $("input[name='communicationProblem']:checked").val() === "Var" ? $('input[name="communicationProblemInput"]').val() : "Yok";
+                            let companion = $("input[name='companion']:checked").val() === "Var" ? $('input[name="companionInput"]').val() : "Yok";
+                            let reachTrouble = $("input[name='reachTrouble']:checked").val() === "Var" ? $('input[name="reachTroubleInput"]').val() : "Yok";
+                            let contactingStaffTrouble = $("input[name='contactingStaffTrouble']:checked").val() === "Var" ? $('input[name="contactingStaffTroubleInput"]').val() : "Yok";
+                            let careAcceptance = $("input[name='careAcceptance']:checked").val();
+                            let careAcceptanceWilling = $("input[name='careAcceptanceWilling']:checked").val() ? $('input[name="careAcceptanceWilling"]:checked').val() : "Yok";
+                            let careAcceptanceNon = $("input[name='careAcceptanceNon']:checked").val() ? $('input[name="careAcceptanceNon"]:checked').val() : "Yok";
+                            let treatmentAcceptance = $("input[name='treatmentAcceptance']:checked").val() === "Kabul etmiyor" ? $('input[name="treatmentAcceptanceInput"]').val() : "Kabul ediyor";
 
-
+                            console.log("communication problem:", communicationProblem, "companion:", companion, "reach trouble:", reachTrouble, "contacting staff trouble:", contactingStaffTrouble, "care acceptance:", careAcceptance, "care acceptance willing:", careAcceptanceWilling, "care acceptance non:", careAcceptanceNon, "treatment acceptance:", treatmentAcceptance )
 
 
                         e.preventDefault()
 
                         $.ajax({
                             type: 'POST',
-                            url: 'student-patient.php',
+                            url: '<?php echo $base_url; ?>/SubmitOrUpdateForm1_Iletisim.php',
                             data: {
-                                IletisimEngeli: IletisimEngeli,
-                                IletisimEngeliDiger: IletisimEngeliDiger,
-                                refakatci: refakatci,
-                                refakatciDiger: refakatciDiger,
-                                UlasmaSikinti: UlasmaSikinti,
-                                UlasmaSikintiDiger: UlasmaSikintiDiger,
-                                PersonelleIletisim: PersonelleIletisim,
-                                PersonelleIletisimDiger: PersonelleIletisimDiger,
-                                BakımaKatılma: BakımaKatılma,
-                                İstekli1: İstekli1,
-                                İsteksiz1: İsteksiz1,
-                                İstekli: İstekli,
-                                İsteksiz: İsteksiz,
-                                TedaviyiKabullenme: TedaviyiKabullenme,
-                                TedaviyiKabullenmeDiger: TedaviyiKabullenmeDiger,
-
+                                patient_id: patient_id,
+                                patient_name: patient_name,
+                                creation_date: creation_date,
+                                update_date: updateDate,
+                                communicationProblem: communicationProblem,
+                                companion: companion,
+                                reachTrouble: reachTrouble,
+                                contactingStaffTrouble: contactingStaffTrouble,
+                                careAcceptance: careAcceptance,
+                                careAcceptanceWilling: careAcceptanceWilling,
+                                careAcceptanceNon: careAcceptanceNon,
+                                treatmentAcceptance: treatmentAcceptance,
+                                form_name: 'iletisimForm1'
                             },
                             success: function(data) {
-                                alert("Success");
-                                location.reload(true)
+                                alert(data);
+                                console.log(data);
+                                let url =
+                                        "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
+                                        patient_id + "&patient_name=" + encodeURIComponent(
+                                            patient_name);
+                                    $("#content").load(url);
                             },
                             error: function(data) {
                                 Swal.fire({
@@ -341,10 +402,6 @@ if (isset($_GET['logout'])) {
                                 })
                             }
                         })
-
-
-
-                    }
                 })
 
             });

@@ -1,83 +1,61 @@
-<?php
-require_once("config-students.php");
-?>
 
 <?php
-if (isset($_POST)) {
+require_once("./config-students.php");
+
+if (isset($_POST["patient_name"])) {
+
     if (isset($_POST['isUpdate'])) {
-        $stmt = $db->prepare("UPDATE uykuForm1 SET
-                                    update_date,
-                                    UykuSuresi,
-                                    UykuSorun,
-                                    GündüzUykusu,
-                                    UykudanYorgun,
-                                    UyumaGüçlüğü,
-                                    UykununBölünmesi,
-                                    UykuSorunDiger,
-                                    UykuyaDalmaAliskanligi,
-                                    UykuyuEtkileyenFaktorler
-                WHERE form_id = ?");
-
-        $stmt->execute([
+        $stmt = $db->prepare("UPDATE uyukuform1 SET
+        update_date = ?,
+        averageSleepDuration = ?,
+        sleepProblem = ?,
+        sleepHelpHabits = ?,
+        hospitalFactorsAffectingSleep = ?
+        WHERE form_id = ?");
+        $result = $stmt->execute([
             $_POST["creation_date"],
-            $_POST["UykuSuresi"],
-            $_POST["UykuSorun"],
-            $_POST["GündüzUykusu"],
-            $_POST["UykudanYorgun"],
-            $_POST["UyumaGüçlüğü"],
-            $_POST["UykununBölünmesi"],
-            $_POST["UykuSorunDiger"],
-            $_POST["UykuyaDalmaAliskanligi"],
-            $_POST["UykuyuEtkileyenFaktorler"],
+            $_POST["averageSleepDuration"],
+            $_POST["sleepProblem"],
+            $_POST["sleepHelpHabits"],
+            $_POST["hospitalFactorsAffectingSleep"],
             $_POST["form_id"]
         ]);
         if ($result) {
-            echo "Güncelleme Başarılı";
-        } else {
             echo $result;
+        } else {
+            echo "Error could not update data!";
         }
     } else {
-        $stmt = $db->prepare("INSERT INTO uykuForm1 (
-                                    patient_name,
-                                    patient_id,
-                                    form_num,
-                                    creation_date,
-                                    update_date,
-                                    UykuSuresi,
-                                    UykuSorun,
-                                    GündüzUykusu,
-                                    UykudanYorgun,
-                                    UyumaGüçlüğü,
-                                    UykununBölünmesi,
-                                    UykuSorunDiger,
-                                    UykuyaDalmaAliskanligi,
-                                    UykuyuEtkileyenFaktorler
-              ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-
-        $stmt->execute([
+        $stmt = $db->prepare("INSERT INTO uyukuform1 (
+                form_name,
+                patient_name,
+                patient_id,
+                creation_date,
+                update_date,
+                averageSleepDuration,
+                sleepProblem,
+                sleepHelpHabits,
+                hospitalFactorsAffectingSleep
+               
+            ) VALUES (?,   ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?)");
+        $result = $stmt->execute([
+            $_POST["form_name"],
             $_POST["patient_name"],
             $_POST["patient_id"],
-            $_POST["form_num"],
             $_POST["creation_date"],
             $_POST["update_date"],
-            $_POST["UykuSuresi"],
-            $_POST["UykuSorun"],
-            $_POST["GündüzUykusu"],
-            $_POST["UykudanYorgun"],
-            $_POST["UyumaGüçlüğü"],
-            $_POST["UykununBölünmesi"],
-            $_POST["UykuSorunDiger"],
-            $_POST["UykuyaDalmaAliskanligi"],
-            $_POST["UykuyuEtkileyenFaktorler"]
+            $_POST["averageSleepDuration"],
+            $_POST["sleepProblem"],
+            $_POST["sleepHelpHabits"],
+            $_POST["hospitalFactorsAffectingSleep"] 
         ]);
         if ($result) {
-            echo "Güncelleme Başarılı";
+            echo "Ekleme Başarılı";
         } else {
-            echo $result;
+            echo "Error: could not inserted!";
         }
     }
 } else {
-
-    echo "error";
+    echo "Error: Post data not set!";
 }
 ?>

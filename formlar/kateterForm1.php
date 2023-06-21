@@ -64,16 +64,16 @@ if (isset($_GET['logout'])) {
 
                         <div class="checkboxes w-25">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="venöz_kateter" id="venöz_kateter"
-                                    value="Periferik venöz kateter ">
+                                <input class="form-check-input" type="radio" name="katererType" id="venöz_kateter"
+                                    value="Periferik venöz kateter">
                                 <label class="form-check-label" for="venöz_kateter">
-                                    <span class="checkbox-header">Periferik venöz kateter </span>
+                                    <span class="checkbox-header">Periferik venöz kateter</span>
                                 </label>
                             </div>
                         </div>
-                        <input type="text" class="form-control w-25" name="PYeri" id="PYeri">
-                        <input type="text" class="form-control w-25" name="PSayısı" id="PSayısı">
-                        <input type="text" class="form-control w-25" name="PTakılmaTarihi" id="PTakılmaTarihi">
+                        <input type="number" class="form-control w-25" disabled name="peripheralKaterarAmount" id="peripheralKaterarAmount">
+                        <input type="text" class="form-control w-25" disabled name="peripheralKaterarLocation" id="peripheralKaterarLocation">
+                        <input type="date" class="form-control w-25" disabled name="peripheralKaterarDate" id="peripheralKaterarDate">
                     </div>
                 </div>
                 <div class="d-flex justify-content-between">
@@ -81,16 +81,16 @@ if (isset($_GET['logout'])) {
 
                         <div class="checkboxes w-25">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="venöz_kateter" id="venöz_kateter"
+                                <input class="form-check-input" type="radio" name="katererType" id="venöz_kateter"
                                     value="Santral venöz kateter">
                                 <label class="form-check-label" for="venöz_kateter">
                                     <span class="checkbox-header">Santral venöz kateter </span>
                                 </label>
                             </div>
                         </div>
-                        <input type="text" class="form-control w-25" name="SYeri" id="SYeri">
-                        <input type="text" class="form-control w-25" name="SSayısı" id="SSayısı">
-                        <input type="text" class="form-control w-25" name="STakılmaTarihi" id="STakılmaTarihi">
+                        <input type="number" class="form-control w-25" disabled name="centralKaterarNumber" id="centralKaterarNumber">
+                        <input type="text" class="form-control w-25" disabled name="centralKaterarLocation" id="centralKaterarLocation">
+                        <input type="date" class="form-control w-25" disabled name="centralKaterarDate" id="centralKaterarDate">
                     </div>
                 </div>
                 <div class="d-flex justify-content-between">
@@ -98,16 +98,16 @@ if (isset($_GET['logout'])) {
 
                         <div class="checkboxes w-25">
                             <div class="form-check ">
-                                <input class="form-check-input" type="radio" name="venöz_kateter" id="venöz_kateter"
+                                <input class="form-check-input" type="radio" name="katererType" id="venöz_kateter"
                                     value="option1">
                                 <label class="form-check-label" for="venöz_kateter">
                                     <span class="checkbox-header">Dren </span>
                                 </label>
                             </div>
                         </div>
-                        <input type="text" class="form-control w-25" name="DYeri" id="DYeri">
-                        <input type="text" class="form-control w-25" name="DSayısı" id="DSayısı">
-                        <input type="text" class="form-control w-25" name="DTakılmaTarihi" id="DTakılmaTarihi">
+                        <input type="number" class="form-control w-25" disabled name="drainKatererAmount" id="drainKatererAmount">
+                        <input type="text" class="form-control w-25" disabled name="drainKatererLocation" id="drainKatererLocation">
+                        <input type="date" class="form-control w-25" disabled name="drainKatererDate" id="drainKatererDate">
                     </div>
                 </div>
                 <div class="d-flex justify-content-between">
@@ -115,19 +115,21 @@ if (isset($_GET['logout'])) {
 
                         <div class="checkboxes w-25">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="venöz_kateter" id="venöz_kateter"
+                                <input class="form-check-input" type="radio" name="katererType" id="venöz_kateter"
                                     value="Diğer">
                                 <label class="form-check-label" for="venöz_kateter">
                                     <span class="checkbox-header">Diğer</span>
                                 </label>
                             </div>
                         </div>
-                        <input type="text" class="form-control w-25" name="DiğerYeri" id="DiğerYeri">
-                        <input type="text" class="form-control w-25" name="DiğerSayısı" id="DiğerSayısı">
-                        <input type="text" class="form-control w-25" name="DiğerTakılmaTarihi" id="DiğerTakılmaTarihi">
+                        <input type="number" class="form-control w-25" disabled name="otherKatereAmount" id="otherKatereAmount">
+                        <input type="text" class="form-control w-25" disabled name="otherKatereLocation" id="otherKatereLocation">
+                        <input type="date" class="form-control w-25" disabled name="otherKatereDate" id="otherKatereDate">
                     </div>
                 </div>
             </div>
+            <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
+
 
             <script>
             $(function() {
@@ -136,6 +138,65 @@ if (isset($_GET['logout'])) {
 
                 })
             });
+     
+            $('.form-check-input[name="katererType"]').change(function(){
+                if($(this).val() === 'Periferik venöz kateter'){
+                    $('#peripheralKaterarAmount').prop('disabled', false);
+                    $('#peripheralKaterarLocation').prop('disabled', false);
+                    $('#peripheralKaterarDate').prop('disabled', false);
+                    $('#centralKaterarNumber').prop('disabled', true);
+                    $('#centralKaterarLocation').prop('disabled', true);
+                    $('#centralKaterarDate').prop('disabled', true);
+                    $('#drainKatererAmount').prop('disabled', true);
+                    $('#drainKatererLocation').prop('disabled', true);
+                    $('#drainKatererDate').prop('disabled', true);
+                    $('#otherKatereAmount').prop('disabled', true);
+                    $('#otherKatereLocation').prop('disabled', true);
+                    $('#otherKatereDate').prop('disabled', true);
+                }
+                if($(this).val() === 'Santral venöz kateter'){
+                    $('#centralKaterarNumber').prop('disabled', false);
+                    $('#centralKaterarLocation').prop('disabled', false);
+                    $('#centralKaterarDate').prop('disabled', false);
+                    $('#peripheralKaterarAmount').prop('disabled', true);
+                    $('#peripheralKaterarLocation').prop('disabled', true);
+                    $('#peripheralKaterarDate').prop('disabled', true);
+                    $('#drainKatererAmount').prop('disabled', true);
+                    $('#drainKatererLocation').prop('disabled', true);
+                    $('#drainKatererDate').prop('disabled', true);
+                    $('#otherKatereAmount').prop('disabled', true);
+                    $('#otherKatereLocation').prop('disabled', true);
+                    $('#otherKatereDate').prop('disabled', true);
+                }
+                if($(this).val() === 'Dren'){
+                    $('#drainKatererAmount').prop('disabled', false);
+                    $('#drainKatererLocation').prop('disabled', false);
+                    $('#drainKatererDate').prop('disabled', false);
+                    $('#peripheralKaterarAmount').prop('disabled', true);
+                    $('#peripheralKaterarLocation').prop('disabled', true);
+                    $('#peripheralKaterarDate').prop('disabled', true);
+                    $('#centralKaterarNumber').prop('disabled', true);
+                    $('#centralKaterarLocation').prop('disabled', true);
+                    $('#centralKaterarDate').prop('disabled', true);
+                    $('#otherKatereAmount').prop('disabled', true);
+                    $('#otherKatereLocation').prop('disabled', true);
+                    $('#otherKatereDate').prop('disabled', true);
+                }
+                if($(this).val() === 'Diğer'){
+                    $('#otherKatereAmount').prop('disabled', false);
+                    $('#otherKatereLocation').prop('disabled', false);
+                    $('#otherKatereDate').prop('disabled', false);
+                    $('#peripheralKaterarAmount').prop('disabled', true);
+                    $('#peripheralKaterarLocation').prop('disabled', true);
+                    $('#peripheralKaterarDate').prop('disabled', true);
+                    $('#centralKaterarNumber').prop('disabled', true);
+                    $('#centralKaterarLocation').prop('disabled', true);
+                    $('#centralKaterarDate').prop('disabled', true);
+                    $('#drainKatererAmount').prop('disabled', true);
+                    $('#drainKatererLocation').prop('disabled', true);
+                    $('#drainKatererDate').prop('disabled', true);
+                }
+            })
             </script>
 
             <script>
@@ -143,28 +204,33 @@ if (isset($_GET['logout'])) {
                 $('#submit').click(function(e) {
 
 
-                    var valid = this.form.checkValidity();
 
-                    if (valid) {
-                        var id = <?php
+                            let age = $('#age').val();
+                            let not = $('#not').val();
 
-                                        $userid = $_SESSION['userlogin']['id'];
-                                        echo $userid
-                                        ?>;
-                        let venöz_kateter = $("input[name='venöz_kateter']:checked").val();
-                        let PYeri = $("input[type='radio'][name='PYeri']").val();
-                        let PSayısı = $("input[type='radio'][name='PSayısı']").val();
-                        let PTakılmaTarihi = $("input[type='radio'][name='PTakılmaTarihi']").val();
-                        let SYeri = $("input[type='radio'][name='SYeri']").val();
-                        let SSayısı = $("input[type='radio'][name='SSayısı']").val();
-                        let STakılmaTarihi = $("input[type='radio'][name='STakılmaTarihi']").val();
-                        let DYeri = $("input[type='radio'][name='DYeri']").val();
-                        let DSayısı = $("input[type='radio'][name='DSayısı']").val();
-                        let DTakılmaTarihi = $("input[type='radio'][name='DTakılmaTarihi']").val();
-                        let DigerYeri = $("input[type='radio'][name='DigerYeri']").val();
-                        let DigerSayısı = $("input[type='radio'][name='DigerSayısı']").val();
-                        let DigerTakılmaTarihi = $("input[type='radio'][name='DigerTakılmaTarihi']")
-                            .val();
+                            var patient_id = <?php
+                                                $userid = $_GET['patient_id'];
+                                                echo $userid
+                                                ?>;
+                            let patient_name = "<?php
+                                                echo urldecode($_GET['patient_name']);
+                                                ?>";
+                            let yourDate = new Date()
+                            let creation_date = yourDate.toISOString().split('T')[0];
+                            let updateDate = yourDate.toISOString().split('T')[0];
+                            let katererType = $(".form-check-input[name='katererType']:checked").val();
+                            let peripheralKaterarAmount = $('#peripheralKaterarAmount').val();
+                            let peripheralKaterarLocation = $('#peripheralKaterarLocation').val();
+                            let peripheralKaterarDate = $('#peripheralKaterarDate').val();
+                            let centralKaterarNumber = $('#centralKaterarNumber').val();
+                            let centralKaterarLocation = $('#centralKaterarLocation').val();
+                            let centralKaterarDate = $('#centralKaterarDate').val();
+                            let drainKatererAmount = $('#drainKatererAmount').val();
+                            let drainKatererLocation = $('#drainKatererLocation').val();
+                            let drainKatererDate = $('#drainKatererDate').val();
+                            let otherKatereAmount = $('#otherKatereAmount').val();
+                            let otherKatereLocation = $('#otherKatereLocation').val();
+                            let otherKatereDate = $('#otherKatereDate').val();
 
 
 
@@ -172,26 +238,36 @@ if (isset($_GET['logout'])) {
 
                         $.ajax({
                             type: 'POST',
-                            url: 'student-patient.php',
+                            url: '<?php echo $base_url; ?>/SubmitOrUpdateForm1_Kateter.php',
                             data: {
-                                venöz_kateter: venöz_kateter,
-                                PYeri: PYeri,
-                                PSayısı: PSayısı,
-                                PTakılmaTarihi: PTakılmaTarihi,
-                                SYeri: SYeri,
-                                SSayısı: SSayısı,
-                                STakılmaTarihi: STakılmaTarihi,
-                                DYeri: DYeri,
-                                DSayısı: DSayısı,
-                                DTakılmaTarihi: DTakılmaTarihi,
-                                DigerYeri: DigerYeri,
-                                DigerSayısı: DigerSayısı,
-                                DigerTakılmaTarihi: DigerTakılmaTarihi
+                               
+                                patient_id: patient_id,
+                                patient_name: patient_name,
+                                creation_date: creation_date,
+                                update_date: updateDate,
+                                katererType: katererType,
+                                peripheralKaterarAmount: peripheralKaterarAmount,
+                                peripheralKaterarLocation: peripheralKaterarLocation,
+                                peripheralKaterarDate: peripheralKaterarDate,
+                                centralKaterarNumber: centralKaterarNumber,
+                                centralKaterarLocation: centralKaterarLocation,
+                                centralKaterarDate: centralKaterarDate,
+                                drainKatererAmount: drainKatererAmount,
+                                drainKatererLocation: drainKatererLocation,
+                                drainKatererDate: drainKatererDate,
+                                otherKatereAmount: otherKatereAmount,
+                                otherKatereLocation: otherKatereLocation,
+                                otherKatereDate: otherKatereDate,
+                                form_name: 'kateterForm1',
 
                             },
                             success: function(data) {
-                                alert("Başarılı");
-                                location.reload(true)
+                                alert(data);
+                                let url =
+                                        "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
+                                        patient_id + "&patient_name=" + encodeURIComponent(
+                                            patient_name);
+                                    $("#content").load(url);
                             },
                             error: function(data) {
                                 Swal.fire({
@@ -204,7 +280,7 @@ if (isset($_GET['logout'])) {
 
 
 
-                    }
+                    
                 })
 
             });

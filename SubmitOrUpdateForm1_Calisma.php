@@ -1,94 +1,86 @@
-<?php
-require_once("config-students.php");
-?>
 
 <?php
-if (isset($_POST)) {
-    $sql = "SELECT * FROM  form1_solunumgereksinimi  WHERE SDiger =" . $_POST["SDiger"];
-    $smtmselect = $db->prepare($sql);
-    $result = $smtmselect->execute();
-    if ($result) {
-        $values = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
-        if (count($values) > 0) {
-            $stmt = $db->prepare("UPDATE form1_beslenmegereksinimi SET
-                                    DuzenliCalisma,
-                                    CalismiyorSure,
-                                    CalisiyorSure,
-                                    IsIzni,
-                                    IsIzniDiger,
-                                    MeslekRiski,
-                                    MeslekRiskiDiger,
-                                    AileBireyleri,
-                                    AileBireyleriDiger,
-                                    CocukSayisi,
-                                    CocukSayisiDiger,
-                                    AileRolu,
-                                    Hobi,
-                                    HastaneAktivite,
-                                    HastaneAktiviteDiger
-                WHERE SDiger = ?");
+require_once("./config-students.php");
 
-            $stmt->execute([
-                $_POST["DuzenliCalisma"],
-                $_POST["CalismiyorSure"],
-                $_POST["CalisiyorSure"],
-                $_POST["IsIzni"],
-                $_POST["IsIzniDiger"],
-                $_POST["MeslekRiski"],
-                $_POST["MeslekRiskiDiger"],
-                $_POST["AileBireyleri"],
-                $_POST["AileBireyleriDiger"],
-                $_POST["CocukSayisi"],
-                $_POST["CocukSayisiDiger"],
-                $_POST["AileRolu"],
-                $_POST["Hobi"],
-                $_POST["HastaneAktivite"],
-                $_POST["HastaneAktiviteDiger"]
-            ]);
-            echo  "Güncelleme Başarılı!";
+
+if (isset($_POST["patient_name"])) {
+
+    if (isset($_POST['isUpdate'])) {
+        $stmt = $db->prepare("UPDATE ilestimform1 SET
+        update_date = ?,
+        workStatus = ?,
+        workingTime = ?,
+        nonWorkingTime = ?,
+        workInterruption = ?,
+        workRisk = ?,
+        familyMembers = ?,
+        numberOfChildren = ?,
+        roleInFamily = ?,
+        hobbies = ?,
+        otherActivities = ?
+
+        WHERE form_id = ?");
+        $result = $stmt->execute([
+            $_POST["creation_date"],
+            $_POST["workStatus"],
+            $_POST["workingTime"],
+            $_POST["nonWorkingTime"],
+            $_POST["workInterruption"],
+            $_POST["workRisk"],
+            $_POST["familyMembers"],
+            $_POST["numberOfChildren"],
+            $_POST["roleInFamily"],
+            $_POST["hobbies"],
+            $_POST["otherActivities"],
+            $_POST["form_id"]
+        ]);
+        if ($result) {
+            echo $result;
         } else {
-            $stmt = $db->prepare("INSERT INTO form1_solunumgereksinimi (
-                                    DuzenliCalisma,
-                                    CalismiyorSure,
-                                    CalisiyorSure,
-                                    IsIzni,
-                                    IsIzniDiger,
-                                    MeslekRiski,
-                                    MeslekRiskiDiger,
-                                    AileBireyleri,
-                                    AileBireyleriDiger,
-                                    CocukSayisi,
-                                    CocukSayisiDiger,
-                                    AileRolu,
-                                    Hobi,
-                                    HastaneAktivite,
-                                    HastaneAktiviteDiger
-              ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-
-            $stmt->execute([
-                $_POST["DuzenliCalisma"],
-                $_POST["CalismiyorSure"],
-                $_POST["CalisiyorSure"],
-                $_POST["IsIzni"],
-                $_POST["IsIzniDiger"],
-                $_POST["MeslekRiski"],
-                $_POST["MeslekRiskiDiger"],
-                $_POST["AileBireyleri"],
-                $_POST["AileBireyleriDiger"],
-                $_POST["CocukSayisi"],
-                $_POST["CocukSayisiDiger"],
-                $_POST["AileRolu"],
-                $_POST["Hobi"],
-                $_POST["HastaneAktivite"],
-                $_POST["HastaneAktiviteDiger"]
-            ]);
-            echo "succesfully inserted";
+            echo "Error could not update data!";
         }
     } else {
-
-        echo "error";
+        $stmt = $db->prepare("INSERT INTO ilestimform1 (
+                form_name,
+                patient_name,
+                patient_id,
+                creation_date,
+                update_date,
+                workStatus,
+                workingTime,
+                nonWorkingTime,
+                workInterruption,
+                workRisk,
+                familyMembers,
+                numberOfChildren,
+                roleInFamily,
+                hobbies,
+                otherActivities
+            ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        $result = $stmt->execute([
+            $_POST["form_name"],
+            $_POST["patient_name"],
+            $_POST["patient_id"],
+            $_POST["creation_date"],
+            $_POST["update_date"],
+            $_POST["workStatus"],
+            $_POST["workingTime"],
+            $_POST["nonWorkingTime"],
+            $_POST["workInterruption"],
+            $_POST["workRisk"],
+            $_POST["familyMembers"],
+            $_POST["numberOfChildren"],
+            $_POST["roleInFamily"],
+            $_POST["hobbies"],
+            $_POST["otherActivities"]
+        ]);
+        if ($result) {
+            echo "Ekleme Başarılı";
+        } else {
+            echo "Error: could not inserted!";
+        }
     }
 } else {
-    echo "error";
+    echo "Error: Post data not set!";
 }
 ?>

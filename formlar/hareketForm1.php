@@ -52,11 +52,11 @@ if (isset($_GET['logout'])) {
 
             <div class="input-section d-flex">
                 <div class="form-check form-check-inline d-flex">
-                    <input class="form-check-input" type="checkbox" id="HareketAliskanligi" value="HareketAliskanligi">
+                    <input class="form-check-input" type="checkbox" id="exercisingHabit" value="exercisingHabit" name="exercisingHabit">
                     <label class="form-check-label" for="HareketAliskanligi">
                         Hastaneye yatmadan önceki düzenli egzersiz yapma alışkanlığı
                     </label>
-                    <input type="text" class="form-control" name="HareketAliskanligiDiger" id="HareketAliskanligiDiger">
+                    <input type="text" class="form-control" disabled name="exercisingHabitInput" id="exercisingHabitInput">
                 </div>
             </div>
 
@@ -66,14 +66,14 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="EgzersizDurumu" id="EgzersizDurumu" value="Hayir">
+                            <input class="form-check-input" type="radio" name="inHospitalExercise" id="inHospitalExercise" value="Hayir">
                             <label class="form-check-label" for="EgzersizDurumu">
                                 <span class="checkbox-header">Hayir</span>
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="EgzersizDurumu" id="EgzersizDurumu" value="Evet">
+                            <input class="form-check-input" type="radio" name="inHospitalExercise" id="inHospitalExercise" value="Evet">
                             <label class="form-check-label" for="EgzersizDurumu">
                                 <span class="checkbox-header">Evet</span>
 
@@ -84,7 +84,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="ROM_egzersizi" value="ROM egzersizi">
+                                                <input class="form-check-input" type="radio" disabled name="exerciseType" id="romExcersise" value="ROM egzersizi">
                                                 <label class="form-check-label" for="ROM_egzersizi">ROM egzersizi
                                                 </label>
                                             </div>
@@ -94,7 +94,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="ROM_egzersizi_diger" value="Diğer">
+                                                <input class="form-check-input" type="radio" name="exerciseType" disabled id="exerciseType" value="Diğer">
                                                 <label class="form-check-label" for="ROM_egzersizi_diger">Diğer</label>
                                             </div>
                                         </td>
@@ -110,18 +110,18 @@ if (isset($_GET['logout'])) {
             </div>
             <div class="input-section d-flex">
 
-                <p class="usernamelabel">Hareket etme isteği </p>
+                <p class="usernamelabel">Hareket etme isteği:</p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="HareketIstegi" id="HareketIstegi" value="Yok">
+                            <input class="form-check-input" type="radio" name="movementProblem" id="movementProblem" value="Sorun Yok">
                             <label class="form-check-label" for="HareketIstegi">
-                                <span class="checkbox-header">Yok </span>
+                                <span class="checkbox-header">Sorun Yok </span>
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="HareketIstegi" id="HareketIstegi" value="Var">
+                            <input class="form-check-input" type="radio" name="movementProblem" id="HareketIstegi" value="Var">
                             <label class="form-check-label" for="HareketIstegi">
                                 <span class="checkbox-header">Var</span>
 
@@ -132,7 +132,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="Halsizlik" value="Halsizlik">
+                                                <input class="form-check-input" disabled name="movementProblemDesc" type="checkbox" id="Halsizlik" value="Halsizlik">
                                                 <label class="form-check-label" for="Halsizlik">Halsizlik </label>
                                             </div>
                                         </td>
@@ -141,7 +141,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="Yorgunluk" value="Yorgunluk">
+                                                <input class="form-check-input" disabled name="movementProblemDesc" type="checkbox" id="Yorgunluk" value="Yorgunluk">
                                                 <label class="form-check-label" for="Yorgunluk">Yorgunluk</label>
                                             </div>
                                         </td>
@@ -150,7 +150,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="Huzursuzluk" value="Huzursuzluk">
+                                                <input class="form-check-input" disabled name="movementProblemDesc" type="checkbox" id="Huzursuzluk" value="Huzursuzluk">
                                                 <label class="form-check-label" for="Huzursuzluk">Huzursuzluk</label>
                                             </div>
                                         </td>
@@ -159,7 +159,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="HDiğer" value="Diğer">
+                                                <input class="form-check-input" disabled name="movementProblemDesc" type="checkbox" id="HDiğer" value="Diğer">
                                                 <label class="form-check-label" for="HDiğer">Diğer</label>
                                             </div>
                                         </td>
@@ -179,21 +179,21 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="giyinme_soyunma" id="giyinme_soyunma" value="Bağımsız">
+                            <input class="form-check-input" type="radio" name="wearingClothesDependence" id="giyinme_soyunma" value="Bağımsız">
                             <label class="form-check-label" for="giyinme_soyunma">
                                 <span class="checkbox-header">Bağımsız </span>
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="giyinme_soyunma" id="giyinme_soyunma" value="Yarı bağımlı">
+                            <input class="form-check-input" type="radio" name="wearingClothesDependence" id="giyinme_soyunma" value="Yarı bağımlı">
                             <label class="form-check-label" for="giyinme_soyunma">
                                 <span class="checkbox-header">Yarı bağımlı </span>
 
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="giyinme_soyunma" id="giyinme_soyunma" value="Bağımlı">
+                            <input class="form-check-input" type="radio" name="wearingClothesDependence" id="giyinme_soyunma" value="Bağımlı">
                             <label class="form-check-label" for="giyinme_soyunma">
                                 <span class="checkbox-header">Bağımlı</span>
 
@@ -208,21 +208,21 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="pozisyon_degistirme" id="pozisyon_degistirme" value="Bağımsız">
+                            <input class="form-check-input" type="radio" name="changingPositionDependence" id="pozisyon_degistirme" value="Bağımsız">
                             <label class="form-check-label" for="pozisyon_degistirme">
                                 <span class="checkbox-header">Bağımsız </span>
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="pozisyon_degistirme" id="pozisyon_degistirme" value="Yarı bağımlı">
+                            <input class="form-check-input" type="radio" name="changingPositionDependence" id="pozisyon_degistirme" value="Yarı bağımlı">
                             <label class="form-check-label" for="pozisyon_degistirme">
                                 <span class="checkbox-header">Yarı bağımlı </span>
 
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="pozisyon_degistirme" id="pozisyon_degistirme" value="Bağımlı">
+                            <input class="form-check-input" type="radio" name="changingPositionDependence" id="pozisyon_degistirme" value="Bağımlı">
                             <label class="form-check-label" for="pozisyon_degistirme">
                                 <span class="checkbox-header">Bağımlı</span>
 
@@ -237,21 +237,21 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="AyağaKalkma" id="AyağaKalkma" value="Bağımsız">
+                            <input class="form-check-input" type="radio" name="standingUpDependence" id="AyağaKalkma" value="Bağımsız">
                             <label class="form-check-label" for="AyağaKalkma">
                                 <span class="checkbox-header">Bağımsız </span>
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="AyağaKalkma" id="AyağaKalkma" value="Yarı bağımlı">
+                            <input class="form-check-input" type="radio" name="standingUpDependence" id="AyağaKalkma" value="Yarı bağımlı">
                             <label class="form-check-label" for="AyağaKalkma">
                                 <span class="checkbox-header">Yarı bağımlı </span>
 
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="AyağaKalkma" id="AyağaKalkma" value="Bağımlı">
+                            <input class="form-check-input" type="radio" name="standingUpDependence" id="AyağaKalkma" value="Bağımlı">
                             <label class="form-check-label" for="AyağaKalkma">
                                 <span class="checkbox-header">Bağımlı</span>
 
@@ -266,91 +266,153 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="yurume" id="yurume" value="Bağımsız">
+                            <input class="form-check-input" type="radio" name="walkingDependence" id="yurume" value="Bağımsız">
                             <label class="form-check-label" for="yurume">
                                 <span class="checkbox-header">Bağımsız </span>
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="yurume" id="yurume" value="Yarı bağımlı">
+                            <input class="form-check-input" type="radio" name="walkingDependence" id="yurume" value="Yarı bağımlı">
                             <label class="form-check-label" for="yurume">
                                 <span class="checkbox-header">Yarı bağımlı </span>
 
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="yurume" id="yurume" value="Bağımlı">
+                            <input class="form-check-input" type="radio" name="walkingDependence" id="yurume" value="Bağımlı">
                             <label class="form-check-label" for="yurume">
                                 <span class="checkbox-header">Bağımlı</span>
-
                             </label>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="d-flex text-center">
+                <input class="form-control submit m-auto " type='submit' name="submit" id="submit" value="Kayıt">
+            </div>
+            </div>
+            </div>
+
 
 
             <script>
+                
+                $('input[name="exercisingHabit"]').change(function() {
+                    console.log("hello");
+                    console.log(this.checked);
+                    if (this.checked) {
+                        $('input[name="exercisingHabitInput"]').prop('disabled', false);
+                    } else {
+                        $('input[name="exercisingHabitInput"]').prop('disabled', true);
+                    }
+                    });
+
+
+            $('.form-check-input[name="inHospitalExercise"]').change(function() {
+                console.log($(this).val());
+                if ($(this).val() === 'Evet') {
+                    $('input[name="exerciseType"]').prop('disabled', false);
+                } else {
+                    $('input[name="exerciseType"]').prop('disabled', true);
+                }
+                });
+
+               
+             $('.form-check-input[name="movementProblem"]').change(function() {
+                console.log($(this).val());
+                if ($(this).val() === 'Var') {
+                    $('.form-check-input[name="movementProblemDesc"]').prop('disabled', false);
+                } else {
+                    $('.form-check-input[name="movementProblemDesc"]').prop('disabled', true);
+                }
+                });
+
+    
+
+
+
                 $(function() {
                     $('#closeBtn').click(function(e) {
                         $("#content").load("formlar-student.php");
 
                     })
                 });
+
             </script>
 
             <script>
                 $(function() {
                     $('#submit').click(function(e) {
+                        console.log("hellosecond");
+                             e.preventDefault()
 
-
-                        var valid = this.form.checkValidity();
-
-                        if (valid) {
                             var id = <?php
+                            $userid = $_SESSION['userlogin']['id'];
+                            echo $userid
+                            ?>;
+                            var name = $('#name').val();
+                            var surname = $('#surname').val();
+                            var age = $('#age').val();
+                            var not = $('#not').val();
+                            let form_name = "hareketForm1";
+                            let patient_name = "<?php
+                                                    echo urldecode($_GET['patient_name']);
+                                                    ?>";
+                            var patient_id = <?php
+                                                    $userid = $_GET['patient_id'];
+                                                    echo $userid
+                                                    ?>;
+                            let yourDate = new Date()
+                            let creationDate = yourDate.toISOString().split('T')[0];
+                            let updateDate = yourDate.toISOString().split('T')[0];
+                            let exercisingHabit = $('input[name="exercisingHabit"]').is(":checked") ? $('input[name="exercisingHabit"]').val() : "Hayir";
+                            let exercisingHabitInput = "";
+                            if(exercisingHabit === "exercisingHabit"){
+                                exercisingHabit = $('input[name="exercisingHabitInput"]').val();
+                            }
+                            let inHospitalExercise = $('input[name="inHospitalExercise"]:checked').val() === "Evet" ? $('input[name="exerciseType"]:checked').val() : "Hayir";
+                            let movementProblem = $('.form-check-input[name="movementProblem"]:checked').val() === "Var" ? $('.form-check-input[name="movementProblemDesc"]:checked').map(function() {
+                                return $(this).val();
+                            }).get().join("/") : "Sorun Yok";
+                            let wearingClothesDependence = $('input[name="wearingClothesDependence"]:checked').val();
+                            let changingPositionDependence = $('input[name="changingPositionDependence"]:checked').val();
+                            let standingUpDependence = $('input[name="standingUpDependence"]:checked').val();
+                            let walkingDependence = $('input[name="walkingDependence"]:checked').val();
 
-                                        $userid = $_SESSION['userlogin']['id'];
-                                        echo $userid
-                                        ?>;
-                            let HareketAliskanligi = parseInt($("input[name='HareketAliskanligi']").val());
-                            let EgzersizDurumu = $("input[type='radio'][name='EgzersizDurumu']:checked")
-                                .val();
-                            let ROM_egzersizi = $("input[name='ROM_egzersizi']").val();
-                            let ROM_egzersizi_diger = $("input[name='ROM_egzersizi_diger']:checked").val();
-                            let HareketIstegi = $("input[name='HareketIstegi']:checked").val();
-                            let Yorgunluk = $("input[name='Yorgunluk']").val();
-                            let Huzursuzluk = $("input[name='Huzursuzluk']").val();
-                            let HDiğer = $("input[name='HDiğer']").val();
-                            let giyinme_soyunma = $("input[name='giyinme_soyunma']:checked").val();
-                            let pozisyon_degistirme = $("input[name='pozisyon_degistirme']:checked").val();
-                            let AyağaKalkma = $("input[name='AyağaKalkma']:checked").val();
-                            let yurume = $("input[name='yurume']:checked").val();
-
-
-                            e.preventDefault()
+                            console.log("exercising habit: ", exercisingHabit, "in hospital exercise: ", inHospitalExercise, "movement problem: ", movementProblem, "wearing clothes dependence: ", wearingClothesDependence, "changing position dependence: ", changingPositionDependence, "standing up dependence: ", standingUpDependence, "walking dependence: ", walkingDependence);
 
                             $.ajax({
                                 type: 'POST',
-                                url: '<?php echo $base_url; ?>/student-patient.php',
+                                url: '<?php echo $base_url; ?>/SubmitOrUpdateForm1_Hareket.php',
                                 data: {
-                                    HareketAliskanligi: HareketAliskanligi,
-                                    EgzersizDurumu: EgzersizDurumu,
-                                    ROM_egzersizi: ROM_egzersizi,
-                                    ROM_egzersizi_diger: ROM_egzersizi_diger,
-                                    HareketIstegi: HareketIstegi,
-                                    Yorgunluk: Yorgunluk,
-                                    Huzursuzluk: Huzursuzluk,
-                                    HDiğer: HDiğer,
-                                    giyinme_soyunma: giyinme_soyunma,
-                                    pozisyon_degistirme: pozisyon_degistirme,
-                                    AyağaKalkma: AyağaKalkma,
-                                    yurume: yurume,
+                                    'id': id,
+                                    'name': name,
+                                    'surname': surname,
+                                    'age': age,
+                                    'not': not,
+                                    'form_name': form_name,
+                                    'patient_name': patient_name,
+                                    'patient_id': patient_id,
+                                    'creation_date': creationDate,
+                                    'update_date': updateDate,
+                                    'exercisingHabit': exercisingHabit,
+                                    'inHospitalExercise': inHospitalExercise,
+                                    'movementProblem': movementProblem,
+                                    'wearingClothesDependence': wearingClothesDependence,
+                                    'changingPositionDependence': changingPositionDependence,
+                                    'standingUpDependence': standingUpDependence,
+                                    'walkingDependence': walkingDependence
 
                                 },
                                 success: function(data) {
-                                    alert("Success");
-                                    location.reload(true)
+                                    alert(data);
+                                    console.log(data);
+                                    let url =
+                                        "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
+                                        patient_id + "&patient_name=" + encodeURIComponent(
+                                            patient_name);
+                                    $("#content").load(url);
                                 },
                                 error: function(data) {
                                     Swal.fire({
@@ -360,10 +422,6 @@ if (isset($_GET['logout'])) {
                                     })
                                 }
                             })
-
-
-
-                        }
                     })
 
                 });

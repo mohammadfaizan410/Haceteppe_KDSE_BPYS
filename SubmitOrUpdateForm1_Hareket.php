@@ -1,82 +1,73 @@
-<?php
-require_once("config-students.php");
-?>
 
 <?php
-if (isset($_POST)) {
-    $sql = "SELECT * FROM  form1_solunumgereksinimi  WHERE SDiger =" . $_POST["SDiger"];
-    $smtmselect = $db->prepare($sql);
-    $result = $smtmselect->execute();
-    if ($result) {
-        $values = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
-        if (count($values) > 0) {
-            $stmt = $db->prepare("UPDATE form1_beslenmegereksinimi SET
-                           HareketAliskanligi,
-                           EgzersizDurumu,
-                           ROM_egzersizi,
-                           ROM_egzersizi_diger,
-                           HareketIstegi,
-                           Yorgunluk,
-                           Huzursuzluk,
-                           HDiğer,
-                           giyinme_soyunma,
-                           pozisyon_degistirme,
-                           AyağaKalkma,
-                           yurume
-                WHERE SDiger = ?");
+require_once("./config-students.php");
 
-            $stmt->execute([
-                $_POST["HareketAliskanligi"],
-                $_POST["EgzersizDurumu"],
-                $_POST["ROM_egzersizi"],
-                $_POST["ROM_egzersizi_diger"],
-                $_POST["HareketIstegi"],
-                $_POST["Yorgunluk"],
-                $_POST["Huzursuzluk"],
-                $_POST["HDiğer"],
-                $_POST["giyinme_soyunma"],
-                $_POST["pozisyon_degistirme"],
-                $_POST["AyağaKalkma"],
-                $_POST["yurume"]
-            ]);
-            echo  "Güncelleme Başarılı!";
+if (isset($_POST["patient_name"])) {
+
+    if (isset($_POST['isUpdate'])) {
+        $stmt = $db->prepare("UPDATE hareketForm1 SET
+        update_date = ?,
+        exercisingHabit = ?,
+        inHospitalExercise = ?,
+        movementProblem = ?,
+        wearingClothesDependence = ?,
+        changingPositionDependence = ?,
+        standingUpDependence = ?,
+        walkingDependence = ?
+        WHERE form_id = ?");
+
+        $result = $stmt->execute([
+            $_POST["creation_date"],
+            $_POST["exercisingHabit"],
+            $_POST["inHospitalExercise"],
+            $_POST["movementProblem"],
+            $_POST["wearingClothesDependence"],
+            $_POST["changingPositionDependence"],
+            $_POST["standingUpDependence"],
+            $_POST["walkingDependence"],
+            $_POST["form_id"]
+        ]);
+        if ($result) {
+            echo $result;
         } else {
-            $stmt = $db->prepare("INSERT INTO form1_solunumgereksinimi (
-                           HareketAliskanligi,
-                           EgzersizDurumu,
-                           ROM_egzersizi,
-                           ROM_egzersizi_diger,
-                           HareketIstegi,
-                           Yorgunluk,
-                           Huzursuzluk,
-                           HDiğer,
-                           giyinme_soyunma,
-                           pozisyon_degistirme,
-                           AyağaKalkma,
-                           yurume
-              ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-
-            $stmt->execute([
-                $_POST["HareketAliskanligi"],
-                $_POST["EgzersizDurumu"],
-                $_POST["ROM_egzersizi"],
-                $_POST["ROM_egzersizi_diger"],
-                $_POST["HareketIstegi"],
-                $_POST["Yorgunluk"],
-                $_POST["Huzursuzluk"],
-                $_POST["HDiğer"],
-                $_POST["giyinme_soyunma"],
-                $_POST["pozisyon_degistirme"],
-                $_POST["AyağaKalkma"],
-                $_POST["yurume"]
-            ]);
-            echo "succesfully inserted";
+            echo "Error could not update data!";
         }
     } else {
-
-        echo "error";
+        $stmt = $db->prepare("INSERT INTO hareketForm1 (
+                form_name,
+                patient_name,
+                patient_id,
+                creation_date,
+                update_date,
+                exercisingHabit,
+                inHospitalExercise,
+                movementProblem,
+                wearingClothesDependence,
+                changingPositionDependence,
+                standingUpDependence,
+                walkingDependence
+            ) VALUES (?,    ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?)");
+        $result = $stmt->execute([
+            $_POST["form_name"],
+            $_POST["patient_name"],
+            $_POST["patient_id"],
+            $_POST["creation_date"],
+            $_POST["update_date"],
+            $_POST["exercisingHabit"],
+            $_POST["inHospitalExercise"],
+            $_POST["movementProblem"],
+            $_POST["wearingClothesDependence"],
+            $_POST["changingPositionDependence"],
+            $_POST["standingUpDependence"],
+            $_POST["walkingDependence"]
+        ]);
+        if ($result) {
+            echo "Ekleme Başarılı";
+        } else {
+            echo "Error: could not inserted!";
+        }
     }
 } else {
-    echo "error";
+    echo "Error: Post data not set!";
 }
 ?>
