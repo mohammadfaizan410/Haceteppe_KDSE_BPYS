@@ -1,94 +1,94 @@
-<?php
-require_once("config-students.php");
-?>
 
 <?php
-if (isset($_POST)) {
-    $sql = "SELECT * FROM  form1_solunumgereksinimi  WHERE SDiger =" . $_POST["SDiger"];
-    $smtmselect = $db->prepare($sql);
-    $result = $smtmselect->execute();
-    if ($result) {
-        $values = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
-        if (count($values) > 0) {
-            $stmt = $db->prepare("UPDATE form1_beslenmegereksinimi SET
-                                    IletisimEngeli,
-                                    IletisimEngeliDiger,
-                                    refakatci,
-                                    refakatciDiger,
-                                    UlasmaSikinti,
-                                    UlasmaSikintiDiger,
-                                    PersonelleIletisim,
-                                    PersonelleIletisimDiger,
-                                    BakımaKatılma,
-                                    İstekli1,
-                                    İsteksiz1,
-                                    İstekli,
-                                    İsteksiz,
-                                    TedaviyiKabullenme,
-                                    TedaviyiKabullenmeDiger
-                WHERE SDiger = ?");
+require_once("./config-students.php");
 
-            $stmt->execute([
-                $_POST["IletisimEngeli"],
-                $_POST["IletisimEngeliDiger"],
-                $_POST["refakatci"],
-                $_POST["refakatciDiger"],
-                $_POST["UlasmaSikinti"],
-                $_POST["UlasmaSikintiDiger"],
-                $_POST["PersonelleIletisim"],
-                $_POST["PersonelleIletisimDiger"],
-                $_POST["BakımaKatılma"],
-                $_POST["İstekli1"],
-                $_POST["İsteksiz1"],
-                $_POST["İstekli"],
-                $_POST["İsteksiz"],
-                $_POST["TedaviyiKabullenme"],
-                $_POST["TedaviyiKabullenmeDiger"]
-            ]);
-            echo  "Güncelleme Başarılı!";
+
+
+// patient_id: patient_id,
+// patient_name: patient_name,
+// creation_date: creation_date,
+// updateDate: updateDate,
+// communicationProblem: communicationProblem,
+// companion: companion,
+// reachTrouble: reachTrouble,
+// contactingStaffTrouble: contactingStaffTrouble,
+// careAcceptance: careAcceptance,
+// careAcceptanceWilling: careAcceptanceWilling,
+// careAcceptanceNon: careAcceptanceNon,
+// treatmentAcceptance: treatmentAcceptance,
+// form_name: 'iletisimForm1'
+
+if (isset($_POST["patient_name"])) {
+
+    if (isset($_POST['isUpdate'])) {
+        $stmt = $db->prepare("UPDATE ilestimform1 SET
+        update_date = ?,
+        communicationProblem = ?,
+        companion = ?,
+        reachTrouble = ?,
+        contactingStaffTrouble = ?,
+        careAcceptance = ?,
+        careAcceptanceWilling = ?,
+        careAcceptanceNon = ?,
+        treatmentAcceptance = ?
+
+        WHERE form_id = ?");
+
+        $result = $stmt->execute([
+            $_POST["creation_date"],
+            $_POST["communicationProblem"],
+            $_POST["companion"],
+            $_POST["reachTrouble"],
+            $_POST["contactingStaffTrouble"],
+            $_POST["careAcceptance"],
+            $_POST["careAcceptanceWilling"],
+            $_POST["careAcceptanceNon"],
+            $_POST["treatmentAcceptance"],
+            $_POST["form_id"]
+        ]);
+        if ($result) {
+            echo $result;
         } else {
-            $stmt = $db->prepare("INSERT INTO form1_solunumgereksinimi (
-                                    IletisimEngeli,
-                                    IletisimEngeliDiger,
-                                    refakatci,
-                                    refakatciDiger,
-                                    UlasmaSikinti,
-                                    UlasmaSikintiDiger,
-                                    PersonelleIletisim,
-                                    PersonelleIletisimDiger,
-                                    BakımaKatılma,
-                                    İstekli1,
-                                    İsteksiz1,
-                                    İstekli,
-                                    İsteksiz,
-                                    TedaviyiKabullenme,
-                                    TedaviyiKabullenmeDiger
-              ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-
-            $stmt->execute([
-                $_POST["IletisimEngeli"],
-                $_POST["IletisimEngeliDiger"],
-                $_POST["refakatci"],
-                $_POST["refakatciDiger"],
-                $_POST["UlasmaSikinti"],
-                $_POST["UlasmaSikintiDiger"],
-                $_POST["PersonelleIletisim"],
-                $_POST["PersonelleIletisimDiger"],
-                $_POST["BakımaKatılma"],
-                $_POST["İstekli1"],
-                $_POST["İsteksiz1"],
-                $_POST["İstekli"],
-                $_POST["İsteksiz"],
-                $_POST["TedaviyiKabullenme"],
-                $_POST["TedaviyiKabullenmeDiger"]
-            ]);
-            echo "succesfully inserted";
+            echo "Error could not update data!";
         }
     } else {
-
-        echo "error";
+        $stmt = $db->prepare("INSERT INTO ilestimform1 (
+                form_name,
+                patient_name,
+                patient_id,
+                creation_date,
+                update_date,
+                communicationProblem,
+                companion,
+                reachTrouble,
+                contactingStaffTrouble,
+                careAcceptance,
+                careAcceptanceWilling,
+                careAcceptanceNon,
+                treatmentAcceptance
+            ) VALUES (?,    ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?,   ?)");
+        $result = $stmt->execute([
+            $_POST["form_name"],
+            $_POST["patient_name"],
+            $_POST["patient_id"],
+            $_POST["creation_date"],
+            $_POST["update_date"],
+            $_POST["communicationProblem"],
+            $_POST["companion"],
+            $_POST["reachTrouble"],
+            $_POST["contactingStaffTrouble"],
+            $_POST["careAcceptance"],
+            $_POST["careAcceptanceWilling"],
+            $_POST["careAcceptanceNon"],
+            $_POST["treatmentAcceptance"]
+        ]);
+        if ($result) {
+            echo "Ekleme Başarılı";
+        } else {
+            echo "Error: could not inserted!";
+        }
     }
 } else {
-    echo "error";
+    echo "Error: Post data not set!";
 }
 ?>

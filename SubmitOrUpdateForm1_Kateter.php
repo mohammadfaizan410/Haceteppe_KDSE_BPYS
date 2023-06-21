@@ -1,86 +1,97 @@
-<?php
-require_once("config-students.php");
-?>
 
 <?php
-if (isset($_POST)) {
-    $sql = "SELECT * FROM  form1_solunumgereksinimi  WHERE SDiger =" . $_POST["SDiger"];
-    $smtmselect = $db->prepare($sql);
-    $result = $smtmselect->execute();
-    if ($result) {
-        $values = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
-        if (count($values) > 0) {
-            $stmt = $db->prepare("UPDATE form1_beslenmegereksinimi SET
-                                    venöz_kateter,
-                                    PYeri,
-                                    PSayısı,
-                                    PTakılmaTarihi,
-                                    SYeri,
-                                    SSayısı,
-                                    STakılmaTarihi,
-                                    DYeri,
-                                    DSayısı,
-                                    DTakılmaTarihi,
-                                    DigerYeri,
-                                    DigerSayısı,
-                                    DigerTakılmaTarihi
-                WHERE SDiger = ?");
+require_once("./config-students.php");
 
-            $stmt->execute([
-                $_POST["venöz_kateter"],
-                $_POST["PYeri"],
-                $_POST["PSayısı"],
-                $_POST["PTakılmaTarihi"],
-                $_POST["SYeri"],
-                $_POST["SSayısı"],
-                $_POST["STakılmaTarihi"],
-                $_POST["DYeri"],
-                $_POST["DSayısı"],
-                $_POST["DTakılmaTarihi"],
-                $_POST["DigerYeri"],
-                $_POST["DigerSayısı"],
-                $_POST["DigerTakılmaTarihi"]
-            ]);
-            echo  "Güncelleme Başarılı!";
+if (isset($_POST["patient_name"])) {
+
+    if (isset($_POST['isUpdate'])) {
+        $stmt = $db->prepare("UPDATE katererform1 SET
+        update_date = ?,
+        katererType = ?,
+        peripheralKaterarAmount = ?,
+        peripheralKaterarLocation = ?,
+        peripheralKaterarDate   = ?,
+        centralKaterarNumber = ?,
+        centralKaterarLocation = ?,
+        centralKaterarDate = ?,
+        drainKatererAmount = ?,
+        drainKatererLocation = ?,
+        drainKatererDate = ?,
+        otherKatereAmount = ?,
+        otherKatereLocation = ?,
+        otherKatereDate = ?
+        WHERE form_id = ?");
+
+        $result = $stmt->execute([
+            $_POST["creation_date"],
+            $_POST["katererType"],
+            $_POST["peripheralKaterarAmount"],
+            $_POST["peripheralKaterarLocation"],
+            $_POST["peripheralKaterarDate"],
+            $_POST["centralKaterarNumber"],
+            $_POST["centralKaterarLocation"],
+            $_POST["centralKaterarDate"],
+            $_POST["drainKatererAmount"],
+            $_POST["drainKatererLocation"],
+            $_POST["drainKatererDate"],
+            $_POST["otherKatereAmount"],
+            $_POST["otherKatereLocation"],
+            $_POST["otherKatereDate"],
+            $_POST["form_id"]
+        ]);
+        if ($result) {
+            echo $result;
         } else {
-            $stmt = $db->prepare("INSERT INTO form1_solunumgereksinimi (
-                                    venöz_kateter,
-                                    PYeri,
-                                    PSayısı,
-                                    PTakılmaTarihi,
-                                    SYeri,
-                                    SSayısı,
-                                    STakılmaTarihi,
-                                    DYeri,
-                                    DSayısı,
-                                    DTakılmaTarihi,
-                                    DigerYeri,
-                                    DigerSayısı,
-                                    DigerTakılmaTarihi
-              ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-
-            $stmt->execute([
-                $_POST["venöz_kateter"],
-                $_POST["PYeri"],
-                $_POST["PSayısı"],
-                $_POST["PTakılmaTarihi"],
-                $_POST["SYeri"],
-                $_POST["SSayısı"],
-                $_POST["STakılmaTarihi"],
-                $_POST["DYeri"],
-                $_POST["DSayısı"],
-                $_POST["DTakılmaTarihi"],
-                $_POST["DigerYeri"],
-                $_POST["DigerSayısı"],
-                $_POST["DigerTakılmaTarihi"]
-            ]);
-            echo "succesfully inserted";
+            echo "Error could not update data!";
         }
     } else {
-
-        echo "error";
+        $stmt = $db->prepare("INSERT INTO katererform1 (
+                form_name,
+                patient_name,
+                patient_id,
+                creation_date,
+                update_date,
+                katererType,
+                peripheralKaterarAmount,
+                peripheralKaterarLocation,
+                peripheralKaterarDate,
+                centralKaterarNumber,
+                centralKaterarLocation,
+                centralKaterarDate,
+                drainKatererAmount,
+                drainKatererLocation,
+                drainKatererDate,
+                otherKatereAmount,
+                otherKatereLocation,
+                otherKatereDate
+            ) VALUES (?, ?, ? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,?)");
+        $result = $stmt->execute([
+            $_POST["form_name"],
+            $_POST["patient_name"],
+            $_POST["patient_id"],
+            $_POST["creation_date"],
+            $_POST["update_date"],
+            $_POST["katererType"],
+            $_POST["peripheralKaterarAmount"],
+            $_POST["peripheralKaterarLocation"],
+            $_POST["peripheralKaterarDate"],
+            $_POST["centralKaterarNumber"],
+            $_POST["centralKaterarLocation"],
+            $_POST["centralKaterarDate"],
+            $_POST["drainKatererAmount"],
+            $_POST["drainKatererLocation"],
+            $_POST["drainKatererDate"],
+            $_POST["otherKatereAmount"],
+            $_POST["otherKatereLocation"],
+            $_POST["otherKatereDate"]
+        ]);
+        if ($result) {
+            echo "Ekleme Başarılı";
+        } else {
+            echo "Error: could not inserted!";
+        }
     }
 } else {
-    echo "error";
+    echo "Error: Post data not set!";
 }
 ?>

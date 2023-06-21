@@ -138,7 +138,6 @@ if (isset($_GET['logout'])) {
                         patient_surname: patient_surname,
                         id: id,
                         patient_age: patient_age
-
                     },
                     success: function(data) {
                         alert(data);

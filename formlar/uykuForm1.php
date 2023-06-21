@@ -33,12 +33,12 @@ if (isset($_GET['logout'])) {
 <body style="background-color:white">
     <div class="container-fluid pt-4 px-4">
         <div class="send-patient ta-center">
-            <span class='close closeBtn' id='closeBtn'>&times;</span>
+            <span class='close closeBtn' id='closeBtn1'>&times;</span>
             <h1 class="form-header">UYKU GEREKSİNİMİ</h1>
 
             <div class="input-section d-flex">
                 <p class="usernamelabel">Ortalama uyku süresi:</p>
-                <input type="text" class="form-control" name="UykuSuresi" id="UykuSuresi">
+                <input type="text" class="form-control" name="averageSleepDuration" id="averageSleepDuration">
             </div>
 
             <div class="input-section d-flex">
@@ -47,14 +47,14 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="UykuSorun" id="UykuSorun" value="Sorun Yok">
+                            <input class="form-check-input" type="radio" name="sleepProblem" id="sleepProblem" value="Sorun Yok">
                             <label class="form-check-label" for="UykuSorun">
                                 <span class="checkbox-header">Sorun Yok</span>
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="UykuSorun" id="UykuSorun" value="Sorun Var">
+                            <input class="form-check-input" type="radio" name="sleepProblem" id="sleepProblem" value="Sorun Var">
                             <label class="form-check-label" for="UykuSorun">
                                 <span class="checkbox-header">Sorun Var</span>
 
@@ -65,8 +65,8 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="GündüzUykusu" value="GündüUykusu">
-                                                <label class="form-check-label" for="GündüzUykusU>Gündüz uykus </label>
+                                                <input class="form-check-input" disabled name="sleepProblemDesc" type="checkbox" id="sleepProblemDesc" value="Gündüz uykus">
+                                                <label class="form-check-label" for="GündüzUykusU">Gündüz uykus </label>
                                             </div>
                                         </td>
 
@@ -74,9 +74,8 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class=" protezlertable">
                                                     <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="checkbox" id="UykudanYorgun" value="Uykudan yorgun">
-                                                        <label class="form-check-label" for="UykudanYorgun">Uykudan
-                                                            yorgun kalkma</label>
+                                                        <input class="form-check-input" disabled name="sleepProblemDesc" type="checkbox" id="UykudanYorgun" value="Uykudan yorgun kalkma">
+                                                        <label class="form-check-label" for="UykudanYorgun">Uykudan yorgun kalkma</label>
                                                     </div>
                                         </td>
 
@@ -84,7 +83,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="UyumaGüçlüğü" value="Uyuma güçlüğü">
+                                                <input class="form-check-input" disabled name="sleepProblemDesc" type="checkbox" id="UyumaGüçlüğü" value="Uyuma güçlüğü">
                                                 <label class="form-check-label" for="UyumaGüçlüğü">Uyuma güçlüğü</label>
                                             </div>
                                         </td>
@@ -93,9 +92,8 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="UykununBölünmesi" value="Uykunun Bölünmesi">
-                                                <label class="form-check-label" for="UykununBölünmesi">Uykunun
-                                                    Bölünmesi</label>
+                                                <input class="form-check-input" disabled name="sleepProblemDesc" type="checkbox" id="sleepProblemDesc" value="Uykunun Bölünmesi">
+                                                <label class="form-check-label" for="UykununBölünmesi">Uykunun Bölünmesi</label>
                                             </div>
                                         </td>
 
@@ -104,13 +102,12 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="UykuSorunDiger" value="Diğer">
+                                                <input class="form-check-input" disabled name="sleepProblemDesc" type="checkbox" id="UykuSorunDiger" value="Diğer">
                                                 <label class="form-check-label" for="UykuSorunDiger">Diğer</label>
                                             </div>
                                         </td>
 
                                     </tr>
-
 
                                 </tbody>
                             </table>
@@ -119,22 +116,21 @@ if (isset($_GET['logout'])) {
                 </div>
             </div>
 
-
             <div class="input-section d-flex">
                 <p class="usernamelabel">Uykuya dalmada yardımcı olan alışkanlıkları (kitap okuma, süt içme vb.)
                     (Açıklayınız):</p>
-                <input type="text" class="form-control" name="UykuyaDalmaAliskanligi" id="UykuyaDalmaAliskanligi">
+                <input type="text" class="form-control" name="sleepHelpHabits" id="UykuyaDalmaAliskanligi">
             </div>
             <div class="input-section d-flex">
                 <p class="usernamelabel">Hastane ortamında uykusunu etkileyen faktörler: (Açıklayınız):</p>
-                <input type="text" class="form-control" name="UykuyuEtkileyenFaktorler" id="UykuyuEtkileyenFaktorler">
+                <input type="text" class="form-control" name="hospitalFactorsAffectingSleep" id="UykuyuEtkileyenFaktorler">
             </div>
             <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
 
 
             <script>
                 $(function() {
-                    $('#closeBtn').click(function(e) {
+                    $('#closeBtn1').click(function(e) {
                         let patient_id = <?php
                                             $userid = $_GET['patient_id'];
                                             echo $userid
@@ -148,6 +144,16 @@ if (isset($_GET['logout'])) {
 
                     })
                 });
+
+                $('.form-check-input[name="sleepProblem"]').change(function() {
+                    if ($(this).val() == "Sorun Var") {
+                        $('input[name="sleepProblemDesc"]').prop('disabled', false);
+                    } else {
+                        $('input[name="sleepProblemDesc"]').prop('disabled', true);
+                    }
+                    });
+                
+                
             </script>
 
             <script>
@@ -155,8 +161,6 @@ if (isset($_GET['logout'])) {
                     $('#submit').click(function(e) {
                         e.preventDefault()
 
-                        var valid = this.form.checkValidity();
-                        if (valid) {
                             let name = $('#name').val();
                             let surname = $('#surname').val();
                             let age = $('#age').val();
@@ -172,18 +176,14 @@ if (isset($_GET['logout'])) {
                             let yourDate = new Date()
                             let creation_date = yourDate.toISOString().split('T')[0];
                             let updateDate = yourDate.toISOString().split('T')[0];
-                            let fileNo = 160;
-                            let UykuSuresi = $("input[name='UykuSuresi']").val();
-                            let UykuSorun = parseInt($("input[type='radio'][name='UykuSorun']:checked")
-                                .val());
-                            let GündüzUykusu = $("input[name='GündüzUykusu']").val();
-                            let UykudanYorgun = $("input[name='UykudanYorgun']").val();
-                            let UyumaGüçlüğü = $("input[name='UyumaGüçlüğü']").val();
-                            let UykununBölünmesi = $("input[name='UykununBölünmesi']").val();
-                            let UykuSorunDiger = $("input[name='UykuSorunDiger']").val();
-                            let UykuyaDalmaAliskanligi = $("input[name='UykuyaDalmaAliskanligi']").val();
-                            let UykuyuEtkileyenFaktorler = $("input[name='UykuyuEtkileyenFaktorler']")
-                                .val();
+                            let form_name = "uykuForm1";
+                            let averageSleepDuration = $('#averageSleepDuration').val();
+                            let sleepProblem = $('.form-check-input[name="sleepProblem"]:checked').val() === "Sorun Var" ? $("input[name='sleepProblemDesc']:checked").map(function() {
+                                return $(this).val();
+                            }).get().join("/") : "Sorun Yok";
+
+                            let sleepHelpHabits = $('#UykuyaDalmaAliskanligi').val();
+                            let hospitalFactorsAffectingSleep = $('#UykuyuEtkileyenFaktorler').val();
 
 
                             e.preventDefault()
@@ -194,19 +194,13 @@ if (isset($_GET['logout'])) {
                                 data: {
                                     patient_id: patient_id,
                                     patient_name: patient_name,
-                                    form_num: fileNo,
+                                    form_name: form_name,
                                     creation_date: creation_date,
                                     update_date: updateDate,
-                                    UykuSuresi: UykuSuresi,
-                                    UykuSorun: UykuSorun,
-                                    GündüzUykusu: GündüzUykusu,
-                                    UykudanYorgun: UykudanYorgun,
-                                    UyumaGüçlüğü: UyumaGüçlüğü,
-                                    UykununBölünmesi: UykununBölünmesi,
-                                    UykuSorunDiger: UykuSorunDiger,
-                                    UykuyaDalmaAliskanligi: UykuyaDalmaAliskanligi,
-                                    UykuyuEtkileyenFaktorler: UykuyuEtkileyenFaktorler
-
+                                    averageSleepDuration: averageSleepDuration,
+                                    sleepProblem: sleepProblem,
+                                    sleepHelpHabits: sleepHelpHabits,
+                                    hospitalFactorsAffectingSleep: hospitalFactorsAffectingSleep,
                                 },
                                 success: function(data) {
                                     alert(data);
@@ -227,7 +221,7 @@ if (isset($_GET['logout'])) {
 
 
 
-                        }
+                        
                     })
 
                 });

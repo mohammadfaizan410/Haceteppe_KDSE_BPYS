@@ -66,7 +66,7 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="DuzenliCalisma" id="DuzenliCalisma"
+                            <input class="form-check-input" type="radio" name="workStatus" id="DuzenliCalisma"
                                 value="Çalışmıyor">
                             <label class="form-check-label" for="DuzenliCalisma">
                                 <span class="checkbox-header">Çalışmıyor</span>
@@ -76,12 +76,12 @@ if (isset($_GET['logout'])) {
                                 <label class="form-check-label" for="beslenmeileumuradio">
                                     <span class="checkbox-header">Süre:</span>
                                 </label>
-                                <input type="text" class="form-control diger" name="CalismiyorSure" id="CalismiyorSure">
+                                <input type="text" class="form-control diger" name="nonWorkingTime" disabled id="CalismiyorSure">
                             </div>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="DuzenliCalisma" id="DuzenliCalisma"
+                            <input class="form-check-input" type="radio" name="workStatus" id="DuzenliCalisma"
                                 value="Çalışıyor">
                             <label class="form-check-label" for="DuzenliCalisma">
                                 <span class="checkbox-header">Çalışıyor </span>
@@ -91,7 +91,7 @@ if (isset($_GET['logout'])) {
                                 <label class="form-check-label" for="beslenmeileumuradio">
                                     <span class="checkbox-header">Süre:</span>
                                 </label>
-                                <input type="text" class="form-control diger" name="CalisiyorSure" id="CalisiyorSure">
+                                <input type="text" class="form-control diger" name="workingTime" disabled id="CalisiyorSure">
                             </div>
                         </div>
 
@@ -104,17 +104,17 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="IsIzni" id="IsIzni" value="Yok">
+                            <input class="form-check-input" type="radio" name="workInterruption" id="IsIzni" value="Yok">
                             <label class="form-check-label" for="IsIzni">
                                 <span class="checkbox-header">Yok</span>
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="IsIzni" id="IsIzni" value="Var">
+                            <input class="form-check-input" type="radio" name="workInterruption" id="IsIzni" value="Var">
                             <label class="form-check-label" for="IsIzni">
                                 <span class="checkbox-header">Var: (Açıklayınız)</span>
                             </label>
-                            <input type="text" class="form-control diger" name="IsIzniDiger" id="IsIzniDiger">
+                            <input type="text" class="form-control diger" name="workInterruptionInput" disabled id="IsIzniDiger">
                         </div>
                     </div>
                 </div>
@@ -124,19 +124,19 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="MeslekRiski" id="MeslekRiski"
+                            <input class="form-check-input" type="radio" name="workRisk" id="MeslekRiski"
                                 value="Yok">
                             <label class="form-check-label" for="MeslekRiski">
                                 <span class="checkbox-header">Yok</span>
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="MeslekRiski" id="MeslekRiski"
+                            <input class="form-check-input" type="radio" name="workRisk" id="MeslekRiski"
                                 value="Var">
                             <label class="form-check-label" for="MeslekRiski">
                                 <span class="checkbox-header">Var: (Açıklayınız)</span>
                             </label>
-                            <input type="text" class="form-control diger" name="MeslekRiskiDiger" id="MeslekRiskiDiger">
+                            <input type="text" class="form-control diger" name="workRiskInput" id="MeslekRiskiDiger">
                         </div>
                     </div>
                 </div>
@@ -146,12 +146,10 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="AileBireyleri" id="AileBireyleri"
-                                value="option1">
                             <label class="form-check-label" for="AileBireyleri">
                                 <span class="checkbox-header">Belirtiniz:</span>
                             </label>
-                            <input type="text" class="form-control diger" name="AileBireyleriDiger"
+                            <input type="text" class="form-control diger" name="familyMembers"
                                 id="AileBireyleriDiger">
                         </div>
                     </div>
@@ -162,12 +160,10 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="CocukSayisi" id="CocukSayisi"
-                                value="option1">
                             <label class="form-check-label" for="CocukSayisi">
                                 <span class="checkbox-header">Belirtiniz:</span>
                             </label>
-                            <input type="text" class="form-control diger" name="CocukSayisiDiger" id="CocukSayisiDiger">
+                            <input type="number" class="form-control diger" name="numberOfChildren" id="CocukSayisiDiger">
                         </div>
                     </div>
                 </div>
@@ -175,12 +171,12 @@ if (isset($_GET['logout'])) {
 
             <div class="input-section d-flex">
                 <p class="usernamelabel">Aile içindeki rolü:</p>
-                <input type="text" class="form-control" name="AileRolu" id="AileRolu">
+                <input type="text" class="form-control" name="roleInFamily" id="AileRolu">
             </div>
 
             <div class="input-section d-flex">
                 <p class="usernamelabel">Hobileri (Belirtiniz) :</p>
-                <input type="text" class="form-control" name="Hobi" id="Hobi">
+                <input type="text" class="form-control" name="hobbies" id="Hobi">
             </div>
             <div class="input-section d-flex">
                 <p class="usernamelabel">Hastane ortamındaki sosyal aktiviteleri:</p>
@@ -188,52 +184,51 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes ">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="HastaneAktivite" id="HastaneAktivite"
+                            <input class="form-check-input" type="checkbox" name="hospitalSocialActivities" id="HastaneAktivite"
                                 value="TV izleme">
                             <label class="form-check-label" for="HastaneAktivite">
                                 <span class="checkbox-header">TV izleme</span>
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="HastaneAktivite" id="HastaneAktivite"
+                            <input class="form-check-input" type="checkbox" name="hospitalSocialActivities" id="HastaneAktivite"
                                 value="Gazete, kitap, dergi vs. okuma">
                             <label class="form-check-label" for="HastaneAktivite">
                                 <span class="checkbox-header">Gazete, kitap, dergi vs. okuma </span>
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="HastaneAktivite" id="HastaneAktivite"
+                            <input class="form-check-input" type="checkbox" name="hospitalSocialActivities" id="HastaneAktivite"
                                 value="Sohbet etme">
                             <label class="form-check-label" for="HastaneAktivite">
                                 <span class="checkbox-header">Sohbet etme </span>
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="HastaneAktivite" id="HastaneAktivite"
+                            <input class="form-check-input" type="checkbox" name="hospitalSocialActivities" id="HastaneAktivite"
                                 value="El işi vs">
                             <label class="form-check-label" for="HastaneAktivite">
                                 <span class="checkbox-header">El işi vs </span>
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="HastaneAktivite" id="HastaneAktivite"
+                            <input class="form-check-input" type="checkbox" name="hospitalSocialActivities" id="HastaneAktivite"
                                 value="Radyo dinleme">
                             <label class="form-check-label" for="HastaneAktivite">
                                 <span class="checkbox-header">Radyo dinleme </span>
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="HastaneAktivite" id="HastaneAktivite"
-                                value="Diğer">
                             <label class="form-check-label" for="HastaneAktivite">
                                 <span class="checkbox-header">Diğer: </span>
                             </label>
-                            <input type="text" class="form-control diger" name="HastaneAktiviteDiger"
+                            <input type="text" class="form-control diger" name="otherSocialActivities"
                                 id="HastaneAktiviteDiger">
                         </div>
                     </div>
                 </div>
             </div>
+            <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
         </div>
     </div>
 
@@ -244,6 +239,54 @@ if (isset($_GET['logout'])) {
 
         })
     });
+
+    // $('.form-check-input[name="careAcceptance"]').change(function(){
+    //             if($(this).val() === 'Katılıyor'){
+    //                 $('input[name="careAcceptanceWilling"]').prop('disabled', false);
+    //                 $('input[name="careAcceptanceNon"]').prop('disabled', true);
+
+    //             }else{
+    //                 $('input[name="careAcceptanceWilling"]').prop('disabled', true);
+    //                 $('input[name="careAcceptanceNon"]').prop('disabled', false);
+    //             }
+    //         })
+
+    $('.form-check-input[name="workStatus"]').change(function(){
+                if($(this).val() === 'Çalışıyor'){
+                    $('input[name="workingTime"]').prop('disabled', false);
+                    $('input[name="nonWorkingTime"]').prop('disabled', true);
+
+                }else{
+                    $('input[name="workingTime"]').prop('disabled', true);
+                    $('input[name="nonWorkingTime"]').prop('disabled', false);
+                }
+            })
+    
+    $('.form-check-input[name="workInterruption"]').change(function(){
+                if($(this).val() === 'Var'){
+                    $('input[name="workInterruptionInput"]').prop('disabled', false);
+                    
+
+                }else{
+                    $('input[name="workInterruptionInput"]').prop('disabled', true);
+                    
+                }
+            })
+    
+    $('.form-check-input[name="workRisk"]').change(function(){
+                if($(this).val() === 'Var'){
+                    $('input[name="workRiskInput"]').prop('disabled', false);
+                    
+
+                }else{
+                    $('input[name="workRiskInput"]').prop('disabled', true);
+                    
+                }
+            })
+
+
+
+    
     </script>
 
     <script>
@@ -260,58 +303,69 @@ if (isset($_GET['logout'])) {
         $('#submit').click(function(e) {
 
 
-            var valid = this.form.checkValidity();
 
-            if (valid) {
-                var id = <?php
+                             let age = $('#age').val();
+                            let not = $('#not').val();
 
-                                $userid = $_SESSION['userlogin']['id'];
-                                echo $userid
-                                ?>;
-                let DuzenliCalisma = $("input[name='DuzenliCalisma']:checked").val();
-                let CalismiyorSure = $("input[type='radio'][name='CalismiyorSure']").val();
-                let CalisiyorSure = $("input[type='radio'][name='CalisiyorSure']").val();
-                let IsIzni = $("input[type='radio'][name='IsIzni']:checked").val();
-                let IsIzniDiger = $("input[type='radio'][name='IsIzniDiger']").val();
-                let MeslekRiski = $("input[type='radio'][name='MeslekRiski']:checked").val();
-                let MeslekRiskiDiger = $("input[type='radio'][name='MeslekRiskiDiger']").val();
-                let AileBireyleri = $("input[type='radio'][name='AileBireyleri']:checked").val();
-                let AileBireyleriDiger = $("input[type='radio'][name='AileBireyleriDiger']").val();
-                let CocukSayisi = $("input[type='radio'][name='CocukSayisi']:checked").val();
-                let CocukSayisiDiger = $("input[type='radio'][name='CocukSayisiDiger']").val();
-                let AileRolu = $("input[type='radio'][name='AileRolu']").val();
-                let Hobi = $("input[type='radio'][name='Hobi']").val();
-                let HastaneAktivite = $("input[type='radio'][name='HastaneAktivite']:checked").val();
-                let HastaneAktiviteDiger = $("input[type='radio'][name='HastaneAktiviteDiger']").val();
+                            var patient_id = <?php
+                                                $userid = $_GET['patient_id'];
+                                                echo $userid
+                                                ?>;
+                            let patient_name = "<?php
+                                                echo urldecode($_GET['patient_name']);
+                                                ?>";
+                            let yourDate = new Date()
+                            let creation_date = yourDate.toISOString().split('T')[0];
+                            let updateDate = yourDate.toISOString().split('T')[0];
+                            let workStatus = $('.form-check-input[name="workStatus"]:checked').val() ? $('.form-check-input[name="workStatus"]:checked').val() : 'none';
+                            let workingTime = $('#CalisiyorSure').val() ? $('#CalisiyorSure').val() : '';
+                            let nonWorkingTime = $('#CalismiyorSure').val() ? $('#CalismiyorSure').val() : '';
+                            let workInterruption = $('input[name="workInterruption"]:checked').val() === 'Var' ? $('input[name="workInterruptionInput"]').val() : $('input[name="workInterruption"]:checked').val();
+                            let workRisk = $('input[name="workRisk"]:checked').val() === 'Var' ? $('input[name="workRiskInput"]').val() : $('input[name="workRisk"]:checked').val();
+                            let familyMembers = $('input[name="familyMembers"]').val() ? $('input[name="familyMembers"]').val() : '';
+                            let numberOfChildren = $('input[name="numberOfChildren"]').val() ? $('input[name="numberOfChildren"]').val() : 0;
+                             // let movementProblem = $('.form-check-input[name="movementProblem"]:checked').val() === "Var" ? $('.form-check-input[name="movementProblemDesc"]:checked').map(function() {
+                            //     return $(this).val();
+                            // }).get().join("/") : "Sorun Yok"
+                            let roleInFamily = $('input[name="roleInFamily"]').val() ? $('input[name="roleInFamily"]').val() : '';
+                            let hobbies = $('.form-check-input[name="hospitalSocialActivities"]:checked').map(function() {
+                                return $(this).val();
+                            }).get().join("/");
+                            let otherActivities = $('input[name="otherSocialActivities"]').val() ? $('input[name="otherSocialActivities"]').val() : '';
 
+                            console.log("wprkStatus: ", workStatus, "workingTime: ", workingTime, "nonWorkingTime: ", nonWorkingTime, "workInterruption: ", workInterruption, "workRisk: ", workRisk, "familyMembers: ", familyMembers, "numberOfChildren: ", numberOfChildren, "roleInFamily: ", roleInFamily, "hobbies: ", hobbies)
 
 
                 e.preventDefault()
 
                 $.ajax({
                     type: 'POST',
-                    url: 'student-patient.php',
+                    url: '<?php echo $base_url; ?>/SubmitOrUpdateForm1_Calisma.php',
                     data: {
-                        DuzenliCalisma: DuzenliCalisma,
-                        CalismiyorSure: CalismiyorSure,
-                        CalisiyorSure: CalisiyorSure,
-                        IsIzni: IsIzni,
-                        IsIzniDiger: IsIzniDiger,
-                        MeslekRiski: MeslekRiski,
-                        MeslekRiskiDiger: MeslekRiskiDiger,
-                        AileBireyleri: AileBireyleri,
-                        AileBireyleriDiger: AileBireyleriDiger,
-                        CocukSayisi: CocukSayisi,
-                        CocukSayisiDiger: CocukSayisiDiger,
-                        AileRolu: AileRolu,
-                        Hobi: Hobi,
-                        HastaneAktivite: HastaneAktivite,
-                        HastaneAktiviteDiger: HastaneAktiviteDiger
-
+                        patient_id: patient_id,
+                        patient_name: patient_name,
+                        creation_date: creation_date,
+                        update_date: updateDate,
+                        workStatus: workStatus,
+                        workingTime: workingTime,
+                        nonWorkingTime: nonWorkingTime,
+                        workInterruption: workInterruption,
+                        workRisk: workRisk,
+                        familyMembers: familyMembers,
+                        numberOfChildren: numberOfChildren,
+                        roleInFamily: roleInFamily,
+                        hobbies: hobbies,
+                        otherActivities: otherActivities,
+                        form_name: 'calismaForm1'
                     },
                     success: function(data) {
-                        alert("Başarılı");
-                        location.reload(true)
+                        alert(data)
+                        console.log(data)
+                        let url =
+                                        "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
+                                        patient_id + "&patient_name=" + encodeURIComponent(
+                                            patient_name);
+                                    $("#content").load(url);
                     },
                     error: function(data) {
                         Swal.fire({
@@ -324,7 +378,6 @@ if (isset($_GET['logout'])) {
 
 
 
-            }
         })
 
     });
