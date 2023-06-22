@@ -65,49 +65,50 @@ if (isset($_GET['logout'])) {
                     <form action="" method="POST" class="patients-save-fields">
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Date:</p>
-                            <input type="date" class="form-control" required name="date" id="diger" placeholder="Patient ID">
+                            <input type="date" class="form-control" required name="date" id="date" placeholder="Tarih">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Tetkik adı </p>
+                            <p id="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="tektikOption" id="ÖdemŞiddeti" value="Tıbbi Biyokimya*">
+                                    <input class="form-check-input" type="radio" name="tektikOption" id="tektikOption" value="Tıbbi Biyokimya*">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">Tıbbi Biyokimya*</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="tektikOption" id="ÖdemŞiddeti" value="Mikrobiyoloji*">
+                                    <input class="form-check-input" type="radio" name="tektikOption" id="tektikOption" value="Mikrobiyoloji*">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">Mikrobiyoloji*</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="tektikOption" id="ÖdemŞiddeti" value="Radyoloji Bulguları">
+                                    <input class="form-check-input" type="radio" name="tektikOption" id="tektikOption" value="Radyoloji Bulguları">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">Radyoloji Bulguları</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="tektikOption" id="ÖdemŞiddeti" value="Tomografi-Mr">
+                                    <input class="form-check-input" type="radio" name="tektikOption" id="tektikOption" value="Tomografi-Mr">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">Tomografi-Mr</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="tektikOption" id="ÖdemŞiddeti" value="Ultrason-Doppler">
+                                    <input class="form-check-input" type="radio" name="tektikOption" id="tektikOption" value="Ultrason-Doppler">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">Ultrason-Doppler</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="tektikOption" id="ÖdemŞiddeti" value="Girişimsel Radyoloji">
+                                    <input class="form-check-input" type="radio" name="tektikOption" id="tektikOption" value="Girişimsel Radyoloji">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">Girişimsel Radyoloji</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="tektikOption" id="ÖdemŞiddeti" value="Kan Merkezi">
+                                    <input class="form-check-input" type="radio" name="tektikOption" id="tektikOption" value="Kan Merkezi">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">Kan Merkezi</span>
                                     </label>
@@ -116,11 +117,11 @@ if (isset($_GET['logout'])) {
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Tetkik Sonucu :</p>
-                            <input type="text" class="form-control" required name="examination_result" id="diger" placeholder="Tetkik Sonucu" maxlength="2000">
+                            <input type="text" class="form-control" required name="examination_result" id="examination_result" placeholder="Tetkik Sonucu" maxlength="2000">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Referans Değeri :</p>
-                            <input type="text" class="form-control" required name="referance_value" id="diger" placeholder="Referans Değeri" maxlength="200">
+                            <input type="text" class="form-control" required name="referance_value" id="referance_value" placeholder="Referans Değeri" maxlength="200">
                         </div>
                         <input class="form-control submit" type="submit" name="submit" id="submit" value="Submit">
                     </form>
@@ -148,14 +149,14 @@ if (isset($_GET['logout'])) {
 
         })
     });
+
+ 
 </script>
 <script>
     $(function() {
         $('#submit').click(function(e) {
             console.log("clicked")
             e.preventDefault()
-            var valid = this.form.checkValidity();
-            if (valid) {
                 let patient_name = "<?php
                                     echo urldecode($_GET['patient_name']);
                                     ?>";
@@ -176,6 +177,68 @@ if (isset($_GET['logout'])) {
                 let examination_result = $("input[name='examination_result']").val();
                 let referance_value = $("input[name='referance_value']").val();
                 console.log("values initiated")
+                   // if(nameSurname == "") {
+    //                             //scroll to nameSurname 
+    //                             $('html, body').animate({
+    //                                 scrollTop: $("#nameSurname").offset().top
+    //                             }, 200);
+    //                             //change border color
+    //                             $('#nameSurname').css('border-color', 'red');
+    //                             //stop function 
+    //                             return false;
+    //                         }
+                            $('.form-check-input').closest('.form-check').css('border-color', '#ced4da');
+                            $('.form-control').css('border-color', '#ced4da');
+                            $('#option-error').css('display', 'none');
+                    //custom validation
+                     if($('#date').val() === ""){
+                        //scroll to date
+                        $('html, body').animate({
+                            scrollTop: $("#date").offset().top
+                        }, 200);
+                        //change border color
+                        $('#date').css('border-color', 'red');
+                        //stop function
+                        return false;
+                     }
+
+                        if($("input[type='radio'][name='tektikOption']:checked").length === 0){
+                            //scroll to tektikOption
+                            $('html, body').animate({
+                                scrollTop: $("#option-error").offset().top
+                            }, 200);
+                            //change border color
+                            $('#option-error').css('display', 'block');
+                            //stop function
+                            return false;
+                        }
+
+                        if($('#examination_result').val() === ""){
+                            //scroll to examination_result
+                            $('html, body').animate({
+                                scrollTop: $("#examination_result").offset().top
+                            }, 200);
+                            //change border color
+                            $('#examination_result').css('border-color', 'red');
+                            //stop function
+                            return false;
+                        }
+
+                        if($('#referance_value').val() === ""){
+                            //scroll to referance_value
+                            $('html, body').animate({
+                                scrollTop: $("#referance_value").offset().top
+                            }, 200);
+                            //change border color
+                            $('#referance_value').css('border-color', 'red');
+                            //stop function
+                            return false;
+                        }
+
+
+
+
+
 
                 $.ajax({
                     type: 'POST',
@@ -206,7 +269,7 @@ if (isset($_GET['logout'])) {
                         console.log(data)
                     }
                 })
-            }
+            
         })
 
     });

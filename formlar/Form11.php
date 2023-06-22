@@ -61,6 +61,7 @@ if (isset($_GET['logout'])) {
                     <form action="" method="POST" class="patients-save-fields">
                         <div class="input-section d-flex">
                             <p class="usernamelabel">zaman aralığını seçin: </p>
+                            <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="time_range" id="time_range"
@@ -89,39 +90,39 @@ if (isset($_GET['logout'])) {
                         <div class="input-section d-flex">
                             <p class="usernamelabel">IV:</p>
                             <div class='d-flex flex-column w-75'>
-                                <input type="number" class="form-control mt-2" required name="iv_input1" id="diger"
+                                <input type="number" class="form-control mt-2" required name="iv_input1" id="iv_input1"
                                     placeholder="IV" min="0" max="10000">
-                                <input type="number" class="form-control mt-2" required name="iv_input2" id="diger"
+                                <input type="number" class="form-control mt-2" required name="iv_input2" id="iv_input2"
                                     placeholder="IV" maxlength="5" min="0" max="10000">
-                                <input type="number" class="form-control mt-2" required name="iv_input3" id="diger"
+                                <input type="number" class="form-control mt-2" required name="iv_input3" id="iv_input3"
                                     placeholder="IV" maxlength="5" min="0" max="10000">
-                                <input type="number" class="form-control mt-2" required name="iv_input4" id="diger"
+                                <input type="number" class="form-control mt-2" required name="iv_input4" id="iv_input4"
                                     placeholder="IV" maxlength="5" min="0" max="10000">
                             </div>
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Kan Ürünü:</p>
                             <div class='d-flex flex-column w-75'>
-                                <input type="number" class="form-control mt-2" required name="blood_product1" id="diger"
+                                <input type="number" class="form-control mt-2" required name="blood_product1" id="blood_product1"
                                     placeholder="Kan Ürünü" maxlength="5" min="0" max="10000">
-                                <input type="number" class="form-control mt-2" required name="blood_product2" id="diger"
+                                <input type="number" class="form-control mt-2" required name="blood_product2" id="blood_product2"
                                     placeholder="Kan Ürünü" maxlength="5" min="0" max="10000">
-                                <input type="number" class="form-control mt-2" required name="blood_product3" id="diger"
+                                <input type="number" class="form-control mt-2" required name="blood_product3" id="blood_product3"
                                     placeholder="Kan Ürünü" maxlength="5" min="0" max="10000">
-                                <input type="number" class="form-control mt-2" required name="blood_product4" id="diger"
+                                <input type="number" class="form-control mt-2" required name="blood_product4" id="blood_product4"
                                     placeholder="Kan Ürünü" maxlength="5" min="0" max="10000">
                             </div>
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Oral:</p>
                             <div class='d-flex flex-column w-75'>
-                                <input type="number" class="form-control mt-2" required name="oral1" id="diger"
+                                <input type="number" class="form-control mt-2" required name="oral1" id="oral1"
                                     placeholder="Oral" maxlength="5" min="0" max="10000">
-                                <input type="number" class="form-control mt-2" required name="oral2" id="diger"
+                                <input type="number" class="form-control mt-2" required name="oral2" id="oral2"
                                     placeholder="Oral" maxlength="5" min="0" max="10000">
-                                <input type="number" class="form-control mt-2" required name="oral3" id="diger"
+                                <input type="number" class="form-control mt-2" required name="oral3" id="oral3"
                                     placeholder="Oral" maxlength="5" min="0" max="10000">
-                                <input type="number" class="form-control mt-2" required name="oral4" id="diger"
+                                <input type="number" class="form-control mt-2" required name="oral4" id="oral4"
                                     placeholder="Oral" maxlength="5" min="0" max="10000">
                             </div>
                         </div>
@@ -131,26 +132,26 @@ if (isset($_GET['logout'])) {
                         <div class="input-section d-flex">
                             <p class="usernamelabel">İdrar:</p>
                             <div class='d-flex flex-column w-75'>
-                                <input type="number" class="form-control mt-2" required name="idrar_input1" id="diger"
+                                <input type="number" class="form-control mt-2" required name="idrar_input1" id="idrar_input1"
                                     placeholder="İdrar" maxlength="5" min="0" max="10000">
-                                <input type="number" class="form-control mt-2" required name="idrar_input2" id="diger"
+                                <input type="number" class="form-control mt-2" required name="idrar_input2" id="idrar_input2"
                                     placeholder="İdrar" maxlength="5" min="0" max="10000">
-                                <input type="number" class="form-control mt-2" required name="idrar_input3" id="diger"
+                                <input type="number" class="form-control mt-2" required name="idrar_input3" id="idrar_input3"
                                     placeholder="İdrar" maxlength="5" min="0" max="10000">
-                                <input type="number" class="form-control mt-2" required name="idrar_input4" id="diger"
+                                <input type="number" class="form-control mt-2" required name="idrar_input4" id="idrar_input4"
                                     placeholder="İdrar" maxlength="5" min="0" max="10000">
                             </div>
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Gaita :</p>
                             <div class='d-flex flex-column w-75'>
-                                <input type="number" class="form-control mt-2" required name="gaita_input1" id="diger"
+                                <input type="number" class="form-control mt-2" required name="gaita_input1" id="gaita_input1"
                                     placeholder="Gaita" maxlength="5" min="0" max="10000">
-                                <input type="number" class="form-control mt-2" required name="gaita_input2" id="diger"
+                                <input type="number" class="form-control mt-2" required name="gaita_input2" id="gaita_input2"
                                     placeholder="Gaita" maxlength="5" min="0" max="10000">
-                                <input type="number" class="form-control mt-2" required name="gaita_input3" id="diger"
+                                <input type="number" class="form-control mt-2" required name="gaita_input3" id="gaita_input3"
                                     placeholder="Gaita" maxlength="5" min="0" max="10000">
-                                <input type="number" class="form-control mt-2" required name="gaita_input4" id="diger"
+                                <input type="number" class="form-control mt-2" required name="gaita_input4" id="gaita_input4"
                                     placeholder="Gaita" maxlength="5" min="0" max="10000">
                             </div>
                         </div>
@@ -182,9 +183,7 @@ if (isset($_GET['logout'])) {
         $('#submit').click(function(e) {
             e.preventDefault()
             console.log("clicked")
-            var valid = this.form.checkValidity();
 
-            if (valid) {
                 var id = <?php
                                 $userid = $_SESSION['userlogin']['id'];
                                 echo $userid
@@ -235,6 +234,73 @@ if (isset($_GET['logout'])) {
                 let cikardigi_total4 = idrar_input4 + gaita_input4;
                 let total = aldigi_total1 + aldigi_total2 + aldigi_total3 + aldigi_total4 +
                     cikardigi_total1 + cikardigi_total2 + cikardigi_total3 + cikardigi_total4;
+
+                //custom validation
+                //set all border colors to default
+                $('.input').css('border-color', '#ced4da');
+                //set all error messages to none
+                $('.option-error').css('display', 'none');
+
+                if($('.form-check-input[name="time_range"]:checked').length === 0){
+                    // Scroll to time_range
+                    $('html, body').animate({
+                        scrollTop: $('.form-check-input[name="time_range"]').first().offset().top
+                    }, 200);
+                    // Display error message
+                    $('.form-check-input[name="time_range"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                    return false;
+                }
+                if($('#iv_input1').val() === ""){
+                    //scroll to iv_input1
+                    $('html, body').animate({
+                        scrollTop: $("#iv_input1").offset().top
+                    }, 200);
+                    //change border color
+                    $('#iv_input1').css('border-color', 'red');
+                    //stop function
+                    return false;
+                }
+                if($('#blood_product1').val() === ""){
+                    //scroll to iv_input1
+                    $('html, body').animate({
+                        scrollTop: $("#blood_product1").offset().top
+                    }, 200);
+                    //change border color
+                    $('#blood_product1').css('border-color', 'red');
+                    //stop function
+                    return false;
+                }
+                if($('#oral1').val() === ""){
+                    //scroll to iv_input1
+                    $('html, body').animate({
+                        scrollTop: $("#oral1").offset().top
+                    }, 200);
+                    //change border color
+                    $('#oral1').css('border-color', 'red');
+                    //stop function
+                    return false;
+                }
+                if($('#idrar_input1').val() === ""){
+                    //scroll to iv_input1
+                    $('html, body').animate({
+                        scrollTop: $("#idrar_input1").offset().top
+                    }, 200);
+                    //change border color
+                    $('#idrar_input1').css('border-color', 'red');
+                    //stop function
+                    return false;
+                }
+                if($('#gaita_input1').val() === ""){
+                    //scroll to iv_input1
+                    $('html, body').animate({
+                        scrollTop: $("#gaita_input1").offset().top
+                    }, 200);
+                    //change border color
+                    $('#gaita_input1').css('border-color', 'red');
+                    //stop function
+                    return false;
+                }
+
 
                 $.ajax({
                     type: 'POST',
@@ -293,7 +359,7 @@ if (isset($_GET['logout'])) {
                         console.log(data);
                     }
                 })
-            }
+            
         })
 
     });

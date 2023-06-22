@@ -61,16 +61,16 @@ if (isset($_GET['logout'])) {
                     <form action="" method="POST" class="patients-save-fields">
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Uygulama Giriniz</p>
-                            <input type="text" class="form-control" required name="applications" id="diger"
+                            <input type="text" class="form-control" required name="applications" id="applications"
                                 placeholder="Uygulama Giriniz" maxlength="200">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Saat :</p>
-                            <input type="time" class="form-control" required name="hours" id="diger">
+                            <input type="time" class="form-control" required name="hours" id="hours">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Açıklama Giriniz</p>
-                            <input type="text" class="form-control" required name="description" id="diger"
+                            <input type="text" class="form-control" required name="description" id="description"
                                 placeholder="Açıklama Giriniz" maxlength="2000">
                         </div>
                         <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
@@ -102,9 +102,7 @@ if (isset($_GET['logout'])) {
     $(function() {
         $('#submit').click(function(e) {
             e.preventDefault()
-            var valid = this.form.checkValidity();
 
-            if (valid) {
                 var id = <?php
                                 $userid = $_SESSION['userlogin']['id'];
                                 echo $userid
@@ -127,7 +125,54 @@ if (isset($_GET['logout'])) {
                 let applications = $("input[name='applications']").val();
                 let hours = $("input[name='hours']").val();
                 let description = $("input[name='description']").val();
-                console.log("values initiated")
+
+                   //set border color normal
+                   $('.form-control').css('border-color', '#ced4da');
+                   //custom validation
+                // if($('#iv_input1').val() === ""){
+                //     //scroll to iv_input1
+                //     $('html, body').animate({
+                //         scrollTop: $("#iv_input1").offset().top
+                //     }, 200);
+                //     //change border color
+                //     $('#iv_input1').css('border-color', 'red');
+                //     //stop function
+                //     return false;
+                // }
+
+                if($('#applications').val() === ""){
+                    //scroll to iv_input1
+                    $('html, body').animate({
+                        scrollTop: $("#applications").offset().top
+                    }, 200);
+                    //change border color
+                    $('#applications').css('border-color', 'red');
+                    //stop function
+                    return false;
+                }
+
+                if($('#hours').val() === ""){
+                    //scroll to iv_input1
+                    $('html, body').animate({
+                        scrollTop: $("#hours").offset().top
+                    }, 200);
+                    //change border color
+                    $('#hours').css('border-color', 'red');
+                    //stop function
+                    return false;
+                }
+
+                if($('#description').val() === ""){
+                    //scroll to iv_input1
+                    $('html, body').animate({
+                        scrollTop: $("#description").offset().top
+                    }, 200);
+                    //change border color
+                    $('#description').css('border-color', 'red');
+                    //stop function
+                    return false;
+                }
+                
 
                 $.ajax({
                     type: 'POST',
@@ -160,10 +205,6 @@ if (isset($_GET['logout'])) {
                         console.log(data)
                     }
                 })
-
-
-
-            }
         })
 
     });

@@ -47,48 +47,30 @@ if (isset($_GET['logout'])) {
 
         ?>
         <div class="send-patient">
-            <span class='close closeBtn' id='closeBtn'>&times;</span>
+            <span class='close closeBtn' id='closeBtn1'>&times;</span>
 
             <h1 class="form-header">HASTA DEĞERLENDİRME FORMU</h1>
             <div class=" patients-save">
-                <form action="" method="" class="patients-save-fields">
-                    <!--       <p class="usernamelabel">Hasta Adı Soyadı</p>
-                    <input type="text" class="form-control" required name="name" id="name"
-                        placeholder="Hasta Adı Soyadı Giriniz">
-
-                    <p class="usernamelabel">Hasta Soyadı</p>
-                    <input type="text" class="form-control" required name="surname" id="surname"
-                        placeholder="Hasta Soyadı Giriniz">
-
-                    <p class="usernamelabel">Hasta Yaşı</p>
-                    <input type="text" class="form-control" required name="age" id="age"
-                        placeholder="Hasta Yaşı Giriniz">
-
-                    <p class="usernamelabel">Notlar</p>
-                    <input type="text" class="form-control not" required name="not" id="not" placeholder="Not giriniz"> -->
+                <form action="" method="" class="patients-save-fields p-3">
                     <div class="input-section-wrapper">
 
                         <div class="input-section-item">
 
                             <div class="input-section d-flex">
                                 <p class="usernamelabel">Hasta Adı Soyadı:</p>
-                                <input type="text" class="form-control" name="ad_soyad" id="ad_soyad"
+                                <input type="text" class="form-control" name="nameSurname" id="nameSurname"
                                     placeholder="Hasta Adı Soyadı Giriniz">
                             </div>
 
                             <div class="input-section d-flex">
                                 <p class="usernamelabel">Doğum Yeri:</p>
-                                <input type="text" class="form-control" name="dogum_yeri" id="dogum_yeri"
+                                <input type="date" class="form-control" name="dob" id="dob"
                                     placeholder="Doğum Yeri Giriniz">
                             </div>
 
-                            <!--<div class="input-section d-flex">
-                                <p class="usernamelabel">Doğum Tarihi:</p>
-                                <input type="date" class="form-control" name="doğumtarihi" id="doğumtarihi" placeholder="Hasta Adı Soyadı Giriniz">
-                            </div>-->
                             <div class="input-section d-flex">
                                 <p class="usernamelabel">Hasta Yaşı</p>
-                                <input type="text" class="form-control" name="yas" id="yas"
+                                <input type="number" class="form-control" name="age" id="age"
                                     placeholder="Hasta Yaşı Giriniz">
                             </div>
 
@@ -98,14 +80,14 @@ if (isset($_GET['logout'])) {
                                 <div class="checkbox-wrapper d-flex">
                                     <div class="checkboxes">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="cinsiyet" id="cinsiyet"
+                                            <input class="form-check-input" type="radio" name="gender" id="gender"
                                                 value="Erkek">
                                             <label class="form-check-label" for="cinsiyet">
                                                 <span class="checkbox-header"> Erkek </span>
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="cinsiyet" id="cinsiyet"
+                                            <input class="form-check-input" type="radio" name="gender" id="gender"
                                                 value="Kadın">
                                             <label class="form-check-label" for="cinsiyet">
                                                 <span class="checkbox-header"> Kadın </span>
@@ -119,19 +101,19 @@ if (isset($_GET['logout'])) {
 
                             <div class="input-section d-flex">
                                 <p class="usernamelabel">Medeni Durumu:</p>
-                                <input type="text" class="form-control" required name="medeni_durum" id="medeni_durum"
+                                <input type="text" class="form-control"  name="maritalStatus" id="maritalStatus"
                                     placeholder="Medeni Durumu Giriniz">
                             </div>
 
                             <div class="input-section d-flex">
                                 <p class="usernamelabel">Mesleği:</p>
-                                <input type="text" class="form-control" required name="meslek" id="meslek"
+                                <input type="text" class="form-control"  name="profession" id="profession"
                                     placeholder="Mesleği Durumu Giriniz">
                             </div>
 
                             <div class="input-section d-flex">
                                 <p class="usernamelabel">Eğitim Durumu:</p>
-                                <input type="text" class="form-control" required name="egitim_durumu" id="egitim_durumu"
+                                <input type="text" class="form-control"  name="education" id="education"
                                     placeholder="Eğitim Durumu Giriniz">
                             </div>
 
@@ -140,39 +122,39 @@ if (isset($_GET['logout'])) {
                         <div class="input-section-item">
                             <div class="input-section d-flex">
                                 <p class="usernamelabel">Protokol/Dosya No:</p>
-                                <input type="text" class="form-control" required name="protocol_file_no"
+                                <input type="text" class="form-control"  name="protocol_file_no"
                                     id="protocol_file_no" placeholder="Protokol/Dosya No Giriniz">
                             </div>
 
                             <div class="input-section d-flex">
                                 <p class="usernamelabel">Yatış Tarihi:</p>
-                                <input type="date" class="form-control" required name="yatis_tarihi" id="yatis_tarihi"
+                                <input type="date" class="form-control"  name="admissionDate" id="admissionDate"
                                     placeholder="Protokol/Dosya No Giriniz">
                             </div>
 
                             <div class="input-section d-flex">
                                 <p class="usernamelabel">Bölüm:</p>
-                                <input type="text" class="form-control" required name="bolum" id="bolum"
+                                <input type="text" class="form-control"  name="department" id="department"
                                     placeholder="Bölüm Giriniz">
                             </div>
 
                             <div class="input-section d-flex">
                                 <p class="usernamelabel">Tıbbi Tanı:</p>
-                                <input type="text" class="form-control" required name="tibbi_tani" id="tibbi_tani"
+                                <input type="text" class="form-control"  name="diagnosis" id="diagnosis"
                                     placeholder="Tıbbi Tanıyı Giriniz">
                             </div>
 
                             <div class="input-section d-flex">
                                 <p class="usernamelabel">Doktor Adı Soyadı:</p>
-                                <input type="text" class="form-control" required name="doktor_ad_soyad"
-                                    id="doktor_ad_soyad" placeholder="Doktor Adı Soyadı Giriniz">
+                                <input type="text" class="form-control"  name="doctorName"
+                                    id="doctorName" placeholder="Doktor Adı Soyadı Giriniz">
                             </div>
 
 
 
                             <div class="input-section d-flex">
                                 <p class="usernamelabel">Çocuk Sayısı:</p>
-                                <input type="text" class="form-control" required name="cocuk_sayisi" id="cocuk_sayisi"
+                                <input type="text" class="form-control"  name="numberOfChildren" id="numberOfChildren"
                                     placeholder="Çocuk Sayısı Giriniz">
                             </div>
 
@@ -182,15 +164,15 @@ if (isset($_GET['logout'])) {
                                 <div class="checkbox-wrapper d-flex">
                                     <div class="checkboxes">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="sosyal_guvencesi"
-                                                id="sosyal_guvencesi" value="Resmi">
+                                            <input class="form-check-input" type="radio" name="socialSecurity"
+                                                id="socialSecurity" value="Resmi">
                                             <label class="form-check-label" for="sosyal_guvencesi">
                                                 <span class="checkbox-header"> Resmi </span>
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="sosyal_guvencesi"
-                                                id="sosyal_guvencesi" value="Ücretli">
+                                            <input class="form-check-input" type="radio" name="socialSecurity"
+                                                id="socialSecurity" value="Ücretli">
                                             <label class="form-check-label" for="sosyal_guvencesi">
                                                 <span class="checkbox-header"> Ücretli </span>
 
@@ -198,14 +180,14 @@ if (isset($_GET['logout'])) {
 
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="sosyal_guvencesi"
-                                                id="sosyal_guvencesi" value="Diğer">
+                                            <input class="form-check-input" type="radio" name="socialSecurity"
+                                                id="socialSecurity" value="Diğer">
                                             <label class="form-check-label" for="sosyal_guvencesi">
                                                 <span class="checkbox-header"> Diğer </span>
 
                                             </label>
-                                            <input type="text" class="form-control" required name="sosyal_guvence_diger"
-                                                id="sosyal_guvence_diger" placeholder="Diğer">
+                                            <input type="text" class="form-control" disabled name="socialSecuritOther"
+                                                id="socialSecuritOther" placeholder="Diğer">
                                         </div>
                                     </div>
                                 </div>
@@ -215,7 +197,7 @@ if (isset($_GET['logout'])) {
 
                     <div class="input-section d-flex">
                         <p class="usernamelabel">Dili:</p>
-                        <input type="text" class="form-control" required name="dil" id="dil" placeholder="Dil Giriniz">
+                        <input type="text" class="form-control"  name="language" id="language" placeholder="Dil Giriniz">
                     </div>
 
                     <div class="input-section d-flex">
@@ -224,21 +206,21 @@ if (isset($_GET['logout'])) {
                         <div class="checkbox-wrapper d-flex">
                             <div class="checkboxes">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="TercumanGereksinimi"
-                                        id="TercumanGereksinimi" value="Yok">
+                                    <input class="form-check-input" type="radio" name="translatorRequirement"
+                                        id="translatorRequirement" value="Yok">
                                     <label class="form-check-label" for="TercumanGereksinimi">
                                         <span class="checkbox-header"> Yok </span>
                                     </label>
                                 </div>
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="TercumanGereksinimi"
-                                        id="TercumanGereksinimi" value="Var">
+                                    <input class="form-check-input" type="radio" name="translatorRequirement"
+                                        id="translatorRequirement" value="Var">
                                     <label class="form-check-label" for="TercumanGereksinimi">
                                         <span class="checkbox-header"> Var (Açıklayınız) </span>
 
                                     </label>
-                                    <input type="text" class="form-control" required name="t_diger" id="t_diger"
+                                    <input type="text" class="form-control" disabled name="translatorRequirementInput" id="translatorRequirementInput"
                                         placeholder="Diğer">
                                 </div>
                             </div>
@@ -248,7 +230,7 @@ if (isset($_GET['logout'])) {
                     <div class="input-section d-flex">
 
                         <p class="usernamelabel">Kan Grubu</p>
-                        <input type="text" class="form-control not" required name="kangrubu" id="kangrubu"
+                        <input type="text" class="form-control not" disabled name="bloodGroup" id="bloodGroup"
                             placeholder="Kan Grubu giriniz">
                     </div>
 
@@ -258,21 +240,21 @@ if (isset($_GET['logout'])) {
                         <div class="checkbox-wrapper d-flex">
                             <div class="checkboxes">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="TransfuzyonYapilma"
-                                        id="TransfuzyonYapilma" value="Yok">
+                                    <input class="form-check-input" type="radio" name="transfusionStatus"
+                                        id="transfusionStatus" value="Yok">
                                     <label class="form-check-label" for="TransfuzyonYapilma">
                                         <span class="checkbox-header"> Yok </span>
                                     </label>
                                 </div>
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="TransfuzyonYapilma"
-                                        id="TransfuzyonYapilma" value="Var">
+                                    <input class="form-check-input" type="radio" name="transfusionStatus"
+                                        id="transfusionStatus" value="Var">
                                     <label class="form-check-label" for="TransfuzyonYapilma">
                                         <span class="checkbox-header"> Var (Açıklayınız) </span>
 
                                     </label>
-                                    <input type="text" class="form-control" required name="yatisdiger" id="yatisdiger"
+                                    <input type="text" class="form-control" disabled name="transfusionStatusInput" id="transfusionStatusInput"
                                         placeholder="Diğer">
                                 </div>
                             </div>
@@ -285,22 +267,22 @@ if (isset($_GET['logout'])) {
                         <div class="checkbox-wrapper d-flex">
                             <div class="checkboxes">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="TransfuzyonReaksiyonu"
-                                        id="TransfuzyonReaksiyonu" value="Yok">
+                                    <input class="form-check-input" type="radio" name="transfusionReaction"
+                                        id="transfusionReaction" value="Yok">
                                     <label class="form-check-label" for="TransfuzyonReaksiyonu">
                                         <span class="checkbox-header"> Yok </span>
                                     </label>
                                 </div>
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="TransfuzyonReaksiyonu"
-                                        id="TransfuzyonReaksiyonu" value="Var">
+                                    <input class="form-check-input" type="radio" name="transfusionReaction"
+                                        id="transfusionReaction" value="Var">
                                     <label class="form-check-label" for="TransfuzyonReaksiyonu">
                                         <span class="checkbox-header"> Var (Açıklayınız) </span>
 
                                     </label>
-                                    <input type="text" class="form-control" required name="reaksiyon_diger"
-                                        id="reaksiyon_diger" placeholder="Diğer">
+                                    <input type="text" class="form-control" disabled name="transfusionReactionInput"
+                                        id="transfusionReactionInput" placeholder="Diğer">
                                 </div>
                             </div>
                         </div>
@@ -312,27 +294,27 @@ if (isset($_GET['logout'])) {
                         <div class="checkbox-wrapper d-flex">
                             <div class="checkboxes">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="BilgiKisisi" id="BilgiKisisi"
+                                    <input class="form-check-input" type="radio" name="infoStorageType" id="infoStorageType"
                                         value="Kendisi">
                                     <label class="form-check-label" for="BilgiKisisi">
                                         <span class="checkbox-header"> Kendisi </span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="BilgiKisisi" id="BilgiKisisi"
+                                    <input class="form-check-input" type="radio" name="infoStorageType" id="infoStorageType"
                                         value="Dosya">
                                     <label class="form-check-label" for="BilgiKisisi">
                                         <span class="checkbox-header"> Dosya </span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="BilgiKisisi" id="BilgiKisisi"
+                                    <input class="form-check-input" type="radio" name="infoStorageType" id="infoStorageType"
                                         value="Diger">
                                     <label class="form-check-label" for="BilgiKisisi">
                                         <span class="checkbox-header"> Diğer </span>
 
                                     </label>
-                                    <input type="text" class="form-control" required name="kisi_diger" id="kisi_diger"
+                                    <input type="text" class="form-control" disabled name="infoStorageTypeInput" id="infoStorageTypeInput"
                                         placeholder="Diğer">
                                 </div>
                             </div>
@@ -341,37 +323,30 @@ if (isset($_GET['logout'])) {
 
                     <div class="input-section d-flex">
                         <p class="usernamelabel">Kol Bandı Rengi:</p>
-                        <input type="text" class="form-control" required name="kolbandi" id="kolbandi"
+                        <input type="text" class="form-control" name="kolbandi" id="kolbandi"
                             placeholder="Kol Bandı Rengi Giriniz">
                     </div>
-
-                    <div class="input-section d-flex">
-                        <p class="usernamelabel">Açıklayınız:</p>
-                        <input type="text" class="form-control" required name="kolbandiaciklama" id="kolbandiaciklama"
-                            placeholder="Açıklayınız">
-                    </div>
-
                     <h1 class="form-header">Gerektiğinde Ulaşılabilecek Yakını</h1>
 
                     <div class="input-section d-flex">
                         <p class="usernamelabel">Adı Soyadı:</p>
-                        <input type="text" class="form-control" required name="adsoyadyakin" id="adsoyadyakin"
+                        <input type="text" class="form-control"  name="relativeNameSurname" id="relativeNameSurname"
                             placeholder="Adı Soyadı">
                     </div>
                     <div class="input-section d-flex">
                         <p class="usernamelabel">Yakınlık Derecesi:</p>
-                        <input type="text" class="form-control" required name="yakinlikderece" id="yakinlikderece"
+                        <input type="text" class="form-control"  name="relativeDistance" id="relativeDistance"
                             placeholder="Yakınlık Derecesi">
                     </div>
                     <div class="input-section d-flex">
                         <p class="usernamelabel">Telefon:</p>
-                        <input type="text" class="form-control" required name="telefonyakin" id="telefonyakin"
+                        <input type="text" class="form-control"  name="relativePhone" id="relativePhone"
                             placeholder="Telefon">
                     </div>
                     <div class="input-section d-flex">
 
                         <p class="usernamelabel">Adres</p>
-                        <input type="text" class="form-control not" required name="adresyakin" id="adresyakin"
+                        <input type="text" class="form-control not"  name="relativeAddress" id="relativeAddress"
                             placeholder="Adres giriniz">
                     </div>
 
@@ -383,7 +358,7 @@ if (isset($_GET['logout'])) {
                         <div class="checkbox-wrapper d-flex">
                             <div class="checkboxes">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="YatisDurumu" id="YatisDurumu"
+                                    <input class="form-check-input" type="radio" name="previousHospitalization" id="previousHospitalization"
                                         value="Yok">
                                     <label class="form-check-label" for="YatisDurumu">
                                         <span class="checkbox-header"> Yok </span>
@@ -391,14 +366,12 @@ if (isset($_GET['logout'])) {
                                 </div>
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="YatisDurumu" id="YatisDurumu"
+                                    <input class="form-check-input" type="radio" name="previousHospitalization" id="previousHospitalization"
                                         value="Var">
                                     <label class="form-check-label" for="YatisDurumu">
-                                        <span class="checkbox-header"> Var (Açıklayınız) </span>
+                                        <span class="checkbox-header"> Var </span>
 
                                     </label>
-                                    <input type="text" class="form-control" required name="yatis_durumu_diger"
-                                        id="yatis_durumu_diger" placeholder="Diğer">
                                 </div>
                             </div>
                         </div>
@@ -413,12 +386,12 @@ if (isset($_GET['logout'])) {
 
                             </tr>
                             <tr>
-                                <td><input type="text" class="form-control ozgecmistable" required name="yatis_yili"
-                                        id="yatis_yili" placeholder="..."></td>
-                                <td><input type="text" class="form-control ozgecmistable" required name="yatis_suresi"
-                                        id="yatis_suresi" placeholder="..."></td>
-                                <td><input type="text" class="form-control ozgecmistable" required name="yatis_nedeni"
-                                        id="yatis_nedeni" placeholder="..."></td>
+                                <td><input type="text" class="form-control ozgecmistable" disabled  name="hospitalization_year"
+                                        id="hospitalization_year" placeholder="..."></td>
+                                <td><input type="text" class="form-control ozgecmistable" disabled  name="hospitalization_location"
+                                        id="hospitalization_location" placeholder="..."></td>
+                                <td><input type="text" class="form-control ozgecmistable" disabled  name="hospitalization_reason"
+                                        id="hospitalization_reason" placeholder="..."></td>
                             </tr>
                         </tbody>
                     </table>
@@ -428,22 +401,22 @@ if (isset($_GET['logout'])) {
                         <div class="checkbox-wrapper d-flex">
                             <div class="checkboxes">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="GetirdigiHastaliklar"
-                                        id="GetirdigiHastaliklar" value="Yok">
+                                    <input class="form-check-input" type="radio" name="diseases"
+                                        id="diseases" value="Yok">
                                     <label class="form-check-label" for="GetirdigiHastaliklar">
                                         <span class="checkbox-header"> Yok </span>
                                     </label>
                                 </div>
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="GetirdigiHastaliklar"
-                                        id="GetirdigiHastaliklar" value="Var">
+                                    <input class="form-check-input" type="radio" name="diseases"
+                                        id="diseases" value="Var">
                                     <label class="form-check-label" for="GetirdigiHastaliklar">
                                         <span class="checkbox-header"> Var (Açıklayınız) </span>
 
                                     </label>
-                                    <input type="text" class="form-control" required name="hastalik_diger"
-                                        id="hastalik_diger" placeholder="Diğer">
+                                    <input type="text" class="form-control" disabled  name="diseasesInput"
+                                        id="diseasesInput" placeholder="Diğer">
                                 </div>
                             </div>
                         </div>
@@ -455,22 +428,22 @@ if (isset($_GET['logout'])) {
                         <div class="checkbox-wrapper d-flex">
                             <div class="checkboxes">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="GetirdigiAmeliyatlar"
-                                        id="GetirdigiAmeliyatlar" value="Yok">
-                                    <label class="form-check-label" for="GetirdigiAmeliyatlar">
+                                    <input class="form-check-input" type="radio" name="previousSurgeries"
+                                        id="previousSurgeries" value="Yok">
+                                    <label class="form-check-label" for="previousSurgeries">
                                         <span class="checkbox-header"> Yok </span>
                                     </label>
                                 </div>
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="GetirdigiAmeliyatlar"
-                                        id="GetirdigiAmeliyatlar" value="Var">
-                                    <label class="form-check-label" for="GetirdigiAmeliyatlar">
+                                    <input class="form-check-input" type="radio" name="previousSurgeries"
+                                        id="previousSurgeries" value="Var">
+                                    <label class="form-check-label" for="previousSurgeries">
                                         <span class="checkbox-header"> Var (Açıklayınız) </span>
 
                                     </label>
-                                    <input type="text" class="form-control" required name="ameliyat_diger"
-                                        id="ameliyat_diger" placeholder="Diğer">
+                                    <input type="text" class="form-control" disabled  name="previousSurgeriesInput"
+                                        id="previousSurgeriesInput" placeholder="Diğer">
                                 </div>
                             </div>
                         </div>
@@ -482,21 +455,21 @@ if (isset($_GET['logout'])) {
                         <div class="checkbox-wrapper d-flex">
                             <div class="checkboxes">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="GetirdigiKazalar"
-                                        id="GetirdigiKazalar" value="option1">
+                                    <input class="form-check-input" type="radio" name="accidents"
+                                        id="accidents" value="Yok">
                                     <label class="form-check-label" for="GetirdigiKazalar">
                                         <span class="checkbox-header"> Yok </span>
                                     </label>
                                 </div>
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="GetirdigiKazalar"
-                                        id="GetirdigiKazalar" value="option2">
+                                    <input class="form-check-input" type="radio" name="accidents"
+                                        id="accidents" value="Var">
                                     <label class="form-check-label" for="GetirdigiKazalar">
                                         <span class="checkbox-header"> Var (Açıklayınız) </span>
 
                                     </label>
-                                    <input type="text" class="form-control" required name="kaza_diger" id="kaza_diger"
+                                    <input type="text" class="form-control" disabled  name="accidentsInput" id="accidentsInput"
                                         placeholder="Diğer">
                                 </div>
                             </div>
@@ -509,22 +482,22 @@ if (isset($_GET['logout'])) {
                         <div class="checkbox-wrapper d-flex">
                             <div class="checkboxes">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="BulasiciHastalik"
-                                        id="BulasiciHastalik" value="Yok">
+                                    <input class="form-check-input" type="radio" name="infectiousDisease"
+                                        id="infectiousDisease" value="Yok">
                                     <label class="form-check-label" for="BulasiciHastalik">
                                         <span class="checkbox-header"> Yok </span>
                                     </label>
                                 </div>
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="BulasiciHastalik"
-                                        id="BulasiciHastalik" value="Var">
+                                    <input class="form-check-input" type="radio" name="infectiousDisease"
+                                        id="infectiousDisease" value="Var">
                                     <label class="form-check-label" for="BulasiciHastalik">
                                         <span class="checkbox-header"> Var (Açıklayınız) </span>
 
                                     </label>
-                                    <input type="text" class="form-control" required name="bulasici_diger"
-                                        id="bulasici_diger" placeholder="Diğer">
+                                    <input type="text" class="form-control" disabled  name="infectiousDiseaseInput"
+                                        id="infectiousDiseaseInput" placeholder="Diğer">
                                 </div>
                             </div>
                         </div>
@@ -536,22 +509,20 @@ if (isset($_GET['logout'])) {
                         <div class="checkbox-wrapper d-flex">
                             <div class="checkboxes">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="AlerjikReaksiyon"
-                                        id="AlerjikReaksiyon" value="Yok">
-                                    <label class="form-check-label" for="AlerjikReaksiyon">
+                                    <input class="form-check-input" type="radio" name="allergies"
+                                        id="allergies" value="Yok">
+                                    <label class="form-check-label" for="allergies">
                                         <span class="checkbox-header"> Yok </span>
                                     </label>
                                 </div>
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="AlerjikReaksiyon"
-                                        id="AlerjikReaksiyon" value="Var">
-                                    <label class="form-check-label" for="AlerjikReaksiyon">
+                                    <input class="form-check-input" type="radio" name="allergies"
+                                        id="allergies" value="Var">
+                                    <label class="form-check-label" for="allergies">
                                         <span class="checkbox-header"> Var (Aşağıdaki Tabloda Açıklayınız) </span>
 
                                     </label>
-                                    <input type="text" class="form-control" required name="alerji_diger"
-                                        id="alerji_diger" placeholder="Diğer">
                                 </div>
                             </div>
                         </div>
@@ -566,12 +537,12 @@ if (isset($_GET['logout'])) {
 
                             </tr>
                             <tr>
-                                <td><input type="text" class="form-control ozgecmistable" required name="Allerjen"
-                                        id="Allerjen" placeholder="..."></td>
-                                <td><input type="text" class="form-control ozgecmistable" required name="Belirtiler"
-                                        id="Belirtiler" placeholder="..."></td>
-                                <td><input type="text" class="form-control ozgecmistable" required name="Tedavi"
-                                        id="Tedavi" placeholder="..."></td>
+                                <td><input type="text" class="form-control ozgecmistable"  name="allergen"
+                                        id="allergen" placeholder="..." disabled></td>
+                                <td><input type="text" class="form-control ozgecmistable"  name="allergySymptoms"
+                                        id="allergySymptoms" placeholder="..." disabled></td>
+                                <td><input type="text" class="form-control ozgecmistable"  name="allergyTherapy"
+                                        id="allergyTherapy" placeholder="..." disabled></td>
                             </tr>
                         </tbody>
                     </table>
@@ -582,22 +553,20 @@ if (isset($_GET['logout'])) {
                         <div class="checkbox-wrapper d-flex">
                             <div class="checkboxes">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="KullanilanIlaclar"
-                                        id="KullanilanIlaclar" value="Yok">
-                                    <label class="form-check-label" for="KullanilanIlaclar">
+                                    <input class="form-check-input" type="radio" name="previousMedications"
+                                        id="previousMedications" value="Yok">
+                                    <label class="form-check-label" for="previousMedications">
                                         <span class="checkbox-header"> Yok </span>
                                     </label>
                                 </div>
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="KullanilanIlaclar"
-                                        id="KullanilanIlaclar" value="Var">
+                                    <input class="form-check-input" type="radio" name="previousMedications"
+                                        id="previousMedications" value="Var">
                                     <label class="form-check-label" for="KullanilanIlaclar">
                                         <span class="checkbox-header"> Var (Aşağıdaki Tabloda Açıklayınız) </span>
 
                                     </label>
-                                    <input type="text" class="form-control" required name="ilaclar_diger"
-                                        id="ilaclar_diger" placeholder="Diğer">
                                 </div>
                             </div>
                         </div>
@@ -617,23 +586,23 @@ if (isset($_GET['logout'])) {
 
                                 </tr>
                                 <tr>
-                                    <td><input type="text" class="form-control ozgecmistable" required name="IlacAdi"
-                                            id="IlacAdi" placeholder="..."></td>
+                                    <td><input type="text" class="form-control ozgecmistable" disabled name="medicineName"
+                                            id="medicineName" placeholder="..."></td>
                                     <td>
                                         <div class="checkbox-wrapper d-flex">
                                             <div class="checkboxes recetecheckbox">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="Recete"
-                                                        id="Recete" value="R+">
-                                                    <label class="form-check-label" for="Recete">
+                                                    <input class="form-check-input" type="radio" disabled name="prescriptionType"
+                                                        id="prescriptionType" value="R+">
+                                                    <label class="form-check-label" for="prescriptionType">
                                                         <span class="checkbox-header"> R+ </span>
                                                     </label>
                                                 </div>
 
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="Recete"
-                                                        id="Recete" value="R-">
-                                                    <label class="form-check-label" for="Recete">
+                                                    <input class="form-check-input" type="radio" disabled name="prescriptionType"
+                                                        id="prescriptionType" value="R-">
+                                                    <label class="form-check-label" for="prescriptionType">
                                                         <span class="checkbox-header"> R-
                                                         </span>
 
@@ -643,19 +612,19 @@ if (isset($_GET['logout'])) {
                                             </div>
                                         </div>
                                     </td>
-                                    <td><input type="text" class="form-control ozgecmistable" required
+                                    <td><input type="text" class="form-control ozgecmistable" 
                                             name="KullanimSuresi" id="KullanimSuresi" placeholder="..."></td>
-                                    <td><input type="text" class="form-control ozgecmistable" required name="Dozu"
-                                            id="Dozu" placeholder="..."></td>
-                                    <td><input type="text" class="form-control ozgecmistable" required name="Sikligi"
-                                            id="Sikligi" placeholder="..."></td>
-                                    <td><input type="text" class="form-control ozgecmistable" required name="AlinisYolu"
-                                            id="AlinisYolu" placeholder="..."></td>
-                                    <td><input type="text" class="form-control ozgecmistable" required name="Suresi"
-                                            id="Suresi" placeholder="..."></td>
+                                    <td><input type="text" class="form-control ozgecmistable"  name="medicineDose"
+                                            id="medicineDose" placeholder="..." disabled></td>
+                                    <td><input type="text" class="form-control ozgecmistable"  name="medicineFrequency"
+                                            id="medicineFrequency" placeholder="..." disabled></td>
+                                    <td><input type="text" class="form-control ozgecmistable"  name="intakeMethod"
+                                            id="intakeMethod" placeholder="..." disabled></td>
+                                    <td><input type="text" class="form-control ozgecmistable"  name="intakeTimes"
+                                            id="intakeTimes" placeholder="..." disabled></td>
                                 </tr>
                                 <!--<tr>
-                                    <td><input type="text" class="form-control ozgecmistable" required name="ozgecmistable1" id="ozgecmistable1" placeholder="..."></td>
+                                    <td><input type="text" class="form-control ozgecmistable"  name="ozgecmistable1" id="ozgecmistable1" placeholder="..."></td>
                                     <td>
                                         <div class="checkbox-wrapper d-flex">
                                             <div class="checkboxes recetecheckbox">
@@ -678,14 +647,14 @@ if (isset($_GET['logout'])) {
                                             </div>
                                         </div>
                                     </td>
-                                    <td><input type="text" class="form-control ozgecmistable" required name="ozgecmistable1" id="ozgecmistable1" placeholder="..."></td>
-                                    <td><input type="text" class="form-control ozgecmistable" required name="ozgecmistable1" id="ozgecmistable1" placeholder="..."></td>
-                                    <td><input type="text" class="form-control ozgecmistable" required name="ozgecmistable1" id="ozgecmistable1" placeholder="..."></td>
-                                    <td><input type="text" class="form-control ozgecmistable" required name="ozgecmistable1" id="ozgecmistable1" placeholder="..."></td>
-                                    <td><input type="text" class="form-control ozgecmistable" required name="ozgecmistable1" id="ozgecmistable1" placeholder="..."></td>
+                                    <td><input type="text" class="form-control ozgecmistable"  name="ozgecmistable1" id="ozgecmistable1" placeholder="..."></td>
+                                    <td><input type="text" class="form-control ozgecmistable"  name="ozgecmistable1" id="ozgecmistable1" placeholder="..."></td>
+                                    <td><input type="text" class="form-control ozgecmistable"  name="ozgecmistable1" id="ozgecmistable1" placeholder="..."></td>
+                                    <td><input type="text" class="form-control ozgecmistable"  name="ozgecmistable1" id="ozgecmistable1" placeholder="..."></td>
+                                    <td><input type="text" class="form-control ozgecmistable"  name="ozgecmistable1" id="ozgecmistable1" placeholder="..."></td>
                                 </tr>
                                 <tr>
-                                    <td><input type="text" class="form-control ozgecmistable" required name="ozgecmistable1" id="ozgecmistable1" placeholder="..."></td>
+                                    <td><input type="text" class="form-control ozgecmistable"  name="ozgecmistable1" id="ozgecmistable1" placeholder="..."></td>
                                     <td>
                                         <div class="checkbox-wrapper d-flex">
                                             <div class="checkboxes recetecheckbox">
@@ -708,40 +677,30 @@ if (isset($_GET['logout'])) {
                                             </div>
                                         </div>
                                     </td>
-                                    <td><input type="text" class="form-control ozgecmistable" required name="ozgecmistable1" id="ozgecmistable1" placeholder="..."></td>
-                                    <td><input type="text" class="form-control ozgecmistable" required name="ozgecmistable1" id="ozgecmistable1" placeholder="..."></td>
-                                    <td><input type="text" class="form-control ozgecmistable" required name="ozgecmistable1" id="ozgecmistable1" placeholder="..."></td>
-                                    <td><input type="text" class="form-control ozgecmistable" required name="ozgecmistable1" id="ozgecmistable1" placeholder="..."></td>
-                                    <td><input type="text" class="form-control ozgecmistable" required name="ozgecmistable1" id="ozgecmistable1" placeholder="..."></td>-->
+                                    <td><input type="text" class="form-control ozgecmistable"  name="ozgecmistable1" id="ozgecmistable1" placeholder="..."></td>
+                                    <td><input type="text" class="form-control ozgecmistable"  name="ozgecmistable1" id="ozgecmistable1" placeholder="..."></td>
+                                    <td><input type="text" class="form-control ozgecmistable"  name="ozgecmistable1" id="ozgecmistable1" placeholder="..."></td>
+                                    <td><input type="text" class="form-control ozgecmistable"  name="ozgecmistable1" id="ozgecmistable1" placeholder="..."></td>
+                                    <td><input type="text" class="form-control ozgecmistable"  name="ozgecmistable1" id="ozgecmistable1" placeholder="..."></td>-->
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                    <div class="input-section d-flex">
-
+                    <div class="input-section d-flex justify-content-around">
                         <p class="usernamelabel">Kullandığı Araçlar/Protezler:</p>
-                        <div class="checkbox-wrapper d-flex">
-                            <div class="checkboxes">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="KullandigiAraclar"
+                                    <div>
+                                    <input class="form-check-input" type="radio" name="aidTools"
                                         id="KullandigiAraclar" value="Yok">
                                     <label class="form-check-label" for="KullandigiAraclar">
                                         <span class="checkbox-header"> Yok </span>
                                     </label>
-                                </div>
-
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="KullandigiAraclar"
+                                    </div>
+                                    <div>
+                                        <input class="form-check-input" type="radio" name="aidTools"
                                         id="KullandigiAraclar" value="Var">
-                                    <label class="form-check-label" for="KullandigiAraclar">
-                                        <span class="checkbox-header"> Var (Aşağıdaki Tabloda Açıklayınız) </span>
-
-                                    </label>
-                                    <input type="text" class="form-control" required name="araclar_diger"
-                                        id="araclar_diger" placeholder="Diğer">
-                                </div>
-                            </div>
-                        </div>
+                                        <label class="form-check-label" for="KullandigiAraclar">
+                                            <span class="checkbox-header"> Var</span>
+                                    </div>
                     </div>
 
                     <table class="ozgecmistable-wrapper">
@@ -749,30 +708,30 @@ if (isset($_GET['logout'])) {
                             <tr>
                                 <td class="protezlertable">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" name="Gozluk" id="Gozluk"
+                                        <input class="form-check-input" type="checkbox" disabled name="aidToolsDesc" id="aidToolsDesc"
                                             value="Gozluk">
                                         <label class="form-check-label" for="inlineCheckbox1">Gözlük </label>
                                     </div>
                                 </td>
                                 <td class="protezlertable">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" name="KontaktLens"
-                                            id="KontaktLens" value="Kontakt Lens">
+                                        <input class="form-check-input" type="checkbox" disabled name="aidToolsDesc"
+                                            id="aidToolsDesc" value="Kontakt Lens">
                                         <label class="form-check-label" for="inlineCheckbox1">Kontakt Lens </label>
                                     </div>
                                 </td>
                                 <td class="protezlertable">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" name="IsitmeCihazi"
-                                            id="IsitmeCihazi" value="Isitme Cihazi">
+                                        <input class="form-check-input" type="checkbox" disabled name="aidToolsDesc"
+                                            id="aidToolsDesc" value="Isitme Cihazi">
                                         <label class="form-check-label" for="inlineCheckbox1">İşitme Cihazı </label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" name="Sag" id="Sag" value="Sag">
+                                        <input class="form-check-input" type="checkbox" disabled name="aidToolsDesc" id="aidToolsDesc" value="İşitme Cihazı (Sağ)">
                                         <label class="form-check-label" for="inlineCheckbox1">Sağ </label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" name="Sol" id="Sol" value="Sol">
+                                        <input class="form-check-input" type="checkbox" disabled name="aidToolsDesc" id="aidToolsDesc" value="İşitme Cihazı (Sol)">
                                         <label class="form-check-label" for="inlineCheckbox1">Sol</label>
                                     </div>
                                 </td>
@@ -780,22 +739,22 @@ if (isset($_GET['logout'])) {
                             <tr>
                                 <td class="protezlertable">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" name="DisProtezi"
-                                            id="DisProtezi" value="Dis Protezi">
+                                        <input class="form-check-input" type="checkbox" disabled name="aidToolsDesc"
+                                            id="aidToolsDesc" value="Dis Protezi">
                                         <label class="form-check-label" for="inlineCheckbox1">Diş Protez </label>
                                     </div>
                                 </td>
                                 <td class="protezlertable">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" name="TekerlekliSandalye"
-                                            id="TekerlekliSandalye" value="Tekerlekli Sandalye">
+                                        <input class="form-check-input" type="checkbox" disabled name="aidToolsDesc"
+                                            id="aidToolsDesc" value="Tekerlekli Sandalye">
                                         <label class="form-check-label" for="inlineCheckbox1">Tekerlekli
                                             Sandalye</label>
                                     </div>
                                 </td>
                                 <td class="protezlertable">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" name="Baston" id="Baston"
+                                        <input class="form-check-input" type="checkbox" disabled name="aidToolsDesc" id="aidToolsDesc"
                                             value="Baston">
                                         <label class="form-check-label" for="inlineCheckbox1">Baston </label>
                                     </div>
@@ -805,23 +764,17 @@ if (isset($_GET['logout'])) {
 
                                 <td class="protezlertable">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" name="Yurutec" id="Yurutec"
+                                        <input class="form-check-input" type="checkbox" disabled name="aidToolsDesc" id="aidToolsDesc"
                                             value="Yurutec">
                                         <label class="form-check-label" for="inlineCheckbox1">Yürüteç (Walker) </label>
                                     </div>
                                 </td>
                                 <td class="protezlertable">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" name="KoltukDegnegi"
-                                            id="KoltukDegnegi" value="Koltuk Degnegi">
+                                        <input class="form-check-input" type="checkbox" disabled name="aidToolsDesc"
+                                            id="aidToolsDesc" value="Koltuk Degnegi">
                                         <label class="form-check-label" for="inlineCheckbox1">Koltuk Değneği</label>
                                     </div>
-                                </td>
-                                <td class="protezlertable">
-                                    <p class="usernamelabel">Diğer</p>
-
-                                    <input type="text" class="form-control ozgecmistable" required name="protez_diger"
-                                        id="protez_diger" placeholder="...">
                                 </td>
                             </tr>
                         </tbody>
@@ -829,29 +782,7 @@ if (isset($_GET['logout'])) {
 
                     <div class="input-section d-flex">
 
-                        <p class="usernamelabel">Alışkanlıklar:</p>
-                        <div class="checkbox-wrapper d-flex">
-                            <div class="checkboxes">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="Aliskanliklar" id="Aliskanliklar"
-                                        value="Yok">
-                                    <label class="form-check-label" for="Aliskanliklar">
-                                        <span class="checkbox-header"> Yok </span>
-                                    </label>
-                                </div>
-
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="Aliskanliklar" id="Aliskanliklar"
-                                        value="Var">
-                                    <label class="form-check-label" for="Aliskanliklar">
-                                        <span class="checkbox-header"> Var (Aşağıdaki Tabloda Açıklayınız) </span>
-
-                                    </label>
-                                    <input type="text" class="form-control" required name="aliskanlik_diger"
-                                        id="aliskanlik_diger" placeholder="Diğer">
-                                </div>
-                            </div>
-                        </div>
+                        <p class="usernamelabel text-center">Alışkanlıklar:</p>
                     </div>
 
                     <table class="ozgecmistable-wrapper">
@@ -859,7 +790,7 @@ if (isset($_GET['logout'])) {
                             <tr>
                                 <td class="protezlertable">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" name="Sigara" id="Sigara"
+                                        <input class="form-check-input" type="checkbox" name="smoking" id="smoking"
                                             value="Sigara">
                                         <label class="form-check-label" for="inlineCheckbox1">Sigara </label>
                                     </div>
@@ -867,20 +798,20 @@ if (isset($_GET['logout'])) {
                                 <td class="protezlertable">
                                     <p class="usernamelabel">Miktarı</p>
 
-                                    <input type="text" class="form-control ozgecmistable" required name="SMiktar"
-                                        id="SMiktar" placeholder="...">
+                                    <input type="text" class="form-control ozgecmistable"  name="smokingAmount"
+                                        id="smokingAmount" disabled placeholder="...">
                                 </td>
                                 <td class="protezlertable">
                                     <p class="usernamelabel">Kullanım Süreci</p>
 
-                                    <input type="text" class="form-control ozgecmistable" required
-                                        name="SKullanimSureci" id="SKullanimSureci" placeholder="...">
+                                    <input type="text" class="form-control ozgecmistable" 
+                                        name="smokingTime" id="smokingTime" disabled placeholder="...">
                                 </td>
                             </tr>
                             <tr>
                                 <td class="protezlertable">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" name="Alkol" id="Alkol"
+                                        <input class="form-check-input" type="checkbox" name="alcoholUsage" id="alcoholUsage"
                                             value="Alkol">
                                         <label class="form-check-label" for="inlineCheckbox1">Alkol </label>
                                     </div>
@@ -888,41 +819,41 @@ if (isset($_GET['logout'])) {
                                 <td class="protezlertable">
                                     <p class="usernamelabel">Miktarı</p>
 
-                                    <input type="text" class="form-control ozgecmistable" required name="AMiktar"
+                                    <input type="text" class="form-control ozgecmistable" disabled  name="alcoholAmount"
                                         id="AMiktar" placeholder="...">
                                 </td>
                                 <td class="protezlertable">
                                     <p class="usernamelabel">Kullanım Süreci</p>
 
-                                    <input type="text" class="form-control ozgecmistable" required
-                                        name="AKullanimSureci" id="AKullanimSureci" placeholder="...">
+                                    <input type="text" disabled class="form-control ozgecmistable" 
+                                        name="alcoholUsageTime" id="alcoholUsageTime" placeholder="...">
                                 </td>
                             </tr>
                             <tr>
                                 <td class="protezlertable">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" name="Cay" id="Cay" value="Cay">
+                                        <input class="form-check-input" type="checkbox" name="teaUsage" id="teaUsage" value="Cay">
                                         <label class="form-check-label" for="inlineCheckbox1">Çay </label>
                                     </div>
                                 </td>
                                 <td class="protezlertable">
                                     <p class="usernamelabel">Miktarı</p>
 
-                                    <input type="text" class="form-control ozgecmistable" required name="CMiktar"
-                                        id="CMiktar" placeholder="...">
+                                    <input type="text" class="form-control ozgecmistable" disabled name="teaUsageAmount"
+                                        id="teaUsageAmount" placeholder="...">
                                 </td>
                                 <td class="protezlertable">
                                     <p class="usernamelabel">Kullanım Süreci</p>
 
-                                    <input type="text" class="form-control ozgecmistable" required
-                                        name="CKullanimSureci" id="CKullanimSureci" placeholder="...">
+                                    <input type="text" class="form-control ozgecmistable" 
+                                        name="teaUsageTime" id="teaUsageTime" placeholder="...">
                                 </td>
                             </tr>
 
                             <tr>
                                 <td class="protezlertable">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" name="Kahve" id="Kahve"
+                                        <input class="form-check-input" type="checkbox"  name="coffeeUsage" id="coffeeUsage"
                                             value="Kahve">
                                         <label class="form-check-label" for="inlineCheckbox1">Kahve </label>
                                     </div>
@@ -930,14 +861,14 @@ if (isset($_GET['logout'])) {
                                 <td class="protezlertable">
                                     <p class="usernamelabel">Miktarı</p>
 
-                                    <input type="text" class="form-control ozgecmistable" required name="KMiktar"
-                                        id="KMiktar" placeholder="...">
+                                    <input type="text" class="form-control ozgecmistable" disabled name="coffeeUsageAmount"
+                                        id="coffeeUsageAmount" placeholder="...">
                                 </td>
                                 <td class="protezlertable">
                                     <p class="usernamelabel">Kullanım Süreci</p>
 
-                                    <input type="text" class="form-control ozgecmistable" required
-                                        name="KKullanimSureci" id="KKullanimSureci" placeholder="...">
+                                    <input type="text" disabled class="form-control ozgecmistable" 
+                                        name="coffeeUsageTime" id="coffeeUsageTime" placeholder="...">
                                 </td>
                             </tr>
 
@@ -945,24 +876,24 @@ if (isset($_GET['logout'])) {
 
                                 <td class="protezlertable">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
+                                        <input class="form-check-input" type="checkbox" id="otherHabits"
                                             value="option2">
                                         <label class="form-check-label" for="inlineCheckbox1">Diğer </label>
-                                        <input type="text" class="form-control ozgecmistable" required name="DDiger"
-                                            id="DDiger" placeholder="...">
+                                        <input type="text" class="form-control ozgecmistable"  name="otherHabitsInput"
+                                            id="otherHabitsInput" placeholder="...">
                                     </div>
                                 </td>
                                 <td class="protezlertable">
                                     <p class="usernamelabel">Miktarı</p>
 
-                                    <input type="text" class="form-control ozgecmistable" required name="DMiktar"
-                                        id="DMiktar" placeholder="...">
+                                    <input type="text" class="form-control ozgecmistable"  name="otherHabitsAmount"
+                                        id="otherHabitsAmount" placeholder="...">
                                 </td>
                                 <td class="protezlertable">
                                     <p class="usernamelabel">Kullanım Süreci</p>
 
-                                    <input type="text" class="form-control ozgecmistable" required
-                                        name="DKullanimSureci" id="DKullanimSureci" placeholder="...">
+                                    <input type="text" class="form-control ozgecmistable" 
+                                        name="otherHabitsTime" id="otherHabitsTime" placeholder="...">
                                 </td>
                             </tr>
                         </tbody>
@@ -975,7 +906,7 @@ if (isset($_GET['logout'])) {
                         <div class="checkbox-wrapper d-flex">
                             <div class="checkboxes">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="AileviSaglik" id="AileviSaglik"
+                                    <input class="form-check-input" type="radio" name="familyIllnesses" id="familyIllnesses"
                                         value="Yok">
                                     <label class="form-check-label" for="AileviSaglik">
                                         <span class="checkbox-header"> Yok </span>
@@ -983,64 +914,53 @@ if (isset($_GET['logout'])) {
                                 </div>
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="AileviSaglik" id="AileviSaglik"
+                                    <input class="form-check-input" type="radio" name="familyIllnesses" id="familyIllnesses"
                                         value="Var">
                                     <label class="form-check-label" for="AileviSaglik">
                                         <span class="checkbox-header"> Var (Aşağıdaki Tabloda Açıklayınız) </span>
 
                                     </label>
-                                    <input type="text" class="form-control" required name="ailevi_diger"
-                                        id="ailevi_diger" placeholder="Diğer">
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <table class="ozgecmistable-wrapper">
+                    <table class="ozgecmistable-wrapper d-flex flex-column">
                         <tbody>
-                            <tr>
+                            <tr class="m-3">
 
                                 <td class="protezlertable">
-                                    <p class="usernamelabel">Yakınlık Derecesi</p>
-
+                                    <p class="usernamelabel">Yakınlık Derecesi:  </p>
 
                                 </td>
                                 <td class="protezlertable">
-                                    <p class="usernamelabel">Tanısı</p>
-
+                                    <input type="text" class="form-control ozgecmistable" 
+                                        name="familyMemberRelation" disabled id="familyMemberRelation" placeholder="...">
                                 </td>
+                                
                             </tr>
-                            <tr>
-                                <td class="protezlertable">
-                                    <input type="text" class="form-control ozgecmistable" required
-                                        name="YakinlikDerecesi" id="YakinlikDerecesi" placeholder="...">
+                            <tr class="m-3">
+                            <td class="protezlertable">
+                                    <p class="usernamelabel">Tanısı:  </p>
+
                                 </td>
                                 <td class="protezlertable">
-                                    <input type="text" class="form-control ozgecmistable" required name="Tanisi"
-                                        id="Tanisi" placeholder="...">
+                                    <input type="text" class="form-control ozgecmistable"  name="familyMemberIllness"
+                                        id="familyMemberIllness" disabled placeholder="...">
                                 </td>
 
                             </tr>
-                            <!--<tr>
-                                <td class="protezlertable">
-                                    <input type="text" class="form-control ozgecmistable" required name="ozgecmistable1" id="ozgecmistable1" placeholder="...">
-                                </td>
-                                <td class="protezlertable">
-                                    <input type="text" class="form-control ozgecmistable" required name="ozgecmistable1" id="ozgecmistable1" placeholder="...">
-                                </td>
-
-                            </tr>-->
                         </tbody>
                     </table>
 
                     <h1 class="form-header">Hastalık Öyküsü</h1>
 
-                    <p class="usernamelabel">Geldiği Yer </p>
+                    <p class="usernamelabel m-3">Geldiği Yer </p>
 
                     <div class="checkbox-wrapper d-flex">
                         <div class="checkboxes d-flex">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="GeldigiYer" id="GeldigiYer"
+                                <input class="form-check-input" type="radio" name="arrivalFrom" id="arrivalFrom"
                                     value="Yogun Bakim">
                                 <label class="form-check-label" for="GeldigiYer">
                                     <span class="checkbox-header"> Yoğun Bakım </span>
@@ -1048,7 +968,7 @@ if (isset($_GET['logout'])) {
                             </div>
 
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="GeldigiYer" id="GeldigiYer"
+                                <input class="form-check-input" type="radio" name="arrivalFrom" id="arrivalFrom"
                                     value="Poliklinik">
                                 <label class="form-check-label" for="GeldigiYer">
                                     <span class="checkbox-header"> Poliklinik </span>
@@ -1056,7 +976,7 @@ if (isset($_GET['logout'])) {
                             </div>
 
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="GeldigiYer" id="GeldigiYer"
+                                <input class="form-check-input" type="radio" name="arrivalFrom" id="arrivalFrom"
                                     value="Acil Servis">
                                 <label class="form-check-label" for="GeldigiYer">
                                     <span class="checkbox-header"> Acil Servis </span>
@@ -1064,7 +984,7 @@ if (isset($_GET['logout'])) {
                             </div>
 
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="GeldigiYer" id="GeldigiYer"
+                                <input class="form-check-input" type="radio" name="arrivalFrom" id="arrivalFrom"
                                     value="Ev">
                                 <label class="form-check-label" for="GeldigiYer">
                                     <span class="checkbox-header"> Ev </span>
@@ -1072,24 +992,24 @@ if (isset($_GET['logout'])) {
                             </div>
 
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="GeldigiYer" id="GeldigiYer"
+                                <input class="form-check-input" type="radio" name="arrivalFrom" id="arrivalFrom"
                                     value="Diger">
                                 <label class="form-check-label" for="GeldigiYer">
                                     <span class="checkbox-header"> Diğer </span>
 
                                 </label>
-                                <input type="text" class="form-control" required name="yer_diger" id="yer_diger"
+                                <input type="text" class="form-control" disabled name="arrivalFromInput" id="arrivalFromInput"
                                     placeholder="Diğer">
                             </div>
                         </div>
                     </div>
 
-                    <p class="usernamelabel"> Hastaneye Geliş Şekli </p>
+                    <p class="usernamelabel m-3"> Hastaneye Geliş Şekli </p>
 
                     <div class="checkbox-wrapper d-flex">
                         <div class="checkboxes d-flex">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="GelisSekli" id="GelisSekli"
+                                <input class="form-check-input" type="radio" name="hospitalArrivalMethod" id="hospitalArrivalMethod"
                                     value="Yuruyerek">
                                 <label class="form-check-label" for="GelisSekli">
                                     <span class="checkbox-header"> Yürüyerek </span>
@@ -1097,7 +1017,7 @@ if (isset($_GET['logout'])) {
                             </div>
 
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="GelisSekli" id="GelisSekli"
+                                <input class="form-check-input" type="radio" name="hospitalArrivalMethod" id="hospitalArrivalMethod"
                                     value="Tekerlekli Sandalye">
                                 <label class="form-check-label" for="GelisSekli">
                                     <span class="checkbox-header"> Tekerlekli Sandalye </span>
@@ -1105,7 +1025,7 @@ if (isset($_GET['logout'])) {
                             </div>
 
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="GelisSekli" id="GelisSekli"
+                                <input class="form-check-input" type="radio" name="hospitalArrivalMethod" id="hospitalArrivalMethod"
                                     value="Sedye">
                                 <label class="form-check-label" for="GelisSekli">
                                     <span class="checkbox-header"> Sedye </span>
@@ -1115,24 +1035,24 @@ if (isset($_GET['logout'])) {
 
 
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="GelisSekli" id="GelisSekli"
+                                <input class="form-check-input" type="radio" name="hospitalArrivalMethod" id="hospitalArrivalMethod"
                                     value="Diger">
                                 <label class="form-check-label" for="GelisSekli">
                                     <span class="checkbox-header"> Diğer </span>
 
                                 </label>
-                                <input type="text" class="form-control" required name="gelis_diger" id="gelis_diger"
+                                <input type="text" class="form-control"  name="hospitalArrivalMethodInput" id="hospitalArrivalMethodInput"
                                     placeholder="Diğer">
                             </div>
                         </div>
                     </div>
 
                     <p class="usernamelabel">Şikayetler</p>
-                    <input type="text" class="form-control not" required name="Sikayetler" id="Sikayetler"
+                    <input type="text" class="form-control not"  name="complaints" id="complaints"
                         placeholder="Şikayetler">
 
                     <p class="usernamelabel">Tıbbi Tanı</p>
-                    <input type="text" class="form-control not" required name="TibbiTani" id="TibbiTani"
+                    <input type="text" class="form-control not"  name="medicalDiagnosis" id="medicalDiagnosis"
                         placeholder="Tıbbi Tanı">
 
                     <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
@@ -1157,230 +1077,1167 @@ if (isset($_GET['logout'])) {
 
             })
         });
+
+    // $('.form-check-input[name="careAcceptance"]').change(function(){
+    //             if($(this).val() === 'Katılıyor'){
+    //                 $('input[name="careAcceptanceWilling"]').prop('disabled', false);
+    //                 $('input[name="careAcceptanceNon"]').prop('disabled', true);
+
+    //             }else{
+    //                 $('input[name="careAcceptanceWilling"]').prop('disabled', true);
+    //                 $('input[name="careAcceptanceNon"]').prop('disabled', false);
+    //             }
+    //         })
+
+        $('.form-check-input[name="socialSecurity"]').change(function(){
+            if($(this).val() === "Diğer"){
+                $('input[name="socialSecuritOther"]').prop('disabled', false);
+            }
+        })
+
+        $('.form-check-input[name="translatorRequirement"]').change(function(){
+            if($(this).val() === "Var"){
+                $('input[name="translatorRequirementInput"]').prop('disabled', false);
+            }
+        })
+
+        $('.form-check-input[name="transfusionStatus"]').change(function(){
+            if($(this).val() === "Var"){
+                $('input[name="transfusionStatusInput"]').prop('disabled', false);
+            }
+        })
+        $('.form-check-input[name="transfusionReaction"]').change(function(){
+            if($(this).val() === "Var"){
+                $('input[name="transfusionReactionInput"]').prop('disabled', false);
+            }
+        })
+        $('.form-check-input[name="infoStorageType"]').change(function(){
+            if($(this).val() === "Diger"){
+                $('input[name="infoStorageTypeInput"]').prop('disabled', false);
+            }
+        })
+
+        $('.form-check-input[name="previousHospitalization"]').change(function(){
+            if($(this).val() === "Var"){
+                $('input[name="hospitalization_year"]').prop('disabled', false);
+                $('input[name="hospitalization_location"]').prop('disabled', false);
+                $('input[name="hospitalization_reason"]').prop('disabled', false);
+            }
+        })
+
+        $('.form-check-input[name="diseases"]').change(function(){
+            if($(this).val() === "Var"){
+                $('input[name="diseasesInput"]').prop('disabled', false);
+            }
+        })
+
+        $('.form-check-input[name="previousSurgeries"]').change(function(){
+            if($(this).val() === "Var"){
+                $('input[name="previousSurgeriesInput"]').prop('disabled', false);
+            }
+        })
+
+        //accidents
+
+        $('.form-check-input[name="accidents"]').change(function(){
+            if($(this).val() === "Var"){
+                $('input[name="accidentsInput"]').prop('disabled', false);
+
+            }
+        })
+
+        //infectiousDisease
+
+        $('.form-check-input[name="infectiousDisease"]').change(function(){
+            if($(this).val() === "Var"){
+                $('input[name="infectiousDiseaseInput"]').prop('disabled', false);
+
+            }
+        })
+
+        //allergies
+
+        $('.form-check-input[name="allergies"]').change(function(){
+            if($(this).val() === "Var"){
+                $('input[name="allergen"]').prop('disabled', false);
+                $('input[name="allergySymptoms"]').prop('disabled', false);
+                $('input[name="allergyTherapy"]').prop('disabled', false);
+            }
+        })
+        
+
+        //previousMedications
+
+        $('.form-check-input[name="previousMedications"]').change(function(){
+            if($(this).val() === "Var"){
+                $('input[name="medicineName"]').prop('disabled', false);
+                $('input[name="prescriptionType"]').prop('disabled', false);
+                $('input[name="medicineFrequency"]').prop('disabled', false);
+                $('input[name="medicineDose"]').prop('disabled', false);
+                $('input[name="intakeMethod"]').prop('disabled', false);
+                $('input[name="intakeTimes"]').prop('disabled', false);
+            }
+        })
+
+        //aidTools
+
+        $('.form-check-input[name="aidTools"]').change(function(){
+            if($(this).val() === "Var"){
+                $('.form-check-input[name="aidToolsDesc"]').prop('disabled', false);
+            }
+        })
+
+        //smoking
+
+        $('.form-check-input[name="smoking"]').change(function(){
+            if($(this).val() === "Sigara"){
+                $('input[name="smokingAmount"]').prop('disabled', false);
+                $('input[name="smokingTime"]').prop('disabled', false);
+            }
+        })
+
+        //alcoholUsage
+
+        $('.form-check-input[name="alcoholUsage"]').change(function(){
+            if($(this).val() === "Alkol"){
+                $('input[name="alcoholAmount"]').prop('disabled', false);
+                $('input[name="alcoholUsageTime"]').prop('disabled', false);
+            }
+        })
+
+        //teaUsage
+
+        $('.form-check-input[name="teaUsage"]').change(function(){
+            if($(this).val() === "Cay"){
+                $('input[name="teaUsageAmount"]').prop('disabled', false);
+                $('input[name="teaUsageTime"]').prop('disabled', false);
+            }
+        })
+
+        //coffeeUsage
+
+        $('.form-check-input[name="coffeeUsage"]').change(function(){
+            if($(this).val() === "Kahve"){
+                $('input[name="coffeeUsageAmount"]').prop('disabled', false);
+                $('input[name="coffeeUsageTime"]').prop('disabled', false);
+            }
+        })
+
+        //otherHabits
+
+        $('.form-check-input[name="otherHabits"]').change(function(){
+            if($(this).val() === "Diger"){
+                $('input[name="otherHabitsInput"]').prop('disabled', false);
+                $('input[name="otherHabitsAmount"]').prop('disabled', false);
+                $('input[name="otherHabitsTime"]').prop('disabled', false);
+            }
+        })
+
+        //familyIllnesses
+
+        $('.form-check-input[name="familyIllnesses"]').change(function(){
+            if($(this).val() === "Var"){
+                $('input[name="familyMemberRelation"]').prop('disabled', false);
+                $('input[name="familyMemberIllness"]').prop('disabled', false);
+            }
+        })
+
+        //arrivalFrom
+
+        $('.form-check-input[name="arrivalFrom"]').change(function(){
+            if($(this).val() === "Diger"){
+                $('input[name="arrivalFromInput"]').prop('disabled', false);
+            }
+        })
+
+        //hospitalArrivalMethod
+
+        $('.form-check-input[name="hospitalArrivalMethod"]').change(function(){
+            if($(this).val() === "Diger"){
+                $('input[name="hospitalArrivalMethodInput"]').prop('disabled', false);
+            }
+        })
+
+        $(function() {
+        $('#closeBtn1').click(function(e) {
+            let patient_id = <?php
+                                    $userid = $_GET['patient_id'];
+                                    echo $userid
+                                    ?>;
+            let patient_name = "<?php
+                                    echo urldecode($_GET['patient_name']);
+                                    ?>";
+            var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
+                "&patient_name=" + encodeURIComponent(patient_name);
+            $("#content").load(url);
+
+        })
+    });
+        
         </script>
 
         <script>
         $(function() {
             $('#submit').click(function(e) {
-                var valid = this.form.checkValidity();
+                e.preventDefault()                
+                            let age = $('#age').val();
+                            let not = $('#not').val();
 
-                if (valid) {
-                    let surname = $('#surname').val();
-                    let age = $('#age').val();
-                    let not = $('#not').val();
+                            var patient_id = <?php
+                                                $userid = $_GET['patient_id'];
+                                                echo $userid
+                                                ?>;
+                            let patient_name = "<?php
+                                                echo urldecode($_GET['patient_name']);
+                                                ?>";
+                            let form_name = "ozgecmis";
+                            let yourDate = new Date()
+                            let creation_date = yourDate.toISOString().split('T')[0];
+                            let update_date = yourDate.toISOString().split('T')[0];
+                            let nameSurname = $('#nameSurname').val();
+                            let dob = $('#dob').val();
+                            let gender = $('.fform-check-input[name= "gender"]').val();
+                            let maritalStatus = $('[name="maritalStatus"]').val();
+                            let profession = $('#profession').val();
+                            let education = $('#education').val();
+                            let protocol_file_no = $('#protocol_file_no').val();
+                            let admissionDate = $('#admissionDate').val();
+                            let department = $('#department').val();
+                            let diagnosis = $('#diagnosis').val();
+                            let doctorName = $('#doctorName').val();
+                            let numberOfChildren = $('#numberOfChildren').val();
+                            let socialSecurity = $('.form-check-input[name="socialSecurity"]:checked').val() === "Diger" ? $('#socialSecuritOther').val() : $('.form-check-input[name="socialSecurity"]:checked').val();
+                            let language = $('#language').val();
+                            let translatorRequirement = $('.form-check-input[name="translatorRequirement"]:checked').val() === "Var" ? $('#translatorRequirementInput').val() : $('.form-check-input[name="translatorRequirement"]:checked').val();
+                            let bloodType = $('#bloodType').val();
+                            let transfusionStatus = $('.form-check-input[name="transfusionStatus"]:checked').val() === "Var" ? $('#transfusionStatusInput').val() : $('.form-check-input[name="transfusionStatus"]:checked').val();
+                            let transfusionReaction = $('.form-check-input[name="transfusionReaction"]:checked').val() === "Var" ? $('#transfusionReactionInput').val() : $('.form-check-input[name="transfusionReaction"]:checked').val();
+                            let infoStorageType = $('.form-check-input[name="infoStorageType"]:checked').val() === "Diger" ? $('#infoStorageTypeInput').val() : $('.form-check-input[name="infoStorageType"]:checked').val();
+                            let kolbandi = $('input[name="kolbandi"]').val();
+                            let relativeNameSurname = $('input[name="relativeNameSurname"]').val();
+                            let relativePhone = $('input[name="relativePhone"]').val();
+                            let relativeAddress = $('input[name="relativeAddress"]').val();
+                            let relativeDistance = $('input[name="relativeDistance"]').val();
+                            let previousHospitalization = $('.form-check-input[name="previousHospitalization"]:checked').val();
+                            let hospitalization_year = $('input[name="hospitalization_year"]').val() ? $('input[name="hospitalization_year"]').val() : "";
+                            let hospitalization_location = $('input[name="hospitalization_location"]').val() ? $('input[name="hospitalization_location"]').val() : "";
+                            let hospitalization_reason = $('input[name="hospitalization_reason"]').val() ? $('input[name="hospitalization_reason"]').val() : "";
+                            let diseases = $('.form-check-input[name="diseases"]:checked').val() === "Var" ? $('#diseasesInput').val() : $('.form-check-input[name="diseases"]:checked').val();
+                            let previousSurgeries = $('.form-check-input[name="previousSurgeries"]:checked').val() === "Var" ? $('#previousSurgeriesInput').val() : $('.form-check-input[name="previousSurgeries"]:checked').val();
+                            let accidents = $('.form-check-input[name="accidents"]:checked').val() === "Var" ? $('#accidentsInput').val() : $('.form-check-input[name="accidents"]:checked').val();
+                            let infectiousDisease = $('.form-check-input[name="infectiousDisease"]:checked').val() === "Var" ? $('#infectiousDiseaseInput').val() : $('.form-check-input[name="infectiousDisease"]:checked').val();
+                            let allergies = $('.form-check-input[name="allergies"]:checked').val();
+                            let allergen = $('input[name="allergen"]').val() ? $('input[name="allergen"]').val() : "";
+                            let allergySymptoms = $('input[name="allergySymptoms"]').val() ? $('input[name="allergySymptoms"]').val() : "";
+                            let allergyTherapy = $('input[name="allergyTherapy"]').val() ? $('input[name="allergyTherapy"]').val() : "";
+                            let previousMedications = $('.form-check-input[name="previousMedications"]:checked').val();
+                            let medicineName = $('input[name="medicineName"]').val() ? $('input[name="medicineName"]').val() : "";
+                            let prescriptionType = $('.form-check-input[name="prescriptionType"]:checked').val();
+                            let medicineFrequency = $('input[name="medicineFrequency"]').val() ? $('input[name="medicineFrequency"]').val() : "";
+                            let medicineDose = $('input[name="medicineDose"]').val() ? $('input[name="medicineDose"]').val() : "";
+                            let intakeMethod = $('input[name="intakeMethod"]').val() ? $('input[name="intakeMethod"]').val() : "";
+                            let intakeTimes = $('input[name="intakeTimes"]').val() ? $('input[name="intakeTimes"]').val() : "";
+                            // let sleepProblem = $('.form-check-input[name="sleepProblem"]:checked').val() === "Sorun Var" ? $("input[name='sleepProblemDesc']:checked").map(function() {
+                            //     return $(this).val();
+                            // }).get().join("/") : "Sorun Yok";
 
-                    var patient_id = <?php
-                                            $userid = $_GET['patient_id'];
-                                            echo $userid
-                                            ?>;
-                    let patient_name = "<?php
-                                            echo urldecode($_GET['patient_name']);
-                                            ?>";
-                    let ad_soyad = $("input[name='ad_soyad']").val();
-                    let dogum_yeri = $("input[name='dogum_yeri']").val();
-                    let yas = parseInt($("input[name='yas']").val());
-                    let cinsiyet = $("input[type='radio'][name='cinsiyet']:checked").val();
-                    let medeni_durum = $("input[name='medeni_durum']").val();
-                    let meslek = $("input[name='meslek']").val();
-                    let egitim_durumu = $("input[name='egitim_durumu']").val();
-                    let protocol_file_no = $("input[name='protocol_file_no']").val();
-                    let yatis_tarihi = $("input[name='yatis_tarihi']").val();
-                    let bolum = $("input[name='bolum']").val();
-                    let tibbi_tani = $("input[name='tibbi_tani']").val();
-                    let doktor_ad_soyad = $("input[name='doktor_ad_soyad']").val();
-                    let cocuk_sayisi = $("input[name='cocuk_sayisi']").val();
-                    let sosyal_guvencesi = $("input[type='radio'][name='sosyal_guvencesi']:checked")
-                        .val();
-                    let sosyal_guvence_diger = $("input[name='sosyal_guvence_diger']").val();
-                    let dil = $("input[name='dil']").val();
-                    let TercumanGereksinimi = $(
-                        "input[type='radio'][name='TercumanGereksinimi']:checked").val();
-                    let t_diger = $("input[name='t_diger']").val();
-                    let TransfuzyonYapilma = $("input[type='radio'][name='TransfuzyonYapilma']:checked")
-                        .val();
-                    let yatisdiger = $("input[name='yatisdiger']").val();
-                    let TransfuzyonReaksiyonu = $(
-                        "input[type='radio'][name='TransfuzyonReaksiyonu']:checked").val();
-                    let reaksiyon_diger = $("input[name='reaksiyon_diger']").val();
-                    let BilgiKisisi = $("input[type='radio'][name='BilgiKisisi']:checked").val();
-                    let kisi_diger = $("input[name='kisi_diger']").val();
-                    let kolbandi = $("input[name='kolbandi']").val();
-                    let kolbandiaciklama = $("input[name='kolbandiaciklama']").val();
-                    let adsoyadyakin = $("input[name='adsoyadyakin']").val();
-                    let yakinlikderece = $("input[name='yakinlikderece']").val();
-                    let telefonyakin = $("input[name='telefonyakin']").val();
-                    let adresyakin = $("input[name='adresyakin']").val();
-                    let YatisDurumu = $("input[name='YatisDurumu']:checked").val();
-                    let yatis_durumu_diger = $("input[name='yatis_durumu_diger']").val();
-                    let yatis_yili = $("input[name='yatis_yili']").val();
-                    let yatis_suresi = $("input[name='yatis_suresi']").val();
-                    let yatis_nedeni = $("input[name='yatis_nedeni']").val();
-                    let GetirdigiHastaliklar = $("input[name='GetirdigiHastaliklar']:checked").val();
-                    let hastalik_diger = $("input[name='hastalik_diger']").val();
-                    let GetirdigiAmeliyatlar = $("input[name='GetirdigiAmeliyatlar']:checked").val();
-                    let ameliyat_diger = $("input[name='ameliyat_diger']").val();
-                    let GetirdigiKazalar = $("input[name='GetirdigiKazalar']:checked").val();
-                    let kaza_diger = $("input[name='kaza_diger']").val();
-                    let BulasiciHastalik = $("input[name='BulasiciHastalik']:checked").val();
-                    let bulasici_diger = $("input[name='bulasici_diger']").val();
-                    let AlerjikReaksiyon = $("input[name='AlerjikReaksiyon']:checked").val();
-                    let alerji_diger = $("input[name='alerji_diger']").val();
-                    let Allerjen = $("input[name='Allerjen']").val();
-                    let Belirtiler = $("input[name='Belirtiler']").val();
-                    let Tedavi = $("input[name='Tedavi']").val();
-                    let KullanilanIlaclar = $("input[name='KullanilanIlaclar']:checked").val();
-                    let ilaclar_diger = $("input[name='ilaclar_diger']").val();
-                    let IlacAdi = $("input[name='IlacAdi']").val();
-                    let Recete = $("input[name='Recete']:checked").val();
-                    let KullanimSuresi = $("input[name='KullanimSuresi']").val();
-                    let Dozu = $("input[name='Dozu']").val();
-                    let Sikligi = $("input[name='Sikligi']").val();
-                    let AlinisYolu = $("input[name='AlinisYolu']").val();
-                    let Suresi = $("input[name='Suresi']").val();
-                    let KullandigiAraclar = $("input[name='KullandigiAraclar']:checked").val();
-                    let araclar_diger = $("input[name='araclar_diger']").val();
-                    let Gozluk = $("input[name='Gozluk']").val();
-                    let KontaktLens = $("input[name='KontaktLens']").val();
-                    let IsitmeCihazi = $("input[name='IsitmeCihazi']").val();
-                    let Sag = $("input[name='Sag']").val();
-                    let Sol = $("input[name='Sol']").val();
-                    let DisProtezi = $("input[name='DisProtezi']").val();
-                    let TekerlekliSandalye = $("input[name='TekerlekliSandalye']").val();
-                    let Baston = $("input[name='Baston']").val();
-                    let Yurutec = $("input[name='Yurutec']").val();
-                    let KoltukDegnegi = $("input[name='KoltukDegnegi']").val();
-                    let protez_diger = $("input[name='protez_diger']").val();
-                    let Aliskanliklar = $("input[name='Aliskanliklar']:checked").val();
-                    let aliskanlik_diger = $("input[name='aliskanlik_diger']").val();
-                    let Sigara = $("input[name='Sigara']").val();
-                    let SMiktar = $("input[name='SMiktar']").val();
-                    let SKullanimSureci = $("input[name='SKullanimSureci']").val();
-                    let Alkol = $("input[name='Alkol']").val();
-                    let AMiktar = $("input[name='AMiktar']").val();
-                    let AKullanimSureci = $("input[name='AKullanimSureci']").val();
-                    let Cay = $("input[name='Cay']").val();
-                    let CMiktar = $("input[name='CMiktar']").val();
-                    let CKullanimSureci = $("input[name='CKullanimSureci']").val();
-                    let Kahve = $("input[name='Kahve']").val();
-                    let KMiktar = $("input[name='KMiktar']").val();
-                    let KKullanimSureci = $("input[name='KKullanimSureci']").val();
-                    let DDiger = $("input[name='DDiger']").val();
-                    let DMiktar = $("input[name='DMiktar']").val();
-                    let DKullanimSureci = $("input[name='DKullanimSureci']").val();
-                    let AileviSaglik = $("input[name='AileviSaglik']:checked").val();
-                    let ailevi_diger = $("input[name='ailevi_diger']").val();
-                    let YakinlikDerecesi = $("input[name='YakinlikDerecesi']").val();
-                    let Tanisi = $("input[name='Tanisi']").val();
-                    let GeldigiYer = $("input[name='GeldigiYer']:checked").val();
-                    let yer_diger = $("input[name='yer_diger']").val();
-                    let GelisSekli = $("input[name='GelisSekli']:checked").val();
-                    let gelis_diger = $("input[name='gelis_diger']").val();
-                    let Sikayetler = $("input[name='Sikayetler']").val();
-                    let TibbiTani = $("input[name='TibbiTani']").val();
+                            let aidTools = $('.form-check-input[name="aidTools"]:checked').val() === "Var" ? $("input[name='aidToolsDesc']:checked").map(function() {
+                                return $(this).val();
+                            }).get().join("/") : "Yok";
 
-                    e.preventDefault()
+                            let smoking = $('input[name="smoking"]').val();
+                            let smokingAmount = $('input[name="smokingAmount"]').val() ? $('input[name="smokingAmount"]').val() : "";
+                            let smokingTime = $('input[name="smokingTime"]').val() ? $('input[name="smokingTime"]').val() : "";
+                            let alcoholUsage = $('input[name="alcoholUsage"]').val();
+                            let alcoholAmount = $('input[name="alcoholAmount"]').val() ? $('input[name="alcoholAmount"]').val() : "";
+                            let alcoholUsageTime = $('input[name="alcoholUsageTime"]').val() ? $('input[name="alcoholUsageTime"]').val() : "";
+                            let teaUsage = $('input[name="teaUsage"]').val();
+                            let teaUsageAmount = $('input[name="teaUsageAmount"]').val() ? $('input[name="teaUsageAmount"]').val() : "";
+                            let teaUsageTime = $('input[name="teaUsageTime"]').val() ? $('input[name="teaUsageTime"]').val() : "";
+                            let coffeeUsage = $('input[name="coffeeUsage"]').val();
+                            let coffeeUsageAmount = $('input[name="coffeeUsageAmount"]').val() ? $('input[name="coffeeUsageAmount"]').val() : "";
+                            let coffeeUsageTime = $('input[name="coffeeUsageTime"]').val() ? $('input[name="coffeeUsageTime"]').val() : "";
+                            let otherHabitsInput = $('input[name="otherHabitsInput"]').val() ? $('input[name="otherHabitsInput"]').val() : "";
+                            let otherHabitsAmount = $('input[name="otherHabitsAmount"]').val() ? $('input[name="otherHabitsAmount"]').val() : "";
+                            let otherHabitsTime = $('input[name="otherHabitsTime"]').val() ? $('input[name="otherHabitsTime"]').val() : "";
+                            let familyIllnesses = $('.form-check-input[name="familyIllnesses"]:checked').val();
+                            let familyMemberRelation = $('input[name="familyMemberRelation"]').val() ? $('input[name="familyMemberRelation"]').val() : "";
+                            let familyMemberIllness = $('input[name="familyMemberIllness"]').val() ? $('input[name="familyMemberIllness"]').val() : "";
+                            let arrivalFrom = $('.form-check-input[name="arrivalFrom"]:checked').val() === "Diger" ? $('#arrivalFromInput').val() : $('.form-check-input[name="arrivalFrom"]:checked').val();
+                            let hospitalArrivalMethod = $('.form-check-input[name="hospitalArrivalMethod"]:checked').val() === "Diger" ? $('#hospitalArrivalMethodInput').val() : $('.form-check-input[name="hospitalArrivalMethod"]:checked').val();
+                            let complaints = $('input[name="complaints"]').val() ? $('input[name="complaints"]').val() : "";
+                            let medicalDiagnosis = $('input[name="medicalDiagnosis"]').val() ? $('input[name="medicalDiagnosis"]').val() : "";
+
+                            //set all border colors to default using class selector form-check-input and form-control
+                            $('.form-check-input').closest('.form-check').css('border-color', '#ced4da');
+                            $('.form-control').css('border-color', '#ced4da');
+                            if(nameSurname == "") {
+                                //scroll to nameSurname 
+                                $('html, body').animate({
+                                    scrollTop: $("#nameSurname").offset().top
+                                }, 200);
+                                //change border color
+                                $('#nameSurname').css('border-color', 'red');
+                                //stop function 
+                                return false;
+                            }
+                            
+                            if(dob == "") {
+                                //scroll to dob
+                                $('html, body').animate({
+                                    scrollTop: $("#dob").offset().top
+                                }, 200);
+                                //change border color
+                                $('#dob').css('border-color', 'red');
+                                return false;
+                            }
+
+                            if(age == ""){
+                                //scroll to age
+                                $('html, body').animate({
+                                    scrollTop: $("#age").offset().top
+                                }, 200);
+                                //change border color
+                                $('#age').css('border-color', 'red');
+                                return false;
+                            }
+
+                            // if(age == ""){
+                            //     //scroll to age
+                            //     $('html, body').animate({
+                            //         scrollTop: $("#age").offset().top
+                            //     }, 200);
+                            //     //change border color
+                            //     $('#age').css('border-color', 'red');
+                            //     return false;
+                            // }
+
+                            //gender
+                            if ($('input[name="gender"]:checked').length === 0) {
+                                // Scroll to gender
+                                $('html, body').animate({
+                                    scrollTop: $('.form-check-input[name="gender"]').first().offset().top
+                                }, 200);
+                                // Change border color
+                                $('.form-check-input[name="gender"]').first().closest('.form-check').css('border-color', 'red');
+                                return false;
+                                }
+
+                            //maritalStatus
+                            if(maritalStatus == ""){
+                                //scroll to maritalStatus
+                                $('html, body').animate({
+                                    scrollTop: $("#maritalStatus").offset().top
+                                }, 200);
+                                //change border color
+                                $('#maritalStatus').css('border-color', 'red');
+                                return false;
+                            }
+
+                            //profession
+                            if(profession == ""){
+                                //scroll to profession
+                                $('html, body').animate({
+                                    scrollTop: $("#profession").offset().top
+                                }, 200);
+                                //change border color
+                                $('#profession').css('border-color', 'red');
+                                return false;
+                            }
+
+                            //education
+                            if(education == ""){
+                                //scroll to education
+                                $('html, body').animate({
+                                    scrollTop: $("#education").offset().top
+                                }, 200);
+                                //change border color
+                                $('#education').css('border-color', 'red');
+                                return false;
+                            }
+
+                            //protocol_file_no
+                            if(protocol_file_no == ""){
+                                //scroll to protocol_file_no
+                                $('html, body').animate({
+                                    scrollTop: $("#protocol_file_no").offset().top
+                                }, 200);
+                                //change border color
+                                $('#protocol_file_no').css('border-color', 'red');
+                                return false;
+                            }
+
+                            //admissionDate
+                            if(admissionDate == ""){
+                                //scroll to admissionDate
+                                $('html, body').animate({
+                                    scrollTop: $("#admissionDate").offset().top
+                                }, 200);
+                                //change border color
+                                $('#admissionDate').css('border-color', 'red');
+                                return false;
+                            }
+
+                            //department
+                            if(department == ""){
+                                //scroll to department
+                                $('html, body').animate({
+                                    scrollTop: $("#department").offset().top
+                                }, 200);
+                                //change border color
+                                $('#department').css('border-color', 'red');
+                                return false;
+                            }
+
+                            //diagnosis
+                            if(diagnosis == ""){
+                                //scroll to diagnosis
+                                $('html, body').animate({
+                                    scrollTop: $("#diagnosis").offset().top
+                                }, 200);
+                                //change border color
+                                $('#diagnosis').css('border-color', 'red');
+                                return false;
+                            }
+
+                            //doctorName
+                            if(doctorName == ""){
+                                //scroll to doctorName
+                                $('html, body').animate({
+                                    scrollTop: $("#doctorName").offset().top
+                                }, 200);
+                                //change border color
+                                $('#doctorName').css('border-color', 'red');
+                                return false;
+                            }
+
+                            //numberOfChildren
+                            if(numberOfChildren == ""){
+                                //scroll to numberOfChildren
+                                $('html, body').animate({
+                                    scrollTop: $("#numberOfChildren").offset().top
+                                }, 200);
+                                //change border color
+                                $('#numberOfChildren').css('border-color', 'red');
+                                return false;
+                            }
+
+                            //socialSecurity
+                            if ($('input[name="socialSecurity"]:checked').length === 0) {
+                                // Scroll to socialSecurity
+                                $('html, body').animate({
+                                    scrollTop: $('.form-check-input[name="socialSecurity"]').first().offset().top
+                                }, 200);
+                                // Change border color
+                                $('.form-check-input[name="socialSecurity"]').first().closest('.form-check').css('border-color', 'red');
+                                return false;
+                                }
+                            if( $('input[name="socialSecurity"]:checked').val() === "Diger" && $('#socialSecuritOther').val() == ""){
+                                //scroll to socialSecuritOther
+                                $('html, body').animate({
+                                    scrollTop: $("#socialSecuritOther").offset().top
+                                }, 200);
+                                //change border color
+                                $('#socialSecuritOther').css('border-color', 'red');
+                                return false;
+                            }
+
+                            //language
+                            if(language == ""){
+                                //scroll to language
+                                $('html, body').animate({
+                                    scrollTop: $("#language").offset().top
+                                }, 200);
+                                //change border color
+                                $('#language').css('border-color', 'red');
+                                return false;
+                            }
+
+                            //translatorRequirement
+                            if ($('input[name="translatorRequirement"]:checked').length === 0) {
+                                // Scroll to translatorRequirement
+                                $('html, body').animate({
+                                    scrollTop: $('.form-check-input[name="translatorRequirement"]').first().offset().top
+                                }, 200);
+                                // Change border color
+                                $('.form-check-input[name="translatorRequirement"]').first().closest('.form-check').css('border-color', 'red');
+                                return false;
+                                }
+                            if( $('input[name="translatorRequirement"]:checked').val() === "Var" && $('#translatorRequirementInput').val() == ""){
+                                //scroll to translatorRequirementInput
+                                $('html, body').animate({
+                                    scrollTop: $("#translatorRequirementInput").offset().top
+                                }, 200);
+                                //change border color
+                                $('#translatorRequirementInput').css('border-color', 'red');
+                                return false;
+                            }
+
+                            //bloodType
+                            if(bloodType == ""){
+                                //scroll to bloodType
+                                $('html, body').animate({
+                                    scrollTop: $("#bloodGroup").offset().top
+                                }, 200);
+                                //change border color
+                                $('#bloodGroup').css('border-color', 'red');
+                                return false;
+                            }
+
+                            //transfusionStatus
+                            if($('.form-check-input[name="transfusionStatus"]:checked').length === 0) {
+                                // Scroll to transfusionStatus
+                                $('html, body').animate({
+                                    scrollTop: $('.form-check-input[name="transfusionStatus"]').first().offset().top
+                                }, 200);
+                                // Change border color
+                                $('.form-check-input[name="transfusionStatus"]').first().closest('.form-check').css('border-color', 'red');
+                            }
+                            if( $('input[name="transfusionStatus"]:checked').val() === "Var" && $('#transfusionStatusInput').val() == ""){
+                                //scroll to transfusionStatusInput
+                                $('html, body').animate({
+                                    scrollTop: $("#transfusionStatusInput").offset().top
+                                }, 200);
+                                //change border color
+                                $('#transfusionStatusInput').css('border-color', 'red');
+                                return false;
+                            }
+
+                            //transfusionReaction
+                            if($('.form-check-input[name="transfusionReaction"]:checked').length === 0) {
+                                // Scroll to transfusionReaction
+                                $('html, body').animate({
+                                    scrollTop: $('.form-check-input[name="transfusionReaction"]').first().offset().top
+                                }, 200);
+                                // Change border color
+                                $('.form-check-input[name="transfusionReaction"]').first().closest('.form-check').css('border-color', 'red');
+                            }
+                            if( $('input[name="transfusionReaction"]:checked').val() === "Var" && $('#transfusionReactionInput').val() == ""){
+                                //scroll to transfusionReactionInput
+                                $('html, body').animate({
+                                    scrollTop: $("#transfusionReactionInput").offset().top
+                                }, 200);
+                                //change border color
+                                $('#transfusionReactionInput').css('border-color', 'red');
+                                return false;
+                            }
+
+                            //infoStorageType
+                            if($('.form-check-input[name="infoStorageType"]:checked').length === 0) {
+                                // Scroll to infoStorageType
+                                $('html, body').animate({
+                                    scrollTop: $('.form-check-input[name="infoStorageType"]').first().offset().top
+                                }, 200);
+                                // Change border color
+                                $('.form-check-input[name="infoStorageType"]').first().closest('.form-check').css('border-color', 'red');
+                            }
+                            if( $('input[name="infoStorageType"]:checked').val() === "Diger" && $('#infoStorageTypeInput').val() == ""){
+                                //scroll to infoStorageTypeInput
+                                $('html, body').animate({
+                                    scrollTop: $("#infoStorageTypeInput").offset().top
+                                }, 200);
+                                //change border color
+                                $('#infoStorageTypeInput').css('border-color', 'red');
+                                return false;
+                            }
+
+                            //kolbandi
+                            if(kolbandi == ""){
+                                //scroll to kolbandi
+                                $('html, body').animate({
+                                    scrollTop: $("#kolbandi").offset().top
+                                }, 200);
+                                //change border color
+                                $('#kolbandi').css('border-color', 'red');
+                                return false;
+                            }
+
+                            //relativeNameSurname
+                            if(relativeNameSurname == ""){
+                                //scroll to relativeNameSurname
+                                $('html, body').animate({
+                                    scrollTop: $("#relativeNameSurname").offset().top
+                                }, 200);
+                                //change border color
+                                $('#relativeNameSurname').css('border-color', 'red');
+                                return false;
+                            }
+
+                            //relativePhone
+                            if(relativePhone == ""){
+                                //scroll to relativePhone
+                                $('html, body').animate({
+                                    scrollTop: $("#relativePhone").offset().top
+                                }, 200);
+                                //change border color
+                                $('#relativePhone').css('border-color', 'red');
+                                return false;
+                            }
+
+                            //relativeAddress
+                            if(relativeAddress == ""){
+                                //scroll to relativeAddress
+                                $('html, body').animate({
+                                    scrollTop: $("#relativeAddress").offset().top
+                                }, 200);
+                                //change border color
+                                $('#relativeAddress').css('border-color', 'red');
+                                return false;
+                            }
+
+                            //relativeDistance
+                            if(relativeDistance == ""){
+                                //scroll to relativeDistance
+                                $('html, body').animate({
+                                    scrollTop: $("#relativeDistance").offset().top
+                                }, 200);
+                                //change border color
+                                $('#relativeDistance').css('border-color', 'red');
+                                return false;
+                            }
+
+                            //previousHospitalization
+                            if($('.form-check-input[name="previousHospitalization"]:checked').length === 0) {
+                                // Scroll to previousHospitalization
+                                $('html, body').animate({
+                                    scrollTop: $('.form-check-input[name="previousHospitalization"]').first().offset().top
+                                }, 200);
+                                // Change border color
+                                $('.form-check-input[name="previousHospitalization"]').first().closest('.form-check').css('border-color', 'red');
+                            }
+                            if( $('input[name="previousHospitalization"]:checked').val() === "Var" && $('#hospitalization_year').val() == ""){
+                                //scroll to hospitalization_year
+                                $('html, body').animate({
+                                    scrollTop: $("#hospitalization_year").offset().top
+                                }, 200);
+                                //change border color
+                                $('#hospitalization_year').css('border-color', 'red');
+                                return false;
+                            }
+                            if( $('input[name="previousHospitalization"]:checked').val() === "Var" && $('#hospitalization_location').val() == ""){
+                                //scroll to hospitalization_location
+                                $('html, body').animate({
+                                    scrollTop: $("#hospitalization_location").offset().top
+                                }, 200);
+                                //change border color
+                                $('#hospitalization_location').css('border-color', 'red');
+                                return false;
+                            }
+                            if( $('input[name="previousHospitalization"]:checked').val() === "Var" && $('#hospitalization_reason').val() == ""){
+                                //scroll to hospitalization_reason
+                                $('html, body').animate({
+                                    scrollTop: $("#hospitalization_reason").offset().top
+                                }, 200);
+                                //change border color
+                                $('#hospitalization_reason').css('border-color', 'red');
+                                return false;
+                            }
+
+                            //diseases
+                            if($('.form-check-input[name="diseases"]:checked').length === 0) {
+                                // Scroll to diseases
+                                $('html, body').animate({
+                                    scrollTop: $('.form-check-input[name="diseases"]').first().offset().top
+                                }, 200);
+                                // Change border color
+                                $('.form-check-input[name="diseases"]').first().closest('.form-check').css('border-color', 'red');
+                            }
+                            if( $('input[name="diseases"]:checked').val() === "Var" && $('#diseasesInput').val() == ""){
+                                //scroll to diseasesInput
+                                $('html, body').animate({
+                                    scrollTop: $("#diseasesInput").offset().top
+                                }, 200);
+                                //change border color
+                                $('#diseasesInput').css('border-color', 'red');
+                                return false;
+                            }
+
+                            //previousSurgeries
+                            if($('.form-check-input[name="previousSurgeries"]:checked').length === 0) {
+                                // Scroll to previousSurgeries
+                                $('html, body').animate({
+                                    scrollTop: $('.form-check-input[name="previousSurgeries"]').first().offset().top
+                                }, 200);
+                                // Change border color
+                                $('.form-check-input[name="previousSurgeries"]').first().closest('.form-check').css('border-color', 'red');
+                            }
+                            if( $('input[name="previousSurgeries"]:checked').val() === "Var" && $('#previousSurgeriesInput').val() == ""){
+                                //scroll to previousSurgeriesInput
+                                $('html, body').animate({
+                                    scrollTop: $("#previousSurgeriesInput").offset().top
+                                }, 200);
+                                //change border color
+                                $('#previousSurgeriesInput').css('border-color', 'red');
+                                return false;
+                            }
+                            
+                            //accidents
+                            if($('.form-check-input[name="accidents"]:checked').length === 0) {
+                                // Scroll to accidents
+                                $('html, body').animate({
+                                    scrollTop: $('.form-check-input[name="accidents"]').first().offset().top
+                                }, 200);
+                                // Change border color
+                                $('.form-check-input[name="accidents"]').first().closest('.form-check').css('border-color', 'red');
+                            }
+                            if( $('input[name="accidents"]:checked').val() === "Var" && $('#accidentsInput').val() == ""){
+                                //scroll to accidentsInput
+                                $('html, body').animate({
+                                    scrollTop: $("#accidentsInput").offset().top
+                                }, 200);
+                                //change border color
+                                $('#accidentsInput').css('border-color', 'red');
+                                return false;
+                            }
+
+                            //infectiousDisease
+                            if($('.form-check-input[name="infectiousDisease"]:checked').length === 0) {
+                                // Scroll to infectiousDisease
+                                $('html, body').animate({
+                                    scrollTop: $('.form-check-input[name="infectiousDisease"]').first().offset().top
+                                }, 200);
+                                // Change border color
+                                $('.form-check-input[name="infectiousDisease"]').first().closest('.form-check').css('border-color', 'red');
+                            }
+                            if( $('input[name="infectiousDisease"]:checked').val() === "Var" && $('#infectiousDiseaseInput').val() == ""){
+                                //scroll to infectiousDiseaseInput
+                                $('html, body').animate({
+                                    scrollTop: $("#infectiousDiseaseInput").offset().top
+                                }, 200);
+                                //change border color
+                                $('#infectiousDiseaseInput').css('border-color', 'red');
+                                return false;
+                            }
+
+                            //allergies
+                            if($('.form-check-input[name="allergies"]:checked').length === 0) {
+                                // Scroll to allergies
+                                $('html, body').animate({
+                                    scrollTop: $('.form-check-input[name="allergies"]').first().offset().top
+                                }, 200);
+                                // Change border color
+                                $('.form-check-input[name="allergies"]').first().closest('.form-check').css('border-color', 'red');
+                            }
+                            if( $('input[name="allergies"]:checked').val() === "Var" && $('#allergen').val() == ""){
+                                //scroll to allergen
+                                $('html, body').animate({
+                                    scrollTop: $("#allergen").offset().top
+                                }, 200);
+                                //change border color
+                                $('#allergen').css('border-color', 'red');
+                                return false;
+                            }
+                            if( $('input[name="allergies"]:checked').val() === "Var" && $('#allergySymptoms').val() == ""){
+                                //scroll to allergySymptoms
+                                $('html, body').animate({
+                                    scrollTop: $("#allergySymptoms").offset().top
+                                }, 200);
+                                //change border color
+                                $('#allergySymptoms').css('border-color', 'red');
+                                return false;
+                            }
+                            if( $('input[name="allergies"]:checked').val() === "Var" && $('#allergyTherapy').val() == ""){
+                                //scroll to allergyTherapy
+                                $('html, body').animate({
+                                    scrollTop: $("#allergyTherapy").offset().top
+                                }, 200);
+                                //change border color
+                                $('#allergyTherapy').css('border-color', 'red');
+                                return false;
+                            }
+
+                            //previousMedications
+                            if($('.form-check-input[name="previousMedications"]:checked').length === 0) {
+                                // Scroll to previousMedications
+                                $('html, body').animate({
+                                    scrollTop: $('.form-check-input[name="previousMedications"]').first().offset().top
+                                }, 200);
+                                // Change border color
+                                $('.form-check-input[name="previousMedications"]').first().closest('.form-check').css('border-color', 'red');
+                            }
+                            if( $('input[name="previousMedications"]:checked').val() === "Var" && $('#medicineName').val() == ""){
+                                //scroll to medicineName
+                                $('html, body').animate({
+                                    scrollTop: $("#medicineName").offset().top
+                                }, 200);
+                                //change border color
+                                $('#medicineName').css('border-color', 'red');
+                                return false;
+                            }
+                            if( $('input[name="previousMedications"]:checked').val() === "Var" && $('#medicineFrequency').val() == ""){
+                                //scroll to medicineFrequency
+                                $('html, body').animate({
+                                    scrollTop: $("#medicineFrequency").offset().top
+                                }, 200);
+                                //change border color
+                                $('#medicineFrequency').css('border-color', 'red');
+                                return false;
+                            }
+                            if( $('input[name="previousMedications"]:checked').val() === "Var" && $('#medicineDose').val() == ""){
+                                //scroll to medicineDose
+                                $('html, body').animate({
+                                    scrollTop: $("#medicineDose").offset().top
+                                }, 200);
+                                //change border color
+                                $('#medicineDose').css('border-color', 'red');
+                                return false;
+                            }
+                            if( $('input[name="previousMedications"]:checked').val() === "Var" && $('#intakeMethod').val() == ""){
+                                //scroll to intakeMethod
+                                $('html, body').animate({
+                                    scrollTop: $("#intakeMethod").offset().top
+                                }, 200);
+                                //change border color
+                                $('#intakeMethod').css('border-color', 'red');
+                                return false;
+                            }
+                            if( $('input[name="previousMedications"]:checked').val() === "Var" && $('#intakeTimes').val() == ""){
+                                //scroll to intakeTimes
+                                $('html, body').animate({
+                                    scrollTop: $("#intakeTimes").offset().top
+                                }, 200);
+                                //change border color
+                                $('#intakeTimes').css('border-color', 'red');
+                                return false;
+                            }
+
+                            //aidTools
+                            if($('.form-check-input[name="aidTools"]:checked').length === 0) {
+                                // Scroll to aidTools
+                                $('html, body').animate({
+                                    scrollTop: $('.form-check-input[name="aidTools"]').first().offset().top
+                                }, 200);
+                                // Change border color
+                                $('.form-check-input[name="aidTools"]').first().closest('.form-check').css('border-color', 'red');
+                            }
+                            if( $('input[name="aidTools"]:checked').val() === "Var" && $('.form-check-input[name="aidToolsDsc":checked]').length() === 0){
+                                //scroll to aidToolsInput
+                                $('html, body').animate({
+                                    scrollTop: $('.form-check-input[name="aidTools"]').first().offset().top
+                                }, 200);
+                                // Change border color
+                                $('.form-check-input[name="aidTools"]').first().closest('.form-check').css('border-color', 'red');
+                            }
+
+                            //smoking
+                            if(smoking == ""){
+                                //scroll to smoking
+                                $('html, body').animate({
+                                    scrollTop: $("#smoking").offset().top
+                                }, 200);
+                                //change border color
+                                $('#smoking').css('border-color', 'red');
+                                return false;
+                            }
+                            if( smoking == "Evet" && $('#smokingAmount').val() == ""){
+                                //scroll to smokingAmount
+                                $('html, body').animate({
+                                    scrollTop: $("#smokingAmount").offset().top
+                                }, 200);
+                                //change border color
+                                $('#smokingAmount').css('border-color', 'red');
+                                return false;
+                            }
+                            if( smoking == "Evet" && $('#smokingTime').val() == ""){
+                                //scroll to smokingTime
+                                $('html, body').animate({
+                                    scrollTop: $("#smokingTime").offset().top
+                                }, 200);
+                                //change border color
+                                $('#smokingTime').css('border-color', 'red');
+                                return false;
+                            }
+
+                            //alcoholUsage
+                            if(alcoholUsage == ""){
+                                //scroll to alcoholUsage
+                                $('html, body').animate({
+                                    scrollTop: $("#alcoholUsage").offset().top
+                                }, 200);
+                                //change border color
+                                $('#alcoholUsage').css('border-color', 'red');
+                                return false;
+                            }
+                            if( alcoholUsage == "Evet" && $('#alcoholAmount').val() == ""){
+                                //scroll to alcoholAmount
+                                $('html, body').animate({
+                                    scrollTop: $("#alcoholAmount").offset().top
+                                }, 200);
+                                //change border color
+                                $('#alcoholAmount').css('border-color', 'red');
+                                return false;
+                            }
+                            if( alcoholUsage == "Evet" && $('#alcoholUsageTime').val() == ""){
+                                //scroll to alcoholUsageTime
+                                $('html, body').animate({
+                                    scrollTop: $("#alcoholUsageTime").offset().top
+                                }, 200);
+                                //change border color
+                                $('#alcoholUsageTime').css('border-color', 'red');
+                                return false;
+                            }
+
+                            //teaUsage
+                            if(teaUsage == ""){
+                                //scroll to teaUsage
+                                $('html, body').animate({
+                                    scrollTop: $("#teaUsage").offset().top
+                                }, 200);
+                                //change border color
+                                $('#teaUsage').css('border-color', 'red');
+                                return false;
+                            }
+                            if( teaUsage == "Evet" && $('#teaUsageAmount').val() == ""){
+                                //scroll to teaUsageAmount
+                                $('html, body').animate({
+                                    scrollTop: $("#teaUsageAmount").offset().top
+                                }, 200);
+                                //change border color
+                                $('#teaUsageAmount').css('border-color', 'red');
+                                return false;
+                            }
+                            if( teaUsage == "Evet" && $('#teaUsageTime').val() == ""){
+                                //scroll to teaUsageTime
+                                $('html, body').animate({
+                                    scrollTop: $("#teaUsageTime").offset().top
+                                }, 200);
+                                //change border color
+                                $('#teaUsageTime').css('border-color', 'red');
+                                return false;
+                            }
+
+                            //coffeeUsage
+                            if(coffeeUsage == ""){
+                                //scroll to coffeeUsage
+                                $('html, body').animate({
+                                    scrollTop: $("#coffeeUsage").offset().top
+                                }, 200);
+                                //change border color
+                                $('#coffeeUsage').css('border-color', 'red');
+                                return false;
+                            }
+                            if( coffeeUsage == "Evet" && $('#coffeeUsageAmount').val() == ""){
+                                //scroll to coffeeUsageAmount
+                                $('html, body').animate({
+                                    scrollTop: $("#coffeeUsageAmount").offset().top
+                                }, 200);
+                                //change border color
+                                $('#coffeeUsageAmount').css('border-color', 'red');
+                                return false;
+                            }
+                            if( coffeeUsage == "Evet" && $('#coffeeUsageTime').val() == ""){
+                                //scroll to coffeeUsageTime
+                                $('html, body').animate({
+                                    scrollTop: $("#coffeeUsageTime").offset().top
+                                }, 200);
+                                //change border color
+                                $('#coffeeUsageTime').css('border-color', 'red');
+                                return false;
+                            }
+
+                            //otherHabits
+                            if(otherHabits == ""){
+                                //scroll to otherHabits
+                                $('html, body').animate({
+                                    scrollTop: $("#otherHabits").offset().top
+                                }, 200);
+                                //change border color
+                                $('#otherHabits').css('border-color', 'red');
+                                return false;
+                            }
+                            if($('.form-check-input[name="otherHabits":checked]').length !== 0 && $('#otherHabitsInput').val() == ""){
+                                //scroll to otherHabitsInput
+                                $('html, body').animate({
+                                    scrollTop: $("#otherHabitsInput").offset().top
+                                }, 200);
+                                //change border color
+                                $('#otherHabitsInput').css('border-color', 'red');
+                                return false;
+                            }
+                            if($('.form-check-input[name="otherHabits":checked]').length !== 0 && $('#otherHabitsAmount').val() == ""){
+                                //scroll to otherHabitsAmount
+                                $('html, body').animate({
+                                    scrollTop: $("#otherHabitsAmount").offset().top
+                                }, 200);
+                                //change border color
+                                $('#otherHabitsAmount').css('border-color', 'red');
+                                return false;
+                            }
+                            if($('.form-check-input[name="otherHabits":checked]').length !== 0 && $('#otherHabitsTime').val() == ""){
+                                //scroll to otherHabitsTime
+                                $('html, body').animate({
+                                    scrollTop: $("#otherHabitsTime").offset().top
+                                }, 200);
+                                //change border color
+                                $('#otherHabitsTime').css('border-color', 'red');
+                                return false;
+                            }
+
+                            //familyIllnesses
+                            if($('.form-check-input[name="familyIllnesses"]').length === 0){
+                                //scroll to familyIllnesses
+                                $('html, body').animate({
+                                    scrollTop: $('.form-check-input[name="familyIllnesses"]').first().offset().top
+                                }, 200);
+                                // Change border color
+                                $('.form-check-input[name="familyIllnesses"]').first().closest('.form-check').css('border-color', 'red');
+                            }
+                            if( $('.form-check-input[name="familyIllnesses"]:checked').val() === "Var" && $('#familyMemberRelation').val() == ""){
+                                //scroll to familyMemberRelation
+                                $('html, body').animate({
+                                    scrollTop: $("#familyMemberRelation").offset().top
+                                }, 200);
+                                //change border color
+                                $('#familyMemberRelation').css('border-color', 'red');
+                                return false;
+                            }
+                            if( $('.form-check-input[name="familyIllnesses"]:checked').val() === "Var" && $('#familyMemberIllness').val() == ""){
+                                //scroll to familyMemberIllness
+                                $('html, body').animate({
+                                    scrollTop: $("#familyMemberIllness").offset().top
+                                }, 200);
+                                //change border color
+                                $('#familyMemberIllness').css('border-color', 'red');
+                                return false;
+                            }
+
+                            //arrivalFrom
+                            if($('.form-check-input[name="arrivalFrom"]').length === 0){
+                                //scroll to arrivalFrom
+                                $('html, body').animate({
+                                    scrollTop: $('.form-check-input[name="arrivalFrom"]').first().offset().top
+                                }, 200);
+                                // Change border color
+                                $('.form-check-input[name="arrivalFrom"]').first().closest('.form-check').css('border-color', 'red');
+                            }
+                            if( $('.form-check-input[name="arrivalFrom"]:checked').val() === "Diger" && $('#arrivalFromInput').val() == ""){
+                                //scroll to arrivalFromInput
+                                $('html, body').animate({
+                                    scrollTop: $("#arrivalFromInput").offset().top
+                                }, 200);
+                                //change border color
+                                $('#arrivalFromInput').css('border-color', 'red');
+                                return false;
+                            }
+
+                            //hospitalArrivalMethod
+                            if($('.form-check-input[name="hospitalArrivalMethod"]').length === 0){
+                                //scroll to hospitalArrivalMethod
+                                $('html, body').animate({
+                                    scrollTop: $('.form-check-input[name="hospitalArrivalMethod"]').first().offset().top
+                                }, 200);
+                                // Change border color
+                                $('.form-check-input[name="hospitalArrivalMethod"]').first().closest('.form-check').css('border-color', 'red');
+                            }
+                            if( $('.form-check-input[name="hospitalArrivalMethod"]:checked').val() === "Diger" && $('#hospitalArrivalMethodInput').val() == ""){
+                                //scroll to hospitalArrivalMethodInput
+                                $('html, body').animate({
+                                    scrollTop: $("#hospitalArrivalMethodInput").offset().top
+                                }, 200);
+                                //change border color
+                                $('#hospitalArrivalMethodInput').css('border-color', 'red');
+                                return false;
+                            }
+
+                            //arrivalDate
+                            if(arrivalDate == ""){
+                                //scroll to arrivalDate
+                                $('html, body').animate({
+                                    scrollTop: $("#arrivalDate").offset().top
+                                }, 200);
+                                //change border color
+                                $('#arrivalDate').css('border-color', 'red');
+                                return false;
+                            }
+
+                            //arrivalTime
+                            if(arrivalTime == ""){
+                                //scroll to arrivalTime
+                                $('html, body').animate({
+                                    scrollTop: $("#arrivalTime").offset().top
+                                }, 200);
+                                //change border color
+                                $('#arrivalTime').css('border-color', 'red');
+                                return false;
+                            }
 
                     $.ajax({
                         type: 'POST',
                         url: '<?php echo $base_url; ?>/SubmitOrUpdateForm1_Ozgecmis.php',
                         data: {
-                            ad_soyad: ad_soyad,
-                            dogum_yeri: dogum_yeri,
-                            yas: yas,
-                            cinsiyet: cinsiyet,
-                            medeni_durum: medeni_durum,
-                            meslek: meslek,
-                            egitim_durumu: egitim_durumu,
+                            patient_id: patient_id,
+                            patient_name: patient_name,
+                            form_name: form_name,
+                            creation_date : creation_date,
+                            update_date : update_date,
+                            nameSurname: nameSurname,
+                            dob : dob,
+                            gender: gender,
+                            maritalStatus: maritalStatus,
+                            profession: profession,
+                            education: education,
                             protocol_file_no: protocol_file_no,
-                            yatis_tarihi: yatis_tarihi,
-                            bolum: bolum,
-                            tibbi_tani: tibbi_tani,
-                            doktor_ad_soyad: doktor_ad_soyad,
-                            cocuk_sayisi: cocuk_sayisi,
-                            sosyal_guvencesi: sosyal_guvencesi,
-                            sosyal_guvence_diger: sosyal_guvence_diger,
-                            dil: dil,
-                            TercumanGereksinimi: TercumanGereksinimi,
-                            t_diger: t_diger,
-                            TransfuzyonYapilma: TransfuzyonYapilma,
-                            yatisdiger: yatisdiger,
-                            TransfuzyonReaksiyonu: TransfuzyonReaksiyonu,
-                            reaksiyon_diger: reaksiyon_diger,
-                            BilgiKisisi: BilgiKisisi,
-                            kisi_diger: kisi_diger,
+                            admissionDate: admissionDate,
+                            department: department,
+                            diagnosis: diagnosis,
+                            doctorName: doctorName,
+                            numberOfChildren: numberOfChildren,
+                            socialSecurity: socialSecurity,
+                            language: language,
+                            translatorRequirement: translatorRequirement,
+                            bloodType: bloodType,
+                            transfusionStatus: transfusionStatus,
+                            transfusionReaction: transfusionReaction,
+                            infoStorageType: infoStorageType,
                             kolbandi: kolbandi,
-                            kolbandiaciklama: kolbandiaciklama,
-                            adsoyadyakin: adsoyadyakin,
-                            yakinlikderece: yakinlikderece,
-                            telefonyakin: telefonyakin,
-                            adresyakin: adresyakin,
-                            YatisDurumu: YatisDurumu,
-                            yatis_durumu_diger: yatis_durumu_diger,
-                            yatis_yili: yatis_yili,
-                            yatis_suresi: yatis_suresi,
-                            yatis_nedeni: yatis_nedeni,
-                            GetirdigiHastaliklar: GetirdigiHastaliklar,
-                            hastalik_diger: hastalik_diger,
-                            GetirdigiAmeliyatlar: GetirdigiAmeliyatlar,
-                            ameliyat_diger: ameliyat_diger,
-                            GetirdigiKazalar: GetirdigiKazalar,
-                            kaza_diger: kaza_diger,
-                            BulasiciHastalik: BulasiciHastalik,
-                            bulasici_diger: bulasici_diger,
-                            AlerjikReaksiyon: AlerjikReaksiyon,
-                            alerji_diger: alerji_diger,
-                            Allerjen: Allerjen,
-                            Belirtiler: Belirtiler,
-                            Tedavi: Tedavi,
-                            KullanilanIlaclar: KullanilanIlaclar,
-                            ilaclar_diger: ilaclar_diger,
-                            IlacAdi: IlacAdi,
-                            Recete: Recete,
-                            KullanimSuresi: KullanimSuresi,
-                            Dozu: Dozu,
-                            Sikligi: Sikligi,
-                            AlinisYolu: AlinisYolu,
-                            Suresi: Suresi,
-                            KullandigiAraclar: KullandigiAraclar,
-                            araclar_diger: araclar_diger,
-                            Gozluk: Gozluk,
-                            KontaktLens: KontaktLens,
-                            IsitmeCihazi: IsitmeCihazi,
-                            Sag: Sag,
-                            Sol: Sol,
-                            DisProtezi: DisProtezi,
-                            TekerlekliSandalye: TekerlekliSandalye,
-                            Baston: Baston,
-                            Yurutec: Yurutec,
-                            KoltukDegnegi: KoltukDegnegi,
-                            protez_diger: protez_diger,
-                            Aliskanliklar: Aliskanliklar,
-                            aliskanlik_diger: aliskanlik_diger,
-                            Sigara: Sigara,
-                            SMiktar: SMiktar,
-                            SKullanimSureci: SKullanimSureci,
-                            Alkol: Alkol,
-                            AMiktar: AMiktar,
-                            AKullanimSureci: AKullanimSureci,
-                            Cay: Cay,
-                            CMiktar: CMiktar,
-                            CKullanimSureci: CKullanimSureci,
-                            Kahve: Kahve,
-                            KMiktar: KMiktar,
-                            KKullanimSureci: KKullanimSureci,
-                            DDiger: DDiger,
-                            DMiktar: DMiktar,
-                            DKullanimSureci: DKullanimSureci,
-                            AileviSaglik: AileviSaglik,
-                            ailevi_diger: ailevi_diger,
-                            YakinlikDerecesi: YakinlikDerecesi,
-                            Tanisi: Tanisi,
-                            GeldigiYer: GeldigiYer,
-                            yer_diger: yer_diger,
-                            GelisSekli: GelisSekli,
-                            gelis_diger: gelis_diger,
-                            Sikayetler: Sikayetler,
-                            TibbiTani: TibbiTani
+                            relativeNameSurname: relativeNameSurname,
+                            relativePhone: relativePhone,
+                            relativeAddress: relativeAddress,
+                            relativeDistance: relativeDistance,
+                            previousHospitalization: previousHospitalization,
+                            hospitalization_year: hospitalization_year,
+                            hospitalization_location: hospitalization_location,
+                            hospitalization_reason: hospitalization_reason,
+                            diseases: diseases,
+                            previousSurgeries: previousSurgeries,
+                            accidents: accidents,
+                            infectiousDisease: infectiousDisease,
+                            allergies: allergies,
+                            allergen: allergen,
+                            allergySymptoms: allergySymptoms,
+                            allergyTherapy: allergyTherapy,
+                            previousMedications: previousMedications,
+                            medicineName: medicineName,
+                            medicineFrequency: medicineFrequency,
+                            medicineDose: medicineDose,
+                            intakeMethod: intakeMethod,
+                            intakeTimes: intakeTimes,
+                            aidTools: aidTools,
+                            aidToolsDsc: aidToolsDsc,
+                            smoking: smoking,
+                            smokingAmount: smokingAmount,
+                            smokingTime: smokingTime,
+                            alcoholUsage: alcoholUsage,
+                            alcoholAmount: alcoholAmount,
+                            alcoholUsageTime: alcoholUsageTime,
+                            teaUsage: teaUsage,
+                            teaUsageAmount: teaUsageAmount,
+                            teaUsageTime: teaUsageTime,
+                            coffeeUsage: coffeeUsage,
+                            coffeeUsageAmount: coffeeUsageAmount,
+                            coffeeUsageTime: coffeeUsageTime,
+                            otherHabits: otherHabits,
+                            otherHabitsInput: otherHabitsInput,
+                            otherHabitsAmount: otherHabitsAmount,
+                            otherHabitsTime: otherHabitsTime,
+                            familyIllnesses: familyIllnesses,
+                            familyMemberRelation: familyMemberRelation,
+                            familyMemberIllness: familyMemberIllness,
+                            arrivalFrom: arrivalFrom,
+                            hospitalArrivalMethod : hospitalArrivalMethod,
+                            complaints: complaints,
+                            medicalDiagnosis: medicalDiagnosis                       
+                            
                         },
                         success: function(data) {
                             alert(data);
@@ -1398,10 +2255,6 @@ if (isset($_GET['logout'])) {
                             })
                         }
                     })
-
-
-
-                }
             })
 
         });
@@ -1411,106 +2264,3 @@ if (isset($_GET['logout'])) {
 </body>
 
 </html>
-
-<!--<div class="patients-table dark-blue text-center rounded p-4" id="patients-table">
-                <div class="d-flex align-items-center justify-content-between mb-4">
-                    <h6 class="mb-0">Hastalar</h6>
-
-                </div>
-
-                <div class="table-responsive">
-                    <table class="table text-start align-middle table-bordered table-hover mb-0">
-                        <thead>
-                            <tr class="text-white">
-
-                                <th scope="col">İsim</th>
-                                <th scope="col">Soyisim</th>
-                                <th scope="col">Yaş</th>
-                                <th scope="col">Notlar</th>
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach ($values as &$value)
-                                echo "
-                                <tr>
-                                   
-                                    <td style='
-                                    color: white;'>" . $value["name"] . "</td>
-                                    <td style='
-                                    color: white;'>" . $value["surname"] . "</td>
-                                    <td style='
-                                    color: white;'>" . $value["age"] . "</td>
-                                    <td style='
-                                    color: white;'> " . $value["notlar"] . " </td>
-                                </tr>"
-
-                            ?>
-
-
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <script>
-            $(function() {
-                $('#closeBtn').click(function(e) {
-                    $("#content").load("formlar-student.php");
-
-                })
-            });
-        </script>
-
-        <script>
-            $(function() {
-                $('#submit').click(function(e) {
-
-
-                    var valid = this.form.checkValidity();
-
-                    if (valid) {
-                        var id = <?php
-
-                                    $userid = $_SESSION['userlogin']['id'];
-                                    echo $userid
-                                    ?>;
-                        var name = $('#name').val();
-                        var surname = $('#surname').val();
-                        var age = $('#age').val();
-                        var not = $('#not').val();
-
-
-                        e.preventDefault()
-
-                        $.ajax({
-                            type: 'POST',
-                            url: 'student-patient.php',
-                            data: {
-                                id: id,
-                                name: name,
-                                surname: surname,
-                                age: age,
-                                not: not
-
-                            },
-                            success: function(data) {
-                                alert("Success");
-                                location.reload(true)
-                            },
-                            error: function(data) {
-                                Swal.fire({
-                                    'title': 'Errors',
-                                    'text': 'There were errors',
-                                    'type': 'error'
-                                })
-                            }
-                        })
-
-
-
-                    }
-                })
-
-            });
-        </script>-->

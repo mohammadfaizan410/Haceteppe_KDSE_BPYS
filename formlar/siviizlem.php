@@ -63,27 +63,27 @@ if (isset($_GET['logout'])) {
                     <form action="" method="POST" class="patients-save-fields">
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Sıvının Cinsi:</p>
-                            <input type="text" class="form-control" required name="liquid_type" id="diger"
+                            <input type="text" class="form-control" required name="liquid_type" id="liquid_type"
                                 placeholder="Sıvının Cinsi" maxlength="200">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Sıvının Hızı:</p>
-                            <input type="text" class="form-control" required name="liquid_velocity" id="diger"
+                            <input type="text" class="form-control" required name="liquid_velocity" id="liquid_velocity"
                                 placeholder="Sıvının Hızı" maxlength="200">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Saat:</p>
-                            <input type="time" class="form-control" required name="delivery_time" id="diger"
+                            <input type="time" class="form-control" required name="delivery_time" id="delivery_time"
                                 placeholder="Saat">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Seviye:</p>
-                            <input type="text" class="form-control" required name="liquid_level" id="diger"
+                            <input type="text" class="form-control" required name="liquid_level" id="liquid_level"
                                 placeholder="Seviye" maxlength="200">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Giden:</p>
-                            <input type="text" class="form-control" required name="liquid_sent" id="diger"
+                            <input type="text" class="form-control" required name="liquid_sent" id="liquid_sent"
                                 placeholder="Giden" maxlength="200">
                         </div>
                         <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
@@ -115,10 +115,7 @@ if (isset($_GET['logout'])) {
     $(function() {
         $('#submit').click(function(e) {
             e.preventDefault()
-            console.log("clicked")
-            var valid = this.form.checkValidity();
 
-            if (valid) {
                 let patient_name = "<?php
                                         echo urldecode($_GET['patient_name']);
                                         ?>";
@@ -139,7 +136,79 @@ if (isset($_GET['logout'])) {
                 let delivery_time = $("input[name='delivery_time']").val();
                 let liquid_level = $("input[name='liquid_level']").val();
                 let liquid_sent = $("input[name='liquid_sent']").val();
-                console.log("values initiated")
+
+
+                //set all border to default color
+                $('.form-control').css('border-color', '#ced4da');
+
+                //custom validation
+                // if($('#iv_input1').val() === ""){
+                //     //scroll to iv_input1
+                //     $('html, body').animate({
+                //         scrollTop: $("#iv_input1").offset().top
+                //     }, 200);
+                //     //change border color
+                //     $('#iv_input1').css('border-color', 'red');
+                //     //stop function
+                //     return false;
+                // }
+
+                if($('#liquid_type').val() === ""){
+                    //scroll to iv_input1
+                    $('html, body').animate({
+                        scrollTop: $("#liquid_type").offset().top
+                    }, 200);
+                    //change border color
+                    $('#liquid_type').css('border-color', 'red');
+                    //stop function
+                    return false;
+                }
+
+                if($('#liquid_velocity').val() === ""){
+                    //scroll to iv_input1
+                    $('html, body').animate({
+                        scrollTop: $("#liquid_velocity").offset().top
+                    }, 200);
+                    //change border color
+                    $('#liquid_velocity').css('border-color', 'red');
+                    //stop function
+                    return false;
+                }
+
+                if($('#delivery_time').val() === ""){
+                    //scroll to iv_input1
+                    $('html, body').animate({
+                        scrollTop: $("#delivery_time").offset().top
+                    }, 200);
+                    //change border color
+                    $('#delivery_time').css('border-color', 'red');
+                    //stop function
+                    return false;
+                }
+
+                if($('#liquid_level').val() === ""){
+                    //scroll to iv_input1
+                    $('html, body').animate({
+                        scrollTop: $("#liquid_level").offset().top
+                    }, 200);
+                    //change border color
+                    $('#liquid_level').css('border-color', 'red');
+                    //stop function
+                    return false;
+                }
+
+                if($('#liquid_sent').val() === ""){
+                    //scroll to iv_input1
+                    $('html, body').animate({
+                        scrollTop: $("#liquid_sent").offset().top
+                    }, 200);
+                    //change border color
+                    $('#liquid_sent').css('border-color', 'red');
+                    //stop function
+                    return false;
+                }
+
+
 
                 $.ajax({
                     type: 'POST',
@@ -168,10 +237,6 @@ if (isset($_GET['logout'])) {
                         console.log(data)
                     }
                 })
-
-
-
-            }
         })
 
     });
