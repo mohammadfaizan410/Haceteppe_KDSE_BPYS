@@ -50,13 +50,13 @@ if (isset($_GET['logout'])) {
             <span class='close closeBtn' id='closeBtn'>&times;</span>
 
             <h1 class="form-header">SOLUNUM GEREKSİNİMİ</h1>
+            <p style='color: red' class='error'></p>
             <div class="input-section d-flex">
-
                 <p class="usernamelabel">Solunumda:</p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="yatisdurumuradi-o" id="yatisdurumuradio"
+                            <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio"
                                 value="Bagimsiz">
                             <label class="form-check-label" for="yatisdurumuradio">
                                 <span class="checkbox-header">Bağımsız</span>
@@ -1060,6 +1060,7 @@ if (isset($_GET['logout'])) {
             </div> -->
     </div>
     <script>
+
     $(function() {
         $('#closeBtn').click(function(e) {
             $("#content").load("formlar-student.php");
@@ -1195,6 +1196,7 @@ if (isset($_GET['logout'])) {
 
         var noseExamination = $('[name="BurunMuayenesi"]');
         var nasalIssue = $('[name="NasalIssue"]');
+        var nasalOtherCheckbox = $('#NazalDiger');
         var nasalOther = $('[name="nazal_diger"]');
 
         nasalIssue.prop('disabled', true);
@@ -1225,11 +1227,12 @@ if (isset($_GET['logout'])) {
             }
         });
 
-        nasalOther.on('change', function(){
-            if (!$(this).is(':checked')){
+        nasalOtherCheckbox.on('change', function(){
+            if (!$(this).is(':checked')) {
                 nasalOther.val('');
+                nasalOther.attr('disabled', true);
             }
-        })
+        });
 
         var thyroidProblems = $('[name="TiroidBezi"]');
         var thyroidIssue = $('[name="ThyroidIssue"]');
@@ -1271,6 +1274,7 @@ if (isset($_GET['logout'])) {
             var selectedValue = $(this).val();
 
             if (selectedValue === "Yok") {
+                shift.prop('checked', false);
                 shift.prop('disabled', true);
             } else {
                 shift.prop('disabled', false);
@@ -1412,209 +1416,270 @@ if (isset($_GET['logout'])) {
     <script>
     $(function() {
         $('#submit').click(function(e) {
-            var valid = this.form.checkValidity();
+            
+            if (!$('[name="yatisdurumuradio"]').is(':checked') || !$('[name="SolunumSorunu"]').is(':checked') || !$('[name="SolunumYolu"]').is(':checked')
+                || !$('[name="Oksurme"]').is(':checked') || !$('[name="Balgam"]').is(':checked') || !$('[name="AspirasyonIhtiyaci"]').is(':checked')
+                || !$('[name="BurunMuayenesi"]').is(':checked') || !$('[name="TiroidBezi"]').is(':checked') || !$('[name="Trakea"]').is(':checked')
+                || !$('[name="LenfNodlari"]').is(':checked') || !$('[name="SkapulaSimatrikligi"]').is(':checked')
+                || !$('[name="OmurgaDeform"]').is(':checked') || !$('[name="GogusHareketleri"]').is(':checked') || !$('[name="GogusKafesinde"]').is(':checked')
+                || !$('[name="GogusDeformitesi"]').is(':checked') || !$('[name="SolunumSistemiUygilamasi"]').is(':checked')
+                || $('[name="NodDiger"]').val() === ''){
+                $('html, body').scrollTop(0);
+                $('.error').text('Lütfen tüm gerekli alanları doldurun');
+            } else {
+                if ($('[name="SolunumSorunu"]:checked').val() == "Var" && (!$('[name="breathing-problem"]').is(':checked') 
+                || ($('#breathing-not').is(':checked') && $('[name="solunum_diger"]').val() === ''))){    
+                    $('html, body').scrollTop(0);
+                    $('.error').text('Lütfen tüm gerekli alanları doldurun');
+                } else if ($('[name="SolunumYolu"]:checked').val() == "Var" && !$('[name="AirwayMethod"]').is(':checked')) {
+                    $('html, body').scrollTop(0);
+                    $('.error').text('Lütfen tüm gerekli alanları doldurun');
+                } else if ($('[name="Oksurme"]:checked').val() == "Var" && (!$('[name="CoughOption"]').is(':checked')
+                 || (($('#OksurmeDiğer').is(':checked') && $('[name="oksurme_diger"]').val() == '')))){
+                    $('html, body').scrollTop(0);
+                    $('.error').text('Lütfen tüm gerekli alanları doldurun');
+                 } else if ($('[name="Balgam"]:checked').val() === "Var" && (!$('[name="BalgamType"]').is(':checked')
+                 || ($('[name="BalgamType"]:checked').val() === "Diğer" && $('[name="balgam_diger"]').val() === ''))) {
+                    $('html, body').scrollTop(0);
+                    $('.error').text('Lütfen tüm gerekli alanları doldurun');
+                 } else if ($('[name="AspirasyonIhtiyaci"]:checked').val() == "Var" && !$('[name="Aspirasyon_need"]').is(':checked')) {
+                    $('html, body').scrollTop(0);
+                    $('.error').text('Lütfen tüm gerekli alanları doldurun');
+                 } else if ($('[name="BurunMuayenesi"]:checked').val() == "Var" && (!$('[name="NasalIssue"]').is(':checked') 
+                || ($('#NazalDiger').is(':checked') && $('[name="nazal_diger"]').val() === ''))) {
+                    $('html, body').scrollTop(0);
+                    $('.error').text('Lütfen tüm gerekli alanları doldurun');
+                 } else if ($('[name="TiroidBezi"]:checked').val() === "Var" && (!$('[name="ThyroidIssue"]').is(':checked')
+                 || ($('#TiroidDiger').is(':checked') && $('[name="tiroid_diger"]').val() === ''))) {
+                    $('html, body').scrollTop(0);
+                    $('.error').text('Lütfen tüm gerekli alanları doldurun');
+                 } else if ($('[name="Trakea"]:checked').val() == "Var" && !$('[name="Shift"]').is(':checked')) {
+                    $('html, body').scrollTop(0);
+                    $('.error').text('Lütfen tüm gerekli alanları doldurun');
+                 } else if ($('[name="LenfNodlari"]:checked').val() == "Var" && $('[name="NodYeri"]').val() === '') {
+                    $('html, body').scrollTop(0);
+                    $('.error').text('Lütfen tüm gerekli alanları doldurun');
+                 } else if ($('[name="OmurgaDeform"]:checked').val() == "Var" && !$('[name="SpinalDeformity"]').is(':checked')) {
+                    $('html, body').scrollTop(0);
+                    $('.error').text('Lütfen tüm gerekli alanları doldurun');
+                 } else if ($('[name="GogusKafesinde"]:checked').val() == "Var" && (!$('[name="ChestIssues"]').is(':checked') 
+                 || ($('#KrepitasyonAlani').is(':checked') && $('[name="Krepitasyon_Alani"]').val() === '')
+                 || ($('#KitleOzelligi').is(':checked') && $('[name="Kitle_Ozelligi"]').val() === '')
+                 || ($('#KitleDiger').is(':checked') && $('[name="Kitle_Diger"]').val() === ''))) {
+                    $('html, body').scrollTop(0);
+                    $('.error').text('Lütfen tüm gerekli alanları doldurun');
+                 } else if ($('[name="GogusDeformitesi"]:checked').val() == "Var" && !$('[name="DeformityType"]').is(':checked')) {
+                    $('html, body').scrollTop(0);
+                    $('.error').text('Lütfen tüm gerekli alanları doldurun');
+                 } else if ($('[name="SolunumSistemiUygilamasi"][value="Diger"]').is(':checked') && $('[name="SolunumUygulamasi_diger"]').val() === '') {
+                    $('html, body').scrollTop(0);
+                    $('.error').text('Lütfen tüm gerekli alanları doldurun');
+                 } else {
 
-            if (valid) {
-                var id = <?php
-                            $userid = $_SESSION['userlogin']['id'];
-                            echo $userid
-                            ?>;
-                let form_name = "solunumgereksinimi";
-                let patient_name = "<?php
-                                        echo urldecode($_GET['patient_name']);
-                                        ?>";
-                var patient_id = <?php
-                                        $userid = $_GET['patient_id'];
-                                        echo $userid
-                                        ?>;
-                let yourDate = new Date()
-                let creationDate = yourDate.toISOString().split('T')[0];
-                let updateDate = yourDate.toISOString().split('T')[0];
-                let yatisdurumuradio = $("input[type='radio'][name='yatisdurumuradio']:checked").val();
-                let SolunumSorunu = $("input[name='SolunumSorunu']:checked").val();
-                // not to db
-                var breathingProblemArr = [];
-                $('[name="breathing-problem"]:checked').each(function(){
-                    breathingProblemArr.push($(this).val());
-                });
-                //
-                let breathingProblems = JSON.stringify(breathingProblemArr);
-                let solunum_diger = $("input[name='solunum_diger']").prop("disabled") ? null : $("input[name='solunum_diger']").val();
-                let SolunumYolu = $("input[name='SolunumYolu']:checked").val();
-                let airwayMethod = $('input[name="AirwayMethod"]').prop('disabled') ? '' : $('input[name="AirwayMethod"]:checked').val();
-                let Oksurme = $("input[name='Oksurme']:checked").val();
-                let coughOption = $('input[name="CoughOption"]').prop('disabled') ? null : $('input[name="CoughOption"]:checked').val();
-                let oksurme_diger = $("input[name='oksurme_diger']").attr('disabled') ? null : $("input[name='oksurme_diger']").val();
-                let Balgam = $("input[name='Balgam']:checked").val();
-                let BalgamType = $('input[name="BalgamType"]').prop('disabled') ? null : $('input[name="BalgamType"]:checked').val();
-                let balgam_diger = $("input[name='balgam_diger']").attr('disabled') ? null : $("input[name='balgam_diger']").val();
-                let AspirasyonIhtiyaci = $("input[name='AspirasyonIhtiyaci']:checked").val();
-                // not to db
-                var aspirasyonNeedsArr = [];
-                $('[name="Aspirasyon_need"]:checked').each(function () {
-                    aspirasyonNeedsArr.push($(this).val());
-                });
-                //
-                let aspirasyonNeeds = JSON.stringify(aspirasyonNeedsArr);
-                let BurunMuayenesi = $("input[name='BurunMuayenesi']:checked").val();
-                // not to db
-                var nasalIssuesArr = [];
-                $('[name="NasalIssues"]:checked').each(function(){
-                    nasalIssuesArr.push($(this).val());
-                });
-                //
-                let nasalIssues = JSON.stringify(nasalIssuesArr);
-                let nazal_diger = $("input[name='nazal_diger']").attr('disabled') ? null : $("input[name='nazal_diger']").val();
-                let TiroidBezi = $("input[name='TiroidBezi']:checked").val();
-                let tiroidIssue = $('input[name="ThyroidIssue"]').prop('disabled') ? null : $('input[name="ThyroidIssue"]:checked').val();
-                let TiroidDiger = $('input[name="tiroid_diger"]').attr('disabled') ? null : $('input[name="tiroid_diger"]').val();
-                let Trakea = $("input[name='Trakea']:checked").val();
-                let Shift = $('input[name="Shift"]').prop('disabled') ? null : $('input[name="Shift"]:checked').val();
-                let LenfNodlari = $("input[name='LenfNodlari']:checked").val();
-                let NodYeri = $("input[name='NodYeri']").attr('disabled') ? null : $("input[name='NodYeri']").val();
-                let NodDiger = $("input[name='NodDiger']").val();
-                let SkapulaSimatrikligi = $("input[name='SkapulaSimatrikligi']:checked").val();
-                let OmurgaDeform = $("input[name='OmurgaDeform']:checked").val();
-                // not to db
-                var SpinalDeformitiesArr = [];
-                $('[name="SpinalDeformity"]:checked').each(function(){
-                    SpinalDeformitiesArr.push($(this).val());
-                });
-                //
-                let SpinalDeformities = JSON.stringify(SpinalDeformitiesArr);
-                let GogusHareketleri = $("input[name='GogusHareketleri']:checked").val();
-                let GogusKafesinde = $("input[name='GogusKafesinde']:checked").val();
-                let Krepitasyon_Alani = $("input[name='Krepitasyon_Alani']").attr('disabled') ? null : $("input[name='Krepitasyon_Alani']").val();
-                let Hassasiyet = $("input[name='ChestIssues']").attr('disabled') ? null : $("#Hassasiyet").val();
-                let Kitle_Ozelligi = $("input[name='Kitle_Ozelligi']").attr('disabled') ? null : $("input[name='Kitle_Ozelligi']").val();
-                let Kitle_Diger = $("input[name='Kitle_Diger']").attr('disabled') ? null : $("input[name='Kitle_Diger']").val();
-                let GogusDeformitesi = $("input[name='GogusDeformitesi']:checked").val();
-                // not to db
-                var DeformityTypesArr = [];
-                $('input[name="DeformityType"]:checked').each(function(){
-                    DeformityTypesArr.push($(this).val());
-                });
-                //
-                let DeformityTypes = JSON.stringify(DeformityTypesArr);
-                // not to db
-                var SolunumSistemiUygilamasiArr = []
-                $('input[name="SolunumSistemiUygilamasi"]:checked').each(function(){
-                    SolunumSistemiUygilamasiArr.push($(this).val());
-                });
-                //
-                let SolunumSistemiUygilamasi = JSON.stringify(SolunumSistemiUygilamasiArr);
-                let SolunumUygulamasi_diger = $("input[name='SolunumUygulamasi_diger']").attr('disabled') ? null : $("input[name='SolunumUygulamasi_diger']").val();
+                    var valid = true;
+                    if (valid) {
+                        var id = <?php
+                                    $userid = $_SESSION['userlogin']['id'];
+                                    echo $userid
+                                    ?>;
+                        let form_name = "solunumgereksinimi";
+                        let patient_name = "<?php
+                                                echo urldecode($_GET['patient_name']);
+                                                ?>";
+                        var patient_id = <?php
+                                                $userid = $_GET['patient_id'];
+                                                echo $userid
+                                                ?>;
+                        let yourDate = new Date()
+                        let creationDate = yourDate.toISOString().split('T')[0];
+                        let updateDate = yourDate.toISOString().split('T')[0];
+                        let yatisdurumuradio = $("input[type='radio'][name='yatisdurumuradio']:checked").val();
+                        let SolunumSorunu = $("input[name='SolunumSorunu']:checked").val();
+                        // not to db
+                        var breathingProblemArr = [];
+                        $('[name="breathing-problem"]:checked').each(function(){
+                            breathingProblemArr.push($(this).val());
+                        });
+                        //
+                        let breathingProblems = JSON.stringify(breathingProblemArr);
+                        let solunum_diger = $("input[name='solunum_diger']").prop("disabled") ? null : $("input[name='solunum_diger']").val();
+                        let SolunumYolu = $("input[name='SolunumYolu']:checked").val();
+                        let airwayMethod = $('input[name="AirwayMethod"]').prop('disabled') ? '' : $('input[name="AirwayMethod"]:checked').val();
+                        let Oksurme = $("input[name='Oksurme']:checked").val();
+                        let coughOption = $('input[name="CoughOption"]').prop('disabled') ? null : $('input[name="CoughOption"]:checked').val();
+                        let oksurme_diger = $("input[name='oksurme_diger']").attr('disabled') ? null : $("input[name='oksurme_diger']").val();
+                        let Balgam = $("input[name='Balgam']:checked").val();
+                        let BalgamType = $('input[name="BalgamType"]').prop('disabled') ? null : $('input[name="BalgamType"]:checked').val();
+                        let balgam_diger = $("input[name='balgam_diger']").attr('disabled') ? null : $("input[name='balgam_diger']").val();
+                        let AspirasyonIhtiyaci = $("input[name='AspirasyonIhtiyaci']:checked").val();
+                        // not to db
+                        var aspirasyonNeedsArr = [];
+                        $('[name="Aspirasyon_need"]:checked').each(function () {
+                            aspirasyonNeedsArr.push($(this).val());
+                        });
+                        //
+                        let aspirasyonNeeds = JSON.stringify(aspirasyonNeedsArr);
+                        let BurunMuayenesi = $("input[name='BurunMuayenesi']:checked").val();
+                        // not to db
+                        var nasalIssuesArr = [];
+                        $('[name="NasalIssues"]:checked').each(function(){
+                            nasalIssuesArr.push($(this).val());
+                        });
+                        //
+                        let nasalIssues = JSON.stringify(nasalIssuesArr);
+                        let nazal_diger = $("input[name='nazal_diger']").attr('disabled') ? null : $("input[name='nazal_diger']").val();
+                        let TiroidBezi = $("input[name='TiroidBezi']:checked").val();
+                        let tiroidIssue = $('input[name="ThyroidIssue"]').prop('disabled') ? null : $('input[name="ThyroidIssue"]:checked').val();
+                        let TiroidDiger = $('input[name="tiroid_diger"]').attr('disabled') ? null : $('input[name="tiroid_diger"]').val();
+                        let Trakea = $("input[name='Trakea']:checked").val();
+                        let Shift = $('input[name="Shift"]').prop('disabled') ? null : $('input[name="Shift"]:checked').val();
+                        let LenfNodlari = $("input[name='LenfNodlari']:checked").val();
+                        let NodYeri = $("input[name='NodYeri']").attr('disabled') ? null : $("input[name='NodYeri']").val();
+                        let NodDiger = $("input[name='NodDiger']").val();
+                        let SkapulaSimatrikligi = $("input[name='SkapulaSimatrikligi']:checked").val();
+                        let OmurgaDeform = $("input[name='OmurgaDeform']:checked").val();
+                        // not to db
+                        var SpinalDeformitiesArr = [];
+                        $('[name="SpinalDeformity"]:checked').each(function(){
+                            SpinalDeformitiesArr.push($(this).val());
+                        });
+                        //
+                        let SpinalDeformities = JSON.stringify(SpinalDeformitiesArr);
+                        let GogusHareketleri = $("input[name='GogusHareketleri']:checked").val();
+                        let GogusKafesinde = $("input[name='GogusKafesinde']:checked").val();
+                        let Krepitasyon_Alani = $("input[name='Krepitasyon_Alani']").attr('disabled') ? null : $("input[name='Krepitasyon_Alani']").val();
+                        let Hassasiyet = $("input[name='ChestIssues']").attr('disabled') ? null : $("#Hassasiyet").val();
+                        let Kitle_Ozelligi = $("input[name='Kitle_Ozelligi']").attr('disabled') ? null : $("input[name='Kitle_Ozelligi']").val();
+                        let Kitle_Diger = $("input[name='Kitle_Diger']").attr('disabled') ? null : $("input[name='Kitle_Diger']").val();
+                        let GogusDeformitesi = $("input[name='GogusDeformitesi']:checked").val();
+                        // not to db
+                        var DeformityTypesArr = [];
+                        $('input[name="DeformityType"]:checked').each(function(){
+                            DeformityTypesArr.push($(this).val());
+                        });
+                        //
+                        let DeformityTypes = JSON.stringify(DeformityTypesArr);
+                        // not to db
+                        var SolunumSistemiUygilamasiArr = []
+                        $('input[name="SolunumSistemiUygilamasi"]:checked').each(function(){
+                            SolunumSistemiUygilamasiArr.push($(this).val());
+                        });
+                        //
+                        let SolunumSistemiUygilamasi = JSON.stringify(SolunumSistemiUygilamasiArr);
+                        let SolunumUygulamasi_diger = $("input[name='SolunumUygulamasi_diger']").attr('disabled') ? null : $("input[name='SolunumUygulamasi_diger']").val();
 
-                console.log('id:', id);
-                console.log('form_name:', form_name);
-                console.log('patient_name:', patient_name);
-                console.log('patient_id:', patient_id);
-                console.log('creationDate:', creationDate);
-                console.log('updateDate:', updateDate);
-                console.log('yatisdurumuradio:', yatisdurumuradio);
-                console.log('SolunumSorunu:', SolunumSorunu);
-                console.log('breathingProblems:', breathingProblems);
-                console.log('solunum_diger:', solunum_diger);
-                console.log('SolunumYolu:', SolunumYolu);
-                console.log('airwayMethod:', airwayMethod);
-                console.log('Oksurme:', Oksurme);
-                console.log('coughOption:', coughOption);
-                console.log('oksurme_diger:', oksurme_diger);
-                console.log('Balgam:', Balgam);
-                console.log('BalgamType:', BalgamType);
-                console.log('balgam_diger:', balgam_diger);
-                console.log('AspirasyonIhtiyaci:', AspirasyonIhtiyaci);
-                console.log('aspirasyonNeeds:', aspirasyonNeeds);
-                console.log('BurunMuayenesi:', BurunMuayenesi);
-                console.log('nasalIssues:', nasalIssues);
-                console.log('nazal_diger:', nazal_diger);
-                console.log('TiroidBezi:', TiroidBezi);
-                console.log('tiroidIssue:', tiroidIssue);
-                console.log('TiroidDiger:', TiroidDiger);
-                console.log('Trakea:', Trakea);
-                console.log('Shift:', Shift);
-                console.log('LenfNodlari:', LenfNodlari);
-                console.log('NodYeri:', NodYeri);
-                console.log('NodDiger:', NodDiger);
-                console.log('SkapulaSimatrikligi:', SkapulaSimatrikligi);
-                console.log('OmurgaDeform:', OmurgaDeform);
-                console.log('SpinalDeformities:', SpinalDeformities);
-                console.log('GogusHareketleri:', GogusHareketleri);
-                console.log('GogusKafesinde:', GogusKafesinde);
-                console.log('Krepitasyon_Alani:', Krepitasyon_Alani);
-                console.log('Hassasiyet:', Hassasiyet);
-                console.log('Kitle_Ozelligi:', Kitle_Ozelligi);
-                console.log('Kitle_Diger:', Kitle_Diger);
-                console.log('GogusDeformitesi:', GogusDeformitesi);
-                console.log('DeformityTypes:', DeformityTypes);
-                console.log('SolunumSistemiUygilamasi:', SolunumSistemiUygilamasi);
-                console.log('SolunumUygulamasi_diger:', SolunumUygulamasi_diger);                
+                        console.log('id:', id);
+                        console.log('form_name:', form_name);
+                        console.log('patient_name:', patient_name);
+                        console.log('patient_id:', patient_id);
+                        console.log('creationDate:', creationDate);
+                        console.log('updateDate:', updateDate);
+                        console.log('yatisdurumuradio:', yatisdurumuradio);
+                        console.log('SolunumSorunu:', SolunumSorunu);
+                        console.log('breathingProblems:', breathingProblems);
+                        console.log('solunum_diger:', solunum_diger);
+                        console.log('SolunumYolu:', SolunumYolu);
+                        console.log('airwayMethod:', airwayMethod);
+                        console.log('Oksurme:', Oksurme);
+                        console.log('coughOption:', coughOption);
+                        console.log('oksurme_diger:', oksurme_diger);
+                        console.log('Balgam:', Balgam);
+                        console.log('BalgamType:', BalgamType);
+                        console.log('balgam_diger:', balgam_diger);
+                        console.log('AspirasyonIhtiyaci:', AspirasyonIhtiyaci);
+                        console.log('aspirasyonNeeds:', aspirasyonNeeds);
+                        console.log('BurunMuayenesi:', BurunMuayenesi);
+                        console.log('nasalIssues:', nasalIssues);
+                        console.log('nazal_diger:', nazal_diger);
+                        console.log('TiroidBezi:', TiroidBezi);
+                        console.log('tiroidIssue:', tiroidIssue);
+                        console.log('TiroidDiger:', TiroidDiger);
+                        console.log('Trakea:', Trakea);
+                        console.log('Shift:', Shift);
+                        console.log('LenfNodlari:', LenfNodlari);
+                        console.log('NodYeri:', NodYeri);
+                        console.log('NodDiger:', NodDiger);
+                        console.log('SkapulaSimatrikligi:', SkapulaSimatrikligi);
+                        console.log('OmurgaDeform:', OmurgaDeform);
+                        console.log('SpinalDeformities:', SpinalDeformities);
+                        console.log('GogusHareketleri:', GogusHareketleri);
+                        console.log('GogusKafesinde:', GogusKafesinde);
+                        console.log('Krepitasyon_Alani:', Krepitasyon_Alani);
+                        console.log('Hassasiyet:', Hassasiyet);
+                        console.log('Kitle_Ozelligi:', Kitle_Ozelligi);
+                        console.log('Kitle_Diger:', Kitle_Diger);
+                        console.log('GogusDeformitesi:', GogusDeformitesi);
+                        console.log('DeformityTypes:', DeformityTypes);
+                        console.log('SolunumSistemiUygilamasi:', SolunumSistemiUygilamasi);
+                        console.log('SolunumUygulamasi_diger:', SolunumUygulamasi_diger);                
 
-                e.preventDefault()
+                        e.preventDefault()
 
-                console.log('Submit button is pressed')
+                        console.log('Submit button is pressed')
 
-                $.ajax({
-                    type: 'POST',
-                    url: '<?php echo $base_url; ?>/SubmitOrUpdateForm1_SolunumGereksinimi.php/',
-                    data: {
-                        form_name: form_name,
-                        patient_name: patient_name,
-                        patient_id: patient_id,
-                        creationDate: creationDate,
-                        updateDate: updateDate,
-                        yatisdurumuradio: yatisdurumuradio,
-                        SolunumSorunu: SolunumSorunu,
-                        breathingProblems: breathingProblems,
-                        solunum_diger: solunum_diger,
-                        SolunumYolu: SolunumYolu,
-                        airwayMethod: airwayMethod,
-                        Oksurme: Oksurme,
-                        coughOption: coughOption,
-                        oksurme_diger: oksurme_diger,
-                        Balgam: Balgam,
-                        BalgamType: BalgamType,
-                        balgam_diger: balgam_diger,
-                        AspirasyonIhtiyaci: AspirasyonIhtiyaci,
-                        aspirasyonNeeds: aspirasyonNeeds,
-                        BurunMuayenesi: BurunMuayenesi,
-                        nasalIssues: nasalIssues,
-                        nazal_diger: nazal_diger,
-                        TiroidBezi: TiroidBezi,
-                        tiroidIssue: tiroidIssue,
-                        TiroidDiger: TiroidDiger,
-                        Trakea: Trakea,
-                        Shift: Shift,
-                        LenfNodlari: LenfNodlari,
-                        NodYeri: NodYeri,
-                        NodDiger: NodDiger,
-                        SkapulaSimatrikligi: SkapulaSimatrikligi,
-                        OmurgaDeform: OmurgaDeform,
-                        SpinalDeformities: SpinalDeformities,
-                        GogusHareketleri: GogusHareketleri,
-                        GogusKafesinde: GogusKafesinde,
-                        Krepitasyon_Alani: Krepitasyon_Alani,
-                        Hassasiyet: Hassasiyet,
-                        Kitle_Ozelligi: Kitle_Ozelligi,
-                        Kitle_Diger: Kitle_Diger,
-                        GogusDeformitesi: GogusDeformitesi,
-                        DeformityTypes: DeformityTypes,
-                        SolunumSistemiUygilamasi: SolunumSistemiUygilamasi,
-                        SolunumUygulamasi_diger: SolunumUygulamasi_diger,
-                    },
-                    success: function(data) {
-                        alert(data);
-                    },
-                    error: function(data) {
-                        Swal.fire({
-                            'title': 'Errors',
-                            'text': 'There were errors',
-                            'type': 'error'
+                        $.ajax({
+                            type: 'POST',
+                            url: '<?php echo $base_url; ?>/SubmitOrUpdateForm1_SolunumGereksinimi.php/',
+                            data: {
+                                form_name: form_name,
+                                patient_name: patient_name,
+                                patient_id: patient_id,
+                                creationDate: creationDate,
+                                updateDate: updateDate,
+                                yatisdurumuradio: yatisdurumuradio,
+                                SolunumSorunu: SolunumSorunu,
+                                breathingProblems: breathingProblems,
+                                solunum_diger: solunum_diger,
+                                SolunumYolu: SolunumYolu,
+                                airwayMethod: airwayMethod,
+                                Oksurme: Oksurme,
+                                coughOption: coughOption,
+                                oksurme_diger: oksurme_diger,
+                                Balgam: Balgam,
+                                BalgamType: BalgamType,
+                                balgam_diger: balgam_diger,
+                                AspirasyonIhtiyaci: AspirasyonIhtiyaci,
+                                aspirasyonNeeds: aspirasyonNeeds,
+                                BurunMuayenesi: BurunMuayenesi,
+                                nasalIssues: nasalIssues,
+                                nazal_diger: nazal_diger,
+                                TiroidBezi: TiroidBezi,
+                                tiroidIssue: tiroidIssue,
+                                TiroidDiger: TiroidDiger,
+                                Trakea: Trakea,
+                                Shift: Shift,
+                                LenfNodlari: LenfNodlari,
+                                NodYeri: NodYeri,
+                                NodDiger: NodDiger,
+                                SkapulaSimatrikligi: SkapulaSimatrikligi,
+                                OmurgaDeform: OmurgaDeform,
+                                SpinalDeformities: SpinalDeformities,
+                                GogusHareketleri: GogusHareketleri,
+                                GogusKafesinde: GogusKafesinde,
+                                Krepitasyon_Alani: Krepitasyon_Alani,
+                                Hassasiyet: Hassasiyet,
+                                Kitle_Ozelligi: Kitle_Ozelligi,
+                                Kitle_Diger: Kitle_Diger,
+                                GogusDeformitesi: GogusDeformitesi,
+                                DeformityTypes: DeformityTypes,
+                                SolunumSistemiUygilamasi: SolunumSistemiUygilamasi,
+                                SolunumUygulamasi_diger: SolunumUygulamasi_diger,
+                            },
+                            success: function(data) {
+                                alert(data);
+
+                            },
+                            error: function(data) {
+                                Swal.fire({
+                                    'title': 'Errors',
+                                    'text': 'There were errors',
+                                    'type': 'error'
+                                })
+                            }
                         })
+
                     }
-                })
-
-
+            }
 
             }
         })

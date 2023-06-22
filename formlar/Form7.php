@@ -217,6 +217,25 @@ if (isset($_GET['logout'])) {
 
 
     <script>
+        $(document).ready(function(){
+            var chosenRadio = $('[name="YaraGörünümü"]');
+            var chosenOther = $('[name="YaraGörünümüDiger"]');
+            
+            chosenOther.attr('disabled', true);
+
+            chosenRadio.on('change', function(){
+                var selectedValue = $(this).val();
+
+                if (selectedValue === "Diğer"){
+                    chosenOther.attr('disabled', false);
+                } else {
+                    chosenOther.val('');
+                    chosenOther.attr('disabled', true);
+                }
+            });
+
+        })
+
         $(function() {
             $('#closeBtn1').click(function(e) {
                 let patient_id = <?php

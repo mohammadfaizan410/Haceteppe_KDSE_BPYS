@@ -340,6 +340,24 @@ if (isset($_GET['logout'])) {
 
     </script>
     <script>
+    $(document).ready(function(){
+        var o2Method = $('[name="o2_method"]');
+        var o2Other = $('[name="o2_method_diger"]');
+
+        o2Other.attr('disabled', true);
+
+        o2Method.on('change', function(){
+            var selectedValue = $(this).val();
+
+            if (selectedValue === "Diğer"){
+                o2Other.attr('disabled', false);
+            } else {
+                o2Other.val('');
+                o2Other.attr('disabled', true);
+            }
+        })
+    })
+
     $(function() {
         $('#closeBtn1').click(function(e) {
             let patient_id = "<?php
