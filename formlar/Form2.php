@@ -52,6 +52,7 @@ if (isset($_GET['logout'])) {
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
+                        <p style='color: red' class='error'></p>
                         <img src="./ağrı skalası.png"
                             style="width:67%; height:auto;border: 1px solid;border-color: #246174; box-shadow:1px 1px 1px 1px #246174; border-radius: 20px;">
                         <div class="input-section d-flex" style="padding-top: 5%;">
@@ -177,72 +178,81 @@ if (isset($_GET['logout'])) {
     $(function() {
         $('#submit').click(function(e) {
             e.preventDefault()
-            var valid = this.form.checkValidity();
-            if (valid) {
-                let name = $('#name').val();
-                let surname = $('#surname').val();
-                let age = $('#age').val();
-                let not = $('#not').val();
+            if (!$('[name="AgriSiddeti"]').is(':checked') || !$('[name="AgriSuresi"]').is(':checked') 
+            || $('[name="pain_location"]').val() === "" || $('[name="pain_character"]').val() === "" 
+            || $('[name="pain_frequency"]').val() === "" || $('[name="pain_increase_factors"]').val() === ""
+            || $('[name="pain_decrease_factors"]').val() === ""){
+                $('html, body').scrollTop(0);
+                $('.error').text('Lütfen tüm gerekli alanları doldurun')
+            } else {
 
-                var patient_id = <?php
-                                        $userid = $_GET['patient_id'];
-                                        echo $userid
-                                        ?>;
-                let patient_name = "<?php
-                                        echo urldecode($_GET['patient_name']);
-                                        ?>";
-                let yourDate = new Date()
-                let creation_date = yourDate.toISOString().split('T')[0];
-                let updateDate = yourDate.toISOString().split('T')[0];
-                let fileNo = 2;
-                let painIntensity = $("input[type='radio'][name='AgriSiddeti']:checked").val();
-                let painDuration = $("input[type='radio'][name='AgriSuresi']:checked").val() ===
-                    "option1" ? "Less than 6 months" : "More than 6 months";
-                let pain_location = $('input[name="pain_location"]').val();
-                let pain_character = $('input[name="pain_character"]').val();
-                let pain_frequency = $('input[name="pain_frequency"]').val();
-                let pain_increase_factors = $('input[name="pain_increase_factors"]').val();
-                let pain_decrease_factors = $('input[name="pain_decrease_factors"]').val();
-                console.log(pain_decrease_factors)
+                var valid = this.form.checkValidity();
+                if (valid) {
+                    let name = $('#name').val();
+                    let surname = $('#surname').val();
+                    let age = $('#age').val();
+                    let not = $('#not').val();
 
-
-
-                $.ajax({
-                    type: 'POST',
-                    url: '<?php echo $base_url; ?>/submitOrUpdateForm2.php',
-                    data: {
-                        patient_id: patient_id,
-                        patient_name: patient_name,
-                        form_num: fileNo,
-                        creation_date: creation_date,
-                        update_date: updateDate,
-                        pain_intensity: painIntensity,
-                        pain_duration: painDuration,
-                        pain_location: pain_location,
-                        pain_frequency: pain_frequency,
-                        pain_character: pain_character,
-                        pain_increase_factors: pain_increase_factors,
-                        pain_decrease_factors: pain_decrease_factors
-                    },
-                    success: function(data) {
-                        alert(data);
-                        let url =
-                            "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
-                            patient_id + "&patient_name=" + encodeURIComponent(
-                            patient_name);
-                        $("#content").load(url);
-                    },
-                    error: function(data) {
-                        Swal.fire({
-                            'title': 'Errors',
-                            'text': 'There were errors',
-                            'type': 'error'
-                        })
-                    }
-                })
+                    var patient_id = <?php
+                                            $userid = $_GET['patient_id'];
+                                            echo $userid
+                                            ?>;
+                    let patient_name = "<?php
+                                            echo urldecode($_GET['patient_name']);
+                                            ?>";
+                    let yourDate = new Date()
+                    let creation_date = yourDate.toISOString().split('T')[0];
+                    let updateDate = yourDate.toISOString().split('T')[0];
+                    let fileNo = 2;
+                    let painIntensity = $("input[type='radio'][name='AgriSiddeti']:checked").val();
+                    let painDuration = $("input[type='radio'][name='AgriSuresi']:checked").val() ===
+                        "option1" ? "Less than 6 months" : "More than 6 months";
+                    let pain_location = $('input[name="pain_location"]').val();
+                    let pain_character = $('input[name="pain_character"]').val();
+                    let pain_frequency = $('input[name="pain_frequency"]').val();
+                    let pain_increase_factors = $('input[name="pain_increase_factors"]').val();
+                    let pain_decrease_factors = $('input[name="pain_decrease_factors"]').val();
+                    console.log(pain_decrease_factors)
 
 
 
+                    $.ajax({
+                        type: 'POST',
+                        url: '<?php echo $base_url; ?>/submitOrUpdateForm2.php',
+                        data: {
+                            patient_id: patient_id,
+                            patient_name: patient_name,
+                            form_num: fileNo,
+                            creation_date: creation_date,
+                            update_date: updateDate,
+                            pain_intensity: painIntensity,
+                            pain_duration: painDuration,
+                            pain_location: pain_location,
+                            pain_frequency: pain_frequency,
+                            pain_character: pain_character,
+                            pain_increase_factors: pain_increase_factors,
+                            pain_decrease_factors: pain_decrease_factors
+                        },
+                        success: function(data) {
+                            alert(data);
+                            let url =
+                                "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
+                                patient_id + "&patient_name=" + encodeURIComponent(
+                                patient_name);
+                            $("#content").load(url);
+                        },
+                        error: function(data) {
+                            Swal.fire({
+                                'title': 'Errors',
+                                'text': 'There were errors',
+                                'type': 'error'
+                            })
+                        }
+                    })
+
+
+
+                }
             }
         })
 

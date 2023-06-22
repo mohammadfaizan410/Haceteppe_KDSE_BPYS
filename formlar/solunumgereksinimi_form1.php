@@ -403,7 +403,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="Oro_Nazofarengeal" name="Aspiration-need"
+                                                <input class="form-check-input" type="checkbox" id="Oro_Nazofarengeal" name="Aspirasyon_need"
                                                     value="Oro_Nazofarengeal">
                                                 <label class="form-check-label" for="Oro_Nazofarengeal">Oro -
                                                     Nazofarengeal</label>
@@ -414,7 +414,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="Trakeal" name="Aspiration-need"
+                                                <input class="form-check-input" type="checkbox" id="Trakeal" name="Aspirasyon_need"
                                                     value="Trakeal">
                                                 <label class="form-check-label" for="Trakeal">Trakeal</label>
                                             </div>
@@ -1178,7 +1178,7 @@ if (isset($_GET['logout'])) {
         });
 
         var aspiration_need = $('[name=AspirasyonIhtiyaci]');
-        var aspiration_type = breathing_problem.find('[name="Aspiration-need"]');
+        var aspiration_type = breathing_problem.find('[name="Aspirasyon_need"]');
         
         aspiration_type.prop('disabled', true);
 
