@@ -1,8 +1,6 @@
 <?php
 
-use function PHPSTORM_META\type;
-
-require_once("config-students.php");
+require_once("../config-students.php");
 ?>
 <?php
 $data = json_decode(file_get_contents('php://input'), true);

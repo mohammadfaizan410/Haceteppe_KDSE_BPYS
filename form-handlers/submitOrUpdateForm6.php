@@ -1,5 +1,5 @@
 <?php
-require_once("config-students.php");
+require_once("../config-students.php");
 ?>
 <?php
 if (isset($_POST["patient_name"])) {

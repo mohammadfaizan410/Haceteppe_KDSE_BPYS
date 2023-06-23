@@ -1,5 +1,5 @@
 <?php
-require_once("config-students.php");
+require_once("../config-students.php");
 ?>
 <?php
 //  patient_id: patient_id,
