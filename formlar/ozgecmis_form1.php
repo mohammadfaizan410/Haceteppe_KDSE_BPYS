@@ -1071,12 +1071,6 @@ if (isset($_GET['logout'])) {
         <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
         <script>
-        $(function() {
-            $('#closeBtn').click(function(e) {
-                $("#content").load("formlar-student.php");
-
-            })
-        });
 
     // $('.form-check-input[name="careAcceptance"]').change(function(){
     //             if($(this).val() === 'Katılıyor'){
