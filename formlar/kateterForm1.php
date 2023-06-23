@@ -61,7 +61,7 @@ if (isset($_GET['logout'])) {
                 </div>
                 <div class="d-flex justify-content-between">
                     <div class="input-section d-flex">
-
+                    <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                         <div class="checkboxes w-25">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="katererType" id="venöz_kateter"
@@ -78,7 +78,7 @@ if (isset($_GET['logout'])) {
                 </div>
                 <div class="d-flex justify-content-between">
                     <div class="input-section d-flex">
-
+                    <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                         <div class="checkboxes w-25">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="katererType" id="venöz_kateter"
@@ -95,7 +95,7 @@ if (isset($_GET['logout'])) {
                 </div>
                 <div class="d-flex justify-content-between">
                     <div class="input-section d-flex">
-
+                    <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                         <div class="checkboxes w-25">
                             <div class="form-check ">
                                 <input class="form-check-input" type="radio" name="katererType" id="venöz_kateter"
@@ -112,7 +112,7 @@ if (isset($_GET['logout'])) {
                 </div>
                 <div class="d-flex justify-content-between">
                     <div class="input-section d-flex">
-
+                    <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                         <div class="checkboxes w-25">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="katererType" id="venöz_kateter"
@@ -233,6 +233,7 @@ if (isset($_GET['logout'])) {
                             let otherKatereDate = $('#otherKatereDate').val();
 
 
+                            //custom validation
 
                         e.preventDefault()
 

@@ -63,6 +63,8 @@ if (isset($_GET['logout'])) {
             <div class="input-section d-flex">
 
                 <p class="usernamelabel">Hastanede egzersiz yapma durumuz</p>
+                <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
+
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
@@ -111,6 +113,8 @@ if (isset($_GET['logout'])) {
             <div class="input-section d-flex">
 
                 <p class="usernamelabel">Hareket etme isteği:</p>
+                <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
+
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
@@ -121,7 +125,7 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="movementProblem" id="HareketIstegi" value="Var">
+                            <input class="form-check-input" type="radio" name="movementProblem" id="movementProblem" value="Var">
                             <label class="form-check-label" for="HareketIstegi">
                                 <span class="checkbox-header">Var</span>
 
@@ -132,7 +136,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" disabled name="movementProblemDesc" type="checkbox" id="Halsizlik" value="Halsizlik">
+                                                <input class="form-check-input" disabled name="movementProblemDesc" type="checkbox" id="movementProblemDesc" value="Halsizlik">
                                                 <label class="form-check-label" for="Halsizlik">Halsizlik </label>
                                             </div>
                                         </td>
@@ -141,7 +145,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" disabled name="movementProblemDesc" type="checkbox" id="Yorgunluk" value="Yorgunluk">
+                                                <input class="form-check-input" disabled name="movementProblemDesc" type="checkbox" id="movementProblemDesc" value="Yorgunluk">
                                                 <label class="form-check-label" for="Yorgunluk">Yorgunluk</label>
                                             </div>
                                         </td>
@@ -150,7 +154,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" disabled name="movementProblemDesc" type="checkbox" id="Huzursuzluk" value="Huzursuzluk">
+                                                <input class="form-check-input" disabled name="movementProblemDesc" type="checkbox" id="movementProblemDesc" value="Huzursuzluk">
                                                 <label class="form-check-label" for="Huzursuzluk">Huzursuzluk</label>
                                             </div>
                                         </td>
@@ -159,7 +163,7 @@ if (isset($_GET['logout'])) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" disabled name="movementProblemDesc" type="checkbox" id="HDiğer" value="Diğer">
+                                                <input class="form-check-input" disabled name="movementProblemDesc" type="checkbox" id="movementProblemDesc" value="Diğer">
                                                 <label class="form-check-label" for="HDiğer">Diğer</label>
                                             </div>
                                         </td>
@@ -176,24 +180,26 @@ if (isset($_GET['logout'])) {
             <div class="input-section d-flex">
 
                 <p class="usernamelabel">Kıyafetlerini giyme ve çıkarmada</p>
+                <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
+
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="wearingClothesDependence" id="giyinme_soyunma" value="Bağımsız">
+                            <input class="form-check-input" type="radio" name="wearingClothesDependence" id="wearingClothesDependence" value="Bağımsız">
                             <label class="form-check-label" for="giyinme_soyunma">
                                 <span class="checkbox-header">Bağımsız </span>
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="wearingClothesDependence" id="giyinme_soyunma" value="Yarı bağımlı">
+                            <input class="form-check-input" type="radio" name="wearingClothesDependence" id="wearingClothesDependence" value="Yarı bağımlı">
                             <label class="form-check-label" for="giyinme_soyunma">
                                 <span class="checkbox-header">Yarı bağımlı </span>
 
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="wearingClothesDependence" id="giyinme_soyunma" value="Bağımlı">
+                            <input class="form-check-input" type="radio" name="wearingClothesDependence" id="wearingClothesDependence" value="Bağımlı">
                             <label class="form-check-label" for="giyinme_soyunma">
                                 <span class="checkbox-header">Bağımlı</span>
 
@@ -205,24 +211,26 @@ if (isset($_GET['logout'])) {
             <div class="input-section d-flex">
 
                 <p class="usernamelabel">Pozisyon değiştirmede </p>
+                <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
+
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="changingPositionDependence" id="pozisyon_degistirme" value="Bağımsız">
+                            <input class="form-check-input" type="radio" name="changingPositionDependence" id="changingPositionDependence" value="Bağımsız">
                             <label class="form-check-label" for="pozisyon_degistirme">
                                 <span class="checkbox-header">Bağımsız </span>
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="changingPositionDependence" id="pozisyon_degistirme" value="Yarı bağımlı">
+                            <input class="form-check-input" type="radio" name="changingPositionDependence" id="changingPositionDependence" value="Yarı bağımlı">
                             <label class="form-check-label" for="pozisyon_degistirme">
                                 <span class="checkbox-header">Yarı bağımlı </span>
 
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="changingPositionDependence" id="pozisyon_degistirme" value="Bağımlı">
+                            <input class="form-check-input" type="radio" name="changingPositionDependence" id="changingPositionDependence" value="Bağımlı">
                             <label class="form-check-label" for="pozisyon_degistirme">
                                 <span class="checkbox-header">Bağımlı</span>
 
@@ -234,24 +242,26 @@ if (isset($_GET['logout'])) {
             <div class="input-section d-flex">
 
                 <p class="usernamelabel">Ayağa kalkmada </p>
+                <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
+
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="standingUpDependence" id="AyağaKalkma" value="Bağımsız">
+                            <input class="form-check-input" type="radio" name="standingUpDependence" id="standingUpDependence" value="Bağımsız">
                             <label class="form-check-label" for="AyağaKalkma">
                                 <span class="checkbox-header">Bağımsız </span>
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="standingUpDependence" id="AyağaKalkma" value="Yarı bağımlı">
+                            <input class="form-check-input" type="radio" name="standingUpDependence" id="standingUpDependence" value="Yarı bağımlı">
                             <label class="form-check-label" for="AyağaKalkma">
                                 <span class="checkbox-header">Yarı bağımlı </span>
 
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="standingUpDependence" id="AyağaKalkma" value="Bağımlı">
+                            <input class="form-check-input" type="radio" name="standingUpDependence" id="standingUpDependence" value="Bağımlı">
                             <label class="form-check-label" for="AyağaKalkma">
                                 <span class="checkbox-header">Bağımlı</span>
 
@@ -263,24 +273,25 @@ if (isset($_GET['logout'])) {
             <div class="input-section d-flex">
 
                 <p class="usernamelabel">Yürümede</p>
+                <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="walkingDependence" id="yurume" value="Bağımsız">
+                            <input class="form-check-input" type="radio" name="walkingDependence" id="walkingDependence" value="Bağımsız">
                             <label class="form-check-label" for="yurume">
                                 <span class="checkbox-header">Bağımsız </span>
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="walkingDependence" id="yurume" value="Yarı bağımlı">
+                            <input class="form-check-input" type="radio" name="walkingDependence" id="walkingDependence" value="Yarı bağımlı">
                             <label class="form-check-label" for="yurume">
                                 <span class="checkbox-header">Yarı bağımlı </span>
 
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="walkingDependence" id="yurume" value="Bağımlı">
+                            <input class="form-check-input" type="radio" name="walkingDependence" id="walkingDependence" value="Bağımlı">
                             <label class="form-check-label" for="yurume">
                                 <span class="checkbox-header">Bağımlı</span>
                             </label>
@@ -290,10 +301,11 @@ if (isset($_GET['logout'])) {
             </div>
             <div class="d-flex text-center">
                 <input class="form-control submit m-auto " type='submit' name="submit" id="submit" value="Kayıt">
+             </form>
+                </div>
             </div>
-            </div>
-            </div>
-
+        </div>
+    </div>
 
 
             <script>
@@ -328,6 +340,8 @@ if (isset($_GET['logout'])) {
                 }
                 });
 
+             
+
     
 
 
@@ -344,7 +358,6 @@ if (isset($_GET['logout'])) {
             <script>
                 $(function() {
                     $('#submit').click(function(e) {
-                        console.log("hellosecond");
                              e.preventDefault()
 
                             var id = <?php
@@ -366,7 +379,7 @@ if (isset($_GET['logout'])) {
                             let yourDate = new Date()
                             let creationDate = yourDate.toISOString().split('T')[0];
                             let updateDate = yourDate.toISOString().split('T')[0];
-                            let exercisingHabit = $('input[name="exercisingHabit"]').is(":checked") ? $('input[name="exercisingHabit"]').val() : "Hayir";
+                            let exercisingHabit = $('input[name="exercisingHabit"]').val() ? $('input[name="exercisingHabit"]').val() : "Hayir";
                             let exercisingHabitInput = "";
                             if(exercisingHabit === "exercisingHabit"){
                                 exercisingHabit = $('input[name="exercisingHabitInput"]').val();
@@ -381,6 +394,123 @@ if (isset($_GET['logout'])) {
                             let walkingDependence = $('input[name="walkingDependence"]:checked').val();
 
                             console.log("exercising habit: ", exercisingHabit, "in hospital exercise: ", inHospitalExercise, "movement problem: ", movementProblem, "wearing clothes dependence: ", wearingClothesDependence, "changing position dependence: ", changingPositionDependence, "standing up dependence: ", standingUpDependence, "walking dependence: ", walkingDependence);
+
+                                  //set border color normal
+                            $('.form-control').css('border-color', '#ced4da');
+                            //set all error messages to none
+                                $('.option-error').css('display', 'none');
+                            //custom validation
+                            // if($('#iv_input1').val() === ""){
+                            //     //scroll to iv_input1
+                            //     $('html, body').animate({
+                            //         scrollTop: $("#iv_input1").offset().top
+                            //     }, 200);
+                            //     //change border color
+                            //     $('#iv_input1').css('border-color', 'red');
+                            //     //stop function
+                            //     return false;
+                            // }
+
+                //             if($('.form-check-input[name="time_range"]:checked').length === 0){
+                //     // Scroll to time_range
+                //     $('html, body').animate({
+                //         scrollTop: $('.form-check-input[name="time_range"]').first().offset().top
+                //     }, 200);
+                //     // Display error message
+                //     $('.form-check-input[name="time_range"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                //     return false;
+                // }
+
+                            if($('.form-check-input[name="exercisingHabit"]:checked').length === 1 && $('input[name="exercisingHabitInput"]').val() === ""){
+                                //scroll to exercisingHabit
+                                      $('html, body').animate({
+                                    scrollTop: $("#exercisingHabitInput").offset().top
+                                }, 200);
+                                //change border color
+                                $('#exercisingHabitInput').css('border-color', 'red');
+                                //stop function
+                                return false;
+                            }
+
+                            if($('.form-check-input[name="inHospitalExercise"]:checked').length === 0){
+                                //scroll to inHospitalExercise
+                                $('html, body').animate({
+                                    scrollTop: $('.form-check-input[name="inHospitalExercise"]').first().offset().top
+                                }, 200);
+                                // Display error message
+                                $('.form-check-input[name="inHospitalExercise"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                                //stop function
+                                return false;
+                            }
+
+                            if($('.form-check-input[name="movementProblem"]:checked').length === 0){
+                                //scroll to movementProblem
+                                $('html, body').animate({
+                                    scrollTop: $('.form-check-input[name="movementProblem"]').first().offset().top
+                                }, 200);
+                                // Display error message
+                                $('.form-check-input[name="movementProblem"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                                //stop function
+                                return false;
+                            }
+                            if($('.form-check-input[name="movementProblem"]:checked').length !== 0 && $('.form-check-input[name="movementProblemDesc"]:checked').length === 0){
+                                //scroll to movementProblem
+                                $('html, body').animate({
+                                    scrollTop: $('.form-check-input[name="movementProblem"]').first().offset().top
+                                }, 200);
+                                // Display error message
+                                $('.form-check-input[name="movementProblem"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                                //stop function
+                                return false;
+                            }
+
+
+                            if ($('.form-check-input[name="wearingClothesDependence"]:checked').length === 0) {
+                                // Scroll to wearingClothesDependence
+                                $('html, body').animate({
+                                    scrollTop: $('.form-check-input[name="wearingClothesDependence"]').first().offset().top
+                                }, 200);
+                                // Display error message
+                                $('.form-check-input[name="wearingClothesDependence"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                                // Stop function
+                                return false;
+                                }
+
+                            if($('.form-check-input[name="changingPositionDependence"]:checked').length === 0){
+                                //scroll to changingPositionDependence
+                                $('html, body').animate({
+                                    scrollTop: $('.form-check-input[name="changingPositionDependence"]').first().offset().top
+                                }, 200);
+                                // Display error message
+                                $('.form-check-input[name="changingPositionDependence"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                                //stop function
+                                return false;
+                            }
+
+                            if($('.form-check-input[name="standingUpDependence"]:checked').length === 0){
+                                //scroll to standingUpDependence
+                                $('html, body').animate({
+                                    scrollTop: $('.form-check-input[name="standingUpDependence"]').first().offset().top
+                                }, 200);
+                                // Display error message
+                                $('.form-check-input[name="standingUpDependence"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                                //stop function
+                                return false;
+                            }
+
+                            if($('.form-check-input[name="walkingDependence"]:checked').length === 0){
+                                //scroll to walkingDependence
+                                $('html, body').animate({
+                                    scrollTop: $('.form-check-input[name="walkingDependence"]').first().offset().top
+                                }, 200);
+                                // Display error message
+                                $('.form-check-input[name="walkingDependence"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                                //stop function
+                                return false;
+                            }
+
+
+
 
                             $.ajax({
                                 type: 'POST',
