@@ -52,6 +52,7 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Ödemin Şiddeti:</p>
+                            <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="ÖdemŞiddeti" id="ÖdemŞiddeti" value="Ödem Yok">
@@ -117,66 +118,80 @@ if (isset($_GET['logout'])) {
             $('#submit').click(function(e) {
                 e.preventDefault()
 
-                var valid = this.form.checkValidity();
+                if ($('[name="assessed_area"]').val() === "") {
+                    $('html, body').animate({
+                            scrollTop: $('[name="assessed_area"]').offset().top
+                        }, 200);
+                        //change border color
+                    $('[name="assessed_area"]').css('border-color', 'red');
+                } else if (!$('[name="ÖdemŞiddeti"]').is(':checked')) {
+                    $('html, body').animate({
+                            scrollTop: $('.option-error').first().offset().top
+                        }, 200);
+                        // Display error message
+                    $('.option-error').css('display', 'block');
+                } else {
+                    var valid = this.form.checkValidity();
 
-                if (valid) {
-                    var id = <?php
+                    if (valid) {
+                        var id = <?php
 
-                                $userid = $_SESSION['userlogin']['id'];
-                                echo $userid
-                                ?>;
-                    var name = $('#name').val();
-                    var surname = $('#surname').val();
-                    var age = $('#age').val();
-                    var not = $('#not').val();
-                    let form_num = 8;
-                    let patient_name = "<?php
-                                        echo urldecode($_GET['patient_name']);
-                                        ?>";
-                    var patient_id = <?php
-                                        $userid = $_GET['patient_id'];
-                                        echo $userid
-                                        ?>;
-                    let yourDate = new Date()
-                    let creationDate = yourDate.toISOString().split('T')[0];
-                    let updateDate = yourDate.toISOString().split('T')[0];
-                    let assessed_area = $("input[name='assessed_area']").val();
-                    let edema_severity = $("input[type='radio'][name='ÖdemŞiddeti']:checked").val();
-
-
-                    $.ajax({
-                        type: 'POST',
-                        url: '<?php echo $base_url; ?>/submitOrUpdateForm8.php',
-                        data: {
-                            id: id,
-                            name: name,
-                            surname: surname,
-                            age: age,
-                            not: not,
-                            form_num: form_num,
-                            patient_id: patient_id,
-                            patient_name: patient_name,
-                            creation_date: creationDate,
-                            update_date: updateDate,
-                            assessed_area: assessed_area,
-                            edema_severity: edema_severity
-                        },
-                        success: function(data) {
-                            alert(data);
-                            let url =
-                                "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
-                                patient_id + "&patient_name=" + encodeURIComponent(
-                                    patient_name);
-                            $("#content").load(url);
-                        },
-                        error: function(data) {
-                            console.log(data)
-                        }
-                    })
+                                    $userid = $_SESSION['userlogin']['id'];
+                                    echo $userid
+                                    ?>;
+                        var name = $('#name').val();
+                        var surname = $('#surname').val();
+                        var age = $('#age').val();
+                        var not = $('#not').val();
+                        let form_num = 8;
+                        let patient_name = "<?php
+                                            echo urldecode($_GET['patient_name']);
+                                            ?>";
+                        var patient_id = <?php
+                                            $userid = $_GET['patient_id'];
+                                            echo $userid
+                                            ?>;
+                        let yourDate = new Date()
+                        let creationDate = yourDate.toISOString().split('T')[0];
+                        let updateDate = yourDate.toISOString().split('T')[0];
+                        let assessed_area = $("input[name='assessed_area']").val();
+                        let edema_severity = $("input[type='radio'][name='ÖdemŞiddeti']:checked").val();
 
 
+                        $.ajax({
+                            type: 'POST',
+                            url: '<?php echo $base_url; ?>/submitOrUpdateForm8.php',
+                            data: {
+                                id: id,
+                                name: name,
+                                surname: surname,
+                                age: age,
+                                not: not,
+                                form_num: form_num,
+                                patient_id: patient_id,
+                                patient_name: patient_name,
+                                creation_date: creationDate,
+                                update_date: updateDate,
+                                assessed_area: assessed_area,
+                                edema_severity: edema_severity
+                            },
+                            success: function(data) {
+                                alert(data);
+                                let url =
+                                    "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
+                                    patient_id + "&patient_name=" + encodeURIComponent(
+                                        patient_name);
+                                $("#content").load(url);
+                            },
+                            error: function(data) {
+                                console.log(data)
+                            }
+                        })
 
-                }
+
+
+                    }
+            }
             })
 
         });
