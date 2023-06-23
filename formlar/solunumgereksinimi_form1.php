@@ -50,9 +50,9 @@ if (isset($_GET['logout'])) {
             <span class='close closeBtn' id='closeBtn'>&times;</span>
 
             <h1 class="form-header">SOLUNUM GEREKSİNİMİ</h1>
-            <p style='color: red' class='error'></p>
             <div class="input-section d-flex">
                 <p class="usernamelabel">Solunumda:</p>
+                <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes">
                         <div class="form-check">
@@ -87,6 +87,7 @@ if (isset($_GET['logout'])) {
             <div class="input-section d-flex">
 
                 <p class="usernamelabel">Solunumda sorun var mı?:</p>
+                <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
@@ -200,6 +201,7 @@ if (isset($_GET['logout'])) {
             <div class="input-section d-flex">
 
                 <p class="usernamelabel">Solunum yolu:</p>
+                <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
@@ -252,6 +254,7 @@ if (isset($_GET['logout'])) {
             <div class="input-section d-flex">
 
                 <p class="usernamelabel">Öksürme:</p>
+                <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
@@ -305,6 +308,7 @@ if (isset($_GET['logout'])) {
             <div class="input-section d-flex">
 
                 <p class="usernamelabel">Balgam:</p>
+                <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
@@ -381,6 +385,7 @@ if (isset($_GET['logout'])) {
             <div class="input-section d-flex">
 
                 <p class="usernamelabel">Aspirasyon İhtiyacı:</p>
+                <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
@@ -434,6 +439,7 @@ if (isset($_GET['logout'])) {
             <div class="input-section d-flex">
 
                 <p class="usernamelabel">Burun Muayenesi:</p>
+                <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
@@ -534,6 +540,7 @@ if (isset($_GET['logout'])) {
             <div class="input-section d-flex">
 
                 <p class="usernamelabel">Tiroid bezi:</p>
+                <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
@@ -592,6 +599,7 @@ if (isset($_GET['logout'])) {
             <div class="input-section d-flex">
 
                 <p class="usernamelabel">Trakea:</p>
+                <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
@@ -643,6 +651,7 @@ if (isset($_GET['logout'])) {
             <div class="input-section d-flex">
 
                 <p class="usernamelabel">Boyun lenf nodlarında büyüme:</p>
+                <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
@@ -697,6 +706,7 @@ if (isset($_GET['logout'])) {
             <div class="input-section d-flex">
 
                 <p class="usernamelabel">Skapulaların simetrikliği:</p>
+                <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
@@ -724,6 +734,7 @@ if (isset($_GET['logout'])) {
             <div class="input-section d-flex">
 
                 <p class="usernamelabel">Omurga deformitesi :</p>
+                <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
@@ -788,6 +799,7 @@ if (isset($_GET['logout'])) {
             <div class="input-section d-flex">
 
                 <p class="usernamelabel">Göğüs hareketleri :</p>
+                <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
@@ -815,6 +827,7 @@ if (isset($_GET['logout'])) {
             <div class="input-section d-flex">
 
                 <p class="usernamelabel">Göğüs kafesinde :</p>
+                <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
@@ -897,6 +910,7 @@ if (isset($_GET['logout'])) {
             <div class="input-section d-flex">
 
                 <p class="usernamelabel">Göğüs deformitesi :</p>
+                <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
@@ -959,7 +973,7 @@ if (isset($_GET['logout'])) {
             </div>
 
             <p class="usernamelabel">Solunum sistemi uygulaması </p>
-
+            <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
             <div class="checkbox-wrapper d-flex">
                 <div class="checkboxes d-flex">
                     <div class="form-check">
@@ -1417,63 +1431,270 @@ if (isset($_GET['logout'])) {
     $(function() {
         $('#submit').click(function(e) {
             
-            if (!$('[name="yatisdurumuradio"]').is(':checked') || !$('[name="SolunumSorunu"]').is(':checked') || !$('[name="SolunumYolu"]').is(':checked')
-                || !$('[name="Oksurme"]').is(':checked') || !$('[name="Balgam"]').is(':checked') || !$('[name="AspirasyonIhtiyaci"]').is(':checked')
-                || !$('[name="BurunMuayenesi"]').is(':checked') || !$('[name="TiroidBezi"]').is(':checked') || !$('[name="Trakea"]').is(':checked')
-                || !$('[name="LenfNodlari"]').is(':checked') || !$('[name="SkapulaSimatrikligi"]').is(':checked')
-                || !$('[name="OmurgaDeform"]').is(':checked') || !$('[name="GogusHareketleri"]').is(':checked') || !$('[name="GogusKafesinde"]').is(':checked')
-                || !$('[name="GogusDeformitesi"]').is(':checked') || !$('[name="SolunumSistemiUygilamasi"]').is(':checked')
-                || $('[name="NodDiger"]').val() === ''){
-                $('html, body').scrollTop(0);
-                $('.error').text('Lütfen tüm gerekli alanları doldurun');
-            } else {
-                if ($('[name="SolunumSorunu"]:checked').val() == "Var" && (!$('[name="breathing-problem"]').is(':checked') 
-                || ($('#breathing-not').is(':checked') && $('[name="solunum_diger"]').val() === ''))){    
-                    $('html, body').scrollTop(0);
-                    $('.error').text('Lütfen tüm gerekli alanları doldurun');
+            if (!$('[name="yatisdurumuradio"]').is(':checked')) {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                    scrollTop: $('[name="yatisdurumuradio"]').offset().top
+                }, 200);
+                $('[name="yatisdurumuradio"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+            } else if (!$('[name="SolunumSorunu"]').is(':checked')) {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                    scrollTop: $('[name="SolunumSorunu"]').offset().top
+                }, 200);
+                $('[name="SolunumSorunu"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+            } else if (!$('[name="SolunumYolu"]').is(':checked')) {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                    scrollTop: $('[name="SolunumYolu"]').offset().top
+                }, 200);
+                $('[name="SolunumYolu"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+            } else if (!$('[name="Oksurme"]').is(':checked')) {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                    scrollTop: $('[name="Oksurme"]').offset().top
+                }, 200);
+                $('[name="Oksurme"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+            } else if (!$('[name="Balgam"]').is(':checked')) {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                    scrollTop: $('[name="Balgam"]').offset().top
+                }, 200);
+                $('[name="Balgam"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+            } else if (!$('[name="AspirasyonIhtiyaci"]').is(':checked')) {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                    scrollTop: $('[name="AspirasyonIhtiyaci"]').offset().top
+                }, 200);
+                $('[name="AspirasyonIhtiyaci"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+            } else if (!$('[name="BurunMuayenesi"]').is(':checked')) {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                    scrollTop: $('[name="BurunMuayenesi"]').offset().top
+                }, 200);
+                $('[name="BurunMuayenesi"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+            } else if (!$('[name="TiroidBezi"]').is(':checked')) {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                    scrollTop: $('[name="TiroidBezi"]').offset().top
+                }, 200);
+                $('[name="TiroidBezi"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+            } else if (!$('[name="Trakea"]').is(':checked')) {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                    scrollTop: $('[name="Trakea"]').offset().top
+                }, 200);
+                $('[name="yatisdurumurTrakeaadio"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+            } else if (!$('[name="LenfNodlari"]').is(':checked')) {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                    scrollTop: $('[name="LenfNodlari"]').offset().top
+                }, 200);
+                $('[name="LenfNodlari"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+            } else if (!$('[name="SkapulaSimatrikligi"]').is(':checked')) {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                    scrollTop: $('[name="SkapulaSimatrikligi"]').offset().top
+                }, 200);
+                $('[name="SkapulaSimatrikligi"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+            } else if (!$('[name="OmurgaDeform"]').is(':checked')) {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                    scrollTop: $('[name="OmurgaDeform"]').offset().top
+                }, 200);
+                $('[name="OmurgaDeform"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+            } else if (!$('[name="GogusHareketleri"]').is(':checked')) {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                    scrollTop: $('[name="GogusHareketleri"]').offset().top
+                }, 200);
+                $('[name="GogusHareketleri"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+            } else if (!$('[name="GogusKafesinde"]').is(':checked')) {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                    scrollTop: $('[name="GogusKafesinde"]').offset().top
+                }, 200);
+                $('[name="GogusKafesinde"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+            } else if (!$('[name="GogusDeformitesi"]').is(':checked')) {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                    scrollTop: $('[name="GogusDeformitesi"]').offset().top
+                }, 200);
+                $('[name="GogusDeformitesi"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+            } else if (!$('[name="SolunumSistemiUygilamasi"]').is(':checked')) {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                    scrollTop: $('[name="SolunumSistemiUygilamasi"]').offset().top
+                }, 200);
+                $('[name="SolunumSistemiUygilamasi"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+            } else if ($('[name="NodDiger"]').val() === '') {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                            scrollTop: $('[name="NodDiger"]').offset().top
+                        }, 200);
+                        //change border color
+                $('[name="NodDiger"]').css('border-color', 'red');
+            }
+            else {
+                if ($('[name="SolunumSorunu"]:checked').val() == "Var" && !$('[name="breathing-problem"]').is(':checked')){   
+                    $('.option-error').css('display', 'none'); 
+                    $('html, body').animate({
+                    scrollTop: $('[name="SolunumSorunu"]').offset().top
+                    }, 200);
+                    $('[name="SolunumSorunu"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+                } else if ($('#breathing-not').is(':checked') && $('[name="solunum_diger"]').val() === '') {
+                    $('.option-error').css('display', 'none');
+                    $('html, body').animate({
+                            scrollTop: $('[name="solunum_diger"]').offset().top
+                        }, 200);
+                        //change border color
+                    $('[name="solunum_diger"]').css('border-color', 'red');
                 } else if ($('[name="SolunumYolu"]:checked').val() == "Var" && !$('[name="AirwayMethod"]').is(':checked')) {
-                    $('html, body').scrollTop(0);
-                    $('.error').text('Lütfen tüm gerekli alanları doldurun');
-                } else if ($('[name="Oksurme"]:checked').val() == "Var" && (!$('[name="CoughOption"]').is(':checked')
-                 || (($('#OksurmeDiğer').is(':checked') && $('[name="oksurme_diger"]').val() == '')))){
-                    $('html, body').scrollTop(0);
-                    $('.error').text('Lütfen tüm gerekli alanları doldurun');
-                 } else if ($('[name="Balgam"]:checked').val() === "Var" && (!$('[name="BalgamType"]').is(':checked')
-                 || ($('[name="BalgamType"]:checked').val() === "Diğer" && $('[name="balgam_diger"]').val() === ''))) {
-                    $('html, body').scrollTop(0);
-                    $('.error').text('Lütfen tüm gerekli alanları doldurun');
+                    $('.option-error').css('display', 'none');
+                    $('html, body').animate({
+                    scrollTop: $('[name="SolunumYolu"]').offset().top
+                    }, 200);
+                    $('[name="SolunumYolu"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+                } else if ($('[name="Oksurme"]:checked').val() == "Var" && !$('[name="CoughOption"]').is(':checked')){
+                    $('.option-error').css('display', 'none');
+                    $('html, body').animate({
+                    scrollTop: $('[name="Oksurme"]').offset().top
+                    }, 200);
+                    $('[name="Oksurme"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+                 } else if (($('#OksurmeDiğer').is(':checked') && $('[name="oksurme_diger"]').val() == '')) {
+                    $('html, body').animate({
+                            scrollTop: $('[name="oksurme_diger"]').offset().top
+                        }, 200);
+                        //change border color
+                    $('[name="oksurme_diger"]').css('border-color', 'red');
+                 } else if ($('[name="Balgam"]:checked').val() === "Var" && (!$('[name="BalgamType"]').is(':checked'))) {
+                    $('.option-error').css('display', 'none');
+                    $('html, body').animate({
+                    scrollTop: $('[name="Balgam"]').offset().top
+                    }, 200);
+                    $('[name="Balgam"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+                 } else if ($('[name="BalgamType"]:checked').val() === "Diğer" && $('[name="balgam_diger"]').val() === '') {
+                    $('html, body').animate({
+                            scrollTop: $('[name="balgam_diger"]').offset().top
+                        }, 200);
+                        //change border color
+                    $('[name="balgam_diger"]').css('border-color', 'red');
                  } else if ($('[name="AspirasyonIhtiyaci"]:checked').val() == "Var" && !$('[name="Aspirasyon_need"]').is(':checked')) {
-                    $('html, body').scrollTop(0);
-                    $('.error').text('Lütfen tüm gerekli alanları doldurun');
-                 } else if ($('[name="BurunMuayenesi"]:checked').val() == "Var" && (!$('[name="NasalIssue"]').is(':checked') 
-                || ($('#NazalDiger').is(':checked') && $('[name="nazal_diger"]').val() === ''))) {
-                    $('html, body').scrollTop(0);
-                    $('.error').text('Lütfen tüm gerekli alanları doldurun');
-                 } else if ($('[name="TiroidBezi"]:checked').val() === "Var" && (!$('[name="ThyroidIssue"]').is(':checked')
-                 || ($('#TiroidDiger').is(':checked') && $('[name="tiroid_diger"]').val() === ''))) {
-                    $('html, body').scrollTop(0);
-                    $('.error').text('Lütfen tüm gerekli alanları doldurun');
+                    $('.option-error').css('display', 'none');
+                    $('html, body').animate({
+                    scrollTop: $('[name="AspirasyonIhtiyaci"]').offset().top
+                    }, 200);
+                    $('[name="AspirasyonIhtiyaci"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+                 } else if ($('[name="BurunMuayenesi"]:checked').val() == "Var" && !$('[name="NasalIssue"]').is(':checked')) {
+                    $('.option-error').css('display', 'none');
+                    $('html, body').animate({
+                    scrollTop: $('[name="BurunMuayenesi"]').offset().top
+                    }, 200);
+                    $('[name="BurunMuayenesi"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+                 } else if ($('#NazalDiger').is(':checked') && $('[name="nazal_diger"]').val() === "") {
+                    $('html, body').animate({
+                            scrollTop: $('[name="nazal_diger"]').offset().top
+                        }, 200);
+                        //change border color
+                    $('[name="nazal_diger"]').css('border-color', 'red');
+                 } else if ($('[name="TiroidBezi"]:checked').val() === "Var" && !$('[name="ThyroidIssue"]').is(':checked')) {
+                    $('.option-error').css('display', 'none');
+                    $('html, body').animate({
+                    scrollTop: $('[name="TiroidBezi"]').offset().top
+                    }, 200);
+                    $('[name="TiroidBezi"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+                 } else if ($('#TiroidDiger').is(':checked') && $('[name="tiroid_diger"]').val() === '') {
+                    $('html, body').animate({
+                            scrollTop: $('[name="tiroid_diger"]').offset().top
+                        }, 200);
+                        //change border color
+                    $('[name="tiroid_diger"]').css('border-color', 'red');
                  } else if ($('[name="Trakea"]:checked').val() == "Var" && !$('[name="Shift"]').is(':checked')) {
-                    $('html, body').scrollTop(0);
-                    $('.error').text('Lütfen tüm gerekli alanları doldurun');
+                    $('.option-error').css('display', 'none');
+                    $('html, body').animate({
+                    scrollTop: $('[name="Trakea"]').offset().top
+                    }, 200);
+                    $('[name="Trakea"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
                  } else if ($('[name="LenfNodlari"]:checked').val() == "Var" && $('[name="NodYeri"]').val() === '') {
-                    $('html, body').scrollTop(0);
-                    $('.error').text('Lütfen tüm gerekli alanları doldurun');
+                    $('.option-error').css('display', 'none');
+                    $('html, body').animate({
+                    scrollTop: $('[name="LenfNodlari"]').offset().top
+                    }, 200);
+                    $('[name="LenfNodlari"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
                  } else if ($('[name="OmurgaDeform"]:checked').val() == "Var" && !$('[name="SpinalDeformity"]').is(':checked')) {
-                    $('html, body').scrollTop(0);
-                    $('.error').text('Lütfen tüm gerekli alanları doldurun');
-                 } else if ($('[name="GogusKafesinde"]:checked').val() == "Var" && (!$('[name="ChestIssues"]').is(':checked') 
-                 || ($('#KrepitasyonAlani').is(':checked') && $('[name="Krepitasyon_Alani"]').val() === '')
-                 || ($('#KitleOzelligi').is(':checked') && $('[name="Kitle_Ozelligi"]').val() === '')
-                 || ($('#KitleDiger').is(':checked') && $('[name="Kitle_Diger"]').val() === ''))) {
-                    $('html, body').scrollTop(0);
-                    $('.error').text('Lütfen tüm gerekli alanları doldurun');
-                 } else if ($('[name="GogusDeformitesi"]:checked').val() == "Var" && !$('[name="DeformityType"]').is(':checked')) {
-                    $('html, body').scrollTop(0);
-                    $('.error').text('Lütfen tüm gerekli alanları doldurun');
+                    $('.option-error').css('display', 'none');
+                    $('html, body').animate({
+                    scrollTop: $('[name="OmurgaDeform"]').offset().top
+                    }, 200);
+                    $('[name="OmurgaDeform"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+                 } else if ($('[name="GogusKafesinde"]:checked').val() == "Var" && !$('[name="ChestIssues"]').is(':checked')) {
+                    $('.option-error').css('display', 'none');
+                    $('html, body').animate({
+                    scrollTop: $('[name="GogusKafesinde"]').offset().top
+                    }, 200);
+                    $('[name="GogusKafesinde"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+                 } else if ($('#KrepitasyonAlani').is(':checked') && $('[name="Krepitasyon_Alani"]').val() === '') {
+                    $('html, body').animate({
+                            scrollTop: $('[name="Krepitasyon_Alani"]').offset().top
+                        }, 200);
+                        //change border color
+                    $('[name="Krepitasyon_Alani"]').css('border-color', 'red');
+                    return false;
+                } else if ($('#KitleOzelligi').is(':checked') && $('[name="Kitle_Ozelligi"]').val() === '') {
+                    $('html, body').animate({
+                            scrollTop: $('[name="Kitle_Ozelligi"]').offset().top
+                        }, 200);
+                        //change border color
+                    $('[name="Kitle_Ozelligi"]').css('border-color', 'red');
+                    return false;
+                } else if ($('#KitleDiger').is(':checked') && $('[name="Kitle_Diger"]').val() === '') {
+                    $('html, body').animate({
+                            scrollTop: $('[name="Kitle_Diger"]').offset().top
+                        }, 200);
+                        //change border color
+                    $('[name="Kitle_Diger"]').css('border-color', 'red');
+                    return false;
+                } else if ($('[name="GogusDeformitesi"]:checked').val() == "Var" && !$('[name="DeformityType"]').is(':checked')) {
+                    $('.option-error').css('display', 'none');
+                    $('html, body').animate({
+                    scrollTop: $('[name="GogusDeformitesi"]').offset().top
+                    }, 200);
+                    $('[name="GogusDeformitesi"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
                  } else if ($('[name="SolunumSistemiUygilamasi"][value="Diger"]').is(':checked') && $('[name="SolunumUygulamasi_diger"]').val() === '') {
-                    $('html, body').scrollTop(0);
-                    $('.error').text('Lütfen tüm gerekli alanları doldurun');
+                    $('html, body').animate({
+                            scrollTop: $('[name="SolunumUygulamasi_diger"]').offset().top
+                        }, 200);
+                        //change border color
+                    $('[name="SolunumUygulamasi_diger"]').css('border-color', 'red');
+                    return false;
                  } else {
 
                     var valid = true;
@@ -1566,52 +1787,7 @@ if (isset($_GET['logout'])) {
                         });
                         //
                         let SolunumSistemiUygilamasi = JSON.stringify(SolunumSistemiUygilamasiArr);
-                        let SolunumUygulamasi_diger = $("input[name='SolunumUygulamasi_diger']").attr('disabled') ? null : $("input[name='SolunumUygulamasi_diger']").val();
-
-                        console.log('id:', id);
-                        console.log('form_name:', form_name);
-                        console.log('patient_name:', patient_name);
-                        console.log('patient_id:', patient_id);
-                        console.log('creationDate:', creationDate);
-                        console.log('updateDate:', updateDate);
-                        console.log('yatisdurumuradio:', yatisdurumuradio);
-                        console.log('SolunumSorunu:', SolunumSorunu);
-                        console.log('breathingProblems:', breathingProblems);
-                        console.log('solunum_diger:', solunum_diger);
-                        console.log('SolunumYolu:', SolunumYolu);
-                        console.log('airwayMethod:', airwayMethod);
-                        console.log('Oksurme:', Oksurme);
-                        console.log('coughOption:', coughOption);
-                        console.log('oksurme_diger:', oksurme_diger);
-                        console.log('Balgam:', Balgam);
-                        console.log('BalgamType:', BalgamType);
-                        console.log('balgam_diger:', balgam_diger);
-                        console.log('AspirasyonIhtiyaci:', AspirasyonIhtiyaci);
-                        console.log('aspirasyonNeeds:', aspirasyonNeeds);
-                        console.log('BurunMuayenesi:', BurunMuayenesi);
-                        console.log('nasalIssues:', nasalIssues);
-                        console.log('nazal_diger:', nazal_diger);
-                        console.log('TiroidBezi:', TiroidBezi);
-                        console.log('tiroidIssue:', tiroidIssue);
-                        console.log('TiroidDiger:', TiroidDiger);
-                        console.log('Trakea:', Trakea);
-                        console.log('Shift:', Shift);
-                        console.log('LenfNodlari:', LenfNodlari);
-                        console.log('NodYeri:', NodYeri);
-                        console.log('NodDiger:', NodDiger);
-                        console.log('SkapulaSimatrikligi:', SkapulaSimatrikligi);
-                        console.log('OmurgaDeform:', OmurgaDeform);
-                        console.log('SpinalDeformities:', SpinalDeformities);
-                        console.log('GogusHareketleri:', GogusHareketleri);
-                        console.log('GogusKafesinde:', GogusKafesinde);
-                        console.log('Krepitasyon_Alani:', Krepitasyon_Alani);
-                        console.log('Hassasiyet:', Hassasiyet);
-                        console.log('Kitle_Ozelligi:', Kitle_Ozelligi);
-                        console.log('Kitle_Diger:', Kitle_Diger);
-                        console.log('GogusDeformitesi:', GogusDeformitesi);
-                        console.log('DeformityTypes:', DeformityTypes);
-                        console.log('SolunumSistemiUygilamasi:', SolunumSistemiUygilamasi);
-                        console.log('SolunumUygulamasi_diger:', SolunumUygulamasi_diger);                
+                        let SolunumUygulamasi_diger = $("input[name='SolunumUygulamasi_diger']").attr('disabled') ? null : $("input[name='SolunumUygulamasi_diger']").val();           
 
                         e.preventDefault()
 
@@ -1679,7 +1855,7 @@ if (isset($_GET['logout'])) {
                         })
 
                     }
-            }
+                }
 
             }
         })

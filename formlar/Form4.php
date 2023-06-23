@@ -97,6 +97,7 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section d-flex" style="justify-content:space-between">
                             <p class="usernamelabel">Düşme Nedeni : </p>
+                            <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="fall-reason-wrapper">
                                 <div>
                                     <input class="form-check-input" type="radio" name="DüşmeNedeni" id="DüşmeNedeni"
@@ -170,90 +171,174 @@ if (isset($_GET['logout'])) {
     $(function() {
         $('#submit').click(function(e) {
 
+            if ($('[name="patient_gender"]').val() === "") {
+                $('html, body').animate({
+                            scrollTop: $('[name="patient_gender"]').offset().top
+                        }, 200);
+                        //change border color
+                $('[name="patient_gender"]').css('border-color', 'red');
+                return false
+            } else if ($('[name="medical_diagnosis"]').val() === "") {
+                $('html, body').animate({
+                            scrollTop: $('[name="medical_diagnosis"]').offset().top
+                        }, 200);
+                        //change border color
+                $('[name="medical_diagnosis"]').css('border-color', 'red');
+                return false
+            } else if ($('[name="place_of_fall"]').val() === "") {
+                $('html, body').animate({
+                            scrollTop: $('[name="place_of_fall"]').offset().top
+                        }, 200);
+                        //change border color
+                $('[name="place_of_fall"]').css('border-color', 'red');
+                return false
+            } else if ($('[name="fall_date"]').val() === "") {
+                $('html, body').animate({
+                            scrollTop: $('[name="fall_date"]').offset().top
+                        }, 200);
+                        //change border color
+                $('[name="fall_date"]').css('border-color', 'red');
+                return false
+            } else if ($('[name="fall_time"]').val() === "") {
+                $('html, body').animate({
+                            scrollTop: $('[name="fall_time"]').offset().top
+                        }, 200);
+                        //change border color
+                $('[name="fall_time"]').css('border-color', 'red');
+                return false
+            } else if ($('[name="last_fall_risk_score"]').val() === "") {
+                $('html, body').animate({
+                            scrollTop: $('[name="last_fall_risk_score"]').offset().top
+                        }, 200);
+                        //change border color
+                $('[name="last_fall_risk_score"]').css('border-color', 'red');
+                return false
+            } else if ($('[name="injury_status"]').val() === "") {
+                $('html, body').animate({
+                            scrollTop: $('[name="injury_status"]').offset().top
+                        }, 200);
+                        //change border color
+                $('[name="injury_status"]').css('border-color', 'red');
+                return false
+            } else if ($('[name="injury_severity"]').val() === "") {
+                $('html, body').animate({
+                            scrollTop: $('[name="injury_severity"]').offset().top
+                        }, 200);
+                        //change border color
+                $('[name="injury_severity"]').css('border-color', 'red');
+                return false
+            } else if (!$('[name="DüşmeNedeni"]').is(':checked')) {
+                $('html, body').animate({
+                            scrollTop: $('.option-error').first().offset().top
+                        }, 200);
+                        // Display error message
+                $('.option-error').css('display', 'block');
+            } else if ($('[name="pre_fall_precautions"]').val() === "") {
+                $('html, body').animate({
+                            scrollTop: $('[name="pre_fall_precautions"]').offset().top
+                        }, 200);
+                        //change border color
+                $('[name="pre_fall_precautions"]').css('border-color', 'red');
+                return false
+            } else if ($('[name="pre_fall_general_condition"]').val() === "") {
+                $('html, body').animate({
+                            scrollTop: $('[name="pre_fall_general_condition"]').offset().top
+                        }, 200);
+                        //change border color
+                $('[name="pre_fall_general_condition"]').css('border-color', 'red');
+                return false
+            } else if ($('[name="post_fall_general_condition"]').val() === "") {
+                $('html, body').animate({
+                            scrollTop: $('[name="post_fall_general_condition"]').offset().top
+                        }, 200);
+                        //change border color
+                $('[name="post_fall_general_condition"]').css('border-color', 'red');
+                return false
+            } else {
+                var valid = this.form.checkValidity();
 
-            var valid = this.form.checkValidity();
-
-            if (valid) {
-                var name = $('#name').val();
-                var surname = $('#surname').val();
-                var age = $('#age').val();
-                var not = $('#not').val();
-                let form_num = 4;
-                let patient_name = "<?php
-                                        echo urldecode($_GET['patient_name']);
-                                        ?>";
-                var patient_id = <?php
-                                        $userid = $_GET['patient_id'];
-                                        echo $userid
-                                        ?>;
-                let patient_gender = $("input[name='patient_gender']").val();
-                let yourDate = new Date()
-                let creation_date = yourDate.toISOString().split('T')[0];
-                let updateDate = yourDate.toISOString().split('T')[0];
-                let medical_diagnosis = $("input[name='medical_diagnosis']").val();
-                let place_of_fall = $("input[name='place_of_fall']").val();
-                let fall_date = $("input[name='fall_date']").val();
-                let fall_time = $("input[name='fall_time']").val();
-                let last_fall_risk_score = $("input[name='last_fall_risk_score']").val();
-                let injury_status = $("input[name='injury_status']").val();
-                let injury_severity = $("input[name='injury_severity']").val();
-                let fall_cause = $("input[type='radio'][name='DüşmeNedeni']:checked").val();
-                let pre_fall_precautions = $("input[name='pre_fall_precautions']").val();
-                let pre_fall_general_condition = $("input[name='pre_fall_general_condition']").val();
-                let post_fall_general_condition = $("input[name='post_fall_general_condition']").val();
+                if (valid) {
+                    var name = $('#name').val();
+                    var surname = $('#surname').val();
+                    var age = $('#age').val();
+                    var not = $('#not').val();
+                    let form_num = 4;
+                    let patient_name = "<?php
+                                            echo urldecode($_GET['patient_name']);
+                                            ?>";
+                    var patient_id = <?php
+                                            $userid = $_GET['patient_id'];
+                                            echo $userid
+                                            ?>;
+                    let patient_gender = $("input[name='patient_gender']").val();
+                    let yourDate = new Date()
+                    let creation_date = yourDate.toISOString().split('T')[0];
+                    let updateDate = yourDate.toISOString().split('T')[0];
+                    let medical_diagnosis = $("input[name='medical_diagnosis']").val();
+                    let place_of_fall = $("input[name='place_of_fall']").val();
+                    let fall_date = $("input[name='fall_date']").val();
+                    let fall_time = $("input[name='fall_time']").val();
+                    let last_fall_risk_score = $("input[name='last_fall_risk_score']").val();
+                    let injury_status = $("input[name='injury_status']").val();
+                    let injury_severity = $("input[name='injury_severity']").val();
+                    let fall_cause = $("input[type='radio'][name='DüşmeNedeni']:checked").val();
+                    let pre_fall_precautions = $("input[name='pre_fall_precautions']").val();
+                    let pre_fall_general_condition = $("input[name='pre_fall_general_condition']").val();
+                    let post_fall_general_condition = $("input[name='post_fall_general_condition']").val();
 
 
 
 
 
-                e.preventDefault()
+                    e.preventDefault()
 
-                $.ajax({
-                    type: 'POST',
-                    url: '<?php echo $base_url; ?>/submitOrUpdateForm4.php/',
-                    data: {
-                        name: name,
-                        surname: surname,
-                        age: age,
-                        not: not,
-                        patient_name: patient_name,
-                        patient_id: patient_id,
-                        patient_gender: patient_gender,
-                        update_date: updateDate,
-                        creation_date: creation_date,
-                        medical_diagnosis: medical_diagnosis,
-                        place_of_fall: place_of_fall,
-                        fall_date: fall_date,
-                        fall_time: fall_time,
-                        last_fall_risk_score: last_fall_risk_score,
-                        injury_status: injury_status,
-                        injury_severity: injury_severity,
-                        fall_cause: fall_cause,
-                        pre_fall_precautions: pre_fall_precautions,
-                        pre_fall_general_condition: pre_fall_general_condition,
-                        post_fall_general_condition: post_fall_general_condition
+                    $.ajax({
+                        type: 'POST',
+                        url: '<?php echo $base_url; ?>/submitOrUpdateForm4.php/',
+                        data: {
+                            name: name,
+                            surname: surname,
+                            age: age,
+                            not: not,
+                            patient_name: patient_name,
+                            patient_id: patient_id,
+                            patient_gender: patient_gender,
+                            update_date: updateDate,
+                            creation_date: creation_date,
+                            medical_diagnosis: medical_diagnosis,
+                            place_of_fall: place_of_fall,
+                            fall_date: fall_date,
+                            fall_time: fall_time,
+                            last_fall_risk_score: last_fall_risk_score,
+                            injury_status: injury_status,
+                            injury_severity: injury_severity,
+                            fall_cause: fall_cause,
+                            pre_fall_precautions: pre_fall_precautions,
+                            pre_fall_general_condition: pre_fall_general_condition,
+                            post_fall_general_condition: post_fall_general_condition
 
-                    },
-                    success: function(data) {
-                        alert(data);
-                        let url =
-                            "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
-                            patient_id + "&patient_name=" + encodeURIComponent(
-                                patient_name);
-                        $("#content").load(url);
+                        },
+                        success: function(data) {
+                            alert(data);
+                            let url =
+                                "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
+                                patient_id + "&patient_name=" + encodeURIComponent(
+                                    patient_name);
+                            $("#content").load(url);
 
-                    },
-                    error: function(data) {
-                        Swal.fire({
-                            'title': 'Errors',
-                            'text': 'There were errors',
-                            'type': 'error'
-                        })
-                    }
-                })
+                        },
+                        error: function(data) {
+                            Swal.fire({
+                                'title': 'Errors',
+                                'text': 'There were errors',
+                                'type': 'error'
+                            })
+                        }
+                    })
 
 
 
+                }
             }
         })
 

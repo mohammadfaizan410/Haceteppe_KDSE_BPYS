@@ -44,7 +44,6 @@ if (isset($_GET['logout'])) {
         <div class="send-patient">
             <span class='close closeBtn' id='closeBtn1'>&times;</span>
             <h1 class="form-header">Düşme Riski Değerlendirmesi</h1>
-            <p style="color: red" class="error"></p>
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
@@ -55,7 +54,7 @@ if (isset($_GET['logout'])) {
                             <p class="usernamelabel" style="font-weight: bold;">Risk Faktörü</p>
                             <p class="usernamelabel" style="font-weight: bold;">Puan ( ≥ 5 Yüksek Risk )</p>
                         </div>
-
+                        <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                         <div class="input-section d-flex" style="justify-content:space-between">
                             <p class="usernamelabel">Konfüzyon / Dezoryantasyon: </p>
                             <div class="form-check">
@@ -139,6 +138,7 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section d-flex" style="justify-content:space-around">
                             <p class="usernamelabel" style="font-weight: bold;">Sandalyeden Kalkma Testi</p>
+                            <p class="option-error1" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between">
@@ -234,9 +234,20 @@ if (isset($_GET['logout'])) {
         $('#submit').click(function(e) {
             e.preventDefault();
 
-            if (!$('#RiskFactor:checked').length || !$('[name="get_up_without_arm"]').is(':checked')){
-                $('html, body').scrollTop(0);
-                $('.error').text('Lütfen tüm gerekli alanları doldurun')
+            if (!$('#RiskFactor:checked').length){
+                $('.option-error1').css('display', 'none');
+                $('html, body').animate({
+                            scrollTop: $('.option-error').first().offset().top
+                        }, 200);
+                        // Display error message
+                $('.option-error').css('display', 'block');
+            } else if (!$('[name="get_up_without_arm"]').is(':checked')) {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                            scrollTop: $('.option-error1').first().offset().top
+                        }, 200);
+                        // Display error message
+                $('.option-error1').css('display', 'block');
             } else {
 
                 var valid = this.form.checkValidity();
@@ -258,18 +269,40 @@ if (isset($_GET['logout'])) {
                     let creation_date = yourDate.toISOString().split('T')[0];
                     let updateDate = yourDate.toISOString().split('T')[0];
                     let confusion_point = parseInt($("input[name='confusion_point']").val());
+                    if (isNaN(confusion_point)) {
+                        confusion_point = 0;
+                    }
                     let symtomatic_depression_point = parseInt($(
                         "input[name='symtomatic_depression_point']").val());
+                    if (isNaN(symtomatic_depression_point)) {
+                        symtomatic_depression_point = 0;
+                    }
                     let evacuation_trouble = parseInt($("input[name='evacuation_trouble']").val());
+                    if (isNaN(evacuation_trouble)) {
+                        evacuation_trouble = 0;
+                    }
                     let dizziness_point = parseInt($("input[name='dizziness_point']").val());
+                    if (isNaN(dizziness_point)) {
+                        dizziness_point = 0;
+                    }
                     let gender_point = parseInt($("input[name='gender_point']").val());
+                    if (isNaN(gender_point)) {
+                        gender_point = 0;
+                    }
                     let epilepsy_drug_point = parseInt($("input[name='epilepsy_drug_point']").val());
+                    if (isNaN(epilepsy_drug_point)) {
+                        epilepsy_drug_point = 0;
+                    }
                     let benzo_drug_point = parseInt($("input[name='benzo_drug_point']").val());
+                    if (isNaN(benzo_drug_point)) {
+                        benzo_drug_point = 0;
+                    }
                     let arm_chair_point = parseInt($("input[type='radio'][name='test']:checked").val());
+                    if (isNaN(arm_chair_point)) {
+                        arm_chair_point = 0;
+                    }
                     let total = confusion_point + symtomatic_depression_point + evacuation_trouble +
                         dizziness_point + gender_point + epilepsy_drug_point + benzo_drug_point;
-
-
 
                     $.ajax({
                         type: 'POST',

@@ -52,11 +52,11 @@ if (isset($_GET['logout'])) {
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
-                        <p style='color: red' class='error'></p>
                         <img src="./ağrı skalası.png"
                             style="width:67%; height:auto;border: 1px solid;border-color: #246174; box-shadow:1px 1px 1px 1px #246174; border-radius: 20px;">
                         <div class="input-section d-flex" style="padding-top: 5%;">
                             <p class="usernamelabel">Ağrının Şiddeti:</p>
+                            <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="AgriSiddeti" id="AgriSiddeti"
                                     value="0. Yok">
@@ -103,6 +103,7 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Ağrının Süresi:</p>
+                            <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="AgriSuresi" id="AgriSuresi"
                                     value="option1">
@@ -178,12 +179,57 @@ if (isset($_GET['logout'])) {
     $(function() {
         $('#submit').click(function(e) {
             e.preventDefault()
-            if (!$('[name="AgriSiddeti"]').is(':checked') || !$('[name="AgriSuresi"]').is(':checked') 
-            || $('[name="pain_location"]').val() === "" || $('[name="pain_character"]').val() === "" 
-            || $('[name="pain_frequency"]').val() === "" || $('[name="pain_increase_factors"]').val() === ""
-            || $('[name="pain_decrease_factors"]').val() === ""){
-                $('html, body').scrollTop(0);
-                $('.error').text('Lütfen tüm gerekli alanları doldurun')
+            if (!$('[name="AgriSiddeti"]').is(':checked')) {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                            scrollTop: $('[name="AgriSiddeti"]').first().offset().top
+                        }, 200);
+                        // Display error message
+                $('[name="AgriSiddeti"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                return false;
+            } else if (!$('[name="AgriSuresi"]').is(':checked')) {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                            scrollTop: $('[name="AgriSuresi"]').first().offset().top
+                        }, 200);
+                        // Display error message
+                    $('[name="AgriSuresi"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                    return false;
+            } else if ($('[name="pain_location"]').val() === "") {
+                $('html, body').animate({
+                            scrollTop: $('[name="pain_location"]').offset().top
+                        }, 200);
+                        //change border color
+                $('[name="pain_location"]').css('border-color', 'red');
+                return false
+            } else if ($('[name="pain_character"]').val() === "") {
+                $('html, body').animate({
+                            scrollTop: $('[name="pain_character"]').offset().top
+                        }, 200);
+                        //change border color
+                $('[name="pain_character"]').css('border-color', 'red');
+                return false
+            } else if ($('[name="pain_frequency"]').val() === "") {
+                $('html, body').animate({
+                            scrollTop: $('[name="pain_frequency"]').offset().top
+                        }, 200);
+                        //change border color
+                $('[name="pain_frequency"]').css('border-color', 'red');
+                return false
+            } else if ($('[name="pain_increase_factors"]').val() === "") {
+                $('html, body').animate({
+                            scrollTop: $('[name="pain_increase_factors"]').offset().top
+                        }, 200);
+                        //change border color
+                $('[name="pain_increase_factors"]').css('border-color', 'red');
+                return false
+            } else if ($('[name="pain_decrease_factors"]').val() === "") {
+                $('html, body').animate({
+                            scrollTop: $('[name="pain_decrease_factors"]').offset().top
+                        }, 200);
+                        //change border color
+                $('[name="pain_decrease_factors"]').css('border-color', 'red');
+                return false
             } else {
 
                 var valid = this.form.checkValidity();
