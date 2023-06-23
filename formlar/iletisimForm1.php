@@ -530,7 +530,7 @@ if (isset($_GET['logout'])) {
 
                         $.ajax({
                             type: 'POST',
-                            url: '<?php echo $base_url; ?>/SubmitOrUpdateForm1_Iletisim.php',
+                            url: '<?php echo $base_url; ?>/form-handlers/SubmitOrUpdateForm1_Iletisim.php',
                             data: {
                                 patient_id: patient_id,
                                 patient_name: patient_name,

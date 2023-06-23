@@ -190,7 +190,7 @@ if (isset($_GET['logout'])) {
 
                             $.ajax({
                                 type: 'POST',
-                                url: '<?php echo $base_url; ?>/submitOrUpdateForm1_Uyku.php',
+                                url: '<?php echo $base_url; ?>/form-handlers/submitOrUpdateForm1_Uyku.php',
                                 data: {
                                     patient_id: patient_id,
                                     patient_name: patient_name,

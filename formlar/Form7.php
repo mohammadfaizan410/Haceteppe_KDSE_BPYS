@@ -427,7 +427,7 @@ if (isset($_GET['logout'])) {
                     console.log('after setting variables')
                     $.ajax({
                         type: 'POST',
-                        url: '<?php echo $base_url; ?>/submitOrUpdateForm7.php',
+                        url: '<?php echo $base_url; ?>/form-handlers/submitOrUpdateForm7.php',
                         data: JSON.stringify({
                             name: name,
                             form_num: formnum,

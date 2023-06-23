@@ -514,7 +514,7 @@ if (isset($_GET['logout'])) {
 
                             $.ajax({
                                 type: 'POST',
-                                url: '<?php echo $base_url; ?>/SubmitOrUpdateForm1_Hareket.php',
+                                url: '<?php echo $base_url; ?>/form-handlers/SubmitOrUpdateForm1_Hareket.php',
                                 data: {
                                     'id': id,
                                     'name': name,

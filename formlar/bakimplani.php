@@ -233,7 +233,7 @@ if (isset($_GET['logout'])) {
 
                 $.ajax({
                     type: 'POST',
-                    url: '<?php echo $base_url; ?>/submitOrUpdateBakimPlani_form14.php',
+                    url: '<?php echo $base_url; ?>/form-handlers/submitOrUpdateBakimPlani_form14.php',
                     data: {
                         id: id,
                         name: name,

@@ -205,25 +205,25 @@ if (isset($_GET['logout'])) {
                 let updateDate = yourDate.toISOString().split('T')[0];
                 let time_range = $("input[type='radio'][name='time_range']:checked").val();
                 let iv_input1 = parseInt($("input[name='iv_input1']").val())
-                let iv_input2 = parseInt($("input[name='iv_input2']").val())
-                let iv_input3 = parseInt($("input[name='iv_input3']").val())
-                let iv_input4 = parseInt($("input[name='iv_input4']").val())
-                let blood_product1 = parseInt($("input[name='blood_product1']").val())
-                let blood_product2 = parseInt($("input[name='blood_product2']").val())
-                let blood_product3 = parseInt($("input[name='blood_product3']").val())
-                let blood_product4 = parseInt($("input[name='blood_product4']").val())
+                let iv_input2 = parseInt($("input[name='iv_input2']").val()) ? parseInt($("input[name='iv_input2']").val()) : 0;
+                let iv_input3 = parseInt($("input[name='iv_input3']").val()) ? parseInt($("input[name='iv_input3']").val()) : 0;
+                let iv_input4 = parseInt($("input[name='iv_input4']").val()) ? parseInt($("input[name='iv_input4']").val()) : 0;
+                let blood_product1 = parseInt($("input[name='blood_product1']").val()) ? parseInt($("input[name='blood_product1']").val()) : 0;
+                let blood_product2 = parseInt($("input[name='blood_product2']").val()) ? parseInt($("input[name='blood_product2']").val()) : 0;
+                let blood_product3 = parseInt($("input[name='blood_product3']").val()) ? parseInt($("input[name='blood_product3']").val()) : 0;
+                let blood_product4 = parseInt($("input[name='blood_product4']").val()) ? parseInt($("input[name='blood_product4']").val()) : 0;
                 let oral1 = parseInt($("input[name='oral1']").val())
-                let oral2 = parseInt($("input[name='oral2']").val())
-                let oral3 = parseInt($("input[name='oral3']").val())
-                let oral4 = parseInt($("input[name='oral4']").val())
+                let oral2 = parseInt($("input[name='oral2']").val()) ? parseInt($("input[name='oral2']").val()) : 0;
+                let oral3 = parseInt($("input[name='oral3']").val()) ? parseInt($("input[name='oral3']").val()) : 0;
+                let oral4 = parseInt($("input[name='oral4']").val()) ? parseInt($("input[name='oral4']").val()) : 0;
                 let idrar_input1 = parseInt($("input[name='idrar_input1']").val())
-                let idrar_input2 = parseInt($("input[name='idrar_input2']").val())
-                let idrar_input3 = parseInt($("input[name='idrar_input3']").val())
-                let idrar_input4 = parseInt($("input[name='idrar_input4']").val())
-                let gaita_input1 = parseInt($("input[name='gaita_input1']").val())
-                let gaita_input2 = parseInt($("input[name='gaita_input2']").val())
-                let gaita_input3 = parseInt($("input[name='gaita_input3']").val())
-                let gaita_input4 = parseInt($("input[name='gaita_input4']").val())
+                let idrar_input2 = parseInt($("input[name='idrar_input2']").val()) ? parseInt($("input[name='idrar_input2']").val()) : 0;
+                let idrar_input3 = parseInt($("input[name='idrar_input3']").val()) ? parseInt($("input[name='idrar_input3']").val()) : 0;
+                let idrar_input4 = parseInt($("input[name='idrar_input4']").val()) ? parseInt($("input[name='idrar_input4']").val()) : 0;
+                let gaita_input1 = parseInt($("input[name='gaita_input1']").val()) ? parseInt($("input[name='gaita_input1']").val()) : 0;
+                let gaita_input2 = parseInt($("input[name='gaita_input2']").val()) ? parseInt($("input[name='gaita_input2']").val()) : 0;
+                let gaita_input3 = parseInt($("input[name='gaita_input3']").val()) ? parseInt($("input[name='gaita_input3']").val()) : 0;
+                let gaita_input4 = parseInt($("input[name='gaita_input4']").val()) ? parseInt($("input[name='gaita_input4']").val()) : 0;
                 let aldigi_total1 = iv_input1 + blood_product1 + oral1;
                 let aldigi_total2 = iv_input2 + blood_product2 + oral2;
                 let aldigi_total3 = iv_input3 + blood_product3 + oral3;
@@ -304,7 +304,7 @@ if (isset($_GET['logout'])) {
 
                 $.ajax({
                     type: 'POST',
-                    url: '<?php echo $base_url; ?>/submitOrUpdateAldigi_form11.php',
+                    url: '<?php echo $base_url; ?>/form-handlers/submitOrUpdateAldigi_form11.php',
                     data: {
                         id: id,
                         name: name,

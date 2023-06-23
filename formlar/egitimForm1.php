@@ -137,7 +137,7 @@ if (isset($_GET['logout'])) {
 
                 $.ajax({
                     type: 'POST',
-                    url: 'student-patient.php',
+                    url: '<?php echo $base_url; ?>/form-handlers/SubmitOrUpdateForm1_Egitim.php',
                     data: {
                         radio1: radio1,
                         Konu: Konu,

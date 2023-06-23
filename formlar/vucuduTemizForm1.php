@@ -1267,7 +1267,7 @@ if (isset($_GET['logout'])) {
 
                             $.ajax({
                                 type: 'POST',
-                                url: '<?php echo $base_url; ?>/SubmitOrUpdateForm1_Vucut.php',
+                                url: '<?php echo $base_url; ?>/form-handlers/SubmitOrUpdateForm1_Vucut.php',
                                 data: {
                                     name : name,
                                     surname : surname,

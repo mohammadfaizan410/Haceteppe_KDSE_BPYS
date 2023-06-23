@@ -1795,7 +1795,7 @@ if (isset($_GET['logout'])) {
 
                         $.ajax({
                             type: 'POST',
-                            url: '<?php echo $base_url; ?>/SubmitOrUpdateForm1_SolunumGereksinimi.php/',
+                            url: '<?php echo $base_url; ?>/form-handlers/SubmitOrUpdateForm1_SolunumGereksinimi.php/',
                             data: {
                                 form_name: form_name,
                                 patient_name: patient_name,

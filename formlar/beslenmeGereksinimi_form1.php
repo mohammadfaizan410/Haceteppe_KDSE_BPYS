@@ -1363,7 +1363,7 @@ if (isset($_GET['logout'])) {
 
                         $.ajax({
                             type: 'POST',
-                            url: '<?php echo $base_url; ?>student-patient.php',
+                            url: '<?php echo $base_url; ?>/form-handlers/SubmitOrUpdateForm1_BeslenmeGereksinimi.php',
                             data: {
                                 OgunSayisi: OgunSayisi,
                                 TukettigiBesin: TukettigiBesin,

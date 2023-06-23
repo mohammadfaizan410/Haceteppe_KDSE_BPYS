@@ -212,7 +212,7 @@ if (isset($_GET['logout'])) {
 
                 $.ajax({
                     type: 'POST',
-                    url: '<?php echo $base_url; ?>/submitOrUpdateSivi_form12.php',
+                    url: '<?php echo $base_url; ?>/form-handlers/submitOrUpdateSivi_form12.php',
                     data: {
                         form_num: form_num,
                         patient_id: patient_id,

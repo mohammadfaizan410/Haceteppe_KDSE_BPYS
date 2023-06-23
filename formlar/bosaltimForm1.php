@@ -743,7 +743,7 @@ $(function() {
 
             $.ajax({
                 type: 'POST',
-                url: '<?php echo $base_url; ?>/SubmitOrUpdateForm1_Bosaltim.php',
+                url: '<?php echo $base_url; ?>/form-handlers/SubmitOrUpdateForm1_Bosaltim.php',
                 data: {
                     protezlertable: protezlertable,
                     sikligi: sikligi,

@@ -228,7 +228,7 @@ if (isset($_GET['logout'])) {
 
                 $.ajax({
                     type: 'POST',
-                    url: '<?php echo $base_url; ?>/submitOrUpdateMedikal_form13.php',
+                    url: '<?php echo $base_url; ?>/form-handlers/submitOrUpdateMedikal_form13.php',
                     data: {
                         id: id,
                         name: name,

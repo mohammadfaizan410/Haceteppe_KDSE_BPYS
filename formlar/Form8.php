@@ -160,7 +160,7 @@ if (isset($_GET['logout'])) {
 
                         $.ajax({
                             type: 'POST',
-                            url: '<?php echo $base_url; ?>/submitOrUpdateForm8.php',
+                            url: '<?php echo $base_url; ?>/form-handlers/submitOrUpdateForm8.php',
                             data: {
                                 id: id,
                                 name: name,
