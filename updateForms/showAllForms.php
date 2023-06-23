@@ -180,6 +180,69 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
+        // $sql = "SELECT * FROM  calismaform1 WHERE patient_id =" . $userid;
+        // $smtmselect = $db->prepare($sql);
+        // $result = $smtmselect->execute();
+        // $values = [];
+        // if ($result) {
+        //     $values15 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+        // } else {
+        //     echo 'error';
+        // };
+        // $sql = "SELECT * FROM  harekatform1 WHERE patient_id =" . $userid;
+        // $smtmselect = $db->prepare($sql);
+        // $result = $smtmselect->execute();
+        // $values = [];
+        // if ($result) {
+        //     $values16 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+        // } else {
+        //     echo 'error';
+        // };
+        // $sql = "SELECT * FROM  ilestimform1 WHERE patient_id =" . $userid;
+        // $smtmselect = $db->prepare($sql);
+        // $result = $smtmselect->execute();
+        // $values = [];
+        // if ($result) {
+        //     $values17 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+        // } else {
+        //     echo 'error';
+        // };
+        // $sql = "SELECT * FROM  katererform1 WHERE patient_id =" . $userid;
+        // $smtmselect = $db->prepare($sql);
+        // $result = $smtmselect->execute();
+        // $values = [];
+        // if ($result) {
+        //     $values18 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+        // } else {
+        //     echo 'error';
+        // };
+        // $sql = "SELECT * FROM  solunumgereksinimi_form1 WHERE patient_id =" . $userid;
+        // $smtmselect = $db->prepare($sql);
+        // $result = $smtmselect->execute();
+        // $values = [];
+        // if ($result) {
+        //     $values19 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+        // } else {
+        //     echo 'error';
+        // };
+        // $sql = "SELECT * FROM  uyukuform1 WHERE patient_id =" . $userid;
+        // $smtmselect = $db->prepare($sql);
+        // $result = $smtmselect->execute();
+        // $values = [];
+        // if ($result) {
+        //     $values20 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+        // } else {
+        //     echo 'error';
+        // };
+        // $sql = "SELECT * FROM  vucudutemizform1 WHERE patient_id =" . $userid;
+        // $smtmselect = $db->prepare($sql);
+        // $result = $smtmselect->execute();
+        // $values = [];
+        // if ($result) {
+        //     $values21 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+        // } else {
+        //     echo 'error';
+        // };
 
         $sql = "SELECT * FROM  tani1 WHERE patient_id =" . $userid;
         $smtmselect = $db->prepare($sql);
@@ -190,6 +253,7 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
+       
 
         $allForms = [
             'table1_data' => $values1,
@@ -206,6 +270,13 @@ if (isset($_GET['logout'])) {
             'table12_data' => $values12,
             'table13_data' => $values13,
             'table14_data' => $values14,
+            // 'table15_data' => $values15,
+            // 'table16_data' => $values16,
+            // 'table17_data' => $values17,
+            // 'table18_data' => $values18,
+            // 'table19_data' => $values19,
+            // 'table20_data' => $values20,
+            // 'table21_data' => $values21,
         ];
 
         ?>
@@ -276,6 +347,27 @@ if (isset($_GET['logout'])) {
                                     }
                                     if ($key ===  'table14_data') {
                                         echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color : white;"  href="' . $base_url . '/formlar-review/Form15-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Form15   Date:' . $form["update_date"] . '</p></a></div>';
+                                    }
+                                    if ($key ===  'table15_data') {
+                                        echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color: white;" href="' . $base_url . '/formlar-review/Form16-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Form16   Date:' . $form["update_date"] . '</p></a></div>';
+                                    }
+                                    if ($key ===  'table16_data') {
+                                        echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color: white;" href="' . $base_url . '/formlar-review/Form17-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Form17   Date:' . $form["update_date"] . '</p></a></div>';
+                                    }
+                                    if ($key ===  'table17_data') {
+                                        echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color: white;" href="' . $base_url . '/formlar-review/Form18-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Form18   Date:' . $form["update_date"] . '</p></a></div>';
+                                    }
+                                    if ($key ===  'table18_data') {
+                                        echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color: white;" href="' . $base_url . '/formlar-review/Form19-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Form19   Date:' . $form["update_date"] . '</p></a></div>';
+                                    }
+                                    if ($key ===  'table19_data') {
+                                        echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color: white;" href="' . $base_url . '/formlar-review/Form20-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Form20   Date:' . $form["update_date"] . '</p></a></div>';
+                                    }
+                                    if ($key ===  'table20_data') {
+                                        echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color: white;" href="' . $base_url . '/formlar-review/Form21-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Form21   Date:' . $form["update_date"] . '</p></a></div>';
+                                    }
+                                    if ($key ===  'table21_data') {
+                                        echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color: white;" href="' . $base_url . '/formlar-review/Form22-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Form22   Date:' . $form["update_date"] . '</p></a></div>';
                                     }
                                 };
                             }
