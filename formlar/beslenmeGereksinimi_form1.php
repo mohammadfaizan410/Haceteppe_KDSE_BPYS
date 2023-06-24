@@ -181,6 +181,54 @@ if (isset($_GET['logout'])) {
                 </div>
             </div>
             <div class="input-section d-flex">
+                <p class="usernamelabel">Günlük olarak izin verilen besinlerin tüketimi </p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="food-consumption-yok" id="food-consumption-yok" value="Yok">
+                    <label class="form-check-label" for="food-consumption-yok">
+                        <span class="checkbox-header">Yok</span>
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="food-consumption-var" id="food-consumption-var" value="Var">
+                    <label class="form-check-label" for="food-consumption-var">
+                        <span class="checkbox-header">Var</span>
+                    </label>
+                    <table class="food-consumption-table">
+                        <tr>
+                            <td>
+                                <div class="form-check">
+                                <input class="form-check-input" type="radio" name="food-consumption-daha-az" id="food-consumption-daha-az" value="Daha Az">
+                                <label class="form-check-label" for="food-consumption-daha-az">
+                                    <span class="checkbox-header">Daha az</span>
+                                </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="form-check">
+                                <input class="form-check-input" type="radio" name="food-consumption-daha-fazla" id="food-consumption-daha-fazla" value="Daha Fazla">
+                                <label class="form-check-label" for="food-consumption-daha-fazla">
+                                    <span class="checkbox-header">Daha fazla </span>
+                                </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="form-check">
+                                <input class="form-check-input" type="radio" name="food-consumption-daha-diger" id="food-consumption-daha-diger" value="Diger">
+                                <label class="form-check-label" for="food-consumption-daha-diger">
+                                    <span class="checkbox-header">Diğer</span>
+                                </label>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+            </div>
+            <div class="input-section d-flex">
                 <p class="usernamelabel">Sıvı Tüketimi</p>
                 <div>
                     Miktarı<input type="text" class="form-control" required name="SiviTuketimi" id="SiviTuketimi"
@@ -307,6 +355,37 @@ if (isset($_GET['logout'])) {
             </div>
 
             <div class="input-section d-flex">
+                <p class="usernamelabel">Gastrik Rezidü </p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gastric-residue-yok" id="gastric-residue-yok"
+                        value="Yok">
+                    <label class="form-check-label" for="gastric-residue-yok">
+                        <span class="checkbox-header">Yok</span>
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gastric-residue-var" id="gastric-residue-var"
+                        value="Var">
+                    <label class="form-check-label" for="gastric-residue-var">
+                        <span class="checkbox-header">Var</span>
+                    </label>
+                    <table class="gastric-residue-table">
+                    <tr>
+                        <td>
+                            <div>
+                                Miltarı 
+                                <input type="text" class="form-control" required name="gastric-residue-ml" id="gastric-residue-ml"
+                                    maxlength="6">
+                                ml.
+                            </div>
+                        </td>   
+                    </tr>
+                </table>
+                </div>
+            
+            </div>
+
+            <div class="input-section d-flex">
                 <p class="usernamelabel">Nazogastrik dekompresyon</p>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="NazogastrikRadio" id="NazogastrikRadio"
@@ -341,6 +420,107 @@ if (isset($_GET['logout'])) {
                     </label>
                 </div>
             </div>
+
+            <div class="input-section d-flex">
+                <p class="usernamelabel">Kilo kaybı </p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="weight-loss-yok" id="weight-loss-yok" value="Yok">
+                    <label class="form-check-label" for="weight-loss-yok">
+                        <span class="checkbox-header">Yok</span>
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="weight-loss-var" id="weight-loss-var" value="Var">
+                    <label class="form-check-label" for="weight-loss-var">
+                        <span class="checkbox-header">Var</span>
+                    </label>
+                    <table class="weight-loss-table">
+                        <tr>
+                            <td>
+                                <div class="form-check">
+                                <input class="form-check-input" type="radio" name="weight-loss-hizli" id="weight-loss-hizli" value="Hızlı">
+                                <label class="form-check-label" for="weight-loss-hizli">
+                                    <span class="checkbox-header">Hızlı </span>
+                                </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="form-check">
+                                <input class="form-check-input" type="radio" name="weight-loss-kontrollu" id="weight-loss-kontrollu" value="Kontrollü">
+                                <label class="form-check-label" for="food-consumption-kontrollu">
+                                    <span class="checkbox-header">Kontrollü</span>
+                                </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="form-check">
+                                <input class="form-check-input" type="radio" name="weight-loss-diger" id="weight-loss-diger" value="Diger">
+                                <label class="form-check-label" for="weight-loss-diger">
+                                    <span class="checkbox-header">Diğer</span>
+                                </label>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+            </div>
+
+
+            <div class="input-section d-flex">
+                <p class="usernamelabel">Kilo alma </p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="weight-gain-yok" id="weight-gain-yok" value="Yok">
+                    <label class="form-check-label" for="weight-gain-yok">
+                        <span class="checkbox-header">Yok</span>
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="weight-gain-var" id="weight-gain-var" value="Var">
+                    <label class="form-check-label" for="weight-loss-var">
+                        <span class="checkbox-header">Var</span>
+                    </label>
+                    <table class="weight-gain-table">
+                        <tr>
+                            <td>
+                                <div class="form-check">
+                                <input class="form-check-input" type="radio" name="weight-gain-hizli" id="weight-gain-hizli" value="Hızlı">
+                                <label class="form-check-label" for="weight-gain-hizli">
+                                    <span class="checkbox-header">Hızlı </span>
+                                </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="form-check">
+                                <input class="form-check-input" type="radio" name="weight-gain-kontrollu" id="weight-gain-kontrollu" value="Kontrollü">
+                                <label class="form-check-label" for="weight-gain-kontrollu">
+                                    <span class="checkbox-header">Kontrollü</span>
+                                </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="form-check">
+                                <input class="form-check-input" type="radio" name="weight-gain-diger" id="weight-gain-diger" value="Diger">
+                                <label class="form-check-label" for="weight-gain-diger">
+                                    <span class="checkbox-header">Diğer</span>
+                                </label>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+            </div>
+
+
 
 
             <div class="input-section d-flex">
@@ -550,6 +730,28 @@ if (isset($_GET['logout'])) {
                                                         <input class="form-check-input" name='AgizMukozasiOptions'
                                                             type="checkbox" id="Nodul" value="Nodul">
                                                         <label class="form-check-label" for="Nodul">Nodul</label>
+                                                    </div>
+                                                </td>
+
+                                            </tr>
+
+                                            <tr>
+                                                <td class="protezlertable">
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" name='AgizMukozasiOptions'
+                                                            type="checkbox" id="Lezyon" value="Lezyon">
+                                                        <label class="form-check-label" for="Lezyon">Lezyon </label>
+                                                    </div>
+                                                </td>
+
+                                            </tr>
+
+                                            <tr>
+                                                <td class="protezlertable">
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" name='AgizMukozasiOptions'
+                                                            type="checkbox" id="Kuruluk" value="Kuruluk">
+                                                        <label class="form-check-label" for="Kuruluk">Kuruluk </label>
                                                     </div>
                                                 </td>
 
@@ -936,14 +1138,14 @@ if (isset($_GET['logout'])) {
                             <div class="checkboxes d-flex">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="AbdominalKontür"
-                                        id="AbdominalKontür" value="Düz">
+                                        id="abdominal-contour-straight" value="Düz">
                                     <label class="form-check-label" for="AbdominalKontür">
                                         <span class="checkbox-header">Düz</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="AbdominalKontür"
-                                        id="AbdominalKontür" value="Yuvarlak">
+                                        id="abdominal-contour-round" value="Yuvarlak">
                                     <label class="form-check-label" for="AbdominalKontür">
                                         <span class="checkbox-header">Yuvarlak</span>
 
@@ -951,14 +1153,14 @@ if (isset($_GET['logout'])) {
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="AbdominalKontür"
-                                        id="AbdominalKontür" value="İç Bükey">
+                                        id="abdominal-contour-concave" value="İç Bükey">
                                     <label class="form-check-label" for="AbdominalKontür">
                                         <span class="checkbox-header">İç Bükey</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="AbdominalKontür"
-                                        id="AbdominalKontür" value="Dış Bükey">
+                                        id="abdominal-contour-convex" value="Dış Bükey">
                                     <label class="form-check-label" for="AbdominalKontür">
                                         <span class="checkbox-header">Dış Bükey</span>
 
@@ -975,19 +1177,19 @@ if (isset($_GET['logout'])) {
                         <div class="checkbox-wrapper d-flex">
                             <div class="checkboxes d-flex">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="Herniasyon" id="Herniasyon"
+                                    <input class="form-check-input" type="radio" name="Herniasyon" id="herniation-yok"
                                         value="Yok">
                                     <label class="form-check-label" for="Herniasyon">
                                         <span class="checkbox-header">Sorun Yok</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="Herniasyon" id="Herniasyon"
+                                    <input class="form-check-input" type="radio" name="Herniasyon" id="herniation-var"
                                         value="Var">
                                     <label class="form-check-label" for="Herniasyon">
                                         <span class="checkbox-header"> Var. Yeri</span>
                                     </label>
-                                    <input type="text" class="form-control diger" name="HDiger" id="HDiger"
+                                    <input type="text" class="form-control diger" name="HDiger" id="herniation-var-description"
                                         maxlength="40">
                                 </div>
 
@@ -1001,14 +1203,14 @@ if (isset($_GET['logout'])) {
                         <div class="checkbox-wrapper d-flex">
                             <div class="checkboxes d-flex">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="Umbilikus" id="Umbilikus"
+                                    <input class="form-check-input" type="radio" name="Umbilikus" id="umbilikus-collapsed"
                                         value="Çökük">
                                     <label class="form-check-label" for="Umbilikus">
                                         <span class="checkbox-header">Çökük </span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="Umbilikus" id="Umbilikus"
+                                    <input class="form-check-input" type="radio" name="Umbilikus" id="umbilikus-bump"
                                         value="Tümsek">
                                     <label class="form-check-label" for="Umbilikus">
                                         <span class="checkbox-header">Tümsek</span>
@@ -1026,14 +1228,14 @@ if (isset($_GET['logout'])) {
                             <div class="checkboxes d-flex">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="AbdomenDokuntu"
-                                        id="AbdomenDokuntu" value="Yok">
+                                        id="abdominal-rash-yok" value="Yok">
                                     <label class="form-check-label" for="AbdomenDokuntu">
                                         <span class="checkbox-header">Sorun Yok</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="AbdomenDokuntu"
-                                        id="AbdomenDokuntu" value="Var">
+                                        id="abdominal-rash-var" value="Var">
                                     <label class="form-check-label" for="AbdomenDokuntu">
                                         <span class="checkbox-header"> Var</span>
                                     </label>
@@ -1049,13 +1251,13 @@ if (isset($_GET['logout'])) {
                         <div class="checkbox-wrapper d-flex">
                             <div class="checkboxes d-flex">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="Asit" id="Asit" value="Yok">
+                                    <input class="form-check-input" type="radio" name="Asit" id="abdominal-acid-yok" value="Yok">
                                     <label class="form-check-label" for="Asit">
                                         <span class="checkbox-header">Yok</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="Asit" id="Asit" value="Var">
+                                    <input class="form-check-input" type="radio" name="Asit" id="abdominal-acid-var" value="Var">
                                     <label class="form-check-label" for="Asit">
                                         <span class="checkbox-header"> Var</span>
                                     </label>
@@ -1071,28 +1273,25 @@ if (isset($_GET['logout'])) {
                         <div class="checkbox-wrapper d-flex">
                             <div class="checkboxes d-flex">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="Kitle" id="Kitle" value="Yeri">
                                     <label class="form-check-label" for="Kitle">
                                         <span class="checkbox-header">Yeri</span>
                                     </label>
-                                    <input type="text" class="form-control diger" name="Yeri" id="YDiger"
+                                    <input type="text" class="form-control diger" name="Yeri" id="abdominal-mass-place"
                                         maxlength="40">
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="Kitle" id="Kitle"
-                                        value="Buyuklugu">
+                                    
                                     <label class="form-check-label" for="Kitle">
                                         <span class="checkbox-header"> Büyüklüğü</span>
                                     </label>
-                                    <input type="text" class="form-control diger" name="Buyuklugu" id="BDiger">
+                                    <input type="text" class="form-control diger" name="Buyuklugu" id="abdominal-mass-size">
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="Kitle" id="Kitle"
-                                        value="Ozelligi">
+                                    
                                     <label class="form-check-label" for="Kitle">
                                         <span class="checkbox-header"> Özelliği</span>
                                     </label>
-                                    <input type="text" class="form-control diger" name="Ozelligi" id="ODiger">
+                                    <input type="text" class="form-control diger" name="Ozelligi" id="abdominal-mass-description">
                                 </div>
 
                             </div>
@@ -1106,8 +1305,7 @@ if (isset($_GET['logout'])) {
                             <div class="checkbox-wrapper d-flex">
                                 <div class="checkboxes d-flex">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="KarinDerisi" id="KarinDerisi"
-                                            value="Pigmentasyon">
+                                        
                                         <label class="form-check-label" for="KarinDerisi">
                                             <span class="checkbox-header">Pigmentasyon</span>
                                         </label>
@@ -1136,17 +1334,38 @@ if (isset($_GET['logout'])) {
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="Stria" id="Stria" value="Yok">
+                                    <input class="form-check-input" type="radio" name="Stria" id="Stria-yok" value="Yok">
                                     <label class="form-check-label" for="Stria">
                                         <span class="checkbox-header"> Yok</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="Stria" id="Stria" value="Var">
+                                    <input class="form-check-input" type="radio" name="Stria" id="Stria-var" value="Var">
                                     <label class="form-check-label" for="Stria">
-                                        <span class="checkbox-header"> Var.Açıklama</span>
+                                        <span class="checkbox-header"> Var</span>
                                     </label>
-                                    <input type="text" class="form-control diger" name="StriaDiger" maxlength="30">
+                                </div>
+
+                            </div>
+
+                            <div class="checkboxes d-flex">
+                                <div class="form-check">
+                                    <label class="form-check-label" for="beslenmeabdominalumuradio">
+                                        <span class="checkbox-header">Skar </span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="Skar-yok" id="Skar-yok" value="Yok">
+                                    <label class="form-check-label" for="Skar">
+                                        <span class="checkbox-header"> Yok</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="Skar" id="Skar-var" value="Var">
+                                    <label class="form-check-label" for="Skar-var">
+                                        <span class="checkbox-header"> Var. Açıklama</span>
+                                    </label>
+                                    <input type="text" class="form-control" id="Skar-var-input" name="Skar-var-input" maxlength="30">
 
                                 </div>
 
@@ -1173,6 +1392,10 @@ if (isset($_GET['logout'])) {
                 })
             });
             $('#sonda-table :input').prop('disabled', true);
+            $('.food-consumption-table :input').prop('disabled', true);
+            $('.gastric-residue-table :input').prop('disabled', true);
+            $('.weight-loss-table :input').prop('disabled', true);
+            $('.weight-gain-table :input').prop('disabled', true);
             $('input[type="radio"][name="nazal"]').prop('disabled', true);
             $('input[type="text"][name="OrogastrikTakilmaTarihi"]').prop('disabled', true);
             $('input[type="text"][name="GastrostomiTarihi"]').prop('disabled', true);
@@ -1184,7 +1407,7 @@ if (isset($_GET['logout'])) {
                     $('#sonda-table :input').prop('disabled', true);
                     $('input[type="radio"][name="nazal"]').prop('disabled', true);
                     $('input[type="text"][name="OrogastrikTakilmaTarihi"]').val('')
-                    $('input[type="text"][name="GastrostomiTarihi"]').val('');
+                    $('input[type="text"][name="tatakem bck to"]').val('');
                     $('input[type="text"][name="JejunostomiTarihi"]').val('');
                     $('input[name=nazal]').val('');
                     $('input[name=nazal]').prop("checked", '');
@@ -1195,6 +1418,91 @@ if (isset($_GET['logout'])) {
                     $('#GastrostomiTarihi').val('');
                 }
             });
+
+            $('#weight-gain-yok, #weight-gain-var').change(function() {
+                if ($(this).prop('checked')) {
+                // Uncheck the other radio button
+                $('#weight-gain-yok, #weight-gain-var').not(this).prop('checked', false);
+                
+                    if ($('#weight-gain-var').prop('checked')){
+                    $('.weight-gain-table :input').prop('disabled', false); 
+                }
+                else {
+                    $('.weight-gain-table :input').prop('disabled', true); 
+                }
+                }
+            });
+
+            $('#weight-loss-yok, #weight-loss-var').change(function() {
+                if ($(this).prop('checked')) {
+                // Uncheck the other radio button
+                $('#weight-loss-yok, #weight-loss-var').not(this).prop('checked', false);
+                
+                    if ($('#weight-loss-var').prop('checked')){
+                    $('.weight-loss-table :input').prop('disabled', false); 
+                }
+                else {
+                    $('.weight-loss-table :input').prop('disabled', true); 
+                }
+                }
+            });
+
+            $('#gastric-residue-yok, #gastric-residue-var').change(function() {
+                if ($(this).prop('checked')) {
+                // Uncheck the other radio button
+                $('#gastric-residue-yok, #gastric-residue-var').not(this).prop('checked', false);
+                
+                    if ($('#gastric-residue-var').prop('checked')){
+                    $('.gastric-residue-table :input').prop('disabled', false); 
+                }
+                else {
+                    $('.gastric-residue-table :input').prop('disabled', true); 
+                }
+                }
+            });
+
+            $('#food-consumption-yok, #food-consumption-var').change(function() {
+                if ($(this).prop('checked')) {
+                // Uncheck the other radio button
+                $('#food-consumption-yok, #food-consumption-var').not(this).prop('checked', false);
+                
+                    if ($('#food-consumption-var').prop('checked')){
+                    $('.food-consumption-table :input').prop('disabled', false); 
+                }
+                else {
+                    $('.food-consumption-table :input').prop('disabled', true); 
+                }
+                }
+            });
+
+            $('#Skar-yok, #Skar-var').change(function() {
+                if ($(this).prop('checked')) {
+                // Uncheck the other radio button
+                $('#Skar-yok, #Skar-var').not(this).prop('checked', false);
+                if ($('#Skar-var').prop('checked')){
+                    $('#Skar-var-input').prop('disabled', false); 
+                }
+                else {
+                    $('#Skar-var-input').prop('disabled', true); 
+                }
+                }
+            });
+
+            $('#herniation-yok, #herniation-var').change(function() {
+                if ($(this).prop('checked')) {
+                // Uncheck the other radio button
+                $('#herniation-yok, #herniation-var').not(this).prop('checked', false);
+                if ($('#herniation-var').prop('checked')){
+                    $('#herniation-var-description').prop('disabled', false); 
+                }
+                else {
+                    $('#herniation-var-description').prop('disabled', true); 
+                }
+                }
+            });
+
+            
+
             $('input[type="radio"][name="probe-type"]').on('change', function() {
                 if ($(this).val() === 'Nazogastrik') {
                     $('input[type="radio"][name="nazal"]').prop('disabled', false);
@@ -1227,193 +1535,95 @@ if (isset($_GET['logout'])) {
             <script>
             $(function() {
                 $('#submit').click(function(e) {
+                    e.preventDefault();
 
-
-                    var valid = this.form.checkValidity();
+                    var valid = checkValidity();
 
                     if (valid) {
-                        var id = <?php
-
-                                        $userid = $_SESSION['userlogin']['id'];
-                                        echo $userid
-                                        ?>;
+                        var id = <?php $userid = $_SESSION['userlogin']['id'];
+                                    echo $userid
+                                    ?>;
                         var OgunSayisi = $('#OgunSayisi').val();
                         var TukettigiBesin = $('#TukettigiBesin').val();
                         var PisirmeYontemi = $('#PisirmeYontemi').val();
                         var Boy = $('#Boy').val();
                         var Kilo = $('#Kilo').val();
                         var BKI = $('#BKI').val();
-                        var karşılamada = $('input[name=karşılamada]:checked').val();
-                        var diyet = $('input[name=diyet]:checked').attr("id") === "NormalDiyet" ? $(
-                            '#NormalDiyet').val() : $('#OzelDiyet').val();
-                        var BeslenmeSekli = $('input[name=şekli]:checked').val();
-                        var passageTarihi = 'sonda-yok';
-                        var probeType = 'probe-yok';
-                        if (BeslenmeSekli === 'Sonda') {
-                            if ($('input[name=probe-type]:checked').val() === 'Nazogastrik') {
-                                if ($('input[name=nazal]:checked').val() === 'Sag Nazal') {
-                                    probeType = "Nazogastrik" + ", Sag Nazal";
-                                    passageTarihi = $('#PasajTakilmaTarihi1').val();
-                                } else {
-                                    probeType = "Nazogastrik" + ", Sol Nazal";
-                                    passageTarihi = $('#PasajTakilmaTarihi2').val();
-                                }
-                            }
-                            if ($('input[name=probe-type]:checked').val() === 'Orogastrik') {
-                                probeType = "Orogastrik";
-                                passageTarihi = $('#OrogastrikTakilmaTarihi').val();
-                            }
-                            if ($('input[name=probe-type]:checked').val() === 'Gastrostomi') {
-                                probeType = "Gastrostomi";
-                                passageTarihi = $('#GastrostomiTarihi').val();
-                            }
-                            if ($('input[name=probe-type]:checked').val() === 'Jejunostomi') {
-                                probeType = "Jejunostomi";
-                                passageTarihi = $('#JejunostomiTarihi').val();
-                            }
-                        }
-                        var NazogastrikRadio = $('input[name=NazogastrikRadio]:checked').val()
-                        var cignemeRadio = $('input[name=cignemeRadio]:checked').val()
-                        var beslenmeIlgili = '';
-                        if ($('input[name=beslenmeIlgili]:checked').val() === "Var") {
-                            beslenmeIlgili = $('input[name="beslenmeIlgiliOptions"]:checked').map(
-                                function() {
-                                    return this.value;
-                                }).get().join(',');
-                        } else {
-                            beslenmeIlgili = 'Sorun Yok';
-                        }
-                        var dudaklarinDurum = '';
-                        if ($('input[name=dudaklarinDurum]:checked').val() === "Var") {
-                            dudaklarinDurum = $('input[name="dudaklarinDurumOptions"]:checked').map(
-                                function() {
-                                    return this.value;
-                                }).get().join(',');
-                        } else {
-                            dudaklarinDurum = 'Sorun Yok';
-                        }
-                        var AgizMukozasi = '';
-                        if ($('input[name=AgizMukozasi]:checked').val() === "Var") {
-                            AgizMukozasi = $('input[name="AgizMukozasiOptions"]:checked').map(
-                        function() {
-                                return this.value;
-                            }).get().join(',');
-                        } else {
-                            AgizMukozasi = 'Sorun Yok';
-                        }
-                        var DislerDisEtleri = '';
-                        if ($('input[name=DislerDisEtleri]:checked').val() === "Var") {
-                            DislerDisEtleri = $('input[name="DislerDisEtleriOptions"]:checked').map(
-                                function() {
-                                    return this.value;
-                                }).get().join(',');
-                        } else {
-                            DislerDisEtleri = 'Sorun Yok';
-                        }
-                        var DilDurum = '';
-                        if ($('input[name=DilDurum]:checked').val() === "Var") {
-                            DilDurum = $('input[name="DilDurumOptions"]:checked').map(function() {
-                                return this.value;
-                            }).get().join(',');
-                        } else {
-                            DilDurum = 'Sorun Yok';
-                        }
-                        var FarenksDurum = '';
-                        if ($('input[name=FarenksDurum]:checked').val() === "Var") {
-                            FarenksDurum = $('input[name="FarenksDurumOptions"]:checked').map(
-                        function() {
-                                return this.value;
-                            }).get().join(',');
-                        } else {
-                            FarenksDurum = 'Sorun Yok';
-                        }
-                        var TonsilaDurum = '';
-                        if ($('input[name=TonsilaDurum]:checked').val() === "Var") {
-                            TonsilaDurum = $('input[name="TonsilaDurumOptions"]:checked').map(
-                        function() {
-                                return this.value;
-                            }).get().join(',');
-                        } else {
-                            TonsilaDurum = 'Sorun Yok';
-                        }
-                        var AbdominalHassasiyet = $('input[name=TonsilaDurum]:checked').val() ===
-                            "Var" ? "Sorun var" : "Sorun Yok";
-                        var AbdominalKontür = $('input[name=AbdominalKontür]:checked').val()
-                        var Herniasyon = $('input[name=Herniasyon]:checked').val() === "Yok" ?
-                            "Sorun Yok" : $('#HDiger').val();
-                        var Umbilikus = $('input[name=Umbilikus]:checked').val()
-                        var AbdomenDokuntu = $('input[name=AbdomenDokuntu]:checked').val()
-                        var Asit = $('#Asit').val();
-                        var Kitle = '';
-                        if ($('input[name=Kitle]:checked').val() === "Yeri") {
-                            $('#YDiger').val();
-                        }
-                        if ($('input[name=Kitle]:checked').val() === "Buyuklugu") {
-                            $('#BDiger').val();
-                        }
-                        if ($('input[name=Kitle]:checked').val() === "Ozelligi") {
-                            $('#ODiger').val();
-                        }
-                        var KarinDerisi = $('input[name=KarinDerisi]:checked').val()
+                        var karsilamada = $('input[name="karşılamada"]:checked').val();
 
-                        var Stria = $('input[name=Stria]:checked').val() === 'Var' ? $(
-                            'input[name=StriaDiger]').val() : "Stria Yok";
 
-                        e.preventDefault()
 
                         $.ajax({
-                            type: 'POST',
-                            url: '<?php echo $base_url; ?>student-patient.php',
-                            data: {
-                                OgunSayisi: OgunSayisi,
-                                TukettigiBesin: TukettigiBesin,
-                                PisirmeYontemi: PisirmeYontemi,
-                                Boy: Boy,
-                                Kilo: Kilo,
-                                BKI: BKI,
-                                karşılamada: karşılamada,
-                                diyet: diyet,
-                                BeslenmeSekli: BeslenmeSekli,
-                                passageTarihi: passageTarihi,
-                                probeType: probeType,
-                                NazogastrikRadio: NazogastrikRadio,
-                                cignemeRadio: cignemeRadio,
-                                beslenmeIlgili: beslenmeIlgili,
-                                dudaklarinDurum: dudaklarinDurum,
-                                AgizMukozasi: AgizMukozasi,
-                                DislerDisEtleri: DislerDisEtleri,
-                                DilDurum: DilDurum,
-                                FarenksDurum: FarenksDurum,
-                                TonsilaDurum: TonsilaDurum,
-                                AbdominalHassasiyet: AbdominalHassasiyet,
-                                AbdominalKontür: AbdominalKontür,
-                                Herniasyon: Herniasyon,
-                                Umbilikus: Umbilikus,
-                                AbdomenDokuntu: AbdomenDokuntu,
-                                Asit: Asit,
-                                Kitle: Kitle,
-                                KarinDerisi: KarinDerisi,
-                                Stria: Stria
-                            },
-                            success: function(data) {
-                                alert("Başarılı");
-                                location.reload(true)
-                            },
-                            error: function(data) {
-                                Swal.fire({
-                                    'title': 'Errors',
-                                    'text': 'There were errors',
-                                    'type': 'error'
-                                })
-                            }
-                        })
-
-
+                        type: 'POST',
+                        url: '<?php echo $base_url; ?>/submitOrUpdateYasamsal_form10.php',
+                        data: {
+                            isUpdate: false,
+                            id: id,
+                            name: name,
+                            surname: surname,
+                            
+                        },
+                        success: function(data) {
+                            alert("Güncelleme Başarılı!");
+                            let url =
+                                "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
+                                patient_id + "&patient_name=" + encodeURIComponent(patient_name);
+                            $("#content").load(url);
+                        },
+                        error: function(data) {
+                            console.log(data)
+                        }
+                })
 
                     }
+                    else {
+                        alert("Lütfen formu eksiksiz doldurunuz!");
+                    }
+
                 })
 
             });
+
+            function checkValidity(){
+                //Günlük öğün sayısı/zamanı
+                if($('#OgunSayisi').val() == ""){
+                    return false;
+                }
+                //Ağırlıklı olarak tükettiğiniz besinler nelerdir?
+                if($('#TukettigiBesin').val() == ""){
+                    return false;
+                }
+
+                //Sıklıkla kullandığınız pişirme yöntemleri nelerdir?
+                if($('#PisirmeYontemi').val() == ""){
+                    return false;
+                }
+
+                //Boy 
+                if($('#Boy').val() == ""){
+                    return false;
+                }
+                //Kilo
+                if($('#Kilo').val() == ""){
+                    return false;
+                }
+                //BKI
+                if($('#BKI').val() == ""){
+                    return false;
+                }
+                //Beslenme gereksinimini karşılamada
+                if (!($('#Bagimsiz').is(':checked') || $('#YariBagimli').is(':checked') || $('#Bagimli').is(':checked'))) {
+                return false;
+                }
+                //Diyet NormalDiyet
+                if(!$('#NormalDiyet').is(':checked')){
+                    if($('#OzelDiyet').val() == ""){
+                        return false;
+                    }
+                }
+
+                return true;
+            }
             </script>
             <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
