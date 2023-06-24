@@ -50,6 +50,7 @@ if (isset($_GET['logout'])) {
                         <div class="input-section-item" style="justify-content:space-between; padding: 5%">
                             <p class="usernamelabel" style="font-weight: bold;">Risk Faktörleri (Uyaranın algılanması,
                                 basınca karşı oluşan rahatsızlığın algılanması)</p>
+                            <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between;">
@@ -96,6 +97,7 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section-item" style="justify-content:space-between; padding: 5%">
                             <p class="usernamelabel" style="font-weight: bold;">Nemlilik (Vücudun nemliliği)</p>
+                            <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between;">
@@ -144,6 +146,7 @@ if (isset($_GET['logout'])) {
                         <div class="input-section-item" style="justify-content:space-between; padding: 5%">
                             <p class="usernamelabel" style="font-weight: bold;">Aktivite (Fiziksel aktivitenin derecesi)
                             </p>
+                            <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between;">
@@ -193,6 +196,7 @@ if (isset($_GET['logout'])) {
                         <div class="input-section-item" style="justify-content:space-between; padding: 5%">
                             <p class="usernamelabel" style="font-weight: bold;">Hareket (Pozisyonunu değiştirme ve
                                 kontrol edebilme)</p>
+                            <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between;">
@@ -239,6 +243,7 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section-item" style="justify-content:space-between; padding: 5%">
                             <p class="usernamelabel" style="font-weight: bold;">Beslenme (Beslenme Alışkanlığı)</p>
+                            <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between;">
@@ -297,6 +302,7 @@ if (isset($_GET['logout'])) {
                         <div class="input-section-item" style="justify-content:space-between; padding: 5%">
                             <p class="usernamelabel" style="font-weight: bold;">Risk Faktörleri(Uyaranın algılanması,
                                 basınca karşı oluşan rahatsızlığın algılanması)</p>
+                            <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between;">
@@ -378,88 +384,140 @@ if (isset($_GET['logout'])) {
         $(function() {
             $('#submit').click(function(e) {
                 e.preventDefault()
-                var valid = this.form.checkValidity();
 
-                if (valid) {
-                    var id = <?php
+                if (!$('[name="RiskFaktörleri"]').is(':checked')) {
+                    $('.option-error').css('display', 'none');
+                    $('html, body').animate({
+                                scrollTop: $('[name="RiskFaktörleri"]').first().offset().top
+                            }, 200);
+                            // Display error message
+                    $('[name="RiskFaktörleri"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                    return false;
+                } else if (!$('[name="nemlilik"]').is(':checked')) {
+                    $('.option-error').css('display', 'none');
+                    $('html, body').animate({
+                                scrollTop: $('[name="nemlilik"]').first().offset().top
+                            }, 200);
+                            // Display error message
+                    $('[name="nemlilik"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                    return false;
+                } else if (!$('[name="aktivite"]').is(':checked')) {
+                    $('.option-error').css('display', 'none');
+                    $('html, body').animate({
+                                scrollTop: $('[name="aktivite"]').first().offset().top
+                            }, 200);
+                            // Display error message
+                    $('[name="aktivite"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                    return false;
+                } else if (!$('[name="hareket"]').is(':checked')) {
+                    $('.option-error').css('display', 'none');
+                    $('html, body').animate({
+                                scrollTop: $('[name="hareket"]').first().offset().top
+                            }, 200);
+                            // Display error message
+                    $('[name="hareket"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                    return false;
+                } else if (!$('[name="beslenme"]').is(':checked')) {
+                    $('.option-error').css('display', 'none');
+                    $('html, body').animate({
+                                scrollTop: $('[name="beslenme"]').first().offset().top
+                            }, 200);
+                            // Display error message
+                    $('[name="beslenme"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                    return false;
+                } else if (!$('[name="SurtunmeTahris"]').is(':checked')) {
+                    $('.option-error').css('display', 'none');
+                    $('html, body').animate({
+                                scrollTop: $('[name="SurtunmeTahris"]').first().offset().top
+                            }, 200);
+                            // Display error message
+                    $('[name="SurtunmeTahris"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                    return false;
+                } else {
 
-                                $userid = $_SESSION['userlogin']['id'];
-                                echo $userid
-                                ?>;
-                    var name = $('#name').val();
-                    var surname = $('#surname').val();
-                    var age = $('#age').val();
-                    var not = $('#not').val();
-                    let form_num = 6;
-                    let yourDate = new Date()
-                    let patient_name = "<?php
-                                        echo urldecode($_GET['patient_name']);
-                                        ?>";
-                    let patient_id = "<?php
-                                        echo ($_GET['patient_id']);
-                                        ?>";
-                    let creation_date = yourDate.toISOString().split('T')[0];
-                    let update_date = yourDate.toISOString().split('T')[0];
-                    let sensory_perception = parseInt($(
-                        "input[type='radio'][name='RiskFaktörleri']:checked").val());
-                    let moisture = parseInt($("input[type='radio'][name='nemlilik']:checked").val());
-                    let activity = parseInt($("input[type='radio'][name='aktivite']:checked").val());
-                    let mobility = parseInt($("input[type='radio'][name='hareket']:checked").val());
-                    let nutrition = parseInt($("input[type='radio'][name='beslenme']:checked").val());
-                    let discomfort = parseInt($("input[type='radio'][name='SurtunmeTahris']:checked")
-                        .val());
-                    let total = sensory_perception + mobility + activity + moisture + nutrition +
-                        discomfort;
-                    let risk;
-                    if (total <= 12) risk = "Risk Yok";
-                    else if (total <= 14) risk = "Orta Risk";
-                    else risk = "Yüksek Risk";
+                    var valid = this.form.checkValidity();
+
+                    if (valid) {
+                        var id = <?php
+
+                                    $userid = $_SESSION['userlogin']['id'];
+                                    echo $userid
+                                    ?>;
+                        var name = $('#name').val();
+                        var surname = $('#surname').val();
+                        var age = $('#age').val();
+                        var not = $('#not').val();
+                        let form_num = 6;
+                        let yourDate = new Date()
+                        let patient_name = "<?php
+                                            echo urldecode($_GET['patient_name']);
+                                            ?>";
+                        let patient_id = "<?php
+                                            echo ($_GET['patient_id']);
+                                            ?>";
+                        let creation_date = yourDate.toISOString().split('T')[0];
+                        let update_date = yourDate.toISOString().split('T')[0];
+                        let sensory_perception = parseInt($(
+                            "input[type='radio'][name='RiskFaktörleri']:checked").val());
+                        let moisture = parseInt($("input[type='radio'][name='nemlilik']:checked").val());
+                        let activity = parseInt($("input[type='radio'][name='aktivite']:checked").val());
+                        let mobility = parseInt($("input[type='radio'][name='hareket']:checked").val());
+                        let nutrition = parseInt($("input[type='radio'][name='beslenme']:checked").val());
+                        let discomfort = parseInt($("input[type='radio'][name='SurtunmeTahris']:checked")
+                            .val());
+                        let total = sensory_perception + mobility + activity + moisture + nutrition +
+                            discomfort;
+                        let risk;
+                        if (total <= 12) risk = "Risk Yok";
+                        else if (total <= 14) risk = "Orta Risk";
+                        else risk = "Yüksek Risk";
 
 
-                    $.ajax({
-                        type: 'POST',
-                        url: '<?php echo $base_url; ?>/submitOrUpdateForm6.php/',
-                        data: {
-                            id: id,
-                            name: name,
-                            surname: surname,
-                            age: age,
-                            not: not,
-                            form_num: form_num,
-                            patient_name: patient_name,
-                            patient_id: patient_id,
-                            creation_date: creation_date,
-                            update_date: update_date,
-                            sensory_perception: sensory_perception,
-                            moisture: moisture,
-                            activity: activity,
-                            mobility: mobility,
-                            nutrition: nutrition,
-                            discomfort: discomfort,
-                            total: total,
-                            risk: risk
+                        $.ajax({
+                            type: 'POST',
+                            url: '<?php echo $base_url; ?>/form-handlers/submitOrUpdateForm6.php/',
+                            data: {
+                                id: id,
+                                name: name,
+                                surname: surname,
+                                age: age,
+                                not: not,
+                                form_num: form_num,
+                                patient_name: patient_name,
+                                patient_id: patient_id,
+                                creation_date: creation_date,
+                                update_date: update_date,
+                                sensory_perception: sensory_perception,
+                                moisture: moisture,
+                                activity: activity,
+                                mobility: mobility,
+                                nutrition: nutrition,
+                                discomfort: discomfort,
+                                total: total,
+                                risk: risk
 
 
-                        },
-                        success: function(data) {
-                            alert(data);
-                            let url =
-                                "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
-                                patient_id + "&patient_name=" + encodeURIComponent(
-                                    patient_name);
-                            $("#content").load(url);
-                        },
-                        error: function(data) {
-                            Swal.fire({
-                                'title': 'Errors',
-                                'text': 'There were errors',
-                                'type': 'error'
-                            })
-                        }
-                    })
+                            },
+                            success: function(data) {
+                                alert(data);
+                                let url =
+                                    "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
+                                    patient_id + "&patient_name=" + encodeURIComponent(
+                                        patient_name);
+                                $("#content").load(url);
+                            },
+                            error: function(data) {
+                                Swal.fire({
+                                    'title': 'Errors',
+                                    'text': 'There were errors',
+                                    'type': 'error'
+                                })
+                            }
+                        })
 
 
 
+                    }
                 }
             })
 

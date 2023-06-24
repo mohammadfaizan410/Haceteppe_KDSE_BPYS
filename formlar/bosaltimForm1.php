@@ -41,7 +41,7 @@ if (isset($_GET['logout'])) {
 
 </head>
 <div class="send-patient ta-center">
-    <span class='close closeBtn' id='closeBtn'>&times;</span>
+    <span class='close closeBtn' id='closeBtn1'>&times;</span>
     <h1 class="form-header">BOŞALTIM GEREKSİNİMİ </h1>
     <div class=" patients-save">
         <form action="" method="" class="patients-save-fields">
@@ -648,18 +648,19 @@ if (isset($_GET['logout'])) {
 </div>
 <script>
 $(function() {
-    $('#closeBtn').click(function(e) {
+    $('#closeBtn1').click(function(e) {
+        e.preventDefault();
+        console.log("close btn clicked");
         let patient_id = <?php
-                                $userid = $_GET['patient_id'];
-                                echo $userid
-                                ?>;
+                                    $userid = $_GET['patient_id'];
+                                    echo $userid
+                                    ?>;
         let patient_name = "<?php
-                                echo urldecode($_GET['patient_name']);
-                                ?>";
+                                    echo urldecode($_GET['patient_name']);
+                                    ?>";
         var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
             "&patient_name=" + encodeURIComponent(patient_name);
         $("#content").load(url);
-
     })
 });
 </script>
@@ -743,7 +744,7 @@ $(function() {
 
             $.ajax({
                 type: 'POST',
-                url: '<?php echo $base_url; ?>/SubmitOrUpdateForm1_Bosaltim.php',
+                url: '<?php echo $base_url; ?>/form-handlers/SubmitOrUpdateForm1_Bosaltim.php',
                 data: {
                     protezlertable: protezlertable,
                     sikligi: sikligi,

@@ -1,28 +1,29 @@
+
 <?php
-require_once("config-students.php");
+require_once("../config-students.php");
 ?>
 <?php
 
 if (isset($_POST["patient_name"])) {
     if (isset($_POST['isUpdate'])) {
-        $stmt = $db->prepare("UPDATE form13
-        SET
+        $stmt = $db->prepare("UPDATE form12 SET
+        patient_name = ?,
         update_date = ?,
-        delivery_date = ?,
+        liquid_type = ?,
+        liquid_velocity = ?,
         delivery_time = ?,
-        medicine_name = ?,
-        medicine_dose = ?,
-        delivery_method = ?,
-        treatment_timeRange = ?
+        liquid_level = ?,
+        liquid_sent = ?
         WHERE form_id = ?");
-        $result =  $stmt->execute([
+
+        $result = $stmt->execute([
+            $_POST["patient_name"],
             $_POST["creation_date"],
-            $_POST["delivery_date"],
+            $_POST["liquid_type"],
+            $_POST["liquid_velocity"],
             $_POST["delivery_time"],
-            $_POST["medicine_name"],
-            $_POST["medicine_dose"],
-            $_POST["delivery_method"],
-            $_POST["treatment_timeRange"],
+            $_POST["liquid_level"],
+            $_POST["liquid_sent"],
             $_POST["form_id"]
         ]);
         if ($result) {
@@ -31,31 +32,29 @@ if (isset($_POST["patient_name"])) {
             echo $result;
         }
     } else {
-        $stmt = $db->prepare("INSERT INTO form13 (
+        $stmt = $db->prepare("INSERT INTO form12 (
                 form_num,
                 patient_name,
                 patient_id,
                 creation_date,
                 update_date,
-                delivery_date,
+                liquid_type,
+                liquid_velocity,
                 delivery_time,
-                medicine_name,
-                medicine_dose,
-                delivery_method,
-                treatment_timeRange
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                liquid_level,
+                liquid_sent
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         $result =  $stmt->execute([
             $_POST["form_num"],
             $_POST["patient_name"],
             $_POST["patient_id"],
             $_POST["creation_date"],
             $_POST["update_date"],
-            $_POST["delivery_date"],
+            $_POST["liquid_type"],
+            $_POST["liquid_velocity"],
             $_POST["delivery_time"],
-            $_POST["medicine_name"],
-            $_POST["medicine_dose"],
-            $_POST["delivery_method"],
-            $_POST["treatment_timeRange"]
+            $_POST["liquid_level"],
+            $_POST["liquid_sent"]
         ]);
         if ($result) {
             echo "Ekleme Başarılı";

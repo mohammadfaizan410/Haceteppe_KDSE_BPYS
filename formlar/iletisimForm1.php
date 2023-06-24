@@ -48,17 +48,18 @@ if (isset($_GET['logout'])) {
 
         ?>
         <div class="send-patient ta-center">
-            <span class='close closeBtn' id='closeBtn'>&times;</span>
+            <span class='close closeBtn' id='closeBtn1'>&times;</span>
             <h1 class="form-header">İLETİŞİM KURMA GEREKSİNİMİ</h1>
 
 
 
             <div class="input-section d-flex">
                 <p class="usernamelabel">İletişim kurmasına engel olan herhangi bir durum</p>
+                <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="communicationProblem" id="IletisimEngeli"
+                            <input class="form-check-input" type="radio" name="communicationProblem" id="communicationProblem"
                                 value="Yok">
                             <label class="form-check-label" for="IletisimEngeli">
                                 <span class="checkbox-header">Yok</span>
@@ -66,44 +67,47 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="communicationProblem" id="IletisimEngeli"
+                            <input class="form-check-input" type="radio" name="communicationProblem" id="communicationProblem"
                                 value="Var">
                             <label class="form-check-label" for="IletisimEngeli">
                                 <span class="checkbox-header">Var: (Açıklayınız)</span>
                             </label>
                             <input type="text" class="form-control diger" disabled name="communicationProblemInput"
-                                id="IletisimEngeliDiger">
+                                id="communicationProblemInput">
                         </div>
                     </div>
                 </div>
             </div>
             <div class="input-section d-flex">
                 <p class="usernamelabel">Refakatçisi</p>
+                <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="companion" id="refakatci" value="Yok">
+                            <input class="form-check-input" type="radio" name="companion" id="companion" value="Yok">
                             <label class="form-check-label" for="refakatci">
                                 <span class="checkbox-header">Yok</span>
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="companion" id="refakatci" value="Var">
+                            <input class="form-check-input" type="radio" name="companion" id="companion" value="Var">
                             <label class="form-check-label" for="refakatci">
                                 <span class="checkbox-header">Var: (Açıklayınız)</span>
                             </label>
-                            <input type="text" class="form-control diger" disabled name="companionInput" id="refakatciDiger">
+                            <input type="text" class="form-control diger" disabled name="companionInput" id="companionInput">
                         </div>
                     </div>
                 </div>
             </div>
             <div class="input-section d-flex">
                 <p class="usernamelabel">Yakınlarına ulaşmada sıkıntısı</p>
+                <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
+
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="reachTrouble" id="UlasmaSikinti"
+                            <input class="form-check-input" type="radio" name="reachTrouble" id="reachTrouble"
                                 value="Yok">
                             <label class="form-check-label" for="UlasmaSikinti">
                                 <span class="checkbox-header">Yok</span>
@@ -111,24 +115,26 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="reachTrouble" id="UlasmaSikinti"
+                            <input class="form-check-input" type="radio" name="reachTrouble" id="reachTrouble"
                                 value="Var">
                             <label class="form-check-label" for="UlasmaSikinti">
                                 <span class="checkbox-header">Var: (Açıklayınız)</span>
                             </label>
                             <input type="text" class="form-control diger" name="reachTroubleInput" disabled
-                                id="UlasmaSikintiDiger">
+                                id="reachTroubleInput">
                         </div>
                     </div>
                 </div>
             </div>
             <div class="input-section d-flex">
                 <p class="usernamelabel">Sağlık personeli ile iletişime geçmede sorun</p>
+                <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
+
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="contactingStaffTrouble"
-                                id="PersonelleIletisim" value="Yok">
+                                id="contactingStaffTrouble" value="Yok">
                             <label class="form-check-label" for="PersonelleIletisim">
                                 <span class="checkbox-header">Yok</span>
                             </label>
@@ -136,12 +142,12 @@ if (isset($_GET['logout'])) {
 
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="contactingStaffTrouble"
-                                id="PersonelleIletisim" value="Var">
+                                id="contactingStaffTrouble" value="Var">
                             <label class="form-check-label" for="PersonelleIletisim">
                                 <span class="checkbox-header">Var: (Açıklayınız)</span>
                             </label>
                             <input type="text" class="form-control diger" name="contactingStaffTroubleInput" disabled
-                                id="PersonelleIletisimDiger">
+                                id="contactingStaffTroubleInput">
                         </div>
                     </div>
                 </div>
@@ -154,10 +160,11 @@ if (isset($_GET['logout'])) {
             <div class="input-section d-flex">
 
                 <p class="usernamelabel">Bakıma katılma </p>
+                <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="careAcceptance" id="BakımaKatılma"
+                            <input class="form-check-input" type="radio" name="careAcceptance" id="careAcceptance"
                                 value="Katılmıyor">
                             <label class="form-check-label" for="BakımaKatılma">
                                 <span class="checkbox-header">Katılmıyor </span>
@@ -191,11 +198,10 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="careAcceptance" id="BakımaKatılma"
+                            <input class="form-check-input" type="radio" name="careAcceptance" id="careAcceptance"
                                 value="Katılıyor">
                             <label class="form-check-label" for="BakımaKatılma">
                                 <span class="checkbox-header"> Katılıyor</span>
-
                             </label>
                             <table class="ozgecmistable-wrapper">
                                 <tbody>
@@ -256,14 +262,28 @@ if (isset($_GET['logout'])) {
                         </div>
                     </div>
                 </div>
-                <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
+                <input class="form-control submit m-auto " type='submit' name="submit" id="submit" value="Kayıt">
+             </form>
+                </div>
             </div>
+        </div>
+    </div>
             <script>
             $(function() {
-                $('#closeBtn').click(function(e) {
-                    $("#content").load("formlar-student.php");
-
-                })
+                        $('#closeBtn1').click(function(e) {
+                e.preventDefault();
+                console.log("close btn clicked");
+                let patient_id = <?php
+                                            $userid = $_GET['patient_id'];
+                                            echo $userid
+                                            ?>;
+                let patient_name = "<?php
+                                            echo urldecode($_GET['patient_name']);
+                                            ?>";
+                var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
+                    "&patient_name=" + encodeURIComponent(patient_name);
+                $("#content").load(url);
+            })
             });
 
 
@@ -334,6 +354,7 @@ if (isset($_GET['logout'])) {
             <script>
             $(function() {
                 $('#submit').click(function(e) {
+                    e.preventDefault()
 
 
 
@@ -363,13 +384,163 @@ if (isset($_GET['logout'])) {
                             let treatmentAcceptance = $("input[name='treatmentAcceptance']:checked").val() === "Kabul etmiyor" ? $('input[name="treatmentAcceptanceInput"]').val() : "Kabul ediyor";
 
                             console.log("communication problem:", communicationProblem, "companion:", companion, "reach trouble:", reachTrouble, "contacting staff trouble:", contactingStaffTrouble, "care acceptance:", careAcceptance, "care acceptance willing:", careAcceptanceWilling, "care acceptance non:", careAcceptanceNon, "treatment acceptance:", treatmentAcceptance )
+                                       //set border color normal
+                            $('.form-control').css('border-color', '#ced4da');
+                            //set all error messages to none
+                                $('.option-error').css('display', 'none');
+                            //custom validation
+                            // if($('#iv_input1').val() === ""){
+                            //     //scroll to iv_input1
+                                // $('html, body').animate({
+                                //     scrollTop: $("#iv_input1").offset().top
+                                // }, 200);
+                            //     //change border color
+                                // $('#iv_input1').css('border-color', 'red');
+                                // //stop function
+                                // return false;
+                            // }
 
+                //             if($('.form-check-input[name="time_range"]:checked').length === 0){
+                //     // Scroll to time_range
+                //     $('html, body').animate({
+                //         scrollTop: $('.form-check-input[name="time_range"]').first().offset().top
+                //     }, 200);
+                //     // Display error message
+                //     $('.form-check-input[name="time_range"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                //     return false;
+                // }
 
-                        e.preventDefault()
+                if($(".form-check-input[name='communicationProblem']:checked").length === 0){
+                    // Scroll to communicationProblem
+                    $('html, body').animate({
+                        scrollTop: $("input[name='communicationProblem']").first().offset().top
+                    }, 200);
+                    // Display error message
+                    $(".form-check-input[name='communicationProblem']").first().closest('.input-section').find('.option-error').css('display', 'block');
+                    return false;
+                }
+                if($(".form-check-input[name='communicationProblem']:checked").length !== 0 && $('input[name="communicationProblemInput"]').val() === "" ){
+                    //Scroll to communicationProblemInput
+                    $('html, body').animate({
+                                    scrollTop: $("#communicationProblemInput").offset().top
+                                }, 200);
+                    // change border color
+                    $('#communicationProblemInput').css('border-color', 'red');
+                                //stop function
+                                return false;
+                }
+
+                if($(".form-check-input[name='companion']:checked").length === 0){
+                    // Scroll to companion
+                    $('html, body').animate({
+                        scrollTop: $("input[name='companion']").first().offset().top
+                    }, 200);
+                    // Display error message
+                    $(".form-check-input[name='companion']").first().closest('.input-section').find('.option-error').css('display', 'block');
+                    return false;
+                }
+                if($(".form-check-input[name='companion']:checked").length !== 0 && $('input[name="companionInput"]').val() === "" ){
+                    //Scroll to companionInput
+                    $('html, body').animate({
+                                    scrollTop: $("#companionInput").offset().top
+                                }, 200);
+                    // change border color
+                    $('#companionInput').css('border-color', 'red');
+                                //stop function
+                                return false;
+                }
+
+                if($(".form-check-input[name='reachTrouble']:checked").length === 0){
+                    // Scroll to reachTrouble
+                    $('html, body').animate({
+                        scrollTop: $("input[name='reachTrouble']").first().offset().top
+                    }, 200);
+                    // Display error message
+                    $(".form-check-input[name='reachTrouble']").first().closest('.input-section').find('.option-error').css('display', 'block');
+                    return false;
+                }
+                if($(".form-check-input[name='reachTrouble']:checked").length !== 0 && $('input[name="reachTroubleInput"]').val() === "" ){
+                    //Scroll to reachTroubleInput
+                    $('html, body').animate({
+                                    scrollTop: $("#reachTroubleInput").offset().top
+                                }, 200);
+                    // change border color
+                    $('#reachTroubleInput').css('border-color', 'red');
+                                //stop function
+                                return false;
+                }
+
+                if($(".form-check-input[name='contactingStaffTrouble']:checked").length === 0){
+                    // Scroll to contactingStaffTrouble
+                    $('html, body').animate({
+                        scrollTop: $("input[name='contactingStaffTrouble']").first().offset().top
+                    }, 200);
+                    // Display error message
+                    $(".form-check-input[name='contactingStaffTrouble']").first().closest('.input-section').find('.option-error').css('display', 'block');
+                    return false;  
+                }
+                if($(".form-check-input[name='contactingStaffTrouble']:checked").length !== 0 && $('input[name="contactingStaffTroubleInput"]').val() === "" ){
+                    //Scroll to contactingStaffTroubleInput
+                    $('html, body').animate({
+                                    scrollTop: $("#contactingStaffTroubleInput").offset().top
+                                }, 200);
+                    // change border color
+                    $('#contactingStaffTroubleInput').css('border-color', 'red');
+                                //stop function
+                                return false;
+                }
+
+                if($(".form-check-input[name='careAcceptance']:checked").length === 0){
+                    // Scroll to careAcceptance
+                    $('html, body').animate({
+                        scrollTop: $("input[name='careAcceptance']").first().offset().top
+                    }, 200);
+                    // Display error message
+                    $(".form-check-input[name='careAcceptance']").first().closest('.input-section').find('.option-error').css('display', 'block');
+                    return false;
+                }
+                if($(".form-check-input[name='careAcceptance']:checked").length === 0 && $("input[name='careAcceptance']:checked").val() === "Katılmıyor" && $("input[name='careAcceptanceWilling']:checked").length === 0){
+                    // Scroll to careAcceptanceWilling
+                        $('html, body').animate({
+                        scrollTop: $("input[name='careAcceptance']").first().offset().top
+                    }, 200);
+                    // Display error message
+                    $(".form-check-input[name='careAcceptance']").first().closest('.input-section').find('.option-error').css('display', 'block');
+                    return false;
+                }
+                if($(".form-check-input[name='careAcceptance']:checked").length === 0 && $("input[name='careAcceptance']:checked").val() === "Katılıyor" && $("input[name='careAcceptanceWilling']:checked").length === 0){
+                    // Scroll to careAcceptanceWilling
+                        $('html, body').animate({
+                        scrollTop: $("input[name='careAcceptance']").first().offset().top
+                    }, 200);
+                    // Display error message
+                    $(".form-check-input[name='careAcceptance']").first().closest('.input-section').find('.option-error').css('display', 'block');
+                    return false;
+                }
+
+                if($(".form-check-input[name='treatmentAcceptance']:checked").length === 0){
+                    // Scroll to treatmentAcceptance
+                    $('html, body').animate({
+                        scrollTop: $("input[name='treatmentAcceptance']").first().offset().top
+                    }, 200);
+                    // Display error message
+                    $(".form-check-input[name='treatmentAcceptance']").first().closest('.input-section').find('.option-error').css('display', 'block');
+                    return false;
+                }
+                if($(".form-check-input[name='treatmentAcceptance']:checked").length !== 0 && $('input[name="treatmentAcceptanceInput"]').val() === "" ){
+                    //Scroll to treatmentAcceptanceInput
+                    $('html, body').animate({
+                                    scrollTop: $("#treatmentAcceptanceInput").offset().top
+                                }, 200);
+                    // change border color
+                    $('#treatmentAcceptanceInput').css('border-color', 'red');
+                                //stop function
+                                return false;
+                }
 
                         $.ajax({
                             type: 'POST',
-                            url: '<?php echo $base_url; ?>/SubmitOrUpdateForm1_Iletisim.php',
+                            url: '<?php echo $base_url; ?>/form-handlers/SubmitOrUpdateForm1_Iletisim.php',
                             data: {
                                 patient_id: patient_id,
                                 patient_name: patient_name,
@@ -400,11 +571,12 @@ if (isset($_GET['logout'])) {
                                     'text': 'There were errors',
                                     'type': 'error'
                                 })
-                            }
+                                }
+                            })
+                
                         })
                 })
 
-            });
             </script>
             <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>

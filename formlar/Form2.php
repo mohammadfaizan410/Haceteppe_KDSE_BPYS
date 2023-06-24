@@ -56,6 +56,7 @@ if (isset($_GET['logout'])) {
                             style="width:67%; height:auto;border: 1px solid;border-color: #246174; box-shadow:1px 1px 1px 1px #246174; border-radius: 20px;">
                         <div class="input-section d-flex" style="padding-top: 5%;">
                             <p class="usernamelabel">Ağrının Şiddeti:</p>
+                            <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="AgriSiddeti" id="AgriSiddeti"
                                     value="0. Yok">
@@ -102,6 +103,7 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Ağrının Süresi:</p>
+                            <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="AgriSuresi" id="AgriSuresi"
                                     value="option1">
@@ -177,72 +179,126 @@ if (isset($_GET['logout'])) {
     $(function() {
         $('#submit').click(function(e) {
             e.preventDefault()
-            var valid = this.form.checkValidity();
-            if (valid) {
-                let name = $('#name').val();
-                let surname = $('#surname').val();
-                let age = $('#age').val();
-                let not = $('#not').val();
+            if (!$('[name="AgriSiddeti"]').is(':checked')) {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                            scrollTop: $('[name="AgriSiddeti"]').first().offset().top
+                        }, 200);
+                        // Display error message
+                $('[name="AgriSiddeti"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                return false;
+            } else if (!$('[name="AgriSuresi"]').is(':checked')) {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                            scrollTop: $('[name="AgriSuresi"]').first().offset().top
+                        }, 200);
+                        // Display error message
+                    $('[name="AgriSuresi"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                    return false;
+            } else if ($('[name="pain_location"]').val() === "") {
+                $('html, body').animate({
+                            scrollTop: $('[name="pain_location"]').offset().top
+                        }, 200);
+                        //change border color
+                $('[name="pain_location"]').css('border-color', 'red');
+                return false
+            } else if ($('[name="pain_character"]').val() === "") {
+                $('html, body').animate({
+                            scrollTop: $('[name="pain_character"]').offset().top
+                        }, 200);
+                        //change border color
+                $('[name="pain_character"]').css('border-color', 'red');
+                return false
+            } else if ($('[name="pain_frequency"]').val() === "") {
+                $('html, body').animate({
+                            scrollTop: $('[name="pain_frequency"]').offset().top
+                        }, 200);
+                        //change border color
+                $('[name="pain_frequency"]').css('border-color', 'red');
+                return false
+            } else if ($('[name="pain_increase_factors"]').val() === "") {
+                $('html, body').animate({
+                            scrollTop: $('[name="pain_increase_factors"]').offset().top
+                        }, 200);
+                        //change border color
+                $('[name="pain_increase_factors"]').css('border-color', 'red');
+                return false
+            } else if ($('[name="pain_decrease_factors"]').val() === "") {
+                $('html, body').animate({
+                            scrollTop: $('[name="pain_decrease_factors"]').offset().top
+                        }, 200);
+                        //change border color
+                $('[name="pain_decrease_factors"]').css('border-color', 'red');
+                return false
+            } else {
 
-                var patient_id = <?php
-                                        $userid = $_GET['patient_id'];
-                                        echo $userid
-                                        ?>;
-                let patient_name = "<?php
-                                        echo urldecode($_GET['patient_name']);
-                                        ?>";
-                let yourDate = new Date()
-                let creation_date = yourDate.toISOString().split('T')[0];
-                let updateDate = yourDate.toISOString().split('T')[0];
-                let fileNo = 2;
-                let painIntensity = $("input[type='radio'][name='AgriSiddeti']:checked").val();
-                let painDuration = $("input[type='radio'][name='AgriSuresi']:checked").val() ===
-                    "option1" ? "Less than 6 months" : "More than 6 months";
-                let pain_location = $('input[name="pain_location"]').val();
-                let pain_character = $('input[name="pain_character"]').val();
-                let pain_frequency = $('input[name="pain_frequency"]').val();
-                let pain_increase_factors = $('input[name="pain_increase_factors"]').val();
-                let pain_decrease_factors = $('input[name="pain_decrease_factors"]').val();
-                console.log(pain_decrease_factors)
+                var valid = this.form.checkValidity();
+                if (valid) {
+                    let name = $('#name').val();
+                    let surname = $('#surname').val();
+                    let age = $('#age').val();
+                    let not = $('#not').val();
+
+                    var patient_id = <?php
+                                            $userid = $_GET['patient_id'];
+                                            echo $userid
+                                            ?>;
+                    let patient_name = "<?php
+                                            echo urldecode($_GET['patient_name']);
+                                            ?>";
+                    let yourDate = new Date()
+                    let creation_date = yourDate.toISOString().split('T')[0];
+                    let updateDate = yourDate.toISOString().split('T')[0];
+                    let fileNo = 2;
+                    let painIntensity = $("input[type='radio'][name='AgriSiddeti']:checked").val();
+                    let painDuration = $("input[type='radio'][name='AgriSuresi']:checked").val() ===
+                        "option1" ? "Less than 6 months" : "More than 6 months";
+                    let pain_location = $('input[name="pain_location"]').val();
+                    let pain_character = $('input[name="pain_character"]').val();
+                    let pain_frequency = $('input[name="pain_frequency"]').val();
+                    let pain_increase_factors = $('input[name="pain_increase_factors"]').val();
+                    let pain_decrease_factors = $('input[name="pain_decrease_factors"]').val();
+                    console.log(pain_decrease_factors)
 
 
 
-                $.ajax({
-                    type: 'POST',
-                    url: '<?php echo $base_url; ?>/submitOrUpdateForm2.php',
-                    data: {
-                        patient_id: patient_id,
-                        patient_name: patient_name,
-                        form_num: fileNo,
-                        creation_date: creation_date,
-                        update_date: updateDate,
-                        pain_intensity: painIntensity,
-                        pain_duration: painDuration,
-                        pain_location: pain_location,
-                        pain_frequency: pain_frequency,
-                        pain_character: pain_character,
-                        pain_increase_factors: pain_increase_factors,
-                        pain_decrease_factors: pain_decrease_factors
-                    },
-                    success: function(data) {
-                        alert(data);
-                        let url =
-                            "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
-                            patient_id + "&patient_name=" + encodeURIComponent(
-                            patient_name);
-                        $("#content").load(url);
-                    },
-                    error: function(data) {
-                        Swal.fire({
-                            'title': 'Errors',
-                            'text': 'There were errors',
-                            'type': 'error'
-                        })
-                    }
-                })
+                    $.ajax({
+                        type: 'POST',
+                        url: '<?php echo $base_url; ?>/form-handlers/submitOrUpdateForm2.php',
+                        data: {
+                            patient_id: patient_id,
+                            patient_name: patient_name,
+                            form_num: fileNo,
+                            creation_date: creation_date,
+                            update_date: updateDate,
+                            pain_intensity: painIntensity,
+                            pain_duration: painDuration,
+                            pain_location: pain_location,
+                            pain_frequency: pain_frequency,
+                            pain_character: pain_character,
+                            pain_increase_factors: pain_increase_factors,
+                            pain_decrease_factors: pain_decrease_factors
+                        },
+                        success: function(data) {
+                            alert(data);
+                            let url =
+                                "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
+                                patient_id + "&patient_name=" + encodeURIComponent(
+                                patient_name);
+                            $("#content").load(url);
+                        },
+                        error: function(data) {
+                            Swal.fire({
+                                'title': 'Errors',
+                                'text': 'There were errors',
+                                'type': 'error'
+                            })
+                        }
+                    })
 
 
 
+                }
             }
         })
 

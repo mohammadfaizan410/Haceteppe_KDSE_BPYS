@@ -48,6 +48,7 @@ if (isset($_GET['logout'])) {
                     <form action="" method="POST" class="patients-save-fields">
                         <div class="input-section-item" style="justify-content:space-between; padding: 5%">
                             <p class="usernamelabel" style="font-weight: bold;">Gözleri Açabilme</p>
+                            <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                         </div>
 
                         <div class="input-section d-flex"
@@ -100,6 +101,7 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section-item" style="justify-content:space-between; padding: 5%">
                             <p class="usernamelabel" style="font-weight: bold;">Motor Cevap</p>
+                            <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                         </div>
 
                         <div class="input-section d-flex"
@@ -177,6 +179,7 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section-item" style="justify-content:space-between; padding: 5%">
                             <p class="usernamelabel" style="font-weight: bold;">Sözel Tepki</p>
+                            <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                         </div>
 
                         <div class="input-section d-flex"
@@ -281,72 +284,99 @@ if (isset($_GET['logout'])) {
         $('#submit').click(function(e) {
             e.preventDefault()
 
-            var valid = this.form.checkValidity();
+            if (!$('[name="GözleriAçabilme"]').is(':checked')) {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                            scrollTop: $('[name="GözleriAçabilme"]').first().offset().top
+                        }, 200);
+                        // Display error message
+                $('[name="GözleriAçabilme"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                return false;
+            } else if (!$('[name="MotorCevap"]').is(':checked')) {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                            scrollTop: $('[name="MotorCevap"]').first().offset().top
+                        }, 200);
+                        // Display error message
+                $('[name="MotorCevap"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                return false;
+            } else if (!$('[name="SözelTepki"]').is(':checked')) {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                            scrollTop: $('[name="SözelTepki"]').first().offset().top
+                        }, 200);
+                        // Display error message
+                $('[name="SözelTepki"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                return false;
+            } else {
 
-            if (valid) {
-                var name = $('#name').val();
-                var surname = $('#surname').val();
-                var age = $('#age').val();
-                var not = $('#not').val();
-                let form_num = 6;
-                let yourDate = new Date()
-                let patient_name = "<?php
-                                        echo urldecode($_GET['patient_name']);
-                                        ?>";
-                var patient_id = <?php
-                                        $userid = $_GET['patient_id'];
-                                        echo $userid
-                                        ?>;
-                let creation_date = yourDate.toISOString().split('T')[0];
-                let updateDate = yourDate.toISOString().split('T')[0];
-                let eye_opening_points = parseInt($(
-                    "input[type='radio'][name='GözleriAçabilme']:checked").val());
-                let motor_response_points = parseInt($("input[type='radio'][name='MotorCevap']:checked")
-                    .val());
-                let verbal_response_points = parseInt($(
-                    "input[type='radio'][name='SözelTepki']:checked").val());
-                let total = eye_opening_points + motor_response_points + verbal_response_points;
+                var valid = this.form.checkValidity();
 
-                console.log(creation_date, updateDate, eye_opening_points, motor_response_points,
-                    verbal_response_points, total);
+                if (valid) {
+                    var name = $('#name').val();
+                    var surname = $('#surname').val();
+                    var age = $('#age').val();
+                    var not = $('#not').val();
+                    let form_num = 6;
+                    let yourDate = new Date()
+                    let patient_name = "<?php
+                                            echo urldecode($_GET['patient_name']);
+                                            ?>";
+                    var patient_id = <?php
+                                            $userid = $_GET['patient_id'];
+                                            echo $userid
+                                            ?>;
+                    let creation_date = yourDate.toISOString().split('T')[0];
+                    let updateDate = yourDate.toISOString().split('T')[0];
+                    let eye_opening_points = parseInt($(
+                        "input[type='radio'][name='GözleriAçabilme']:checked").val());
+                    let motor_response_points = parseInt($("input[type='radio'][name='MotorCevap']:checked")
+                        .val());
+                    let verbal_response_points = parseInt($(
+                        "input[type='radio'][name='SözelTepki']:checked").val());
+                    let total = eye_opening_points + motor_response_points + verbal_response_points;
 
-                $.ajax({
-                    type: 'POST',
-                    url: '<?php echo $base_url; ?>/submitOrUpdateForm5.php',
-                    data: {
-                        name: name,
-                        surname: surname,
-                        age: age,
-                        not: not,
-                        form_num: form_num,
-                        patient_name: patient_name,
-                        patient_id: patient_id,
-                        creation_date: creation_date,
-                        updateDate: updateDate,
-                        eye_opening_points: eye_opening_points,
-                        motor_response_points: motor_response_points,
-                        verbal_response_points: verbal_response_points,
-                        total: total
-                    },
-                    success: function(data) {
-                        alert(data);
-                        let url =
-                            "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
-                            patient_id + "&patient_name=" + encodeURIComponent(
-                            patient_name);
-                        $("#content").load(url);
-                    },
-                    error: function(data) {
-                        Swal.fire({
-                            'title': 'Errors',
-                            'text': 'There were errors',
-                            'type': 'error'
-                        })
-                    }
-                })
+                    console.log(creation_date, updateDate, eye_opening_points, motor_response_points,
+                        verbal_response_points, total);
+
+                    $.ajax({
+                        type: 'POST',
+                        url: '<?php echo $base_url; ?>/form-handlers/submitOrUpdateForm5.php',
+                        data: {
+                            name: name,
+                            surname: surname,
+                            age: age,
+                            not: not,
+                            form_num: form_num,
+                            patient_name: patient_name,
+                            patient_id: patient_id,
+                            creation_date: creation_date,
+                            updateDate: updateDate,
+                            eye_opening_points: eye_opening_points,
+                            motor_response_points: motor_response_points,
+                            verbal_response_points: verbal_response_points,
+                            total: total
+                        },
+                        success: function(data) {
+                            alert(data);
+                            let url =
+                                "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
+                                patient_id + "&patient_name=" + encodeURIComponent(
+                                patient_name);
+                            $("#content").load(url);
+                        },
+                        error: function(data) {
+                            Swal.fire({
+                                'title': 'Errors',
+                                'text': 'There were errors',
+                                'type': 'error'
+                            })
+                        }
+                    })
 
 
 
+                }
             }
         })
 

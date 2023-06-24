@@ -69,32 +69,32 @@ if (isset($_GET['logout'])) {
                     <form action="" method="POST" class="patients-save-fields">
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Sorunla İlişkili Veriler:</p>
-                            <input type="text" class="form-control" required name="problem_info" id="diger"
+                            <input type="text" class="form-control" required name="problem_info" id="problem_info"
                                 placeholder="Sorunla İlişkili Veriler" maxlength="5000">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Hemşirelik Tanıları:</p>
-                            <input type="text" class="form-control" required name="nurse_description" id="diger"
+                            <input type="text" class="form-control" required name="nurse_description" id="nurse_description"
                                 placeholder="Hemşirelik Tanıları" maxlength="5000">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">NOC Çıktıları:</p>
-                            <input type="text" class="form-control" required name="noc_output" id="diger"
+                            <input type="text" class="form-control" required name="noc_output" id="noc_output"
                                 placeholder="NOC Çıktıları" maxlength="200">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">NOC Gösterge:</p>
-                            <input type="text" class="form-control" required name="noc_indicator" id="diger"
+                            <input type="text" class="form-control" required name="noc_indicator" id="noc_indicator"
                                 placeholder="NOC Gösterge" maxlength="200">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Hemşirelik Girişimleri:</p>
-                            <input type="text" class="form-control" required name="nurse_attempt" id="diger"
+                            <input type="text" class="form-control" required name="nurse_attempt" id="nurse_attempt"
                                 placeholder="Hemşirelik Girişimleri" maxlength="200">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Değerlendirme:</p>
-                            <input type="text" class="form-control" required name="evaluation" id="diger"
+                            <input type="text" class="form-control" required name="evaluation" id="evaluation"
                                 placeholder="Değerlendirme" maxlength="200">
                         </div>
                         <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
@@ -155,11 +155,85 @@ if (isset($_GET['logout'])) {
                 let noc_indicator = $("input[name='noc_indicator']").val();
                 let nurse_attempt = $("input[name='nurse_attempt']").val();
                 let evaluation = $("input[name='evaluation']").val();
-                console.log("values initiated")
+
+                  //set border color normal
+                  $('.form-control').css('border-color', '#ced4da');
+                   //custom validation
+                // if($('#iv_input1').val() === ""){
+                //     //scroll to iv_input1
+                //     $('html, body').animate({
+                //         scrollTop: $("#iv_input1").offset().top
+                //     }, 200);
+                //     //change border color
+                //     $('#iv_input1').css('border-color', 'red');
+                //     //stop function
+                //     return false;
+                // }
+
+                if($('#problem_info').val() === ""){
+                    //scroll to iv_input1
+                    $('html, body').animate({
+                        scrollTop: $("#problem_info").offset().top
+                    }, 200);
+                    //change border color
+                    $('#problem_info').css('border-color', 'red');
+                    //stop function
+                    return false;
+                }
+                if($('#nurse_description').val() === ""){
+                    //scroll to iv_input1
+                    $('html, body').animate({
+                        scrollTop: $("#nurse_description").offset().top
+                    }, 200);
+                    //change border color
+                    $('#nurse_description').css('border-color', 'red');
+                    //stop function
+                    return false;
+                }
+                if($('#noc_output').val() === ""){
+                    //scroll to iv_input1
+                    $('html, body').animate({
+                        scrollTop: $("#noc_output").offset().top
+                    }, 200);
+                    //change border color
+                    $('#noc_output').css('border-color', 'red');
+                    //stop function
+                    return false;
+                }
+                if($('#noc_indicator').val() === ""){
+                    //scroll to iv_input1
+                    $('html, body').animate({
+                        scrollTop: $("#noc_indicator").offset().top
+                    }, 200);
+                    //change border color
+                    $('#noc_indicator').css('border-color', 'red');
+                    //stop function
+                    return false;
+                }
+                if($('#nurse_attempt').val() === ""){
+                    //scroll to iv_input1
+                    $('html, body').animate({
+                        scrollTop: $("#nurse_attempt").offset().top
+                    }, 200);
+                    //change border color
+                    $('#nurse_attempt').css('border-color', 'red');
+                    //stop function
+                    return false;
+                }
+                if($('#evaluation').val() === ""){
+                    //scroll to iv_input1
+                    $('html, body').animate({
+                        scrollTop: $("#evaluation").offset().top
+                    }, 200);
+                    //change border color
+                    $('#evaluation').css('border-color', 'red');
+                    //stop function
+                    return false;
+                }
 
                 $.ajax({
                     type: 'POST',
-                    url: '<?php echo $base_url; ?>/submitOrUpdateBakimPlani_form14.php',
+                    url: '<?php echo $base_url; ?>/form-handlers/submitOrUpdateBakimPlani_form14.php',
                     data: {
                         id: id,
                         name: name,

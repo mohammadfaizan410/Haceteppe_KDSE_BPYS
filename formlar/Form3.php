@@ -54,7 +54,7 @@ if (isset($_GET['logout'])) {
                             <p class="usernamelabel" style="font-weight: bold;">Risk Faktörü</p>
                             <p class="usernamelabel" style="font-weight: bold;">Puan ( ≥ 5 Yüksek Risk )</p>
                         </div>
-
+                        <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                         <div class="input-section d-flex" style="justify-content:space-between">
                             <p class="usernamelabel">Konfüzyon / Dezoryantasyon: </p>
                             <div class="form-check">
@@ -138,6 +138,7 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section d-flex" style="justify-content:space-around">
                             <p class="usernamelabel" style="font-weight: bold;">Sandalyeden Kalkma Testi</p>
+                            <p class="option-error1" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                         </div>
 
                         <div class="input-section d-flex" style="justify-content:space-between">
@@ -232,75 +233,114 @@ if (isset($_GET['logout'])) {
     $(function() {
         $('#submit').click(function(e) {
             e.preventDefault();
-            var valid = this.form.checkValidity();
 
-            if (valid) {
-                let name = $('#name').val();
-                let surname = $('#surname').val();
-                let age = $('#age').val();
-                let not = $('#not').val();
-                let form_num = 3;
-                var patient_id = <?php
-                                        $userid = $_GET['patient_id'];
-                                        echo $userid
-                                        ?>;
-                let patient_name = "<?php
-                                        echo urldecode($_GET['patient_name']);
-                                        ?>";
-                let yourDate = new Date()
-                let creation_date = yourDate.toISOString().split('T')[0];
-                let updateDate = yourDate.toISOString().split('T')[0];
-                let confusion_point = parseInt($("input[name='confusion_point']").val());
-                let symtomatic_depression_point = parseInt($(
-                    "input[name='symtomatic_depression_point']").val());
-                let evacuation_trouble = parseInt($("input[name='evacuation_trouble']").val());
-                let dizziness_point = parseInt($("input[name='dizziness_point']").val());
-                let gender_point = parseInt($("input[name='gender_point']").val());
-                let epilepsy_drug_point = parseInt($("input[name='epilepsy_drug_point']").val());
-                let benzo_drug_point = parseInt($("input[name='benzo_drug_point']").val());
-                let arm_chair_point = parseInt($("input[type='radio'][name='test']:checked").val());
-                let total = confusion_point + symtomatic_depression_point + evacuation_trouble +
-                    dizziness_point + gender_point + epilepsy_drug_point + benzo_drug_point;
+            if (!$('#RiskFactor:checked').length){
+                $('.option-error1').css('display', 'none');
+                $('html, body').animate({
+                            scrollTop: $('.option-error').first().offset().top
+                        }, 200);
+                        // Display error message
+                $('.option-error').css('display', 'block');
+            } else if (!$('[name="get_up_without_arm"]').is(':checked')) {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                            scrollTop: $('.option-error1').first().offset().top
+                        }, 200);
+                        // Display error message
+                $('.option-error1').css('display', 'block');
+            } else {
 
+                var valid = this.form.checkValidity();
 
-
-                $.ajax({
-                    type: 'POST',
-                    url: '<?php echo $base_url; ?>/submitOrUpdateForm3.php',
-                    data: {
-                        form_num: form_num,
-                        patient_name: patient_name,
-                        patient_id: patient_id,
-                        creation_date: creation_date,
-                        update_date: updateDate,
-                        confusion_point: confusion_point,
-                        symtomatic_depression_point: symtomatic_depression_point,
-                        evacuation_trouble: evacuation_trouble,
-                        dizziness_point: dizziness_point,
-                        gender_point: gender_point,
-                        epilepsy_drug_point: epilepsy_drug_point,
-                        benzo_drug_point: benzo_drug_point,
-                        arm_chair_point: arm_chair_point,
-                        total: total,
-                    },
-                    success: function(data) {
-                        alert(data);
-                        let url =
-                            "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
-                            patient_id + "&patient_name=" + encodeURIComponent(
-                            patient_name);
-                        $("#content").load(url);
-                    },
-                    error: function(data) {
-                        Swal.fire({
-                            'title': 'Errors',
-                            'text': 'There were errors',
-                            'type': 'error'
-                        })
+                if (valid) {
+                    let name = $('#name').val();
+                    let surname = $('#surname').val();
+                    let age = $('#age').val();
+                    let not = $('#not').val();
+                    let form_num = 3;
+                    var patient_id = <?php
+                                            $userid = $_GET['patient_id'];
+                                            echo $userid
+                                            ?>;
+                    let patient_name = "<?php
+                                            echo urldecode($_GET['patient_name']);
+                                            ?>";
+                    let yourDate = new Date()
+                    let creation_date = yourDate.toISOString().split('T')[0];
+                    let updateDate = yourDate.toISOString().split('T')[0];
+                    let confusion_point = parseInt($("input[name='confusion_point']").val());
+                    if (isNaN(confusion_point)) {
+                        confusion_point = 0;
                     }
-                })
+                    let symtomatic_depression_point = parseInt($(
+                        "input[name='symtomatic_depression_point']").val());
+                    if (isNaN(symtomatic_depression_point)) {
+                        symtomatic_depression_point = 0;
+                    }
+                    let evacuation_trouble = parseInt($("input[name='evacuation_trouble']").val());
+                    if (isNaN(evacuation_trouble)) {
+                        evacuation_trouble = 0;
+                    }
+                    let dizziness_point = parseInt($("input[name='dizziness_point']").val());
+                    if (isNaN(dizziness_point)) {
+                        dizziness_point = 0;
+                    }
+                    let gender_point = parseInt($("input[name='gender_point']").val());
+                    if (isNaN(gender_point)) {
+                        gender_point = 0;
+                    }
+                    let epilepsy_drug_point = parseInt($("input[name='epilepsy_drug_point']").val());
+                    if (isNaN(epilepsy_drug_point)) {
+                        epilepsy_drug_point = 0;
+                    }
+                    let benzo_drug_point = parseInt($("input[name='benzo_drug_point']").val());
+                    if (isNaN(benzo_drug_point)) {
+                        benzo_drug_point = 0;
+                    }
+                    let arm_chair_point = parseInt($("input[type='radio'][name='test']:checked").val());
+                    if (isNaN(arm_chair_point)) {
+                        arm_chair_point = 0;
+                    }
+                    let total = confusion_point + symtomatic_depression_point + evacuation_trouble +
+                        dizziness_point + gender_point + epilepsy_drug_point + benzo_drug_point;
 
+                    $.ajax({
+                        type: 'POST',
+                        url: '<?php echo $base_url; ?>/form-handlers/submitOrUpdateForm3.php',
+                        data: {
+                            form_num: form_num,
+                            patient_name: patient_name,
+                            patient_id: patient_id,
+                            creation_date: creation_date,
+                            update_date: updateDate,
+                            confusion_point: confusion_point,
+                            symtomatic_depression_point: symtomatic_depression_point,
+                            evacuation_trouble: evacuation_trouble,
+                            dizziness_point: dizziness_point,
+                            gender_point: gender_point,
+                            epilepsy_drug_point: epilepsy_drug_point,
+                            benzo_drug_point: benzo_drug_point,
+                            arm_chair_point: arm_chair_point,
+                            total: total,
+                        },
+                        success: function(data) {
+                            alert(data);
+                            let url =
+                                "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
+                                patient_id + "&patient_name=" + encodeURIComponent(
+                                patient_name);
+                            $("#content").load(url);
+                        },
+                        error: function(data) {
+                            Swal.fire({
+                                'title': 'Errors',
+                                'text': 'There were errors',
+                                'type': 'error'
+                            })
+                        }
+                    })
 
+                }
 
             }
         })

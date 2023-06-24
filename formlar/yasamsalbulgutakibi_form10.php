@@ -62,15 +62,16 @@ if (isset($_GET['logout'])) {
                     <form action="" method="POST" class="patients-save-fields">
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Saat:</p>
-                            <input type="time" class="form-control" required name="time" id="diger" placeholder="Saat">
+                            <input type="time" class="form-control" required name="time" id="time" placeholder="Saat">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Vücut Sıcaklığı:</p>
-                            <input type="number" class="form-control" required name="body_temperature" id="diger"
+                            <input type="number" class="form-control" required name="body_temperature" id="body_temperature"
                                 placeholder="Vücut Sıcaklığı" min="0" max="100">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Ölçüm yeri: </p>
+                            <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="measurement_location"
@@ -112,6 +113,7 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Nabız yeri: </p>
+                            <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="heartrate_location"
@@ -132,13 +134,14 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Nabız hızı:</p>
-                            <input type="number" class="form-control" required name="heart_rate" id="diger"
+                            <input type="number" class="form-control" required name="heart_rate" id="heart_rate"
                                 placeholder="Nabız hızı" min="0" max="500">
                         </div>
 
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Nabız niteliği: </p>
+                            <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="heartrate_nature"
@@ -180,30 +183,31 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Solunum sayısı:</p>
-                            <input type="number" class="form-control" required name="respiratory_rate" id="diger"
+                            <input type="number" class="form-control" required name="respiratory_rate" id="respiratory_rate"
                                 placeholder="Solunum sayısı" min="0" max="1000">
                         </div>
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Solunum Özelliği: </p>
+                            <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="respiratory_nature"
-                                        id="breathing_nature" value="Normal">
+                                        id="respiratory_nature" value="Normal">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">Normal</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="respiratory_nature"
-                                        id="breathing_nature" value="Derin">
+                                        id="respiratory_nature" value="Derin">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">Derin</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="respiratory_nature"
-                                        id="breathing_nature" value="Yüzeyel">
+                                        id="respiratory_nature" value="Yüzeyel">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">Yüzeyel</span>
                                     </label>
@@ -215,12 +219,14 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Kan basıncı:</p>
-                            <input type="text" class="form-control" required name="blood_pressure" id="diger"
+                            <input type="text" class="form-control" required name="blood_pressure" id="blood_pressure"
                                 placeholder="Tetkik Sonucu" maxlength="7">
                         </div>
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">KB Ölçüm yeri: </p>
+                            <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
+
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="bp_measurement_location"
@@ -255,6 +261,7 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">O2 verme durum: </p>
+                            <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="o2_status" id="o2_status_alm"
@@ -275,6 +282,8 @@ if (isset($_GET['logout'])) {
                         </div>
                         <div class="input-section d-flex" id="o2-delivery-container">
                             <p class="usernamelabel">O2 verme Yöntemi: </p>
+                            <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
+
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="o2_method" id="o2_method_1"
@@ -308,7 +317,7 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">SPO2 (%):</p>
-                            <input type="number" class="form-control" required name="spo2_percentage" id="diger"
+                            <input type="number" class="form-control" required name="spo2_percentage" id="spo2_percentage"
                                 placeholder="SPO2 (%)" min="0" max="100">
                         </div>
                         <div class="input-section d-flex" id="o2-delivery-container">
@@ -340,6 +349,24 @@ if (isset($_GET['logout'])) {
 
     </script>
     <script>
+    $(document).ready(function(){
+        var o2Method = $('[name="o2_method"]');
+        var o2Other = $('[name="o2_method_diger"]');
+
+        o2Other.attr('disabled', true);
+
+        o2Method.on('change', function(){
+            var selectedValue = $(this).val();
+
+            if (selectedValue === "Diğer"){
+                o2Other.attr('disabled', false);
+            } else {
+                o2Other.val('');
+                o2Other.attr('disabled', true);
+            }
+        })
+    })
+
     $(function() {
         $('#closeBtn1').click(function(e) {
             let patient_id = "<?php
@@ -382,9 +409,11 @@ if (isset($_GET['logout'])) {
             let updateDate = yourDate.toISOString().split('T')[0];
             let time = $("input[name='time']").val();
             let body_temperature = $("input[name='body_temperature']").val();
+            let measurement_location = $("input[type='radio'][name='measurement_location']:checked")
+                .val();
+            let heartrate_location = $("input[type='radio'][name='heartrate_location']:checked").val();
             let heart_rate = $("input[name='heart_rate']").val();
             let heartrate_nature = $("input[type='radio'][name='heartrate_nature']:checked").val();
-            let heartrate_location = $("input[type='radio'][name='heartrate_location']:checked").val();
             let respiratory_rate = $("input[name='respiratory_rate']").val();
             let respiratory_nature = $("input[type='radio'][name='respiratory_nature']:checked").val();
             let blood_pressure = $("input[name='blood_pressure']").val();
@@ -392,8 +421,6 @@ if (isset($_GET['logout'])) {
                 "input[type='radio'][name='bp_measurement_location']:checked").val();
             let o2_status = $("input[type='radio'][name='o2_status']:checked").val();
             let o2_method = '';
-            let measurement_location = $("input[type='radio'][name='measurement_location']:checked")
-                .val();
 
             if (o2_status === "Almıyor") {
                 o2_method = "Almıyor";
@@ -409,9 +436,177 @@ if (isset($_GET['logout'])) {
             let weight_input = $('#kilo_yapiliyor').css("display") === 'flex' ? $(
                 "input[name='weight_input']").val() : 'Yapilmiyor';
 
+            
+                // if ($('input[name="gender"]:checked').length === 0) {
+                //     // Scroll to gender
+                //     $('html, body').animate({
+                //         scrollTop: $('.form-check-input[name="gender"]').first().offset().top
+                //     }, 200);
+                //     // Display error message
+                //     $('.form-check-input[name="gender"]').first().closest('.form-check').find('.option-error').css('display', 'block');
+                //     return false;
+                //     }
+
+                // if($('#referance_value').val() === ""){
+                //             //scroll to referance_value
+                //             $('html, body').animate({
+                //                 scrollTop: $("#referance_value").offset().top
+                //             }, 200);
+                //             //change border color
+                //             $('#referance_value').css('border-color', 'red');
+                //             //stop function
+                //             return false;
+                //         }
+
+                //set option error display to none
+                $('.option-error').css('display', 'none');
+                //set borders to original color
+                $('input').css('border-color', '#ced4da');
+                //custom validation
+                    if($('#time').val()=== ""){
+                        //scroll to time
+                        $('html, body').animate({
+                            scrollTop: $("#time").offset().top
+                        }, 200);
+                        //change border color
+                        $('#time').css('border-color', 'red');
+                        //stop function
+                        return false;
+                    }
+
+                    if($('#body_temperature').val()=== ""){
+                        //scroll to body_temperature
+                        $('html, body').animate({
+                            scrollTop: $("#body_temperature").offset().top
+                        }, 200);
+                        //change border color
+                        $('#body_temperature').css('border-color', 'red');
+                        //stop function
+                        return false;
+                    }
+                    if($('input[name="measurement_location"]:checked').length === 0){
+                        //scroll to measurement_location
+                        $('html, body').animate({
+                            scrollTop: $('.form-check-input[name="measurement_location"]').first().offset().top
+                        }, 200);
+                        // Display error message
+                        $('.form-check-input[name="measurement_location"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+                    }
+
+                    if($('input[name="heartrate_location"]:checked').length === 0){
+                        //scroll to heartrate_location
+                        $('html, body').animate({
+                            scrollTop: $('.form-check-input[name="heartrate_location"]').first().offset().top
+                        }, 200);
+                        // Display error message
+                        $('.form-check-input[name="heartrate_location"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+                    }
+
+                    if($('#heart_rate').val()=== "" ){
+                        //scroll to heart_rate
+                        $('html, body').animate({
+                            scrollTop: $("#heart_rate").offset().top
+                        }, 200);
+                        //change border color
+                        $('#heart_rate').css('border-color', 'red');
+                        //stop function
+                        return false;
+                    }
+
+                    if($('input[name="heartrate_nature"]:checked').length === 0){
+                        //scroll to heartrate_nature
+                        $('html, body').animate({
+                            scrollTop: $('.form-check-input[name="heartrate_nature"]').first().offset().top
+                        }, 200);
+                        // Display error message
+                        $('.form-check-input[name="heartrate_nature"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+                    }
+
+                   
+
+                    if($('#respiratory_rate').val()=== "" ){
+                        //scroll to heart_rate
+                        $('html, body').animate({
+                            scrollTop: $("#respiratory_rate").offset().top
+                        }, 200);
+                        //change border color
+                        $('#respiratory_rate').css('border-color', 'red');
+                        //stop function
+                        return false;
+                    }
+
+                    if($('input[name="respiratory_nature"]:checked').length === 0){
+                        //scroll to respiratory_nature
+                        $('html, body').animate({
+                            scrollTop: $('.form-check-input[name="respiratory_nature"]').first().offset().top
+                        }, 200);
+                        // Display error message
+                        $('.form-check-input[name="respiratory_nature"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+                    }
+
+                    if($('#blood_pressure').val()=== "" ){
+                        //scroll to blood_pressure
+                        $('html, body').animate({
+                            scrollTop: $("#blood_pressure").offset().top
+                        }, 200);
+                        //change border color
+                        $('#blood_pressure').css('border-color', 'red');
+                        //stop function
+                        return false;
+                    }
+
+                    if($('input[name="bp_measurement_location"]:checked').length === 0){
+                        //scroll to bp_measurement_location
+                        $('html, body').animate({
+                            scrollTop: $('.form-check-input[name="bp_measurement_location"]').first().offset().top
+                        }, 200);
+                        // Display error message
+                        $('.form-check-input[name="bp_measurement_location"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+                    }
+
+                    if($('input[name="o2_status"]:checked').length === 0){
+                        //scroll to o2_status
+                        $('html, body').animate({
+                            scrollTop: $('.form-check-input[name="o2_status"]').first().offset().top
+                        }, 200);
+                        // Display error message
+                        $('.form-check-input[name="o2_status"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+                    }
+
+                    if($('input[name="o2_method"]:checked').length === 0){
+                        //scroll to o2_method
+                        $('html, body').animate({
+                            scrollTop: $('.form-check-input[name="o2_method"]').first().offset().top
+                        }, 200);
+                        // Display error message
+                        $('.form-check-input[name="o2_method"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+                    }
+
+                    if($('#spo2_percentage').val()=== "" ){
+                        //scroll to spo2_percentage
+                        $('html, body').animate({
+                            scrollTop: $("#spo2_percentage").offset().top
+                        }, 200);
+                        //change border color
+                        $('#spo2_percentage').css('border-color', 'red');
+                        //stop function
+                        return false;
+                    }
+
+
+              
+
+
             $.ajax({
                 type: 'POST',
-                url: '<?php echo $base_url; ?>/submitOrUpdateYasamsal_form10.php',
+                url: '<?php echo $base_url; ?>/form-handlers/submitOrUpdateYasamsal_form10.php',
                 data: {
                     id: id,
                     name: name,
