@@ -189,15 +189,15 @@ if (isset($_GET['logout'])) {
         // } else {
         //     echo 'error';
         // };
-        // $sql = "SELECT * FROM  harekatform1 WHERE patient_id =" . $userid;
-        // $smtmselect = $db->prepare($sql);
-        // $result = $smtmselect->execute();
-        // $values = [];
-        // if ($result) {
-        //     $values16 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
-        // } else {
-        //     echo 'error';
-        // };
+        $sql = "SELECT * FROM  hareketform1 WHERE patient_id =" . $userid;
+        $smtmselect = $db->prepare($sql);
+        $result = $smtmselect->execute();
+        $values = [];
+        if ($result) {
+            $values16 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            echo 'error';
+        };
         // $sql = "SELECT * FROM  ilestimform1 WHERE patient_id =" . $userid;
         // $smtmselect = $db->prepare($sql);
         // $result = $smtmselect->execute();
@@ -234,15 +234,24 @@ if (isset($_GET['logout'])) {
         // } else {
         //     echo 'error';
         // };
-        // $sql = "SELECT * FROM  vucudutemizform1 WHERE patient_id =" . $userid;
-        // $smtmselect = $db->prepare($sql);
-        // $result = $smtmselect->execute();
-        // $values = [];
-        // if ($result) {
-        //     $values21 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
-        // } else {
-        //     echo 'error';
-        // };
+        $sql = "SELECT * FROM  vucudutemizform1 WHERE patient_id =" . $userid;
+        $smtmselect = $db->prepare($sql);
+        $result = $smtmselect->execute();
+        $values = [];
+        if ($result) {
+            $values21 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            echo 'error';
+        };
+        $sql = "SELECT * FROM  ozgecmisform1 WHERE patient_id =" . $userid;
+        $smtmselect = $db->prepare($sql);
+        $result = $smtmselect->execute();
+        $values = [];
+        if ($result) {
+            $values22 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            echo 'error';
+        };
 
         $sql = "SELECT * FROM  tani1 WHERE patient_id =" . $userid;
         $smtmselect = $db->prepare($sql);
@@ -271,12 +280,13 @@ if (isset($_GET['logout'])) {
             'table13_data' => $values13,
             'table14_data' => $values14,
             // 'table15_data' => $values15,
-            // 'table16_data' => $values16,
+            'table16_data' => $values16,
             // 'table17_data' => $values17,
             // 'table18_data' => $values18,
             // 'table19_data' => $values19,
             // 'table20_data' => $values20,
-            // 'table21_data' => $values21,
+            'table21_data' => $values21,
+            'table22_data' => $values22,
         ];
 
         ?>
@@ -352,7 +362,7 @@ if (isset($_GET['logout'])) {
                                         echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color: white;" href="' . $base_url . '/formlar-review/Form16-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Form16   Date:' . $form["update_date"] . '</p></a></div>';
                                     }
                                     if ($key ===  'table16_data') {
-                                        echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color: white;" href="' . $base_url . '/formlar-review/Form17-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Form17   Date:' . $form["update_date"] . '</p></a></div>';
+                                        echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color: white;" href="' . $base_url . '/formlar-review/Form1-hereket-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Hereket form 1   Date:' . $form["update_date"] . '</p></a></div>';
                                     }
                                     if ($key ===  'table17_data') {
                                         echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color: white;" href="' . $base_url . '/formlar-review/Form18-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Form18   Date:' . $form["update_date"] . '</p></a></div>';
@@ -367,7 +377,10 @@ if (isset($_GET['logout'])) {
                                         echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color: white;" href="' . $base_url . '/formlar-review/Form21-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Form21   Date:' . $form["update_date"] . '</p></a></div>';
                                     }
                                     if ($key ===  'table21_data') {
-                                        echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color: white;" href="' . $base_url . '/formlar-review/Form22-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Form22   Date:' . $form["update_date"] . '</p></a></div>';
+                                        echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color: white;" href="' . $base_url . '/formlar-review/Form1-Vucudu-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Form 1 Vucudu Temiz   Date:' . $form["update_date"] . '</p></a></div>';
+                                    }
+                                    if ($key ===  'table22_data') {
+                                        echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color: white;" href="' . $base_url . '/formlar-review/Form1-ozgecmis-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Form 1 Ozgecmis   Date:' . $form["update_date"] . '</p></a></div>';
                                     }
                                 };
                             }
