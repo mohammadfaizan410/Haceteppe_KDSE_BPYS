@@ -292,6 +292,7 @@ if ($result) {
             $('[name="hobbies"]').val(hobbies);
 
             var hospitalSocialActivities = <?php echo $calismaform1['hospitalSocialActivities']; ?>;
+            console.log(hospitalSocialActivities);
             hospitalSocialActivities.forEach(function(value) {
                 $('[name="hospitalSocialActivities"][value="'+value+'"]').prop('checked', true);
                 if (value === "Diğer") {
@@ -308,98 +309,98 @@ if ($result) {
             console.log('pressed');
             e.preventDefault();
 
-            // if (!$('[name="workStatus"]').is(':checked')) {
-            //     $('.option-error').css('display', 'none');
-            //     $('html, body').animate({
-            //         scrollTop: $('[name="workStatus"]').offset().top
-            //     }, 200);
-            //     $('[name="workStatus"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-            //             return false;
-            // } else if (!$('[name="workInterruption"]').is(':checked')) {
-            //     $('.option-error').css('display', 'none');
-            //     $('html, body').animate({
-            //         scrollTop: $('[name="workInterruption"]').offset().top
-            //     }, 200);
-            //     $('[name="workInterruption"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-            //             return false;
-            // } else if (!$('[name="workRisk"]').is(':checked')) {
-            //     $('.option-error').css('display', 'none');
-            //     $('html, body').animate({
-            //         scrollTop: $('[name="workRisk"]').offset().top
-            //     }, 200);
-            //     $('[name="workRisk"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-            //             return false;
-            // } else if (!$('[name="hospitalSocialActivities"]').is(':checked')) {
-            //     $('.option-error').css('display', 'none');
-            //     $('html, body').animate({
-            //         scrollTop: $('[name="hospitalSocialActivities"]').offset().top
-            //     }, 200);
-            //     $('[name="hospitalSocialActivities"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-            //             return false;
-            // } else if ($('[name="familyMembers"]').val() === '') {
-            //     $('.option-error').css('display', 'none');
-            //     $('html, body').animate({
-            //                 scrollTop: $('[name="familyMembers"]').offset().top
-            //             }, 200);
-            //             //change border color
-            //     $('[name="familyMembers"]').css('border-color', 'red');
-            // } else if ($('[name="numberOfChildren"]').val() === '') {
-            //     $('.option-error').css('display', 'none');
-            //     $('html, body').animate({
-            //                 scrollTop: $('[name="numberOfChildren"]').offset().top
-            //             }, 200);
-            //             //change border color
-            //     $('[name="numberOfChildren"]').css('border-color', 'red');
-            // } else if ($('[name="roleInFamily"]').val() === '') {
-            //     $('.option-error').css('display', 'none');
-            //     $('html, body').animate({
-            //                 scrollTop: $('[name="roleInFamily"]').offset().top
-            //             }, 200);
-            //             //change border color
-            //     $('[name="roleInFamily"]').css('border-color', 'red');
-            // } else if ($('[name="hobbies"]').val() === '') {
-            //     $('.option-error').css('display', 'none');
-            //     $('html, body').animate({
-            //                 scrollTop: $('[name="hobbies"]').offset().top
-            //             }, 200);
-            //             //change border color
-            //     $('[name="hobbies"]').css('border-color', 'red');
-            // } else if ($('[name="workStatus"][value="Çalışmıyor"]').is(':checked') && $('[name="nonWorkingTime"]').val() === '') {
-            //         $('.option-error').css('display', 'none');
-            //         $('html, body').animate({
-            //                 scrollTop: $('[name="nonWorkingTime"]').offset().top
-            //             }, 200);
-            //             //change border color
-            //         $('[name="nonWorkingTime"]').css('border-color', 'red');
-            // } else if ($('[name="workStatus"][value="Çalışıyor"]').is(':checked') && $('[name="workingTime"]').val() === '') {
-            //         $('.option-error').css('display', 'none');
-            //         $('html, body').animate({
-            //                 scrollTop: $('[name="workingTime"]').offset().top
-            //             }, 200);
-            //             //change border color
-            //         $('[name="workingTime"]').css('border-color', 'red');
-            // } else if ($('[name="workInterruption"][value="Var"]').is(':checked') && $('[name="workInterruptionInput"]').val() === '') {
-            //         $('.option-error').css('display', 'none');
-            //         $('html, body').animate({
-            //                 scrollTop: $('[name="workInterruptionInput"]').offset().top
-            //             }, 200);
-            //             //change border color
-            //         $('[name="workInterruptionInput"]').css('border-color', 'red');
-            // } else if ($('[name="workRisk"][value="Var"]').is(':checked') && $('[name="workRiskInput"]').val() === '') {
-            //         $('.option-error').css('display', 'none');
-            //         $('html, body').animate({
-            //                 scrollTop: $('[name="workRiskInput"]').offset().top
-            //             }, 200);
-            //             //change border color
-            //         $('[name="workRiskInput"]').css('border-color', 'red');
-            // } else if ($('[name="hospitalSocialActivities"][value="Diğer"]').is(':checked') && $('[name="otherSocialActivities"]').val() === '') {
-            //         $('.option-error').css('display', 'none');
-            //         $('html, body').animate({
-            //                 scrollTop: $('[name="otherSocialActivities"]').offset().top
-            //             }, 200);
-            //             //change border color
-            //         $('[name="otherSocialActivities"]').css('border-color', 'red');
-            // } else {
+            if (!$('[name="workStatus"]').is(':checked')) {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                    scrollTop: $('[name="workStatus"]').offset().top
+                }, 200);
+                $('[name="workStatus"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+            } else if (!$('[name="workInterruption"]').is(':checked')) {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                    scrollTop: $('[name="workInterruption"]').offset().top
+                }, 200);
+                $('[name="workInterruption"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+            } else if (!$('[name="workRisk"]').is(':checked')) {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                    scrollTop: $('[name="workRisk"]').offset().top
+                }, 200);
+                $('[name="workRisk"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+            } else if (!$('[name="hospitalSocialActivities"]').is(':checked')) {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                    scrollTop: $('[name="hospitalSocialActivities"]').offset().top
+                }, 200);
+                $('[name="hospitalSocialActivities"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+            } else if ($('[name="familyMembers"]').val() === '') {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                            scrollTop: $('[name="familyMembers"]').offset().top
+                        }, 200);
+                        //change border color
+                $('[name="familyMembers"]').css('border-color', 'red');
+            } else if ($('[name="numberOfChildren"]').val() === '') {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                            scrollTop: $('[name="numberOfChildren"]').offset().top
+                        }, 200);
+                        //change border color
+                $('[name="numberOfChildren"]').css('border-color', 'red');
+            } else if ($('[name="roleInFamily"]').val() === '') {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                            scrollTop: $('[name="roleInFamily"]').offset().top
+                        }, 200);
+                        //change border color
+                $('[name="roleInFamily"]').css('border-color', 'red');
+            } else if ($('[name="hobbies"]').val() === '') {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                            scrollTop: $('[name="hobbies"]').offset().top
+                        }, 200);
+                        //change border color
+                $('[name="hobbies"]').css('border-color', 'red');
+            } else if ($('[name="workStatus"][value="Çalışmıyor"]').is(':checked') && $('[name="nonWorkingTime"]').val() === '') {
+                    $('.option-error').css('display', 'none');
+                    $('html, body').animate({
+                            scrollTop: $('[name="nonWorkingTime"]').offset().top
+                        }, 200);
+                        //change border color
+                    $('[name="nonWorkingTime"]').css('border-color', 'red');
+            } else if ($('[name="workStatus"][value="Çalışıyor"]').is(':checked') && $('[name="workingTime"]').val() === '') {
+                    $('.option-error').css('display', 'none');
+                    $('html, body').animate({
+                            scrollTop: $('[name="workingTime"]').offset().top
+                        }, 200);
+                        //change border color
+                    $('[name="workingTime"]').css('border-color', 'red');
+            } else if ($('[name="workInterruption"][value="Var"]').is(':checked') && $('[name="workInterruptionInput"]').val() === '') {
+                    $('.option-error').css('display', 'none');
+                    $('html, body').animate({
+                            scrollTop: $('[name="workInterruptionInput"]').offset().top
+                        }, 200);
+                        //change border color
+                    $('[name="workInterruptionInput"]').css('border-color', 'red');
+            } else if ($('[name="workRisk"][value="Var"]').is(':checked') && $('[name="workRiskInput"]').val() === '') {
+                    $('.option-error').css('display', 'none');
+                    $('html, body').animate({
+                            scrollTop: $('[name="workRiskInput"]').offset().top
+                        }, 200);
+                        //change border color
+                    $('[name="workRiskInput"]').css('border-color', 'red');
+            } else if ($('[name="hospitalSocialActivities"][value="Diğer"]').is(':checked') && $('[name="otherSocialActivities"]').val() === '') {
+                    $('.option-error').css('display', 'none');
+                    $('html, body').animate({
+                            scrollTop: $('[name="otherSocialActivities"]').offset().top
+                        }, 200);
+                        //change border color
+                    $('[name="otherSocialActivities"]').css('border-color', 'red');
+            } else {
 
                 var id = '<?php
 
@@ -407,19 +408,14 @@ if ($result) {
                                 echo $userid
                                 ?>';
                 var form_id = '<?php echo $form_id ?>';
-                var patient_id = '<?php
-                                    $userid = $_GET['patient_id'];
-                                    echo $userid
-                                    ?>';
-                let patient_name = "<?php
-                                    echo urldecode($_GET['patient_name']);
-                                    ?>";
+                var patient_id = '<?php echo $calismaform1['patient_id']; ?>';
+                let patient_name = "<?php echo $calismaform1['patient_name']; ?>";
                 let yourDate = new Date()
                 let creation_date = yourDate.toISOString().split('T')[0];
                 let updateDate = yourDate.toISOString().split('T')[0];
                 let workStatus = $('.form-check-input[name="workStatus"]:checked').val();
-                let workingTime = $('#CalisiyorSure').val() ? $('#CalisiyorSure').val();
-                let nonWorkingTime = $('#CalismiyorSure').val() ? $('#CalismiyorSure').val();
+                let workingTime = $('[name="workingTime"]').val();
+                let nonWorkingTime = $('[name="nonWorkingTime"]').val();
                 let workInterruption = $('input[name="workInterruption"]:checked').val();
                 let workInterruptionInput = $('[name="workInterruptionInput"]').prop('disabled') ? null : $('[name="workInterruptionInput"]').val(); 
                 let workRisk = $('input[name="workRisk"]:checked').val();
@@ -483,7 +479,7 @@ if ($result) {
                     }
                 })
 
-        // }
+        }
 
 
 

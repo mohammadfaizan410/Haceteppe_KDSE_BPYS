@@ -437,15 +437,15 @@ if (isset($_GET['logout'])) {
                 "input[name='weight_input']").val() : 'Yapilmiyor';
 
             
-                // if ($('input[name="gender"]:checked').length === 0) {
-                //     // Scroll to gender
-                //     $('html, body').animate({
-                //         scrollTop: $('.form-check-input[name="gender"]').first().offset().top
-                //     }, 200);
-                //     // Display error message
-                //     $('.form-check-input[name="gender"]').first().closest('.form-check').find('.option-error').css('display', 'block');
-                //     return false;
-                //     }
+                if ($('input[name="gender"]:checked').length === 0) {
+                    // Scroll to gender
+                    $('html, body').animate({
+                        scrollTop: $('.form-check-input[name="gender"]').first().offset().top
+                    }, 200);
+                    // Display error message
+                    $('.form-check-input[name="gender"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                    return false;
+                    }
 
                 // if($('#referance_value').val() === ""){
                 //             //scroll to referance_value
@@ -484,7 +484,7 @@ if (isset($_GET['logout'])) {
                         //stop function
                         return false;
                     }
-                    if($('input[name="measurement_location"]:checked').length === 0){
+                    if($('.form-check-input[name="measurement_location"]:checked').length === 0){
                         //scroll to measurement_location
                         $('html, body').animate({
                             scrollTop: $('.form-check-input[name="measurement_location"]').first().offset().top
@@ -494,7 +494,7 @@ if (isset($_GET['logout'])) {
                         return false;
                     }
 
-                    if($('input[name="heartrate_location"]:checked').length === 0){
+                    if($('.form-check-input[name="heartrate_location"]:checked').length === 0){
                         //scroll to heartrate_location
                         $('html, body').animate({
                             scrollTop: $('.form-check-input[name="heartrate_location"]').first().offset().top
@@ -515,7 +515,7 @@ if (isset($_GET['logout'])) {
                         return false;
                     }
 
-                    if($('input[name="heartrate_nature"]:checked').length === 0){
+                    if($('.form-check-input[name="heartrate_nature"]:checked').length === 0){
                         //scroll to heartrate_nature
                         $('html, body').animate({
                             scrollTop: $('.form-check-input[name="heartrate_nature"]').first().offset().top
@@ -538,7 +538,7 @@ if (isset($_GET['logout'])) {
                         return false;
                     }
 
-                    if($('input[name="respiratory_nature"]:checked').length === 0){
+                    if($('.form-check-input[name="respiratory_nature"]:checked').length === 0){
                         //scroll to respiratory_nature
                         $('html, body').animate({
                             scrollTop: $('.form-check-input[name="respiratory_nature"]').first().offset().top
@@ -559,7 +559,7 @@ if (isset($_GET['logout'])) {
                         return false;
                     }
 
-                    if($('input[name="bp_measurement_location"]:checked').length === 0){
+                    if($('.form-check-input[name="bp_measurement_location"]:checked').length === 0){
                         //scroll to bp_measurement_location
                         $('html, body').animate({
                             scrollTop: $('.form-check-input[name="bp_measurement_location"]').first().offset().top
@@ -569,7 +569,7 @@ if (isset($_GET['logout'])) {
                         return false;
                     }
 
-                    if($('input[name="o2_status"]:checked').length === 0){
+                    if($('.form-check-input[name="o2_status"]:checked').length === 0){
                         //scroll to o2_status
                         $('html, body').animate({
                             scrollTop: $('.form-check-input[name="o2_status"]').first().offset().top
@@ -579,7 +579,7 @@ if (isset($_GET['logout'])) {
                         return false;
                     }
 
-                    if($('input[name="o2_method"]:checked').length === 0){
+                    if($('.form-check-input[name="o2_method"]:checked').length === 0){
                         //scroll to o2_method
                         $('html, body').animate({
                             scrollTop: $('.form-check-input[name="o2_method"]').first().offset().top

@@ -36,7 +36,7 @@ if (isset($_POST["patient_name"])) {
             $_POST["numberOfChildren"],
             $_POST["roleInFamily"],
             $_POST["hobbies"],
-            $_POST["hospitalSocialActivies"],
+            $_POST["hospitalSocialActivities"],
             $_POST["otherActivities"],
             $_POST["form_id"]
         ]);

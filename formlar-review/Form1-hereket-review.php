@@ -10,6 +10,18 @@ if (isset($_GET['logout'])) {
     unset($_SESSION);
     header("Location: main.php");
 }
+require_once('../config-students.php');
+
+$userid = $_SESSION['userlogin']['id'];
+$form_id = $_GET['form_id'];
+$sql = "SELECT * FROM hareketform1 where form_id= $form_id";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+if ($result) {
+    $hareketform1 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+} else {
+    echo 'error';
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +47,6 @@ if (isset($_GET['logout'])) {
         <?php
         require_once('../config-students.php');
         $userid = $_SESSION['userlogin']['id'];
-        //echo $userid;
         $sql = "SELECT * FROM  patients  WHERE id =" . $userid;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
@@ -49,7 +60,14 @@ if (isset($_GET['logout'])) {
         <div class="send-patient ta-center">
             <span class='close closeBtn' id='closeBtn1'>&times;</span>
             <h1 class="form-header">HAREKET GEREKSİNİMİ</h1>
-
+            <div class="input-section d-flex">
+                    <p class="usernamelabel">Patient Name:</p>
+                    <input type="text" class="form-control" required name="patient_name" id="diger" placeholder="Patient Name" value="<?php echo $hareketform1[0]['patient_name']; ?>" disabled>
+                </div>
+                <div class="input-section d-flex">
+                    <p class="usernamelabel">Patient ID:</p>
+                    <input type="text" class="form-control" required name="patient_id" id="diger" placeholder="Patient ID" value="<?php echo $hareketform1[0]['patient_id']; ?>" disabled>
+                </div>
             <div class="input-section d-flex">
                 <div class="form-check form-check-inline d-flex">
                     <input class="form-check-input" type="checkbox" id="exercisingHabit" value="exercisingHabit" name="exercisingHabit">
@@ -306,6 +324,48 @@ if (isset($_GET['logout'])) {
             </div>
         </div>
     </div>
+    <script>
+                    if("<?php echo $hareketform1[0]['exercisingHabit'] ?>" !== ""){
+                        $('input[name="exercisingHabit"]').prop('checked', true);
+                        $('input[name="exercisingHabitInput"]').prop('disabled', false);
+                        $('input[name="exercisingHabitInput"]').val("<?php echo $hareketform1[0]['exercisingHabit'] ?>");
+                    }
+                    if ("<?php echo $hareketform1[0]['inHospitalExercise'] ?>" !== "Hayir") {
+                        $('input[name="inHospitalExercise"][value="Evet"]').prop('checked', true);
+                        $('.form-check-input[name="exerciseType"]').prop('disabled', false);
+                        $('input[name="exerciseType"][value="<?php echo $hareketform1[0]['inHospitalExercise'] ?>"]').prop('checked', true);
+                        }
+                    else{
+                        $('input[name="inHospitalExercise"][value="Hayir"]').prop('checked', true);
+                        $('.form-check-input[name="exerciseType"]').prop('disabled', true);
+                    }
+                    if("<?php echo $hareketform1[0]['movementProblem'] ?>" !== "Sorun Yok"){
+                        $('input[name="movementProblem"][value="Var"]').prop('checked', true);
+                        $('.form-check-input[name="movementProblemDesc"]').prop('disabled', false);
+                        let movementProblemDesc = "<?php echo $hareketform1[0]['movementProblem'] ?>".split("/");
+                        for(let i = 0; i < movementProblemDesc.length; i++){
+                            $('input[name="movementProblemDesc"][value="' + movementProblemDesc[i] + '"]').prop('checked', true);
+                        }
+                    }
+                    else{
+                        $('input[name="movementProblem"][value="Sorun Yok"]').prop('checked', true);
+                        $('.form-check-input[name="movementProblemDesc"]').prop('disabled', true);
+                    }
+                    if("<?php echo $hareketform1[0]['wearingClothesDependence'] ?>" !== ""){
+                        $('input[name="wearingClothesDependence"][value="<?php echo $hareketform1[0]['wearingClothesDependence'] ?>"]').prop('checked', true);
+                    }
+                    if("<?php echo $hareketform1[0]['changingPositionDependence'] ?>" !== ""){
+                        $('input[name="changingPositionDependence"][value="<?php echo $hareketform1[0]['changingPositionDependence'] ?>"]').prop('checked', true);
+                    }
+                    if("<?php echo $hareketform1[0]['standingUpDependence'] ?>" !== ""){
+                        $('input[name="standingUpDependence"][value="<?php echo $hareketform1[0]['standingUpDependence'] ?>"]').prop('checked', true);
+                    }
+                    if("<?php echo $hareketform1[0]['walkingDependence'] ?>" !== ""){
+                        $('input[name="walkingDependence"][value="<?php echo $hareketform1[0]['walkingDependence'] ?>"]').prop('checked', true);
+                    }
+                    
+             
+        </script>
 
 
             <script>
@@ -315,6 +375,7 @@ if (isset($_GET['logout'])) {
                         $('input[name="exercisingHabitInput"]').prop('disabled', false);
                     } else {
                         $('input[name="exercisingHabitInput"]').prop('disabled', true);
+                        $('input[name="exercisingHabitInput"]').val('')
                     }
                     });
 
@@ -337,30 +398,20 @@ if (isset($_GET['logout'])) {
                 }
                 });
 
-             
-
     
 
-
-
-                $('#closeBtn1').click(function(e) {
-        e.preventDefault();
-        console.log("close btn clicked");
-        let patient_id = <?php
-                                    $userid = $_GET['patient_id'];
-                                    echo $userid
-                                    ?>;
-        let patient_name = "<?php
-                                    echo urldecode($_GET['patient_name']);
-                                    ?>";
-        var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
-            "&patient_name=" + encodeURIComponent(patient_name);
-        $("#content").load(url);
-
+                $(function() {
+            $('#closeBtn1').click(function(e) {
+                let patient_name = $("input[name='patient_name']").val();
+                let patient_id = parseInt($("input[name='patient_id']").val());
+                let url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
+                    "&patient_name=" + encodeURIComponent(patient_name);
+                $("#content").load(url);
+            })
         
     })
+  </script>
 
-            </script>
 
             <script>
                 $(function() {
@@ -376,13 +427,8 @@ if (isset($_GET['logout'])) {
                             var age = $('#age').val();
                             var not = $('#not').val();
                             let form_name = "hareketForm1";
-                            let patient_name = "<?php
-                                                    echo urldecode($_GET['patient_name']);
-                                                    ?>";
-                            var patient_id = <?php
-                                                    $userid = $_GET['patient_id'];
-                                                    echo $userid
-                                                    ?>;
+                             let patient_name = $("input[name='patient_name']").val();
+                             let patient_id = parseInt($("input[name='patient_id']").val());
                             let yourDate = new Date()
                             let creationDate = yourDate.toISOString().split('T')[0];
                             let updateDate = yourDate.toISOString().split('T')[0];

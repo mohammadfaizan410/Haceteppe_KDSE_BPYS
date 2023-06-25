@@ -361,6 +361,7 @@ input[type="email"] {
     width: 100%;
     justify-content: space-between;
     margin-bottom: 25px;
+    border: 2px solid #246174;
 }
 
 .usernamelabel {

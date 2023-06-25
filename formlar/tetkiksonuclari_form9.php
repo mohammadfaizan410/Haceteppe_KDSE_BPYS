@@ -187,7 +187,7 @@ if (isset($_GET['logout'])) {
     //                             //stop function 
     //                             return false;
     //                         }
-                            $('.form-check-input').closest('.form-check').css('border-color', '#ced4da');
+                            $('.form-check-input').closest('.input-section').css('border-color', '#ced4da');
                             $('.form-control').css('border-color', '#ced4da');
                             $('#option-error').css('display', 'none');
                     //custom validation

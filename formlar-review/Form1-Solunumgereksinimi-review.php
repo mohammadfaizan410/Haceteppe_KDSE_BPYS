@@ -1040,8 +1040,6 @@ if ($result) {
             var solunumsorunu = "<?php echo $solunumgereksinimi_form1['SolunumSorunu']; ?>";
             $('[name="SolunumSorunu"][value="'+ solunumsorunu + '"]').prop('checked', true);
 
-            console.log(solunumsorunu);
-
             if (solunumsorunu == "Var"){
 
                 var breathingProblems = <?php echo $solunumgereksinimi_form1['breathingProblems']; ?>;
@@ -1228,12 +1226,10 @@ if ($result) {
 
 
         })
-
-    </script>
-    <script>
+        </script>
+        <script>
         $(function() {
         $('[name="submit"]').click(function(e) {
-            console.log('second submit');
 
             if (!$('[name="yatisdurumuradio"]').is(':checked')) {
                 $('.option-error').css('display', 'none');
@@ -1508,6 +1504,9 @@ if ($result) {
                                     echo $userid
                                     ?>;
                         var form_id = <?php echo $form_id ?>;
+                        
+                        var patient_id = "<?php echo $solunumgereksinimi_form1['patient_id']; ?>";
+                        let patient_name = "<?php echo $solunumgereksinimi_form1['patient_name']; ?>";
                         let form_name = "solunumgereksinimi";
                         let yourDate = new Date()
                         let creationDate = yourDate.toISOString().split('T')[0];
@@ -1659,15 +1658,17 @@ if ($result) {
         });
 
     });
-    $(function() {
-            $('#closeBtn1').click(function(e) {
-                let patient_name = <?php echo $solunumgereksinimi_form1['patient_name'] ?>;
-                let patient_id = <?php echo $solunumgereksinimi_form1['patient_id'] ?>;
-                let url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
-                    "&patient_name=" + encodeURIComponent(patient_name);
-                $("#content").load(url);
-            })
+    </script>
+    <script>
+    $(function(){
+        $('#closeBtn1').click(function(e) {
+            let patient_name = "<?php echo $solunumgereksinimi_form1['patient_name'] ?>";
+            let patient_id = "<?php echo $solunumgereksinimi_form1['patient_id'] ?>";
+            let url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
+                "&patient_name=" + encodeURIComponent(patient_name);
+            $("#content").load(url);
         });
+    });
     </script>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
