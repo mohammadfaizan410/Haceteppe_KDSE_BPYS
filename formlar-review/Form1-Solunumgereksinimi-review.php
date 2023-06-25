@@ -1049,35 +1049,105 @@ if ($result) {
                         $('#breathing-not').attr('checked', true);
                         var breathingOther = "<?php echo $solunumgereksinimi_form1['solunum_diger']; ?>"
                         $('[name="solunum_diger"]').val(breathingOther);
+                        $('[name="solunum_diger"]').attr('disabled', false);
                     } else {
                         $('[name="breathing-problem"][value="'+value+'"]').prop('checked', true);
+                        $('[name="solunum_diger"]').attr('disabled', true);
                     }
                 })
 
+            } else {
+                $('[name="breathing-problem"]').prop('disabled', true);
+                $('[name="solunum_diger"]').attr('disabled', true);
             }
+
+            $('[name="SolunumSorunu"]').on('change', function(){
+                var selectedValue = $(this).val();
+
+                if (selectedValue === "Var"){
+                    $('[name="breathing-problem"]').prop('disabled', false);
+                    $('[name="solunum_diger"]').attr('disabled', true);
+                } else {
+                    $('[name="breathing-problem"]').prop('checked', false).prop('disabled', true);
+                    $('[name="solunum_diger"]').val('').attr('disabled', true);
+                }
+            });
+
+            $('#breathing-not').on('change', function(){
+                if (!$(this).is(':checked')){
+                    $('[name="solunum_diger"]').val('').attr('disabled', true);
+                } else {
+                    $('[name="solunum_diger"]').attr('disabled', false);
+                }
+            })
 
             var solunumyolu = "<?php echo $solunumgereksinimi_form1['SolunumYolu']; ?>";
             $('[name="SolunumYolu"][value="'+ solunumyolu + '"]').prop('checked', true);
 
             if (solunumyolu == "Var"){
                 AirwayMethod = "<?php echo $solunumgereksinimi_form1['airwayMethod']; ?>"
-
+                $('[name="AirwayMethod"]').prop('disabled', false);
                 $('[value="'+ AirwayMethod + '"]').prop('checked', true);
+            } 
+            else {
+                $('[name="AirwayMethod"]').prop('disabled', true);
             }
+
+            $('[name="SolunumYolu"]').on('change', function(){
+                var selectedValue = $(this).val();
+
+                if (selectedValue === "Var"){
+                    $('[name="AirwayMethod"]').prop('disabled', false);
+                } else {
+                    $('[name="AirwayMethod"]').prop('checked', false).prop('disabled', true);
+                }
+
+            })
 
             var oksurme = "<?php echo $solunumgereksinimi_form1['Oksurme']; ?>";
             $('[name="Oksurme"][value="'+ oksurme + '"]').prop('checked', true);
 
             if (oksurme == "Var"){
                 coughOption = "<?php echo $solunumgereksinimi_form1['coughOption']; ?>";
+                $('[name="CoughOption"]').prop('disabled', false);
 
                 if (coughOption === "Diğer"){
                     $('[name="CoughOption"][value="Diğer"]').prop('checked', true);
-                    $('[name="oksurme_diger"]').val("<?php echo $solunumgereksinimi_form1['oksurme_diger']; ?>");
-                } else {
-                    $('[value="Etkisiz"]').prop('checked', true);
+                    $('#oksurme_diger').val("<?php echo $solunumgereksinimi_form1['oksurme_diger']; ?>");
                 }
+            } 
+            else {
+                $('[name="CoughOption"]').prop('disabled', true);
             }
+
+            if ($('[name="CoughOption"][value="Diğer"]').is(':checked')){
+                $('#oksurme_diger').attr('disabled', false);
+            } else {
+                $('#oksurme_diger').attr('disabled', true);
+            }
+
+            $('[name="Oksurme"]').on('change', function(){
+                var selectedValue = $(this).val();
+
+                if (selectedValue === "Var"){
+                    $('[name="CoughOption"]').prop('disabled', false);
+                    $('[name="oksurme_diger"]').attr('disabled', true);
+                } else {
+                    $('[name="CoughOption"]').prop('checked', false).prop('disabled', true);
+                    $('[name="oksurme_diger"]').val('').attr('disabled', true);
+                }
+            })
+
+            $('[name="CoughOption"]').on('change', function(){
+                var selectedValue = $(this).val();
+                
+                if (selectedValue === "Diğer"){
+                    $('[name="oksurme_diger"]').attr('disabled', false);
+                } else {
+                    $('[name="oksurme_diger"]').val('');
+                    $('[name="oksurme_diger"]').attr('disabled', true);
+                }
+            })
 
             var balgam = "<?php echo $solunumgereksinimi_form1['Balgam']; ?>";
             $('[name="Balgam"][value="'+ balgam + '"]').prop('checked', true);
@@ -1087,51 +1157,154 @@ if ($result) {
 
                 $('[name="BalgamType"][value="'+ balgamType + '"]').prop('checked', true);
                 if (balgamType === "Diğer"){
+                    $('[name="BalgamType"][value="Diğer"]').prop('checked', true);
                     $('[name="balgam_diger"]').val("<?php echo $solunumgereksinimi_form1['balgam_diger']; ?>");
-                }
+                } 
+            } 
+            else {
+                $('[name="BalgamType"]').prop('disabled', true);
             }
+
+            if ($('[name="BalgamType"][value="Diğer"]').is(':checked')){
+                $('[name="balgam_diger"]').prop('disabled', false);
+            } else {
+                $('[name="balgam_diger"]').prop('disabled', true);
+            }
+
+            $('[name="Balgam"]').on('change', function(){
+                var selectedValue = $(this).val();
+
+                if (selectedValue === "Var"){
+                    $('[name="BalgamType"]').prop('disabled', false);
+                    $('[name="balgam_diger"]').prop('disabled', true);
+                } 
+                else {
+                    $('[name="BalgamType"]').prop('checked', false).prop('disabled', true);
+                    $('[name="balgam_diger"]').val('').prop('disabled', true);
+                }
+            })
+
+            $('[name="BalgamType"]').on('change', function(){
+                if ($(this).val() === "Diğer"){
+                    $('[name="balgam_diger"]').prop('disabled', false);
+                } else {
+                    $('[name="balgam_diger"]').val('');
+                    $('[name="balgam_diger"]').prop('disabled', true);
+                }
+            })
+
 
             var aspirasyonIhtiyaci = "<?php echo $solunumgereksinimi_form1['AspirasyonIhtiyaci']; ?>";
             $('[name="AspirasyonIhtiyaci"][value="'+ aspirasyonIhtiyaci + '"]').prop('checked', true);
 
             if (aspirasyonIhtiyaci == "Var"){
-
+                
+                $('[name="Aspirasyon_need"]').prop('disabled', false);
                 var aspirasyonNeeds = <?php echo $solunumgereksinimi_form1['aspirasyonNeeds']; ?>;
 
                 aspirasyonNeeds.forEach(function(value) {
                     $('[name="Aspirasyon_need"][value="'+value+'"]').prop('checked', true);
                 })
 
+            } 
+            else {
+                $('[name="Aspirasyon_need"]').prop('disabled', true);
             }
+
+            $('[name="AspirasyonIhtiyaci"]').on('change', function(){
+                var selectedValue = $(this).val();
+
+                if (selectedValue === "Var"){
+                    $('[name="Aspirasyon_need"]').prop('disabled', false);
+                } else {
+                    $('[name="Aspirasyon_need"]').prop('checked', false).prop('disabled', true);
+                }
+            })
 
             var burunMuayenesi = "<?php echo $solunumgereksinimi_form1['BurunMuayenesi']; ?>";
             $('[name="BurunMuayenesi"][value="'+ burunMuayenesi + '"]').prop('checked', true);
 
             if (burunMuayenesi == "Var"){
-
+                $('[name="NasalIssue"]').prop('disabled', false);
                 var nasalIssues = <?php echo $solunumgereksinimi_form1['nasalIssues']; ?>;
 
                 nasalIssues.forEach(function(value) {
                     $('[name="NasalIssue"][value="'+value+'"]').prop('checked', true);
                     if (value === "Diger") {
                         var nasalOther = "<?php echo $solunumgereksinimi_form1['nazal_diger']; ?>";
-                        $('[name="nazal_diger"]').val(nasalOther);
-                    }
+                        $('[name="nazal_diger"]').val(nasalOther).prop('disabled', false);
+                    } 
                 })
 
             }
 
+            if ($('[name="NasalIssue"][value="Diger"]').is(':checked')){
+                $('[name="nazal_diger"]').prop('disabled', false);
+            } else {
+                $('[name="nazal_diger"]').prop('disabled', true);
+            }
+
+            $('[name="BurunMuayenesi"]').on('change', function(){
+                var selectedValue = $(this).val();
+
+                if (selectedValue === "Var"){
+                    $('[name="NasalIssue"]').prop('disabled', false);
+                    $('[name="nazal_diger"]').attr('disabled', true);
+                } else {
+                    $('[name="NasalIssue"]').prop('checked', false).prop('disabled', true);
+                    $('[name="nazal_diger"]').val('').attr('disabled', true);
+                }
+            });
+
+            $('#NazalDiger').on('change', function(){
+                if (!$(this).is(':checked')){
+                    $('[name="nazal_diger"]').val('').attr('disabled', true);
+                } else {
+                    $('[name="nazal_diger"]').attr('disabled', false);
+                }
+            })
+
             var tiroid = "<?php echo $solunumgereksinimi_form1['TiroidBezi']; ?>";
             $('[name="TiroidBezi"][value="'+ tiroid + '"]').prop('checked', true);
-
+            
             if (tiroid == "Var"){
                 ThyroidIssue = "<?php echo $solunumgereksinimi_form1['thyroidIssue']; ?>";
+                $('[name="ThyroidIssue"]').prop('disabled', false);
 
                 $('[name="ThyroidIssue"][value="'+ ThyroidIssue + '"]').prop('checked', true);
                 if (ThyroidIssue === "Diger"){
-                    $('[name="tiroid_diger"]').val("<?php echo $solunumgereksinimi_form1['TiroidDiger']; ?>");
+                    $('[name="tiroid_diger"]').val("<?php echo $solunumgereksinimi_form1['TiroidDiger']; ?>").prop('disabled', false);
                 }
             }
+
+            if ($('[name="ThyroidIssue"][value="Diger"]').is(':checked')){
+                $('[name="tiroid_diger"]').prop('disabled', false);
+            } else {
+                $('[name="tiroid_diger"]').prop('disabled', true);
+            }
+
+            $('[name="TiroidBezi"]').on('change', function(){
+                var selectedValue = $(this).val();
+
+                if (selectedValue === "Var"){
+                    $('[name="ThyroidIssue"]').prop('disabled', false);
+                    $('[name="tiroid_diger"]').attr('disabled', true);
+                } 
+                else {
+                    $('[name="ThyroidIssue"]').prop('checked', false).prop('disabled', true);
+                    $('[name="tiroid_diger"]').val('').attr('disabled', true);
+                }
+            })
+
+            $('[name="ThyroidIssue"]').on('change', function(){
+                var selectedValue = $(this).val();
+
+                if (selectedValue === "Diger"){
+                    $('[name="tiroid_diger"]').attr('disabled', false);
+                } else {
+                    $('[name="tiroid_diger"]').val('').attr('disabled', true);
+                }
+            })
 
             var trakea = "<?php echo $solunumgereksinimi_form1['Trakea']; ?>";
             $('[name="Trakea"][value="'+ trakea + '"]').prop('checked', true);
@@ -1139,15 +1312,42 @@ if ($result) {
             if (trakea == "Var"){
                 shift = "<?php echo $solunumgereksinimi_form1['Shift']; ?>"
 
+                $('[name="Shift"]').prop('disabled', false);
                 $('[value="'+ shift + '"]').prop('checked', true);
+            } 
+            else {
+                $('[name="Shift"]').prop('checked', false).prop('disabled', true);
             }
+
+            $('[name="Trakea"]').on('change', function(){
+                var selectedValue = $(this).val();
+
+                if (selectedValue === "Var"){
+                    $('[name="Shift"]').prop('disabled', false);
+                } else {
+                    $('[name="Shift"]').prop('checked', false).prop('disabled', true);
+                }
+            })
 
             var lenf = "<?php echo $solunumgereksinimi_form1['LenfNodlari']; ?>";
             $('[name="LenfNodlari"][value="'+ lenf + '"]').prop('checked', true);
 
             if (lenf == "Var"){
-                $('[name="NodYeri"]').val("<?php echo $solunumgereksinimi_form1['NodYeri']; ?>")
+                $('[name="NodYeri"]').val("<?php echo $solunumgereksinimi_form1['NodYeri']; ?>").prop('disabled', false);
+            } 
+            else {
+                $('[name="NodYeri"]').val('').prop('disabled', true);
             }
+
+            $('[name="LenfNodlari"]').on('change', function(){
+                var selectedValue = $(this).val();
+
+                if (selectedValue === "Var"){
+                    $('[name="NodYeri"]').prop('disabled', false);
+                } else {
+                    $('[name="NodYeri"]').val('').prop('disabled', true);
+                }
+            })
 
             $('[name="NodDiger"]').val("<?php echo $solunumgereksinimi_form1['NodDiger']; ?>")
 
@@ -1159,13 +1359,27 @@ if ($result) {
 
             if (omurgaDeform == "Var"){
 
+                $('[name="SpinalDeformity"]').prop('disabled', false);
                 var spinalDeforms = <?php echo $solunumgereksinimi_form1['SpinalDeformities']; ?>;
 
                 spinalDeforms.forEach(function(value) {
                     $('[name="SpinalDeformity"][value="'+value+'"]').prop('checked', true);
                 })
 
+            } 
+            else {
+                $('[name="SpinalDeformity"]').prop('checked', false).prop('disabled', true);
             }
+
+            $('[name="OmurgaDeform"]').on('change', function(){
+                var selectedValue = $(this).val();
+
+                if (selectedValue === "Var"){
+                    $('[name="SpinalDeformity"]').prop('disabled', false);
+                } else {
+                    $('[name="SpinalDeformity"]').prop('checked', false).prop('disabled', true);
+                }
+            })
 
             var gogusHareketleri = "<?php echo $solunumgereksinimi_form1['GogusHareketleri']; ?>";
             $('[name="GogusHareketleri"][value="'+ gogusHareketleri + '"]').prop('checked', true);
@@ -1179,9 +1393,13 @@ if ($result) {
                 kitleOzelligi = "<?php echo $solunumgereksinimi_form1['Kitle_Ozelligi']; ?>";
                 kitleDiger = "<?php echo $solunumgereksinimi_form1['Kitle_Diger']; ?>";
 
+                $('[name="ChestIssues"]').prop('disabled', false);
+
                 if (krepitasyon != ""){
                     $('#KrepitasyonAlani').prop('checked', true);
-                    $('[name="Krepitasyon_Alani"]').val(krepitasyon);
+                    $('[name="Krepitasyon_Alani"]').val(krepitasyon).prop('disabled', false);
+                } else {
+                    $('[name="Krepitasyon_Alani"]').prop('disabled', true);
                 }
 
                 if (hassasiyet != ""){
@@ -1190,36 +1408,112 @@ if ($result) {
 
                 if (kitleOzelligi != ""){
                     $('#KitleOzelligi').prop('checked', true);
-                    $('[name="Kitle_Ozelligi"]').val(kitleOzelligi);
+                    $('[name="Kitle_Ozelligi"]').val(kitleOzelligi).prop('disabled', false);
+                } else {
+                    $('[name="Kitle_Ozelligi"]').prop('disabled', true);
                 }
 
                 if (kitleDiger != ""){
                     $('#KitleDiger').prop('checked', true);
-                    $('[name="Kitle_Diger"]').val(kitleDiger);
+                    $('[name="Kitle_Diger"]').val(kitleDiger).prop('disabled', false);
+                } else {
+                    $('[name="Kitle_Diger"]').prop('disabled', true);
                 }
 
+            } 
+            else {
+                $('[name="ChestIssues"]').prop('disabled', true);
+                $('[name="Krepitasyon_Alani"]').prop('disabled', true);
+                $('[name="Kitle_Ozelligi"]').prop('disabled', true);
+                $('[name="Kitle_Diger"]').prop('disabled', true);
             }
+
+            $('[name="GogusKafesinde"]').on('change', function(){
+                var selectedValue = $(this).val();
+
+                if (selectedValue === "Var"){
+                    $('[name="Krepitasyon_Alani"]').prop('disabled', true);
+                    $('[name="Kitle_Ozelligi"]').prop('disabled', true);
+                    $('[name="Kitle_Diger"]').prop('disabled', true);
+                    $('[name="ChestIssues"]').prop('disabled', false);
+                } else {
+                    $('[name="Krepitasyon_Alani"]').val('').prop('disabled', true);
+                    $('[name="Kitle_Ozelligi"]').val('').prop('disabled', true);
+                    $('[name="Kitle_Diger"]').val('').prop('disabled', true);
+                    $('[name="ChestIssues"]').prop('checked', false).prop('disabled', true);
+                }
+            })
+
+            $('#KrepitasyonAlani').on('change', function(){
+                if (!$(this).is(':checked')){
+                    $('[name="Krepitasyon_Alani"]').val('').prop('disabled', true);
+                } else {
+                    $('[name="Krepitasyon_Alani"]').prop('disabled', false);
+                }
+            })
+
+            $('#KitleOzelligi').on('change', function(){
+                if (!$(this).is(':checked')){
+                    $('[name="Kitle_Ozelligi"]').val('').prop('disabled', true);
+                } else {
+                    $('[name="Kitle_Ozelligi"]').prop('disabled', false);
+                }
+            })
+
+            $('#KitleDiger').on('change', function(){
+                if (!$(this).is(':checked')){
+                    $('[name="Kitle_Diger"]').val('').prop('disabled', true);
+                } else {
+                    $('[name="Kitle_Diger"]').prop('disabled', false);
+                }
+            })
 
             var gogusDeformitesi = "<?php echo $solunumgereksinimi_form1['GogusDeformitesi']; ?>";
             $('[name="GogusDeformitesi"][value="'+ gogusDeformitesi + '"]').prop('checked', true);
 
             if (gogusDeformitesi == "Var"){
 
+                $('[name="DeformityType"]').prop('disabled', false);
                 var deformityTypes = <?php echo $solunumgereksinimi_form1['DeformityTypes']; ?>;
 
                 deformityTypes.forEach(function(value) {
                     $('[name="DeformityType"][value="'+value+'"]').prop('checked', true);
                 })
 
+            } else {
+                $('[name="DeformityType"]').prop('disabled', false);
             }
+
+            $('[name="GogusDeformitesi"]').on('change', function(){
+                var selectedValue = $(this).val();
+
+                if (selectedValue === "Var"){
+                    $('[name="DeformityType"]').prop('disabled', false);
+                } else {
+                    $('[name="DeformityType"]').prop('checked', false).prop('disabled', true);
+                }
+
+            })
 
             var solunumSistemi = <?php echo $solunumgereksinimi_form1['SolunumSistemiUygilamasi']; ?>;
 
             solunumSistemi.forEach(function(value) {
                 $('[name="SolunumSistemiUygilamasi"][value="'+value+'"]').prop('checked', true);
-                if (value === "Diğer") {
+                if (value === "Diger") {
                     var solunumSistemiOther = "<?php echo $solunumgereksinimi_form1['SolunumUygulamasi_diger']; ?>"
-                    $('[name="SolunumSistemiUygilamasi_diger"]').val(solunumSistemiOther);
+                    $('[name="SolunumUygulamasi_diger"]').val(solunumSistemiOther).attr('disabled', false);
+                } 
+            })
+
+            if (!$('[name="SolunumSistemiUygilamasi"][value="Diğer"]').is(':checked')){
+                $('[name="SolunumUygulamasi_diger"]').attr('disabled', true);
+            }
+
+            $('[name="SolunumSistemiUygilamasi"][value="Diger"]').on('change', function(){
+                if (!$(this).is(':checked')){
+                    $('[name="SolunumUygulamasi_diger"]').val('').attr('disabled', true);
+                } else {
+                    $('[name="SolunumUygulamasi_diger"]').attr('disabled', false);
                 }
             })
 
