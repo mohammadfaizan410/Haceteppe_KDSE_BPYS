@@ -363,7 +363,7 @@ if ($result) {
                     if("<?php echo $hareketform1[0]['walkingDependence'] ?>" !== ""){
                         $('input[name="walkingDependence"][value="<?php echo $hareketform1[0]['walkingDependence'] ?>"]').prop('checked', true);
                     }
-                    
+
              
         </script>
 
@@ -422,6 +422,7 @@ if ($result) {
                             $userid = $_SESSION['userlogin']['id'];
                             echo $userid
                             ?>;
+                            var form_id = <?php echo $_GET['form_id']; ?>;
                             var name = $('#name').val();
                             var surname = $('#surname').val();
                             var age = $('#age').val();
@@ -561,14 +562,14 @@ if ($result) {
                                 //stop function
                                 return false;
                             }
-
-
-
+                            console.log("values init and validation success ");
 
                             $.ajax({
                                 type: 'POST',
                                 url: '<?php echo $base_url; ?>/form-handlers/SubmitOrUpdateForm1_Hareket.php',
                                 data: {
+                                    'form_id' : form_id,
+                                    'isUpdate': true,
                                     'id': id,
                                     'name': name,
                                     'surname': surname,

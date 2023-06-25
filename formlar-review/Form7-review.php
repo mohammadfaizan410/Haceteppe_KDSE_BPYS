@@ -373,7 +373,7 @@ if ($result) {
                 console.log('after setting variables')
                 $.ajax({
                     type: 'POST',
-                    url: '<?php echo $base_url; ?>/submitOrUpdateForm7.php',
+                    url: '<?php echo $base_url; ?>/form-handlers/submitOrUpdateForm7.php',
                     data: JSON.stringify({
                         isUpdate: true,
                         form_id: form_id,

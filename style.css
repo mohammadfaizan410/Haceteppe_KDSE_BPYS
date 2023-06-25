@@ -362,11 +362,15 @@ input[type="email"] {
     justify-content: space-between;
     margin-bottom: 25px;
     border: 2px solid #246174;
+    border-radius: 15px;
+    padding: 20px;
+
 }
 
 .usernamelabel {
     margin-bottom: unset;
     align-self: center;
+    font-weight: 700;
 }
 
 .input-section-wrapper {
