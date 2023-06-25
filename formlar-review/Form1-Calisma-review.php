@@ -256,27 +256,59 @@ if ($result) {
 
             if (workStatus == "Çalışmıyor"){
                 var nonWorkingTime = "<?php echo $calismaform1['nonWorkingTime']; ?>";
-                $('[name="nonWorkingTime"]').val(nonWorkingTime);
+                $('[name="nonWorkingTime"]').val(nonWorkingTime).prop('disabled', false);
             } else {
                 var workingTime = "<?php echo $calismaform1['workingTime']; ?>";
-                $('[name="workingTime"]').val(workingTime);
+                $('[name="workingTime"]').val(workingTime).prop('disabled', false);
             }
+
+            $('[name="workStatus"]').on('change', function(){
+                var selectedValue = $(this).val();
+
+                if (selectedValue === "Çalışmıyor"){
+                    $('[name="workingTime"]').val('').prop('disabled', true);
+                    $('[name="nonWorkingTime"]').prop('disabled', false);
+                } else {
+                    $('[name="nonWorkingTime"]').val('').prop('disabled', true);
+                    $('[name="workingTime"]').prop('disabled', false);
+                }
+            })
 
             var workInterruption = "<?php echo $calismaform1['workInterruption']; ?>";
             $('[name="workInterruption"][value="'+workInterruption+'"]').prop('checked', true);
 
             if (workInterruption == "Var"){
                 var workInterruptionInput = "<?php echo $calismaform1['workInterruptionInput']; ?>";
-                $('[name="workInterruptionInput"]').val(workInterruptionInput);
+                $('[name="workInterruptionInput"]').val(workInterruptionInput).prop('disabled', false);
             }
+
+            $('[name="workInterruption"]').on('change', function(){
+                var selectedValue = $(this).val();
+
+                if (selectedValue === "Yok"){
+                    $('[name="workInterruptionInput"]').val('').prop('disabled', true);
+                } else {
+                    $('[name="workInterruptionInput"]').prop('disabled', false);
+                }
+            })
 
             var workRisk = "<?php echo $calismaform1['workRisk']; ?>";
             $('[name="workRisk"][value="'+workRisk+'"]').prop('checked', true);
 
             if (workRisk == "Var"){
                 var workRiskInput = "<?php echo $calismaform1['workRiskInput']; ?>";
-                $('[name="workRiskInput"]').val(workRiskInput);
-            }
+                $('[name="workRiskInput"]').val(workRiskInput).prop('disabled', false);
+            } 
+
+            $('[name="workRisk"]').on('change', function(){
+                var selectedValue = $(this).val();
+
+                if (selectedValue === "Var"){
+                    $('[name="workRiskInput"]').prop('disabled', false);
+                } else {
+                    $('[name="workRiskInput"]').val('').prop('disabled', true);
+                }
+            })
 
             var familyMembers = "<?php echo $calismaform1['familyMembers']; ?>";
             $('[name="familyMembers"]').val(familyMembers);
@@ -292,12 +324,22 @@ if ($result) {
             $('[name="hobbies"]').val(hobbies);
 
             var hospitalSocialActivities = <?php echo $calismaform1['hospitalSocialActivities']; ?>;
-            console.log(hospitalSocialActivities);
             hospitalSocialActivities.forEach(function(value) {
                 $('[name="hospitalSocialActivities"][value="'+value+'"]').prop('checked', true);
                 if (value === "Diğer") {
                     var otherSocialActivities = "<?php echo $calismaform1['otherActivities']; ?>"
+                    $('[name="otherSocialActivities"]').prop('disabled', false);
                     $('[name="otherSocialActivities"]').val(otherSocialActivities);
+                } else {
+                    $('[name="otherSocialActivities"]').prop('disabled', true);
+                }
+            });
+
+            $('[name="hospitalSocialActivities"][value="Diğer"]').on('change', function(){
+                if (!$(this).is(':checked')){
+                    $('[name="otherSocialActivities"]').val('').prop('disabled', true);
+                } else {
+                    $('[name="otherSocialActivities"]').prop('disabled', false);
                 }
             })
 
