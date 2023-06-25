@@ -153,7 +153,7 @@ if ($result) {
 
                 $.ajax({
                     type: 'POST',
-                    url: '<?php echo $base_url; ?>/submitOrUpdateSivi_form12.php',
+                    url: '<?php echo $base_url; ?>/form-handlers/submitOrUpdateSivi_form12.php',
                     data: {
                         isUpdate: true,
                         form_id: form_id,

@@ -277,7 +277,7 @@ if (isset($_GET['logout'])) {
 
             $.ajax({
                 type: 'POST',
-                url: '<?php echo $base_url; ?>/submitOrUpdateAldigi_form11.php',
+                url: '<?php echo $base_url; ?>/form-handlers/submitOrUpdateAldigi_form11.php',
                 data: {
                     isUpdate: true,
                     form_id: form_id,

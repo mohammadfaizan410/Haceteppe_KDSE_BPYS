@@ -345,7 +345,6 @@ if (isset($_GET['logout'])) {
 
                 $('#closeBtn1').click(function(e) {
         e.preventDefault();
-        console.log("close btn clicked");
         let patient_id = <?php
                                     $userid = $_GET['patient_id'];
                                     echo $userid

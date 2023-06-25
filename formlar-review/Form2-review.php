@@ -259,7 +259,7 @@ if ($result) {
 
                     $.ajax({
                         type: 'POST',
-                        url: '<?php echo $base_url; ?>/submitOrUpdateForm2.php/',
+                        url: '<?php echo $base_url; ?>/form-handlers/submitOrUpdateForm2.php/',
                         data: {
                             isUpdate: true,
                             form_id: form_id,

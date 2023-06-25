@@ -171,7 +171,7 @@ if ($result) {
 
                 $.ajax({
                     type: 'POST',
-                    url: '<?php echo $base_url; ?>/submitOrUpdateBakimPlani_form14.php',
+                    url: '<?php echo $base_url; ?>/form-handlers/submitOrUpdateBakimPlani_form14.php',
                     data: {
                         isUpdate: true,
                         id: id,
