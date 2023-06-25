@@ -337,7 +337,7 @@ if (isset($_GET['logout'])) {
                             <input type="text" class="form-control" name="weight_input" id="diger"
                                 placeholder="Günlük Kilo Takibi" maxlength="200">
                         </div>
-                        <div class="d-flex text-center">
+                        <div class="d-flex text-center input-section">
                             <input class="form-control submit m-auto " type='submit' name="submit" id="submit" value="Kayıt">
                         </div>
                     </form>
@@ -437,15 +437,15 @@ if (isset($_GET['logout'])) {
                 "input[name='weight_input']").val() : 'Yapilmiyor';
 
             
-                if ($('input[name="gender"]:checked').length === 0) {
-                    // Scroll to gender
-                    $('html, body').animate({
-                        scrollTop: $('.form-check-input[name="gender"]').first().offset().top
-                    }, 200);
-                    // Display error message
-                    $('.form-check-input[name="gender"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-                    return false;
-                    }
+                // if ($('input[name="gender"]:checked').length === 0) {
+                //     // Scroll to gender
+                //     $('html, body').animate({
+                //         scrollTop: $('.form-check-input[name="gender"]').first().offset().top
+                //     }, 200);
+                //     // Display error message
+                //     $('.form-check-input[name="gender"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                //     return false;
+                //     }
 
                 // if($('#referance_value').val() === ""){
                 //             //scroll to referance_value
@@ -579,7 +579,7 @@ if (isset($_GET['logout'])) {
                         return false;
                     }
 
-                    if($('.form-check-input[name="o2_method"]:checked').length === 0){
+                    if($('.form-check-input[name="o2_status"]:checked').val() === "Aliyor" && $('.form-check-input[name="o2_method"]:checked').length === 0){
                         //scroll to o2_method
                         $('html, body').animate({
                             scrollTop: $('.form-check-input[name="o2_method"]').first().offset().top
@@ -588,8 +588,19 @@ if (isset($_GET['logout'])) {
                         $('.form-check-input[name="o2_method"]').first().closest('.input-section').find('.option-error').css('display', 'block');
                         return false;
                     }
+                    if($('.form-check-input[name="o2_status"]:checked').val() === "Aliyor" && $('.form-check-input[name="o2_method"]:checked').val() === "Diğer" && $('#o2_method_diger_input').val() === ""){
+                        //scroll to o2_method_diger_input
+                        $('html, body').animate({
+                            scrollTop: $('#o2_method_diger_input').offset().top
+                        }, 200);
+                        //change border color
+                        $('#o2_method_diger_input').css('border-color', 'red');
+                        //stop function
+                        return false;
+                    }
 
-                    if($('#spo2_percentage').val()=== "" ){
+
+                    if( $('#spo2_percentage').val()=== "" ){
                         //scroll to spo2_percentage
                         $('html, body').animate({
                             scrollTop: $("#spo2_percentage").offset().top

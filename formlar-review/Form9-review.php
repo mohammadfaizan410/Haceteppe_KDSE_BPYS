@@ -173,10 +173,8 @@ if (isset($_GET['logout'])) {
     });
     </script>
     <script>
-    const examination = "<?php echo $form9[0]['examination_type']; ?>";
-    console.log(examination);
-    $('input[name="tektikOption"]').each(function() {
-        if ($(this).val() === examination) {
+    $('.form-check-input[name="tektikOption"]').each(function() {
+        if ($(this).val() === '<?php echo $form9[0]['examination_type']; ?>') {
             $(this).prop('checked', true);
         }
     });

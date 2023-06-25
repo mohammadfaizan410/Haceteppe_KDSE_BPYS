@@ -350,7 +350,7 @@ if ($result) {
                         <p class="usernamelabel m-2">Kol Bandı Rengi:</p>
                         <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                         <input type="text" class="form-control" name="kolbandi" id="kolbandi"
-                            placeholder="Kol Bandı Rengi Giriniz">
+                            placeholder="Kol Bandı Rengi Giriniz" value="<?php echo $ozgecmisform1[0]['kolbandi'] ?>">
                     </div>
                     <h1 class="form-header">Gerektiğinde Ulaşılabilecek Yakını</h1>
 
@@ -415,11 +415,11 @@ if ($result) {
                             </tr>
                             <tr>
                                 <td><input type="number" min="1950" max="2099" class="form-control ozgecmistable" disabled  name="hospitalization_year"
-                                        id="hospitalization_year" placeholder="..."></td>
+                                        id="hospitalization_year" placeholder="..." value="<?php echo $ozgecmisform1[0]['hospitalization_year']?>"></td>
                                 <td><input type="text" class="form-control ozgecmistable" disabled  name="hospitalization_location"
-                                        id="hospitalization_location" placeholder="..."></td>
+                                        id="hospitalization_location" placeholder="..." value="<?php echo $ozgecmisform1[0]['hospitalization_location']?>"></td>
                                 <td><input type="text" class="form-control ozgecmistable" disabled  name="hospitalization_reason"
-                                        id="hospitalization_reason" placeholder="..."></td>
+                                        id="hospitalization_reason" placeholder="..." value="<?php echo $ozgecmisform1[0]['hospitalization_reason']?>"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -1099,19 +1099,23 @@ if ($result) {
                         </div>
                     </div>
                     </div>
-
-                    <p class="usernamelabel m-2">Şikayetler</p>
-                    <input type="text" class="form-control not"  name="complaints" id="complaints"
+                    <div class="input-section">
+                        
+                        <p class="usernamelabel m-2">Şikayetler</p>
+                        <input type="text" class="form-control not"  name="complaints" id="complaints"
                         placeholder="Şikayetler" value="<?php echo $ozgecmisform1[0]['complaints'] ?>">
-
-                    <p class="usernamelabel m-2">Tıbbi Tanı</p>
-                    <input type="text" class="form-control not"  name="medicalDiagnosis" id="medicalDiagnosis"
+                        
+                        <p class="usernamelabel m-2">Tıbbi Tanı</p>
+                        <input type="text" class="form-control not"  name="medicalDiagnosis" id="medicalDiagnosis"
                         placeholder="Tıbbi Tanı" value="<?php echo $ozgecmisform1[0]['medicalDiagnosis'] ?>">
-
-                    <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
+                    </div>
+                <div class="input-section d-flex text-center">
+                <input class="form-control submit m-auto " type='submit' name="submit" id="submit" value="Kayıt">
+             </form>
+                </div>
             </div>
-            </form>
         </div>
+    </div>
 
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -1124,11 +1128,7 @@ if ($result) {
         <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
         <script>
-            console.log("hello there")
-             //prefilling function for form 1
         $(function(){
-            console.log("hello")
-            //gender
             $('.form-check-input[name="gender"]').each(function(){
                 console.log("<?php echo $ozgecmisform1[0]['gender'] ?>")
                 if($(this).val() === "<?php echo $ozgecmisform1[0]['gender'] ?>" ){
@@ -1150,6 +1150,7 @@ if ($result) {
             $(".form-check-input[name='socialSecurity']").filter(function() {
                 return $(this).val() === "Diğer";
             }).prop('checked', true);
+            $("input[name='socialSecuritOther']").prop('disabled', false)
             $("input[name='socialSecuritOther']").val(socialSecurityValue);
             }
 
@@ -1167,6 +1168,7 @@ if ($result) {
             $(".form-check-input[name='translatorRequirement']").filter(function() {
                 return $(this).val() === "Var";
             }).prop('checked', true);
+            $("input[name='translatorRequirementInput']").prop('disabled', false);
             $("input[name='translatorRequirementInput']").val(translatorRequirementValue);
             }
 
@@ -1184,6 +1186,7 @@ if ($result) {
             $(".form-check-input[name='transfusionStatus']").filter(function() {
                 return $(this).val() === "Var";
             }).prop('checked', true);
+            $("input[name='transfusionStatusInput']").prop('disabled', false);
             $("input[name='transfusionStatusInput']").val(transfusionStatusValue)
             }
 
@@ -1201,6 +1204,7 @@ if ($result) {
             $(".form-check-input[name='transfusionReaction']").filter(function() {
                 return $(this).val() === "Var";
             }).prop('checked', true);
+            $("input[name='transfusionReactionInput']").prop('disabled', false);
             $("input[name='transfusionReactionInput']").val(transfusionReactionValue)
             }
 
@@ -1218,6 +1222,7 @@ if ($result) {
             $(".form-check-input[name='infoStorageType']").filter(function() {
                 return $(this).val() === "Diger";
             }).prop('checked', true);
+            $("input[name='infoStorageTypeInput']").prop('disabled', false);
             $("input[name='infoStorageTypeInput']").val(infoStorageTypeValue)
             }
             
@@ -1235,9 +1240,9 @@ if ($result) {
             $(".form-check-input[name='previousHospitalization']").filter(function() {
                 return $(this).val() === "Var";
             }).prop('checked', true);
-            $("input[name='hospitalization_year']").val("<?php echo $ozgecmisform1[0]['hospitalization_year']?>")
-            $("input[name='hospitalization_location']").val("<?php echo $ozgecmisform1[0]['hospitalization_location']?>")
-            $("input[name='hospitalization_reason']").val("<?php echo $ozgecmisform1[0]['hospitalization_reason']?>")
+            $("input[name='hospitalization_year']").prop('disabled', false);
+            $("input[name='hospitalization_location']").prop('disabled', false);
+            $("input[name='hospitalization_reason']").prop('disabled', false);
             }
 
             //diseases
@@ -1254,6 +1259,7 @@ if ($result) {
             $(".form-check-input[name='diseases']").filter(function() {
                 return $(this).val() === "Var";
             }).prop('checked', true);
+            $("input[name='diseasesInput']").prop('disabled', false);
             $("input[name='diseasesInput']").val(diseasesValue)
             }
 
@@ -1271,6 +1277,7 @@ if ($result) {
             $(".form-check-input[name='previousSurgeries']").filter(function() {
                 return $(this).val() === "Var";
             }).prop('checked', true);
+            $("input[name='previousSurgeriesInput']").prop('disabled', false);
             $("input[name='previousSurgeriesInput']").val(previousSurgeriesValue)
             }
 
@@ -1288,6 +1295,7 @@ if ($result) {
             $(".form-check-input[name='accidents']").filter(function() {
                 return $(this).val() === "Var";
             }).prop('checked', true);
+            $("input[name='accidentsInput']").prop('disabled', false);
             $("input[name='accidentsInput']").val(accidentsValue)
             }
 
@@ -1305,6 +1313,7 @@ if ($result) {
             $(".form-check-input[name='infectiousDisease']").filter(function() {
                 return $(this).val() === "Var";
             }).prop('checked', true);
+            $("input[name='infectiousDiseaseInput']").prop('disabled', false);
             $("input[name='infectiousDiseaseInput']").val(infectiousDiseaseValue)
             }
 
@@ -1343,6 +1352,8 @@ if ($result) {
             //smoking
             if($('.form-check-input[name="smoking"]').val() === "<?php echo $ozgecmisform1[0]['smoking'] ?>"){
                 $('.form-check-input[name="smoking"]').prop('checked', true);
+                $('input[name="smokingAmount"]').prop('disabled', false);
+                $('input[name="smokingTime"]').prop('disabled', false);
             }
             $('input[name="smokingAmount"]').val("<?php echo $ozgecmisform1[0]['smokingAmount'] ?>")
             $('input[name="smokingTime"]').val("<?php echo $ozgecmisform1[0]['smokingTime'] ?>")
@@ -1350,6 +1361,9 @@ if ($result) {
             //alcoholUsage
             if($('.form-check-input[name="alcoholUsage"]').val() === "<?php echo $ozgecmisform1[0]['alcoholUsage'] ?>"){
                 $('.form-check-input[name="alcoholUsage"]').prop('checked', true);
+                $('input[name="alcoholAmount"]').prop('disabled', false);
+                $('input[name="alcoholUsageTime"]').prop('disabled', false);
+
             }
             $('input[name="alcoholAmount"]').val("<?php echo $ozgecmisform1[0]['alcoholAmount'] ?>")
             $('input[name="alcoholUsageTime"]').val("<?php echo $ozgecmisform1[0]['alcoholUsageTime'] ?>")
@@ -1357,6 +1371,8 @@ if ($result) {
             //teaUsage
             if($('.form-check-input[name="teaUsage"]').val() === "<?php echo $ozgecmisform1[0]['teaUsage'] ?>"){
                 $('.form-check-input[name="teaUsage"]').prop('checked', true);
+                $('input[name="teaUsageAmount"]').prop('disabled', false);
+                $('input[name="teaUsageTime"]').prop('disabled', false);
             }
             $('input[name="teaUsageAmount"]').val("<?php echo $ozgecmisform1[0]['teaUsageAmount'] ?>")
             $('input[name="teaUsageTime"]').val("<?php echo $ozgecmisform1[0]['teaUsageTime'] ?>")
@@ -1364,6 +1380,8 @@ if ($result) {
             //coffeeUsage
             if($('.form-check-input[name="coffeeUsage"]').val() === "<?php echo $ozgecmisform1[0]['coffeeUsage'] ?>"){
                 $('.form-check-input[name="coffeeUsage"]').prop('checked', true);
+                $('input[name="coffeeUsageAmount"]').prop('disabled', false);
+                $('input[name="coffeeUsageTime"]').prop('disabled', false);
             }
             $('input[name="coffeeUsageAmount"]').val("<?php echo $ozgecmisform1[0]['coffeeUsageAmount'] ?>")
             $('input[name="coffeeUsageTime"]').val("<?php echo $ozgecmisform1[0]['coffeeUsageTime'] ?>")
@@ -1371,6 +1389,8 @@ if ($result) {
             //otherHabits
             if($('.form-check-input[name="otherHabits"]').val() === "<?php echo $ozgecmisform1[0]['otherHabits'] ?>"){
                 $('.form-check-input[name="otherHabits"]').prop('checked', true);
+                $('input[name="otherHabitsAmount"]').prop('disabled', false);
+                $('input[name="otherHabitsTime"]').prop('disabled', false);
             }
             $('input[name="otherHabitsAmount"]').val("<?php echo $ozgecmisform1[0]['otherHabitsAmount'] ?>")
             $('input[name="otherHabitsTime"]').val("<?php echo $ozgecmisform1[0]['otherHabitsTime'] ?>")
@@ -1389,6 +1409,8 @@ if ($result) {
             $(".form-check-input[name='familyIllnesses']").filter(function() {
                 return $(this).val() === "Var";
             }).prop('checked', true);
+            $("input[name='familyMemberRelation']").prop('disabled', false);
+            $("input[name='familyMemberIllness']").prop('disabled', false);
             $("input[name='familyMemberRelation']").val("<?php echo $ozgecmisform1[0]['familyMemberRelation']?>")
             $("input[name='familyMemberIllness']").val("<?php echo $ozgecmisform1[0]['familyMemberIllness']?>")
             }
@@ -1407,6 +1429,7 @@ if ($result) {
             $(".form-check-input[name='arrivalFrom']").filter(function() {
                 return $(this).val() === "Diger";
             }).prop('checked', true);
+            $("input[name='arrivalFromInput']").prop('disabled', false);
             $("input[name='arrivalFromInput']").val("<?php echo $ozgecmisform1[0]['arrivalFrom']?>")
             }
 
@@ -1424,20 +1447,9 @@ if ($result) {
             $(".form-check-input[name='hospitalArrivalMethod']").filter(function() {
                 return $(this).val() === "Diger";
             }).prop('checked', true);
+            $("input[name='hospitalArrivalMethodInput']").prop('disabled', false);
             $("input[name='hospitalArrivalMethodInput']").val("<?php echo $ozgecmisform1[0]['hospitalArrivalMethod']?>")
             }
-
-          
-
-
-
-            
-
-
-
-
-
-
 
          })
 
@@ -1445,218 +1457,206 @@ if ($result) {
 
 
         <script>
-    // $('.form-check-input[name="careAcceptance"]').change(function(){
-    //             if($(this).val() === 'Katılıyor'){
-    //                 $('input[name="careAcceptanceWilling"]').prop('disabled', false);
-    //                 $('input[name="careAcceptanceNon"]').prop('disabled', true);
+    $('.form-check-input[name="careAcceptance"]').change(function(){
+                if($(this).val() === 'Katılıyor'){
+                    $('input[name="careAcceptanceWilling"]').prop('disabled', false);
+                    $('input[name="careAcceptanceNon"]').prop('disabled', true);
 
-    //             }else{
-    //                 $('input[name="careAcceptanceWilling"]').prop('disabled', true);
-    //                 $('input[name="careAcceptanceNon"]').prop('disabled', false);
-    //             }
-    //         })
+                }else{
+                    $('input[name="careAcceptanceWilling"]').prop('disabled', true);
+                    $('input[name="careAcceptanceNon"]').prop('disabled', false);
+                }
+            })
 
-        // $('.form-check-input[name="socialSecurity"]').change(function(){
-        //     if($(this).val() === "Diğer"){
-        //         $('input[name="socialSecuritOther"]').prop('disabled', false);
-        //     }
-        // })
+        $('.form-check-input[name="socialSecurity"]').change(function(){
+            if($(this).val() === "Diğer"){
+                $('input[name="socialSecuritOther"]').prop('disabled', false);
+            }
+        })
 
-        // $('.form-check-input[name="translatorRequirement"]').change(function(){
-        //     if($(this).val() === "Var"){
-        //         $('input[name="translatorRequirementInput"]').prop('disabled', false);
-        //     }
-        // })
+        $('.form-check-input[name="translatorRequirement"]').change(function(){
+            if($(this).val() === "Var"){
+                $('input[name="translatorRequirementInput"]').prop('disabled', false);
+            }
+        })
 
-        // $('.form-check-input[name="transfusionStatus"]').change(function(){
-        //     if($(this).val() === "Var"){
-        //         $('input[name="transfusionStatusInput"]').prop('disabled', false);
-        //     }
-        // })
-        // $('.form-check-input[name="transfusionReaction"]').change(function(){
-        //     if($(this).val() === "Var"){
-        //         $('input[name="transfusionReactionInput"]').prop('disabled', false);
-        //     }
-        // })
-        // $('.form-check-input[name="infoStorageType"]').change(function(){
-        //     if($(this).val() === "Diger"){
-        //         $('input[name="infoStorageTypeInput"]').prop('disabled', false);
-        //     }
-        // })
+        $('.form-check-input[name="transfusionStatus"]').change(function(){
+            if($(this).val() === "Var"){
+                $('input[name="transfusionStatusInput"]').prop('disabled', false);
+            }
+        })
+        $('.form-check-input[name="transfusionReaction"]').change(function(){
+            if($(this).val() === "Var"){
+                $('input[name="transfusionReactionInput"]').prop('disabled', false);
+            }
+        })
+        $('.form-check-input[name="infoStorageType"]').change(function(){
+            if($(this).val() === "Diger"){
+                $('input[name="infoStorageTypeInput"]').prop('disabled', false);
+            }
+        })
 
-        // $('.form-check-input[name="previousHospitalization"]').change(function(){
-        //     if($(this).val() === "Var"){
-        //         $('input[name="hospitalization_year"]').prop('disabled', false);
-        //         $('input[name="hospitalization_location"]').prop('disabled', false);
-        //         $('input[name="hospitalization_reason"]').prop('disabled', false);
-        //     }
-        // })
+        $('.form-check-input[name="previousHospitalization"]').change(function(){
+            if($(this).val() === "Var"){
+                $('input[name="hospitalization_year"]').prop('disabled', false);
+                $('input[name="hospitalization_location"]').prop('disabled', false);
+                $('input[name="hospitalization_reason"]').prop('disabled', false);
+            }
+        })
 
-        // $('.form-check-input[name="diseases"]').change(function(){
-        //     if($(this).val() === "Var"){
-        //         $('input[name="diseasesInput"]').prop('disabled', false);
-        //     }
-        // })
+        $('.form-check-input[name="diseases"]').change(function(){
+            if($(this).val() === "Var"){
+                $('input[name="diseasesInput"]').prop('disabled', false);
+            }
+        })
 
-        // $('.form-check-input[name="previousSurgeries"]').change(function(){
-        //     if($(this).val() === "Var"){
-        //         $('input[name="previousSurgeriesInput"]').prop('disabled', false);
-        //     }
-        // })
+        $('.form-check-input[name="previousSurgeries"]').change(function(){
+            if($(this).val() === "Var"){
+                $('input[name="previousSurgeriesInput"]').prop('disabled', false);
+            }
+        })
 
-        // //accidents
+        //accidents
 
-        // $('.form-check-input[name="accidents"]').change(function(){
-        //     if($(this).val() === "Var"){
-        //         $('input[name="accidentsInput"]').prop('disabled', false);
+        $('.form-check-input[name="accidents"]').change(function(){
+            if($(this).val() === "Var"){
+                $('input[name="accidentsInput"]').prop('disabled', false);
 
-        //     }
-        // })
+            }
+        })
 
-        // //infectiousDisease
+        //infectiousDisease
 
-        // $('.form-check-input[name="infectiousDisease"]').change(function(){
-        //     if($(this).val() === "Var"){
-        //         $('input[name="infectiousDiseaseInput"]').prop('disabled', false);
+        $('.form-check-input[name="infectiousDisease"]').change(function(){
+            if($(this).val() === "Var"){
+                $('input[name="infectiousDiseaseInput"]').prop('disabled', false);
 
-        //     }
-        // })
+            }
+        })
 
-        // //allergies
+        //allergies
 
-        // $('.form-check-input[name="allergies"]').change(function(){
-        //     if($(this).val() === "Var"){
-        //         $('input[name="allergen"]').prop('disabled', false);
-        //         $('input[name="allergySymptoms"]').prop('disabled', false);
-        //         $('input[name="allergyTherapy"]').prop('disabled', false);
-        //     }
-        // })
+        $('.form-check-input[name="allergies"]').change(function(){
+            if($(this).val() === "Var"){
+                $('input[name="allergen"]').prop('disabled', false);
+                $('input[name="allergySymptoms"]').prop('disabled', false);
+                $('input[name="allergyTherapy"]').prop('disabled', false);
+            }
+        })
         
 
-        // //previousMedications
+        //previousMedications
 
-        // $('.form-check-input[name="previousMedications"]').change(function(){
-        //     if($(this).val() === "Var"){
-        //         $('input[name="medicineName"]').prop('disabled', false);
-        //         $('input[name="prescriptionType"]').prop('disabled', false);
-        //         $('input[name="medicineFrequency"]').prop('disabled', false);
-        //         $('input[name="medicineDose"]').prop('disabled', false);
-        //         $('input[name="intakeMethod"]').prop('disabled', false);
-        //         $('input[name="intakeTimes"]').prop('disabled', false);
-        //     }
-        // })
+        $('.form-check-input[name="previousMedications"]').change(function(){
+            if($(this).val() === "Var"){
+                $('input[name="medicineName"]').prop('disabled', false);
+                $('input[name="prescriptionType"]').prop('disabled', false);
+                $('input[name="medicineFrequency"]').prop('disabled', false);
+                $('input[name="medicineDose"]').prop('disabled', false);
+                $('input[name="intakeMethod"]').prop('disabled', false);
+                $('input[name="intakeTimes"]').prop('disabled', false);
+            }
+        })
 
-        // //aidTools
+        //aidTools
 
-        // $('.form-check-input[name="aidTools"]').change(function(){
-        //     if($(this).val() === "Var"){
-        //         $('.form-check-input[name="aidToolsDesc"]').prop('disabled', false);
-        //     }
-        // })
+        $('.form-check-input[name="aidTools"]').change(function(){
+            if($(this).val() === "Var"){
+                $('.form-check-input[name="aidToolsDesc"]').prop('disabled', false);
+            }
+        })
 
-        // //smoking
+        //smoking
 
-        // $('.form-check-input[name="smoking"]').change(function(){
-        //     if($(this).val() === "Sigara"){
-        //         $('input[name="smokingAmount"]').prop('disabled', false);
-        //         $('input[name="smokingTime"]').prop('disabled', false);
-        //     }
-        // })
+        $('.form-check-input[name="smoking"]').change(function(){
+            if($(this).val() === "Sigara"){
+                $('input[name="smokingAmount"]').prop('disabled', false);
+                $('input[name="smokingTime"]').prop('disabled', false);
+            }
+        })
 
-        // //alcoholUsage
+        //alcoholUsage
 
-        // $('.form-check-input[name="alcoholUsage"]').change(function(){
-        //     if($(this).val() === "Alkol"){
-        //         $('input[name="alcoholAmount"]').prop('disabled', false);
-        //         $('input[name="alcoholUsageTime"]').prop('disabled', false);
-        //     }
-        // })
+        $('.form-check-input[name="alcoholUsage"]').change(function(){
+            if($(this).val() === "Alkol"){
+                $('input[name="alcoholAmount"]').prop('disabled', false);
+                $('input[name="alcoholUsageTime"]').prop('disabled', false);
+            }
+        })
 
-        // //teaUsage
+        //teaUsage
 
-        // $('.form-check-input[name="teaUsage"]').change(function(){
-        //     if($(this).val() === "Cay"){
-        //         $('input[name="teaUsageAmount"]').prop('disabled', false);
-        //         $('input[name="teaUsageTime"]').prop('disabled', false);
-        //     }
-        // })
+        $('.form-check-input[name="teaUsage"]').change(function(){
+            if($(this).val() === "Cay"){
+                $('input[name="teaUsageAmount"]').prop('disabled', false);
+                $('input[name="teaUsageTime"]').prop('disabled', false);
+            }
+        })
 
-        // //coffeeUsage
+        //coffeeUsage
 
-        // $('.form-check-input[name="coffeeUsage"]').change(function(){
-        //     if($(this).val() === "Kahve"){
-        //         $('input[name="coffeeUsageAmount"]').prop('disabled', false);
-        //         $('input[name="coffeeUsageTime"]').prop('disabled', false);
-        //     }
-        // })
+        $('.form-check-input[name="coffeeUsage"]').change(function(){
+            if($(this).val() === "Kahve"){
+                $('input[name="coffeeUsageAmount"]').prop('disabled', false);
+                $('input[name="coffeeUsageTime"]').prop('disabled', false);
+            }
+        })
 
-        // //otherHabits
+        //otherHabits
 
-        // $('.form-check-input[name="otherHabits"]').change(function(){
-        //     if($(this).val() === "Diger"){
-        //         $('input[name="otherHabitsInput"]').prop('disabled', false);
-        //         $('input[name="otherHabitsAmount"]').prop('disabled', false);
-        //         $('input[name="otherHabitsTime"]').prop('disabled', false);
-        //     }
-        // })
+        $('.form-check-input[name="otherHabits"]').change(function(){
+            if($(this).val() === "Diger"){
+                $('input[name="otherHabitsInput"]').prop('disabled', false);
+                $('input[name="otherHabitsAmount"]').prop('disabled', false);
+                $('input[name="otherHabitsTime"]').prop('disabled', false);
+            }
+        })
 
-        // //familyIllnesses
+        //familyIllnesses
 
-        // $('.form-check-input[name="familyIllnesses"]').change(function(){
-        //     if($(this).val() === "Var"){
-        //         $('input[name="familyMemberRelation"]').prop('disabled', false);
-        //         $('input[name="familyMemberIllness"]').prop('disabled', false);
-        //     }
-        // })
+        $('.form-check-input[name="familyIllnesses"]').change(function(){
+            if($(this).val() === "Var"){
+                $('input[name="familyMemberRelation"]').prop('disabled', false);
+                $('input[name="familyMemberIllness"]').prop('disabled', false);
+            }
+        })
 
-        // //arrivalFrom
+        //arrivalFrom
 
-        // $('.form-check-input[name="arrivalFrom"]').change(function(){
-        //     if($(this).val() === "Diger"){
-        //         $('input[name="arrivalFromInput"]').prop('disabled', false);
-        //     }
-        // })
+        $('.form-check-input[name="arrivalFrom"]').change(function(){
+            if($(this).val() === "Diger"){
+                $('input[name="arrivalFromInput"]').prop('disabled', false);
+            }
+        })
 
-        // //hospitalArrivalMethod
+        //hospitalArrivalMethod
 
-        // $('.form-check-input[name="hospitalArrivalMethod"]').change(function(){
-        //     if($(this).val() === "Diger"){
-        //         $('input[name="hospitalArrivalMethodInput"]').prop('disabled', false);
-        //     }
-        // })
+        $('.form-check-input[name="hospitalArrivalMethod"]').change(function(){
+            if($(this).val() === "Diger"){
+                $('input[name="hospitalArrivalMethodInput"]').prop('disabled', false);
+            }
+        })
 
         $(function() {
         $('#closeBtn1').click(function(e) {
-            let patient_id = <?php
-                                    $userid = $_GET['patient_id'];
-                                    echo $userid
-                                    ?>;
-            let patient_name = "<?php
-                                    echo urldecode($_GET['patient_name']);
-                                    ?>";
+            let patient_id = "<?php echo $ozgecmisform1[0]['patient_id']  ?>";
+            let patient_name = "<?php echo $ozgecmisform1[0]['patient_name']  ?>";
             var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
                 "&patient_name=" + encodeURIComponent(patient_name);
             $("#content").load(url);
 
         })
-    });
-        
+    }); 
         </script>
 
         <script>
-        $(function() {
             $('#submit').click(function(e) {
                 e.preventDefault()                
                             let age = $('#age').val();
                             let not = $('#not').val();
 
-                            var patient_id = <?php
-                                                $userid = $_GET['patient_id'];
-                                                echo $userid
-                                                ?>;
-                            let patient_name = "<?php
-                                                echo urldecode($_GET['patient_name']);
-                                                ?>";
+                            let patient_id = "<?php echo $ozgecmisform1[0]['patient_id']  ?>";
+                             let patient_name = "<?php echo $ozgecmisform1[0]['patient_name']  ?>";
                             let form_name = "ozgecmis";
                             let yourDate = new Date()
                             let creation_date = yourDate.toISOString().split('T')[0];
@@ -1700,7 +1700,7 @@ if ($result) {
                             let allergyTherapy = $('input[name="allergyTherapy"]').val() ? $('input[name="allergyTherapy"]').val() : "";
                             let previousMedications = $('.form-check-input[name="previousMedications"]:checked').val();
                             let medicineName = $('input[name="medicineName"]').val() ? $('input[name="medicineName"]').val() : "";
-                            let prescriptionType = $('.form-check-input[name="prescriptionType"]:checked').val();
+                            let prescriptionType = $('.form-check-input[name="prescriptionType"]:checked').val() ? $('.form-check-input[name="prescriptionType"]:checked').val() : "";
                             let medicineFrequency = $('input[name="medicineFrequency"]').val() ? $('input[name="medicineFrequency"]').val() : "";
                             let medicineDose = $('input[name="medicineDose"]').val() ? $('input[name="medicineDose"]').val() : "";
                             let intakeMethod = $('input[name="intakeMethod"]').val() ? $('input[name="intakeMethod"]').val() : "";
@@ -1736,6 +1736,8 @@ if ($result) {
                             let hospitalArrivalMethod = $('.form-check-input[name="hospitalArrivalMethod"]:checked').val() === "Diger" ? $('#hospitalArrivalMethodInput').val() : $('.form-check-input[name="hospitalArrivalMethod"]:checked').val();
                             let complaints = $('input[name="complaints"]').val() ? $('input[name="complaints"]').val() : "";
                             let medicalDiagnosis = $('input[name="medicalDiagnosis"]').val() ? $('input[name="medicalDiagnosis"]').val() : "";
+                            var form_id = <?php echo $_GET['form_id']; ?>;
+
 
                              //set border color normal
                             $('.form-control').css('border-color', '#ced4da');
@@ -2322,7 +2324,7 @@ if ($result) {
                                 return false;
 
                             }
-                            if( $('.form-check-input[name="aidTools"]:checked').val() === "Var" && $('.form-check-input[name="aidToolsDsc"]:checked').length() === 0){
+                            if( $('.form-check-input[name="aidTools"]:checked').val() === "Var" && $('.form-check-input[name="aidToolsDsc"]:checked').length === 0){
                                 //scroll to aidToolsInput
                                 $('html, body').animate({
                                     scrollTop: $('.form-check-input[name="aidTools"]').first().offset().top
@@ -2432,6 +2434,9 @@ if ($result) {
                         type: 'POST',
                         url: '<?php echo $base_url; ?>/form-handlers/SubmitOrUpdateForm1_Ozgecmis.php',
                         data: {
+                            isUpdate : true,
+                            form_id : form_id,
+                            age: age,
                             patient_id: patient_id,
                             patient_name: patient_name,
                             form_name: form_name,
@@ -2439,6 +2444,7 @@ if ($result) {
                             update_date : update_date,
                             nameSurname: nameSurname,
                             dob : dob,
+                            infoPerson : infoPerson,
                             gender: gender,
                             maritalStatus: maritalStatus,
                             profession: profession,
@@ -2515,16 +2521,11 @@ if ($result) {
                             $("#content").load(url);
                         },
                         error: function(data) {
-                            Swal.fire({
-                                'title': 'Errors',
-                                'text': 'There were errors',
-                                'type': 'error'
-                            })
+                            alert("error");
                         }
                     })
             })
 
-        });
         </script>
         <!-- Template Javascript -->
         <script src=""></script>

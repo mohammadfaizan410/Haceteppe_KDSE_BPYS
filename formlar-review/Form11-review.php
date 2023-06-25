@@ -203,7 +203,6 @@ if (isset($_GET['logout'])) {
         </div>
     </div>
     <script>
-    $(function() {
         $('#closeBtn1').click(function(e) {
             let patient_name = $("input[name='patient_name']").val();
             let patient_id = parseInt($("input[name='patient_id']").val());
@@ -212,7 +211,6 @@ if (isset($_GET['logout'])) {
             $("#content").load(url);
 
         })
-    });
 
     //preselecting checboxes
     $('input[name="time_range"]').each(function() {
@@ -222,7 +220,6 @@ if (isset($_GET['logout'])) {
     });
     </script>
     <script>
-    $(function() {
         $('#submit').click(function(e) {
             e.preventDefault()
             console.log("clicked")
@@ -335,7 +332,6 @@ if (isset($_GET['logout'])) {
             })
         })
 
-    });
     </script>
     <script src=""></script>
 </body>

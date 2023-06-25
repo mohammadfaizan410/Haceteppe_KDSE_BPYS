@@ -75,46 +75,46 @@ if ($result) {
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Patient Name:</p>
                             <input type="text" class="form-control" value="<?php echo $form14[0]['patient_name']; ?>"
-                                required name="patient_name" id="diger" placeholder="Patient Name" disabled>
+                                required name="patient_name" id="patient_name" placeholder="Patient Name" disabled>
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Patient ID:</p>
                             <input type="text" class="form-control" value="<?php echo $form14[0]['patient_id']; ?>"
-                                required name="patient_id" id="diger" placeholder="Patient ID" disabled>
+                                required name="patient_id" id="patient_id" placeholder="Patient ID" disabled>
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Sorunla İlişkili Veriler:</p>
-                            <input type="text" class="form-control" required name="problem_info" id="diger"
+                            <input type="text" class="form-control" required name="problem_info" id="problem_info"
                                 placeholder="problem_info" maxlength="100"
                                 value="<?php echo $form14[0]['problem_info']; ?>">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Hemşirelik Tanıları:</p>
-                            <input type="text" class="form-control" required name="nurse_description" id="diger"
+                            <input type="text" class="form-control" required name="nurse_description" id="nurse_description"
                                 placeholder="nurse_description" maxlength="250"
                                 value="<?php echo $form14[0]['nurse_description']; ?>">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">NOC Çıktıları:</p>
-                            <input type="text" class="form-control" required name="noc_output" id="diger"
+                            <input type="text" class="form-control" required name="noc_output" id="noc_output"
                                 placeholder="noc_output" maxlength="250"
                                 value="<?php echo $form14[0]['noc_output']; ?>">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">NOC Gösterge:</p>
-                            <input type="text" class="form-control" required name="noc_indicator" id="diger"
+                            <input type="text" class="form-control" required name="noc_indicator" id="noc_indicator"
                                 placeholder="noc_indicator" maxlength="250"
                                 value="<?php echo $form14[0]['noc_indicator']; ?>">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Hemşirelik Girişimleri:</p>
-                            <input type="text" class="form-control" required name="nurse_attempt" id="diger"
+                            <input type="text" class="form-control" required name="nurse_attempt" id="nurse_attempt"
                                 placeholder="nurse_attempt" maxlength="250"
                                 value="<?php echo $form14[0]['nurse_attempt']; ?>">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Değerlendirme:</p>
-                            <input type="text" class="form-control" required name="evaluation" id="diger"
+                            <input type="text" class="form-control" required name="evaluation" id="evaluation"
                                 placeholder="evaluation" maxlength="250"
                                 value="<?php echo $form14[0]['evaluation']; ?>">
                         </div>
@@ -139,13 +139,9 @@ if ($result) {
     });
     </script>
     <script>
-    $(function() {
         $('#submit').click(function(e) {
             e.preventDefault()
-            console.log("clicked")
-            var valid = this.form.checkValidity();
 
-            if (valid) {
                 var form_id = <?php echo $form_id ?>;
                 var id = <?php
                                 $userid = $_SESSION['userlogin']['id'];
@@ -168,6 +164,81 @@ if ($result) {
                 let nurse_attempt = $("input[name='nurse_attempt']").val();
                 let evaluation = $("input[name='evaluation']").val();
                 console.log("values initiated")
+                  //set border color normal
+                  $('.form-control').css('border-color', '#ced4da');
+                   //custom validation
+                // if($('#iv_input1').val() === ""){
+                //     //scroll to iv_input1
+                //     $('html, body').animate({
+                //         scrollTop: $("#iv_input1").offset().top
+                //     }, 200);
+                //     //change border color
+                //     $('#iv_input1').css('border-color', 'red');
+                //     //stop function
+                //     return false;
+                // }
+
+                if($('#problem_info').val() === ""){
+                    //scroll to iv_input1
+                    $('html, body').animate({
+                        scrollTop: $("#problem_info").offset().top
+                    }, 200);
+                    //change border color
+                    $('#problem_info').css('border-color', 'red');
+                    //stop function
+                    return false;
+                }
+                if($('#nurse_description').val() === ""){
+                    //scroll to iv_input1
+                    $('html, body').animate({
+                        scrollTop: $("#nurse_description").offset().top
+                    }, 200);
+                    //change border color
+                    $('#nurse_description').css('border-color', 'red');
+                    //stop function
+                    return false;
+                }
+                if($('#noc_output').val() === ""){
+                    //scroll to iv_input1
+                    $('html, body').animate({
+                        scrollTop: $("#noc_output").offset().top
+                    }, 200);
+                    //change border color
+                    $('#noc_output').css('border-color', 'red');
+                    //stop function
+                    return false;
+                }
+                if($('#noc_indicator').val() === ""){
+                    //scroll to iv_input1
+                    $('html, body').animate({
+                        scrollTop: $("#noc_indicator").offset().top
+                    }, 200);
+                    //change border color
+                    $('#noc_indicator').css('border-color', 'red');
+                    //stop function
+                    return false;
+                }
+                if($('#nurse_attempt').val() === ""){
+                    //scroll to iv_input1
+                    $('html, body').animate({
+                        scrollTop: $("#nurse_attempt").offset().top
+                    }, 200);
+                    //change border color
+                    $('#nurse_attempt').css('border-color', 'red');
+                    //stop function
+                    return false;
+                }
+                if($('#evaluation').val() === ""){
+                    //scroll to iv_input1
+                    $('html, body').animate({
+                        scrollTop: $("#evaluation").offset().top
+                    }, 200);
+                    //change border color
+                    $('#evaluation').css('border-color', 'red');
+                    //stop function
+                    return false;
+                }
+
 
                 $.ajax({
                     type: 'POST',
@@ -203,10 +274,9 @@ if ($result) {
 
 
 
-            }
+            
         })
 
-    });
     </script>
     <script src=""></script>
 </body>

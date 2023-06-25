@@ -74,27 +74,27 @@ if ($result) {
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Patient Name:</p>
                             <input type="text" class="form-control" value="<?php echo $form15[0]['patient_name']; ?>"
-                                required name="patient_name" id="diger" placeholder="Patient Name" disabled>
+                                required name="patient_name" id="patient_name" placeholder="Patient Name" disabled>
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Patient ID:</p>
                             <input type="text" class="form-control" value="<?php echo $form15[0]['patient_id']; ?>"
-                                required name="patient_id" id="diger" placeholder="Patient ID" disabled>
+                                required name="patient_id" id="patient_id" placeholder="Patient ID" disabled>
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Uygulamalar</p>
-                            <input type="text" class="form-control" required name="applications" id="diger"
+                            <input type="text" class="form-control" required name="applications" id="applications"
                                 placeholder="applications" maxlength="100"
                                 value="<?php echo $form15[0]['applications']; ?>">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Saat :</p>
-                            <input type="time" class="form-control" required name="hours" id="diger"
+                            <input type="time" class="form-control" required name="hours" id="hours"
                                 value="<?php echo $form15[0]['hours']; ?>">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Açıklama Giriniz</p>
-                            <input type="text" class="form-control" required name="description" id="diger"
+                            <input type="text" class="form-control" required name="description" id="description"
                                 placeholder="Açıklama Giriniz" maxlength="250"
                                 value="<?php echo $form15[0]['description']; ?>">
                         </div>
@@ -107,7 +107,6 @@ if ($result) {
 
     </div>
     <script>
-    $(function() {
         $('#closeBtn1').click(function(e) {
             let patient_name = $("input[name='patient_name']").val();
             let patient_id = parseInt($("input[name='patient_id']").val());
@@ -116,16 +115,12 @@ if ($result) {
             $("#content").load(url);
 
         })
-    });
     </script>
     <script>
-    $(function() {
         $('#submit').click(function(e) {
             e.preventDefault()
             console.log("clicked")
-            var valid = this.form.checkValidity();
 
-            if (valid) {
                 var id = <?php
                                 $userid = $_SESSION['userlogin']['id'];
                                 echo $userid
@@ -144,6 +139,53 @@ if ($result) {
                 let applications = $("input[name='applications']").val();
                 let hours = $("input[name='hours']").val();
                 let description = $("input[name='description']").val();
+                
+                   //set border color normal
+                   $('.form-control').css('border-color', '#ced4da');
+                   //custom validation
+                // if($('#iv_input1').val() === ""){
+                //     //scroll to iv_input1
+                //     $('html, body').animate({
+                //         scrollTop: $("#iv_input1").offset().top
+                //     }, 200);
+                //     //change border color
+                //     $('#iv_input1').css('border-color', 'red');
+                //     //stop function
+                //     return false;
+                // }
+
+                if($('#applications').val() === ""){
+                    //scroll to iv_input1
+                    $('html, body').animate({
+                        scrollTop: $("#applications").offset().top
+                    }, 200);
+                    //change border color
+                    $('#applications').css('border-color', 'red');
+                    //stop function
+                    return false;
+                }
+
+                if($('#hours').val() === ""){
+                    //scroll to iv_input1
+                    $('html, body').animate({
+                        scrollTop: $("#hours").offset().top
+                    }, 200);
+                    //change border color
+                    $('#hours').css('border-color', 'red');
+                    //stop function
+                    return false;
+                }
+
+                if($('#description').val() === ""){
+                    //scroll to iv_input1
+                    $('html, body').animate({
+                        scrollTop: $("#description").offset().top
+                    }, 200);
+                    //change border color
+                    $('#description').css('border-color', 'red');
+                    //stop function
+                    return false;
+                }
 
                 $.ajax({
                     type: 'POST',
@@ -178,13 +220,8 @@ if ($result) {
                         console.log(data)
                     }
                 })
-
-
-
-            }
         })
 
-    });
     </script>
     <script src=""></script>
 </body>
