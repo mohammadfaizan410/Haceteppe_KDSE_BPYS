@@ -9,8 +9,6 @@ if (isset($_POST)) {
 
         $stmt = $db->prepare("UPDATE solunumgereksinimi_form1 SET
             form_name = ?,
-            patient_name = ?,
-            patient_id = ?,
             updateDate = ?,
             yatisdurumuradio = ?,
             SolunumSorunu = ?,
@@ -54,8 +52,6 @@ if (isset($_POST)) {
 
         $result = $stmt->execute([
             $_POST['form_name'],
-            $_POST['patient_name'],
-            $_POST['patient_id'],
             $_POST['updateDate'],
             $_POST["yatisdurumuradio"],
             $_POST["SolunumSorunu"],

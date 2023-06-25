@@ -180,6 +180,24 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
+        $sql = "SELECT * FROM  solunumgereksinimi_form1 WHERE patient_id =" . $userid;
+        $smtmselect = $db->prepare($sql);
+        $result = $smtmselect->execute();
+        $values = [];
+        if ($result) {
+            $values15 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            echo 'error';
+        };
+        $sql = "SELECT * FROM  calismaform1 WHERE patient_id =" . $userid;
+        $smtmselect = $db->prepare($sql);
+        $result = $smtmselect->execute();
+        $values = [];
+        if ($result) {
+            $values16 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            echo 'error';
+        };
 
         $sql = "SELECT * FROM  tani1 WHERE patient_id =" . $userid;
         $smtmselect = $db->prepare($sql);
@@ -206,6 +224,8 @@ if (isset($_GET['logout'])) {
             'table12_data' => $values12,
             'table13_data' => $values13,
             'table14_data' => $values14,
+            'table15_data' => $values15,
+            'table16_data' => $values16,
         ];
 
         ?>
@@ -276,6 +296,12 @@ if (isset($_GET['logout'])) {
                                     }
                                     if ($key ===  'table14_data') {
                                         echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color : white;"  href="' . $base_url . '/formlar-review/Form15-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Form15   Date:' . $form["update_date"] . '</p></a></div>';
+                                    }
+                                    if ($key ===  'table15_data') {
+                                        echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color : white;"  href="' . $base_url . '/formlar-review/Form1-Solunumgereksinimi-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Solunumgereksinimi_form1   Date:' . $form["updateDate"] . '</p></a></div>';
+                                    }
+                                    if ($key ===  'table16_data') {
+                                        echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color : white;"  href="' . $base_url . '/formlar-review/Form1-Calisma-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Çalışma_form1   Date:' . $form["update_date"] . '</p></a></div>';
                                     }
                                 };
                             }

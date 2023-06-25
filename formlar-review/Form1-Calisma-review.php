@@ -10,6 +10,18 @@ if (isset($_GET['logout'])) {
     unset($_SESSION);
     header("Location: main.php");
 }
+require_once('../config-students.php');
+
+$userid = $_SESSION['userlogin']['id'];
+$form_id = $_GET['form_id'];
+$sql = "SELECT * FROM calismaform1 where form_id= $form_id";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+if ($result) {
+    $calismaform1 = $smtmselect->fetchAll(PDO::FETCH_ASSOC)[0];
+} else {
+    echo 'error';
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -237,223 +249,187 @@ if (isset($_GET['logout'])) {
             <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
         </div>
     </div>
-
     <script>
-    $(document).ready(function(){
+        $(document).ready(function(){
+            var workStatus = "<?php echo $calismaform1['workStatus']; ?>";
+            $('[name="workStatus"][value="'+workStatus+'"]').prop('checked', true);
 
-        var workStatus = $('[name="workStatus"]');
-        var nonWorkingTime = $('[name="nonWorkingTime"]');
-        var workingTime = $('[name="workingTime"]');
-
-        nonWorkingTime.attr('disabled', true);
-        workingTime.attr('disabled', true);
-
-        workStatus.on('change', function(){
-            var selectedValue = $(this).val();
-
-            if (selectedValue === "Çalışmıyor"){
-                workingTime.val('');
-                workingTime.attr('disabled', true);
-                nonWorkingTime.attr('disabled', false);
-            } else if (selectedValue === "Çalışıyor") {
-                nonWorkingTime.val('');
-                nonWorkingTime.attr('disabled', true);
-                workingTime.attr('disabled', false);
-            }
-        });
-
-        var workInterruption = $('[name="workInterruption"]');
-        var workInterruptionInput = $('[name="workInterruptionInput"]');
-
-        workInterruptionInput.attr('disabled', true);
-
-        workInterruption.on('change', function(){
-            var selectedValue = $(this).val();
-
-            if (selectedValue === "Var"){
-                workInterruptionInput.attr('disabled', false);
+            if (workStatus == "Çalışmıyor"){
+                var nonWorkingTime = "<?php echo $calismaform1['nonWorkingTime']; ?>";
+                $('[name="nonWorkingTime"]').val(nonWorkingTime);
             } else {
-                workInterruptionInput.val('');
-                workInterruptionInput.attr('disabled', true);
+                var workingTime = "<?php echo $calismaform1['workingTime']; ?>";
+                $('[name="workingTime"]').val(workingTime);
             }
+
+            var workInterruption = "<?php echo $calismaform1['workInterruption']; ?>";
+            $('[name="workInterruption"][value="'+workInterruption+'"]').prop('checked', true);
+
+            if (workInterruption == "Var"){
+                var workInterruptionInput = "<?php echo $calismaform1['workInterruptionInput']; ?>";
+                $('[name="workInterruptionInput"]').val(workInterruptionInput);
+            }
+
+            var workRisk = "<?php echo $calismaform1['workRisk']; ?>";
+            $('[name="workRisk"][value="'+workRisk+'"]').prop('checked', true);
+
+            if (workRisk == "Var"){
+                var workRiskInput = "<?php echo $calismaform1['workRiskInput']; ?>";
+                $('[name="workRiskInput"]').val(workRiskInput);
+            }
+
+            var familyMembers = "<?php echo $calismaform1['familyMembers']; ?>";
+            $('[name="familyMembers"]').val(familyMembers);
+
+            var numberOfChildren = "<?php echo $calismaform1['numberOfChildren']; ?>";
+            $('[name="numberOfChildren"]').val(numberOfChildren);
+
+            
+            var roleInFamily = "<?php echo $calismaform1['roleInFamily']; ?>";
+            $('[name="roleInFamily"]').val(roleInFamily);
+
+            var hobbies = "<?php echo $calismaform1['hobbies']; ?>";
+            $('[name="hobbies"]').val(hobbies);
+
+            var hospitalSocialActivities = <?php echo $calismaform1['hospitalSocialActivities']; ?>;
+            hospitalSocialActivities.forEach(function(value) {
+                $('[name="hospitalSocialActivities"][value="'+value+'"]').prop('checked', true);
+                if (value === "Diğer") {
+                    var otherSocialActivities = "<?php echo $calismaform1['otherActivities']; ?>"
+                    $('[name="otherSocialActivities"]').val(otherSocialActivities);
+                }
+            })
+
         });
-
-        var workRisk = $('[name="workRisk"]');
-        var workRiskInput = $('[name="workRiskInput"]');
-
-        workRiskInput.attr('disabled', true);
-
-        workRisk.on('change', function(){
-            var selectedValue = $(this).val();
-
-            if (selectedValue === "Var"){
-                workRiskInput.attr('disabled', false);
-            } else {
-                workRiskInput.val('');
-                workRiskInput.attr('disabled', false);
-            }
-        });
-
-        var otherSocialActivities = $('[name="otherSocialActivities"]');
-
-        otherSocialActivities.attr('disabled', true);
-
-        $('[name="hospitalSocialActivities"][value="Diğer"]').on('change', function(){
-            if (!$(this).is(':checked')){
-                otherSocialActivities.val('');
-                otherSocialActivities.attr('disabled', true);
-            } else {
-                otherSocialActivities.attr('disabled', false);
-            }
-        })
-
-        })
     </script>
-
     <script>
-    $(function() {
-        $('#closeBtn1').click(function(e) {
-        e.preventDefault();
-        console.log("close btn clicked");
-        let patient_id = <?php
-                                    $userid = $_GET['patient_id'];
-                                    echo $userid
-                                    ?>;
-        let patient_name = "<?php
-                                    echo urldecode($_GET['patient_name']);
-                                    ?>";
-        var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
-            "&patient_name=" + encodeURIComponent(patient_name);
-        $("#content").load(url);
-    })
-    });
-    </script>
-
-    <script>
-    $(function() {
-        $('#submit').click(function(e) {
-
+        $(function() {
+            $('#submit').click(function(e) {
+            console.log('pressed');
             e.preventDefault();
 
-            if (!$('[name="workStatus"]').is(':checked')) {
-                $('.option-error').css('display', 'none');
-                $('html, body').animate({
-                    scrollTop: $('[name="workStatus"]').offset().top
-                }, 200);
-                $('[name="workStatus"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-                        return false;
-            } else if (!$('[name="workInterruption"]').is(':checked')) {
-                $('.option-error').css('display', 'none');
-                $('html, body').animate({
-                    scrollTop: $('[name="workInterruption"]').offset().top
-                }, 200);
-                $('[name="workInterruption"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-                        return false;
-            } else if (!$('[name="workRisk"]').is(':checked')) {
-                $('.option-error').css('display', 'none');
-                $('html, body').animate({
-                    scrollTop: $('[name="workRisk"]').offset().top
-                }, 200);
-                $('[name="workRisk"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-                        return false;
-            } else if (!$('[name="hospitalSocialActivities"]').is(':checked')) {
-                $('.option-error').css('display', 'none');
-                $('html, body').animate({
-                    scrollTop: $('[name="hospitalSocialActivities"]').offset().top
-                }, 200);
-                $('[name="hospitalSocialActivities"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-                        return false;
-            } else if ($('[name="familyMembers"]').val() === '') {
-                $('.option-error').css('display', 'none');
-                $('html, body').animate({
-                            scrollTop: $('[name="familyMembers"]').offset().top
-                        }, 200);
-                        //change border color
-                $('[name="familyMembers"]').css('border-color', 'red');
-            } else if ($('[name="numberOfChildren"]').val() === '') {
-                $('.option-error').css('display', 'none');
-                $('html, body').animate({
-                            scrollTop: $('[name="numberOfChildren"]').offset().top
-                        }, 200);
-                        //change border color
-                $('[name="numberOfChildren"]').css('border-color', 'red');
-            } else if ($('[name="roleInFamily"]').val() === '') {
-                $('.option-error').css('display', 'none');
-                $('html, body').animate({
-                            scrollTop: $('[name="roleInFamily"]').offset().top
-                        }, 200);
-                        //change border color
-                $('[name="roleInFamily"]').css('border-color', 'red');
-            } else if ($('[name="hobbies"]').val() === '') {
-                $('.option-error').css('display', 'none');
-                $('html, body').animate({
-                            scrollTop: $('[name="hobbies"]').offset().top
-                        }, 200);
-                        //change border color
-                $('[name="hobbies"]').css('border-color', 'red');
-            } else if ($('[name="workStatus"][value="Çalışmıyor"]').is(':checked') && $('[name="nonWorkingTime"]').val() === '') {
-                    $('.option-error').css('display', 'none');
-                    $('html, body').animate({
-                            scrollTop: $('[name="nonWorkingTime"]').offset().top
-                        }, 200);
-                        //change border color
-                    $('[name="nonWorkingTime"]').css('border-color', 'red');
-            } else if ($('[name="workStatus"][value="Çalışıyor"]').is(':checked') && $('[name="workingTime"]').val() === '') {
-                    $('.option-error').css('display', 'none');
-                    $('html, body').animate({
-                            scrollTop: $('[name="workingTime"]').offset().top
-                        }, 200);
-                        //change border color
-                    $('[name="workingTime"]').css('border-color', 'red');
-            } else if ($('[name="workInterruption"][value="Var"]').is(':checked') && $('[name="workInterruptionInput"]').val() === '') {
-                    $('.option-error').css('display', 'none');
-                    $('html, body').animate({
-                            scrollTop: $('[name="workInterruptionInput"]').offset().top
-                        }, 200);
-                        //change border color
-                    $('[name="workInterruptionInput"]').css('border-color', 'red');
-            } else if ($('[name="workRisk"][value="Var"]').is(':checked') && $('[name="workRiskInput"]').val() === '') {
-                    $('.option-error').css('display', 'none');
-                    $('html, body').animate({
-                            scrollTop: $('[name="workRiskInput"]').offset().top
-                        }, 200);
-                        //change border color
-                    $('[name="workRiskInput"]').css('border-color', 'red');
-            } else if ($('[name="hospitalSocialActivities"][value="Diğer"]').is(':checked') && $('[name="otherSocialActivities"]').val() === '') {
-                    $('.option-error').css('display', 'none');
-                    $('html, body').animate({
-                            scrollTop: $('[name="otherSocialActivities"]').offset().top
-                        }, 200);
-                        //change border color
-                    $('[name="otherSocialActivities"]').css('border-color', 'red');
-            } else {
+            // if (!$('[name="workStatus"]').is(':checked')) {
+            //     $('.option-error').css('display', 'none');
+            //     $('html, body').animate({
+            //         scrollTop: $('[name="workStatus"]').offset().top
+            //     }, 200);
+            //     $('[name="workStatus"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+            //             return false;
+            // } else if (!$('[name="workInterruption"]').is(':checked')) {
+            //     $('.option-error').css('display', 'none');
+            //     $('html, body').animate({
+            //         scrollTop: $('[name="workInterruption"]').offset().top
+            //     }, 200);
+            //     $('[name="workInterruption"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+            //             return false;
+            // } else if (!$('[name="workRisk"]').is(':checked')) {
+            //     $('.option-error').css('display', 'none');
+            //     $('html, body').animate({
+            //         scrollTop: $('[name="workRisk"]').offset().top
+            //     }, 200);
+            //     $('[name="workRisk"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+            //             return false;
+            // } else if (!$('[name="hospitalSocialActivities"]').is(':checked')) {
+            //     $('.option-error').css('display', 'none');
+            //     $('html, body').animate({
+            //         scrollTop: $('[name="hospitalSocialActivities"]').offset().top
+            //     }, 200);
+            //     $('[name="hospitalSocialActivities"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+            //             return false;
+            // } else if ($('[name="familyMembers"]').val() === '') {
+            //     $('.option-error').css('display', 'none');
+            //     $('html, body').animate({
+            //                 scrollTop: $('[name="familyMembers"]').offset().top
+            //             }, 200);
+            //             //change border color
+            //     $('[name="familyMembers"]').css('border-color', 'red');
+            // } else if ($('[name="numberOfChildren"]').val() === '') {
+            //     $('.option-error').css('display', 'none');
+            //     $('html, body').animate({
+            //                 scrollTop: $('[name="numberOfChildren"]').offset().top
+            //             }, 200);
+            //             //change border color
+            //     $('[name="numberOfChildren"]').css('border-color', 'red');
+            // } else if ($('[name="roleInFamily"]').val() === '') {
+            //     $('.option-error').css('display', 'none');
+            //     $('html, body').animate({
+            //                 scrollTop: $('[name="roleInFamily"]').offset().top
+            //             }, 200);
+            //             //change border color
+            //     $('[name="roleInFamily"]').css('border-color', 'red');
+            // } else if ($('[name="hobbies"]').val() === '') {
+            //     $('.option-error').css('display', 'none');
+            //     $('html, body').animate({
+            //                 scrollTop: $('[name="hobbies"]').offset().top
+            //             }, 200);
+            //             //change border color
+            //     $('[name="hobbies"]').css('border-color', 'red');
+            // } else if ($('[name="workStatus"][value="Çalışmıyor"]').is(':checked') && $('[name="nonWorkingTime"]').val() === '') {
+            //         $('.option-error').css('display', 'none');
+            //         $('html, body').animate({
+            //                 scrollTop: $('[name="nonWorkingTime"]').offset().top
+            //             }, 200);
+            //             //change border color
+            //         $('[name="nonWorkingTime"]').css('border-color', 'red');
+            // } else if ($('[name="workStatus"][value="Çalışıyor"]').is(':checked') && $('[name="workingTime"]').val() === '') {
+            //         $('.option-error').css('display', 'none');
+            //         $('html, body').animate({
+            //                 scrollTop: $('[name="workingTime"]').offset().top
+            //             }, 200);
+            //             //change border color
+            //         $('[name="workingTime"]').css('border-color', 'red');
+            // } else if ($('[name="workInterruption"][value="Var"]').is(':checked') && $('[name="workInterruptionInput"]').val() === '') {
+            //         $('.option-error').css('display', 'none');
+            //         $('html, body').animate({
+            //                 scrollTop: $('[name="workInterruptionInput"]').offset().top
+            //             }, 200);
+            //             //change border color
+            //         $('[name="workInterruptionInput"]').css('border-color', 'red');
+            // } else if ($('[name="workRisk"][value="Var"]').is(':checked') && $('[name="workRiskInput"]').val() === '') {
+            //         $('.option-error').css('display', 'none');
+            //         $('html, body').animate({
+            //                 scrollTop: $('[name="workRiskInput"]').offset().top
+            //             }, 200);
+            //             //change border color
+            //         $('[name="workRiskInput"]').css('border-color', 'red');
+            // } else if ($('[name="hospitalSocialActivities"][value="Diğer"]').is(':checked') && $('[name="otherSocialActivities"]').val() === '') {
+            //         $('.option-error').css('display', 'none');
+            //         $('html, body').animate({
+            //                 scrollTop: $('[name="otherSocialActivities"]').offset().top
+            //             }, 200);
+            //             //change border color
+            //         $('[name="otherSocialActivities"]').css('border-color', 'red');
+            // } else {
 
-                let age = $('#age').val();
-                let not = $('#not').val();
+                var id = '<?php
 
-                var patient_id = <?php
+                                $userid = $_SESSION['userlogin']['id'];
+                                echo $userid
+                                ?>';
+                var form_id = '<?php echo $form_id ?>';
+                var patient_id = '<?php
                                     $userid = $_GET['patient_id'];
                                     echo $userid
-                                    ?>;
+                                    ?>';
                 let patient_name = "<?php
                                     echo urldecode($_GET['patient_name']);
                                     ?>";
                 let yourDate = new Date()
                 let creation_date = yourDate.toISOString().split('T')[0];
                 let updateDate = yourDate.toISOString().split('T')[0];
-                let workStatus = $('.form-check-input[name="workStatus"]:checked').val() ? $('.form-check-input[name="workStatus"]:checked').val() : 'none';
-                let workingTime = $('#CalisiyorSure').val() ? $('#CalisiyorSure').val() : '';
-                let nonWorkingTime = $('#CalismiyorSure').val() ? $('#CalismiyorSure').val() : '';
+                let workStatus = $('.form-check-input[name="workStatus"]:checked').val();
+                let workingTime = $('#CalisiyorSure').val() ? $('#CalisiyorSure').val();
+                let nonWorkingTime = $('#CalismiyorSure').val() ? $('#CalismiyorSure').val();
                 let workInterruption = $('input[name="workInterruption"]:checked').val();
                 let workInterruptionInput = $('[name="workInterruptionInput"]').prop('disabled') ? null : $('[name="workInterruptionInput"]').val(); 
                 let workRisk = $('input[name="workRisk"]:checked').val();
                 let workRiskInput = $('[name="workRiskInput"]').prop('disabled') ? null : $('[name="workRiskInput"]').val();
-                let familyMembers = $('input[name="familyMembers"]').val() ? $('input[name="familyMembers"]').val() : '';
-                let numberOfChildren = $('input[name="numberOfChildren"]').val() ? $('input[name="numberOfChildren"]').val() : 0;
+                let familyMembers = $('input[name="familyMembers"]').val();
+                let numberOfChildren = $('input[name="numberOfChildren"]').val();
                     // let movementProblem = $('.form-check-input[name="movementProblem"]:checked').val() === "Var" ? $('.form-check-input[name="movementProblemDesc"]:checked').map(function() {
                 //     return $(this).val();
                 // }).get().join("/") : "Sorun Yok"
-                let roleInFamily = $('input[name="roleInFamily"]').val() ? $('input[name="roleInFamily"]').val() : '';
+                let roleInFamily = $('input[name="roleInFamily"]').val();
                 let hobbies = $('[name="hobbies"]').val();
                 // not to db
                 var hospitalSocialActivitiesArr = [];
@@ -462,14 +438,14 @@ if (isset($_GET['logout'])) {
                         });
                         //
                 let hospitalSocialActivities = JSON.stringify(hospitalSocialActivitiesArr);
-                let otherActivities = $('input[name="otherSocialActivities"]').val() ? $('input[name="otherSocialActivities"]').val() : '';
-
-                console.log("wprkStatus: ", workStatus, "workingTime: ", workingTime, "nonWorkingTime: ", nonWorkingTime, "workInterruption: ", workInterruption, "workRisk: ", workRisk, "familyMembers: ", familyMembers, "numberOfChildren: ", numberOfChildren, "roleInFamily: ", roleInFamily, "hobbies: ", hobbies)
+                let otherActivities = $('input[name="otherSocialActivities"]').val();
 
                 $.ajax({
                     type: 'POST',
                     url: '<?php echo $base_url; ?>/form-handlers/SubmitOrUpdateForm1_Calisma.php',
                     data: {
+                        isUpdate: true,
+                        form_id: form_id,
                         patient_id: patient_id,
                         patient_name: patient_name,
                         creation_date: creation_date,
@@ -507,7 +483,7 @@ if (isset($_GET['logout'])) {
                     }
                 })
 
-        }
+        // }
 
 
 
@@ -524,9 +500,5 @@ if (isset($_GET['logout'])) {
     <script src="lib/tempusdominus/js/moment.min.js"></script>
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src=""></script>
 </body>
-
 </html>

@@ -6,17 +6,20 @@ require_once("../config-students.php");
 if (isset($_POST["patient_name"])) {
 
     if (isset($_POST['isUpdate'])) {
-        $stmt = $db->prepare("UPDATE ilestimform1 SET
+        $stmt = $db->prepare("UPDATE calismaform1 SET
         update_date = ?,
         workStatus = ?,
         workingTime = ?,
         nonWorkingTime = ?,
         workInterruption = ?,
+        workInterruptionInput = ?,
         workRisk = ?,
+        workRiskInput = ?,
         familyMembers = ?,
         numberOfChildren = ?,
         roleInFamily = ?,
         hobbies = ?,
+        hospitalSocialActivities = ?,
         otherActivities = ?
 
         WHERE form_id = ?");
@@ -26,11 +29,14 @@ if (isset($_POST["patient_name"])) {
             $_POST["workingTime"],
             $_POST["nonWorkingTime"],
             $_POST["workInterruption"],
+            $_POST["workInterruptionInput"],
             $_POST["workRisk"],
+            $_POST["workRiskInput"],
             $_POST["familyMembers"],
             $_POST["numberOfChildren"],
             $_POST["roleInFamily"],
             $_POST["hobbies"],
+            $_POST["hospitalSocialActivies"],
             $_POST["otherActivities"],
             $_POST["form_id"]
         ]);
@@ -40,7 +46,7 @@ if (isset($_POST["patient_name"])) {
             echo "Error could not update data!";
         }
     } else {
-        $stmt = $db->prepare("INSERT INTO ilestimform1 (
+        $stmt = $db->prepare("INSERT INTO calismaform1 (
                 form_name,
                 patient_name,
                 patient_id,
@@ -50,13 +56,16 @@ if (isset($_POST["patient_name"])) {
                 workingTime,
                 nonWorkingTime,
                 workInterruption,
+                workInterruptionInput,
                 workRisk,
+                workRiskInput,
                 familyMembers,
                 numberOfChildren,
                 roleInFamily,
                 hobbies,
+                hospitalSocialActivities,
                 otherActivities
-            ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+            ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
         $result = $stmt->execute([
             $_POST["form_name"],
             $_POST["patient_name"],
@@ -67,11 +76,14 @@ if (isset($_POST["patient_name"])) {
             $_POST["workingTime"],
             $_POST["nonWorkingTime"],
             $_POST["workInterruption"],
+            $_POST["workInterruptionInput"],
             $_POST["workRisk"],
+            $_POST["workRiskInput"],
             $_POST["familyMembers"],
             $_POST["numberOfChildren"],
             $_POST["roleInFamily"],
             $_POST["hobbies"],
+            $_POST["hospitalSocialActivities"],
             $_POST["otherActivities"]
         ]);
         if ($result) {

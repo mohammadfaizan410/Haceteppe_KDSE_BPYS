@@ -10,6 +10,18 @@ if (isset($_GET['logout'])) {
     unset($_SESSION);
     header("Location: main.php");
 }
+require_once('../config-students.php');
+
+$userid = $_SESSION['userlogin']['id'];
+$form_id = $_GET['form_id'];
+$sql = "SELECT * FROM solunumgereksinimi_form1 where form_id= $form_id";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+if ($result) {
+    $solunumgereksinimi_form1 = $smtmselect->fetchAll(PDO::FETCH_ASSOC)[0];
+} else {
+    echo 'error';
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,20 +44,6 @@ if (isset($_GET['logout'])) {
 
 <body style="background-color:white">
     <div class="container-fluid pt-4 px-4">
-        <?php
-        require_once('../config-students.php');
-        $userid = $_SESSION['userlogin']['id'];
-        //echo $userid;
-        $sql = "SELECT * FROM  patients  WHERE id =" . $userid;
-        $smtmselect = $db->prepare($sql);
-        $result = $smtmselect->execute();
-        if ($result) {
-            $values = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
-        } else {
-            echo 'error';
-        }
-
-        ?>
         <div class="send-patient ta-center">
             <span class='close closeBtn' id='closeBtn1'>&times;</span>
 
@@ -1032,415 +1030,211 @@ if (isset($_GET['logout'])) {
 
             </form>
         </div>
-        <!-- <div class="patients-table dark-blue text-center rounded p-4" id="patients-table">
-                <div class="d-flex align-items-center justify-content-between mb-4">
-                    <h6 class="mb-0">Hastalar</h6>
 
-                </div>
-
-                <div class="table-responsive">
-                    <table class="table text-start align-middle table-bordered table-hover mb-0">
-                        <thead>
-                            <tr class="text-white">
-
-                                <th scope="col">İsim</th>
-                                <th scope="col">Soyisim</th>
-                                <th scope="col">Yaş</th>
-                                <th scope="col">Notlar</th>
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach ($values as &$value)
-                                echo "
-                                <tr>
-                                   
-                                    <td style='
-                                    color: white;'>" . $value["name"] . "</td>
-                                    <td style='
-                                    color: white;'>" . $value["surname"] . "</td>
-                                    <td style='
-                                    color: white;'>" . $value["age"] . "</td>
-                                    <td style='
-                                    color: white;'> " . $value["notlar"] . " </td>
-                                </tr>"
-
-                            ?>
-
-
-                        </tbody>
-                    </table>
-                </div>
-            </div> -->
     </div>
     <script>
+        $(document).ready(function(){
+            var yatisdurumuradio = "<?php echo $solunumgereksinimi_form1['yatisdurumuradio']; ?>";
+            $('[name="yatisdurumuradio"][value="'+ yatisdurumuradio + '"]').prop('checked', true);
 
-    $(function() {
-        $('#closeBtn1').click(function(e) {
-        e.preventDefault();
-        console.log("close btn clicked");
-        let patient_id = <?php
-                                    $userid = $_GET['patient_id'];
-                                    echo $userid
-                                    ?>;
-        let patient_name = "<?php
-                                    echo urldecode($_GET['patient_name']);
-                                    ?>";
-        var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
-            "&patient_name=" + encodeURIComponent(patient_name);
-        $("#content").load(url);
-    })
-    });
+            var solunumsorunu = "<?php echo $solunumgereksinimi_form1['SolunumSorunu']; ?>";
+            $('[name="SolunumSorunu"][value="'+ solunumsorunu + '"]').prop('checked', true);
 
-    $(document).ready(function() {
-        var breathing = $('input[name="SolunumSorunu"]');
-        var breathing_problem = $('.ozgecmistable-wrapper');
-        var otherVal = $('[name="solunum_diger"]');
+            console.log(solunumsorunu);
 
-        breathing_problem.find('input[name="breathing-problem"]').prop('disabled', true).prop('checked', false);
-        otherVal.prop('disabled', true)
+            if (solunumsorunu == "Var"){
 
-        breathing.on('change', function() {
-            var selectedValue = $(this).val();
+                var breathingProblems = <?php echo $solunumgereksinimi_form1['breathingProblems']; ?>;
 
-            if (selectedValue === 'Yok') {
-                breathing_problem.find('input[name="breathing-problem"]').prop('disabled', true).prop('checked', false);
-                otherVal.val('');
-                otherVal.prop('disabled', true)
-            } else {
-                breathing_problem.find('input[name="breathing-problem"]').prop('disabled', false);
-                otherVal.prop('disabled', true)
+                breathingProblems.forEach(function(value) {
+                    if (value === "Diğer") {
+                        $('#breathing-not').attr('checked', true);
+                        var breathingOther = "<?php echo $solunumgereksinimi_form1['solunum_diger']; ?>"
+                        $('[name="solunum_diger"]').val(breathingOther);
+                    } else {
+                        $('[name="breathing-problem"][value="'+value+'"]').prop('checked', true);
+                    }
+                })
+
             }
-        });
 
-        $('#breathing-not').on('change', function(){
-            if (!$(this).is(':checked')){
-                otherVal.val('');
-                otherVal.prop('disabled', true);
-            } else {
-                otherVal.prop('disabled', false);
+            var solunumyolu = "<?php echo $solunumgereksinimi_form1['SolunumYolu']; ?>";
+            $('[name="SolunumYolu"][value="'+ solunumyolu + '"]').prop('checked', true);
+
+            if (solunumyolu == "Var"){
+                AirwayMethod = "<?php echo $solunumgereksinimi_form1['airwayMethod']; ?>"
+
+                $('[value="'+ AirwayMethod + '"]').prop('checked', true);
             }
+
+            var oksurme = "<?php echo $solunumgereksinimi_form1['Oksurme']; ?>";
+            $('[name="Oksurme"][value="'+ oksurme + '"]').prop('checked', true);
+
+            if (oksurme == "Var"){
+                coughOption = "<?php echo $solunumgereksinimi_form1['coughOption']; ?>";
+
+                if (coughOption === "Diğer"){
+                    $('[name="CoughOption"][value="Diğer"]').prop('checked', true);
+                    $('[name="oksurme_diger"]').val("<?php echo $solunumgereksinimi_form1['oksurme_diger']; ?>");
+                } else {
+                    $('[value="Etkisiz"]').prop('checked', true);
+                }
+            }
+
+            var balgam = "<?php echo $solunumgereksinimi_form1['Balgam']; ?>";
+            $('[name="Balgam"][value="'+ balgam + '"]').prop('checked', true);
+
+            if (balgam == "Var"){
+                balgamType = "<?php echo $solunumgereksinimi_form1['BalgamType']; ?>";
+
+                $('[name="BalgamType"][value="'+ balgamType + '"]').prop('checked', true);
+                if (balgamType === "Diğer"){
+                    $('[name="balgam_diger"]').val("<?php echo $solunumgereksinimi_form1['balgam_diger']; ?>");
+                }
+            }
+
+            var aspirasyonIhtiyaci = "<?php echo $solunumgereksinimi_form1['AspirasyonIhtiyaci']; ?>";
+            $('[name="AspirasyonIhtiyaci"][value="'+ aspirasyonIhtiyaci + '"]').prop('checked', true);
+
+            if (aspirasyonIhtiyaci == "Var"){
+
+                var aspirasyonNeeds = <?php echo $solunumgereksinimi_form1['aspirasyonNeeds']; ?>;
+
+                aspirasyonNeeds.forEach(function(value) {
+                    $('[name="Aspirasyon_need"][value="'+value+'"]').prop('checked', true);
+                })
+
+            }
+
+            var burunMuayenesi = "<?php echo $solunumgereksinimi_form1['BurunMuayenesi']; ?>";
+            $('[name="BurunMuayenesi"][value="'+ burunMuayenesi + '"]').prop('checked', true);
+
+            if (burunMuayenesi == "Var"){
+
+                var nasalIssues = <?php echo $solunumgereksinimi_form1['nasalIssues']; ?>;
+
+                nasalIssues.forEach(function(value) {
+                    $('[name="NasalIssue"][value="'+value+'"]').prop('checked', true);
+                    if (value === "Diger") {
+                        var nasalOther = "<?php echo $solunumgereksinimi_form1['nazal_diger']; ?>";
+                        $('[name="nazal_diger"]').val(nasalOther);
+                    }
+                })
+
+            }
+
+            var tiroid = "<?php echo $solunumgereksinimi_form1['TiroidBezi']; ?>";
+            $('[name="TiroidBezi"][value="'+ tiroid + '"]').prop('checked', true);
+
+            if (tiroid == "Var"){
+                ThyroidIssue = "<?php echo $solunumgereksinimi_form1['thyroidIssue']; ?>";
+
+                $('[name="ThyroidIssue"][value="'+ ThyroidIssue + '"]').prop('checked', true);
+                if (ThyroidIssue === "Diger"){
+                    $('[name="tiroid_diger"]').val("<?php echo $solunumgereksinimi_form1['TiroidDiger']; ?>");
+                }
+            }
+
+            var trakea = "<?php echo $solunumgereksinimi_form1['Trakea']; ?>";
+            $('[name="Trakea"][value="'+ trakea + '"]').prop('checked', true);
+
+            if (trakea == "Var"){
+                shift = "<?php echo $solunumgereksinimi_form1['Shift']; ?>"
+
+                $('[value="'+ shift + '"]').prop('checked', true);
+            }
+
+            var lenf = "<?php echo $solunumgereksinimi_form1['LenfNodlari']; ?>";
+            $('[name="LenfNodlari"][value="'+ lenf + '"]').prop('checked', true);
+
+            if (lenf == "Var"){
+                $('[name="NodYeri"]').val("<?php echo $solunumgereksinimi_form1['NodYeri']; ?>")
+            }
+
+            $('[name="NodDiger"]').val("<?php echo $solunumgereksinimi_form1['NodDiger']; ?>")
+
+            var skapula = "<?php echo $solunumgereksinimi_form1['SkapulaSimatrikligi']; ?>";
+            $('[name="SkapulaSimatrikligi"][value="'+ skapula + '"]').prop('checked', true);
+
+            var omurgaDeform = "<?php echo $solunumgereksinimi_form1['OmurgaDeform']; ?>";
+            $('[name="OmurgaDeform"][value="'+ omurgaDeform + '"]').prop('checked', true);
+
+            if (omurgaDeform == "Var"){
+
+                var spinalDeforms = <?php echo $solunumgereksinimi_form1['SpinalDeformities']; ?>;
+
+                spinalDeforms.forEach(function(value) {
+                    $('[name="SpinalDeformity"][value="'+value+'"]').prop('checked', true);
+                })
+
+            }
+
+            var gogusHareketleri = "<?php echo $solunumgereksinimi_form1['GogusHareketleri']; ?>";
+            $('[name="GogusHareketleri"][value="'+ gogusHareketleri + '"]').prop('checked', true);
+
+            var goguskafesinde = "<?php echo $solunumgereksinimi_form1['GogusKafesinde']; ?>";
+            $('[name="GogusKafesinde"][value="'+ goguskafesinde + '"]').prop('checked', true);
+
+            if (goguskafesinde == "Var"){
+                krepitasyon = "<?php echo $solunumgereksinimi_form1['Krepitasyon_Alani']; ?>";
+                hassasiyet = "<?php echo $solunumgereksinimi_form1['Hassasiyet']; ?>";
+                kitleOzelligi = "<?php echo $solunumgereksinimi_form1['Kitle_Ozelligi']; ?>";
+                kitleDiger = "<?php echo $solunumgereksinimi_form1['Kitle_Diger']; ?>";
+
+                if (krepitasyon != ""){
+                    $('#KrepitasyonAlani').prop('checked', true);
+                    $('[name="Krepitasyon_Alani"]').val(krepitasyon);
+                }
+
+                if (hassasiyet != ""){
+                    $('#Hassasiyet').prop('checked', true);
+                }
+
+                if (kitleOzelligi != ""){
+                    $('#KitleOzelligi').prop('checked', true);
+                    $('[name="Kitle_Ozelligi"]').val(kitleOzelligi);
+                }
+
+                if (kitleDiger != ""){
+                    $('#KitleDiger').prop('checked', true);
+                    $('[name="Kitle_Diger"]').val(kitleDiger);
+                }
+
+            }
+
+            var gogusDeformitesi = "<?php echo $solunumgereksinimi_form1['GogusDeformitesi']; ?>";
+            $('[name="GogusDeformitesi"][value="'+ gogusDeformitesi + '"]').prop('checked', true);
+
+            if (gogusDeformitesi == "Var"){
+
+                var deformityTypes = <?php echo $solunumgereksinimi_form1['DeformityTypes']; ?>;
+
+                deformityTypes.forEach(function(value) {
+                    $('[name="DeformityType"][value="'+value+'"]').prop('checked', true);
+                })
+
+            }
+
+            var solunumSistemi = <?php echo $solunumgereksinimi_form1['SolunumSistemiUygilamasi']; ?>;
+
+            solunumSistemi.forEach(function(value) {
+                $('[name="SolunumSistemiUygilamasi"][value="'+value+'"]').prop('checked', true);
+                if (value === "Diğer") {
+                    var solunumSistemiOther = "<?php echo $solunumgereksinimi_form1['SolunumUygulamasi_diger']; ?>"
+                    $('[name="SolunumSistemiUygilamasi_diger"]').val(solunumSistemiOther);
+                }
+            })
+
+
+
         })
-
-
-        var solunumYolu = $('[name="SolunumYolu"]');
-        var airwayType = $('[name="AirwayMethod"]');
-
-        airwayType.attr('disabled', true);
-
-        solunumYolu.on('change', function(){
-            var selectedValue = $(this).val();
-
-            if (selectedValue === "Yok") {
-                airwayType.prop('checked', false);
-                airwayType.attr('disabled', true);
-            } else {
-                airwayType.attr('disabled', false);
-            }
-        })
-
-        var oksurme = $('[name="Oksurme"]');
-        var oksurmeOptions = $('[name="CoughOption"]');
-        var oksurmeDigerInput = $('#oksurme_diger');
-
-        oksurmeOptions.attr('disabled', true);
-        oksurmeDigerInput.attr('disabled', true);
-
-        oksurme.on('change', function() {
-            var selectedValue = $(this).val();
-
-            if (selectedValue === 'Yok') {
-                oksurmeOptions.prop('checked', false);
-                oksurmeOptions.attr('disabled', true);
-                oksurmeDigerInput.val('')
-                oksurmeDigerInput.attr('disabled', true);
-            } else if (selectedValue === 'Var') {
-                oksurmeOptions.attr('disabled', false);
-                oksurmeDigerInput.attr('disabled', true);
-            }
-        });
-
-        oksurmeOptions.on('change', function(){
-            var selectedValue = $(this).val();
-
-            if (selectedValue === "Diğer"){
-                oksurmeDigerInput.attr('disabled', false);
-            } else {
-                oksurmeDigerInput.val('');
-                oksurmeDigerInput.attr('disabled', true);
-            }
-        });
-       
-        var balgam = $('[name="Balgam"]');
-        var balgamType = $('[name="BalgamType"]');
-        var balgamOther = $('[name="balgam_diger"]');
-
-        balgamType.attr('disabled', true);
-        balgamOther.attr('disabled', true);
-
-        balgam.on('change', function() {
-            var selectedValue = $(this).val();
-
-            if (selectedValue === "Yok"){
-                balgamType.prop('checked', false);
-                balgamType.attr('disabled', true);
-                balgamOther.val('').attr('disabled', true);
-            } else {
-                balgamType.attr('disabled', false);
-                balgamOther.attr('disabled', true);
-            }
-        });
-
-        balgamType.on('change', function(){
-            var selectedValue = $(this).val();
-
-            if (selectedValue === "Diğer"){
-                balgamOther.attr('disabled', false);
-            } else {
-                balgamOther.val('').attr('disabled', true);
-            }
-        });
-
-        var aspiration_need = $('[name=AspirasyonIhtiyaci]');
-        var aspiration_type = breathing_problem.find('[name="Aspirasyon_need"]');
-        
-        aspiration_type.prop('disabled', true);
-
-        aspiration_need.on('change', function(){
-            var selectedValue = $(this).val();
-
-            if (selectedValue === "Yok"){
-                aspiration_type.prop('checked', false);
-                aspiration_type.prop('disabled', true);
-            } else {
-                aspiration_type.prop('disabled', false);
-            }
-
-        });
-
-        var noseExamination = $('[name="BurunMuayenesi"]');
-        var nasalIssue = $('[name="NasalIssue"]');
-        var nasalOtherCheckbox = $('#NazalDiger');
-        var nasalOther = $('[name="nazal_diger"]');
-
-        nasalIssue.prop('disabled', true);
-        nasalOther.attr('disabled', true);
-
-        noseExamination.on('change', function(){
-            var selectedValue = $(this).val();
-
-            if (selectedValue === "Yok"){
-                nasalIssue.prop('checked', false);
-                nasalIssue.prop('disabled', true);
-                nasalOther.val('');
-                nasalOther.attr('disabled', true);
-            } else {
-                nasalIssue.prop('disabled', false);
-                nasalOther.attr('disabled', true);
-            }
-        });
-
-        nasalIssue.on('change', function(){
-            var selectedValue = $(this).val();
-
-            if (selectedValue === "Diger"){
-                nasalOther.attr('disabled', false);
-            } else {
-                nasalOther.val('');
-                nasalOther.attr('disabled', true);
-            }
-        });
-
-        nasalOtherCheckbox.on('change', function(){
-            if (!$(this).is(':checked')) {
-                nasalOther.val('');
-                nasalOther.attr('disabled', true);
-            }
-        });
-
-        var thyroidProblems = $('[name="TiroidBezi"]');
-        var thyroidIssue = $('[name="ThyroidIssue"]');
-        var thyroidOther = $('[name="tiroid_diger"]');
-
-        thyroidIssue.attr('disabled', true);
-        thyroidOther.attr('disabled', true);
-
-        thyroidProblems.on('change', function(){
-            var selectedValue = $(this).val();
-
-            if (selectedValue === "Yok"){
-                thyroidIssue.prop('checked', false);
-                thyroidIssue.attr('disabled', true);
-                thyroidOther.val('');
-                thyroidOther.attr('disabled', true);
-            } else {
-                thyroidIssue.attr('disabled', false);
-                thyroidOther.attr('disabled', true);
-            }
-        });
-
-        thyroidIssue.on('change', function(){
-            var selectedValue = $(this).val();
-
-            if (selectedValue === "Diger"){
-                thyroidOther.attr('disabled', false);
-            } else {
-                thyroidOther.val('');
-            }
-        });
-
-        var tracheaProblem = $('[name="Trakea"]');
-        var shift = $('[name="Shift"]');
-
-        shift.prop('disabled', true);
-
-        tracheaProblem.on('change', function(){
-            var selectedValue = $(this).val();
-
-            if (selectedValue === "Yok") {
-                shift.prop('checked', false);
-                shift.prop('disabled', true);
-            } else {
-                shift.prop('disabled', false);
-            }
-        })
-
-        var lymphEnlargement = $('[name="LenfNodlari"]');
-        var place = $('[name="NodYeri"]');
-
-        place.attr('disabled', true);
-
-        lymphEnlargement.on('change', function(){
-            var selectedValue = $(this).val();
-
-            if (selectedValue === "Yok"){
-                place.val('')
-                place.attr('disabled', true);
-            } else {
-                place.attr('disabled', false);
-            }
-        })
-
-        var spineProblem = $('[name="OmurgaDeform"]');
-        var deformityType = $('[name="SpinalDeformity"]');
-
-        deformityType.prop('disabled', true);
-
-        spineProblem.on('change', function(){
-            var selectedValue = $(this).val();
-
-            if (selectedValue === "Yok"){
-                deformityType.prop('checked', false);
-                deformityType.prop('disabled', true);
-            } else {
-                deformityType.prop('disabled', false);
-            }
-        });
-
-        var chestCageProblems = $('[name="GogusKafesinde"]');
-        var chestIssues = $('[name="ChestIssues"]');
-        var chestOther = $('[name="KitleDiger"]');
-        var krepitasyonAlani = $('[name="Krepitasyon_Alani"]');
-        var kitleOzelligi = $('[name="Kitle_Ozelligi"]');
-        var kitleDiger = $('[name="Kitle_Diger"]');
-        var krepitasyonAlaniCheckBox = $('#KrepitasyonAlani');
-        var kitleOzelligiCheckBox = $('#KitleOzelligi');
-        var kitleDigerCheckBox = $('#KitleDiger');
-
-        chestIssues.prop('disabled', true);
-        chestOther.attr('disabled', true);
-        krepitasyonAlani.attr('disabled', true);
-        kitleOzelligi.attr('disabled', true);
-        kitleDiger.attr('disabled', true);
-
-        chestCageProblems.on('change', function(){
-            var selectedValue = $(this).val();
-
-            if (selectedValue === "Yok"){
-                chestIssues.prop('checked', false);
-                chestIssues.prop('disabled', true);
-                chestOther.val('');
-                chestOther.attr('disabled', true);
-                krepitasyonAlani.val('');
-                kitleOzelligi.val('');
-                kitleDiger.val('');
-                krepitasyonAlani.attr('disabled', true);
-                kitleOzelligi.attr('disabled', true);
-                kitleDiger.attr('disabled', true);
-            } else {
-                chestIssues.prop('disabled', false);
-                chestOther.attr('disabled', true);
-                krepitasyonAlani.attr('disabled', true);
-                kitleOzelligi.attr('disabled', true);
-                kitleDiger.attr('disabled', true);
-            }
-        });
-
-        krepitasyonAlaniCheckBox.on('change', function(){
-            if (!$(this).is(':checked')){
-                krepitasyonAlani.val('');
-                krepitasyonAlani.attr('disabled', true);
-            } else {
-                krepitasyonAlani.attr('disabled', false);
-            }
-        });
-
-        kitleOzelligiCheckBox.on('change', function(){
-            if (!$(this).is(':checked')){
-                kitleOzelligi.val('');
-                kitleOzelligi.attr('disabled', true);
-            } else {
-                kitleOzelligi.attr('disabled', false);
-            }
-        })
-
-        kitleDigerCheckBox.on('change', function(){
-            if (!$(this).is(':checked')){
-                kitleDiger.val('');
-                kitleDiger.attr('disabled', true);
-            } else {
-                kitleDiger.attr('disabled', false);
-            }
-        });
-
-        var chestDeformity = $('[name="GogusDeformitesi"]');
-        var chestDeformityType = $('[name="DeformityType"]');
-
-        chestDeformityType.prop('disabled', true);
-
-        chestDeformity.on('change', function(){
-            var selectedValue = $(this).val();
-
-            if (selectedValue === "Yok"){
-                chestDeformityType.prop('checked', false);
-                chestDeformityType.prop('disabled', true);
-            } else {
-                chestDeformityType.prop('disabled', false);
-            }
-        });
-
-        var respiratorySystemAppOtherCheck = $('input[name="SolunumSistemiUygilamasi"][value="Diger"]');
-        var respiratorySystemAppOther = $('[name="SolunumUygulamasi_diger"]');
-
-        respiratorySystemAppOther.attr('disabled', true);
-
-        respiratorySystemAppOtherCheck.on('change', function(){
-            if (!$(this).is(':checked')){
-                respiratorySystemAppOther.val('');
-                respiratorySystemAppOther.attr('disabled', true);
-            } else {
-                respiratorySystemAppOther.attr('disabled', false);
-            }
-        })
-
-    });
 
     </script>
-
     <script>
-    $(function() {
-        $('#submit').click(function(e) {
-            
+        $(function() {
+        $('[name="submit"]').click(function(e) {
+            console.log('second submit');
+
             if (!$('[name="yatisdurumuradio"]').is(':checked')) {
                 $('.option-error').css('display', 'none');
                 $('html, body').animate({
@@ -1713,14 +1507,8 @@ if (isset($_GET['logout'])) {
                                     $userid = $_SESSION['userlogin']['id'];
                                     echo $userid
                                     ?>;
+                        var form_id = <?php echo $form_id ?>;
                         let form_name = "solunumgereksinimi";
-                        let patient_name = "<?php
-                                                echo urldecode($_GET['patient_name']);
-                                                ?>";
-                        var patient_id = <?php
-                                                $userid = $_GET['patient_id'];
-                                                echo $userid
-                                                ?>;
                         let yourDate = new Date()
                         let creationDate = yourDate.toISOString().split('T')[0];
                         let updateDate = yourDate.toISOString().split('T')[0];
@@ -1807,9 +1595,9 @@ if (isset($_GET['logout'])) {
                             type: 'POST',
                             url: '<?php echo $base_url; ?>/form-handlers/SubmitOrUpdateForm1_SolunumGereksinimi.php/',
                             data: {
+                                isUpdate: true,
+                                form_id: form_id,
                                 form_name: form_name,
-                                patient_name: patient_name,
-                                patient_id: patient_id,
                                 creationDate: creationDate,
                                 updateDate: updateDate,
                                 yatisdurumuradio: yatisdurumuradio,
@@ -1868,10 +1656,20 @@ if (isset($_GET['logout'])) {
                 }
 
             }
-        })
+        });
 
     });
+    $(function() {
+            $('#closeBtn1').click(function(e) {
+                let patient_name = <?php echo $solunumgereksinimi_form1['patient_name'] ?>;
+                let patient_id = <?php echo $solunumgereksinimi_form1['patient_id'] ?>;
+                let url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
+                    "&patient_name=" + encodeURIComponent(patient_name);
+                $("#content").load(url);
+            })
+        });
     </script>
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/chart/chart.min.js"></script>
@@ -1882,8 +1680,6 @@ if (isset($_GET['logout'])) {
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
-    <!-- Template Javascript -->
-    <script src=""></script>
-</body>
+    </body>
 
 </html>
