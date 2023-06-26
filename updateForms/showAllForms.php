@@ -393,10 +393,7 @@ if (isset($_GET['logout'])) {
                                         echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color : white;"  href="' . $base_url . '/formlar-review/Form1-Solunumgereksinimi-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Form1-Solunumgereksinimi   Date:' . $form["update_date"] . '</p></a></div>';
                                     }
                                     if ($key ===  'table17_data') {
-<<<<<<< HEAD
                                         echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color : white;"  href="' . $base_url . '/formlar-review/Form1-Iletisim-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">İletişim_form1   Date:' . $form["update_date"] . '</p></a></div>';
-=======
-                                        echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color : white;"  href="' . $base_url . '/formlar-review/Form1-hereket-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Herket_form1   Date:' . $form["update_date"] . '</p></a></div>';
                                     }
                                     if ($key ===  'table18_data') {
                                         echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color : white;"  href="' . $base_url . '/formlar-review/Form1-Vucudu-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p"> Vucudu_form1  Date:' . $form["update_date"] . '</p></a></div>';
