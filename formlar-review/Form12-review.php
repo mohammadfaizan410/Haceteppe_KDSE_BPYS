@@ -82,27 +82,27 @@ if ($result) {
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Sıvının Cinsi:</p>
-                            <input type="text" class="form-control" required name="liquid_type" id="diger"
+                            <input type="text" class="form-control" required name="liquid_type" id="liquid_type"
                                 placeholder="liquid_type" value="<?php echo $form12[0]['liquid_type']; ?>">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Sıvının Hızı:</p>
-                            <input type="text" class="form-control" required name="liquid_velocity" id="diger"
+                            <input type="text" class="form-control" required name="liquid_velocity" id="liquid_velocity"
                                 placeholder="liquid_velocity" value="<?php echo $form12[0]['liquid_velocity']; ?>">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Saat:</p>
-                            <input type="text" class="form-control" required name="delivery_time" id="diger"
+                            <input type="time" class="form-control" required name="delivery_time" id="delivery_time"
                                 placeholder="delivery_time" value="<?php echo $form12[0]['delivery_time']; ?>">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Seviye:</p>
-                            <input type="text" class="form-control" required name="liquid_level" id="diger"
+                            <input type="text" class="form-control" required name="liquid_level" id="liquid_level"
                                 placeholder="liquid_level" value="<?php echo $form12[0]['liquid_level']; ?>">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Giden:</p>
-                            <input type="text" class="form-control" required name="liquid_sent" id="diger"
+                            <input type="text" class="form-control" required name="liquid_sent" id="liquid_sent"
                                 placeholder="liquid_sent" value="<?php echo $form12[0]['liquid_sent']; ?>">
                         </div>
                         <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
@@ -114,7 +114,6 @@ if ($result) {
 
     </div>
     <script>
-    $(function() {
         $('#closeBtn1').click(function(e) {
             let patient_name = $("input[name='patient_name']").val();
             let patient_id = parseInt($("input[name='patient_id']").val());
@@ -123,16 +122,13 @@ if ($result) {
             $("#content").load(url);
 
         })
-    });
     </script>
     <script>
-    $(function() {
         $('#submit').click(function(e) {
             e.preventDefault()
             console.log("clicked")
             var valid = this.form.checkValidity();
 
-            if (valid) {
                 var form_id = <?php echo $form_id ?>;
                 let patient_name = $("input[name='patient_name']").val();
                 let patient_id = parseInt($("input[name='patient_id']").val());
@@ -150,6 +146,63 @@ if ($result) {
                 let liquid_level = $("input[name='liquid_level']").val();
                 let liquid_sent = $("input[name='liquid_sent']").val();
                 console.log("values initiated")
+                  $('.form-control').css('border-color', '#ced4da');
+
+                if($('#liquid_type').val() === ""){
+                    //scroll to iv_input1
+                    $('html, body').animate({
+                        scrollTop: $("#liquid_type").offset().top
+                    }, 200);
+                    //change border color
+                    $('#liquid_type').css('border-color', 'red');
+                    //stop function
+                    return false;
+                }
+
+                if($('#liquid_velocity').val() === ""){
+                    //scroll to iv_input1
+                    $('html, body').animate({
+                        scrollTop: $("#liquid_velocity").offset().top
+                    }, 200);
+                    //change border color
+                    $('#liquid_velocity').css('border-color', 'red');
+                    //stop function
+                    return false;
+                }
+
+                if($('#delivery_time').val() === ""){
+                    //scroll to iv_input1
+                    $('html, body').animate({
+                        scrollTop: $("#delivery_time").offset().top
+                    }, 200);
+                    //change border color
+                    $('#delivery_time').css('border-color', 'red');
+                    //stop function
+                    return false;
+                }
+
+                if($('#liquid_level').val() === ""){
+                    //scroll to iv_input1
+                    $('html, body').animate({
+                        scrollTop: $("#liquid_level").offset().top
+                    }, 200);
+                    //change border color
+                    $('#liquid_level').css('border-color', 'red');
+                    //stop function
+                    return false;
+                }
+
+                if($('#liquid_sent').val() === ""){
+                    //scroll to iv_input1
+                    $('html, body').animate({
+                        scrollTop: $("#liquid_sent").offset().top
+                    }, 200);
+                    //change border color
+                    $('#liquid_sent').css('border-color', 'red');
+                    //stop function
+                    return false;
+                }
+
 
                 $.ajax({
                     type: 'POST',
@@ -181,12 +234,8 @@ if ($result) {
                     }
                 })
 
-
-
-            }
         })
 
-    });
     </script>
     <script src=""></script>
 </body>

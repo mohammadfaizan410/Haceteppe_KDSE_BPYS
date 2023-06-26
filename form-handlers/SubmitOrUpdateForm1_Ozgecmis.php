@@ -11,7 +11,7 @@ if (isset($_POST["patient_name"])) {
                         update_date = ?,
                         nameSurname = ?,
                         dob = ?,
-                        age,
+                        age = ?,
                         gender = ?,
                         maritalStatus = ?,
                         profession = ?,
@@ -49,7 +49,7 @@ if (isset($_POST["patient_name"])) {
                         allergyTherapy = ?,
                         previousMedications = ?,
                         medicineName = ?,
-                        prescriptionType: ?,
+                        prescriptionType = ?,
                         medicineFrequency = ?,
                         medicineDose = ?,
                         intakeMethod = ?,
@@ -79,79 +79,78 @@ if (isset($_POST["patient_name"])) {
                         complaints = ?,
                         medicalDiagnosis = ?
                         WHERE form_id = ?");
-
         $result =    $stmt->execute([
-            $_POST["creation_date"],
-            $_POST["nameSurname"],
-            $_POST["dob"],
-            $_POST["age"],
-            $_POST["gender"],
-            $_POST["maritalStatus"],
-            $_POST["profession"],
-            $_POST["education"],
-            $_POST["protocol_file_no"],
-            $_POST["admissionDate"],
-            $_POST["department"],
-            $_POST["diagnosis"],
-            $_POST["doctorName"],
-            $_POST["numberOfChildren"],
-            $_POST["socialSecurity"],
-            $_POST["language"],
-            $_POST["translatorRequirement"],
-            $_POST["bloodGroup"],
-            $_POST["transfusionStatus"],
-            $_POST["transfusionReaction"],
-            $_POST["infoPerson"],
-            $_POST["infoStorageType"],
-            $_POST["kolbandi"],
-            $_POST["relativeNameSurname"],
-            $_POST["relativePhone"],
-            $_POST["relativeAddress"],
-            $_POST["relativeDistance"],
-            $_POST["previousHospitalization"],
-            $_POST["hospitalization_year"],
-            $_POST["hospitalization_location"],
-            $_POST["hospitalization_reason"],
-            $_POST["diseases"],
-            $_POST["previousSurgeries"],
-            $_POST["accidents"],
-            $_POST["infectiousDisease"],
-            $_POST["allergies"],
-            $_POST["allergen"],
-            $_POST["allergySymptoms"],
-            $_POST["allergyTherapy"],
-            $_POST["previousMedications"],
-            $_POST["medicineName"],
-            $_POST["prescriptionType"],
-            $_POST["medicineFrequency"],
-            $_POST["medicineDose"],
-            $_POST["intakeMethod"],
-            $_POST["intakeTimes"],
-            $_POST["aidTools"],
-            $_POST["smoking"],
-            $_POST["smokingAmount"],
-            $_POST["smokingTime"],
-            $_POST["alcoholUsage"],
-            $_POST["alcoholAmount"],
-            $_POST["alcoholUsageTime"],
-            $_POST["teaUsage"],
-            $_POST["teaUsageAmount"],
-            $_POST["teaUsageTime"],
-            $_POST["coffeeUsage"],
-            $_POST["coffeeUsageAmount"],
-            $_POST["coffeeUsageTime"],
-            $_POST["otherHabits"],
-            $_POST["otherHabitsInput"],
-            $_POST["otherHabitsAmount"],
-            $_POST["otherHabitsTime"],
-            $_POST["familyIllnesses"],
-            $_POST["familyMemberRelation"],
-            $_POST["familyMemberIllness"],
-            $_POST["arrivalFrom"],
-            $_POST["hospitalArrivalMethod"],
-            $_POST["complaints"],
-            $_POST["medicalDiagnosis"],
-            $_POST["form_id"]
+                $_POST["creation_date"],
+                $_POST["nameSurname"],
+                $_POST["dob"],
+                $_POST["age"],
+                $_POST["gender"],
+                $_POST["maritalStatus"],
+                $_POST["profession"],
+                $_POST["education"],
+                $_POST["protocol_file_no"],
+                $_POST["admissionDate"],
+                $_POST["department"],
+                $_POST["diagnosis"],
+                $_POST["doctorName"],
+                $_POST["numberOfChildren"],
+                $_POST["socialSecurity"],
+                $_POST["language"],
+                $_POST["translatorRequirement"],
+                $_POST["bloodGroup"],
+                $_POST["transfusionStatus"],
+                $_POST["transfusionReaction"],
+                $_POST["infoPerson"],
+                $_POST["infoStorageType"],
+                $_POST["kolbandi"],
+                $_POST["relativeNameSurname"],
+                $_POST["relativePhone"],
+                $_POST["relativeAddress"],
+                $_POST["relativeDistance"],
+                $_POST["previousHospitalization"],
+                $_POST["hospitalization_year"],
+                $_POST["hospitalization_location"],
+                $_POST["hospitalization_reason"],
+                $_POST["diseases"],
+                $_POST["previousSurgeries"],
+                $_POST["accidents"],
+                $_POST["infectiousDisease"],
+                $_POST["allergies"],
+                $_POST["allergen"],
+                $_POST["allergySymptoms"],
+                $_POST["allergyTherapy"],
+                $_POST["previousMedications"],
+                $_POST["medicineName"],
+                $_POST["prescriptionType"],
+                $_POST["medicineFrequency"],
+                $_POST["medicineDose"],
+                $_POST["intakeMethod"],
+                $_POST["intakeTimes"],
+                $_POST["aidTools"],
+                $_POST["smoking"],
+                $_POST["smokingAmount"],
+                $_POST["smokingTime"],
+                $_POST["alcoholUsage"],
+                $_POST["alcoholAmount"],
+                $_POST["alcoholUsageTime"],
+                $_POST["teaUsage"],
+                $_POST["teaUsageAmount"],
+                $_POST["teaUsageTime"],
+                $_POST["coffeeUsage"],
+                $_POST["coffeeUsageAmount"],
+                $_POST["coffeeUsageTime"],
+                $_POST["otherHabits"],
+                $_POST["otherHabitsInput"],
+                $_POST["otherHabitsAmount"],
+                $_POST["otherHabitsTime"],
+                $_POST["familyIllnesses"],
+                $_POST["familyMemberRelation"],
+                $_POST["familyMemberIllness"],
+                $_POST["arrivalFrom"],
+                $_POST["hospitalArrivalMethod"],
+                $_POST["complaints"],
+                $_POST["medicalDiagnosis"],
+                $_POST["form_id"]
         ]);
 
 
@@ -161,8 +160,8 @@ if (isset($_POST["patient_name"])) {
             echo $result;
         }
     }
-
-    $stmt = $db->prepare("INSERT into ozgecmisform1 (
+    else{
+        $stmt = $db->prepare("INSERT into ozgecmisform1 (
                 patient_name,
                 patient_id,
                 form_name,
@@ -239,10 +238,10 @@ if (isset($_POST["patient_name"])) {
                 medicalDiagnosis
                 ) VALUES (?,?,?,?, ?, ?, ?, ? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 
-    $result =   $stmt->execute([
-        $_POST["patient_name"],
-        $_POST["patient_id"],
-        $_POST["form_name"],
+$result =   $stmt->execute([
+    $_POST["patient_name"],
+    $_POST["patient_id"],
+    $_POST["form_name"],
         $_POST["creation_date"],
         $_POST["update_date"],
         $_POST["nameSurname"],
@@ -315,13 +314,14 @@ if (isset($_POST["patient_name"])) {
         $_POST["complaints"],
         $_POST["medicalDiagnosis"]        
     ]);
-
-
+    
+    
     if ($result) {
         echo "Ekleme Başarılı";
     } else {
         echo $result;
     }
+}
 } else {
     echo 'error';
 }

@@ -294,7 +294,7 @@ if (isset($_GET['logout'])) {
                                         </label>
                                     </div>
                                     <div class="input-section d-flex">
-                                        <input type="text" class="form-control" required disabled name="o2_method_diger" id="o2_method_diger_input" placeholder="Yöntemi">
+                                        <input type="text" class="form-control" required disabled name="o2_method_digerr" id="o2_method_diger_input" placeholder="Yöntemi">
                                     </div>
                                 </div>
                             </div>
@@ -319,7 +319,7 @@ if (isset($_GET['logout'])) {
                         </div>
                         <div class="input-section d-flex" id="kilo_yapiliyor">
                             <p class="usernamelabel">Günlük Kilo Takibi:</p>
-                            <input type="text" class="form-control" value=<?php echo $form10[0]['weight_input']; ?> name="weight_input" id="diger" placeholder="Günlük Kilo Takibi">
+                            <input type="text" class="form-control" value="<?php echo $form10[0]['weight_input']; ?>" name="weight_input" id="diger" placeholder="Günlük Kilo Takibi">
                         </div>
                         <div class='tani1-warning' id="tani1-warning">
                             <p>Girdileriniz Gaz Değişiminde Bozulma Tanısı ile uyuşuyor bu tanıyı eklemek ister misiniz?
@@ -367,7 +367,6 @@ if (isset($_GET['logout'])) {
         }
     </script>
     <script>
-        $(function() {
             $('#closeBtn1').click(function(e) {
                 let patient_name = $("input[name='patient_name']").val();
                 let patient_id = parseInt($("input[name='patient_id']").val());
@@ -376,51 +375,56 @@ if (isset($_GET['logout'])) {
                 $("#content").load(url);
 
             })
-        });
 
 
         //preselecting inputs
-        $('input[name="measurement_location"]').each(function() {
+        $('.form-check-input[name="measurement_location"]').each(function() {
             if ($(this).val() === "<?php echo $form10[0]['measurement_location']; ?>") {
                 $(this).prop('checked', true);
             }
         });
-        $('input[name="heartrate_nature"]').each(function() {
+        $('.form-check-input[name="heartrate_nature"]').each(function() {
             if ($(this).val() === "<?php echo $form10[0]['heartrate_nature']; ?>") {
                 $(this).prop('checked', true);
             }
         });
 
-        $('input[name="respiratory_nature"]').each(function() {
+        $('.form-check-input[name="respiratory_nature"]').each(function() {
             if ($(this).val() === "<?php echo $form10[0]['respiratory_nature']; ?>") {
                 $(this).prop('checked', true);
             }
         });
 
-        $('input[name="bp_measurement_location"]').each(function() {
+        $('.form-check-input[name="bp_measurement_location"]').each(function() {
             if ($(this).val() === "<?php echo $form10[0]['bp_measurement_location']; ?>") {
                 $(this).prop('checked', true);
             }
         });
 
-        $('input[name="o2_status"]').each(function() {
+        $('.form-check-input[name="o2_status"]').each(function() {
             if ($(this).val() === "<?php echo $form10[0]['o2_status']; ?>") {
                 $(this).prop('checked', true);
             }
         });
-        $('input[name="heartrate_location"]').each(function() {
+        $('.form-check-input[name="heartrate_location"]').each(function() {
             if ($(this).val() === "<?php echo $form10[0]['heartrate_location']; ?>") {
                 $(this).prop('checked', true);
             }
         });
-        $('input[name="o2_method"]').each(function() {
+        $('.form-check-input[name="o2_method"]').each(function() {
             if ($(this).val() === "<?php echo $form10[0]['o2_method']; ?>") {
                 $(this).prop('checked', true);
             }
         });
+        if("<?php echo $form10[0]['o2_method']; ?>" !== "O2 maske" && "<?php echo $form10[0]['o2_method']; ?>" !== "Nazal kanül"){
+            $('#o2_method_diger_input').prop('disabled', false);
+            $('#o2_method_diger_input').val("<?php echo $form10[0]['o2_method']; ?>");
+            $('#o2_method_diger').prop('checked', true);
+        }
+
+
     </script>
     <script>
-        $(function() {
             $('#submit').click(function(e) {
                 e.preventDefault()
 
@@ -470,6 +474,159 @@ if (isset($_GET['logout'])) {
                 let weight_input = $('#kilo_yapiliyor').css("display") === 'flex' ? $(
                     "input[name='weight_input']").val() : 'Yapilmiyorum';
 
+                       //set option error display to none
+                $('.option-error').css('display', 'none');
+                //set borders to original color
+                $('input').css('border-color', '#ced4da');
+                //custom validation
+                    if($('#time').val()=== ""){
+                        //scroll to time
+                        $('html, body').animate({
+                            scrollTop: $("#time").offset().top
+                        }, 200);
+                        //change border color
+                        $('#time').css('border-color', 'red');
+                        //stop function
+                        return false;
+                    }
+
+                    if($('#body_temperature').val()=== ""){
+                        //scroll to body_temperature
+                        $('html, body').animate({
+                            scrollTop: $("#body_temperature").offset().top
+                        }, 200);
+                        //change border color
+                        $('#body_temperature').css('border-color', 'red');
+                        //stop function
+                        return false;
+                    }
+                    if($('.form-check-input[name="measurement_location"]:checked').length === 0){
+                        //scroll to measurement_location
+                        $('html, body').animate({
+                            scrollTop: $('.form-check-input[name="measurement_location"]').first().offset().top
+                        }, 200);
+                        // Display error message
+                        $('.form-check-input[name="measurement_location"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+                    }
+
+                    if($('.form-check-input[name="heartrate_location"]:checked').length === 0){
+                        //scroll to heartrate_location
+                        $('html, body').animate({
+                            scrollTop: $('.form-check-input[name="heartrate_location"]').first().offset().top
+                        }, 200);
+                        // Display error message
+                        $('.form-check-input[name="heartrate_location"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+                    }
+
+                    if($('#heart_rate').val()=== "" ){
+                        //scroll to heart_rate
+                        $('html, body').animate({
+                            scrollTop: $("#heart_rate").offset().top
+                        }, 200);
+                        //change border color
+                        $('#heart_rate').css('border-color', 'red');
+                        //stop function
+                        return false;
+                    }
+
+                    if($('.form-check-input[name="heartrate_nature"]:checked').length === 0){
+                        //scroll to heartrate_nature
+                        $('html, body').animate({
+                            scrollTop: $('.form-check-input[name="heartrate_nature"]').first().offset().top
+                        }, 200);
+                        // Display error message
+                        $('.form-check-input[name="heartrate_nature"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+                    }
+
+                   
+
+                    if($('#respiratory_rate').val()=== "" ){
+                        //scroll to heart_rate
+                        $('html, body').animate({
+                            scrollTop: $("#respiratory_rate").offset().top
+                        }, 200);
+                        //change border color
+                        $('#respiratory_rate').css('border-color', 'red');
+                        //stop function
+                        return false;
+                    }
+
+                    if($('.form-check-input[name="respiratory_nature"]:checked').length === 0){
+                        //scroll to respiratory_nature
+                        $('html, body').animate({
+                            scrollTop: $('.form-check-input[name="respiratory_nature"]').first().offset().top
+                        }, 200);
+                        // Display error message
+                        $('.form-check-input[name="respiratory_nature"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+                    }
+
+                    if($('#blood_pressure').val()=== "" ){
+                        //scroll to blood_pressure
+                        $('html, body').animate({
+                            scrollTop: $("#blood_pressure").offset().top
+                        }, 200);
+                        //change border color
+                        $('#blood_pressure').css('border-color', 'red');
+                        //stop function
+                        return false;
+                    }
+
+                    if($('.form-check-input[name="bp_measurement_location"]:checked').length === 0){
+                        //scroll to bp_measurement_location
+                        $('html, body').animate({
+                            scrollTop: $('.form-check-input[name="bp_measurement_location"]').first().offset().top
+                        }, 200);
+                        // Display error message
+                        $('.form-check-input[name="bp_measurement_location"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+                    }
+
+                    if($('.form-check-input[name="o2_status"]:checked').length === 0){
+                        //scroll to o2_status
+                        $('html, body').animate({
+                            scrollTop: $('.form-check-input[name="o2_status"]').first().offset().top
+                        }, 200);
+                        // Display error message
+                        $('.form-check-input[name="o2_status"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+                    }
+
+                    if($('.form-check-input[name="o2_status"]:checked').val() === "Aliyor" && $('.form-check-input[name="o2_method"]:checked').length === 0){
+                        //scroll to o2_method
+                        $('html, body').animate({
+                            scrollTop: $('.form-check-input[name="o2_method"]').first().offset().top
+                        }, 200);
+                        // Display error message
+                        $('.form-check-input[name="o2_method"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+                    }
+                    if($('.form-check-input[name="o2_status"]:checked').val() === "Aliyor" && $('.form-check-input[name="o2_method"]:checked').val() === "Diğer" && $('#o2_method_diger_input').val() === "" ){
+                        //scroll to o2_method_diger_input
+                        $('html, body').animate({
+                            scrollTop: $('#o2_method_diger_input').offset().top
+                        }, 200);
+                        //change border color
+                        $('#o2_method_diger_input').css('border-color', 'red');
+                        //stop function
+                        return false;
+                    }
+
+
+                    if( $('#spo2_percentage').val()=== "" ){
+                        //scroll to spo2_percentage
+                        $('html, body').animate({
+                            scrollTop: $("#spo2_percentage").offset().top
+                        }, 200);
+                        //change border color
+                        $('#spo2_percentage').css('border-color', 'red');
+                        //stop function
+                        return false;
+                    }
+
                 $.ajax({
                     type: 'POST',
                     url: '<?php echo $base_url; ?>/form-handlers/submitOrUpdateYasamsal_form10.php',
@@ -515,7 +672,6 @@ if (isset($_GET['logout'])) {
 
             })
 
-        });
     </script>
     <script src=""></script>
 </body>

@@ -74,36 +74,36 @@ if ($result) {
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Patient Name:</p>
                             <input type="text" class="form-control" value="<?php echo $form13[0]['patient_name']; ?>"
-                                required name="patient_name" id="diger" placeholder="Patient Name" disabled>
+                                required name="patient_name" id="patient_name" placeholder="Patient Name" disabled>
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Patient ID:</p>
                             <input type="text" class="form-control" value="<?php echo $form13[0]['patient_id']; ?>"
-                                required name="patient_id" id="diger" placeholder="Patient ID" disabled>
+                                required name="patient_id" id="patient_id" placeholder="Patient ID" disabled>
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Saat:</p>
-                            <input type="time" class="form-control" required name="delivery_time" id="diger"
+                            <input type="time" class="form-control" required name="delivery_time" id="delivery_time"
                                 placeholder="delivery_time" value="<?php echo $form13[0]['delivery_time']; ?>">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">İlacın Adı:</p>
-                            <input type="text" class="form-control" required name="medicine_name" id="diger"
+                            <input type="text" class="form-control" required name="medicine_name" id="medicine_name"
                                 placeholder="medicine_name" value="<?php echo $form13[0]['medicine_name']; ?>">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">İlacın Dozu:</p>
-                            <input type="text" class="form-control" required name="medicine_dose" id="diger"
+                            <input type="text" class="form-control" required name="medicine_dose" id="medicine_dose"
                                 placeholder="medicine_dose" value="<?php echo $form13[0]['medicine_dose']; ?>">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">İlacın Yolu:</p>
-                            <input type="text" class="form-control" required name="delivery_method" id="diger"
+                            <input type="text" class="form-control" required name="delivery_method" id="delivery_method"
                                 placeholder="delivery_method" value="<?php echo $form13[0]['delivery_method']; ?>">
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Uygulama Zamanı:</p>
-                            <input type="text" class="form-control" required name="treatment_timeRange" id="diger"
+                            <input type="text" class="form-control" required name="treatment_timeRange" id="treatment_timeRange"
                                 placeholder="treatment_timeRange"
                                 value="<?php echo $form13[0]['treatment_timeRange']; ?>">
                         </div>
@@ -128,13 +128,10 @@ if ($result) {
     });
     </script>
     <script>
-    $(function() {
         $('#submit').click(function(e) {
             e.preventDefault()
             console.log("clicked")
-            var valid = this.form.checkValidity();
 
-            if (valid) {
                 var id = <?php
                                 $userid = $_SESSION['userlogin']['id'];
                                 echo $userid
@@ -159,6 +156,87 @@ if ($result) {
                 let delivery_method = $("input[name='delivery_method']").val();
                 let treatment_timeRange = $("input[name='treatment_timeRange']").val();
                 console.log("values initiated")
+                
+                //set border color normal
+                $('.form-control').css('border-color', '#ced4da');
+                 //custom validation
+                // if($('#iv_input1').val() === ""){
+                //     //scroll to iv_input1
+                //     $('html, body').animate({
+                //         scrollTop: $("#iv_input1").offset().top
+                //     }, 200);
+                //     //change border color
+                //     $('#iv_input1').css('border-color', 'red');
+                //     //stop function
+                //     return false;
+                // }
+
+                if($('#applicationDescription').val() === ""){
+                    //scroll to applicationDescription
+                    $('html, body').animate({
+                        scrollTop: $("#applicationDescription").offset().top
+                    }, 200);
+                    //change border color
+                    $('#applicationDescription').css('border-color', 'red');
+                    //stop function
+                    return false;
+                }
+
+                if($('#delivery_time').val() === ""){
+                    //scroll to delivery_time
+                    $('html, body').animate({
+                        scrollTop: $("#delivery_time").offset().top
+                    }, 200);
+                    //change border color
+                    $('#delivery_time').css('border-color', 'red');
+                    //stop function
+                    return false;
+                }
+
+                if($('#medicine_name').val() === ""){
+                    //scroll to medicine_name
+                    $('html, body').animate({
+                        scrollTop: $("#medicine_name").offset().top
+                    }, 200);
+                    //change border color
+                    $('#medicine_name').css('border-color', 'red');
+                    //stop function
+                    return false;
+                }
+
+                if($('#medicine_dose').val() === ""){
+                    //scroll to medicine_dose
+                    $('html, body').animate({
+                        scrollTop: $("#medicine_dose").offset().top
+                    }, 200);
+                    //change border color
+                    $('#medicine_dose').css('border-color', 'red');
+                    //stop function
+                    return false;
+                }
+
+                if($('#delivery_method').val() === ""){
+                    //scroll to delivery_method
+                    $('html, body').animate({
+                        scrollTop: $("#delivery_method").offset().top
+                    }, 200);
+                    //change border color
+                    $('#delivery_method').css('border-color', 'red');
+                    //stop function
+                    return false;
+                }
+
+                if($('#treatment_timeRange').val() === ""){
+                    //scroll to treatment_timeRange
+                    $('html, body').animate({
+                        scrollTop: $("#treatment_timeRange").offset().top
+                    }, 200);
+                    //change border color
+                    $('#treatment_timeRange').css('border-color', 'red');
+                    //stop function
+                    return false;
+                }
+
 
                 $.ajax({
                     type: 'POST',
@@ -195,13 +273,8 @@ if ($result) {
                         console.log(data)
                     }
                 })
-
-
-
-            }
         })
 
-    });
     </script>
     <script src=""></script>
 </body>

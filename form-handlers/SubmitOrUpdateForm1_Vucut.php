@@ -46,7 +46,6 @@ if (isset($_POST["patient_name"])) {
 
         $result = $stmt->execute([
             $_POST["creation_date"],
-            $_POST["update_date"],
             $_POST["bathDate"],
             $_POST["bodyCleansingDependence"],
             $_POST["bathingFrequency"],
