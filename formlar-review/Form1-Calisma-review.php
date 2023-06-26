@@ -250,6 +250,18 @@ if ($result) {
         </div>
     </div>
     <script>
+        //closeBtn1 click
+        $('#closeBtn1').click(function() {
+            let patient_id = '<?php echo $calismaform1['patient_id']; ?>';
+                let patient_name = "<?php echo $calismaform1['patient_name']; ?>";
+                let url =
+                                        "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
+                                        patient_id + "&patient_name=" + encodeURIComponent(
+                                            patient_name);
+                $('#content').load(url);
+        });
+
+
         $(document).ready(function(){
             var workStatus = "<?php echo $calismaform1['workStatus']; ?>";
             $('[name="workStatus"][value="'+workStatus+'"]').prop('checked', true);

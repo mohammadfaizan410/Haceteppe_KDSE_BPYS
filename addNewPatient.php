@@ -141,6 +141,7 @@ if (isset($_GET['logout'])) {
                     },
                     success: function(data) {
                         alert(data);
+                        $("#content").load("<?php echo $base_url; ?>/updateForms/showAllPatients.php");
                     },
                     error: function(data) {
                         Swal.fire({

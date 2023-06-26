@@ -183,7 +183,7 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
-        $sql = "SELECT * FROM  solunumgereksinimi_form1 WHERE patient_id =" . $userid;
+        $sql = "SELECT * FROM ozgecmisform1 WHERE patient_id =" . $userid;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         $values = [];
@@ -192,7 +192,7 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
-        $sql = "SELECT * FROM  calismaform1 WHERE patient_id =" . $userid;
+        $sql = "SELECT * FROM solunumgereksinimi_form1  WHERE patient_id =" . $userid;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         $values = [];
@@ -210,7 +210,7 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
-        $sql = "SELECT * FROM  ozgecmisform1 WHERE patient_id =" . $userid;
+        $sql = "SELECT * FROM vucudutemizform1   WHERE patient_id =" . $userid;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         $values = [];
@@ -219,12 +219,21 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
-        $sql = "SELECT * FROM  vucudutemizform1 WHERE patient_id =" . $userid;
+        $sql = "SELECT * FROM  katererform1  WHERE patient_id =" . $userid;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         $values = [];
         if ($result) {
             $values19 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            echo 'error';
+        };
+        $sql = "SELECT * FROM  calismaform1  WHERE patient_id =" . $userid;
+        $smtmselect = $db->prepare($sql);
+        $result = $smtmselect->execute();
+        $values = [];
+        if ($result) {
+            $values20 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
         } else {
             echo 'error';
         };
@@ -259,6 +268,7 @@ if (isset($_GET['logout'])) {
             'table17_data' => $values17,
             'table18_data' => $values18,
             'table19_data' => $values19,
+            'table20_data' => $values20,
         ];
 
         ?>
@@ -294,6 +304,7 @@ if (isset($_GET['logout'])) {
                         $form_17_options = '';
                         $form_18_options = '';
                         $form_19_options = '';
+                        $form_20_options = '';
 
                         if (isset($allForms)) {
                             foreach ($allForms as $key => $currentTableAllForms) {
@@ -370,78 +381,106 @@ if (isset($_GET['logout'])) {
                                         $form_15_options .= '<li class="m-2 p-2 "><div class="entered-forms"><a class="nav-items review btn btn-success"   style="color: white;" href="' . $base_url . '/formlar-review/Form15-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form15 Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table15_data') {
-                                        echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color : white;"  href="' . $base_url . '/formlar-review/Form1-Solunumgereksinimi-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Solunumgereksinimi_form1   Date:' . $form["updateDate"] . '</p></a></div>';
+                                        echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color : white;"  href="' . $base_url . '/formlar-review/Form1-ozgecmis-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Form1 Ozgecmis   Date:' . $form["updateDate"] . '</p></a></div>';
                                     }
                                     if ($key ===  'table16_data') {
-                                        echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color : white;"  href="' . $base_url . '/formlar-review/Form1-Calisma-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Çalışma_form1   Date:' . $form["update_date"] . '</p></a></div>';
+                                        echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color : white;"  href="' . $base_url . '/formlar-review/Form1-Solunumgereksinimi-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Form1-Solunumgereksinimi   Date:' . $form["update_date"] . '</p></a></div>';
                                     }
                                     if ($key ===  'table17_data') {
                                         echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color : white;"  href="' . $base_url . '/formlar-review/Form1-hereket-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Herket_form1   Date:' . $form["update_date"] . '</p></a></div>';
                                     }
                                     if ($key ===  'table18_data') {
-                                        echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color : white;"  href="' . $base_url . '/formlar-review/Form1-ozgecmis-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Ozgecmis_form1   Date:' . $form["update_date"] . '</p></a></div>';
+                                        echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color : white;"  href="' . $base_url . '/formlar-review/Form1-Vucudu-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p"> Vucudu_form1  Date:' . $form["update_date"] . '</p></a></div>';
                                     }
                                     if ($key ===  'table19_data') {
-                                        echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color : white;"  href="' . $base_url . '/formlar-review/Form1-vucudu-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Vucudu_form1   Date:' . $form["update_date"] . '</p></a></div>';
+                                        echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color : white;"  href="' . $base_url . '/formlar-review/Form1-Katerer-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">  Katerer Date:' . $form["update_date"] . '</p></a></div>';
                                     }
                                 };
                             }
-                            echo "<div class='w-75 m-auto'>
-                            <button class='entered-forms  btn btn-success w-50 m-auto align-items-center' id='form2_toggle'>Form 2 <span id='form2_caret'>&#9660;</span></button>
-                            <ul class='entered-forms-ul ' id='form_2_options' style='display:none'>" . $form_2_options . "</ul>
-                            </div>";
+                            if($form_2_options !== ""){
+                                echo "<div class='w-75 m-auto'>
+                                <button class='entered-forms  btn btn-success w-50 m-auto align-items-center' id='form2_toggle'>Form 2 <span id='form2_caret'>&#9660;</span></button>
+                                <ul class='entered-forms-ul ' id='form_2_options' style='display:none'>" . $form_2_options . "</ul>
+                                </div>";
+                            }
+                            if($form_3_options !== ""){
                             echo "<div class='w-75 m-auto'>
                             <button class='entered-forms toggle_button btn btn-success w-50 m-auto align-items-center' id='form3_toggle'>Form 3 <span id='form3_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_3_options' style='display:none'>" . $form_3_options . "</ul>
                             </div>";
+                            }
+                            if($form_4_options !== ""){
                             echo "<div class='w-75 m-auto'>
                             <button class='entered-forms toggle_button btn btn-success w-50 m-auto align-items-center' id='form4_toggle'>Form 4 <span id='form4_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_4_options' style='display:none'>" . $form_4_options . "</ul>
                             </div>";
+                            }
+                            if($form_5_options !== ""){
                             echo "<div class='w-75 m-auto'>
                             <button class='entered-forms toggle_button btn btn-success w-50 m-auto align-items-center' id='form5_toggle'>Form 5 <span id='form5_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_5_options' style='display:none'>" . $form_5_options . "</ul>
                             </div>";
+                            }
+                            if($form_6_options !== ""){
                             echo "<div class='w-75 m-auto'>
                             <button class='entered-forms toggle_button btn btn-success w-50 m-auto align-items-center' id='form6_toggle'>Form 6 <span id='form6_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_6_options' style='display:none'>" . $form_6_options . "</ul>
                             </div>";
+                            }
+                            if($form_7_options !== ""){
                             echo "<div class='w-75 m-auto'>
                             <button class='entered-forms toggle_button btn btn-success w-50 m-auto align-items-center' id='form7_toggle'>Form 7 <span id='form7_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_7_options' style='display:none'>" . $form_7_options . "</ul>
                             </div>";
+                            }
+                            if($form_8_options !== ""){
                             echo "<div class='w-75 m-auto'>
                             <button class='entered-forms toggle_button btn btn-success w-50 m-auto align-items-center' id='form8_toggle'>Form 8 <span id='form8_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_8_options' style='display:none'>" . $form_8_options . "</ul>
                             </div>";
+                            }
+                            if($form_9_options !== ""){
                             echo "<div class='w-75 m-auto'>
                             <button class='entered-forms toggle_button btn btn-success w-50 m-auto align-items-center' id='form9_toggle'>Form 9 <span id='form9_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_9_options' style='display:none'>" . $form_9_options . "</ul>
                             </div>";
+                            }
+                            if($form_10_options !== ""){
                             echo "<div class='w-75 m-auto'>
                             <button class='entered-forms toggle_button btn btn-success w-50 m-auto align-items-center' id='form10_toggle'>Form 10 <span id='form10_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_10_options' style='display:none'>" . $form_10_options . "</ul>
                             </div>";
+                            }
+                            if($form_11_options !== ""){
                             echo "<div class='w-75 m-auto'>
                             <button class='entered-forms toggle_button btn btn-success w-50 m-auto align-items-center' id='form11_toggle'>Form 11 <span id='form11_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_11_options' style='display:none'>" . $form_11_options . "</ul>
                             </div>";
+                            }
+                            if($form_12_options !== ""){
                             echo "<div class='w-75 m-auto'>
                             <button class='entered-forms toggle_button btn btn-success w-50 m-auto align-items-center'  id='form12_toggle'>Form 12 <span id='form12_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_12_options' style='display:none'>" . $form_12_options . "</ul>
                             </div>";
+                            }
+                            if($form_13_options !== ""){
                             echo "<div class='w-75 m-auto'>
                             <button class='entered-forms toggle_button btn btn-success w-50 m-auto align-items-center'  id='form13_toggle'>Form 13 <span id='form13_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_13_options' style='display:none'>" . $form_13_options . "</ul>
                             </div>";
+                            }
+                            if($form_14_options !== ""){
                             echo "<div class='w-75 m-auto'>
                             <button class='entered-forms toggle_button btn btn-success w-50 m-auto align-items-center'  id='form14_toggle'>Form 14 <span id='form14_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_14_options' style='display:none'>" . $form_14_options . "</ul>
                             </div>";
+                            }
+                            if($form_15_options !== ""){
                             echo "<div class='w-75 m-auto'>
                             <button class='entered-forms toggle_button btn btn-success w-50 m-auto align-items-center'  id='form15_toggle'>Form 15 <span id='form15_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_15_options' style='display:none'>" . $form_15_options . "</ul>
                             </div>";
+                            }
 
                         }
 

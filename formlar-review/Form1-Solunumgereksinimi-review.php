@@ -1934,7 +1934,13 @@ if ($result) {
                             },
                             success: function(data) {
                                 alert(data);
-
+                                let patient_id = '<?php echo $calismaform1['patient_id']; ?>';
+                                let patient_name = "<?php echo $calismaform1['patient_name']; ?>";
+                                let url =
+                                                        "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
+                                                        patient_id + "&patient_name=" + encodeURIComponent(
+                                                            patient_name);
+                                $('#content').load(url);
                             },
                             error: function(data) {
                                 Swal.fire({

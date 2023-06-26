@@ -10,6 +10,18 @@ if (isset($_GET['logout'])) {
     unset($_SESSION);
     header("Location: main.php");
 }
+require_once('../config-students.php');
+
+$userid = $_SESSION['userlogin']['id'];
+$form_id = $_GET['form_id'];
+$sql = "SELECT * FROM katererform1 where form_id= $form_id";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+if ($result) {
+    $katererform1 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+} else {
+    echo 'error';
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -72,9 +84,9 @@ if (isset($_GET['logout'])) {
                                 </label>
                             </div>
                         </div>
-                        <input type="number" class="form-control w-25" disabled name="peripheralKaterarAmount" id="peripheralKaterarAmount">
-                        <input type="text" class="form-control w-25" disabled name="peripheralKaterarLocation" id="peripheralKaterarLocation">
-                        <input type="date" class="form-control w-25" disabled name="peripheralKaterarDate" id="peripheralKaterarDate">
+                        <input type="number" class="form-control w-25" disabled name="peripheralKaterarAmount" id="peripheralKaterarAmount" value="<?php echo $katererform1[0]['peripheralKaterarAmount']; ?>">
+                        <input type="text" class="form-control w-25" disabled name="peripheralKaterarLocation" id="peripheralKaterarLocation" value="<?php echo $katererform1[0]['peripheralKaterarLocation']; ?>">
+                        <input type="date" class="form-control w-25" disabled name="peripheralKaterarDate" id="peripheralKaterarDate" value="<?php echo $katererform1[0]['peripheralKaterarDate']; ?>">
                     </div>
                 </div>
                 <div class="d-flex justify-content-between">
@@ -88,9 +100,9 @@ if (isset($_GET['logout'])) {
                                 </label>
                             </div>
                         </div>
-                        <input type="number" class="form-control w-25" disabled name="centralKaterarNumber" id="centralKaterarNumber">
-                        <input type="text" class="form-control w-25" disabled name="centralKaterarLocation" id="centralKaterarLocation">
-                        <input type="date" class="form-control w-25" disabled name="centralKaterarDate" id="centralKaterarDate">
+                        <input type="number" class="form-control w-25" disabled name="centralKaterarNumber" id="centralKaterarNumber" value="<?php echo $katererform1[0]['centralKaterarNumber']; ?>">
+                        <input type="text" class="form-control w-25" disabled name="centralKaterarLocation" id="centralKaterarLocation" value="<?php echo $katererform1[0]['centralKaterarLocation']; ?>">
+                        <input type="date" class="form-control w-25" disabled name="centralKaterarDate" id="centralKaterarDate" value="<?php echo $katererform1[0]['centralKaterarDate']; ?>">
                     </div>
                 </div>
                 <div class="d-flex justify-content-between">
@@ -104,9 +116,9 @@ if (isset($_GET['logout'])) {
                                 </label>
                             </div>
                         </div>
-                        <input type="number" class="form-control w-25" disabled name="drainKatererAmount" id="drainKatererAmount">
-                        <input type="text" class="form-control w-25" disabled name="drainKatererLocation" id="drainKatererLocation">
-                        <input type="date" class="form-control w-25" disabled name="drainKatererDate" id="drainKatererDate">
+                        <input type="number" class="form-control w-25" disabled name="drainKatererAmount" id="drainKatererAmount" value="<?php echo $katererform1[0]['drainKatererAmount']; ?>">
+                        <input type="text" class="form-control w-25" disabled name="drainKatererLocation" id="drainKatererLocation" value="<?php echo $katererform1[0]['drainKatererLocation']; ?>">
+                        <input type="date" class="form-control w-25" disabled name="drainKatererDate" id="drainKatererDate" value="<?php echo $katererform1[0]['drainKatererDate']; ?>">
                     </div>
                 </div>
                 <div class="d-flex justify-content-between">
@@ -120,9 +132,9 @@ if (isset($_GET['logout'])) {
                                 </label>
                             </div>
                         </div>
-                        <input type="number" class="form-control w-25" disabled name="otherKatereAmount" id="otherKatereAmount">
-                        <input type="text" class="form-control w-25" disabled name="otherKatereLocation" id="otherKatereLocation">
-                        <input type="date" class="form-control w-25" disabled name="otherKatereDate" id="otherKatereDate">
+                        <input type="number" class="form-control w-25" disabled name="otherKatereAmount" id="otherKatereAmount" value="<?php echo $katererform1[0]['otherKatereAmount']; ?>">
+                        <input type="text" class="form-control w-25" disabled name="otherKatereLocation" id="otherKatereLocation" value="<?php echo $katererform1[0]['otherKatereLocation']; ?>">
+                        <input type="date" class="form-control w-25" disabled name="otherKatereDate" id="otherKatereDate" value="<?php echo $katererform1[0]['otherKatereDate']; ?>">
                     </div>
                 </div>
             </div>
@@ -134,13 +146,8 @@ if (isset($_GET['logout'])) {
                 $('#closeBtn1').click(function(e) {
         e.preventDefault();
         console.log("close btn clicked");
-        let patient_id = <?php
-                                    $userid = $_GET['patient_id'];
-                                    echo $userid
-                                    ?>;
-        let patient_name = "<?php
-                                    echo urldecode($_GET['patient_name']);
-                                    ?>";
+        let patient_id = "<?php echo $katererform1[0]['patient_id']; ?>";
+        let patient_name = "<?php echo $katererform1[0]['patient_name']; ?>"
         var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
             "&patient_name=" + encodeURIComponent(patient_name);
         $("#content").load(url);
@@ -205,6 +212,9 @@ if (isset($_GET['logout'])) {
                     $('#drainKatererDate').prop('disabled', true);
                 }
             })
+
+            //form prefilling
+            $('input[name="katererType"][value="<?php echo $katererform1[0]['katererType']; ?>"]').prop('checked', true);
             </script>
 
             <script>
@@ -425,4 +435,4 @@ if (isset($_GET['logout'])) {
             <script src=""></script>
 </body>
 
-</html>
+</html>`
