@@ -2,22 +2,6 @@
 <?php
 require_once("../config-students.php");
 
-
-
-// patient_id: patient_id,
-// patient_name: patient_name,
-// creation_date: creation_date,
-// updateDate: updateDate,
-// communicationProblem: communicationProblem,
-// companion: companion,
-// reachTrouble: reachTrouble,
-// contactingStaffTrouble: contactingStaffTrouble,
-// careAcceptance: careAcceptance,
-// careAcceptanceWilling: careAcceptanceWilling,
-// careAcceptanceNon: careAcceptanceNon,
-// treatmentAcceptance: treatmentAcceptance,
-// form_name: 'iletisimForm1'
-
 if (isset($_POST["patient_name"])) {
 
     if (isset($_POST['isUpdate'])) {

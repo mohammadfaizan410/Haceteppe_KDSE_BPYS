@@ -10,6 +10,18 @@ if (isset($_GET['logout'])) {
     unset($_SESSION);
     header("Location: main.php");
 }
+require_once('../config-students.php');
+
+$userid = $_SESSION['userlogin']['id'];
+$form_id = $_GET['form_id'];
+$sql = "SELECT * FROM ilestimform1 where form_id= $form_id";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+if ($result) {
+    $iletisim = $smtmselect->fetchAll(PDO::FETCH_ASSOC)[0];
+} else {
+    echo 'error';
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -241,7 +253,6 @@ if (isset($_GET['logout'])) {
 
             <div class="input-section d-flex">
                 <p class="usernamelabel">Tedaviyi kabullenme </p>
-                <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
@@ -269,112 +280,158 @@ if (isset($_GET['logout'])) {
             </div>
         </div>
     </div>
-            <script>
-            $(function() {
-                        $('#closeBtn1').click(function(e) {
-                e.preventDefault();
-                console.log("close btn clicked");
-                let patient_id = <?php
-                                            $userid = $_GET['patient_id'];
-                                            echo $userid
-                                            ?>;
-                let patient_name = "<?php
-                                            echo urldecode($_GET['patient_name']);
-                                            ?>";
-                var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
-                    "&patient_name=" + encodeURIComponent(patient_name);
-                $("#content").load(url);
-            })
+    <script>
+        $(document).ready(function(){
+            var communicationProblem = "<?php echo $iletisim['communicationProblem']; ?>";
+            
+            if (communicationProblem == "Yok"){
+                $('[name="communicationProblem"][value="Yok"]').attr('checked', true);
+                $('[name="communicationProblemInput"]').attr('disabled', true);
+            } else {
+                $('[name="communicationProblem"][value="Var"]').attr('checked', true);
+                $('[name="communicationProblemInput"]').val(communicationProblem).attr('disabled', false);
+            }
+
+            $('[name="communicationProblem"]').on('change', function(){
+                var selectedValue = $(this).val();
+
+                if (selectedValue === "Var"){
+                    $('[name="communicationProblemInput"]').attr('disabled', false);
+                } else {
+                    $('[name="communicationProblemInput"]').val('').attr('disabled', true);
+                }
             });
 
+            var companion = "<?php echo $iletisim['companion']; ?>";
+            
+            if (companion == "Yok"){
+                $('[name="companion"][value="Yok"]').attr('checked', true);
+                $('[name="companionInput"]').attr('disabled', true);
+            } else {
+                $('[name="companion"][value="Var"]').attr('checked', true);
+                $('[name="companionInput"]').val(companion).attr('disabled', false);
+            }
 
-            // $('.form-check-input[name="inHospitalExercise"]').change(function() {
-            //     console.log($(this).val());
-            //     if ($(this).val() === 'Evet') {
-            //         $('input[name="exerciseType"]').prop('disabled', false);
-            //     } else {
-            //         $('input[name="exerciseType"]').prop('disabled', true);
-            //     }
-            //     });
+            $('[name="companion"]').on('change', function(){
+                var selectedValue = $(this).val();
 
-            $('.form-check-input[name="communicationProblem"]').change(function(){
-                if($(this).val() === 'Var'){
-                    $('input[name="communicationProblemInput"]').prop('disabled', false);
-                }else{
-                    $('input[name="communicationProblemInput"]').prop('disabled', true);
+                if (selectedValue === "Var"){
+                    $('[name="companionInput"]').attr('disabled', false);
+                } else {
+                    $('[name="companionInput"]').val('').attr('disabled', true);
+                }
+            });
+
+            var reachTrouble = "<?php echo $iletisim['reachTrouble']; ?>";
+            
+            if (reachTrouble == "Yok"){
+                $('[name="reachTrouble"][value="Yok"]').attr('checked', true);
+                $('[name="reachTroubleInput"]').attr('disabled', true);
+            } else {
+                $('[name="reachTrouble"][value="Var"]').attr('checked', true);
+                $('[name="reachTroubleInput"]').val(reachTrouble).attr('disabled', false);
+            }
+
+            $('[name="reachTrouble"]').on('change', function(){
+                var selectedValue = $(this).val();
+
+                if (selectedValue === "Var"){
+                    $('[name="reachTroubleInput"]').attr('disabled', false);
+                } else {
+                    $('[name="reachTroubleInput"]').val('').attr('disabled', true);
+                }
+            });
+
+            var contactingStaffTrouble = "<?php echo $iletisim['contactingStaffTrouble']; ?>";
+            
+            if (contactingStaffTrouble == "Yok"){
+                $('[name="contactingStaffTrouble"][value="Yok"]').attr('checked', true);
+                $('[name="contactingStaffTroubleInput"]').attr('disabled', true);
+            } else {
+                $('[name="contactingStaffTrouble"][value="Var"]').attr('checked', true);
+                $('[name="contactingStaffTroubleInput"]').val(contactingStaffTrouble).attr('disabled', false);
+            }
+
+            $('[name="contactingStaffTrouble"]').on('change', function(){
+                var selectedValue = $(this).val();
+
+                if (selectedValue === "Var"){
+                    $('[name="contactingStaffTroubleInput"]').attr('disabled', false);
+                } else {
+                    $('[name="contactingStaffTroubleInput"]').val('').attr('disabled', true);
+                }
+            });
+
+            var careAcceptance = "<?php echo $iletisim['careAcceptance']; ?>";
+
+            if (careAcceptance == "Katılmıyor"){
+                var careAcceptanceNon = "<?php echo $iletisim['careAcceptanceNon']; ?>";
+
+                $('[name="careAcceptance"][value="Katılmıyor"]').attr('checked', true);
+                $('[name="careAcceptanceNon"]').prop('disabled', false);
+                $('[name="careAcceptanceNon"][value="'+careAcceptanceNon+'"]').prop('checked', true);
+                $('[name="careAcceptanceWilling"]').prop('disabled', true);
+            } else {
+                var careAcceptanceWilling = "<?php echo $iletisim['careAcceptanceWilling']; ?>";
+
+                $('[name="careAcceptance"][value="Katılıyor"]').attr('checked', true);
+                $('[name="careAcceptanceWilling"]').prop('disabled', false);
+                $('[name="careAcceptanceWilling"][value="'+careAcceptanceWilling+'"]').prop('checked', true);
+                $('[name="careAcceptanceNon"]').prop('disabled', true);
+            }
+
+            $('[name="careAcceptance"]').on('change', function(){
+                var selectedValue = $(this).val();
+
+                if (selectedValue === "Katılmıyor"){
+                    $('[name="careAcceptanceWilling"]').prop('checked', false).prop('disabled', true);
+                    $('[name="careAcceptanceNon"]').prop('disabled', false);
+                } else {
+                    $('[name="careAcceptanceNon"]').prop('checked', false).prop('disabled', true);
+                    $('[name="careAcceptanceWilling"]').prop('disabled', false);
                 }
             })
 
-            $('.form-check-input[name="companion"]').change(function(){
-                if($(this).val() === 'Var'){
-                    $('input[name="companionInput"]').prop('disabled', false);
-                }else{
-                    $('input[name="companionInput"]').prop('disabled', true);
+            var treatmentAcceptance = "<?php echo $iletisim['treatmentAcceptance']; ?>";
+            
+            if (treatmentAcceptance == "Kabul ediyor"){
+                $('[name="treatmentAcceptance"][value="Kabul ediyor"]').attr('checked', true);
+                $('[name="treatmentAcceptanceInput"]').attr('disabled', true);
+            } else {
+                $('[name="treatmentAcceptance"][value="Kabul etmiyor"]').attr('checked', true);
+                $('[name="treatmentAcceptanceInput"]').val(treatmentAcceptance).attr('disabled', false);
+            }
+
+            $('[name="treatmentAcceptance"]').on('change', function(){
+                var selectedValue = $(this).val();
+
+                if (selectedValue === "Kabul etmiyor"){
+                    $('[name="treatmentAcceptanceInput"]').attr('disabled', false);
+                } else {
+                    $('[name="treatmentAcceptanceInput"]').val('').attr('disabled', true);
                 }
-            })
+            });
 
-            $('.form-check-input[name="reachTrouble"]').change(function(){
-                if($(this).val() === 'Var'){
-                    $('input[name="reachTroubleInput"]').prop('disabled', false);
-                }else{
-                    $('input[name="reachTroubleInput"]').prop('disabled', true);
-                }
-            })
-
-            $('.form-check-input[name="contactingStaffTrouble"]').change(function(){
-                if($(this).val() === 'Var'){
-                    $('input[name="contactingStaffTroubleInput"]').prop('disabled', false);
-                }else{
-                    $('input[name="contactingStaffTroubleInput"]').prop('disabled', true);
-                }
-            })
-
-            $('.form-check-input[name="treatmentAcceptance"]').change(function(){
-                if($(this).val() === 'Kabul etmiyor'){
-                    $('input[name="treatmentAcceptanceInput"]').prop('disabled', false);
-                }else{
-                    $('input[name="treatmentAcceptanceInput"]').prop('disabled', true);
-                }
-            })
-
-
-            $('.form-check-input[name="careAcceptance"]').change(function(){
-                if($(this).val() === 'Katılıyor'){
-                    $('input[name="careAcceptanceWilling"]').prop('disabled', false);
-                    $('input[name="careAcceptanceNon"]').prop('disabled', true);
-
-                }else{
-                    $('input[name="careAcceptanceWilling"]').prop('disabled', true);
-                    $('input[name="careAcceptanceNon"]').prop('disabled', false);
-                }
-            })
-
-
-            </script>
-
-            <script>
+        })
+    </script>
+    <script>
             $(function() {
                 $('#submit').click(function(e) {
                     e.preventDefault()
 
+                    console.log('submitted');
 
+                    var id = "<?php
 
-                        let age = $('#age').val();
-                            let not = $('#not').val();
-
-                            var patient_id = <?php
-                                                $userid = $_GET['patient_id'];
-                                                echo $userid
-                                                ?>;
-                            let patient_name = "<?php
-                                                echo urldecode($_GET['patient_name']);
-                                                ?>";
-                            let yourDate = new Date()
+                            $userid = $_SESSION['userlogin']['id'];
+                            echo $userid
+                            ?>";
+                            var form_id = '<?php echo $form_id ?>';
+                            var patient_id = "<?php echo $iletisim['patient_id']; ?>";
+                            let patient_name = "<?php echo $iletisim['patient_name']; ?>";
+                            let yourDate = new Date();
                             let creation_date = yourDate.toISOString().split('T')[0];
                             let updateDate = yourDate.toISOString().split('T')[0];
-                            // let movementProblem = $('.form-check-input[name="movementProblem"]:checked').val() === "Var" ? $('.form-check-input[name="movementProblemDesc"]:checked').map(function() {
-                            //     return $(this).val();
-                            // }).get().join("/") : "Sorun Yok";
                             let communicationProblem = $("input[name='communicationProblem']:checked").val() === "Var" ? $('input[name="communicationProblemInput"]').val() : "Yok";
                             let companion = $("input[name='companion']:checked").val() === "Var" ? $('input[name="companionInput"]').val() : "Yok";
                             let reachTrouble = $("input[name='reachTrouble']:checked").val() === "Var" ? $('input[name="reachTroubleInput"]').val() : "Yok";
@@ -389,27 +446,6 @@ if (isset($_GET['logout'])) {
                             $('.form-control').css('border-color', '#ced4da');
                             //set all error messages to none
                                 $('.option-error').css('display', 'none');
-                            //custom validation
-                            // if($('#iv_input1').val() === ""){
-                            //     //scroll to iv_input1
-                                // $('html, body').animate({
-                                //     scrollTop: $("#iv_input1").offset().top
-                                // }, 200);
-                            //     //change border color
-                                // $('#iv_input1').css('border-color', 'red');
-                                // //stop function
-                                // return false;
-                            // }
-
-                //             if($('.form-check-input[name="time_range"]:checked').length === 0){
-                //     // Scroll to time_range
-                //     $('html, body').animate({
-                //         scrollTop: $('.form-check-input[name="time_range"]').first().offset().top
-                //     }, 200);
-                //     // Display error message
-                //     $('.form-check-input[name="time_range"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-                //     return false;
-                // }
 
                 if($(".form-check-input[name='communicationProblem']:checked").length === 0){
                     // Scroll to communicationProblem
@@ -420,7 +456,7 @@ if (isset($_GET['logout'])) {
                     $(".form-check-input[name='communicationProblem']").first().closest('.input-section').find('.option-error').css('display', 'block');
                     return false;
                 }
-                if($(".form-check-input[name='communicationProblem'][value='Var']:checked").length !== 0 && $('input[name="communicationProblemInput"]').val() === "" ){
+                else if($(".form-check-input[name='communicationProblem'][value='Var']:checked").length !== 0 && $('input[name="communicationProblemInput"]').val() === "" ){
                     //Scroll to communicationProblemInput
                     $('html, body').animate({
                                     scrollTop: $("#communicationProblemInput").offset().top
@@ -431,7 +467,7 @@ if (isset($_GET['logout'])) {
                                 return false;
                 }
 
-                if($(".form-check-input[name='companion']:checked").length === 0){
+                else if($(".form-check-input[name='companion']:checked").length === 0){
                     // Scroll to companion
                     $('html, body').animate({
                         scrollTop: $("input[name='companion']").first().offset().top
@@ -440,7 +476,7 @@ if (isset($_GET['logout'])) {
                     $(".form-check-input[name='companion']").first().closest('.input-section').find('.option-error').css('display', 'block');
                     return false;
                 }
-                if($(".form-check-input[name='companion'][value='Var']:checked").length !== 0 && $('input[name="companionInput"]').val() === "" ){
+                else if($(".form-check-input[name='companion'][value='Var']:checked").length !== 0 && $('input[name="companionInput"]').val() === "" ){
                     //Scroll to companionInput
                     $('html, body').animate({
                                     scrollTop: $("#companionInput").offset().top
@@ -451,7 +487,7 @@ if (isset($_GET['logout'])) {
                                 return false;
                 }
 
-                if($(".form-check-input[name='reachTrouble']:checked").length === 0){
+                else if($(".form-check-input[name='reachTrouble']:checked").length === 0){
                     // Scroll to reachTrouble
                     $('html, body').animate({
                         scrollTop: $("input[name='reachTrouble']").first().offset().top
@@ -460,7 +496,7 @@ if (isset($_GET['logout'])) {
                     $(".form-check-input[name='reachTrouble']").first().closest('.input-section').find('.option-error').css('display', 'block');
                     return false;
                 }
-                if($(".form-check-input[name='reachTrouble'][value='Var']:checked").length !== 0 && $('input[name="reachTroubleInput"]').val() === "" ){
+                else if($(".form-check-input[name='reachTrouble'][value='Var']:checked").length !== 0 && $('input[name="reachTroubleInput"]').val() === "" ){
                     //Scroll to reachTroubleInput
                     $('html, body').animate({
                                     scrollTop: $("#reachTroubleInput").offset().top
@@ -471,7 +507,7 @@ if (isset($_GET['logout'])) {
                                 return false;
                 }
 
-                if($(".form-check-input[name='contactingStaffTrouble']:checked").length === 0){
+                else if($(".form-check-input[name='contactingStaffTrouble']:checked").length === 0){
                     // Scroll to contactingStaffTrouble
                     $('html, body').animate({
                         scrollTop: $("input[name='contactingStaffTrouble']").first().offset().top
@@ -480,7 +516,7 @@ if (isset($_GET['logout'])) {
                     $(".form-check-input[name='contactingStaffTrouble']").first().closest('.input-section').find('.option-error').css('display', 'block');
                     return false;  
                 }
-                if($(".form-check-input[name='contactingStaffTrouble'][value='Var']:checked").length !== 0 && $('input[name="contactingStaffTroubleInput"]').val() === "" ){
+                else if($(".form-check-input[name='contactingStaffTrouble'][value='Var']:checked").length !== 0 && $('input[name="contactingStaffTroubleInput"]').val() === "" ){
                     //Scroll to contactingStaffTroubleInput
                     $('html, body').animate({
                                     scrollTop: $("#contactingStaffTroubleInput").offset().top
@@ -491,7 +527,7 @@ if (isset($_GET['logout'])) {
                                 return false;
                 }
 
-                if($(".form-check-input[name='careAcceptance']:checked").length === 0){
+                else if($(".form-check-input[name='careAcceptance']:checked").length === 0){
                     // Scroll to careAcceptance
                     $('html, body').animate({
                         scrollTop: $("input[name='careAcceptance']").first().offset().top
@@ -500,7 +536,7 @@ if (isset($_GET['logout'])) {
                     $(".form-check-input[name='careAcceptance']").first().closest('.input-section').find('.option-error').css('display', 'block');
                     return false;
                 }
-                if($(".form-check-input[name='careAcceptance']").is(':checked') && $("input[name='careAcceptance']:checked").val() === "Katılmıyor" && !$("input[name='careAcceptanceNon']").is(':checked')){
+                else if($(".form-check-input[name='careAcceptance']").is(':checked') && $("input[name='careAcceptance']:checked").val() === "Katılmıyor" && !$("input[name='careAcceptanceNon']").is(':checked')){
                     // Scroll to careAcceptanceWilling
                         $('html, body').animate({
                         scrollTop: $("input[name='careAcceptance']").first().offset().top
@@ -509,7 +545,7 @@ if (isset($_GET['logout'])) {
                     $(".form-check-input[name='careAcceptance']").first().closest('.input-section').find('.option-error').css('display', 'block');
                     return false;
                 }
-                if($(".form-check-input[name='careAcceptance']").is(':checked') && $("input[name='careAcceptance']:checked").val() === "Katılıyor" && !$("input[name='careAcceptanceWilling']").is(':checked')){
+                else if($(".form-check-input[name='careAcceptance']").is(':checked') && $("input[name='careAcceptance']:checked").val() === "Katılıyor" && !$("input[name='careAcceptanceWilling']").is(':checked')){
                     // Scroll to careAcceptanceWilling
                         $('html, body').animate({
                         scrollTop: $("input[name='careAcceptance']").first().offset().top
@@ -519,7 +555,7 @@ if (isset($_GET['logout'])) {
                     return false;
                 }
 
-                if(!$(".form-check-input[name='treatmentAcceptance']").is(':checked')){
+                else if(!$(".form-check-input[name='treatmentAcceptance']").is(':checked')){
                     // Scroll to treatmentAcceptance
                     $('html, body').animate({
                         scrollTop: $("input[name='treatmentAcceptance']").first().offset().top
@@ -528,7 +564,7 @@ if (isset($_GET['logout'])) {
                     $(".form-check-input[name='treatmentAcceptance']").first().closest('.input-section').find('.option-error').css('display', 'block');
                     return false;
                 }
-                if($(".form-check-input[name='treatmentAcceptance'][value='Kabul etmiyor']").is(':checked') && $('input[name="treatmentAcceptanceInput"]').val() === "" ){
+                else if($(".form-check-input[name='treatmentAcceptance'][value='Kabul etmiyor']").is(':checked') && $('input[name="treatmentAcceptanceInput"]').val() === "" ){
                     //Scroll to treatmentAcceptanceInput
                     $('html, body').animate({
                                     scrollTop: $("[name='treatmentAcceptanceInput']").offset().top
@@ -537,12 +573,14 @@ if (isset($_GET['logout'])) {
                     $('[name="treatmentAcceptanceInput"]').css('border-color', 'red');
                                 //stop function
                                 return false;
-                }
+                } else {
 
                         $.ajax({
                             type: 'POST',
                             url: '<?php echo $base_url; ?>/form-handlers/SubmitOrUpdateForm1_Iletisim.php',
                             data: {
+                                isUpdate: true,
+                                form_id: form_id,
                                 patient_id: patient_id,
                                 patient_name: patient_name,
                                 creation_date: creation_date,
@@ -574,8 +612,10 @@ if (isset($_GET['logout'])) {
                                 })
                                 }
                             })
+                        }
                 
-                        })
+                        });
+                        
                 })
 
             </script>
@@ -588,9 +628,5 @@ if (isset($_GET['logout'])) {
             <script src="lib/tempusdominus/js/moment.min.js"></script>
             <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
             <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-
-            <!-- Template Javascript -->
-            <script src=""></script>
-</body>
-
+    </body>
 </html>
