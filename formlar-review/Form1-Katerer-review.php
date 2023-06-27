@@ -10,6 +10,18 @@ if (isset($_GET['logout'])) {
     unset($_SESSION);
     header("Location: main.php");
 }
+require_once('../config-students.php');
+
+$userid = $_SESSION['userlogin']['id'];
+$form_id = $_GET['form_id'];
+$sql = "SELECT * FROM katererform1 where form_id= $form_id";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+if ($result) {
+    $katererform1 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+} else {
+    echo 'error';
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -72,9 +84,9 @@ if (isset($_GET['logout'])) {
                                 </label>
                             </div>
                         </div>
-                        <input type="number" class="form-control w-25" disabled name="peripheralKaterarAmount" id="peripheralKaterarAmount">
-                        <input type="text" class="form-control w-25" disabled name="peripheralKaterarLocation" id="peripheralKaterarLocation">
-                        <input type="date" class="form-control w-25" disabled name="peripheralKaterarDate" id="peripheralKaterarDate">
+                        <input type="number" class="form-control w-25" disabled name="peripheralKaterarAmount" id="peripheralKaterarAmount" value="<?php echo $katererform1[0]['peripheralKaterarAmount']; ?>">
+                        <input type="text" class="form-control w-25" disabled name="peripheralKaterarLocation" id="peripheralKaterarLocation" value="<?php echo $katererform1[0]['peripheralKaterarLocation']; ?>">
+                        <input type="date" class="form-control w-25" disabled name="peripheralKaterarDate" id="peripheralKaterarDate" value="<?php echo $katererform1[0]['peripheralKaterarDate']; ?>">
                     </div>
                 </div>
                 <div class="d-flex justify-content-between">
@@ -88,9 +100,9 @@ if (isset($_GET['logout'])) {
                                 </label>
                             </div>
                         </div>
-                        <input type="number" class="form-control w-25" disabled name="centralKaterarNumber" id="centralKaterarNumber">
-                        <input type="text" class="form-control w-25" disabled name="centralKaterarLocation" id="centralKaterarLocation">
-                        <input type="date" class="form-control w-25" disabled name="centralKaterarDate" id="centralKaterarDate">
+                        <input type="number" class="form-control w-25" disabled name="centralKaterarNumber" id="centralKaterarNumber" value="<?php echo $katererform1[0]['centralKaterarNumber']; ?>">
+                        <input type="text" class="form-control w-25" disabled name="centralKaterarLocation" id="centralKaterarLocation" value="<?php echo $katererform1[0]['centralKaterarLocation']; ?>">
+                        <input type="date" class="form-control w-25" disabled name="centralKaterarDate" id="centralKaterarDate" value="<?php echo $katererform1[0]['centralKaterarDate']; ?>">
                     </div>
                 </div>
                 <div class="d-flex justify-content-between">
@@ -104,9 +116,9 @@ if (isset($_GET['logout'])) {
                                 </label>
                             </div>
                         </div>
-                        <input type="number" class="form-control w-25" disabled name="drainKatererAmount" id="drainKatererAmount">
-                        <input type="text" class="form-control w-25" disabled name="drainKatererLocation" id="drainKatererLocation">
-                        <input type="date" class="form-control w-25" disabled name="drainKatererDate" id="drainKatererDate">
+                        <input type="number" class="form-control w-25" disabled name="drainKatererAmount" id="drainKatererAmount" value="<?php echo $katererform1[0]['drainKatererAmount']; ?>">
+                        <input type="text" class="form-control w-25" disabled name="drainKatererLocation" id="drainKatererLocation" value="<?php echo $katererform1[0]['drainKatererLocation']; ?>">
+                        <input type="date" class="form-control w-25" disabled name="drainKatererDate" id="drainKatererDate" value="<?php echo $katererform1[0]['drainKatererDate']; ?>">
                     </div>
                 </div>
                 <div class="d-flex justify-content-between">
@@ -120,9 +132,9 @@ if (isset($_GET['logout'])) {
                                 </label>
                             </div>
                         </div>
-                        <input type="number" class="form-control w-25" disabled name="otherKatereAmount" id="otherKatereAmount">
-                        <input type="text" class="form-control w-25" disabled name="otherKatereLocation" id="otherKatereLocation">
-                        <input type="date" class="form-control w-25" disabled name="otherKatereDate" id="otherKatereDate">
+                        <input type="number" class="form-control w-25" disabled name="otherKatereAmount" id="otherKatereAmount" value="<?php echo $katererform1[0]['otherKatereAmount']; ?>">
+                        <input type="text" class="form-control w-25" disabled name="otherKatereLocation" id="otherKatereLocation" value="<?php echo $katererform1[0]['otherKatereLocation']; ?>">
+                        <input type="date" class="form-control w-25" disabled name="otherKatereDate" id="otherKatereDate" value="<?php echo $katererform1[0]['otherKatereDate']; ?>">
                     </div>
                 </div>
             </div>
@@ -134,18 +146,70 @@ if (isset($_GET['logout'])) {
                 $('#closeBtn1').click(function(e) {
         e.preventDefault();
         console.log("close btn clicked");
-        let patient_id = <?php
-                                    $userid = $_GET['patient_id'];
-                                    echo $userid
-                                    ?>;
-        let patient_name = "<?php
-                                    echo urldecode($_GET['patient_name']);
-                                    ?>";
+        let patient_id = "<?php echo $katererform1[0]['patient_id']; ?>";
+        let patient_name = "<?php echo $katererform1[0]['patient_name']; ?>"
         var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
             "&patient_name=" + encodeURIComponent(patient_name);
         $("#content").load(url);
     })
             });
+            
+            if("<?php echo $katererform1[0]['katererType']; ?>" === 'Periferik venöz kateter'){
+                $('#peripheralKaterarAmount').prop('disabled', false);
+                $('#peripheralKaterarLocation').prop('disabled', false);
+                $('#peripheralKaterarDate').prop('disabled', false);
+                $('#centralKaterarNumber').prop('disabled', true);
+                $('#centralKaterarLocation').prop('disabled', true);
+                $('#centralKaterarDate').prop('disabled', true);
+                $('#drainKatererAmount').prop('disabled', true);
+                $('#drainKatererLocation').prop('disabled', true);
+                $('#drainKatererDate').prop('disabled', true);
+                $('#otherKatereAmount').prop('disabled', true);
+                $('#otherKatereLocation').prop('disabled', true);
+                $('#otherKatereDate').prop('disabled', true);
+            }
+            if("<?php echo $katererform1[0]['katererType']; ?>" === 'Santral venöz kateter'){
+                $('#centralKaterarNumber').prop('disabled', false);
+                $('#centralKaterarLocation').prop('disabled', false);
+                $('#centralKaterarDate').prop('disabled', false);
+                $('#peripheralKaterarAmount').prop('disabled', true);
+                $('#peripheralKaterarLocation').prop('disabled', true);
+                $('#peripheralKaterarDate').prop('disabled', true);
+                $('#drainKatererAmount').prop('disabled', true);
+                $('#drainKatererLocation').prop('disabled', true);
+                $('#drainKatererDate').prop('disabled', true);
+                $('#otherKatereAmount').prop('disabled', true);
+                $('#otherKatereLocation').prop('disabled', true);
+                $('#otherKatereDate').prop('disabled', true);
+            }
+            if("<?php echo $katererform1[0]['katererType']; ?>" === 'Dren'){
+                $('#drainKatererAmount').prop('disabled', false);
+                $('#drainKatererLocation').prop('disabled', false);
+                $('#drainKatererDate').prop('disabled', false);
+                $('#peripheralKaterarAmount').prop('disabled', true);
+                $('#peripheralKaterarLocation').prop('disabled', true);
+                $('#peripheralKaterarDate').prop('disabled', true);
+                $('#centralKaterarNumber').prop('disabled', true);
+                $('#centralKaterarLocation').prop('disabled', true);
+                $('#centralKaterarDate').prop('disabled', true);
+                $('#otherKatereAmount').prop('disabled', true);
+                $('#otherKatereLocation').prop('disabled', true);
+                $('#otherKatereDate').prop('disabled', true);
+            }
+            if("<?php echo $katererform1[0]['katererType']; ?>" === 'Diğer'){
+                $('#otherKatereAmount').prop('disabled', false);
+                $('#otherKatereLocation').prop('disabled', false);
+                $('#otherKatereDate').prop('disabled', false);
+                $('#peripheralKaterarAmount').prop('disabled', true);
+                $('#peripheralKaterarLocation').prop('disabled', true);
+                $('#peripheralKaterarDate').prop('disabled', true);
+                $('#centralKaterarNumber').prop('disabled', true);
+                $('#centralKaterarLocation').prop('disabled', true);
+                $('#centralKaterarDate').prop('disabled', true);
+                $('#drainKatererAmount').prop('disabled', true);
+                $('#drainKatererLocation').prop('disabled', true);
+                $('#drainKatererDate').prop('disabled', true);
+            }
      
             $('.form-check-input[name="katererType"]').change(function(){
                 if($(this).val() === 'Periferik venöz kateter'){
@@ -161,6 +225,16 @@ if (isset($_GET['logout'])) {
                     $('#otherKatereAmount').prop('disabled', true);
                     $('#otherKatereLocation').prop('disabled', true);
                     $('#otherKatereDate').prop('disabled', true);
+                    $('#centralKaterarNumber').val('');
+                    $('#centralKaterarLocation').val('');
+                    $('#centralKaterarDate').val('');
+                    $('#drainKatererAmount').val('');
+                    $('#drainKatererLocation').val('');
+                    $('#drainKatererDate').val('');
+                    $('#otherKatereAmount').val('');
+                    $('#otherKatereLocation').val('');
+                    $('#otherKatereDate').val('');
+
                 }
                 if($(this).val() === 'Santral venöz kateter'){
                     $('#centralKaterarNumber').prop('disabled', false);
@@ -175,6 +249,16 @@ if (isset($_GET['logout'])) {
                     $('#otherKatereAmount').prop('disabled', true);
                     $('#otherKatereLocation').prop('disabled', true);
                     $('#otherKatereDate').prop('disabled', true);
+                    $('#peripheralKaterarAmount').val('');
+                    $('#peripheralKaterarLocation').val('');
+                    $('#peripheralKaterarDate').val('');
+                    $('#drainKatererAmount').val('');
+                    $('#drainKatererLocation').val('');
+                    $('#drainKatererDate').val('');
+                    $('#otherKatereAmount').val('');
+                    $('#otherKatereLocation').val('');
+                    $('#otherKatereDate').val('');
+
                 }
                 if($(this).val() === 'Dren'){
                     $('#drainKatererAmount').prop('disabled', false);
@@ -189,6 +273,15 @@ if (isset($_GET['logout'])) {
                     $('#otherKatereAmount').prop('disabled', true);
                     $('#otherKatereLocation').prop('disabled', true);
                     $('#otherKatereDate').prop('disabled', true);
+                    $('#peripheralKaterarAmount').val('');
+                    $('#peripheralKaterarLocation').val('');
+                    $('#peripheralKaterarDate').val('');
+                    $('#centralKaterarNumber').val('');
+                    $('#centralKaterarLocation').val('');
+                    $('#centralKaterarDate').val('');
+                    $('#otherKatereAmount').val('');
+                    $('#otherKatereLocation').val('');
+                    $('#otherKatereDate').val('');
                 }
                 if($(this).val() === 'Diğer'){
                     $('#otherKatereAmount').prop('disabled', false);
@@ -203,8 +296,21 @@ if (isset($_GET['logout'])) {
                     $('#drainKatererAmount').prop('disabled', true);
                     $('#drainKatererLocation').prop('disabled', true);
                     $('#drainKatererDate').prop('disabled', true);
+                    $('#peripheralKaterarAmount').val('');
+                    $('#peripheralKaterarLocation').val('');
+                    $('#peripheralKaterarDate').val('');
+                    $('#centralKaterarNumber').val('');
+                    $('#centralKaterarLocation').val('');
+                    $('#centralKaterarDate').val('');
+                    $('#drainKatererAmount').val('');
+                    $('#drainKatererLocation').val('');
+                    $('#drainKatererDate').val('');
+
                 }
             })
+
+            //form prefilling
+            $('input[name="katererType"][value="<?php echo $katererform1[0]['katererType']; ?>"]').prop('checked', true);
             </script>
 
             <script>
@@ -215,14 +321,9 @@ if (isset($_GET['logout'])) {
 
                             let age = $('#age').val();
                             let not = $('#not').val();
-
-                            var patient_id = <?php
-                                                $userid = $_GET['patient_id'];
-                                                echo $userid
-                                                ?>;
-                            let patient_name = "<?php
-                                                echo urldecode($_GET['patient_name']);
-                                                ?>";
+                            let form_id = "<?php echo $katererform1[0]['form_id']; ?>";
+                            var patient_id = "<?php echo $katererform1[0]['patient_id']; ?>";
+                            let patient_name = "<?php echo $katererform1[0]['patient_name']; ?>";
                             let yourDate = new Date()
                             let creation_date = yourDate.toISOString().split('T')[0];
                             let updateDate = yourDate.toISOString().split('T')[0];
@@ -367,7 +468,8 @@ if (isset($_GET['logout'])) {
                             type: 'POST',
                             url: '<?php echo $base_url; ?>/form-handlers/SubmitOrUpdateForm1_Kateter.php',
                             data: {
-                               
+                                isUpdate: true,
+                                form_id: form_id,
                                 patient_id: patient_id,
                                 patient_name: patient_name,
                                 creation_date: creation_date,
@@ -425,4 +527,4 @@ if (isset($_GET['logout'])) {
             <script src=""></script>
 </body>
 
-</html>
+</html>`

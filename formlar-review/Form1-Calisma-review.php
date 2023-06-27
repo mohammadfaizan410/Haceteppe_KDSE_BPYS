@@ -250,6 +250,18 @@ if ($result) {
         </div>
     </div>
     <script>
+        //closeBtn1 click
+        $('#closeBtn1').click(function() {
+            let patient_id = '<?php echo $calismaform1['patient_id']; ?>';
+                let patient_name = "<?php echo $calismaform1['patient_name']; ?>";
+                let url =
+                                        "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
+                                        patient_id + "&patient_name=" + encodeURIComponent(
+                                            patient_name);
+                $('#content').load(url);
+        });
+
+
         $(document).ready(function(){
             var workStatus = "<?php echo $calismaform1['workStatus']; ?>";
             $('[name="workStatus"][value="'+workStatus+'"]').prop('checked', true);
@@ -347,7 +359,11 @@ if ($result) {
     </script>
     <script>
             $('#submit').click(function(e) {
-            console.log('pressed');
+            //set border colors to default
+            $('.form-control').css('border-color', '#ced4da');
+            //set all errors display to none
+            $('.option-error').css('display', 'none');
+
             e.preventDefault();
 
             if (!$('[name="workStatus"]').is(':checked')) {
@@ -357,55 +373,6 @@ if ($result) {
                 }, 200);
                 $('[name="workStatus"]').first().closest('.input-section').find('.option-error').css('display', 'block');
                         return false;
-            } else if (!$('[name="workInterruption"]').is(':checked')) {
-                $('.option-error').css('display', 'none');
-                $('html, body').animate({
-                    scrollTop: $('[name="workInterruption"]').offset().top
-                }, 200);
-                $('[name="workInterruption"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-                        return false;
-            } else if (!$('[name="workRisk"]').is(':checked')) {
-                $('.option-error').css('display', 'none');
-                $('html, body').animate({
-                    scrollTop: $('[name="workRisk"]').offset().top
-                }, 200);
-                $('[name="workRisk"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-                        return false;
-            } else if (!$('[name="hospitalSocialActivities"]').is(':checked')) {
-                $('.option-error').css('display', 'none');
-                $('html, body').animate({
-                    scrollTop: $('[name="hospitalSocialActivities"]').offset().top
-                }, 200);
-                $('[name="hospitalSocialActivities"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-                        return false;
-            } else if ($('[name="familyMembers"]').val() === '') {
-                $('.option-error').css('display', 'none');
-                $('html, body').animate({
-                            scrollTop: $('[name="familyMembers"]').offset().top
-                        }, 200);
-                        //change border color
-                $('[name="familyMembers"]').css('border-color', 'red');
-            } else if ($('[name="numberOfChildren"]').val() === '') {
-                $('.option-error').css('display', 'none');
-                $('html, body').animate({
-                            scrollTop: $('[name="numberOfChildren"]').offset().top
-                        }, 200);
-                        //change border color
-                $('[name="numberOfChildren"]').css('border-color', 'red');
-            } else if ($('[name="roleInFamily"]').val() === '') {
-                $('.option-error').css('display', 'none');
-                $('html, body').animate({
-                            scrollTop: $('[name="roleInFamily"]').offset().top
-                        }, 200);
-                        //change border color
-                $('[name="roleInFamily"]').css('border-color', 'red');
-            } else if ($('[name="hobbies"]').val() === '') {
-                $('.option-error').css('display', 'none');
-                $('html, body').animate({
-                            scrollTop: $('[name="hobbies"]').offset().top
-                        }, 200);
-                        //change border color
-                $('[name="hobbies"]').css('border-color', 'red');
             } else if ($('[name="workStatus"][value="Çalışmıyor"]').is(':checked') && $('[name="nonWorkingTime"]').val() === '') {
                     $('.option-error').css('display', 'none');
                     $('html, body').animate({
@@ -413,13 +380,22 @@ if ($result) {
                         }, 200);
                         //change border color
                     $('[name="nonWorkingTime"]').css('border-color', 'red');
-            } else if ($('[name="workStatus"][value="Çalışıyor"]').is(':checked') && $('[name="workingTime"]').val() === '') {
+            }
+            else if ($('[name="workStatus"][value="Çalışıyor"]').is(':checked') && $('[name="workingTime"]').val() === '') {
                     $('.option-error').css('display', 'none');
                     $('html, body').animate({
                             scrollTop: $('[name="workingTime"]').offset().top
                         }, 200);
                         //change border color
                     $('[name="workingTime"]').css('border-color', 'red');
+            }
+            else if (!$('[name="workInterruption"]').is(':checked')) {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                    scrollTop: $('[name="workInterruption"]').offset().top
+                }, 200);
+                $('[name="workInterruption"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
             } else if ($('[name="workInterruption"][value="Var"]').is(':checked') && $('[name="workInterruptionInput"]').val() === '') {
                     $('.option-error').css('display', 'none');
                     $('html, body').animate({
@@ -427,14 +403,62 @@ if ($result) {
                         }, 200);
                         //change border color
                     $('[name="workInterruptionInput"]').css('border-color', 'red');
-            } else if ($('[name="workRisk"][value="Var"]').is(':checked') && $('[name="workRiskInput"]').val() === '') {
+            }
+            else if (!$('[name="workRisk"]').is(':checked')) {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                    scrollTop: $('[name="workRisk"]').offset().top
+                }, 200);
+                $('[name="workRisk"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+            }  else if ($('[name="workRisk"][value="Var"]').is(':checked') && $('[name="workRiskInput"]').val() === '') {
                     $('.option-error').css('display', 'none');
                     $('html, body').animate({
                             scrollTop: $('[name="workRiskInput"]').offset().top
                         }, 200);
                         //change border color
                     $('[name="workRiskInput"]').css('border-color', 'red');
-            } else if ($('[name="hospitalSocialActivities"][value="Diğer"]').is(':checked') && $('[name="otherSocialActivities"]').val() === '') {
+            }
+            else if ($('[name="familyMembers"]').val() === '') {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                            scrollTop: $('[name="familyMembers"]').offset().top
+                        }, 200);
+                        //change border color
+                $('[name="familyMembers"]').css('border-color', 'red');
+            }
+            else if ($('[name="numberOfChildren"]').val() === '') {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                            scrollTop: $('[name="numberOfChildren"]').offset().top
+                        }, 200);
+                        //change border color
+                $('[name="numberOfChildren"]').css('border-color', 'red');
+            } 
+            else if ($('[name="roleInFamily"]').val() === '') {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                            scrollTop: $('[name="roleInFamily"]').offset().top
+                        }, 200);
+                        //change border color
+                $('[name="roleInFamily"]').css('border-color', 'red');
+            }
+            else if ($('[name="hobbies"]').val() === '') {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                            scrollTop: $('[name="hobbies"]').offset().top
+                        }, 200);
+                        //change border color
+                $('[name="hobbies"]').css('border-color', 'red');
+            } 
+             else if (!$('[name="hospitalSocialActivities"]').is(':checked')) {
+                $('.option-error').css('display', 'none');
+                $('html, body').animate({
+                    scrollTop: $('[name="hospitalSocialActivities"]').offset().top
+                }, 200);
+                $('[name="hospitalSocialActivities"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                        return false;
+            }   else if ($('[name="hospitalSocialActivities"][value="Diğer"]').is(':checked') && $('[name="otherSocialActivities"]').val() === '') {
                     $('.option-error').css('display', 'none');
                     $('html, body').animate({
                             scrollTop: $('[name="otherSocialActivities"]').offset().top

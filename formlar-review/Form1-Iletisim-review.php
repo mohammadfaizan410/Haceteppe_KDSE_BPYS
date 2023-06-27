@@ -274,6 +274,7 @@ if ($result) {
                         </div>
                     </div>
                 </div>
+                </div>
                 <input class="form-control submit m-auto " type='submit' name="submit" id="submit" value="Kayıt">
              </form>
                 </div>
@@ -281,6 +282,16 @@ if ($result) {
         </div>
     </div>
     <script>
+        
+        $(function() {
+            $('#closeBtn1').click(function(e) {
+                let patient_name = "<?php echo $iletisim['patient_name']; ?>"
+                let patient_id = parseInt("<?php echo $iletisim['patient_id']; ?>");
+                let url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
+                    "&patient_name=" + encodeURIComponent(patient_name);
+                $("#content").load(url);
+            })
+        })
         $(document).ready(function(){
             var communicationProblem = "<?php echo $iletisim['communicationProblem']; ?>";
             
@@ -311,6 +322,7 @@ if ($result) {
                 $('[name="companion"][value="Var"]').attr('checked', true);
                 $('[name="companionInput"]').val(companion).attr('disabled', false);
             }
+            
 
             $('[name="companion"]').on('change', function(){
                 var selectedValue = $(this).val();

@@ -1074,7 +1074,7 @@ if (isset($_GET['logout'])) {
                                     <input class="form-check-input" type="radio" name="capillaryFillingProblem" id="capillaryFillingProblem" value="Var">
                                     <label class="form-check-label" for="KapillerDolum">
                                         <span class="checkbox-header">Var. Açıklayınız </span>
-                                        <input type="text" class="form-control diger" disabled name="capillaryFillingInput">
+                                        <input type="text" class="form-control diger" disabled name="capillaryFillingInput" id="capillaryFillingInput">
                                     </label>
                                 </div>
                             </div>
@@ -1172,12 +1172,12 @@ if (isset($_GET['logout'])) {
                     }
                 })
 
-                $('.form-check-input[name="skinHeat"]').change(function(){
+                $('.form-check-input[name="skinTemperature"]').change(function(){
                     console.log($(this).val())
                     if($(this).val() === "Var"){
-                        $('input[name="skinHeatInput"]').prop('disabled', false);
+                        $('input[name="skinTemperatureInput"]').prop('disabled', false);
                     }else{
-                        $('input[name="skinHeatInput"]').prop('disabled', true);
+                        $('input[name="skinTemperatureInput"]').prop('disabled', true);
                     }
                 })
 
@@ -1306,11 +1306,11 @@ if (isset($_GET['logout'])) {
             if(mensturalProduct === "Hazır ped"){
                 mensturalProductReplacement = $("input[name='padReplacementFreq']").val(); 
             }
-            if(mensturalProduct === "Bez"){
+            else if(mensturalProduct === "Bez"){
                 mensturalProductReplacement = $("input[name='bezReplacementFreq']").val(); 
             }
-            if(mensturalProduct === "Diğer"){
-                mensturalProductReplacement = $("input[name='digerReplacementFreq']").val(); 
+            else{
+                mensturalProductReplacement = $('#digerReplacementFreq').val(); 
             }
             let skinColorProblem = $("input[name='skinColorProblem']:checked").val() === "Var" ? $("input[name='skinColorProblemDesc']:checked").map(function(){return $(this).val();}).get().join("/") : $("input[name='skinColorProblem']:checked").val();
             let skinMoisture = $("input[name='skinMoisture']:checked").val() === "Var" ? $("input[name='skinMoistureInput']").val() : "Sorun Yok";
@@ -1888,7 +1888,7 @@ if (isset($_GET['logout'])) {
                 
 
 
-
+                console.log(mensturalProductReplacement)
 
 
 

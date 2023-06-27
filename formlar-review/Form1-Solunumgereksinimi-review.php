@@ -969,7 +969,7 @@ if ($result) {
                     </div>
                 </div>
             </div>
-
+            <div class="input-section">
             <p class="usernamelabel">Solunum sistemi uygulaması </p>
             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
             <div class="checkbox-wrapper d-flex">
@@ -1024,13 +1024,14 @@ if ($result) {
                     </div>
                 </div>
             </div>
+            </div>
 
 
-            <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
-
-            </form>
+            <input class="form-control submit m-auto " type='submit' name="submit" id="submit" value="Kayıt">
+             </form>
+                </div>
+            </div>
         </div>
-
     </div>
     <script>
         $(document).ready(function(){
@@ -1523,273 +1524,294 @@ if ($result) {
         </script>
         <script>
         $(function() {
-        $('[name="submit"]').click(function(e) {
+            $('[name="submit"]').click(function(e) {
+               //set border color to default
+               $('.form-control').css('border-color', '#ced4da');
+            //set all error fields to display none
+            $('.option-error').css('display', 'none');
 
-            if (!$('[name="yatisdurumuradio"]').is(':checked')) {
-                $('.option-error').css('display', 'none');
-                $('html, body').animate({
-                    scrollTop: $('[name="yatisdurumuradio"]').offset().top
-                }, 200);
-                $('[name="yatisdurumuradio"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-                        return false;
-            } else if (!$('[name="SolunumSorunu"]').is(':checked')) {
-                $('.option-error').css('display', 'none');
-                $('html, body').animate({
-                    scrollTop: $('[name="SolunumSorunu"]').offset().top
-                }, 200);
-                $('[name="SolunumSorunu"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-                        return false;
-            } else if (!$('[name="SolunumYolu"]').is(':checked')) {
-                $('.option-error').css('display', 'none');
-                $('html, body').animate({
-                    scrollTop: $('[name="SolunumYolu"]').offset().top
-                }, 200);
-                $('[name="SolunumYolu"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-                        return false;
-            } else if (!$('[name="Oksurme"]').is(':checked')) {
-                $('.option-error').css('display', 'none');
-                $('html, body').animate({
-                    scrollTop: $('[name="Oksurme"]').offset().top
-                }, 200);
-                $('[name="Oksurme"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-                        return false;
-            } else if (!$('[name="Balgam"]').is(':checked')) {
-                $('.option-error').css('display', 'none');
-                $('html, body').animate({
-                    scrollTop: $('[name="Balgam"]').offset().top
-                }, 200);
-                $('[name="Balgam"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-                        return false;
-            } else if (!$('[name="AspirasyonIhtiyaci"]').is(':checked')) {
-                $('.option-error').css('display', 'none');
-                $('html, body').animate({
-                    scrollTop: $('[name="AspirasyonIhtiyaci"]').offset().top
-                }, 200);
-                $('[name="AspirasyonIhtiyaci"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-                        return false;
-            } else if (!$('[name="BurunMuayenesi"]').is(':checked')) {
-                $('.option-error').css('display', 'none');
-                $('html, body').animate({
-                    scrollTop: $('[name="BurunMuayenesi"]').offset().top
-                }, 200);
-                $('[name="BurunMuayenesi"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-                        return false;
-            } else if (!$('[name="TiroidBezi"]').is(':checked')) {
-                $('.option-error').css('display', 'none');
-                $('html, body').animate({
-                    scrollTop: $('[name="TiroidBezi"]').offset().top
-                }, 200);
-                $('[name="TiroidBezi"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-                        return false;
-            } else if (!$('[name="Trakea"]').is(':checked')) {
-                $('.option-error').css('display', 'none');
-                $('html, body').animate({
-                    scrollTop: $('[name="Trakea"]').offset().top
-                }, 200);
-                $('[name="yatisdurumurTrakeaadio"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-                        return false;
-            } else if (!$('[name="LenfNodlari"]').is(':checked')) {
-                $('.option-error').css('display', 'none');
-                $('html, body').animate({
-                    scrollTop: $('[name="LenfNodlari"]').offset().top
-                }, 200);
-                $('[name="LenfNodlari"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-                        return false;
-            } else if (!$('[name="SkapulaSimatrikligi"]').is(':checked')) {
-                $('.option-error').css('display', 'none');
-                $('html, body').animate({
-                    scrollTop: $('[name="SkapulaSimatrikligi"]').offset().top
-                }, 200);
-                $('[name="SkapulaSimatrikligi"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-                        return false;
-            } else if (!$('[name="OmurgaDeform"]').is(':checked')) {
-                $('.option-error').css('display', 'none');
-                $('html, body').animate({
-                    scrollTop: $('[name="OmurgaDeform"]').offset().top
-                }, 200);
-                $('[name="OmurgaDeform"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-                        return false;
-            } else if (!$('[name="GogusHareketleri"]').is(':checked')) {
-                $('.option-error').css('display', 'none');
-                $('html, body').animate({
-                    scrollTop: $('[name="GogusHareketleri"]').offset().top
-                }, 200);
-                $('[name="GogusHareketleri"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-                        return false;
-            } else if (!$('[name="GogusKafesinde"]').is(':checked')) {
-                $('.option-error').css('display', 'none');
-                $('html, body').animate({
-                    scrollTop: $('[name="GogusKafesinde"]').offset().top
-                }, 200);
-                $('[name="GogusKafesinde"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-                        return false;
-            } else if (!$('[name="GogusDeformitesi"]').is(':checked')) {
-                $('.option-error').css('display', 'none');
-                $('html, body').animate({
-                    scrollTop: $('[name="GogusDeformitesi"]').offset().top
-                }, 200);
-                $('[name="GogusDeformitesi"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-                        return false;
-            } else if (!$('[name="SolunumSistemiUygilamasi"]').is(':checked')) {
-                $('.option-error').css('display', 'none');
-                $('html, body').animate({
-                    scrollTop: $('[name="SolunumSistemiUygilamasi"]').offset().top
-                }, 200);
-                $('[name="SolunumSistemiUygilamasi"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-                        return false;
-            } else if ($('[name="NodDiger"]').val() === '') {
-                $('.option-error').css('display', 'none');
-                $('html, body').animate({
-                            scrollTop: $('[name="NodDiger"]').offset().top
-                        }, 200);
-                        //change border color
-                $('[name="NodDiger"]').css('border-color', 'red');
-            }
-            else {
-                if ($('[name="SolunumSorunu"]:checked').val() == "Var" && !$('[name="breathing-problem"]').is(':checked')){   
-                    $('.option-error').css('display', 'none'); 
-                    $('html, body').animate({
-                    scrollTop: $('[name="SolunumSorunu"]').offset().top
-                    }, 200);
-                    $('[name="SolunumSorunu"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-                        return false;
-                } else if ($('#breathing-not').is(':checked') && $('[name="solunum_diger"]').val() === '') {
-                    $('.option-error').css('display', 'none');
-                    $('html, body').animate({
-                            scrollTop: $('[name="solunum_diger"]').offset().top
-                        }, 200);
-                        //change border color
-                    $('[name="solunum_diger"]').css('border-color', 'red');
-                } else if ($('[name="SolunumYolu"]:checked').val() == "Var" && !$('[name="AirwayMethod"]').is(':checked')) {
-                    $('.option-error').css('display', 'none');
-                    $('html, body').animate({
-                    scrollTop: $('[name="SolunumYolu"]').offset().top
-                    }, 200);
-                    $('[name="SolunumYolu"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-                        return false;
-                } else if ($('[name="Oksurme"]:checked').val() == "Var" && !$('[name="CoughOption"]').is(':checked')){
-                    $('.option-error').css('display', 'none');
-                    $('html, body').animate({
-                    scrollTop: $('[name="Oksurme"]').offset().top
-                    }, 200);
-                    $('[name="Oksurme"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-                        return false;
-                 } else if (($('#OksurmeDiğer').is(':checked') && $('[name="oksurme_diger"]').val() == '')) {
-                    $('html, body').animate({
-                            scrollTop: $('[name="oksurme_diger"]').offset().top
-                        }, 200);
-                        //change border color
-                    $('[name="oksurme_diger"]').css('border-color', 'red');
-                 } else if ($('[name="Balgam"]:checked').val() === "Var" && (!$('[name="BalgamType"]').is(':checked'))) {
-                    $('.option-error').css('display', 'none');
-                    $('html, body').animate({
-                    scrollTop: $('[name="Balgam"]').offset().top
-                    }, 200);
-                    $('[name="Balgam"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-                        return false;
-                 } else if ($('[name="BalgamType"]:checked').val() === "Diğer" && $('[name="balgam_diger"]').val() === '') {
-                    $('html, body').animate({
-                            scrollTop: $('[name="balgam_diger"]').offset().top
-                        }, 200);
-                        //change border color
-                    $('[name="balgam_diger"]').css('border-color', 'red');
-                 } else if ($('[name="AspirasyonIhtiyaci"]:checked').val() == "Var" && !$('[name="Aspirasyon_need"]').is(':checked')) {
-                    $('.option-error').css('display', 'none');
-                    $('html, body').animate({
-                    scrollTop: $('[name="AspirasyonIhtiyaci"]').offset().top
-                    }, 200);
-                    $('[name="AspirasyonIhtiyaci"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-                        return false;
-                 } else if ($('[name="BurunMuayenesi"]:checked').val() == "Var" && !$('[name="NasalIssue"]').is(':checked')) {
-                    $('.option-error').css('display', 'none');
-                    $('html, body').animate({
-                    scrollTop: $('[name="BurunMuayenesi"]').offset().top
-                    }, 200);
-                    $('[name="BurunMuayenesi"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-                        return false;
-                 } else if ($('#NazalDiger').is(':checked') && $('[name="nazal_diger"]').val() === "") {
-                    $('html, body').animate({
-                            scrollTop: $('[name="nazal_diger"]').offset().top
-                        }, 200);
-                        //change border color
-                    $('[name="nazal_diger"]').css('border-color', 'red');
-                 } else if ($('[name="TiroidBezi"]:checked').val() === "Var" && !$('[name="ThyroidIssue"]').is(':checked')) {
-                    $('.option-error').css('display', 'none');
-                    $('html, body').animate({
-                    scrollTop: $('[name="TiroidBezi"]').offset().top
-                    }, 200);
-                    $('[name="TiroidBezi"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-                        return false;
-                 } else if ($('#TiroidDiger').is(':checked') && $('[name="tiroid_diger"]').val() === '') {
-                    $('html, body').animate({
-                            scrollTop: $('[name="tiroid_diger"]').offset().top
-                        }, 200);
-                        //change border color
-                    $('[name="tiroid_diger"]').css('border-color', 'red');
-                 } else if ($('[name="Trakea"]:checked').val() == "Var" && !$('[name="Shift"]').is(':checked')) {
-                    $('.option-error').css('display', 'none');
-                    $('html, body').animate({
-                    scrollTop: $('[name="Trakea"]').offset().top
-                    }, 200);
-                    $('[name="Trakea"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-                        return false;
-                 } else if ($('[name="LenfNodlari"]:checked').val() == "Var" && $('[name="NodYeri"]').val() === '') {
-                    $('.option-error').css('display', 'none');
-                    $('html, body').animate({
-                    scrollTop: $('[name="LenfNodlari"]').offset().top
-                    }, 200);
-                    $('[name="LenfNodlari"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-                        return false;
-                 } else if ($('[name="OmurgaDeform"]:checked').val() == "Var" && !$('[name="SpinalDeformity"]').is(':checked')) {
-                    $('.option-error').css('display', 'none');
-                    $('html, body').animate({
-                    scrollTop: $('[name="OmurgaDeform"]').offset().top
-                    }, 200);
-                    $('[name="OmurgaDeform"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-                        return false;
-                 } else if ($('[name="GogusKafesinde"]:checked').val() == "Var" && !$('[name="ChestIssues"]').is(':checked')) {
-                    $('.option-error').css('display', 'none');
-                    $('html, body').animate({
-                    scrollTop: $('[name="GogusKafesinde"]').offset().top
-                    }, 200);
-                    $('[name="GogusKafesinde"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-                        return false;
-                 } else if ($('#KrepitasyonAlani').is(':checked') && $('[name="Krepitasyon_Alani"]').val() === '') {
-                    $('html, body').animate({
-                            scrollTop: $('[name="Krepitasyon_Alani"]').offset().top
-                        }, 200);
-                        //change border color
-                    $('[name="Krepitasyon_Alani"]').css('border-color', 'red');
-                    return false;
-                } else if ($('#KitleOzelligi').is(':checked') && $('[name="Kitle_Ozelligi"]').val() === '') {
-                    $('html, body').animate({
-                            scrollTop: $('[name="Kitle_Ozelligi"]').offset().top
-                        }, 200);
-                        //change border color
-                    $('[name="Kitle_Ozelligi"]').css('border-color', 'red');
-                    return false;
-                } else if ($('#KitleDiger').is(':checked') && $('[name="Kitle_Diger"]').val() === '') {
-                    $('html, body').animate({
-                            scrollTop: $('[name="Kitle_Diger"]').offset().top
-                        }, 200);
-                        //change border color
-                    $('[name="Kitle_Diger"]').css('border-color', 'red');
-                    return false;
-                } else if ($('[name="GogusDeformitesi"]:checked').val() == "Var" && !$('[name="DeformityType"]').is(':checked')) {
-                    $('.option-error').css('display', 'none');
-                    $('html, body').animate({
-                    scrollTop: $('[name="GogusDeformitesi"]').offset().top
-                    }, 200);
-                    $('[name="GogusDeformitesi"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-                        return false;
-                 } else if ($('[name="SolunumSistemiUygilamasi"][value="Diger"]').is(':checked') && $('[name="SolunumUygulamasi_diger"]').val() === '') {
-                    $('html, body').animate({
-                            scrollTop: $('[name="SolunumUygulamasi_diger"]').offset().top
-                        }, 200);
-                        //change border color
-                    $('[name="SolunumUygulamasi_diger"]').css('border-color', 'red');
-                    return false;
-                 } else {
+if (!$('[name="yatisdurumuradio"]').is(':checked')) {
+    $('.option-error').css('display', 'none');
+    $('html, body').animate({
+        scrollTop: $('[name="yatisdurumuradio"]').offset().top
+    }, 200);
+    $('[name="yatisdurumuradio"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+            return false;
+} else if (!$('[name="SolunumSorunu"]').is(':checked')) {
+    $('.option-error').css('display', 'none');
+    $('html, body').animate({
+        scrollTop: $('[name="SolunumSorunu"]').offset().top
+    }, 200);
+    $('[name="SolunumSorunu"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+            return false;
+} 
+else if ($('[name="SolunumSorunu"]:checked').val() == "Var" && !$('[name="breathing-problem"]').is(':checked')){   
+        $('.option-error').css('display', 'none'); 
+        $('html, body').animate({
+        scrollTop: $('[name="SolunumSorunu"]').offset().top
+        }, 200);
+        $('[name="SolunumSorunu"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+            return false;
+    } else if ($('#breathing-not').is(':checked') && $('[name="solunum_diger"]').val() === '') {
+        $('.option-error').css('display', 'none');
+        $('html, body').animate({
+                scrollTop: $('[name="solunum_diger"]').offset().top
+            }, 200);
+            //change border color
+        $('[name="solunum_diger"]').css('border-color', 'red');
+    }
+else if (!$('[name="SolunumYolu"]').is(':checked')) {
+    $('.option-error').css('display', 'none');
+    $('html, body').animate({
+        scrollTop: $('[name="SolunumYolu"]').offset().top
+    }, 200);
+    $('[name="SolunumYolu"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+            return false;
+}
+else if ($('[name="SolunumYolu"]:checked').val() == "Var" && !$('[name="AirwayMethod"]').is(':checked')) {
+        $('.option-error').css('display', 'none');
+        $('html, body').animate({
+        scrollTop: $('[name="SolunumYolu"]').offset().top
+        }, 200);
+        $('[name="SolunumYolu"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+            return false;
+    } 
+else if (!$('[name="Oksurme"]').is(':checked')) {
+    $('.option-error').css('display', 'none');
+    $('html, body').animate({
+        scrollTop: $('[name="Oksurme"]').offset().top
+    }, 200);
+    $('[name="Oksurme"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+            return false;
+} 
+else if ($('[name="Oksurme"]:checked').val() == "Var" && !$('[name="CoughOption"]').is(':checked')){
+        $('.option-error').css('display', 'none');
+        $('html, body').animate({
+        scrollTop: $('[name="Oksurme"]').offset().top
+        }, 200);
+        $('[name="Oksurme"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+            return false;
+     } else if (($('#OksurmeDiğer').is(':checked') && $('[name="oksurme_diger"]').val() == '')) {
+        $('html, body').animate({
+                scrollTop: $('[name="oksurme_diger"]').offset().top
+            }, 200);
+            //change border color
+        $('[name="oksurme_diger"]').css('border-color', 'red');
+     }
+     else if (!$('[name="Balgam"]').is(':checked')) {
+    $('.option-error').css('display', 'none');
+    $('html, body').animate({
+        scrollTop: $('[name="Balgam"]').offset().top
+    }, 200);
+    $('[name="Balgam"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+            return false;
+} else if ($('[name="Balgam"]:checked').val() === "Var" && (!$('[name="BalgamType"]').is(':checked'))) {
+        $('.option-error').css('display', 'none');
+        $('html, body').animate({
+        scrollTop: $('[name="Balgam"]').offset().top
+        }, 200);
+        $('[name="Balgam"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+            return false;
+     } else if ($('[name="BalgamType"]:checked').val() === "Diğer" && $('[name="balgam_diger"]').val() === '') {
+        $('html, body').animate({
+                scrollTop: $('[name="balgam_diger"]').offset().top
+            }, 200);
+            //change border color
+        $('[name="balgam_diger"]').css('border-color', 'red');
+     }
+ else if (!$('[name="AspirasyonIhtiyaci"]').is(':checked')) {
+    $('.option-error').css('display', 'none');
+    $('html, body').animate({
+        scrollTop: $('[name="AspirasyonIhtiyaci"]').offset().top
+    }, 200);
+    $('[name="AspirasyonIhtiyaci"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+            return false;
+} else if ($('[name="AspirasyonIhtiyaci"]:checked').val() == "Var" && !$('[name="Aspirasyon_need"]').is(':checked')) {
+        $('.option-error').css('display', 'none');
+        $('html, body').animate({
+        scrollTop: $('[name="AspirasyonIhtiyaci"]').offset().top
+        }, 200);
+        $('[name="AspirasyonIhtiyaci"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+            return false;
+     } 
+else if (!$('[name="BurunMuayenesi"]').is(':checked')) {
+    $('.option-error').css('display', 'none');
+    $('html, body').animate({
+        scrollTop: $('[name="BurunMuayenesi"]').offset().top
+    }, 200);
+    $('[name="BurunMuayenesi"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+            return false;
+} 
+else if ($('[name="BurunMuayenesi"]:checked').val() == "Var" && !$('[name="NasalIssue"]').is(':checked')) {
+        $('.option-error').css('display', 'none');
+        $('html, body').animate({
+        scrollTop: $('[name="BurunMuayenesi"]').offset().top
+        }, 200);
+        $('[name="BurunMuayenesi"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+            return false;
+     } else if ($('#NazalDiger').is(':checked') && $('[name="nazal_diger"]').val() === "") {
+        $('html, body').animate({
+                scrollTop: $('[name="nazal_diger"]').offset().top
+            }, 200);
+            //change border color
+        $('[name="nazal_diger"]').css('border-color', 'red');
+     }
+else if (!$('[name="TiroidBezi"]').is(':checked')) {
+    $('.option-error').css('display', 'none');
+    $('html, body').animate({
+        scrollTop: $('[name="TiroidBezi"]').offset().top
+    }, 200);
+    $('[name="TiroidBezi"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+            return false;
+}  else if ($('[name="TiroidBezi"]:checked').val() === "Var" && !$('[name="ThyroidIssue"]').is(':checked')) {
+        $('.option-error').css('display', 'none');
+        $('html, body').animate({
+        scrollTop: $('[name="TiroidBezi"]').offset().top
+        }, 200);
+        $('[name="TiroidBezi"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+            return false;
+     } else if ($('#TiroidDiger').is(':checked') && $('[name="tiroid_diger"]').val() === '') {
+        $('html, body').animate({
+                scrollTop: $('[name="tiroid_diger"]').offset().top
+            }, 200);
+            //change border color
+        $('[name="tiroid_diger"]').css('border-color', 'red');
+     } 
+else if (!$('[name="Trakea"]').is(':checked')) {
+    $('html, body').animate({
+        scrollTop: $('[name="Trakea"]').offset().top
+    }, 200);
+    $('[name="Trakea"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+            return false;
+}
+else if ($('[name="Trakea"]:checked').val() == "Var" && !$('[name="Shift"]').is(':checked')) {
+        $('html, body').animate({
+        scrollTop: $('[name="Trakea"]').offset().top
+        }, 200);
+        $('[name="Trakea"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+            return false;
+     }
+ else if (!$('[name="LenfNodlari"]').is(':checked')) {
+    $('html, body').animate({
+        scrollTop: $('[name="LenfNodlari"]').offset().top
+    }, 200);
+    $('[name="LenfNodlari"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+            return false;
+}
+else if ($('[name="LenfNodlari"]:checked').val() == "Var" && $('[name="NodYeri"]').val() === '') {
+        $('html, body').animate({
+        scrollTop: $('[name="NodYeri"]').offset().top
+        }, 200);
+        $('[name="NodYeri"]').css('border-color', 'red');
+            return false;
+     }
+     else if ($('[name="NodDiger"]').val() === '') {
+    $('.option-error').css('display', 'none');
+    $('html, body').animate({
+                scrollTop: $('[name="NodDiger"]').offset().top
+            }, 200);
+            //change border color
+    $('[name="NodDiger"]').css('border-color', 'red');
+    
+    return false;
+}
+ else if (!$('[name="SkapulaSimatrikligi"]').is(':checked')) {
+    $('html, body').animate({
+        scrollTop: $('[name="SkapulaSimatrikligi"]').offset().top
+    }, 200);
+    $('[name="SkapulaSimatrikligi"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+            return false;
+} else if (!$('[name="OmurgaDeform"]').is(':checked')) {
+    $('html, body').animate({
+        scrollTop: $('[name="OmurgaDeform"]').offset().top
+    }, 200);
+    $('[name="OmurgaDeform"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+            return false;
+}
+else if ($('[name="OmurgaDeform"]:checked').val() == "Var" && !$('[name="SpinalDeformity"]').is(':checked')) {
+        $('.option-error').css('display', 'none');
+        $('html, body').animate({
+        scrollTop: $('[name="OmurgaDeform"]').offset().top
+        }, 200);
+        $('[name="OmurgaDeform"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+            return false;
+     } 
+else if (!$('[name="GogusHareketleri"]').is(':checked')) {
+    $('.option-error').css('display', 'none');
+    $('html, body').animate({
+        scrollTop: $('[name="GogusHareketleri"]').offset().top
+    }, 200);
+    $('[name="GogusHareketleri"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+            return false;
+}
+ else if (!$('[name="GogusKafesinde"]').is(':checked')) {
+    $('.option-error').css('display', 'none');
+    $('html, body').animate({
+        scrollTop: $('[name="GogusKafesinde"]').offset().top
+    }, 200);
+    $('[name="GogusKafesinde"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+            return false;
+}   else if ($('[name="GogusKafesinde"]:checked').val() == "Var" && !$('[name="ChestIssues"]').is(':checked')) {
+        $('.option-error').css('display', 'none');
+        $('html, body').animate({
+        scrollTop: $('[name="GogusKafesinde"]').offset().top
+        }, 200);
+        $('[name="GogusKafesinde"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+            return false;
+     } 
+     else if ($('#KrepitasyonAlani').is(':checked') && $('[name="Krepitasyon_Alani"]').val() === '') {
+        $('html, body').animate({
+                scrollTop: $('[name="Krepitasyon_Alani"]').offset().top
+            }, 200);
+            //change border color
+        $('[name="Krepitasyon_Alani"]').css('border-color', 'red');
+        return false;
+    } else if ($('#KitleOzelligi').is(':checked') && $('[name="Kitle_Ozelligi"]').val() === '') {
+        $('html, body').animate({
+                scrollTop: $('[name="Kitle_Ozelligi"]').offset().top
+            }, 200);
+            //change border color
+        $('[name="Kitle_Ozelligi"]').css('border-color', 'red');
+        return false;
+    } else if ($('#KitleDiger').is(':checked') && $('[name="Kitle_Diger"]').val() === '') {
+        $('html, body').animate({
+                scrollTop: $('[name="Kitle_Diger"]').offset().top
+            }, 200);
+            //change border color
+        $('[name="Kitle_Diger"]').css('border-color', 'red');
+    }
+else if (!$('[name="GogusDeformitesi"]').is(':checked')) {
+    $('.option-error').css('display', 'none');
+    $('html, body').animate({
+        scrollTop: $('[name="GogusDeformitesi"]').offset().top
+    }, 200);
+    $('[name="GogusDeformitesi"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+            return false;
+}
+else if ($('[name="GogusDeformitesi"]:checked').val() == "Var" && !$('[name="DeformityType"]').is(':checked')) {
+        $('.option-error').css('display', 'none');
+        $('html, body').animate({
+        scrollTop: $('[name="GogusDeformitesi"]').offset().top
+        }, 200);
+        $('[name="GogusDeformitesi"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+            return false;
+     }
+ else if (!$('[name="SolunumSistemiUygilamasi"]').is(':checked')) {
+    $('.option-error').css('display', 'none');
+    $('html, body').animate({
+        scrollTop: $('[name="SolunumSistemiUygilamasi"]').offset().top
+    }, 200);
+    $('[name="SolunumSistemiUygilamasi"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+            return false;
+}
+else if ($('[name="SolunumSistemiUygilamasi"][value="Diger"]').is(':checked') && $('[name="SolunumUygulamasi_diger"]').val() === '') {
+        $('html, body').animate({
+                scrollTop: $('[name="SolunumUygulamasi_diger"]').offset().top
+            }, 200);
+            //change border color
+        $('[name="SolunumUygulamasi_diger"]').css('border-color', 'red');
+        return false;
+    } else {
 
                     var valid = true;
                     if (valid) {
@@ -1911,7 +1933,7 @@ if ($result) {
                                 nasalIssues: nasalIssues,
                                 nazal_diger: nazal_diger,
                                 TiroidBezi: TiroidBezi,
-                                tiroidIssue: tiroidIssue,
+                                thyroidIssue: tiroidIssue,
                                 TiroidDiger: TiroidDiger,
                                 Trakea: Trakea,
                                 Shift: Shift,
@@ -1934,7 +1956,13 @@ if ($result) {
                             },
                             success: function(data) {
                                 alert(data);
-
+                                let patient_id = '<?php echo $solunumgereksinimi_form1['patient_id']; ?>';
+                                let patient_name = "<?php echo $solunumgereksinimi_form1['patient_name']; ?>";
+                                let url =
+                                                        "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
+                                                        patient_id + "&patient_name=" + encodeURIComponent(
+                                                            patient_name);
+                                $('#content').load(url);
                             },
                             error: function(data) {
                                 Swal.fire({
@@ -1947,8 +1975,6 @@ if ($result) {
 
                     }
                 }
-
-            }
         });
 
     });

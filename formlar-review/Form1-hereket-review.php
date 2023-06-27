@@ -495,6 +495,16 @@ if ($result) {
                                 //stop function
                                 return false;
                             }
+                            if($('.form-check-input[name="inHospitalExercise"]:checked').val() === "Evet" && $('.form-check-input[name="exerciseType"]:checked').length === 0){
+                                //scroll to inHospitalExercise
+                                $('html, body').animate({
+                                    scrollTop: $('.form-check-input[name="inHospitalExercise"]').first().offset().top
+                                }, 200);
+                                // Display error message
+                                $('.form-check-input[name="inHospitalExercise"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                                //stop function
+                                return false;
+                            }
 
                             if($('.form-check-input[name="movementProblem"]:checked').length === 0){
                                 //scroll to movementProblem

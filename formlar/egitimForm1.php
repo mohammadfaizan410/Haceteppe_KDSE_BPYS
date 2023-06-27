@@ -66,15 +66,20 @@ if (isset($_GET['logout'])) {
                     <input type="radio" name="radio1">
                     <label for="radio1">Daha önce sağlık eğitimi</label>
                 </div>
-                <p class="usernamelabel">Konusu</p>
-                <p class="usernamelabel">Kimden/Nereden aldı</p>
-                <p class="usernamelabel">Ne zaman aldı</p>
             </div>
-            <div class="input-section d-flex justify-content-between">
-                <div class="w-25"></div>
-                <input type="text" class="form-control" required name="Konu" id="Konu">
-                <input type="text" class="form-control" required name="Nerden" id="Nerden">
-                <input type="text" class="form-control" required name="NeZaman" id="NeZaman">
+            <div class="input-section d-flex ">
+                <div>
+                    <p class="usernamelabel">Konusu</p>
+                    <input type="text" class="form-control" required name="Konu" id="Konu">
+                </div>
+                <div>
+                    <p class="usernamelabel">Kimden/Nereden aldı</p>
+                    <input type="text" class="form-control " required name="Nerden" id="Nerden">
+                </div>
+                <div>
+                <p class="usernamelabel">Ne zaman aldı</p>
+                    <input type="text" class="form-control" required name="NeZaman" id="NeZaman">
+                </div>
             </div>
 
             <div class="input-section d-flex">
@@ -94,8 +99,11 @@ if (isset($_GET['logout'])) {
                         id="TedaviBasvurusuDiger">
                 </div>
             </div>
-
-
+            <div>
+            <input type="submit" class="form-control submit m-auto" name="submit" id="submit" value="Kaydet">
+                </div>
+            </div>
+            </form>
         </div>
     </div>
 
@@ -126,14 +134,19 @@ if (isset($_GET['logout'])) {
         $('#submit').click(function(e) {
 
 
-            var valid = this.form.checkValidity();
 
-            if (valid) {
                 var id = <?php
 
                                 $userid = $_SESSION['userlogin']['id'];
                                 echo $userid
                                 ?>;
+                let patient_name = "<?php
+                                    echo urldecode($_GET['patient_name']);
+                                    ?>";
+                let patient_id = <?php
+                                    $userid = $_GET['patient_id'];
+                                    echo $userid
+                                    ?>;
                 var radio1 = $("input[name='radio1']:checked").val();
                 let Konu = $("input[name='Konu']").val();
                 let Nerden = $("input[name='Nerden']").val();
@@ -141,6 +154,7 @@ if (isset($_GET['logout'])) {
                 let EgitimIstegi = $("input[name='EgitimIstegi']").val();
                 let TedaviBasvurusu = $("input[name='TedaviBasvurusu']").val();
                 let TedaviBasvurusuDiger = $("input[name='TedaviBasvurusuDiger']").val();
+                
 
 
                 e.preventDefault()
@@ -159,8 +173,16 @@ if (isset($_GET['logout'])) {
 
                     },
                     success: function(data) {
-                        alert("Başarılı");
-                        location.reload(true)
+                         let patient_id = <?php
+                                    $userid = $_GET['patient_id'];
+                                    echo $userid
+                                    ?>;
+                            let patient_name = "<?php
+                                                        echo urldecode($_GET['patient_name']);
+                                                        ?>";
+                            var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
+                                "&patient_name=" + encodeURIComponent(patient_name);
+                            $("#content").load(url);
                     },
                     error: function(data) {
                         Swal.fire({
@@ -173,7 +195,7 @@ if (isset($_GET['logout'])) {
 
 
 
-            }
+            
         })
 
     });

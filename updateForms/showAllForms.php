@@ -183,7 +183,7 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
-        $sql = "SELECT * FROM  solunumgereksinimi_form1 WHERE patient_id =" . $userid;
+        $sql = "SELECT * FROM ozgecmisform1 WHERE patient_id =" . $userid;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         $values = [];
@@ -192,7 +192,7 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
-        $sql = "SELECT * FROM  calismaform1 WHERE patient_id =" . $userid;
+        $sql = "SELECT * FROM solunumgereksinimi_form1  WHERE patient_id =" . $userid;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         $values = [];
@@ -210,7 +210,11 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
+<<<<<<< HEAD
         $sql = "SELECT * FROM  ozgecmisform1 WHERE patient_id =" . $userid;
+=======
+        $sql = "SELECT * FROM vucudutemizform1 WHERE patient_id =" . $userid;
+>>>>>>> b1a37f9737235f45cad6a7ab00c2e07471ed1982
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         $values = [];
@@ -219,7 +223,7 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
-        $sql = "SELECT * FROM  vucudutemizform1 WHERE patient_id =" . $userid;
+        $sql = "SELECT * FROM  katererform1  WHERE patient_id =" . $userid;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         $values = [];
@@ -228,7 +232,11 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
+<<<<<<< HEAD
         $sql = "SELECT * FROM  bosaltimform1 WHERE patient_id =" . $userid;
+=======
+        $sql = "SELECT * FROM  ilestimform1  WHERE patient_id =" . $userid;
+>>>>>>> b1a37f9737235f45cad6a7ab00c2e07471ed1982
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         $values = [];
@@ -237,6 +245,18 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
+<<<<<<< HEAD
+=======
+        $sql = "SELECT * FROM  calismaform1  WHERE patient_id =" . $userid;
+        $smtmselect = $db->prepare($sql);
+        $result = $smtmselect->execute();
+        $values = [];
+        if ($result) {
+            $values21 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            echo 'error';
+        };
+>>>>>>> b1a37f9737235f45cad6a7ab00c2e07471ed1982
 
         $sql = "SELECT * FROM  tani1 WHERE patient_id =" . $userid;
         $smtmselect = $db->prepare($sql);
@@ -269,15 +289,20 @@ if (isset($_GET['logout'])) {
             'table18_data' => $values18,
             'table19_data' => $values19,
             'table20_data' => $values20,
+<<<<<<< HEAD
+=======
+            'table21_data' => $values21,
+>>>>>>> b1a37f9737235f45cad6a7ab00c2e07471ed1982
         ];
 
         ?>
         <div class="send-patient">
 
-            <div class=" patients-save">
-
+            <span class='close closeBtn' id='closeBtn1'>&times;</span>
+            <div class="patients-save">
+                
             </div>
-            <div class="patients-table text-center rounded p-4" id="patients-table">
+            <div class="text-center rounded p-4" style="background-color: " id="patients-table">
                 <div class="d-flex align-items-center justify-content-between mb-4">
                     <h6 class="mb-0 darkcyan table-title">Hasta Listesi / Öneriler</h6>
 
@@ -286,6 +311,7 @@ if (isset($_GET['logout'])) {
                     <h1 class='mb-5 entered-forms-header'>Doldurulmuş Formlar</h1>
                     <div class="entered-forms-wrapper">
                         <?php
+                        $form_1_options = '';
                         $form_2_options = '';
                         $form_3_options = '';
                         $form_4_options = '';
@@ -304,6 +330,11 @@ if (isset($_GET['logout'])) {
                         $form_17_options = '';
                         $form_18_options = '';
                         $form_19_options = '';
+                        $form_20_options = '';
+                        $form_21_options = '';
+                        $form_22_options = '';
+
+
 
                         if (isset($allForms)) {
                             foreach ($allForms as $key => $currentTableAllForms) {
@@ -380,82 +411,182 @@ if (isset($_GET['logout'])) {
                                         $form_15_options .= '<li class="m-2 p-2 "><div class="entered-forms"><a class="nav-items review btn btn-success"   style="color: white;" href="' . $base_url . '/formlar-review/Form15-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form15 Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table15_data') {
-                                        echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color : white;"  href="' . $base_url . '/formlar-review/Form1-Solunumgereksinimi-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Solunumgereksinimi_form1   Date:' . $form["updateDate"] . '</p></a></div>';
+                                        $form_id = $form["form_id"];
+                                        $update_date = $form["update_date"];
+                                        $form_16_options .= '<li class="m-2 p-2 "><div class="entered-forms"><a class="nav-items review btn btn-success"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-ozgecmis-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Ozgecmis Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table16_data') {
-                                        echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color : white;"  href="' . $base_url . '/formlar-review/Form1-Calisma-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Çalışma_form1   Date:' . $form["update_date"] . '</p></a></div>';
+                                        $form_id = $form["form_id"];
+                                        $update_date = $form["updateDate"];
+                                        $form_17_options .= '<li class="m-2 p-2 "><div class="entered-forms"><a class="nav-items review btn btn-success"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Solunumgereksinimi-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Solunum Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table17_data') {
+<<<<<<< HEAD
                                         echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color : white;"  href="' . $base_url . '/formlar-review/Form1-hereket-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Herket_form1   Date:' . $form["update_date"] . '</p></a></div>';
+=======
+                                        $form_id = $form["form_id"];
+                                        $update_date = $form["update_date"];
+                                        $form_18_options .= '<li class="m-2 p-2 "><div class="entered-forms"><a class="nav-items review btn btn-success"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-hereket-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Hareket Date: ' . $update_date . '</p></a></div></li>';
+>>>>>>> b1a37f9737235f45cad6a7ab00c2e07471ed1982
                                     }
                                     if ($key ===  'table18_data') {
-                                        echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color : white;"  href="' . $base_url . '/formlar-review/Form1-ozgecmis-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Ozgecmis_form1   Date:' . $form["update_date"] . '</p></a></div>';
+                                        $form_id = $form["form_id"];
+                                        $update_date = $form["update_date"];
+                                        $form_19_options .= '<li class="m-2 p-2 "><div class="entered-forms"><a class="nav-items review btn btn-success"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Vucudu-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Vucut Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table19_data') {
+<<<<<<< HEAD
                                         echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color : white;"  href="' . $base_url . '/formlar-review/Form1-vucudu-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Vucudu_form1   Date:' . $form["update_date"] . '</p></a></div>';
                                     }
                                     if ($key ===  'table20_data') {
                                         echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color : white;"  href="' . $base_url . '/formlar-review/Form1-Bosaltim-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Bosaltim_form1   Date:' . $form["update_date"] . '</p></a></div>';
+=======
+                                        $form_id = $form["form_id"];
+                                        $update_date = $form["update_date"];
+                                        $form_20_options .= '<li class="m-2 p-2 "><div class="entered-forms"><a class="nav-items review btn btn-success"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Katerer-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Katerer Date: ' . $update_date . '</p></a></div></li>';
+                                    }
+                                    if ($key ===  'table20_data') {
+                                        $form_id = $form["form_id"];
+                                        $update_date = $form["update_date"];
+                                        $form_21_options .= '<li class="m-2 p-2 "><div class="entered-forms"><a class="nav-items review btn btn-success"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Iletisim-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Ilestim Date: ' . $update_date . '</p></a></div></li>';
+                                    }
+                                    if ($key ===  'table21_data') {
+                                        $form_id = $form["form_id"];
+                                        $update_date = $form["update_date"];
+                                        $form_22_options .= '<li class="m-2 p-2 "><div class="entered-forms"><a class="nav-items review btn btn-success"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Calisma-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Calisma Date: ' . $update_date . '</p></a></div></li>';
+>>>>>>> b1a37f9737235f45cad6a7ab00c2e07471ed1982
                                     }
                                 };
                             }
                             echo "<div class='w-75 m-auto'>
-                            <button class='entered-forms  btn btn-success w-50 m-auto align-items-center' id='form2_toggle'>Form 2 <span id='form2_caret'>&#9660;</span></button>
-                            <ul class='entered-forms-ul ' id='form_2_options' style='display:none'>" . $form_2_options . "</ul>
+                            <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form1_sections_toggle'>Form1 <span id='form1_caret'>&#9660;<span></button>
+                            <ul class='entered-forms-ul' id='form1_sections_options' style='display:none'>";
+                            if($form_16_options!==""){
+                                echo "
+                                <li class='m-2'><div class='w-75 m-auto'>
+                                <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form16_toggle'>Form1 Ozgecmis <span id='form16_caret'>&#9660;<span></button>
+                                <ul class='entered-forms-ul' id='form_16_options' style='display:none'>" . $form_16_options . "</ul>
+                                </div></li>";
+                            }
+                            if($form_17_options!==""){
+                            echo "<li class='m-2'><div class='w-75 m-auto'>
+                                <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form17_toggle'>Form1 Solunum <span id='form17_caret'>&#9660;<span></button>
+                                <ul class='entered-forms-ul' id='form_17_options' style='display:none'>" . $form_17_options . "</ul>
+                                </div></li>
+                                <li class='m-2'><div class='w-75 m-auto'>";
+                            }
+                            if($form_18_options!==""){
+                            echo " <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form18_toggle'>Form1 Hereket <span id='form18_caret'>&#9660;<span></button>
+                            <ul class='entered-forms-ul' id='form_18_options' style='display:none'>" . $form_18_options . "</ul>
+                            </div></li>";}
+                            if($form_19_options!==""){
+                            echo "<li class='m-2'><div class='w-75 m-auto'>
+                            <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form19_toggle'>Form1 Vucut <span id='form19_caret'>&#9660;<span></button>
+                            <ul class='entered-forms-ul' id='form_19_options' style='display:none'>" . $form_19_options . "</ul>
+                            </div></li>";}
+                            if($form_20_options!==""){
+                            echo "<li class='m-2'><div class='w-75 m-auto'>
+                            <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form20_toggle'>Form1 Katerer <span id='form20_caret'>&#9660;<span></button>
+                            <ul class='entered-forms-ul' id='form_20_options' style='display:none'>" . $form_20_options . "</ul>
+                            </div></li>";}
+                            if($form_21_options!==""){
+                            echo "<li class='m-2'><div class='w-75 m-auto'>
+                            <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form21_toggle'> Form1 Iletisim<span id='form21_caret'>&#9660;<span></button>
+                            <ul class='entered-forms-ul' id='form_21_options' style='display:none'>" . $form_21_options . "</ul>
+                            </div></li>";}
+                            if($form_22_options!==""){
+                            echo "<li class='m-2'><div class='w-75 m-auto'>
+                            <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form22_toggle'>Form1 Calisma <span id='form22_caret'>&#9660;<span></button>
+                            <ul class='entered-forms-ul' id='form_22_options' style='display:none'>" . $form_22_options . "</ul>
+                            </div></li>";}
+                             echo "</ul>
                             </div>";
+
+                            if($form_2_options !== ""){
+                                echo "<div class='w-75 m-auto'>
+                                <button class='entered-forms  btn btn-success w-50 m-auto align-items-center' id='form2_toggle'>Form 2 <span id='form2_caret'>&#9660;</span></button>
+                                <ul class='entered-forms-ul ' id='form_2_options' style='display:none'>" . $form_2_options . "</ul>
+                                </div>";
+                            }
+                            if($form_3_options !== ""){
                             echo "<div class='w-75 m-auto'>
                             <button class='entered-forms toggle_button btn btn-success w-50 m-auto align-items-center' id='form3_toggle'>Form 3 <span id='form3_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_3_options' style='display:none'>" . $form_3_options . "</ul>
                             </div>";
+                            }
+                            if($form_4_options !== ""){
                             echo "<div class='w-75 m-auto'>
                             <button class='entered-forms toggle_button btn btn-success w-50 m-auto align-items-center' id='form4_toggle'>Form 4 <span id='form4_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_4_options' style='display:none'>" . $form_4_options . "</ul>
                             </div>";
+                            }
+                            if($form_5_options !== ""){
                             echo "<div class='w-75 m-auto'>
                             <button class='entered-forms toggle_button btn btn-success w-50 m-auto align-items-center' id='form5_toggle'>Form 5 <span id='form5_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_5_options' style='display:none'>" . $form_5_options . "</ul>
                             </div>";
+                            }
+                            if($form_6_options !== ""){
                             echo "<div class='w-75 m-auto'>
                             <button class='entered-forms toggle_button btn btn-success w-50 m-auto align-items-center' id='form6_toggle'>Form 6 <span id='form6_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_6_options' style='display:none'>" . $form_6_options . "</ul>
                             </div>";
+                            }
+                            if($form_7_options !== ""){
                             echo "<div class='w-75 m-auto'>
                             <button class='entered-forms toggle_button btn btn-success w-50 m-auto align-items-center' id='form7_toggle'>Form 7 <span id='form7_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_7_options' style='display:none'>" . $form_7_options . "</ul>
                             </div>";
+                            }
+                            if($form_8_options !== ""){
                             echo "<div class='w-75 m-auto'>
                             <button class='entered-forms toggle_button btn btn-success w-50 m-auto align-items-center' id='form8_toggle'>Form 8 <span id='form8_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_8_options' style='display:none'>" . $form_8_options . "</ul>
                             </div>";
+                            }
+                            if($form_9_options !== ""){
                             echo "<div class='w-75 m-auto'>
                             <button class='entered-forms toggle_button btn btn-success w-50 m-auto align-items-center' id='form9_toggle'>Form 9 <span id='form9_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_9_options' style='display:none'>" . $form_9_options . "</ul>
                             </div>";
+                            }
+                            if($form_10_options !== ""){
                             echo "<div class='w-75 m-auto'>
                             <button class='entered-forms toggle_button btn btn-success w-50 m-auto align-items-center' id='form10_toggle'>Form 10 <span id='form10_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_10_options' style='display:none'>" . $form_10_options . "</ul>
                             </div>";
+                            }
+                            if($form_11_options !== ""){
                             echo "<div class='w-75 m-auto'>
                             <button class='entered-forms toggle_button btn btn-success w-50 m-auto align-items-center' id='form11_toggle'>Form 11 <span id='form11_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_11_options' style='display:none'>" . $form_11_options . "</ul>
                             </div>";
+                            }
+                            if($form_12_options !== ""){
                             echo "<div class='w-75 m-auto'>
                             <button class='entered-forms toggle_button btn btn-success w-50 m-auto align-items-center'  id='form12_toggle'>Form 12 <span id='form12_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_12_options' style='display:none'>" . $form_12_options . "</ul>
                             </div>";
+                            }
+                            if($form_13_options !== ""){
                             echo "<div class='w-75 m-auto'>
                             <button class='entered-forms toggle_button btn btn-success w-50 m-auto align-items-center'  id='form13_toggle'>Form 13 <span id='form13_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_13_options' style='display:none'>" . $form_13_options . "</ul>
                             </div>";
+                            }
+                            if($form_14_options !== ""){
                             echo "<div class='w-75 m-auto'>
                             <button class='entered-forms toggle_button btn btn-success w-50 m-auto align-items-center'  id='form14_toggle'>Form 14 <span id='form14_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_14_options' style='display:none'>" . $form_14_options . "</ul>
                             </div>";
+                            }
+                            if($form_15_options !== ""){
                             echo "<div class='w-75 m-auto'>
                             <button class='entered-forms toggle_button btn btn-success w-50 m-auto align-items-center'  id='form15_toggle'>Form 15 <span id='form15_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_15_options' style='display:none'>" . $form_15_options . "</ul>
                             </div>";
-
+                            }
+                           
                         }
 
                         ?>
@@ -563,6 +694,15 @@ if (isset($_GET['logout'])) {
             </div>
         </div>
         <script>
+            //closeBtn click
+            $(function() {
+                $("#closeBtn1").on("click", function(e) {
+                    console.log("closeBtn clicked");
+                    e.preventDefault();
+                    $("#content").load("<?php echo $base_url; ?>/updateForms/showAllPatients.php");
+                })
+            })
+
         $(function() {
             $("a.review").on("click", function(e) {
                 e.preventDefault();
@@ -749,6 +889,103 @@ if (isset($_GET['logout'])) {
                 }
             })
         });
+        $(function() {
+            $("button#form16_toggle").on("click", function(e) {
+                e.preventDefault();
+                $("#form_16_options").slideToggle('slow');
+                if($("#form16_caret").css("transform") === "none"){
+                    $("#form16_caret").css("transform", "rotate(180deg)");
+                }
+                else{
+                    $("#form16_caret").css("transform", "");
+                }
+            })
+        });
+        $(function() {
+            $("button#form17_toggle").on("click", function(e) {
+                e.preventDefault();
+                $("#form_17_options").slideToggle('slow');
+                if($("#form17_caret").css("transform") === "none"){
+                    $("#form17_caret").css("transform", "rotate(180deg)");
+                }
+                else{
+                    $("#form17_caret").css("transform", "");
+                }
+            })
+        });
+        $(function() {
+            $("button#form18_toggle").on("click", function(e) {
+                e.preventDefault();
+                $("#form_18_options").slideToggle('slow');
+                if($("#form18_caret").css("transform") === "none"){
+                    $("#form18_caret").css("transform", "rotate(180deg)");
+                }
+                else{
+                    $("#form18_caret").css("transform", "");
+                }
+            })
+        });
+        $(function() {
+            $("button#form19_toggle").on("click", function(e) {
+                e.preventDefault();
+                $("#form_19_options").slideToggle('slow');
+                if($("#form19_caret").css("transform") === "none"){
+                    $("#form19_caret").css("transform", "rotate(180deg)");
+                }
+                else{
+                    $("#form19_caret").css("transform", "");
+                }
+            })
+        });
+        $(function() {
+            $("button#form20_toggle").on("click", function(e) {
+                e.preventDefault();
+                $("#form_20_options").slideToggle('slow');
+                if($("#form20_caret").css("transform") === "none"){
+                    $("#form20_caret").css("transform", "rotate(180deg)");
+                }
+                else{
+                    $("#form20_caret").css("transform", "");
+                }
+            })
+        });
+        $(function() {
+            $("button#form21_toggle").on("click", function(e) {
+                e.preventDefault();
+                $("#form_21_options").slideToggle('slow');
+                if($("#form21_caret").css("transform") === "none"){
+                    $("#form21_caret").css("transform", "rotate(180deg)");
+                }
+                else{
+                    $("#form21_caret").css("transform", "");
+                }
+            })
+        });
+        $(function() {
+            $("button#form1_sections_toggle").on("click", function(e) {
+                e.preventDefault();
+                $("#form1_sections_options").slideToggle('slow');
+                if($("#form1_caret").css("transform") === "none"){
+                    $("#form1_caret").css("transform", "rotate(180deg)");
+                }
+                else{
+                    $("#form1_caret").css("transform", "");
+                }
+            })
+        });
+        $(function() {
+            $("button#form22_toggle").on("click", function(e) {
+                e.preventDefault();
+                $("#form_22_options").slideToggle('slow');
+                if($("#form22_caret").css("transform") === "none"){
+                    $("#form22_caret").css("transform", "rotate(180deg)");
+                }
+                else{
+                    $("#form22_caret").css("transform", "");
+                }
+            })
+        });
+
         </script>
         <script>
 

@@ -414,11 +414,11 @@ if ($result) {
 
                             </tr>
                             <tr>
-                                <td><input type="number" min="1950" max="2099" class="form-control ozgecmistable" disabled  name="hospitalization_year"
+                                <td><input type="number" min="1950" max="2099" class="form-control ozgecmistable"   name="hospitalization_year"
                                         id="hospitalization_year" placeholder="..." value="<?php echo $ozgecmisform1[0]['hospitalization_year']?>"></td>
-                                <td><input type="text" class="form-control ozgecmistable" disabled  name="hospitalization_location"
+                                <td><input type="text" class="form-control ozgecmistable"   name="hospitalization_location"
                                         id="hospitalization_location" placeholder="..." value="<?php echo $ozgecmisform1[0]['hospitalization_location']?>"></td>
-                                <td><input type="text" class="form-control ozgecmistable" disabled  name="hospitalization_reason"
+                                <td><input type="text" class="form-control ozgecmistable"   name="hospitalization_reason"
                                         id="hospitalization_reason" placeholder="..." value="<?php echo $ozgecmisform1[0]['hospitalization_reason']?>"></td>
                             </tr>
                         </tbody>
@@ -1240,7 +1240,7 @@ if ($result) {
             $(".form-check-input[name='previousHospitalization']").filter(function() {
                 return $(this).val() === "Var";
             }).prop('checked', true);
-            $("input[name='hospitalization_year']").prop('disabled', false);
+            $("#hospitalization_year").prop('disabled', false);
             $("input[name='hospitalization_location']").prop('disabled', false);
             $("input[name='hospitalization_reason']").prop('disabled', false);
             }
@@ -1339,13 +1339,17 @@ if ($result) {
             //aidTools
             let aidToolsArr = "<?php echo $ozgecmisform1[0]['aidTools']; ?>".split("/");
             $(".form-check-input[name='aidTools']").each(function() {
-                if(aidToolsArr[0] === "Yok"){
+                if(aidToolsArr[0] === "" || aidToolsArr[0] === "Yok"){
                     $('input[name="aidTools"][value="Yok"]').prop('checked', true);
+                    $('.form-check-input[name="aidToolsDesc"]').prop('disabled', true);
                 }else {
                     $('input[name="aidTools"][value="Var"]').prop('checked', true);
                     $(".form-check-input[name='aidToolsDesc']").each(function() {
-                        $(this).prop("checked", true);
+                        if(aidToolsArr.includes($(this).val())){
+                            $(this).prop('checked', true);
+                        }
                     })
+                    $('.form-check-input[name="aidToolsDesc"]').prop('disabled', false);
                 }
             })
 
@@ -1472,11 +1476,17 @@ if ($result) {
             if($(this).val() === "Diğer"){
                 $('input[name="socialSecuritOther"]').prop('disabled', false);
             }
+            else{
+                $('input[name="socialSecuritOther"]').prop('disabled', true);
+            }
         })
 
         $('.form-check-input[name="translatorRequirement"]').change(function(){
             if($(this).val() === "Var"){
                 $('input[name="translatorRequirementInput"]').prop('disabled', false);
+            }
+            else{
+                $('input[name="translatorRequirementInput"]').prop('disabled', true);
             }
         })
 
@@ -1484,15 +1494,27 @@ if ($result) {
             if($(this).val() === "Var"){
                 $('input[name="transfusionStatusInput"]').prop('disabled', false);
             }
+            else{
+                $('input[name="transfusionStatusInput"]').prop('disabled', true);
+
+            }
         })
         $('.form-check-input[name="transfusionReaction"]').change(function(){
             if($(this).val() === "Var"){
                 $('input[name="transfusionReactionInput"]').prop('disabled', false);
             }
+            else{
+                $('input[name="transfusionReactionInput"]').prop('disabled', true);
+
+            }
         })
         $('.form-check-input[name="infoStorageType"]').change(function(){
             if($(this).val() === "Diger"){
                 $('input[name="infoStorageTypeInput"]').prop('disabled', false);
+            }
+            else{
+                $('input[name="infoStorageTypeInput"]').prop('disabled', true);
+
             }
         })
 
@@ -1502,17 +1524,28 @@ if ($result) {
                 $('input[name="hospitalization_location"]').prop('disabled', false);
                 $('input[name="hospitalization_reason"]').prop('disabled', false);
             }
+            else{
+                $('input[name="hospitalization_year"]').prop('disabled', true);
+                $('input[name="hospitalization_location"]').prop('disabled', true);
+                $('input[name="hospitalization_reason"]').prop('disabled', true);
+            }
         })
 
         $('.form-check-input[name="diseases"]').change(function(){
             if($(this).val() === "Var"){
                 $('input[name="diseasesInput"]').prop('disabled', false);
             }
+            else{
+                $('input[name="diseasesInput"]').prop('disabled', true);
+            }
         })
 
         $('.form-check-input[name="previousSurgeries"]').change(function(){
             if($(this).val() === "Var"){
                 $('input[name="previousSurgeriesInput"]').prop('disabled', false);
+            }
+            else{
+                $('input[name="previousSurgeriesInput"]').prop('disabled', true);
             }
         })
 
@@ -1523,6 +1556,9 @@ if ($result) {
                 $('input[name="accidentsInput"]').prop('disabled', false);
 
             }
+            else{
+                $('input[name="accidentsInput"]').prop('disabled', true);
+            }
         })
 
         //infectiousDisease
@@ -1531,6 +1567,9 @@ if ($result) {
             if($(this).val() === "Var"){
                 $('input[name="infectiousDiseaseInput"]').prop('disabled', false);
 
+            }
+            else{
+                $('input[name="infectiousDiseaseInput"]').prop('disabled', true);
             }
         })
 
@@ -1542,8 +1581,13 @@ if ($result) {
                 $('input[name="allergySymptoms"]').prop('disabled', false);
                 $('input[name="allergyTherapy"]').prop('disabled', false);
             }
+            else{
+                $('input[name="allergen"]').prop('disabled', true);
+                $('input[name="allergySymptoms"]').prop('disabled', true);
+                $('input[name="allergyTherapy"]').prop('disabled', true);
+            }
         })
-        
+
 
         //previousMedications
 
@@ -1556,6 +1600,14 @@ if ($result) {
                 $('input[name="intakeMethod"]').prop('disabled', false);
                 $('input[name="intakeTimes"]').prop('disabled', false);
             }
+            else{
+                $('input[name="medicineName"]').prop('disabled', true);
+                $('input[name="prescriptionType"]').prop('disabled', true);
+                $('input[name="medicineFrequency"]').prop('disabled', true);
+                $('input[name="medicineDose"]').prop('disabled', true);
+                $('input[name="intakeMethod"]').prop('disabled', true);
+                $('input[name="intakeTimes"]').prop('disabled', true);
+            }
         })
 
         //aidTools
@@ -1563,6 +1615,9 @@ if ($result) {
         $('.form-check-input[name="aidTools"]').change(function(){
             if($(this).val() === "Var"){
                 $('.form-check-input[name="aidToolsDesc"]').prop('disabled', false);
+            }
+            else{
+                $('.form-check-input[name="aidToolsDesc"]').prop('disabled', true);
             }
         })
 
@@ -1573,6 +1628,10 @@ if ($result) {
                 $('input[name="smokingAmount"]').prop('disabled', false);
                 $('input[name="smokingTime"]').prop('disabled', false);
             }
+            else{
+                $('input[name="smokingAmount"]').prop('disabled', true);
+                $('input[name="smokingTime"]').prop('disabled', true);
+            }
         })
 
         //alcoholUsage
@@ -1581,6 +1640,10 @@ if ($result) {
             if($(this).val() === "Alkol"){
                 $('input[name="alcoholAmount"]').prop('disabled', false);
                 $('input[name="alcoholUsageTime"]').prop('disabled', false);
+            }
+            else{
+                $('input[name="alcoholAmount"]').prop('disabled', true);
+                $('input[name="alcoholUsageTime"]').prop('disabled', true);
             }
         })
 
@@ -1591,6 +1654,10 @@ if ($result) {
                 $('input[name="teaUsageAmount"]').prop('disabled', false);
                 $('input[name="teaUsageTime"]').prop('disabled', false);
             }
+            else{
+                $('input[name="teaUsageAmount"]').prop('disabled', true);
+                $('input[name="teaUsageTime"]').prop('disabled', true);
+            }
         })
 
         //coffeeUsage
@@ -1599,6 +1666,10 @@ if ($result) {
             if($(this).val() === "Kahve"){
                 $('input[name="coffeeUsageAmount"]').prop('disabled', false);
                 $('input[name="coffeeUsageTime"]').prop('disabled', false);
+            }
+            else{
+                $('input[name="coffeeUsageAmount"]').prop('disabled', true);
+                $('input[name="coffeeUsageTime"]').prop('disabled', true);
             }
         })
 
@@ -1610,6 +1681,11 @@ if ($result) {
                 $('input[name="otherHabitsAmount"]').prop('disabled', false);
                 $('input[name="otherHabitsTime"]').prop('disabled', false);
             }
+            else{
+                $('input[name="otherHabitsInput"]').prop('disabled', true);
+                $('input[name="otherHabitsAmount"]').prop('disabled', true);
+                $('input[name="otherHabitsTime"]').prop('disabled', true);
+            }
         })
 
         //familyIllnesses
@@ -1619,6 +1695,10 @@ if ($result) {
                 $('input[name="familyMemberRelation"]').prop('disabled', false);
                 $('input[name="familyMemberIllness"]').prop('disabled', false);
             }
+            else{
+                $('input[name="familyMemberRelation"]').prop('disabled', true);
+                $('input[name="familyMemberIllness"]').prop('disabled', true);
+            }
         })
 
         //arrivalFrom
@@ -1627,6 +1707,9 @@ if ($result) {
             if($(this).val() === "Diger"){
                 $('input[name="arrivalFromInput"]').prop('disabled', false);
             }
+            else{
+                $('input[name="arrivalFromInput"]').prop('disabled', true);
+            }
         })
 
         //hospitalArrivalMethod
@@ -1634,6 +1717,9 @@ if ($result) {
         $('.form-check-input[name="hospitalArrivalMethod"]').change(function(){
             if($(this).val() === "Diger"){
                 $('input[name="hospitalArrivalMethodInput"]').prop('disabled', false);
+            }
+            else{
+                $('input[name="hospitalArrivalMethodInput"]').prop('disabled', true);
             }
         })
 
@@ -2324,8 +2410,8 @@ if ($result) {
                                 return false;
 
                             }
-                            if( $('.form-check-input[name="aidTools"]:checked').val() === "Var" && $('.form-check-input[name="aidToolsDsc"]:checked').length === 0){
-                                //scroll to aidToolsInput
+                            if( $('.form-check-input[name="aidTools"]:checked').val() === "Var" && $('.form-check-input[name="aidToolsDesc"]:checked').length === 0){
+                                //scroll to aidTools
                                 $('html, body').animate({
                                     scrollTop: $('.form-check-input[name="aidTools"]').first().offset().top
                                 }, 200);
