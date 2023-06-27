@@ -619,12 +619,22 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                 },
                 success: function(data) {
                     console.log("something happened")
-                    alert(data);
                     let url =
                         "<?php echo $base_url; ?>/taniReview/tani1Review.php?patient_id=" +
                         patient_id + "&patient_name=" + encodeURIComponent(
                             patient_name);
-                    $("#content").load(url);
+                            $("#tick-container").fadeIn(800);
+                            // Change the tick background to the animated GIF
+                            $("#tick").css("background-image", "url('./check.gif')");
+
+                            // Delay for 2 seconds (adjust the duration as needed)
+                            setTimeout(function() {
+                            // Load the content
+                            $("#content").load(url);
+                            $("#tick-container").fadeOut(600);
+                            // Hide the tick container
+                            }, 600);
+;
                 },
                 error: function(data) {
                     console.log(data)

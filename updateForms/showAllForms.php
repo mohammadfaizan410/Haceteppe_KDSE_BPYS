@@ -1019,6 +1019,19 @@ if (isset($_GET['logout'])) {
                 }
             })
         });
+        $(function() {
+            $("button#form24_toggle").on("click", function(e) {
+                e.preventDefault();
+                $("#form_24_options").slideToggle('slow');
+                if($("#form24_caret").css("transform") === "none"){
+                    $("#form24_caret").css("transform", "rotate(180deg)");
+                }
+                else{
+                    $("#form24_caret").css("transform", "");
+                }
+            })
+        });
+   
         </script>
         <script>
 

@@ -679,7 +679,6 @@ if (isset($_GET['logout'])) {
                     weight_input: weight_input
                 },
                 success: function(data) {
-                    alert(data);
                     let url =
                         "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
                         patient_id + "&patient_name=" + encodeURIComponent(patient_name);
@@ -691,12 +690,11 @@ if (isset($_GET['logout'])) {
                             setTimeout(function() {
                             // Load the content
                             $("#content").load(url);
-                            $("#tick-container").fadeOut(800);
+                            $("#tick-container").fadeOut(600);
                             // Hide the tick container
-                            }, 2000);                },
+                            }, 600);                },
                 error: function(data) {
                     console.log(data);
-                    alert(data);
                 }
             })
 

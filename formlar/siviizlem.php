@@ -147,9 +147,9 @@ if (isset($_GET['logout'])) {
                             setTimeout(function() {
                             // Load the content
                             $("#content").load(url);
-                            $("#tick-container").fadeOut(800);
+                            $("#tick-container").fadeOut(600);
                             // Hide the tick container
-                            }, 2000);
+                            }, 600);
 
         })
     });
@@ -269,12 +269,21 @@ if (isset($_GET['logout'])) {
                         liquid_sent: liquid_sent
                     },
                     success: function(data) {
-                        alert("Ekleme Başarılı");
                         let url =
                             "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
                             patient_id + "&patient_name=" + encodeURIComponent(
                                 patient_name);
-                        $("#content").load(url);
+                                $("#tick-container").fadeIn(800);
+                            // Change the tick background to the animated GIF
+                            $("#tick").css("background-image", "url('./check.gif')");
+
+                            // Delay for 2 seconds (adjust the duration as needed)
+                            setTimeout(function() {
+                            // Load the content
+                            $("#content").load(url);
+                            $("#tick-container").fadeOut(600);
+                            // Hide the tick container
+                            }, 600);
                     },
                     error: function(data) {
                         console.log(data)

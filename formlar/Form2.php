@@ -325,9 +325,9 @@ if (isset($_GET['logout'])) {
                             setTimeout(function() {
                             // Load the content
                             $("#content").load(url);
-                            $("#tick-container").fadeOut(800);
+                            $("#tick-container").fadeOut(600);
                             // Hide the tick container
-                            }, 2000);
+                            }, 600);
                         },
                         error: function(data) {
                             Swal.fire({
