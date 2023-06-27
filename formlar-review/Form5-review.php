@@ -438,7 +438,7 @@ if ($result) {
                                     patient_name);
                                     $("#tick-container").fadeIn(800);
                             // Change the tick background to the animated GIF
-                            $("#tick").css("background-image", "url('./check.gif')");
+                            $("#tick").css("background-image", "url('./check-2.gif')");
 
                             // Delay for 2 seconds (adjust the duration as needed)
                             setTimeout(function() {
@@ -446,7 +446,7 @@ if ($result) {
                             $("#content").load(url);
                             $("#tick-container").fadeOut(600);
                             // Hide the tick container
-                            }, 600);
+                            }, 1000);
                         },
                         error: function(data) {
                             Swal.fire({

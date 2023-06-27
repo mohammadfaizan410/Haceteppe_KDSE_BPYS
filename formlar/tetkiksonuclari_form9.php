@@ -188,86 +188,105 @@ if (isset($_GET['logout'])) {
         $('#submit').click(function(e) {
             console.log("clicked")
             e.preventDefault()
-                let patient_name = "<?php
-                                    echo urldecode($_GET['patient_name']);
-                                    ?>";
-                var patient_id = <?php
-                                    $userid = $_GET['patient_id'];
-                                    echo $userid
-                                    ?>;
-                var name = $('#name').val();
-                var surname = $('#surname').val();
-                var age = $('#age').val();
-                var not = $('#not').val();
-                let form_num = 9;
-                let yourDate = new Date()
-                let creationDate = yourDate.toISOString().split('T')[0];
-                let updateDate = yourDate.toISOString().split('T')[0];
-                let date = $("input[name='date']").val();
-                let examination_type = $("input[type='radio'][name='tektikOption']:checked").val()
-                let examination_result = $("input[name='examination_result']").val();
-                let referance_value = $("input[name='referance_value']").val();
-                console.log("values initiated")
-                   // if(nameSurname == "") {
-    //                             //scroll to nameSurname 
-    //                             $('html, body').animate({
-    //                                 scrollTop: $("#nameSurname").offset().top
-    //                             }, 200);
-    //                             //change border color
-    //                             $('#nameSurname').css('border-color', 'red');
-    //                             //stop function 
-    //                             return false;
-    //                         }
-                            $('.form-check-input').closest('.input-section').css('border-color', '#ced4da');
-                            $('.form-control').css('border-color', '#ced4da');
-                            $('#option-error').css('display', 'none');
-                    //custom validation
-                     if($('#date').val() === ""){
-                        //scroll to date
-                        $('html, body').animate({
-                            scrollTop: $("#date").offset().top
-                        }, 200);
-                        //change border color
-                        $('#date').css('border-color', 'red');
-                        //stop function
-                        return false;
-                     }
+            let patient_name = "<?php
+                                echo urldecode($_GET['patient_name']);
+                                ?>";
+            var patient_id = "<?php
+                                $userid = $_GET['patient_id'];
+                                echo $userid
+                                ?>";
+            var name = $('#name').val();
+            var surname = $('#surname').val();
+            var age = $('#age').val();
+            var not = $('#not').val();
+            let form_num = 9;
+            let yourDate = new Date()
+            let creationDate = yourDate.toISOString().split('T')[0];
+            let updateDate = yourDate.toISOString().split('T')[0];
+            let date = $("input[name='date']").val();
+            let examination_type = $("input[type='radio'][name='tektikOption']:checked").val()
+            let examination_result = $("input[name='examination_result']").val();
+            let referance_value = $("input[name='referance_value']").val();
+            console.log("values initiated")
 
-                        if($("input[type='radio'][name='tektikOption']:checked").length === 0){
-                            //scroll to tektikOption
-                            $('html, body').animate({
-                                scrollTop: $("#option-error").offset().top
-                            }, 200);
-                            //change border color
-                            $('#option-error').css('display', 'block');
-                            //stop function
-                            return false;
-                        }
+            if($('#date').val() === ""){
+                //scroll to date
+                $('html, body').animate({
+                    scrollTop: $("#date").offset().top
+                }, 200);
+                //change border color
+                $('#date').css('border-color', 'red');
+                //stop function
+                return false;
+            }
 
-                        if($('#examination_result').val() === ""){
-                            //scroll to examination_result
-                            $('html, body').animate({
-                                scrollTop: $("#examination_result").offset().top
-                            }, 200);
-                            //change border color
-                            $('#examination_result').css('border-color', 'red');
-                            //stop function
-                            return false;
-                        }
+            else if($("input[type='radio'][name='tektikOption']:checked").length === 0){
+                    //scroll to tektikOption
+                    $('html, body').animate({
+                        scrollTop: $("#option-error").offset().top
+                    }, 200);
+                    //change border color
+                    $('#option-error').css('display', 'block');
+                    //stop function
+                    return false;
+            }
 
-                        if($('#referance_value').val() === ""){
-                            //scroll to referance_value
-                            $('html, body').animate({
-                                scrollTop: $("#referance_value").offset().top
-                            }, 200);
-                            //change border color
-                            $('#referance_value').css('border-color', 'red');
-                            //stop function
-                            return false;
-                        }
+            else if($('[name="examination_result"]').val() === ""){
+                    //scroll to examination_result
+                    $('html, body').animate({
+                        scrollTop: $("#examination_result").offset().top
+                    }, 200);
+                    //change border color
+                    $('#examination_result').css('border-color', 'red');
+                    //stop function
+                    return false;
+            }
 
+            else if($('#referance_value').val() === ""){
+                    //scroll to referance_value
+                    $('html, body').animate({
+                        scrollTop: $("#referance_value").offset().top
+                    }, 200);
+                    //change border color
+                    $('#referance_value').css('border-color', 'red');
+                    //stop function
+                    return false;
+            }
 
+            else {
 
+<<<<<<< HEAD
+            $.ajax({
+                type: 'POST',
+                url: '<?php echo $base_url; ?>/form-handlers/submitOrUpdateTektik_form9.php',
+                data: {
+                    name: name,
+                    surname: surname,
+                    age: age,
+                    not: not,
+                    form_num: form_num,
+                    patient_id: patient_id,
+                    patient_name: patient_name,
+                    creation_date: creationDate,
+                    update_date: updateDate,
+                    date: date,
+                    examination_type: examination_type,
+                    examination_result: examination_result,
+                    referance_value: referance_value
+                },
+                success: function(data) {
+                    alert(data);
+                    let url =
+                        "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
+                        patient_id + "&patient_name=" + encodeURIComponent(patient_name);
+                    $("#content").load(url);
+                },
+                error: function(data) {
+                    console.log(data)
+                }
+            })
+            }
+=======
 
 
 
@@ -295,7 +314,7 @@ if (isset($_GET['logout'])) {
                             patient_id + "&patient_name=" + encodeURIComponent(patient_name);
                             $("#tick-container").fadeIn(800);
                             // Change the tick background to the animated GIF
-                            $("#tick").css("background-image", "url('./check.gif')");
+                            $("#tick").css("background-image", "url('./check-2.gif')");
 
                             // Delay for 2 seconds (adjust the duration as needed)
                             setTimeout(function() {
@@ -303,12 +322,13 @@ if (isset($_GET['logout'])) {
                             $("#content").load(url);
                             $("#tick-container").fadeOut(600);
                             // Hide the tick container
-                            }, 600);
+                            }, 1000);
                     },
                     error: function(data) {
                         console.log(data)
                     }
                 })
+>>>>>>> 47525edb6df03ea3ea3f005cc9f9365a91b0f3df
             
         })
 

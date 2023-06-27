@@ -159,110 +159,107 @@ if (isset($_GET['logout'])) {
         $('#submit').click(function(e) {
             e.preventDefault()
             console.log("clicked")
-            var valid = this.form.checkValidity();
+            var id = <?php
+                            $userid = $_SESSION['userlogin']['id'];
+                            echo $userid
+                            ?>;
+            var name = $('#name').val();
+            var surname = $('#surname').val();
+            var age = $('#age').val();
+            var not = $('#not').val();
+            let form_num = 15;
+            var patient_id = <?php
+                                    $userid = $_GET['patient_id'];
+                                    echo $userid
+                                    ?>;
+            let patient_name = "<?php
+                                    echo urldecode($_GET['patient_name']);
+                                    ?>";
+            let yourDate = new Date();
+            let creationDate = yourDate.toISOString().split('T')[0];
+            let updateDate = yourDate.toISOString().split('T')[0];
+            let problem_info = $("input[name='problem_info']").val();
+            let nurse_description = $("input[name='nurse_description']").val();
+            let noc_output = $("input[name='noc_output']").val();
+            let noc_indicator = $("input[name='noc_indicator']").val();
+            let nurse_attempt = $("input[name='nurse_attempt']").val();
+            let evaluation = $("input[name='evaluation']").val();
 
-            if (valid) {
-                var id = <?php
-                                $userid = $_SESSION['userlogin']['id'];
-                                echo $userid
-                                ?>;
-                var name = $('#name').val();
-                var surname = $('#surname').val();
-                var age = $('#age').val();
-                var not = $('#not').val();
-                let form_num = 15;
-                var patient_id = <?php
-                                        $userid = $_GET['patient_id'];
-                                        echo $userid
-                                        ?>;
-                let patient_name = "<?php
-                                        echo urldecode($_GET['patient_name']);
-                                        ?>";
-                let yourDate = new Date();
-                let creationDate = yourDate.toISOString().split('T')[0];
-                let updateDate = yourDate.toISOString().split('T')[0];
-                let problem_info = $("input[name='problem_info']").val();
-                let nurse_description = $("input[name='nurse_description']").val();
-                let noc_output = $("input[name='noc_output']").val();
-                let noc_indicator = $("input[name='noc_indicator']").val();
-                let nurse_attempt = $("input[name='nurse_attempt']").val();
-                let evaluation = $("input[name='evaluation']").val();
+                //set border color normal
+                $('.form-control').css('border-color', '#ced4da');
+                //custom validation
+            // if($('#iv_input1').val() === ""){
+            //     //scroll to iv_input1
+            //     $('html, body').animate({
+            //         scrollTop: $("#iv_input1").offset().top
+            //     }, 200);
+            //     //change border color
+            //     $('#iv_input1').css('border-color', 'red');
+            //     //stop function
+            //     return false;
+            // }
 
-                  //set border color normal
-                  $('.form-control').css('border-color', '#ced4da');
-                   //custom validation
-                // if($('#iv_input1').val() === ""){
-                //     //scroll to iv_input1
-                //     $('html, body').animate({
-                //         scrollTop: $("#iv_input1").offset().top
-                //     }, 200);
-                //     //change border color
-                //     $('#iv_input1').css('border-color', 'red');
-                //     //stop function
-                //     return false;
-                // }
-
-                if($('#problem_info').val() === ""){
-                    //scroll to iv_input1
-                    $('html, body').animate({
-                        scrollTop: $("#problem_info").offset().top
-                    }, 200);
-                    //change border color
-                    $('#problem_info').css('border-color', 'red');
-                    //stop function
-                    return false;
-                }
-                if($('#nurse_description').val() === ""){
-                    //scroll to iv_input1
-                    $('html, body').animate({
-                        scrollTop: $("#nurse_description").offset().top
-                    }, 200);
-                    //change border color
-                    $('#nurse_description').css('border-color', 'red');
-                    //stop function
-                    return false;
-                }
-                if($('#noc_output').val() === ""){
-                    //scroll to iv_input1
-                    $('html, body').animate({
-                        scrollTop: $("#noc_output").offset().top
-                    }, 200);
-                    //change border color
-                    $('#noc_output').css('border-color', 'red');
-                    //stop function
-                    return false;
-                }
-                if($('#noc_indicator').val() === ""){
-                    //scroll to iv_input1
-                    $('html, body').animate({
-                        scrollTop: $("#noc_indicator").offset().top
-                    }, 200);
-                    //change border color
-                    $('#noc_indicator').css('border-color', 'red');
-                    //stop function
-                    return false;
-                }
-                if($('#nurse_attempt').val() === ""){
-                    //scroll to iv_input1
-                    $('html, body').animate({
-                        scrollTop: $("#nurse_attempt").offset().top
-                    }, 200);
-                    //change border color
-                    $('#nurse_attempt').css('border-color', 'red');
-                    //stop function
-                    return false;
-                }
-                if($('#evaluation').val() === ""){
-                    //scroll to iv_input1
-                    $('html, body').animate({
-                        scrollTop: $("#evaluation").offset().top
-                    }, 200);
-                    //change border color
-                    $('#evaluation').css('border-color', 'red');
-                    //stop function
-                    return false;
-                }
-
+            if($('#problem_info').val() === ""){
+                //scroll to iv_input1
+                $('html, body').animate({
+                    scrollTop: $("#problem_info").offset().top
+                }, 200);
+                //change border color
+                $('#problem_info').css('border-color', 'red');
+                //stop function
+                return false;
+            }
+            else if($('#nurse_description').val() === ""){
+                //scroll to iv_input1
+                $('html, body').animate({
+                    scrollTop: $("#nurse_description").offset().top
+                }, 200);
+                //change border color
+                $('#nurse_description').css('border-color', 'red');
+                //stop function
+                return false;
+            }
+            else if($('#noc_output').val() === ""){
+                //scroll to iv_input1
+                $('html, body').animate({
+                    scrollTop: $("#noc_output").offset().top
+                }, 200);
+                //change border color
+                $('#noc_output').css('border-color', 'red');
+                //stop function
+                return false;
+            }
+            else if($('#noc_indicator').val() === ""){
+                //scroll to iv_input1
+                $('html, body').animate({
+                    scrollTop: $("#noc_indicator").offset().top
+                }, 200);
+                //change border color
+                $('#noc_indicator').css('border-color', 'red');
+                //stop function
+                return false;
+            }
+            else if($('#nurse_attempt').val() === ""){
+                //scroll to iv_input1
+                $('html, body').animate({
+                    scrollTop: $("#nurse_attempt").offset().top
+                }, 200);
+                //change border color
+                $('#nurse_attempt').css('border-color', 'red');
+                //stop function
+                return false;
+            }
+            else if($('#evaluation').val() === ""){
+                //scroll to iv_input1
+                $('html, body').animate({
+                    scrollTop: $("#evaluation").offset().top
+                }, 200);
+                //change border color
+                $('#evaluation').css('border-color', 'red');
+                //stop function
+                return false;
+            }
+            else {
                 $.ajax({
                     type: 'POST',
                     url: '<?php echo $base_url; ?>/form-handlers/submitOrUpdateBakimPlani_form14.php',
@@ -291,7 +288,7 @@ if (isset($_GET['logout'])) {
                                 patient_name);
                                 $("#tick-container").fadeIn(800);
                             // Change the tick background to the animated GIF
-                            $("#tick").css("background-image", "url('./check.gif')");
+                            $("#tick").css("background-image", "url('./check-2.gif')");
 
                             // Delay for 2 seconds (adjust the duration as needed)
                             setTimeout(function() {
@@ -299,15 +296,13 @@ if (isset($_GET['logout'])) {
                             $("#content").load(url);
                             $("#tick-container").fadeOut(600);
                             // Hide the tick container
-                            }, 600);                    },
+                            }, 1000);                    },
                     error: function(data) {
                         console.log(data)
                     }
                 })
+        }
 
-
-
-            }
         })
 
     });

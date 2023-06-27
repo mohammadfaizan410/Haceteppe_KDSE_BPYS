@@ -523,7 +523,6 @@ if (isset($_GET['logout'])) {
                              echo "</ul>
                             </div>";
 
-
                             if($form_2_options !== ""){
                                 echo "<div class='w-75 m-auto'>
                                 <button class='entered-forms  btn btn-success w-50 m-auto align-items-center' id='form2_toggle'>Form 2 <span id='form2_caret'>&#9660;</span></button>

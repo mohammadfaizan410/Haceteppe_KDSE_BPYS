@@ -793,7 +793,7 @@ if ($result) {
             excretionForm2.forEach(function(value) {
                     $('[name="excretionForm2"][value="'+value+'"]').prop('checked', true);
                 })
-            $('[name="StomanınRengi"]').val(ileostomiStomaninRengiStomaninRengi).attr('disabled', false);
+            $('[name="StomanınRengi"]').val(ileostomiStomaninRengi).attr('disabled', false);
             $('[name="excretionForm2"]').prop('disabled', false);
             $('[name="StomanRengi"]').attr('disabled', true);
             $('[name="excretionForm1"]').prop('disabled', true);
@@ -903,7 +903,7 @@ if ($result) {
                     $('[name="ureter"][value="'+value+'"]').prop('checked', true);
                 })
     } else {
-        $('[name="ureter"]').prop('disabled', false);
+        $('[name="ureter"]').prop('disabled', true);
     }
 
     $('[name="Üreterestomi"]').on('change', function(){
@@ -1136,7 +1136,7 @@ $('#submit').click(function(e) {
         let defekasyon_zamani = $('[name="defekasyon_zamani"]').val();
         let defekasyon_tekrari = $('[name="defekasyon_tekrari"]').val();
         let bosaltimSekli = $('[name="BoşaltımŞekli"]:checked').val();
-        let excretionForm = $('[name="excretionForm"]').is('disabled') ? null : $('[name="excretionForm"]:checked').val();
+        let excretionForm = $('[name="excretionForm"]').prop('disabled') ? null : $('[name="excretionForm"]:checked').val();
         var kolostomExcretionFormArr = [];
                 $('[name="excretionForm1"]:checked').each(function(){
                     kolostomExcretionFormArr.push($(this).val());
@@ -1173,6 +1173,7 @@ $('#submit').click(function(e) {
         let IdrarRengi = $("input[name='IdrarRengi']:checked").val();
         let IdrarBerrakligi = $("input[name='IdrarBerrakligi']:checked").val();
 
+        console.log(excretionForm);
 
         $.ajax({
             type: 'POST',
@@ -1197,7 +1198,7 @@ $('#submit').click(function(e) {
                 kolostomExcretionForm: kolostomExcretionForm,
                 kolostomStomaninRengi: kolostomStomaninRengi,
                 ileostomiExcretionForm: ileostomiExcretionForm,
-                ileostomiStomaninRengi: kolostomStomaninRengi,
+                ileostomiStomaninRengi: ileostomiStomaninRengi,
                 protezlertable: protezlertable,
                 bosaltimdaSorun: bosaltimdaSorun,
                 excretionIssues: excretionIssues,
@@ -1216,7 +1217,7 @@ $('#submit').click(function(e) {
                     patient_id + "&patient_name=" + encodeURIComponent(patient_name);
                     $("#tick-container").fadeIn(800);
                             // Change the tick background to the animated GIF
-                            $("#tick").css("background-image", "url('./check.gif')");
+                            $("#tick").css("background-image", "url('./check-2.gif')");
 
                             // Delay for 2 seconds (adjust the duration as needed)
                             setTimeout(function() {
@@ -1224,7 +1225,7 @@ $('#submit').click(function(e) {
                             $("#content").load(url);
                             $("#tick-container").fadeOut(600);
                             // Hide the tick container
-                            }, 600);
+                            },1000);
             },
             error: function(data) {
                 Swal.fire({
