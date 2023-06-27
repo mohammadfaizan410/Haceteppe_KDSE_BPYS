@@ -27,10 +27,46 @@ if (isset($_GET['logout'])) {
 
     <!-- Template Stylesheet -->
     <link href="style.css" rel="stylesheet">
+    <style>
+            body {
+  margin: 0; /* Remove default body margin */
+  padding: 0; /* Remove default body padding */
+}
+
+#tick-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none; /* Hide the tick container initially */
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  background-color: #ffffff;
+}
+
+#tick {
+  width: 50%;
+  height: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  margin: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateX(25%);
+}
+ 
+        </style>
 
 </head>
 
 <body style="background-color:white">
+
+<div id="tick-container">
+  <div id="tick"></div>
+</div>
     <div class="container-fluid pt-4 px-4">
         <?php
         require_once('../config-students.php');
@@ -1382,7 +1418,17 @@ if (isset($_GET['logout'])) {
                                     ?>";
             var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
                 "&patient_name=" + encodeURIComponent(patient_name);
-            $("#content").load(url);
+                $("#tick-container").fadeIn(800);
+                            // Change the tick background to the animated GIF
+                            $("#tick").css("background-image", "url('./check-2.gif')");
+
+                            // Delay for 2 seconds (adjust the duration as needed)
+                            setTimeout(function() {
+                            // Load the content
+                            $("#content").load(url);
+                            $("#tick-container").fadeOut(600);
+                            // Hide the tick container
+                            }, 1000);
 
         })
     });
@@ -2241,7 +2287,6 @@ if (isset($_GET['logout'])) {
                             
                         },
                         success: function(data) {
-                            alert(data);
                             let url =
                                 "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
                                 patient_id + "&patient_name=" + encodeURIComponent(

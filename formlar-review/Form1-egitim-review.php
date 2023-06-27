@@ -10,6 +10,18 @@ if (isset($_GET['logout'])) {
     unset($_SESSION);
     header("Location: main.php");
 }
+require_once('../config-students.php');
+
+$userid = $_SESSION['userlogin']['id'];
+$form_id = $_GET['form_id'];
+$sql = "SELECT * FROM egitimform1 where form_id= $form_id";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+if ($result) {
+    $egitimform1 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+} else {
+    echo 'error';
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,7 +50,6 @@ if (isset($_GET['logout'])) {
 
     <!-- Template Stylesheet -->
     <link href="style.css" rel="stylesheet">
-
     <style>
             body {
   margin: 0; /* Remove default body margin */
@@ -69,15 +80,16 @@ if (isset($_GET['logout'])) {
   left: 50%;
   transform: translate(-50%, -50%) translateX(25%);
 }
+ 
+
     </style>
+
 </head>
 
 <body style="background-color:white">
-
 <div id="tick-container">
   <div id="tick"></div>
 </div>
-
     <div class="container-fluid pt-4 px-4">
         <?php
         require_once('../config-students.php');
@@ -106,21 +118,21 @@ if (isset($_GET['logout'])) {
             <div class="input-section d-flex ">
                 <div>
                     <p class="usernamelabel">Konusu</p>
-                    <input type="text" class="form-control" disabled  name="Konu" id="Konu">
+                    <input type="text" class="form-control" disabled  name="Konu" id="Konu" value="<?php echo $egitimform1[0]['Konu']?>">
                 </div>
                 <div>
                     <p class="usernamelabel">Kimden/Nereden aldı</p>
-                    <input type="text" class="form-control " disabled name="Nerden" id="Nerden">
+                    <input type="text" class="form-control " disabled name="Nerden" id="Nerden" value="<?php echo $egitimform1[0]['Nerden']?>">
                 </div>
                 <div>
                 <p class="usernamelabel">Ne zaman aldı</p>
-                    <input type="text" class="form-control" disabled name="NeZaman" id="NeZaman">
+                    <input type="text" class="form-control" disabled name="NeZaman" id="NeZaman" value="<?php echo $egitimform1[0]['NeZaman']?>" >
                 </div>
             </div>
 
             <div class="input-section d-flex">
                 <p class="usernamelabel">Sağlığınız ile ilgili hangi konularda eğitim almak istersiniz:</p>
-                <input type="text" class="form-control"  name="EgitimIstegi" id="EgitimIstegi">
+                <input type="text" class="form-control"  name="EgitimIstegi" id="EgitimIstegi" value="<?php echo $egitimform1[0]['EgitimIstegi']?>">
             </div>
 
             <div>
@@ -132,7 +144,7 @@ if (isset($_GET['logout'])) {
                 <div class="input-section d-flex">
                     <p class="usernamelabel">Açıklayınız:</p>
                     <input type="text" class="form-control" disabled  name="TedaviBasvurusuDiger"
-                        id="TedaviBasvurusuDiger">
+                        id="TedaviBasvurusuDiger" value="<?php echo $egitimform1[0]['TedaviBasvurusuDiger']?>">
                 </div>
             </div>
             <div>
@@ -147,17 +159,25 @@ if (isset($_GET['logout'])) {
 
 
     <script>
+   
+    //form prefilling
+    if("<?php echo $egitimform1[0]['radio1']?>" !== ""){
+        $('input[name="radio1"]').prop('checked', true);
+        $('#Konu').prop('disabled', false);
+        $('#Nerden').prop('disabled', false);
+        $('#NeZaman').prop('disabled', false);
+    }
+    if("<?php echo $egitimform1[0]['TedaviBasvurusu']?>" !== ""){
+        $('input[name="TedaviBasvurusu"]').prop('checked', true);
+        $('#TedaviBasvurusuDiger').prop('disabled', false);
+    }
+
+
     $(function() {
         $('#closeBtn1').click(function(e) {
         e.preventDefault();
-        console.log("close btn clicked");
-        let patient_id = <?php
-                                    $userid = $_GET['patient_id'];
-                                    echo $userid
-                                    ?>;
-        let patient_name = "<?php
-                                    echo urldecode($_GET['patient_name']);
-                                    ?>";
+        let patient_id = "<?php echo $egitimform1[0]['patient_id']?>"
+        let patient_name = "<?php echo $egitimform1[0]['patient_name']?>"
         var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
             "&patient_name=" + encodeURIComponent(patient_name);
         $("#content").load(url);
@@ -171,12 +191,13 @@ if (isset($_GET['logout'])) {
                     $('#NeZaman').prop('disabled', false);
         }
         else{
-                    $('#Konu').prop('disabled', true);
+            $('#Konu').prop('disabled', true);
                     $('#Nerden').prop('disabled', true);
                     $('#NeZaman').prop('disabled', true);
                     $('#Konu').val('');
                     $('#Nerden').val('');
                     $('#NeZaman').val('');
+
         }
                 }));
     if($('input[name="TedaviBasvurusu"]').change(function() {
@@ -192,35 +213,31 @@ if (isset($_GET['logout'])) {
     </script>
 
     <script>
-    $(function() {
         $('#submit').click(function(e) {
-
-
+            e.preventDefault()
+            console.log("clicked")
+                var form_id = "<?php echo $egitimform1[0]['form_id']?>";
 
                 var id = <?php
 
                                 $userid = $_SESSION['userlogin']['id'];
                                 echo $userid
                                 ?>;
-                let patient_name = "<?php
-                                    echo urldecode($_GET['patient_name']);
-                                    ?>";
-                let patient_id = <?php
-                                    $userid = $_GET['patient_id'];
-                                    echo $userid
-                                    ?>;
+                let patient_name = "<?php echo $egitimform1[0]['patient_name']?>"
+                let patient_id = "<?php echo $egitimform1[0]['patient_id']?>"
                                      let yourDate = new Date();
                             let creation_date = yourDate.toISOString().split('T')[0];
                             let updateDate = yourDate.toISOString().split('T')[0];
                 var radio1 = $("input[name='radio1']:checked").val() ? $("input[name='radio1']:checked").val() : "null";
                 let Konu = $("input[name='Konu']").val() ? $("input[name='Konu']").val() : "";
-                let Nerden = $("input[name='Nerden']").val() ? $("input[name='Nerden']").val() : "";    
+                let Nerden = $("input[name='Nerden']").val() ? $("input[name='Nerden']").val() : "";
                 let NeZaman = $("input[name='NeZaman']").val() ? $("input[name='NeZaman']").val() : "";
                 let EgitimIstegi = $("input[name='EgitimIstegi']").val() ? $("input[name='EgitimIstegi']").val() : "";
                 let TedaviBasvurusu = $("input[name='TedaviBasvurusu']").val() ? $("input[name='TedaviBasvurusu']").val() : "";
                 let TedaviBasvurusuDiger = $("input[name='TedaviBasvurusuDiger']").val() ? $("input[name='TedaviBasvurusuDiger']").val() : "";
-                                 //set borders to default
+                 //set borders to default
     $('.form-control').css('border-color', '#ced4da');
+                
                if($('input[name="radio1"]').is(':checked') && $('#Konu').val() === "" ){
                        //Scroll to companionInput
                        $('html, body').animate({
@@ -270,13 +287,14 @@ if (isset($_GET['logout'])) {
                                              return false;
                 }
 
-                e.preventDefault()
 
                 $.ajax({
                     type: 'POST',
                     url: '<?php echo $base_url; ?>/form-handlers/SubmitOrUpdateForm1_Egitim.php',
                     data: {
+                        isUpdate : true,
                         form_name : 'form1Egitim',
+                        form_id   : form_id,
                         id: id,
                         patient_id: patient_id,
                         patient_name: patient_name,
@@ -292,13 +310,8 @@ if (isset($_GET['logout'])) {
 
                     },
                     success: function(data) {
-                         let patient_id = <?php
-                                    $userid = $_GET['patient_id'];
-                                    echo $userid
-                                    ?>;
-                            let patient_name = "<?php
-                                                        echo urldecode($_GET['patient_name']);
-                                                        ?>";
+                         let patient_id = "<?php echo $egitimform1[0]['patient_id']?>";
+                            let patient_name =  "<?php echo $egitimform1[0]['patient_name']?>";
                             var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
                                 "&patient_name=" + encodeURIComponent(patient_name);
                                 $("#tick-container").fadeIn(800);
@@ -321,12 +334,6 @@ if (isset($_GET['logout'])) {
                         })
                     }
                 })
-
-
-
-            
-        })
-
     });
     </script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>

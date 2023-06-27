@@ -50,9 +50,42 @@ if (isset($_GET['logout'])) {
         td {
             width: 200px;
         }
+        body {
+  margin: 0; /* Remove default body margin */
+  padding: 0; /* Remove default body padding */
+}
+
+#tick-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none; /* Hide the tick container initially */
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  background-color: #ffffff;
+}
+
+#tick {
+  width: 50%;
+  height: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  margin: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateX(25%);
+}
     </style>
 
 <body>
+    
+<div id="tick-container">
+  <div id="tick"></div>
+</div>
     <?php
     require_once('../config-students.php');
     $userid = $_SESSION['userlogin']['id'];
@@ -613,6 +646,7 @@ if (isset($_GET['logout'])) {
                         let o2_status = $("input[type='radio'][name='o2_status']:checked").val();
                         let o2_method = '';
 
+<<<<<<< HEAD
                         if (o2_status === "Almıyor") {
                             o2_method = "Almıyor";
                         } else {
@@ -681,6 +715,59 @@ if (isset($_GET['logout'])) {
                             }
                         })
             }
+=======
+                $.ajax({
+                    type: 'POST',
+                    url: '<?php echo $base_url; ?>/form-handlers/submitOrUpdateYasamsal_form10.php',
+                    data: {
+                        isUpdate: true,
+                        form_id: form_id,
+                        id: id,
+                        name: name,
+                        surname: surname,
+                        age: age,
+                        not: not,
+                        form_num: form_num,
+                        patient_id: patient_id,
+                        patient_name: patient_name,
+                        creation_date: creationDate,
+                        update_date: updateDate,
+                        time: time,
+                        body_temperature: body_temperature,
+                        heart_rate: heart_rate,
+                        heartrate_location: heartrate_location,
+                        respiratory_nature: respiratory_nature,
+                        heartrate_nature: heartrate_nature,
+                        respiratory_rate: respiratory_rate,
+                        blood_pressure: blood_pressure,
+                        bp_measurement_location: bp_measurement_location,
+                        measurement_location: measurement_location,
+                        o2_status: o2_status,
+                        o2_method: o2_method,
+                        spo2_percentage: spo2_percentage,
+                        weight_input: weight_input
+                    },
+                    success: function(data) {
+                         let url =
+                            "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
+                            patient_id + "&patient_name=" + encodeURIComponent(patient_name);
+                            $("#tick-container").fadeIn(800);
+                            // Change the tick background to the animated GIF
+                            $("#tick").css("background-image", "url('./check-2.gif')");
+
+                            // Delay for 2 seconds (adjust the duration as needed)
+                            setTimeout(function() {
+                            // Load the content
+                            $("#content").load(url);
+                            $("#tick-container").fadeOut(600);
+                            // Hide the tick container
+                            }, 1000);
+                    },
+                    error: function(data) {
+                        console.log(data)
+                    }
+                })
+>>>>>>> 47525edb6df03ea3ea3f005cc9f9365a91b0f3df
 
             })
 
