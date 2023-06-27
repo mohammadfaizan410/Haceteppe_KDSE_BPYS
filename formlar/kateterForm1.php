@@ -98,7 +98,7 @@ if (isset($_GET['logout'])) {
                         <div class="checkboxes w-25">
                             <div class="form-check ">
                                 <input class="form-check-input" type="radio" name="katererType" id="venöz_kateter"
-                                    value="option1">
+                                    value="Dren">
                                 <label class="form-check-label" for="venöz_kateter">
                                     <span class="checkbox-header">Dren </span>
                                 </label>

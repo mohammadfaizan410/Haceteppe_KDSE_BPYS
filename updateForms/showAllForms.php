@@ -228,12 +228,21 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
-        $sql = "SELECT * FROM  calismaform1  WHERE patient_id =" . $userid;
+        $sql = "SELECT * FROM  ilestimform1  WHERE patient_id =" . $userid;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         $values = [];
         if ($result) {
             $values20 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            echo 'error';
+        };
+        $sql = "SELECT * FROM  calismaform1  WHERE patient_id =" . $userid;
+        $smtmselect = $db->prepare($sql);
+        $result = $smtmselect->execute();
+        $values = [];
+        if ($result) {
+            $values21 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
         } else {
             echo 'error';
         };
@@ -269,15 +278,16 @@ if (isset($_GET['logout'])) {
             'table18_data' => $values18,
             'table19_data' => $values19,
             'table20_data' => $values20,
+            'table21_data' => $values21,
         ];
 
         ?>
         <div class="send-patient">
 
-            <div class=" patients-save">
+            <div class="patients-save">
 
             </div>
-            <div class="patients-table text-center rounded p-4" id="patients-table">
+            <div class="text-center rounded p-4" style="background-color: " id="patients-table">
                 <div class="d-flex align-items-center justify-content-between mb-4">
                     <h6 class="mb-0 darkcyan table-title">Hasta Listesi / Öneriler</h6>
 
@@ -307,6 +317,9 @@ if (isset($_GET['logout'])) {
                         $form_19_options = '';
                         $form_20_options = '';
                         $form_21_options = '';
+                        $form_22_options = '';
+
+
 
                         if (isset($allForms)) {
                             foreach ($allForms as $key => $currentTableAllForms) {
@@ -390,17 +403,17 @@ if (isset($_GET['logout'])) {
                                     if ($key ===  'table16_data') {
                                         $form_id = $form["form_id"];
                                         $update_date = $form["updateDate"];
-                                        $form_17_options .= '<li class="m-2 p-2 "><div class="entered-forms"><a class="nav-items review btn btn-success"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Solunum-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Solunum Date: ' . $update_date . '</p></a></div></li>';
+                                        $form_17_options .= '<li class="m-2 p-2 "><div class="entered-forms"><a class="nav-items review btn btn-success"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Solunumgereksinimi-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Solunum Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table17_data') {
                                         $form_id = $form["form_id"];
                                         $update_date = $form["update_date"];
-                                        $form_18_options .= '<li class="m-2 p-2 "><div class="entered-forms"><a class="nav-items review btn btn-success"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Hareket-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Hareket Date: ' . $update_date . '</p></a></div></li>';
+                                        $form_18_options .= '<li class="m-2 p-2 "><div class="entered-forms"><a class="nav-items review btn btn-success"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-hereket-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Hareket Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table18_data') {
                                         $form_id = $form["form_id"];
                                         $update_date = $form["update_date"];
-                                        $form_19_options .= '<li class="m-2 p-2 "><div class="entered-forms"><a class="nav-items review btn btn-success"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Vucut-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Vucut Date: ' . $update_date . '</p></a></div></li>';
+                                        $form_19_options .= '<li class="m-2 p-2 "><div class="entered-forms"><a class="nav-items review btn btn-success"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Vucudu-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Vucut Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table19_data') {
                                         $form_id = $form["form_id"];
@@ -410,7 +423,12 @@ if (isset($_GET['logout'])) {
                                     if ($key ===  'table20_data') {
                                         $form_id = $form["form_id"];
                                         $update_date = $form["update_date"];
-                                        $form_21_options .= '<li class="m-2 p-2 "><div class="entered-forms"><a class="nav-items review btn btn-success"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Calisma-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Calisma Date: ' . $update_date . '</p></a></div></li>';
+                                        $form_21_options .= '<li class="m-2 p-2 "><div class="entered-forms"><a class="nav-items review btn btn-success"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Iletisim-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Ilestim Date: ' . $update_date . '</p></a></div></li>';
+                                    }
+                                    if ($key ===  'table21_data') {
+                                        $form_id = $form["form_id"];
+                                        $update_date = $form["update_date"];
+                                        $form_22_options .= '<li class="m-2 p-2 "><div class="entered-forms"><a class="nav-items review btn btn-success"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Calisma-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Calisma Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                 };
                             }
@@ -425,33 +443,39 @@ if (isset($_GET['logout'])) {
                                 </div></li>";
                             }
                             if($form_17_options!==""){
-                            echo "<li class='m-2'>><div class='w-75 m-auto'>
+                            echo "<li class='m-2'><div class='w-75 m-auto'>
                                 <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form17_toggle'>Form1 Solunum <span id='form17_caret'>&#9660;<span></button>
                                 <ul class='entered-forms-ul' id='form_17_options' style='display:none'>" . $form_17_options . "</ul>
                                 </div></li>
-                                <li class='m-2'>><div class='w-75 m-auto'>";
+                                <li class='m-2'><div class='w-75 m-auto'>";
                             }
                             if($form_18_options!==""){
                             echo " <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form18_toggle'>Form1 Hereket <span id='form18_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_18_options' style='display:none'>" . $form_18_options . "</ul>
                             </div></li>";}
                             if($form_19_options!==""){
-                            echo "<li class='m-2'>><div class='w-75 m-auto'>
+                            echo "<li class='m-2'><div class='w-75 m-auto'>
                             <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form19_toggle'>Form1 Vucut <span id='form19_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_19_options' style='display:none'>" . $form_19_options . "</ul>
                             </div></li>";}
                             if($form_20_options!==""){
-                            echo "<li class='m-2'>><div class='w-75 m-auto'>
+                            echo "<li class='m-2'><div class='w-75 m-auto'>
                             <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form20_toggle'>Form1 Katerer <span id='form20_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_20_options' style='display:none'>" . $form_20_options . "</ul>
                             </div></li>";}
                             if($form_21_options!==""){
-                            echo "<li class='m-2'>><div class='w-75 m-auto'>
-                            <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form21_toggle'>Form1 Calisma <span id='form21_caret'>&#9660;<span></button>
+                            echo "<li class='m-2'><div class='w-75 m-auto'>
+                            <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form21_toggle'> Form1 Iletisim<span id='form21_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_21_options' style='display:none'>" . $form_21_options . "</ul>
+                            </div></li>";}
+                            if($form_22_options!==""){
+                            echo "<li class='m-2'><div class='w-75 m-auto'>
+                            <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form22_toggle'>Form1 Calisma <span id='form22_caret'>&#9660;<span></button>
+                            <ul class='entered-forms-ul' id='form_22_options' style='display:none'>" . $form_22_options . "</ul>
                             </div></li>";}
                              echo "</ul>
                             </div>";
+
                             if($form_2_options !== ""){
                                 echo "<div class='w-75 m-auto'>
                                 <button class='entered-forms  btn btn-success w-50 m-auto align-items-center' id='form2_toggle'>Form 2 <span id='form2_caret'>&#9660;</span></button>
@@ -911,6 +935,18 @@ if (isset($_GET['logout'])) {
                 }
                 else{
                     $("#form1_caret").css("transform", "");
+                }
+            })
+        });
+        $(function() {
+            $("button#form22_toggle").on("click", function(e) {
+                e.preventDefault();
+                $("#form_22_options").slideToggle('slow');
+                if($("#form22_caret").css("transform") === "none"){
+                    $("#form22_caret").css("transform", "rotate(180deg)");
+                }
+                else{
+                    $("#form22_caret").css("transform", "");
                 }
             })
         });

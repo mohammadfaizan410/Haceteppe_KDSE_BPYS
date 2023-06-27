@@ -1128,11 +1128,17 @@ if (isset($_GET['logout'])) {
             if($(this).val() === "Diğer"){
                 $('input[name="socialSecuritOther"]').prop('disabled', false);
             }
+            else{
+                $('input[name="socialSecuritOther"]').prop('disabled', true);
+            }
         })
 
         $('.form-check-input[name="translatorRequirement"]').change(function(){
             if($(this).val() === "Var"){
                 $('input[name="translatorRequirementInput"]').prop('disabled', false);
+            }
+            else{
+                $('input[name="translatorRequirementInput"]').prop('disabled', true);
             }
         })
 
@@ -1140,15 +1146,24 @@ if (isset($_GET['logout'])) {
             if($(this).val() === "Var"){
                 $('input[name="transfusionStatusInput"]').prop('disabled', false);
             }
+            else{
+                $('input[name="transfusionStatusInput"]').prop('disabled', true);
+            }
         })
         $('.form-check-input[name="transfusionReaction"]').change(function(){
             if($(this).val() === "Var"){
                 $('input[name="transfusionReactionInput"]').prop('disabled', false);
             }
+            else{
+                $('input[name="transfusionReactionInput"]').prop('disabled', true);
+            }
         })
         $('.form-check-input[name="infoStorageType"]').change(function(){
             if($(this).val() === "Diger"){
                 $('input[name="infoStorageTypeInput"]').prop('disabled', false);
+            }
+            else{
+                $('input[name="infoStorageTypeInput"]').prop('disabled', true);
             }
         })
 
@@ -1158,17 +1173,28 @@ if (isset($_GET['logout'])) {
                 $('input[name="hospitalization_location"]').prop('disabled', false);
                 $('input[name="hospitalization_reason"]').prop('disabled', false);
             }
+            else{
+                $('input[name="hospitalization_year"]').prop('disabled', true);
+                $('input[name="hospitalization_location"]').prop('disabled', true);
+                $('input[name="hospitalization_reason"]').prop('disabled', true);
+            }
         })
 
         $('.form-check-input[name="diseases"]').change(function(){
             if($(this).val() === "Var"){
                 $('input[name="diseasesInput"]').prop('disabled', false);
             }
+            else{
+                $('input[name="diseasesInput"]').prop('disabled', true);
+            }
         })
 
         $('.form-check-input[name="previousSurgeries"]').change(function(){
             if($(this).val() === "Var"){
                 $('input[name="previousSurgeriesInput"]').prop('disabled', false);
+            }
+            else{
+                $('input[name="previousSurgeriesInput"]').prop('disabled', true);
             }
         })
 
@@ -1177,7 +1203,9 @@ if (isset($_GET['logout'])) {
         $('.form-check-input[name="accidents"]').change(function(){
             if($(this).val() === "Var"){
                 $('input[name="accidentsInput"]').prop('disabled', false);
-
+            }
+            else{
+                $('input[name="accidentsInput"]').prop('disabled', true);
             }
         })
 
@@ -1188,6 +1216,9 @@ if (isset($_GET['logout'])) {
                 $('input[name="infectiousDiseaseInput"]').prop('disabled', false);
 
             }
+            else{
+                $('input[name="infectiousDiseaseInput"]').prop('disabled', true);
+            }
         })
 
         //allergies
@@ -1197,6 +1228,11 @@ if (isset($_GET['logout'])) {
                 $('input[name="allergen"]').prop('disabled', false);
                 $('input[name="allergySymptoms"]').prop('disabled', false);
                 $('input[name="allergyTherapy"]').prop('disabled', false);
+            }
+            else{
+                $('input[name="allergen"]').prop('disabled', true);
+                $('input[name="allergySymptoms"]').prop('disabled', true);
+                $('input[name="allergyTherapy"]').prop('disabled', true);
             }
         })
         
@@ -1212,6 +1248,14 @@ if (isset($_GET['logout'])) {
                 $('input[name="intakeMethod"]').prop('disabled', false);
                 $('input[name="intakeTimes"]').prop('disabled', false);
             }
+            else{
+                $('input[name="medicineName"]').prop('disabled', true);
+                $('input[name="prescriptionType"]').prop('disabled', true);
+                $('input[name="medicineFrequency"]').prop('disabled', true);
+                $('input[name="medicineDose"]').prop('disabled', true);
+                $('input[name="intakeMethod"]').prop('disabled', true);
+                $('input[name="intakeTimes"]').prop('disabled', true);
+            }
         })
 
         //aidTools
@@ -1219,6 +1263,9 @@ if (isset($_GET['logout'])) {
         $('.form-check-input[name="aidTools"]').change(function(){
             if($(this).val() === "Var"){
                 $('.form-check-input[name="aidToolsDesc"]').prop('disabled', false);
+            }
+            else{
+                $('.form-check-input[name="aidToolsDesc"]').prop('disabled', true);
             }
         })
 
@@ -1229,6 +1276,10 @@ if (isset($_GET['logout'])) {
                 $('input[name="smokingAmount"]').prop('disabled', false);
                 $('input[name="smokingTime"]').prop('disabled', false);
             }
+            else{
+                $('input[name="smokingAmount"]').prop('disabled', true);
+                $('input[name="smokingTime"]').prop('disabled', true);
+            }
         })
 
         //alcoholUsage
@@ -1237,6 +1288,10 @@ if (isset($_GET['logout'])) {
             if($(this).val() === "Alkol"){
                 $('input[name="alcoholAmount"]').prop('disabled', false);
                 $('input[name="alcoholUsageTime"]').prop('disabled', false);
+            }
+            else{
+                $('input[name="alcoholAmount"]').prop('disabled', true);
+                $('input[name="alcoholUsageTime"]').prop('disabled', true);
             }
         })
 
@@ -1247,6 +1302,10 @@ if (isset($_GET['logout'])) {
                 $('input[name="teaUsageAmount"]').prop('disabled', false);
                 $('input[name="teaUsageTime"]').prop('disabled', false);
             }
+            else{
+                $('input[name="teaUsageAmount"]').prop('disabled', true);
+                $('input[name="teaUsageTime"]').prop('disabled', true);
+            }
         })
 
         //coffeeUsage
@@ -1255,6 +1314,10 @@ if (isset($_GET['logout'])) {
             if($(this).val() === "Kahve"){
                 $('input[name="coffeeUsageAmount"]').prop('disabled', false);
                 $('input[name="coffeeUsageTime"]').prop('disabled', false);
+            }
+            else{
+                $('input[name="coffeeUsageAmount"]').prop('disabled', true);
+                $('input[name="coffeeUsageTime"]').prop('disabled', true);
             }
         })
 
@@ -1266,6 +1329,11 @@ if (isset($_GET['logout'])) {
                 $('input[name="otherHabitsAmount"]').prop('disabled', false);
                 $('input[name="otherHabitsTime"]').prop('disabled', false);
             }
+            else{
+                $('input[name="otherHabitsInput"]').prop('disabled', true);
+                $('input[name="otherHabitsAmount"]').prop('disabled', true);
+                $('input[name="otherHabitsTime"]').prop('disabled', true);
+            }
         })
 
         //familyIllnesses
@@ -1275,6 +1343,10 @@ if (isset($_GET['logout'])) {
                 $('input[name="familyMemberRelation"]').prop('disabled', false);
                 $('input[name="familyMemberIllness"]').prop('disabled', false);
             }
+            else{
+                $('input[name="familyMemberRelation"]').prop('disabled', true);
+                $('input[name="familyMemberIllness"]').prop('disabled', true);
+            }
         })
 
         //arrivalFrom
@@ -1283,6 +1355,9 @@ if (isset($_GET['logout'])) {
             if($(this).val() === "Diger"){
                 $('input[name="arrivalFromInput"]').prop('disabled', false);
             }
+            else{
+                $('input[name="arrivalFromInput"]').prop('disabled', true);
+            }
         })
 
         //hospitalArrivalMethod
@@ -1290,6 +1365,9 @@ if (isset($_GET['logout'])) {
         $('.form-check-input[name="hospitalArrivalMethod"]').change(function(){
             if($(this).val() === "Diger"){
                 $('input[name="hospitalArrivalMethodInput"]').prop('disabled', false);
+            }
+            else{
+                $('input[name="hospitalArrivalMethodInput"]').prop('disabled', true);
             }
         })
 

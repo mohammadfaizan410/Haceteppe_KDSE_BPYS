@@ -5,8 +5,6 @@ require_once("../config-students.php");
 <?php
 if (isset($_POST)) {
     if (isset($_POST['isUpdate'])) {
-        $values = $result->fetchAll();
-
         $stmt = $db->prepare("UPDATE solunumgereksinimi_form1 SET
             form_name = ?,
             updateDate = ?,

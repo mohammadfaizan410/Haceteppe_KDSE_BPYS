@@ -110,7 +110,7 @@ if ($result) {
                         <div class="checkboxes w-25">
                             <div class="form-check ">
                                 <input class="form-check-input" type="radio" name="katererType" id="venöz_kateter"
-                                    value="option1">
+                                    value="Dren">
                                 <label class="form-check-label" for="venöz_kateter">
                                     <span class="checkbox-header">Dren </span>
                                 </label>
@@ -153,6 +153,63 @@ if ($result) {
         $("#content").load(url);
     })
             });
+            
+            if("<?php echo $katererform1[0]['katererType']; ?>" === 'Periferik venöz kateter'){
+                $('#peripheralKaterarAmount').prop('disabled', false);
+                $('#peripheralKaterarLocation').prop('disabled', false);
+                $('#peripheralKaterarDate').prop('disabled', false);
+                $('#centralKaterarNumber').prop('disabled', true);
+                $('#centralKaterarLocation').prop('disabled', true);
+                $('#centralKaterarDate').prop('disabled', true);
+                $('#drainKatererAmount').prop('disabled', true);
+                $('#drainKatererLocation').prop('disabled', true);
+                $('#drainKatererDate').prop('disabled', true);
+                $('#otherKatereAmount').prop('disabled', true);
+                $('#otherKatereLocation').prop('disabled', true);
+                $('#otherKatereDate').prop('disabled', true);
+            }
+            if("<?php echo $katererform1[0]['katererType']; ?>" === 'Santral venöz kateter'){
+                $('#centralKaterarNumber').prop('disabled', false);
+                $('#centralKaterarLocation').prop('disabled', false);
+                $('#centralKaterarDate').prop('disabled', false);
+                $('#peripheralKaterarAmount').prop('disabled', true);
+                $('#peripheralKaterarLocation').prop('disabled', true);
+                $('#peripheralKaterarDate').prop('disabled', true);
+                $('#drainKatererAmount').prop('disabled', true);
+                $('#drainKatererLocation').prop('disabled', true);
+                $('#drainKatererDate').prop('disabled', true);
+                $('#otherKatereAmount').prop('disabled', true);
+                $('#otherKatereLocation').prop('disabled', true);
+                $('#otherKatereDate').prop('disabled', true);
+            }
+            if("<?php echo $katererform1[0]['katererType']; ?>" === 'Dren'){
+                $('#drainKatererAmount').prop('disabled', false);
+                $('#drainKatererLocation').prop('disabled', false);
+                $('#drainKatererDate').prop('disabled', false);
+                $('#peripheralKaterarAmount').prop('disabled', true);
+                $('#peripheralKaterarLocation').prop('disabled', true);
+                $('#peripheralKaterarDate').prop('disabled', true);
+                $('#centralKaterarNumber').prop('disabled', true);
+                $('#centralKaterarLocation').prop('disabled', true);
+                $('#centralKaterarDate').prop('disabled', true);
+                $('#otherKatereAmount').prop('disabled', true);
+                $('#otherKatereLocation').prop('disabled', true);
+                $('#otherKatereDate').prop('disabled', true);
+            }
+            if("<?php echo $katererform1[0]['katererType']; ?>" === 'Diğer'){
+                $('#otherKatereAmount').prop('disabled', false);
+                $('#otherKatereLocation').prop('disabled', false);
+                $('#otherKatereDate').prop('disabled', false);
+                $('#peripheralKaterarAmount').prop('disabled', true);
+                $('#peripheralKaterarLocation').prop('disabled', true);
+                $('#peripheralKaterarDate').prop('disabled', true);
+                $('#centralKaterarNumber').prop('disabled', true);
+                $('#centralKaterarLocation').prop('disabled', true);
+                $('#centralKaterarDate').prop('disabled', true);
+                $('#drainKatererAmount').prop('disabled', true);
+                $('#drainKatererLocation').prop('disabled', true);
+                $('#drainKatererDate').prop('disabled', true);
+            }
      
             $('.form-check-input[name="katererType"]').change(function(){
                 if($(this).val() === 'Periferik venöz kateter'){
@@ -168,6 +225,16 @@ if ($result) {
                     $('#otherKatereAmount').prop('disabled', true);
                     $('#otherKatereLocation').prop('disabled', true);
                     $('#otherKatereDate').prop('disabled', true);
+                    $('#centralKaterarNumber').val('');
+                    $('#centralKaterarLocation').val('');
+                    $('#centralKaterarDate').val('');
+                    $('#drainKatererAmount').val('');
+                    $('#drainKatererLocation').val('');
+                    $('#drainKatererDate').val('');
+                    $('#otherKatereAmount').val('');
+                    $('#otherKatereLocation').val('');
+                    $('#otherKatereDate').val('');
+
                 }
                 if($(this).val() === 'Santral venöz kateter'){
                     $('#centralKaterarNumber').prop('disabled', false);
@@ -182,6 +249,16 @@ if ($result) {
                     $('#otherKatereAmount').prop('disabled', true);
                     $('#otherKatereLocation').prop('disabled', true);
                     $('#otherKatereDate').prop('disabled', true);
+                    $('#peripheralKaterarAmount').val('');
+                    $('#peripheralKaterarLocation').val('');
+                    $('#peripheralKaterarDate').val('');
+                    $('#drainKatererAmount').val('');
+                    $('#drainKatererLocation').val('');
+                    $('#drainKatererDate').val('');
+                    $('#otherKatereAmount').val('');
+                    $('#otherKatereLocation').val('');
+                    $('#otherKatereDate').val('');
+
                 }
                 if($(this).val() === 'Dren'){
                     $('#drainKatererAmount').prop('disabled', false);
@@ -196,6 +273,15 @@ if ($result) {
                     $('#otherKatereAmount').prop('disabled', true);
                     $('#otherKatereLocation').prop('disabled', true);
                     $('#otherKatereDate').prop('disabled', true);
+                    $('#peripheralKaterarAmount').val('');
+                    $('#peripheralKaterarLocation').val('');
+                    $('#peripheralKaterarDate').val('');
+                    $('#centralKaterarNumber').val('');
+                    $('#centralKaterarLocation').val('');
+                    $('#centralKaterarDate').val('');
+                    $('#otherKatereAmount').val('');
+                    $('#otherKatereLocation').val('');
+                    $('#otherKatereDate').val('');
                 }
                 if($(this).val() === 'Diğer'){
                     $('#otherKatereAmount').prop('disabled', false);
@@ -210,6 +296,16 @@ if ($result) {
                     $('#drainKatererAmount').prop('disabled', true);
                     $('#drainKatererLocation').prop('disabled', true);
                     $('#drainKatererDate').prop('disabled', true);
+                    $('#peripheralKaterarAmount').val('');
+                    $('#peripheralKaterarLocation').val('');
+                    $('#peripheralKaterarDate').val('');
+                    $('#centralKaterarNumber').val('');
+                    $('#centralKaterarLocation').val('');
+                    $('#centralKaterarDate').val('');
+                    $('#drainKatererAmount').val('');
+                    $('#drainKatererLocation').val('');
+                    $('#drainKatererDate').val('');
+
                 }
             })
 
@@ -225,14 +321,9 @@ if ($result) {
 
                             let age = $('#age').val();
                             let not = $('#not').val();
-
-                            var patient_id = <?php
-                                                $userid = $_GET['patient_id'];
-                                                echo $userid
-                                                ?>;
-                            let patient_name = "<?php
-                                                echo urldecode($_GET['patient_name']);
-                                                ?>";
+                            let form_id = "<?php echo $katererform1[0]['form_id']; ?>";
+                            var patient_id = "<?php echo $katererform1[0]['patient_id']; ?>";
+                            let patient_name = "<?php echo $katererform1[0]['patient_name']; ?>";
                             let yourDate = new Date()
                             let creation_date = yourDate.toISOString().split('T')[0];
                             let updateDate = yourDate.toISOString().split('T')[0];
@@ -377,7 +468,8 @@ if ($result) {
                             type: 'POST',
                             url: '<?php echo $base_url; ?>/form-handlers/SubmitOrUpdateForm1_Kateter.php',
                             data: {
-                               
+                                isUpdate: true,
+                                form_id: form_id,
                                 patient_id: patient_id,
                                 patient_name: patient_name,
                                 creation_date: creation_date,

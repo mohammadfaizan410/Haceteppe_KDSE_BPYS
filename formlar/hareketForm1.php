@@ -448,6 +448,16 @@ if (isset($_GET['logout'])) {
                                 //stop function
                                 return false;
                             }
+                            if($('.form-check-input[name="inHospitalExercise"]:checked').val() === "Evet" && $('.form-check-input[name="exerciseType"]:checked').length === 0){
+                                //scroll to inHospitalExercise
+                                $('html, body').animate({
+                                    scrollTop: $('.form-check-input[name="inHospitalExercise"]').first().offset().top
+                                }, 200);
+                                // Display error message
+                                $('.form-check-input[name="inHospitalExercise"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                                //stop function
+                                return false;
+                            }
 
                             if($('.form-check-input[name="movementProblem"]:checked').length === 0){
                                 //scroll to movementProblem
@@ -459,7 +469,7 @@ if (isset($_GET['logout'])) {
                                 //stop function
                                 return false;
                             }
-                            if($('.form-check-input[name="movementProblem"]:checked').length !== 0 && $('.form-check-input[name="movementProblemDesc"]:checked').length === 0){
+                            if($('.form-check-input[name="movementProblem"]:checked').val() === "Var" && $('.form-check-input[name="movementProblemDesc"]:checked').length === 0){
                                 //scroll to movementProblem
                                 $('html, body').animate({
                                     scrollTop: $('.form-check-input[name="movementProblem"]').first().offset().top
