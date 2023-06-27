@@ -697,7 +697,7 @@ if (isset($_GET['logout'])) {
                             patient_id + "&patient_name=" + encodeURIComponent(patient_name);
                             $("#tick-container").fadeIn(800);
                             // Change the tick background to the animated GIF
-                            $("#tick").css("background-image", "url('./check.gif')");
+                            $("#tick").css("background-image", "url('./check-2.gif')");
 
                             // Delay for 2 seconds (adjust the duration as needed)
                             setTimeout(function() {
@@ -705,7 +705,7 @@ if (isset($_GET['logout'])) {
                             $("#content").load(url);
                             $("#tick-container").fadeOut(600);
                             // Hide the tick container
-                            }, 600);
+                            }, 1000);
                     },
                     error: function(data) {
                         console.log(data)
