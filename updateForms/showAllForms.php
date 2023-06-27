@@ -210,11 +210,7 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
-<<<<<<< HEAD
-        $sql = "SELECT * FROM  ozgecmisform1 WHERE patient_id =" . $userid;
-=======
         $sql = "SELECT * FROM vucudutemizform1 WHERE patient_id =" . $userid;
->>>>>>> b1a37f9737235f45cad6a7ab00c2e07471ed1982
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         $values = [];
@@ -232,11 +228,8 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
-<<<<<<< HEAD
         $sql = "SELECT * FROM  bosaltimform1 WHERE patient_id =" . $userid;
-=======
         $sql = "SELECT * FROM  ilestimform1  WHERE patient_id =" . $userid;
->>>>>>> b1a37f9737235f45cad6a7ab00c2e07471ed1982
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         $values = [];
@@ -245,8 +238,6 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
-<<<<<<< HEAD
-=======
         $sql = "SELECT * FROM  calismaform1  WHERE patient_id =" . $userid;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
@@ -306,8 +297,6 @@ if (isset($_GET['logout'])) {
             'table18_data' => $values18,
             'table19_data' => $values19,
             'table20_data' => $values20,
-<<<<<<< HEAD
-=======
             'table21_data' => $values21,
             'table22_data' => $values22,
             'table23_data' => $values23,
@@ -439,13 +428,10 @@ if (isset($_GET['logout'])) {
                                         $form_17_options .= '<li class="m-2 p-2 "><div class="entered-forms"><a class="nav-items review btn btn-success"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Solunumgereksinimi-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Solunum Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table17_data') {
-<<<<<<< HEAD
                                         echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color : white;"  href="' . $base_url . '/formlar-review/Form1-hereket-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Herket_form1   Date:' . $form["update_date"] . '</p></a></div>';
-=======
                                         $form_id = $form["form_id"];
                                         $update_date = $form["update_date"];
                                         $form_18_options .= '<li class="m-2 p-2 "><div class="entered-forms"><a class="nav-items review btn btn-success"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-hereket-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Hareket Date: ' . $update_date . '</p></a></div></li>';
->>>>>>> b1a37f9737235f45cad6a7ab00c2e07471ed1982
                                     }
                                     if ($key ===  'table18_data') {
                                         $form_id = $form["form_id"];
@@ -453,12 +439,10 @@ if (isset($_GET['logout'])) {
                                         $form_19_options .= '<li class="m-2 p-2 "><div class="entered-forms"><a class="nav-items review btn btn-success"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Vucudu-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Vucut Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table19_data') {
-<<<<<<< HEAD
                                         echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color : white;"  href="' . $base_url . '/formlar-review/Form1-vucudu-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Vucudu_form1   Date:' . $form["update_date"] . '</p></a></div>';
                                     }
                                     if ($key ===  'table20_data') {
                                         echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color : white;"  href="' . $base_url . '/formlar-review/Form1-Bosaltim-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Bosaltim_form1   Date:' . $form["update_date"] . '</p></a></div>';
-=======
                                         $form_id = $form["form_id"];
                                         $update_date = $form["update_date"];
                                         $form_20_options .= '<li class="m-2 p-2 "><div class="entered-forms"><a class="nav-items review btn btn-success"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Katerer-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Katerer Date: ' . $update_date . '</p></a></div></li>';
