@@ -405,14 +405,14 @@ if (isset($_GET['logout'])) {
             <div class="input-section d-flex">
                 <p class="usernamelabel">Gastrik Rezidü </p>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gastric-residue-yok" id="gastric-residue-yok"
+                    <input class="form-check-input gastric_residue" type="radio" name="gastric_residue_yok" id="gastric_residue_yok"
                         value="Yok">
-                    <label class="form-check-label" for="gastric-residue-yok">
+                    <label class="form-check-label" for="gastric_residue_yok">
                         <span class="checkbox-header">Yok</span>
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gastric-residue-var" id="gastric-residue-var"
+                    <input class="form-check-input gastric_residue" type="radio" name="gastric-residue-var" id="gastric-residue-var"
                         value="Var">
                     <label class="form-check-label" for="gastric-residue-var">
                         <span class="checkbox-header">Var</span>
@@ -1647,10 +1647,10 @@ if (isset($_GET['logout'])) {
             });
 
             //Gastrik Rezidü
-            $('#gastric-residue-yok, #gastric-residue-var').change(function() {
+            $('#gastric_residue_yok, #gastric-residue-var').change(function() {
                 if ($(this).prop('checked')) {
                 // Uncheck the other radio button
-                $('#gastric-residue-yok, #gastric-residue-var').not(this).prop('checked', false);
+                $('#gastric_residue_yok, #gastric-residue-var').not(this).prop('checked', false);
                 
                     if ($('#gastric-residue-var').prop('checked')){
                     $('.gastric_residue_table :input').prop('disabled', false); 
@@ -2013,43 +2013,174 @@ if (isset($_GET['logout'])) {
                         var Boy = $('#Boy').val();
                         var Kilo = $('#Kilo').val();
                         var BKI = $('#BKI').val();
-                        var karsilamada = $('input[name="karşılamada"]:checked').val();
+                        var nutritional_needs = $('#nutritional_needs:checked').val();
+                        var diet = $('#diet:checked').val();
+                        var diet_input = $('#diet_input').val();
+                        var food_consumption = $('input.food_consumption:checked').val();
+                        var food_consumption_var = $('input.food_consumption_var:checked').val();
+                        var liquid_consumption = $('input#liquid_consumption').val();
+                        var diet_eating_process = $('input#diet_eating_process').val();
+                        var with_probe = $('input#with_probe').val();
+                        var nazal_radio = $('input#nazal_radio').val();
+                        var sag_nazal_input = $('input.nazal_input[name="sag_nazal_input"]').val();
+                        var sol_nazal_input = $('input.nazal_input[name="sol_nazal_input"]').val();
+                        var orogastrik_input = $('input#orogastrik_input').val();
+                        var gastrostomi_input = $('input#gastrostomi_input').val();
+                        var jejunostomi_input = $('input#jejunostomi_input').val();
+                        var gastric_residue = $('input.gastric_residue:checked').val();
+                        var gastric_residue_ml = $('input#gastric_residue_ml').val();
+                        var nazogastrik_decompression_radio = $('input.nazogastrik_decompression_radio:checked').val();
+                        var chewing_difficulty = $('input.chewing_difficulty:checked').val();
+                        var weight_loss = $('input.weight_loss:checked').val();
+                        var weight_loss_var = $('input.weight_loss_var:checked').val();
+                        var weight_gain = $('input.weight_gain:checked').val();
+                        var weight_gain_var = $('input.weight_gain_var:checked').val();
 
+                        var nutrition_issue = $('input.nutrition_issue:checked').val();
+                        var all_Inputs_nutrition_issue_var = $('input.nutrition_issue_var');
+                        var nutrition_issue_var = [];
+                        if (all_Inputs_nutrition_issue_var.length != 0) {
+                        all_Inputs_nutrition_issue_var.each(function(index, item) {
+                            if ($(item).is(':checked')) {
+                            nutrition_issue_var.push($(item).val());
+                            }
+                        });
+                        }
+                        var lip_color_issue = $('input.lip_color_issue:checked').val();
+                        var all_Inputs_lip_color_issue_var = $('input.lip_color_issue_var');
+                        var lip_color_issue_var = [];
+                        if (all_Inputs_lip_color_issue_var.length != 0) {
+                            all_Inputs_lip_color_issue_var.each(function(index, item) {
+                            if ($(item).is(':checked')) {
+                                lip_color_issue_var.push($(item).val());
+                            }
+                        });
+                        }
+                        var oral_mucosa_issue = $('input.oral_mucosa_issue:checked').val();
+                        var all_Inputs_oral_mucosa_issue_var = $('input.oral_mucosa_issue_var');
+                        var oral_mucosa_issue_var = [];
+                        if (all_Inputs_oral_mucosa_issue_var.length != 0) {
+                            all_Inputs_oral_mucosa_issue_var.each(function(index, item) {
+                            if ($(item).is(':checked')) {
+                                oral_mucosa_issue_var.push($(item).val());
+                            }
+                        });
+                        }
+                        var teeth_gums_issue = $('input.teeth_gums_issue:checked').val();
+                        var all_Inputs_teeth_gums_issue_var = $('input.teeth_gums_issue_var');
+                        var teeth_gums_issue_var = [];
+                        if (all_Inputs_teeth_gums_issue_var.length != 0) {
+                            all_Inputs_teeth_gums_issue_var.each(function(index, item) {
+                            if ($(item).is(':checked')) {
+                                teeth_gums_issue_var.push($(item).val());
+                            }
+                        });
+                        }
+                        var tongue_issue = $('input.tongue_issue:checked').val();
+                        var all_Inputs_tongue_issue_var = $('input.tongue_issue_var');
+                        var tongue_issue_var = [];
+                        if (all_Inputs_tongue_issue_var.length != 0) {
+                            all_Inputs_tongue_issue_var.each(function(index, item) {
+                            if ($(item).is(':checked')) {
+                                tongue_issue_var.push($(item).val());
+                            }
+                        });
+                        }
+                        var pharynx_issue = $('input.pharynx_issue:checked').val();
+                        var all_Inputs_pharynx_issue_var = $('input.pharynx_issue_var');
+                        var pharynx_issue_var = [];
+                        if (all_Inputs_pharynx_issue_var.length != 0) {
+                            all_Inputs_pharynx_issue_var.each(function(index, item) {
+                            if ($(item).is(':checked')) {
+                                pharynx_issue_var.push($(item).val());
+                            }
+                        });
+                        }
+                        var tonsils_issue = $('input.tonsils_issue:checked').val();
+                        var all_Inputs_tonsils_issue_var = $('input.tonsils_issue_var');
+                        var tonsils_issue_var = [];
+                        if (all_Inputs_tonsils_issue_var.length != 0) {
+                            all_Inputs_tonsils_issue_var.each(function(index, item) {
+                            if ($(item).is(':checked')) {
+                                tonsils_issue_var.push($(item).val());
+                            }
+                        });
+                        }
+                        var abdominal_issue = $('input.abdominal_issue:checked').val();
+                        var abdominal_contour = $('input.abdominal_contour:checked').val();
+                        var herniation = $('input.herniation:checked').val();
+                        var herniation_input = $('input.herniation_input').val();
+                        var umbelikus = $('input.umbelikus:checked').val();
+                        var abdominal_rash = $('input.abdominal_rash:checked').val();
+                        var abdominal_acites = $('input.abdominal_acites:checked').val();
+                        var abdominal_mass_place = $('input#abdominal_mass_place').val();
+                        var abdominal_mass_size = $('input#abdominal_mass_size').val();
+                        var abdominal_mass_description = $('input#abdominal_mass_description').val();
+                        var pigmentation = $('input.pigmentation:checked').val();
+                        var stria = $('input.stria:checked').val();
+                        var scar = $('input.scar:checked').val();
+                        var scar_input = $('input.scar_input').val();
 
-                        return;
                         $.ajax({
                             type: 'POST',
                             url: '<?php echo $base_url; ?>/form-handlers/SubmitOrUpdateForm1_BeslenmeGereksinimi.php',
                             data: {
                                 OgunSayisi: OgunSayisi,
-                                TukettigiBesin: TukettigiBesin,
-                                PisirmeYontemi: PisirmeYontemi,
-                                Boy: Boy,
-                                Kilo: Kilo,
-                                BKI: BKI,
-                                karşılamada: karşılamada,
-                                diyet: diyet,
-                                BeslenmeSekli: BeslenmeSekli,
-                                passageTarihi: passageTarihi,
-                                probeType: probeType,
-                                NazogastrikRadio: NazogastrikRadio,
-                                cignemeRadio: cignemeRadio,
-                                beslenmeIlgili: beslenmeIlgili,
-                                dudaklarinDurum: dudaklarinDurum,
-                                AgizMukozasi: AgizMukozasi,
-                                DislerDisEtleri: DislerDisEtleri,
-                                DilDurum: DilDurum,
-                                FarenksDurum: FarenksDurum,
-                                TonsilaDurum: TonsilaDurum,
-                                AbdominalHassasiyet: AbdominalHassasiyet,
-                                AbdominalKontür: AbdominalKontür,
-                                Herniasyon: Herniasyon,
-                                Umbilikus: Umbilikus,
-                                AbdomenDokuntu: AbdomenDokuntu,
-                                Asit: Asit,
-                                Kitle: Kitle,
-                                KarinDerisi: KarinDerisi,
-                                Stria: Stria
+                                TukettigiBesin:TukettigiBesin,
+                                PisirmeYontemi:PisirmeYontemi,
+                                Boy:Boy,
+                                Kilo:Kilo,
+                                BKI:BKI,
+                                nutritional_needs:nutritional_needs,
+                                diet:diet,
+                                diet_input:diet_input,
+                                food_consumption:food_consumption,
+                                food_consumption_var:food_consumption_var,
+                                liquid_consumption:liquid_consumption,
+                                diet_eating_process:diet_eating_process,
+                                with_probe:with_probe,
+                                nazal_radio:nazal_radio,
+                                sag_nazal_input:sag_nazal_input,
+                                sol_nazal_input:sol_nazal_input,
+                                orogastrik_input:orogastrik_input,
+                                gastrostomi_input:gastrostomi_input,
+                                jejunostomi_input:jejunostomi_input,
+                                gastric_residue:gastric_residue,
+                                gastric_residue_ml:gastric_residue_ml,
+                                nazogastrik_decompression_radio:nazogastrik_decompression_radio,
+                                chewing_difficulty:chewing_difficulty,
+                                weight_loss:weight_loss,
+                                weight_loss_var:weight_loss_var,
+                                weight_gain:weight_gain,
+                                weight_gain_var:weight_gain_var,
+                                nutrition_issue:nutrition_issue,
+                                nutrition_issue_var:nutrition_issue_var,
+                                lip_color_issue:lip_color_issue,
+                                lip_color_issue_var:lip_color_issue_var,
+                                oral_mucosa_issue:oral_mucosa_issue,
+                                oral_mucosa_issue_var:oral_mucosa_issue_var,
+                                teeth_gums_issue:teeth_gums_issue,
+                                teeth_gums_issue_var:teeth_gums_issue_var,
+                                tongue_issue:tongue_issue,
+                                tongue_issue_var:tongue_issue_var,
+                                pharynx_issue:pharynx_issue,
+                                pharynx_issue_var:pharynx_issue_var,
+                                tonsils_issue:tonsils_issue,
+                                tonsils_issue_var:tonsils_issue_var,
+                                abdominal_issue:abdominal_issue,
+                                abdominal_contour:abdominal_contour,
+                                herniation:herniation,
+                                herniation_input:herniation_input,
+                                umbelikus:umbelikus,
+                                abdominal_rash:abdominal_rash,
+                                abdominal_acites:abdominal_acites,
+                                abdominal_mass_place:abdominal_mass_place,
+                                abdominal_mass_size:abdominal_mass_size,
+                                abdominal_mass_description:abdominal_mass_description,
+                                pigmentation:pigmentation,
+                                stria:stria,
+                                scar:scar,
+                                scar_input:scar_input,
                             },
                             success: function(data) {
                                 $("#tick-container").fadeIn(800);
@@ -2234,7 +2365,7 @@ if (isset($_GET['logout'])) {
                 }
 
                 //Gastrik Rezidü
-                if(!($('#gastric-residue-yok').is(':checked') || $('#gastric-residue-var').is(':checked'))){
+                if(!($('#gastric_residue_yok').is(':checked') || $('#gastric-residue-var').is(':checked'))){
                     scrollToInput('#gastric-residue-var');
 
                     return false;
