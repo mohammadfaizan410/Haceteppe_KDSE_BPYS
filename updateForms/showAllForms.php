@@ -284,8 +284,9 @@ if (isset($_GET['logout'])) {
         ?>
         <div class="send-patient">
 
+            <span class='close closeBtn' id='closeBtn1'>&times;</span>
             <div class="patients-save">
-
+                
             </div>
             <div class="text-center rounded p-4" style="background-color: " id="patients-table">
                 <div class="d-flex align-items-center justify-content-between mb-4">
@@ -668,6 +669,15 @@ if (isset($_GET['logout'])) {
             </div>
         </div>
         <script>
+            //closeBtn click
+            $(function() {
+                $("#closeBtn1").on("click", function(e) {
+                    console.log("closeBtn clicked");
+                    e.preventDefault();
+                    $("#content").load("<?php echo $base_url; ?>/updateForms/showAllPatients.php");
+                })
+            })
+
         $(function() {
             $("a.review").on("click", function(e) {
                 e.preventDefault();

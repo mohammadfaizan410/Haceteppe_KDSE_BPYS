@@ -43,11 +43,43 @@ if (isset($_GET['logout'])) {
         .send-patient {
             align-self: center;
         }
+        body {
+  margin: 0; /* Remove default body margin */
+  padding: 0; /* Remove default body padding */
+}
+
+#tick-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none; /* Hide the tick container initially */
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  background-color: #ffffff;
+}
+
+#tick {
+  width: 50%;
+  height: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  margin: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateX(25%);
+}
     </style>
 
 </head>
 
 <body style="background-color:white">
+<div id="tick-container">
+  <div id="tick"></div>
+</div>
     <div class="container-fluid pt-4 px-4">
         <div class="container-fluid pt-4 px-4">
             <div class="send-patient">
@@ -97,6 +129,19 @@ if (isset($_GET['logout'])) {
                 $("#content").load("./showAllForms.php");
             })
         });
+        $(window).on('resize scroll', function() {
+  var container = $('#tick-container');
+  var tick = $('#tick');
+
+  var windowHeight = $(window).height();
+  var containerHeight = container.outerHeight();
+
+  // Calculate the top position of the container
+  var topPosition = (windowHeight - containerHeight) / 2;
+
+  // Set the top position of the container
+  container.css('top', topPosition + 'px');
+});
 
         $(function() {
             $('#submit').click(function(e) {
@@ -110,7 +155,6 @@ if (isset($_GET['logout'])) {
                 let patient_surname = $("input[name='surname']").val();
                 let patient_id = parseInt($("input[name='patient_id']").val());
 
-                var minAge = 18;
                 var today = new Date()
                 //Calculates age from given Birth Date in the form//
 
@@ -119,10 +163,26 @@ if (isset($_GET['logout'])) {
                 var birthDate = new Date(dt1);
                 var years = (givenDate.getFullYear() - birthDate.getFullYear());
 
+                //set all border to default
+                $(".form-control").css("border-color", "#ced4da");
                 if (givenDate.getMonth() < birthDate.getMonth() ||
                     givenDate.getMonth() == birthDate.getMonth() && givenDate.getDate() < birthDate
                     .getDate()) {
                     years--;
+                }
+                if(patient_name ==""){
+                    //change patient name to red
+                    $("input[name='name']").css("border-color", "red");
+                    return false;
+                }
+                else if(patient_surname ==""){
+                    //change patient surname to red
+                    $("input[name='surname']").css("border-color", "red");
+                    return false;
+                }
+                else if(dt1 === ""){
+                    $("input[name='date']").css("border-color", "red");
+                    return false;
                 }
 
                 console.log(years);
@@ -140,8 +200,18 @@ if (isset($_GET['logout'])) {
                         patient_age: patient_age
                     },
                     success: function(data) {
-                        alert(data);
+                        $("#tick-container").fadeIn(800);
+
+                        // Change the tick background to the animated GIF
+                        $("#tick").css("background-image", "url('./check.gif')");
+
+                        // Delay for 2 seconds (adjust the duration as needed)
+                        setTimeout(function() {
+                        // Load the content
                         $("#content").load("<?php echo $base_url; ?>/updateForms/showAllPatients.php");
+                        $("#tick-container").fadeOut(800);
+                        // Hide the tick container
+                        }, 2000);
                     },
                     error: function(data) {
                         Swal.fire({
