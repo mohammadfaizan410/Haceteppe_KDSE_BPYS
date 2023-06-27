@@ -228,7 +228,6 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
-        $sql = "SELECT * FROM  bosaltimform1 WHERE patient_id =" . $userid;
         $sql = "SELECT * FROM  ilestimform1  WHERE patient_id =" . $userid;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
@@ -457,11 +456,6 @@ if (isset($_GET['logout'])) {
                                         $update_date = $form["update_date"];
                                         $form_22_options .= '<li class="m-2 p-2 "><div class="entered-forms"><a class="nav-items review btn btn-success"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Calisma-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Calisma Date: ' . $update_date . '</p></a></div></li>';
                                     }
-                                    if ($key ===  'table22_data') {
-                                        $form_id = $form["form_id"];
-                                        $update_date = $form["update_date"];
-                                        $form_23_options .= '<li class="m-2 p-2 "><div class="entered-forms"><a class="nav-items review btn btn-success"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-egitim-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Egitim Date: ' . $update_date . '</p></a></div></li>';
-                                    }
                                     if ($key ===  'table23_data') {
                                         $form_id = $form["form_id"];
                                         $update_date = $form["update_date"];
@@ -471,11 +465,6 @@ if (isset($_GET['logout'])) {
                                         $form_id = $form["form_id"];
                                         $update_date = $form["update_date"];
                                         $form_23_options .= '<li class="m-2 p-2 "><div class="entered-forms"><a class="nav-items review btn btn-success"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-egitim-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Egitim Date: ' . $update_date . '</p></a></div></li>';
-                                    }
-                                    if ($key ===  'table23_data') {
-                                        $form_id = $form["form_id"];
-                                        $update_date = $form["update_date"];
-                                        $form_24_options .= '<li class="m-2 p-2 "><div class="entered-forms"><a class="nav-items review btn btn-success"  style="color: white;" href="' . $base_url . '/formlar-review/Form1-bosaltim-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Bosaltim Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                 };
                             }
