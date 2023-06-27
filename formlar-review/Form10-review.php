@@ -621,13 +621,8 @@ if (isset($_GET['logout'])) {
                             ?>;
                         var form_id = <?php echo $form_id ?>;
                         let form_num = 10;
-                        let patient_name = "<?php
-                                                echo urldecode($_GET['patient_name']);
-                                                ?>";
-                        var patient_id = "<?php
-                                                $userid = $_GET['patient_id'];
-                                                echo $userid
-                                                ?>";
+                        let patient_name = "<?php echo $form10[0]['patient_name']; ?>"
+                        var patient_id = "<?php echo $form10[0]['patient_id']; ?>"
                         let yourDate = new Date()
                         let creationDate = yourDate.toISOString().split('T')[0];
                         let updateDate = yourDate.toISOString().split('T')[0];
@@ -670,10 +665,6 @@ if (isset($_GET['logout'])) {
                             }
                         };
 
-                        let spo2_percentage = $("input[name='spo2_percentage']").val();
-                        let weight_input = $('#kilo_yapiliyor').css("display") === 'flex' ? $(
-                            "input[name='weight_input']").val() : 'Yapilmiyorum';
-
 
                         $.ajax({
                             type: 'POST',
@@ -703,6 +694,8 @@ if (isset($_GET['logout'])) {
                                 weight_input: weight_input
                             },
                             success: function(data) {
+                                let patient_id = "<?php echo $form10[0]['patient_id']; ?>";
+                                let patient_name = "<?php echo $form10[0]['patient_name']; ?>";
                                 let url =
                                     "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
                                     patient_id + "&patient_name=" + encodeURIComponent(patient_name);
