@@ -10,6 +10,18 @@ if (isset($_GET['logout'])) {
     unset($_SESSION);
     header("Location: main.php");
 }
+require_once('../config-students.php');
+
+$userid = $_SESSION['userlogin']['id'];
+$form_id = $_GET['form_id'];
+$sql = "SELECT * FROM bosaltimform1 where form_id= $form_id";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+if ($result) {
+    $bosaltim = $smtmselect->fetchAll(PDO::FETCH_ASSOC)[0];
+} else {
+    echo 'error';
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -678,7 +690,28 @@ if (isset($_GET['logout'])) {
 
 </script>
 <script>
-    $('[name="excretionProblems"]').prop('disabled', true);
+    var stoolEmptyingHelp = "<?php echo $bosaltim['stoolEmptyingHelp']; ?>";
+    $('[name="stoolEmptyingHelp"][value="'+stoolEmptyingHelp+'"]').attr('checked', true);
+
+    var hospitalStoolEmptyingFrequency = "<?php echo $bosaltim['hospitalStoolEmptyingFrequency']; ?>";
+    $('[name="hospitalStoolEmptyingFrequency"]').val(hospitalStoolEmptyingFrequency);
+
+    var hospitalStoolEmptyingDate = "<?php echo $bosaltim['hospitalStoolEmptyingDate']; ?>";
+    $('[name="hospitalStoolEmptyingDate"]').val(hospitalStoolEmptyingDate);
+
+    var BoşaltımSorun = "<?php echo $bosaltim['bosaltimSorun']; ?>";
+    $('[name="BoşaltımSorun"][value="'+BoşaltımSorun+'"]').attr('checked', true);
+
+    if ($('[name="BoşaltımSorun"]:checked').val() === "Var"){
+        var excretionProblems = <?php echo $bosaltim['excretionProblems']; ?>;
+        
+        excretionProblems.forEach(function(value) {
+                    $('[name="excretionProblems"][value="'+value+'"]').prop('checked', true);
+                })
+        $('[name="excretionProblems"]').prop('disabled', false);
+    } else {
+        $('[name="excretionProblems"]').prop('disabled', true);
+    }
 
     $('[name="BoşaltımSorun"]').on('change', function(){
         var selectedValue = $(this).val();
@@ -690,27 +723,70 @@ if (isset($_GET['logout'])) {
         }
     })
 
-    $('[name="StomaRengi"]').prop('disabled', true);
-    $('[name="StomanınRengi"]').prop('disabled', true);
-    $('[name="excretionForm1"]').prop('disabled', true);
-    $('[name="excretionForm2"]').prop('disabled', true);
-    $('[name="excretionForm"]').prop('disabled', true);
+    var bagirsak_sesleri = "<?php echo $bosaltim['bagirsak_sesleri']; ?>";
+    $('[name="bagirsak_sesleri"]').val(bagirsak_sesleri);
+
+    var defekasyon_zamani = "<?php echo $bosaltim['defekasyon_zamani']; ?>";
+    $('[name="defekasyon_zamani"]').val(defekasyon_zamani);
+
+    var defekasyon_tekrari = "<?php echo $bosaltim['defekasyon_tekrari']; ?>";
+    $('[name="defekasyon_tekrari"]').val(defekasyon_tekrari);
+
+    var protezlertable2 = "<?php echo $bosaltim['protezlertable']; ?>";
+    $('[name="protezlertable2"][value="'+protezlertable2+'"]').attr('checked', true);
+
+    var BoşaltımŞekli = "<?php echo $bosaltim['bosaltimSekli']; ?>";
+    $('[name="BoşaltımŞekli"][value="'+BoşaltımŞekli+'"]').attr('checked', true);
+
+    if (BoşaltımŞekli == "Var"){
+        $('[name="excretionForm"]').prop('disabled', false);
+        var excretionForm = "<?php echo $bosaltim['excretionForm']; ?>";
+        $('[name="excretionForm"][value="'+excretionForm+'"]').attr('checked', true);
+        if (excretionForm == "Kolostom") {
+            var excretionForm1 = <?php echo $bosaltim['kolostomExcretionForm']; ?>;
+            var kolostomStomaninRengi = "<?php echo $bosaltim['kolostomStomaninRengi']; ?>";
+            excretionForm1.forEach(function(value) {
+                    $('[name="excretionForm1"][value="'+value+'"]').prop('checked', true);
+                })
+            $('[name="StomaRengi"]').val(kolostomStomaninRengi).attr('disabled', false);
+            $('[name="excretionForm1"]').prop('disabled', false);
+            $('[name="StomanınRengi"]').attr('disabled', true);
+            $('[name="excretionForm2"]').prop('disabled', true);
+        } else {
+            var excretionForm2 = <?php echo $bosaltim['ileostomiExcretionForm']; ?>;
+            var ileostomiStomaninRengi = "<?php echo $bosaltim['ileostomiStomaninRengi']; ?>";
+            excretionForm2.forEach(function(value) {
+                    $('[name="excretionForm2"][value="'+value+'"]').prop('checked', true);
+                })
+            $('[name="StomanınRengi"]').val(ileostomiStomaninRengiStomaninRengi).attr('disabled', false);
+            $('[name="excretionForm2"]').prop('disabled', false);
+            $('[name="StomanRengi"]').attr('disabled', true);
+            $('[name="excretionForm1"]').prop('disabled', true);
+        }
+
+    } else {
+        $('[name="excretionForm"]').prop('disabled', true);
+        $('[name="StomaRengi"]').attr('disabled', true);
+        $('[name="excretionForm1"]').prop('disabled', true);
+        $('[name="StomanınRengi"]').attr('disabled', true);
+        $('[name="excretionForm2"]').prop('disabled', true);
+    }
 
     $('[name="BoşaltımŞekli"]').on('change', function(){
         var selectedValue = $(this).val();
 
         if (selectedValue === "Var"){
-            $('[name="StomaRengi"]').prop('disabled', true);
-            $('[name="StomanınRengi"]').prop('disabled', true);
-            $('[name="excretionForm1"]').prop('disabled', true);
-            $('[name="excretionForm2"]').prop('disabled', true);
             $('[name="excretionForm"]').prop('disabled', false);
+            $('[name="StomaRengi"]').attr('disabled', true);
+            $('[name="excretionForm1"]').prop('disabled', true);
+            $('[name="StomanınRengi"]').attr('disabled', true);
+            $('[name="excretionForm2"]').prop('disabled', true);
         } else {
-            $('[name="StomaRengi"]').val('').prop('disabled', true);
-            $('[name="StomanınRengi"]').val('').prop('disabled', true);
-            $('[name="excretionForm1"]').prop('checked', false).prop('disabled', true);
-            $('[name="excretionForm2"]').prop('checked', false).prop('disabled', true);
             $('[name="excretionForm"]').prop('checked', false).prop('disabled', true);
+            $('[name="StomaRengi"]').val('').attr('disabled', true);
+            $('[name="excretionForm1"]').prop('checked', false).prop('disabled', true);
+            $('[name="StomanınRengi"]').val('').attr('disabled', true);
+            $('[name="excretionForm2"]').prop('checked', false).prop('disabled', true);
         }
     })
 
@@ -718,19 +794,30 @@ if (isset($_GET['logout'])) {
         var selectedValue = $(this).val();
 
         if (selectedValue === "Kolostom"){
-            $('[name="StomaRengi"]').prop('disabled', false);
-            $('[name="StomanınRengi"]').val('').prop('disabled', true);
+            $('[name="StomaRengi"]').attr('disabled', false);
             $('[name="excretionForm1"]').prop('disabled', false);
+            $('[name="StomanınRengi"]').val('').attr('disabled', true);
             $('[name="excretionForm2"]').prop('checked', false).prop('disabled', true);
         } else {
-            $('[name="StomaRengi"]').val('').prop('disabled', true);
-            $('[name="StomanınRengi"]').prop('disabled', false);
-            $('[name="excretionForm1"]').prop('checked', false).prop('disabled', true);
+            $('[name="StomaRengi"]').attr('disabled', true);
+            $('[name="excretionForm1"]').val('').prop('checked', false).prop('disabled', true);
+            $('[name="StomanınRengi"]').attr('disabled', false);
             $('[name="excretionForm2"]').prop('disabled', false);
         }
     })
 
-    $('[name="excretionIssues"]').prop('disabled', true);
+    var BoşaltımdaSorun = "<?php echo $bosaltim['bosaltimdaSorun']; ?>";
+    $('[name="BoşaltımdaSorun"][value="'+BoşaltımdaSorun+'"]').attr('checked', true);
+
+    if (BoşaltımdaSorun === "Var"){
+        var excretionIssues = <?php echo $bosaltim['excretionIssues']; ?>;
+        excretionIssues.forEach(function(value) {
+                    $('[name="excretionIssues"][value="'+value+'"]').prop('checked', true);
+                })
+        $('[name="excretionIssues"]').prop('disabled', false);
+    } else {
+        $('[name="excretionIssues"]').prop('disabled', true);
+    }
 
     $('[name="BoşaltımdaSorun"]').on('change', function(){
         var selectedValue = $(this).val();
@@ -742,32 +829,66 @@ if (isset($_GET['logout'])) {
         }
     })
 
-    $('[name="mesane_takilma_tarihi"]').prop('disabled', true);
-    $('[name="attachmentPurpose"]').prop('disabled', true);
+    var Mesane_kateterizasyonu = "<?php echo $bosaltim['Mesane_kateterizasyonu']; ?>";
+    $('[name="Mesane_kateterizasyonu"][value="'+Mesane_kateterizasyonu+'"]').attr('checked', true);
+
+    if (Mesane_kateterizasyonu === "Var"){
+        var mesane_takilma_tarihi = "<?php echo $bosaltim['mesane_takilma_tarihi']; ?>";
+        var attachmentPurpose = <?php echo $bosaltim['attachmentPurpose']; ?>;
+        attachmentPurpose.forEach(function(value) {
+                    $('[name="attachmentPurpose"][value="'+value+'"]').prop('checked', true);
+                })
+
+        $('[name="attachmentPurpose"]').prop('disabled', false);
+        $('[name="mesane_takilma_tarihi"]').val(mesane_takilma_tarihi).prop('disabled', false);
+    } else {
+        $('[name="attachmentPurpose"]').prop('disabled', true);
+        $('[name="mesane_takilma_tarihi"]').prop('disabled', true);
+    }
 
     $('[name="Mesane_kateterizasyonu"]').on('change', function(){
         var selectedValue = $(this).val();
 
         if (selectedValue === "Var"){
-            $('[name="mesane_takilma_tarihi"]').prop('disabled', false);
             $('[name="attachmentPurpose"]').prop('disabled', false);
+            $('[name="mesane_takilma_tarihi"]').prop('disabled', false);
         } else {
-            $('[name="mesane_takilma_tarihi"]').val('').prop('disabled', true);
             $('[name="attachmentPurpose"]').prop('checked', false).prop('disabled', true);
+            $('[name="mesane_takilma_tarihi"]').val('').prop('disabled', true);
         }
     })
 
-    $('[name="ureter"]').attr('disabled', true);
+    var Üreterestomi = "<?php echo $bosaltim['ureterestomi']; ?>";
+    $('[name="Üreterestomi"][value="'+Üreterestomi+'"]').attr('checked', true);
+
+    if ($('[name="Üreterestomi"]:checked').val() === "Var"){
+        $('[name="ureter"]').prop('disabled', false);
+        var ureter = <?php echo $bosaltim['ureter']; ?>;
+        ureter.forEach(function(value) {
+                    $('[name="ureter"][value="'+value+'"]').prop('checked', true);
+                })
+    } else {
+        $('[name="ureter"]').prop('disabled', false);
+    }
 
     $('[name="Üreterestomi"]').on('change', function(){
         var selectedValue = $(this).val();
 
         if (selectedValue === "Var"){
-            $('[name="ureter"]').attr('disabled', false);
+            $('[name="ureter"]').prop('disabled', false);
         } else {
-            $('[name="ureter"]').prop('checked', false).attr('disabled', true);
+            $('[name="ureter"]').prop('checked', false).prop('disabled', true);
         }
     })
+
+    var Sistostomi = "<?php echo $bosaltim['Sistostomi']; ?>";
+    $('[name="Sistostomi"][value="'+Sistostomi+'"]').attr('checked', true);
+
+    var IdrarRengi = "<?php echo $bosaltim['IdrarRengi']; ?>";
+    $('[name="IdrarRengi"][value="'+IdrarRengi+'"]').attr('checked', true);
+
+    var IdrarBerrakligi = "<?php echo $bosaltim['IdrarBerrakligi']; ?>";
+    $('[name="IdrarBerrakligi"][value="'+IdrarBerrakligi+'"]').attr('checked', true);
 
 </script>
 <script>
@@ -956,13 +1077,14 @@ $('#submit').click(function(e) {
 
         e.preventDefault();
 
-        let patient_id = <?php
-                                $userid = $_GET['patient_id'];
-                                echo $userid
-                                ?>;
-        let patient_name = "<?php
-                                echo urldecode($_GET['patient_name']);
-                                ?>";
+        var id = "<?php
+
+                            $userid = $_SESSION['userlogin']['id'];
+                            echo $userid
+                            ?>";
+        var form_id = '<?php echo $form_id ?>';
+        var patient_id = "<?php echo $bosaltim['patient_id']; ?>";
+        let patient_name = "<?php echo $bosaltim['patient_name']; ?>";
         let yourDate = new Date()
         let creation_date = yourDate.toISOString().split('T')[0];
         let updateDate = yourDate.toISOString().split('T')[0];
@@ -1021,6 +1143,8 @@ $('#submit').click(function(e) {
             type: 'POST',
             url: '<?php echo $base_url; ?>/form-handlers/SubmitOrUpdateForm1_Bosaltim.php',
             data: {
+                isUpdate: true,
+                form_id: form_id,
                 patient_id: patient_id,
                 patient_name: patient_name,
                 creation_date: creation_date,
@@ -1038,7 +1162,7 @@ $('#submit').click(function(e) {
                 kolostomExcretionForm: kolostomExcretionForm,
                 kolostomStomaninRengi: kolostomStomaninRengi,
                 ileostomiExcretionForm: ileostomiExcretionForm,
-                ileostomiStomaninRengi: ileostomiStomaninRengi,
+                ileostomiStomaninRengi: kolostomStomaninRengi,
                 protezlertable: protezlertable,
                 bosaltimdaSorun: bosaltimdaSorun,
                 excretionIssues: excretionIssues,
@@ -1082,9 +1206,5 @@ $('#submit').click(function(e) {
 <script src="lib/tempusdominus/js/moment.min.js"></script>
 <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
 <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-
-<!-- Template Javascript -->
-<script src=""></script>
 </body>
-
 </html>

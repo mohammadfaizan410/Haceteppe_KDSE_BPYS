@@ -201,11 +201,7 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
-<<<<<<< HEAD
-        $sql = "SELECT * FROM  ilestimform1 WHERE patient_id =" . $userid;
-=======
         $sql = "SELECT * FROM  hareketform1 WHERE patient_id =" . $userid;
->>>>>>> c17f3489497279a3c3b928dd7c3a0bb10018a597
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         $values = [];
@@ -214,8 +210,6 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
-<<<<<<< HEAD
-=======
         $sql = "SELECT * FROM  ozgecmisform1 WHERE patient_id =" . $userid;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
@@ -234,7 +228,15 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
->>>>>>> c17f3489497279a3c3b928dd7c3a0bb10018a597
+        $sql = "SELECT * FROM  bosaltimform1 WHERE patient_id =" . $userid;
+        $smtmselect = $db->prepare($sql);
+        $result = $smtmselect->execute();
+        $values = [];
+        if ($result) {
+            $values20 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            echo 'error';
+        };
 
         $sql = "SELECT * FROM  tani1 WHERE patient_id =" . $userid;
         $smtmselect = $db->prepare($sql);
@@ -264,11 +266,9 @@ if (isset($_GET['logout'])) {
             'table15_data' => $values15,
             'table16_data' => $values16,
             'table17_data' => $values17,
-<<<<<<< HEAD
-=======
             'table18_data' => $values18,
             'table19_data' => $values19,
->>>>>>> c17f3489497279a3c3b928dd7c3a0bb10018a597
+            'table20_data' => $values20,
         ];
 
         ?>
@@ -386,9 +386,6 @@ if (isset($_GET['logout'])) {
                                         echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color : white;"  href="' . $base_url . '/formlar-review/Form1-Calisma-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Çalışma_form1   Date:' . $form["update_date"] . '</p></a></div>';
                                     }
                                     if ($key ===  'table17_data') {
-<<<<<<< HEAD
-                                        echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color : white;"  href="' . $base_url . '/formlar-review/Form1-Iletisim-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">İletişim_form1   Date:' . $form["update_date"] . '</p></a></div>';
-=======
                                         echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color : white;"  href="' . $base_url . '/formlar-review/Form1-hereket-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Herket_form1   Date:' . $form["update_date"] . '</p></a></div>';
                                     }
                                     if ($key ===  'table18_data') {
@@ -396,7 +393,9 @@ if (isset($_GET['logout'])) {
                                     }
                                     if ($key ===  'table19_data') {
                                         echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color : white;"  href="' . $base_url . '/formlar-review/Form1-vucudu-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Vucudu_form1   Date:' . $form["update_date"] . '</p></a></div>';
->>>>>>> c17f3489497279a3c3b928dd7c3a0bb10018a597
+                                    }
+                                    if ($key ===  'table20_data') {
+                                        echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color : white;"  href="' . $base_url . '/formlar-review/Form1-Bosaltim-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Bosaltim_form1   Date:' . $form["update_date"] . '</p></a></div>';
                                     }
                                 };
                             }
