@@ -350,10 +350,25 @@ if (isset($_GET['logout'])) {
     </script>
     <script>
     $(document).ready(function(){
+        var o2delivery = $('[name="o2_status"]');
+
         var o2Method = $('[name="o2_method"]');
         var o2Other = $('[name="o2_method_diger"]');
 
+        o2Method.prop('disabled', true);
         o2Other.attr('disabled', true);
+
+        o2delivery.on('change', function(){
+            var selectedValue = $(this).val();
+
+            if (selectedValue === "Aliyor"){
+                o2Method.prop('disabled', false);
+                o2Other.attr('disabled', true);
+            } else {
+                o2Method.prop('checked', false).prop('disabled', true);
+                o2Other.attr('disabled', true);
+            }
+        })
 
         o2Method.on('change', function(){
             var selectedValue = $(this).val();
@@ -363,6 +378,19 @@ if (isset($_GET['logout'])) {
             } else {
                 o2Other.val('');
                 o2Other.attr('disabled', true);
+            }
+        })
+
+        var weightInputCheck = $('#weight_input_toggle');
+        var weightInput = $('[name="weight_input"]');
+
+        weightInput.attr('disabled', false);
+
+        weightInputCheck.on('change', function(){
+            if (!$(this).is(':checked')){
+                weightInput.attr('disabled', false);
+            } else {
+                weightInput.val('').attr('disabled', true);
             }
         })
     })
@@ -612,7 +640,15 @@ if (isset($_GET['logout'])) {
                     }
 
 
-              
+                    if (!$('#weight_input_toggle').is(':checked') && $('[name="weight_input"]').val() === ""){
+                        $('html, body').animate({
+                            scrollTop: $('[name="weight_input"]').offset().top
+                        }, 200);
+                        //change border color
+                        $('[name="weight_input"]').css('border-color', 'red');
+                        //stop function
+                        return false;
+                    }
 
 
             $.ajax({

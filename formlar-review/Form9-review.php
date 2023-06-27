@@ -184,9 +184,24 @@ if (isset($_GET['logout'])) {
         $('#submit').click(function(e) {
             e.preventDefault()
             console.log("clicked")
-            var valid = this.form.checkValidity();
-
-            if (valid) {
+            if ($('[name="examination_result"]').val() === "") {
+                console.log('in here 1');
+                $('html, body').animate({
+                        scrollTop: $('[name="examination_result"]').offset().top
+                    }, 200);
+                    //change border color
+                    $('[name="examination_result"]').css('border-color', 'red');
+                    //stop function
+                    return false;
+            } else if ($('[name="referance_value"]').val() === "") {
+                $('html, body').animate({
+                        scrollTop: $('[name="referance_value"]').offset().top
+                    }, 200);
+                    //change border color
+                    $('[name="referance_value"]').css('border-color', 'red');
+                    //stop function
+                    return false;
+            } else {
                 var id = <?php
                                 $userid = $_SESSION['userlogin']['id'];
                                 echo $userid
