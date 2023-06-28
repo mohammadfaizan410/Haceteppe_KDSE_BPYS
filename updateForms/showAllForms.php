@@ -264,6 +264,15 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
+        $sql = "SELECT * FROM  form1_beslenme  WHERE patient_id =" . $userid;
+        $smtmselect = $db->prepare($sql);
+        $result = $smtmselect->execute();
+        $values = [];
+        if ($result) {
+            $values24 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            echo 'error';
+        };
 
         $sql = "SELECT * FROM  tani1 WHERE patient_id =" . $userid;
         $smtmselect = $db->prepare($sql);
@@ -299,6 +308,7 @@ if (isset($_GET['logout'])) {
             'table21_data' => $values21,
             'table22_data' => $values22,
             'table23_data' => $values23,
+            'table24_data' => $values24,
         ];
 
         ?>
@@ -339,6 +349,7 @@ if (isset($_GET['logout'])) {
                         $form_22_options = '';
                         $form_23_options = '';
                         $form_24_options = '';
+                        $form_25_options = '';
 
 
 
@@ -466,6 +477,12 @@ if (isset($_GET['logout'])) {
                                         $update_date = $form["update_date"];
                                         $form_23_options .= '<li class="m-2 p-2 "><div class="entered-forms"><a class="nav-items review btn btn-success"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-egitim-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Egitim Date: ' . $update_date . '</p></a></div></li>';
                                     }
+                                    if ($key ===  'table24_data') {
+                                        $form_id = $form["form_id"];
+                                        $update_date = $form["update_date"];
+                                        $form_25_options .= '<li class="m-2 p-2 "><div class="entered-forms"><a class="nav-items review btn btn-success"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-beslenme-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Beslenme Date: ' . $update_date . '</p></a></div></li>';
+                                    }
+
                                 };
                             }
                             echo "<div class='w-75 m-auto'>
@@ -518,6 +535,11 @@ if (isset($_GET['logout'])) {
                             echo "<li class='m-2'><div class='w-75 m-auto'>
                             <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form23_toggle'>Form1 Egitim <span id='form23_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_23_options' style='display:none'>" . $form_23_options . "</ul>
+                            </div></li>";}
+                            if($form_25_options!==""){
+                            echo "<li class='m-2'><div class='w-75 m-auto'>
+                            <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form25_toggle'>Form1 Beslenme <span id='form25_caret'>&#9660;<span></button>
+                            <ul class='entered-forms-ul' id='form_25_options' style='display:none'>" . $form_25_options . "</ul>
                             </div></li>";}
                            
                              echo "</ul>
@@ -1027,6 +1049,18 @@ if (isset($_GET['logout'])) {
                 }
                 else{
                     $("#form24_caret").css("transform", "");
+                }
+            })
+        });
+        $(function() {
+            $("button#form25_toggle").on("click", function(e) {
+                e.preventDefault();
+                $("#form_25_options").slideToggle('slow');
+                if($("#form25_caret").css("transform") === "none"){
+                    $("#form25_caret").css("transform", "rotate(180deg)");
+                }
+                else{
+                    $("#form25_caret").css("transform", "");
                 }
             })
         });

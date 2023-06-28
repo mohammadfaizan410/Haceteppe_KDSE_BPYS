@@ -10,6 +10,18 @@ if (isset($_GET['logout'])) {
     unset($_SESSION);
     header("Location: main.php");
 }
+require_once('../config-students.php');
+
+$userid = $_SESSION['userlogin']['id'];
+$form_id = $_GET['form_id'];
+$sql = "SELECT * FROM form1_beslenme where form_id= $form_id";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+if ($result) {
+    $form1_beslenme = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+} else {
+    echo 'error';
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -2197,21 +2209,17 @@ if (isset($_GET['logout'])) {
                             url: '<?php echo $base_url; ?>/form-handlers/SubmitOrUpdateForm1_BeslenmeGereksinimi.php',
                             data: ajaxData,
                             success: function(data) {
-                                let url =
-                                "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
-                                patient_id + "&patient_name=" + encodeURIComponent(
-                                patient_name);
-                                $("#tick-container").fadeIn(800);
-                            // Change the tick background to the animated GIF
-                            $("#tick").css("background-image", "url('./check-2.gif')");
+                            //     $("#tick-container").fadeIn(800);
+                            // // Change the tick background to the animated GIF
+                            // $("#tick").css("background-image", "url('./check-2.gif')");
 
-                            // Delay for 2 seconds (adjust the duration as needed)
-                            setTimeout(function() {
-                            // Load the content
-                            $("#content").load(url);
-                            $("#tick-container").fadeOut(600);
-                            // Hide the tick container
-                            }, 1000);
+                            // // Delay for 2 seconds (adjust the duration as needed)
+                            // setTimeout(function() {
+                            // // Load the content
+                            // $("#content").load(url);
+                            // $("#tick-container").fadeOut(600);
+                            // // Hide the tick container
+                            // }, 1000);
                             },
                             error: function(data) {
                                 Swal.fire({
