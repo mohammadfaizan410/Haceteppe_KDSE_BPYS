@@ -536,7 +536,11 @@ if (isset($_GET['logout'])) {
                             <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form23_toggle'>Form1 Egitim <span id='form23_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_23_options' style='display:none'>" . $form_23_options . "</ul>
                             </div></li>";}
-                           
+                            if($form_25_options!==""){
+                            echo "<li class='m-2'><div class='w-75 m-auto'>
+                            <button class='entered-forms  btn btn-success w-50 m-auto align-items-center' id='form25_toggle'>Form1 Beslenme <span id='form25_caret'>&#9660;<span></button>
+                            <ul class='entered-forms-ul' id='form_25_options' style='display:none'>" . $form_25_options . "</ul>
+                            </div></li>";}
                              echo "</ul>
                             </div>";
 
