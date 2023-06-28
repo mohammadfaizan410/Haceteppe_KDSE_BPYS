@@ -109,7 +109,7 @@ if ($result) {
             <h1 class="form-header">BESLENME GEREKSİNİMİ</h1>
             <div class="input-section d-flex">
                 <p class="usernamelabel">Günlük öğün sayısı/zamanı </p>
-                <input type="text" class="form-control" required name="OgunSayisi" id="OgunSayisi" maxlength="30">
+                <input type="text" class="form-control" required name="OgunSayisi" id="OgunSayisi" maxlength="30" value="<?php echo $form1_beslenme[0]['OgunSayisi']?>">
             </div>
             <div class="input-section d-flex">
                 <p class="usernamelabel">Ağırlıklı olarak tükettiğiniz besinler nelerdir?</p>
