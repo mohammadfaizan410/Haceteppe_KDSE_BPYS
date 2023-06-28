@@ -519,7 +519,6 @@ if (isset($_GET['logout'])) {
                             <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form23_toggle'>Form1 Egitim <span id='form23_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_23_options' style='display:none'>" . $form_23_options . "</ul>
                             </div></li>";}
-                           
                              echo "</ul>
                             </div>";
 

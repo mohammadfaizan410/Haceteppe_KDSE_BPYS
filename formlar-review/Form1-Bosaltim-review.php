@@ -710,13 +710,8 @@ if ($result) {
         $('#closeBtn1').click(function(e) {
             e.preventDefault();
             console.log("close btn clicked");
-            let patient_id = <?php
-                                        $userid = $_GET['patient_id'];
-                                        echo $userid
-                                        ?>;
-            let patient_name = "<?php
-                                        echo urldecode($_GET['patient_name']);
-                                        ?>";
+            let patient_id = "<?php echo $bosaltim['patient_id']?>"
+            let patient_name = "<?php echo $bosaltim['patient_name']?>"
             var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
                 "&patient_name=" + encodeURIComponent(patient_name);
             $("#content").load(url);
