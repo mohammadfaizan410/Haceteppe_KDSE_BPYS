@@ -327,7 +327,7 @@ if (isset($_GET['logout'])) {
                                         </label>
                                     </div>
                                     <div class="input-section d-flex">
-                                        <input type="text" class="form-control" required disabled name="o2_method_digerr" id="o2_method_diger_input" placeholder="Yöntemi">
+                                        <input type="text" class="form-control" required disabled name="o2_method_diger" id="o2_method_diger_input" placeholder="Yöntemi">
                                     </div>
                                 </div>
                             </div>
@@ -366,6 +366,50 @@ if (isset($_GET['logout'])) {
         </div>
     </div>
     <script>
+    $(document).ready(function(){
+        var o2delivery = $('[name="o2_status"]');
+
+        var o2Method = $('[name="o2_method"]');
+        var o2Other = $('[name="o2_method_diger"]');
+
+        o2delivery.on('change', function(){
+            var selectedValue = $(this).val();
+
+            if (selectedValue === "Aliyor"){
+                o2Method.prop('disabled', false);
+                o2Other.attr('disabled', true);
+            } else {
+                o2Method.prop('checked', false).prop('disabled', true);
+                o2Other.val('').attr('disabled', true);
+            }
+        })
+
+        o2Method.on('change', function(){
+            var selectedValue = $(this).val();
+
+            if (selectedValue === "Diğer"){
+                o2Other.attr('disabled', false);
+            } else {
+                o2Other.val('');
+                o2Other.attr('disabled', true);
+            }
+        })
+
+        var weightInputCheck = $('#weight_input_toggle');
+        var weightInput = $('[name="weight_input"]');
+
+        weightInput.attr('disabled', false);
+
+        weightInputCheck.on('change', function(){
+            if (!$(this).is(':checked')){
+                weightInput.attr('disabled', false);
+            } else {
+                weightInput.val('').attr('disabled', true);
+            }
+        })
+    })
+    </script>
+    <script>
         var tanı_respiratory_rate = parseInt($("input[name='respiratory_rate']").val());
         var tanı_heart_rate = parseInt($("input[name='heart_rate']").val());
         var tanı_spo2_percentage = parseInt($("input[name='spo2_percentage']").val());
@@ -376,8 +420,7 @@ if (isset($_GET['logout'])) {
         console.log(tanı_respiratory_nature);
 
         if (tanı_respiratory_rate < 16 || tanı_respiratory_rate > 20 || tanı_heart_rate > 100 || tanı_spo2_percentage <
-            95 || tanı_o2_status == "Aliyor" || tanı_respiratory_nature === "Derin" || tanı_respiratory_nature === "Yüzeyel"
-        ) {
+            95 || tanı_o2_status == "Aliyor" || tanı_respiratory_nature === "Derin" || tanı_respiratory_nature === "Yüzeyel") {
             $('#tani1-warning').css("display", "block");
             $(function() {
                 $("a.addtanı").on("click", function(e) {
@@ -408,7 +451,6 @@ if (isset($_GET['logout'])) {
                 $("#content").load(url);
 
             })
-
 
         //preselecting inputs
         $('.form-check-input[name="measurement_location"]').each(function() {
@@ -449,10 +491,18 @@ if (isset($_GET['logout'])) {
                 $(this).prop('checked', true);
             }
         });
+        if ("<?php echo $form10[0]['o2_status']; ?>" == "Aliyor"){
+            $('[name="o2_method"]').prop('disabled', false);
+        } else {
+            $('[name="o2_method"]').prop('checked', false).prop('disabled', true);
+        }
+
         if("<?php echo $form10[0]['o2_method']; ?>" !== "O2 maske" && "<?php echo $form10[0]['o2_method']; ?>" !== "Nazal kanül"){
             $('#o2_method_diger_input').prop('disabled', false);
             $('#o2_method_diger_input').val("<?php echo $form10[0]['o2_method']; ?>");
             $('#o2_method_diger').prop('checked', true);
+        } else {
+            $('#o2_method_diger_input').val('').prop('disabled', true);
         }
 
 
