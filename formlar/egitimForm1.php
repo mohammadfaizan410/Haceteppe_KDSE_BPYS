@@ -212,12 +212,12 @@ if (isset($_GET['logout'])) {
                                      let yourDate = new Date();
                             let creation_date = yourDate.toISOString().split('T')[0];
                             let updateDate = yourDate.toISOString().split('T')[0];
-                var radio1 = $("input[name='radio1']:checked").val() ? $("input[name='radio1']:checked").val() : "null";
+                let radio1 = $("input[name='radio1']").is(':checked') ? $("input[name='radio1']").val() : "";
                 let Konu = $("input[name='Konu']").val() ? $("input[name='Konu']").val() : "";
                 let Nerden = $("input[name='Nerden']").val() ? $("input[name='Nerden']").val() : "";    
                 let NeZaman = $("input[name='NeZaman']").val() ? $("input[name='NeZaman']").val() : "";
                 let EgitimIstegi = $("input[name='EgitimIstegi']").val() ? $("input[name='EgitimIstegi']").val() : "";
-                let TedaviBasvurusu = $("input[name='TedaviBasvurusu']").val() ? $("input[name='TedaviBasvurusu']").val() : "";
+                let TedaviBasvurusu = $("input[name='TedaviBasvurusu']").is(":checked") ? $("input[name='TedaviBasvurusu']").val() : "";
                 let TedaviBasvurusuDiger = $("input[name='TedaviBasvurusuDiger']").val() ? $("input[name='TedaviBasvurusuDiger']").val() : "";
                                  //set borders to default
     $('.form-control').css('border-color', '#ced4da');

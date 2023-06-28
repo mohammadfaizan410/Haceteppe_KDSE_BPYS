@@ -438,7 +438,6 @@ if (isset($_GET['logout'])) {
                                         $form_17_options .= '<li class="m-2 p-2 "><div class="entered-forms"><a class="nav-items review btn btn-success"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Solunumgereksinimi-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Solunum Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table17_data') {
-                                        echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color : white;"  href="' . $base_url . '/formlar-review/Form1-hereket-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Herket_form1   Date:' . $form["update_date"] . '</p></a></div>';
                                         $form_id = $form["form_id"];
                                         $update_date = $form["update_date"];
                                         $form_18_options .= '<li class="m-2 p-2 "><div class="entered-forms"><a class="nav-items review btn btn-success"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-hereket-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Hareket Date: ' . $update_date . '</p></a></div></li>';
@@ -449,14 +448,10 @@ if (isset($_GET['logout'])) {
                                         $form_19_options .= '<li class="m-2 p-2 "><div class="entered-forms"><a class="nav-items review btn btn-success"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Vucudu-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Vucut Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table19_data') {
-                                        echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color : white;"  href="' . $base_url . '/formlar-review/Form1-vucudu-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Vucudu_form1   Date:' . $form["update_date"] . '</p></a></div>';
-                                    }
-                                    if ($key ===  'table20_data') {
-                                        echo '<div class="entered-forms"><a class="nav-items review btn btn-success entered-forms-button" style="color : white;"  href="' . $base_url . '/formlar-review/Form1-Bosaltim-review.php?form_id=' . $form["form_id"] . '"><p class="entered-forms-p">Bosaltim_form1   Date:' . $form["update_date"] . '</p></a></div>';
                                         $form_id = $form["form_id"];
                                         $update_date = $form["update_date"];
-                                        $form_20_options .= '<li class="m-2 p-2 "><div class="entered-forms"><a class="nav-items review btn btn-success"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Katerer-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Katerer Date: ' . $update_date . '</p></a></div></li>';
-                                    }
+                                        $form_20_options .= '<li class="m-2 p-2 "><div class="entered-forms"><a class="nav-items review btn btn-success"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Katerer-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Katerer Date: ' . $update_date . '</p></a></div></li>';                                    }
+                                 
                                     if ($key ===  'table20_data') {
                                         $form_id = $form["form_id"];
                                         $update_date = $form["update_date"];
@@ -484,7 +479,11 @@ if (isset($_GET['logout'])) {
                                     }
 
                                 };
-                            }
+                            };
+                        };
+                        
+                        
+                        if($form_16_options !== "" || $form_17_options !== "" || $form_18_options !== "" || $form_19_options !== "" ||  $form_20_options !== "" || $form_21_options !== "" || $form_22_options !== "" || $form_23_options !== "" || $form_24_options !== "" || $form_25_options !== "" ){
                             echo "<div class='w-75 m-auto'>
                             <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form1_sections_toggle'>Form1 <span id='form1_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form1_sections_options' style='display:none'>";
@@ -504,11 +503,11 @@ if (isset($_GET['logout'])) {
                             echo "<li class='m-2'><div class='w-75 m-auto'>
                                 <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form17_toggle'>Form1 Solunum <span id='form17_caret'>&#9660;<span></button>
                                 <ul class='entered-forms-ul' id='form_17_options' style='display:none'>" . $form_17_options . "</ul>
-                                </div></li>
-                                <li class='m-2'><div class='w-75 m-auto'>";
+                                </div></li>";
                             }
                             if($form_18_options!==""){
-                            echo " <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form18_toggle'>Form1 Hereket <span id='form18_caret'>&#9660;<span></button>
+                            echo "<li class='m-2'><div class='w-75 m-auto'>
+                             <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form18_toggle'>Form1 Hereket <span id='form18_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_18_options' style='display:none'>" . $form_18_options . "</ul>
                             </div></li>";}
                             if($form_19_options!==""){
@@ -543,6 +542,7 @@ if (isset($_GET['logout'])) {
                             </div></li>";}
                              echo "</ul>
                             </div>";
+                            }
 
                             if($form_2_options !== ""){
                                 echo "<div class='w-75 m-auto'>
@@ -628,9 +628,7 @@ if (isset($_GET['logout'])) {
                             <ul class='entered-forms-ul' id='form_15_options' style='display:none'>" . $form_15_options . "</ul>
                             </div>";
                             }
-                           
-                        }
-
+                        
                         ?>
                     </div>
                     </thead>
