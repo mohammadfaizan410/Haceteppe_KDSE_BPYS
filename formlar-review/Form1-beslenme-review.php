@@ -2144,8 +2144,8 @@ if ($result) {
                         var form_values = <?php echo $valuesJson; ?>;
                         var all_values = form_values;
                         let patient_id = all_values.patient_id;
-                        var form_id = all_values.form_id;
                         let patient_name = all_values['patient_name'];
+                        var form_id = all_values.form_id;
                         console.log(patient_name);
                         let yourDate = new Date();
                         let creation_date = yourDate.toISOString().split('T')[0];
@@ -2221,17 +2221,23 @@ if ($result) {
                             url: '<?php echo $base_url; ?>/form-handlers/SubmitOrUpdateForm1_BeslenmeGereksinimi.php',
                             data: ajaxData,
                             success: function(data) {
-                            //     $("#tick-container").fadeIn(800);
-                            // // Change the tick background to the animated GIF
-                            // $("#tick").css("background-image", "url('./check-2.gif')");
+                                let patient_id = all_values.patient_id;
+                            let patient_name = all_values['patient_name'];
+                            let url =
+                                "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
+                                patient_id + "&patient_name=" + encodeURIComponent(patient_name);
 
-                            // // Delay for 2 seconds (adjust the duration as needed)
-                            // setTimeout(function() {
-                            // // Load the content
-                            // $("#content").load(url);
-                            // $("#tick-container").fadeOut(600);
-                            // // Hide the tick container
-                            // }, 1000);
+                                $("#tick-container").fadeIn(800);
+                            // Change the tick background to the animated GIF
+                            $("#tick").css("background-image", "url('./check-2.gif')");
+
+                            // Delay for 2 seconds (adjust the duration as needed)
+                            setTimeout(function() {
+                            // Load the content
+                            $("#content").load(url);
+                            $("#tick-container").fadeOut(600);
+                            // Hide the tick container
+                            }, 1000);
                             },
                             error: function(data) {
                                 Swal.fire({

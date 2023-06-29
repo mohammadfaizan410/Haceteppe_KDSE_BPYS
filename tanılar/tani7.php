@@ -178,7 +178,7 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                             </div>
                             <p class="usernamelabel">Eğitim:</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt7"
+                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt7"
                                     value="Ağrının nedenleri, ne kadar süreceği ve girişimlerle ilgili yaşanabilecek sorunlar hakkında bilgi verilir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Ağrının nedenleri, ne kadar süreceği ve girişimlerle
@@ -186,7 +186,7 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt8"
+                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt8"
                                     value="Ağrıyı arttıran faktörler ve baş etmede kullanılabilecek yöntemler konusunda bilgi verilir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Ağrıyı arttıran faktörler ve baş etmede
@@ -194,7 +194,7 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt9"
+                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt9"
                                     value="Ağrılı aktiviteler sırasında, sonrasında eğer mümkünse ağrı ortaya çıkmadan ya da artmadan önce farmakolojik ve nonfarmakalojik teknikleri birlikte kullanması hakkında bilgi verilir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Ağrılı aktiviteler sırasında, sonrasında eğer mümkünse
@@ -203,7 +203,7 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt"
+                                <input class="form-check-input" type="checkbox" name="nurse_education"
                                     id="nurse_attempt10"
                                     value="Ağrı giderilmediği takdirde hemşireye haber verilmesi konusunda bilgi verilir">
                                 <label class="form-check-label" for="nurse_attempt">
@@ -214,7 +214,7 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
 
                             <p class="usernamelabel">İş Birliği Gerektiren Uygulamalar:</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt"
+                                <input class="form-check-input" type="checkbox" name="collaborative_apps"
                                     id="nurse_attempt11" value="İstemde yer alan ilaçlar (analjezikler) uygulanır">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">İstemde yer alan ilaçlar (analjezikler)
@@ -291,62 +291,7 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
 
 
     </div>
-    <script>
-    var tanı_respiratory_rate = <?= json_encode($tanı_respiratory_rate, JSON_UNESCAPED_UNICODE); ?>;;
-    var tanı_heart_rate = <?= json_encode($tanı_heart_rate, JSON_UNESCAPED_UNICODE); ?>;
-    var tanı_spo2_percentage = <?= json_encode($tanı_spo2_percentage, JSON_UNESCAPED_UNICODE); ?>;
-    var tanı_o2_status = <?= json_encode($tanı_o2_status, JSON_UNESCAPED_UNICODE); ?>;
-    var tanı_respiratory_nature = <?= json_encode($tanı_respiratory_nature, JSON_UNESCAPED_UNICODE); ?>;
-    var field_respiratory_rate = document.getElementById('field_respiratory_rate');
-    var field_heart_rate = document.getElementById('field_heart_rate');
-    var field_spo2_percentage = document.getElementById('field_spo2_percentage');
-    var field_o2_status = document.getElementById('field_o2_status');
-    var field_respiratory_nature = document.getElementById('field_respiratory_nature');
-
-    var respiratory_rate_string = "Solunum Hızı: " + tanı_respiratory_rate;
-    field_respiratory_rate.innerHTML = respiratory_rate_string;
-
-    var heart_rate_string = "Nabız Hızı: " + tanı_heart_rate;
-    field_heart_rate.innerHTML = heart_rate_string;
-
-    var spo2_percentage_string = "SpO2: " + tanı_spo2_percentage;
-    field_spo2_percentage.innerHTML = spo2_percentage_string;
-
-    var o2_status_string = "O2 Tedavisi: " + tanı_o2_status;
-    field_o2_status.innerHTML = o2_status_string;
-
-    var respiratory_nature_string = "Solunumun Özelliği: " + tanı_respiratory_nature;
-    field_respiratory_nature.innerHTML = respiratory_nature_string;
-
-    if (tanı_respiratory_rate < 16 || tanı_respiratory_rate > 20) {
-        $('#field_respiratory_rate').css("color", "green");
-    } else {
-        $('#field_respiratory_rate').css("color", "red");
-    }
-    if (tanı_heart_rate > 100) {
-        $('#field_heart_rate').css("color", "green");
-    } else {
-        $('#field_heart_rate').css("color", "red");
-    }
-    if (tanı_spo2_percentage < 95) {
-        $('#field_spo2_percentage').css("color", "green");
-    } else {
-        $('#field_spo2_percentage').css("color", "red");
-    }
-    if (tanı_o2_status == "Aliyor") {
-        $('#field_o2_status').css("color", "green");
-    } else {
-        $('#field_o2_status').css("color", "red");
-    }
-    if (tanı_respiratory_nature === "Derin" || tanı_respiratory_nature === "Yüzeyel") {
-        $('#field_respiratory_nature').css("color", "green");
-    } else {
-        $('#field_respiratory_nature').css("color", "red");
-    }
-
-    var matchedfields_string = respiratory_rate_string + " / " + heart_rate_string + " / " + spo2_percentage_string +
-        " / " + o2_status_string + " / " + respiratory_nature_string;
-    </script>
+   
 
     <script>
     $(function() {
@@ -389,95 +334,27 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
             let yourDate = new Date();
             let creationDate = yourDate.toISOString().split('T')[0];
             let updateDate = yourDate.toISOString().split('T')[0];
-            let problem_info = matchedfields_string
-            let nurse_description = "Gaz değişiminde bozulma"
-            let noc_output = "Hastanın oksijen satürasyonun %95’in üzerinde olması"
-            let noc_indicator = $("input[type='radio'][name='noc_indicator']:checked").val();
-            let noc_indicator_after = $("input[type='radio'][name='noc_indicator_after']:checked")
-                .val();
-
-            let evaluation = "";
-            console.log("values init")
-
-            if (noc_indicator == "5: Hastanın oksijen satürasyonunda bozulma yok") {
-                evaluation +=
-                    "Sorun çözümlendi:5 gösterge seçildiyse;yeni günde bakım planına bu tanıyı taşımayacak"
-            } else {
-                evaluation +=
-                    "Sorun devam ediyor: 1-4 gösterge seçildiyse; yeni günde bakım planında tanımlı tanı olacak."
-            }
-            let nurse_attempt = "";
-            let nurse_education = '';
-            let coop_attempt = '';
-
-            var l1 = document.getElementById("nurse_attempt1");
-            var l2 = document.getElementById("nurse_attempt2");
-            var l3 = document.getElementById("nurse_attempt3");
-            var l4 = document.getElementById("nurse_attempt4");
-            var l5 = document.getElementById("nurse_attempt5");
-            var l6 = document.getElementById("nurse_attempt6");
-            var l7 = document.getElementById("nurse_attempt7");
-            var l8 = document.getElementById("nurse_attempt8");
-            var l9 = document.getElementById("nurse_attempt9");
-            var l10 = document.getElementById("nurse_attempt10");
-            var l11 = document.getElementById("nurse_attempt11");
+            let nurse_attempt = $('.form-check-input[name="nurse_attempt"]:checked').map(function() {
+                    return this.value;
+                }).get().join('/');
+                let nurse_education = $('.form-check-input[name="nurse_education"]:checked').map(function() {
+                    return this.value;
+                }).get().join('/');
+                let collaborative_apps = $('.form-check-input[name="collaborative_apps"]:checked').map(function() {
+                    return this.value;
+                }).get().join('/');
+                let noc_indicator = $('.form-check-input[name="noc_indicator"]:checked').val();
+		        let noc_indicator_2 = $('.form-check-input[name="noc_indicator_2"]') ? $('.form-check-input[name=noc_indicator_2]:checked').val() : "null";
+		        let noc_indicator_3 = $('.form-check-input[name="noc_indicator_3"]') ? $('.form-check-input[name=noc_indicator_3]:checked').val() : "null";
+                let noc_indicator_after = $('.form-check-input[name="noc_indicator_after"]:checked').val();
+		        let noc_indicator_after_2 = $('.form-check-input[name="noc_indicator_after_2"]') ? $('.form-check-input[name=noc_indicator_after_2]:checked').val() : "null";
+		        let noc_indicator_after_3 = $('.form-check-input[name="noc_indicator_after_3"]') ? $('.form-check-input[name=noc_indicator_after_3]:checked').val() : "null";
 
 
-            if (l1.checked == true) {
-                var pl1 = document.getElementById("nurse_attempt1").value;
-                nurse_attempt += pl1 + "/";
-            }
-            if (l2.checked == true) {
-                var pl2 = document.getElementById("nurse_attempt2").value;
-                nurse_attempt += pl2 + "/";
-            }
-            if (l3.checked == true) {
-                var pl3 = document.getElementById("nurse_attempt3").value;
-                nurse_attempt += pl3 + "/";
-            }
-            if (l4.checked == true) {
-                var pl4 = document.getElementById("nurse_attempt4").value;
-                nurse_attempt += pl4 + "/";
-            }
-            if (l5.checked == true) {
-                var pl5 = document.getElementById("nurse_attempt5").value;
-                nurse_attempt += pl5 + "/";
-            }
-            if (l6.checked == true) {
-                var pl6 = document.getElementById("nurse_attempt6").value;
-                nurse_attempt += pl6 + "/";
-            }
-            if (l7.checked == true) {
-                var pl7 = document.getElementById("nurse_attempt7").value;
-                nurse_education += pl7 + "/";
-            }
-            if (l8.checked == true) {
-                var pl8 = document.getElementById("nurse_attempt8").value;
-                nurse_education += pl8 + "/";
-            }
-            if (l9.checked == true) {
-                var pl9 = document.getElementById("nurse_attempt9").value;
-                nurse_education += pl9 + "/";
-            }
-            if (l10.checked == true) {
-                var pl10 = document.getElementById("nurse_attempt10").value;
-                nurse_education += pl10 + "/";
-            }
-            if (l11.checked == true) {
-                var pl11 = document.getElementById("nurse_attempt11").value;
-                coop_attempt += pl11 + "/";
-            }
-
-
-
-            $.ajax({
+                $.ajax({
                 type: 'POST',
-                url: '<?php echo $base_url; ?>/insertTanalar/tani7Insert.php',
+                url: '<?php echo $base_url; ?>/insertTanalar/riskTani15Insert.php',
                 data: {
-                    name: name,
-                    surname: surname,
-                    age: age,
-                    form_num: form_num,
                     patient_id: patient_id,
                     patient_name: patient_name,
                     creation_date: creationDate,
@@ -487,20 +364,34 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                     noc_output: noc_output,
                     noc_indicator: noc_indicator,
                     noc_indicator_after: noc_indicator_after,
+                    noc_indicator_2: noc_indicator_2,
+                    noc_indicator_after_2: noc_indicator_after_2,
+                    noc_indicator_3: noc_indicator_3,
+                    noc_indicator_after_3: noc_indicator_after_3,
                     nurse_attempt: nurse_attempt,
                     nurse_education: nurse_education,
-                    coop_attempt: coop_attempt,
+                    collaborative_apps: collaborative_apps,
                     evaluation: evaluation,
-                    matchedfields_string: matchedfields_string,
+                    standalone: $_GET['standalone']
                 },
                 success: function(data) {
                     console.log("something happened")
-                    alert(data);
                     let url =
-                        "<?php echo $base_url; ?>/taniReview/tani7Review.php?patient_id=" +
+                        "<?php echo $base_url; ?>/taniReview/riskTani15Review.php?patient_id=" +
                         patient_id + "&patient_name=" + encodeURIComponent(
                             patient_name);
-                    $("#content").load(url);
+                            $("#tick-container").fadeIn(800);
+                            // Change the tick background to the animated GIF
+                            $("#tick").css("background-image", "url('./check-2.gif')");
+
+                            // Delay for 2 seconds (adjust the duration as needed)
+                            setTimeout(function() {
+                            // Load the content
+                            $("#content").load(url);
+                            $("#tick-container").fadeOut(600);
+                            // Hide the tick container
+                            }, 1000);
+;
                 },
                 error: function(data) {
                     console.log(data)

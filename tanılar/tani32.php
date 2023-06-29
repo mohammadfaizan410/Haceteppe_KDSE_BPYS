@@ -10,18 +10,7 @@ if (isset($_GET['logout'])) {
     unset($_SESSION);
     header("Location: main.php");
 }
-
-// $tanı_respiratory_rate = $_GET['tanı_respiratory_rate'];
-// $tanı_heart_rate = $_GET['tanı_heart_rate'];
-// $tanı_spo2_percentage = $_GET['tanı_spo2_percentage'];
-// $tanı_o2_status = $_GET['tanı_o2_status'];
-// $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
-$average_sleep_time = isset($_GET['average_sleep_time']) ? $_GET['average_sleep_time'] : "NaN";
-$sleep_problem = isset($_GET['sleep_problem']) ? $_GET['sleep_problem'] : "NaN";
-$restlessness = isset($_GET['restlessness']) ? $_GET['restlessness'] : "NaN";
-$fatigue  = isset($_GET['fatigue ']) ? $_GET['fatigue'] : "NaN";
-$hospital_environment_factors = isset($_GET['hospital_environment_factors']) ? $_GET['hospital_environment_factors'] : "NaN";
-
+//Nausea, vomiting, lack of apetite
 ?>
 <!DOCTYPE html>
 <html>
@@ -73,313 +62,283 @@ $hospital_environment_factors = isset($_GET['hospital_environment_factors']) ? $
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Sorunla İlişkili Veriler:</p>
                             <div class="matchedfields-wrapper">
-                                <?php         
-                                echo "<p class='matchedfields' id='average_sleep_time' style='".($average_sleep_time == 'NaN' ? 'color: red' : 'color:blue ' )."'>Ortalama uyku süresi: ".$average_sleep_time."</p>";
-                                echo "<p class='matchedfields' id='sleep_problem' style='".($sleep_problem == 'NaN' ? 'color:red ' : 'color: blue' )."'>Uykuda sorun:".$sleep_problem."</p>";
-                                echo "<p class='matchedfields' id='restlessness' style='".($restlessness == 'NaN' ? 'color:red ' : 'color: blue' )."'>Huzursuzluk:".$restlessness."</p>";
-                                echo "<p class='matchedfields' id='fatigue' style='".($fatigue == 'NaN' ? 'color:red ' : 'color: blue' )."'> Yorgunluk:".$fatigue."</p>";
-                                echo "<p class='matchedfields' id='hospital_environment_factors' style='".($hospital_environment_factors == 'NaN' ? 'color:red ' : 'color: blue' )."'>Hastane ortamında uykusunu etkileyen faktörler:".$hospital_environment_factors."</p>";
-                                ?>
                             </div>
 
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Hemşirelik Tanıları:</p>
-                            <p class="tanıdescription">OUyku örüntüsünde bozulma </p>
+                            <p class="tanıdescription">Boş zaman aktivitelerinde yetersizlik</p>
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın gece bölünmeden uyuduğunun gözlemlenmesi</p>
+                            <p class="tanıdescription">Hastanın düzenlenen aktivitelere katılım göstermesi </p>
                         </div>
-
-
-
-
 
 
                         <div class="input-section" id="o2-delivery-container">
                             <p class="usernamelabel">NOC Gösterge: </p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1: Hastanın gece uykusunda sürekli bölünme var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1: Hasta düzenlenen aktivitelere hiç katılım göstermez">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">1: Hastanın gece uykusunda sürekli bölünme var</span>
+                                        <span class="checkbox-header">1: Hasta düzenlenen aktivitelere hiç katılım göstermez</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2: Hastanın gece uykusunda sık sık bölünme var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2: Hasta düzenlenen aktivitelere sık sık katılım göstermez">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">2: Hastanın gece uykusunda sık sık bölünme var</span>
+                                        <span class="checkbox-header">2: Hasta düzenlenen aktivitelere sık sık katılım göstermez</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3: Hastanın gece uykusunda bazen bölünme var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3: Hasta düzenlenen aktivitelere bazen katılım göstermez">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">3: Hastanın gece uykusunda bazen bölünme var</span>
+                                        <span class="checkbox-header">3: Hasta düzenlenen aktivitelere bazen katılım göstermez</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4: Hastanın gece uykusunda nadiren bölünme var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4: Hasta düzenlenen aktivitelere nadiren katılım göstermez">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">4: Hastanın gece uykusunda nadiren bölünme var</span>
+                                        <span class="checkbox-header">4: Hasta düzenlenen aktivitelere nadiren katılım göstermez</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="
-                                        noc_indicator" value="5: Hastanın gece uykusunda bölünme yok">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="5: Hasta düzenlenen aktivitelere sürekli katılım gösterir">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">5: Hastanın gece uykusunda bölünme yok
-                                        </span>
+                                        <span class="checkbox-header">5: Hasta düzenlenen aktivitelere sürekli katılım gösterir</span>
                                     </label>
                                 </div>
 
                             </div>
                         </div>
+
+
                         <div class="input-section d-flex">
                             <p class="usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hasta gece iyi uyuduğunu ifade etmesi</p>
+                            <p class="tanıdescription">Hastanın boş zamanlarını nasıl değerlendireceği konusunda seçenekleri belirlemesi </p>
                         </div>
+
+
                         <div class="input-section" id="o2-delivery-container">
                             <p class="usernamelabel">NOC Gösterge: </p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator" value="1: Hasta sürekli gece iyi uyumadığını ifade eder">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator" value="1:Hasta aktivite seçeneklerini hiç belirleyemez">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">1: Hasta sürekli gece iyi uyumadığını ifade eder</span>
+                                        <span class="checkbox-header">1:Hasta aktivite seçeneklerini hiç belirleyemez</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator" value="2: Hasta sık sık gece iyi uyumadığını ifade eder">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator" value="2:Hasta aktivite seçeneklerini sık sık belirleyemez">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">2: Hasta sık sık gece iyi uyumadığını ifade eder</span>
+                                        <span class="checkbox-header">2:Hasta aktivite seçeneklerini sık sık belirleyemez</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator" value="3: Hasta bazen gece iyi uyumadığını ifade eder">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator" value="3:Hasta aktivite seçeneklerini bazen belirleyemez">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">3: Hasta bazen gece iyi uyumadığını ifade eder</span>
+                                        <span class="checkbox-header">3:Hasta aktivite seçeneklerini bazen belirleyemez</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator" value="4: Hasta nadiren gece iyi uyumadığını ifade eder">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator" value="4:Hasta aktivite seçeneklerini nadiren belirleyemez ">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">4: Hasta nadiren gece iyi uyumadığını ifade eder</span>
+                                        <span class="checkbox-header">4:Hasta aktivite seçeneklerini nadiren belirleyemez </span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="
-                                        noc_indicator" value="5: Hasta gece iyi uyuduğunu ifade eder">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator" value="5:Hasta aktivite seçeneklerini belirler">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">5: Hasta gece iyi uyuduğunu ifade eder
-                                        </span>
+                                        <span class="checkbox-header">5:Hasta aktivite seçeneklerini belirler</span>
                                     </label>
                                 </div>
 
                             </div>
                         </div>
+
+                
 
                         <div class="input-section d-flex" style="flex-direction: column;">
                             <p class="usernamelabel">Hemşirelik Girişimleri:</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt" value="Hastanın ilgi alanları belirlenir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Hastanın ilgi alanları belirlenir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt" value="Hastanın aktivitelere duygusal, fiziksel ve sosyal açıdan gösterdiği tepkiler gözlemlenir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Hastanın aktivitelere duygusal, fiziksel ve sosyal açıdan gösterdiği tepkiler gözlemlenir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt" value="Hastaya kapasitesine uygun aktiviteleri seçmesi konusunda destek olunur">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Hastaya kapasitesine uygun aktiviteleri seçmesi konusunda destek olunur</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt" value="Rutinleri değiştirmek, monotonluktan uzaklaşmak, 
+düşüncelerin uyarılmasını sağlamak için; müzik, oyun, puzzle, ziyaret ve rahatlama aktiviteleri gibi uyaranlar verilir
+">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Rutinleri değiştirmek, monotonluktan uzaklaşmak, 
+düşüncelerin uyarılmasını sağlamak için; müzik, oyun, puzzle, ziyaret ve rahatlama aktiviteleri gibi uyaranlar verilir
+</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt" value="Uygunsa oda arkadaşı sağlanır">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Uygunsa oda arkadaşı sağlanır</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt" value="Ailesinin, arkadaşlarının ve hasta için önemli olan kişilerin ziyaret etmesi için teşvik edilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Ailesinin, arkadaşlarının ve hasta için önemli olan kişilerin ziyaret etmesi için teşvik edilir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt" value="Hastanın bağımsızlığı desteklenir, ancak yetersiz kaldığı durumlarda hastaya yardım edilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Hastanın bağımsızlığı desteklenir, ancak yetersiz kaldığı durumlarda hastaya yardım edilir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt" value="Hasta mümkün oldukça öz bakımını gerçekleştirme konusunda sorumluluk alması için teşvik edilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Hasta mümkün oldukça öz bakımını gerçekleştirme konusunda sorumluluk alması için teşvik edilir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt" value="Sorumlulukların kabul edilmesi ve/veya davranış değişikliğinin sağlanabilmesi için olumlu geri bildirimlerde bulunulur ">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Sorumlulukların kabul edilmesi ve/veya davranış değişikliğinin sağlanabilmesi için olumlu geri bildirimlerde bulunulur </span>
+                                </label>
+                            </div>
 
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt1" value="Hastanın uyku/aktivite örüntüsü değerlendirilir">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hastanın uyku/aktivite örüntüsü değerlendirilir</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt2" value="Kullanılan ilaçların uyku örüntüsüne etkisi değerlendirilir">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Kullanılan ilaçların uyku örüntüsüne etkisi değerlendirilir</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt3" value="Uykuyu etkileyen çevresel faktörler tanımlanır, sakin ve sessiz bir çevre sağlanır">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Uykuyu etkileyen çevresel faktörler tanımlanır, sakin ve sessiz bir çevre sağlanır</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt4" value="Mümkünse hastaya tek kişilik oda sağlanır ">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Mümkünse hastaya tek kişilik oda sağlanır </span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt5" value="Mümkünse hastaya uygun oda arkadaşı sağlanır">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Mümkünse hastaya uygun oda arkadaşı sağlanır</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt6" value="Hastanın olağan uyku öncesi rutinlerini sürdürmesi için imkan (kitap okuma, duş yapma, çocuklar için oyuncak/battaniye vb) sağlanır">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hastanın olağan uyku öncesi rutinlerini sürdürmesi için imkan (kitap okuma, duş yapma, çocuklar için oyuncak/battaniye vb) sağlanır</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt7" value="Hastanın gün içerisinde uyuması sınırlandırılır ve bu doğrultuda aktivite planlamasına yardım edilir">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hastanın gün içerisinde uyuması sınırlandırılır ve bu doğrultuda aktivite planlamasına yardım edilir</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt8" value="Uyumayı desteklemek için masaj, pozisyon verme ve dokunma gibi teknikler uygulanır ">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Uyumayı desteklemek için masaj, pozisyon verme ve dokunma gibi teknikler uygulanır </span>
-                                </label>
-                            </div>
-
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt9" value="Hastanın korku, çözülmemiş problemler ve çatışma gibi uykusuzluğa neden olan faktörleri tanımlamasına yardımcı olunur">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hastanın korku, çözülmemiş problemler ve çatışma gibi uykusuzluğa neden olan faktörleri tanımlamasına yardımcı olunur</span>
-                                </label>
-                            </div>
 
                             <p class="usernamelabel">Eğitim:</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt10" value="Hastaya ve bakım verenlerine uyku örüntüsünün bozulmasına neden olabilecek faktörler (psikolojik, fizyolojik, yaşam tarzı değişiklikleri, uzun süreli çalışma saatleri, nöbetli çalışma vb) hakkında bilgi verilir ">
+                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_education" value="Boş zamanlarda yapılabilecek yeni veya alternatif aktiviteler hakkında bilgi verilir ve yapması için teşvik edilir">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hastaya ve bakım verenlerine uyku örüntüsünün bozulmasına neden olabilecek faktörler (psikolojik, fizyolojik, yaşam tarzı değişiklikleri, uzun süreli çalışma saatleri, nöbetli çalışma vb) hakkında bilgi verilir </span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt11" value="Hamilelik, hastalık, stres gibi durumlarda yeterli uykunun önemi açıklanır ">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hamilelik, hastalık, stres gibi durumlarda yeterli uykunun önemi açıklanır </span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt12" value="Uykusunun bölünmemesi için akşam saatlerinde sıvı alımını azaltması ve yatmadan önce tuvalete gitmesi konusunda hastaya bilgi verilir">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Uykusunun bölünmemesi için akşam saatlerinde sıvı alımını azaltması ve yatmadan önce tuvalete gitmesi konusunda hastaya bilgi verilir</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt13" value="Uykuyu engelleyen yiyecek ve içecekleri (kahve, kola, çay gibi) yatma zamanında tüketmemesi söylenir">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Uykuyu engelleyen yiyecek ve içecekleri (kahve, kola, çay gibi) yatma zamanında tüketmemesi söylenir</span>
+                                    <span class="checkbox-header">Boş zamanlarda yapılabilecek yeni veya alternatif aktiviteler hakkında bilgi verilir ve yapması için teşvik edilir</span>
                                 </label>
                             </div>
 
 
                             <p class="usernamelabel">İŞ BİRLİĞİ GEREKTİREN UYGULAMALAR</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="collaborative_apps" id="nurse_attempt14" value="Gerektiğinde istemde yer alan ilaçlar uygulanır">
+                                <input class="form-check-input" type="checkbox" name="collaborative_apps" id="collaborative_apps" value="Boş zamanlarda eğlenceli olabilecek faaliyetlerin yapılmasında hastaya yardımcı olabilecek gönüllülerden ya da iş uğraş terapistlerinden destek alınır">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Gerektiğinde istemde yer alan ilaçlar uygulanır</span>
+                                    <span class="checkbox-header">Boş zamanlarda eğlenceli olabilecek faaliyetlerin yapılmasında hastaya yardımcı olabilecek gönüllülerden ya da iş uğraş terapistlerinden destek alınır</span>
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="collaborative_apps" id="collaborative_apps" value="Hasta benzer durumla baş etmiş olan diğer hastalarla tanıştırılır">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Hasta benzer durumla baş etmiş olan diğer hastalarla tanıştırılır</span>
                                 </label>
                             </div>
 
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Değerlendirme:</p>
-                            <div class="input-section d-flex">
-                            <p class="usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın gece bölünmeden uyuduğunun gözlemlenmesi</p>
-                        </div>
+
+
+                            
+                             
                         
-
- 
-
-
-
-                        <div class="input-section" id="o2-delivery-container">
-                            <p class="usernamelabel">NOC Gösterge: </p>
-                            <div class="form-check">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
-                                        id="noc_indicator"
-                                        value="1: Hastanın gece uykusunda sürekli bölünme var">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">1: Hastanın gece uykusunda sürekli bölünme var</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
-                                        id="noc_indicator"
-                                        value="2: Hastanın gece uykusunda sık sık bölünme var">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">2: Hastanın gece uykusunda sık sık bölünme var</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
-                                        id="noc_indicator"
-                                        value="3: Hastanın gece uykusunda bazen bölünme var">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">3: Hastanın gece uykusunda bazen bölünme var</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
-                                        id="noc_indicator"
-                                        value="4: Hastanın gece uykusunda nadiren bölünme var">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">4: Hastanın gece uykusunda nadiren bölünme var</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="
-                                        noc_indicator" value="5: Hastanın gece uykusunda bölünme yok">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">5: Hastanın gece uykusunda bölünme yok
-                                        </span>
-                                    </label>
-                                </div>
-
-                            </div>
-                        </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hasta gece iyi uyuduğunu ifade etmesi</p>
+                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p class="tanıdescription">Hastanın düzenlenen aktivitelere katılım göstermesi </p>
                         </div>
+
+
                         <div class="input-section" id="o2-delivery-container">
                             <p class="usernamelabel">NOC Gösterge: </p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after_2"
-                                        id="noc_indicator"
-                                        value="1: Hasta sürekli gece iyi uyumadığını ifade eder">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="1: Hasta düzenlenen aktivitelere hiç katılım göstermez">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">1: Hasta sürekli gece iyi uyumadığını ifade eder</span>
+                                        <span class="checkbox-header">1: Hasta düzenlenen aktivitelere hiç katılım göstermez</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after_2"
-                                        id="noc_indicator"
-                                        value="2: Hasta sık sık gece iyi uyumadığını ifade eder">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="2: Hasta düzenlenen aktivitelere sık sık katılım göstermez">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">2: Hasta sık sık gece iyi uyumadığını ifade eder</span>
+                                        <span class="checkbox-header">2: Hasta düzenlenen aktivitelere sık sık katılım göstermez</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after_2"
-                                        id="noc_indicator"
-                                        value="3: Hasta bazen gece iyi uyumadığını ifade eder">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="3: Hasta düzenlenen aktivitelere bazen katılım göstermez">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">3: Hasta bazen gece iyi uyumadığını ifade eder</span>
+                                        <span class="checkbox-header">3: Hasta düzenlenen aktivitelere bazen katılım göstermez</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after_2"
-                                        id="noc_indicator"
-                                        value="4: Hasta nadiren gece iyi uyumadığını ifade eder">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="4: Hasta düzenlenen aktivitelere nadiren katılım göstermez">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">4: Hasta nadiren gece iyi uyumadığını ifade eder</span>
+                                        <span class="checkbox-header">4: Hasta düzenlenen aktivitelere nadiren katılım göstermez</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="
-                                        noc_indicator" value="5: Hasta gece iyi uyuduğunu ifade eder">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="5: Hasta düzenlenen aktivitelere sürekli katılım gösterir">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">5: Hasta gece iyi uyuduğunu ifade eder 
-                                        </span>
+                                        <span class="checkbox-header">5: Hasta düzenlenen aktivitelere sürekli katılım gösterir</span>
                                     </label>
                                 </div>
 
                             </div>
+                        </div>
+
+
+                        <div class="input-section d-flex">
+                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p class="tanıdescription">Hastanın boş zamanlarını nasıl değerlendireceği konusunda seçenekleri belirlemesi </p>
+                        </div>
+
+
+                        <div class="input-section" id="o2-delivery-container">
+                            <p class="usernamelabel">NOC Gösterge: </p>
+                            <div class="form-check">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator" value="1:Hasta aktivite seçeneklerini hiç belirleyemez">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">1:Hasta aktivite seçeneklerini hiç belirleyemez</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator" value="2:Hasta aktivite seçeneklerini sık sık belirleyemez">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">2:Hasta aktivite seçeneklerini sık sık belirleyemez</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator" value="3:Hasta aktivite seçeneklerini bazen belirleyemez">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">3:Hasta aktivite seçeneklerini bazen belirleyemez</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator" value="4:Hasta aktivite seçeneklerini nadiren belirleyemez ">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">4:Hasta aktivite seçeneklerini nadiren belirleyemez </span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator" value="5:Hasta aktivite seçeneklerini belirler">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">5:Hasta aktivite seçeneklerini belirler</span>
+                                    </label>
+                                </div>
+
+                            </div>
+                            
+                        </div>
+
                         </div>
                             <p class="tanıdescription"> Sorun devam ediyor: 1-4 gösterge seçildiyse; yeni günde bakım planında tanımlı tanı olacak.</p>
                             <p class="tanıdescription"> Sorun çözümlendi:
@@ -397,8 +356,6 @@ $hospital_environment_factors = isset($_GET['hospital_environment_factors']) ? $
 
 
     </div>
-   
-
     <script>
         $(function() {
             $('#closeBtn1').click(function(e) {
@@ -429,11 +386,11 @@ $hospital_environment_factors = isset($_GET['hospital_environment_factors']) ? $
                 var surname = $('#surname').val();
                 var age = $('#age').val();
                 var not = $('#not').val();
-                let form_num = 15;
+                tani_name = 'tani21';
                 var patient_id = <?php
-                                        $userid = isset($_GET['patient_id']) ?$_GET['patient_id'] : 20;
-                                        echo $userid
-                                        ?>;
+                                    $userid = $_GET['patient_id'];
+                                    echo $userid
+                                    ?>;
                 let patient_name = "<?php
                                     echo urldecode($_GET['patient_name']);
                                     ?>";
@@ -455,7 +412,6 @@ $hospital_environment_factors = isset($_GET['hospital_environment_factors']) ? $
                 let noc_indicator_after = $('.form-check-input[name="noc_indicator_after"]:checked').val();
 		        let noc_indicator_after_2 = $('.form-check-input[name="noc_indicator_after_2"]') ? $('.form-check-input[name=noc_indicator_after_2]:checked').val() : "null";
 		        let noc_indicator_after_3 = $('.form-check-input[name="noc_indicator_after_3"]') ? $('.form-check-input[name=noc_indicator_after_3]:checked').val() : "null";
-
                 $.ajax({
                 type: 'POST',
                 url: '<?php echo $base_url; ?>/insertTanalar/riskTani15Insert.php',

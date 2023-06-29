@@ -272,25 +272,25 @@ $feeding_problem = isset($_GET['feeding_problem']) ? $_GET['feeding_problem'] : 
 
                             <p class="usernamelabel">Eğitim:</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt22" id="nurse_attempt22" value="Bulantı ve kusmayı azaltmak için hastaya yavaş, derin nefes alma öğretilirr">
+                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt22" value="Bulantı ve kusmayı azaltmak için hastaya yavaş, derin nefes alma öğretilirr">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Bulantı ve kusmayı azaltmak için hastaya yavaş, derin nefes alma öğretilirDüzenli bağırsak boşaltım alışkanlığının geliştirilmesi için eğitim verilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt23" id="nurse_attempt23" value="Bakım verenler, hastanın sevdiği ve yemesinde sakınca olmayan yemeklerin temini konusunda teşvik edilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt23" value="Bakım verenler, hastanın sevdiği ve yemesinde sakınca olmayan yemeklerin temini konusunda teşvik edilir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Bakım verenler, hastanın sevdiği ve yemesinde sakınca olmayan yemeklerin temini konusunda teşvik edilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt24" id="nurse_attempt24" value="Hastaya ve bakım verenlerine kalori ve besin alımını nasıl takip edebileceği öğretilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt24" value="Hastaya ve bakım verenlerine kalori ve besin alımını nasıl takip edebileceği öğretilir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Hastaya ve bakım verenlerine kalori ve besin alımını nasıl takip edebileceği öğretilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt25" id="nurse_attempt25" value="Hasta kendine uygun takma diş kullanımı veya diş bakım alışkanlığı edinmesi için desteklenir">
+                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt25" value="Hasta kendine uygun takma diş kullanımı veya diş bakım alışkanlığı edinmesi için desteklenir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Hasta kendine uygun takma diş kullanımı veya diş bakım alışkanlığı edinmesi için desteklenir</span>
                                 </label>
@@ -298,37 +298,37 @@ $feeding_problem = isset($_GET['feeding_problem']) ? $_GET['feeding_problem'] : 
 
                             <p class="usernamelabel">İŞ BİRLİĞİ GEREKTİREN UYGULAMALAR</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt26" id="nurse_attempt26" value="Günlük kalori gereksinimlerine uygun olan diyetin planlanması için diyetisyenle işbirliği yapılır">
+                                <input class="form-check-input" type="checkbox" name="collaborative_apps" id="nurse_attempt26" value="Günlük kalori gereksinimlerine uygun olan diyetin planlanması için diyetisyenle işbirliği yapılır">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Günlük kalori gereksinimlerine uygun olan diyetin planlanması için diyetisyenle işbirliği yapılır</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt27" id="nurse_attempt27" value="Yetersiz protein alan ya da protein kaybeden hastalar (anoreksiya nevroza, glomeruler hastalığı olan ya da diyaliz alan hastalar) için gerekli protein miktarının belirlenmesi için diyetisyenle görüşülür">
+                                <input class="form-check-input" type="checkbox" name="collaborative_apps" id="nurse_attempt27" value="Yetersiz protein alan ya da protein kaybeden hastalar (anoreksiya nevroza, glomeruler hastalığı olan ya da diyaliz alan hastalar) için gerekli protein miktarının belirlenmesi için diyetisyenle görüşülür">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Yetersiz protein alan ya da protein kaybeden hastalar (anoreksiya nevroza, glomeruler hastalığı olan ya da diyaliz alan hastalar) için gerekli protein miktarının belirlenmesi için diyetisyenle görüşülür</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt28" id="nurse_attempt28" value="Yeterli kalori alımının sürdürülmesi için iştah açıcılar, tamamlayıcı besinler, beslenme tüpü ile beslenme ya da TPN’ye ihtiyaç olup olmadığının belirlenmesi için hekimle iş birliği yapılır">
+                                <input class="form-check-input" type="checkbox" name="collaborative_apps" id="nurse_attempt28" value="Yeterli kalori alımının sürdürülmesi için iştah açıcılar, tamamlayıcı besinler, beslenme tüpü ile beslenme ya da TPN’ye ihtiyaç olup olmadığının belirlenmesi için hekimle iş birliği yapılır">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Yeterli kalori alımının sürdürülmesi için iştah açıcılar, tamamlayıcı besinler, beslenme tüpü ile beslenme ya da TPN’ye ihtiyaç olup olmadığının belirlenmesi için hekimle iş birliği yapılır</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt29" id="nurse_attempt29" value="İstemde yer alan ilaçlar (antiemetikler, analjezikler vb) uygulanır">
+                                <input class="form-check-input" type="checkbox" name="collaborative_apps" id="nurse_attempt29" value="İstemde yer alan ilaçlar (antiemetikler, analjezikler vb) uygulanır">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">İstemde yer alan ilaçlar (antiemetikler, analjezikler vb) uygulanır</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt30" id="nurse_attempt30" value="Yeme bozukluğu olan hastaya destek sağlanması için gerekli birimlere/kurumlara sevk edilir">
+                                <input class="form-check-input" type="checkbox" name="collaborative_apps" id="nurse_attempt30" value="Yeme bozukluğu olan hastaya destek sağlanması için gerekli birimlere/kurumlara sevk edilir">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Yeme bozukluğu olan hastaya destek sağlanması için gerekli birimlere/kurumlara sevk edilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt31" id="nurse_attempt31" value="Hastanın yeterli yiyeceği satın alma ya da hazırlama konusunda sıkıntıları varsa, bu ihtiyacı karşılayabilecek organlar hakkında (belediyeler, valilik, sosyal yardım kuruluşları vb.) bilgilendirme yapılır">
+                                <input class="form-check-input" type="checkbox" name="collaborative_apps" id="nurse_attempt31" value="Hastanın yeterli yiyeceği satın alma ya da hazırlama konusunda sıkıntıları varsa, bu ihtiyacı karşılayabilecek organlar hakkında (belediyeler, valilik, sosyal yardım kuruluşları vb.) bilgilendirme yapılır">
                                 <label class="form-check-label" for="nurse_attempt">
                                     <span class="checkbox-header">Hastanın yeterli yiyeceği satın alma ya da hazırlama konusunda sıkıntıları varsa, bu ihtiyacı karşılayabilecek organlar hakkında (belediyeler, valilik, sosyal yardım kuruluşları vb.) bilgilendirme yapılır</span>
                                 </label>
@@ -399,18 +399,7 @@ $feeding_problem = isset($_GET['feeding_problem']) ? $_GET['feeding_problem'] : 
 
 
     </div>
-    <script>
-        var BKI = document.getElementById('BKI').innerText;
-        var permitted_food = document.getElementById('permitted_food').innerText;
-        var nutrition_problem = document.getElementById('nutrition_problem').innerText;
-        var excretion_problem = document.getElementById('excretion_problem').innerText;
-        var language_problem = document.getElementById('language_problem').innerText;
-        var ingestion_problem = document.getElementById('ingestion_problem').innerText;
-        var feeding_problem = document.getElementById('feeding_problem').innerText;
-
-        var matchedfields_string = BKI + " / " + permitted_food + " / " + nutrition_problem +
-            " / " + excretion_problem + " / " + language_problem + "/" + language_problem + "/" + ingestion_problem + "/" + feeding_problem;
-    </script>
+   
 
     <script>
         $(function() {
@@ -453,218 +442,68 @@ $feeding_problem = isset($_GET['feeding_problem']) ? $_GET['feeding_problem'] : 
                 let yourDate = new Date();
                 let creationDate = yourDate.toISOString().split('T')[0];
                 let updateDate = yourDate.toISOString().split('T')[0];
-                let problem_info = matchedfields_string
-                let nurse_description = "Gaz değişiminde bozulma"
-                let noc_output = "Hastanın oksijen satürasyonun %95’in üzerinde olması"
-                let noc_indicator = $("input[type='radio'][name='noc_indicator']:checked").val();
-                let noc_indicator_after = $("input[type='radio'][name='noc_indicator_after']:checked").val();
-                let evaluation = "";
-                console.log("values init")
-
-                if (noc_indicator == "5: Hastanın oksijen satürasyonunda bozulma yok") {
-                    evaluation +=
-                        "Sorun çözümlendi:5 gösterge seçildiyse;yeni günde bakım planına bu tanıyı taşımayacak"
-                } else {
-                    evaluation +=
-                        "Sorun devam ediyor: 1-4 gösterge seçildiyse; yeni günde bakım planında tanımlı tanı olacak."
-                }
-                let nurse_attempt = "";
-                let nurse_education = '';
-                let collaborative_applications = '';
-
-                var l1 = document.getElementById("nurse_attempt1");
-                var l2 = document.getElementById("nurse_attempt2");
-                var l3 = document.getElementById("nurse_attempt3");
-                var l4 = document.getElementById("nurse_attempt4");
-                var l5 = document.getElementById("nurse_attempt5");
-                var l6 = document.getElementById("nurse_attempt6");
-                var l7 = document.getElementById("nurse_attempt7");
-                var l8 = document.getElementById("nurse_attempt8");
-                var l9 = document.getElementById("nurse_attempt9");
-                var l10 = document.getElementById("nurse_attempt10");
-                var l11 = document.getElementById("nurse_attempt11");
-                var l12 = document.getElementById("nurse_attempt12");
-                var l13 = document.getElementById("nurse_attempt13");
-                var l14 = document.getElementById("nurse_attempt14");
-                var l15 = document.getElementById("nurse_attempt15");
-                var l16 = document.getElementById("nurse_attempt16");
-                var l17 = document.getElementById("nurse_attempt17");
-                var l18 = document.getElementById("nurse_attempt18");
-                var l19 = document.getElementById("nurse_attempt19");
-                var l20 = document.getElementById("nurse_attempt20");
-                var l21 = document.getElementById("nurse_attempt21");
-                var l22 = document.getElementById("nurse_attempt22");
-                var l23 = document.getElementById("nurse_attempt23");
-                var l24 = document.getElementById("nurse_attempt24");
-                var l25 = document.getElementById("nurse_attempt25");
-                var l26 = document.getElementById("nurse_attempt26");
-                var l27 = document.getElementById("nurse_attempt27");
-                var l28 = document.getElementById("nurse_attempt28");
-                var l29 = document.getElementById("nurse_attempt29");
-                var l30 = document.getElementById("nurse_attempt30");
-                var l31 = document.getElementById("nurse_attempt31");
-
-                if (l1.checked == true) {
-                    var pl1 = document.getElementById("nurse_attempt1").value;
-                    nurse_attempt += pl1 + "/";
-                }
-                if (l2.checked == true) {
-                    var pl2 = document.getElementById("nurse_attempt2").value;
-                    nurse_attempt += pl2 + "/";
-                }
-                if (l3.checked == true) {
-                    var pl3 = document.getElementById("nurse_attempt3").value;
-                    nurse_attempt += pl3 + "/";
-                }
-                if (l4.checked == true) {
-                    var pl4 = document.getElementById("nurse_attempt4").value;
-                    nurse_attempt += pl4 + "/";
-                }
-                if (l5.checked == true) {
-                    var pl5 = document.getElementById("nurse_attempt5").value;
-                    nurse_attempt += pl5 + "/";
-                }
-                if (l6.checked == true) {
-                    var pl6 = document.getElementById("nurse_attempt6").value;
-                    nurse_attempt += pl6 + "/";
-                }
-                if (l7.checked == true) {
-                    var pl7 = document.getElementById("nurse_attempt7").value;
-                    nurse_attempt += pl7 + "/";
-                }
-                if (l8.checked == true) {
-                    var pl8 = document.getElementById("nurse_attempt8").value;
-                    nurse_attempt += pl8 + "/";
-                }
-                if (l9.checked == true) {
-                    var pl9 = document.getElementById("nurse_attempt9").value;
-                    nurse_attempt += pl9 + "/";
-                }
-                if (l10.checked == true) {
-                    var pl10 = document.getElementById("nurse_attempt10").value;
-                    nurse_attempt += pl10 + "/";
-                }
-                if (l11.checked == true) {
-                    var pl11 = document.getElementById("nurse_attempt11").value;
-                    nurse_attempt += pl11 + "/";
-                }
-                if (l12.checked == true) {
-                    var pl12 = document.getElementById("nurse_attempt12").value;
-                    nurse_attempt += pl12 + "/";
-                }
-                if (l13.checked == true) {
-                    var pl13 = document.getElementById("nurse_attempt13").value;
-                    nurse_attempt += pl13 + "/";
-                }
-                if (l14.checked == true) {
-                    var pl14 = document.getElementById("nurse_attempt14").value;
-                    nurse_attempt += pl14 + "/";
-                }
-                if (l15.checked == true) {
-                    var pl15 = document.getElementById("nurse_attempt15").value;
-                    nurse_attempt += pl15 + "/";
-                }
-                if (l16.checked == true) {
-                    var pl16 = document.getElementById("nurse_attempt16").value;
-                    nurse_attempt += pl16 + "/";
-                }
-                if (l17.checked == true) {
-                    var pl17 = document.getElementById("nurse_attempt17").value;
-                    nurse_attempt += pl17 + "/";
-                }
-                if (l18.checked == true) {
-                    var pl18 = document.getElementById("nurse_attempt18").value;
-                    nurse_attempt += pl18 + "/";
-                }
-                if (l19.checked == true) {
-                    var pl19 = document.getElementById("nurse_attempt19").value;
-                    nurse_attempt += pl19 + "/";
-                }
-                if (l20.checked == true) {
-                    var pl20 = document.getElementById("nurse_attempt20").value;
-                    nurse_attempt += pl20 + "/";
-                }
-                if (l21.checked == true) {
-                    var pl21 = document.getElementById("nurse_attempt21").value;
-                    nurse_attempt += pl21 + "/";
-                }
-                if (l22.checked == true) {
-                    var pl22 = document.getElementById("nurse_attempt22").value;
-                    nurse_education += pl22 + "/";
-                }
-                if (l23.checked == true) {
-                    var pl23 = document.getElementById("nurse_attempt23").value;
-                    nurse_education += pl23 + "/";
-                }
-                if (l24.checked == true) {
-                    var pl24 = document.getElementById("nurse_attempt24").value;
-                    nurse_education += pl24 + "/";
-                }
-                if (l25.checked == true) {
-                    var pl25 = document.getElementById("nurse_attempt25").value;
-                    nurse_education += pl25 + "/";
-                }
-                if (l26.checked == true) {
-                    var pl26 = document.getElementById("nurse_attempt26").value;
-                    collaborative_applications += pl26 + "/";
-                }
-                if (l27.checked == true) {
-                    var pl27 = document.getElementById("nurse_attempt27").value;
-                    collaborative_applications += pl27 + "/";
-                }
-                if (l28.checked == true) {
-                    var pl28 = document.getElementById("nurse_attempt28").value;
-                    collaborative_applications += pl28 + "/";
-                }
-                if (l29.checked == true) {
-                    var pl29 = document.getElementById("nurse_attempt29").value;
-                    collaborative_applications += pl29 + "/";
-                }
-                if (l30.checked == true) {
-                    var pl30 = document.getElementById("nurse_attempt30").value;
-                    collaborative_applications += pl30 + "/";
-                }
-                if (l31.checked == true) {
-                    var pl31 = document.getElementById("nurse_attempt31").value;
-                    collaborative_applications += pl31 + "/";
-                }
+                let nurse_attempt = $('.form-check-input[name="nurse_attempt"]:checked').map(function() {
+                    return this.value;
+                }).get().join('/');
+                let nurse_education = $('.form-check-input[name="nurse_education"]:checked').map(function() {
+                    return this.value;
+                }).get().join('/');
+                let collaborative_apps = $('.form-check-input[name="collaborative_apps"]:checked').map(function() {
+                    return this.value;
+                }).get().join('/');
+                let noc_indicator = $('.form-check-input[name="noc_indicator"]:checked').val();
+		        let noc_indicator_2 = $('.form-check-input[name="noc_indicator_2"]') ? $('.form-check-input[name=noc_indicator_2]:checked').val() : "null";
+		        let noc_indicator_3 = $('.form-check-input[name="noc_indicator_3"]') ? $('.form-check-input[name=noc_indicator_3]:checked').val() : "null";
+                let noc_indicator_after = $('.form-check-input[name="noc_indicator_after"]:checked').val();
+		        let noc_indicator_after_2 = $('.form-check-input[name="noc_indicator_after_2"]') ? $('.form-check-input[name=noc_indicator_after_2]:checked').val() : "null";
+		        let noc_indicator_after_3 = $('.form-check-input[name="noc_indicator_after_3"]') ? $('.form-check-input[name=noc_indicator_after_3]:checked').val() : "null";
 
                 $.ajax({
-                    type: 'POST',
-                    url: '<?php echo $base_url; ?>/insertTanalar/tani12Insert.php',
-                    data: {
-                        name: name,
-                        surname: surname,
-                        age: age,
-                        form_num: form_num,
-                        patient_id: patient_id,
-                        patient_name: patient_name,
-                        creation_date: creationDate,
-                        update_date: updateDate,
-                        problem_info: problem_info,
-                        nurse_description: nurse_description,
-                        noc_output: noc_output,
-                        noc_indicator: noc_indicator,
-                        noc_indicator_after:noc_indicator_after,
-                        nurse_attempt: nurse_attempt,
-                        nurse_education: nurse_education,
-                        collaborative_applications: collaborative_applications,
-                        evaluation: evaluation,
-                        matchedfields_string: matchedfields_string,
-                    },
-                    success: function(data) {
-                        console.log("something happened")
-                        alert(data);
-                        let url =
-                            "<?php echo $base_url; ?>/taniReview/tani12Review.php?patient_id=" +
-                            patient_id + "&patient_name=" + encodeURIComponent(
-                                patient_name);
-                        $("#content").load(url);
-                    },
-                    error: function(data) {
-                        console.log(data)
-                    }
-                });
+                type: 'POST',
+                url: '<?php echo $base_url; ?>/insertTanalar/riskTani15Insert.php',
+                data: {
+                    patient_id: patient_id,
+                    patient_name: patient_name,
+                    creation_date: creationDate,
+                    update_date: updateDate,
+                    problem_info: problem_info,
+                    nurse_description: nurse_description,
+                    noc_output: noc_output,
+                    noc_indicator: noc_indicator,
+                    noc_indicator_after: noc_indicator_after,
+                    noc_indicator_2: noc_indicator_2,
+                    noc_indicator_after_2: noc_indicator_after_2,
+                    noc_indicator_3: noc_indicator_3,
+                    noc_indicator_after_3: noc_indicator_after_3,
+                    nurse_attempt: nurse_attempt,
+                    nurse_education: nurse_education,
+                    collaborative_apps: collaborative_apps,
+                    evaluation: evaluation,
+                    standalone: $_GET['standalone']
+                },
+                success: function(data) {
+                    console.log("something happened")
+                    let url =
+                        "<?php echo $base_url; ?>/taniReview/riskTani15Review.php?patient_id=" +
+                        patient_id + "&patient_name=" + encodeURIComponent(
+                            patient_name);
+                            $("#tick-container").fadeIn(800);
+                            // Change the tick background to the animated GIF
+                            $("#tick").css("background-image", "url('./check-2.gif')");
+
+                            // Delay for 2 seconds (adjust the duration as needed)
+                            setTimeout(function() {
+                            // Load the content
+                            $("#content").load(url);
+                            $("#tick-container").fadeOut(600);
+                            // Hide the tick container
+                            }, 1000);
+;
+                },
+                error: function(data) {
+                    console.log(data)
+                }
+            });
             })
         });
     </script>
