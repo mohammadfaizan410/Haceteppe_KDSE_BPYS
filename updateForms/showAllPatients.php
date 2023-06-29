@@ -63,30 +63,30 @@ if (isset($_GET['logout'])) {
             </div>
             <div class="patients-table text-center rounded p-4" id="patients-table">
                 <div class="d-flex align-items-center justify-content-between mb-4">
-                    <h6 class="mb-0 darkcyan table-title">Hasta Listesi / Öneriler</h6>
+                    <p style="color : #333333; font-size: 20px" class="pb-4">Hasta Listesi / Öneriler</p>
 
                 </div>
 
                 <div class="table-responsive">
-                    <table class="table text-start align-middle table-bordered table-hover mb-0">
+                    <table class="table text-start align-middle table-hover mb-0">
                         <thead>
-                            <tr class=" darkcyan table-head">
+                            <tr class="darkcyan table-head">
 
-                                <th scope="col">İsim</th>
-                                <th scope="col">Soyisim</th>
-                                <th scope="col">Yaş</th>
-                                <th scope="col">Formlar</th>
+                                <th scope="col" style="font-weight : bold; font-size: large;">İsim</th>
+                                <th scope="col" style="font-weight : bold; font-size: large;">Soyisim</th>
+                                <th scope="col" style="font-weight : bold; font-size: large;">Yaş</th>
+                                <th scope="col" style="font-weight : bold; font-size: large;">Formlar</th>
 
                             </tr>
                             <?php
                             if (isset($values) && count($values) > 0) {
                                 foreach ($values as $key => $value) {
                                     $fullName = $value['name'] . " " . $value['surname'];
-                                    echo '<tr>                            
-                                    <td scope="col" style="color: white;">' . $value['name'] . '</td>
-                                    <td scope="col" style="color: white;">' . $value['surname'] . '</td>
-                                    <td scope="col" style="color: white;">' . $value['age'] . '</td>
-                                    <td scope="col"><a style="color: white;" class="showallforms" href="#" data-patient-id="' . $value['patient_id'] . '" data-patient-name="' . $fullName . '">Formları Görüntüle</a></td>
+                                    echo '<tr class="mb-4 align-items-center">                            
+                                    <td scope="col" style="color: #333333;">' . $value['name'] . '</td>
+                                    <td scope="col" style="color: #333333;">' . $value['surname'] . '</td>
+                                    <td scope="col" style="color: #333333;">' . $value['age'] . '</td>
+                                    <td scope="col"><a style="color: white;" class="showallforms btn btn-success p-3" href="#" data-patient-id="' . $value['patient_id'] . '" data-patient-name="' . $fullName . '">Formları Görüntüle</a></td>
                                 </tr>';
                                 }
                             }

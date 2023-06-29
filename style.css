@@ -23,7 +23,7 @@ body {
 }
 
 .stu-body {
-    background-color: #dddddd !important;
+    background-color: #ECE8E1 !important;
     background-image: none;
     display: flex;
 }
@@ -50,8 +50,8 @@ body {
 .login-box {
     max-width: 599px;
     width: 90%;
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
+    background: #ECE8E1;
+    color: #333333;
     top: 50%;
     left: 50%;
     position: absolute;
@@ -74,20 +74,19 @@ body {
     height: 60px;
     font-size: 20px !important;
     border-radius: 20px;
-    color: #fff;
-    background-color: goldenrod;
+    color: white;
     text-decoration: none;
     padding-top: 18px;
 }
 
 .buttons:hover {
     cursor: pointer;
-    background-color: darkgoldenrod;
-    color: #000 !important;
+    color: #333333 !important;
 }
 
 .buttons-wrapper {
     width: 100%;
+    color: white;
 }
 
 .stu-body1 {
@@ -98,7 +97,9 @@ body {
 }
 
 h3 {
-    color: #246174 !important;
+    color: #333333 !important;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333333;
 }
 
 .navigation {
@@ -141,7 +142,7 @@ h3 {
 }
 
 .hemsire-fakulte {
-    color: black;
+    color: #198754 !important;
     font-size: 16px;
     font-weight: bold;
     margin-top: -25px;
@@ -163,8 +164,9 @@ h3 {
 
 .nav-link {
     padding: 0;
-    color: #246174 !important;
+    color: #198754 !important;
     margin-right: 20px;
+    font-size: medium;
 }
 
 .nav-link:hover {
@@ -195,12 +197,13 @@ h3 {
 
 .form-control {
     background-color: #d1d1d1 !important;
-    width: 50% !important;
     align-self: center;
-    border: 1px solid;
-    border-color: #246174;
-    box-shadow: 1px 1px 1px 1px #246174;
+    border: 1px solid rgb(100, 100, 100);
+    color : #333333;
+}
 
+.diger{
+    width: 90% !important;
 }
 
 .not {
@@ -209,10 +212,13 @@ h3 {
 
 .submit {
     height: 75px;
-
-    background-color: #246174 !important;
+    background-color: #198754 !important;
     color: white;
     margin-top: 50px;
+    font-size: large;
+    border : none;
+    border-radius: 15px;
+    width: 75%;
 }
 
 .header {
@@ -221,22 +227,26 @@ h3 {
 
     text-align: center;
     font-size: 22px;
-    color: #fff;
+    color: #198754 ;
 }
 
 .login {
     margin-top: 20px;
     margin-bottom: 30px;
+    color: #333333 ;
 }
 
 .logout {
     text-decoration: none;
-    color: #fff;
+    color: #333333 ;
 }
 
 .login-box p {
     margin-bottom: 10px;
     font-weight: bold !important;
+    color : #333333 ; 
+    font-size: large;
+    padding-bottom: 5px;
 }
 
 
@@ -249,14 +259,14 @@ h3 {
 }
 
 .login-box input[type="text"],
-input[type="password"] {
+input[type="password"],input[type="email"]  {
 
     border: none;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #198754;
     background: transparent;
     outline: none;
     height: 40px;
-    color: #fff;
+    color: #333333 ;
     font-size: 13px;
 
 
@@ -266,7 +276,6 @@ input[type="password"] {
 input[type="password"],
 input[type="email"] {
     height: 20px;
-
 }
 
 
@@ -279,21 +288,21 @@ input[type="email"] {
     font-size: 18px;
     border-radius: 20px;
     color: #fff;
-    background-color: #246174;
+    background-color: #198754;
 
 }
 
 
 .login-box ::placeholder {
 
-    color: #fff;
+    color: #333333 ;
 }
 
 
 .login-box input[type="submit"]:hover {
 
     cursor: pointer;
-    background: darkgoldenrod;
+    background: #198754;
     color: #000;
 }
 
@@ -303,8 +312,8 @@ input[type="email"] {
 
     text-decoration: none;
     font-size: 14px;
-    color: #fff;
-    background-color: #246174;
+    color: #333333 ;
+    background-color: #198754;
 
 }
 
@@ -329,17 +338,18 @@ input[type="email"] {
 }
 
 .patients-table {
-    background-color: #246174 !important;
+    background-color: white !important;
 }
 
 .lower-buttons {
     background: none !important;
+    color : #333333 ;
 }
 
 .form-header {
     font-weight: 700;
     font-size: 36px;
-    color: #525770;
+    color: #333333; 
     text-align: center;
     margin-bottom: 30px;
     margin-top: 30px;
@@ -361,7 +371,7 @@ input[type="email"] {
     width: 100%;
     justify-content: space-between;
     margin-bottom: 25px;
-    border: 2px solid #246174;
+    border: 1px solid #a8a7a7;
     border-radius: 15px;
     padding: 20px;
 
@@ -408,7 +418,7 @@ input[type="email"] {
 .previous-btn,
 .next-btn {
     padding: 16px;
-    background: #246174;
+    background: #198754;
     border: 1px solid;
     border-radius: 10px;
     border-color: #246174;
@@ -422,7 +432,7 @@ input[type="email"] {
 
 .new-form {
     width: 90%;
-    background-color: #246174;
+    background-color: #198754;
     height: 50px;
     border-radius: 16px;
     display: flex;
@@ -622,7 +632,9 @@ input[type="email"] {
 }
 
 .table-head {
-    color: white;
+    color: #333333;
+    font-weight: 700;
+    font-size: larger;
 }
 
 .broadcastPrompt {
@@ -757,19 +769,27 @@ input[type="email"] {
 }
 
 .resend {
-    background-color: #246174 !important;
+    background-color: #198754 !important;
     border: none;
     height: 40px;
     border-radius: 20px;
     color: #fff;
     font-size: 14px;
     padding: 12px;
+    cursor: pointer;
 }
 
 .taniReview {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.taniTable{
+    width: 50%;
+    border : 2px solid black;
+    margin : auto;
+    margin-top: 20px;
 }
 
 @media screen and (max-width: 768px) {
@@ -838,7 +858,8 @@ input[type="email"] {
     }
 
     .table-title {
-        font-size: 18px;
+        font-size: 20px;
+        color: #333333;
     }
 
     .entered-forms-header {

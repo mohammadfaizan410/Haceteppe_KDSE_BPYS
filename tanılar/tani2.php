@@ -11,11 +11,7 @@ if (isset($_GET['logout'])) {
     header("Location: main.php");
 }
 
-$tanı_respiratory_rate = $_GET['tanı_respiratory_rate'];
-$tanı_heart_rate = $_GET['tanı_heart_rate'];
-$tanı_spo2_percentage = $_GET['tanı_spo2_percentage'];
-$tanı_o2_status = $_GET['tanı_o2_status'];
-$tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -448,7 +444,9 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                                 5 gösterge seçildiyse; yeni günde bakım planına bu tanıyı taşımayacak
                             </p>
                         </div>
-                        <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
+                                                                <input type="submit" class="w-75 submit m-auto" name="submit" id="submit" value="Kaydet">
+
+
                     </form>
                 </div>
             </div>

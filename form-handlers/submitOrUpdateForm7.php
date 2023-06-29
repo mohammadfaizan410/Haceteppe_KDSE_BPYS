@@ -4,10 +4,9 @@ require_once("../config-students.php");
 ?>
 <?php
 $data = json_decode(file_get_contents('php://input'), true);
-$healing_date = date('Y-m-d', strtotime($data["healing_date"]));
-if (isset($data["patient_name"])) {
+$healing_date = DateTime::createFromFormat('Y-m-d', $data["healing_date"]);
+$healing_date_formatted = $healing_date->format('Y-m-d');if (isset($data["patient_name"])) {
     if (isset($data["isUpdate"])) {
-
         $stmt = $db->prepare("UPDATE form7 SET 
                     update_date = ?,
                     occurance_date = ?,
@@ -49,14 +48,14 @@ if (isset($data["patient_name"])) {
             $data["pain"],
             $data["care_products"],
             $data["result"],
-            $healing_date,
+            $healing_date_formatted,
             $data["form_id"],
         ]);
 
         if ($result) {
             echo "Güncelleme Başarılı!";
         } else {
-            echo $result;
+            echo 'error';
         }
     } else {
 
@@ -109,7 +108,7 @@ if (isset($data["patient_name"])) {
             $data["pain"],
             $data["care_products"],
             $data["result"],
-            $healing_date,
+            $healing_date_formatted,
         ]);
 
         if ($result) {

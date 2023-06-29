@@ -228,7 +228,8 @@ if (isset($_GET['logout'])) {
                                     id="diger" placeholder="IV input">
                             </div>
                         </div>
-                        <input class="form-control submit" type="submit" name="submit" id="submit" value="Kaydet">
+                                            <input type="submit" class="w-75 submit m-auto" name="submit" id="submit" value="Kaydet">
+
                     </form>
                 </div>
             </div>

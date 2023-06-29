@@ -334,7 +334,7 @@ if (isset($_GET['logout'])) {
                 </div>
             </div>
             <div class="d-flex text-center">
-                <input class="form-control submit m-auto " type='submit' name="submit" id="submit" value="Kayıt">
+                <input class="submit m-auto " type='submit' name="submit" id="submit" value="Kayıt">
              </form>
                 </div>
             </div>

@@ -389,7 +389,9 @@ $feeding_problem = isset($_GET['feeding_problem']) ? $_GET['feeding_problem'] : 
                                 5 gösterge seçildiyse; yeni günde bakım planına bu tanıyı taşımayacak
                             </p>
                         </div>
-                        <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
+                                                                <input type="submit" class="w-75 submit m-auto" name="submit" id="submit" value="Kaydet">
+
+
                     </form>
                 </div>
             </div>
