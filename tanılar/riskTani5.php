@@ -367,6 +367,7 @@ if (isset($_GET['logout'])) {
                 type: 'POST',
                 url: '<?php echo $base_url; ?>/insertTanalar/riskTani15Insert.php',
                 data: {
+                    table: 'tani39',
                     patient_id: patient_id,
                     patient_name: patient_name,
                     creation_date: creationDate,

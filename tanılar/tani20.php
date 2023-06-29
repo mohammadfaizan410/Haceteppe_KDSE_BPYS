@@ -397,6 +397,7 @@ $Hb   = isset($_GET['Hb  ']) ? $_GET['Hb '] : "NaN";
                 type: 'POST',
                 url: '<?php echo $base_url; ?>/insertTanalar/riskTani15Insert.php',
                 data: {
+                    table: 'tani20',
                     patient_id: patient_id,
                     patient_name: patient_name,
                     creation_date: creationDate,

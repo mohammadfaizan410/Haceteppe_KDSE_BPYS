@@ -462,6 +462,7 @@ $hospital_environment_factors = isset($_GET['hospital_environment_factors']) ? $
                 type: 'POST',
                 url: '<?php echo $base_url; ?>/insertTanalar/riskTani15Insert.php',
                 data: {
+                    table: 'tani16',
                     patient_id: patient_id,
                     patient_name: patient_name,
                     creation_date: creationDate,

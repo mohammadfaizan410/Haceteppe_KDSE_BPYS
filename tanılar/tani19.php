@@ -423,6 +423,7 @@ $fatigue  = isset($_GET['fatigue ']) ? $_GET['fatigue '] : "NaN";
                 type: 'POST',
                 url: '<?php echo $base_url; ?>/insertTanalar/riskTani15Insert.php',
                 data: {
+                    table: 'tani19',
                     patient_id: patient_id,
                     patient_name: patient_name,
                     creation_date: creationDate,

@@ -366,6 +366,7 @@ $permitted_food_consumption = isset($_GET['permitted_food_consumption']) ? $_GET
                 type: 'POST',
                 url: '<?php echo $base_url; ?>/insertTanalar/riskTani15Insert.php',
                 data: {
+                    table: 'tani14',
                     patient_id: patient_id,
                     patient_name: patient_name,
                     creation_date: creationDate,
