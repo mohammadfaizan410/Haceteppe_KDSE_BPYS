@@ -355,6 +355,7 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                 type: 'POST',
                 url: '<?php echo $base_url; ?>/insertTanalar/riskTani15Insert.php',
                 data: {
+                    table: 'tani7',
                     patient_id: patient_id,
                     patient_name: patient_name,
                     creation_date: creationDate,

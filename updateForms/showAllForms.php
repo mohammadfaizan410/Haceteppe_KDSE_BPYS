@@ -517,16 +517,12 @@ if (isset($_GET['logout'])) {
                                         $update_date = $form["update_date"];
                                         $form_23_options .= '<li class="m-2 p-2 "><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-egitim-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Egitim Date: ' . $update_date . '</p></a></div></li>';
                                     }
-<<<<<<< HEAD
-                                    
-=======
                                     if ($key ===  'table24_data') {
                                         $form_id = $form["form_id"];
                                         $update_date = $form["update_date"];
                                         $form_25_options .= '<li class="m-2 p-2 "><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-beslenme-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Beslenme Date: ' . $update_date . '</p></a></div></li>';
                                     }
 
->>>>>>> 67c228c3512f36d3b36af8a719c2a032c5601bfb
                                 };
                             };
                         };

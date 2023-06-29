@@ -377,6 +377,7 @@ $family_history = isset($_GET['family_history']) ? $_GET['family_history'] : 'Na
                 type: 'POST',
                 url: '<?php echo $base_url; ?>/insertTanalar/riskTani15Insert.php',
                 data: {
+                    table: 'tani13',
                     patient_id: patient_id,
                     patient_name: patient_name,
                     creation_date: creationDate,

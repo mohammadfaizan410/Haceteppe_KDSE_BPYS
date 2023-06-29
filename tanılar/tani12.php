@@ -462,6 +462,7 @@ $feeding_problem = isset($_GET['feeding_problem']) ? $_GET['feeding_problem'] : 
                 type: 'POST',
                 url: '<?php echo $base_url; ?>/insertTanalar/riskTani15Insert.php',
                 data: {
+                    table: 'tani12',
                     patient_id: patient_id,
                     patient_name: patient_name,
                     creation_date: creationDate,
