@@ -279,13 +279,13 @@ if (isset($_GET['logout'])) {
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="şekli" id="diet_eating_process" value="Oral">
+                            <input class="form-check-input diet_eating_process" type="radio" name="şekli" id="diet_eating_process" value="Oral">
                             <label class="form-check-label" for="BeslenmeSekli">
                                 <span class="checkbox-header">Oral</span>
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="şekli" id="diet_eating_process"
+                            <input class="form-check-input diet_eating_process" type="radio" name="şekli" id="diet_eating_process"
                                 value="Parenteral">
                             <label class="form-check-label" for="BeslenmeSekli">
                                 <span class="checkbox-header">Parenteral</span>
@@ -293,7 +293,7 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="şekli" id="diet_eating_process" value="Sonda ile">
+                            <input class="form-check-input diet_eating_process" type="radio" name="şekli" id="diet_eating_process" value="Sonda ile">
                             <label class="form-check-label" for="BeslenmeSekli">
                                 <span class="checkbox-header">Sonda ile</span>
                             </label>
@@ -1515,7 +1515,7 @@ if (isset($_GET['logout'])) {
             $('input[type=radio][id="diet_eating_process"]').change(function() {
                 if ($(this).prop('checked')) {
                     // Uncheck the other radio button
-                    $('#diet_eating_process').not(this).prop('checked', false);
+                    $('.diet_eating_process').not(this).prop('checked', false);
                 }
                 if ($('input[type=radio][id="diet_eating_process"][value="Sonda ile"]').is(':checked')) {
                         $('#sonda_table input[type=radio][id="with_probe"]').prop('disabled', false);
@@ -2016,9 +2016,9 @@ if (isset($_GET['logout'])) {
                         var food_consumption = $('input.food_consumption:checked').val();
                         var food_consumption_var = $('input.food_consumption_var:checked').val();
                         var liquid_consumption = $('input#liquid_consumption').val();
-                        var diet_eating_process = $('input#diet_eating_process').val();
+                        var diet_eating_process = $('input.diet_eating_process:checked').val();
                         var with_probe = $('input#with_probe:checked').val();
-                        var nazal_radio = $('input#nazal_radio').val();
+                        var nazal_radio = $('input.nazal_radio:checked').val();
                         var sag_nazal_input = $('input.nazal_input[name="sag_nazal_input"]').val();
                         var sol_nazal_input = $('input.nazal_input[name="sol_nazal_input"]').val();
                         var orogastrik_input = $('input#orogastrik_input').val();
@@ -2313,13 +2313,13 @@ if (isset($_GET['logout'])) {
                 }
 
                 //Beslenme şekli
-                if ($('input#diet_eating_process:checked').length === 0){
-                    scrollToInput('input#diet_eating_process');
+                if ($('input.diet_eating_process:checked').length === 0){
+                    scrollToInput('input.diet_eating_process');
                     return false;
                 }
 
                 // Sonda ile
-                if($('input#diet_eating_process[value="Sonda ile"]').is(':checked')){
+                if($('input.diet_eating_process[value="Sonda ile"]').is(':checked')){
                     if ($('input#with_probe:checked').length === 0){
                         scrollToInput('input#with_probe');
 

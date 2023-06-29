@@ -667,7 +667,6 @@ input[type="email"] {
     flex-direction: column;
     gap: 20px;
     width: 100%;
-    min-height: 225px;
     margin-bottom: 20px;
 }
 
