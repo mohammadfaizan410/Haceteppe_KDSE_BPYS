@@ -271,7 +271,9 @@ if ($result) {
                         <p style="padding-inline: 15% 15%;">*GKS: 15 (Oryante), 13-14 (Konfüze), 8-13 (Stubor), 3-8
                             (Prekoma), 3 (Koma)</p>
 
-                        <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
+                                                                <input type="submit" class="w-75 submit m-auto" name="submit" id="submit" value="Kaydet">
+
+
                     </form>
                 </div>
             </div>

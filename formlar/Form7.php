@@ -439,7 +439,7 @@ if (isset($_GET['logout'])) {
                     var length = $("input[name='length']").val();
                     var width = $("input[name='width']").val();
                     var depth = $("input[name='depth']").val();
-                    var dimentions = "" + length + 'cm/' + "" + width + 'cm/' + "" + depth + 'cm';
+                    var dimentions =length + '/' + width + '/' + depth;;
                     var exudate = $('#wound-exudate').val();
                     // var appearance_wound =$("input[type='radio'][name='YaraGörünümü']:checked").val() === "Diğer" ? $("input[name='YaraGörünümüDiger']").val() : $("input[type='radio'][name='YaraGörünümü']:checked").val();
                     var appearance_wound = $("input[type='radio'][name='YaraGörünümü']:checked").val();

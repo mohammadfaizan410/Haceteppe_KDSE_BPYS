@@ -370,12 +370,12 @@ if (isset($_GET['logout'])) {
                             <input type="text" class="form-control" name="weight_input" id="diger"
                                 placeholder="Günlük Kilo Takibi" maxlength="200">
                         </div>
-                        <div class="d-flex text-center input-section">
-                            <input class="form-control submit m-auto " type='submit' name="submit" id="submit" value="Kayıt">
-                        </div>
-                    </form>
+                    </div>
                 </div>
-            </div>
+                <div class="d-flex">
+                    <input class="submit m-auto " type='submit' name="submit" id="submit" value="Kayıt">
+                </div>
+            </form>
         </div>
     </div>
     <script>

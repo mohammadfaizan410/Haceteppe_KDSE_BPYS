@@ -189,7 +189,9 @@ if ($result) {
                             <input type="text" class="form-control" required name="pain_decrease_factors" id="diger" placeholder="Ağrıyı Azaltan Durumları Giriniz" value="<?php echo $form2[0]['pain_decrease_factors']; ?>">
                         </div>
 
-                        <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
+                                                                <input type="submit" class="w-75 submit m-auto" name="submit" id="submit" value="Kaydet">
+
+
                 </div>
 
             </div>
@@ -221,7 +223,6 @@ if ($result) {
         console.log("<?php echo $form2[0]['pain_intensity']; ?>")
         var painintensity = "<?php echo $form2[0]['pain_intensity']; ?>"
         if (painintensity == "0. Yok") {
-            console.log(painintensity);
 
             document.getElementById('AgriSiddeti1').setAttribute('checked', 'checked');
         }

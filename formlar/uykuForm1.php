@@ -158,7 +158,10 @@ if (isset($_GET['logout'])) {
                 <p class="usernamelabel">Hastane ortamında uykusunu etkileyen faktörler: (Açıklayınız):</p>
                 <input type="text" class="form-control" name="hospitalFactorsAffectingSleep" id="UykuyuEtkileyenFaktorler">
             </div>
-            <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
+            <div class='d-flex'>    
+            <input class="submit m-auto " type='submit' name="submit" id="submit" value="Kayıt">
+    </div>
+
 
 
             <script>

@@ -409,39 +409,7 @@ if (isset($_GET['logout'])) {
         })
     })
     </script>
-    <script>
-        var tanı_respiratory_rate = parseInt($("input[name='respiratory_rate']").val());
-        var tanı_heart_rate = parseInt($("input[name='heart_rate']").val());
-        var tanı_spo2_percentage = parseInt($("input[name='spo2_percentage']").val());
-        var tanı_o2_status = '<?php echo $form10[0]['o2_status']; ?>'
-        var tanı_respiratory_nature = '<?php echo $form10[0]['respiratory_nature']; ?>'
-        console.log("AAAAAA");
-        console.log($("input[type='radio'][name='o2_status']:checked").val())
-        console.log(tanı_respiratory_nature);
 
-        if (tanı_respiratory_rate < 16 || tanı_respiratory_rate > 20 || tanı_heart_rate > 100 || tanı_spo2_percentage <
-            95 || tanı_o2_status == "Aliyor" || tanı_respiratory_nature === "Derin" || tanı_respiratory_nature === "Yüzeyel") {
-            $('#tani1-warning').css("display", "block");
-            $(function() {
-                $("a.addtanı").on("click", function(e) {
-                    e.preventDefault();
-                    console.log("tani111111");
-                    let patient_name = $("input[name='patient_name']").val();
-                    let patient_id = parseInt($("input[name='patient_id']").val());
-                    var url = "<?php echo $base_url; ?>/tanılar/tani1.php?patient_id=" + patient_id +
-                        "&patient_name=" + encodeURIComponent(patient_name) + "&tanı_respiratory_rate=" +
-                        tanı_respiratory_rate + "&tanı_heart_rate=" + tanı_heart_rate +
-                        "&tanı_spo2_percentage=" +
-                        tanı_spo2_percentage + "&tanı_o2_status=" + tanı_o2_status +
-                        "&tanı_respiratory_nature=" +
-                        tanı_respiratory_nature;
-                    $("#content").load(url);
-                });
-            });
-        } else {
-            $('#tani1-warning').css("display", "none");
-        }
-    </script>
     <script>
             $('#closeBtn1').click(function(e) {
                 let patient_name = $("input[name='patient_name']").val();

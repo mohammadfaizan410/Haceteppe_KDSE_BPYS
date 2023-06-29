@@ -187,7 +187,7 @@ if (isset($_GET['logout'])) {
                                     placeholder="Gaita" maxlength="5" min="0" max="10000">
                             </div>
                         </div>
-                        <input class="form-control submit" type="submit" name="submit" id="submit" value="Kaydet">
+                        <input class="submit" type="submit" name="submit" id="submit" value="Kaydet">
                     </form>
                 </div>
             </div>

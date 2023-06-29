@@ -10,6 +10,18 @@ if (isset($_GET['logout'])) {
     unset($_SESSION);
     header("Location: main.php");
 }
+require_once('../config-students.php');
+
+$userid = $_SESSION['userlogin']['id'];
+$form_id = $_GET['form_id'];
+$sql = "SELECT * FROM form1_beslenme where form_id= $form_id";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+if ($result) {
+    $form1_beslenme = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+} else {
+    echo 'error';
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -78,19 +90,27 @@ if (isset($_GET['logout'])) {
 </div>
     <div class="container-fluid pt-4 px-4">
         <?php
+
         require_once('../config-students.php');
         $userid = $_SESSION['userlogin']['id'];
+        $form_id = $_GET['form_id'];
         //echo $userid;
-        $sql = "SELECT * FROM  patients  WHERE id =" . $userid;
+        $sql = "SELECT * FROM form1_beslenme WHERE form_id =" . $form_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
+
         if ($result) {
             $values = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+            $valuesJson = $values[0];
+            $valuesJson = json_encode($valuesJson);
+
+            
         } else {
             echo 'error';
         }
 
         ?>
+
         <div class="send-patient ta-center">
             <span class='close closeBtn' id='closeBtn1'>&times;</span>
 
@@ -1420,37 +1440,39 @@ if (isset($_GET['logout'])) {
                             </div>
                         </div>
 
-                    </div> 
-                    </div> 
-                    </div> 
-                    <div class='d-flex'>
-                    <input type="submit" class="w-75 submit m-auto" name="submit" id="submit" value="Kaydet">
                     </div>
-</form>
+                                                                           <div class='d-flex'>    
+    <input class="submit m-auto " type='submit' name="submit" id="submit" value="Kayıt">
 </div>
-</div>
+
+            </form>
+        </div>
+
+
+    </div>
+
+
 
 
 
 
 
             <script>
+               
             $(function() {
                 $('#closeBtn1').click(function(e) {
                     e.preventDefault();
                     console.log("close btn clicked");
-                    let patient_id = <?php
-                                                $userid = $_GET['patient_id'];
-                                                echo $userid
-                                                ?>;
-                    let patient_name = "<?php
-                                                echo urldecode($_GET['patient_name']);
-                                                ?>";
+                    var form_values = <?php echo $valuesJson; ?>;
+                    var all_values = form_values;
+                    let patient_id = all_values.patient_id;
+                    let patient_name = all_values['patient_name'];
                     var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
                         "&patient_name=" + encodeURIComponent(patient_name);
                     $("#content").load(url);
                 });
             });
+
             $('#sonda_table :input').prop('disabled', true);
             $('.food_consumption_table :input').prop('disabled', true);
             $('.gastric_residue_table :input').prop('disabled', true);
@@ -2002,7 +2024,6 @@ if (isset($_GET['logout'])) {
            
                 $('#submit').click(function(e) {
                     e.preventDefault();
-
                     var valid = checkValidity();
 
                     if (valid) {
@@ -2120,18 +2141,19 @@ if (isset($_GET['logout'])) {
                         var scar = $('input.scar:checked').val();
                         var scar_input = $('input.scar_input').val();
 
-                        var patient_id = <?php
-                                            $userid = $_GET['patient_id'];
-                                            echo $userid
-                                            ?>;
-                        let patient_name = "<?php
-                                            echo urldecode($_GET['patient_name']);
-                                            ?>";
+                        var form_values = <?php echo $valuesJson; ?>;
+                        var all_values = form_values;
+                        let patient_id = all_values.patient_id;
+                        var form_id = all_values.form_id;
+                        let patient_name = all_values['patient_name'];
+                        console.log(patient_name);
                         let yourDate = new Date();
                         let creation_date = yourDate.toISOString().split('T')[0];
                         let updateDate = yourDate.toISOString().split('T')[0];
 
                         var ajaxData = {
+                                isUpdate : true,
+                                form_id: form_id,
                                 patient_id: patient_id,
                                 patient_name: patient_name,
                                 creation_date: creation_date,
@@ -2199,21 +2221,17 @@ if (isset($_GET['logout'])) {
                             url: '<?php echo $base_url; ?>/form-handlers/SubmitOrUpdateForm1_BeslenmeGereksinimi.php',
                             data: ajaxData,
                             success: function(data) {
-                                let url =
-                                "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
-                                patient_id + "&patient_name=" + encodeURIComponent(
-                                patient_name);
-                                $("#tick-container").fadeIn(800);
-                            // Change the tick background to the animated GIF
-                            $("#tick").css("background-image", "url('./check-2.gif')");
+                            //     $("#tick-container").fadeIn(800);
+                            // // Change the tick background to the animated GIF
+                            // $("#tick").css("background-image", "url('./check-2.gif')");
 
-                            // Delay for 2 seconds (adjust the duration as needed)
-                            setTimeout(function() {
-                            // Load the content
-                            $("#content").load(url);
-                            $("#tick-container").fadeOut(600);
-                            // Hide the tick container
-                            }, 1000);
+                            // // Delay for 2 seconds (adjust the duration as needed)
+                            // setTimeout(function() {
+                            // // Load the content
+                            // $("#content").load(url);
+                            // $("#tick-container").fadeOut(600);
+                            // // Hide the tick container
+                            // }, 1000);
                             },
                             error: function(data) {
                                 Swal.fire({
@@ -2617,6 +2635,193 @@ if (isset($_GET['logout'])) {
                 return true;
             }
             </script>
+                    <script>
+
+
+var form_values = <?php echo $valuesJson; ?>;
+var all_values = form_values;
+$('#OgunSayisi').val(all_values.OgunSayisi);
+$('#TukettigiBesin').val(all_values.TukettigiBesin);
+$('#PisirmeYontemi').val(all_values.PisirmeYontemi);
+$('#Boy').val(all_values.Boy);
+$('#Kilo').val(all_values.Kilo);
+$('#BKI').val(all_values.BKI);
+$(`.nutritional_needs[value='${all_values.nutritional_needs}']`).prop('checked', true);
+$(`#diet[value='${all_values.diet}']`).prop('checked', true);
+$(`#diet_input`).val(all_values.diet_input);
+$(`.food_consumption[value='${all_values.food_consumption}']`).prop('checked', true);
+$(`.food_consumption_var[value='${all_values.food_consumption_var}']`).prop('checked', true);
+$(`#liquid_consumption`).val(all_values.liquid_consumption);
+$(`.diet_eating_process[value='${all_values.diet_eating_process}']`).prop('checked', true);
+$(`#with_probe[value='${all_values.with_probe}']`).prop('checked', true);
+$(`.nazal_radio[value='${all_values.nazal_radio}']`).prop('checked', true);
+$(`.nazal_input[name='sag_nazal_input']`).val(all_values.sag_nazal_input);
+$(`.nazal_input[name='sol_nazal_input']`).val(all_values.sol_nazal_input);
+$(`#orogastrik_input`).val(all_values.orogastrik_input);
+$(`#gastrostomi_input`).val(all_values.gastrostomi_input);
+$(`#jejunostomi_input`).val(all_values.jejunostomi_input);
+$(`.gastric_residue[value='${all_values.gastric_residue}']`).prop('checked', true);
+$(`#gastric_residue_ml`).val(all_values.gastric_residue_ml);
+$(`.nazogastrik_decompression_radio[value='${all_values.nazogastrik_decompression_radio}']`).prop('checked', true);
+$(`.chewing_difficulty[value='${all_values.chewing_difficulty}']`).prop('checked', true);
+$(`.weight_loss[value='${all_values.weight_loss}']`).prop('checked', true);
+$(`.weight_loss_var[value='${all_values.weight_loss_var}']`).prop('checked', true);
+$(`.weight_gain[value='${all_values.weight_gain}']`).prop('checked', true);
+$(`.weight_gain_var[value='${all_values.weight_gain_var}']`).prop('checked', true);
+
+$(`.nutrition_issue[value='${all_values.nutrition_issue}']`).prop('checked', true);
+var nutrition_issue_var = all_values.nutrition_issue_var.split(",");
+ if(Array.isArray(nutrition_issue_var)){
+    nutrition_issue_var.forEach(function(item){
+        $(`.nutrition_issue_var[value='${item}']`).prop('checked', true);
+    });
+ }
+ $(`.lip_color_issue[value='${all_values.lip_color_issue}']`).prop('checked', true);
+ var lip_color_issue_var = all_values.lip_color_issue_var.split(",");
+ if(Array.isArray(lip_color_issue_var)){
+    lip_color_issue_var.forEach(function(item){
+        $(`.lip_color_issue_var[value='${item}']`).prop('checked', true);
+    });
+ }
+ $(`.oral_mucosa_issue[value='${all_values.oral_mucosa_issue}']`).prop('checked', true);
+ var oral_mucosa_issue_var = all_values.oral_mucosa_issue_var.split(",");
+ if(Array.isArray(oral_mucosa_issue_var)){
+    oral_mucosa_issue_var.forEach(function(item){
+        $(`.oral_mucosa_issue_var[value='${item}']`).prop('checked', true);
+    });
+ }
+ $(`.teeth_gums_issue[value='${all_values.teeth_gums_issue}']`).prop('checked', true);
+ var teeth_gums_issue_var = all_values.teeth_gums_issue_var.split(",");
+ if(Array.isArray(teeth_gums_issue_var)){
+    teeth_gums_issue_var.forEach(function(item){
+        $(`.teeth_gums_issue_var[value='${item}']`).prop('checked', true);
+    });
+ }
+ $(`.tongue_issue[value='${all_values.tongue_issue}']`).prop('checked', true);
+ var tongue_issue_var = all_values.tongue_issue_var.split(",");
+ if(Array.isArray(tongue_issue_var)){
+    tongue_issue_var.forEach(function(item){
+        $(`.tongue_issue_var[value='${item}']`).prop('checked', true);
+    });
+ }
+ $(`.pharynx_issue[value='${all_values.pharynx_issue}']`).prop('checked', true);
+ var pharynx_issue_var = all_values.pharynx_issue_var.split(",");
+ if(Array.isArray(pharynx_issue_var)){
+    pharynx_issue_var.forEach(function(item){
+        $(`.pharynx_issue_var[value='${item}']`).prop('checked', true);
+    });
+ }
+ $(`.tonsils_issue[value='${all_values.tonsils_issue}']`).prop('checked', true);
+ var tonsils_issue_var = all_values.tonsils_issue_var.split(",");
+ if(Array.isArray(tonsils_issue_var)){
+    tonsils_issue_var.forEach(function(item){
+        $(`.tonsils_issue_var[value='${item}']`).prop('checked', true);
+    });
+ }
+ 
+ $(`.abdominal_issue[value='${all_values.abdominal_issue}']`).prop('checked', true);
+ $(`.abdominal_contour[value='${all_values.abdominal_contour}']`).prop('checked', true);
+ $(`.herniation[value='${all_values.herniation}']`).prop('checked', true);
+ $(`.herniation_input`).val(all_values.herniation_input);
+ $(`.umbelikus[value='${all_values.umbelikus}']`).prop('checked', true);
+ $(`.abdominal_rash[value='${all_values.abdominal_rash}']`).prop('checked', true);
+ $(`.abdominal_acites[value='${all_values.abdominal_acites}']`).prop('checked', true);
+ $(`#abdominal_mass_place`).val(all_values.abdominal_mass_place);
+ $(`#abdominal_mass_size`).val(all_values.abdominal_mass_size);
+ $(`#abdominal_mass_description`).val(all_values.abdominal_mass_description);
+ $(`.pigmentation[value='${all_values.pigmentation}']`).prop('checked', true);
+ $(`.stria[value='${all_values.stria}']`).prop('checked', true);
+ $(`.scar[value='${all_values.scar}']`).prop('checked', true);
+ $(`.scar_input`).val(all_values.scar_input);
+
+
+    //Diyet
+    if ($('#diet[value="Ozel"]').is(':checked')) {
+        $('#diet_input').prop('disabled',false)
+    }
+    //Günlük olarak izin verilen besinlerin tüketimi
+    if ($('input.food_consumption[value="Var"]').is(':checked')){
+        $('input.food_consumption_var').prop('disabled',false)
+    }
+    //Sonda ile
+    if($('input.diet_eating_process[value="Sonda ile"]').is(':checked')){
+        $('input#with_probe').prop('disabled',false)
+    }
+    if ($('input#with_probe[value="Nazogastrik"]').is(':checked')){
+        $('input.nazal_radio').prop('disabled',false);
+        }
+    if($('input.nazal_radio[value="Sag Nazal"]').is(':checked')){
+        $('input.nazal_input[name="sag_nazal_input"]').prop('disabled',false);
+    }
+    if($('input.nazal_radio[value="Sol Nazal"]').is(':checked')){
+        $('input.nazal_input[name="sol_nazal_input"]').prop('disabled',false);
+    }
+    if ($('input#with_probe[value="Orogastrik"]').is(':checked')){
+        $('input#orogastrik_input').prop('disabled',false);
+    }
+    if ($('input#with_probe[value="Gastrostomi"]').is(':checked')){
+        $('input#gastrostomi_input').prop('disabled',false);
+    }
+    if ($('input#with_probe[value="Jejunostomi"]').is(':checked')){
+        $('input#jejunostomi_input').prop('disabled',false);
+    }
+    if($('input.gastric_residue[value="Var"]').is(':checked')){
+        $('input#gastric_residue_ml').prop('disabled',false);
+    }
+    if ($('input.weight_loss[value="Var"]').is(':checked')){
+        $('input.weight_loss_var').prop('disabled',false)
+    }
+    if ($('input.weight_gain[value="Var"]').is(':checked')){
+        $('input.weight_gain_var').prop('disabled',false)
+    }
+    if ($('input.nutrition_issue[value="Var"]').is(':checked')){
+        $('input.nutrition_issue_var').prop('disabled',false)
+    }
+    if ($('input.lip_color_issue[value="Var"]').is(':checked')){
+        $('input.lip_color_issue_var').prop('disabled',false)
+    }
+    if ($('input.oral_mucosa_issue[value="Var"]').is(':checked')){
+        $('input.oral_mucosa_issue_var').prop('disabled',false)
+    }
+    if ($('input.teeth_gums_issue[value="Var"]').is(':checked')){
+        $('input.teeth_gums_issue_var').prop('disabled',false)
+    }
+    if ($('input.tongue_issue[value="Var"]').is(':checked')){
+        $('input.tongue_issue_var').prop('disabled',false)
+    }
+    if ($('input.pharynx_issue[value="Var"]').is(':checked')){
+        $('input.pharynx_issue_var').prop('disabled',false)
+    }
+    if ($('input.tonsils_issue[value="Var"]').is(':checked')){
+        $('input.tonsils_issue_var').prop('disabled',false)
+    }
+    if ($('input.herniation[value="Var"]').is(':checked')){
+        $('input.herniation_input').prop('disabled',false)
+    }
+    if ($('input.scar[value="Var"]').is(':checked')){
+        $('input.scar_input').prop('disabled',false)
+    }
+
+
+
+
+
+$('input[type="text"]').val(function(index, currentValue) {
+  if (currentValue === "empty") {
+    return "";
+  }
+  return currentValue;
+});
+
+
+
+
+
+
+
+
+
+</script>
             
             <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>

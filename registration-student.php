@@ -29,10 +29,43 @@ require_once("config-students.php");
 
 </head>
 
+<style>
+        body {
+  margin: 0; /* Remove default body margin */
+  padding: 0; /* Remove default body padding */
+}
+
+#tick-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none; /* Hide the tick container initially */
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  background-color: #ffffff;
+}
+
+#tick {
+  width: 50%;
+  height: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  margin: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateX(25%);
+}
+</style>
 
 
 <body>
-
+<div id="tick-container">
+  <div id="tick"></div>
+</div>
     <div id="validation-box">
         <form action="" method="post">
             <div class="login-box login-login" style=''>
@@ -132,8 +165,19 @@ $("#register").click(function(e) {
                 }
                 //email dosent exist
                 else {
-                    $("#validation-box").css("display", "block");
+                    $("#tick-container").fadeIn(800);
+                            // Change the tick background to the animated GIF
+                            $("#tick").css("background-image", "url('./check-2.gif')");
+
+                            // Delay for 2 seconds (adjust the duration as needed)
+                            setTimeout(function() {
+                            // Load the content
+                            $("#tick-container").fadeOut(600);
+                            // Hide the tick container
+                            $("#validation-box").css("display", "block");
                     $("#registrationForm").css("display", "none");
+                            }, 1000); 
+                  
                     console.log("<?php echo $base_url; ?>/sendEmailCode.php")
                     $.ajax({
                         type: "POST",
@@ -143,6 +187,7 @@ $("#register").click(function(e) {
                         },
                         success: function(response) {
                             code = response;
+
                         },
                         error: function(response) {
                             alert("Error : Server E-Posta Gönderemedi");
@@ -172,6 +217,15 @@ $("#register").click(function(e) {
                     $("#validate").click(function(e) {
                         e.preventDefault();
                         var codeEntered = $("#code").val();
+                        $("#tick-container").fadeIn(800);
+                            // Change the tick background to the animated GIF
+                            $("#tick").css("background-image", "url('./check-2.gif')");
+                            // Delay for 2 seconds (adjust the duration as needed)
+                            setTimeout(function() {
+                            // Load the content
+                            $("#tick-container").fadeOut(600);
+                            // Hide the tick containe
+                            }, 1000); 
                         if (codeEntered == code) {
                             $.ajax({
                                 type: "POST",

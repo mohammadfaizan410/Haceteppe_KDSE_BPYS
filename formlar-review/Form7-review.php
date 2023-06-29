@@ -136,11 +136,17 @@ if ($result) {
                             <p class="usernamelabel">Boyut (cm):</p>
                             <div class="form-check">
                                 <div class="input-section d-flex">
-
-                                    <input type="text" class="form-control" required name="length" id="length"
-                                        placeholder="Uzunluk Giriniz" value="<?php echo $form7[0]['dimentions']; ?>">
+                                    <p class="usernamelabel">Uzunluk:</p>
+                                    <input type="number" class="form-control" required name="length" id="length" placeholder="Uzunluk Giriniz" min="0" max="1000">
                                 </div>
-
+                                <div class="input-section d-flex">
+                                    <p class="usernamelabel">Genişlik:</p>
+                                    <input type="number" class="form-control" required name="width" id="width" placeholder="Genişlik Giriniz" min="0" max="1000">
+                                </div>
+                                <div class="input-section d-flex">
+                                    <p class="usernamelabel">Derinlik:</p>
+                                    <input type="number" class="form-control" required name="depth" id="depth" placeholder="Derinlik Giriniz" min="0" max="1000">
+                                </div>
                             </div>
                         </div>
 
@@ -285,7 +291,9 @@ if ($result) {
                                 placeholder="İyileşmeTarihi" value="<?php echo $form7[0]['healing_date']; ?>">
                         </div>
 
-                        <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
+                        <input type="submit" class="w-75 submit m-auto" name="submit" id="submit" value="Kaydet">
+
+
                     </form>
                 </div>
             </div>
@@ -356,11 +364,8 @@ if ($result) {
 
         $('#submit').click(function(e) {
             e.preventDefault();
-            console.log("hello from form 7x")
-            var valid = this.form.checkValidity();
-            if (valid) {
                 var form_id = <?php echo $form_id ?>;
-
+                
                 var id = <?php
                                 $userid = $_SESSION['userlogin']['id'];
                                 echo $userid
@@ -385,10 +390,10 @@ if ($result) {
                 var length = $("input[name='length']").val();
                 var width = $("input[name='width']").val();
                 var depth = $("input[name='depth']").val();
-                var dimentions = "" + length + 'cm/' + "" + width + 'cm/' + "" + depth + 'cm';
+                var dimentions = "" + length + "/" + width + "/" + depth;
                 var exudate = $('#wound-exudate').val();
                 // var appearance_wound =$("input[type='radio'][name='YaraGörünümü']:checked").val() === "Diğer" ? $("input[name='YaraGörünümüDiger']").val() : $("input[type='radio'][name='YaraGörünümü']:checked").val();
-                var appearance_wound = $("input[type='radio'][name='YaraGörünümü']:checked").val();
+                var appearance_wound = $("input[type='radio'][name='YaraGörünümü']:checked").val() ? $("input[type='radio'][name='YaraGörünümü']:checked").val() : "";
                 var odor1 = $("input[name='odor']").val();
                 var tunnelling1 = $("input[name='tunnelling']").val();
                 var edema1 = $("input[name='edema']").val();
@@ -400,7 +405,8 @@ if ($result) {
                 var careProducts1 = $('#careProducts').val();
                 var result1 = $("input[name='result']").val();
                 var healingDate = $('#healingDate').val();
-
+                
+                console.log("hello from form 7x")
 
 
                 console.log('after setting variables')
@@ -436,6 +442,9 @@ if ($result) {
                         healing_date: healingDate
                     }),
                     success: function(data) {
+                        alert(data)
+                        let patient_id  = $("input[name='patient_id']").val();
+                        let patient_name = $("input[name='patient_name']").val();
                          let url =
                             "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
                             patient_id + "&patient_name=" + encodeURIComponent(
@@ -460,8 +469,7 @@ if ($result) {
                         })
                     }
                 })
-            }
-
+            
 
 
         });

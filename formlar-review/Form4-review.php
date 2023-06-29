@@ -178,7 +178,9 @@ if ($result) {
                             <input type="text" class="form-control" required name="post_fall_general_condition" id="diger" placeholder="Genel Durumu Giriniz" value="<?php echo $form4[0]['post_fall_general_condition']; ?>">
                         </div>
 
-                        <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
+                                                                <input type="submit" class="w-75 submit m-auto" name="submit" id="submit" value="Kaydet">
+
+
                     </form>
                 </div>
             </div>
