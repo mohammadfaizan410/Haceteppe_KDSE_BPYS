@@ -149,8 +149,10 @@ h6,
 }
 
 p {
-    margin-top: 0;
-    margin-bottom: 1rem
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    padding : 5px;
 }
 
 abbr[title],
@@ -3045,6 +3047,7 @@ textarea.form-control.is-invalid {
     border: 1px solid transparent;
     padding: .375rem .75rem;
     font-size: 1rem;
+    font-weight: 700;
     border-radius: 5px;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out
 }

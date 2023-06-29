@@ -65,7 +65,7 @@ if (isset($_GET['logout'])) {
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Sorunla İlişkili Veriler:</p>
+                            <p id="tani_usernamelabel">Sorunla İlişkili Veriler:</p>
                             <div class="matchedfields-wrapper">
                                 <p class="matchedfields" id="field_respiratory_rate"></p>
                                 <p class="matchedfields" id="field_heart_rate"></p>
@@ -77,15 +77,15 @@ if (isset($_GET['logout'])) {
 
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Hemşirelik Tanıları:</p>
+                            <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
                             <p class="tanıdescription">Doku bütünlüğünde bozulma riski</p>
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p id="tani_usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hastanın doku ve mukoz membranlarında bozulma olmaması</p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
-                            <p class="usernamelabel">NOC Gösterge: </p>
+                            <p id="tani_usernamelabel">NOC Gösterge: </p>
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator"
@@ -132,7 +132,7 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="input-section d-flex" style="flex-direction: column;">
-                            <p class="usernamelabel">Hemşirelik Girişimleri:</p>
+                            <p id="tani_usernamelabel">Hemşirelik Girişimleri:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt1"
                                     value="Hastanın risk düzeyini belirlemek için standart bir risk değerlendirme aracı kullanılır">
@@ -210,7 +210,7 @@ if (isset($_GET['logout'])) {
                                     <span class="checkbox-header">Hasta yemek öncesi ve yemek sonrası ağız bakımını uygulaması için desteklenir</span>
                                 </label>
                             </div>
-                            <p class="usernamelabel">Eğitim:</p>
+                            <p id="tani_usernamelabel">Eğitim:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt8"
                                     value="Hasta ve bakım verenleri doku bütünlüğü bozulma belirtileri hakkında bilgi verilir">
@@ -253,7 +253,7 @@ if (isset($_GET['logout'])) {
                                     <span class="checkbox-header">İrritasyon ve yanıkları önlemek için tüketmemesi gereken besinler (çok sıcak/çok soğuk besinler, acı ve baharatlı besinler) konusunda bilgi verilir ve rahatsızlığı azaltmak için besinleri ılık olarak tüketmesi önerilir</span>
                                 </label>
                             </div>
-                            <p class="usernamelabel">İşbirliği Gerektiren Uygulamalar</p>
+                            <p id="tani_usernamelabel">İşbirliği Gerektiren Uygulamalar</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="collaboratıve_apps"
                                     id="nurse_attempt15" value="Derideki değişim ve yaraların önlenmesi, değerlendirilmesi ve tedavisi konusunda yardım almak için yara bakım hemşiresi ile işbirliği yapılır">
@@ -270,16 +270,16 @@ if (isset($_GET['logout'])) {
                             </div>
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Değerlendirme:</p>
+                            <p id="tani_usernamelabel">Değerlendirme:</p>
                             <p class="tanıdescription">Risk devam ediyor: 1-5 gösterge seçildiyse; yeni günde bakım planında tanımlı tanı olacak.</p>
                             <p class="tanıdescription">Mevcut Tanı:Risk ortaya çıktıysa, gelişen durumla ilgili kayıt ve bakım planı yapılacak.</p>
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p id="tani_usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hastanın doku ve mukoz membranlarında bozulma olmaması</p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
-                            <p class="usernamelabel">NOC Gösterge: </p>
+                            <p id="tani_usernamelabel">NOC Gösterge: </p>
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after"

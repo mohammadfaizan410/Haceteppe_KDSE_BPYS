@@ -71,7 +71,7 @@ if (isset($_GET['patient_id'])) {
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Sorunla İlişkili Veriler:</p>
+                            <p id="tani_usernamelabel">Sorunla İlişkili Veriler:</p>
                             <div class="matchedfields-wrapper">
                                 <?php
                                 $innerHtml = '';
@@ -89,15 +89,15 @@ if (isset($_GET['patient_id'])) {
 
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Hemşirelik Tanıları:</p>
+                            <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
                             <p class="tanıdescription">Gaz değişiminde bozulma </p>
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p id="tani_usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hastanın oksijen satürasyonun %95’in üzerinde olması</p>
                         </div>
                         <div class="input-section taniReview" id="o2-delivery-container">
-                            <p class="usernamelabel">NOC Gösterge: </p>
+                            <p id="tani_usernamelabel">NOC Gösterge: </p>
                             <div class="form-check">
                                 <div class="form-check">
                                     <div class="form-check">
@@ -112,7 +112,7 @@ if (isset($_GET['patient_id'])) {
                         </div>
 
                         <div class="input-section d-flex" style="flex-direction: column;">
-                            <p class="usernamelabel">Hemşirelik Girişimleri:</p>
+                            <p id="tani_usernamelabel">Hemşirelik Girişimleri:</p>
                             <?php
                             $nurse_attempt = explode("/", $tani1Data[0]['nurse_attempt']);
                             foreach ($nurse_attempt as $value) {
@@ -128,7 +128,7 @@ if (isset($_GET['patient_id'])) {
                             ?>
                         </div>
                         <div class="input-section d-flex" style="flex-direction: column;">
-                            <p class="usernamelabel">Eğitim:</p>
+                            <p id="tani_usernamelabel">Eğitim:</p>
                             <?php
                             $nurse_education = explode("/", $tani1Data[0]['nurse_education']);
                             foreach ($nurse_education as $value) {
@@ -145,13 +145,13 @@ if (isset($_GET['patient_id'])) {
                         </div>
 
                         <div class="input-section d-flex taniReview">
-                            <p class="usernamelabel">Değerlendirme:</p>
+                            <p id="tani_usernamelabel">Değerlendirme:</p>
                             <div class="input-section d-flex">
-                                <p class="usernamelabel">NOC Çıktıları:</p>
+                                <p id="tani_usernamelabel">NOC Çıktıları:</p>
                                 <p class="tanıdescription">Hastanın oksijen satürasyonun %95’in üzerinde olması</p>
                             </div>
                             <div class="input-section taniReview" id="o2-delivery-container">
-                                <p class="usernamelabel">NOC Gösterge: </p>
+                                <p id="tani_usernamelabel">NOC Gösterge: </p>
                                 <div class="form-check">
                                     <div class="form-check">
                                         <div class="form-check">

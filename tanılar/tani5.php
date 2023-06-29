@@ -11,11 +11,6 @@ if (isset($_GET['logout'])) {
     header("Location: main.php");
 }
 
-$tanı_respiratory_rate = $_GET['tanı_respiratory_rate'];
-$tanı_heart_rate = $_GET['tanı_heart_rate'];
-$tanı_spo2_percentage = $_GET['tanı_spo2_percentage'];
-$tanı_o2_status = $_GET['tanı_o2_status'];
-$tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -65,7 +60,7 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Sorunla İlişkili Veriler:</p>
+                            <p id="tani_usernamelabel">Sorunla İlişkili Veriler:</p>
                             <div class="matchedfields-wrapper">
                                 <p class="matchedfields" id="field_respiratory_rate"></p>
 
@@ -75,15 +70,15 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
 
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Hemşirelik Tanıları:</p>
+                            <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
                             <p class="tanıdescription">Sıvı volüm fazlalığı</p>
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p id="tani_usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hastanın 24 saatlik aldığı/çıkardığı dengede olması</p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
-                            <p class="usernamelabel">NOC Gösterge: </p>
+                            <p id="tani_usernamelabel">NOC Gösterge: </p>
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1:Hastada çok şiddetli düzeyde sıvı yüklenmesi var">
@@ -123,11 +118,11 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
 
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p id="tani_usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hastada ödem olmaması</p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
-                            <p class="usernamelabel">NOC Gösterge: </p>
+                            <p id="tani_usernamelabel">NOC Gösterge: </p>
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator2" value="1: Hastada şiddetli düzeyde ödem var ">
@@ -167,7 +162,7 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                         </div>
 
                         <div class="input-section d-flex" style="flex-direction: column;">
-                            <p class="usernamelabel">Hemşirelik Girişimleri:</p>
+                            <p id="tani_usernamelabel">Hemşirelik Girişimleri:</p>
 
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt1" value="Hasta pulmoner (solunum sıkıntısının artması) ve kardiyovasküler (nabız hızının artması, KB nın artması, vb) komplikasyonlar açısından değerlendirilir ">
@@ -249,7 +244,7 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                                         ölçülüp, kaydedilir</span>
                                 </label>
                             </div>
-                            <p class="usernamelabel">Eğitim:</p>
+                            <p id="tani_usernamelabel">Eğitim:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt12" value="Hasta ve bakım verenleri sıvı volüm fazlalığı belirtileri ve bulguları hakkında bilgilendirilir">
                                 <label class="form-check-label" for="nurse_attempt">
@@ -271,7 +266,7 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                                         hakkında bilgi verilir</span>
                                 </label>
                             </div>
-                            <p class="usernamelabel">İş Birliği Gerektiren Uygulamalar:</p>
+                            <p id="tani_usernamelabel">İş Birliği Gerektiren Uygulamalar:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="collaborative_apps" id="nurse_attempt15" value="Proteinden zengin, sodyumdan kısıtlı diyet sağlanması konusunda diyetisyenle iş birliği yapılır">
                                 <label class="form-check-label" for="nurse_attempt">
@@ -303,13 +298,19 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
 
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Değerlendirme:</p>
+                            <p id="tani_usernamelabel">Değerlendirme:</p>
+                            <p class="tanıdescription"> Sorun devam ediyor: 1-4 gösterge seçildiyse; yeni günde bakım
+                                planında tanımlı tanı olacak. </p>
+                            <p class="tanıdescription"> Sorun çözümlendi:
+                                5 gösterge seçildiyse; yeni günde bakım planına bu tanıyı taşımayacak
+                            </p>
+    </div>
                             <div class="input-section d-flex">
-                                <p class="usernamelabel">NOC Çıktıları:</p>
+                                <p id="tani_usernamelabel">NOC Çıktıları:</p>
                                 <p class="tanıdescription">Hastanın 24 saatlik aldığı/çıkardığı dengede olması</p>
                             </div>
                             <div class="input-section" id="o2-delivery-container">
-                                <p class="usernamelabel">NOC Gösterge: </p>
+                                <p id="tani_usernamelabel">NOC Gösterge: </p>
                                 <div class="form-check">
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="1:Hastada çok şiddetli düzeyde sıvı yüklenmesi var">
@@ -353,11 +354,11 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
 
                             </div>
                             <div class="input-section d-flex">
-                                <p class="usernamelabel">NOC Çıktıları:</p>
+                                <p id="tani_usernamelabel">NOC Çıktıları:</p>
                                 <p class="tanıdescription">Hastada ödem olmaması</p>
                             </div>
                             <div class="input-section" id="o2-delivery-container">
-                                <p class="usernamelabel">NOC Gösterge: </p>
+                                <p id="tani_usernamelabel">NOC Gösterge: </p>
                                 <div class="form-check">
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator2_after" value="1: Hastada şiddetli düzeyde ödem var ">
@@ -395,11 +396,7 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                                 </div>
 
                             </div>
-                            <p class="tanıdescription"> Sorun devam ediyor: 1-4 gösterge seçildiyse; yeni günde bakım
-                                planında tanımlı tanı olacak. </p>
-                            <p class="tanıdescription"> Sorun çözümlendi:
-                                5 gösterge seçildiyse; yeni günde bakım planına bu tanıyı taşımayacak
-                            </p>
+                        
                         </div>
                                                                 <input type="submit" class="w-75 submit m-auto" name="submit" id="submit" value="Kaydet">
 

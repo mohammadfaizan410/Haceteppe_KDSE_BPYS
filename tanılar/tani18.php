@@ -74,7 +74,7 @@ $crutch_use  = isset($_GET['crutch_use ']) ? $_GET['crutch_use '] : "NaN";
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Sorunla İlişkili Veriler:</p>
+                            <p id="tani_usernamelabel">Sorunla İlişkili Veriler:</p>
                             <div class="matchedfields-wrapper">
                                 <?php         
                                 echo "<p class='matchedfields' id='changing_position' style='".($changing_position == 'NaN' ? 'color: red' : 'color:blue ' )."'>Ortalama uyku süresi: ".$changing_position."</p>";
@@ -91,11 +91,11 @@ $crutch_use  = isset($_GET['crutch_use ']) ? $_GET['crutch_use '] : "NaN";
 
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Hemşirelik Tanıları:</p>
+                            <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
                             <p class="tanıdescription">Fiziksel mobilitede bozulma </p>
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p id="tani_usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hastanın etkili bir şekilde mobilize olması </p>
                         </div>
 
@@ -105,7 +105,7 @@ $crutch_use  = isset($_GET['crutch_use ']) ? $_GET['crutch_use '] : "NaN";
 
 
                         <div class="input-section" id="o2-delivery-container">
-                            <p class="usernamelabel">NOC Gösterge: </p>
+                            <p id="tani_usernamelabel">NOC Gösterge: </p>
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1: Hasta hiç mobilize olmuyor">
@@ -144,7 +144,7 @@ $crutch_use  = isset($_GET['crutch_use ']) ? $_GET['crutch_use '] : "NaN";
                         </div>
 
                         <div class="input-section d-flex" style="flex-direction: column;">
-                            <p class="usernamelabel">Hemşirelik Girişimleri:</p>
+                            <p id="tani_usernamelabel">Hemşirelik Girişimleri:</p>
 
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt1" value="Günlük yaşam aktivitelerini yerine getirme konusunda hastanın bağımsızlığı desteklenir, gerektiğinde yardımcı olunur">
@@ -202,7 +202,7 @@ $crutch_use  = isset($_GET['crutch_use ']) ? $_GET['crutch_use '] : "NaN";
                                 </label>
                             </div>
 
-                            <p class="usernamelabel">Eğitim:</p>
+                            <p id="tani_usernamelabel">Eğitim:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt10" value="Kas gücünü korumak ve geliştirmek için aktif ve pasif ROM egzersizleri konusunda bilgilendirilir ve yapması konusunda hasta desteklenir">
                                 <label class="form-check-label" for="nurse_attempt">
@@ -247,7 +247,7 @@ $crutch_use  = isset($_GET['crutch_use ']) ? $_GET['crutch_use '] : "NaN";
                                 </label>
                             </div>
 
-                            <p class="usernamelabel">İŞ BİRLİĞİ GEREKTİREN UYGULAMALAR</p>
+                            <p id="tani_usernamelabel">İŞ BİRLİĞİ GEREKTİREN UYGULAMALAR</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="collaborative_apps" id="nurse_attempt17" value="Bir egzersiz programı oluşturmak için fizyoterapistle işbirliği yapılır">
                                 <label class="form-check-label" for="nurse_attempt">
@@ -269,9 +269,14 @@ $crutch_use  = isset($_GET['crutch_use ']) ? $_GET['crutch_use '] : "NaN";
 
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Değerlendirme:</p>
+                            <p id="tani_usernamelabel">Değerlendirme:</p>
+                            <p class="tanıdescription"> Sorun devam ediyor: 1-4 gösterge seçildiyse; yeni günde bakım planında tanımlı tanı olacak.</p>
+                            <p class="tanıdescription"> Sorun çözümlendi:
+                                5 gösterge seçildiyse; yeni günde bakım planına bu tanıyı taşımayacak
+                            </p>
+                        </div>
                             <div class="input-section d-flex">
-                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p id="tani_usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hastanın etkili bir şekilde mobilize olması  </p>
                         </div>
                         
@@ -281,7 +286,7 @@ $crutch_use  = isset($_GET['crutch_use ']) ? $_GET['crutch_use '] : "NaN";
 
 
                         <div class="input-section" id="o2-delivery-container">
-                            <p class="usernamelabel">NOC Gösterge: </p>
+                            <p id="tani_usernamelabel">NOC Gösterge: </p>
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after"
@@ -326,10 +331,7 @@ $crutch_use  = isset($_GET['crutch_use ']) ? $_GET['crutch_use '] : "NaN";
 
                             </div>
                         </div>
-                            <p class="tanıdescription"> Sorun devam ediyor: 1-4 gösterge seçildiyse; yeni günde bakım planında tanımlı tanı olacak.</p>
-                            <p class="tanıdescription"> Sorun çözümlendi:
-                                5 gösterge seçildiyse; yeni günde bakım planına bu tanıyı taşımayacak
-                            </p>
+                          
                         </div>
                                                                 <input type="submit" class="w-75 submit m-auto" name="submit" id="submit" value="Kaydet">
 

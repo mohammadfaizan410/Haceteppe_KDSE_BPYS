@@ -72,7 +72,7 @@ $pain_duration  = isset($_GET['pain_duration ']) ? $_GET['pain_duration '] : "Na
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Sorunla İlişkili Veriler:</p>
+                            <p id="tani_usernamelabel">Sorunla İlişkili Veriler:</p>
                             <div class="matchedfields-wrapper">
                                 <?php         
                                 echo "<p class='matchedfields' id='average_sleep_time' style='".($average_sleep_time == 'NaN' ? 'color: red' : 'color:blue ' )."'>Ortalama uyku süresi: ".$average_sleep_time."</p>";
@@ -87,11 +87,11 @@ $pain_duration  = isset($_GET['pain_duration ']) ? $_GET['pain_duration '] : "Na
 
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Hemşirelik Tanıları:</p>
+                            <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
                             <p class="tanıdescription">Konforda bozulma </p>
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p id="tani_usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hastanın rahat olduğunu ifade etmesi </p>
                         </div>
 
@@ -101,7 +101,7 @@ $pain_duration  = isset($_GET['pain_duration ']) ? $_GET['pain_duration '] : "Na
 
 
                         <div class="input-section" id="o2-delivery-container">
-                            <p class="usernamelabel">NOC Gösterge: </p>
+                            <p id="tani_usernamelabel">NOC Gösterge: </p>
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1: Hastanın gece uykusunda sürekli bölünme var">
@@ -140,7 +140,7 @@ $pain_duration  = isset($_GET['pain_duration ']) ? $_GET['pain_duration '] : "Na
                         </div>
 
                         <div class="input-section d-flex" style="flex-direction: column;">
-                            <p class="usernamelabel">Hemşirelik Girişimleri:</p>
+                            <p id="tani_usernamelabel">Hemşirelik Girişimleri:</p>
 
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt1" value="Konforda bozulmanın nedenleri belirlenir">
@@ -223,7 +223,7 @@ $pain_duration  = isset($_GET['pain_duration ']) ? $_GET['pain_duration '] : "Na
                                 </label>
                             </div>
 
-                            <p class="usernamelabel">Eğitim:</p>
+                            <p id="tani_usernamelabel">Eğitim:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt14" value="Hastaya ve bakım verenlerine uygun gevşeme teknikleri öğretilip, uygulatılır">
                                 <label class="form-check-label" for="nurse_attempt">
@@ -261,7 +261,7 @@ $pain_duration  = isset($_GET['pain_duration ']) ? $_GET['pain_duration '] : "Na
                                 </label>
                             </div>
 
-                            <p class="usernamelabel">İŞ BİRLİĞİ GEREKTİREN UYGULAMALAR</p>
+                            <p id="tani_usernamelabel">İŞ BİRLİĞİ GEREKTİREN UYGULAMALAR</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="collaborative_apps" id="nurse_attempt20" value="İstemde yer alan farmakolojik yöntemler (analjezikler, kortikosteroid kremler, anksiyolitikler, antihistaminikler, antifungal ilaçlar) uygulanır">
                                 <label class="form-check-label" for="nurse_attempt">
@@ -277,9 +277,14 @@ $pain_duration  = isset($_GET['pain_duration ']) ? $_GET['pain_duration '] : "Na
 
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Değerlendirme:</p>
+                            <p id="tani_usernamelabel">Değerlendirme:</p>
+                            <p class="tanıdescription"> Sorun devam ediyor: 1-4 gösterge seçildiyse; yeni günde bakım planında tanımlı tanı olacak.</p>
+                            <p class="tanıdescription"> Sorun çözümlendi:
+                                5 gösterge seçildiyse; yeni günde bakım planına bu tanıyı taşımayacak
+                            </p>
+                        </div>
                             <div class="input-section d-flex">
-                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p id="tani_usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hastanın rahat olduğunu ifade etmesi </p>
                         </div>
                         
@@ -289,7 +294,7 @@ $pain_duration  = isset($_GET['pain_duration ']) ? $_GET['pain_duration '] : "Na
 
 
                         <div class="input-section" id="o2-delivery-container">
-                            <p class="usernamelabel">NOC Gösterge: </p>
+                            <p id="tani_usernamelabel">NOC Gösterge: </p>
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after"
@@ -335,10 +340,7 @@ $pain_duration  = isset($_GET['pain_duration ']) ? $_GET['pain_duration '] : "Na
                             </div>
                         </div>
 
-                            <p class="tanıdescription"> Sorun devam ediyor: 1-4 gösterge seçildiyse; yeni günde bakım planında tanımlı tanı olacak.</p>
-                            <p class="tanıdescription"> Sorun çözümlendi:
-                                5 gösterge seçildiyse; yeni günde bakım planına bu tanıyı taşımayacak
-                            </p>
+                          
                         </div>
                                                                 <input type="submit" class="w-75 submit m-auto" name="submit" id="submit" value="Kaydet">
 

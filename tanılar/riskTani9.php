@@ -65,7 +65,7 @@ if (isset($_GET['logout'])) {
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Sorunla İlişkili Veriler:</p>
+                            <p id="tani_usernamelabel">Sorunla İlişkili Veriler:</p>
                             <div class="matchedfields-wrapper">
                                 <p class="matchedfields" id="field_respiratory_rate"></p>
                                 <p class="matchedfields" id="field_heart_rate"></p>
@@ -77,15 +77,15 @@ if (isset($_GET['logout'])) {
 
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Hemşirelik Tanıları:</p>
+                            <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
                             <p class="tanıdescription">Alerjik yanıt riski</p>
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p id="tani_usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hastanın lokalize ya da sistemik olarak hiçbir alerjik tepki göstermemesi</p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
-                            <p class="usernamelabel">NOC Gösterge: </p>
+                            <p id="tani_usernamelabel">NOC Gösterge: </p>
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator"
@@ -132,7 +132,7 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="input-section d-flex" style="flex-direction: column;">
-                            <p class="usernamelabel">Hemşirelik Girişimleri:</p>
+                            <p id="tani_usernamelabel">Hemşirelik Girişimleri:</p>
 
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt1"
@@ -197,7 +197,7 @@ if (isset($_GET['logout'])) {
                                     <span class="checkbox-header">Özellikle ilaç tedavisi uygulanırken anaflaktik şok semptomları için hazırlıklı olunur</span>
                                 </label>
                             </div>
-                            <p class="usernamelabel">Eğitim:</p>
+                            <p id="tani_usernamelabel">Eğitim:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_education"
                                     id="nurse_attempt10" value="Alerjik reaksiyonlar hakkında bilgi verilir">
@@ -219,7 +219,7 @@ if (isset($_GET['logout'])) {
                                     <span class="checkbox-header">Risk faktörleri ve risk azaltma uygulamaları hakkında bilgilendirme yapılır</span>
                                 </label>
                             </div>
-                            <p class="usernamelabel">İşbirliği Gerektiren Uygulamalar</p>
+                            <p id="tani_usernamelabel">İşbirliği Gerektiren Uygulamalar</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="collaboratıve_apps"
                                     id="nurse_attempt13" value="Hastanın bilinen alerjilerine dair sağlık bakım ekibi üyelerine bilgi verilir">
@@ -236,16 +236,16 @@ if (isset($_GET['logout'])) {
                             </div>
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Değerlendirme:</p>
+                            <p id="tani_usernamelabel">Değerlendirme:</p>
                             <p class="tanıdescription">Risk devam ediyor: 1-5 gösterge seçildiyse; yeni günde bakım planında tanımlı tanı olacak.</p>
                             <p class="tanıdescription">Mevcut Tanı:Risk ortaya çıktıysa, gelişen durumla ilgili kayıt ve bakım planı yapılacak.</p>
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p id="tani_usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hastanın lokalize ya da sistemik olarak hiçbir alerjik tepki göstermemesi</p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
-                            <p class="usernamelabel">NOC Gösterge: </p>
+                            <p id="tani_usernamelabel">NOC Gösterge: </p>
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after"

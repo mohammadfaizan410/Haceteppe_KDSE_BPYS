@@ -11,11 +11,7 @@ if (isset($_GET['logout'])) {
     header("Location: main.php");
 }
 
-$tanı_respiratory_rate = $_GET['tanı_respiratory_rate'];
-$tanı_heart_rate = $_GET['tanı_heart_rate'];
-$tanı_spo2_percentage = $_GET['tanı_spo2_percentage'];
-$tanı_o2_status = $_GET['tanı_o2_status'];
-$tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -65,22 +61,22 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Sorunla İlişkili Veriler:</p>
+                            <p id="tani_usernamelabel">Sorunla İlişkili Veriler:</p>
                             <div class="matchedfields-wrapper">
 
                             </div>
 
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Hemşirelik Tanıları:</p>
+                            <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
                             <p class="tanıdescription">Akut ağrı </p>
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p id="tani_usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hastanın ağrısı olmadığını ifade etmesi </p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
-                            <p class="usernamelabel">NOC Gösterge: </p>
+                            <p id="tani_usernamelabel">NOC Gösterge: </p>
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator"
@@ -124,7 +120,7 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                         </div>
 
                         <div class="input-section d-flex" style="flex-direction: column;">
-                            <p class="usernamelabel">Hemşirelik Girişimleri:</p>
+                            <p id="tani_usernamelabel">Hemşirelik Girişimleri:</p>
 
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt1"
@@ -176,7 +172,7 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                                         (gürültü, aydınlanma, sıcaklık gibi) kontrol altına alınır</span>
                                 </label>
                             </div>
-                            <p class="usernamelabel">Eğitim:</p>
+                            <p id="tani_usernamelabel">Eğitim:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt7"
                                     value="Ağrının nedenleri, ne kadar süreceği ve girişimlerle ilgili yaşanabilecek sorunlar hakkında bilgi verilir">
@@ -212,7 +208,7 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                                 </label>
                             </div>
 
-                            <p class="usernamelabel">İş Birliği Gerektiren Uygulamalar:</p>
+                            <p id="tani_usernamelabel">İş Birliği Gerektiren Uygulamalar:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="collaborative_apps"
                                     id="nurse_attempt11" value="İstemde yer alan ilaçlar (analjezikler) uygulanır">
@@ -223,13 +219,19 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                             </div>
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Değerlendirme:</p>
+                            <p id="tani_usernamelabel">Değerlendirme:</p>
+                            <p class="tanıdescription"> Sorun devam ediyor: 1-4 gösterge seçildiyse; yeni günde bakım
+                                planında tanımlı tanı olacak. </p>
+                            <p class="tanıdescription"> Sorun çözümlendi:
+                                5 gösterge seçildiyse; yeni günde bakım planına bu tanıyı taşımayacak
+                            </p>
+</div>
                             <div class="input-section d-flex">
-                                <p class="usernamelabel">NOC Çıktıları:</p>
+                                <p id="tani_usernamelabel">NOC Çıktıları:</p>
                                 <p class="tanıdescription">Hastanın ağrısı olmadığını ifade etmesi </p>
                             </div>
                             <div class="input-section" id="o2-delivery-container">
-                                <p class="usernamelabel">NOC Gösterge: </p>
+                                <p id="tani_usernamelabel">NOC Gösterge: </p>
                                 <div class="form-check">
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required name="noc_indicator_after"
@@ -274,11 +276,7 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                                 </div>
 
                             </div>
-                            <p class="tanıdescription"> Sorun devam ediyor: 1-4 gösterge seçildiyse; yeni günde bakım
-                                planında tanımlı tanı olacak. </p>
-                            <p class="tanıdescription"> Sorun çözümlendi:
-                                5 gösterge seçildiyse; yeni günde bakım planına bu tanıyı taşımayacak
-                            </p>
+                         
                         </div>
 
                                                                 <input type="submit" class="w-75 submit m-auto" name="submit" id="submit" value="Kaydet">
