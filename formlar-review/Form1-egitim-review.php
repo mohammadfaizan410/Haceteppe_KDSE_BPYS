@@ -148,11 +148,14 @@ if ($result) {
                 </div>
             </div>
             <div>
-            <input type="submit" class="form-control submit m-auto" name="submit" id="submit" value="Kaydet">
-                </div>
-            </div>
+            <div class='d-flex'>    
+    <input class="submit m-auto " type='submit' name="submit" id="submit" value="Kayıt">
+</div>
+
             </form>
         </div>
+
+
     </div>
 
 

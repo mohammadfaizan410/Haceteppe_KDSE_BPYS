@@ -154,10 +154,13 @@ if (isset($_GET['logout'])) {
                             <p class="usernamelabel">Referans Değeri :</p>
                             <input type="text" class="form-control" required name="referance_value" id="referance_value" placeholder="Referans Değeri" maxlength="200">
                         </div>
-                        <input class="form-control submit" type="submit" name="submit" id="submit" value="Submit">
-                    </form>
+                    </div>
                 </div>
-            </div>
+                <div class='d-flex'>    
+    <input class="submit m-auto " type='submit' name="submit" id="submit" value="Kayıt">
+</div>
+
+            </form>
         </div>
 
 

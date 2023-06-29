@@ -1143,12 +1143,14 @@ if ($result) {
                         <input type="text" class="form-control not"  name="medicalDiagnosis" id="medicalDiagnosis"
                         placeholder="Tıbbi Tanı" value="<?php echo $ozgecmisform1[0]['medicalDiagnosis'] ?>">
                     </div>
-                <div class="input-section d-flex text-center">
-                <input class="form-control submit m-auto " type='submit' name="submit" id="submit" value="Kayıt">
-             </form>
-                </div>
-            </div>
+                    <div class='d-flex'>    
+    <input class="submit m-auto " type='submit' name="submit" id="submit" value="Kayıt">
+</div>
+
+            </form>
         </div>
+
+
     </div>
 
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>

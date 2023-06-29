@@ -296,7 +296,9 @@ $tanı_EndotrakealTüp = $_GET['tanı_EndotrakealTüp'];
                             </div>
 
                         </div>
-                        <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
+                                                                <input type="submit" class="w-75 submit m-auto" name="submit" id="submit" value="Kaydet">
+
+
                     </form>
                 </div>
             </div>

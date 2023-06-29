@@ -100,9 +100,10 @@ if (isset($_GET['logout'])) {
                                 <p class="usernamelabel">Hasta Doğum Tarihi:</p>
                                 <input type="date" class="form-control" required name="age" id="date" placeholder="Hasta Doğum Tarihi">
                             </div>
+                            <input type="submit" class="w-75 submit m-auto" name="submit" id="submit" value="Kaydet">
                     </div>
 
-                    <input type="submit" class="form-control submit m-auto" name="submit" id="submit" value="Kaydet">
+
                     </form>
                 </div>
             </div>

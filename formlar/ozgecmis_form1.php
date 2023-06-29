@@ -1123,16 +1123,18 @@ if (isset($_GET['logout'])) {
                         </div>
                     </div>
                     </div>
-
-                    <p class="usernamelabel m-2">Şikayetler</p>
-                    <input type="text" class="form-control not"  name="complaints" id="complaints"
+                    <div class='d-flex input-section'>
+                        <p class="usernamelabel m-2">Şikayetler</p>
+                        <input type="text" class="form-control not"  name="complaints" id="complaints"
                         placeholder="Şikayetler">
-
-                    <p class="usernamelabel m-2">Tıbbi Tanı</p>
-                    <input type="text" class="form-control not"  name="medicalDiagnosis" id="medicalDiagnosis"
+                        
+                        <p class="usernamelabel m-2">Tıbbi Tanı</p>
+                        <input type="text" class="form-control not"  name="medicalDiagnosis" id="medicalDiagnosis"
                         placeholder="Tıbbi Tanı">
+    </div>
 
-                    <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
+            <input type="submit" class="w-75 submit m-auto" name="submit" id="submit" value="Kaydet">
+
             </div>
             </form>
         </div>

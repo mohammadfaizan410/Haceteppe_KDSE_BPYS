@@ -280,8 +280,14 @@ if ($result) {
                     </div>
                 </div>
             </div>
-            <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
+            <div class='d-flex'>    
+    <input class="submit m-auto " type='submit' name="submit" id="submit" value="Kayıt">
+</div>
+
+            </form>
         </div>
+
+
     </div>
     <script>
         //closeBtn1 click

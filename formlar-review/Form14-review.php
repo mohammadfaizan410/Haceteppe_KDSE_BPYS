@@ -150,7 +150,9 @@ if ($result) {
                                 placeholder="evaluation" maxlength="250"
                                 value="<?php echo $form14[0]['evaluation']; ?>">
                         </div>
-                        <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
+                                                                <input type="submit" class="w-75 submit m-auto" name="submit" id="submit" value="Kaydet">
+
+
                     </form>
                 </div>
             </div>

@@ -139,7 +139,9 @@ if ($result) {
                                 placeholder="treatment_timeRange"
                                 value="<?php echo $form13[0]['treatment_timeRange']; ?>">
                         </div>
-                        <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
+                                                                <input type="submit" class="w-75 submit m-auto" name="submit" id="submit" value="Kaydet">
+
+
                     </form>
                 </div>
             </div>
