@@ -457,6 +457,7 @@ input[type="email"] {
 
 .patients-table {
     align-self: center;
+    
 }
 
 .block {
@@ -794,6 +795,20 @@ input[type="email"] {
     border : 2px solid black;
     margin : auto;
     margin-top: 20px;
+}
+
+.option_selector{
+    align-items: center;
+    aspect-ratio: 1/1;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #6E60AA 0%, #9080D6 84.79%, #B18BE5 100%);
+    font-size: large;
+    color: white;
+    border: 3px solid white;
+    cursor: pointer;
+}
+.option_selector:hover{
+    border:2px solid #6E60AA;
 }
 
 @media screen and (max-width: 768px) {

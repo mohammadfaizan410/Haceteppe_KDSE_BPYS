@@ -286,8 +286,8 @@ if ($result) {
                         patient_name: patient_name,
                         creation_date: creationDate,
                         update_date: updateDate,
-                        problem_info: problem_info,
-                        nurse_description: nurse_description,
+         
+        
                         noc_output: noc_output,
                         noc_indicator: noc_indicator,
                         nurse_attempt: nurse_attempt,
@@ -321,7 +321,7 @@ if ($result) {
         })
 
     </script>
-    <script src=""></script>
+    
 </body>
 
 </html>

@@ -23,19 +23,6 @@ if (isset($_GET['logout'])) {
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
-
-
-
-
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
-
-
-
-    <!-- Template Stylesheet -->
-    <link href="./style.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-
     <style>
     .send-patient {
         align-self: center;

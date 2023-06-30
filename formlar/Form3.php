@@ -20,17 +20,6 @@ if (isset($_GET['logout'])) {
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
-
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
-
-
-
-
-    <!-- Template Stylesheet -->
-    <link href="../style.css" rel="stylesheet">
-
-
     <style>
     .send-patient {
         align-self: center;
@@ -392,7 +381,7 @@ if (isset($_GET['logout'])) {
         })
     })
     </script>
-    <script src=""></script>
+    
 </body>
 
 </html>

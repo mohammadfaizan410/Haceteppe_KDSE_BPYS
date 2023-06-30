@@ -282,7 +282,7 @@ if (isset($_GET['logout'])) {
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_education"
+                                <input class="form-check-input" type="checkbox" name="collaborative_apps"
                                     id="nurse_attempt20"
                                     value="Mekanik ventilasyon uygulanma ihtimali için gerekli hazırlıklar yapılır">
                                 <label class="form-check-label" for="nurse_attempt">
@@ -525,16 +525,15 @@ if (isset($_GET['logout'])) {
                 }
                 }                $.ajax({
                 type: 'POST',
-                url: '<?php echo $base_url; ?>/insertTanalar/riskTani15Insert.php',
+                url: '<?php echo $base_url; ?>/tani-handler/submitOrUpdateTani.php',
                 data: {
                     table: 'tani1',
                     patient_id: patient_id,
                     patient_name: patient_name,
                     creation_date: creationDate,
                     update_date: updateDate,
-                    problem_info: problem_info,
-                    nurse_description: nurse_description,
-                    noc_output: noc_output,
+    
+                   
                     noc_indicator: noc_indicator,
                     noc_indicator_after: noc_indicator_after,
                     noc_indicator_2: noc_indicator_2,
@@ -545,7 +544,7 @@ if (isset($_GET['logout'])) {
                     nurse_education: nurse_education,
                     collaborative_apps: collaborative_apps,
                     evaluation: evaluation,
-                    standalone: $_GET['standalone']
+                    standalone: '<?php echo $_GET['standalone']; ?>'
                 },
                 success: function(data) {
                     console.log("something happened")

@@ -471,9 +471,9 @@ if (isset($_GET['logout'])) {
                     patient_name: patient_name,
                     creation_date: creationDate,
                     update_date: updateDate,
-                    problem_info: problem_info,
-                    nurse_description: nurse_description,
-                    noc_output: noc_output,
+     
+    
+                   
                     noc_indicator: noc_indicator,
                     noc_indicator_after: noc_indicator_after,
                     noc_indicator_2: noc_indicator_2,
@@ -484,7 +484,7 @@ if (isset($_GET['logout'])) {
                     nurse_education: nurse_education,
                     collaborative_apps: collaborative_apps,
                     evaluation: false,
-                    standalone: $_GET['standalone']
+                    standalone: '<?php echo $_GET['standalone']; ?>'standalone']; ?>'
                 },
                 success: function(data) {
                     console.log("something happened")

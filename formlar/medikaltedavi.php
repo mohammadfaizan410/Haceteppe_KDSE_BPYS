@@ -308,7 +308,7 @@ if (isset($_GET['logout'])) {
 
     });
     </script>
-    <script src=""></script>
+    
 </body>
 
 </html>

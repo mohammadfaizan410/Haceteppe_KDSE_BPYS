@@ -2846,7 +2846,7 @@ $('input[type="text"]').val(function(index, currentValue) {
             </style>
 
             <!-- Template Javascript -->
-            <script src=""></script>
+            
 </body>
 
 </html>
