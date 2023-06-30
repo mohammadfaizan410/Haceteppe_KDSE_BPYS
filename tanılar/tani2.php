@@ -61,7 +61,7 @@ if (isset($_GET['logout'])) {
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Sorunla İlişkili Veriler:</p>
+                            <p id="tani_usernamelabel">Sorunla İlişkili Veriler:</p>
                             <div class="matchedfields-wrapper">
                                 <p class="matchedfields" id="field_respiratory_rate"></p>
 
@@ -71,16 +71,20 @@ if (isset($_GET['logout'])) {
 
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Hemşirelik Tanıları:</p>
+                            <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
                             <p class="tanıdescription">Etkisiz solunum örüntüsü</p>
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p id="tani_usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hastanın solunum örüntüsünün normal olması </p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
+<<<<<<< HEAD
                             <p class="usernamelabel">NOC Gösterge: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
+=======
+                            <p id="tani_usernamelabel">NOC Gösterge: </p>
+>>>>>>> ab2aa3ea378aa02a63dc6f7b91a9871f8f1fb9d5
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1:Hastanın solunum örüntüsünde çok şiddetli düzeyde bozulma var">
@@ -123,12 +127,16 @@ if (isset($_GET['logout'])) {
 
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p id="tani_usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hastanın solunum hızının ve ritminin normal olması</p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
+<<<<<<< HEAD
                             <p class="usernamelabel">NOC Gösterge: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
+=======
+                            <p id="tani_usernamelabel">NOC Gösterge: </p>
+>>>>>>> ab2aa3ea378aa02a63dc6f7b91a9871f8f1fb9d5
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator_2" value="1:Hastanın solunum hızı ve ritminde çok şiddetli düzeyde bozulma var">
@@ -172,8 +180,13 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="input-section d-flex" style="flex-direction: column;">
+<<<<<<< HEAD
                             <p class="usernamelabel">Hemşirelik Girişimleri:</p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
+=======
+                            <p id="tani_usernamelabel">Hemşirelik Girişimleri:</p>
+
+>>>>>>> ab2aa3ea378aa02a63dc6f7b91a9871f8f1fb9d5
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt1" value="Yaşamsal bulgu takibi yapılır">
                                 <label class="form-check-label" for="nurse_attempt">
@@ -276,8 +289,12 @@ if (isset($_GET['logout'])) {
                                         göğüs genişlemesi izlenir ve kaydedilir. </span>
                                 </label>
                             </div>
+<<<<<<< HEAD
                             <p class="usernamelabel">Eğitim:</p>
                             <p class="option-error2" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
+=======
+                            <p id="tani_usernamelabel">Eğitim:</p>
+>>>>>>> ab2aa3ea378aa02a63dc6f7b91a9871f8f1fb9d5
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt16" value="Hastaya ve bakım verenlerine solunum sıkıntısı yaşadığı dönemlerde nasıl nefes alıp vermesi gerektiği konusunda eğitim verilir ">
                                 <label class="form-check-label" for="nurse_attempt">
@@ -330,8 +347,12 @@ if (isset($_GET['logout'])) {
                                         gibi konuları içeren eğitim verilir</span>
                                 </label>
                             </div>
+<<<<<<< HEAD
                             <p class="usernamelabel">İş Birliği Gerektiren Uygulamalar:</p>
                             <p class="option-error2" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
+=======
+                            <p id="tani_usernamelabel">İş Birliği Gerektiren Uygulamalar:</p>
+>>>>>>> ab2aa3ea378aa02a63dc6f7b91a9871f8f1fb9d5
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="collaborative_apps" id="nurse_attempt23" value="Klinik protokolleri ya da isteme göre oksijen tedavisi ve soğuk buhar uygulanır">
                                 <label class="form-check-label" for="nurse_attempt">
@@ -348,10 +369,20 @@ if (isset($_GET['logout'])) {
                             </div>
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Değerlendirme:</p>
+                            <p id="tani_usernamelabel">Değerlendirme:</p>
+                            <p class="tanıdescription"> Sorun devam ediyor: 1-4 gösterge seçildiyse; yeni günde bakım
+                                planında tanımlı tanı olacak. </p>
+                            <p class="tanıdescription"> Sorun çözümlendi:
+                                5 gösterge seçildiyse; yeni günde bakım planına bu tanıyı taşımayacak
+                            </p>
+                        </div>
                             <div class="input-section" id="o2-delivery-container">
+<<<<<<< HEAD
                                 <p class="usernamelabel">NOC Gösterge: </p>
                                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
+=======
+                                <p id="tani_usernamelabel">NOC Gösterge: </p>
+>>>>>>> ab2aa3ea378aa02a63dc6f7b91a9871f8f1fb9d5
                                 <div class="form-check">
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="1:Hastanın solunum örüntüsünde çok şiddetli düzeyde bozulma var">
@@ -394,12 +425,16 @@ if (isset($_GET['logout'])) {
 
                             </div>
                             <div class="input-section d-flex">
-                                <p class="usernamelabel">NOC Çıktıları:</p>
+                                <p id="tani_usernamelabel">NOC Çıktıları:</p>
                                 <p class="tanıdescription">Hastanın solunum hızının ve ritminin normal olması</p>
                             </div>
                             <div class="input-section" id="o2-delivery-container">
+<<<<<<< HEAD
                                 <p class="usernamelabel">NOC Gösterge: </p>
                                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
+=======
+                                <p id="tani_usernamelabel">NOC Gösterge: </p>
+>>>>>>> ab2aa3ea378aa02a63dc6f7b91a9871f8f1fb9d5
                                 <div class="form-check">
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator2_after" value="1:Hastanın solunum hızı ve ritminde çok şiddetli düzeyde bozulma var">
@@ -444,11 +479,7 @@ if (isset($_GET['logout'])) {
                                 </div>
 
                             </div>
-                            <p class="tanıdescription"> Sorun devam ediyor: 1-4 gösterge seçildiyse; yeni günde bakım
-                                planında tanımlı tanı olacak. </p>
-                            <p class="tanıdescription"> Sorun çözümlendi:
-                                5 gösterge seçildiyse; yeni günde bakım planına bu tanıyı taşımayacak
-                            </p>
+                        
                         </div>
                                                                 <input type="submit" class="w-75 submit m-auto" name="submit" id="submit" value="Kaydet">
 

@@ -11,11 +11,7 @@ if (isset($_GET['logout'])) {
     header("Location: main.php");
 }
 
-$tanı_respiratory_rate = $_GET['tanı_respiratory_rate'];
-$tanı_heart_rate = $_GET['tanı_heart_rate'];
-$tanı_spo2_percentage = $_GET['tanı_spo2_percentage'];
-$tanı_o2_status = $_GET['tanı_o2_status'];
-$tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -65,23 +61,27 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Sorunla İlişkili Veriler:</p>
+                            <p id="tani_usernamelabel">Sorunla İlişkili Veriler:</p>
                             <div class="matchedfields-wrapper">
 
                             </div>
 
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Hemşirelik Tanıları:</p>
+                            <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
                             <p class="tanıdescription">İdrar boşaltımında bozulma ı</p>
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p id="tani_usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hastanın idrarını ağrı ve rahatsızlık olmadan yapması </p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
+<<<<<<< HEAD
                             <p class="usernamelabel">NOC Gösterge: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
+=======
+                            <p id="tani_usernamelabel">NOC Gösterge: </p>
+>>>>>>> ab2aa3ea378aa02a63dc6f7b91a9871f8f1fb9d5
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1: Hastada idrar yapma sırasında sürekli ağrı ve rahatsızlık var">
@@ -125,12 +125,16 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
 
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p id="tani_usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hastanın idrar kontrolünü sürdürmesi</p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
+<<<<<<< HEAD
                             <p class="usernamelabel">NOC Gösterge: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
+=======
+                            <p id="tani_usernamelabel">NOC Gösterge: </p>
+>>>>>>> ab2aa3ea378aa02a63dc6f7b91a9871f8f1fb9d5
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator2" value="1: Hastada sürekli inkontinans var">
@@ -170,8 +174,13 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                         </div>
 
                         <div class="input-section d-flex" style="flex-direction: column;">
+<<<<<<< HEAD
                             <p class="usernamelabel">Hemşirelik Girişimleri:</p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
+=======
+                            <p id="tani_usernamelabel">Hemşirelik Girişimleri:</p>
+
+>>>>>>> ab2aa3ea378aa02a63dc6f7b91a9871f8f1fb9d5
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt1" value="Hastanın idrar boşaltımı; sıklık, yoğunluk, koku, miktar, renk açılarından izlenir">
                                 <label class="form-check-label" for="nurse_attempt">
@@ -206,8 +215,12 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                                     <span class="checkbox-header">Gerekli ise mesane kateterizasyonu uygulanır</span>
                                 </label>
                             </div>
+<<<<<<< HEAD
                             <p class="usernamelabel">Eğitim:</p>
                             <p class="option-error1" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
+=======
+                            <p id="tani_usernamelabel">Eğitim:</p>
+>>>>>>> ab2aa3ea378aa02a63dc6f7b91a9871f8f1fb9d5
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt6" value="Hastaya idrara sıkışması durumunda hemen bu ihtiyacı gidermesi konusunda bilgi verilir">
                                 <label class="form-check-label" for="nurse_attempt">
@@ -244,8 +257,12 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                                     </span>
                                 </label>
                             </div>
+<<<<<<< HEAD
                             <p class="usernamelabel">İş Birliği Gerektiren Uygulamalar:</p>
                             <p class="option-error2" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
+=======
+                            <p id="tani_usernamelabel">İş Birliği Gerektiren Uygulamalar:</p>
+>>>>>>> ab2aa3ea378aa02a63dc6f7b91a9871f8f1fb9d5
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="collaborative_apps" id="nurse_attempt11" value="İstemde yer alan ilaçlar (antibiyotik, analjezik, entipiretik) uygulanır">
                                 <label class="form-check-label" for="nurse_attempt">
@@ -264,14 +281,24 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
 
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Değerlendirme:</p>
+                            <p id="tani_usernamelabel">Değerlendirme:</p>
+                            <p class="tanıdescription"> Sorun devam ediyor: 1-4 gösterge seçildiyse; yeni günde bakım
+                                planında tanımlı tanı olacak. </p>
+                            <p class="tanıdescription"> Sorun çözümlendi:
+                                5 gösterge seçildiyse; yeni günde bakım planına bu tanıyı taşımayacak
+                            </p>
+    </div>
                             <div class="input-section d-flex">
-                                <p class="usernamelabel">NOC Çıktıları:</p>
+                                <p id="tani_usernamelabel">NOC Çıktıları:</p>
                                 <p class="tanıdescription">Hastanın idrarını ağrı ve rahatsızlık olmadan yapması</p>
                             </div>
                             <div class="input-section" id="o2-delivery-container">
+<<<<<<< HEAD
                                 <p class="usernamelabel">NOC Gösterge: </p>
                                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
+=======
+                                <p id="tani_usernamelabel">NOC Gösterge: </p>
+>>>>>>> ab2aa3ea378aa02a63dc6f7b91a9871f8f1fb9d5
                                 <div class="form-check">
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="1:Hastada çok şiddetli düzeyde sıvı yüklenmesi var">
@@ -316,12 +343,16 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
 
                             </div>
                             <div class="input-section d-flex">
-                                <p class="usernamelabel">NOC Çıktıları:</p>
+                                <p id="tani_usernamelabel">NOC Çıktıları:</p>
                                 <p class="tanıdescription">Hastanın idrar kontrolünü sürdürmesi</p>
                             </div>
                             <div class="input-section" id="o2-delivery-container">
+<<<<<<< HEAD
                                 <p class="usernamelabel">NOC Gösterge: </p>
                                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
+=======
+                                <p id="tani_usernamelabel">NOC Gösterge: </p>
+>>>>>>> ab2aa3ea378aa02a63dc6f7b91a9871f8f1fb9d5
                                 <div class="form-check">
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator2_after" value="1: Hastada sürekli inkontinans var ">
@@ -359,11 +390,7 @@ $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
                                 </div>
 
                             </div>
-                            <p class="tanıdescription"> Sorun devam ediyor: 1-4 gösterge seçildiyse; yeni günde bakım
-                                planında tanımlı tanı olacak. </p>
-                            <p class="tanıdescription"> Sorun çözümlendi:
-                                5 gösterge seçildiyse; yeni günde bakım planına bu tanıyı taşımayacak
-                            </p>
+                           
                         </div>
                                                                 <input type="submit" class="w-75 submit m-auto" name="submit" id="submit" value="Kaydet">
 

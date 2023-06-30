@@ -90,22 +90,22 @@ if ($result) {
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Patient Name:</p>
+                            <p id="tani_usernamelabel">Patient Name:</p>
                             <input type="text" class="form-control" required name="patient_name" id="diger"
                                 placeholder="Patient Name" value="<?php echo $form7[0]['patient_name']; ?>" disabled>
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Patient ID:</p>
+                            <p id="tani_usernamelabel">Patient ID:</p>
                             <input type="text" class="form-control" required name="patient_id" id="diger"
                                 placeholder="Patient ID" value="<?php echo $form7[0]['patient_id']; ?>" disabled>
                         </div>
 
                         <div class="input-section-item" style="justify-content:space-between; padding: 5%">
-                            <p class="usernamelabel" style="font-weight: bold;">Değerlendirme Kriterleri</p>
+                            <p id="tani_usernamelabel" style="font-weight: bold;">Değerlendirme Kriterleri</p>
                         </div>
 
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Oluşma Tarihi:</p>
+                            <p id="tani_usernamelabel">Oluşma Tarihi:</p>
                             <input type="date" class="form-control" required name="occurance_date" id="diger"
                                 placeholder="OluşmaTarihi" value="<?php echo $form7[0]['occurance_date']; ?>">
                         </div>
@@ -121,43 +121,43 @@ if ($result) {
                         </div>
 
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Yeri:</p>
+                            <p id="tani_usernamelabel">Yeri:</p>
                             <input type="text" class="form-control" required name="location" id="location"
                                 placeholder="Yara Yerini Giriniz" value="<?php echo $form7[0]['location']; ?>">
                         </div>
 
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Evresi:</p>
+                            <p id="tani_usernamelabel">Evresi:</p>
                             <input type="text" class="form-control" required name="stage" id="stage"
                                 placeholder="Yara Evresini Giriniz" value="<?php echo $form7[0]['stage']; ?>">
                         </div>
 
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Boyut (cm):</p>
+                            <p id="tani_usernamelabel">Boyut (cm):</p>
                             <div class="form-check">
                                 <div class="input-section d-flex">
-                                    <p class="usernamelabel">Uzunluk:</p>
+                                    <p id="tani_usernamelabel">Uzunluk:</p>
                                     <input type="number" class="form-control" required name="length" id="length" placeholder="Uzunluk Giriniz" min="0" max="1000">
                                 </div>
                                 <div class="input-section d-flex">
-                                    <p class="usernamelabel">Genişlik:</p>
+                                    <p id="tani_usernamelabel">Genişlik:</p>
                                     <input type="number" class="form-control" required name="width" id="width" placeholder="Genişlik Giriniz" min="0" max="1000">
                                 </div>
                                 <div class="input-section d-flex">
-                                    <p class="usernamelabel">Derinlik:</p>
+                                    <p id="tani_usernamelabel">Derinlik:</p>
                                     <input type="number" class="form-control" required name="depth" id="depth" placeholder="Derinlik Giriniz" min="0" max="1000">
                                 </div>
                             </div>
                         </div>
 
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Yara eksudası:</p>
+                            <p id="tani_usernamelabel">Yara eksudası:</p>
                             <input type="text" class="form-control" required name="diger" id="wound-exudate"
                                 placeholder="Yara Eksudasını Giriniz" value="<?php echo $form7[0]['wound_exudate']; ?>">
                         </div>
 
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Yara görünümü:</p>
+                            <p id="tani_usernamelabel">Yara görünümü:</p>
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="YaraGörünümü" id="Nekrotik"
@@ -214,7 +214,7 @@ if ($result) {
                                     <input class="form-check-input" type="radio" name="YaraGörünümü" id="YaraGörünümü"
                                         value="Diğer">
                                     <div class="input-section d-flex">
-                                        <p class="usernamelabel">Diğer:</p>
+                                        <p id="tani_usernamelabel">Diğer:</p>
                                         <input type="text" class="form-control" required name="YaraGörünümüDiger"
                                             id="diger" placeholder="Diğer">
                                     </div>
@@ -223,70 +223,70 @@ if ($result) {
                         </div>
 
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Yarada koku :</p>
+                            <p id="tani_usernamelabel">Yarada koku :</p>
                             <input type="text" class="form-control" required name="odor" id="odor"
                                 placeholder="Koku Durumunu Giriniz" value="<?php echo $form7[0]['odor']; ?>">
                         </div>
 
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Yarada tünelleşme:</p>
+                            <p id="tani_usernamelabel">Yarada tünelleşme:</p>
                             <input type="text" class="form-control" required name="tunnelling" id="tunnelling"
                                 placeholder="Tünelleşme Durumunu Giriniz"
                                 value="<?php echo $form7[0]['tunnelling']; ?>">
                         </div>
 
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Yarada ödem:</p>
+                            <p id="tani_usernamelabel">Yarada ödem:</p>
                             <input type="text" class="form-control" required name="edema" id="edema"
                                 placeholder="Ödem Durumunu Giriniz" value="<?php echo $form7[0]['edema']; ?>">
                         </div>
 
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Yara kenarında maserasyon:</p>
+                            <p id="tani_usernamelabel">Yara kenarında maserasyon:</p>
                             <input type="text" class="form-control" required name="maceration" id="maceration"
                                 placeholder="Maserasyon Durumunu Giriniz"
                                 value="<?php echo $form7[0]['maceration']; ?>">
                         </div>
 
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Yara kenarında eritem:</p>
+                            <p id="tani_usernamelabel">Yara kenarında eritem:</p>
                             <input type="text" class="form-control" required name="erythema" id="erythema"
                                 placeholder="Eritem Durumunu Giriniz" value="<?php echo $form7[0]['erythema']; ?>">
                         </div>
 
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Yara kenarı soyulmuş:</p>
+                            <p id="tani_usernamelabel">Yara kenarı soyulmuş:</p>
                             <input type="text" class="form-control" required name="peeling" id="peeling"
                                 placeholder="Soyulma Durumunu Giriniz" value="<?php echo $form7[0]['peeling']; ?>">
                         </div>
 
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Yara kenarı kuru:</p>
+                            <p id="tani_usernamelabel">Yara kenarı kuru:</p>
                             <input type="text" class="form-control" required name="dryness" id="dryness"
                                 placeholder="Kuruluk Durumunu Giriniz" value="<?php echo $form7[0]['dryness']; ?>">
                         </div>
 
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Yara bölgesinde ağrı:</p>
+                            <p id="tani_usernamelabel">Yara bölgesinde ağrı:</p>
                             <input type="text" class="form-control" required name="pain" id="pain"
                                 placeholder="Ağrı Durumunu Giriniz" value="<?php echo $form7[0]['pain']; ?>">
                         </div>
 
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Kullanılan Bakım Ürünleri:</p>
+                            <p id="tani_usernamelabel">Kullanılan Bakım Ürünleri:</p>
                             <input type="text" class="form-control" required name="careProducts" id="careProducts"
                                 placeholder="Kullanılan Ürünleri Giriniz"
                                 value="<?php echo $form7[0]['careProducts']; ?>">
                         </div>
 
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Sonuç:</p>
+                            <p id="tani_usernamelabel">Sonuç:</p>
                             <input type="text" class="form-control" required name="result" id="result"
                                 placeholder="Sonucu Giriniz" value="<?php echo $form7[0]['result']; ?>">
                         </div>
 
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">İyileşme Tarihi:</p>
+                            <p id="tani_usernamelabel">İyileşme Tarihi:</p>
                             <input type="date" class="form-control" required name="healingDate" id="healingDate"
                                 placeholder="İyileşmeTarihi" value="<?php echo $form7[0]['healing_date']; ?>">
                         </div>

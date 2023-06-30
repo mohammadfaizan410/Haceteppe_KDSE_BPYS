@@ -65,7 +65,7 @@ if (isset($_GET['logout'])) {
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Sorunla İlişkili Veriler:</p>
+                            <p id="tani_usernamelabel">Sorunla İlişkili Veriler:</p>
                             <div class="matchedfields-wrapper">
                                 <p class="matchedfields" id="field_respiratory_rate"></p>
                                 <p class="matchedfields" id="field_heart_rate"></p>
@@ -77,15 +77,15 @@ if (isset($_GET['logout'])) {
 
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Hemşirelik Tanıları:</p>
+                            <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
                             <p class="tanıdescription">Doku bütünlüğünde bozulma riski</p>
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p id="tani_usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hastanın doku ve mukoz membranlarında bozulma olmaması</p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
-                            <p class="usernamelabel">NOC Gösterge: </p>
+                            <p id="tani_usernamelabel">NOC Gösterge: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <div class="form-check">
@@ -133,7 +133,7 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="input-section d-flex" style="flex-direction: column;">
-                            <p class="usernamelabel">Hemşirelik Girişimleri:</p>
+                            <p id="tani_usernamelabel">Hemşirelik Girişimleri:</p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt1"
@@ -212,7 +212,7 @@ if (isset($_GET['logout'])) {
                                     <span class="checkbox-header">Hasta yemek öncesi ve yemek sonrası ağız bakımını uygulaması için desteklenir</span>
                                 </label>
                             </div>
-                            <p class="usernamelabel">Eğitim:</p>
+                            <p id="tani_usernamelabel">Eğitim:</p>
                             <p class="option-error1" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt8"
@@ -256,7 +256,7 @@ if (isset($_GET['logout'])) {
                                     <span class="checkbox-header">İrritasyon ve yanıkları önlemek için tüketmemesi gereken besinler (çok sıcak/çok soğuk besinler, acı ve baharatlı besinler) konusunda bilgi verilir ve rahatsızlığı azaltmak için besinleri ılık olarak tüketmesi önerilir</span>
                                 </label>
                             </div>
-                            <p class="usernamelabel">İşbirliği Gerektiren Uygulamalar</p>
+                            <p id="tani_usernamelabel">İşbirliği Gerektiren Uygulamalar</p>
                             <p class="option-error2" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="collaboratıve_apps"
@@ -274,16 +274,16 @@ if (isset($_GET['logout'])) {
                             </div>
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Değerlendirme:</p>
+                            <p id="tani_usernamelabel">Değerlendirme:</p>
                             <p class="tanıdescription">Risk devam ediyor: 1-5 gösterge seçildiyse; yeni günde bakım planında tanımlı tanı olacak.</p>
                             <p class="tanıdescription">Mevcut Tanı:Risk ortaya çıktıysa, gelişen durumla ilgili kayıt ve bakım planı yapılacak.</p>
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p id="tani_usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hastanın doku ve mukoz membranlarında bozulma olmaması</p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
-                            <p class="usernamelabel">NOC Gösterge: </p>
+                            <p id="tani_usernamelabel">NOC Gösterge: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <div class="form-check">

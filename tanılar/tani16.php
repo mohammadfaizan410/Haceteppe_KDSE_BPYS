@@ -71,7 +71,7 @@ $hospital_environment_factors = isset($_GET['hospital_environment_factors']) ? $
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Sorunla İlişkili Veriler:</p>
+                            <p id="tani_usernamelabel">Sorunla İlişkili Veriler:</p>
                             <div class="matchedfields-wrapper">
                                 <?php         
                                 echo "<p class='matchedfields' id='average_sleep_time' style='".($average_sleep_time == 'NaN' ? 'color: red' : 'color:blue ' )."'>Ortalama uyku süresi: ".$average_sleep_time."</p>";
@@ -84,11 +84,11 @@ $hospital_environment_factors = isset($_GET['hospital_environment_factors']) ? $
 
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Hemşirelik Tanıları:</p>
+                            <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
                             <p class="tanıdescription">OUyku örüntüsünde bozulma </p>
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p id="tani_usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hastanın gece bölünmeden uyuduğunun gözlemlenmesi</p>
                         </div>
 
@@ -137,7 +137,7 @@ $hospital_environment_factors = isset($_GET['hospital_environment_factors']) ? $
                             </div>
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p id="tani_usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hasta gece iyi uyuduğunu ifade etmesi</p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
@@ -278,9 +278,14 @@ $hospital_environment_factors = isset($_GET['hospital_environment_factors']) ? $
 
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Değerlendirme:</p>
+                            <p id="tani_usernamelabel">Değerlendirme:</p>
+                            <p class="tanıdescription"> Sorun devam ediyor: 1-4 gösterge seçildiyse; yeni günde bakım planında tanımlı tanı olacak.</p>
+                            <p class="tanıdescription"> Sorun çözümlendi:
+                                5 gösterge seçildiyse; yeni günde bakım planına bu tanıyı taşımayacak
+                            </p>
+                        </div>
                             <div class="input-section d-flex">
-                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p id="tani_usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hastanın gece bölünmeden uyuduğunun gözlemlenmesi</p>
                         </div>
                         
@@ -290,7 +295,7 @@ $hospital_environment_factors = isset($_GET['hospital_environment_factors']) ? $
 
 
                         <div class="input-section" id="o2-delivery-container">
-                            <p class="usernamelabel">NOC Gösterge: </p>
+                            <p id="tani_usernamelabel">NOC Gösterge: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <div class="form-check">
@@ -337,11 +342,11 @@ $hospital_environment_factors = isset($_GET['hospital_environment_factors']) ? $
                             </div>
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p id="tani_usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hasta gece iyi uyuduğunu ifade etmesi</p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
-                            <p class="usernamelabel">NOC Gösterge: </p>
+                            <p id="tani_usernamelabel">NOC Gösterge: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <div class="form-check">
@@ -387,10 +392,7 @@ $hospital_environment_factors = isset($_GET['hospital_environment_factors']) ? $
 
                             </div>
                         </div>
-                            <p class="tanıdescription"> Sorun devam ediyor: 1-4 gösterge seçildiyse; yeni günde bakım planında tanımlı tanı olacak.</p>
-                            <p class="tanıdescription"> Sorun çözümlendi:
-                                5 gösterge seçildiyse; yeni günde bakım planına bu tanıyı taşımayacak
-                            </p>
+                           
                         </div>
                                                                 <input type="submit" class="w-75 submit m-auto" name="submit" id="submit" value="Kaydet">
 

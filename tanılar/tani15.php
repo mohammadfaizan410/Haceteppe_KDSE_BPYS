@@ -72,7 +72,7 @@ $oral_care = isset($_GET['oral_care']) ? $_GET['oral_care'] : "NaN";
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Sorunla İlişkili Veriler:</p>
+                            <p id="tani_usernamelabel">Sorunla İlişkili Veriler:</p>
                             <div class="matchedfields-wrapper">
                                 <?php
                                 echo "<p class='matchedfields' id='language_problem' style='" . ($language_problem == 'NaN' ? 'color: red' : 'color:blue ') . "'>Dilde sorun: " . $language_problem . "</p>";
@@ -86,11 +86,11 @@ $oral_care = isset($_GET['oral_care']) ? $_GET['oral_care'] : "NaN";
 
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Hemşirelik Tanıları:</p>
+                            <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
                             <p class="tanıdescription">Oral mukoz membranda bozulma </p>
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p id="tani_usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hastanın muköz membran bütünlüğünün sağlanması</p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
@@ -133,7 +133,7 @@ $oral_care = isset($_GET['oral_care']) ? $_GET['oral_care'] : "NaN";
                             </div>
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p id="tani_usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hastada ağız kokusunun olmaması</p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
@@ -290,13 +290,18 @@ $oral_care = isset($_GET['oral_care']) ? $_GET['oral_care'] : "NaN";
                             </div>
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">Değerlendirme:</p>
+                            <p id="tani_usernamelabel">Değerlendirme:</p>
+                            <p class="tanıdescription"> Sorun devam ediyor: 1-4 gösterge seçildiyse; yeni günde bakım planında tanımlı tanı olacak.</p>
+                            <p class="tanıdescription"> Sorun çözümlendi:
+                                5 gösterge seçildiyse; yeni günde bakım planına bu tanıyı taşımayacak
+                            </p>
+                        </div>
                             <div class="input-section d-flex">
-                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p id="tani_usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hastanın muköz membran bütünlüğünün sağlanması</p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
-                            <p class="usernamelabel">NOC Gösterge: </p>
+                            <p id="tani_usernamelabel">NOC Gösterge: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <div class="form-check">
@@ -344,11 +349,11 @@ $oral_care = isset($_GET['oral_care']) ? $_GET['oral_care'] : "NaN";
                             
                         </div>
                         <div class="input-section d-flex">
-                            <p class="usernamelabel">NOC Çıktıları:</p>
+                            <p id="tani_usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hastada ağız kokusunun olmaması</p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
-                            <p class="usernamelabel">NOC Gösterge: </p>
+                            <p id="tani_usernamelabel">NOC Gösterge: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <div class="form-check">
