@@ -2308,7 +2308,7 @@ if (isset($_GET['logout'])) {
         });
         </script>
         <!-- Template Javascript -->
-        
+        <script src=""></script>
 </body>
 
 </html>

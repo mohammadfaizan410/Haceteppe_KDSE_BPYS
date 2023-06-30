@@ -273,7 +273,7 @@ if (isset($_GET['logout'])) {
 
 
             <!-- Template Javascript -->
-            
+            <script src=""></script>
 </body>
 
 </html>

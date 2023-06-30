@@ -44,18 +44,12 @@ if (isset($_GET['logout'])) {
         <?php
         require_once('../config-students.php');
         $userid = $_SESSION['userlogin']['id'];
-        for( $i = 0; $i < 49; $i++){
-            if($_SESSION['userlogin']['patients'][$i]['id'] == $_GET['patient_id']){
-                $patient_name = $_SESSION['userlogin']['patients'][$i]['name'];
-            }
-        }
-        //echo $userid;
-        $sql = "SELECT * FROM  patients  WHERE id =" . $userid;
+        $sql = "SELECT * FROM  tani1  WHERE patient_id =" . $_GET['patient_id'];
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         $values = [];
         if ($result) {
-            $values = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+            $tani1 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
         } else {
             echo 'error';
         };
@@ -77,6 +71,11 @@ if (isset($_GET['logout'])) {
                             <tr class="darkcyan table-head">
                                 <th scope="col" style="font-weight : bold; font-size: large;"></th>
                             </tr>
+                           <?php
+                           foreach($tani1 as $tani1){
+                               echo "<tr><td><div class='mt-3 entered-forms align-items-center'><a class='nav-items review btn btn-success w-50 p-3' style='color: white;' href='" . $base_url . "/taniReview/tani1-review.php?patient_id=" . $_get['patient_id'] . "&patient_name=" . $_GET['patient_name'] . "&tani_id=" . $tani1[0]['tani_id']. "'>Tani1</a></div></td></tr>";
+                            }
+                            ?>
                            
                         </thead>
                         <tbody>
@@ -85,7 +84,8 @@ if (isset($_GET['logout'])) {
                 </div>
             </div>
         </div>
-        <script>       
+        <script>
+       
              var patient_id = "<?php echo $_GET['patient_id']; ?>";
                  var patient_name = "<?php echo $_GET['patient_name']; ?>";
             
@@ -127,8 +127,6 @@ input.addEventListener("input", function() {
 });
             </script>
 
-        <!-- Template Javascript -->
-        
 </body>
 
 </html>

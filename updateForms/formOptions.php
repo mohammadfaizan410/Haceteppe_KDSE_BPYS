@@ -68,6 +68,12 @@ if (isset($_GET['logout'])) {
                 
                 $("#content").load(url);
             });
+            $('#showSubmittedTani').click(function() {
+                var url = "<?php echo $base_url; ?>/updateForms/showSubmittedTanis.php?patient_id=" +
+                        patient_id + "&patient_name=" + encodeURIComponent(patient_name); 
+                
+                $("#content").load(url);
+            });
 
             
         </script>
