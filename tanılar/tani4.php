@@ -125,12 +125,8 @@ if (isset($_GET['logout'])) {
                             <p class="tanıdescription">Hastanın idrar konsantrasyonunun normal olması</p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
-<<<<<<< HEAD
                             <p class="usernamelabel">NOC Gösterge: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-=======
-                            <p id="tani_usernamelabel">NOC Gösterge: </p>
->>>>>>> ab2aa3ea378aa02a63dc6f7b91a9871f8f1fb9d5
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator2" value="1: Hastanın idrarı ileri derecede yoğundur">
@@ -174,12 +170,8 @@ if (isset($_GET['logout'])) {
                                 nemliliği, deri turgoru) normal olması</p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
-<<<<<<< HEAD
                             <p class="usernamelabel">NOC Gösterge: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-=======
-                            <p id="tani_usernamelabel">NOC Gösterge: </p>
->>>>>>> ab2aa3ea378aa02a63dc6f7b91a9871f8f1fb9d5
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_3" id="noc_indicator3" value="1: Hastanın derisi ve ağız mukozası aşırı düzeyde kuru; deri turgoru aşırı zayıflamıştır">
@@ -223,13 +215,8 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="input-section d-flex" style="flex-direction: column;">
-<<<<<<< HEAD
                             <p class="usernamelabel">Hemşirelik Girişimleri:</p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-=======
-                            <p id="tani_usernamelabel">Hemşirelik Girişimleri:</p>
-
->>>>>>> ab2aa3ea378aa02a63dc6f7b91a9871f8f1fb9d5
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt1" value="Yaşamsal bulgu takibi yapılır">
                                 <label class="form-check-label" for="nurse_attempt">
@@ -320,12 +307,8 @@ if (isset($_GET['logout'])) {
                                 </label>
                             </div>
 
-<<<<<<< HEAD
                             <p class="usernamelabel">Eğitim:</p>
                             <p class="option-error1" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-=======
-                            <p id="tani_usernamelabel">Eğitim:</p>
->>>>>>> ab2aa3ea378aa02a63dc6f7b91a9871f8f1fb9d5
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt14" value="Hasta ve bakım verenlerine sıvı volüm eksikliği komplikasyonlarının belirtileri öğretilir">
                                 <label class="form-check-label" for="nurse_attempt">
@@ -349,13 +332,8 @@ if (isset($_GET['logout'])) {
                                 </label>
                             </div>
 
-<<<<<<< HEAD
                             <p class="usernamelabel">İş Birliği Gerektiren Uygulamalar:</p>
                             <p class="option-error2" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-=======
-                            <p id="tani_usernamelabel">İş Birliği Gerektiren Uygulamalar:</p>
-
->>>>>>> ab2aa3ea378aa02a63dc6f7b91a9871f8f1fb9d5
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="collaborative_apps" id="nurse_attempt17" value="İstem yapılan sıvıların infüzyonu yapılır">
                                 <label class="form-check-label" for="nurse_attempt">
@@ -385,12 +363,8 @@ if (isset($_GET['logout'])) {
                                 </p>
                             </div>
                             <div class="input-section" id="o2-delivery-container">
-<<<<<<< HEAD
                                 <p class="usernamelabel">NOC Gösterge: </p>
                                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-=======
-                                <p id="tani_usernamelabel">NOC Gösterge: </p>
->>>>>>> ab2aa3ea378aa02a63dc6f7b91a9871f8f1fb9d5
                                 <div class="form-check">
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="1: Hastada çok şiddetli düzeyde sıvı kaybı var">

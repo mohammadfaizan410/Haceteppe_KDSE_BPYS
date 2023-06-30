@@ -78,12 +78,8 @@ if (isset($_GET['logout'])) {
                             <p class="tanıdescription">Hastanın hava yollarının açıklığının sürdürülmesi</p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
-<<<<<<< HEAD
                             <p class="usernamelabel">NOC Gösterge: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-=======
-                            <p id="tani_usernamelabel">NOC Gösterge: </p>
->>>>>>> ab2aa3ea378aa02a63dc6f7b91a9871f8f1fb9d5
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1: Hastanın hava yollarında çok şiddetli düzeyde tıkanıklık var">
@@ -130,12 +126,8 @@ if (isset($_GET['logout'])) {
                             <p class="tanıdescription">Hastanın etkili bir şekilde balgam çıkarması</p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
-<<<<<<< HEAD
                             <p class="usernamelabel">NOC Gösterge: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-=======
-                            <p id="tani_usernamelabel">NOC Gösterge: </p>
->>>>>>> ab2aa3ea378aa02a63dc6f7b91a9871f8f1fb9d5
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator2" value="1:  Hasta hiç balgam çıkartmıyor ">
@@ -175,13 +167,8 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="input-section d-flex" style="flex-direction: column;">
-<<<<<<< HEAD
                             <p class="usernamelabel">Hemşirelik Girişimleri:</p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-=======
-                            <p id="tani_usernamelabel">Hemşirelik Girişimleri:</p>
-
->>>>>>> ab2aa3ea378aa02a63dc6f7b91a9871f8f1fb9d5
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt1" value="Yaşamsal bulgu takibi yapılır">
                                 <label class="form-check-label" for="nurse_attempt">
@@ -243,12 +230,8 @@ if (isset($_GET['logout'])) {
                                 </label>
                             </div>
 
-<<<<<<< HEAD
                             <p class="usernamelabel">Eğitim:</p>
                             <p class="option-error1" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-=======
-                            <p id="tani_usernamelabel">Eğitim:</p>
->>>>>>> ab2aa3ea378aa02a63dc6f7b91a9871f8f1fb9d5
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt10" value="Hastaya ve bakım verenlerine solunum (büzük dudak, kontrollü nefes teknikleri vb.) ve öksürük egzersizleri ile ilgili eğitim verilir">
                                 <label class="form-check-label" for="nurse_attempt">
@@ -294,13 +277,8 @@ if (isset($_GET['logout'])) {
                                 </label>
                             </div>
 
-<<<<<<< HEAD
                             <p class="usernamelabel">İş Birliği Gerektiren Uygulamalar:</p>
                             <p class="option-error2" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-=======
-                            <p id="tani_usernamelabel">İş Birliği Gerektiren Uygulamalar:</p>
-
->>>>>>> ab2aa3ea378aa02a63dc6f7b91a9871f8f1fb9d5
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="collaborative_apps" id="nurse_attempt16" value="Gerektiğinde solunum terapisti ile işbirliği yapılır">
                                 <label class="form-check-label" for="nurse_attempt">
@@ -388,12 +366,8 @@ if (isset($_GET['logout'])) {
                                 <p class="tanıdescription">Hastanın etkili bir şekilde balgam çıkarması</p>
                             </div>
                             <div class="input-section" id="o2-delivery-container">
-<<<<<<< HEAD
                                 <p class="usernamelabel">NOC Gösterge: </p>
                                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-=======
-                                <p id="tani_usernamelabel">NOC Gösterge: </p>
->>>>>>> ab2aa3ea378aa02a63dc6f7b91a9871f8f1fb9d5
                                 <div class="form-check">
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator_after_2" value="1:  Hasta hiç balgam çıkartmıyor ">
@@ -431,16 +405,6 @@ if (isset($_GET['logout'])) {
                                 </div>
 
                             </div>
-<<<<<<< HEAD
-                            <p class="tanıdescription"> Sorun devam ediyor: 1-4 gösterge seçildiyse; yeni günde bakım
-                                planında tanımlı tanı olacak. </p>
-                            <p class="tanıdescription"> Sorun çözümlendi:
-                                5 gösterge seçildiyse; yeni günde bakım planına bu tanıyı taşımayacak
-                            </p>
-=======
-                           
-                        </div>
->>>>>>> ab2aa3ea378aa02a63dc6f7b91a9871f8f1fb9d5
                                                                 <input type="submit" class="w-75 submit m-auto" name="submit" id="submit" value="Kaydet">
 
 
