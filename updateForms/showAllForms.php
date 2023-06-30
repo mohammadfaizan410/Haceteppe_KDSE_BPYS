@@ -688,8 +688,8 @@ if (isset($_GET['logout'])) {
                     <div class="entered-forms-wrapper">
                     <div class='w-100 m-auto'>
                             <button class='entered-forms toggle_button btn btn-success w-75 m-auto align-items-center' id='new_forms_toggle'>Formlar <span id='new_forms_caret'>&#9660;<span></button>
-                            <ul class='entered-forms-ul' id='new_forms_options' style='display:none'>
-
+                            <input type="text" id="searchInputNewForms"  style='display:none' class='form-control  w-50 m-auto mb-2 mt-3' placeholder="Ad veya soyadına göre ara">
+                        <ul class='entered-forms-ul' id='new_forms_options' style='display:none'>
                         <li><div class="mt-3 entered-forms align-items-center"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;"
                                href="<?php echo $base_url; ?>/formlar/beslenmeGereksinimi_form1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form1_beslenme</a><div></li>
                        <li> <div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;"
@@ -2517,6 +2517,8 @@ if (isset($_GET['logout'])) {
             $("button#new_forms_toggle").on("click", function(e) {
                 e.preventDefault();
                 $("#new_forms_options").slideToggle('slow');
+                $("#searchInputNewForms").slideToggle('slow');
+                $("#searchInputNewForms").val('');
                 var currentScroll = $(window).scrollTop();
                 var targetScroll = currentScroll + 500;
                 if($("#new_forms_caret").css("transform") === "none"){
@@ -2534,6 +2536,7 @@ if (isset($_GET['logout'])) {
                     $('html, body').animate({
                         scrollTop : currentScroll - 500
                     },0)
+                    resetSearch();
                 }
             })
         });
@@ -2556,12 +2559,45 @@ if (isset($_GET['logout'])) {
                     $('html, body').animate({
                         scrollTop : currentScroll - 500
                     },0)
+                    
                 }
             })
         });
 
    
         </script>
+<script>
+  // Get the input element and the list
+  var input = document.getElementById("searchInputNewForms");
+  var list = document.getElementById("new_forms_options");
+
+  // Add an event listener to the input element
+  input.addEventListener("input", function() {
+    var filter = input.value.toLowerCase().trim(); // Convert search input to lowercase and remove leading/trailing whitespace
+
+    // Iterate through each list item
+    for (var i = 0; i < list.children.length; i++) {
+      var listItem = list.children[i];
+      var itemText = listItem.textContent.toLowerCase();
+
+      // Show/hide the list item based on the search input
+      if (itemText.includes(filter)) {
+        listItem.style.display = "";
+      } else {
+        listItem.style.display = "none";
+      }
+    }
+  });
+
+  function resetSearch() {
+    $("#searchInputNewForms").val(''); // Clear the search input value
+
+    // Show all list items
+    $("#new_forms_options li").each(function() {
+      $(this).show();
+    });
+  }
+</script>
         <script>
 
 
