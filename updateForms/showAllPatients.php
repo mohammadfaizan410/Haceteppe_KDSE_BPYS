@@ -63,12 +63,14 @@ if (isset($_GET['logout'])) {
             </div>
             <div class="patients-table text-center rounded p-4" id="patients-table">
                 <div class="d-flex align-items-center justify-content-between mb-4">
-                    <p style="color : #333333; font-size: 20px" class="pb-4">Hasta Listesi / Öneriler</p>
+                    <p style="color : #333333; font-size: 20px" class="pb-2">Hasta Listesi / Öneriler</p>
 
                 </div>
 
                 <div class="table-responsive">
-                    <table class="table text-start align-middle table-hover mb-0">
+                <input type="text" id="searchInput" class='form-control mb-5' placeholder="Ad veya soyadına göre ara">
+
+                    <table class="table text-start align-middle table-hover mb-0" id='dataTable'>
                         <thead>
                             <tr class="darkcyan table-head">
 
@@ -122,7 +124,26 @@ if (isset($_GET['logout'])) {
                     $("#content").load(url);
                 });
             });
+
+            
         </script>
+        <script>
+var input = document.getElementById("searchInput");
+  var table = document.getElementById("dataTable");
+  input.addEventListener("input", function() {
+    var filter = input.value.toLowerCase().trim();
+    for (var i = 1; i < table.rows.length; i++) {
+      var row = table.rows[i];
+      var name = row.cells[0].textContent.toLowerCase();
+      var surname = row.cells[1].textContent.toLowerCase();
+      if (name.includes(filter) || surname.includes(filter) || (name + " " + surname).includes(filter)) {
+        row.style.display = "";
+      } else {
+        row.style.display = "none";
+      }
+    }
+  });
+</script>
 
         <!-- Template Javascript -->
         <script src=""></script>
