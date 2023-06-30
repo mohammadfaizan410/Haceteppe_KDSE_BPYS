@@ -264,15 +264,15 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
-        $sql = "SELECT * FROM  form1_beslenme  WHERE patient_id =" . $userid;
-        $smtmselect = $db->prepare($sql);
-        $result = $smtmselect->execute();
-        $values = [];
-        if ($result) {
-            $values24 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
-        } else {
-            echo 'error';
-        };
+        // $sql = "SELECT * FROM  form1_beslenme  WHERE patient_id =" . $userid;
+        // $smtmselect = $db->prepare($sql);
+        // $result = $smtmselect->execute();
+        // $values = [];
+        // if ($result) {
+        //     $values24 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+        // } else {
+        //     echo 'error';
+        // };
 
         $sql = "SELECT * FROM  tani1 WHERE patient_id =" . $userid;
         $smtmselect = $db->prepare($sql);
@@ -308,7 +308,7 @@ if (isset($_GET['logout'])) {
             'table21_data' => $values21,
             'table22_data' => $values22,
             'table23_data' => $values23,
-            'table24_data' => $values24,
+            // 'table24_data' => $values24,
         ];
 
         ?>
@@ -517,11 +517,11 @@ if (isset($_GET['logout'])) {
                                         $update_date = $form["update_date"];
                                         $form_23_options .= '<li class="m-2 p-2 "><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-egitim-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Egitim Date: ' . $update_date . '</p></a></div></li>';
                                     }
-                                    if ($key ===  'table24_data') {
-                                        $form_id = $form["form_id"];
-                                        $update_date = $form["update_date"];
-                                        $form_25_options .= '<li class="m-2 p-2 "><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-beslenme-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Beslenme Date: ' . $update_date . '</p></a></div></li>';
-                                    }
+                                    // if ($key ===  'table24_data') {
+                                    //     $form_id = $form["form_id"];
+                                    //     $update_date = $form["update_date"];
+                                    //     $form_25_options .= '<li class="m-2 p-2 "><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-beslenme-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Beslenme Date: ' . $update_date . '</p></a></div></li>';
+                                    // }
 
                                 };
                             };
@@ -773,6 +773,15 @@ if (isset($_GET['logout'])) {
                         <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;"
                                 href="<?php echo $base_url; ?>/formlar/gunlukbakimuygulamalari.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">Form
                                 15</a></div></li>
+                        <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;"
+                                href="<?php echo $base_url; ?>/tanılar/tani1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">tanı
+                                1</a></div></li>
+                        <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;"
+                                href="<?php echo $base_url; ?>/tanılar/tani3.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">tanı
+                                3</a></div></li>
+                        <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;"
+                                href="<?php echo $base_url; ?>/tanılar/tani4.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>">tanı
+                                4</a></div></li>
                                 </ul>
                                 
                         </div>

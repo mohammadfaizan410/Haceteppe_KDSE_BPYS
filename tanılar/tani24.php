@@ -81,6 +81,7 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section" id="o2-delivery-container">
                             <p class="usernamelabel">NOC Gösterge: </p>
+                            <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator1" value="1: Hasta hiç banyo yapmıyor ">
@@ -118,6 +119,7 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section d-flex" style="flex-direction: column;">
                             <p class="usernamelabel">Hemşirelik Girişimleri:</p>
+                            <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt1" value="Hastanın vücut temizliği günlük olarak değerlendirilir">
                                 <label class="form-check-label" for="nurse_attempt">
@@ -208,6 +210,7 @@ if (isset($_GET['logout'])) {
                             </div>
                            
                             <p class="usernamelabel">İŞ BİRLİĞİ GEREKTİREN UYGULAMALAR</p>
+                            <p class="option-error2" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="collaborative_apps" id="collaborative_apps1" value="Hasta ve bakım verenleri evde bakım için sosyal hizmetlere yönlendirilir">
                                 <label class="form-check-label" for="nurse_attempt">
@@ -242,6 +245,7 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section" id="o2-delivery-container">
                             <p class="usernamelabel">NOC Gösterge: </p>
+                            <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after1" value="1: Hasta hiç banyo yapmıyor ">
@@ -313,6 +317,78 @@ if (isset($_GET['logout'])) {
         $(function() {
             $('#submit').click(function(e) {
                 e.preventDefault()
+                if (!$('[name="noc_indicator"]').is(':checked')) {
+                    $('.option-error').css('display', 'none');
+                    $('.option-error1').css('display', 'none');
+                    $('.option-error2').css('display', 'none');
+                    $('html, body').animate({
+                            scrollTop: $('[name="noc_indicator"]').offset().top
+                        }, 200);
+                    $('[name="noc_indicator"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                    return false;
+                } else if ($('[name="noc_indicator_2"]').length && !$('[name="noc_indicator_2"]').is(':checked')) {
+                    $('.option-error').css('display', 'none');
+                    $('.option-error1').css('display', 'none');
+                    $('.option-error2').css('display', 'none');
+                    $('html, body').animate({
+                            scrollTop: $('[name="noc_indicator_2"]').offset().top
+                        }, 200);
+                    $('[name="noc_indicator_2"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                    return false;
+                } else if ($('[name="noc_indicator_3"]').length && !$('[name="noc_indicator_3"]').is(':checked')) {
+                    $('.option-error').css('display', 'none');
+                    $('.option-error1').css('display', 'none');
+                    $('.option-error2').css('display', 'none');
+                    $('html, body').animate({
+                            scrollTop: $('[name="noc_indicator_3"]').offset().top
+                        }, 200);
+                    $('[name="noc_indicator_3"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                    return false;
+                } else if ($('[name="nurse_attempt"]:checked').length === 0){
+                    $('.option-error').css('display', 'none');
+                    $('.option-error1').css('display', 'none');
+                    $('.option-error2').css('display', 'none');
+                    $('html, body').animate({
+                            scrollTop: $('[name="nurse_attempt"]').offset().top
+                        }, 200);
+                    $('[name="nurse_attempt"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                    return false;
+                } else if ($('[name="collaborative_apps"]:checked').length === 0){
+                    $('.option-error').css('display', 'none');
+                    $('.option-error1').css('display', 'none');
+                    $('html, body').animate({
+                            scrollTop: $('[name="collaborative_apps"]').offset().top
+                        }, 200);
+                    $('[name="collaborative_apps"]').first().closest('.input-section').find('.option-error2').css('display', 'block');
+                    return false;
+                } else if (!$('[name="noc_indicator_after"]').is(':checked')) {
+                    $('.option-error').css('display', 'none');
+                    $('.option-error1').css('display', 'none');
+                    $('.option-error2').css('display', 'none');
+                    $('html, body').animate({
+                            scrollTop: $('[name="noc_indicator_after"]').offset().top
+                        }, 200);
+                    $('[name="noc_indicator_after"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                    return false;
+                } else if ($('[name="noc_indicator_after_2"]').length && !$('[name="noc_indicator_after_2"]').is(':checked')) {
+                    $('.option-error').css('display', 'none');
+                    $('.option-error1').css('display', 'none');
+                    $('.option-error2').css('display', 'none');
+                    $('html, body').animate({
+                            scrollTop: $('[name="noc_indicator_after_2"]').offset().top
+                        }, 200);
+                    $('[name="noc_indicator_after_2"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                    return false;
+                } else if ($('[name="noc_indicator_after_3"]').length && !$('[name="noc_indicator_after_3"]').is(':checked')) {
+                    $('.option-error').css('display', 'none');
+                    $('.option-error1').css('display', 'none');
+                    $('.option-error2').css('display', 'none');
+                    $('html, body').animate({
+                            scrollTop: $('[name="noc_indicator_after_3"]').offset().top
+                        }, 200);
+                    $('[name="noc_indicator_after_3"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                    return false;
+                }
                 console.log("submit clicked")
                 var id = <?php
                             $userid = $_SESSION['userlogin']['id'];
