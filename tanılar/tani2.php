@@ -377,12 +377,8 @@ if (isset($_GET['logout'])) {
                             </p>
                         </div>
                             <div class="input-section" id="o2-delivery-container">
-<<<<<<< HEAD
                                 <p class="usernamelabel">NOC Gösterge: </p>
                                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-=======
-                                <p id="tani_usernamelabel">NOC Gösterge: </p>
->>>>>>> ab2aa3ea378aa02a63dc6f7b91a9871f8f1fb9d5
                                 <div class="form-check">
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="1:Hastanın solunum örüntüsünde çok şiddetli düzeyde bozulma var">
@@ -429,12 +425,8 @@ if (isset($_GET['logout'])) {
                                 <p class="tanıdescription">Hastanın solunum hızının ve ritminin normal olması</p>
                             </div>
                             <div class="input-section" id="o2-delivery-container">
-<<<<<<< HEAD
                                 <p class="usernamelabel">NOC Gösterge: </p>
                                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-=======
-                                <p id="tani_usernamelabel">NOC Gösterge: </p>
->>>>>>> ab2aa3ea378aa02a63dc6f7b91a9871f8f1fb9d5
                                 <div class="form-check">
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator2_after" value="1:Hastanın solunum hızı ve ritminde çok şiddetli düzeyde bozulma var">

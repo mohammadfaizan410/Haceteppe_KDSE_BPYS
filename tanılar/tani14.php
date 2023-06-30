@@ -93,12 +93,8 @@ $permitted_food_consumption = isset($_GET['permitted_food_consumption']) ? $_GET
 
 
                         <div class="input-section" id="o2-delivery-container">
-<<<<<<< HEAD
                             <p class="usernamelabel">NOC Gösterge: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-=======
-                            <p id="tani_usernamelabel">NOC Gösterge: </p>
->>>>>>> ab2aa3ea378aa02a63dc6f7b91a9871f8f1fb9d5
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1: Hastanın kilo vermeyle ilgili bir isteği yok">
@@ -137,13 +133,8 @@ $permitted_food_consumption = isset($_GET['permitted_food_consumption']) ? $_GET
                         </div>
 
                         <div class="input-section d-flex" style="flex-direction: column;">
-<<<<<<< HEAD
                             <p class="usernamelabel">Hemşirelik Girişimleri:</p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-=======
-                            <p id="tani_usernamelabel">Hemşirelik Girişimleri:</p>
-
->>>>>>> ab2aa3ea378aa02a63dc6f7b91a9871f8f1fb9d5
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt1" value="Hastanın ne zaman, nerede, ne yediği ile ilgili bir günlük tutması için teşvik edilir ve geçerli yeme kalıpları tanımlanır">
                                 <label class="form-check-label" for="nurse_attempt">
@@ -206,12 +197,8 @@ $permitted_food_consumption = isset($_GET['permitted_food_consumption']) ? $_GET
                             </div>
 
 
-<<<<<<< HEAD
                             <p class="usernamelabel">Eğitim:</p>
                             <p class="option-error1" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-=======
-                            <p id="tani_usernamelabel">Eğitim:</p>
->>>>>>> ab2aa3ea378aa02a63dc6f7b91a9871f8f1fb9d5
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt11" value="Kompleks karbonhidratlar ve proteinlerden oluşan bir diyet izlenmesi ve basit şekerler, fast food, kafein ve yumuşak içeceklerden kaçınması için bilgi verilir">
                                 <label class="form-check-label" for="nurse_attempt">
@@ -243,12 +230,8 @@ $permitted_food_consumption = isset($_GET['permitted_food_consumption']) ? $_GET
                                 </label>
                             </div>
 
-<<<<<<< HEAD
                             <p class="usernamelabel">İŞ BİRLİĞİ GEREKTİREN UYGULAMALAR</p>
                             <p class="option-error2" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-=======
-                            <p id="tani_usernamelabel">İŞ BİRLİĞİ GEREKTİREN UYGULAMALAR</p>
->>>>>>> ab2aa3ea378aa02a63dc6f7b91a9871f8f1fb9d5
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="collaborative_apps" id="nurse_attempt16" value="Diyet yönetimi ve zayıflama programı için diyetisyenle işbirliği yapılır">
                                 <label class="form-check-label" for="nurse_attempt">
@@ -279,13 +262,8 @@ $permitted_food_consumption = isset($_GET['permitted_food_consumption']) ? $_GET
 
 
                         <div class="input-section" id="o2-delivery-container">
-<<<<<<< HEAD
                             <p class="usernamelabel">NOC Gösterge: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-=======
-                            <p id="tani_usernamelabel">NOC Gösterge: </p>
-
->>>>>>> ab2aa3ea378aa02a63dc6f7b91a9871f8f1fb9d5
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after"

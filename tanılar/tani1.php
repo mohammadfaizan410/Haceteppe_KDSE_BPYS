@@ -282,12 +282,9 @@ if (isset($_GET['logout'])) {
                                         için hastaya uygulanacak girişimlerden önce açıklama yapılır</span>
                                 </label>
                             </div>
-<<<<<<< HEAD
                             <p class="usernamelabel">İŞ BİRLİĞİ GEREKTİREN UYGULAMALAR</p>
                             <p class="option-error2" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-=======
                             <p id="tani_usernamelabel">İŞ BİRLİĞİ GEREKTİREN UYGULAMALAR</p>
->>>>>>> ab2aa3ea378aa02a63dc6f7b91a9871f8f1fb9d5
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="collaborative_apps"
                                     id="nurse_attempt19"
@@ -320,12 +317,8 @@ if (isset($_GET['logout'])) {
                             <p class="tanıdescription">Hastanın oksijen satürasyonun %95’in üzerinde olması</p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
-<<<<<<< HEAD
                             <p class="usernamelabel">NOC Gösterge: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-=======
-                            <p id="tani_usernamelabel">NOC Gösterge: </p>
->>>>>>> ab2aa3ea378aa02a63dc6f7b91a9871f8f1fb9d5
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after"
