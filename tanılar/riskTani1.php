@@ -483,7 +483,7 @@ if (isset($_GET['logout'])) {
                     nurse_attempt: nurse_attempt,
                     nurse_education: nurse_education,
                     collaborative_apps: collaborative_apps,
-                    evaluation: evaluation,
+                    evaluation: false,
                     standalone: $_GET['standalone']
                 },
                 success: function(data) {
