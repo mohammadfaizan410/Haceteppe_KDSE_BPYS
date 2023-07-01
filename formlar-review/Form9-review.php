@@ -22,7 +22,7 @@ if (isset($_GET['logout'])) {
 
 
 
-    <link href="../style.css" rel="stylesheet">
+    
 
     <style>
     table {
@@ -306,7 +306,7 @@ if (isset($_GET['logout'])) {
 
     });
     </script>
-    <script src=""></script>
+    
 </body>
 
 </html>

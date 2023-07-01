@@ -10,6 +10,19 @@ if (isset($_GET['logout'])) {
     unset($_SESSION);
     header("Location: main.php");
 }
+require_once('../config-students.php');
+
+$userid = $_SESSION['userlogin']['id'];
+$tani_id = $_GET['tani_id'];
+$sql = "SELECT * FROM tani6 where tani_id= $tani_id";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+if ($result) {
+    $tani6 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+} else {
+    echo 'error';
+}
+?> 
 
 ?>
 <!DOCTYPE html>
@@ -676,6 +689,23 @@ if (isset($_GET['logout'])) {
             $("#content").load(url);
 
         })
+        $('input[name="noc_indicator"][value="<?php echo $tani6[0]['noc_indicator']; ?>"]').prop('checked', true);
+        $('input[name="noc_indicator_2"][value="<?php echo $tani6[0]['noc_indicator_2']; ?>"]').prop('checked', true);
+        $('input[name="noc_indicator_3"][value="<?php echo $tani6[0]['noc_indicator_3']; ?>"]').prop('checked', true);
+        $('input[name="noc_indicator_after"][value="<?php echo $tani6[0]['noc_indicator_after']; ?>"]').prop('checked', true);
+        $('input[name="noc_indicator_after_2"][value="<?php echo $tani6[0]['noc_indicator_after_2']; ?>"]').prop('checked', true);
+        $('input[name="noc_indicator_after_3"][value="<?php echo $tani6[0]['noc_indicator_after_3']; ?>"]').prop('checked', true);
+
+        "<?php echo $tani6[0]['nurse_attempt']?>".split('/').forEach(element => {
+            $('input[name="nurse_attempt"][value="' + element + '"]').prop('checked', true);
+        });
+        "<?php echo $tani6[0]['nurse_education']?>".split('/').forEach(element => {
+            $('input[name="nurse_education"][value="' + element + '"]').prop('checked', true);
+        });
+        "<?php echo $tani6[0]['collaborative_apps']?>".split('/').forEach(element => {
+            $('input[name="collaborative_apps"][value="' + element + '"]').prop('checked', true);
+        });
+
     });
     </script>
     <script>
@@ -797,8 +827,8 @@ if (isset($_GET['logout'])) {
 		        let noc_indicator_3 = $('.form-check-input[name="noc_indicator_3"]') ? $('.form-check-input[name=noc_indicator_3]:checked').val() : "null";
                 let noc_indicator_after = $('.form-check-input[name="noc_indicator_after"]:checked').val();
 		        let noc_indicator_after_2 = $('.form-check-input[name="noc_indicator_after_2"]') ? $('.form-check-input[name=noc_indicator_after_2]:checked').val() : "null";
-        let noc_indicator_after_3 = $('.form-check-input[name="noc_indicator_after_3"]') ? $('.form-check-input[name=noc_indicator_after_3]:checked').val() : "null";
-let evaluation = 0;
+                let noc_indicator_after_3 = $('.form-check-input[name="noc_indicator_after_3"]') ? $('.form-check-input[name=noc_indicator_after_3]:checked').val() : "null";
+                let evaluation = 0;
                 var firstCheckbox = $('.form-check-input[name="noc_indicator_after"]:last');
                 var secondCheckbox = $('.form-check-input[name="noc_indicator_after_2"]:last');
                 var thirdCheckbox = $('.form-check-input[name="noc_indicator_after_3"]:last');
@@ -806,15 +836,15 @@ let evaluation = 0;
                 if (firstCheckbox.length > 0) {
                 if (secondCheckbox.length > 0 && thirdCheckbox.length > 0) {
                     if (secondCheckbox.is(':checked') && thirdCheckbox.is(':checked')) {
-                    let evaluation = 1;;
+                    evaluation = 1;
                     }
                 } else if (secondCheckbox.length > 0) {
                     if (secondCheckbox.is(':checked')) {
-                        let evaluation = 1;;
+                        evaluation = 1;
                     }
                 } else {
                     if (firstCheckbox.is(':checked')) {
-                        let evaluation = 1;;
+                        evaluation = 1;
                     }
                 }
                 }
@@ -842,7 +872,7 @@ let evaluation = 0;
                     nurse_education: nurse_education,
                     collaborative_apps: collaborative_apps,
                     evaluation: evaluation,
-                    standalone: '<?php echo $_GET['standalone'];?>'
+                    standalone: '<?php echo $tani6[0]['standalone']; ?>'              
                 },
                 success: function(data) {
                     console.log("something happened")
@@ -861,7 +891,6 @@ let evaluation = 0;
                             $("#tick-container").fadeOut(600);
                             // Hide the tick container
                             }, 1000);
-;
                 },
                 error: function(data) {
                     console.log(data)

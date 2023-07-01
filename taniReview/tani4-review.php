@@ -10,9 +10,20 @@ if (isset($_GET['logout'])) {
     unset($_SESSION);
     header("Location: main.php");
 }
+require_once('../config-students.php');
 
+$userid = $_SESSION['userlogin']['id'];
+$tani_id = $_GET['tani_id'];
+$sql = "SELECT * FROM tani4 where tani_id= $tani_id";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+if ($result) {
+    $tani4 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+} else {
+    echo 'error';
+}
+?> 
 
-?>
 <!DOCTYPE html>
 <html>
 
@@ -63,58 +74,53 @@ if (isset($_GET['logout'])) {
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">Sorunla İlişkili Veriler:</p>
                             <div class="matchedfields-wrapper">
-                                <p class="matchedfields" id="field_respiratory_rate"></p>
 
-                                <p class="matchedfields" id="field_respiratory_nature"></p>
 
                             </div>
 
                         </div>
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
-                            <p class="tanıdescription">Etkisiz solunum örüntüsü</p>
+                            <p class="tanıdescription">Sıvı volüm eksikliği </p>
                         </div>
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın solunum örüntüsünün normal olması </p>
+                            <p class="tanıdescription">Hastanın 24 saatlik aldığı/çıkardığı sıvıların dengede olması</p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
                             <p class="usernamelabel">NOC Gösterge: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1:Hastanın solunum örüntüsünde çok şiddetli düzeyde bozulma var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1: Hastada çok şiddetli düzeyde sıvı kaybı var">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">1:Hastanın solunum örüntüsünde çok şiddetli
-                                            düzeyde bozulma var</span>
+                                        <span class="checkbox-header">1: Hastada çok şiddetli düzeyde sıvı kaybı
+                                            var</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2:Hastanın solunum örüntüsünde önemli düzeyde bozulma var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2: Hastanın hava yollarında şiddetli düzeyde tıkanıklık var ">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">2:Hastanın solunum örüntüsünde önemli düzeyde
-                                            bozulma var</span>
+                                        <span class="checkbox-header">2: Hastada şiddetli düzeyde sıvı kaybı var </span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3:Hastanın solunum örüntüsünde orta düzeyde bozulma var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3:Hastada orta düzeyde sıvı kaybı var ">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">3:Hastanın solunum örüntüsünde orta düzeyde
-                                            bozulma var</span>
+                                        <span class="checkbox-header">3:Hastada orta düzeyde sıvı kaybı var </span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4:Hastanın solunum örüntüsünde hafif düzeyde bozulma var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4:Hastada hafif düzeyde sıvı kaybı var">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">4:Hastanın solunum örüntüsünde hafif düzeyde
-                                            bozulma var</span>
+                                        <span class="checkbox-header">4:Hastada hafif düzeyde sıvı kaybı var</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="
-                                        noc_indicator" value="5:Hastanın solunum örüntüsü normal">
+                                        noc_indicator" value="5:Hastanın aldığı/ çıkardığı sıvılar dengededir">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">5:Hastanın solunum örüntüsü normal
+                                        <span class="checkbox-header">5:Hastanın aldığı/ çıkardığı sıvılar dengededir
                                         </span>
                                     </label>
                                 </div>
@@ -124,46 +130,91 @@ if (isset($_GET['logout'])) {
                         </div>
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın solunum hızının ve ritminin normal olması</p>
+                            <p class="tanıdescription">Hastanın idrar konsantrasyonunun normal olması</p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
                             <p class="usernamelabel">NOC Gösterge: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator_2" value="1:Hastanın solunum hızı ve ritminde çok şiddetli düzeyde bozulma var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator2" value="1: Hastanın idrarı ileri derecede yoğundur">
                                     <label class="form-check-label" for="noc_indicator2">
-                                        <span class="checkbox-header">1:Hastanın solunum hızı ve ritminde çok şiddetli
-                                            düzeyde bozulma var</span>
+                                        <span class="checkbox-header">1: Hastanın idrarı ileri derecede yoğundur</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator2" value="2:Hastanın solunum hızı ve ritminde şiddetli düzeyde bozulma var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator2" value="2: Hastanın idrarı yoğundur">
                                     <label class="form-check-label" for="noc_indicator2">
-                                        <span class="checkbox-header">2:Hastanın solunum hızı ve ritminde şiddetli
-                                            düzeyde bozulma var</span>
+                                        <span class="checkbox-header">2: Hastanın idrarı yoğundur</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator2" value="3:Hastanın solunum hızı ve ritminde orta düzeyde bozulma var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator2" value="3: Hastanın idrarı orta düzeyde yoğundur">
                                     <label class="form-check-label" for="noc_indicator2">
-                                        <span class="checkbox-header">3:Hastanın solunum hızı ve ritminde orta düzeyde
-                                            bozulma var</span>
+                                        <span class="checkbox-header">3: Hastanın idrarı orta düzeyde yoğundur</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator2" value="4:Hastanın solunum hızı ve ritminde hafif düzeyde bozulma var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator2" value="4: Hastanın idrarı biraz yoğundur">
                                     <label class="form-check-label" for="noc_indicator2">
-                                        <span class="checkbox-header">4:Hastanın solunum hızı ve ritminde hafif düzeyde
-                                            bozulma var</span>
+                                        <span class="checkbox-header">4: Hastanın idrarı biraz yoğundur</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_2" id="
-                                        noc_indicator2" value="5:Hastanın solunum örüntüsü normal">
+                                        noc_indicator2" value="5: Hastanın idrarı normaldir (1005< İdrar dansitesi < 1030)">
                                     <label class="form-check-label" for="noc_indicator2">
-                                        <span class="checkbox-header">5:Hastanın solunum hızı ve ritmi normal
-                                        </span>
+                                        <span class="checkbox-header">5: Hastanın idrarı normaldir (1005< İdrar dansitesi < 1030) </span>
+                                    </label>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="input-section d-flex">
+                            <p id="tani_usernamelabel">NOC Çıktıları:</p>
+                            <p class="tanıdescription">Hastanın hidrasyon durumunun (derinin ve ağız mukozasının
+                                nemliliği, deri turgoru) normal olması</p>
+                        </div>
+                        <div class="input-section" id="o2-delivery-container">
+                            <p class="usernamelabel">NOC Gösterge: </p>
+                            <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
+                            <div class="form-check">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_3" id="noc_indicator3" value="1: Hastanın derisi ve ağız mukozası aşırı düzeyde kuru; deri turgoru aşırı zayıflamıştır">
+                                    <label class="form-check-label" for="noc_indicator3">
+                                        <span class="checkbox-header">1: Hastanın derisi ve ağız mukozası aşırı düzeyde
+                                            kuru; deri turgoru aşırı zayıflamıştır</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_3" id="noc_indicator3" value="2: Hastanın derisi ve ağız mukozası çok kuru; deri turgoru çok zayıflamıştır">
+                                    <label class="form-check-label" for="noc_indicator3">
+                                        <span class="checkbox-header">2: Hastanın derisi ve ağız mukozası çok kuru; deri
+                                            turgoru çok zayıflamıştır</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_3" id="noc_indicator3" value="3: Hastanın derisi ve ağız mukozası oldukça kuru; deri turgoru oldukça zayıflamıştır">
+                                    <label class="form-check-label" for="noc_indicator3">
+                                        <span class="checkbox-header">3: Hastanın derisi ve ağız mukozası oldukça kuru;
+                                            deri turgoru oldukça zayıflamıştır</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_3" id="noc_indicator3" value="4: Hastanın derisi ve ağız mukozası biraz kuru; deri turgoru biraz zayıflamıştır">
+                                    <label class="form-check-label" for="noc_indicator3">
+                                        <span class="checkbox-header">4: Hastanın derisi ve ağız mukozası biraz kuru;
+                                            deri turgoru biraz zayıflamıştır</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_3" id="
+                                        noc_indicator3" value="5: Hastanın derisi ve ağız mukozasının nemliliği ve deri turgoru normaldir">
+                                    <label class="form-check-label" for="noc_indicator3">
+                                        <span class="checkbox-header">5: Hastanın derisi ve ağız mukozasının nemliliği
+                                            ve deri turgoru normaldir</span>
                                     </label>
                                 </div>
 
@@ -181,171 +232,130 @@ if (isset($_GET['logout'])) {
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt2" value="Pulse oksimetre ile oksijen satürasyonu izlenir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt2" value="Hastanın hidrasyon durumu değerlendirilir ( muköz membranların nemliliği, deri turgoru, vb)">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Pulse oksimetre ile oksijen satürasyonu izlenir</span>
+                                    <span class="checkbox-header">Hastanın hidrasyon durumu değerlendirilir ( muköz
+                                        membranların nemliliği, deri turgoru, vb)</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt3" value="Solunumun hızı, ritmi, derinliği ve solunum çabası değerlendirilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt3" value="Baş dönmesi ve postural hipotansiyon varlığı değerlendirilir">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Solunumun hızı, ritmi, derinliği ve solunum çabası
+                                    <span class="checkbox-header">Baş dönmesi ve postural hipotansiyon varlığı
                                         değerlendirilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt4" value="Hastanın göğüs hareketleri simetri, supraklavikular ve interkostal kas çekilmeleri açısından değerlendirilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt4" value="Hipotansiyon durumunda kontraendike değilse hastaya trandelanburg pozisyonu verilir">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hastanın göğüs hareketleri simetri, supraklavikular ve
-                                        interkostal kas çekilmeleri açısından değerlendirilir</span>
+                                    <span class="checkbox-header">Hipotansiyon durumunda kontraendike değilse hastaya
+                                        trandelanburg pozisyonu verilir </span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt5" value="Hasta solukluk, siyanoz gibi bulgular açısından değerlendirilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt5" value="Hastanın kişi, yer ve zaman oryantasyonu değerlendirilir">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hasta solukluk, siyanoz gibi bulgular açısından
+                                    <span class="checkbox-header">Hastanın kişi, yer ve zaman oryantasyonu
                                         değerlendirilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt6" value="Trakeanın yerleşimi değerlendirilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt6" value="Sıvı dengesinin değerlendirilmesi için Aldığı-Çıkardığı takibi yapılır">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Trakeanın yerleşimi değerlendirilir</span>
+                                    <span class="checkbox-header">Sıvı dengesinin değerlendirilmesi için
+                                        Aldığı-Çıkardığı takibi yapılır</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt7" value="Hastanın göğüs kafesinde krepitasyon varlığı değerlendirilir, krepitasyon olması halinde yeri ve boyutu takip edilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt7" value="Her gün aynı saatte, benzer özellikte kıyafetlerle, günlük kilo takibi yapılır">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hastanın göğüs kafesinde krepitasyon varlığı
-                                        değerlendirilir, krepitasyon olması halinde yeri ve boyutu takip edilir</span>
+                                    <span class="checkbox-header">Her gün aynı saatte, benzer özellikte kıyafetlerle,
+                                        günlük kilo takibi yapılır</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt8" value="Hastada gelişebilecek huzursuzluk, anksiyete ve hava açlığı gibi durumlar değerlendirilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt8" value="Hasta oral sıvı alımı konusunda desteklenir ">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hastada gelişebilecek huzursuzluk, anksiyete ve hava
-                                        açlığı gibi durumlar değerlendirilir</span>
+                                    <span class="checkbox-header">Hasta oral sıvı alımı konusunda desteklenir </span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt9" value="Hastanın ventilasyon potansiyelini en yüksek düzeye çıkartmak için hastaya uygun pozisyon verilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt9" value="Hasta kanama bulguları açısından (hematemez, hemoptizi, melena vb.) izlenir">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hastanın ventilasyon potansiyelini en yüksek düzeye
-                                        çıkartmak için hastaya uygun pozisyon verilir</span>
+                                    <span class="checkbox-header">Hasta kanama bulguları açısından (hematemez,
+                                        hemoptizi, melena vb.) izlenir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt10" value="Uygun sıklıkta öksürme ve derin solunum egzersizleri yaptırılır">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt10" value="Laboratuvar bulguları (Hct, Hemoglobin, BUN, Albumin, total protein, serum elektrolitleri) izlenir">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Uygun sıklıkta öksürme ve derin solunum egzersizleri
-                                        yaptırılır</span>
+                                    <span class="checkbox-header">Laboratuvar bulguları (Hct, Hemoglobin, BUN, Albumin,
+                                        total protein, serum elektrolitleri) izlenir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt11" value="Gerektiğinde istemde yer alan oksijen desteği uygulanır">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt11" value="Hastanın diyaresi varsa; diyarenin sıklığı, gaitanın özellikleri (renk, koku, miktar, kıvam) değerlendirilir.">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Gerektiğinde istemde yer alan oksijen desteği
-                                        uygulanır</span>
+                                    <span class="checkbox-header">Hastanın diyaresi varsa; diyarenin sıklığı, gaitanın
+                                        özellikleri (renk, koku, miktar, kıvam) değerlendirilir.</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt12" value="Gerektiğinde kan gazı sonuçları izlenir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt12" value="Hastanın kusması varsa; kusmanın sıklığı, içeriğin özellikleri (renk, koku, miktar) değerlendirilir.">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Gerektiğinde kan gazı sonuçları izlenir</span>
+                                    <span class="checkbox-header">Hastanın kusması varsa; kusmanın sıklığı, içeriğin
+                                        özellikleri (renk, koku, miktar) değerlendirilir.</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt13" value="Hastanın yara drenajı varsa; drenajın miktarı ve özelliği değerlendirilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Hastanın yara drenajı varsa; drenajın miktarı ve
+                                        özelliği değerlendirilir</span>
                                 </label>
                             </div>
 
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt13" value="Hastanın airway ihtiyacı değerlendirilir, gerekli ise airway uygulanır">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hastanın airway ihtiyacı değerlendirilir, gerekli ise
-                                        airway uygulanır</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt14" value="Hastanın aspirasyon ihtiyacı değerlendirilir, gerektiğinde aspire edilir ">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hastanın aspirasyon ihtiyacı değerlendirilir,
-                                        gerektiğinde aspire edilir </span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt15" value="Ventilatör desteği uygulanan hastalanın bilateral göğüs genişlemesi izlenir ve kaydedilir. ">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Ventilatör desteği uygulanan hastalanın bilateral
-                                        göğüs genişlemesi izlenir ve kaydedilir. </span>
-                                </label>
-                            </div>
                             <p class="usernamelabel">Eğitim:</p>
-                            <p class="option-error2" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
+                            <p class="option-error1" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt16" value="Hastaya ve bakım verenlerine solunum sıkıntısı yaşadığı dönemlerde nasıl nefes alıp vermesi gerektiği konusunda eğitim verilir ">
+                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt14" value="Hasta ve bakım verenlerine sıvı volüm eksikliği komplikasyonlarının belirtileri öğretilir">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hastaya ve bakım verenlerine solunum sıkıntısı
-                                        yaşadığı dönemlerde nasıl nefes alıp vermesi gerektiği konusunda eğitim verilir
+                                    <span class="checkbox-header">Hasta ve bakım verenlerine sıvı volüm eksikliği
+                                        komplikasyonlarının belirtileri öğretilir
                                     </span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt17" value="Hastaya ve bakım verenlerine solunum (büzük dudak, kontrollü nefes teknikleri vb.) ve öksürük egzersizleri ile ilgili eğitim verilir ">
+                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt15" value="Hasta ve bakım verenlerine aldığı çıkardığı sıvıları nasıl izleyeceği konusunda bilgi verilir">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hastaya ve bakım verenlerine solunum (büzük dudak,
-                                        kontrollü nefes teknikleri vb.) ve öksürük egzersizleri ile ilgili eğitim
-                                        verilir </span>
+                                    <span class="checkbox-header">Hasta ve bakım verenlerine aldığı çıkardığı sıvıları
+                                        nasıl izleyeceği konusunda bilgi verilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt18" value="Gerektiğinde spirometre kullanımı konusunda eğitim verilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt16" value="Hasta ve bakım verenlerine  su içmenin önemi konusunda bilgi verilir">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Gerektiğinde spirometre kullanımı konusunda eğitim
-                                        verilir</span>
+                                    <span class="checkbox-header">Hasta ve bakım verenlerine su içmenin önemi konusunda
+                                        bilgi verilir</span>
                                 </label>
                             </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt19" value="Hasta ve bakım verenlerine alerjenler ve alerjenlerden uzak durma konusunda bilgi verilir">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hasta ve bakım verenlerine alerjenler ve alerjenlerden
-                                        uzak durma konusunda bilgi verilir</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt20" value="Hasta ve bakım verenlerine sigara kullanımından uzak durma ile ilgili eğitim verilir">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hasta ve bakım verenlerine sigara kullanımından uzak
-                                        durma ile ilgili eğitim verilir</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt21" value="Anksiyeteyi azaltmak ve kontrol duygusunu arttırmak için uygulanacak girişimlerden önce açıklama yapılır">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Anksiyeteyi azaltmak ve kontrol duygusunu arttırmak
-                                        için uygulanacak girişimlerden önce açıklama yapılır</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt22" value="Hasta ve bakım verenlerine ilaçların kullanımı, solunuma yardımcı araçlar, gelişebilecek komplikasyonların belirti ve bulguları gibi konuları içeren eğitim verilir">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hasta ve bakım verenlerine ilaçların kullanımı,
-                                        solunuma yardımcı araçlar, gelişebilecek komplikasyonların belirti ve bulguları
-                                        gibi konuları içeren eğitim verilir</span>
-                                </label>
-                            </div>
+
                             <p class="usernamelabel">İş Birliği Gerektiren Uygulamalar:</p>
                             <p class="option-error2" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="collaborative_apps" id="nurse_attempt23" value="Klinik protokolleri ya da isteme göre oksijen tedavisi ve soğuk buhar uygulanır">
+                                <input class="form-check-input" type="checkbox" name="collaborative_apps" id="nurse_attempt17" value="İstem yapılan sıvıların infüzyonu yapılır">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Klinik protokolleri ya da isteme göre oksijen tedavisi
-                                        ve soğuk buhar uygulanır</span>
+                                    <span class="checkbox-header">İstem yapılan sıvıların infüzyonu yapılır</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="collaborative_apps" id="nurse_attempt24" value="İstem yapılan ilaçlar (analjezikler, bronkodilatörler, steroidler vb) uygulanır">
+                                <input class="form-check-input" type="checkbox" name="collaborative_apps" id="nurse_attempt18" value="İstem yapılan kan ürünlerinin transfüzyonu yapılır">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">İstem yapılan ilaçlar (analjezikler, bronkodilatörler,
-                                        steroidler vb) uygulanır</span>
+                                    <span class="checkbox-header">İstem yapılan kan ürünlerinin transfüzyonu
+                                        yapılır</span>
                                 </label>
                             </div>
+
                         </div>
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">Değerlendirme:</p>
@@ -355,43 +365,47 @@ if (isset($_GET['logout'])) {
                                 5 gösterge seçildiyse; yeni günde bakım planına bu tanıyı taşımayacak
                             </p>
                         </div>
+                            <div class="input-section d-flex">
+                                <p id="tani_usernamelabel">NOC Çıktıları:</p>
+                                <p class="tanıdescription">Hastanın 24 saatlik aldığı/çıkardığı sıvıların dengede olması
+                                </p>
+                            </div>
                             <div class="input-section" id="o2-delivery-container">
                                 <p class="usernamelabel">NOC Gösterge: </p>
                                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                                 <div class="form-check">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="1:Hastanın solunum örüntüsünde çok şiddetli düzeyde bozulma var">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="1: Hastada çok şiddetli düzeyde sıvı kaybı var">
                                         <label class="form-check-label" for="noc_indicator_after">
-                                            <span class="checkbox-header">1:Hastanın solunum örüntüsünde çok şiddetli
-                                                düzeyde bozulma var</span>
+                                            <span class="checkbox-header">1: Hastada çok şiddetli düzeyde sıvı kaybı
+                                                var</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="2:Hastanın solunum örüntüsünde önemli düzeyde bozulma var">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="2: Hastanın hava yollarında şiddetli düzeyde tıkanıklık var ">
                                         <label class="form-check-label" for="noc_indicator_after">
-                                            <span class="checkbox-header">2:Hastanın solunum örüntüsünde önemli düzeyde
-                                                bozulma var</span>
+                                            <span class="checkbox-header">2: Hastada şiddetli düzeyde sıvı kaybı var
+                                            </span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="3:Hastanın solunum örüntüsünde orta düzeyde bozulma var">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="3:Hastada orta düzeyde sıvı kaybı var ">
                                         <label class="form-check-label" for="noc_indicator_after">
-                                            <span class="checkbox-header">3:Hastanın solunum örüntüsünde orta düzeyde
-                                                bozulma var</span>
+                                            <span class="checkbox-header">3:Hastada orta düzeyde sıvı kaybı var </span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="4:Hastanın solunum örüntüsünde hafif düzeyde bozulma var">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="4:Hastada hafif düzeyde sıvı kaybı var">
                                         <label class="form-check-label" for="noc_indicator_after">
-                                            <span class="checkbox-header">4:Hastanın solunum örüntüsünde hafif düzeyde
-                                                bozulma var</span>
+                                            <span class="checkbox-header">4:Hastada hafif düzeyde sıvı kaybı var</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required name="noc_indicator_after" id="
-                                        noc_indicator_after" value="5:Hastanın solunum örüntüsü normal">
+                                        noc_indicator_after" value="5:Hastanın aldığı/ çıkardığı sıvılar dengededir">
                                         <label class="form-check-label" for="noc_indicator_after">
-                                            <span class="checkbox-header">5:Hastanın solunum örüntüsü normal
+                                            <span class="checkbox-header">5:Hastanın aldığı/ çıkardığı sıvılar
+                                                dengededir
                                             </span>
                                         </label>
                                     </div>
@@ -401,58 +415,110 @@ if (isset($_GET['logout'])) {
                             </div>
                             <div class="input-section d-flex">
                                 <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                                <p class="tanıdescription">Hastanın solunum hızının ve ritminin normal olması</p>
+                                <p class="tanıdescription">Hastanın idrar konsantrasyonunun normal olması</p>
                             </div>
                             <div class="input-section" id="o2-delivery-container">
                                 <p class="usernamelabel">NOC Gösterge: </p>
                                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                                 <div class="form-check">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator2_after" value="1:Hastanın solunum hızı ve ritminde çok şiddetli düzeyde bozulma var">
-                                        <label class="form-check-label" for="noc_indicator_after_2">
-                                            <span class="checkbox-header">1:Hastanın solunum hızı ve ritminde çok
-                                                şiddetli
-                                                düzeyde bozulma var</span>
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator2_after" value="1: Hastanın idrarı ileri derecede yoğundur">
+                                        <label class="form-check-label" for="noc_indicator2_after">
+                                            <span class="checkbox-header">1: Hastanın idrarı ileri derecede
+                                                yoğundur</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator2_after" value="2:Hastanın solunum hızı ve ritminde şiddetli düzeyde bozulma var">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator2_after" value="2: Hastanın idrarı yoğundur">
                                         <label class="form-check-label" for="noc_indicator2_after">
-                                            <span class="checkbox-header">2:Hastanın solunum hızı ve ritminde şiddetli
-                                                düzeyde bozulma var</span>
+                                            <span class="checkbox-header">2: Hastanın idrarı yoğundur</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator2_after" value="3:Hastanın solunum hızı ve ritminde orta düzeyde bozulma var">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator2_after" value="3: Hastanın idrarı orta düzeyde yoğundur">
                                         <label class="form-check-label" for="noc_indicator2_after">
-                                            <span class="checkbox-header">3:Hastanın solunum hızı ve ritminde orta
-                                                düzeyde
-                                                bozulma var</span>
+                                            <span class="checkbox-header">3: Hastanın idrarı orta düzeyde
+                                                yoğundur</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator2_after" value="4:Hastanın solunum hızı ve ritminde hafif düzeyde bozulma var">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator2_after" value="4: Hastanın idrarı biraz yoğundur">
                                         <label class="form-check-label" for="noc_indicator2_after">
-                                            <span class="checkbox-header">4:Hastanın solunum hızı ve ritminde hafif
-                                                düzeyde
-                                                bozulma var</span>
+                                            <span class="checkbox-header">4: Hastanın idrarı biraz yoğundur</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="
-                                        noc_indicator2_after" value="5:Hastanın solunum örüntüsü normal">
+                                        noc_indicator2_after" value="5: Hastanın idrarı normaldir (1005< İdrar dansitesi < 1030)">
                                         <label class="form-check-label" for="noc_indicator2_after">
-                                            <span class="checkbox-header">5:Hastanın solunum hızı ve ritmi normal
-                                            </span>
+                                            <span class="checkbox-header">5: Hastanın idrarı normaldir (1005< İdrar dansitesi < 1030) </span>
                                         </label>
                                     </div>
 
                                 </div>
 
                             </div>
-                        
+
+                            <div class="input-section d-flex">
+                                <p id="tani_usernamelabel">NOC Çıktıları:</p>
+                                <p class="tanıdescription">Hastanın hidrasyon durumunun (derinin ve ağız mukozasının
+                                    nemliliği, deri turgoru) normal olması</p>
+                            </div>
+                            <div class="input-section" id="o2-delivery-container">
+                                <p class="usernamelabel">NOC Gösterge: </p>
+                                <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
+                                <div class="form-check">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_3" id="noc_indicator3_after" value="1: Hastanın derisi ve ağız mukozası aşırı düzeyde kuru; deri turgoru aşırı zayıflamıştır">
+                                        <label class="form-check-label" for="noc_indicator3_after">
+                                            <span class="checkbox-header">1: Hastanın derisi ve ağız mukozası aşırı
+                                                düzeyde
+                                                kuru; deri turgoru aşırı zayıflamıştır</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_3" id="noc_indicator3_after" value="2: Hastanın derisi ve ağız mukozası çok kuru; deri turgoru çok zayıflamıştır">
+                                        <label class="form-check-label" for="noc_indicator3_after">
+                                            <span class="checkbox-header">2: Hastanın derisi ve ağız mukozası çok kuru;
+                                                deri
+                                                turgoru çok zayıflamıştır</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_3" id="noc_indicator3_after" value="3: Hastanın derisi ve ağız mukozası oldukça kuru; deri turgoru oldukça zayıflamıştır">
+                                        <label class="form-check-label" for="noc_indicator3_after">
+                                            <span class="checkbox-header">3: Hastanın derisi ve ağız mukozası oldukça
+                                                kuru;
+                                                deri turgoru oldukça zayıflamıştır</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_3" id="noc_indicator3_after" value="4: Hastanın derisi ve ağız mukozası biraz kuru; deri turgoru biraz zayıflamıştır">
+                                        <label class="form-check-label" for="noc_indicator3_after">
+                                            <span class="checkbox-header">4: Hastanın derisi ve ağız mukozası biraz
+                                                kuru;
+                                                deri turgoru biraz zayıflamıştır</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_3" id="
+                                        noc_indicator3_after" value="5: Hastanın derisi ve ağız mukozasının nemliliği ve deri turgoru normaldir">
+                                        <label class="form-check-label" for="noc_indicator3_after">
+                                            <span class="checkbox-header">5: Hastanın derisi ve ağız mukozasının
+                                                nemliliği
+                                                ve deri turgoru normaldir</span>
+                                        </label>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                           
                         </div>
-                        <input type="submit" class="d-flex w-75 submit m-auto justify-content-center mb-5" name="submit" id="submit" value="Kaydet">
+                                                                <input type="submit" class="d-flex w-75 submit m-auto justify-content-center mb-5" name="submit" id="submit" value="Kaydet">              
+
+
+
                     </form>
                 </div>
             </div>
@@ -463,9 +529,9 @@ if (isset($_GET['logout'])) {
     
 
     <script>
-    $(function() {
-        $('#closeBtn1').click(function(e) {
-            let patient_id = <?php
+        $(function() {
+            $('#closeBtn1').click(function(e) {
+                let patient_id = <?php
                                     $userid = $_GET['patient_id'];
                                     echo $userid
                                     ?>;
@@ -477,6 +543,22 @@ if (isset($_GET['logout'])) {
                 $("#content").load(url);
 
             })
+        });
+        $('input[name="noc_indicator"][value="<?php echo $tani4[0]['noc_indicator']; ?>"]').prop('checked', true);
+        $('input[name="noc_indicator_2"][value="<?php echo $tani4[0]['noc_indicator_2']; ?>"]').prop('checked', true);
+        $('input[name="noc_indicator_3"][value="<?php echo $tani4[0]['noc_indicator_3']; ?>"]').prop('checked', true);
+        $('input[name="noc_indicator_after"][value="<?php echo $tani4[0]['noc_indicator_after']; ?>"]').prop('checked', true);
+        $('input[name="noc_indicator_after_2"][value="<?php echo $tani4[0]['noc_indicator_after_2']; ?>"]').prop('checked', true);
+        $('input[name="noc_indicator_after_3"][value="<?php echo $tani4[0]['noc_indicator_after_3']; ?>"]').prop('checked', true);
+
+        "<?php echo $tani4[0]['nurse_attempt']?>".split('/').forEach(element => {
+            $('input[name="nurse_attempt"][value="' + element + '"]').prop('checked', true);
+        });
+        "<?php echo $tani4[0]['nurse_education']?>".split('/').forEach(element => {
+            $('input[name="nurse_education"][value="' + element + '"]').prop('checked', true);
+        });
+        "<?php echo $tani4[0]['collaborative_apps']?>".split('/').forEach(element => {
+            $('input[name="collaborative_apps"][value="' + element + '"]').prop('checked', true);
         });
     </script>
     <script>
@@ -491,7 +573,7 @@ if (isset($_GET['logout'])) {
                             scrollTop: $('[name="noc_indicator"]').offset().top
                         }, 200);
                     $('[name="noc_indicator"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-                return false;
+                    return false;
                 } else if ($('[name="noc_indicator_2"]').length && !$('[name="noc_indicator_2"]').is(':checked')) {
                     $('.option-error').css('display', 'none');
                     $('.option-error1').css('display', 'none');
@@ -618,11 +700,14 @@ let evaluation = 0;
                     }
                 }
                 }
+
+
+
                 $.ajax({
                 type: 'POST',
                 url:'<?php echo $base_url; ?>/tani-handler/submitOrUpdateTani.php',
                 data: {
-                    table: 'tani2',
+                    table: 'tani4',
                     patient_id: patient_id,
                     patient_name: patient_name,
                     creation_date: creationDate,
@@ -640,12 +725,12 @@ let evaluation = 0;
                     nurse_education: nurse_education,
                     collaborative_apps: collaborative_apps,
                     evaluation: evaluation,
-                    standalone: '<?php echo $_GET['standalone']; ?>'
-                },
+                    standalone: '<?php echo $tani4[0]['standalone']; ?>'
+                                },
                 success: function(data) {
                     console.log("something happened")
                     let url =
-                        "<?php echo $base_url; ?>/taniReview/tani2-review.php?patient_id=" +
+                        "<?php echo $base_url; ?>/taniReview/tani4-review.php?patient_id=" +
                         patient_id + "&patient_name=" + encodeURIComponent(
                             patient_name);
                             $("#tick-container").fadeIn(800);

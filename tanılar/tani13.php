@@ -35,7 +35,7 @@ $family_history = isset($_GET['family_history']) ? $_GET['family_history'] : 'Na
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
     <!-- Template Stylesheet -->
-    <link href="../style.css" rel="stylesheet">
+    
     <style>
         table {
             border-collapse: collapse;
@@ -307,7 +307,8 @@ $family_history = isset($_GET['family_history']) ? $_GET['family_history'] : 'Na
                        
                            
                         </div>
-                                                                <input type="submit" class="w-75 submit m-auto" name="submit" id="submit" value="Kaydet">
+                                                                <input type="submit" class="d-flex w-75 submit m-auto justify-content-center mb-5" name="submit" id="submit" value="Kaydet">              
+
 
 
 
@@ -332,7 +333,7 @@ $family_history = isset($_GET['family_history']) ? $_GET['family_history'] : 'Na
                 let patient_name = "<?php
                                     echo urldecode($_GET['patient_name']);
                                     ?>";
-                var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
+                var url = "<?php echo $base_url; ?>/updateForms/showAllTanis.php?patient_id=" + patient_id +
                     "&patient_name=" + encodeURIComponent(patient_name);
                 $("#content").load(url);
 
@@ -461,7 +462,7 @@ $family_history = isset($_GET['family_history']) ? $_GET['family_history'] : 'Na
                 let noc_indicator_after = $('.form-check-input[name="noc_indicator_after"]:checked').val();
 		        let noc_indicator_after_2 = $('.form-check-input[name="noc_indicator_after_2"]') ? $('.form-check-input[name=noc_indicator_after_2]:checked').val() : "null";
         let noc_indicator_after_3 = $('.form-check-input[name="noc_indicator_after_3"]') ? $('.form-check-input[name=noc_indicator_after_3]:checked').val() : "null";
-let evaluation = false;
+let evaluation = 0;
                 var firstCheckbox = $('.form-check-input[name="noc_indicator_after"]:last');
                 var secondCheckbox = $('.form-check-input[name="noc_indicator_after_2"]:last');
                 var thirdCheckbox = $('.form-check-input[name="noc_indicator_after_3"]:last');
@@ -469,21 +470,21 @@ let evaluation = false;
                 if (firstCheckbox.length > 0) {
                 if (secondCheckbox.length > 0 && thirdCheckbox.length > 0) {
                     if (secondCheckbox.is(':checked') && thirdCheckbox.is(':checked')) {
-                    evaluation = true;
+                    let evaluation = 1;;
                     }
                 } else if (secondCheckbox.length > 0) {
                     if (secondCheckbox.is(':checked')) {
-                        evaluation = true;
+                        let evaluation = 1;;
                     }
                 } else {
                     if (firstCheckbox.is(':checked')) {
-                        evaluation = true;
+                        let evaluation = 1;;
                     }
                 }
                 }
                 $.ajax({
                 type: 'POST',
-                url: '<?php echo $base_url; ?>/insertTanalar/riskTani15Insert.php',
+                url:'<?php echo $base_url; ?>/tani-handler/submitOrUpdateTani.php',
                 data: {
                     table: 'tani13',
                     patient_id: patient_id,
@@ -503,12 +504,12 @@ let evaluation = false;
                     nurse_education: nurse_education,
                     collaborative_apps: collaborative_apps,
                     evaluation: evaluation,
-                    standalone: '<?php echo $_GET['standalone']; ?>'standalone']; ?>'
+                    standalone: '<?php echo $_GET['standalone'];?>'
                 },
                 success: function(data) {
                     console.log("something happened")
                     let url =
-                        "<?php echo $base_url; ?>/taniReview/riskTani15Review.php?patient_id=" +
+                        "<?php echo $base_url; ?>/taniReview/tani13-review.php?patient_id=" +
                         patient_id + "&patient_name=" + encodeURIComponent(
                             patient_name);
                             $("#tick-container").fadeIn(800);

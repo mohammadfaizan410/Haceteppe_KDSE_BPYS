@@ -1428,7 +1428,7 @@ if (isset($_GET['logout'])) {
                     let patient_name = "<?php
                                                 echo urldecode($_GET['patient_name']);
                                                 ?>";
-                    var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
+                    var url = "<?php echo $base_url; ?>/updateForms/showAllForms1.php?patient_id=" + patient_id +
                         "&patient_name=" + encodeURIComponent(patient_name);
                     $("#content").load(url);
                 });
@@ -2182,7 +2182,7 @@ if (isset($_GET['logout'])) {
                             data: ajaxData,
                             success: function(data) {
                                 let url =
-                                "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
+                                "<?php echo $base_url; ?>/updateForms/showAllForms1.php?patient_id=" +
                                 patient_id + "&patient_name=" + encodeURIComponent(
                                 patient_name);
                                 $("#tick-container").fadeIn(800);
@@ -2617,7 +2617,7 @@ if (isset($_GET['logout'])) {
             </style>
 
             <!-- Template Javascript -->
-            <script src=""></script>
+            
 </body>
 
 </html>

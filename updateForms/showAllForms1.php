@@ -93,47 +93,34 @@ if (isset($_GET['logout'])) {
                                 href="<?php echo $base_url; ?>/formlar/vucuduTemizForm1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">vucuduTemizForm1</a>
                         </div></td></tr>
                         <tr><td> <div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color: white;"
-                                href="<?php echo $base_url; ?>/formlar/Form2.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form
-                                2</a></div></td></tr>
+                                href="<?php echo $base_url; ?>/formlar/Form2.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form2</a></div></td></tr>
                         <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;"
-                                href="<?php echo $base_url; ?>/formlar/Form3.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form
-                                3</a></div></td></tr>
+                                href="<?php echo $base_url; ?>/formlar/Form3.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form3
+                                </a></div></td></tr>
                         <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;"
-                                href="<?php echo $base_url; ?>/formlar/Form4.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form
-                                4</a></div></td></tr>
+                                href="<?php echo $base_url; ?>/formlar/Form4.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form4</a></div></td></tr>
                         <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;"
-                                href="<?php echo $base_url; ?>/formlar/Form5.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form
-                                5</a></div></td></tr>
+                                href="<?php echo $base_url; ?>/formlar/Form5.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form5</a></div></td></tr>
                         <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;"
-                                href="<?php echo $base_url; ?>/formlar/Form6.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form
-                                6</a></div></td></tr>
+                                href="<?php echo $base_url; ?>/formlar/Form6.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form6</a></div></td></tr>
                         <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;"
-                                href="<?php echo $base_url; ?>/formlar/Form7.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form
-                                7</a></div></td></tr>
+                                href="<?php echo $base_url; ?>/formlar/Form7.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form7</a></div></td></tr>
                         <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;"
-                                href="<?php echo $base_url; ?>/formlar/Form8.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form
-                                8</a></div></td></tr>
+                                href="<?php echo $base_url; ?>/formlar/Form8.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form8</a></div></td></tr>
                         <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;"
-                                href="<?php echo $base_url; ?>/formlar/tetkiksonuclari_form9.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form
-                                9</a></div></td></tr>
+                                href="<?php echo $base_url; ?>/formlar/tetkiksonuclari_form9.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form9</a></div></td></tr>
                         <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;"
-                                href="<?php echo $base_url; ?>/formlar/yasamsalbulgutakibi_form10.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form
-                                10</a></div></td></tr>
+                                href="<?php echo $base_url; ?>/formlar/yasamsalbulgutakibi_form10.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form10</a></div></td></tr>
                         <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;"
-                                href="<?php echo $base_url; ?>/formlar/Form11.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form
-                                11</a></div></td></tr>
+                                href="<?php echo $base_url; ?>/formlar/Form11.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form11</a></div></td></tr>
                         <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;"
-                                href="<?php echo $base_url; ?>/formlar/siviizlem.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form
-                                12</a></div></td></tr>
+                                href="<?php echo $base_url; ?>/formlar/siviizlem.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form12</a></div></td></tr>
                         <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;"
-                                href="<?php echo $base_url; ?>/formlar/medikaltedavi.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form
-                                13</a></div></td></tr>
+                                href="<?php echo $base_url; ?>/formlar/medikaltedavi.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form13</a></div></td></tr>
                         <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;"
-                                href="<?php echo $base_url; ?>/formlar/bakimplani.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form
-                                14</a></div></td></tr>
+                                href="<?php echo $base_url; ?>/formlar/bakimplani.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form14</a></div></td></tr>
                         <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;"
-                                href="<?php echo $base_url; ?>/formlar/gunlukbakimuygulamalari.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form
-                                15</a></div></td></tr>
+                                href="<?php echo $base_url; ?>/formlar/gunlukbakimuygulamalari.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form15</a></div></td></tr>
                         </thead>
                         <tbody>
                         </tbody>

@@ -10,8 +10,18 @@ if (isset($_GET['logout'])) {
     unset($_SESSION);
     header("Location: main.php");
 }
+require_once('../config-students.php');
 
-
+$userid = $_SESSION['userlogin']['id'];
+$tani_id = $_GET['tani_id'];
+$sql = "SELECT * FROM tani3 where tani_id= $tani_id";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+if ($result) {
+    $tani3 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+} else {
+    echo 'error';
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -63,56 +73,58 @@ if (isset($_GET['logout'])) {
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">Sorunla İlişkili Veriler:</p>
                             <div class="matchedfields-wrapper">
+                                <p class="matchedfields" id="field_respiratory_rate"></p>
+
+                                <p class="matchedfields" id="field_respiratory_nature"></p>
 
                             </div>
 
                         </div>
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
-                            <p class="tanıdescription">İdrar boşaltımında bozulma ı</p>
+                            <p class="tanıdescription">Etkisiz hava yolu temizliği </p>
                         </div>
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın idrarını ağrı ve rahatsızlık olmadan yapması </p>
+                            <p class="tanıdescription">Hastanın hava yollarının açıklığının sürdürülmesi</p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
                             <p class="usernamelabel">NOC Gösterge: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1: Hastada idrar yapma sırasında sürekli ağrı ve rahatsızlık var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1: Hastanın hava yollarında çok şiddetli düzeyde tıkanıklık var">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">1: Hastada idrar yapma sırasında sürekli ağrı ve
-                                            rahatsızlık var</span>
+                                        <span class="checkbox-header">1: Hastanın hava yollarında çok şiddetli düzeyde
+                                            tıkanıklık var</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2: Hastada idrar yapma sırasında sık sık ağrı ve rahatsızlık var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2: Hastanın hava yollarında şiddetli düzeyde tıkanıklık var ">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">2: Hastada idrar yapma sırasında sık sık ağrı ve
-                                            rahatsızlık var</span>
+                                        <span class="checkbox-header">2: Hastanın hava yollarında şiddetli düzeyde
+                                            tıkanıklık var </span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3: Hastada idrar yapma sırasında bazen ağrı ve rahatsızlık var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3: Hastanın hava yollarında orta düzeyde tıkanıklık var">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">3: Hastada idrar yapma sırasında bazen ağrı ve
-                                            rahatsızlık var</span>
+                                        <span class="checkbox-header">3: Hastanın hava yollarında orta düzeyde
+                                            tıkanıklık var</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4: Hastada idrar yapma sırasında nadiren ağrı ve rahatsızlık var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4: Hastanın hava yollarında hafif düzeyde tıkanıklık var">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">4: Hastada idrar yapma sırasında nadiren ağrı ve
-                                            rahatsızlık var</span>
+                                        <span class="checkbox-header">4: Hastanın hava yollarında hafif düzeyde
+                                            tıkanıklık var</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="
-                                        noc_indicator" value="5: Hastada idrar yapma sırasında ağrı ve rahatsızlık yok ">
+                                        noc_indicator" value="5: Hastanın hava yolları tamamen açık">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">5: Hastada idrar yapma sırasında ağrı ve
-                                            rahatsızlık yok
+                                        <span class="checkbox-header">5: Hastanın hava yolları tamamen açık
                                         </span>
                                     </label>
                                 </div>
@@ -122,41 +134,41 @@ if (isset($_GET['logout'])) {
                         </div>
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın idrar kontrolünü sürdürmesi</p>
+                            <p class="tanıdescription">Hastanın etkili bir şekilde balgam çıkarması</p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
                             <p class="usernamelabel">NOC Gösterge: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator2" value="1: Hastada sürekli inkontinans var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator2" value="1:  Hasta hiç balgam çıkartmıyor ">
                                     <label class="form-check-label" for="noc_indicator2">
-                                        <span class="checkbox-header">1: Hastada sürekli inkontinans var</span>
+                                        <span class="checkbox-header">1: Hasta hiç balgam çıkartmıyor </span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator2" value="2: Hastada sık sık inkontinans var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator2" value="2: Hasta nadiren balgam çıkartıyor">
                                     <label class="form-check-label" for="noc_indicator2">
-                                        <span class="checkbox-header">2: Hastada sık sık inkontinans var</span>
+                                        <span class="checkbox-header">2: Hasta nadiren balgam çıkartıyor</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator2" value="3: Hastada bazen inkontinans var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator2" value="3. Hasta bazen balgam çıkartıyor">
                                     <label class="form-check-label" for="noc_indicator2">
-                                        <span class="checkbox-header">3: Hastada bazen inkontinans var</span>
+                                        <span class="checkbox-header">3. Hasta bazen balgam çıkartıyor</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator2" value="4: Hastada nadiren inkontinans var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator2" value="4: Hasta sık sık balgam çıkartıyor">
                                     <label class="form-check-label" for="noc_indicator2">
-                                        <span class="checkbox-header">4: Hastada nadiren inkontinans var</span>
+                                        <span class="checkbox-header">4: Hasta sık sık balgam çıkartıyor</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_2" id="
-                                        noc_indicator2" value="5: Hasta hiç inkontinans yok">
+                                        noc_indicator2" value="5: Hasta etkili bir şekilde balgam çıkartıyor">
                                     <label class="form-check-label" for="noc_indicator2">
-                                        <span class="checkbox-header">5: Hasta hiç inkontinans yok
+                                        <span class="checkbox-header">5: Hasta etkili bir şekilde balgam çıkartıyor
                                         </span>
                                     </label>
                                 </div>
@@ -169,147 +181,190 @@ if (isset($_GET['logout'])) {
                             <p class="usernamelabel">Hemşirelik Girişimleri:</p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt1" value="Hastanın idrar boşaltımı; sıklık, yoğunluk, koku, miktar, renk açılarından izlenir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt1" value="Yaşamsal bulgu takibi yapılır">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hastanın idrar boşaltımı; sıklık, yoğunluk, koku,
-                                        miktar, renk açılarından izlenir</span>
+                                    <span class="checkbox-header">Yaşamsal bulgu takibi yapılır</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt2" value="Hasta yeterli ve uygun sıvı alımı konusunda desteklenir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt2" value="Pulse oksimetre ile oksijen satürasyonu izlenir">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hasta yeterli ve uygun sıvı alımı konusunda
-                                        desteklenir</span>
+                                    <span class="checkbox-header">Pulse oksimetre ile oksijen satürasyonu izlenir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt3" value="Zamanlı-sözel tuvalete çıkma hatırlatıcıları kullanılarak hastanın idrar kontrolü arttırılır">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt3" value="Solunumun hızı, ritmi, derinliği ve solunum çabası değerlendirilir">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Zamanlı-sözel tuvalete çıkma hatırlatıcıları
-                                        kullanılarak hastanın idrar kontrolü arttırılır</span>
+                                    <span class="checkbox-header">Solunumun hızı, ritmi, derinliği ve solunum çabası
+                                        değerlendirilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt4" value="Gece uykusu öncesi mesane boşaltımı konusunda hasta desteklenir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt4" value="Hastanın öksürmesi ve sekresyonlarının miktarı ve niteliği değerlendirilir ">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Gece uykusu öncesi mesane boşaltımı konusunda hasta
-                                        desteklenir</span>
+                                    <span class="checkbox-header">Hastanın öksürmesi ve sekresyonlarının miktarı ve
+                                        niteliği değerlendirilir </span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt5" value="Gerekli ise mesane kateterizasyonu uygulanır">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt5" value="Hastanın solunum sesleri değerlendirilir">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Gerekli ise mesane kateterizasyonu uygulanır</span>
+                                    <span class="checkbox-header">Hastanın solunum sesleri değerlendirilir</span>
                                 </label>
                             </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt6" value="Uygun sıklıkta öksürme ve derin solunum egzersizleri yaptırılır">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Uygun sıklıkta öksürme ve derin solunum egzersizleri
+                                        yaptırılır</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt7" value="Sekresyonların yoğunluğunu azaltmak için uygun hidrasyon sağlanır">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Sekresyonların yoğunluğunu azaltmak için uygun
+                                        hidrasyon sağlanır</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt8" value="Aspirasyon ihtiyacı değerlendirilir, gerektiğinde hasta aspire edilir ">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Aspirasyon ihtiyacı değerlendirilir, gerektiğinde
+                                        hasta aspire edilir </span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt9" value="Gerektiğinde istemde yer alan oksijen desteği uygulanır">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Gerektiğinde istemde yer alan oksijen desteği
+                                        uygulanır</span>
+                                </label>
+                            </div>
+
                             <p class="usernamelabel">Eğitim:</p>
                             <p class="option-error1" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt6" value="Hastaya idrara sıkışması durumunda hemen bu ihtiyacı gidermesi konusunda bilgi verilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt10" value="Hastaya ve bakım verenlerine solunum (büzük dudak, kontrollü nefes teknikleri vb.) ve öksürük egzersizleri ile ilgili eğitim verilir">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hastaya idrara sıkışması durumunda hemen bu ihtiyacı
-                                        gidermesi konusunda bilgi verilir</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt7" value="Hasta ve bakım verenlerine idrar yolu enfeksiyonu belirti ve bulguları öğretilir">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hasta ve bakım verenlerine idrar yolu enfeksiyonu
-                                        belirti ve bulguları öğretilir</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt8" value="Hasta ve bakım verenlerine idrar çıkışının nasıl kaydedileceği hakkında bilgi verilir">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hasta ve bakım verenlerine idrar çıkışının nasıl
-                                        kaydedileceği hakkında bilgi verilir</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt9" value="Perineal bakım konusunda bilgi verilir">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Perineal bakım konusunda bilgi verilir</span>
-                                </label>
-                            </div>
-
-
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt10" value="Pelvik kas egzersizleri öğretilir">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Pelvik kas egzersizleri öğretilir
+                                    <span class="checkbox-header">Hastaya ve bakım verenlerine solunum (büzük dudak,
+                                        kontrollü nefes teknikleri vb.) ve öksürük egzersizleri ile ilgili eğitim
+                                        verilir
                                     </span>
                                 </label>
                             </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt11" value="Gerektiğinde spirometre kullanımı konusunda eğitim verilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Gerektiğinde spirometre kullanımı konusunda eğitim
+                                        verilir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt12" value="Hasta ve bakım verenlerine balgamdaki renk, koku, miktar ve nitelik değişimlerinin anlamı ve önemi konusunda ">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Hasta ve bakım verenlerine balgamdaki renk, koku,
+                                        miktar ve nitelik değişimlerinin anlamı ve önemi konusunda eğitim verilir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt13" value="Hasta ve bakım verenlerine sigara kullanımından uzak durma ile ilgili eğitim verilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Hasta ve bakım verenlerine sigara kullanımından uzak
+                                        durma ile ilgili eğitim verilir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt14" value="Hasta ve bakım verenlerine destek ekipmanlarının (kondansatör, oksijen maskesi, spirometre gibi) kullanımı öğretilir ">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Hasta ve bakım verenlerine destek ekipmanlarının
+                                        (kondansatör, oksijen maskesi, spirometre gibi) kullanımı öğretilir </span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt15" value="Hastada cerrahi insizyon var ise, öksürürken insizyon bölgesini nasıl destekleyeceği konusunda bilgi verilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Hastada cerrahi insizyon var ise, öksürürken insizyon
+                                        bölgesini nasıl destekleyeceği konusunda bilgi verilir</span>
+                                </label>
+                            </div>
+
                             <p class="usernamelabel">İş Birliği Gerektiren Uygulamalar:</p>
                             <p class="option-error2" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="collaborative_apps" id="nurse_attempt11" value="İstemde yer alan ilaçlar (antibiyotik, analjezik, entipiretik) uygulanır">
+                                <input class="form-check-input" type="checkbox" name="collaborative_apps" id="nurse_attempt16" value="Gerektiğinde solunum terapisti ile işbirliği yapılır">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">İstemde yer alan ilaçlar (antibiyotik, analjezik,
-                                        entipiretik) uygulanır</span>
+                                    <span class="checkbox-header">Gerektiğinde solunum terapisti ile işbirliği
+                                        yapılır</span>
                                 </label>
                             </div>
-
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="collaborative_apps" id="nurse_attempt12" value="Gerektiğinde idrar analizi için örnek alınır">
+                                <input class="form-check-input" type="checkbox" name="collaborative_apps" id="nurse_attempt17" value="Klinik protokolleri ya da isteme göre oksijen tedavisi ve soğuk buhar uygulanır">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Gerektiğinde idrar analizi için örnek alınır</span>
+                                    <span class="checkbox-header">Klinik protokolleri ya da isteme göre oksijen tedavisi
+                                        ve soğuk buhar uygulanır</span>
                                 </label>
                             </div>
-
-
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="collaborative_apps" id="nurse_attempt18" value="Perküsyon uygulaması ya da destekleyici ekipman kullanımının uygunluğu için hekimle iletişime geçilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Perküsyon uygulaması ya da destekleyici ekipman
+                                        kullanımının uygunluğu için hekimle iletişime geçilir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="collaborative_apps" id="nurse_attempt19" value="İstem yapılan ilaçlar (analjezikler, bronkodilatörler, steroidler vb) uygulanır">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">İstem yapılan ilaçlar (analjezikler, bronkodilatörler,
+                                        steroidler vb) uygulanır</span>
+                                </label>
+                            </div>
                         </div>
                         <div class="input-section d-flex">
-                            <p id="tani_usernamelabel">Değerlendirme:</p>
-                            <p class="tanıdescription"> Sorun devam ediyor: 1-4 gösterge seçildiyse; yeni günde bakım
-                                planında tanımlı tanı olacak. </p>
-                            <p class="tanıdescription"> Sorun çözümlendi:
-                                5 gösterge seçildiyse; yeni günde bakım planına bu tanıyı taşımayacak
-                            </p>
-    </div>
+                            <p class="usernamelabel">Değerlendirme:</p>
+                            <p class="tanıdescription">Risk devam ediyor: 1-5 gösterge seçildiyse; yeni günde bakım planında tanımlı tanı olacak.</p>
+                            <p class="tanıdescription">Mevcut Tanı:Risk ortaya çıktıysa, gelişen durumla ilgili kayıt ve bakım planı yapılacak.</p>
+                        </div>
                             <div class="input-section d-flex">
                                 <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                                <p class="tanıdescription">Hastanın idrarını ağrı ve rahatsızlık olmadan yapması</p>
+                                <p class="tanıdescription">Hastanın hava yollarının açıklığının sürdürülmesi</p>
                             </div>
                             <div class="input-section" id="o2-delivery-container">
                                 <p class="usernamelabel">NOC Gösterge: </p>
                                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                                 <div class="form-check">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="1:Hastada çok şiddetli düzeyde sıvı yüklenmesi var">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="1: Hastanın hava yollarında çok şiddetli düzeyde tıkanıklık var">
                                         <label class="form-check-label" for="noc_indicator_after">
-                                            <span class="checkbox-header">1: Hastada idrar yapma sırasında sürekli ağrı
-                                                ve rahatsızlık var</span>
+                                            <span class="checkbox-header">1: Hastanın hava yollarında çok şiddetli
+                                                düzeyde tıkanıklık var</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="2: Hastada idrar yapma sırasında sık sık ağrı ve rahatsızlık var ">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="2: Hastanın hava yollarında şiddetli düzeyde tıkanıklık var ">
                                         <label class="form-check-label" for="noc_indicator_after">
-                                            <span class="checkbox-header">2: Hastada idrar yapma sırasında sık sık ağrı
-                                                ve rahatsızlık var
-                                            </span>
+                                            <span class="checkbox-header">2: Hastanın hava yollarında şiddetli düzeyde
+                                                tıkanıklık var </span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="3: Hastada idrar yapma sırasında bazen ağrı ve rahatsızlık var">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="3: Hastanın hava yollarında orta düzeyde tıkanıklık var">
                                         <label class="form-check-label" for="noc_indicator_after">
-                                            <span class="checkbox-header">3: Hastada idrar yapma sırasında bazen ağrı ve
-                                                rahatsızlık var</span>
+                                            <span class="checkbox-header">3: Hastanın hava yollarında orta düzeyde
+                                                tıkanıklık var</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="4: Hastada idrar yapma sırasında nadiren ağrı ve rahatsızlık var">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="4: Hastanın hava yollarında hafif düzeyde tıkanıklık var">
                                         <label class="form-check-label" for="noc_indicator_after">
-                                            <span class="checkbox-header">4: Hastada idrar yapma sırasında nadiren ağrı
-                                                ve rahatsızlık var</span>
+                                            <span class="checkbox-header">4: Hastanın hava yollarında hafif düzeyde
+                                                tıkanıklık var</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required name="noc_indicator_after" id="
-                                        noc_indicator_after" value="5: Hastada idrar yapma sırasında ağrı ve rahatsızlık yok ">
+                                        noc_indicator_after" value="5: Hastanın hava yolları tamamen açık">
                                         <label class="form-check-label" for="noc_indicator_after">
-                                            <span class="checkbox-header">5: Hastada idrar yapma sırasında ağrı ve
-                                                rahatsızlık yok
+                                            <span class="checkbox-header">5: Hastanın hava yolları tamamen açık
                                             </span>
                                         </label>
                                     </div>
@@ -319,41 +374,41 @@ if (isset($_GET['logout'])) {
                             </div>
                             <div class="input-section d-flex">
                                 <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                                <p class="tanıdescription">Hastanın idrar kontrolünü sürdürmesi</p>
+                                <p class="tanıdescription">Hastanın etkili bir şekilde balgam çıkarması</p>
                             </div>
                             <div class="input-section" id="o2-delivery-container">
                                 <p class="usernamelabel">NOC Gösterge: </p>
                                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                                 <div class="form-check">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator2_after" value="1: Hastada sürekli inkontinans var ">
-                                        <label class="form-check-label" for="noc_indicator2_after">
-                                            <span class="checkbox-header">1: Hastada sürekli inkontinans var</span>
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator_after_2" value="1:  Hasta hiç balgam çıkartmıyor ">
+                                        <label class="form-check-label" for="noc_indicator_after_2">
+                                            <span class="checkbox-header">1: Hasta hiç balgam çıkartmıyor </span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator2_after" value="2: Hastada sık sık inkontinans var">
-                                        <label class="form-check-label" for="noc_indicator2_after">
-                                            <span class="checkbox-header">2: Hastada sık sık inkontinans var</span>
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator_after_2" value="2: Hasta nadiren balgam çıkartıyor">
+                                        <label class="form-check-label" for="noc_indicator_after_2">
+                                            <span class="checkbox-header">2: Hasta nadiren balgam çıkartıyor</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator2_after" value="3: Hastada bazen inkontinans var">
-                                        <label class="form-check-label" for="noc_indicator2_after">
-                                            <span class="checkbox-header">3: Hastada bazen inkontinans var</span>
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator_after_2" value="3. Hasta bazen balgam çıkartıyor">
+                                        <label class="form-check-label" for="noc_indicator_after_2">
+                                            <span class="checkbox-header">3. Hasta bazen balgam çıkartıyor</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator2_after" value="4: Hastada nadiren inkontinans var">
-                                        <label class="form-check-label" for="noc_indicator2_after">
-                                            <span class="checkbox-header">4: Hastada nadiren inkontinans var</span>
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator_after_2" value="4: Hasta sık sık balgam çıkartıyor">
+                                        <label class="form-check-label" for="noc_indicator_after_2">
+                                            <span class="checkbox-header">4: Hasta sık sık balgam çıkartıyor</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="
-                                        noc_indicator2_after" value="5: Hasta hiç inkontinans yok">
-                                        <label class="form-check-label" for="noc_indicator2_after">
-                                            <span class="checkbox-header">5: Hasta hiç inkontinans yok
+                                        noc_indicator2_after2" value="5: Hasta etkili bir şekilde balgam çıkartıyor">
+                                        <label class="form-check-label" for="noc_indicator_after_2">
+                                            <span class="checkbox-header">5: Hasta etkili bir şekilde balgam çıkartıyor
                                             </span>
                                         </label>
                                     </div>
@@ -361,8 +416,6 @@ if (isset($_GET['logout'])) {
                                 </div>
 
                             </div>
-                           
-                        </div>
                                                                 <input type="submit" class="d-flex w-75 submit m-auto justify-content-center mb-5" name="submit" id="submit" value="Kaydet">              
 
 
@@ -375,10 +428,11 @@ if (isset($_GET['logout'])) {
 
     </div>
     
+
     <script>
-        $(function() {
-            $('#closeBtn1').click(function(e) {
-                let patient_id = <?php
+    $(function() {
+        $('#closeBtn1').click(function(e) {
+            let patient_id = <?php
                                     $userid = $_GET['patient_id'];
                                     echo $userid
                                     ?>;
@@ -390,6 +444,22 @@ if (isset($_GET['logout'])) {
                 $("#content").load(url);
 
             })
+        });
+        $('input[name="noc_indicator"][value="<?php echo $tani3[0]['noc_indicator']; ?>"]').prop('checked', true);
+        $('input[name="noc_indicator_2"][value="<?php echo $tani3[0]['noc_indicator_2']; ?>"]').prop('checked', true);
+        $('input[name="noc_indicator_3"][value="<?php echo $tani3[0]['noc_indicator_3']; ?>"]').prop('checked', true);
+        $('input[name="noc_indicator_after"][value="<?php echo $tani3[0]['noc_indicator_after']; ?>"]').prop('checked', true);
+        $('input[name="noc_indicator_after_2"][value="<?php echo $tani3[0]['noc_indicator_after_2']; ?>"]').prop('checked', true);
+        $('input[name="noc_indicator_after_3"][value="<?php echo $tani3[0]['noc_indicator_after_3']; ?>"]').prop('checked', true);
+
+        "<?php echo $tani3[0]['nurse_attempt']?>".split('/').forEach(element => {
+            $('input[name="nurse_attempt"][value="' + element + '"]').prop('checked', true);
+        });
+        "<?php echo $tani3[0]['nurse_education']?>".split('/').forEach(element => {
+            $('input[name="nurse_education"][value="' + element + '"]').prop('checked', true);
+        });
+        "<?php echo $tani3[0]['collaborative_apps']?>".split('/').forEach(element => {
+            $('input[name="collaborative_apps"][value="' + element + '"]').prop('checked', true);
         });
     </script>
     <script>
@@ -532,12 +602,11 @@ let evaluation = 0;
                 }
                 }
 
-
                 $.ajax({
                 type: 'POST',
                 url:'<?php echo $base_url; ?>/tani-handler/submitOrUpdateTani.php',
                 data: {
-                    table: 'tani9',
+                    table: 'tani3',
                     patient_id: patient_id,
                     patient_name: patient_name,
                     creation_date: creationDate,
@@ -555,12 +624,12 @@ let evaluation = 0;
                     nurse_education: nurse_education,
                     collaborative_apps: collaborative_apps,
                     evaluation: evaluation,
-                    standalone: '<?php echo $_GET['standalone'];?>'
-                },
+                    standalone: '<?php echo $tani2[0]['standalone']; ?>'
+                                },
                 success: function(data) {
                     console.log("something happened")
                     let url =
-                        "<?php echo $base_url; ?>/taniReview/tani9-review.php?patient_id=" +
+                        "<?php echo $base_url; ?>/taniReview/tani3-review.php?patient_id=" +
                         patient_id + "&patient_name=" + encodeURIComponent(
                             patient_name);
                             $("#tick-container").fadeIn(800);

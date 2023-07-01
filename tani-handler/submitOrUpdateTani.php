@@ -2,6 +2,7 @@
 require_once("../config-students.php");
 $base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
 $time = date("Y-m-d H:i:s");
+$table_name = $_POST['table'];
 ?>
 <?php
 
@@ -21,7 +22,7 @@ if (isset($_POST["patient_name"])) {
         }
     } else {
 
-        $result =   $stmt = $db->prepare("INSERT INTO tani1 (
+        $result =   $stmt = $db->prepare("INSERT INTO $table_name (
                 patient_id,
                 patient_name,
                 creation_date,

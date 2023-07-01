@@ -35,7 +35,7 @@ if ($result) {
     <link href="img/favicon.ico" rel="icon">
     <!-- Icon Font Stylesheet -->
 
-    <link href="../style.css" rel="stylesheet">
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
     <style>
@@ -297,7 +297,7 @@ if ($result) {
                     },
                     success: function(data) {
                          let url =
-                            "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
+                            "<?php echo $base_url; ?>/updateForms/showAllTanis.php?patient_id=" +
                             patient_id + "&patient_name=" + encodeURIComponent(
                                 patient_name);
                                 $("#tick-container").fadeIn(800);
@@ -319,7 +319,7 @@ if ($result) {
         })
 
     </script>
-    <script src=""></script>
+    
 </body>
 
 </html>

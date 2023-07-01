@@ -36,7 +36,7 @@ if ($result) {
     <link href="img/favicon.ico" rel="icon">
 
     <!-- Template Stylesheet -->
-    <link href="../style.css" rel="stylesheet">
+    
     <style>
         .send-patient {
             align-self: center;
@@ -260,7 +260,7 @@ if ($result) {
 
         });
     </script>
-    <script src=""></script>
+    
 </body>
 
 </html>

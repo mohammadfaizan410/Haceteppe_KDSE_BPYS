@@ -22,7 +22,7 @@ if (isset($_GET['logout'])) {
 
 
 
-    <link href="../style.css" rel="stylesheet">
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <style>
     table {
@@ -375,7 +375,7 @@ if (isset($_GET['logout'])) {
         })
 
     </script>
-    <script src=""></script>
+    
 </body>
 
 </html>

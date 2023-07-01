@@ -37,7 +37,7 @@ if ($result) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
     <!-- Template Stylesheet -->
-    <link href="../style.css" rel="stylesheet">
+    
     <style>
     table {
         border-collapse: collapse;
@@ -267,7 +267,7 @@ if ($result) {
         })
 
     </script>
-    <script src=""></script>
+    
 </body>
 
 </html>

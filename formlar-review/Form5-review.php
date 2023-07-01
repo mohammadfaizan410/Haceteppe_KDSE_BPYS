@@ -37,7 +37,7 @@ if ($result) {
 
 
     <!-- Template Stylesheet -->
-    <link href="../style.css" rel="stylesheet">
+    
 
     <style>
         .send-patient {
@@ -466,7 +466,7 @@ if ($result) {
 
         });
     </script>
-    <script src=""></script>
+    
 </body>
 
 </html>

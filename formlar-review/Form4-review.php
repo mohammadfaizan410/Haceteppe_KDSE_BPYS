@@ -37,7 +37,7 @@ if ($result) {
 
 
     <!-- Template Stylesheet -->
-    <link href="../style.css" rel="stylesheet">
+    
 
 
 
@@ -330,7 +330,7 @@ if ($result) {
 
         });
     </script>
-    <script src=""></script>
+    
 </body>
 
 </html>

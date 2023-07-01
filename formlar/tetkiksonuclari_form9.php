@@ -25,7 +25,7 @@ if (isset($_GET['logout'])) {
 
 
     <!-- Template Stylesheet -->
-    <link href="../style.css" rel="stylesheet">
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
     <style>
@@ -177,7 +177,7 @@ if (isset($_GET['logout'])) {
             let patient_name = "<?php
                                 echo urldecode($_GET['patient_name']);
                                 ?>";
-            var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
+            var url = "<?php echo $base_url; ?>/updateForms/showAllForms1.php?patient_id=" + patient_id +
                 "&patient_name=" + encodeURIComponent(patient_name);
             $("#content").load(url);
 
@@ -258,7 +258,6 @@ if (isset($_GET['logout'])) {
 
             else {
 
-<<<<<<< HEAD
             $.ajax({
                 type: 'POST',
                 url: '<?php echo $base_url; ?>/form-handlers/submitOrUpdateTektik_form9.php',
@@ -280,7 +279,7 @@ if (isset($_GET['logout'])) {
                 success: function(data) {
                     alert(data);
                     let url =
-                        "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
+                        "<?php echo $base_url; ?>/updateForms/showAllForms1.php?patient_id=" +
                         patient_id + "&patient_name=" + encodeURIComponent(patient_name);
                     $("#content").load(url);
                 },
@@ -289,49 +288,6 @@ if (isset($_GET['logout'])) {
                 }
             })
             }
-=======
-
-
-
-                $.ajax({
-                    type: 'POST',
-                    url: '<?php echo $base_url; ?>/form-handlers/submitOrUpdateTektik_form9.php',
-                    data: {
-                        name: name,
-                        surname: surname,
-                        age: age,
-                        not: not,
-                        form_num: form_num,
-                        patient_id: patient_id,
-                        patient_name: patient_name,
-                        creation_date: creationDate,
-                        update_date: updateDate,
-                        date: date,
-                        examination_type: examination_type,
-                        examination_result: examination_result,
-                        referance_value: referance_value
-                    },
-                    success: function(data) {
-                        let url =
-                            "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
-                            patient_id + "&patient_name=" + encodeURIComponent(patient_name);
-                            $("#tick-container").fadeIn(800);
-                            // Change the tick background to the animated GIF
-                            $("#tick").css("background-image", "url('./check-2.gif')");
-
-                            // Delay for 2 seconds (adjust the duration as needed)
-                            setTimeout(function() {
-                            // Load the content
-                            $("#content").load(url);
-                            $("#tick-container").fadeOut(600);
-                            // Hide the tick container
-                            }, 1000);
-                    },
-                    error: function(data) {
-                        console.log(data)
-                    }
-                })
->>>>>>> 47525edb6df03ea3ea3f005cc9f9365a91b0f3df
             
         })
 

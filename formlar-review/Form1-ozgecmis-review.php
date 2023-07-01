@@ -2659,7 +2659,7 @@ if ($result) {
 
         </script>
         <!-- Template Javascript -->
-        <script src=""></script>
+        
 </body>
 
 </html>

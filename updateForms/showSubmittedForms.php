@@ -111,7 +111,7 @@ input.addEventListener("input", function() {
             </script>
 
         <!-- Template Javascript -->
-        <script src=""></script>
+        
 </body>
 
 </html>

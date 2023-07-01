@@ -25,7 +25,7 @@ if (isset($_GET['logout'])) {
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
-    <link href="../style.css" rel="stylesheet">
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
     <style>
@@ -139,20 +139,9 @@ if (isset($_GET['logout'])) {
             let patient_name = "<?php
                                     echo urldecode($_GET['patient_name']);
                                     ?>";
-            var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
+            var url = "<?php echo $base_url; ?>/updateForms/showAllForms1.php?patient_id=" + patient_id +
                 "&patient_name=" + encodeURIComponent(patient_name);
-                $("#tick-container").fadeIn(800);
-                            // Change the tick background to the animated GIF
-                            $("#tick").css("background-image", "url('./check-2.gif')");
-
-                            // Delay for 2 seconds (adjust the duration as needed)
-                            setTimeout(function() {
-                            // Load the content
-                            $("#content").load(url);
-                            $("#tick-container").fadeOut(600);
-                            // Hide the tick container
-                            }, 1000);
-
+            $("#content").load(url);
         })
     });
     </script>
@@ -272,7 +261,7 @@ if (isset($_GET['logout'])) {
                     },
                     success: function(data) {
                         let url =
-                            "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
+                            "<?php echo $base_url; ?>/updateForms/showAllForms1.php?patient_id=" +
                             patient_id + "&patient_name=" + encodeURIComponent(
                                 patient_name);
                                 $("#tick-container").fadeIn(800);
@@ -295,7 +284,7 @@ if (isset($_GET['logout'])) {
 
     });
     </script>
-    <script src=""></script>
+    
 </body>
 
 </html>

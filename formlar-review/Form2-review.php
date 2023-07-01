@@ -44,7 +44,7 @@ if ($result) {
 
 
     <!-- Template Stylesheet -->
-    <link href="../style.css" rel="stylesheet">
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
     <style>
@@ -344,7 +344,7 @@ if ($result) {
 
         });
     </script>
-    <script src=""></script>
+    
 </body>
 
 </html>

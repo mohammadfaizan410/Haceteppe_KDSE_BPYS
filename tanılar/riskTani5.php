@@ -30,7 +30,7 @@ if (isset($_GET['logout'])) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
     <!-- Template Stylesheet -->
-    <link href="../style.css" rel="stylesheet">
+    
     <style>
     table {
         border-collapse: collapse;
@@ -297,7 +297,7 @@ if (isset($_GET['logout'])) {
             let patient_name = "<?php
                                     echo urldecode($_GET['patient_name']);
                                     ?>";
-            var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
+            var url = "<?php echo $base_url; ?>/updateForms/showAllTanis.php?patient_id=" + patient_id +
                 "&patient_name=" + encodeURIComponent(patient_name);
             $("#content").load(url);
 
@@ -439,7 +439,7 @@ if (isset($_GET['logout'])) {
 
                 $.ajax({
                 type: 'POST',
-                url: '<?php echo $base_url; ?>/insertTanalar/riskTani15Insert.php',
+                url:'<?php echo $base_url; ?>/tani-handler/submitOrUpdateTani.php',
                 data: {
                     table: 'tani39',
                     patient_id: patient_id,
@@ -459,7 +459,7 @@ if (isset($_GET['logout'])) {
                     nurse_education: nurse_education,
                     collaborative_apps: collaborative_apps,
                     evaluation: evaluation,
-                    standalone: '<?php echo $_GET['standalone']; ?>'standalone']; ?>'
+                    standalone: '<?php echo $_GET['standalone'];?>'
                 },
                 success: function(data) {
                     console.log("something happened")

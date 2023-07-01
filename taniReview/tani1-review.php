@@ -10,7 +10,18 @@ if (isset($_GET['logout'])) {
     unset($_SESSION);
     header("Location: main.php");
 }
+require_once('../config-students.php');
 
+$userid = $_SESSION['userlogin']['id'];
+$tani_id = $_GET['tani_id'];
+$sql = "SELECT * FROM tani1 where tani_id= $tani_id";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+if ($result) {
+    $tani1 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+} else {
+    echo 'error';
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,7 +36,7 @@ if (isset($_GET['logout'])) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
     <!-- Template Stylesheet -->
-    <link href="../style.css" rel="stylesheet">
+    
     <style>
     table {
         border-collapse: collapse;
@@ -355,7 +366,8 @@ if (isset($_GET['logout'])) {
                             </div>
 
                         </div>
-                        <input type="submit" class="w-75 submit m-auto" name="submit" id="submit" value="Kaydet">
+                        <input type="submit" class="d-flex w-75 submit m-auto justify-content-center mb-5" name="submit" id="submit" value="Kaydet">              
+
 
 
                     </form>
@@ -376,22 +388,36 @@ if (isset($_GET['logout'])) {
             let patient_name = "<?php
                                     echo urldecode($_GET['patient_name']);
                                     ?>";
-            var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
+            var url = "<?php echo $base_url; ?>/updateForms/showSubmittedTanis.php?patient_id=" + patient_id +
                 "&patient_name=" + encodeURIComponent(patient_name);
             $("#content").load(url);
 
         })
     });
+        $('input[name="noc_indicator"][value="<?php echo $tani1[0]['noc_indicator']; ?>"]').prop('checked', true);
+        $('input[name="noc_indicator_2"][value="<?php echo $tani1[0]['noc_indicator_2']; ?>"]').prop('checked', true);
+        $('input[name="noc_indicator_3"][value="<?php echo $tani1[0]['noc_indicator_3']; ?>"]').prop('checked', true);
+        $('input[name="noc_indicator_after"][value="<?php echo $tani1[0]['noc_indicator_after']; ?>"]').prop('checked', true);
+        $('input[name="noc_indicator_after_2"][value="<?php echo $tani1[0]['noc_indicator_after_2']; ?>"]').prop('checked', true);
+        $('input[name="noc_indicator_after_3"][value="<?php echo $tani1[0]['noc_indicator_after_3']; ?>"]').prop('checked', true);
+
+        "<?php echo $tani1[0]['nurse_attempt']?>".split('/').forEach(element => {
+            $('input[name="nurse_attempt"][value="' + element + '"]').prop('checked', true);
+        });
+        "<?php echo $tani1[0]['nurse_education']?>".split('/').forEach(element => {
+            $('input[name="nurse_education"][value="' + element + '"]').prop('checked', true);
+        });
+        "<?php echo $tani1[0]['collaborative_apps']?>".split('/').forEach(element => {
+            $('input[name="collaborative_apps"][value="' + element + '"]').prop('checked', true);
+        });
+
     </script>
     <script>
     $(function() {
+       
+
         $('#submit').click(function(e) {
-            //prefilling
-
-
-
-
-
+    
             e.preventDefault();
             if (!$('[name="noc_indicator"]').is(':checked')) {
                 $('.option-error').css('display', 'none');
@@ -510,7 +536,7 @@ if (isset($_GET['logout'])) {
                 let noc_indicator_after = $('.form-check-input[name="noc_indicator_after"]:checked').val();
 		        let noc_indicator_after_2 = $('.form-check-input[name="noc_indicator_after_2"]') ? $('.form-check-input[name=noc_indicator_after_2]:checked').val() : "null";
                 let noc_indicator_after_3 = $('.form-check-input[name="noc_indicator_after_3"]') ? $('.form-check-input[name=noc_indicator_after_3]:checked').val() : "null";
-                let evaluation = false;
+                let evaluation = 0;
                 var firstCheckbox = $('.form-check-input[name="noc_indicator_after"]:last');
                 var secondCheckbox = $('.form-check-input[name="noc_indicator_after_2"]:last');
                 var thirdCheckbox = $('.form-check-input[name="noc_indicator_after_3"]:last');
@@ -518,20 +544,20 @@ if (isset($_GET['logout'])) {
                 if (firstCheckbox.length > 0) {
                 if (secondCheckbox.length > 0 && thirdCheckbox.length > 0) {
                     if (secondCheckbox.is(':checked') && thirdCheckbox.is(':checked')) {
-                    evaluation = true;
+                    let evaluation = 1;;
                     }
                 } else if (secondCheckbox.length > 0) {
                     if (secondCheckbox.is(':checked')) {
-                        evaluation = true;
+                        let evaluation = 1;;
                     }
                 } else {
                     if (firstCheckbox.is(':checked')) {
-                        evaluation = true;
+                        let evaluation = 1;;
                     }
                 }
                 }                $.ajax({
                 type: 'POST',
-                url: '<?php echo $base_url; ?>/insertTanalar/riskTani15Insert.php',
+                url:'<?php echo $base_url; ?>/tani-handler/submitOrUpdateTani.php',
                 data: {
                     isUpdate: true,
                     table: 'tani1',
@@ -552,7 +578,7 @@ if (isset($_GET['logout'])) {
                     nurse_education: nurse_education,
                     collaborative_apps: collaborative_apps,
                     evaluation: evaluation,
-                    standalone: '<?php echo $_GET['standalone']; ?>'
+                    standalone: true
                 },
                 success: function(data) {
                     alert(data)
