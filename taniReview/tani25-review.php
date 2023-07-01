@@ -566,7 +566,7 @@ submit" id="submit" value="Kaydet">
                 success: function(data) {
                     console.log("something happened")
                     let url =
-                        "<?php echo $base_url; ?>/taniReview/tani25-review.php?patient_id=" +
+                        "<?php echo $base_url; ?>/updateForms/showSubmittedTanis.php?patient_id=" +
                         patient_id + "&patient_name=" + encodeURIComponent(
                             patient_name);
                             $("#tick-container").fadeIn(800);

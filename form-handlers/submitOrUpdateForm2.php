@@ -1,5 +1,6 @@
 <?php
 require_once("../config-students.php");
+
 ?>
 
 <?php
@@ -33,7 +34,6 @@ if (isset($_POST)) {
       echo $result;
     }
   } else {
-
 
     $stmt = $db->prepare("INSERT INTO form2 (
                 patient_name,

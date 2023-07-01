@@ -51,7 +51,6 @@ if (isset($_GET['logout'])) {
                     <p style="color : #333333; font-size: 20px" class="pb-2">Form List</p>
 
                 </div>
-
                 <div class="table-responsive">
                 <input type="text" id="searchInput" class='form-control mb-5' placeholder="Form Ad göre ara">
 

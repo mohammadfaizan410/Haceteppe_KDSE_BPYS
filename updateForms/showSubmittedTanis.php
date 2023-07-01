@@ -81,7 +81,7 @@ if (isset($_GET['logout'])) {
                                     echo '<td>' . $row['creation_date'] . '</td>';
                                     echo '<td>'.$row['time'].'</td>';
                                     echo "<td><div class='entered-forms align-items-center'><a class='nav-items review btn btn-success w-100' style='color : white;'
-                                    href='" . $base_url . "/taniReview/tani" . $row['tani_num'] . "-review.php?patient_id=" . $row['patient_id'] . "&patient_name=" . $row['patient_name'] . "&standalone=" . $row['standalone'] . "&evaluation=" . $row['evaluation'] . "&tani_id=".$row['tani_id']."'>tani" . $row['tani_num'] . "</a></div></td>";
+                                    href='" . $base_url . "/taniReview/tani" . $row['tani_num'] . "-review.php?patient_id=" . $row['patient_id'] . "&patient_name=" . $row['patient_name'] . "&standalone=" . $row['standalone'] . "&evaluation=" . $row['evaluation'] . "&tani_id=".$row['tani_id']."&tani_num=".$row['tani_num']."'>tani" . $row['tani_num'] . "</a></div></td>";
                                     echo '</tr>';
                                 }
 
