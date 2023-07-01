@@ -443,6 +443,7 @@ let evaluation = 0;
                 type: 'POST',
                 url:'<?php echo $base_url; ?>/tani-handler/submitOrUpdateTani.php',
                 data: {
+                    tani_num: 22,
                     table: 'tani22',
                     patient_id: patient_id,
                     patient_name: patient_name,

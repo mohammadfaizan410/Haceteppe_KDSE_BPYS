@@ -78,11 +78,11 @@ if (isset($_GET['logout'])) {
                         </div>
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
-                            <p class="tanıdescription">Göz kuruluğu riski </p>
+                            <p class="tanıdescription">Kanama riski</p>
                         </div>
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın sklera ve göz kapağındaki normal nemliliğinin sürdürülmesi</p>
+                            <p class="tanıdescription">Hastanın kanama belirti ve bulguları göstermemesi</p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
                             <p id="tani_usernamelabel">NOC Gösterge: </p>
@@ -124,7 +124,7 @@ if (isset($_GET['logout'])) {
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="
                                         noc_indicator" value="5">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">5: Hastanın sklera ve göz kapağının nemliliği normal, risk devam ediyor</span>
+                                        <span class="checkbox-header">5: Hastada kanama belirti ve bulgusu yok, risk devam ediyor</span>
                                     </label>
                                 </div>
 
@@ -137,65 +137,125 @@ if (isset($_GET['logout'])) {
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt1"
-                                    value="Sklera ve konjoktiva nem, renk, kızarıklık, aşınma ve drenaj açısından değerlendirilir">
+                                    value="Yaşamsal bulgu takibi yapılır">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Sklera ve konjoktiva nem, renk, kızarıklık, aşınma ve drenaj açısından değerlendirilir</span>
+                                    <span class="checkbox-header">Yaşamsal bulgu takibi yapılır</span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt2"
-                                    value="Göz kuruluğuna neden olabilecek alerji, sigara içme gibi risk faktörleri değerlendirilir">
+                                    value="Hastanın bilinç durumu değerlendirilir">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Göz kuruluğuna neden olabilecek alerji, sigara içme gibi risk faktörleri değerlendirilir</span>
+                                    <span class="checkbox-header">Hastanın bilinç durumu değerlendirilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt3"
-                                    value="Göz kırpma refleksi olmayan bilinçsiz ya da kritik hastalara her 2-4 saatte bir göz bakımı uygulanır">
+                                    value="Pansumanlarının kanama takibi yapılır">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Göz kırpma refleksi olmayan bilinçsiz ya da kritik hastalara her 2-4 saatte bir göz bakımı uygulanır</span>
+                                    <span class="checkbox-header">Pansumanlarının kanama takibi yapılır</span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt4"
-                                    value="Gözlerin nemliliği salin ya da yapay gözyaşı ile sağlanır">
+                                    value="Yara ve insizyon bölgeleri için kanama takibi yapılır">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Gözlerin nemliliği salin ya da yapay gözyaşı ile sağlanır</span>
+                                    <span class="checkbox-header">Yara ve insizyon bölgeleri için kanama takibi yapılır</span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt5"
-                                    value="Bilinçsiz hastada gözleri kapalı tutmak için koruyucu malzeme kullanılır">
+                                    value="Yara iyileşme süreci takip edilir">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Bilinçsiz hastada gözleri kapalı tutmak için koruyucu malzeme kullanılır</span>
+                                    <span class="checkbox-header">Yara iyileşme süreci takip edilir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt6"
+                                    value="Hastanın laboratuvar değerleri (Hemoglobin, hematokrit, trombosit, PTZ, INR) takip edilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Hastanın laboratuvar değerleri (Hemoglobin, hematokrit, trombosit, PTZ, INR) takip edilir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt7"
+                                    value="Hastada kanamaya sebep olabilecek travmalara (çarpma, burkma, düşme gibi) karşı önlem alınır">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Hastada kanamaya sebep olabilecek travmalara (çarpma, burkma, düşme gibi) karşı önlem alınır</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt8"
+                                    value="Hastaya yapılacak gereksiz invaziv girişimlerden kaçınılır. İnvaziv girişim yapılması halinde, girişim yapılan alan kanama açısından izlenir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Hastaya yapılacak gereksiz invaziv girişimlerden kaçınılır.
+                                         İnvaziv girişim yapılması halinde, girişim yapılan alan kanama açısından izlenir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt9"
+                                    value="Gerektiğinde tıraş makinesi ile tıraş yaptırılır">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Gerektiğinde tıraş makinesi ile tıraş yaptırılır</span>
                                 </label>
                             </div>
                             <p id="tani_usernamelabel">Eğitim:</p>
+                            <p class="option-error1" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt8"
-                                    value="Kontakt lenslerin doğru kullanımı, çıkarılması ve saklanması konusunda eğitim verilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_education"
+                                    id="nurse_attempt10" value="Ağız hijyeni için yumuşak kıllı diş fırçası kullanımı önerilir">
                                 <label class="form-check-label" for="nurse_education">
-                                    <span class="checkbox-header">Kontakt lenslerin doğru kullanımı, çıkarılması ve saklanması konusunda eğitim verilir</span>
+                                    <span class="checkbox-header">Ağız hijyeni için yumuşak kıllı diş fırçası kullanımı önerilir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_education"
+                                    id="nurse_attempt11" value="Hasta bakım verenlerine kanama belirti ve bulguları (nemli/soluk cilt, halsizlik ve baygınlık hissi, hızlı ve yüzeyel solunum, bilinç değişikliği, zayıf ve hızlı nabız, idrarda/gaitada/balgamda kan görülmesi, ciltte kızarıklıkların/morarmaların olması) öğretilir ve bu bulgular saptandığında hemşireyi bilgilendirmeleri gerektiği anlatılır">
+                                <label class="form-check-label" for="nurse_education">
+                                    <span class="checkbox-header">Hasta bakım verenlerine kanama belirti ve bulguları (nemli/soluk cilt, halsizlik ve baygınlık hissi,
+                                         hızlı ve yüzeyel solunum, bilinç değişikliği, zayıf ve hızlı nabız, idrarda/gaitada/balgamda kan görülmesi,
+                                          ciltte kızarıklıkların/morarmaların olması) öğretilir ve bu bulgular saptandığında hemşireyi bilgilendirmeleri gerektiği anlatılır</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_education"
+                                    id="nurse_attempt12"
+                                    value="Pıhtılaşma bozukluğu olan hastalara antikoagülan kullanımından uzak durulması hakkında bilgi verilir">
+                                <label class="form-check-label" for="nurse_education">
+                                    <span class="checkbox-header">Pıhtılaşma bozukluğu olan hastalara antikoagülan kullanımından uzak durulması hakkında bilgi verilir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_education"
+                                    id="nurse_attempt13"
+                                    value="Pıhtılaşma bozukluğu olan hastalara K vitamini içeren besinler ve bu besinlerin tüketimi konusunda bilgi verilir">
+                                <label class="form-check-label" for="nurse_education">
+                                    <span class="checkbox-header">Pıhtılaşma bozukluğu olan hastalara K vitamini içeren besinler ve bu besinlerin tüketimi konusunda bilgi verilir</span>
                                 </label>
                             </div>
                             <p id="tani_usernamelabel">İşbirliği Gerektiren Uygulamalar</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="collaboratıve_apps"
-                                    id="nurse_attempt15" value="İstemde yer alan farmakolojik yöntemler (Göz pomadları, damlaları) uygulanır">
-                                <label class="form-check-label" for="collaboratıve_apps">
-                                    <span class="checkbox-header">İstemde yer alan farmakolojik yöntemler (Göz pomadları, damlaları) uygulanır</span>
+                                <input class="form-check-input" type="checkbox" name="collaborative_apps"
+                                    id="nurse_attempt14"
+                                    value="Gerektiğinde istem yapılan kan ürünlerinin transfüzyonu yapılır">
+                                <label class="form-check-label" for="collaborative_apps">
+                                    <span class="checkbox-header">Gerektiğinde istem yapılan kan ürünlerinin transfüzyonu yapılır</span>
                                 </label>
                             </div>
                         </div>
+
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">Değerlendirme:</p>
                             <p class="tanıdescription">Risk devam ediyor: 1-5 gösterge seçildiyse; yeni günde bakım planında tanımlı tanı olacak.</p>
                             <p class="tanıdescription">Mevcut Tanı:Risk ortaya çıktıysa, gelişen durumla ilgili kayıt ve bakım planı yapılacak.</p>
                         </div>
+
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın sklera ve göz kapağındaki normal nemliliğinin sürdürülmesi</p>
+                            <p class="tanıdescription">Hastanın kanama belirti ve bulguları göstermemesi</p>
                         </div>
+
+
                         <div class="input-section" id="o2-delivery-container">
                             <p id="tani_usernamelabel">NOC Gösterge: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
@@ -236,11 +296,12 @@ if (isset($_GET['logout'])) {
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after" id="
                                         noc_indicator" value="5">
                                     <label class="form-check-label" for="noc_indicator_after">
-                                        <span class="checkbox-header">5: Hastanın sklera ve göz kapağının nemliliği normal, risk devam ediyor</span>
+                                        <span class="checkbox-header">5: Hastada kanama belirti ve bulgusu yok, risk devam ediyor</span>
                                     </label>
                                 </div>
-
                             </div>
+
+
 
                         </div>
                         <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
@@ -307,6 +368,14 @@ if (isset($_GET['logout'])) {
                             scrollTop: $('[name="nurse_attempt"]').offset().top
                         }, 200);
                     $('[name="nurse_attempt"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                    return false;
+                } else if ($('[name="nurse_education"]:checked').length === 0){
+                    $('.option-error').css('display', 'none');
+                    $('.option-error2').css('display', 'none');
+                    $('html, body').animate({
+                            scrollTop: $('[name="nurse_education"]').offset().top
+                        }, 200);
+                    $('[name="nurse_education"]').first().closest('.input-section').find('.option-error1').css('display', 'block');
                     return false;
                 } else if (!$('[name="noc_indicator_after"]').is(':checked')) {
                     $('.option-error').css('display', 'none');
@@ -397,7 +466,8 @@ if (isset($_GET['logout'])) {
                 type: 'POST',
                 url:'<?php echo $base_url; ?>/tani-handler/submitOrUpdateTani.php',
                 data: {
-                    table: 'tani49',
+                    tani_num: 35,
+                    table: 'tani35',
                     patient_id: patient_id,
                     patient_name: patient_name,
                     creation_date: creationDate,
@@ -414,13 +484,13 @@ if (isset($_GET['logout'])) {
                     nurse_attempt: nurse_attempt,
                     nurse_education: nurse_education,
                     collaborative_apps: collaborative_apps,
-                    evaluation: evaluation,
-                    standalone: '<?php echo $_GET['standalone']; ?>'
+                    evaluation: false,
+                    standalone: '<?php echo $_GET['standalone'];?>'
                 },
                 success: function(data) {
                     console.log("something happened")
                     let url =
-                        "<?php echo $base_url; ?>/taniReview/riskTani15Review.php?patient_id=" +
+                        "<?php echo $base_url; ?>/taniReview/tani35-review.php?patient_id=" +
                         patient_id + "&patient_name=" + encodeURIComponent(
                             patient_name);
                             $("#tick-container").fadeIn(800);

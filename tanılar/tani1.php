@@ -527,6 +527,7 @@ if (isset($_GET['logout'])) {
                 type: 'POST',
                 url: '<?php echo $base_url; ?>/tani-handler/submitOrUpdateTani.php',
                 data: {
+                    tani_num: 1,
                     table: 'tani1',
                     patient_id: patient_id,
                     patient_name: patient_name,

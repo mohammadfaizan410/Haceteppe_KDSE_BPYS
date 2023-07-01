@@ -78,11 +78,11 @@ if (isset($_GET['logout'])) {
                         </div>
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
-                            <p class="tanıdescription">Doku bütünlüğünde bozulma riski</p>
+                            <p class="tanıdescription">Travma riski </p>
                         </div>
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın doku ve mukoz membranlarında bozulma olmaması</p>
+                            <p class="tanıdescription">Hastanın fiziksel yaralanmalardan korunması</p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
                             <p id="tani_usernamelabel">NOC Gösterge: </p>
@@ -124,7 +124,7 @@ if (isset($_GET['logout'])) {
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="
                                         noc_indicator" value="5">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">5: Hastanın doku ve mukoz membranlarında bozulma yok, risk devam ediyor</span>
+                                        <span class="checkbox-header">5: Hastada fiizksel yaralanma yok, risk devam ediyor</span>
                                     </label>
                                 </div>
 
@@ -137,139 +137,89 @@ if (isset($_GET['logout'])) {
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt1"
-                                    value="Hastanın risk düzeyini belirlemek için standart bir risk değerlendirme aracı kullanılır">
+                                    value="Hastanın mental durumunda değişiklik, yorgunluk, ilaçlar ya da motor/duyusal defisitler (yürüyüş, denge sorunları gibi) gibi güvenliğini etkileyebilecek faktörler belirlenir">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hastanın risk düzeyini belirlemek için standart bir risk değerlendirme aracı kullanılır</span>
+                                    <span class="checkbox-header">Hastanın mental durumunda değişiklik, yorgunluk, ilaçlar ya da motor/duyusal defisitler (yürüyüş, denge sorunları gibi) gibi güvenliğini etkileyebilecek faktörler belirlenir</span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt2"
-                                    value="Periferik dolaşım ve duyuların değerlendirilmesi yapılır (periferik nabızlar, ödem, renk ve sıcaklık gibi)">
+                                    value="Travma riski oluşturabilecek çevresel faktörler (fiziksel, kimyasal, biyolojik vb) belirlenir">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Periferik dolaşım ve duyuların değerlendirilmesi yapılır (periferik nabızlar, ödem, renk ve sıcaklık gibi)</span>
+                                    <span class="checkbox-header">Travma riski oluşturabilecek çevresel faktörler (fiziksel, kimyasal, biyolojik vb) belirlenir</span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt3"
-                                    value="Ağız ve ağız içi yapıları (dudaklar, dil, mukoz memranlar, dişler, dişetleri, diş protezleri) değerlendirilir">
+                                    value="Çevresel riskler ortadan kaldırılır (yeterli aydınlatmanın sağlanması, gerekli uyarıların konumlandırılması gibi)">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Ağız ve ağız içi yapıları (dudaklar, dil, mukoz memranlar, dişler, dişetleri, diş protezleri) değerlendirilir</span>
+                                    <span class="checkbox-header">Çevresel riskler ortadan kaldırılır (yeterli aydınlatmanın sağlanması, gerekli uyarıların konumlandırılması gibi)</span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt4"
-                                    value="Basınç ve sürtünme kaynakları (alçı, kıyafetler, yatak gibi) belirlenir">
+                                    value="Çevrenin güvenliğini arttırmak içim uyumlu araçlar (basamak, korkuluk vb) sağlanır">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Basınç ve sürtünme kaynakları (alçı, kıyafetler, yatak gibi) belirlenir</span>
+                                    <span class="checkbox-header">Çevrenin güvenliğini arttırmak içim uyumlu araçlar (basamak, korkuluk vb) sağlanır</span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt5"
-                                    value="Her gün kemik çıkıntıları ve basınç noktaları üzerindeki deri değerlendirilir">
+                                    value="Hastanın uygun (kaymayan) ayakkabı/terlik giymesi sağlanır">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Her gün kemik çıkıntıları ve basınç noktaları üzerindeki deri değerlendirilir</span>
+                                    <span class="checkbox-header">Hastanın uygun (kaymayan) ayakkabı/terlik giymesi sağlanır</span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt6"
-                                    value="Ayakkabı, çorap, terlik, giysilerin ve varsa protezlerin hastaya uyumu kontrol edilir">
+                                    value="Yürüyüş için yardımcı araç gereçler (baston, yürüteç) sağlanır">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Ayakkabı, çorap, terlik, giysilerin ve varsa protezlerin hastaya uyumu kontrol edilir</span>
+                                    <span class="checkbox-header">Yürüyüş için yardımcı araç gereçler (baston, yürüteç) sağlanır</span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt7"
-                                    value="Sıvı dengesinin değerlendirilmesi için Aldığı-Çıkardığı takibi yapılır">
+                                    value="Hastanın ulaşabileceği bir yerde hemşire çağrı zili bulundurulur">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Sıvı dengesinin değerlendirilmesi için Aldığı-Çıkardığı takibi yapılır</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt7"
-                                    value="Kan vizkozitesini azaltmak için yeterli hidrasyon sağlanır">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Kan vizkozitesini azaltmak için yeterli hidrasyon sağlanır</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt7"
-                                    value="Düzenli aralıklarla hastanın pozisyonu değiştirilir ">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Düzenli aralıklarla hastanın pozisyonu değiştirilir </span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt7"
-                                    value="Uygun pozisyon verme, döndürme ve taşıma teknikleri kullanılır">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Uygun pozisyon verme, döndürme ve taşıma teknikleri kullanılır</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt7"
-                                    value="Hasta yemek öncesi ve yemek sonrası ağız bakımını uygulaması için desteklenir">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hasta yemek öncesi ve yemek sonrası ağız bakımını uygulaması için desteklenir</span>
+                                    <span class="checkbox-header">Hastanın ulaşabileceği bir yerde hemşire çağrı zili bulundurulur</span>
                                 </label>
                             </div>
                             <p id="tani_usernamelabel">Eğitim:</p>
                             <p class="option-error1" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt8"
-                                    value="Hasta ve bakım verenleri doku bütünlüğü bozulma belirtileri hakkında bilgi verilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_education"
+                                    id="nurse_attempt8" value="Hasta ve bakım verenler risk alanına özel güvenlik önlemleri açısından eğitilir">
                                 <label class="form-check-label" for="nurse_education">
-                                    <span class="checkbox-header">Hasta ve bakım verenleri doku bütünlüğü bozulma belirtileri hakkında bilgi verilir</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt9"
-                                    value="Gliserin, alkol ve diğer kurutucu ajan içeren ağız bakım ürünlerinin kullanılmaması konusunda hasta bilgilendirilir">
-                                <label class="form-check-label" for="nurse_education">
-                                    <span class="checkbox-header">Gliserin, alkol ve diğer kurutucu ajan içeren ağız bakım ürünlerinin kullanılmaması konusunda hasta bilgilendirilir</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt10"
-                                    value="Hasta ve bakım verenlerine dolaşımı engelleyen faktörlerle ilgili (sigara kullanımı, sıkan kıyafetler, bacak bacak üzerine atma gibi) bilgi verilir">
-                                <label class="form-check-label" for="nurse_education">
-                                    <span class="checkbox-header">Hasta ve bakım verenlerine dolaşımı engelleyen faktörlerle ilgili (sigara kullanımı, sıkan kıyafetler, bacak bacak üzerine atma gibi) bilgi verilir</span>
+                                    <span class="checkbox-header">Hasta ve bakım verenler risk alanına özel güvenlik önlemleri açısından eğitilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_education"
-                                    id="nurse_attempt11" value="Ayak bakımı hakkında bilgi verilir">
+                                    id="nurse_attempt9" value="Travmayı önleme stratejileriyle ilgili olan eğitim materyalleri temin edilir">
                                 <label class="form-check-label" for="nurse_education">
-                                    <span class="checkbox-header">Ayak bakımı hakkında bilgi verilir</span>
+                                    <span class="checkbox-header">Travmayı önleme stratejileriyle ilgili olan eğitim materyalleri temin edilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_education"
-                                    id="nurse_attempt12" value="Normal ağız ve diş sağlığını sağlamak için, ağız bakımı konusunda bilgi verilir: Yumuşak kıllı diş fırçası ya da tek kullanımlık ağız bakım süngerleri kullanımı gibi">
+                                    id="nurse_attempt10" value="Çevresel tehlikeler ve özellikleri (merdivenler, kaygan zeminler, pencereler vb) ile ilgili bilgi verilir">
                                 <label class="form-check-label" for="nurse_education">
-                                    <span class="checkbox-header">Normal ağız ve diş sağlığını sağlamak için, ağız bakımı konusunda bilgi verilir: Yumuşak kıllı diş fırçası ya da tek kullanımlık ağız bakım süngerleri kullanımı gibi</span>
+                                    <span class="checkbox-header">Çevresel tehlikeler ve özellikleri (merdivenler, kaygan zeminler, pencereler vb) ile ilgili bilgi verilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_education"
-                                    id="nurse_attempt13" value="İrritasyon ve yanıkları önlemek için tüketmemesi gereken besinler (çok sıcak/çok soğuk besinler, acı ve baharatlı besinler) konusunda bilgi verilir ve rahatsızlığı azaltmak için besinleri ılık olarak tüketmesi önerilir">
+                                    id="nurse_attempt11" value="Fiziksel ortamda gereksiz değişiklikler yapmaktan kaçınılır (mobilyaların yerini değiştirmek gibi). Değişiklik yapılması halinde hasta bilgilendirilir">
                                 <label class="form-check-label" for="nurse_education">
-                                    <span class="checkbox-header">İrritasyon ve yanıkları önlemek için tüketmemesi gereken besinler (çok sıcak/çok soğuk besinler, acı ve baharatlı besinler) konusunda bilgi verilir ve rahatsızlığı azaltmak için besinleri ılık olarak tüketmesi önerilir</span>
+                                    <span class="checkbox-header">Fiziksel ortamda gereksiz değişiklikler yapmaktan kaçınılır (mobilyaların yerini değiştirmek gibi). Değişiklik yapılması halinde hasta bilgilendirilir</span>
                                 </label>
                             </div>
                             <p id="tani_usernamelabel">İşbirliği Gerektiren Uygulamalar</p>
-                            <p class="option-error2" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="collaboratıve_apps"
-                                    id="nurse_attempt15" value="Derideki değişim ve yaraların önlenmesi, değerlendirilmesi ve tedavisi konusunda yardım almak için yara bakım hemşiresi ile işbirliği yapılır">
+                                    id="nurse_attempt12" value="Hareket, denge ve gücü arttırmak için yürüme eğitimi ve egzersiz için fizyoterapist ile işbirliği yapılır">
                                 <label class="form-check-label" for="collaboratıve_apps">
-                                    <span class="checkbox-header">Derideki değişim ve yaraların önlenmesi, değerlendirilmesi ve tedavisi konusunda yardım almak için yara bakım hemşiresi ile işbirliği yapılır</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="collaboratıve_apps"
-                                    id="nurse_attempt16" value="Protein, mineral, kalori ve vitamin açısından zengin bir diyet için diyetisyenle işbirliği yapılır">
-                                <label class="form-check-label" for="collaboratıve_apps">
-                                    <span class="checkbox-header">Protein, mineral, kalori ve vitamin açısından zengin bir diyet için diyetisyenle işbirliği yapılır</span>
+                                    <span class="checkbox-header">Hareket, denge ve gücü arttırmak için yürüme eğitimi ve egzersiz için fizyoterapist ile işbirliği yapılır</span>
                                 </label>
                             </div>
                         </div>
@@ -280,7 +230,7 @@ if (isset($_GET['logout'])) {
                         </div>
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın doku ve mukoz membranlarında bozulma olmaması</p>
+                            <p class="tanıdescription">Hastanın fiziksel yaralanmalardan korunması</p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
                             <p id="tani_usernamelabel">NOC Gösterge: </p>
@@ -322,7 +272,7 @@ if (isset($_GET['logout'])) {
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after" id="
                                         noc_indicator" value="5">
                                     <label class="form-check-label" for="noc_indicator_after">
-                                        <span class="checkbox-header">5: Hastanın doku ve mukoz membranlarında bozulma yok, risk devam ediyor</span>
+                                        <span class="checkbox-header">5: Hastada fiizksel yaralanma yok, risk devam ediyor</span>
                                     </label>
                                 </div>
 
@@ -401,14 +351,6 @@ if (isset($_GET['logout'])) {
                             scrollTop: $('[name="nurse_education"]').offset().top
                         }, 200);
                     $('[name="nurse_education"]').first().closest('.input-section').find('.option-error1').css('display', 'block');
-                    return false;
-                } else if ($('[name="collaborative_apps"]:checked').length === 0){
-                    $('.option-error').css('display', 'none');
-                    $('.option-error1').css('display', 'none');
-                    $('html, body').animate({
-                            scrollTop: $('[name="collaborative_apps"]').offset().top
-                        }, 200);
-                    $('[name="collaborative_apps"]').first().closest('.input-section').find('.option-error2').css('display', 'block');
                     return false;
                 } else if (!$('[name="noc_indicator_after"]').is(':checked')) {
                     $('.option-error').css('display', 'none');
@@ -499,7 +441,8 @@ if (isset($_GET['logout'])) {
                 type: 'POST',
                 url:'<?php echo $base_url; ?>/tani-handler/submitOrUpdateTani.php',
                 data: {
-                    table: 'tani48',
+                    tani_num: 39,
+                    table: 'tani39',
                     patient_id: patient_id,
                     patient_name: patient_name,
                     creation_date: creationDate,
@@ -517,12 +460,12 @@ if (isset($_GET['logout'])) {
                     nurse_education: nurse_education,
                     collaborative_apps: collaborative_apps,
                     evaluation: evaluation,
-                    standalone: '<?php echo $_GET['standalone']; ?>'
+                    standalone: '<?php echo $_GET['standalone'];?>'
                 },
                 success: function(data) {
                     console.log("something happened")
                     let url =
-                        "<?php echo $base_url; ?>/taniReview/riskTani15Review.php?patient_id=" +
+                        "<?php echo $base_url; ?>/taniReview/tani39-review.php?patient_id=" +
                         patient_id + "&patient_name=" + encodeURIComponent(
                             patient_name);
                             $("#tick-container").fadeIn(800);

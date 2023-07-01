@@ -10,12 +10,19 @@ if (isset($_GET['logout'])) {
     unset($_SESSION);
     header("Location: main.php");
 }
+require_once('../config-students.php');
 
-// $tanı_respiratory_rate = $_GET['tanı_respiratory_rate'];
-// $tanı_heart_rate = $_GET['tanı_heart_rate'];
-// $tanı_spo2_percentage = $_GET['tanı_spo2_percentage'];
-// $tanı_o2_status = $_GET['tanı_o2_status'];
-// $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
+$userid = $_SESSION['userlogin']['id'];
+$tani_id = $_GET['tani_id'];
+$tani_num = $_GET['tani_num'];
+$sql = "SELECT * FROM tani where tani_id= $tani_id and tani_num=$tani_num";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+if ($result) {
+    $tani = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+} else {
+    echo 'error';
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -32,32 +39,32 @@ if (isset($_GET['logout'])) {
     <!-- Template Stylesheet -->
     
     <style>
-    table {
-        border-collapse: collapse;
-    }
+        table {
+            border-collapse: collapse;
+        }
 
-    th,
-    td {
-        border: 1px solid black;
-        padding: 10px;
-    }
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
 
-    th {
-        background-color: #eee;
-    }
+        th {
+            background-color: #eee;
+        }
 
-    h1 {
-        text-align: center;
-    }
+        h1 {
+            text-align: center;
+        }
 
-    tr,
-    td {
-        width: 200px;
-    }
+        tr,
+        td {
+            width: 200px;
+        }
     </style>
 
 <body>
-    <div class="container-fluid pt-4 px-4">
+<div class="container-fluid pt-4 px-4">
         <div class="send-patient">
             <span class='close closeBtn' id='closeBtn1'>&times;</span>
             <h1 class="form-header">Bakım Planı</h1>
@@ -67,234 +74,221 @@ if (isset($_GET['logout'])) {
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">Sorunla İlişkili Veriler:</p>
                             <div class="matchedfields-wrapper">
-                                <p class="matchedfields" id="field_respiratory_rate"></p>
-                                <p class="matchedfields" id="field_heart_rate"></p>
-                                <p class="matchedfields" id="field_spo2_percentage"></p>
-                                <p class="matchedfields" id="field_o2_status"></p>
-                                <p class="matchedfields" id="field_respiratory_nature"></p>
-
                             </div>
 
                         </div>
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
-                            <p class="tanıdescription">Alerjik yanıt riski</p>
+                            <p class="tanıdescription">Etkisiz sağlık yönetimi  </p>
                         </div>
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın lokalize ya da sistemik olarak hiçbir alerjik tepki göstermemesi</p>
+                            <p class="tanıdescription">Hastanın tedavi programına uyum göstermesi</p>
                         </div>
+
                         <div class="input-section" id="o2-delivery-container">
                             <p id="tani_usernamelabel">NOC Gösterge: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator"
-                                        id="noc_indicator"
-                                        value="1">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1: Hasta tedavi programına hiç uyum göstermez">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">1: Hastada şiddetli düzeyde risk var</span>
+                                        <span class="checkbox-header">1: Hasta tedavi programına hiç uyum göstermez</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator"
-                                        id="noc_indicator"
-                                        value="2">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2: Hasta tedavi programına nadiren uyum gösterir">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">2: Hastada önemli düzeyde risk var</span>
+                                        <span class="checkbox-header">2: Hasta tedavi programına nadiren uyum gösterir</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator"
-                                        id="noc_indicator"
-                                        value="3">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3: Hasta tedavi programına bazen uyum gösterir">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">3: Hastada orta düzeyde risk var</span>
+                                        <span class="checkbox-header">3: Hasta tedavi programına bazen uyum gösterir</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator"
-                                        id="noc_indicator"
-                                        value="4">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4: Hasta tedavi programına sık sık uyum gösterir">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">4: Hastada hafif düzeyde risk var</span>
+                                        <span class="checkbox-header">4: Hasta tedavi programına sık sık uyum gösterir</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="
-                                        noc_indicator" value="5">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="5: Hasta tedavi programına sürekli uyum gösterir ">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">5: Hastada lokalize ya da sistemik olarak hiçbir alerjik tepki yok, risk devam ediyor</span>
+                                        <span class="checkbox-header">5: Hasta tedavi programına sürekli uyum gösterir </span>
                                     </label>
                                 </div>
 
                             </div>
-
                         </div>
+                       
+
+                
 
                         <div class="input-section d-flex" style="flex-direction: column;">
                             <p id="tani_usernamelabel">Hemşirelik Girişimleri:</p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt1"
-                                    value="Alerjik hasta ayaktan ya da yatarak tedavi alırken, koluna uygun bileklik takılır">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt" value="Hastanın bilgi eksikliğini belirlemek için, hastalığı, komplikasyonları ve önerilen tedavileri anlama düzeyi değerlendirilir">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Alerjik hasta ayaktan ya da yatarak tedavi alırken, koluna uygun bileklik takılır</span>
+                                    <span class="checkbox-header">Hastanın bilgi eksikliğini belirlemek için, hastalığı, komplikasyonları ve önerilen tedavileri anlama düzeyi değerlendirilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt2"
-                                    value="Hastanın duyarlı olduğu alerjen kaynaklarına ilişkin hasta ve bakım verenlerinin bilgi düzeyi değerlendirilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt" value="Tedavi planını yaşam tarzıyla bütünleştirirken karşılaşılan problem alanlarını tespit etmek için hasta ve bakım verenleri ile görüşülür">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hastanın duyarlı olduğu alerjen kaynaklarına ilişkin hasta ve bakım verenlerinin bilgi düzeyi değerlendirilir</span>
+                                    <span class="checkbox-header">Tedavi planını yaşam tarzıyla bütünleştirirken karşılaşılan problem alanlarını tespit etmek için hasta ve bakım verenleri ile görüşülür</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt3"
-                                    value="Hastanın duyarlılık ve alerjik reaksiyonlara ilişkin bilgi düzeyi değerlendirilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt" value="Hastanın istendik değişiklik ile ilgili var olan bilgi ve beceri seviyesi değerlendirilir">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hastanın duyarlılık ve alerjik reaksiyonlara ilişkin bilgi düzeyi değerlendirilir</span>
+                                    <span class="checkbox-header">Hastanın istendik değişiklik ile ilgili var olan bilgi ve beceri seviyesi değerlendirilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt4"
-                                    value="Hastanın maruz kaldığı alerjen kaynakları tespit edilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt" value="Hastanın sosyal ve fiziksel çevresi istendik davranışa yönelik destek derecesi açısından değerlendirilir">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hastanın maruz kaldığı alerjen kaynakları tespit edilir</span>
+                                    <span class="checkbox-header">Hastanın sosyal ve fiziksel çevresi istendik davranışa yönelik destek derecesi açısından değerlendirilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt5"
-                                    value="Reçetesiz ilaçlar ve bitkisel ilaçlar da dahil olmak üzere olası ilaç alerjileri, etkileşimler ve kontraendikasyonlar için izlenir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt" value="Hastanın tedavi planına uyumunu engelleyen durumları belirlemesinde destek sağlanır">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Reçetesiz ilaçlar ve bitkisel ilaçlar da dahil olmak üzere olası ilaç alerjileri, etkileşimler ve kontraendikasyonlar için izlenir</span>
+                                    <span class="checkbox-header">Hastanın tedavi planına uyumunu engelleyen durumları belirlemesinde destek sağlanır</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt6"
-                                    value="Solunum hızı, ritmi, derinliği ve eforu izlenir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt" value="Hastanın tedavi planına uyumunu başarmada gerçekçi bir plan oluşturmasına yardımcı olunur">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Solunum hızı, ritmi, derinliği ve eforu izlenir</span>
+                                    <span class="checkbox-header">Hastanın tedavi planına uyumunu başarmada gerçekçi bir plan oluşturmasına yardımcı olunur</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt7"
-                                    value="Risk altındaki hastaların solunum durumu belirli aralıklarla kontrol edilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt" value="Hastaya değişim için hedef belirlemede yardımcı olunur">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Risk altındaki hastaların solunum durumu belirli aralıklarla kontrol edilir</span>
+                                    <span class="checkbox-header">Hastaya değişim için hedef belirlemede yardımcı olunur</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt8"
-                                    value="Astıma bağlı olarak ortaya çıkan semptomlar (hırıltı, nefes darlığı gibi) gözlemlenir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt" value="Belirlenen hedefi gerçekleştirmede, değiştirilmesi gereken hedef davranışları belirlemede yardımcı olunur">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Astıma bağlı olarak ortaya çıkan semptomlar (hırıltı, nefes darlığı gibi) gözlemlenir</span>
+                                    <span class="checkbox-header">Belirlenen hedefi gerçekleştirmede, değiştirilmesi gereken hedef davranışları belirlemede yardımcı olunur</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt9"
-                                    value="Özellikle ilaç tedavisi uygulanırken anaflaktik şok semptomları için hazırlıklı olunur">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt" value="Hasta ile birlikte davranış değişikliğinin önündeki potansiyel engellerin neler olduğu belirlenir">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Özellikle ilaç tedavisi uygulanırken anaflaktik şok semptomları için hazırlıklı olunur</span>
+                                    <span class="checkbox-header">Hasta ile birlikte davranış değişikliğinin önündeki potansiyel engellerin neler olduğu belirlenir</span>
                                 </label>
                             </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt" value="Hasta ile birlikte davranış değişikliği için en etkili stratejiler belirlenir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Hasta ile birlikte davranış değişikliği için en etkili stratejiler belirlenir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt" value="Hasta öncelikle kendi kendini güçlendirme konusunda teşvik edilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Hasta öncelikle kendi kendini güçlendirme konusunda teşvik edilir</span>
+                                </label>
+                            </div>
+
+
                             <p id="tani_usernamelabel">Eğitim:</p>
                             <p class="option-error1" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_education"
-                                    id="nurse_attempt10" value="Alerjik reaksiyonlar hakkında bilgi verilir">
-                                <label class="form-check-label" for="nurse_education">
-                                    <span class="checkbox-header">Alerjik reaksiyonlar hakkında bilgi verilir</span>
+                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_education" value="Hasta ve bakım verenlerine hastalık, komplikasyonlar ve önerilen tedaviler hakkında bilgi verilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Hasta ve bakım verenlerine hastalık, komplikasyonlar ve önerilen tedaviler hakkında bilgi verilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_education"
-                                    id="nurse_attempt11" value="Alerjiler şiddetli ya da şiddetlenebilir ise, hastanın yanında epinefrin enjektör taşıması konusunda bilgi verilir">
-                                <label class="form-check-label" for="nurse_education">
-                                    <span class="checkbox-header">Alerjiler şiddetli ya da şiddetlenebilir ise, hastanın yanında epinefrin enjektör taşıması konusunda bilgi verilir</span>
+                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_education" value="Hasta ve bakım verenlerine sağlık hedeflerine özgü destek kaynakları ile ilgili bilgi verilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Hasta ve bakım verenlerine sağlık hedeflerine özgü destek kaynakları ile ilgili bilgi verilir</span>
                                 </label>
                             </div>
+
+
+                            <p id="tani_usernamelabel">İŞ BİRLİĞİ GEREKTİREN UYGULAMALAR</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_education"
-                                    id="nurse_attempt12" value="Risk faktörleri ve risk azaltma uygulamaları hakkında bilgilendirme yapılır">
-                                <label class="form-check-label" for="nurse_education">
-                                    <span class="checkbox-header">Risk faktörleri ve risk azaltma uygulamaları hakkında bilgilendirme yapılır</span>
+                                <input class="form-check-input" type="checkbox" name="collaborative_apps" id="collaborative_apps" value="Hastanın tedavi programına nasıl uyum sağlayacağını belirlemek için diğer sağlık çalışanlarıyla işbirliği yapılır">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Hastanın tedavi programına nasıl uyum sağlayacağını belirlemek için diğer sağlık çalışanlarıyla işbirliği yapılır</span>
                                 </label>
                             </div>
-                            <p id="tani_usernamelabel">İşbirliği Gerektiren Uygulamalar</p>
-                            <p class="option-error2" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="collaboratıve_apps"
-                                    id="nurse_attempt13" value="Hastanın bilinen alerjilerine dair sağlık bakım ekibi üyelerine bilgi verilir">
-                                <label class="form-check-label" for="collaboratıve_apps">
-                                    <span class="checkbox-header">Hastanın bilinen alerjilerine dair sağlık bakım ekibi üyelerine bilgi verilir</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="collaboratıve_apps"
-                                    id="nurse_attempt14" value="Gerektiğinde alerji uzmanları, diğer sağlık uzmanları ya da kurumlarla iletişime geçilir">
-                                <label class="form-check-label" for="collaboratıve_apps">
-                                    <span class="checkbox-header">Gerektiğinde alerji uzmanları, diğer sağlık uzmanları ya da kurumlarla iletişime geçilir</span>
-                                </label>
-                            </div>
+
+                          
+
                         </div>
+
+
+                            
+                             
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">Değerlendirme:</p>
-                            <p class="tanıdescription">Risk devam ediyor: 1-5 gösterge seçildiyse; yeni günde bakım planında tanımlı tanı olacak.</p>
-                            <p class="tanıdescription">Mevcut Tanı:Risk ortaya çıktıysa, gelişen durumla ilgili kayıt ve bakım planı yapılacak.</p>
+                            <p class="tanıdescription"> Sorun devam ediyor: 1-4 gösterge seçildiyse; yeni günde bakım planında tanımlı tanı olacak.</p>
+                            <p class="tanıdescription"> Sorun çözümlendi:
+                                5 gösterge seçildiyse; yeni günde bakım planına bu tanıyı taşımayacak
+                            </p>
                         </div>
+                            
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın lokalize ya da sistemik olarak hiçbir alerjik tepki göstermemesi</p>
+                            <p class="tanıdescription">Hastanın tedavi programına uyum göstermesi</p>
                         </div>
+
                         <div class="input-section" id="o2-delivery-container">
                             <p id="tani_usernamelabel">NOC Gösterge: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
-                                        id="noc_indicator"
-                                        value="1">
-                                    <label class="form-check-label" for="noc_indicator_after">
-                                        <span class="checkbox-header">1: Hastada şiddetli düzeyde risk var</span>
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="1: Hasta tedavi programına hiç uyum göstermez">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">1: Hasta tedavi programına hiç uyum göstermez</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
-                                        id="noc_indicator"
-                                        value="2">
-                                    <label class="form-check-label" for="noc_indicator_after">
-                                        <span class="checkbox-header">2: Hastada önemli düzeyde risk var</span>
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="2: Hasta tedavi programına nadiren uyum gösterir">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">2: Hasta tedavi programına nadiren uyum gösterir</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
-                                        id="noc_indicator"
-                                        value="3">
-                                    <label class="form-check-label" for="noc_indicator_after">
-                                        <span class="checkbox-header">3: Hastada orta düzeyde risk var</span>
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="3: Hasta tedavi programına bazen uyum gösterir">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">3: Hasta tedavi programına bazen uyum gösterir</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
-                                        id="noc_indicator"
-                                        value="4">
-                                    <label class="form-check-label" for="noc_indicator_after">
-                                        <span class="checkbox-header">4: Hastada hafif düzeyde risk var</span>
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="4: Hasta tedavi programına sık sık uyum gösterir">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">4: Hasta tedavi programına sık sık uyum gösterir</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="
-                                        noc_indicator" value="5">
-                                    <label class="form-check-label" for="noc_indicator_after">
-                                        <span class="checkbox-header">5: Hastada lokalize ya da sistemik olarak hiçbir alerjik tepki yok, risk devam ediyor</span>
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="5: Hasta tedavi programına sürekli uyum gösterir ">
+                                    <label class="form-check-label" for="noc_indicator">
+                                        <span class="checkbox-header">5: Hasta tedavi programına sürekli uyum gösterir </span>
                                     </label>
                                 </div>
 
                             </div>
+                        </div>
+
 
                         </div>
-                        <input type="submit" class="form-control submit" name="submit" id="submit" value="Kaydet">
+                          
+                        </div>
+                                                                <input type="submit" class="d-flex w-75 submit m-auto justify-content-center mb-5" name="submit" id="submit" value="Kaydet">              
+
+
+
+
                     </form>
                 </div>
             </div>
@@ -302,8 +296,8 @@ if (isset($_GET['logout'])) {
 
 
     </div>
-    <script>
-        $(function() {
+<script>
+    $(function() {
         $('#closeBtn1').click(function(e) {
             let patient_id = <?php
                                     $userid = $_GET['patient_id'];
@@ -312,17 +306,37 @@ if (isset($_GET['logout'])) {
             let patient_name = "<?php
                                     echo urldecode($_GET['patient_name']);
                                     ?>";
-            var url = "<?php echo $base_url; ?>/updateForms/showAllTanis.php?patient_id=" + patient_id +
+            var url = "<?php echo $base_url; ?>/updateForms/showSubmittedTanis.php?patient_id=" + patient_id +
                 "&patient_name=" + encodeURIComponent(patient_name);
             $("#content").load(url);
 
         })
     });
-    </script>
-    <script>
-        $(function(){
-            $("#submit").click(function(e){
-                e.preventDefault();
+</script>
+<script>
+    $(document).ready(function(){
+        $('input[name="noc_indicator"][value="<?php echo $tani[0]['noc_indicator']; ?>"]').prop('checked', true);
+        $('input[name="noc_indicator_2"][value="<?php echo $tani[0]['noc_indicator_2']; ?>"]').prop('checked', true);
+        $('input[name="noc_indicator_3"][value="<?php echo $tani[0]['noc_indicator_3']; ?>"]').prop('checked', true);
+        $('input[name="noc_indicator_after"][value="<?php echo $tani[0]['noc_indicator_after']; ?>"]').prop('checked', true);
+        $('input[name="noc_indicator_after_2"][value="<?php echo $tani[0]['noc_indicator_after_2']; ?>"]').prop('checked', true);
+        $('input[name="noc_indicator_after_3"][value="<?php echo $tani[0]['noc_indicator_after_3']; ?>"]').prop('checked', true);
+
+        "<?php echo $tani[0]['nurse_attempt']?>".split('/').forEach(element => {
+            $('input[name="nurse_attempt"][value="' + element + '"]').prop('checked', true);
+        });
+        "<?php echo $tani[0]['nurse_education']?>".split('/').forEach(element => {
+            $('input[name="nurse_education"][value="' + element + '"]').prop('checked', true);
+        });
+        "<?php echo $tani[0]['collaborative_apps']?>".split('/').forEach(element => {
+            $('input[name="collaborative_apps"][value="' + element + '"]').prop('checked', true);
+        });
+    })
+</script>
+<script>
+        $(function() {
+            $('#submit').click(function(e) {
+                e.preventDefault()
                 if (!$('[name="noc_indicator"]').is(':checked')) {
                     $('.option-error').css('display', 'none');
                     $('.option-error1').css('display', 'none');
@@ -403,68 +417,67 @@ if (isset($_GET['logout'])) {
                     $('[name="noc_indicator_after_3"]').first().closest('.input-section').find('.option-error').css('display', 'block');
                     return false;
                 }
+                console.log("submit clicked")
                 var id = <?php
                             $userid = $_SESSION['userlogin']['id'];
                             echo $userid
                             ?>;
-                let form_num = 15;
+                var name = $('#name').val();
+                var surname = $('#surname').val();
+                var age = $('#age').val();
+                var not = $('#not').val();
                 var patient_id = <?php
-                                        $userid = $_GET['patient_id'];
-                                        echo $userid
-                                        ?>;
+                                    $userid = $_GET['patient_id'];
+                                    echo $userid
+                                    ?>;
                 let patient_name = "<?php
-                                        echo urldecode($_GET['patient_name']);
-                                        ?>";
+                                    echo urldecode($_GET['patient_name']);
+                                    ?>";
                 let yourDate = new Date();
                 let creationDate = yourDate.toISOString().split('T')[0];
                 let updateDate = yourDate.toISOString().split('T')[0];
-                let problem_info = matchedfields_string
-                let nurse_description = "Gaz değişiminde bozulma"
-                let noc_output = "Hastanın oksijen satürasyonun %95’in üzerinde olması"
-                let noc_indicator = $("input[type='radio'][name='noc_indicator']:checked").val();
-                let noc_indicator_after = $("input[type='radio'][name='noc_indicator_after']:checked")
-                    .val();
-                    let noc_indicator_2 = $('.form-check-input[name="noc_indicator_2"]') ? $('.form-check-input[name=noc_indicator_2]:checked').val() : "null";
+                let nurse_attempt = $('.form-check-input[name="nurse_attempt"]:checked').map(function() {
+                    return this.value;
+                }).get().join('/');
+                let nurse_education = $('.form-check-input[name="nurse_education"]:checked').map(function() {
+                    return this.value;
+                }).get().join('/');
+                let collaborative_apps = $('.form-check-input[name="collaborative_apps"]:checked').map(function() {
+                    return this.value;
+                }).get().join('/');
+                let noc_indicator = $('.form-check-input[name="noc_indicator"]:checked').val();
+		        let noc_indicator_2 = $('.form-check-input[name="noc_indicator_2"]') ? $('.form-check-input[name=noc_indicator_2]:checked').val() : "null";
 		        let noc_indicator_3 = $('.form-check-input[name="noc_indicator_3"]') ? $('.form-check-input[name=noc_indicator_3]:checked').val() : "null";
+                let noc_indicator_after = $('.form-check-input[name="noc_indicator_after"]:checked').val();
 		        let noc_indicator_after_2 = $('.form-check-input[name="noc_indicator_after_2"]') ? $('.form-check-input[name=noc_indicator_after_2]:checked').val() : "null";
-		        let noc_indicator_after_3 = $('.form-check-input[name="noc_indicator_after_3"]') ? $('.form-check-input[name=noc_indicator_after_3]:checked').val() : "null";
-                let evaluation = "";
-                console.log("values init")
+                let noc_indicator_after_3 = $('.form-check-input[name="noc_indicator_after_3"]') ? $('.form-check-input[name=noc_indicator_after_3]:checked').val() : "null";
+                let evaluation = 0;
+                var firstCheckbox = $('.form-check-input[name="noc_indicator_after"]:last');
+                var secondCheckbox = $('.form-check-input[name="noc_indicator_after_2"]:last');
+                var thirdCheckbox = $('.form-check-input[name="noc_indicator_after_3"]:last');
 
-                if (!$('[name="noc_indicator"]').is(':checked')) {
-                    evaluation +=
-                        "Risk Yok"
+                if (firstCheckbox.length > 0) {
+                if (secondCheckbox.length > 0 && thirdCheckbox.length > 0) {
+                    if (secondCheckbox.is(':checked') && thirdCheckbox.is(':checked')) {
+                    let evaluation = 1;;
+                    }
+                } else if (secondCheckbox.length > 0) {
+                    if (secondCheckbox.is(':checked')) {
+                        let evaluation = 1;;
+                    }
                 } else {
-                    evaluation +=
-                        "Risk devam ediyor: 1-5 gösterge seçildiyse; yeni günde bakım planında tanımlı tanı olacak."
+                    if (firstCheckbox.is(':checked')) {
+                        let evaluation = 1;;
+                    }
                 }
-                // not to db
-                var nurse_attemt_arr = [];
-                        $('[name="nurse_attempt"]:checked').each(function(){
-                            nurse_attemt_arr.push($(this).val());
-                        });
-                        //
-                let nurse_attempt = JSON.stringify(nurse_attemt_arr);
-                
-                var nurse_education_arr = [];
-                        $('[name="nurse_education"]:checked').each(function(){
-                            nurse_education_arr.push($(this).val());
-                        });
-                        //
-                let nurse_education = JSON.stringify(nurse_education_arr);
-
-                var collaborative_apps_arr = [];
-                        $('[name="collaborative_apps"]:checked').each(function(){
-                            collaborative_apps_arr.push($(this).val());
-                        });
-                        //
-                let collaborative_apps = JSON.stringify(collaborative_apps_arr);
-
+                }
                 $.ajax({
                 type: 'POST',
                 url:'<?php echo $base_url; ?>/tani-handler/submitOrUpdateTani.php',
                 data: {
-                    table: 'tani43',
+                    isUpdate: true,
+                    tani_id: <?php echo $tani_id; ?>,
+                    tani_num: <?php echo $tani_num; ?>,
                     patient_id: patient_id,
                     patient_name: patient_name,
                     creation_date: creationDate,
@@ -487,7 +500,7 @@ if (isset($_GET['logout'])) {
                 success: function(data) {
                     console.log("something happened")
                     let url =
-                        "<?php echo $base_url; ?>/taniReview/riskTani15Review.php?patient_id=" +
+                        "<?php echo $base_url; ?>/taniReview/tani33-review.php?patient_id=" +
                         patient_id + "&patient_name=" + encodeURIComponent(
                             patient_name);
                             $("#tick-container").fadeIn(800);
@@ -508,7 +521,9 @@ if (isset($_GET['logout'])) {
                 }
             });
             })
-        })
+        });
     </script>
+
 </body>
+
 </html>

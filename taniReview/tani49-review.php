@@ -10,12 +10,19 @@ if (isset($_GET['logout'])) {
     unset($_SESSION);
     header("Location: main.php");
 }
+require_once('../config-students.php');
 
-// $tanı_respiratory_rate = $_GET['tanı_respiratory_rate'];
-// $tanı_heart_rate = $_GET['tanı_heart_rate'];
-// $tanı_spo2_percentage = $_GET['tanı_spo2_percentage'];
-// $tanı_o2_status = $_GET['tanı_o2_status'];
-// $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
+$userid = $_SESSION['userlogin']['id'];
+$tani_id = $_GET['tani_id'];
+$tani_num = $_GET['tani_num'];
+$sql = "SELECT * FROM tani where tani_id= $tani_id and tani_num=$tani_num";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+if ($result) {
+    $tani = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+} else {
+    echo 'error';
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -32,32 +39,32 @@ if (isset($_GET['logout'])) {
     <!-- Template Stylesheet -->
     
     <style>
-    table {
-        border-collapse: collapse;
-    }
+        table {
+            border-collapse: collapse;
+        }
 
-    th,
-    td {
-        border: 1px solid black;
-        padding: 10px;
-    }
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
 
-    th {
-        background-color: #eee;
-    }
+        th {
+            background-color: #eee;
+        }
 
-    h1 {
-        text-align: center;
-    }
+        h1 {
+            text-align: center;
+        }
 
-    tr,
-    td {
-        width: 200px;
-    }
+        tr,
+        td {
+            width: 200px;
+        }
     </style>
 
 <body>
-    <div class="container-fluid pt-4 px-4">
+<div class="container-fluid pt-4 px-4">
         <div class="send-patient">
             <span class='close closeBtn' id='closeBtn1'>&times;</span>
             <h1 class="form-header">Bakım Planı</h1>
@@ -78,11 +85,11 @@ if (isset($_GET['logout'])) {
                         </div>
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
-                            <p class="tanıdescription">Travma riski </p>
+                            <p class="tanıdescription">Göz kuruluğu riski </p>
                         </div>
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın fiziksel yaralanmalardan korunması</p>
+                            <p class="tanıdescription">Hastanın sklera ve göz kapağındaki normal nemliliğinin sürdürülmesi</p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
                             <p id="tani_usernamelabel">NOC Gösterge: </p>
@@ -124,7 +131,7 @@ if (isset($_GET['logout'])) {
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="
                                         noc_indicator" value="5">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">5: Hastada fiizksel yaralanma yok, risk devam ediyor</span>
+                                        <span class="checkbox-header">5: Hastanın sklera ve göz kapağının nemliliği normal, risk devam ediyor</span>
                                     </label>
                                 </div>
 
@@ -137,89 +144,53 @@ if (isset($_GET['logout'])) {
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt1"
-                                    value="Hastanın mental durumunda değişiklik, yorgunluk, ilaçlar ya da motor/duyusal defisitler (yürüyüş, denge sorunları gibi) gibi güvenliğini etkileyebilecek faktörler belirlenir">
+                                    value="Sklera ve konjoktiva nem, renk, kızarıklık, aşınma ve drenaj açısından değerlendirilir">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hastanın mental durumunda değişiklik, yorgunluk, ilaçlar ya da motor/duyusal defisitler (yürüyüş, denge sorunları gibi) gibi güvenliğini etkileyebilecek faktörler belirlenir</span>
+                                    <span class="checkbox-header">Sklera ve konjoktiva nem, renk, kızarıklık, aşınma ve drenaj açısından değerlendirilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt2"
-                                    value="Travma riski oluşturabilecek çevresel faktörler (fiziksel, kimyasal, biyolojik vb) belirlenir">
+                                    value="Göz kuruluğuna neden olabilecek alerji, sigara içme gibi risk faktörleri değerlendirilir">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Travma riski oluşturabilecek çevresel faktörler (fiziksel, kimyasal, biyolojik vb) belirlenir</span>
+                                    <span class="checkbox-header">Göz kuruluğuna neden olabilecek alerji, sigara içme gibi risk faktörleri değerlendirilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt3"
-                                    value="Çevresel riskler ortadan kaldırılır (yeterli aydınlatmanın sağlanması, gerekli uyarıların konumlandırılması gibi)">
+                                    value="Göz kırpma refleksi olmayan bilinçsiz ya da kritik hastalara her 2-4 saatte bir göz bakımı uygulanır">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Çevresel riskler ortadan kaldırılır (yeterli aydınlatmanın sağlanması, gerekli uyarıların konumlandırılması gibi)</span>
+                                    <span class="checkbox-header">Göz kırpma refleksi olmayan bilinçsiz ya da kritik hastalara her 2-4 saatte bir göz bakımı uygulanır</span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt4"
-                                    value="Çevrenin güvenliğini arttırmak içim uyumlu araçlar (basamak, korkuluk vb) sağlanır">
+                                    value="Gözlerin nemliliği salin ya da yapay gözyaşı ile sağlanır">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Çevrenin güvenliğini arttırmak içim uyumlu araçlar (basamak, korkuluk vb) sağlanır</span>
+                                    <span class="checkbox-header">Gözlerin nemliliği salin ya da yapay gözyaşı ile sağlanır</span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt5"
-                                    value="Hastanın uygun (kaymayan) ayakkabı/terlik giymesi sağlanır">
+                                    value="Bilinçsiz hastada gözleri kapalı tutmak için koruyucu malzeme kullanılır">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hastanın uygun (kaymayan) ayakkabı/terlik giymesi sağlanır</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt6"
-                                    value="Yürüyüş için yardımcı araç gereçler (baston, yürüteç) sağlanır">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Yürüyüş için yardımcı araç gereçler (baston, yürüteç) sağlanır</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt7"
-                                    value="Hastanın ulaşabileceği bir yerde hemşire çağrı zili bulundurulur">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hastanın ulaşabileceği bir yerde hemşire çağrı zili bulundurulur</span>
+                                    <span class="checkbox-header">Bilinçsiz hastada gözleri kapalı tutmak için koruyucu malzeme kullanılır</span>
                                 </label>
                             </div>
                             <p id="tani_usernamelabel">Eğitim:</p>
-                            <p class="option-error1" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_education"
-                                    id="nurse_attempt8" value="Hasta ve bakım verenler risk alanına özel güvenlik önlemleri açısından eğitilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt8"
+                                    value="Kontakt lenslerin doğru kullanımı, çıkarılması ve saklanması konusunda eğitim verilir">
                                 <label class="form-check-label" for="nurse_education">
-                                    <span class="checkbox-header">Hasta ve bakım verenler risk alanına özel güvenlik önlemleri açısından eğitilir</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_education"
-                                    id="nurse_attempt9" value="Travmayı önleme stratejileriyle ilgili olan eğitim materyalleri temin edilir">
-                                <label class="form-check-label" for="nurse_education">
-                                    <span class="checkbox-header">Travmayı önleme stratejileriyle ilgili olan eğitim materyalleri temin edilir</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_education"
-                                    id="nurse_attempt10" value="Çevresel tehlikeler ve özellikleri (merdivenler, kaygan zeminler, pencereler vb) ile ilgili bilgi verilir">
-                                <label class="form-check-label" for="nurse_education">
-                                    <span class="checkbox-header">Çevresel tehlikeler ve özellikleri (merdivenler, kaygan zeminler, pencereler vb) ile ilgili bilgi verilir</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_education"
-                                    id="nurse_attempt11" value="Fiziksel ortamda gereksiz değişiklikler yapmaktan kaçınılır (mobilyaların yerini değiştirmek gibi). Değişiklik yapılması halinde hasta bilgilendirilir">
-                                <label class="form-check-label" for="nurse_education">
-                                    <span class="checkbox-header">Fiziksel ortamda gereksiz değişiklikler yapmaktan kaçınılır (mobilyaların yerini değiştirmek gibi). Değişiklik yapılması halinde hasta bilgilendirilir</span>
+                                    <span class="checkbox-header">Kontakt lenslerin doğru kullanımı, çıkarılması ve saklanması konusunda eğitim verilir</span>
                                 </label>
                             </div>
                             <p id="tani_usernamelabel">İşbirliği Gerektiren Uygulamalar</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="collaboratıve_apps"
-                                    id="nurse_attempt12" value="Hareket, denge ve gücü arttırmak için yürüme eğitimi ve egzersiz için fizyoterapist ile işbirliği yapılır">
+                                    id="nurse_attempt15" value="İstemde yer alan farmakolojik yöntemler (Göz pomadları, damlaları) uygulanır">
                                 <label class="form-check-label" for="collaboratıve_apps">
-                                    <span class="checkbox-header">Hareket, denge ve gücü arttırmak için yürüme eğitimi ve egzersiz için fizyoterapist ile işbirliği yapılır</span>
+                                    <span class="checkbox-header">İstemde yer alan farmakolojik yöntemler (Göz pomadları, damlaları) uygulanır</span>
                                 </label>
                             </div>
                         </div>
@@ -230,7 +201,7 @@ if (isset($_GET['logout'])) {
                         </div>
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın fiziksel yaralanmalardan korunması</p>
+                            <p class="tanıdescription">Hastanın sklera ve göz kapağındaki normal nemliliğinin sürdürülmesi</p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
                             <p id="tani_usernamelabel">NOC Gösterge: </p>
@@ -272,7 +243,7 @@ if (isset($_GET['logout'])) {
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after" id="
                                         noc_indicator" value="5">
                                     <label class="form-check-label" for="noc_indicator_after">
-                                        <span class="checkbox-header">5: Hastada fiizksel yaralanma yok, risk devam ediyor</span>
+                                        <span class="checkbox-header">5: Hastanın sklera ve göz kapağının nemliliği normal, risk devam ediyor</span>
                                     </label>
                                 </div>
 
@@ -287,8 +258,8 @@ if (isset($_GET['logout'])) {
 
 
     </div>
-    <script>
-        $(function() {
+<script>
+    $(function() {
         $('#closeBtn1').click(function(e) {
             let patient_id = <?php
                                     $userid = $_GET['patient_id'];
@@ -297,17 +268,42 @@ if (isset($_GET['logout'])) {
             let patient_name = "<?php
                                     echo urldecode($_GET['patient_name']);
                                     ?>";
-            var url = "<?php echo $base_url; ?>/updateForms/showAllTanis.php?patient_id=" + patient_id +
+            var url = "<?php echo $base_url; ?>/updateForms/showSubmittedTanis.php?patient_id=" + patient_id +
                 "&patient_name=" + encodeURIComponent(patient_name);
             $("#content").load(url);
 
         })
     });
-    </script>
-    <script>
-        $(function(){
-            $("#submit").click(function(e){
-                e.preventDefault();
+</script>
+<script>
+    $(document).ready(function(){
+        $('input[name="noc_indicator"][value="<?php echo $tani[0]['noc_indicator']; ?>"]').prop('checked', true);
+        $('input[name="noc_indicator_2"][value="<?php echo $tani[0]['noc_indicator_2']; ?>"]').prop('checked', true);
+        $('input[name="noc_indicator_3"][value="<?php echo $tani[0]['noc_indicator_3']; ?>"]').prop('checked', true);
+        $('input[name="noc_indicator_after"][value="<?php echo $tani[0]['noc_indicator_after']; ?>"]').prop('checked', true);
+        $('input[name="noc_indicator_after_2"][value="<?php echo $tani[0]['noc_indicator_after_2']; ?>"]').prop('checked', true);
+        $('input[name="noc_indicator_after_3"][value="<?php echo $tani[0]['noc_indicator_after_3']; ?>"]').prop('checked', true);
+
+        var nurse_attempt = <?php echo $tani['nurse_attempt']; ?>;
+        nurse_attempt.forEach(function(value) {
+            $('[name="nurse_attempt"][value="'+value+'"]').prop('checked', true);
+        })
+
+        var nurse_education = <?php echo $tani['nurse_education']; ?>;
+        nurse_education.forEach(function(value) {
+            $('[name="nurse_education"][value="'+value+'"]').prop('checked', true);
+        })
+
+        var collaborative_apps = <?php echo $tani['collaborative_apps']; ?>;
+        collaborative_apps.forEach(function(value) {
+            $('[name="collaborative_apps"][value="'+value+'"]').prop('checked', true);
+        })
+    })
+</script>
+<script>
+        $(function() {
+            $('#submit').click(function(e) {
+                e.preventDefault()
                 if (!$('[name="noc_indicator"]').is(':checked')) {
                     $('.option-error').css('display', 'none');
                     $('.option-error1').css('display', 'none');
@@ -352,6 +348,14 @@ if (isset($_GET['logout'])) {
                         }, 200);
                     $('[name="nurse_education"]').first().closest('.input-section').find('.option-error1').css('display', 'block');
                     return false;
+                } else if ($('[name="collaborative_apps"]:checked').length === 0){
+                    $('.option-error').css('display', 'none');
+                    $('.option-error1').css('display', 'none');
+                    $('html, body').animate({
+                            scrollTop: $('[name="collaborative_apps"]').offset().top
+                        }, 200);
+                    $('[name="collaborative_apps"]').first().closest('.input-section').find('.option-error2').css('display', 'block');
+                    return false;
                 } else if (!$('[name="noc_indicator_after"]').is(':checked')) {
                     $('.option-error').css('display', 'none');
                     $('.option-error1').css('display', 'none');
@@ -380,42 +384,25 @@ if (isset($_GET['logout'])) {
                     $('[name="noc_indicator_after_3"]').first().closest('.input-section').find('.option-error').css('display', 'block');
                     return false;
                 }
+                console.log("submit clicked")
                 var id = <?php
                             $userid = $_SESSION['userlogin']['id'];
                             echo $userid
                             ?>;
-                let form_num = 15;
+                var name = $('#name').val();
+                var surname = $('#surname').val();
+                var age = $('#age').val();
+                var not = $('#not').val();
                 var patient_id = <?php
-                                        $userid = $_GET['patient_id'];
-                                        echo $userid
-                                        ?>;
+                                    $userid = $_GET['patient_id'];
+                                    echo $userid
+                                    ?>;
                 let patient_name = "<?php
-                                        echo urldecode($_GET['patient_name']);
-                                        ?>";
+                                    echo urldecode($_GET['patient_name']);
+                                    ?>";
                 let yourDate = new Date();
                 let creationDate = yourDate.toISOString().split('T')[0];
                 let updateDate = yourDate.toISOString().split('T')[0];
-                let problem_info = matchedfields_string
-                let nurse_description = "Gaz değişiminde bozulma"
-                let noc_output = "Hastanın oksijen satürasyonun %95’in üzerinde olması"
-                let noc_indicator = $("input[type='radio'][name='noc_indicator']:checked").val();
-                let noc_indicator_after = $("input[type='radio'][name='noc_indicator_after']:checked")
-                    .val();
-                    let noc_indicator_2 = $('.form-check-input[name="noc_indicator_2"]') ? $('.form-check-input[name=noc_indicator_2]:checked').val() : "null";
-		        let noc_indicator_3 = $('.form-check-input[name="noc_indicator_3"]') ? $('.form-check-input[name=noc_indicator_3]:checked').val() : "null";
-		        let noc_indicator_after_2 = $('.form-check-input[name="noc_indicator_after_2"]') ? $('.form-check-input[name=noc_indicator_after_2]:checked').val() : "null";
-		        let noc_indicator_after_3 = $('.form-check-input[name="noc_indicator_after_3"]') ? $('.form-check-input[name=noc_indicator_after_3]:checked').val() : "null";
-                let evaluation = "";
-                console.log("values init")
-
-                if (!$('[name="noc_indicator"]').is(':checked')) {
-                    evaluation +=
-                        "Risk Yok"
-                } else {
-                    evaluation +=
-                        "Risk devam ediyor: 1-5 gösterge seçildiyse; yeni günde bakım planında tanımlı tanı olacak."
-                }
-                // not to db
                 var nurse_attemt_arr = [];
                         $('[name="nurse_attempt"]:checked').each(function(){
                             nurse_attemt_arr.push($(this).val());
@@ -436,12 +423,39 @@ if (isset($_GET['logout'])) {
                         });
                         //
                 let collaborative_apps = JSON.stringify(collaborative_apps_arr);
+                let noc_indicator = $('.form-check-input[name="noc_indicator"]:checked').val();
+		        let noc_indicator_2 = $('.form-check-input[name="noc_indicator_2"]') ? $('.form-check-input[name=noc_indicator_2]:checked').val() : "null";
+		        let noc_indicator_3 = $('.form-check-input[name="noc_indicator_3"]') ? $('.form-check-input[name=noc_indicator_3]:checked').val() : "null";
+                let noc_indicator_after = $('.form-check-input[name="noc_indicator_after"]:checked').val();
+		        let noc_indicator_after_2 = $('.form-check-input[name="noc_indicator_after_2"]') ? $('.form-check-input[name=noc_indicator_after_2]:checked').val() : "null";
+                let noc_indicator_after_3 = $('.form-check-input[name="noc_indicator_after_3"]') ? $('.form-check-input[name=noc_indicator_after_3]:checked').val() : "null";
+                let evaluation = 0;
+                var firstCheckbox = $('.form-check-input[name="noc_indicator_after"]:last');
+                var secondCheckbox = $('.form-check-input[name="noc_indicator_after_2"]:last');
+                var thirdCheckbox = $('.form-check-input[name="noc_indicator_after_3"]:last');
 
+                if (firstCheckbox.length > 0) {
+                if (secondCheckbox.length > 0 && thirdCheckbox.length > 0) {
+                    if (secondCheckbox.is(':checked') && thirdCheckbox.is(':checked')) {
+                    let evaluation = 1;;
+                    }
+                } else if (secondCheckbox.length > 0) {
+                    if (secondCheckbox.is(':checked')) {
+                        let evaluation = 1;;
+                    }
+                } else {
+                    if (firstCheckbox.is(':checked')) {
+                        let evaluation = 1;;
+                    }
+                }
+                }
                 $.ajax({
                 type: 'POST',
                 url:'<?php echo $base_url; ?>/tani-handler/submitOrUpdateTani.php',
                 data: {
-                    table: 'tani39',
+                    isUpdate: true,
+                    tani_num: <?php echo $tani_num; ?>,
+                    tani_id: <?php echo $tani_id; ?>,
                     patient_id: patient_id,
                     patient_name: patient_name,
                     creation_date: creationDate,
@@ -459,12 +473,12 @@ if (isset($_GET['logout'])) {
                     nurse_education: nurse_education,
                     collaborative_apps: collaborative_apps,
                     evaluation: evaluation,
-                    standalone: '<?php echo $_GET['standalone'];?>'
+                    standalone: '<?php echo $_GET['standalone']; ?>'
                 },
                 success: function(data) {
                     console.log("something happened")
                     let url =
-                        "<?php echo $base_url; ?>/taniReview/riskTani15Review.php?patient_id=" +
+                        "<?php echo $base_url; ?>/taniReview/tani49-review.php?patient_id=" +
                         patient_id + "&patient_name=" + encodeURIComponent(
                             patient_name);
                             $("#tick-container").fadeIn(800);
@@ -485,7 +499,9 @@ if (isset($_GET['logout'])) {
                 }
             });
             })
-        })
+        });
     </script>
+
 </body>
+
 </html>

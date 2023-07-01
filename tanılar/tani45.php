@@ -78,11 +78,11 @@ if (isset($_GET['logout'])) {
                         </div>
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
-                            <p class="tanıdescription">Gastrointestinal motilitede bozulma riski </p>
+                            <p class="tanıdescription">Kan şekeri düzeyinde dengesizlik riski</p>
                         </div>
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın normal bağırsak hareketliliğini sürdürmesi</p>
+                            <p class="tanıdescription">Hastanın kan şekeri düzeyinin normal aralıkta olması</p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
                             <p id="tani_usernamelabel">NOC Gösterge: </p>
@@ -124,7 +124,7 @@ if (isset($_GET['logout'])) {
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="
                                         noc_indicator" value="5">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">5: Hastanın bağırsak hareketliliği normal, risk devam ediyor</span>
+                                        <span class="checkbox-header">5: Hastanın kan şekeri düzeyi normal aralıkta, risk devam ediyor</span>
                                     </label>
                                 </div>
 
@@ -137,118 +137,111 @@ if (isset($_GET['logout'])) {
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt1"
-                                    value="Bağırsak boşaltım sıklığı, gaitanın özellikleri (miktar, kıvam, renk) ve bağırsak sesleri takip edilir">
+                                    value="Glisemi takibi yapılır">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Bağırsak boşaltım sıklığı, gaitanın özellikleri (miktar, kıvam, renk) ve bağırsak sesleri takip edilir</span>
+                                    <span class="checkbox-header">Glisemi takibi yapılır</span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt2"
-                                    value="Abdomen distansiyon açısından değerlendirilir ve karın çevresi günlük olarak ölçülür">
+                                    value="Hekim istemi ya da kurum prosedürlerine göre serum glikoz düzeyi izlenir">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Abdomen distansiyon açısından değerlendirilir ve karın çevresi günlük olarak ölçülür</span>
+                                    <span class="checkbox-header">Hekim istemi ya da kurum prosedürlerine göre serum glikoz düzeyi izlenir</span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt3"
-                                    value="Hasta yeterli sıvı alımı konusunda desteklenir">
+                                    value="Hipoglisemi ya da hiperglisemiye neden olan faktörler belirlenir">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hasta yeterli sıvı alımı konusunda desteklenir</span>
+                                    <span class="checkbox-header">Hipoglisemi ya da hiperglisemiye neden olan faktörler belirlenir</span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt4"
-                                    value="Tolere edebileceği ölçüde düzenli egzersiz yapması konusunda hasta teşvik edilir">
+                                    value="Aldığı-Çıkardığı takibi yapılır">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Tolere edebileceği ölçüde düzenli egzersiz yapması konusunda hasta teşvik edilir</span>
+                                    <span class="checkbox-header">Aldığı-Çıkardığı takibi yapılır</span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt5"
-                                    value="Defekasyon sırasında hasta mahremiyeti sağlanır">
+                                    value="Hipoglisemi belirti ve bulguları (kan şekeri < 60 mg/dl, solukluk, taşikardi, terleme, bulanık görme, sinirlilik, konfüzyon) izlenir">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Defekasyon sırasında hasta mahremiyeti sağlanır</span>
+                                    <span class="checkbox-header">Hipoglisemi belirti ve bulguları (kan şekeri < 60 mg/dl, solukluk, taşikardi, terleme, bulanık görme, sinirlilik, konfüzyon) izlenir</span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt6"
-                                    value="Kullanılan ilaçların gastrointestinal sisteme olan yan etkileri değerlendirilir">
+                                    value="Hiperglisemi belirti ve bulguları (kan şekeri >300 mg/dl, nefeste aseton kokusu, idrarda keton, baş ağrısı, bulanık görme, kusma, poliüri, polidipsi, polifaji, halsizlik, uyuşukluk, hipotansiyon, taşikardi, kussmaul solunum) izlenir">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Kullanılan ilaçların gastrointestinal sisteme olan yan etkileri değerlendirilir</span>
+                                    <span class="checkbox-header">Hiperglisemi belirti ve bulguları (kan şekeri >300 mg/dl, nefeste aseton kokusu, idrarda keton, baş ağrısı, bulanık görme, kusma, poliüri, polidipsi, polifaji, halsizlik, uyuşukluk, hipotansiyon, taşikardi, kussmaul solunum) izlenir</span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt7"
-                                    value="Ameliyat sonrası dönemde hastanın erken mobilizasyonu sağlanır">
+                                    value="İdrarda keton takibi yapılır">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Ameliyat sonrası dönemde hastanın erken mobilizasyonu sağlanır</span>
+                                    <span class="checkbox-header">İdrarda keton takibi yapılır</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt8"
+                                    value="IV açıklık sürdürülür">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">IV açıklık sürdürülür</span>
                                 </label>
                             </div>
                             <p id="tani_usernamelabel">Eğitim:</p>
                             <p class="option-error1" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt8"
-                                    value="Düzenli bağırsak boşaltım alışkanlığının geliştirilmesi için eğitim verilir">
-                                <label class="form-check-label" for="nurse_education">
-                                    <span class="checkbox-header">Düzenli bağırsak boşaltım alışkanlığının geliştirilmesi için eğitim verilir</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt9"
-                                    value="Konstipasyonu önlemek için yeterli posa ve sıvı alımının önemi anlatılır">
+                                    value="Hasta ve bakım verenlerine diyabet hakkında bakım verilir">
                                 <label class="form-check-label" for="nurse_education">
-                                    <span class="checkbox-header">Konstipasyonu önlemek için yeterli posa ve sıvı alımının önemi anlatılır</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_attempt10"
-                                    value="Hastaya ve bakım verenlerine ciddi karın ağrısı, gaitada kan, istenmeyen kilo kaybı veya tedaviye rağmen düzelmeyen konstipasyon durumunda sağlık kuruluşuna başvurması konusunda bilgi verilir">
-                                <label class="form-check-label" for="nurse_education">
-                                    <span class="checkbox-header">Hastaya ve bakım verenlerine ciddi karın ağrısı, gaitada kan, istenmeyen kilo kaybı veya tedaviye rağmen düzelmeyen konstipasyon durumunda sağlık kuruluşuna başvurması konusunda bilgi verilir</span>
+                                    <span class="checkbox-header">Hasta ve bakım verenlerine diyabet hakkında bakım verilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_education"
-                                    id="nurse_attempt11" value="Diyareye neden olabileceği için, patojen yayılımını önlemede el yıkamanın önemi hakkında bilgi verilir">
+                                    id="nurse_attempt10" value="Glikoz dengesini sağlamak için diyet ve egzersiz hakkında bilgi verilir">
                                 <label class="form-check-label" for="nurse_education">
-                                    <span class="checkbox-header">Diyareye neden olabileceği için, patojen yayılımını önlemede el yıkamanın önemi hakkında bilgi verilir</span>
+                                    <span class="checkbox-header">Glikoz dengesini sağlamak için diyet ve egzersiz hakkında bilgi verilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_education"
-                                    id="nurse_attempt12" value="Diyareye neden olabilecek besinler hakkında bilgi verilir">
+                                    id="nurse_attempt11" value="Diyabeti kontrol etmede kullanılan ilaçlar hakkında bilgi verilir">
                                 <label class="form-check-label" for="nurse_education">
-                                    <span class="checkbox-header">Diyareye neden olabilecek besinler hakkında bilgi verilir</span>
+                                    <span class="checkbox-header">Diyabeti kontrol etmede kullanılan ilaçlar hakkında bilgi verilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_education"
-                                    id="nurse_attempt13" value="Az az ve sık sık beslenme konusunda hastaya bilgi verilir">
+                                    id="nurse_attempt12" value="Uygun şekilde glikoz takibi uygulaması hakkında eğitim verilir">
                                 <label class="form-check-label" for="nurse_education">
-                                    <span class="checkbox-header">Az az ve sık sık beslenme konusunda hastaya bilgi verilir</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_education"
-                                    id="nurse_attempt14" value="GİS irrite edebilecek yiyecekler (kahve, baharat, süt) konusunda bilgi verilir ve bu yiyeceklerin tüketilmemesi gerektiği öğretilir">
-                                <label class="form-check-label" for="nurse_education">
-                                    <span class="checkbox-header">GİS irrite edebilecek yiyecekler (kahve, baharat, süt) konusunda bilgi verilir ve bu yiyeceklerin tüketilmemesi gerektiği öğretilir</span>
+                                    <span class="checkbox-header">Uygun şekilde glikoz takibi uygulaması hakkında eğitim verilir</span>
                                 </label>
                             </div>
                             <p id="tani_usernamelabel">İşbirliği Gerektiren Uygulamalar</p>
                             <p class="option-error2" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="collaboratıve_apps"
-                                    id="nurse_attempt15" value="Hastanın beslenmesi değerlendirilir ve beslenmesinin düzenlenmesi için diyetisyenle görüşülür">
+                                    id="nurse_attempt13" value="Diyet yönetimi için diyetisyenle işbirliği yapılır">
                                 <label class="form-check-label" for="collaboratıve_apps">
-                                    <span class="checkbox-header">Hastanın beslenmesi değerlendirilir ve beslenmesinin düzenlenmesi için diyetisyenle görüşülür</span>
+                                    <span class="checkbox-header">Diyet yönetimi için diyetisyenle işbirliği yapılır</span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="collaboratıve_apps"
-                                    id="nurse_attempt16" value="İstemde yer alan farmakolojik (laksatif, antibiyotik, analjezik, bağırsak motilitesini düzenleyici) yöntemler uygulanır">
+                                    id="nurse_attempt14" value="İhtiyaç olduğunda ilaçları değiştirmede hasta ve diyabet ekibinin iş birliği yapması sağlanır">
                                 <label class="form-check-label" for="collaboratıve_apps">
-                                    <span class="checkbox-header">İstemde yer alan farmakolojik (laksatif, antibiyotik, analjezik, bağırsak motilitesini düzenleyici) yöntemler uygulanır</span>
+                                    <span class="checkbox-header">İhtiyaç olduğunda ilaçları değiştirmede hasta ve diyabet ekibinin iş birliği yapması sağlanır</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="collaboratıve_apps"
+                                    id="nurse_attempt15" value="Hipoglisemi/Hiperglisemi bulguları hakkında hekime bilgi verilir">
+                                <label class="form-check-label" for="collaboratıve_apps">
+                                    <span class="checkbox-header">Hipoglisemi/Hiperglisemi bulguları hakkında hekime bilgi verilir</span>
                                 </label>
                             </div>
                         </div>
@@ -259,7 +252,7 @@ if (isset($_GET['logout'])) {
                         </div>
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın normal bağırsak hareketliliğini sürdürmesi</p>
+                            <p class="tanıdescription">Hastanın kan şekeri düzeyinin normal aralıkta olması</p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
                             <p id="tani_usernamelabel">NOC Gösterge: </p>
@@ -301,7 +294,7 @@ if (isset($_GET['logout'])) {
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after" id="
                                         noc_indicator" value="5">
                                     <label class="form-check-label" for="noc_indicator_after">
-                                        <span class="checkbox-header">5: Hastanın bağırsak hareketliliği normal, risk devam ediyor</span>
+                                        <span class="checkbox-header">5: Hastanın kan şekeri düzeyi normal aralıkta, risk devam ediyor</span>
                                     </label>
                                 </div>
 
@@ -438,7 +431,7 @@ if (isset($_GET['logout'])) {
                 let noc_indicator = $("input[type='radio'][name='noc_indicator']:checked").val();
                 let noc_indicator_after = $("input[type='radio'][name='noc_indicator_after']:checked")
                     .val();
-                let noc_indicator_2 = $('.form-check-input[name="noc_indicator_2"]') ? $('.form-check-input[name=noc_indicator_2]:checked').val() : "null";
+                    let noc_indicator_2 = $('.form-check-input[name="noc_indicator_2"]') ? $('.form-check-input[name=noc_indicator_2]:checked').val() : "null";
 		        let noc_indicator_3 = $('.form-check-input[name="noc_indicator_3"]') ? $('.form-check-input[name=noc_indicator_3]:checked').val() : "null";
 		        let noc_indicator_after_2 = $('.form-check-input[name="noc_indicator_after_2"]') ? $('.form-check-input[name=noc_indicator_after_2]:checked').val() : "null";
 		        let noc_indicator_after_3 = $('.form-check-input[name="noc_indicator_after_3"]') ? $('.form-check-input[name=noc_indicator_after_3]:checked').val() : "null";
@@ -478,7 +471,8 @@ if (isset($_GET['logout'])) {
                 type: 'POST',
                 url:'<?php echo $base_url; ?>/tani-handler/submitOrUpdateTani.php',
                 data: {
-                    table: 'tani46',
+                    tani_num: 45,
+                    table: 'tani45',
                     patient_id: patient_id,
                     patient_name: patient_name,
                     creation_date: creationDate,
@@ -501,7 +495,7 @@ if (isset($_GET['logout'])) {
                 success: function(data) {
                     console.log("something happened")
                     let url =
-                        "<?php echo $base_url; ?>/taniReview/riskTani15Review.php?patient_id=" +
+                        "<?php echo $base_url; ?>/taniReview/tani45-review.php?patient_id=" +
                         patient_id + "&patient_name=" + encodeURIComponent(
                             patient_name);
                             $("#tick-container").fadeIn(800);

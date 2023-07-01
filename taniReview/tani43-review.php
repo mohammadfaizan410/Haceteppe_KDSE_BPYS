@@ -10,12 +10,19 @@ if (isset($_GET['logout'])) {
     unset($_SESSION);
     header("Location: main.php");
 }
+require_once('../config-students.php');
 
-// $tanı_respiratory_rate = $_GET['tanı_respiratory_rate'];
-// $tanı_heart_rate = $_GET['tanı_heart_rate'];
-// $tanı_spo2_percentage = $_GET['tanı_spo2_percentage'];
-// $tanı_o2_status = $_GET['tanı_o2_status'];
-// $tanı_respiratory_nature = $_GET['tanı_respiratory_nature'];
+$userid = $_SESSION['userlogin']['id'];
+$tani_id = $_GET['tani_id'];
+$tani_num = $_GET['tani_num'];
+$sql = "SELECT * FROM tani where tani_id= $tani_id and tani_num=$tani_num";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+if ($result) {
+    $tani = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+} else {
+    echo 'error';
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -32,32 +39,32 @@ if (isset($_GET['logout'])) {
     <!-- Template Stylesheet -->
     
     <style>
-    table {
-        border-collapse: collapse;
-    }
+        table {
+            border-collapse: collapse;
+        }
 
-    th,
-    td {
-        border: 1px solid black;
-        padding: 10px;
-    }
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
 
-    th {
-        background-color: #eee;
-    }
+        th {
+            background-color: #eee;
+        }
 
-    h1 {
-        text-align: center;
-    }
+        h1 {
+            text-align: center;
+        }
 
-    tr,
-    td {
-        width: 200px;
-    }
+        tr,
+        td {
+            width: 200px;
+        }
     </style>
 
 <body>
-    <div class="container-fluid pt-4 px-4">
+<div class="container-fluid pt-4 px-4">
         <div class="send-patient">
             <span class='close closeBtn' id='closeBtn1'>&times;</span>
             <h1 class="form-header">Bakım Planı</h1>
@@ -78,11 +85,11 @@ if (isset($_GET['logout'])) {
                         </div>
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
-                            <p class="tanıdescription">Elektrolit dengesizliği riski</p>
+                            <p class="tanıdescription">Alerjik yanıt riski</p>
                         </div>
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın elektrolit düzeylerinin normal aralıkta olması </p>
+                            <p class="tanıdescription">Hastanın lokalize ya da sistemik olarak hiçbir alerjik tepki göstermemesi</p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
                             <p id="tani_usernamelabel">NOC Gösterge: </p>
@@ -124,7 +131,7 @@ if (isset($_GET['logout'])) {
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="
                                         noc_indicator" value="5">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">5: Hastanın elektrolit düzeyleri normal aralıkta, risk devam ediyor</span>
+                                        <span class="checkbox-header">5: Hastada lokalize ya da sistemik olarak hiçbir alerjik tepki yok, risk devam ediyor</span>
                                     </label>
                                 </div>
 
@@ -137,75 +144,104 @@ if (isset($_GET['logout'])) {
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt1"
-                                    value="Yaşamsal bulguların takibi yapılır">
+                                    value="Alerjik hasta ayaktan ya da yatarak tedavi alırken, koluna uygun bileklik takılır">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Yaşamsal bulguların takibi yapılır</span>
+                                    <span class="checkbox-header">Alerjik hasta ayaktan ya da yatarak tedavi alırken, koluna uygun bileklik takılır</span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt2"
-                                    value="Hastanın elektrolit dengesizliği ile ilişkili belirti ve bulguları (kişi/yer/zaman oryantasyonu, EKG değişiklikleri, güçsüzlük gibi) izlenir">
+                                    value="Hastanın duyarlı olduğu alerjen kaynaklarına ilişkin hasta ve bakım verenlerinin bilgi düzeyi değerlendirilir">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hastanın elektrolit dengesizliği ile ilişkili belirti ve bulguları (kişi/yer/zaman oryantasyonu, EKG değişiklikleri, güçsüzlük gibi) izlenir</span>
+                                    <span class="checkbox-header">Hastanın duyarlı olduğu alerjen kaynaklarına ilişkin hasta ve bakım verenlerinin bilgi düzeyi değerlendirilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt3"
-                                    value="Sıvı dengesinin değerlendirilmesi için Aldığı-Çıkardığı takibi yapılır">
+                                    value="Hastanın duyarlılık ve alerjik reaksiyonlara ilişkin bilgi düzeyi değerlendirilir">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Sıvı dengesinin değerlendirilmesi için Aldığı-Çıkardığı takibi yapılır</span>
+                                    <span class="checkbox-header">Hastanın duyarlılık ve alerjik reaksiyonlara ilişkin bilgi düzeyi değerlendirilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt4"
-                                    value="Deri turgoru ve oral mukozanın durumu dehidratasyon belirtileri açısından değerlendirilir">
+                                    value="Hastanın maruz kaldığı alerjen kaynakları tespit edilir">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Deri turgoru ve oral mukozanın durumu dehidratasyon belirtileri açısından değerlendirilir</span>
+                                    <span class="checkbox-header">Hastanın maruz kaldığı alerjen kaynakları tespit edilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt5"
-                                    value="Hasta yeterli sıvı alımı konusunda desteklenir">
+                                    value="Reçetesiz ilaçlar ve bitkisel ilaçlar da dahil olmak üzere olası ilaç alerjileri, etkileşimler ve kontraendikasyonlar için izlenir">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hasta yeterli sıvı alımı konusunda desteklenir</span>
+                                    <span class="checkbox-header">Reçetesiz ilaçlar ve bitkisel ilaçlar da dahil olmak üzere olası ilaç alerjileri, etkileşimler ve kontraendikasyonlar için izlenir</span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt6"
-                                    value="Serum elektrolit düzeyleri (sodyum, potasyum, klor gibi) izlenir">
+                                    value="Solunum hızı, ritmi, derinliği ve eforu izlenir">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Serum elektrolit düzeyleri (sodyum, potasyum, klor gibi) izlenir</span>
+                                    <span class="checkbox-header">Solunum hızı, ritmi, derinliği ve eforu izlenir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt7"
+                                    value="Risk altındaki hastaların solunum durumu belirli aralıklarla kontrol edilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Risk altındaki hastaların solunum durumu belirli aralıklarla kontrol edilir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt8"
+                                    value="Astıma bağlı olarak ortaya çıkan semptomlar (hırıltı, nefes darlığı gibi) gözlemlenir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Astıma bağlı olarak ortaya çıkan semptomlar (hırıltı, nefes darlığı gibi) gözlemlenir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt9"
+                                    value="Özellikle ilaç tedavisi uygulanırken anaflaktik şok semptomları için hazırlıklı olunur">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Özellikle ilaç tedavisi uygulanırken anaflaktik şok semptomları için hazırlıklı olunur</span>
                                 </label>
                             </div>
                             <p id="tani_usernamelabel">Eğitim:</p>
+                            <p class="option-error1" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_education"
-                                    id="nurse_attempt7" value="Hasta ve bakım verenlerine elektrolit dengesizliği ile ilişkili belirtiler (güçsüzlük, bilinç değişimi, yer zaman kişi oryantasyonunun bozulması gibi) öğretilir">
+                                    id="nurse_attempt10" value="Alerjik reaksiyonlar hakkında bilgi verilir">
                                 <label class="form-check-label" for="nurse_education">
-                                    <span class="checkbox-header">Hasta ve bakım verenlerine elektrolit dengesizliği ile ilişkili belirtiler (güçsüzlük, bilinç değişimi, yer zaman kişi oryantasyonunun bozulması gibi) öğretilir</span>
+                                    <span class="checkbox-header">Alerjik reaksiyonlar hakkında bilgi verilir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_education"
+                                    id="nurse_attempt11" value="Alerjiler şiddetli ya da şiddetlenebilir ise, hastanın yanında epinefrin enjektör taşıması konusunda bilgi verilir">
+                                <label class="form-check-label" for="nurse_education">
+                                    <span class="checkbox-header">Alerjiler şiddetli ya da şiddetlenebilir ise, hastanın yanında epinefrin enjektör taşıması konusunda bilgi verilir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_education"
+                                    id="nurse_attempt12" value="Risk faktörleri ve risk azaltma uygulamaları hakkında bilgilendirme yapılır">
+                                <label class="form-check-label" for="nurse_education">
+                                    <span class="checkbox-header">Risk faktörleri ve risk azaltma uygulamaları hakkında bilgilendirme yapılır</span>
                                 </label>
                             </div>
                             <p id="tani_usernamelabel">İşbirliği Gerektiren Uygulamalar</p>
                             <p class="option-error2" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="collaboratıve_apps"
-                                    id="nurse_attempt8" value="Elektrolit dengesizliği konusunda hekime bilgi verilir">
+                                    id="nurse_attempt13" value="Hastanın bilinen alerjilerine dair sağlık bakım ekibi üyelerine bilgi verilir">
                                 <label class="form-check-label" for="collaboratıve_apps">
-                                    <span class="checkbox-header">Elektrolit dengesizliği konusunda hekime bilgi verilir</span>
+                                    <span class="checkbox-header">Hastanın bilinen alerjilerine dair sağlık bakım ekibi üyelerine bilgi verilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="collaboratıve_apps"
-                                    id="nurse_attempt9" value="İstem yapılan sıvıların infüzyonu yapılır">
+                                    id="nurse_attempt14" value="Gerektiğinde alerji uzmanları, diğer sağlık uzmanları ya da kurumlarla iletişime geçilir">
                                 <label class="form-check-label" for="collaboratıve_apps">
-                                    <span class="checkbox-header">İstem yapılan sıvıların infüzyonu yapılır</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="collaboratıve_apps"
-                                    id="nurse_attempt10" value="Gerekmesi halinde hasta diyaliz için hazırlanır">
-                                <label class="form-check-label" for="collaboratıve_apps">
-                                    <span class="checkbox-header">Gerekmesi halinde hasta diyaliz için hazırlanır</span>
+                                    <span class="checkbox-header">Gerektiğinde alerji uzmanları, diğer sağlık uzmanları ya da kurumlarla iletişime geçilir</span>
                                 </label>
                             </div>
                         </div>
@@ -216,7 +252,7 @@ if (isset($_GET['logout'])) {
                         </div>
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın elektrolit düzeylerinin normal aralıkta olması </p>
+                            <p class="tanıdescription">Hastanın lokalize ya da sistemik olarak hiçbir alerjik tepki göstermemesi</p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
                             <p id="tani_usernamelabel">NOC Gösterge: </p>
@@ -258,7 +294,7 @@ if (isset($_GET['logout'])) {
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after" id="
                                         noc_indicator" value="5">
                                     <label class="form-check-label" for="noc_indicator_after">
-                                        <span class="checkbox-header">5: Hastanın elektrolit düzeyleri normal aralıkta, risk devam ediyor</span>
+                                        <span class="checkbox-header">5: Hastada lokalize ya da sistemik olarak hiçbir alerjik tepki yok, risk devam ediyor</span>
                                     </label>
                                 </div>
 
@@ -273,8 +309,8 @@ if (isset($_GET['logout'])) {
 
 
     </div>
-    <script>
-        $(function() {
+<script>
+    $(function() {
         $('#closeBtn1').click(function(e) {
             let patient_id = <?php
                                     $userid = $_GET['patient_id'];
@@ -283,17 +319,42 @@ if (isset($_GET['logout'])) {
             let patient_name = "<?php
                                     echo urldecode($_GET['patient_name']);
                                     ?>";
-            var url = "<?php echo $base_url; ?>/updateForms/showAllTanis.php?patient_id=" + patient_id +
+            var url = "<?php echo $base_url; ?>/updateForms/showSubmittedTanis.php?patient_id=" + patient_id +
                 "&patient_name=" + encodeURIComponent(patient_name);
             $("#content").load(url);
 
         })
     });
-    </script>
-    <script>
-        $(function(){
-            $("#submit").click(function(e){
-                e.preventDefault();
+</script>
+<script>
+    $(document).ready(function(){
+        $('input[name="noc_indicator"][value="<?php echo $tani[0]['noc_indicator']; ?>"]').prop('checked', true);
+        $('input[name="noc_indicator_2"][value="<?php echo $tani[0]['noc_indicator_2']; ?>"]').prop('checked', true);
+        $('input[name="noc_indicator_3"][value="<?php echo $tani[0]['noc_indicator_3']; ?>"]').prop('checked', true);
+        $('input[name="noc_indicator_after"][value="<?php echo $tani[0]['noc_indicator_after']; ?>"]').prop('checked', true);
+        $('input[name="noc_indicator_after_2"][value="<?php echo $tani[0]['noc_indicator_after_2']; ?>"]').prop('checked', true);
+        $('input[name="noc_indicator_after_3"][value="<?php echo $tani[0]['noc_indicator_after_3']; ?>"]').prop('checked', true);
+
+        var nurse_attempt = <?php echo $tani['nurse_attempt']; ?>;
+        nurse_attempt.forEach(function(value) {
+            $('[name="nurse_attempt"][value="'+value+'"]').prop('checked', true);
+        })
+
+        var nurse_education = <?php echo $tani['nurse_education']; ?>;
+        nurse_education.forEach(function(value) {
+            $('[name="nurse_education"][value="'+value+'"]').prop('checked', true);
+        })
+
+        var collaborative_apps = <?php echo $tani['collaborative_apps']; ?>;
+        collaborative_apps.forEach(function(value) {
+            $('[name="collaborative_apps"][value="'+value+'"]').prop('checked', true);
+        })
+    })
+</script>
+<script>
+        $(function() {
+            $('#submit').click(function(e) {
+                e.preventDefault()
                 if (!$('[name="noc_indicator"]').is(':checked')) {
                     $('.option-error').css('display', 'none');
                     $('.option-error1').css('display', 'none');
@@ -329,6 +390,14 @@ if (isset($_GET['logout'])) {
                             scrollTop: $('[name="nurse_attempt"]').offset().top
                         }, 200);
                     $('[name="nurse_attempt"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                    return false;
+                } else if ($('[name="nurse_education"]:checked').length === 0){
+                    $('.option-error').css('display', 'none');
+                    $('.option-error2').css('display', 'none');
+                    $('html, body').animate({
+                            scrollTop: $('[name="nurse_education"]').offset().top
+                        }, 200);
+                    $('[name="nurse_education"]').first().closest('.input-section').find('.option-error1').css('display', 'block');
                     return false;
                 } else if ($('[name="collaborative_apps"]:checked').length === 0){
                     $('.option-error').css('display', 'none');
@@ -366,42 +435,25 @@ if (isset($_GET['logout'])) {
                     $('[name="noc_indicator_after_3"]').first().closest('.input-section').find('.option-error').css('display', 'block');
                     return false;
                 }
+                console.log("submit clicked")
                 var id = <?php
                             $userid = $_SESSION['userlogin']['id'];
                             echo $userid
                             ?>;
-                let form_num = 15;
+                var name = $('#name').val();
+                var surname = $('#surname').val();
+                var age = $('#age').val();
+                var not = $('#not').val();
                 var patient_id = <?php
-                                        $userid = $_GET['patient_id'];
-                                        echo $userid
-                                        ?>;
+                                    $userid = $_GET['patient_id'];
+                                    echo $userid
+                                    ?>;
                 let patient_name = "<?php
-                                        echo urldecode($_GET['patient_name']);
-                                        ?>";
+                                    echo urldecode($_GET['patient_name']);
+                                    ?>";
                 let yourDate = new Date();
                 let creationDate = yourDate.toISOString().split('T')[0];
                 let updateDate = yourDate.toISOString().split('T')[0];
-                let problem_info = matchedfields_string
-                let nurse_description = "Gaz değişiminde bozulma"
-                let noc_output = "Hastanın oksijen satürasyonun %95’in üzerinde olması"
-                let noc_indicator = $("input[type='radio'][name='noc_indicator']:checked").val();
-                let noc_indicator_after = $("input[type='radio'][name='noc_indicator_after']:checked")
-                    .val();
-                    let noc_indicator_2 = $('.form-check-input[name="noc_indicator_2"]') ? $('.form-check-input[name=noc_indicator_2]:checked').val() : "null";
-		        let noc_indicator_3 = $('.form-check-input[name="noc_indicator_3"]') ? $('.form-check-input[name=noc_indicator_3]:checked').val() : "null";
-		        let noc_indicator_after_2 = $('.form-check-input[name="noc_indicator_after_2"]') ? $('.form-check-input[name=noc_indicator_after_2]:checked').val() : "null";
-		        let noc_indicator_after_3 = $('.form-check-input[name="noc_indicator_after_3"]') ? $('.form-check-input[name=noc_indicator_after_3]:checked').val() : "null";
-                let evaluation = "";
-                console.log("values init")
-
-                if (!$('[name="noc_indicator"]').is(':checked')) {
-                    evaluation +=
-                        "Risk Yok"
-                } else {
-                    evaluation +=
-                        "Risk devam ediyor: 1-5 gösterge seçildiyse; yeni günde bakım planında tanımlı tanı olacak."
-                }
-                // not to db
                 var nurse_attemt_arr = [];
                         $('[name="nurse_attempt"]:checked').each(function(){
                             nurse_attemt_arr.push($(this).val());
@@ -422,12 +474,39 @@ if (isset($_GET['logout'])) {
                         });
                         //
                 let collaborative_apps = JSON.stringify(collaborative_apps_arr);
+                let noc_indicator = $('.form-check-input[name="noc_indicator"]:checked').val();
+		        let noc_indicator_2 = $('.form-check-input[name="noc_indicator_2"]') ? $('.form-check-input[name=noc_indicator_2]:checked').val() : "null";
+		        let noc_indicator_3 = $('.form-check-input[name="noc_indicator_3"]') ? $('.form-check-input[name=noc_indicator_3]:checked').val() : "null";
+                let noc_indicator_after = $('.form-check-input[name="noc_indicator_after"]:checked').val();
+		        let noc_indicator_after_2 = $('.form-check-input[name="noc_indicator_after_2"]') ? $('.form-check-input[name=noc_indicator_after_2]:checked').val() : "null";
+                let noc_indicator_after_3 = $('.form-check-input[name="noc_indicator_after_3"]') ? $('.form-check-input[name=noc_indicator_after_3]:checked').val() : "null";
+                let evaluation = 0;
+                var firstCheckbox = $('.form-check-input[name="noc_indicator_after"]:last');
+                var secondCheckbox = $('.form-check-input[name="noc_indicator_after_2"]:last');
+                var thirdCheckbox = $('.form-check-input[name="noc_indicator_after_3"]:last');
 
+                if (firstCheckbox.length > 0) {
+                if (secondCheckbox.length > 0 && thirdCheckbox.length > 0) {
+                    if (secondCheckbox.is(':checked') && thirdCheckbox.is(':checked')) {
+                    let evaluation = 1;;
+                    }
+                } else if (secondCheckbox.length > 0) {
+                    if (secondCheckbox.is(':checked')) {
+                        let evaluation = 1;;
+                    }
+                } else {
+                    if (firstCheckbox.is(':checked')) {
+                        let evaluation = 1;;
+                    }
+                }
+                }
                 $.ajax({
                 type: 'POST',
                 url:'<?php echo $base_url; ?>/tani-handler/submitOrUpdateTani.php',
                 data: {
-                    table: 'tani41',
+                    isUpdate: true,
+                    tani_num: <?php echo $tani_num; ?>,
+                    tani_id: <?php echo $tani_id; ?>,
                     patient_id: patient_id,
                     patient_name: patient_name,
                     creation_date: creationDate,
@@ -445,12 +524,12 @@ if (isset($_GET['logout'])) {
                     nurse_education: nurse_education,
                     collaborative_apps: collaborative_apps,
                     evaluation: evaluation,
-                    standalone: '<?php echo $_GET['standalone'];?>'
+                    standalone: '<?php echo $_GET['standalone']; ?>'
                 },
                 success: function(data) {
                     console.log("something happened")
                     let url =
-                        "<?php echo $base_url; ?>/taniReview/riskTani15Review.php?patient_id=" +
+                        "<?php echo $base_url; ?>/taniReview/tani43-review.php?patient_id=" +
                         patient_id + "&patient_name=" + encodeURIComponent(
                             patient_name);
                             $("#tick-container").fadeIn(800);
@@ -471,7 +550,9 @@ if (isset($_GET['logout'])) {
                 }
             });
             })
-        })
+        });
     </script>
+
 </body>
+
 </html>

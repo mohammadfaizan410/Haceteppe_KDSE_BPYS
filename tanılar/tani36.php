@@ -78,11 +78,11 @@ if (isset($_GET['logout'])) {
                         </div>
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
-                            <p class="tanıdescription">Oral mükoz membranda bozulma riski</p>
+                            <p class="tanıdescription">Düşme riski</p>
                         </div>
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın muköz membran bütünlüğünün sürdürülmesi</p>
+                            <p class="tanıdescription">Hastada düşmenin gözlemlenmemesi</p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
                             <p id="tani_usernamelabel">NOC Gösterge: </p>
@@ -124,7 +124,7 @@ if (isset($_GET['logout'])) {
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="
                                         noc_indicator" value="5">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">5: Hastanın muköz membran bütünlüğünde sorun yok, risk devam ediyor</span>
+                                        <span class="checkbox-header">5: Hastada düşme yok, risk devam ediyor</span>
                                     </label>
                                 </div>
 
@@ -137,104 +137,137 @@ if (isset($_GET['logout'])) {
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt1"
-                                    value="Hastanın ağız bakımı uygulama becerisi ve bilgisi değerlendirilir">
+                                    value="Hasta, risk değerlendirme aracıyla, düşme riski açısından değerlendirilir">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hastanın ağız bakımı uygulama becerisi ve bilgisi değerlendirilir</span>
+                                    <span class="checkbox-header">Hasta, risk değerlendirme aracıyla, düşme riski açısından değerlendirilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt2"
-                                    value="Sallanan ya da eksik dişler, dişlerin rengi ve minesi, dolgu ya da çürük sayısı, tartar varlığı açısından ağız değerlendirilir">
+                                    value="Hastanın güvenlik ihtiyacını etkileyen faktörler (mental durum değişiklikleri, yorgunluk, yaş, ilaçlar, duyu ya da motor kayıp vb) belirlenir ">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Sallanan ya da eksik dişler, dişlerin rengi ve minesi, dolgu ya da çürük sayısı, tartar varlığı açısından ağız değerlendirilir</span>
+                                    <span class="checkbox-header">Hastanın güvenlik ihtiyacını etkileyen faktörler (mental durum değişiklikleri, yorgunluk, yaş, ilaçlar, duyu ya da motor kayıp vb) belirlenir </span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt3"
-                                    value="Ağız kokusunun varlığı değerlendirilir">
+                                    value="Hastanın yürüme, denge ve yorgunluk seviyesi değerlendirilir">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Ağız kokusunun varlığı değerlendirilir</span>
+                                    <span class="checkbox-header">Hastanın yürüme, denge ve yorgunluk seviyesi değerlendirilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt4"
-                                    value="Hasta yemek öncesi ve yemek sonrası ağız bakımını uygulaması için desteklenir">
+                                    value="Düşme riskini arttıracak çevresel özellikler (kaygan zemin, açık merdiven boşluğu, tuvaletlerde tutma aparatlarının olmaması vb) belirlenir. ">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hasta yemek öncesi ve yemek sonrası ağız bakımını uygulaması için desteklenir</span>
+                                    <span class="checkbox-header">Düşme riskini arttıracak çevresel özellikler (kaygan zemin, açık merdiven boşluğu, tuvaletlerde tutma aparatlarının olmaması vb) belirlenir. </span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt5"
-                                    value="Kendi kendine ağız bakımını gerçekleştiremeyen hastalara düzenli aralıklarla ağız bakımı verilir">
+                                    value="Fiziksel ortamda gereksiz değişiklikler yapmaktan kaçınılır (mobilyaların yerini değiştirmek gibi). Değişiklik yapılması halinde hasta bilgilendirilir">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Kendi kendine ağız bakımını gerçekleştiremeyen hastalara düzenli aralıklarla ağız bakımı verilir</span>
+                                    <span class="checkbox-header">Fiziksel ortamda gereksiz değişiklikler yapmaktan kaçınılır (mobilyaların yerini değiştirmek gibi). Değişiklik yapılması halinde hasta bilgilendirilir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt6"
+                                    value="Düşmeyi önlemeye yönelik temel güvenlik önlemleri (yatak kenarlıklarının kaldırılması, yatağın en alt seviyeye indirilmesi) alınır">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Düşmeyi önlemeye yönelik temel güvenlik önlemleri (yatak kenarlıklarının kaldırılması, yatağın en alt seviyeye indirilmesi) alınır</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt7"
+                                    value="Hastanın ulaşabileceği bir yerde hemşire çağrı zili bulundurulur">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Hastanın ulaşabileceği bir yerde hemşire çağrı zili bulundurulur</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt8"
+                                    value="Hastanın ihtiyacı olan malzemeler kolaylıkla ulaşabileceği bir yere yerleştirilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Hastanın ihtiyacı olan malzemeler kolaylıkla ulaşabileceği bir yere yerleştirilir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt9"
+                                    value="Gerektiğinde hastanın yürümesine eşlik edilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Gerektiğinde hastanın yürümesine eşlik edilir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt"
+                                    id="nurse_attempt10" value="Hastanın uygun (kaymayan) ayakkabı/terlik giymesi sağlanır">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Hastanın uygun (kaymayan) ayakkabı/terlik giymesi sağlanır</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt"
+                                    id="nurse_attempt11" value="Hastaya ayağa kalkması ve yürümesi için isterse baston, yürüteç gibi yardımcı araçlar temin edilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Hastaya ayağa kalkması ve yürümesi için isterse baston, yürüteç gibi yardımcı araçlar temin edilir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt"
+                                    id="nurse_attempt12" value="Mümkünse hasta hemşire deskine yakın bir odaya yerleştirilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Mümkünse hasta hemşire deskine yakın bir odaya yerleştirilir</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt"
+                                    id="nurse_attempt13" value="Gerekli ise düşme riskini sınırlandırmak için fiziksel kısıtlama uygulanır">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Gerekli ise düşme riskini sınırlandırmak için fiziksel kısıtlama uygulanır</span>
                                 </label>
                             </div>
                             <p id="tani_usernamelabel">Eğitim:</p>
                             <p class="option-error1" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_education"
-                                    id="nurse_attempt6" value="Normal ağız ve diş sağlığını sağlamak için, ağız bakımı konusunda bilgi verilir: Yumuşak kıllı diş fırçası ya da tek kullanımlık ağız bakım süngerleri kullanımı gibi.">
+                                    id="nurse_attempt14"
+                                    value="Hasta ve bakım verenlerine düşmeye neden olan faktörler ve bu faktörleri azaltmanın yolları hakkında bilgi verilir">
                                 <label class="form-check-label" for="nurse_education">
-                                    <span class="checkbox-header">Normal ağız ve diş sağlığını sağlamak için, ağız bakımı konusunda bilgi verilir: Yumuşak kıllı diş fırçası ya da tek kullanımlık ağız bakım süngerleri kullanımı gibi.</span>
+                                    <span class="checkbox-header">Hasta ve bakım verenlerine düşmeye neden olan faktörler ve bu faktörleri azaltmanın yolları hakkında bilgi verilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_education"
-                                    id="nurse_attempt7" value="İrritasyon ve yanıkları önlemek için tüketmemesi gereken besinler (çok sıcak/çok soğuk besinler, acı ve baharatlı besinler) konusunda bilgi verilir ve rahatsızlığı azaltmak için besinleri ılık olarak tüketmesi önerilir">
+                                    id="nurse_attempt15"
+                                    value="Hasta mobilizasyon ve yardım gereksinimi açısından değerlendirilir. Hareket etme ihtiyacı olduğunda yardım isteme konusunda bilgi verilir">
                                 <label class="form-check-label" for="nurse_education">
-                                    <span class="checkbox-header">İrritasyon ve yanıkları önlemek için tüketmemesi gereken besinler (çok sıcak/çok soğuk besinler, acı ve baharatlı besinler) konusunda bilgi verilir ve rahatsızlığı azaltmak için besinleri ılık olarak tüketmesi önerilir</span>
+                                    <span class="checkbox-header">Hasta mobilizasyon ve yardım gereksinimi açısından değerlendirilir. Hareket etme ihtiyacı olduğunda yardım isteme konusunda bilgi verilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_education"
-                                    id="nurse_attempt8" value="Gliserin, alkol ve diğer kurutucu ajan içeren ağız bakım ürünlerinin kullanılmaması konusunda hasta bilgilendirilir">
+                                    id="nurse_attempt16"
+                                    value="Hastaya yaralanmayı en aza indirecek şekilde düşmesi öğretilir">
                                 <label class="form-check-label" for="nurse_education">
-                                    <span class="checkbox-header">Gliserin, alkol ve diğer kurutucu ajan içeren ağız bakım ürünlerinin kullanılmaması konusunda hasta bilgilendirilir</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_education"
-                                    id="nurse_attempt9" value="Tütün kullanımından uzak durması konusunda hastaya bilgi verilir">
-                                <label class="form-check-label" for="nurse_education">
-                                    <span class="checkbox-header">Tütün kullanımından uzak durması konusunda hastaya bilgi verilir</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_education"
-                                    id="nurse_attempt10" value="Şekerli ürünlerin tüketimi ve sakız kullanımından uzak durması konusunda bilgi verilir">
-                                <label class="form-check-label" for="nurse_education">
-                                    <span class="checkbox-header">Şekerli ürünlerin tüketimi ve sakız kullanımından uzak durması konusunda bilgi verilir</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_education"
-                                    id="nurse_attempt11" value="Enfeksiyon bulgularını bildirmesi konusunda hastaya bilgi verilir">
-                                <label class="form-check-label" for="nurse_education">
-                                    <span class="checkbox-header">Enfeksiyon bulgularını bildirmesi konusunda hastaya bilgi verilir</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_education"
-                                    id="nurse_attempt12" value="Gerektiğinde fırçalama ve diş ipi kullanımı hakkında eğitim verilir">
-                                <label class="form-check-label" for="nurse_education">
-                                    <span class="checkbox-header">Gerektiğinde fırçalama ve diş ipi kullanımı hakkında eğitim verilir</span>
+                                    <span class="checkbox-header">Hastaya yaralanmayı en aza indirecek şekilde düşmesi öğretilir</span>
                                 </label>
                             </div>
                             <p id="tani_usernamelabel">İşbirliği Gerektiren Uygulamalar</p>
                             <p class="option-error2" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="collaboratıve_apps"
-                                    id="nurse_attempt13" value="Gerektiğinde diş hekimine yönlendirilir">
-                                <label class="form-check-label" for="collaboratıve_apps">
-                                    <span class="checkbox-header">Gerektiğinde diş hekimine yönlendirilir</span>
+                                <input class="form-check-input" type="checkbox" name="collaborative_apps"
+                                    id="nurse_attempt17"
+                                    value="Hareket, denge ve gücü arttırmak için yürüme eğitimi ve egzersiz için fizyoterapist ile işbirliği yapılır">
+                                <label class="form-check-label" for="collaborative_apps">
+                                    <span class="checkbox-header">Hareket, denge ve gücü arttırmak için yürüme eğitimi ve egzersiz için fizyoterapist ile işbirliği yapılır</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="collaboratıve_apps"
-                                    id="nurse_attempt14" value="Hastanın dengeli bir diyetle besin alımı sağlanır ve desteklenir">
-                                <label class="form-check-label" for="collaboratıve_apps">
-                                    <span class="checkbox-header">Hastanın dengeli bir diyetle besin alımı sağlanır ve desteklenir</span>
+                                <input class="form-check-input" type="checkbox" name="collaborative_apps"
+                                    id="nurse_attempt18"
+                                    value="Düşmeye neden olabilecek ilaçların yan etkilerini en aza indirmek için diğer sağlık bakım ekibi üyeleri ile işbirliği yapılır">
+                                <label class="form-check-label" for="collaborative_apps">
+                                    <span class="checkbox-header">Düşmeye neden olabilecek ilaçların yan etkilerini en aza indirmek için diğer sağlık bakım ekibi üyeleri ile işbirliği yapılır</span>
                                 </label>
                             </div>
                         </div>
@@ -245,7 +278,7 @@ if (isset($_GET['logout'])) {
                         </div>
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın muköz membran bütünlüğünün sürdürülmesi</p>
+                            <p class="tanıdescription">Hastada düşmenin gözlemlenmemesi</p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
                             <p id="tani_usernamelabel">NOC Gösterge: </p>
@@ -287,7 +320,7 @@ if (isset($_GET['logout'])) {
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after" id="
                                         noc_indicator" value="5">
                                     <label class="form-check-label" for="noc_indicator_after">
-                                        <span class="checkbox-header">5: Hastanın muköz membran bütünlüğünde sorun yok, risk devam ediyor</span>
+                                        <span class="checkbox-header">5: Hastada düşme yok, risk devam ediyor</span>
                                     </label>
                                 </div>
 
@@ -464,7 +497,8 @@ if (isset($_GET['logout'])) {
                 type: 'POST',
                 url:'<?php echo $base_url; ?>/tani-handler/submitOrUpdateTani.php',
                 data: {
-                    table: 'tani40',
+                    tani_num: 36,
+                    table: 'tani36',
                     patient_id: patient_id,
                     patient_name: patient_name,
                     creation_date: creationDate,
@@ -481,13 +515,13 @@ if (isset($_GET['logout'])) {
                     nurse_attempt: nurse_attempt,
                     nurse_education: nurse_education,
                     collaborative_apps: collaborative_apps,
-                    evaluation: evaluation,
-                    standalone: '<?php echo $_GET['standalone'];?>'
+                    evaluation: false,
+                    standalone: '<?php echo $_GET['standalone']; ?>'
                 },
                 success: function(data) {
                     console.log("something happened")
                     let url =
-                        "<?php echo $base_url; ?>/taniReview/riskTani15Review.php?patient_id=" +
+                        "<?php echo $base_url; ?>/taniReview/tani36-review.php?patient_id=" +
                         patient_id + "&patient_name=" + encodeURIComponent(
                             patient_name);
                             $("#tick-container").fadeIn(800);

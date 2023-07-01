@@ -450,6 +450,7 @@ $permitted_food_consumption = isset($_GET['permitted_food_consumption']) ? $_GET
                 type: 'POST',
                 url:'<?php echo $base_url; ?>/tani-handler/submitOrUpdateTani.php',
                 data: {
+                    tani_num: 14,
                     table: 'tani14',
                     patient_id: patient_id,
                     patient_name: patient_name,

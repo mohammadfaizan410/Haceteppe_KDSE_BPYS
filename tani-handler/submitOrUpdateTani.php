@@ -2,7 +2,7 @@
 require_once("../config-students.php");
 $base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
 $time = date("Y-m-d H:i:s");
-$table_name = $_POST['table'];
+$table_name = 'tani';
 ?>
 <?php
 

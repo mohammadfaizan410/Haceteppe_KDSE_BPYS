@@ -14,7 +14,8 @@ require_once('../config-students.php');
 
 $userid = $_SESSION['userlogin']['id'];
 $tani_id = $_GET['tani_id'];
-$sql = "SELECT * FROM tani7 where tani_id= $tani_id";
+$tani_num = $_GET['tani_num'];
+$sql = "SELECT * FROM tani where tani_id= $tani_id and tani_num=$tani_num";
 $smtmselect = $db->prepare($sql);
 $result = $smtmselect->execute();
 if ($result) {
@@ -483,7 +484,9 @@ let evaluation = 0;
                 type: 'POST',
                 url:'<?php echo $base_url; ?>/tani-handler/submitOrUpdateTani.php',
                 data: {
-                    table: 'tani7',
+                    isUpdate: true,
+                    tani_id: <?php echo $tani_id; ?>,
+                    tani_num: <?php echo $tani_num; ?>,
                     patient_id: patient_id,
                     patient_name: patient_name,
                     creation_date: creationDate,

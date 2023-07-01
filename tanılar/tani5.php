@@ -580,6 +580,7 @@ let evaluation = 0;
                 type: 'POST',
                 url:'<?php echo $base_url; ?>/tani-handler/submitOrUpdateTani.php',
                 data: {
+                    tani_num: 5,
                     table: 'tani5',
                     patient_id: patient_id,
                     patient_name: patient_name,
