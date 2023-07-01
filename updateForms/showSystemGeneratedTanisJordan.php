@@ -75,198 +75,198 @@ if (isset($_GET['logout'])) {
                                 <th scope="col" style="font-weight : bold; font-size: large;"></th>
                             </tr>
                             <tr><td><div class="mt-3 entered-forms align-items-center"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;"
-                               href="<?php echo $base_url; ?>/tanılar/tani1.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı1</a><div></td></tr>
+                               href="<?php echo $base_url; ?>/tanılar/tani1.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı1</a><div></td><t/r>
                           <tr><td> <div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;" 
                                   href="<?php echo $base_url; ?>/tanılar/tani2.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı2</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td> <div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;" 
                                   href="<?php echo $base_url; ?>/tanılar/tani3.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı3</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td> <div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;" 
                                   href="<?php echo $base_url; ?>/tanılar/tani4.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı4</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td> <div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;" 
                                   href="<?php echo $base_url; ?>/tanılar/tani5.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı5</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td> <div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;" 
                                   href="<?php echo $base_url; ?>/tanılar/tani6.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı6</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td> <div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;" 
                                   href="<?php echo $base_url; ?>/tanılar/tani7.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı7</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td> <div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;" 
                                   href="<?php echo $base_url; ?>/tanılar/tani8.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı8</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td> <div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;" 
                                   href="<?php echo $base_url; ?>/tanılar/tani9.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı9</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td> <div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color: white;" 
                                   href="<?php echo $base_url; ?>/tanılar/tani10.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı10</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td> <div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" 
                                   href="<?php echo $base_url; ?>/tanılar/tani11.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı11</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" 
                                   href="<?php echo $base_url; ?>/tanılar/tani12.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı12</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" 
                                   href="<?php echo $base_url; ?>/tanılar/tani13.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı13</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" 
                                   href="<?php echo $base_url; ?>/tanılar/tani14.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı14</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" 
                                   href="<?php echo $base_url; ?>/tanılar/tani15.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı15</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" 
                                   href="<?php echo $base_url; ?>/tanılar/tani16.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı16</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" 
                                   href="<?php echo $base_url; ?>/tanılar/tani17.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı17</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" 
                                   href="<?php echo $base_url; ?>/tanılar/tani18.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı18</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" 
                                   href="<?php echo $base_url; ?>/tanılar/tani19.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı19</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
                                   href="<?php echo $base_url; ?>/tanılar/tani20.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı20</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
                                   href="<?php echo $base_url; ?>/tanılar/tani21.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı21</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
                                   href="<?php echo $base_url; ?>/tanılar/tani22.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı22</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
                                   href="<?php echo $base_url; ?>/tanılar/tani23.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı23</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
                                   href="<?php echo $base_url; ?>/tanılar/tani24.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı24</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
                                   href="<?php echo $base_url; ?>/tanılar/tani25.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı25</a>
-                            </div></td></tr>
+                            </div></td><t/r>
                             
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
                                   href="<?php echo $base_url; ?>/tanılar/tani26.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı26</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
                                   href="<?php echo $base_url; ?>/tanılar/tani27.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı27</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
                                   href="<?php echo $base_url; ?>/tanılar/tani28.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı28</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
                                   href="<?php echo $base_url; ?>/tanılar/tani29.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı29</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
                                   href="<?php echo $base_url; ?>/tanılar/tani30.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı30</a>
-                            </div></td></tr>
+                            </div></td><t/r>
                             
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
                                   href="<?php echo $base_url; ?>/tanılar/tani31.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı31</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
                                   href="<?php echo $base_url; ?>/tanılar/tani32.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı32</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
                                   href="<?php echo $base_url; ?>/tanılar/tani33.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı33</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
                                   href="<?php echo $base_url; ?>/tanılar/tani34.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı34</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
                                   href="<?php echo $base_url; ?>/tanılar/riskTani1.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı35</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
                                   href="<?php echo $base_url; ?>/tanılar/riskTani2.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı36</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
                                   href="<?php echo $base_url; ?>/tanılar/riskTani3.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı37</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
                                   href="<?php echo $base_url; ?>/tanılar/riskTani4.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı38</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
                                   href="<?php echo $base_url; ?>/tanılar/riskTani5.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı39</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
                                   href="<?php echo $base_url; ?>/tanılar/riskTani6.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı40</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
                                   href="<?php echo $base_url; ?>/tanılar/riskTani7.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı41</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
                                   href="<?php echo $base_url; ?>/tanılar/riskTani8.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı42</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
                                   href="<?php echo $base_url; ?>/tanılar/riskTani9.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı43</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
                                   href="<?php echo $base_url; ?>/tanılar/riskTani10.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı44</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
                                   href="<?php echo $base_url; ?>/tanılar/riskTani11.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı45</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
                                   href="<?php echo $base_url; ?>/tanılar/riskTani12.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı46</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
                                   href="<?php echo $base_url; ?>/tanılar/riskTani13.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı47</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
                                   href="<?php echo $base_url; ?>/tanılar/riskTani14.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı48</a>
-                            </div></td></tr>
+                            </div></td><t/r>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
                                   href="<?php echo $base_url; ?>/tanılar/riskTani15.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı49</a>
-                            </div></td></tr>
+                            </div></td><t/r>
                            </thead>
                         <tbody>
                         </tbody>
