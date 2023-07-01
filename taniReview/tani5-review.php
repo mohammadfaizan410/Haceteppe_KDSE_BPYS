@@ -418,55 +418,51 @@ if ($result) {
                 let yourDate = new Date();
                 let creationDate = yourDate.toISOString().split('T')[0];
                 let updateDate = yourDate.toISOString().split('T')[0];
-                let problem_info = matchedfields_string
-                let nurse_description = "Gaz değişiminde bozulma"
-                let noc_output = "Hastanın oksijen satürasyonun %95’in üzerinde olması"
-                let noc_indicator = $("input[type='radio'][name='noc_indicator']:checked").val();
-                let noc_indicator_after = $("input[type='radio'][name='noc_indicator_after']:checked")
-                    .val();
-                    let noc_indicator_2 = $('.form-check-input[name="noc_indicator_2"]') ? $('.form-check-input[name=noc_indicator_2]:checked').val() : "null";
+                let nurse_attempt = $('.form-check-input[name="nurse_attempt"]:checked').map(function() {
+                    return this.value;
+                }).get().join('/');
+                let nurse_education = $('.form-check-input[name="nurse_education"]:checked').map(function() {
+                    return this.value;
+                }).get().join('/');
+                let collaborative_apps = $('.form-check-input[name="collaborative_apps"]:checked').map(function() {
+                    return this.value;
+                }).get().join('/');
+                let noc_indicator = $('.form-check-input[name="noc_indicator"]:checked').val();
+		        let noc_indicator_2 = $('.form-check-input[name="noc_indicator_2"]') ? $('.form-check-input[name=noc_indicator_2]:checked').val() : "null";
 		        let noc_indicator_3 = $('.form-check-input[name="noc_indicator_3"]') ? $('.form-check-input[name=noc_indicator_3]:checked').val() : "null";
+                let noc_indicator_after = $('.form-check-input[name="noc_indicator_after"]:checked').val();
 		        let noc_indicator_after_2 = $('.form-check-input[name="noc_indicator_after_2"]') ? $('.form-check-input[name=noc_indicator_after_2]:checked').val() : "null";
-		        let noc_indicator_after_3 = $('.form-check-input[name="noc_indicator_after_3"]') ? $('.form-check-input[name=noc_indicator_after_3]:checked').val() : "null";
-                let evaluation = "";
-                console.log("values init")
+        let noc_indicator_after_3 = $('.form-check-input[name="noc_indicator_after_3"]') ? $('.form-check-input[name=noc_indicator_after_3]:checked').val() : "null";
+let evaluation = 'false';
+                var firstCheckbox = $('.form-check-input[name="noc_indicator_after"]:last');
+                var secondCheckbox = $('.form-check-input[name="noc_indicator_after_2"]:last');
+                var thirdCheckbox = $('.form-check-input[name="noc_indicator_after_3"]:last');
 
-                if (!$('[name="noc_indicator"]').is(':checked')) {
-                    evaluation +=
-                        "Risk Yok"
+                if (firstCheckbox.length > 0) {
+                if (secondCheckbox.length > 0 && thirdCheckbox.length > 0) {
+                    if (secondCheckbox.is(':checked') && thirdCheckbox.is(':checked')) {
+                    let evaluation = 'true';         
+
+                    }
+                } else if (secondCheckbox.length > 0) {
+                    if (secondCheckbox.is(':checked')) {
+                        let evaluation = 'true';         
+
+                    }
                 } else {
-                    evaluation +=
-                        "Risk devam ediyor: 1-5 gösterge seçildiyse; yeni günde bakım planında tanımlı tanı olacak."
+                    if (firstCheckbox.is(':checked')) {
+                        let evaluation = 'true';         
+
+                    }
                 }
-                // not to db
-                var nurse_attemt_arr = [];
-                        $('[name="nurse_attempt"]:checked').each(function(){
-                            nurse_attemt_arr.push($(this).val());
-                        });
-                        //
-                let nurse_attempt = JSON.stringify(nurse_attemt_arr);
-                
-                var nurse_education_arr = [];
-                        $('[name="nurse_education"]:checked').each(function(){
-                            nurse_education_arr.push($(this).val());
-                        });
-                        //
-                let nurse_education = JSON.stringify(nurse_education_arr);
-
-                var collaborative_apps_arr = [];
-                        $('[name="collaborative_apps"]:checked').each(function(){
-                            collaborative_apps_arr.push($(this).val());
-                        });
-                        //
-                let collaborative_apps = JSON.stringify(collaborative_apps_arr);
-
+                }
                 $.ajax({
                 type: 'POST',
                 url:'<?php echo $base_url; ?>/tani-handler/submitOrUpdateTani.php',
                 data: {
                     isUpdate: true,
-                    tani_id: <?php echo $tani_id; ?>,
-                    tani_num: <?php echo $tani_num; ?>,
+                    tani_id: <?php echo $_GET['tani_id']; ?>,
+                    tani_num: <?php echo $_GET['tani_num']; ?>,
                     patient_id: patient_id,
                     patient_name: patient_name,
                     creation_date: creationDate,

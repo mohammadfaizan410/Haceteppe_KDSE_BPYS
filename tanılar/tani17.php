@@ -495,7 +495,7 @@ $pain_duration  = isset($_GET['pain_duration ']) ? $_GET['pain_duration '] : "Na
                 let noc_indicator_after = $('.form-check-input[name="noc_indicator_after"]:checked').val();
 		        let noc_indicator_after_2 = $('.form-check-input[name="noc_indicator_after_2"]') ? $('.form-check-input[name=noc_indicator_after_2]:checked').val() : "null";
         let noc_indicator_after_3 = $('.form-check-input[name="noc_indicator_after_3"]') ? $('.form-check-input[name=noc_indicator_after_3]:checked').val() : "null";
-let evaluation = 0;
+let evaluation = 'false';
                 var firstCheckbox = $('.form-check-input[name="noc_indicator_after"]:last');
                 var secondCheckbox = $('.form-check-input[name="noc_indicator_after_2"]:last');
                 var thirdCheckbox = $('.form-check-input[name="noc_indicator_after_3"]:last');
@@ -503,15 +503,18 @@ let evaluation = 0;
                 if (firstCheckbox.length > 0) {
                 if (secondCheckbox.length > 0 && thirdCheckbox.length > 0) {
                     if (secondCheckbox.is(':checked') && thirdCheckbox.is(':checked')) {
-                    let evaluation = 1;;
+                    let evaluation = 'true';         
+
                     }
                 } else if (secondCheckbox.length > 0) {
                     if (secondCheckbox.is(':checked')) {
-                        let evaluation = 1;;
+                        let evaluation = 'true';         
+
                     }
                 } else {
                     if (firstCheckbox.is(':checked')) {
-                        let evaluation = 1;;
+                        let evaluation = 'true';         
+
                     }
                 }
                 }

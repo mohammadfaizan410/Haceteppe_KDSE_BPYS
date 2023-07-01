@@ -3,6 +3,7 @@ require_once("../config-students.php");
 $base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
 $time = date("Y-m-d H:i:s");
 $table_name = 'tani';
+$standalone = $_POST['standalone'] === true ? 1 : 0;
 ?>
 <?php
 
@@ -23,6 +24,7 @@ if (isset($_POST["patient_name"])) {
     } else {
 
         $result =   $stmt = $db->prepare("INSERT INTO $table_name (
+                tani_num,
                 patient_id,
                 patient_name,
                 creation_date,
@@ -42,8 +44,9 @@ if (isset($_POST["patient_name"])) {
                 standalone,
                 time
 
-            ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+            ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
         $stmt->execute([
+                $_POST['tani_num'],
                 $_POST['patient_id'],
                 $_POST['patient_name'],
                 $_POST['creation_date'],

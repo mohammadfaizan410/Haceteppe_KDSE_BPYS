@@ -465,7 +465,7 @@ if ($result) {
                 let noc_indicator_after = $('.form-check-input[name="noc_indicator_after"]:checked').val();
 		        let noc_indicator_after_2 = $('.form-check-input[name="noc_indicator_after_2"]') ? $('.form-check-input[name=noc_indicator_after_2]:checked').val() : "null";
                 let noc_indicator_after_3 = $('.form-check-input[name="noc_indicator_after_3"]') ? $('.form-check-input[name=noc_indicator_after_3]:checked').val() : "null";
-                let evaluation = 0;
+                let evaluation = 'false';
                 var firstCheckbox = $('.form-check-input[name="noc_indicator_after"]:last');
                 var secondCheckbox = $('.form-check-input[name="noc_indicator_after_2"]:last');
                 var thirdCheckbox = $('.form-check-input[name="noc_indicator_after_3"]:last');
@@ -473,15 +473,18 @@ if ($result) {
                 if (firstCheckbox.length > 0) {
                 if (secondCheckbox.length > 0 && thirdCheckbox.length > 0) {
                     if (secondCheckbox.is(':checked') && thirdCheckbox.is(':checked')) {
-                    let evaluation = 1;;
+                    let evaluation = 'true';         
+
                     }
                 } else if (secondCheckbox.length > 0) {
                     if (secondCheckbox.is(':checked')) {
-                        let evaluation = 1;;
+                        let evaluation = 'true';         
+
                     }
                 } else {
                     if (firstCheckbox.is(':checked')) {
-                        let evaluation = 1;;
+                        let evaluation = 'true';         
+
                     }
                 }
                 }
@@ -490,8 +493,8 @@ if ($result) {
                 url:'<?php echo $base_url; ?>/tani-handler/submitOrUpdateTani.php',
                 data: {
                     isUpdate: true,
-                    tani_num: <?php echo $tani_num; ?>,
-                    tani_id: <?php echo $tani_id; ?>,
+                    tani_num: <?php echo $_GET['tani_num']; ?>,
+                    tani_id: <?php echo $_GET['tani_id']; ?>,
                     patient_id: patient_id,
                     patient_name: patient_name,
                     creation_date: creationDate,

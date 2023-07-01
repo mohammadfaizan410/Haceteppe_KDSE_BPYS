@@ -44,63 +44,15 @@ if (isset($_GET['logout'])) {
         <?php
         require_once('../config-students.php');
         $userid = $_SESSION['userlogin']['id'];
-        $sql = "SELECT * FROM  tani1  WHERE patient_id =" . $_GET['patient_id'];
+        $patientId = $_GET['patient_id'];
+        $sql = "SELECT * FROM tani WHERE patient_id = " . $patientId . " AND standalone = 'true' GROUP BY tani_num ORDER BY creation_date DESC";
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         if ($result) {
-            $tani1 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+            $allTanisStandalone = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
         } else {
             echo 'error';
-        };
-        $sql = "SELECT * FROM  tani2  WHERE patient_id =" . $_GET['patient_id'];
-        $smtmselect = $db->prepare($sql);
-        $result = $smtmselect->execute();
-        if ($result) {
-            $tani2 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
-        } else {
-            echo 'error';
-        };
-        $sql = "SELECT * FROM  tani3  WHERE patient_id =" . $_GET['patient_id'];
-        $smtmselect = $db->prepare($sql);
-        $result = $smtmselect->execute();
-        if ($result) {
-            $tani3 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
-        } else {
-            echo 'error';
-        };
-        $sql = "SELECT * FROM  tani4  WHERE patient_id =" . $_GET['patient_id'];
-        $smtmselect = $db->prepare($sql);
-        $result = $smtmselect->execute();
-        if ($result) {
-            $tani4 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
-        } else {
-            echo 'error';
-        };
-        $sql = "SELECT * FROM  tani5  WHERE patient_id =" . $_GET['patient_id'];
-        $smtmselect = $db->prepare($sql);
-        $result = $smtmselect->execute();
-        if ($result) {
-            $tani5 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
-        } else {
-            echo 'error';
-        };
-        $sql = "SELECT * FROM  tani6  WHERE patient_id =" . $_GET['patient_id'];
-        $smtmselect = $db->prepare($sql);
-        $result = $smtmselect->execute();
-        if ($result) {
-            $tani6 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
-        } else {
-            echo 'error';
-        };
-        $sql = "SELECT * FROM  tani7  WHERE patient_id =" . $_GET['patient_id'];
-        $smtmselect = $db->prepare($sql);
-        $result = $smtmselect->execute();
-        if ($result) {
-            $tani7 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
-        } else {
-            echo 'error';
-        };
-
+        }
 
         ?>
         <div class="send-patient">
@@ -123,70 +75,16 @@ if (isset($_GET['logout'])) {
                                 <th scope="col" style="font-weight : bold; font-size: large;">View</th>
                             </tr>
                            <?php
-                           foreach($tani1 as $tani1){
-                               echo "
-                               <tr>
-                               <td>".$tani1['tani_id']."</td>
-                               <td>".$tani1['creation_date']."</td>
-                               <td>".$tani1['time']."</td>
-                               <td><a class='nav-items review btn btn-success p-3 w-75' style='color: white;' href='" . $base_url . "/taniReview/tani1-review.php?patient_id=" . $_GET['patient_id'] . "&patient_name=" . $_GET['patient_name'] . "&tani_id=" . $tani1['tani_id']. "'>Tani1</a></td>
-                               </tr>";
-                            }
-                            foreach($tani2 as $tani2){
-                                echo "
-                                <tr>
-                                <td>".$tani2['tani_id']."</td>
-                                <td>".$tani2['creation_date']."</td>
-                                <td>".$tani2['time']."</td>
-                                <td><a class='nav-items review btn btn-success p-3 w-75' style='color: white;' href='" . $base_url . "/taniReview/tani2-review.php?patient_id=" . $_GET['patient_id'] . "&patient_name=" . $_GET['patient_name'] . "&tani_id=" . $tani2['tani_id']. "'>Tani2</a></td>
-                                </tr>";
-                             }
-                                foreach($tani3 as $tani3){
-                                    echo "
-                                    <tr>
-                                    <td>".$tani3['tani_id']."</td>
-                                    <td>".$tani3['creation_date']."</td>
-                                    <td>".$tani3['time']."</td>
-                                    <td><a class='nav-items review btn btn-success p-3 w-75' style='color: white;' href='" . $base_url . "/taniReview/tani3-review.php?patient_id=" . $_GET['patient_id'] . "&patient_name=" . $_GET['patient_name'] . "&tani_id=" . $tani3['tani_id']. "'>Tani3</a></td>
-                                    </tr>";
+                                foreach ($allTanisStandalone as $row) {
+                                    echo '<tr>';
+                                    echo '<td>' . $row['tani_id'] . '</td>';
+                                    echo '<td>' . $row['creation_date'] . '</td>';
+                                    echo '<td>'.$row['time'].'</td>';
+                                    echo "<td><div class='entered-forms align-items-center'><a class='nav-items review btn btn-success w-100' style='color : white;'
+                                    href='" . $base_url . "/taniReview/tani" . $row['tani_num'] . "-review.php?patient_id=" . $row['patient_id'] . "&patient_name=" . $row['patient_name'] . "&standalone=" . $row['standalone'] . "&evaluation=" . $row['evaluation'] . "&tani_id=".$row['tani_id']."'>tani" . $row['tani_num'] . "</a></div></td>";
+                                    echo '</tr>';
                                 }
-                                foreach($tani4 as $tani4){
-                                    echo "
-                                    <tr>
-                                    <td>".$tani4['tani_id']."</td>
-                                    <td>".$tani4['creation_date']."</td>
-                                    <td>".$tani4['time']."</td>
-                                    <td><a class='nav-items review btn btn-success p-3 w-75' style='color: white;' href='" . $base_url . "/taniReview/tani4-review.php?patient_id=" . $_GET['patient_id'] . "&patient_name=" . $_GET['patient_name'] . "&tani_id=" . $tani4['tani_id']. "'>Tani4</a></td>
-                                    </tr>";
-                                }
-                                foreach($tani5 as $tani5){
-                                    echo "
-                                    <tr>
-                                    <td>".$tani5['tani_id']."</td>
-                                    <td>".$tani5['creation_date']."</td>
-                                    <td>".$tani5['time']."</td>
-                                    <td><a class='nav-items review btn btn-success p-3 w-75' style='color: white;' href='" . $base_url . "/taniReview/tani5-review.php?patient_id=" . $_GET['patient_id'] . "&patient_name=" . $_GET['patient_name'] . "&tani_id=" . $tani5['tani_id']. "'>Tani5</a></td>
-                                    </tr>";
-                                }
-                                foreach($tani6 as $tani6){
-                                    echo "
-                                    <tr>
-                                    <td>".$tani6['tani_id']."</td>
-                                    <td>".$tani6['creation_date']."</td>
-                                    <td>".$tani6['time']."</td>
-                                    <td><a class='nav-items review btn btn-success p-3 w-75' style='color: white;' href='" . $base_url . "/taniReview/tani6-review.php?patient_id=" . $_GET['patient_id'] . "&patient_name=" . $_GET['patient_name'] . "&tani_id=" . $tani6['tani_id']. "'>Tani6</a></td>
-                                    </tr>";
-                                }
-                                foreach($tani7 as $tani7){
-                                    echo "
-                                    <tr>
-                                    <td>".$tani7['tani_id']."</td>
-                                    <td>".$tani7['creation_date']."</td>
-                                    <td>".$tani7['time']."</td>
-                                    <td><a class='nav-items review btn btn-success p-3 w-75' style='color: white;' href='" . $base_url . "/taniReview/tani7-review.php?patient_id=" . $_GET['patient_id'] . "&patient_name=" . $_GET['patient_name'] . "&tani_id=" . $tani7['tani_id']. "'>Tani7</a></td>
-                                    </tr>";
-                                }
-                                
+
                             ?>
                            
                         </thead>

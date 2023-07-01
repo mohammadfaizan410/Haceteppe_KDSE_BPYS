@@ -444,7 +444,44 @@ $permitted_food_consumption = isset($_GET['permitted_food_consumption']) ? $_GET
                 let yourDate = new Date();
                 let creationDate = yourDate.toISOString().split('T')[0];
                 let updateDate = yourDate.toISOString().split('T')[0];
-               
+                let nurse_attempt = $('.form-check-input[name="nurse_attempt"]:checked').map(function() {
+                    return this.value;
+                }).get().join('/');
+                let nurse_education = $('.form-check-input[name="nurse_education"]:checked').map(function() {
+                    return this.value;
+                }).get().join('/');
+                let collaborative_apps = $('.form-check-input[name="collaborative_apps"]:checked').map(function() {
+                    return this.value;
+                }).get().join('/');
+                let noc_indicator = $('.form-check-input[name="noc_indicator"]:checked').val();
+		        let noc_indicator_2 = $('.form-check-input[name="noc_indicator_2"]') ? $('.form-check-input[name=noc_indicator_2]:checked').val() : "null";
+		        let noc_indicator_3 = $('.form-check-input[name="noc_indicator_3"]') ? $('.form-check-input[name=noc_indicator_3]:checked').val() : "null";
+                let noc_indicator_after = $('.form-check-input[name="noc_indicator_after"]:checked').val();
+		        let noc_indicator_after_2 = $('.form-check-input[name="noc_indicator_after_2"]') ? $('.form-check-input[name=noc_indicator_after_2]:checked').val() : "null";
+        let noc_indicator_after_3 = $('.form-check-input[name="noc_indicator_after_3"]') ? $('.form-check-input[name=noc_indicator_after_3]:checked').val() : "null";
+let evaluation = 'false';
+                var firstCheckbox = $('.form-check-input[name="noc_indicator_after"]:last');
+                var secondCheckbox = $('.form-check-input[name="noc_indicator_after_2"]:last');
+                var thirdCheckbox = $('.form-check-input[name="noc_indicator_after_3"]:last');
+
+                if (firstCheckbox.length > 0) {
+                if (secondCheckbox.length > 0 && thirdCheckbox.length > 0) {
+                    if (secondCheckbox.is(':checked') && thirdCheckbox.is(':checked')) {
+                    let evaluation = 'true';         
+
+                    }
+                } else if (secondCheckbox.length > 0) {
+                    if (secondCheckbox.is(':checked')) {
+                        let evaluation = 'true';         
+
+                    }
+                } else {
+                    if (firstCheckbox.is(':checked')) {
+                        let evaluation = 'true';         
+
+                    }
+                }
+                }
 
                 $.ajax({
                 type: 'POST',

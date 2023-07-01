@@ -261,7 +261,7 @@ if (isset($_GET['logout'])) {
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="collaborative_apps"
+                                <input class="form-check-input" type="checkbox" name="nurse_education"
                                     id="nurse_attempt18"
                                     value="Anksiyeteyi azaltmak ve kontrol duygusunu arttırmak için hastaya uygulanacak girişimlerden önce açıklama yapılır">
                                 <label class="form-check-label" for="nurse_attempt">
@@ -379,8 +379,8 @@ if (isset($_GET['logout'])) {
             var url = "<?php echo $base_url; ?>/updateForms/showAllTanis.php?patient_id=" + patient_id +
                 "&patient_name=" + encodeURIComponent(patient_name);
             $("#content").load(url);
-
         })
+        console.log(<?php echo $_GET['standalone']?>)
     });
     </script>
     <script>
@@ -504,7 +504,7 @@ if (isset($_GET['logout'])) {
                 let noc_indicator_after = $('.form-check-input[name="noc_indicator_after"]:checked').val();
 		        let noc_indicator_after_2 = $('.form-check-input[name="noc_indicator_after_2"]') ? $('.form-check-input[name=noc_indicator_after_2]:checked').val() : "null";
                 let noc_indicator_after_3 = $('.form-check-input[name="noc_indicator_after_3"]') ? $('.form-check-input[name=noc_indicator_after_3]:checked').val() : "null";
-                let evaluation = 0;
+                let evaluation = 'false';
                 var firstCheckbox = $('.form-check-input[name="noc_indicator_after"]:last');
                 var secondCheckbox = $('.form-check-input[name="noc_indicator_after_2"]:last');
                 var thirdCheckbox = $('.form-check-input[name="noc_indicator_after_3"]:last');
@@ -512,15 +512,18 @@ if (isset($_GET['logout'])) {
                 if (firstCheckbox.length > 0) {
                 if (secondCheckbox.length > 0 && thirdCheckbox.length > 0) {
                     if (secondCheckbox.is(':checked') && thirdCheckbox.is(':checked')) {
-                    let evaluation = 1;;
+                    let evaluation = 'true';         
+
                     }
                 } else if (secondCheckbox.length > 0) {
                     if (secondCheckbox.is(':checked')) {
-                        let evaluation = 1;;
+                        let evaluation = 'true';         
+
                     }
                 } else {
                     if (firstCheckbox.is(':checked')) {
-                        let evaluation = 1;;
+                        let evaluation = 'true';         
+
                     }
                 }
                 }                $.ajax({
@@ -533,8 +536,6 @@ if (isset($_GET['logout'])) {
                     patient_name: patient_name,
                     creation_date: creationDate,
                     update_date: updateDate,
-    
-                   
                     noc_indicator: noc_indicator,
                     noc_indicator_after: noc_indicator_after,
                     noc_indicator_2: noc_indicator_2,
@@ -545,7 +546,7 @@ if (isset($_GET['logout'])) {
                     nurse_education: nurse_education,
                     collaborative_apps: collaborative_apps,
                     evaluation: evaluation,
-                    standalone: '<?php echo $_GET['standalone']; ?>'
+                    standalone: <?php echo $_GET['standalone']; ?>
                 },
                 success: function(data) {
                     console.log("something happened")
