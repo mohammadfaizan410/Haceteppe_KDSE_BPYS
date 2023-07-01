@@ -250,15 +250,15 @@ if ($result) {
             </div>
             <div class="input-section d-flex">
                 <p class="usernamelabel">Bağırsak sesleri(/dk)</p>
-                <input type="text" class="form-control" required name="bagirsak_sesleri" id="bagirsak_sesleri">
+                <input type="number" class="form-control" required name="bagirsak_sesleri" id="bagirsak_sesleri">
             </div>
             <div class="input-section d-flex">
                 <p class="usernamelabel">En son ne zaman defekasyona çıktınız:</p>
-                <input type="text" class="form-control" required name="defekasyon_zamani" id="defekasyon_zamani">
+                <input type="number" class="form-control" required name="defekasyon_zamani" id="defekasyon_zamani">
             </div>
             <div class="input-section d-flex">
                 <p class="usernamelabel">Son 24 saat içinde kaç kez defekasyona çıktınız:</p>
-                <input type="text" class="form-control" required name="defekasyon_tekrari" id="defekasyon_tekrari">
+                <input type="number" class="form-control" required name="defekasyon_tekrari" id="defekasyon_tekrari">
             </div>
 
 

@@ -252,7 +252,7 @@ if (isset($_GET['logout'])) {
 
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Kan basıncı:</p>
-                            <input type="text" class="form-control" required name="blood_pressure" id="blood_pressure"
+                            <input type="number" class="form-control" required name="blood_pressure" id="blood_pressure"
                                 placeholder="Tetkik Sonucu" maxlength="7">
                         </div>
 

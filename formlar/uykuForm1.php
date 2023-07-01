@@ -71,7 +71,7 @@ if (isset($_GET['logout'])) {
 
             <div class="input-section d-flex">
                 <p class="usernamelabel">Ortalama uyku süresi:</p>
-                <input type="text" class="form-control" name="averageSleepDuration" id="averageSleepDuration">
+                <input type="number" class="form-control" name="averageSleepDuration" id="averageSleepDuration">
             </div>
 
             <div class="input-section d-flex">

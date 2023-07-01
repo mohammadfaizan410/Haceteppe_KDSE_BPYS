@@ -331,8 +331,6 @@ if ($result) {
                             <tr class="darkcyan table-head">
                                 <th scope="col" style="font-weight : bold; font-size: large;"></th>
                             </tr>
-                            <tr><td><div class="mt-3 entered-forms align-items-center"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;"
-                               href="<?php echo $base_url; ?>/tanılar/tani1.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&standalone='true'&root=''&parent=''">Tanı1</a><div></td><t/r>
                           
                            </thead>
                         <tbody>
@@ -388,6 +386,8 @@ input.addEventListener("input", function() {
 
 
 <script>
+    var patient_id = "<?php echo $_GET['patient_id']; ?>";
+    var patient_name = "<?php echo $_GET['patient_name']; ?>";
     var form2 = <?php echo json_encode($form2); ?>;
     var form3 = <?php echo json_encode($form3); ?>;
     var form4 = <?php echo json_encode($form4); ?>;
@@ -414,7 +414,7 @@ input.addEventListener("input", function() {
     var vucudutemizform1 = <?php echo json_encode($vucudutemizform1); ?>;
     var solunumgereksinimi_form1 = <?php echo json_encode($solunumgereksinimi_form1); ?>;
     var taniArray = [];
-
+    console.log(typeof(solunumgereksinimi_form1.breathingProblems));
     //tani 1 matching
      if(form10.respiratory_rate < 16 || form10.respiratory_rate > 20 || form10.heart_rate > 100 || form10.o2_status === 'Aliyor' || 
      JSON.parse(solunumgereksinimi_form1.breathingProblems).includes('Dispne') ||  JSON.parse(solunumgereksinimi_form1.breathingProblems).includes('Hipoventilasyon')
@@ -424,10 +424,191 @@ input.addEventListener("input", function() {
 
      if(form10.respiratory_rate < 16 || form10.respiratory_rate > 20 || form10.respiratory_nature === 'Derin' || form10.respiratory_nature === 'Yüzeyel'
     || JSON.parse(solunumgereksinimi_form1.breathingProblems).includes('Dispne') ||  JSON.parse(solunumgereksinimi_form1.breathingProblems).includes('Hipoventilasyon') || JSON.parse(solunumgereksinimi_form1.breathingProblems).includes('Hiperventilasyon')
-     )
+    || solunumgereksinimi_form1.GogusHareketleri === 'Var' || solunumgereksinimi_form1.Krepitasyon_Alani !== '' || solunumgereksinimi_form1.Hassasiyet !== '' || solunumgereksinimi_form1.Kitle_Ozelligi !== '' || hareketform1.movementProblem.split('/').includes('Anksiyete')
+     ){
+        taniArray.push('tani2')
+     }
+
+     if(form10.respiratory_rate < 16 || form10.respiratory_rate > 20
+    || JSON.parse(solunumgereksinimi_form1.breathingProblems).includes('Dispne') || JSON.parse(solunumgereksinimi_form1.breathingProblems).includes('Siyanoz') 
+    ||  JSON.parse(solunumgereksinimi_form1.breathingProblems).includes('Hipoventilasyon') || JSON.parse(solunumgereksinimi_form1.breathingProblems).includes('Hiperventilasyon')
+    || solunumgereksinimi_form1.airwayMethod === 'Trakeostomi' || solunumgereksinimi_form1.airwayMethod === 'Endotrakeal tüp' || solunumgereksinimi_form1.BalgamType === 'Etkisiz balgam' || solunumgereksinimi_form1.Balgam === 'Var' || solunumgereksinimi_form1.coughOption === 'Etkisiz'
+     ){
+        taniArray.push('tani3')
+     }
+
+     if(form10.blood_pressure < 100 || form10.heart_rate > 100 || form10.heartrate_nature === 'Zayıf' || vucudutemizform1.skinAge === 'Zayıf' || bosaltimform1.IdrarRengi === 'Koyu sarı' || vucudutemizform1.skinMoisture === 'Kuru' || form1_beslenme.oral_mucosa_issue_var.split(',').includes('Kuruma') || ((form11.cikardigi_total1 + form11.cikardigi_total2 + form11.cikardigi_total3 + form11.cikardigi_total4)-(form11.aldigi_total1 + form11.aldigi_total2 + form11.aldigi_total3 + form11.aldigi_total4)) > 0
+        || form5.total > 3){
+        taniArray.push('tani4')
+     }
+     if(form10.blood_pressure > 139 || form10.heartrate_nature === 'Dolgun'
+    || hareketform1.movementProblem.split('/').includes('Anksiyete') || ((form11.aldigi_total1 + form11.aldigi_total2 + form11.aldigi_total3 + form11.aldigi_total4)- (form11.cikardigi_total1 + form11.cikardigi_total2 + form11.cikardigi_total3 + form11.cikardigi_total4)) > 0
+    || form8.edema_severity > 1 ){
+        taniArray.push('tani5')
+     }
+
+     if(form10.heartrate_location !== 'Periferik' || form10.respiratory_nature === 'Zayıf'
+     || vucudutemizform1.capillaryFillingProblem > 3 || form2.pain_intensity !== '1-2. Çok Az' || form2.pain_location === 'İdrar yaparken' || form2.pain_character === 'Yanıcı' 
+     || vucudutemizform1.nailColorProblem.split('/').includes('Soluk beyaz ') || vucudutemizform1.nailColorProblem.split('/').includes('Siyanotik') || vucudutemizform1.nailColorProblem.split('/').includes('Sarı')
+     ){
+        taniArray.push('tani6')
+     }
+
+     if(form2.pain_intensity !== '1-2. Çok Az' || form2.pain_location !=='' || form2.pain_frequency !=='' || form2.pain_duration === '6 Aydan Fazla' || form2.pain_character !== ''
+     || form10.heart_rate > 100 || form10.blood_pressure > 139 || form10.respiratory_rate > 20 || form1_beslenme.nutrition_issue_var.split(',').includes('Bulantı') || form1_beslenme.nutrition_issue_var.split(',').includes('Kusma')
+     ){
+        taniArray.push('tani7')
+     }
+
+     if(form2.pain_intensity !== '1-2. Çok Az' || form2.pain_location !=='' || form2.pain_frequency !=='' || form2.pain_duration === '6 Aydan Fazla' || form2.pain_character !== '' || form2.pain_increase_factors !=='' || form2.pain_decrease_factors !==''
+     || hareketform1.movementProblem.split('/').includes('Yorgunluk')
+     ){
+        taniArray.push('tani8')
+     }
+
+     if(form2.pain_intensity !== '1-2. Çok Az' || form2.pain_location === toLowerCase('İdrar yaparken') || form2.pain_character !== ''
+        || bosaltimform1.IdrarRengi === 'Açık kırmızı' || bosaltimform1.IdrarRengi === 'Koyu kırmızı' || bosaltimform1.IdrarBerrakligi === 'Bulanık' ||
+        JSON.parse(bosaltimform1.excretionIssues).includes('Üriner inkontinans') || JSON.parse(bosaltimform1.excretionIssues).includes('Dizüri') || bosaltimform1.protezlertable === 'Yarı Bağımlı' || bosaltimform1.protezlertable === 'Bağımlı'
+        || bosaltimform1.Mesane_kateterizasyonu === 'Var' || bosaltimform1.ureterestomi === 'Var' || bosaltimform1.Sistostomi === 'Var'
+     ){
+        taniArray.push('tani9')
+     }
+
+     if(form2.pain_intensity !== '1-2. Çok Az' || form2.pain_location === toLowerCase('İdrar yaparken') || form2.pain_character !== ''
+        || bosaltimform1.bagirsak_sesleri >  10 || bosaltimform1.defekasyon_tekrari > 3 || JSON.parse(bosaltimform1.excretionIssues).includes('Diyare')
+     ){
+        taniArray.push('tani10')
+     }
+
+    var hospitalStoolEmptyingDate = new Date(bosaltimform1.hospitalStoolEmptyingDate);
+    var currentDate = new Date();
+    var diffDays = Math.ceil(Math.abs(currentDate - hospitalStoolEmptyingDate) / (1000 * 3600 * 24));
+     if(bosaltimform1.bagirsak_sesleri <  6 || diffDays > 3 || bosaltimform1.defekasyon_tekrari > 3 || JSON.parse(bosaltimform1.excretionIssues).includes('Konstipasyon') || JSON.parse(bosaltimform1.excretionIssues).includes('Distansiyon') || form1_beslenme.nutrition_issue_var.split(',').includes('Bulantı')
+     || form1_beslenme.nutrition_issue_var.split(',').includes('Hazımsızlık') || form1_beslenme.nutrition_issue_var.split(',').includes('Kusma')
+     ){
+        taniArray.push('tani11')
+     }
+     
+     if(bosaltimform1.bagirsak_sesleri >  10 || form1_beslenme.BKI <  18 || form1_beslenme.food_consumption_var === 'Daha az' ||  form1_beslenme.nutrition_issue_var.split(',').includes('Bulantı')
+     || form1_beslenme.nutrition_issue_var.split(',').includes('Hazımsızlık') || form1_beslenme.nutrition_issue_var.split(',').includes('Kusma') ||  form1_beslenme.nutrition_issue_var.split(',').includes('İştahsızlık')
+       || form1_beslenme.tongue_issue_var.split(',').includes('Tat almada değişim') || form1_beslenme.chewing_difficulty === 'Var'
+     ){
+        taniArray.push('tani12')
+     }
+
+     if(form1_beslenme.BKI >  25 || form1_beslenme.food_consumption_var === 'Daha fazla' || uyukuform1.sleepProblem.split('/').includes('Uyuma Güçlüğü')
+      ||  hareketform1.exercisingHabit !== '' 
+     ){
+        taniArray.push('tani13')
+     }
+     if(form1_beslenme.BKI >  30 || form1_beslenme.food_consumption_var === 'Daha fazla' 
+     ){
+        taniArray.push('tani14')
+     }
+
+     if(form1_beslenme.tongue_issue_var.split(',').includes('Tat almada değişim') || form1_beslenme.chewing_difficulty === 'Var' || form1_beslenme.lip_color_issue_var.split(',').includes('Soluk') 
+        || form1_beslenme.lip_color_issue_var.split(',').includes('Kuru') || form1_beslenme.oral_mucosa_issue_var.split(',').includes('Ülserasyon') || form1_beslenme.oral_mucosa_issue_var.split(',').includes('Lezyon')
+        || form1_beslenme.oral_mucosa_issue_var.split(',').includes('Kötü koku') || form1_beslenme.oral_mucosa_issue_var.split(',').includes('Nodül') || form1_beslenme.oral_mucosa_issue_var.split(',').includes('Kuruluk')
+        || form1_beslenme.teeth_gums_issue_var.split(',').includes('Dişeti ödemi') || form1_beslenme.teeth_gums_issue_var.split(',').includes('Apse') || form1_beslenme.teeth_gums_issue_var.split(',').includes('Dişeti kanaması') ||
+        vucudutemizform1.mouthCareFreq < 2
+     ){
+        taniArray.push('tani15')
+     }
+
+
+     if(uyukuform1.averageSleepDuration < 7 || uyukuform1.averageSleepDuration.split('/').includes('Gündüz uykusu') || uyukuform1.averageSleepDuration.split('/').includes('Uykudan yorgun kalkma') || uyukuform1.averageSleepDuration.split('/').includes('Uyuma güçlüğü')
+    || uyukuform1.averageSleepDuration.split('/').includes('Uykunun bölünmesi') || hareketform1.movementProblem.split('/').includes('Huzursuzluk') || hareketform1.movementProblem.split('/').includes('Yorgunluk')
+    || uyukuform1.hospitalFactorsAffectingSleep !== ''
+     ){
+        taniArray.push('tani16')
+     }
+
+     if(uyukuform1.averageSleepDuration < 7 || uyukuform1.averageSleepDuration.split('/').includes('Gündüz uykusu') || uyukuform1.averageSleepDuration.split('/').includes('Uykudan yorgun kalkma') || uyukuform1.averageSleepDuration.split('/').includes('Uyuma güçlüğü')
+    || uyukuform1.averageSleepDuration.split('/').includes('Uykunun bölünmesi') || hareketform1.movementProblem.split('/').includes('Huzursuzluk') || hareketform1.movementProblem.split('/').includes('Rahatsızlık') || hareketform1.movementProblem.split('/').includes('Kaşıntı')
+    || form2.pain_duration === '6 Aydan Fazla' || form2.pain_duration !== '6 Aydan Fazla' || form1_beslenme.nutrition_issue_var.split(',').includes('Bulantı')
+     ){
+        taniArray.push('tani17')
+     }
+
+     if(hareketform1.changingPositionDependence === 'Yarı bağımlı' || hareketform1.changingPositionDependence === 'Bağımlı' ||
+     hareketform1.walkingDependence === 'Yarı bağımlı' || hareketform1.walkingDependence === 'Bağımlı' ||  hareketform1.standingUpDependence === 'Yarı bağımlı' || hareketform1.standingUpDependence === 'Bağımlı' ||
+      hareketform1.wearingClothesDependence === 'Yarı bağımlı' || hareketform1.wearingClothesDependence === 'Bağımlı' || vucudutemizform1.bodyCleansingDependence === 'Yarı bağımlı' || vucudutemizform1.bodyCleansingDependence === 'Bağımlı'
+      || ozgecmisform1.aidTools.split('/').includes('Tekerlekli Sandalye') || ozgecmisform1.aidTools.split('/').includes('Baston') || ozgecmisform1.aidTools.split('/').includes('Yürüteç') || ozgecmisform1.aidTools.split('/').includes('Koltuk Degnegi')
+      || JSON.parse(solunumgereksinimi_form1.breathingProblems).includes('Dispne')
+     ){
+        taniArray.push('tani18')
+     }
+
+     if(JSON.parse(solunumgereksinimi_form1.breathingProblems).includes('Dispne') || form10.blood_pressure > 139 || form10.heart_rate > 100 || hareketform1.movementProblem.split('/').includes('Yorgunluk')
+     || hareketform1.movementProblem.split('/').includes('Halsizlik')
+     ){
+        taniArray.push('tani19')
+     }
+     
+     if(uyukuform1.sleepProblem.split('/').includes('Uykudan yorgun kalkma')
+     || hareketform1.movementProblem.split('/').includes('Yorgunluk') || 
+     hareketform1.movementProblem.split('/').includes('Halsizlik')
+     ){
+        taniArray.push('tani20')
+        taniArray.push('tani20')
+     }
+     if(form1_beslenme.nutrition_issue_var.split(',').includes('Bulantı') || form1_beslenme.nutrition_issue_var.split(',').includes('Kusma')
+     ||form1_beslenme.nutrition_issue_var.split(',').includes('İştahsızlık')
+     ){
+        taniArray.push('tani21')
+     }
+     if(form10.heart_rate > 100 || form10.respiratory_rate > 24 ||  form10.body_temperature > 38
+        || vucudutemizform1.skinTemperature === 'Artış'
+     ){
+        taniArray.push('tani22')
+     }
+     if(form10.heart_rate < 50 || form10.respiratory_nature === 'Yüzeyel' || form10.spo2_percentage < 95 || form10.body_temperature < 35 || vucudutemizform1.nailColorProblem.split('/').includes('Siyanotik')
+     || form10.blood_pressure > 139 || vucudutemizform1.capillaryFillingProblem > 3
+     ){
+        taniArray.push('tani23')
+     }
+     
+     
+     
+     var bathDate = new Date(vucudutemizform1.bathDate);
+    var currentDate = new Date();
+    var diffDays = Math.ceil(Math.abs(currentDate - bathDate) / (1000 * 3600 * 24));
+     if(diffDays > 3 || vucudutemizform1.bodyCleansingDependence === 'Yarı bağımlı' || vucudutemizform1.bodyCleansingDependence === 'Bağımlı' || vucudutemizform1.bodyHairStructure.split('/').includes('Yağlı')  
+     ||  vucudutemizform1.scalpHairProblem.split('/').includes('Yağlanma') || vucudutemizform1.bathingFrequency < 2 
+     ){
+        taniArray.push('tani24')
+        taniArray.push('tani24')
+     }
 
 
 
+     
+
+
+
+
+
+
+
+
+
+
+    //  || bosaltimform1.protezlertable === 'Yarı Bağımlı' || bosaltimform1.protezlertable === 'Bağımlı' || bosaltimform1.Mesane_kateterizasyonu === 'Var' || bosaltimform1.ureterestomi === 'Var' || bosaltimform1.Sistostomi === 'Var'
+
+     $.each(taniArray, function(index, item) {
+        console.log(item)
+  var row = $('<tr></tr>');
+  var cell = $('<td></td>').append(
+    $('<div></div>').addClass('mt-3 entered-forms align-items-center').append(
+      $('<a></a>').addClass('nav-items review btn btn-success w-50 p-3').attr({
+        style: 'color: white;',
+        href: "<?php echo $base_url; ?>/tanılar/tani" + (index + 1) + ".php?patient_id=" + patient_id + "&patient_name=" + patient_name + "&standalone=true&root=&parent=",
+      }).text('Tani' + (index + 1))
+    )
+  );
+  row.append(cell);
+  $('#dataTable tbody').append(row);
+});
 </script>
 </body>
 

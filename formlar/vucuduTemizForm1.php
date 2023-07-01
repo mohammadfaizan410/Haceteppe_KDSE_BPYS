@@ -125,7 +125,7 @@ if (isset($_GET['logout'])) {
 
             <div class="input-section d-flex">
                 <p class="usernamelabel">Banyo Sıklığı: :</p>
-                <input type="text" class="form-control" name="bathingFrequency" id="bathingFrequency">
+                <input type="number" class="form-control" name="bathingFrequency" id="bathingFrequency">
             </div>
 
             <div class="input-section d-flex">
@@ -308,7 +308,7 @@ if (isset($_GET['logout'])) {
                 <p class="usernamelabel">Ağız bakımı (Diş protez bakımı) </p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
-                <input type="text" class="form-control w-25" name="mouthCareFreq" id="mouthCareFreq">
+                <input type="number" class="form-control w-25" name="mouthCareFreq" id="mouthCareFreq">
                 <input type="text" class="form-control w-25" name="mouthCareMethod" id="mouthCareMethod">
                 <input type="text" class="form-control w-25" name="mouthCareMaterial" id="mouthCareMaterial">
             </div>
@@ -1110,7 +1110,7 @@ if (isset($_GET['logout'])) {
                                     <input class="form-check-input" type="radio" name="capillaryFillingProblem" id="capillaryFillingProblem" value="Var">
                                     <label class="form-check-label" for="KapillerDolum">
                                         <span class="checkbox-header">Var. Açıklayınız </span>
-                                        <input type="text" class="form-control diger" disabled name="capillaryFillingInput" id="capillaryFillingInput">
+                                        <input type="number" class="form-control diger" disabled name="capillaryFillingInput" id="capillaryFillingInput">
                                     </label>
                                 </div>
                             </div>

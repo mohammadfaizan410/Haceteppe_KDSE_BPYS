@@ -207,6 +207,15 @@ if ($result) {
                                     <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
+                                                <input class="form-check-input" disabled name="movementProblemDesc" type="checkbox" id="movementProblemDesc" value="Anksiyete">
+                                                <label class="form-check-label" for="Huzursuzluk">Anksiyete</label>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="protezlertable">
+                                            <div class="form-check form-check-inline">
                                                 <input class="form-check-input" disabled name="movementProblemDesc" type="checkbox" id="movementProblemDesc" value="Huzursuzluk">
                                                 <label class="form-check-label" for="Huzursuzluk">Huzursuzluk</label>
                                             </div>

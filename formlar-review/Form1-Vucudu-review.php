@@ -135,7 +135,7 @@ if ($result) {
 
             <div class="input-section d-flex">
                 <p class="usernamelabel">Banyo Sıklığı: :</p>
-                <input type="text" class="form-control" name="bathingFrequency" id="bathingFrequency" value="<?php echo $vucudutemizform1[0]['bathingFrequency']; ?>" >
+                <input type="number" class="form-control" name="bathingFrequency" id="bathingFrequency" value="<?php echo $vucudutemizform1[0]['bathingFrequency']; ?>" >
             </div>
 
             <div class="input-section d-flex">
@@ -318,7 +318,7 @@ if ($result) {
                 <p class="usernamelabel">Ağız bakımı (Diş protez bakımı) </p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
-                <input type="text" class="form-control w-25" name="mouthCareFreq" id="mouthCareFreq" value="<?php echo $vucudutemizform1[0]['mouthCareFreq']; ?>">
+                <input type="number" class="form-control w-25" name="mouthCareFreq" id="mouthCareFreq" value="<?php echo $vucudutemizform1[0]['mouthCareFreq']; ?>">
                 <input type="text" class="form-control w-25" name="mouthCareMethod" id="mouthCareMethod" value="<?php echo $vucudutemizform1[0]['mouthCareMethod']; ?>">
                 <input type="text" class="form-control w-25" name="mouthCareMaterial" id="mouthCareMethod" value="<?php echo $vucudutemizform1[0]['mouthCareMethod']; ?>">
             </div>
@@ -1120,7 +1120,7 @@ if ($result) {
                                     <input class="form-check-input" type="radio" name="capillaryFillingProblem" id="capillaryFillingProblem" value="Var">
                                     <label class="form-check-label" for="KapillerDolum">
                                         <span class="checkbox-header">Var. Açıklayınız </span>
-                                        <input type="text" class="form-control diger" disabled  name="capillaryFillingInput">
+                                        <input type="number" class="form-control diger" disabled  name="capillaryFillingInput">
                                     </label>
                                 </div>
                             </div>
