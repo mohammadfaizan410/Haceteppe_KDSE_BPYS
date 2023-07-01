@@ -11,6 +11,263 @@ if (isset($_GET['logout'])) {
     unset($_SESSION);
     header("Location: main.php");
 }
+require_once('../config-students.php');
+
+$userid = $_SESSION['userlogin']['id'];
+$sql = "SELECT * FROM bosaltimform1";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+
+if ($result) {
+    $bosaltimform1 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+    $bosaltimform1 = $bosaltimform1[count($bosaltimform1) - 1];
+} else {
+    echo 'error';
+}
+$sql = "SELECT * FROM solunumgereksinimi_form1";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+
+if ($result) {
+    $solunumgereksinimi_form1 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+    $solunumgereksinimi_form1 = $solunumgereksinimi_form1[count($solunumgereksinimi_form1) - 1];
+} else {
+    echo 'error';
+}
+$sql = "SELECT * FROM calismaform1";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+
+if ($result) {
+    $calismaform1 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+    $calismaform1 = $calismaform1[count($calismaform1) - 1];
+} else {
+    echo 'error';
+}
+$sql = "SELECT * FROM egitimform1";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+
+if ($result) {
+    $egitimform1 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+    $egitimform1 = $egitimform1[count($egitimform1) - 1];
+} else {
+    echo 'error';
+}
+$sql = "SELECT * FROM form1_beslenme";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+
+if ($result) {
+    $form1_beslenme = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+    $form1_beslenme = $form1_beslenme[count($form1_beslenme) - 1];
+} else {
+    echo 'error';
+}
+$sql = "SELECT * FROM form2";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+
+if ($result) {
+    $form2 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+    $form2 = $form2[count($form2) - 1];
+} else {
+    echo 'error';
+}
+$sql = "SELECT * FROM form3";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+
+if ($result) {
+    $form3 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+    $form3 = $form3[count($form3) - 1];
+} else {
+    echo 'error';
+}
+$sql = "SELECT * FROM form4";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+
+if ($result) {
+    $form4 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+    $form4 = $form4[count($form4) - 1];
+} else {
+    echo 'error';
+}
+$sql = "SELECT * FROM form5";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+
+if ($result) {
+    $form5 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+    $form5 = $form5[count($form5) - 1];
+} else {
+    echo 'error';
+}
+$sql = "SELECT * FROM form6";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+
+if ($result) {
+    $form6 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+    $form6 = $form6[count($form6) - 1];
+} else {
+    echo 'error';
+}
+$sql = "SELECT * FROM form7";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+
+if ($result) {
+    $form7 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+    $form7 = $form7[count($form7) - 1];
+} else {
+    echo 'error';
+}
+$sql = "SELECT * FROM form8";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+
+if ($result) {
+    $form8 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+    $form8 = $form8[count($form8) - 1];
+} else {
+    echo 'error';
+}
+$sql = "SELECT * FROM form9";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+
+if ($result) {
+    $form9 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+    $form9 = $form9[count($form9) - 1];
+} else {
+    echo 'error';
+}
+$sql = "SELECT * FROM form10";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+
+if ($result) {
+    $form10 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+    $form10 = $form10[count($form10) - 1];
+} else {
+    echo 'error';
+}
+$sql = "SELECT * FROM form11";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+
+if ($result) {
+    $form11 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+    $form11 = $form11[count($form11) - 1];
+} else {
+    echo 'error';
+}
+$sql = "SELECT * FROM form12";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+
+if ($result) {
+    $form12 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+    $form12 = $form12[count($form12) - 1];
+} else {
+    echo 'error';
+}
+$sql = "SELECT * FROM form13";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+
+if ($result) {
+    $form13 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+    $form13 = $form13[count($form13) - 1];
+} else {
+    echo 'error';
+}
+$sql = "SELECT * FROM form14";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+
+if ($result) {
+    $form14 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+    $form14 = $form14[count($form14) - 1];
+} else {
+    echo 'error';
+}
+$sql = "SELECT * FROM form15";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+
+if ($result) {
+    $form15 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+    $form15 = $form15[count($form15) - 1];
+} else {
+    echo 'error';
+}
+$sql = "SELECT * FROM hareketform1";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+
+if ($result) {
+    $hareketform1 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+    $hareketform1 = $hareketform1[count($hareketform1) - 1];
+} else {
+    echo 'error';
+}
+$sql = "SELECT * FROM ilestimform1";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+
+if ($result) {
+    $ilestimform1 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+    $ilestimform1 = $ilestimform1[count($ilestimform1) - 1];
+} else {
+    echo 'error';
+}
+$sql = "SELECT * FROM katererform1";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+
+if ($result) {
+    $katererform1 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+    $katererform1 = $katererform1[count($katererform1) - 1];
+} else {
+    echo 'error';
+}
+$sql = "SELECT * FROM ozgecmisform1";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+
+if ($result) {
+    $ozgecmisform1 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+    $ozgecmisform1 = $ozgecmisform1[count($ozgecmisform1) - 1];
+} else {
+    echo 'error';
+}
+$sql = "SELECT * FROM uyukuform1";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+
+if ($result) {
+    $uyukuform1 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+    $uyukuform1 = $uyukuform1[count($uyukuform1) - 1];
+} else {
+    echo 'error';
+}
+$sql = "SELECT * FROM vucudutemizform1";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+
+if ($result) {
+    $vucudutemizform1 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+    $vucudutemizform1 = $vucudutemizform1[count($vucudutemizform1) - 1];
+} else {
+    echo 'error';
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 
 ?>
@@ -127,6 +384,51 @@ input.addEventListener("input", function() {
   }
 });
             </script>
+
+
+
+<script>
+    var form2 = <?php echo json_encode($form2); ?>;
+    var form3 = <?php echo json_encode($form3); ?>;
+    var form4 = <?php echo json_encode($form4); ?>;
+    var form5 = <?php echo json_encode($form5); ?>;
+    var form6 = <?php echo json_encode($form6); ?>;
+    var form7 = <?php echo json_encode($form7); ?>;
+    var form8 = <?php echo json_encode($form8); ?>;
+    var form9 = <?php echo json_encode($form9); ?>;
+    var form10 = <?php echo json_encode($form10); ?>;
+    var form11 = <?php echo json_encode($form11); ?>;
+    var form12 = <?php echo json_encode($form12); ?>;
+    var form13 = <?php echo json_encode($form13); ?>;
+    var form14 = <?php echo json_encode($form14); ?>;
+    var form15 = <?php echo json_encode($form15); ?>;
+    var bosaltimform1 = <?php echo json_encode($bosaltimform1); ?>;
+    var calismaform1 = <?php echo json_encode($calismaform1); ?>;
+    var egitimform1 = <?php echo json_encode($egitimform1); ?>;
+    var form1_beslenme = <?php echo json_encode($form1_beslenme); ?>;
+    var hareketform1 = <?php echo json_encode($hareketform1); ?>;
+    var ilestimform1 = <?php echo json_encode($ilestimform1); ?>;
+    var katererform1 = <?php echo json_encode($katererform1); ?>;
+    var ozgecmisform1 = <?php echo json_encode($ozgecmisform1); ?>;
+    var uyukuform1 = <?php echo json_encode($uyukuform1); ?>;
+    var vucudutemizform1 = <?php echo json_encode($vucudutemizform1); ?>;
+    var solunumgereksinimi_form1 = <?php echo json_encode($solunumgereksinimi_form1); ?>;
+    var taniArray = [];
+
+    //tani 1 matching
+     if(form10.respiratory_rate < 16 || form10.respiratory_rate > 20 || form10.heart_rate > 100 || form10.o2_status === 'Aliyor' || 
+     JSON.parse(solunumgereksinimi_form1.breathingProblems).includes('Dispne') ||  JSON.parse(solunumgereksinimi_form1.breathingProblems).includes('Hipoventilasyon')
+     || JSON.parse(solunumgereksinimi_form1.breathingProblems).includes('Bradipne') || form10.respiratory_nature === 'Derin' || form10.respiratory_nature === 'Yüzeyel' || vucudutemizform1.nailStructureProblem.split('/').includes('Çomaklaşma')){
+            taniArray.push('tani1');
+     }
+
+     if(form10.respiratory_rate < 16 || form10.respiratory_rate > 20 || form10.respiratory_nature === 'Derin' || form10.respiratory_nature === 'Yüzeyel'
+    || JSON.parse(solunumgereksinimi_form1.breathingProblems).includes('Dispne') ||  JSON.parse(solunumgereksinimi_form1.breathingProblems).includes('Hipoventilasyon') || JSON.parse(solunumgereksinimi_form1.breathingProblems).includes('Hiperventilasyon')
+     )
+
+
+
+</script>
 </body>
 
 </html>

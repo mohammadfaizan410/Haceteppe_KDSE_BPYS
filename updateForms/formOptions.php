@@ -44,11 +44,11 @@ if (isset($_GET['logout'])) {
         </div>
         <div class='row d-flex justify-content-around mt-5 mb-5'>
             <div class='col-md-3  option_selector' id='showMatchingTanis' >
-                View submitted tanis
+            Show matching tanis
             </div> 
-            <div class='col-md-3 option_selector' id='showSubMatchingTanis'>
-                view submitted matching tanis
-            </div> 
+            <div class='col-md-3 option_selector' id='showMatchingTanisJordan'>
+            showMatchingTanisJordan
+                    </div> 
         </div>
 </div>
 </div>
@@ -70,6 +70,18 @@ if (isset($_GET['logout'])) {
             });
             $('#showSubmittedTani').click(function() {
                 var url = "<?php echo $base_url; ?>/updateForms/showSubmittedTanis.php?patient_id=" +
+                        patient_id + "&patient_name=" + encodeURIComponent(patient_name); 
+                
+                $("#content").load(url);
+            });
+            $('#showMatchingTanis').click(function() {
+                var url = "<?php echo $base_url; ?>/updateForms/showSystemGeneratedTanisFaizan.php?patient_id=" +
+                        patient_id + "&patient_name=" + encodeURIComponent(patient_name); 
+                
+                $("#content").load(url);
+            });
+            $('#showMatchingTanisJordan').click(function() {
+                var url = "<?php echo $base_url; ?>/updateForms/showSystemGeneratedTanisJordan.php?patient_id=" +
                         patient_id + "&patient_name=" + encodeURIComponent(patient_name); 
                 
                 $("#content").load(url);
