@@ -516,14 +516,14 @@ input.addEventListener("input", function() {
      }
 
 
-     if(uyukuform1.averageSleepDuration < 7 || uyukuform1.averageSleepDuration.split('/').includes('Gündüz uykusu') || uyukuform1.averageSleepDuration.split('/').includes('Uykudan yorgun kalkma') || uyukuform1.averageSleepDuration.split('/').includes('Uyuma güçlüğü')
+     if(uyukuform1.averageSleepDuration < 7 || uyukuform1.averageSleepDuration.split('/').includes('Gündüz uykus') || uyukuform1.averageSleepDuration.split('/').includes('Uykudan yorgun kalkma') || uyukuform1.averageSleepDuration.split('/').includes('Uyuma güçlüğü')
     || uyukuform1.averageSleepDuration.split('/').includes('Uykunun bölünmesi') || hareketform1.movementProblem.split('/').includes('Huzursuzluk') || hareketform1.movementProblem.split('/').includes('Yorgunluk')
     || uyukuform1.hospitalFactorsAffectingSleep !== ''
      ){
         taniArray.push('tani16')
      }
 
-     if(uyukuform1.averageSleepDuration < 7 || uyukuform1.averageSleepDuration.split('/').includes('Gündüz uykusu') || uyukuform1.averageSleepDuration.split('/').includes('Uykudan yorgun kalkma') || uyukuform1.averageSleepDuration.split('/').includes('Uyuma güçlüğü')
+     if(uyukuform1.averageSleepDuration < 7 || uyukuform1.averageSleepDuration.split('/').includes('Gündüz uykus') || uyukuform1.averageSleepDuration.split('/').includes('Uykudan yorgun kalkma') || uyukuform1.averageSleepDuration.split('/').includes('Uyuma güçlüğü')
     || uyukuform1.averageSleepDuration.split('/').includes('Uykunun bölünmesi') || hareketform1.movementProblem.split('/').includes('Huzursuzluk') || hareketform1.movementProblem.split('/').includes('Rahatsızlık') || hareketform1.movementProblem.split('/').includes('Kaşıntı')
     || form2.pain_duration === '6 Aydan Fazla' || form2.pain_duration !== '6 Aydan Fazla' || form1_beslenme.nutrition_issue_var.split(',').includes('Bulantı')
      ){
@@ -549,7 +549,6 @@ input.addEventListener("input", function() {
      || hareketform1.movementProblem.split('/').includes('Yorgunluk') || 
      hareketform1.movementProblem.split('/').includes('Halsizlik')
      ){
-        taniArray.push('tani20')
         taniArray.push('tani20')
      }
      if(form1_beslenme.nutrition_issue_var.split(',').includes('Bulantı') || form1_beslenme.nutrition_issue_var.split(',').includes('Kusma')
@@ -577,9 +576,152 @@ input.addEventListener("input", function() {
      ||  vucudutemizform1.scalpHairProblem.split('/').includes('Yağlanma') || vucudutemizform1.bathingFrequency < 2 
      ){
         taniArray.push('tani24')
-        taniArray.push('tani24')
      }
 
+     if (form1_beslenme.cignemeRadio == "Var" || form1_beslenme.nutritional_needs == "Yarı Bağımlı" || form1_beslenme.nutritional_needs == "Bağımlı"
+            || form1_beslenme.food_consumption_var == "Daha Az" || form1_beslenme.diet_eating_process == "Sonda ile") {
+                  taniArray.push("tani25");
+            }
+
+            if (hareketform1.wearingClothesDependence == "Yarı Bağımlı" || hareketform1.wearingClothesDependence == "Bağımlı" || hareketform1.movementProblem.split('/').includes("Yorgunluk")) {
+                  taniArray.push("tani26");
+            }
+
+            if (bosaltimform1.stoolEmptyingHelp == "Yarı Bağımlı" || bosaltimform1.stoolEmptyingHelp == "Bağımlı" || bosaltimform1.protezlertable2 == "Yarı Bağımlı"
+            || bosaltimform1.protezlertable2 == "Bağımlı" || hareketform1.standingUpDependence == "Bağımlı" || hareketform1.wearingClothesDependence == "Yarı Bağımlı" ||
+            hareketform1.wearingClothesDependence == "Bağımlı" || vucudutemizform1.bodyCleansingDependence == "Yarı bağımlı" || vucudutemizform1.bodyCleansingDependence == "Bağımlı" 
+            || JSON.parse(bosaltimform1.excretionProblems).includes("Fekal") || JSON.parse(bosaltimform1.excretionIssues).includes("Üriner inkontinans")) {
+                  taniArray.push("tani27");
+            }
+
+            if (form7.stage == "Evre I" || form7.stage == "Evre II" || katererform1.katererType == "Periferik venöz kateter" || katererform1.katererType == "Santral venöz  kateter" || katererform1.katererType == "Dren" 
+            || vucudutemizform1.skinMoisture == "Var"){
+                    taniArray.push("tani28");
+            }
+
+            if (form7.stage == "Evre III" || form7.stage == "Evre IV" || form7.stage == "Evrelendirilemeyen" || form7.stage == "Derin doku hasarı"
+            || form1_beslenme.oral_mucosa_issue_var.split(',').includes('Ülserasyon') || form1_beslenme.oral_mucosa_issue_var.split(',').includes('Lezyon')){
+                    taniArray.push("tani29");
+            }
+
+            if (JSON.parse(solunumgereksinimi_form1.breathingProblems).includes('Dispne') || ilestimform1.communicationProblem != "Yok"
+            || ilestimform1.contactingStaffTrouble != "Yok" || solunumgereksinimi_form1.airwayMethod == "Trakeostomi" || solunumgereksinimi_form1.airwayMethod == "Endotrakeal Tüp"){
+                    taniArray.push("tani30");
+            }
+
+            if (form1_beslenme.nutrition_issue_var.split(',').includes('İştahsızlık') || form1_beslenme.nutrition_issue_var.split(',').includes('İsteksiz')
+            || ilestimform1.treatmentAcceptance == "Kabul etmiyor" || uyukuform1.sleepProblem.split('/').includes('Gündüz uykus')
+            || uyukuform1.sleepProblem.split('/').includes('Uykudan yorgun kalkma') || uyukuform1.sleepProblem.split('/').includes('Uyuma güçlüğü')
+            || uyukuform1.sleepProblem.split('/').includes('Uykunun bölünmesi') || ilestimform1.reachTrouble != "Yok" || ilestimform1.companion == "Yok" 
+            || calismaform1.workStatus == "Çalışmıyor"){
+                    taniArray.push("tani31");
+            }
+
+
+            if (uyukuform1.sleepProblem.split('/').includes('Gündüz uykus') || calismaform1.hobbies == "Yok" || hareketform1.movementProblem.split('/').includes('Huzursuzluk')){
+                    taniArray.push("tani32"); // add patient age
+            }            
+            if (ilestimform1.treatmentAcceptance !== "") {
+                    taniArray.push("tani33");
+            }
+
+            
+            if (hareketform1.movementProblem.split('/').includes('Huzursuzluk') || hareketform1.movementProblem.split('/').includes('Yorgunluk')
+            || hareketform1.movementProblem.split('/').includes('Anksiyete') || uyukuform1.averageSleepDuration < 7 || uyukuform1.sleepProblem.split('/').includes('Gündüz uykus')
+            || uyukuform1.sleepProblem.split('/').includes('Uykudan yorgun kalkma') || uyukuform1.sleepProblem.split('/').includes('Uyuma güçlüğü')
+            || uyukuform1.sleepProblem.split('/').includes('Uykunun bölünmesi')) {
+                    taniArray.push("tani34");
+            }
+
+
+            if (form3.total >= 5 || ozgecmisform1.aidTools.split('/').includes('Tekerlekli Sandalye') || ozgecmisform1.aidTools.split('/').includes('Baston')
+            || ozgecmisform1.aidTools.split('/').includes('Yurutec') || ozgecmisform1.aidTools.split('/').includes('Koltuk Degnegi')){
+                taniArray.push("tani36");
+            }
+
+            if (katererform1.katererType == "Periferik venöz kateter" || katererform1.katererType == "Santral venöz  kateter" || katererform1.katererType == "Dren"
+            || katererform1.katererType == "Diğer" || bosaltimform1.Mesane_kateterizasyonu == "Var" || ozgecmisform1.smoking != "Yok" || ozgecmisform1.arrivalFromInput == "DM"
+            || form1_beslenme.BKI > 30){
+                taniArray.push("tani37");
+            }
+
+            if (bosaltimform1.bagirsak_sesleri < 6 || form1_beslenme.chewing_difficulty == "Var" || form1_beslenme.gastric_residue == "Var"
+            || solunumgereksinimi_form1.CoughOption == "Ektisiz" || form1_beslenme.diet_eating_process == "Sonda ile" || solunumgereksinimi_form1.airwayMethod == "Trakeostomi"
+            || solunumgereksinimi_form1.airwayMethod == "Endotrakeal Tüp" || form1_beslenme.nazogastrik_decompression_radio == "Var"
+            || JSON.parse(bosaltimform1.excretionProblems).includes('Distansyon') || JSON.parse(bosaltimform1.excretionProblems).includes('Dışkı')){
+                taniArray.push("tani38");
+            }
+
+            if (form1_beslenme.BKI < 18 || ozgecmisform1.aidTools.split('/').includes('Gozluk') || form5.verbal_response_points == 4 
+            || (form5.total >= 3 && form5.total <= 13)){
+                taniArray.push("tani39");
+            }
+
+            if (vucudutemizform1.mouthCareFreq < 2 || ozgecmisform1.smoking != "Yok" || ozgecmisform1.alcoholUsage == "Alkol" 
+            || form1_beslenme.lip_color_issue_var.split(',').includes('Kuru') || form1_beslenme.oral_mucosa_issue_var.split(',').includes('Kuruluk')
+            || form1_beslenme.food_consumption_var == "Daha Az" || form1_beslenme.diet_eating_process == "Parenteral" || form1_beslenme.diet_eating_process == "Sonda ile"
+            || JSON.parse(solunumgereksinimi_form1.aspirationNeeds).includes('Oro_Nazofarengeal')){
+                taniArray.push("tani40");
+            }
+
+            if (JSON.parse(bosaltimform1.excretionProblems).includes('Diare') || bosaltimform1.bagirsak_sesleri > 10 || bosaltimform1.hospitalStoolEmptyingFrequency > 3
+            || form1_beslenme.nutrition_issue_var.split('/').includes('Kusma') || form8.edema_severity == "1" || form8.edema_severity == "2" 
+            || form8.edema_severity == "3" || form8.edema_severity == "4"){
+                taniArray.push("tani41");
+            }
+
+            if (JSON.parse(bosaltimform1.excretionProblems).includes('Diare') || form1_beslenme.nutrition_issue_var.split('/').includes('Kusma')
+            || form1_beslenme.liquid_consumption < 1000 || katererform1.katererType == "Dren" || form1_beslenme.BKI > 30) {
+                taniArray.push("tani42");
+            }
+
+            if (ozgecmisform1.allergies == "Var" || ozgecmisform1.transfusionReaction != "Yok" || ozgecmisform1.kolbandi == "Kırmızı"
+            || ozgecmisform1.arrivalFromInput == "Astım"){
+                taniArray.push("tani43");
+            }
+
+            if (form1_beslenme.BKI > 30 || form10.spo2_percentage < 95 || form1_beslenme.liquid_consumption < 1000 || bosaltimform1.IdrarRengi == "Koyu sarı"
+            || form10.blood_pressure < 100 || form10.heart_rate > 100 || vucudutemizform1.skinAge == "Zayıf" || form5.verbal_response_points == 4 
+            || (form5.total >= 3 && form5.total <= 13)){
+                taniArray.push("tani44");
+            }
+
+            if (ilestimform1.treatmentAcceptance == "Kabul etmiyor" || hareketform1.exercisingHabitInput == "Yok" 
+            || ozgecmisform1.arrivalFromInput == "DM" || form1_beslenme.food_consumption_var == "Daha Az") {
+                taniArray.push("tani45");
+            }
+            var defekasyonZamani = bosaltimform1.defekasyon_zamani;
+            var diffTime = currentDate.getTime() - (defekasyonZamani * 24 * 60 * 60 * 1000); 
+            var dayDiff = Math.floor(diffTime / (24 * 60 * 60 * 1000)); 
+
+            if (dayDiff > 2 || form1_beslenme.nutrition_issue_var == "Hazımsızlık" || form1_beslenme.food_consumption_var == "Daha Az"
+            || form1_beslenme.diet_eating_process == "Parenteral" || form1_beslenme.diet_eating_process == "Sonda ile" 
+            || hareketform1.changingPositionDependence == "Yarı Bağımlı" || hareketform1.changingPositionDependence == "Bağımlı"
+            || hareketform1.movementProblem.split('/').includes('Anksiyete') || hareketform1.exercisingHabit == "Hayir"){
+                taniArray.push("tani46");
+            }
+
+            if (form6.total <= 14 || form1_beslenme.BKI < 18 || form1_beslenme.BKI > 35 || vucudutemizform1.skinColorProblem == "Soluk"
+            || vucudutemizform1.skinColorProblem == "Kızarıklık" || vucudutemizform1.skinColorProblem == "Pigmentasyon artışı"
+            || vucudutemizform1.skinAge == "Zayıf" || form10.body_temperature > 38 || form10.body_temperature < 35 
+            || form1_beslenme.nutritional_needs == "Yarı Bağımlı" || form1_beslenme.nutritional_needs == "Bağımlı"
+            || hareketform1.changingPositionDependence == "Yarı Bağımlı" || hareketform1.changingPositionDependence == "Bağımlı"){
+                taniArray.push("tani47");
+            }
+
+            if (form6.total <= 14 || form1_beslenme.BKI < 18 || form1_beslenme.BKI > 35 || form10.heartrate_nature == "Zayıf"
+            || (vucudutemizform1.capillaryFillingProblem != "Yok" && vucudutemizform1.capillaryFillingProblem > 3) 
+            ||form8.edema_severity == "1" || form8.edema_severity == "2" || form8.edema_severity == "3" || form8.edema_severity == "4"
+            || vucudutemizform1.skinMoisture == "Kuru" || form1_beslenme.oral_mucosa_issue_var.split(',').includes('Kuruluk')
+            || ozgecmisform1.aidTools.split('/').includes('Tekerlekli Sandalye') || ozgecmisform1.aidTools.split('/').includes('Baston')
+            || ozgecmisform1.aidTools.split('/').includes('Yurutec') || ozgecmisform1.aidTools.split('/').includes('Koltuk Degnegi')){
+                taniArray.push("tani48");
+            }
+
+            if (ozgecmisform1.aidTools.split('/').includes('Tekerlekli Sandalye') || form5.verbal_response_points == 4
+            || ozgecmisform1.allergies == "Var" || solunumgereksinimi_form1.airwayMethod == "Endotrakeal Tüp"){
+                taniArray.push("tani49");
+            }
 
 
      
@@ -595,15 +737,15 @@ input.addEventListener("input", function() {
 
     //  || bosaltimform1.protezlertable === 'Yarı Bağımlı' || bosaltimform1.protezlertable === 'Bağımlı' || bosaltimform1.Mesane_kateterizasyonu === 'Var' || bosaltimform1.ureterestomi === 'Var' || bosaltimform1.Sistostomi === 'Var'
 
-     $.each(taniArray, function(index, item) {
-        console.log(item)
+    taniArray.forEach(function(item) {
+  console.log(item);
   var row = $('<tr></tr>');
   var cell = $('<td></td>').append(
     $('<div></div>').addClass('mt-3 entered-forms align-items-center').append(
       $('<a></a>').addClass('nav-items review btn btn-success w-50 p-3').attr({
         style: 'color: white;',
-        href: "<?php echo $base_url; ?>/tanılar/tani" + (index + 1) + ".php?patient_id=" + patient_id + "&patient_name=" + patient_name + "&standalone=true&root_id=null&parent_id=null",
-      }).text('Tani' + (index + 1))
+        href: "<?php echo $base_url; ?>/tanılar/" + item + ".php?patient_id=" + patient_id + "&patient_name=" + patient_name + "&standalone=true&root_id=null&parent_id=null",
+      }).text(item)
     )
   );
   row.append(cell);
