@@ -31,11 +31,14 @@ if (isset($_GET['logout'])) {
     <div class='patient-details'>
         <h2 class='pb-5'>Formlar</h2>
         <div class='row pt-5 pb-3 border-bottom justify-content-center'>
-  <div class='col-lg-3 btn btn-success m-3' id='showAllForms' style='aspect-ratio : 4/2'>
-    <a class=''  style='aspect-ratio : 4/2'>Submit a form</a>
+  <div class='col-lg-3 btn btn-success m-3' id='showAllTanis' style='aspect-ratio : 4/2'>
+    <a class=''  style='aspect-ratio : 4/2'>Submit a Tani</a>
   </div>
-  <div class='col-lg-3 btn btn-success m-3' id='showSubmittedForms' style='aspect-ratio : 4/2'>
-    <a class=''  style='aspect-ratio : 4/2' >Submitted Forms</a>
+  <div class='col-lg-3 btn btn-success m-3' id='showSystemGeneratedTanis' style='aspect-ratio : 4/2'>
+    <a class=''  style='aspect-ratio : 4/2' >System Generated Tanis</a>
+  </div>
+  <div class='col-lg-3 btn btn-success m-3' id='showSubmittedTanis' style='aspect-ratio : 4/2'>
+    <a class=''  style='aspect-ratio : 4/2' >Show tanis</a>
   </div>
 </div>
 </div>
@@ -43,13 +46,18 @@ if (isset($_GET['logout'])) {
         <script>      
             var patient_id = "<?php echo $_GET['patient_id']; ?>";
             var patient_name = "<?php echo $_GET['patient_name']; ?>";
-            $('#showAllForms').click(function() {
-                var url = "<?php echo $base_url; ?>/updateForms/showAllForms1.php?patient_id=" +
+            $('#showAllTanis').click(function() {
+                var url = "<?php echo $base_url; ?>/updateForms/showAllTanis.php?patient_id=" +
                         patient_id + "&patient_name=" + encodeURIComponent(patient_name); 
                 $("#content").load(url);
             });
-            $('#showSubmittedForms').click(function() {
-                var url = "<?php echo $base_url; ?>/updateForms/showSubmittedForms.php?patient_id=" +
+            $('#showSubmittedTanis').click(function() {
+                var url = "<?php echo $base_url; ?>/updateForms/showSubmittedTanis.php?patient_id=" +
+                        patient_id + "&patient_name=" + encodeURIComponent(patient_name); 
+                $("#content").load(url);
+            });
+            $('#showSystemGeneratedTanis').click(function() {
+                var url = "<?php echo $base_url; ?>/updateForms/showSystemGeneratedTanis.php?patient_id=" +
                         patient_id + "&patient_name=" + encodeURIComponent(patient_name); 
                 $("#content").load(url);
             });

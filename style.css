@@ -460,6 +460,14 @@ input[type="email"] {
     
 }
 
+.patient-details{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+    justify-content: start;
+}
+
 .block {
     display: block !important;
 }

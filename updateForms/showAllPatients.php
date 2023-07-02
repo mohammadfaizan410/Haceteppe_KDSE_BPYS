@@ -57,7 +57,7 @@ if (isset($_GET['logout'])) {
                                 <th scope="col" style="font-weight : bold; font-size: large;">İsim</th>
                                 <th scope="col" style="font-weight : bold; font-size: large;">Soyisim</th>
                                 <th scope="col" style="font-weight : bold; font-size: large;">Yaş</th>
-                                <th scope="col" style="font-weight : bold; font-size: large;">Formlar</th>
+                                <th scope="col" style="font-weight : bold; font-size: large;">Detaylar</th>
 
                             </tr>
                             <?php
@@ -68,7 +68,7 @@ if (isset($_GET['logout'])) {
                                     <td scope="col" style="color: #333333;">' . $value['name'] . '</td>
                                     <td scope="col" style="color: #333333;">' . $value['surname'] . '</td>
                                     <td scope="col" style="color: #333333;">' . $value['age'] . '</td>
-                                    <td scope="col"><a style="color: white;" class="showallforms btn btn-success p-3" href="#" data-patient-id="' . $value['patient_id'] . '" data-patient-name="' . $fullName . '">Formları Görüntüle</a></td>
+                                    <td scope="col"><a style="color: white;" class="showallforms btn btn-success p-3" href="#" data-patient-id="' . $value['patient_id'] . '" data-patient-name="' . $fullName . '">Detayları Dörüntüle</a></td>
                                 </tr>';
                                 }
                             }
@@ -86,7 +86,7 @@ if (isset($_GET['logout'])) {
                     e.preventDefault();
                     var patient_id = $(this).data("patient-id");
                     var patient_name = $(this).data("patient-name");
-                    var url = "<?php echo $base_url; ?>/updateForms/formOptions.php?patient_id=" +
+                    var url = "<?php echo $base_url; ?>/updateForms/allOptions.php?patient_id=" +
                         patient_id + "&patient_name=" + encodeURIComponent(patient_name);
                     $("#content").load(url);
                 });

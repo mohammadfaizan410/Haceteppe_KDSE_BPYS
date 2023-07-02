@@ -288,7 +288,7 @@ if (isset($_GET['logout'])) {
             $(function() {
                 $("#closeBtn1").on("click", function(e) {
                     var url =
-                        "<?php echo $base_url; ?>/updateForms/formOptions.php?patient_id=" +
+                        "<?php echo $base_url; ?>/updateForms/taniOptions.php?patient_id=" +
                         patient_id + "&patient_name=" + encodeURIComponent(
                             patient_name);
                     e.preventDefault();
