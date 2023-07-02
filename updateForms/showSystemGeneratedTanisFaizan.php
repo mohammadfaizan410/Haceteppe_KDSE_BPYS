@@ -602,7 +602,7 @@ input.addEventListener("input", function() {
     $('<div></div>').addClass('mt-3 entered-forms align-items-center').append(
       $('<a></a>').addClass('nav-items review btn btn-success w-50 p-3').attr({
         style: 'color: white;',
-        href: "<?php echo $base_url; ?>/tanılar/tani" + (index + 1) + ".php?patient_id=" + patient_id + "&patient_name=" + patient_name + "&standalone=true&root=&parent=",
+        href: "<?php echo $base_url; ?>/tanılar/tani" + (index + 1) + ".php?patient_id=" + patient_id + "&patient_name=" + patient_name + "&standalone=true&root_id=null&parent_id=null",
       }).text('Tani' + (index + 1))
     )
   );

@@ -45,7 +45,7 @@ if (isset($_GET['logout'])) {
         require_once('../config-students.php');
         $userid = $_SESSION['userlogin']['id'];
         $patientId = $_GET['patient_id'];
-        $sql = "SELECT * FROM tani WHERE patient_id = " . $patientId . " AND root_id = NULL";
+        $sql = "SELECT * FROM tani WHERE patient_id = " . $patientId . " AND root_id='null' AND parent_id='null'";
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         if ($result) {
@@ -53,6 +53,15 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         }
+        $sql = "SELECT * FROM tani WHERE patient_id = " . $patientId . " AND root_id!='null' AND parent_id!='null'";
+        $smtmselect = $db->prepare($sql);
+        $result = $smtmselect->execute();
+        if ($result) {
+            $allTanisRooted = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            echo 'error';
+        }
+
 
         ?>
         <div class="send-patient">
@@ -80,9 +89,14 @@ if (isset($_GET['logout'])) {
                                     echo '<td>' . $row['tani_id'] . '</td>';
                                     echo '<td>' . $row['creation_date'] . '</td>';
                                     echo '<td>'.$row['time'].'</td>';
-                                    echo "<td><div class='entered-forms align-items-center'><a class='nav-items review btn btn-success w-100' style='color : white;'
-                                    href='" . $base_url . "/taniReview/tani" . $row['tani_num'] . "-review.php?patient_id=" . $row['patient_id'] . "&patient_name=" . $row['patient_name'] . "&standalone=" . $row['standalone'] . "&evaluation=" . $row['evaluation'] . "&tani_id=".$row['tani_id']."&tani_num=".$row['tani_num']."'>tani" . $row['tani_num'] . "</a></div></td>";
+                                    echo "<td class='root-tani'>
+                                    <div class='entered-forms align-items-center'><a class='nav-items review btn btn-success w-100' style='color : white;'
+                                    href='" . $base_url . "/taniReview/tani" . $row['tani_num'] . "-review.php?patient_id=" . $row['patient_id'] . "&patient_name=" . $row['patient_name'] . "&standalone=" . $row['standalone'] . "&evaluation=" . $row['evaluation'] . "&tani_id=".$row['tani_id']."&tani_num=".$row['tani_num']."'>tani" . $row['tani_num'] . "</a></div>
+                                    </td>";
                                     echo '</tr>';
+                                    echo'<tr id="tani"'.$row['tani_id'].' style="display : none">
+                                    <td colspan="4">hello there sajdnaksjd klas,jdkaskjda lkasjdlkasdklja aslkjdlakjsd</td>
+                                        </tr>';
                                 }
 
                             ?>
