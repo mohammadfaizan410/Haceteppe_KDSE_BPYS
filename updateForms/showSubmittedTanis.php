@@ -45,7 +45,7 @@ if (isset($_GET['logout'])) {
         require_once('../config-students.php');
         $userid = $_SESSION['userlogin']['id'];
         $patientId = $_GET['patient_id'];
-        $sql = "SELECT * FROM tani WHERE patient_id = " . $patientId . "";
+        $sql = "SELECT * FROM tani WHERE patient_id = " . $patientId . " AND root_id = NULL";
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         if ($result) {

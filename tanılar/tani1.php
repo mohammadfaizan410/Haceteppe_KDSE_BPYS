@@ -499,11 +499,14 @@ if (isset($_GET['logout'])) {
                     return this.value;
                 }).get().join('/');
                 let noc_indicator = $('.form-check-input[name="noc_indicator"]:checked').val();
-		        let noc_indicator_2 = $('.form-check-input[name="noc_indicator_2"]') ? $('.form-check-input[name=noc_indicator_2]:checked').val() : "null";
-		        let noc_indicator_3 = $('.form-check-input[name="noc_indicator_3"]') ? $('.form-check-input[name=noc_indicator_3]:checked').val() : "null";
+		        let noc_indicator_2 = $('.form-check-input[name="noc_indicator_2"]').length > 0 ? $('.form-check-input[name="noc_indicator_2"]:checked').val() : "null";
+
+		        let noc_indicator_3 = $('.form-check-input[name="noc_indicator_3"]').length > 0 ? $('.form-check-input[name="noc_indicator_3"]:checked').val() : "null";
+
                 let noc_indicator_after = $('.form-check-input[name="noc_indicator_after"]:checked').val();
-		        let noc_indicator_after_2 = $('.form-check-input[name="noc_indicator_after_2"]') ? $('.form-check-input[name=noc_indicator_after_2]:checked').val() : "null";
-                let noc_indicator_after_3 = $('.form-check-input[name="noc_indicator_after_3"]') ? $('.form-check-input[name=noc_indicator_after_3]:checked').val() : "null";
+		        let noc_indicator_after_2 = $('.form-check-input[name="noc_indicator_after_2"]').length > 0 ? $('.form-check-input[name="noc_indicator_after_2"]:checked').val() : "null";
+
+                let noc_indicator_after_3 = $('.form-check-input[name="noc_indicator_after_3"]').length > 0 ? $('.form-check-input[name="noc_indicator_after_3"]:checked').val() : "null";
                 let evaluation = 'false';
                 var firstCheckbox = $('.form-check-input[name="noc_indicator_after"]:last');
                 var secondCheckbox = $('.form-check-input[name="noc_indicator_after_2"]:last');
@@ -526,7 +529,9 @@ if (isset($_GET['logout'])) {
 
                     }
                 }
-                }                $.ajax({
+                }      
+                console.log(noc_indicator_2, noc_indicator_3)
+                $.ajax({
                 type: 'POST',
                 url: '<?php echo $base_url; ?>/tani-handler/submitOrUpdateTani.php',
                 data: {
@@ -546,11 +551,12 @@ if (isset($_GET['logout'])) {
                     nurse_education: nurse_education,
                     collaborative_apps: collaborative_apps,
                     evaluation: evaluation,
-                    standalone: '<?php echo $_GET['standalone']; ?>',
+                    standalone: <?php echo $_GET['standalone']; ?>,
                     parent_id:  '<?php echo $_GET['parent_id']; ?>',
                     root_id:  '<?php echo $_GET['root_id']; ?>'
                                 },
                 success: function(data) {
+                    alert(data)
                     console.log("something happened")
                     let url =
                         "<?php echo $base_url; ?>/updateForms/showSubmittedTanis.php?patient_id=" +
