@@ -52,6 +52,7 @@ if (isset($_GET['logout'])) {
     </style>
 
 <body>
+    
     <div class="container-fluid pt-4 px-4">
         <div class="send-patient">
             <span class='close closeBtn' id='closeBtn1'>&times;</span>
@@ -556,7 +557,6 @@ if (isset($_GET['logout'])) {
                     
                                 },
                 success: function(data) {
-                    alert(data)
                     alert(data)
                     let url =
                         "<?php echo $base_url; ?>/updateForms/showSubmittedTanis.php?patient_id=" +

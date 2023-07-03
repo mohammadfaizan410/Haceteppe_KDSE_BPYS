@@ -420,7 +420,7 @@ if (isset($_GET['logout'])) {
                     collaborative_apps: collaborative_apps,
                     evaluation: evaluation,
                     standalone: '<?php echo $_GET['standalone']; ?>',
-
+                    
 
                 },
                 success: function(data) {
