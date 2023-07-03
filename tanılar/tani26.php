@@ -76,7 +76,7 @@ if (isset($_GET['logout'])) {
     </style>
 
 <body>
-<div id="tick-container">
+    <div id="tick-container">
   <div id="tick"></div>
 </div>
     <div class="container-fluid pt-4 px-4">
@@ -513,8 +513,8 @@ let evaluation = 'false';
                     collaborative_apps: collaborative_apps,
                     evaluation: evaluation,
                     
-                    parent_id: <?php echo $_GET['parent_id']; ?>,
-                    root_id: <?php echo $_GET['root_id']; ?>
+                    root_id : <?php echo $_GET['root_id']; ?>,
+                    parent_id : <?php echo $_GET['parent_id']; ?>,
 
 
                 },

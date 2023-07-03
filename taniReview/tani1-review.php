@@ -15,13 +15,27 @@ require_once('../config-students.php');
 $userid = $_SESSION['userlogin']['id'];
 $tani_id = $_GET['tani_id'];
 $tani_num = $_GET['tani_num'];
-$sql = "SELECT * FROM tani where tani_id= $tani_id and tani_num=$tani_num";
-$smtmselect = $db->prepare($sql);
-$result = $smtmselect->execute();
-if ($result) {
-    $tani1 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
-} else {
-    echo 'error';
+$root_id = $_GET['root_id'];
+$parent_id = $_GET['parent_id'];
+$display = $_GET['display'];
+if($root_id == 0 && $parent_id == 0){
+    $sql = "SELECT * FROM tani where tani_id= $tani_id and tani_num=$tani_num";
+    $smtmselect = $db->prepare($sql);
+    $result = $smtmselect->execute();
+    if ($result) {
+        $tani1 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+    } else {
+        echo 'error';
+    }
+}else{
+    $sql = "SELECT * FROM tani where parent_id= $parent_id and tani_num=$tani_num";
+    $smtmselect = $db->prepare($sql);
+    $result = $smtmselect->execute();
+    if ($result) {
+        $tani1 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+    } else {
+        echo 'error';
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -39,31 +53,43 @@ if ($result) {
     <!-- Template Stylesheet -->
     
     <style>
-    table {
-        border-collapse: collapse;
+    .send-patient {
+        align-self: center;
     }
+    body {
+  margin: 0; /* Remove default body margin */
+  padding: 0; /* Remove default body padding */
+}
 
-    th,
-    td {
-        border: 1px solid black;
-        padding: 10px;
-    }
+#tick-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none; /* Hide the tick container initially */
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  background-color: #ffffff;
+}
 
-    th {
-        background-color: #eee;
-    }
-
-    h1 {
-        text-align: center;
-    }
-
-    tr,
-    td {
-        width: 200px;
-    }
+#tick {
+  width: 50%;
+  height: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  margin: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateX(25%);
+}
     </style>
-
 <body>
+<div id="tick-container">
+  <div id="tick"></div>
+</div>
     <div class="container-fluid pt-4 px-4">
         <div class="send-patient">
             <span class='close closeBtn' id='closeBtn1'>&times;</span>
@@ -367,7 +393,12 @@ if ($result) {
                             </div>
 
                         </div>
-                        <input type="submit" class="d-flex w-75 submit m-auto justify-content-center mb-5" name="submit" id="submit" value="Kaydet">              
+                        <?php 
+                            if ($display === 1) {
+                                echo '<input type="submit" class="d-flex w-75 submit m-auto justify-content-center mb-5" style="display: block" name="submit" id="submit" value="Kaydet">';              
+                            }
+
+                        ?>             
 
 
 
@@ -395,6 +426,7 @@ if ($result) {
 
         })
     });
+  
         $('input[name="noc_indicator"][value="<?php echo $tani1[0]['noc_indicator']; ?>"]').prop('checked', true);
         $('input[name="noc_indicator_2"][value="<?php echo $tani1[0]['noc_indicator_2']; ?>"]').prop('checked', true);
         $('input[name="noc_indicator_3"][value="<?php echo $tani1[0]['noc_indicator_3']; ?>"]').prop('checked', true);
@@ -411,7 +443,6 @@ if ($result) {
         "<?php echo $tani1[0]['collaborative_apps']?>".split('/').forEach(element => {
             $('input[name="collaborative_apps"][value="' + element + '"]').prop('checked', true);
         });
-
     </script>
     <script>
     $(function() {
@@ -565,7 +596,7 @@ if ($result) {
                 type: 'POST',
                 url:'<?php echo $base_url; ?>/tani-handler/submitOrUpdateTani.php',
                 data: {
-                    isUpdate: true,
+                    
                     tani_id: <?php echo $_GET['tani_id']; ?>,
                     tani_num: <?php echo $_GET['tani_num']; ?>,
                     patient_id: patient_id,
@@ -582,7 +613,10 @@ if ($result) {
                     nurse_education: nurse_education,
                     collaborative_apps: collaborative_apps,
                     evaluation: evaluation,
-                    standalone: true
+                    
+                    root_id : <?php echo $_GET['root_id']; ?>,
+                    parent_id : <?php echo $_GET['parent_id']; ?>,
+
                 },
                 success: function(data) {
                     alert(data)

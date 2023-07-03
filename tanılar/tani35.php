@@ -516,8 +516,8 @@ if (isset($_GET['logout'])) {
                     collaborative_apps: collaborative_apps,
                     evaluation: 'false',
                     
-                    parent_id: <?php echo $_GET['parent_id']; ?>,
-                    root_id: <?php echo $_GET['root_id']; ?>
+                    root_id : <?php echo $_GET['root_id']; ?>,
+                    parent_id : <?php echo $_GET['parent_id']; ?>,
 
 
                 },

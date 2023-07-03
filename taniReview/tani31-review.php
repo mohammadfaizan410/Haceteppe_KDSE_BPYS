@@ -502,8 +502,7 @@ let evaluation = 'false';
                     nurse_education: nurse_education,
                     collaborative_apps: collaborative_apps,
                     evaluation: evaluation,
-                    parent_id: <?php echo $_GET['parent_id']; ?>,
-                    root_id: <?php echo $_GET['root_id']; ?>
+                    
 
 
                 },
