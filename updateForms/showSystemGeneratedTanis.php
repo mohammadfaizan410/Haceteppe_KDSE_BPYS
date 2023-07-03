@@ -561,7 +561,7 @@ input.addEventListener("input", function() {
   ) ||
   (
     hareketform1 &&
-    hareketform1.exercisingHabit.length > 0
+    hareketform1.exercisingHabit.length === 0
   )
 ) {
   taniString += 'tani13/';
@@ -713,7 +713,6 @@ input.addEventListener("input", function() {
             ||(form1_beslenme ?  form1_beslenme.BKI > 30 : false)){
                 taniString += 'tani37/'
             }
-            console.log('here')
 
             if (
                 (bosaltimform1 ? bosaltimform1.bagirsak_sesleri < 6 : false) ||
