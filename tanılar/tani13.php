@@ -254,6 +254,7 @@ $family_history = isset($_GET['family_history']) ? $_GET['family_history'] : 'Na
                             <p id="tani_usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hastanın günlük olarak izin verilen besinleri tüketmesi </p>
                         </div>
+                        <div class='input-section d-flex'>
                             <div>
                                 <p class="usernamelabel">NOC Gösterge: </p>
                                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
