@@ -465,7 +465,6 @@ let evaluation = 'false';
                     }
                 }
                 }
-                console.log(<?php echo $_GET['standalone']; ?>,<?php echo $_GET['root_id']; ?> ,<?php echo $_GET['parent_id']; ?>)
                 $.ajax({
                 type: 'POST',
                 url:'<?php echo $base_url; ?>/tani-handler/submitOrUpdateTani.php',

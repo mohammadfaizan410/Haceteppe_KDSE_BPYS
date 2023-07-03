@@ -72,15 +72,6 @@ if ($result) {
   transform: translate(-50%, -50%) translateX(25%);
 }
     </style>
-        h1 {
-            text-align: center;
-        }
-
-        tr,
-        td {
-            width: 200px;
-        }
-    </style>
 
 <body>
 <div id="tick-container">
@@ -96,21 +87,6 @@ if ($result) {
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
-                        <div class="input-section d-flex">
-                            <p id="tani_usernamelabel">Sorunla İlişkili Veriler:</p>
-                            <div class="matchedfields-wrapper">
-                                <?php         
-                                echo "<p class='matchedfields' id='average_sleep_time' style='".($average_sleep_time == 'NaN' ? 'color: red' : 'color:blue ' )."'>Ortalama uyku süresi: ".$average_sleep_time."</p>";
-                                echo "<p class='matchedfields' id='sleep_problem' style='".($sleep_problem == 'NaN' ? 'color:red ' : 'color: blue' )."'>Uykuda sorun:".$sleep_problem."</p>";
-                                echo "<p class='matchedfields' id='restlessness' style='".($restlessness == 'NaN' ? 'color:red ' : 'color: blue' )."'>Huzursuzluk:".$restlessness."</p>";
-                                echo "<p class='matchedfields' id='Discomfort' style='".($Discomfort == 'NaN' ? 'color:red ' : 'color: blue' )."'> Rahatsızlık :".$Discomfort."</p>";
-                                echo "<p class='matchedfields' id='Itching' style='".($Itching == 'NaN' ? 'color:red ' : 'color: blue' )."'>Kaşıntı :".$Itching."</p>";
-                                echo "<p class='matchedfields' id='feeding_problem' style='".($feeding_problem == 'NaN' ? 'color:red ' : 'color: blue' )."'>Beslenmede Sorun:".$feeding_problem."</p>";
-                                echo "<p class='matchedfields' id='pain_duration' style='".($pain_duration == 'NaN' ? 'color:red ' : 'color: blue' )."'>Ağrının süresi :".$pain_duration."</p>";
-                                ?>
-                            </div>
-
-                        </div>
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
                             <p class="tanıdescription">Konforda bozulma </p>

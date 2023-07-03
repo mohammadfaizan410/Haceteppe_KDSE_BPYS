@@ -39,28 +39,38 @@ if ($result) {
     <!-- Template Stylesheet -->
     
     <style>
-        table {
-            border-collapse: collapse;
-        }
+    .send-patient {
+        align-self: center;
+    }
+    body {
+  margin: 0; /* Remove default body margin */
+  padding: 0; /* Remove default body padding */
+}
 
-        th,
-        td {
-            border: 1px solid black;
-            padding: 10px;
-        }
+#tick-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none; /* Hide the tick container initially */
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  background-color: #ffffff;
+}
 
-        th {
-            background-color: #eee;
-        }
-
-        h1 {
-            text-align: center;
-        }
-
-        tr,
-        td {
-            width: 200px;
-        }
+#tick {
+  width: 50%;
+  height: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  margin: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateX(25%);
+}
     </style>
 
 <body>
@@ -74,24 +84,7 @@ if ($result) {
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
-                        <div class="input-section d-flex">
-                            <p id="tani_usernamelabel">Sorunla İlişkili Veriler:</p>
-                            <div class="matchedfields-wrapper">
-                                <?php         
-                                echo "<p class='matchedfields' id='changing_position' style='".($changing_position == 'NaN' ? 'color: red' : 'color:blue ' )."'>Ortalama uyku süresi: ".$changing_position."</p>";
-                                echo "<p class='matchedfields' id='standing_up' style='".($standing_up == 'NaN' ? 'color:red ' : 'color: blue' )."'>Uykuda sorun:".$standing_up."</p>";
-                                echo "<p class='matchedfields' id='walking' style='".($walking == 'NaN' ? 'color:red ' : 'color: blue' )."'>Huzursuzluk:".$walking."</p>";
-                                echo "<p class='matchedfields' id='changing_clothes' style='".($changing_clothes == 'NaN' ? 'color:red ' : 'color: blue' )."'> Rahatsızlık :".$changing_clothes."</p>";
-                                echo "<p class='matchedfields' id='cleaning_body' style='".($cleaning_body == 'NaN' ? 'color:red ' : 'color: blue' )."'>Kaşıntı :".$cleaning_body."</p>";
-                                echo "<p class='matchedfields' id='wheelchair_use' style='".($wheelchair_use == 'NaN' ? 'color:red ' : 'color: blue' )."'>Beslenmede Sorun:".$wheelchair_use."</p>";
-                                echo "<p class='matchedfields' id='cane_use' style='".($cane_use == 'NaN' ? 'color:red ' : 'color: blue' )."'>Ağrının süresi :".$cane_use."</p>";
-                                echo "<p class='matchedfields' id='walker_use' style='".($walker_use == 'NaN' ? 'color:red ' : 'color: blue' )."'>Ağrının süresi :".$walker_use."</p>";
-                                echo "<p class='matchedfields' id='crutch_use' style='".($crutch_use == 'NaN' ? 'color:red ' : 'color: blue' )."'>Ağrının süresi :".$crutch_use."</p>";
-                                ?>
-                            </div>
-
-                        </div>
-                        <div class="input-section d-flex">
+                            <div class="input-section d-flex">
                             <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
                             <p class="tanıdescription">Fiziksel mobilitede bozulma </p>
                         </div>
@@ -343,14 +336,7 @@ if ($result) {
                                 echo '<input type="submit" class="d-flex w-75 submit m-auto justify-content-center mb-5" style="display: block" name="submit" id="submit" value="Kaydet">';              
                             }
 
-                        ?>    
-                            if ($_GET['display'] === 1) {
-                                echo '<input type="submit" class="d-flex w-75 submit m-auto justify-content-center mb-5" style="display: block" name="submit" id="submit" value="Kaydet">';              
-                            }
-
-                        ?>                  
-
-
+                        ?> 
 
 
                     </form>

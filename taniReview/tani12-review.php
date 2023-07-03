@@ -85,22 +85,6 @@ if ($result) {
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
                         <div class="input-section d-flex">
-                            <p id="tani_usernamelabel">Sorunla İlişkili Veriler:</p>
-                            <div class="matchedfields-wrapper">
-                                <?php
-
-                                echo "<p class='matchedfields' id='BKI' style='" . ($BKI == 'NaN' ? 'color: red' : 'color:blue ') . "'>Bağırsak sesleri: " . $BKI . "</p>";
-                                echo "<p class='matchedfields' id='permitted_food' style='" . ($permitted_food == 'NaN' ? 'color:red ' : 'color: blue') . "'>En son defekasyon:" . $permitted_food . "</p>";
-                                echo "<p class='matchedfields' id='nutrition_problem' style='" . ($nutrition_problem == 'NaN' ? 'color: red' : 'color: blue') . "' >Gaitanın özelliği:" . $nutrition_problem . "</p>";
-                                echo "<p class='matchedfields' id='excretion_problem' style='" . ($excretion_problem == 'NaN' ? 'color: red' : 'color: blue') . "'>Bağırsak Boşaltım sorunu:" . $excretion_problem . "</p>";
-                                echo "<p class='matchedfields' id='language_problem' style='" . ($language_problem == 'NaN' ? 'color: red' : 'color: blue') . "'>Bağırsak Boşaltım sorunu:" . $language_problem . "</p>";
-                                echo "<p class='matchedfields' id='ingestion_problem' style='" . ($ingestion_problem == 'NaN' ? 'color: red' : 'color: blue') . "'>Bağırsak Boşaltım sorunu:" . $ingestion_problem . "</p>";
-                                echo "<p class='matchedfields' id='feeding_problem' style='" . ($feeding_problem == 'NaN' ? 'color: red' : 'color: blue') . "'>Bağırsak Boşaltım sorunu:" . $feeding_problem . "</p>";
-                                ?>
-                            </div>
-
-                        </div>
-                        <div class="input-section d-flex">
                             <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
                             <p class="tanıdescription">Konstipasyon</p>
                         </div>
