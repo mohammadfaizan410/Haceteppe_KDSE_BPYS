@@ -792,197 +792,197 @@ if (isset($_GET['logout'])) {
                     <button class='entered-forms toggle_button btn btn-success w-75 m-auto align-items-center' id='new_tanis_toggle'>Tanılar <span id='new_tanis_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='new_tanis_options' style='display:none'>
                             <li><div class="mt-3 entered-forms align-items-center"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;"
-                               href="<?php echo $base_url; ?>/tanılar/tani1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 1</a><div></li>
+                               href="<?php echo $base_url; ?>/tanılar/tani1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 1</a><div></li>
                           <li> <div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;" 
-                                  href="<?php echo $base_url; ?>/tanılar/tani2.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 2</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani2.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 2</a>
                             </div></li>
 
                             <li> <div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;" 
-                                  href="<?php echo $base_url; ?>/tanılar/tani3.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 3</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani3.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 3</a>
                             </div></li>
 
                             <li> <div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;" 
-                                  href="<?php echo $base_url; ?>/tanılar/tani4.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 4</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani4.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 4</a>
                             </div></li>
 
                             <li> <div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;" 
-                                  href="<?php echo $base_url; ?>/tanılar/tani5.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 5</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani5.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 5</a>
                             </div></li>
 
                             <li> <div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;" 
-                                  href="<?php echo $base_url; ?>/tanılar/tani6.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 6</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani6.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 6</a>
                             </div></li>
 
                             <li> <div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;" 
-                                  href="<?php echo $base_url; ?>/tanılar/tani7.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 7</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani7.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 7</a>
                             </div></li>
 
                             <li> <div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;" 
-                                  href="<?php echo $base_url; ?>/tanılar/tani8.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 8</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani8.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 8</a>
                             </div></li>
 
                             <li> <div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;" 
-                                  href="<?php echo $base_url; ?>/tanılar/tani9.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 9</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani9.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 9</a>
                             </div></li>
 
                             <li> <div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color: white;" 
-                                  href="<?php echo $base_url; ?>/tanılar/tani10.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 10</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani10.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 10</a>
                             </div></li>
 
                             <li> <div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" 
-                                  href="<?php echo $base_url; ?>/tanılar/tani11.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 11</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani11.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 11</a>
                             </div></li>
 
                             <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" 
-                                  href="<?php echo $base_url; ?>/tanılar/tani12.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 12</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani12.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 12</a>
                             </div></li>
 
                             <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" 
-                                  href="<?php echo $base_url; ?>/tanılar/tani13.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 13</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani13.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 13</a>
                             </div></li>
 
                             <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" 
-                                  href="<?php echo $base_url; ?>/tanılar/tani14.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 14</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani14.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 14</a>
                             </div></li>
 
                             <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" 
-                                  href="<?php echo $base_url; ?>/tanılar/tani15.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 15</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani15.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 15</a>
                             </div></li>
 
                             <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" 
-                                  href="<?php echo $base_url; ?>/tanılar/tani16.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 16</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani16.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 16</a>
                             </div></li>
 
                             <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" 
-                                  href="<?php echo $base_url; ?>/tanılar/tani17.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 17</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani17.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 17</a>
                             </div></li>
 
                             <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" 
-                                  href="<?php echo $base_url; ?>/tanılar/tani18.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 18</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani18.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 18</a>
                             </div></li>
 
                             <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" 
-                                  href="<?php echo $base_url; ?>/tanılar/tani19.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 19</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani19.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 19</a>
                             </div></li>
 
                             <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/tani20.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 20</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani20.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 20</a>
                             </div></li>
 
                             <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/tani21.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 21</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani21.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 21</a>
                             </div></li>
 
                             <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/tani22.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 22</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani22.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 22</a>
                             </div></li>
 
                             <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/tani23.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 23</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani23.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 23</a>
                             </div></li>
 
                             <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/tani24.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 24</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani24.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 24</a>
                             </div></li>
 
                             <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/tani25.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 25</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani25.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 25</a>
                             </div></li>
                             
                             <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/tani26.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 26</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani26.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 26</a>
                             </div></li>
 
                             <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/tani27.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 27</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani27.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 27</a>
                             </div></li>
 
                             <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/tani28.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 28</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani28.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 28</a>
                             </div></li>
 
                             <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/tani29.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 29</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani29.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 29</a>
                             </div></li>
 
                             <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/tani30.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 30</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani30.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 30</a>
                             </div></li>
                             
                             <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/tani31.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 31</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani31.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 31</a>
                             </div></li>
 
                             <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/tani32.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 32</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani32.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 32</a>
                             </div></li>
 
                             <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/tani33.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 33</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani33.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 33</a>
                             </div></li>
 
                             <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/tani34.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 34</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani34.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 34</a>
                             </div></li>
 
                             <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/riskTani1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 35</a>
+                                  href="<?php echo $base_url; ?>/tanılar/riskTani1.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 35</a>
                             </div></li>
 
                             <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/riskTani2.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 36</a>
+                                  href="<?php echo $base_url; ?>/tanılar/riskTani2.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 36</a>
                             </div></li>
 
                             <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/riskTani3.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 37</a>
+                                  href="<?php echo $base_url; ?>/tanılar/riskTani3.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 37</a>
                             </div></li>
 
                             <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/riskTani4.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 38</a>
+                                  href="<?php echo $base_url; ?>/tanılar/riskTani4.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 38</a>
                             </div></li>
 
                             <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/riskTani5.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 39</a>
+                                  href="<?php echo $base_url; ?>/tanılar/riskTani5.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 39</a>
                             </div></li>
 
                             <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/riskTani6.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 40</a>
+                                  href="<?php echo $base_url; ?>/tanılar/riskTani6.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 40</a>
                             </div></li>
 
                             <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/riskTani7.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 41</a>
+                                  href="<?php echo $base_url; ?>/tanılar/riskTani7.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 41</a>
                             </div></li>
 
                             <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/riskTani8.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 42</a>
+                                  href="<?php echo $base_url; ?>/tanılar/riskTani8.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 42</a>
                             </div></li>
 
                             <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/riskTani9.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 43</a>
+                                  href="<?php echo $base_url; ?>/tanılar/riskTani9.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 43</a>
                             </div></li>
 
                             <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/riskTani10.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 44</a>
+                                  href="<?php echo $base_url; ?>/tanılar/riskTani10.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 44</a>
                             </div></li>
 
                             <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/riskTani11.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 45</a>
+                                  href="<?php echo $base_url; ?>/tanılar/riskTani11.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 45</a>
                             </div></li>
 
                             <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/riskTani12.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 46</a>
+                                  href="<?php echo $base_url; ?>/tanılar/riskTani12.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 46</a>
                             </div></li>
 
                             <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/riskTani13.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 47</a>
+                                  href="<?php echo $base_url; ?>/tanılar/riskTani13.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 47</a>
                             </div></li>
 
                             <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/riskTani14.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 48</a>
+                                  href="<?php echo $base_url; ?>/tanılar/riskTani14.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 48</a>
                             </div></li>
 
                             <li><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/riskTani15.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&standalone=false&root=''&parent=''">Tanı 49</a>
+                                  href="<?php echo $base_url; ?>/tanılar/riskTani15.php?patient_id=<?php echo $userid; ?>&patient_name=<?php echo $patient_name; ?>&root=''&parent=''">Tanı 49</a>
                             </div></li>
 
 

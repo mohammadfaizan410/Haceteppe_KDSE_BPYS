@@ -49,9 +49,36 @@ if (isset($_GET['logout'])) {
         td {
             width: 200px;
         }
+        #tick-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none; /* Hide the tick container initially */
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            background-color: #ffffff;
+            }
+
+            #tick {
+            width: 50%;
+            height: 50%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            margin: auto;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) translateX(25%);
+            }
     </style>
 
 <body>
+<div id="tick-container">
+  <div id="tick"></div>
+</div>
     <div class="container-fluid pt-4 px-4">
         <div class="send-patient">
             <span class='close closeBtn' id='closeBtn1'>&times;</span>
@@ -464,8 +491,7 @@ if (isset($_GET['logout'])) {
                 let noc_indicator_after = $('.form-check-input[name="noc_indicator_after"]:checked').val();
 		        let noc_indicator_after_2 = $('.form-check-input[name="noc_indicator_after_2"]').length > 0 ? $('.form-check-input[name="noc_indicator_after_2"]:checked').val() : "null";
 
-        let noc_indicator_after_3 = $('.form-check-input[name="noc_indicator_after_3"]').length > 0 ? $('.form-check-input[name="noc_indicator_after_3"]:checked').val() : "null";
-let evaluation = 'false';
+                let noc_indicator_after_3 = $('.form-check-input[name="noc_indicator_after_3"]').length > 0 ? $('.form-check-input[name="noc_indicator_after_3"]:checked').val() : "null";
                 var firstCheckbox = $('.form-check-input[name="noc_indicator_after"]:last');
                 var secondCheckbox = $('.form-check-input[name="noc_indicator_after_2"]:last');
                 var thirdCheckbox = $('.form-check-input[name="noc_indicator_after_3"]:last');
@@ -532,7 +558,9 @@ let evaluation = 'false';
                     nurse_education: nurse_education,
                     collaborative_apps: collaborative_apps,
                     evaluation: evaluation,
-                    standalone: '<?php echo $_GET['standalone']; ?>',
+                    
+                    parent_id: <?php echo $_GET['parent_id']; ?>,
+                    root_id: <?php echo $_GET['root_id']; ?>
 
 
                 },

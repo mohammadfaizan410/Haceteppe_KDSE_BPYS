@@ -552,7 +552,7 @@ if (isset($_GET['logout'])) {
                     nurse_education: nurse_education,
                     collaborative_apps: collaborative_apps,
                     evaluation: evaluation,
-                    standalone: <?php echo $_GET['standalone']; ?>,
+                    
                     
                     
                                 },
