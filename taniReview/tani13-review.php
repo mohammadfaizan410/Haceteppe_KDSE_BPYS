@@ -85,19 +85,6 @@ if ($result) {
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
                         <div class="input-section d-flex">
-                            <p id="tani_usernamelabel">Sorunla İlişkili Veriler:</p>
-                            <div class="matchedfields-wrapper">
-                                <?php
-                                echo "<p class='matchedfields' id='BKI' style='" . ($BKI == 'NaN' ? 'color: red' : 'color:blue ') . "'>BKİ: " . $BKI . "</p>";
-                                echo "<p class='matchedfields' id='permitted_food_consumption' style='" . ($permitted_food_consumption == 'NaN' ? 'color:red ' : 'color: blue') . "'>Günlük olarak izin verilen besinlerin tüketimi:" . $permitted_food_consumption . "</p>";
-                                echo "<p class='matchedfields' id='sleeping_problem' style='" . ($sleeping_problem == 'NaN' ? 'color: red' : 'color: blue') . "' >Uykuda sorun:" . $sleeping_problem . "</p>";
-                                echo "<p class='matchedfields' id='exercise_habit' style='" . ($exercise_habit == 'NaN' ? 'color: red' : 'color: blue') . "'>Egzersiz yapma alışkanlığı:" . $exercise_habit . "</p>";
-                                echo "<p class='matchedfields' id='family_history' style='" . ($family_history == 'NaN' ? 'color: red' : 'color: blue') . "'>Soy Geçmiş: " . $family_history . "</p>";
-                                ?>
-                            </div>
-
-                        </div>
-                        <div class="input-section d-flex">
                             <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
                             <p class="tanıdescription">Fazla kilo </p>
                         </div>

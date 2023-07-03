@@ -451,9 +451,7 @@ $family_history = isset($_GET['family_history']) ? $_GET['family_history'] : 'Na
                 var patient_id = <?php
                                         $userid = isset($_GET['patient_id']) ? $_GET['patient_id'] : 20;
                                         echo $userid
-                                        ?>;
-                                    $userid = $_GET['patient_id'];
-                                   
+                                        ?>;                                   
                 let patient_name = "<?php
                                         echo urldecode(isset($_GET['patient_name']) ? $_GET['patient_name'] : "test");
                                         ?>";

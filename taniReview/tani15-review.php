@@ -85,20 +85,6 @@ if ($result) {
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
                         <div class="input-section d-flex">
-                            <p id="tani_usernamelabel">Sorunla İlişkili Veriler:</p>
-                            <div class="matchedfields-wrapper">
-                                <?php
-                                echo "<p class='matchedfields' id='language_problem' style='" . ($language_problem == 'NaN' ? 'color: red' : 'color:blue ') . "'>Dilde sorun: " . $language_problem . "</p>";
-                                echo "<p class='matchedfields' id='ingestion_problems' style='" . ($ingestion_problems == 'NaN' ? 'color:red ' : 'color: blue') . "'>Yeme ve yutma güçlüğü:" . $ingestion_problems . "</p>";
-                                echo "<p class='matchedfields' id='lip_condition' style='" . ($lip_condition == 'NaN' ? 'color:red ' : 'color: blue') . "'>Dudakların rengi ve yapısı:" . $lip_condition . "</p>";
-                                echo "<p class='matchedfields' id='mucous_condition' style='" . ($mucous_condition == 'NaN' ? 'color:red ' : 'color: blue') . "'> Ağız mukozasında sorun:" . $mucous_condition . "</p>";
-                                echo "<p class='matchedfields' id='mouth_condition' style='" . ($mouth_condition == 'NaN' ? 'color:red ' : 'color: blue') . "'>Dişler ve diş etlerinde sorun:" . $mouth_condition . "</p>";
-                                echo "<p class='matchedfields' id='oral_care' style='" . ($oral_care == 'NaN' ? 'color:red ' : 'color: blue') . "'>Ağız bakımı :" . $oral_care . "</p>";
-                                ?>
-                            </div>
-
-                        </div>
-                        <div class="input-section d-flex">
                             <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
                             <p class="tanıdescription">Oral mukoz membranda bozulma </p>
                         </div>
