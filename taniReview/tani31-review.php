@@ -64,7 +64,7 @@ if ($result) {
     </style>
 
 <body>
-<div class="container-fluid pt-4 px-4">
+    <div class="container-fluid pt-4 px-4">
         <div class="send-patient">
             <span class='close closeBtn' id='closeBtn1'>&times;</span>
             <h1 class="form-header">Bakım Planı</h1>
@@ -79,11 +79,11 @@ if ($result) {
                         </div>
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
-                            <p class="tanıdescription">Sözel iletişimde bozulma </p>
+                            <p class="tanıdescription">Umutsuzluk </p>
                         </div>
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın bakım verenleri ve sağlık profesyoneli ile iletişim kurması</p>
+                            <p class="tanıdescription">Hastanın umutsuzluk duygusunun olmaması</p>
                         </div>
 
 
@@ -92,39 +92,38 @@ if ($result) {
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1: Hasta hiç iletişim kurmaz">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1: Hastanın sürekli umutsuz olduğunu ifade eder">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">1: Hasta hiç iletişim kurmaz</span>
+                                        <span class="checkbox-header">1: Hastanın sürekli umutsuz olduğunu ifade eder</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2: Hasta nadiren iletişim kurar ">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2: Hastanın sık sık umutsuz olduğunu ifade eder">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">2: Hasta nadiren iletişim kurar </span>
+                                        <span class="checkbox-header">2: Hastanın sık sık umutsuz olduğunu ifade eder</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3: Hasta bazen iletişim kurar">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3: Hastanın bazen umutsuz olduğunu ifade eder">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">3: Hasta bazen iletişim kurar</span>
+                                        <span class="checkbox-header">3: Hastanın bazen umutsuz olduğunu ifade eder</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4: Hasta çoğunlukla iletişim kurar">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4: Hastanın nadiren umutsuz olduğunu ifade eder">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">4: Hasta çoğunlukla iletişim kurar</span>
+                                        <span class="checkbox-header">4: Hastanın nadiren umutsuz olduğunu ifade eder</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="5: Hastanın iletişim kurmasında sorun yok">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="5: Hasta umutlu olduğunu ifade eder">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">5: Hastanın iletişim kurmasında sorun yok</span>
+                                        <span class="checkbox-header">5: Hasta umutlu olduğunu ifade eder</span>
                                     </label>
                                 </div>
 
                             </div>
                         </div>
-
 
                 
 
@@ -132,109 +131,42 @@ if ($result) {
                             <p id="tani_usernamelabel">Hemşirelik Girişimleri:</p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt" value="Hastanın anadili, konuşma, işitme, okuma, anlama becerisi, diğerleriyle iletişim kurma becerisi değerlendirilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt" value="Hastanın duyguları ve karar alma yetisi izlenir ">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hastanın anadili, konuşma, işitme, okuma, anlama becerisi, diğerleriyle iletişim kurma becerisi değerlendirilir</span>
+                                    <span class="checkbox-header">Hastanın duyguları ve karar alma yetisi izlenir </span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt" value="Hastayla düzenli bir şekilde birebir iletişim kurulur">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt" value="Hastanın durumu araştırılarak ve olasılık planları yapılarak gerçeğin farkına varması öğretilir">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hastayla düzenli bir şekilde birebir iletişim kurulur</span>
+                                    <span class="checkbox-header">Hastanın durumu araştırılarak ve olasılık planları yapılarak gerçeğin farkına varması öğretilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt" value="Hastayla yavaş yavaş, açıkça, alçak sesle ve yüzüne bakarak iletişim kurulur">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt" value="İntihar potansiyeline yönelik hasta değerlendirilir">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hastayla yavaş yavaş, açıkça, alçak sesle ve yüzüne bakarak iletişim kurulur</span>
+                                    <span class="checkbox-header">İntihar potansiyeline yönelik hasta değerlendirilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt" value="Hastaya basit ve açık direktifler verilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt" value="İştahta artma, öz bakım uygulama, uyku süresinde azalma, göz teması kurma gibi gelişim gösterdiği davranışlara yönelik olumlu geribildirim ve destek sağlanır.">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hastaya basit ve açık direktifler verilir</span>
+                                    <span class="checkbox-header">İştahta artma, öz bakım uygulama, uyku süresinde azalma, göz teması kurma gibi gelişim gösterdiği davranışlara yönelik olumlu geribildirim ve destek sağlanır.</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt" value="Rahat, aceleci olmayan ve yargılamayan bir tavırla bakım verilir">
+                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt" value="Besin ve kilo alımı izlenir">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Rahat, aceleci olmayan ve yargılamayan bir tavırla bakım verilir</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt" value="İki yönlü optimal iletişimi sağlamak için yardımcı araçlar (kartlar, görsel materyaller, kelime listeleri, bilgisayar) kullanılır">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">İki yönlü optimal iletişimi sağlamak için yardımcı araçlar (kartlar, görsel materyaller, kelime listeleri, bilgisayar) kullanılır</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt" value="Hasta ile iletişimde bakım verenlerden ya da hastane çevirmeninden yardım alınır">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hasta ile iletişimde bakım verenlerden ya da hastane çevirmeninden yardım alınır</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt" value="İletişim bozukluğu olan hastalara bağırmaktan kaçınılır">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">İletişim bozukluğu olan hastalara bağırmaktan kaçınılır</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt" value="İşitme engelli hastanın dikkatini çekmek için dokunulur">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">İşitme engelli hastanın dikkatini çekmek için dokunulur</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt" value="İşitme engeli olan hastayla iletişim kurarken, sağlık profesyoneli ağzının görünür olduğundan emin olur">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">İşitme engeli olan hastayla iletişim kurarken, sağlık profesyoneli ağzının görünür olduğundan emin olur</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt" value="İşitme engeli olan hasta, işitme cihazı kullanımı konusunda desteklenir ">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">İşitme engeli olan hasta, işitme cihazı kullanımı konusunda desteklenir </span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt" value="Hasta iletişim kurmaya ve isteklerini ifade etmeye teşvik edilir">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hasta iletişim kurmaya ve isteklerini ifade etmeye teşvik edilir</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt" value="Hastanın iletişim kurma çabalarına dair olumlu pekiştirme yapılır">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hastanın iletişim kurma çabalarına dair olumlu pekiştirme yapılır</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_attempt" id="nurse_attempt" value="Aşırı gürültüyü ve duyusal stresi azaltmak için çevre düzenlemesi yapılır">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Aşırı gürültüyü ve duyusal stresi azaltmak için çevre düzenlemesi yapılır</span>
+                                    <span class="checkbox-header">Besin ve kilo alımı izlenir</span>
                                 </label>
                             </div>
 
 
                             <p id="tani_usernamelabel">Eğitim:</p>
-                            <p class="option-error1" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_education" value="Hastaya neden konuşamadığı ya da anlayamadığı uygun şekilde anlatılır">
+                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_education" value="Hastanın yetenek ve ilgi alanına göre egzersizler önerilir ">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hastaya neden konuşamadığı ya da anlayamadığı uygun şekilde anlatılır</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_education" value="Uyaran ya da iletişim sağlamak için yakınlarının ziyaretlerinin arttırılması konusunda bilgi verilir">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Uyaran ya da iletişim sağlamak için yakınlarının ziyaretlerinin arttırılması konusunda bilgi verilir</span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="nurse_education" id="nurse_education" value="Hasta ve bakım verenlerine konuşma cihazlarının (yemek borusundan konuşma, elektrolarenksler, trakeostomi için konuşma valfi vb) kullanımı konusunda eğitim verilir">
-                                <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Hasta ve bakım verenlerine konuşma cihazlarının (yemek borusundan konuşma, elektrolarenksler, trakeostomi için konuşma valfi vb) kullanımı konusunda eğitim verilir</span>
+                                    <span class="checkbox-header">Hastanın yetenek ve ilgi alanına göre egzersizler önerilir </span>
                                 </label>
                             </div>
 
@@ -242,17 +174,32 @@ if ($result) {
                             <p id="tani_usernamelabel">İŞ BİRLİĞİ GEREKTİREN UYGULAMALAR</p>
                             <p class="option-error2" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="collaborative_apps" id="collaborative_apps" value="Gerektiğinde konuşma terapistine yönlendirilir">
+                                <input class="form-check-input" type="checkbox" name="collaborative_apps" id="collaborative_apps" value="Sosyal destek ve problem çözme becerilerini geliştirmek için grup aktivitelerine aktif katılım için cesaretlendirilir">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Gerektiğinde konuşma terapistine yönlendirilir</span>
+                                    <span class="checkbox-header">Sosyal destek ve problem çözme becerilerini geliştirmek için grup aktivitelerine aktif katılım için cesaretlendirilir</span>
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="collaborative_apps" id="collaborative_apps" value="Manevi gereksinimleri belirlenir ve gerekli ise manevi danışmanlık için yönlendirilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Manevi gereksinimleri belirlenir ve gerekli ise manevi danışmanlık için yönlendirilir</span>
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="collaborative_apps" id="collaborative_apps" value="Hasta ve bakım verenleri destek gruplarına katılmaları için teşvik edilir">
+                                <label class="form-check-label" for="nurse_attempt">
+                                    <span class="checkbox-header">Hasta ve bakım verenleri destek gruplarına katılmaları için teşvik edilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="collaborative_apps" id="collaborative_apps" value="Gerektiğinde çevirmen desteği alınır">
+                                <input class="form-check-input" type="checkbox" name="collaborative_apps" id="collaborative_apps" value="Gerektiğinde psikiyatrik konsültasyon sağlanması için hekimle işbirliği yapılır">
                                 <label class="form-check-label" for="nurse_attempt">
-                                    <span class="checkbox-header">Gerektiğinde çevirmen desteği alınır</span>
+                                    <span class="checkbox-header">Gerektiğinde psikiyatrik konsültasyon sağlanması için hekimle işbirliği yapılır</span>
                                 </label>
                             </div>
+
 
 
                         </div>
@@ -268,51 +215,52 @@ if ($result) {
                                 5 gösterge seçildiyse; yeni günde bakım planına bu tanıyı taşımayacak
                             </p>
                         </div>
+                        <div class="input-section d-flex">
                             <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın bakım verenleri ve sağlık profesyoneli ile iletişim kurması</p>
+                            <p class="tanıdescription">Hastanın umutsuzluk duygusunun olmaması</p>
                         </div>
-
 
                         <div class="input-section" id="o2-delivery-container">
                             <p id="tani_usernamelabel">NOC Gösterge: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="1: Hasta hiç iletişim kurmaz">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="1: Hastanın sürekli umutsuz olduğunu ifade eder">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">1: Hasta hiç iletişim kurmaz</span>
+                                        <span class="checkbox-header">1: Hastanın sürekli umutsuz olduğunu ifade eder</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="2: Hasta nadiren iletişim kurar ">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="2: Hastanın sık sık umutsuz olduğunu ifade eder">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">2: Hasta nadiren iletişim kurar </span>
+                                        <span class="checkbox-header">2: Hastanın sık sık umutsuz olduğunu ifade eder</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="3: Hasta bazen iletişim kurar">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="3: Hastanın bazen umutsuz olduğunu ifade eder">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">3: Hasta bazen iletişim kurar</span>
+                                        <span class="checkbox-header">3: Hastanın bazen umutsuz olduğunu ifade eder</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="4: Hasta çoğunlukla iletişim kurar">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="4: Hastanın nadiren umutsuz olduğunu ifade eder">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">4: Hasta çoğunlukla iletişim kurar</span>
+                                        <span class="checkbox-header">4: Hastanın nadiren umutsuz olduğunu ifade eder</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after_last" value="5: Hastanın iletişim kurmasında sorun yok">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="5: Hasta umutlu olduğunu ifade eder">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">5: Hastanın iletişim kurmasında sorun yok</span>
+                                        <span class="checkbox-header">5: Hasta umutlu olduğunu ifade eder</span>
                                     </label>
                                 </div>
 
                             </div>
                         </div>
 
-                        </div>
 
+                        </div>
+                           
                         </div>
                                                                 <input type="submit" class="d-flex w-75 submit m-auto justify-content-center mb-5" name="submit" id="submit" value="Kaydet">              
 
@@ -326,25 +274,8 @@ if ($result) {
 
 
     </div>
-<script>
-    $(function() {
-        $('#closeBtn1').click(function(e) {
-            let patient_id = <?php
-                                    $userid = $_GET['patient_id'];
-                                    echo $userid
-                                    ?>;
-            let patient_name = "<?php
-                                    echo urldecode($_GET['patient_name']);
-                                    ?>";
-            var url = "<?php echo $base_url; ?>/updateForms/showSubmittedTanis.php?patient_id=" + patient_id +
-                "&patient_name=" + encodeURIComponent(patient_name);
-            $("#content").load(url);
-
-        })
-    });
-</script>
-<script>
-    $(document).ready(function(){
+    <script>
+         $(document).ready(function(){
         $('input[name="noc_indicator"][value="<?php echo $tani[0]['noc_indicator']; ?>"]').prop('checked', true);
         $('input[name="noc_indicator_2"][value="<?php echo $tani[0]['noc_indicator_2']; ?>"]').prop('checked', true);
         $('input[name="noc_indicator_3"][value="<?php echo $tani[0]['noc_indicator_3']; ?>"]').prop('checked', true);
@@ -362,8 +293,23 @@ if ($result) {
             $('input[name="collaborative_apps"][value="' + element + '"]').prop('checked', true);
         });
     })
-</script>
-<script>
+        $(function() {
+            $('#closeBtn1').click(function(e) {
+                let patient_id = <?php
+                                    $userid = $_GET['patient_id'];
+                                    echo $userid
+                                    ?>;
+                let patient_name = "<?php
+                                    echo urldecode($_GET['patient_name']);
+                                    ?>";
+                var url = "<?php echo $base_url; ?>/updateForms/showAllTanis.php?patient_id=" + patient_id +
+                    "&patient_name=" + encodeURIComponent(patient_name);
+                $("#content").load(url);
+
+            })
+        });
+    </script>
+    <script>
         $(function() {
             $('#submit').click(function(e) {
                 e.preventDefault()
@@ -402,14 +348,6 @@ if ($result) {
                             scrollTop: $('[name="nurse_attempt"]').offset().top
                         }, 200);
                     $('[name="nurse_attempt"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-                    return false;
-                } else if ($('[name="nurse_education"]:checked').length === 0){
-                    $('.option-error').css('display', 'none');
-                    $('.option-error2').css('display', 'none');
-                    $('html, body').animate({
-                            scrollTop: $('[name="nurse_education"]').offset().top
-                        }, 200);
-                    $('[name="nurse_education"]').first().closest('.input-section').find('.option-error1').css('display', 'block');
                     return false;
                 } else if ($('[name="collaborative_apps"]:checked').length === 0){
                     $('.option-error').css('display', 'none');
@@ -456,6 +394,7 @@ if ($result) {
                 var surname = $('#surname').val();
                 var age = $('#age').val();
                 var not = $('#not').val();
+                tani_name = 'tani21';
                 var patient_id = <?php
                                     $userid = $_GET['patient_id'];
                                     echo $userid
@@ -483,8 +422,8 @@ if ($result) {
                 let noc_indicator_after = $('.form-check-input[name="noc_indicator_after"]:checked').val();
 		        let noc_indicator_after_2 = $('.form-check-input[name="noc_indicator_after_2"]').length > 0 ? $('.form-check-input[name="noc_indicator_after_2"]:checked').val() : "null";
 
-                let noc_indicator_after_3 = $('.form-check-input[name="noc_indicator_after_3"]').length > 0 ? $('.form-check-input[name="noc_indicator_after_3"]:checked').val() : "null";
-                let evaluation = 'false';
+        let noc_indicator_after_3 = $('.form-check-input[name="noc_indicator_after_3"]').length > 0 ? $('.form-check-input[name="noc_indicator_after_3"]:checked').val() : "null";
+let evaluation = 'false';
                 var firstCheckbox = $('.form-check-input[name="noc_indicator_after"]:last');
                 var secondCheckbox = $('.form-check-input[name="noc_indicator_after_2"]:last');
                 var thirdCheckbox = $('.form-check-input[name="noc_indicator_after_3"]:last');
@@ -511,9 +450,8 @@ if ($result) {
                 type: 'POST',
                 url:'<?php echo $base_url; ?>/tani-handler/submitOrUpdateTani.php',
                 data: {
-                    isUpdate: true,
-                    tani_id: <?php echo $_GET['tani_id']; ?>,
-                    tani_num: <?php echo $_GET['tani_num']; ?>,
+                    tani_num: 31,
+                    table: 'tani31',
                     patient_id: patient_id,
                     patient_name: patient_name,
                     creation_date: creationDate,
@@ -531,12 +469,12 @@ if ($result) {
                     nurse_education: nurse_education,
                     collaborative_apps: collaborative_apps,
                     evaluation: evaluation,
-                    standalone: '<?php echo $_GET['standalone']; ?>',
-parent_id:  '<?php echo $_GET['parent_id']; ?>',
-root_id:  '<?php echo $_GET['root_id']; ?>'
+                    standalone: <?php echo $_GET['standalone']; ?>,
+
+
                 },
                 success: function(data) {
-                    console.log("something happened")
+                    alert(data)
                     let url =
                         "<?php echo $base_url; ?>/updateForms/showSubmittedTanis.php?patient_id=" +
                         patient_id + "&patient_name=" + encodeURIComponent(

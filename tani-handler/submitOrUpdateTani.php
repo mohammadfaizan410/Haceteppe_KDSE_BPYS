@@ -39,12 +39,10 @@ if (isset($_POST["patient_name"])) {
                 nurse_education,
                 collaborative_apps,
                 evaluation,
-                parent_id,
-                root_id,
                 standalone,
                 time
 
-            ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+            ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
         $stmt->execute([
                 $_POST['tani_num'],
                 $_POST['patient_id'],
@@ -61,8 +59,6 @@ if (isset($_POST["patient_name"])) {
                 $_POST['nurse_education'],
                 $_POST['collaborative_apps'],
                 $_POST['evaluation'],
-                $_POST['parent_id'],
-                $_POST['root_id'],
                 $_POST['standalone'],
                 $time
         ]);

@@ -45,7 +45,7 @@ if (isset($_GET['logout'])) {
         require_once('../config-students.php');
         $userid = $_SESSION['userlogin']['id'];
         $patientId = $_GET['patient_id'];
-        $sql = "SELECT * FROM tani WHERE patient_id = " . $patientId . " AND root_id='null' AND parent_id='null'";
+        $sql = "SELECT * FROM tani WHERE patient_id = " . $patientId . "";
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         if ($result) {
@@ -53,22 +53,13 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         }
-        $sql = "SELECT * FROM tani WHERE patient_id = " . $patientId . " AND root_id!='null' AND parent_id!='null'";
-        $smtmselect = $db->prepare($sql);
-        $result = $smtmselect->execute();
-        if ($result) {
-            $allTanisRooted = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
-        } else {
-            echo 'error';
-        }
-
 
         ?>
         <div class="send-patient">
         <span class='close closeBtn' id='closeBtn1'>&times;</span>
             <div class="patients-table text-center rounded p-4" id="patients-table">
                 <div class="d-flex align-items-center justify-content-between mb-4">
-                    <p style="color : #333333; font-size: 20px" class="pb-2">Form List</p>
+                    <p style="color : #333333; font-size: 20px" class="pb-2">Submitted Tanis</p>
 
                 </div>
 

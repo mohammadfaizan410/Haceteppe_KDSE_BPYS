@@ -63,6 +63,7 @@ if (isset($_GET['logout'])) {
                             <?php
                             if (isset($values) && count($values) > 0) {
                                 foreach ($values as $key => $value) {
+                                    
                                     $fullName = $value['name'] . " " . $value['surname'];
                                     echo '<tr class="mb-4 align-items-center">                            
                                     <td scope="col" style="color: #333333;">' . $value['name'] . '</td>

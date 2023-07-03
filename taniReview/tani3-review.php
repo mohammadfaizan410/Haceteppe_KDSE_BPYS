@@ -636,7 +636,7 @@ let evaluation = 'false';
                     standalone: '<?php echo $tani2[0]['standalone']; ?>'
                                 },
                 success: function(data) {
-                    console.log("something happened")
+                    alert(data)
                     let url =
                         "<?php echo $base_url; ?>/updateForms/showSubmittedTanis.php?patient_id=" +
                         patient_id + "&patient_name=" + encodeURIComponent(

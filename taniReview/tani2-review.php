@@ -678,10 +678,10 @@ if ($result) {
                     nurse_education: nurse_education,
                     collaborative_apps: collaborative_apps,
                     evaluation: evaluation,
-                    standalone: '<?php echo $tani2[0]['standalone']; ?>'
+                    standalone: <?php echo $tani2[0]['standalone']; ?>
                 },
                 success: function(data) {
-                    console.log("something happened")
+                    alert(data)
                     let url =
                         "<?php echo $base_url; ?>/taniReview/riskTani15Review.php?patient_id=" +
                         patient_id + "&patient_name=" + encodeURIComponent(

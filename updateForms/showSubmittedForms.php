@@ -45,10 +45,10 @@ if (isset($_GET['logout'])) {
     <div class="container-fluid pt-4 px-4">
         <?php
         require_once('../config-students.php');
-        $userid = $_GET['patient_id'];
+        $patient_id = $_GET['patient_id'];
         $patient_name = $_GET['patient_name'];
-        //echo $userid;
-        $sql = "SELECT * FROM  form2  WHERE patient_id =" . $userid;
+        //echo $patient_id;
+        $sql = "SELECT * FROM  form2  WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         $values = [];
@@ -57,7 +57,7 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
-        $sql = "SELECT * FROM  form3 WHERE patient_id =" . $userid;
+        $sql = "SELECT * FROM  form3 WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         $values = [];
@@ -66,7 +66,7 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
-        $sql = "SELECT * FROM  form4 WHERE patient_id =" . $userid;
+        $sql = "SELECT * FROM  form4 WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         $values = [];
@@ -75,7 +75,7 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
-        $sql = "SELECT * FROM  form5 WHERE patient_id =" . $userid;
+        $sql = "SELECT * FROM  form5 WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         $values = [];
@@ -84,7 +84,7 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
-        $sql = "SELECT * FROM  form6 WHERE patient_id =" . $userid;
+        $sql = "SELECT * FROM  form6 WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         $values = [];
@@ -93,7 +93,7 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
-        $sql = "SELECT * FROM  form7 WHERE patient_id =" . $userid;
+        $sql = "SELECT * FROM  form7 WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         $values = [];
@@ -102,7 +102,7 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
-        $sql = "SELECT * FROM  form8 WHERE patient_id =" . $userid;
+        $sql = "SELECT * FROM  form8 WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         $values = [];
@@ -111,7 +111,7 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
-        $sql = "SELECT * FROM  form9 WHERE patient_id =" . $userid;
+        $sql = "SELECT * FROM  form9 WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         $values = [];
@@ -120,7 +120,7 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
-        $sql = "SELECT * FROM  form10 WHERE patient_id =" . $userid;
+        $sql = "SELECT * FROM  form10 WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         $values = [];
@@ -129,7 +129,7 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
-        $sql = "SELECT * FROM  form11 WHERE patient_id =" . $userid;
+        $sql = "SELECT * FROM  form11 WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         $values = [];
@@ -138,7 +138,7 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
-        $sql = "SELECT * FROM  form11 WHERE patient_id =" . $userid;
+        $sql = "SELECT * FROM  form11 WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         $values = [];
@@ -147,7 +147,7 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
-        $sql = "SELECT * FROM  form12 WHERE patient_id =" . $userid;
+        $sql = "SELECT * FROM  form12 WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         $values = [];
@@ -156,7 +156,7 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
-        $sql = "SELECT * FROM  form13 WHERE patient_id =" . $userid;
+        $sql = "SELECT * FROM  form13 WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         $values = [];
@@ -165,7 +165,7 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
-        $sql = "SELECT * FROM  form14 WHERE patient_id =" . $userid;
+        $sql = "SELECT * FROM  form14 WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         $values = [];
@@ -174,7 +174,7 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
-        $sql = "SELECT * FROM  form15 WHERE patient_id =" . $userid;
+        $sql = "SELECT * FROM  form15 WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         $values = [];
@@ -183,7 +183,7 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
-        $sql = "SELECT * FROM ozgecmisform1 WHERE patient_id =" . $userid;
+        $sql = "SELECT * FROM ozgecmisform1 WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         $values = [];
@@ -192,7 +192,7 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
-        $sql = "SELECT * FROM solunumgereksinimi_form1  WHERE patient_id =" . $userid;
+        $sql = "SELECT * FROM solunumgereksinimi_form1  WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         $values = [];
@@ -201,7 +201,7 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
-        $sql = "SELECT * FROM  hareketform1 WHERE patient_id =" . $userid;
+        $sql = "SELECT * FROM  hareketform1 WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         $values = [];
@@ -210,7 +210,7 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
-        $sql = "SELECT * FROM vucudutemizform1 WHERE patient_id =" . $userid;
+        $sql = "SELECT * FROM vucudutemizform1 WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         $values = [];
@@ -219,7 +219,7 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
-        $sql = "SELECT * FROM  katererform1  WHERE patient_id =" . $userid;
+        $sql = "SELECT * FROM  katererform1  WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         $values = [];
@@ -228,7 +228,7 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
-        $sql = "SELECT * FROM  ilestimform1  WHERE patient_id =" . $userid;
+        $sql = "SELECT * FROM  ilestimform1  WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         $values = [];
@@ -237,7 +237,7 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
-        $sql = "SELECT * FROM  calismaform1  WHERE patient_id =" . $userid;
+        $sql = "SELECT * FROM  calismaform1  WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         $values = [];
@@ -246,7 +246,7 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
-        $sql = "SELECT * FROM  egitimform1  WHERE patient_id =" . $userid;
+        $sql = "SELECT * FROM  egitimform1  WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         $values = [];
@@ -255,7 +255,7 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
-        $sql = "SELECT * FROM  bosaltimform1  WHERE patient_id =" . $userid;
+        $sql = "SELECT * FROM  bosaltimform1  WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         $values = [];
@@ -264,7 +264,7 @@ if (isset($_GET['logout'])) {
         } else {
             echo 'error';
         };
-        $sql = "SELECT * FROM  form1_beslenme  WHERE patient_id =" . $userid;
+        $sql = "SELECT * FROM  form1_beslenme  WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
         $values = [];
@@ -691,8 +691,8 @@ if (isset($_GET['logout'])) {
         <script>
             //closeBtn click
             var patient_id = "<?php echo $_GET['patient_id']; ?>";
-var patient_name = "<?php echo $_GET['patient_name']; ?>";
-console.log(patient_id, patient_name);
+            var patient_name = "<?php echo $_GET['patient_name']; ?>";
+            console.log(patient_id, patient_name);
 $(function() {
                 
                 $("#closeBtn1").on("click", function(e) {

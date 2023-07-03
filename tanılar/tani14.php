@@ -510,11 +510,11 @@ let evaluation = 'false';
                     collaborative_apps: collaborative_apps,
                     evaluation: evaluation,
                     standalone: '<?php echo $_GET['standalone']; ?>',
-parent_id:  '<?php echo $_GET['parent_id']; ?>',
-root_id:  '<?php echo $_GET['root_id']; ?>'
+
+
                 },
                 success: function(data) {
-                    console.log("something happened")
+                    alert(data)
                     let url =
                         "<?php echo $base_url; ?>/updateForms/showSubmittedTanis.php?patient_id=" +
                         patient_id + "&patient_name=" + encodeURIComponent(
