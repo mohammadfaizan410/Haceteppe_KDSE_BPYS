@@ -251,16 +251,16 @@ if (isset($_GET['logout'])) {
                             <p id="tani_usernamelabel">İşbirliği Gerektiren Uygulamalar</p>
                             <p class="option-error2" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="collaboratıve_apps"
+                                <input class="form-check-input" type="checkbox" name="collaborative_apps"
                                     id="nurse_attempt13" value="Hastanın bilinen alerjilerine dair sağlık bakım ekibi üyelerine bilgi verilir">
-                                <label class="form-check-label" for="collaboratıve_apps">
+                                <label class="form-check-label" for="collaborative_apps">
                                     <span class="checkbox-header">Hastanın bilinen alerjilerine dair sağlık bakım ekibi üyelerine bilgi verilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="collaboratıve_apps"
+                                <input class="form-check-input" type="checkbox" name="collaborative_apps"
                                     id="nurse_attempt14" value="Gerektiğinde alerji uzmanları, diğer sağlık uzmanları ya da kurumlarla iletişime geçilir">
-                                <label class="form-check-label" for="collaboratıve_apps">
+                                <label class="form-check-label" for="collaborative_apps">
                                     <span class="checkbox-header">Gerektiğinde alerji uzmanları, diğer sağlık uzmanları ya da kurumlarla iletişime geçilir</span>
                                 </label>
                             </div>
@@ -445,7 +445,7 @@ if (isset($_GET['logout'])) {
                 let yourDate = new Date();
                 let creationDate = yourDate.toISOString().split('T')[0];
                 let updateDate = yourDate.toISOString().split('T')[0];
-                let problem_info = matchedfields_string
+                
                 let nurse_description = "Gaz değişiminde bozulma"
                 let noc_output = "Hastanın oksijen satürasyonun %95’in üzerinde olması"
                 let noc_indicator = $("input[type='radio'][name='noc_indicator']:checked").val();

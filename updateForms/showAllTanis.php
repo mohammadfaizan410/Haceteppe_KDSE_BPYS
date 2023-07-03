@@ -209,63 +209,63 @@ if (isset($_GET['logout'])) {
                             </div></td></tr>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/riskTani1.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&root_id=0&parent_id=0">Tanı35</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani35.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&root_id=0&parent_id=0">Tanı35</a>
                             </div></td></tr>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/riskTani2.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&root_id=0&parent_id=0">Tanı36</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani36.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&root_id=0&parent_id=0">Tanı36</a>
                             </div></td></tr>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/riskTani3.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&root_id=0&parent_id=0">Tanı37</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani37.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&root_id=0&parent_id=0">Tanı37</a>
                             </div></td></tr>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/riskTani4.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&root_id=0&parent_id=0">Tanı38</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani38.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&root_id=0&parent_id=0">Tanı38</a>
                             </div></td></tr>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/riskTani5.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&root_id=0&parent_id=0">Tanı39</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani39.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&root_id=0&parent_id=0">Tanı39</a>
                             </div></td></tr>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/riskTani6.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&root_id=0&parent_id=0">Tanı40</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani40.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&root_id=0&parent_id=0">Tanı40</a>
                             </div></td></tr>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/riskTani7.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&root_id=0&parent_id=0">Tanı41</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani41.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&root_id=0&parent_id=0">Tanı41</a>
                             </div></td></tr>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/riskTani8.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&root_id=0&parent_id=0">Tanı42</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani42.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&root_id=0&parent_id=0">Tanı42</a>
                             </div></td></tr>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/riskTani9.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&root_id=0&parent_id=0">Tanı43</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani43.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&root_id=0&parent_id=0">Tanı43</a>
                             </div></td></tr>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/riskTani10.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&root_id=0&parent_id=0">Tanı44</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani44.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&root_id=0&parent_id=0">Tanı44</a>
                             </div></td></tr>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/riskTani11.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&root_id=0&parent_id=0">Tanı45</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani45.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&root_id=0&parent_id=0">Tanı45</a>
                             </div></td></tr>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/riskTani12.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&root_id=0&parent_id=0">Tanı46</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani46.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&root_id=0&parent_id=0">Tanı46</a>
                             </div></td></tr>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/riskTani13.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&root_id=0&parent_id=0">Tanı47</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani47.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&root_id=0&parent_id=0">Tanı47</a>
                             </div></td></tr>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/riskTani14.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&root_id=0&parent_id=0">Tanı48</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani48.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&root_id=0&parent_id=0">Tanı48</a>
                             </div></td></tr>
 
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/riskTani15.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&root_id=0&parent_id=0">Tanı49</a>
+                                  href="<?php echo $base_url; ?>/tanılar/tani49.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&root_id=0&parent_id=0">Tanı49</a>
                             </div></td></tr>
                            </thead>
                         <tbody>

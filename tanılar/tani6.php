@@ -795,7 +795,7 @@ if (isset($_GET['logout'])) {
             let yourDate = new Date();
             let creationDate = yourDate.toISOString().split('T')[0];
             let updateDate = yourDate.toISOString().split('T')[0];
-            let problem_info = matchedfields_string
+            let problem_info = 
             let nurse_attempt = $('.form-check-input[name="nurse_attempt"]:checked').map(function() {
                     return this.value;
                 }).get().join('/');

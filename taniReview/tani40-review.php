@@ -259,16 +259,16 @@ if ($result) {
                             <p id="tani_usernamelabel">İşbirliği Gerektiren Uygulamalar</p>
                             <p class="option-error2" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="collaboratıve_apps"
+                                <input class="form-check-input" type="checkbox" name="collaborative_apps"
                                     id="nurse_attempt13" value="Gerektiğinde diş hekimine yönlendirilir">
-                                <label class="form-check-label" for="collaboratıve_apps">
+                                <label class="form-check-label" for="collaborative_apps">
                                     <span class="checkbox-header">Gerektiğinde diş hekimine yönlendirilir</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="collaboratıve_apps"
+                                <input class="form-check-input" type="checkbox" name="collaborative_apps"
                                     id="nurse_attempt14" value="Hastanın dengeli bir diyetle besin alımı sağlanır ve desteklenir">
-                                <label class="form-check-label" for="collaboratıve_apps">
+                                <label class="form-check-label" for="collaborative_apps">
                                     <span class="checkbox-header">Hastanın dengeli bir diyetle besin alımı sağlanır ve desteklenir</span>
                                 </label>
                             </div>
@@ -368,17 +368,17 @@ if ($result) {
         $('input[name="noc_indicator_after_2"][value="<?php echo $tani[0]['noc_indicator_after_2']; ?>"]').prop('checked', true);
         $('input[name="noc_indicator_after_3"][value="<?php echo $tani[0]['noc_indicator_after_3']; ?>"]').prop('checked', true);
 
-        var nurse_attempt = <?php echo $tani['nurse_attempt']; ?>;
+        var nurse_attempt = <?php echo $tani[0]['nurse_attempt']; ?>;
         nurse_attempt.forEach(function(value) {
             $('[name="nurse_attempt"][value="'+value+'"]').prop('checked', true);
         })
 
-        var nurse_education = <?php echo $tani['nurse_education']; ?>;
+        var nurse_education = <?php echo $tani[0]['nurse_education']; ?>;
         nurse_education.forEach(function(value) {
             $('[name="nurse_education"][value="'+value+'"]').prop('checked', true);
         })
 
-        var collaborative_apps = <?php echo $tani['collaborative_apps']; ?>;
+        var collaborative_apps = <?php echo $tani[0]['collaborative_apps']; ?>;
         collaborative_apps.forEach(function(value) {
             $('[name="collaborative_apps"][value="'+value+'"]').prop('checked', true);
         })

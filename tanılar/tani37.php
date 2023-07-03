@@ -251,17 +251,17 @@ if (isset($_GET['logout'])) {
                             <p id="tani_usernamelabel">İşbirliği Gerektiren Uygulamalar</p>
                             <p class="option-error2" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="collaboratıve_apps"
+                                <input class="form-check-input" type="checkbox" name="collaborative_apps"
                                     id="nurse_attempt13" value="Protein, mineral, kalori ve vitamin açısından zengin bir diyet için diyetisyenle işbirliği yapılır">
-                                <label class="form-check-label" for="collaboratıve_apps">
+                                <label class="form-check-label" for="collaborative_apps">
                                     <span class="checkbox-header">Protein, mineral, kalori ve vitamin açısından zengin bir diyet için diyetisyenle işbirliği yapılır</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="collaboratıve_apps"
+                                <input class="form-check-input" type="checkbox" name="collaborative_apps"
                                     id="nurse_attempt14"
                                     value="Gerektiğinde istemde yer alan ilaçlar (antibiyotikler, antifungaller, antiviraller, antipretikler, analjezikler gibi) uygulanır">
-                                <label class="form-check-label" for="collaboratıve_apps">
+                                <label class="form-check-label" for="collaborative_apps">
                                     <span class="checkbox-header">Gerektiğinde istemde yer alan ilaçlar (antibiyotikler, antifungaller, antiviraller, antipretikler, analjezikler gibi) uygulanır</span>
                                 </label>
                             </div>
@@ -446,7 +446,7 @@ if (isset($_GET['logout'])) {
                 let yourDate = new Date();
                 let creationDate = yourDate.toISOString().split('T')[0];
                 let updateDate = yourDate.toISOString().split('T')[0];
-                let problem_info = matchedfields_string
+                
                 let nurse_description = "Gaz değişiminde bozulma"
                 let noc_output = "Hastanın oksijen satürasyonun %95’in üzerinde olması"
                 let noc_indicator = $("input[type='radio'][name='noc_indicator']:checked").val();
