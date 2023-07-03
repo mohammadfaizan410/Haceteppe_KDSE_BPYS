@@ -39,20 +39,39 @@ if ($result) {
     <!-- Template Stylesheet -->
     
     <style>
-        table {
-            border-collapse: collapse;
-        }
+    .send-patient {
+        align-self: center;
+    }
+    body {
+  margin: 0; /* Remove default body margin */
+  padding: 0; /* Remove default body padding */
+}
 
-        th,
-        td {
-            border: 1px solid black;
-            padding: 10px;
-        }
+#tick-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none; /* Hide the tick container initially */
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  background-color: #ffffff;
+}
 
-        th {
-            background-color: #eee;
-        }
-
+#tick {
+  width: 50%;
+  height: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  margin: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateX(25%);
+}
+    </style>
         h1 {
             text-align: center;
         }
@@ -64,6 +83,12 @@ if ($result) {
     </style>
 
 <body>
+<div id="tick-container">
+  <div id="tick"></div>
+</div>
+<div id="tick-container">
+  <div id="tick"></div>
+</div>
 <div class="container-fluid pt-4 px-4">
         <div class="send-patient">
             <span class='close closeBtn' id='closeBtn1'>&times;</span>
@@ -346,7 +371,12 @@ if ($result) {
 
                           
                         </div>
-                                                                <input type="submit" class="d-flex w-75 submit m-auto justify-content-center mb-5" name="submit" id="submit" value="Kaydet">              
+                                                                <?php 
+                            if ($_GET['display'] === 1) {
+                                echo '<input type="submit" class="d-flex w-75 submit m-auto justify-content-center mb-5" style="display: block" name="submit" id="submit" value="Kaydet">';              
+                            }
+
+                        ?>                  
 
 
 
@@ -544,7 +574,7 @@ if ($result) {
                 type: 'POST',
                 url:'<?php echo $base_url; ?>/tani-handler/submitOrUpdateTani.php',
                 data: {
-                    isUpdate: true,
+                    
                     tani_id: <?php echo $_GET['tani_id']; ?>,
                     tani_num: <?php echo $_GET['tani_num']; ?>,
                     patient_id: patient_id,
@@ -564,7 +594,9 @@ if ($result) {
                     nurse_education: nurse_education,
                     collaborative_apps: collaborative_apps,
                     evaluation: evaluation,
-                    standalone: '<?php echo $_GET['standalone']; ?>',
+                    
+                    root_id : <?php echo $_GET['root_id']; ?>,
+                    parent_id : <?php echo $_GET['parent_id']; ?>,
 
 
                 },

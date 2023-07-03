@@ -519,7 +519,9 @@ if (isset($_GET['logout'])) {
                     nurse_education: nurse_education,
                     collaborative_apps: collaborative_apps,
                     evaluation: false,
-                    standalone: '<?php echo $_GET['standalone']; ?>',
+                    
+                    root_id : <?php echo $_GET['root_id']; ?>,
+                    parent_id : <?php echo $_GET['parent_id']; ?>,
 
 
                 },

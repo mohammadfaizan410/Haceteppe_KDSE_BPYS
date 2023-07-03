@@ -3,7 +3,6 @@ require_once("../config-students.php");
 $base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
 $time = date("Y-m-d H:i:s");
 $table_name = 'tani';
-$standalone = $_POST['standalone'] === true ? 1 : 0;
 ?>
 <?php
 
@@ -39,10 +38,11 @@ if (isset($_POST["patient_name"])) {
                 nurse_education,
                 collaborative_apps,
                 evaluation,
-                standalone,
+                parent_id,
+                root_id,
                 time
 
-            ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+            ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
         $stmt->execute([
                 $_POST['tani_num'],
                 $_POST['patient_id'],
@@ -59,7 +59,8 @@ if (isset($_POST["patient_name"])) {
                 $_POST['nurse_education'],
                 $_POST['collaborative_apps'],
                 $_POST['evaluation'],
-                $_POST['standalone'],
+                $_POST['parent_id'],
+                $_POST['root_id'],
                 $time
         ]);
         if ($result) {

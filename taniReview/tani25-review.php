@@ -544,7 +544,7 @@ submit" id="submit" value="Kaydet">
                 type: 'POST',
                 url:'<?php echo $base_url; ?>/tani-handler/submitOrUpdateTani.php',
                 data: {
-                    isUpdate: true,
+                    
                     tani_id: <?php echo $_GET['tani_id']; ?>,
                     tani_num: <?php echo $_GET['tani_num']; ?>,
                     patient_id: patient_id,
@@ -564,7 +564,9 @@ submit" id="submit" value="Kaydet">
                     nurse_education: nurse_education,
                     collaborative_apps: collaborative_apps,
                     evaluation: evaluation,
-                    standalone: '<?php echo $_GET['standalone']; ?>',
+                    
+                    root_id : <?php echo $_GET['root_id']; ?>,
+                    parent_id : <?php echo $_GET['parent_id']; ?>,
 
 
                 },
