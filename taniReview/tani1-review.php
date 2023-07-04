@@ -17,6 +17,10 @@ $tani_id = $_GET['tani_id'];
 $tani_num = $_GET['tani_num'];
 $root_id = $_GET['root_id'];
 $parent_id = $_GET['parent_id'];
+$patient_id = isset($_GET['patient_id']) ? $_GET['patient_id'] : '';
+$patient_name = isset($_GET['patient_name']) ? $_GET['patient_name'] : '';
+$student_id = isset($_GET['student_id']) ? $_GET['student_id'] : '';
+$student_name = isset($_GET['student_name']) ? $_GET['student_name'] : '';
 $display = $_GET['display'];
 if($root_id == 0 && $parent_id == 0){
     $sql = "SELECT * FROM tani where tani_id= $tani_id and tani_num=$tani_num";
@@ -403,8 +407,9 @@ if($root_id == 0 && $parent_id == 0){
     </div>
 
     <script>
-    $(function() {
+   $(function() {
         $('#closeBtn1').click(function(e) {
+            if("<?php echo $_SESSION['userlogin']['type']?>" === "student"){
             let patient_id = <?php
                                     $userid = $_GET['patient_id'];
                                     echo $userid
@@ -415,8 +420,19 @@ if($root_id == 0 && $parent_id == 0){
             var url = "<?php echo $base_url; ?>/updateForms/showSubmittedTanis.php?patient_id=" + patient_id +
                 "&patient_name=" + encodeURIComponent(patient_name);
             $("#content").load(url);
-
-        })
+            }else{
+                let patient_id = <?php
+                                    $userid = $_GET['patient_id'];
+                                    echo $userid
+                                    ?>;
+                let patient_name = "<?php echo urldecode($patient_name); ?>";
+                let student_id  = <?php echo $student_id ? $student_id : 0   ?>;
+                let student_name = "<?php echo urldecode($student_name); ?>";
+                var url = "<?php echo $base_url; ?>/updateForms/showTanisTeacher.php?patient_id=" + patient_id +
+                "&patient_name=" + encodeURIComponent(patient_name) + "&student_id=" + student_id + "&student_name=" + encodeURIComponent(student_name);
+                $("#content").load(url);
+        }
+    })
     });
     if(<?php echo $display; ?> === 1){
         $('form').append('<input type="submit" class="d-flex w-75 submit m-auto justify-content-center mb-5" style="display: block" name="submit" id="submit" value="Kaydet">');
@@ -623,7 +639,6 @@ if($root_id == 0 && $parent_id == 0){
                             // Change the tick background to the animated GIF
                             $("#tick").css("background-image", "url('./check-2.gif')");
 
-                            // Delay for 2 seconds (adjust the duration as needed)
                             setTimeout(function() {
                             // Load the content
                             $("#content").load(url);

@@ -83,10 +83,6 @@ require_once("config-students.php");
 
 <script>
   var code = '';
-  //meltem@11229988
-    //other@99882244
-   
-
   $("#register").click(function(e) {
     e.preventDefault();
     const name = $("#name").val();
@@ -98,7 +94,7 @@ require_once("config-students.php");
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const reference = calculateHash($("#reference").val())
     const adminReference = '12acad8e2bc24fc03f6d617d719c989f36b167da74a8374f7afa7239d65ff690';
-    const otherReference = 'a92b80e2e2ff3315ae85981174f5d103e1257eef0c302564a2190c3c9274a10f'
+    const otherReference = 'a92b80e2e2ff3315ae85981174f5d103e1257eef0c302564a2190c3c9274a10f';
     
     $("#error").text("");
     //check form validity

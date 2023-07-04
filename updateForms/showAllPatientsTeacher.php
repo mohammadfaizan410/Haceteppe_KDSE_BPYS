@@ -25,6 +25,8 @@ if (isset($_GET['logout'])) {
 
 <body style="background-color:white">
     <div class="container-fluid pt-4 px-4">
+    <span class='close closeBtn m-3' id='closeBtn1'>&times;</span>
+
         <?php
         require_once('../config-students.php');
         $sql = "SELECT * FROM  patients  WHERE id =" . $_GET['student_id'];
@@ -85,6 +87,10 @@ if (isset($_GET['logout'])) {
         </div>
         <script>
             $(function() {
+                $("#closeBtn1").click(function() {
+                    let url = "<?php echo $base_url; ?>/updateForms/showAllStudents.php";
+                    $('#content').load(url);
+                });
                 $("#showSubmittedforms").click(function() {
                     var patient_id = $(this).data("patient-id");
                     var patient_name = $(this).data("patient-name");
@@ -94,13 +100,13 @@ if (isset($_GET['logout'])) {
                     $('#content').load(url);
                 });
                 $('#showSubmittedtanis').click(function() {
-                    var patient_id = $(this).data("patient-id");
-                    var patient_name = $(this).data("patient-name");
-                    console.log(patient_id, patient_name);
-                    url = "<?php echo $base_url; ?>/updateForms/showSubmittedTanis.php?patient_id=" +
-                    patient_id + "&patient_name=" + encodeURIComponent(patient_name) + "&student_id=" + <?php echo $_GET['student_id'] ?> + "&student_name=" + <?php echo json_encode($_GET['student_name']) ?>;
-                    $('#content').load(url);
-                });
+                var patient_id = $(this).data("patient-id");
+                var patient_name = $(this).data("patient-name");
+                console.log(patient_id, patient_name);
+                var url = "<?php echo $base_url; ?>/updateForms/showTanisTeacher.php?patient_id=" +
+                    patient_id + "&patient_name=" + encodeURIComponent(patient_name) + "&student_id=" + <?php echo $_GET['student_id'] ?> + "&student_name=" + encodeURIComponent(<?php echo json_encode($_GET['student_name']) ?>);
+                $('#content').load(url);
+            });
             });
 
             
