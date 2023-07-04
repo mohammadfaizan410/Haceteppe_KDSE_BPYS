@@ -74,24 +74,22 @@ if (isset($_GET['logout'])) {
 
                 </div>
 
-                <input type="text" id="searchInput" class='form-control mb-5' placeholder="Form Ad göre ara">
-<?php
+                <input type="text" id="searchInput" class='form-control mb-5' placeholder="Search by date, number, time">
+<div id='taniContainer'>                
+                <?php
 $i = 1;
-$taniData = [];
-
 foreach ($allTanisStandalone as $row) {
     $sql = "SELECT * FROM tani WHERE root_id = " . $row['tani_id'] . " ORDER BY tani_id";
     $smtmselect = $db->prepare($sql);
     $result = $smtmselect->execute();
-
     if ($result) {
         $allExtensionTanis = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
     } else {
         echo 'error';
     }
-
     $taniOptions = "<div class='row searchable'><div class='col-lg-12 btn btn-success'><li class='entered-forms-ul-li'><a class='nav-items d-sm-flex justify-content-around' style='color: white;'
                         href='" . $base_url . "/taniReview/tani" . $row['tani_num'] . "-review.php?patient_id=" . $row['patient_id'] . "&patient_name=" . $row['patient_name'] . "&evaluation=" . $row['evaluation'] . "&tani_id=".$row['tani_id']."&tani_num=".$row['tani_num']."&root_id=".$row['root_id']."&parent_id=".$row['parent_id']."&display=0'><div>tani" . $row['tani_num'] . " </div><div>Date:".$row['creation_date']."</div><div>Time:".$row['time']."</div></a></li></div></div>";
+
 
     foreach ($allExtensionTanis as $row2) {
         $taniOptions .= "<div class='row searchable'><div class='col-lg-12 btn btn-success'><li class='entered-forms-ul-li'><a class='nav-items d-flex justify-content-around' style='color: white;'
@@ -103,34 +101,22 @@ foreach ($allTanisStandalone as $row) {
     } else {
         $lastExtension = $row;
     }
-
-    $taniData[] = [
-        'tani_num' => $row['tani_num'],
-        'creation_date' => $lastExtension['creation_date'],
-        'time' => $lastExtension['time'],
-        'options' => $taniOptions
-    ];
-
+    echo '<div class="row">';
+    echo "<div class='root-tani col-lg-12'>";
+    echo "<button class='entered-forms btn btn-success m-auto align-items-center d-flex justify-content-around' id='tani".$i."_toggle'><div>Tani number: tani" . $row['tani_num'] . "</div><div>Date:".$lastExtension['creation_date']."</div><div>Time:".$lastExtension['time']."</div><div><span id='tani".$i."_caret'>&#9660;</span></div></button>";
+    echo "<ul class='entered-forms-ul btn btn-success align-items-center w-75 mt-3' id='tani".$i."_options' style='display:none; list-style-type: none;'>".$taniOptions."</ul>";
+    echo "<div class='entered-forms '><a class='nav-items review btn btn-success w-50 mb-4' style='color: #333333; display: none; background-color: white; border-style: dashed; text-align: center;' id='tani".$i."_add_extension' href='" . $base_url . "/taniReview/tani" . $lastExtension['tani_num'] . "-review.php?patient_id=" . $lastExtension['patient_id'] . "&patient_name=" . $lastExtension['patient_name'] . "&evaluation=" . $lastExtension['evaluation'] . "&tani_id=".$lastExtension['tani_id']."&tani_num=".$lastExtension['tani_num']."&root_id=".$row['tani_id']."&parent_id=".$lastExtension['parent_id']."&display=1'><span class='m-auto'>Add Extension</span></a></div>";
+    echo "</div>";
+    echo '</div>';
+    echo '<div class="row">';
+    echo '<div class="col-lg-6" id="tani'.$row['tani_id'].'" style="display: none">';
+    echo '</div>';
+    echo '</div>';
     $i++;
 }
-?>
 
-<div id="taniContainer">
-    <?php
-    foreach ($taniData as $data) {
-        echo '<div class="row">';
-        echo "<div class='root-tani col-lg-12'>";
-        echo "<button class='entered-forms btn btn-success m-auto align-items-center d-flex justify-content-around' id='tani".$i."_toggle'><div>Tani number: tani" . $data['tani_num'] . "</div><div>Date:".$data['creation_date']."</div><div>Time:".$data['time']."</div><div><span id='tani".$i."_caret'>&#9660;</span></div></button>";
-        echo "<ul class='entered-forms-ul btn btn-success align-items-center w-75 mt-3' id='tani".$i."_options' style='display:none; list-style-type: none;'>".$data['options']."</ul>";
-        echo "<div class='entered-forms '><a class='nav-items review btn btn-success w-50 mb-4' style='color: #333333; display: none; background-color: white; border-style: dashed; text-align: center;' id='tani".$i."_add_extension' href='" . $base_url . "/taniReview/tani" . $data['tani_num'] . "-review.php?patient_id=" . $lastExtension['patient_id'] . "&patient_name=" . $lastExtension['patient_name'] . "&evaluation=" . $lastExtension['evaluation'] . "&tani_id=".$lastExtension['tani_id']."&tani_num=".$data['tani_num']."&root_id=".$row['tani_id']."&parent_id=".$lastExtension['parent_id']."&display=1'><span class='m-auto'>Add Extension</span></a></div>";
-        echo "</div>";
-        echo '</div>';
-        echo '<div class="row">';
-        echo '<div class="col-lg-6" id="tani'.$data['tani_num'].'" style="display: none">';
-        echo '</div>';
-        echo '</div>';
-    }
-    ?>
+?>
+</div>
             </div>
         </div>
         <script>
@@ -176,22 +162,27 @@ foreach ($allTanisStandalone as $row) {
                     })
                 }
             })
-        </script>
-<script>
-   $("#searchInput").on("input", function() {
-    var filter = $(this).val().toUpperCase();
-    var tanis = $(".root-tani");
 
-    tanis.each(function() {
-        var txtValue = $(this).text().toUpperCase();
-        if (txtValue.indexOf(filter) > -1) {
-            $(this).show();
-        } else {
-            $(this).hide();
+            $(document).ready(function() {
+    $("#searchInput").on("input", function() {
+        var input, filter, container, tanis, i, txtValue;
+        input = $(this);
+        console.log(input.val());
+        filter = input.val().toUpperCase();
+        container = $("#taniContainer");
+        tanis = container.find(".root-tani");
+        for (i = 0; i < tanis.length; i++) {
+            txtValue = $(tanis[i]).text();
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                $(tanis[i]).show();
+            } else {
+                $(tanis[i]).hide();
+            }
         }
     });
 });
-</script>
+        </script>
+
 </body>
 
 </html>
