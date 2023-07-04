@@ -429,6 +429,7 @@ if ($result) {
 </script>
 <script>
         $(function() {
+            console.log('test');
             $('#submit').click(function(e) {
                 e.preventDefault()
                 if (!$('[name="noc_indicator"]').is(':checked')) {
@@ -575,8 +576,6 @@ if ($result) {
                 type: 'POST',
                 url:'<?php echo $base_url; ?>/tani-handler/submitOrUpdateTani.php',
                 data: {
-                    
-                    tani_id: <?php echo $_GET['tani_id']; ?>,
                     tani_num: <?php echo $_GET['tani_num']; ?>,
                     patient_id: patient_id,
                     patient_name: patient_name,
