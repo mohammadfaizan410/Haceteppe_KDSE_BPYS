@@ -81,18 +81,7 @@ $Hb   = isset($_GET['Hb  ']) ? $_GET['Hb '] : "NaN";
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
-                        <div class="input-section d-flex">
-                            <p id="tani_usernamelabel">Sorunla İlişkili Veriler:</p>
-                            <div class="matchedfields-wrapper">
-                                <?php         
-                                echo "<p class='matchedfields' id='fatigue' style='".($fatigue == 'NaN' ? 'color: red' : 'color:blue ' )."'>Ortalama uyku süresi: ".$fatigue."</p>";
-                                echo "<p class='matchedfields' id='sleeping_problem' style='".($sleeping_problem == 'NaN' ? 'color:red ' : 'color: blue' )."'>Uykuda sorun:".$sleeping_problem."</p>";
-                                echo "<p class='matchedfields' id='hct' style='".($hct == 'NaN' ? 'color:red ' : 'color: blue' )."'>Huzursuzluk:".$hct."</p>";
-                                echo "<p class='matchedfields' id='Hb' style='".($Hb == 'NaN' ? 'color:red ' : 'color: blue' )."'> Rahatsızlık :".$Hb."</p>";
-                                ?>
-                            </div>
-
-                        </div>
+                       
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
                             <p class="tanıdescription">Yorgunluk</p>

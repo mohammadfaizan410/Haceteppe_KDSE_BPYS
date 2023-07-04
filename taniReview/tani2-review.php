@@ -478,7 +478,7 @@ if ($result) {
                         
                         </div>
                         <?php 
-                            if ($display === 1) {
+                            if ($display !== 0) {
                                 echo '<input type="submit" class="d-flex w-75 submit m-auto justify-content-center mb-5" style="display: block" name="submit" id="submit" value="Kaydet">';              
                             }
 
@@ -705,7 +705,7 @@ if ($result) {
                 success: function(data) {
                     alert(data)
                     let url =
-                        "<?php echo $base_url; ?>/taniReview/riskTani15Review.php?patient_id=" +
+                        "<?php echo $base_url; ?>/updateForms/showSubmittedTanis.php?patient_id=" +
                         patient_id + "&patient_name=" + encodeURIComponent(
                             patient_name);
                             $("#tick-container").fadeIn(800);

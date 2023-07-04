@@ -86,24 +86,6 @@ $crutch_use  = isset($_GET['crutch_use ']) ? $_GET['crutch_use '] : "NaN";
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
-                        <div class="input-section d-flex">
-                            <p id="tani_usernamelabel">Sorunla İlişkili Veriler:</p>
-                            <div class="matchedfields-wrapper">
-                                <?php         
-                                echo "<p class='matchedfields' id='changing_position' style='".($changing_position == 'NaN' ? 'color: red' : 'color:blue ' )."'>Ortalama uyku süresi: ".$changing_position."</p>";
-                                echo "<p class='matchedfields' id='standing_up' style='".($standing_up == 'NaN' ? 'color:red ' : 'color: blue' )."'>Uykuda sorun:".$standing_up."</p>";
-                                echo "<p class='matchedfields' id='walking' style='".($walking == 'NaN' ? 'color:red ' : 'color: blue' )."'>Huzursuzluk:".$walking."</p>";
-                                echo "<p class='matchedfields' id='changing_clothes' style='".($changing_clothes == 'NaN' ? 'color:red ' : 'color: blue' )."'> Rahatsızlık :".$changing_clothes."</p>";
-                                echo "<p class='matchedfields' id='cleaning_body' style='".($cleaning_body == 'NaN' ? 'color:red ' : 'color: blue' )."'>Kaşıntı :".$cleaning_body."</p>";
-                                echo "<p class='matchedfields' id='wheelchair_use' style='".($wheelchair_use == 'NaN' ? 'color:red ' : 'color: blue' )."'>Beslenmede Sorun:".$wheelchair_use."</p>";
-                                echo "<p class='matchedfields' id='cane_use' style='".($cane_use == 'NaN' ? 'color:red ' : 'color: blue' )."'>Ağrının süresi :".$cane_use."</p>";
-                                echo "<p class='matchedfields' id='walker_use' style='".($walker_use == 'NaN' ? 'color:red ' : 'color: blue' )."'>Ağrının süresi :".$walker_use."</p>";
-                                echo "<p class='matchedfields' id='crutch_use' style='".($crutch_use == 'NaN' ? 'color:red ' : 'color: blue' )."'>Ağrının süresi :".$crutch_use."</p>";
-                                ?>
-                            </div>
-
-                        </div>
-                        <div class="input-section d-flex">
                             <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
                             <p class="tanıdescription">Fiziksel mobilitede bozulma </p>
                         </div>

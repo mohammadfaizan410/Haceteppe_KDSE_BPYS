@@ -397,7 +397,7 @@ düşüncelerin uyarılmasını sağlamak için; müzik, oyun, puzzle, ziyaret v
                         </div>
                         <?php 
                             
-                            if ($display) {
+                            if ($_GET['display'] !== 0) {
                                 echo '<input type="submit" class="d-flex w-75 submit m-auto justify-content-center mb-5" style="display: block" name="submit" id="submit" value="Kaydet">';              
                             }
 

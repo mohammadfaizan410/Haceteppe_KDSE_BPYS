@@ -72,14 +72,7 @@ if (isset($_GET['logout'])) {
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
-                        <div class="input-section d-flex">
-                            <p id="tani_usernamelabel">Sorunla İlişkili Veriler:</p>
-                            <div class="matchedfields-wrapper">
 
-
-                            </div>
-
-                        </div>
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
                             <p class="tanıdescription">Etkisiz periferik doku perfüzyonu </p>
@@ -795,10 +788,6 @@ if (isset($_GET['logout'])) {
             let yourDate = new Date();
             let creationDate = yourDate.toISOString().split('T')[0];
             let updateDate = yourDate.toISOString().split('T')[0];
-<<<<<<< HEAD
-            let problem_info = 
-=======
->>>>>>> bc214a4d354700404831bedbc91014967f1ca31f
             let nurse_attempt = $('.form-check-input[name="nurse_attempt"]:checked').map(function() {
                     return this.value;
                 }).get().join('/');

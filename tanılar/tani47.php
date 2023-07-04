@@ -90,19 +90,7 @@ if (isset($_GET['logout'])) {
             <h1 class="form-header">Bakım Planı</h1>
             <div class="input-section-item">
                 <div class="patients-save">
-                    <form action="" method="POST" class="patients-save-fields">
-                        <div class="input-section d-flex">
-                            <p id="tani_usernamelabel">Sorunla İlişkili Veriler:</p>
-                            <div class="matchedfields-wrapper">
-                                <p class="matchedfields" id="field_respiratory_rate"></p>
-                                <p class="matchedfields" id="field_heart_rate"></p>
-                                <p class="matchedfields" id="field_spo2_percentage"></p>
-                                <p class="matchedfields" id="field_o2_status"></p>
-                                <p class="matchedfields" id="field_respiratory_nature"></p>
-
-                            </div>
-
-                        </div>
+                   
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
                             <p class="tanıdescription">Deri bütünlüğünde bozulma riski</p>
