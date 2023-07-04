@@ -312,14 +312,7 @@ if ($result) {
                         </div>
                           
                         </div>
-                        <?php 
-                            
-                            if ($_GET['display'] !== 0) {
-                                echo '<input type="submit" class="d-flex w-75 submit m-auto justify-content-center mb-5" style="display: block" name="submit" id="submit" value="Kaydet">';              
-                            }
-
-                        ?>
-
+                      
 
 
                     </form>
@@ -345,6 +338,9 @@ if ($result) {
 
         })
     });
+    if(<?php echo $_GET['display']; ?> === 1){
+        $('form').append('<input type="submit" class="d-flex w-75 submit m-auto justify-content-center mb-5" style="display: block" name="submit" id="submit" value="Kaydet">');
+        }
 </script>
 <script>
     $(document).ready(function(){

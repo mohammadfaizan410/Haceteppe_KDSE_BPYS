@@ -428,16 +428,7 @@ if ($result) {
                                     </div>
 
                                 </div>
-
-                            </div>
-                            <?php 
-                            if ($_GET['display'] !== 0) {
-                                echo '<input type="submit" class="d-flex w-75 submit m-auto justify-content-center mb-5" style="display: block" name="submit" id="submit" value="Kaydet">';              
-                            }
-
-                        ?>  
-
-
+</div>
 
                     </form>
                 </div>
@@ -464,6 +455,9 @@ if ($result) {
 
             })
         });
+        if(<?php echo $_GET['display']; ?> === 1){
+        $('form').append('<input type="submit" class="d-flex w-75 submit m-auto justify-content-center mb-5" style="display: block" name="submit" id="submit" value="Kaydet">');
+        }
         $('input[name="noc_indicator"][value="<?php echo $tani3[0]['noc_indicator']; ?>"]').prop('checked', true);
         $('input[name="noc_indicator_2"][value="<?php echo $tani3[0]['noc_indicator_2']; ?>"]').prop('checked', true);
         $('input[name="noc_indicator_3"][value="<?php echo $tani3[0]['noc_indicator_3']; ?>"]').prop('checked', true);

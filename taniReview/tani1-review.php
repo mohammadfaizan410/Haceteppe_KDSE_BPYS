@@ -393,14 +393,6 @@ if($root_id == 0 && $parent_id == 0){
                             </div>
 
                         </div>
-                        <?php 
-                            if ($display !== 0) {
-                                echo '<input type="submit" class="d-flex w-75 submit m-auto justify-content-center mb-5" style="display: block" name="submit" id="submit" value="Kaydet">';              
-                            }
-
-                        ?>             
-
-
 
                     </form>
                 </div>
@@ -426,6 +418,10 @@ if($root_id == 0 && $parent_id == 0){
 
         })
     });
+    if(<?php echo $display; ?> === 1){
+        $('form').append('<input type="submit" class="d-flex w-75 submit m-auto justify-content-center mb-5" style="display: block" name="submit" id="submit" value="Kaydet">');
+    }
+
         $('input[name="noc_indicator"][value="<?php echo $tani1[0]['noc_indicator']; ?>"]').prop('checked', true);
         $('input[name="noc_indicator_2"][value="<?php echo $tani1[0]['noc_indicator_2']; ?>"]').prop('checked', true);
         $('input[name="noc_indicator_3"][value="<?php echo $tani1[0]['noc_indicator_3']; ?>"]').prop('checked', true);

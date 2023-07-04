@@ -82,7 +82,7 @@ if (isset($_GET['logout'])) {
                                     echo '<td>'.$row['time'].'</td>';
                                     echo "<td class='root-tani'>
                                     <div class='entered-forms align-items-center'><a class='nav-items review btn btn-success w-100' style='color : white;'
-                                    href='" . $base_url . "/taniReview/tani" . $row['tani_num'] . "-review.php?patient_id=" . $row['patient_id'] . "&patient_name=" . $row['patient_name'] . "&evaluation=" . $row['evaluation'] . "&tani_id=".$row['tani_id']."&tani_num=".$row['tani_num']."&root_id=".$row['root_id']."&parent_id=".$row['parent_id']."&display=1"."'>tani" . $row['tani_num'] . "</a></div>
+                                    href='" . $base_url . "/taniReview/tani" . $row['tani_num'] . "-review.php?patient_id=" . $row['patient_id'] . "&patient_name=" . $row['patient_name'] . "&evaluation=" . $row['evaluation'] . "&tani_id=".$row['tani_id']."&tani_num=".$row['tani_num']."&root_id=".$row['root_id']."&parent_id=".$row['parent_id']."&display=0"."'>tani" . $row['tani_num'] . "</a></div>
                                     </td>";
                                     echo '</tr>';
                                     echo'<tr id="tani"'.$row['tani_id'].' style="display : none">
