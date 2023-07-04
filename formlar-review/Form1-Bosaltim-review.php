@@ -11,7 +11,10 @@ if (isset($_GET['logout'])) {
     header("Location: main.php");
 }
 require_once('../config-students.php');
-
+$patient_id = isset($_GET['patient_id']) ? $_GET['patient_id'] : '';
+$patient_name = isset($_GET['patient_name']) ? $_GET['patient_name'] : '';
+$student_id = isset($_GET['student_id']) ? $_GET['student_id'] : '';
+$student_name = isset($_GET['student_name']) ? $_GET['student_name'] : '';
 $userid = $_SESSION['userlogin']['id'];
 $form_id = $_GET['form_id'];
 echo "<script>console.log($form_id)</script>";

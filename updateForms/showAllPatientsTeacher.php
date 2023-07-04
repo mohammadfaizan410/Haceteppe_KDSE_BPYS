@@ -95,8 +95,8 @@ if (isset($_GET['logout'])) {
                     var patient_id = $(this).data("patient-id");
                     var patient_name = $(this).data("patient-name");
                     var student_name = $(this).data("student-name");
-                    url = "<?php echo $base_url; ?>/updateForms/showSubmittedForms.php?patient_id=" +
-                    patient_id + "&patient_name=" + encodeURIComponent(patient_name) + "&student_id=" + <?php echo $_GET['student_id'] ?> + "&student_name=" + <?php echo json_encode($_GET['student_name']) ?>;
+                    var url = "<?php echo $base_url; ?>/updateForms/showFormsTeacher.php?patient_id=" +
+                    patient_id + "&patient_name=" + encodeURIComponent(patient_name) + "&student_id=" + <?php echo $_GET['student_id'] ?> + "&student_name=" + encodeURIComponent(<?php echo json_encode($_GET['student_name']) ?>);
                     $('#content').load(url);
                 });
                 $('#showSubmittedtanis').click(function() {

@@ -11,7 +11,10 @@ if (isset($_GET['logout'])) {
     header("Location: main.php");
 }
 require_once('../config-students.php');
-
+$patient_id = isset($_GET['patient_id']) ? $_GET['patient_id'] : '';
+$patient_name = isset($_GET['patient_name']) ? $_GET['patient_name'] : '';
+$student_id = isset($_GET['student_id']) ? $_GET['student_id'] : '';
+$student_name = isset($_GET['student_name']) ? $_GET['student_name'] : '';
 $userid = $_SESSION['userlogin']['id'];
 $form_id = $_GET['form_id'];
 if (isset($_GET['display'])) {
@@ -1468,19 +1471,30 @@ if ($result) {
 
             <script>
                
-            $(function() {
+               $(function() {
                 $('#closeBtn1').click(function(e) {
                     e.preventDefault();
                     console.log("close btn clicked");
-                    var form_values = <?php echo $valuesJson; ?>;
-                    var all_values = form_values;
-                    let patient_id = all_values.patient_id;
-                    let patient_name = all_values['patient_name'];
+                    if("<?php echo $_SESSION['userlogin']['type']?>" === "student"){
+                 
+                    let patient_id = <?php echo $_SESSION['userlogin']['id'] ?> ;
+                    let patient_name = "<?php echo $patient_name ?>";
                     var url = "<?php echo $base_url; ?>/updateForms/showSubmittedForms.php?patient_id=" + patient_id +
                         "&patient_name=" + encodeURIComponent(patient_name);
-                    $("#content").load(url);
+                    $("#content").load(url);}
+                    else{
+                        let patient_id = <?php echo $patient_id ? $patient_id : 0   ?> ;
+                let patient_name = "<?php echo urldecode($patient_name); ?>";
+                let student_id  = <?php echo $student_id ? $student_id : 0   ?>;
+                let student_name = "<?php echo urldecode($student_name); ?>";
+                var url = "<?php echo $base_url; ?>/updateForms/showFormsTeacher.php?patient_id=" + patient_id +
+                "&patient_name=" + encodeURIComponent(patient_name) + "&student_id=" + student_id + "&student_name=" + encodeURIComponent(student_name);
+                $("#content").load(url);
+                    }
                 });
             });
+            
+
 
             $('#sonda_table :input').prop('disabled', true);
             $('.food_consumption_table :input').prop('disabled', true);
