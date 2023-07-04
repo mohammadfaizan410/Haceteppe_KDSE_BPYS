@@ -633,7 +633,7 @@ if (isset($_GET['logout'])) {
                             </li>";}
                             if($form_26_options!==""){
                                 echo "<li class='m-2'><div class='w-75 m-auto'>
-                                <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form26_toggle'>Form1 Egitim <span id='form26_caret'>&#9660;<span></button>
+                                <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form26_toggle'>Form1 Uyku <span id='form26_caret'>&#9660;<span></button>
                                 <ul class='entered-forms-ul' id='form_26_options' style='display:none'>" . $form_26_options . "</ul>
                                 </div>
                                 <div class='entered-forms'><a class='nav-items review btn btn-success w-50' style='color : white; display: none' id='form26_add_extension'
@@ -2413,8 +2413,8 @@ $(function() {
                     $("#form26_add_extension").css("display", "block");
                 }
                 else{
-                    $("#form25_caret").css("transform", "");
-                    $("#form25_add_extension").css("display", "none");
+                    $("#form26_caret").css("transform", "");
+                    $("#form26_add_extension").css("display", "none");
                 }
                 $("#form_2_options").slideUp('slow');
                 $("#form2_caret").css("transform", "");

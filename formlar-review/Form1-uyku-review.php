@@ -10,6 +10,23 @@ if (isset($_GET['logout'])) {
     unset($_SESSION);
     header("Location: main.php");
 }
+require_once('../config-students.php');
+
+$userid = $_SESSION['userlogin']['id'];
+$form_id = $_GET['form_id'];
+if (isset($_GET['display'])) {
+    $display = $_GET['display'];
+} else {
+    $display = 0;
+}
+$sql = "SELECT * FROM uyukuform1 where form_id= $form_id";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+if ($result) {
+    $uyku = $smtmselect->fetchAll(PDO::FETCH_ASSOC)[0];
+} else {
+    echo 'error';
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -77,7 +94,6 @@ if (isset($_GET['logout'])) {
             <div class="input-section d-flex">
 
                 <p class="usernamelabel">Uykuda Sorun </p>
-                <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
@@ -163,7 +179,26 @@ if (isset($_GET['logout'])) {
             <input class="submit m-auto " type='submit' name="submit" id="submit" value="Kayıt">
     </div>
 
+    <script>
 
+        $(document).ready(function(){
+            $('#averageSleepDuration').val('<?php echo $uyku['averageSleepDuration']; ?>');
+            if ("<?php echo $uyku['sleepProblem']; ?>" != "Sorun Yok") {
+                "<?php echo $uyku['sleepProblem']; ?>".split('/').forEach(function(item) {
+                    $('input[name="sleepProblemDesc"][value="' + item + '"]').prop('checked', true);
+                })
+                $('input[name="sleepProblem"][value="Sorun Var"]').prop('checked', true);
+                $('input[name="sleepProblemDesc"]').prop('disabled', false);
+            } else {
+                $('input[name="sleepProblem"][value="Sorun Yok"]').prop('checked', true);
+                $('input[name="sleepProblemDesc"]').prop('disabled', true);
+            }
+
+            $('[name="sleepHelpHabits"]').val('<?php echo $uyku['sleepHelpHabits']; ?>');
+            $('[name="hospitalFactorsAffectingSleep"]').val('<?php echo $uyku['hospitalFactorsAffectingSleep']; ?>');
+        })
+
+    </script>
 
             <script>
                 $(function() {
@@ -197,7 +232,6 @@ if (isset($_GET['logout'])) {
                 $(function() {
                     $('#submit').click(function(e) {
                         e.preventDefault()
-
                         if ($('#averageSleepDuration').val() == ""){
                             $('html, body').animate({
                                     scrollTop: $("#averageSleepDuration").offset().top
@@ -237,7 +271,6 @@ if (isset($_GET['logout'])) {
                                 //stop function
                                 return false;
                         }
-
 
                         let name = $('#name').val();
                         let surname = $('#surname').val();
