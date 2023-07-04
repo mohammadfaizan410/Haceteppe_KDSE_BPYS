@@ -7,10 +7,11 @@ if (isset($_POST)) {
     $surname = $_POST['surname'];
     $email = $_POST['email'];
     $password = sha1(($_POST['password']));
+    $admin = $_POST['admin'];
 
-    $sql = "INSERT INTO teachers (name, surname, email, password) VALUES(?,?,?,?)";
+    $sql = "INSERT INTO teachers (name, surname, email, password, admin) VALUES(?,?,?,?,?)";
     $smtminsert = $db->prepare($sql);
-    $result = $smtminsert->execute([$name, $surname, $email, $password]);
+    $result = $smtminsert->execute([$name, $surname, $email, $password, $admin]);
     if ($result) {
         echo 'Başarılı';
     } else {

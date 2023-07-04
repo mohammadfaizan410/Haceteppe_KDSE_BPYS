@@ -104,7 +104,7 @@ session_start();
                             // Delay for 2 seconds (adjust the duration as needed)
                             setTimeout(function() {
                             // Load the content
-                            window.location.href = "student-main.php";
+                            window.location.href = "teacher-main.php";
                             $("#tick-container").fadeOut(600);
                             // Hide the tick container
                             }, 1000);            

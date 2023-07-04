@@ -56,11 +56,7 @@ if (isset($_GET['logout'])) {
             </div>
             <div class="navigation-right">
                 <div class="nav-items-wrapper">
-                    <a href="./formlar-teacher.php" id="formlar" class="nav-link nav-items formlar"> <i class="fa fa-table me-2 "></i>Öğrenciler</a>
-                    <a href="" class="nav-link"><i class="fa fa-th me-2"></i>Formlar</a>
-                    <a href="./messaging.php" class="nav-link nav-items"><i class="fa fa-comments me-2"></i>Mesajlar</a>
-                    <a href="./broadcast.php" class="nav-link nav-items"><i class="fa fa-comments me-2"></i>Forum (Toplu
-                        Mesajlar)</a>
+                    <a href="./updateForms/showAllStudents.php" id="formlar" class="nav-link nav-items formlar"> <i class="fa fa-table me-2 "></i>Öğrenciler</a>
                 </div>
                 <div>
 
@@ -143,6 +139,7 @@ if (isset($_GET['logout'])) {
             }); // disable caching for all requests.
 
             // RAW Text/Html data from a file
+            $("#content").load("./updateForms/showAllStudents.php");
 
             $(function() {
                 $("a.nav-items").on("click", function(e) {
