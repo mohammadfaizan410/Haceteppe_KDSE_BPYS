@@ -399,6 +399,7 @@ if (isset($_GET['logout'])) {
     <script>
     $(function() {
         $('#submit').click(function(e) {
+            console.log("clicked for tani 1")
             e.preventDefault();
             if (!$('[name="noc_indicator"]').is(':checked')) {
                 $('.option-error').css('display', 'none');
@@ -481,7 +482,6 @@ if (isset($_GET['logout'])) {
                 return false;
             }
 
-            e.preventDefault()
             var id = <?php
                             $userid = $_SESSION['userlogin']['id'];
                             echo $userid
@@ -561,9 +561,7 @@ if (isset($_GET['logout'])) {
                     nurse_attempt: nurse_attempt,
                     nurse_education: nurse_education,
                     collaborative_apps: collaborative_apps,
-                    evaluation: evaluation,
-                    standalone: <?php echo $_GET['standalone']; ?>,
-                    
+                    evaluation: evaluation,                    
                     root_id : <?php echo $_GET['root_id']; ?>,
                     parent_id : <?php echo $_GET['parent_id']; ?>,
                     
