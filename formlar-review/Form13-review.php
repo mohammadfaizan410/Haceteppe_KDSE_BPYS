@@ -13,6 +13,11 @@ if (isset($_GET['logout'])) {
 require_once('../config-students.php');
 $userid = $_SESSION['userlogin']['id'];
 $form_id = $_GET['form_id'];
+if (isset($_GET['display'])) {
+    $display = $_GET['display'];
+} else {
+    $display = 0;
+}
 $sql = "SELECT * FROM form13 where form_id= $form_id";
 $smtmselect = $db->prepare($sql);
 $result = $smtmselect->execute();
@@ -139,9 +144,11 @@ if ($result) {
                                 placeholder="treatment_timeRange"
                                 value="<?php echo $form13[0]['treatment_timeRange']; ?>">
                         </div>
-                                                                <input type="submit" class="w-75 submit m-auto" name="submit" id="submit" value="Kaydet">
-
-
+                        <?php
+                        if ($display == 1) {
+                            echo '<input type="submit" class="w-75 submit m-auto" name="submit" id="submit" value="Kaydet">';
+                        }
+                        ?>
                     </form>
                 </div>
             </div>
@@ -154,7 +161,7 @@ if ($result) {
         $('#closeBtn1').click(function(e) {
             let patient_name = $("input[name='patient_name']").val();
             let patient_id = parseInt($("input[name='patient_id']").val());
-            var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
+            var url = "<?php echo $base_url; ?>/updateForms/showSubmittedForms.php?patient_id=" + patient_id +
                 "&patient_name=" + encodeURIComponent(patient_name);
             $("#content").load(url);
 
@@ -276,7 +283,7 @@ if ($result) {
                     type: 'POST',
                     url: '<?php echo $base_url; ?>/form-handlers/submitOrUpdateMedikal_form13.php',
                     data: {
-                        isUpdate: true,
+                        
                         id: id,
                         form_id: form_id,
                         name: name,
@@ -297,7 +304,7 @@ if ($result) {
                     },
                     success: function(data) {
                          let url =
-                            "<?php echo $base_url; ?>/updateForms/showAllTanis.php?patient_id=" +
+                            "<?php echo $base_url; ?>/updateForms/showSubmittedForms.php?patient_id=" +
                             patient_id + "&patient_name=" + encodeURIComponent(
                                 patient_name);
                                 $("#tick-container").fadeIn(800);

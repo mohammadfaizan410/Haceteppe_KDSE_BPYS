@@ -4,33 +4,6 @@ require_once("../config-students.php");
 <?php
 
 if (isset($_POST["patient_name"])) {
-    if (isset($_POST['isUpdate'])) {
-        $stmt = $db->prepare("UPDATE form13
-        SET
-        update_date = ?,
-        delivery_date = ?,
-        delivery_time = ?,
-        medicine_name = ?,
-        medicine_dose = ?,
-        delivery_method = ?,
-        treatment_timeRange = ?
-        WHERE form_id = ?");
-        $result =  $stmt->execute([
-            $_POST["creation_date"],
-            $_POST["delivery_date"],
-            $_POST["delivery_time"],
-            $_POST["medicine_name"],
-            $_POST["medicine_dose"],
-            $_POST["delivery_method"],
-            $_POST["treatment_timeRange"],
-            $_POST["form_id"]
-        ]);
-        if ($result) {
-            echo "Güncelleme Başarılı!";
-        } else {
-            echo $result;
-        }
-    } else {
         $stmt = $db->prepare("INSERT INTO form13 (
                 form_num,
                 patient_name,
@@ -62,7 +35,6 @@ if (isset($_POST["patient_name"])) {
         } else {
             echo $result;
         }
-    }
 } else {
     echo "Error.";
 }

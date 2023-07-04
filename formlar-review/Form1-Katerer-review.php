@@ -14,6 +14,11 @@ require_once('../config-students.php');
 
 $userid = $_SESSION['userlogin']['id'];
 $form_id = $_GET['form_id'];
+if (isset($_GET['display'])) {
+    $display = $_GET['display'];
+} else {
+    $display = 0;
+}
 $sql = "SELECT * FROM katererform1 where form_id= $form_id";
 $smtmselect = $db->prepare($sql);
 $result = $smtmselect->execute();
@@ -174,7 +179,11 @@ if ($result) {
                 </div>
             </div>
             <div class='d-flex'>    
-    <input class="submit m-auto " type='submit' name="submit" id="submit" value="Kayıt">
+            <?php
+                        if ($display == 1) {
+                            echo '<input type="submit" class="w-75 submit m-auto" name="submit" id="submit" value="Kaydet">';
+                        }
+                        ?>
 </div>
 
             </form>
@@ -191,7 +200,7 @@ if ($result) {
         console.log("close btn clicked");
         let patient_id = "<?php echo $katererform1[0]['patient_id']; ?>";
         let patient_name = "<?php echo $katererform1[0]['patient_name']; ?>"
-        var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
+        var url = "<?php echo $base_url; ?>/updateForms/showSubmittedForms.php?patient_id=" + patient_id +
             "&patient_name=" + encodeURIComponent(patient_name);
         $("#content").load(url);
     })
@@ -511,7 +520,7 @@ if ($result) {
                             type: 'POST',
                             url: '<?php echo $base_url; ?>/form-handlers/SubmitOrUpdateForm1_Kateter.php',
                             data: {
-                                isUpdate: true,
+                                
                                 form_id: form_id,
                                 patient_id: patient_id,
                                 patient_name: patient_name,
@@ -535,7 +544,7 @@ if ($result) {
                             },
                             success: function(data) {
                                 let url =
-                                        "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
+                                        "<?php echo $base_url; ?>/updateForms/showSubmittedForms.php?patient_id=" +
                                         patient_id + "&patient_name=" + encodeURIComponent(
                                             patient_name);
                                             $("#tick-container").fadeIn(800);

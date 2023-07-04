@@ -374,9 +374,7 @@ if (isset($_GET['logout'])) {
                                         <a class="nav-items review btn btn-success p-3" style="color: white;" href="' . $base_url . '/formlar-review/Form2-review.php?form_id=' . $form_id . '">
                                         <p class="entered-forms-p">Form2 Date: ' . $update_date . '</p>
                                         </a>
-                                        <a class="nav-items review btn btn-success p-3" style="color: white;" href="' . $base_url . '/formlar-review/Form2-review.php?form_id=' . $form_id . '">
-                                        <p class="entered-forms-p">View Tanis </p>
-                                        </a>
+                                        
                                         </div>
                                         </li>';
                                     }
@@ -388,9 +386,7 @@ if (isset($_GET['logout'])) {
                                         <a class="nav-items review btn btn-success p-3" style="color: white;" href="' . $base_url . '/formlar-review/Form3-review.php?form_id=' . $form_id . '">
                                         <p class="entered-forms-p">Form3 Date: ' . $update_date . '</p>
                                         </a>
-                                        <a class="nav-items review btn btn-success p-3" style="color: white;" href="' . $base_url . '/formlar-review/Form2-review.php?form_id=' . $form_id . '">
-                                        <p class="entered-forms-p">View Tanis </p>
-                                        </a>
+                                        
                                         </div>
                                         <div>Submitted Tani 1</div>
                                         <div class="w-75  m-auto mt-3 d-flex">
@@ -420,9 +416,7 @@ if (isset($_GET['logout'])) {
                                         <div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3" style="color: white;" href="' . $base_url . '/formlar-review/Form4-review.php?form_id=' . $form_id . '">
                                         <p class="entered-forms-p">Form4 Date: ' . $update_date . '</p>
                                         </a>
-                                        <a class="nav-items review btn btn-success p-3" style="color: white;" href="' . $base_url . '/formlar-review/Form2-review.php?form_id=' . $form_id . '">
-                                        <p class="entered-forms-p">View Tanis </p>
-                                        </a>
+                                        
                                         </div>
                                         </li>';
                                     }

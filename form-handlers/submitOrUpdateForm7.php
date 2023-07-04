@@ -6,58 +6,6 @@ require_once("../config-students.php");
 $data = json_decode(file_get_contents('php://input'), true);
 $healing_date = DateTime::createFromFormat('Y-m-d', $data["healing_date"]);
 $healing_date_formatted = $healing_date->format('Y-m-d');if (isset($data["patient_name"])) {
-    if (isset($data["isUpdate"])) {
-        $stmt = $db->prepare("UPDATE form7 SET 
-                    update_date = ?,
-                    occurance_date = ?,
-                    service_wound  = ?,
-                    location = ?,
-                    stage = ?,
-                    dimentions = ?,
-                    wound_exudate = ?,
-                    wound_appearance = ?,
-                    odor = ?,
-                    tunnelling = ?,
-                    edema = ?,
-                    maceration = ?,
-                    erythema = ?,
-                    peeling = ?,
-                    dryness = ?,
-                    pain = ?,
-                    careProducts = ?,
-                    result = ?,
-                    healing_date = ?
-                      WHERE form_id = ?");
-
-        $result = $stmt->execute([
-            $data["update_date"],
-            $data["occurance_date"],
-            $data["service_wound"],
-            $data["location"],
-            $data["stage"],
-            $data["dimentions"],
-            $data["wound_exudate"],
-            $data["appearance_wound"],
-            $data["odor"],
-            $data["tunnelling"],
-            $data["edema"],
-            $data["maceration"],
-            $data["erythema"],
-            $data["peeling"],
-            $data["dryness"],
-            $data["pain"],
-            $data["care_products"],
-            $data["result"],
-            $healing_date_formatted,
-            $data["form_id"],
-        ]);
-
-        if ($result) {
-            echo "Güncelleme Başarılı!";
-        } else {
-            echo 'error';
-        }
-    } else {
 
         $stmt = $db->prepare("INSERT INTO form7 (
                 form_num,
@@ -116,7 +64,7 @@ $healing_date_formatted = $healing_date->format('Y-m-d');if (isset($data["patien
         } else {
             echo $result;
         }
-    }
+    
 } else {
     echo "Error.";
 }

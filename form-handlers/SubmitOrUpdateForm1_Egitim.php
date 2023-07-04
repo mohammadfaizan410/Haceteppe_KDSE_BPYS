@@ -16,35 +16,6 @@ require_once("../config-students.php");
 
 if (isset($_POST["patient_name"])) {
 
-    if (isset($_POST['isUpdate'])) {
-        $stmt = $db->prepare("UPDATE egitimform1 SET
-        update_date = ?,
-        radio1 = ?,
-        Konu = ?,
-        Nerden = ?,
-        NeZaman = ?,
-        EgitimIstegi = ?,
-        TedaviBasvurusu = ?,
-        TedaviBasvurusuDiger = ?
-        WHERE form_id = ?");
-
-        $result = $stmt->execute([
-            $_POST["creation_date"],
-            $_POST["radio1"],   
-            $_POST["Konu"],
-            $_POST["Nerden"],
-            $_POST["NeZaman"],
-            $_POST["EgitimIstegi"],
-            $_POST["TedaviBasvurusu"],
-            $_POST["TedaviBasvurusuDiger"],
-            $_POST["form_id"]
-        ]);
-        if ($result) {
-            echo $result;
-        } else {
-            echo "Error could not update data!";
-        }
-    } else {
         $stmt = $db->prepare("INSERT INTO egitimform1 (
                 form_name,
                 patient_name,
@@ -78,7 +49,7 @@ if (isset($_POST["patient_name"])) {
         } else {
             echo "Error: could not inserted!";
         }
-    }
+    
 } else {
     echo "Error: Post data not set!";
 }
