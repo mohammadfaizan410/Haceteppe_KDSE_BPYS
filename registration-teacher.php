@@ -60,6 +60,8 @@ require_once("config-students.php");
 
       <p class="usernamelabel">E-Posta</p>
       <input type="email" required name="email" id="email" placeholder="E-Posta Giriniz">
+      <p class="usernamelabel">reference numara</p>
+      <input type="password" required name="reference" id="reference" placeholder="E-Posta Giriniz">
 
       <p class="passwordlabel">Şifre</p>
       <input type="password" name="password" id="password" required placeholder="Şifre Giriniz" minlength="6">
@@ -73,6 +75,7 @@ require_once("config-students.php");
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 </body>
 <script>
   $("#validation-box").css("display", "none");
@@ -80,6 +83,9 @@ require_once("config-students.php");
 
 <script>
   var code = '';
+  //meltem@11229988
+    //other@99882244
+   
 
   $("#register").click(function(e) {
     e.preventDefault();
@@ -90,7 +96,10 @@ require_once("config-students.php");
     const confirmPass = $("#confirm-password").val();
     const passRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
+    const reference = calculateHash($("#reference").val())
+    const adminReference = '12acad8e2bc24fc03f6d617d719c989f36b167da74a8374f7afa7239d65ff690';
+    const otherReference = 'a92b80e2e2ff3315ae85981174f5d103e1257eef0c302564a2190c3c9274a10f'
+    
     $("#error").text("");
     //check form validity
     if (name === "") {
@@ -101,7 +110,14 @@ require_once("config-students.php");
       $("#error").text("E-Posta boş olamaz!");
     } else if (!emailRegex.test(email)) {
       $("#error").text("E-Posta doğru formatta değil!");
-    } else if (password == "") {
+    }
+    else if (reference == "") {
+      $("#error").text("reference boş olamaz!");
+    }
+    else if (reference != adminReference && reference != otherReference) {
+     $("#error").text("Reference is incorrect!");
+    }
+     else if (password == "") {
       $("#error").text("Şifre boş olamaz!");
     } else if (confirmPass == "") {
       $("#error").text("Şifre boş olamaz!");
@@ -174,6 +190,7 @@ require_once("config-students.php");
                     surname: surname,
                     email: email,
                     password: password,
+                    admin: reference === adminReference ? 'admin' : 'other'
                   },
                   success: function(response) {
                     alert("Başarılı");
@@ -196,6 +213,13 @@ require_once("config-students.php");
       });
     }
   });
+
+  function calculateHash(data) {
+      var hash = CryptoJS.SHA256(data);
+      return hash.toString(CryptoJS.enc.Hex);
+    }
+
+  
 </script>
 
 </html>

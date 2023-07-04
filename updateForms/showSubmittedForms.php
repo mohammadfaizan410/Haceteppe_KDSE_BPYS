@@ -691,8 +691,8 @@ if (isset($_GET['logout'])) {
         <script>
             //closeBtn click
             var patient_id = "<?php echo $_GET['patient_id']; ?>";
-            var patient_name = "<?php echo $_GET['patient_name']; ?>";
-            console.log(patient_id, patient_name);
+var patient_name = "<?php echo $_GET['patient_name']; ?>";
+console.log(patient_id, patient_name);
 $(function() {
                 
                 $("#closeBtn1").on("click", function(e) {
