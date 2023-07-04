@@ -26,8 +26,18 @@ if (isset($_GET['logout'])) {
 <body style="background-color:white">
     
 <div class="container-fluid pt-4 px-4">
+
     <div class="patients-table text-center rounded p-5" id="patients-table" style='aspect-ratio : 4/2'>
         <span class='close closeBtn' id='closeBtn1'>&times;</span>
+        <div class='row'>
+        <div class='col-lg-5' style="font-weight : bold; font-size: large;">
+        Patient:<?php echo $_GET['patient_name'] ?>
+            </div>
+            
+            <div class='col-lg-5' style="font-weight : bold; font-size: large;">
+            ID:<?php echo $_GET['patient_id'] ?>
+            </div>
+</div>
     <div class='patient-details'>
         <h2 class='pb-5'>Tanilar</h2>
         <div class='row pt-5 pb-3 border-bottom justify-content-center'>

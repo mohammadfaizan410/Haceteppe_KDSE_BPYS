@@ -42,6 +42,15 @@ if (isset($_GET['logout'])) {
 </head>
 
 <body style="background-color:white">
+<div class='row'>
+        <div class='col-lg-5' style="font-weight : bold; font-size: large;">
+        Patient:<?php echo $_GET['patient_name'] ?>
+            </div>
+            
+            <div class='col-lg-5' style="font-weight : bold; font-size: large;">
+            ID:<?php echo $_GET['patient_id'] ?>
+            </div>
+</div>
     <div class="container-fluid pt-4 px-4">
         <?php
         require_once('../config-students.php');

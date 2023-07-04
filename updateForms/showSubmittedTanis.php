@@ -57,6 +57,15 @@ if (isset($_GET['logout'])) {
         ?>
         <div class="send-patient">
         <span class='close closeBtn' id='closeBtn1'>&times;</span>
+        <div class='row'>
+        <div class='col-lg-5' style="font-weight : bold; font-size: large;">
+        Patient:<?php echo $_GET['patient_name'] ?>
+            </div>
+            
+            <div class='col-lg-5' style="font-weight : bold; font-size: large;">
+            ID:<?php echo $_GET['patient_id'] ?>
+            </div>
+</div>
             <div class="patients-table text-center rounded p-4" id="patients-table">
                 <div class="d-flex align-items-center justify-content-between mb-4">
                     <p style="color : #333333; font-size: 20px" class="pb-2">Submitted Tanis</p>
@@ -67,6 +76,10 @@ if (isset($_GET['logout'])) {
                 <input type="text" id="searchInput" class='form-control mb-5' placeholder="Form Ad göre ara">
 
                     <table class="table text-start align-middle table-hover mb-0" id='dataTable'>
+                    <thead>
+                           
+                          
+                           </thead>
                         <thead>
                             <tr>
                                 <th scope="col" style="font-weight : bold; font-size: large;">tani ID</th>
@@ -82,7 +95,7 @@ if (isset($_GET['logout'])) {
                                     echo '<td>'.$row['time'].'</td>';
                                     echo "<td class='root-tani'>
                                     <div class='entered-forms align-items-center'><a class='nav-items review btn btn-success w-100' style='color : white;'
-                                    href='" . $base_url . "/taniReview/tani" . $row['tani_num'] . "-review.php?patient_id=" . $row['patient_id'] . "&patient_name=" . $row['patient_name'] . "&evaluation=" . $row['evaluation'] . "&tani_id=".$row['tani_id']."&tani_num=".$row['tani_num']."&root_id=".$row['root_id']."&parent_id=".$row['parent_id']."&display=0"."'>tani" . $row['tani_num'] . "</a></div>
+                                    href='" . $base_url . "/taniReview/tani" . $row['tani_num'] . "-review.php?patient_id=" . $row['patient_id'] . "&patient_name=" . $row['patient_name'] . "&evaluation=" . $row['evaluation'] . "&tani_id=".$row['tani_id']."&tani_num=".$row['tani_num']."&root_id=".$row['root_id']."&parent_id=".$row['parent_id']."&display=1"."'>tani" . $row['tani_num'] . "</a></div>
                                     </td>";
                                     echo '</tr>';
                                     echo'<tr id="tani"'.$row['tani_id'].' style="display : none">
