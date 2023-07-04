@@ -14,6 +14,11 @@ require_once('../config-students.php');
 
 $userid = $_SESSION['userlogin']['id'];
 $form_id = $_GET['form_id'];
+if (isset($_GET['display'])) {
+    $display = $_GET['display'];
+} else {
+    $display = 0;
+}
 $sql = "SELECT * FROM form1_beslenme where form_id= $form_id";
 $smtmselect = $db->prepare($sql);
 $result = $smtmselect->execute();
@@ -1442,7 +1447,11 @@ if ($result) {
 
                     </div>
                                                                            <div class='d-flex'>    
-    <input class="submit m-auto " type='submit' name="submit" id="submit" value="Kayıt">
+                                                                           <?php
+                        if ($display == 1) {
+                            echo '<input type="submit" class="w-75 submit m-auto" name="submit" id="submit" value="Kaydet">';
+                        }
+                        ?>
 </div>
 
             </form>
@@ -1467,7 +1476,7 @@ if ($result) {
                     var all_values = form_values;
                     let patient_id = all_values.patient_id;
                     let patient_name = all_values['patient_name'];
-                    var url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
+                    var url = "<?php echo $base_url; ?>/updateForms/showSubmittedForms.php?patient_id=" + patient_id +
                         "&patient_name=" + encodeURIComponent(patient_name);
                     $("#content").load(url);
                 });
@@ -2224,7 +2233,7 @@ if ($result) {
                                 let patient_id = all_values.patient_id;
                             let patient_name = all_values['patient_name'];
                             let url =
-                                "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
+                                "<?php echo $base_url; ?>/updateForms/showSubmittedForms.php?patient_id=" +
                                 patient_id + "&patient_name=" + encodeURIComponent(patient_name);
 
                                 $("#tick-container").fadeIn(800);

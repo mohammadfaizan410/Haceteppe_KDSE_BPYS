@@ -14,6 +14,11 @@ require_once('../config-students.php');
 
 $userid = $_SESSION['userlogin']['id'];
 $form_id = $_GET['form_id'];
+if (isset($_GET['display'])) {
+    $display = $_GET['display'];
+} else {
+    $display = 0;
+}
 $sql = "SELECT * FROM solunumgereksinimi_form1 where form_id= $form_id";
 $smtmselect = $db->prepare($sql);
 $result = $smtmselect->execute();
@@ -1062,7 +1067,11 @@ if ($result) {
             </div>
 
             <div class='d-flex'>    
-    <input class="submit m-auto " type='submit' name="submit" id="submit" value="Kayıt">
+            <?php
+                        if ($display == 1) {
+                            echo '<input type="submit" class="w-75 submit m-auto" name="submit" id="submit" value="Kaydet">';
+                        }
+                        ?>
 </div>
 
             </form>
@@ -1947,7 +1956,7 @@ else if ($('[name="SolunumSistemiUygilamasi"][value="Diger"]').is(':checked') &&
                             type: 'POST',
                             url: '<?php echo $base_url; ?>/form-handlers/SubmitOrUpdateForm1_SolunumGereksinimi.php/',
                             data: {
-                                isUpdate: true,
+                                
                                 form_id: form_id,
                                 form_name: form_name,
                                 creationDate: creationDate,
@@ -1995,7 +2004,7 @@ else if ($('[name="SolunumSistemiUygilamasi"][value="Diger"]').is(':checked') &&
                                 let patient_id = '<?php echo $solunumgereksinimi_form1['patient_id']; ?>';
                                 let patient_name = "<?php echo $solunumgereksinimi_form1['patient_name']; ?>";
                                 let url =
-                                                        "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" +
+                                                        "<?php echo $base_url; ?>/updateForms/showSubmittedForms.php?patient_id=" +
                                                         patient_id + "&patient_name=" + encodeURIComponent(
                                                             patient_name);
                                                             $("#tick-container").fadeIn(800);
@@ -2030,7 +2039,7 @@ else if ($('[name="SolunumSistemiUygilamasi"][value="Diger"]').is(':checked') &&
         $('#closeBtn1').click(function(e) {
             let patient_name = "<?php echo $solunumgereksinimi_form1['patient_name'] ?>";
             let patient_id = "<?php echo $solunumgereksinimi_form1['patient_id'] ?>";
-            let url = "<?php echo $base_url; ?>/updateForms/showAllForms.php?patient_id=" + patient_id +
+            let url = "<?php echo $base_url; ?>/updateForms/showSubmittedForms.php?patient_id=" + patient_id +
                 "&patient_name=" + encodeURIComponent(patient_name);
                 $("#tick-container").fadeIn(800);
                             // Change the tick background to the animated GIF
