@@ -28,6 +28,7 @@ if (isset($_GET['logout'])) {
         
         <div class="patients-table text-center rounded p-5" id="patients-table" style='aspect-ratio : 4/2'>
             <span class='close closeBtn' id='closeBtn1'>&times;</span>
+            
     <div class='patient-details'>
         <h2 class='pb-5'>Patient Details</h2>
         <div class='row pt-5 pb-3 border-bottom '>

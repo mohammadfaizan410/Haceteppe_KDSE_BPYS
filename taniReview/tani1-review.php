@@ -393,14 +393,6 @@ if($root_id == 0 && $parent_id == 0){
                             </div>
 
                         </div>
-                        <?php 
-                            if ($display === 1) {
-                                echo '<input type="submit" class="d-flex w-75 submit m-auto justify-content-center mb-5" style="display: block" name="submit" id="submit" value="Kaydet">';              
-                            }
-
-                        ?>             
-
-
 
                     </form>
                 </div>
@@ -426,7 +418,10 @@ if($root_id == 0 && $parent_id == 0){
 
         })
     });
-  
+    if(<?php echo $display; ?> === 1){
+        $('form').append('<input type="submit" class="d-flex w-75 submit m-auto justify-content-center mb-5" style="display: block" name="submit" id="submit" value="Kaydet">');
+    }
+
         $('input[name="noc_indicator"][value="<?php echo $tani1[0]['noc_indicator']; ?>"]').prop('checked', true);
         $('input[name="noc_indicator_2"][value="<?php echo $tani1[0]['noc_indicator_2']; ?>"]').prop('checked', true);
         $('input[name="noc_indicator_3"][value="<?php echo $tani1[0]['noc_indicator_3']; ?>"]').prop('checked', true);
@@ -443,6 +438,7 @@ if($root_id == 0 && $parent_id == 0){
         "<?php echo $tani1[0]['collaborative_apps']?>".split('/').forEach(element => {
             $('input[name="collaborative_apps"][value="' + element + '"]').prop('checked', true);
         });
+
     </script>
     <script>
     $(function() {
@@ -596,7 +592,6 @@ if($root_id == 0 && $parent_id == 0){
                 type: 'POST',
                 url:'<?php echo $base_url; ?>/tani-handler/submitOrUpdateTani.php',
                 data: {
-                    
                     tani_id: <?php echo $_GET['tani_id']; ?>,
                     tani_num: <?php echo $_GET['tani_num']; ?>,
                     patient_id: patient_id,
@@ -613,15 +608,15 @@ if($root_id == 0 && $parent_id == 0){
                     nurse_education: nurse_education,
                     collaborative_apps: collaborative_apps,
                     evaluation: evaluation,
-                    
                     root_id : <?php echo $_GET['root_id']; ?>,
                     parent_id : <?php echo $_GET['parent_id']; ?>,
 
                 },
                 success: function(data) {
                     alert(data)
+                    let tani_num = String(<?php echo $tani_num ?>)
                     let url =
-                        "<?php echo $base_url; ?>/taniReview/riskTani15Review.php?patient_id=" +
+                        "<?php echo $base_url; ?>/updateForms/showSubmittedTanis.php?patient_id=" +
                         patient_id + "&patient_name=" + encodeURIComponent(
                             patient_name);
                             $("#tick-container").fadeIn(800);

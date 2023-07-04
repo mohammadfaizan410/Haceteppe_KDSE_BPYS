@@ -82,19 +82,7 @@ $fatigue  = isset($_GET['fatigue ']) ? $_GET['fatigue '] : "NaN";
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
-                        <div class="input-section d-flex">
-                            <p id="tani_usernamelabel">Sorunla İlişkili Veriler:</p>
-                            <div class="matchedfields-wrapper">
-                                <?php
-                                echo "<p class='matchedfields' id='Dispne' style='" . ($Dispne == 'NaN' ? 'color: red' : 'color:blue ') . "'>Ortalama uyku süresi: " . $Dispne . "</p>";
-                                echo "<p class='matchedfields' id='systolic_bp' style='" . ($systolic_bp == 'NaN' ? 'color:red ' : 'color: blue') . "'>Uykuda sorun:" . $systolic_bp . "</p>";
-                                echo "<p class='matchedfields' id='diastolic_bp' style='" . ($diastolic_bp == 'NaN' ? 'color:red ' : 'color: blue') . "'>Huzursuzluk:" . $diastolic_bp . "</p>";
-                                echo "<p class='matchedfields' id='pulse_rate' style='" . ($pulse_rate == 'NaN' ? 'color:red ' : 'color: blue') . "'> Rahatsızlık :" . $pulse_rate . "</p>";
-                                echo "<p class='matchedfields' id='fatigue' style='" . ($fatigue == 'NaN' ? 'color:red ' : 'color: blue') . "'>Kaşıntı :" . $fatigue . "</p>";
-                                ?>
-                            </div>
-
-                        </div>
+                       
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
                             <p class="tanıdescription">Aktivite intoleransı </p>

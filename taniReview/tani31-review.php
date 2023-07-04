@@ -99,12 +99,7 @@ if ($result) {
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
-                        <div class="input-section d-flex">
-                            <p id="tani_usernamelabel">Sorunla İlişkili Veriler:</p>
-                            <div class="matchedfields-wrapper">
-                            </div>
-
-                        </div>
+                        
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
                             <p class="tanıdescription">Umutsuzluk </p>
@@ -290,14 +285,7 @@ if ($result) {
                         </div>
                            
                         </div>
-                        <?php 
-                            
-                            if ($display) {
-                                echo '<input type="submit" class="d-flex w-75 submit m-auto justify-content-center mb-5" style="display: block" name="submit" id="submit" value="Kaydet">';              
-                            }
-
-                        ?>
-
+                       
 
 
                     </form>
@@ -325,6 +313,9 @@ if ($result) {
         "<?php echo $tani[0]['collaborative_apps']?>".split('/').forEach(element => {
             $('input[name="collaborative_apps"][value="' + element + '"]').prop('checked', true);
         });
+        if(<?php echo $_GET['display']; ?> === 1){
+        $('form').append('<input type="submit" class="d-flex w-75 submit m-auto justify-content-center mb-5" style="display: block" name="submit" id="submit" value="Kaydet">');
+        }
     })
         $(function() {
             $('#closeBtn1').click(function(e) {

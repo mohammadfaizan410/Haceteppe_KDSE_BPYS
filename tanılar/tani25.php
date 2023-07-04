@@ -87,12 +87,6 @@ if (isset($_GET['logout'])) {
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
                         <div class="input-section d-flex">
-                            <p id="tani_usernamelabel">Sorunla İlişkili Veriler:</p>
-                            <div class="matchedfields-wrapper">
-                            </div>
-
-                        </div>
-                        <div class="input-section d-flex">
                             <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
                             <p class="tanıdescription">Beslenmede öz bakım yetersizliği </p>
                         </div>
@@ -362,7 +356,6 @@ if (isset($_GET['logout'])) {
                           
                         </div>
                                                                 <input type="submit" class="d-flex w-75 submit m-auto justify-content-center mb-5" name="submit" id="submit" value="Kaydet">              
-submit" id="submit" value="Kaydet">              
 
 
 

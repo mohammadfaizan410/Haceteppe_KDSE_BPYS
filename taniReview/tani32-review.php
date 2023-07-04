@@ -395,14 +395,7 @@ düşüncelerin uyarılmasını sağlamak için; müzik, oyun, puzzle, ziyaret v
                         </div>
                           
                         </div>
-                        <?php 
-                            
-                            if ($display) {
-                                echo '<input type="submit" class="d-flex w-75 submit m-auto justify-content-center mb-5" style="display: block" name="submit" id="submit" value="Kaydet">';              
-                            }
-
-                        ?>
-
+                       
 
 
                     </form>
@@ -428,6 +421,9 @@ düşüncelerin uyarılmasını sağlamak için; müzik, oyun, puzzle, ziyaret v
 
         })
     });
+    if(<?php echo $_GET['display']; ?> === 1){
+        $('form').append('<input type="submit" class="d-flex w-75 submit m-auto justify-content-center mb-5" style="display: block" name="submit" id="submit" value="Kaydet">');
+        }
 </script>
 <script>
     $(document).ready(function(){

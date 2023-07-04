@@ -403,13 +403,7 @@ if ($result) {
                                 5 gösterge seçildiyse; yeni günde bakım planına bu tanıyı taşımayacak
                             </p>
                         </div>
-                                                                <?php 
-                            if ($_GET['display'] === 1) {
-                                echo '<input type="submit" class="d-flex w-75 submit m-auto justify-content-center mb-5" style="display: block" name="submit" id="submit" value="Kaydet">';              
-                            }
-
-                        ?>                  
-
+                                     
 
 
 
@@ -436,6 +430,9 @@ if ($result) {
 
         })
     });
+    if(<?php echo $_GET['display']; ?> === 1){
+        $('form').append('<input type="submit" class="d-flex w-75 submit m-auto justify-content-center mb-5" style="display: block" name="submit" id="submit" value="Kaydet">');
+        }
 </script>
 <script>
     $(document).ready(function(){
