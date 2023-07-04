@@ -515,8 +515,9 @@ if ($result) {
 
     </div>
 <script>
-    $(function() {
+   $(function() {
         $('#closeBtn1').click(function(e) {
+            if("<?php echo $_SESSION['userlogin']['type']?>" === "student"){
             let patient_id = <?php
                                     $userid = $_GET['patient_id'];
                                     echo $userid
@@ -527,8 +528,19 @@ if ($result) {
             var url = "<?php echo $base_url; ?>/updateForms/showSubmittedTanis.php?patient_id=" + patient_id +
                 "&patient_name=" + encodeURIComponent(patient_name);
             $("#content").load(url);
-
-        })
+            }else{
+                let patient_id = <?php
+                                    $userid = $_GET['patient_id'];
+                                    echo $userid
+                                    ?>;
+                let patient_name = "<?php echo urldecode($_GET['patient_name']); ?>";
+                let student_id  = <?php echo $_GET['student_id']; ?>;
+                let student_name = "<?php echo urldecode($_GET['student_name']); ?>";
+                var url = "<?php echo $base_url; ?>/updateForms/showTanisTeacher.php?patient_id=" + patient_id +
+                "&patient_name=" + encodeURIComponent(patient_name) + "&student_id=" + student_id + "&student_name=" + encodeURIComponent(student_name);
+            $("#content").load(url);
+        }
+    })
     });
     if(<?php echo $_GET['display']; ?> === 1){
         $('form').append('<input type="submit" class="d-flex w-75 submit m-auto justify-content-center mb-5" style="display: block" name="submit" id="submit" value="Kaydet">');
