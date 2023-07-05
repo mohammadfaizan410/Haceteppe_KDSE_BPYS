@@ -302,16 +302,27 @@ if ($result) {
 
     </div>
     <script>
-        //closeBtn1 click
-        $('#closeBtn1').click(function() {
-            let patient_id = '<?php echo $calismaform1['patient_id']; ?>';
-                let patient_name = "<?php echo $calismaform1['patient_name']; ?>";
-                let url =
-                                        "<?php echo $base_url; ?>/updateForms/showSubmittedForms.php?patient_id=" +
-                                        patient_id + "&patient_name=" + encodeURIComponent(
-                                            patient_name);
-                $('#content').load(url);
-        });
+          $(function() {
+                $('#closeBtn1').click(function(e) {
+                    e.preventDefault();
+                    console.log("close btn clicked");
+                    if("<?php echo $_SESSION['userlogin']['type']?>" === "student"){
+                        let patient_id = <?php echo $patient_id ? $patient_id : 0   ?> ;
+                let patient_name = "<?php echo urldecode($patient_name); ?>";
+                    var url = "<?php echo $base_url; ?>/updateForms/showSubmittedForms.php?patient_id=" + patient_id +
+                        "&patient_name=" + encodeURIComponent(patient_name);
+                    $("#content").load(url);}
+                    else{
+                        let patient_id = <?php echo $patient_id ? $patient_id : 0   ?> ;
+                let patient_name = "<?php echo urldecode($patient_name); ?>";
+                let student_id  = <?php echo $student_id ? $student_id : 0   ?>;
+                let student_name = "<?php echo urldecode($student_name); ?>";
+                var url = "<?php echo $base_url; ?>/updateForms/showFormsTeacher.php?patient_id=" + patient_id +
+                "&patient_name=" + encodeURIComponent(patient_name) + "&student_id=" + student_id + "&student_name=" + encodeURIComponent(student_name);
+                $("#content").load(url);
+                    }
+                });
+            });
 
 
         $(document).ready(function(){

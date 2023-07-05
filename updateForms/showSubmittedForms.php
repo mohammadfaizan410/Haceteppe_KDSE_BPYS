@@ -308,12 +308,12 @@ if (isset($_GET['logout'])) {
             <span class='close closeBtn' id='closeBtn1'>&times;</span>
             <div class="patients-save">
                 
-            <div class="text-center rounded p-4" style="background-color: " id="patients-table">
+            <div class="text-center rounded p-4 w-100" style="background-color: " id="patients-table">
                 <div class="d-flex align-items-center justify-content-between mb-4">
                 </div>
                 <div class="table-responsive mb-4">
                     <h1 class='mb-5' style="color: black">Doldurulmuş Formlar</h1>
-                    <div class="entered-forms-wrapper">
+                    <div class="entered-forms-wrapper w-100">
                         <?php
                         $form_1_options = '';
                         $form_2_options = '';
@@ -352,11 +352,8 @@ if (isset($_GET['logout'])) {
                                         $update_date = $form["update_date"];
                                         $form_2_options .= '<li class="m-2 p-2 ">
                                         <div class="entered-forms align-items-center">
-                                        <a class="nav-items review btn btn-success p-3" style="color: white;" href="' . $base_url . '/formlar-review/Form2-review.php?form_id=' . $form_id . '">
+                                        <a class="nav-items review btn btn-success p-3" style="color: white;" href="' . $base_url . '/formlar-review/Form2-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'">
                                         <p class="entered-forms-p">Form2 Date: ' . $update_date . '</p>
-                                        </a>
-                                        <a class="nav-items review btn btn-success p-3" style="color: white;" href="' . $base_url . '/formlar-review/Form2-review.php?form_id=' . $form_id . '">
-                                        <p class="entered-forms-p">View Tanis </p>
                                         </a>
                                         </div>
                                         </li>';
@@ -366,30 +363,9 @@ if (isset($_GET['logout'])) {
                                         $update_date = $form["update_date"];
                                         $form_3_options .= '<li class="m-2 p-2">
                                         <div class="entered-forms align-items-center">
-                                        <a class="nav-items review btn btn-success p-3" style="color: white;" href="' . $base_url . '/formlar-review/Form3-review.php?form_id=' . $form_id . '">
+                                        <a class="nav-items review btn btn-success p-3" style="color: white;" href="' . $base_url . '/formlar-review/Form3-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'">
                                         <p class="entered-forms-p">Form3 Date: ' . $update_date . '</p>
                                         </a>
-                                        <a class="nav-items review btn btn-success p-3" style="color: white;" href="' . $base_url . '/formlar-review/Form2-review.php?form_id=' . $form_id . '">
-                                        <p class="entered-forms-p">View Tanis </p>
-                                        </a>
-                                        </div>
-                                        <div>Submitted Tani 1</div>
-                                        <div class="w-75  m-auto mt-3 d-flex">
-                                        <div class="w-50 border m-auto">
-                                                tani 1 subimission
-                                        </div>
-                                        <div class="w-50 border m-auto">
-                                                tani 1 extension
-                                        </div>
-                                        <div class="w-50 border m-auto">
-                                                tani 1 extension
-                                        </div>
-                                        <div class="w-50 border m-auto">
-                                                tani 1 extension
-                                        </div>
-                                        <div class="w-50 border m-auto">
-                                                tani 1 extension
-                                        </div>
                                        
                                         </div>
                                         </li>';
@@ -398,119 +374,117 @@ if (isset($_GET['logout'])) {
                                         $form_id = $form["form_id"];
                                         $update_date = $form["update_date"];
                                         $form_4_options .= '<li class="m-2 p-2">
-                                        <div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3" style="color: white;" href="' . $base_url . '/formlar-review/Form4-review.php?form_id=' . $form_id . '">
+                                        <div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3" style="color: white;" href="' . $base_url . '/formlar-review/Form4-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'">
                                         <p class="entered-forms-p">Form4 Date: ' . $update_date . '</p>
                                         </a>
-                                        <a class="nav-items review btn btn-success p-3" style="color: white;" href="' . $base_url . '/formlar-review/Form2-review.php?form_id=' . $form_id . '">
-                                        <p class="entered-forms-p">View Tanis </p>
-                                        </a>
+                                       
                                         </div>
                                         </li>';
                                     }
                                     if ($key ===  'table4_data') {
                                         $form_id = $form["form_id"];
                                         $update_date = $form["update_date"];
-                                        $form_5_options .= '<li class="m-2 p-2"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3" style="color: white;" href="' . $base_url . '/formlar-review/Form5-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form5 Date: ' . $update_date . '</p></a></div></li>';
+                                        $form_5_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3" style="color: white;" href="' . $base_url . '/formlar-review/Form5-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form5 Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table5_data') {
                                         $form_id = $form["form_id"];
                                         $update_date = $form["update_date"];
-                                        $form_6_options .= '<li class="m-2 p-2"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3" style="color: white;" href="' . $base_url . '/formlar-review/Form6-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form6 Date: ' . $update_date . '</p></a></div></li>';
+                                        $form_6_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3" style="color: white;" href="' . $base_url . '/formlar-review/Form6-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form6 Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table6_data') {
                                         $form_id = $form["form_id"];
                                         $update_date = $form["update_date"];
-                                        $form_7_options .= '<li class="m-2 p-2"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3" style="color: white;"  href="' . $base_url . '/formlar-review/Form7-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form7 Date: ' . $update_date . '</p></a></div></li>';
+                                        $form_7_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3" style="color: white;"  href="' . $base_url . '/formlar-review/Form7-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form7 Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table7_data') {
                                         $form_id = $form["form_id"];
                                         $update_date = $form["update_date"];
-                                        $form_8_options .= '<li class="m-2 p-2"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"  style="color: white;" href="' . $base_url . '/formlar-review/Form8-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form8 Date: ' . $update_date . '</p></a></div></li>';
+                                        $form_8_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"  style="color: white;" href="' . $base_url . '/formlar-review/Form8-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form8 Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table8_data') {
                                         $form_id = $form["form_id"];
                                         $update_date = $form["update_date"];
-                                        $form_9_options .= '<li class="m-2 p-2"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"  style="color: white;" href="' . $base_url . '/formlar-review/Form9-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form9 Date: ' . $update_date . '</p></a></div></li>';
+                                        $form_9_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"  style="color: white;" href="' . $base_url . '/formlar-review/Form9-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form9 Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table9_data') {
                                         $form_id = $form["form_id"];
                                         $update_date = $form["update_date"];
-                                        $form_10_options .= '<li class="m-2 p-2"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"  style="color: white;" href="' . $base_url . '/formlar-review/Form10-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form10 Date: ' . $update_date . '</p></a></div></li>';
+                                        $form_10_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"  style="color: white;" href="' . $base_url . '/formlar-review/Form10-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form10 Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table10_data') {
                                         $form_id = $form["form_id"];
                                         $update_date = $form["update_date"];
-                                        $form_11_options .= '<li class="m-2 p-2"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"  style="color: white;" href="' . $base_url . '/formlar-review/Form11-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form11 Date: ' . $update_date . '</p></a></div></li>';
+                                        $form_11_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"  style="color: white;" href="' . $base_url . '/formlar-review/Form11-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form11 Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table11_data') {
                                         $form_id = $form["form_id"];
                                         $update_date = $form["update_date"];
-                                        $form_12_options .= '<li class="m-2 p-2"><div class="entered-formsalign-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form12-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form12 Date: ' . $update_date . '</p></a></div></li>';
+                                        $form_12_options .= '<li class="m-2 p-2 w-100"><div class="entered-formsalign-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form12-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form12 Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table12_data') {
                                         $form_id = $form["form_id"];
                                         $update_date = $form["update_date"];
-                                        $form_13_options .= '<li class="m-2 p-2"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form13-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form13 Date: ' . $update_date . '</p></a></div></li>';
+                                        $form_13_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form13-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form13 Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table13_data') {
                                         $form_id = $form["form_id"];
                                         $update_date = $form["update_date"];
-                                        $form_14_options .= '<li class="m-2 p-2"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form14-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form14 Date: ' . $update_date . '</p></a></div></li>';
+                                        $form_14_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form14-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form14 Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table14_data') {
                                         $form_id = $form["form_id"];
                                         $update_date = $form["update_date"];
-                                        $form_15_options .= '<li class="m-2 p-2 "><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form15-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form15 Date: ' . $update_date . '</p></a></div></li>';
+                                        $form_15_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form15-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form15 Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table15_data') {
                                         $form_id = $form["form_id"];
                                         $update_date = $form["update_date"];
-                                        $form_16_options .= '<li class="m-2 p-2 "><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-ozgecmis-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Ozgecmis Date: ' . $update_date . '</p></a></div></li>';
+                                        $form_16_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-ozgecmis-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form1 Ozgecmis Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table16_data') {
                                         $form_id = $form["form_id"];
                                         $update_date = $form["updateDate"];
-                                        $form_17_options .= '<li class="m-2 p-2 "><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Solunumgereksinimi-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Solunum Date: ' . $update_date . '</p></a></div></li>';
+                                        $form_17_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Solunumgereksinimi-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form1 Solunum Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table17_data') {
                                         $form_id = $form["form_id"];
                                         $update_date = $form["update_date"];
-                                        $form_18_options .= '<li class="m-2 p-2 "><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-hereket-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Hareket Date: ' . $update_date . '</p></a></div></li>';
+                                        $form_18_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-hereket-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form1 Hareket Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table18_data') {
                                         $form_id = $form["form_id"];
                                         $update_date = $form["update_date"];
-                                        $form_19_options .= '<li class="m-2 p-2 "><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Vucudu-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Vucut Date: ' . $update_date . '</p></a></div></li>';
+                                        $form_19_options .= '<li class="m-2 p-2  w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Vucudu-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form1 Vucut Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table19_data') {
                                         $form_id = $form["form_id"];
                                         $update_date = $form["update_date"];
-                                        $form_20_options .= '<li class="m-2 p-2 "><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Katerer-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Katerer Date: ' . $update_date . '</p></a></div></li>';                                    }
+                                        $form_20_options .= '<li class="m-2 p-2  w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Katerer-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form1 Katerer Date: ' . $update_date . '</p></a></div></li>';                                    }
                                  
                                     if ($key ===  'table20_data') {
                                         $form_id = $form["form_id"];
                                         $update_date = $form["update_date"];
-                                        $form_21_options .= '<li class="m-2 p-2 "><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Iletisim-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Ilestim Date: ' . $update_date . '</p></a></div></li>';
+                                        $form_21_options .= '<li class="m-2 p-2  w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Iletisim-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form1 Ilestim Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table21_data') {
                                         $form_id = $form["form_id"];
                                         $update_date = $form["update_date"];
-                                        $form_22_options .= '<li class="m-2 p-2 "><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Calisma-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Calisma Date: ' . $update_date . '</p></a></div></li>';
+                                        $form_22_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Calisma-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form1 Calisma Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table23_data') {
                                         $form_id = $form["form_id"];
                                         $update_date = $form["update_date"];
-                                        $form_24_options .= '<li class="m-2 p-2 "><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"  style="color: white;" href="' . $base_url . '/formlar-review/Form1-bosaltim-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Bosaltim Date: ' . $update_date . '</p></a></div></li>';
+                                        $form_24_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"  style="color: white;" href="' . $base_url . '/formlar-review/Form1-bosaltim-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form1 Bosaltim Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table22_data') {
                                         $form_id = $form["form_id"];
                                         $update_date = $form["update_date"];
-                                        $form_23_options .= '<li class="m-2 p-2 "><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-egitim-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Egitim Date: ' . $update_date . '</p></a></div></li>';
+                                        $form_23_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-egitim-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form1 Egitim Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     // if ($key ===  'table24_data') {
                                     //     $form_id = $form["form_id"];
                                     //     $update_date = $form["update_date"];
-                                    //     $form_25_options .= '<li class="m-2 p-2 "><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-beslenme-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Beslenme Date: ' . $update_date . '</p></a></div></li>';
+                                    //     $form_25_options .= '<li class="m-2 p-2 "><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-beslenme-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form1 Beslenme Date: ' . $update_date . '</p></a></div></li>';
                                     // }
 
                                 };

@@ -2254,7 +2254,7 @@ progress {
 .form-control:focus {
     color: #333333;
     background-color: #000;
-    border-color: grey;
+    border-color: #6E60AA;
     outline: 0;
     box-shadow: 0 0 0 .25rem rgb(233, 233, 233)
 }
@@ -2466,7 +2466,7 @@ textarea.form-control-lg {
 }
 
 .form-check {
-    display: block;
+    display: flex;
     min-height: 1.5rem;
     padding-left: 1.5em;
     margin-bottom: .125rem
@@ -2478,17 +2478,19 @@ textarea.form-control-lg {
 }
 
 .form-check-input {
-    width: 1em;
-    height: 1em;
+    width: 1.5em;
+    height: 1.5em;
     margin-top: .25em;
     vertical-align: top;
-    background-color: #000;
+    background-color: white;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    border: 1px solid rgba(0, 0, 0, 0.25);
+    border: 2px solid #6E60AA;
     appearance: none;
-    color-adjust: exact
+    color-adjust: exact;
+    margin-right : 5px;
+    margin-left : 5px;
 }
 
 .form-check-input[type="checkbox"] {
@@ -2504,14 +2506,14 @@ textarea.form-control-lg {
 }
 
 .form-check-input:focus {
-    border-color: #f58b8b;
+    border-color: #6E60AA;
     outline: 0;
     box-shadow: 0 0 0 .25rem rgba(235, 22, 22, 0.25)
 }
 
 .form-check-input:checked {
-    background-color: #EB1616;
-    border-color: #EB1616
+    background-color: #6E60AA;
+    border-color: #6E60AA
 }
 
 .form-check-input:checked[type="checkbox"] {
@@ -3167,21 +3169,21 @@ fieldset:disabled .btn {
 
 .btn-success {
     color: #fff;
-    background-color: #198754;
-    border-color: #198754
+    background-color: #6E60AA;
+    border-color: #6E60AA
 }
 
 .btn-success:hover {
     color: #fff;
-    background-color: #157347;
-    border-color: #146c43
+    background-color: #6E60AA;
+    border-color: #6E60AA
 }
 
 .btn-check:focus+.btn-success,
 .btn-success:focus {
     color: #fff;
-    background-color: #157347;
-    border-color: #146c43;
+    background-color: #6E60AA;
+    border-color: #6E60AA;
     box-shadow: 0 0 0 .25rem rgba(60, 153, 110, 0.5)
 }
 
@@ -3191,8 +3193,8 @@ fieldset:disabled .btn {
 .btn-success.active,
 .show>.btn-success.dropdown-toggle {
     color: #fff;
-    background-color: #146c43;
-    border-color: #13653f
+    background-color: #6E60AA;
+    border-color: #6E60AA
 }
 
 .btn-check:checked+.btn-success:focus,
@@ -3200,7 +3202,7 @@ fieldset:disabled .btn {
 .btn-success:active:focus,
 .btn-success.active:focus,
 .show>.btn-success.dropdown-toggle:focus {
-    box-shadow: 0 0 0 .25rem rgba(60, 153, 110, 0.5)
+    box-shadow: 0 0 0 .25rem #6E60AA
 }
 
 .btn-success:disabled,

@@ -61,11 +61,11 @@ if (isset($_GET['logout'])) {
         <div class="send-patient">
         <span class='close closeBtn' id='closeBtn1'>&times;</span>
         <div class='row'>
-        <div class='col-lg-5' style="font-weight : bold; font-size: large;">
+        <div class='col-lg-6' style="font-weight : bold; font-size: large;">
         Patient:<?php echo $_GET['patient_name'] ?>
             </div>
             
-            <div class='col-lg-5' style="font-weight : bold; font-size: large;">
+            <div class='col-lg-6' style="font-weight : bold; font-size: large;">
             ID:<?php echo $_GET['patient_id'] ?>
             </div>
 </div>

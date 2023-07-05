@@ -87,13 +87,13 @@ foreach ($allTanisStandalone as $row) {
     } else {
         echo 'error';
     }
-    $taniOptions = "<div class='row searchable'><div class='col-lg-12 btn btn-success'><li class='entered-forms-ul-li'><a class='nav-items d-sm-flex justify-content-around' style='color: white;'
-                        href='" . $base_url . "/taniReview/tani" . $row['tani_num'] . "-review.php?patient_id=" . $row['patient_id'] . "&patient_name=" . $row['patient_name'] . "&evaluation=" . $row['evaluation'] . "&tani_id=".$row['tani_id']."&tani_num=".$row['tani_num']."&root_id=".$row['root_id']."&parent_id=".$row['parent_id']."&display=0'><div>tani" . $row['tani_num'] . " </div><div>Date:".$row['creation_date']."</div><div>Time:".$row['time']."</div></a></li></div></div>";
+    $taniOptions = "<li class='entered-forms-ul-li m-2 btn btn-success w-100'><a class='nav-items d-sm-flex justify-content-around' style='color: white;'
+                        href='" . $base_url . "/taniReview/tani" . $row['tani_num'] . "-review.php?patient_id=" . $row['patient_id'] . "&patient_name=" . $row['patient_name'] . "&evaluation=" . $row['evaluation'] . "&tani_id=".$row['tani_id']."&tani_num=".$row['tani_num']."&root_id=".$row['root_id']."&parent_id=".$row['parent_id']."&display=0'><div>tani" . $row['tani_num'] . " </div><div>Date:".$row['creation_date']."</div><div>Time:".$row['time']."</div></a></li>";
 
 
     foreach ($allExtensionTanis as $row2) {
-        $taniOptions .= "<div class='row searchable'><div class='col-lg-12 btn btn-success'><li class='entered-forms-ul-li'><a class='nav-items d-flex justify-content-around' style='color: white;'
-                            href='" . $base_url . "/taniReview/tani" . $row2['tani_num'] . "-review.php?patient_id=" . $row2['patient_id'] . "&patient_name=" . $row2['patient_name'] . "&evaluation=" . $row2['evaluation'] . "&tani_id=".$row2['tani_id']."&tani_num=".$row2['tani_num']."&root_id=".$row2['root_id']."&parent_id=".$row2['parent_id']."&display=0'><div>tani" . $row2['tani_num'] . " </div><div>Date:".$row2['creation_date']."</div><div>Time:".$row2['time']."</div></a></li></div></div>";
+        $taniOptions .= "<li class='entered-forms-ul-li m-2 btn btn-success w-100'><a class='nav-items d-flex justify-content-around' style='color: white;'
+                            href='" . $base_url . "/taniReview/tani" . $row2['tani_num'] . "-review.php?patient_id=" . $row2['patient_id'] . "&patient_name=" . $row2['patient_name'] . "&evaluation=" . $row2['evaluation'] . "&tani_id=".$row2['tani_id']."&tani_num=".$row2['tani_num']."&root_id=".$row2['root_id']."&parent_id=".$row2['parent_id']."&display=0'><div>tani" . $row2['tani_num'] . " </div><div>Date:".$row2['creation_date']."</div><div>Time:".$row2['time']."</div></a></li>";
     }
 
     if ($allExtensionTanis){
@@ -101,20 +101,17 @@ foreach ($allTanisStandalone as $row) {
     } else {
         $lastExtension = $row;
     }
-    echo '<div class="row">';
+    echo '<div class="row m-2">';
     echo "<div class='root-tani col-lg-12'>";
     echo "<button class='entered-forms btn btn-success m-auto align-items-center d-flex justify-content-around' id='tani".$i."_toggle'><div>Tani number: tani" . $row['tani_num'] . "</div><div>Date:".$lastExtension['creation_date']."</div><div>Time:".$lastExtension['time']."</div><div><span id='tani".$i."_caret'>&#9660;</span></div></button>";
-    echo "<ul class='entered-forms-ul btn btn-success align-items-center w-75 mt-3' id='tani".$i."_options' style='display:none; list-style-type: none;'>".$taniOptions."</ul>";
+    echo "<ul class='entered-forms-ul align-items-center w-75 mt-3 m-auto' id='tani".$i."_options' style='display:none; list-style-type: none;'>".$taniOptions."</ul>";
     if (($lastExtension['noc_indicator_after_3'] != "null" && $lastExtension['noc_indicator_after_3'] != "5") || ($lastExtension['noc_indicator_after_2'] != "null" && $lastExtension['noc_indicator_after_2'] != "5")
     || ($lastExtension['noc_indicator_after'] != "null" && $lastExtension['noc_indicator_after'] != "5")){
-        echo "<div class='entered-forms '><a class='nav-items review btn btn-success w-50 mb-4' style='color: #333333; display: none; background-color: white; border-style: dashed; text-align: center;' id='tani".$i."_add_extension' href='" . $base_url . "/taniReview/tani" . $lastExtension['tani_num'] . "-review.php?patient_id=" . $lastExtension['patient_id'] . "&patient_name=" . $lastExtension['patient_name'] . "&evaluation=" . $lastExtension['evaluation'] . "&tani_id=".$lastExtension['tani_id']."&tani_num=".$lastExtension['tani_num']."&root_id=".$row['tani_id']."&parent_id=".$lastExtension['parent_id']."&display=1'><span class='m-auto'>Add Extension</span></a></div>";
+        echo "<div class='entered-forms m-2' style='display: none;' id='tani".$i."_add_extension'><a class='nav-items review btn btn-success w-50 mb-4' style='color: #333333; background-color: white; border-style: dashed; text-align: center;'  href='" . $base_url . "/taniReview/tani" . $lastExtension['tani_num'] . "-review.php?patient_id=" . $lastExtension['patient_id'] . "&patient_name=" . $lastExtension['patient_name'] . "&evaluation=" . $lastExtension['evaluation'] . "&tani_id=".$lastExtension['tani_id']."&tani_num=".$lastExtension['tani_num']."&root_id=".$row['tani_id']."&parent_id=".$lastExtension['parent_id']."&display=1'><span class='m-auto'>Add Extension</span></a></div>";
     }
     echo "</div>";
     echo '</div>';
-    echo '<div class="row">';
-    echo '<div class="col-lg-6" id="tani'.$row['tani_id'].'" style="display: none">';
-    echo '</div>';
-    echo '</div>';
+
     $i++;
 }
 

@@ -1476,9 +1476,8 @@ if ($result) {
                     e.preventDefault();
                     console.log("close btn clicked");
                     if("<?php echo $_SESSION['userlogin']['type']?>" === "student"){
-                 
-                    let patient_id = <?php echo $_SESSION['userlogin']['id'] ?> ;
-                    let patient_name = "<?php echo $patient_name ?>";
+                        let patient_id = <?php echo $patient_id ? $patient_id : 0   ?> ;
+                let patient_name = "<?php echo urldecode($patient_name); ?>";
                     var url = "<?php echo $base_url; ?>/updateForms/showSubmittedForms.php?patient_id=" + patient_id +
                         "&patient_name=" + encodeURIComponent(patient_name);
                     $("#content").load(url);}

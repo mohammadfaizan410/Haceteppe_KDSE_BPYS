@@ -142,7 +142,7 @@ h3 {
 }
 
 .hemsire-fakulte {
-    color: #198754 !important;
+    color: #6E60AA !important;
     font-size: 16px;
     font-weight: bold;
     margin-top: -25px;
@@ -165,7 +165,7 @@ h3 {
 
 .nav-link {
     padding: 0;
-    color: #198754 !important;
+    color: #6E60AA !important;
     margin-right: 20px;
     font-size: medium;
 }
@@ -197,9 +197,9 @@ h3 {
 }
 
 .form-control {
-    background-color: #d1d1d1 !important;
+    background-color: white !important;
     align-self: center;
-    border: 1px solid rgb(100, 100, 100);
+    border: 2px solid #6E60AA;
     color : #333333;
 }
 
@@ -213,7 +213,7 @@ h3 {
 
 .submit {
     height: 75px;
-    background-color: #198754 !important;
+    background-color: #6E60AA !important;
     color: white;
     margin-top: 50px;
     font-size: large;
@@ -228,7 +228,7 @@ h3 {
 
     text-align: center;
     font-size: 22px;
-    color: #198754 ;
+    color: #6E60AA ;
 }
 
 .login {
@@ -263,7 +263,7 @@ h3 {
 input[type="password"],input[type="email"]  {
 
     border: none;
-    border-bottom: 1px solid #198754;
+    border-bottom: 1px solid #6E60AA;
     background: transparent;
     outline: none;
     height: 40px;
@@ -289,7 +289,7 @@ input[type="email"] {
     font-size: 18px;
     border-radius: 20px;
     color: #fff;
-    background-color: #198754;
+    background-color: #6E60AA;
 
 }
 
@@ -303,7 +303,7 @@ input[type="email"] {
 .login-box input[type="submit"]:hover {
 
     cursor: pointer;
-    background: #198754;
+    background: #6E60AA;
     color: #000;
 }
 
@@ -314,7 +314,7 @@ input[type="email"] {
     text-decoration: none;
     font-size: 14px;
     color: #333333 ;
-    background-color: #198754;
+    background-color: #6E60AA;
 
 }
 
@@ -360,8 +360,9 @@ input[type="email"] {
     display: flex;
 }
 
-.checkboxes {
-    gap: 50px;
+.checkbox-header {
+    margin-left: 10px;
+    margin-right: 10px
 }
 
 .patients-save-fields {
@@ -372,7 +373,7 @@ input[type="email"] {
     width: 100%;
     justify-content: space-between;
     margin-bottom: 25px;
-    border: 1px solid #a8a7a7;
+    border: 2px solid #6E60AA;
     border-radius: 15px;
     padding: 20px;
 
@@ -382,6 +383,7 @@ input[type="email"] {
     margin-bottom: unset;
     align-self: center;
     font-weight: 700;
+    color : black
 }
 
 .input-section-wrapper {
@@ -419,7 +421,7 @@ input[type="email"] {
 .previous-btn,
 .next-btn {
     padding: 16px;
-    background: #198754;
+    background: #6E60AA;
     border: 1px solid;
     border-radius: 10px;
     border-color: #246174;
@@ -433,7 +435,7 @@ input[type="email"] {
 
 .new-form {
     width: 90%;
-    background-color: #198754;
+    background-color: #6E60AA;
     height: 50px;
     border-radius: 16px;
     display: flex;
@@ -782,7 +784,7 @@ input[type="email"] {
 }
 
 .resend {
-    background-color: #198754 !important;
+    background-color: #6E60AA !important;
     border: none;
     height: 40px;
     border-radius: 20px;
