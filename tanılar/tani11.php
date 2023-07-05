@@ -104,32 +104,32 @@ $nutrition_problem = isset($_GET['nutrition_problem']) ? $_GET['nutrition_proble
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1: Hastada hiç gaita çıkışı yok ">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">1: Hastada hiç gaita çıkışı yok</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2: Hastada çok kuru ve çok az miktarda gaita çıkışı var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">2: Hastada çok kuru ve çok az miktarda gaita çıkışı var </span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3: Hastada bazen kuru ve az miktarda gaita çıkışı var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">3: Hastada bazen kuru ve az miktarda gaita çıkışı var</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4: Hastada nadiren kuru gaita çıkışı var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">4: Hastada nadiren kuru gaita çıkışı var</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="
-                                        noc_indicator" value="5: Hastada yumuşak kıvamlı ve şekilli gaita çıkışı var">
+                                        noc_indicator" value="5">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">5: Hastada yumuşak kıvamlı ve şekilli gaita çıkışı var
                                         </span>
@@ -157,32 +157,32 @@ $nutrition_problem = isset($_GET['nutrition_problem']) ? $_GET['nutrition_proble
                                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                                 <div class="form-check">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator" value="1:Hastanın bağırsak sesleri yok">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator" value="1">
                                         <label class="form-check-label" for="noc_indicator2">
                                             <span class="checkbox-header">1:Hastanın bağırsak sesleri yok</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator" value="2:Hastanın bağırsak sesleri ciddi düzeyde azalmış">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator" value="2">
                                         <label class="form-check-label" for="noc_indicator2">
                                             <span class="checkbox-header">2:Hastanın bağırsak sesleri ciddi düzeyde azalmış</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator" value="3:Hastanın bağırsak seslerinde orta düzeyde azalmış">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator" value="3">
                                         <label class="form-check-label" for="noc_indicator2">
                                             <span class="checkbox-header">3:Hastanın bağırsak seslerinde orta düzeyde azalmış</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator" value="4:Hastanın bağırsak seslerinde hafif düzeyde azalmış">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator" value="4">
                                         <label class="form-check-label" for="noc_indicator2">
                                             <span class="checkbox-header">4:Hastanın bağırsak seslerinde hafif düzeyde azalmış</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required name="noc_indicator_2" id="
-                                        noc_indicator" value="5:Hastanın bağırsak sesleri normal (6-10/dk)">
+                                        noc_indicator" value="5">
                                         <label class="form-check-label" for="noc_indicator2">
                                             <span class="checkbox-header">5:Hastanın bağırsak sesleri normal (6-10/dk)
                                             </span>
@@ -330,7 +330,7 @@ $nutrition_problem = isset($_GET['nutrition_problem']) ? $_GET['nutrition_proble
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after"
                                         id="noc_indicator"
-                                        value="1: Hastada hiç gaita çıkışı yok ">
+                                        value="1">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">1: Hastada hiç gaita çıkışı yok</span>
                                     </label>
@@ -338,7 +338,7 @@ $nutrition_problem = isset($_GET['nutrition_problem']) ? $_GET['nutrition_proble
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after"
                                         id="noc_indicator"
-                                        value="2: Hastada çok kuru ve çok az miktarda gaita çıkışı var">
+                                        value="2">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">2: Hastada çok kuru ve çok az miktarda gaita çıkışı var </span>
                                     </label>
@@ -346,7 +346,7 @@ $nutrition_problem = isset($_GET['nutrition_problem']) ? $_GET['nutrition_proble
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after"
                                         id="noc_indicator"
-                                        value="3: Hastada bazen kuru ve az miktarda gaita çıkışı var">
+                                        value="3">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">3: Hastada bazen kuru ve az miktarda gaita çıkışı var</span>
                                     </label>
@@ -354,14 +354,14 @@ $nutrition_problem = isset($_GET['nutrition_problem']) ? $_GET['nutrition_proble
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after"
                                         id="noc_indicator"
-                                        value="4: Hastada nadiren kuru gaita çıkışı var">
+                                        value="4">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">4: Hastada nadiren kuru gaita çıkışı var</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after" id="
-                                        noc_indicator" value="5: Hastada yumuşak kıvamlı ve şekilli gaita çıkışı var">
+                                        noc_indicator" value="5">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">5: Hastada yumuşak kıvamlı ve şekilli gaita çıkışı var
                                         </span>
@@ -392,7 +392,7 @@ $nutrition_problem = isset($_GET['nutrition_problem']) ? $_GET['nutrition_proble
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after_2"
                                         id="noc_indicator"
-                                        value="1:Hastanın bağırsak sesleri yok">
+                                        value="1">
                                     <label class="form-check-label" for="noc_indicator_after2">
                                         <span class="checkbox-header">1:Hastanın bağırsak sesleri yok</span>
                                     </label>
@@ -400,7 +400,7 @@ $nutrition_problem = isset($_GET['nutrition_problem']) ? $_GET['nutrition_proble
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after_2"
                                         id="noc_indicator"
-                                        value="2:Hastanın bağırsak sesleri ciddi düzeyde azalmış">
+                                        value="2">
                                     <label class="form-check-label" for="noc_indicator_after2">
                                         <span class="checkbox-header">2:Hastanın bağırsak sesleri ciddi düzeyde azalmış</span>
                                     </label>
@@ -408,7 +408,7 @@ $nutrition_problem = isset($_GET['nutrition_problem']) ? $_GET['nutrition_proble
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after_2"
                                         id="noc_indicator"
-                                        value="3:Hastanın bağırsak seslerinde orta düzeyde azalmış">
+                                        value="3">
                                     <label class="form-check-label" for="noc_indicator_after2">
                                         <span class="checkbox-header">3:Hastanın bağırsak seslerinde orta düzeyde azalmış</span>
                                     </label>
@@ -416,14 +416,14 @@ $nutrition_problem = isset($_GET['nutrition_problem']) ? $_GET['nutrition_proble
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after_2"
                                         id="noc_indicator"
-                                        value="4:Hastanın bağırsak seslerinde hafif düzeyde azalmış">
+                                        value="4">
                                     <label class="form-check-label" for="noc_indicator_after2">
                                         <span class="checkbox-header">4:Hastanın bağırsak seslerinde hafif düzeyde azalmış</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="
-                                        noc_indicator" value="5:Hastanın bağırsak sesleri normal (6-10/dk)">
+                                        noc_indicator" value="5">
                                     <label class="form-check-label" for="noc_indicator_after2">
                                         <span class="checkbox-header">5:Hastanın bağırsak sesleri normal (6-10/dk)
                                         </span>

@@ -129,31 +129,31 @@ if ($result) {
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1: Hasta kıyafetlerini desteksiz ya da destekle değiştirmez">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">1: Hasta kıyafetlerini desteksiz ya da destekle değiştirmez</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2: Hasta kıyafetlerini desteksiz ya da destekle nadiren değiştirir">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">2: Hasta kıyafetlerini desteksiz ya da destekle nadiren değiştirir</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3: Hasta kıyafetlerini desteksiz ya da destekle bazen değiştirir">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">3: Hasta kıyafetlerini desteksiz ya da destekle bazen değiştirir</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4: Hasta kıyafetlerini desteksiz ya da destekle sık sık değiştirir">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">4: Hasta kıyafetlerini desteksiz ya da destekle sık sık değiştirir</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="5: Hasta kıyafetlerini desteksiz ya da destekle değiştirir">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="5">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">5: Hasta kıyafetlerini desteksiz ya da destekle değiştirir</span>
                                     </label>
@@ -298,31 +298,31 @@ if ($result) {
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="1: Hasta kıyafetlerini desteksiz ya da destekle değiştirmez">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="1">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">1: Hasta kıyafetlerini desteksiz ya da destekle değiştirmez</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="2: Hasta kıyafetlerini desteksiz ya da destekle nadiren değiştirir">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="2">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">2: Hasta kıyafetlerini desteksiz ya da destekle nadiren değiştirir</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="3: Hasta kıyafetlerini desteksiz ya da destekle bazen değiştirir">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="3">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">3: Hasta kıyafetlerini desteksiz ya da destekle bazen değiştirir</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="4: Hasta kıyafetlerini desteksiz ya da destekle sık sık değiştirir">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="4">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">4: Hasta kıyafetlerini desteksiz ya da destekle sık sık değiştirir</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="5: Hasta kıyafetlerini desteksiz ya da destekle değiştirir">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="5">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">5: Hasta kıyafetlerini desteksiz ya da destekle değiştirir</span>
                                     </label>

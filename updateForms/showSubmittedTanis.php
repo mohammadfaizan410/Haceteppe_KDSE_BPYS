@@ -105,7 +105,10 @@ foreach ($allTanisStandalone as $row) {
     echo "<div class='root-tani col-lg-12'>";
     echo "<button class='entered-forms btn btn-success m-auto align-items-center d-flex justify-content-around' id='tani".$i."_toggle'><div>Tani number: tani" . $row['tani_num'] . "</div><div>Date:".$lastExtension['creation_date']."</div><div>Time:".$lastExtension['time']."</div><div><span id='tani".$i."_caret'>&#9660;</span></div></button>";
     echo "<ul class='entered-forms-ul btn btn-success align-items-center w-75 mt-3' id='tani".$i."_options' style='display:none; list-style-type: none;'>".$taniOptions."</ul>";
-    echo "<div class='entered-forms '><a class='nav-items review btn btn-success w-50 mb-4' style='color: #333333; display: none; background-color: white; border-style: dashed; text-align: center;' id='tani".$i."_add_extension' href='" . $base_url . "/taniReview/tani" . $lastExtension['tani_num'] . "-review.php?patient_id=" . $lastExtension['patient_id'] . "&patient_name=" . $lastExtension['patient_name'] . "&evaluation=" . $lastExtension['evaluation'] . "&tani_id=".$lastExtension['tani_id']."&tani_num=".$lastExtension['tani_num']."&root_id=".$row['tani_id']."&parent_id=".$lastExtension['parent_id']."&display=1'><span class='m-auto'>Add Extension</span></a></div>";
+    if (($lastExtension['noc_indicator_after_3'] != "null" && $lastExtension['noc_indicator_after_3'] != "5") || ($lastExtension['noc_indicator_after_2'] != "null" && $lastExtension['noc_indicator_after_2'] != "5")
+    || ($lastExtension['noc_indicator_after'] != "null" && $lastExtension['noc_indicator_after'] != "5")){
+        echo "<div class='entered-forms '><a class='nav-items review btn btn-success w-50 mb-4' style='color: #333333; display: none; background-color: white; border-style: dashed; text-align: center;' id='tani".$i."_add_extension' href='" . $base_url . "/taniReview/tani" . $lastExtension['tani_num'] . "-review.php?patient_id=" . $lastExtension['patient_id'] . "&patient_name=" . $lastExtension['patient_name'] . "&evaluation=" . $lastExtension['evaluation'] . "&tani_id=".$lastExtension['tani_id']."&tani_num=".$lastExtension['tani_num']."&root_id=".$row['tani_id']."&parent_id=".$lastExtension['parent_id']."&display=1'><span class='m-auto'>Add Extension</span></a></div>";
+    }
     echo "</div>";
     echo '</div>';
     echo '<div class="row">';

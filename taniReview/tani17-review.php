@@ -112,32 +112,32 @@ if ($result) {
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1: Hastanın gece uykusunda sürekli bölünme var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">1: Hasta sürekli rahatsız olduğunu ifade eder</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2: Hasta sık sık rahatsız olduğunu ifade eder">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">2: Hasta sık sık rahatsız olduğunu ifade eder</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3: Hasta bazen rahatsız olduğunu ifade eder">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">3: Hasta bazen rahatsız olduğunu ifade eder</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4: Hastanın gece uykusunda nadiren bölünme var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">4: Hasta nadiren rahatsız olduğunu ifade eder</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="
-                                        noc_indicator" value="5: Hastanın gece uykusunda bölünme yok">
+                                        noc_indicator" value="5">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">5: Hasta rahat olduğunu ifade eder
                                         </span>
@@ -310,7 +310,7 @@ if ($result) {
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after"
                                         id="noc_indicator"
-                                        value="1: Hastanın gece uykusunda sürekli bölünme var">
+                                        value="1">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">1: Hasta sürekli rahatsız olduğunu ifade eder</span>
                                     </label>
@@ -318,7 +318,7 @@ if ($result) {
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after"
                                         id="noc_indicator"
-                                        value="2: Hasta sık sık rahatsız olduğunu ifade eder">
+                                        value="2">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">2: Hasta sık sık rahatsız olduğunu ifade eder</span>
                                     </label>
@@ -326,7 +326,7 @@ if ($result) {
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after"
                                         id="noc_indicator"
-                                        value="3: Hasta bazen rahatsız olduğunu ifade eder">
+                                        value="3">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">3: Hasta bazen rahatsız olduğunu ifade eder</span>
                                     </label>
@@ -334,14 +334,14 @@ if ($result) {
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after"
                                         id="noc_indicator"
-                                        value="4: Hastanın gece uykusunda nadiren bölünme var">
+                                        value="4">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">4: Hasta nadiren rahatsız olduğunu ifade eder</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after" id="
-                                        noc_indicator" value="5: Hastanın gece uykusunda bölünme yok">
+                                        noc_indicator" value="5">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">5: Hasta rahat olduğunu ifade eder
                                         </span>

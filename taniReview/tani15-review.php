@@ -104,32 +104,32 @@ if ($result) {
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1: Hastanın muköz membranlarında çok şiddetli düzeyde bozulma var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">1: Hastanın muköz membranlarında çok şiddetli düzeyde bozulma var</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2: Hastanın muköz membranlarında şiddetli  düzeyde bozulma var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">2: Hastanın muköz membranlarında şiddetli düzeyde bozulma var</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3: Hastanın muköz membranlarında orta düzeyde bozulma var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">3: Hastanın muköz membranlarında orta düzeyde bozulma var</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4: Hastanın muköz membranlarında hafif düzeyde bozulma var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">4: Hastanın muköz membranlarında hafif düzeyde bozulma var</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="
-                                        noc_indicator" value="5: Hastanın muköz membranlarında bozulma yok">
+                                        noc_indicator" value="5">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">5: Hastanın muköz membranlarında bozulma yok
                                         </span>
@@ -147,32 +147,32 @@ if ($result) {
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator" value="1: Hastada şiddetli ağız kokusu var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator" value="1">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">1: Hastada şiddetli ağız kokusu var</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator" value="2: Hastada ciddi ağız kokusu var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator" value="2">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">2: Hastada ciddi ağız kokusu var</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator" value="3: Hastada orta düzeyde ağız kokusu var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator" value="3">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">3: Hastada orta düzeyde ağız kokusu var</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator" value="4: Hastada hafif ağız kokusu var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator" value="4">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">4: Hastada hafif ağız kokusu var</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_2" id="
-                                        noc_indicator" value="5: Hastada ağız kokusu yok ">
+                                        noc_indicator" value="5">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">5: Hastada ağız kokusu yok
                                         </span>
@@ -313,7 +313,7 @@ if ($result) {
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after"
                                         id="noc_indicator"
-                                        value="1: Hastanın muköz membranlarında çok şiddetli düzeyde bozulma var">
+                                        value="1">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">1: Hastanın muköz membranlarında çok şiddetli düzeyde bozulma var</span>
                                     </label>
@@ -321,7 +321,7 @@ if ($result) {
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after"
                                         id="noc_indicator"
-                                        value="2: Hastanın muköz membranlarında şiddetli  düzeyde bozulma var">
+                                        value="2">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">2: Hastanın muköz membranlarında şiddetli  düzeyde bozulma var</span>
                                     </label>
@@ -329,7 +329,7 @@ if ($result) {
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after"
                                         id="noc_indicator"
-                                        value="3: Hastanın muköz membranlarında orta düzeyde bozulma var">
+                                        value="3">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">3: Hastanın muköz membranlarında orta düzeyde bozulma var</span>
                                     </label>
@@ -337,14 +337,14 @@ if ($result) {
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after"
                                         id="noc_indicator"
-                                        value="4: Hastanın muköz membranlarında hafif düzeyde bozulma var">
+                                        value="4">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">4: Hastanın muköz membranlarında hafif düzeyde bozulma var</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after" id="
-                                        noc_indicator" value="5: Hastanın muköz membranlarında bozulma yok">
+                                        noc_indicator" value="5">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">5: Hastanın muköz membranlarında bozulma yok
                                         </span>
@@ -365,7 +365,7 @@ if ($result) {
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after_2"
                                         id="noc_indicator"
-                                        value="1: Hastada şiddetli ağız kokusu var">
+                                        value="1">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">1: Hastada şiddetli ağız kokusu var</span>
                                     </label>
@@ -373,7 +373,7 @@ if ($result) {
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after_2"
                                         id="noc_indicator"
-                                        value="2: Hastada ciddi ağız kokusu var">
+                                        value="2">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">2: Hastada ciddi ağız kokusu var</span>
                                     </label>
@@ -381,7 +381,7 @@ if ($result) {
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after_2"
                                         id="noc_indicator"
-                                        value="3: Hastada orta düzeyde ağız kokusu var">
+                                        value="3">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">3: Hastada orta düzeyde ağız kokusu var</span>
                                     </label>
@@ -389,14 +389,14 @@ if ($result) {
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after_2"
                                         id="noc_indicator"
-                                        value="4: Hastada hafif ağız kokusu var">
+                                        value="4">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">4: Hastada hafif ağız kokusu var</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="
-                                        noc_indicator" value="5: Hastada ağız kokusu yok ">
+                                        noc_indicator" value="5">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">5: Hastada ağız kokusu yok 
                                         </span>

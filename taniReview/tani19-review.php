@@ -110,32 +110,32 @@ if ($result) {
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1:Hastanın aktiviteye toleransı yok">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">1:Hastanın aktiviteye toleransı yok</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2:Hastanın aktiviteye toleransı sık sık yok">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">2:Hastanın aktiviteye toleransı sık sık yok</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3:Hastanın aktiviteye toleransı bazen yok">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">3:Hastanın aktiviteye toleransı bazen yok</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4:Hastanın aktiviteye toleransı nadiren yok">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">4:Hastanın aktiviteye toleransı nadiren yok</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="
-                                        noc_indicator" value="5: Hastanın aktivite toleransı var">
+                                        noc_indicator" value="5">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">5: Hastanın aktivite toleransı var
                                         </span>
@@ -319,7 +319,7 @@ if ($result) {
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after"
                                         id="noc_indicator"
-                                        value="1:Hastanın aktiviteye toleransı yok">
+                                        value="1">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">1:Hastanın aktiviteye toleransı yok</span>
                                     </label>
@@ -327,7 +327,7 @@ if ($result) {
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after"
                                         id="noc_indicator"
-                                        value="2:Hastanın aktiviteye toleransı sık sık yok">
+                                        value="2">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">2:Hastanın aktiviteye toleransı sık sık yok</span>
                                     </label>
@@ -335,7 +335,7 @@ if ($result) {
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after"
                                         id="noc_indicator"
-                                        value="3:Hastanın aktiviteye toleransı bazen yok">
+                                        value="3">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">3:Hastanın aktiviteye toleransı bazen yok</span>
                                     </label>
@@ -343,14 +343,14 @@ if ($result) {
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after"
                                         id="noc_indicator"
-                                        value="4:Hastanın aktiviteye toleransı nadiren yok">
+                                        value="4">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">4:Hastanın aktiviteye toleransı nadiren yok</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after" id="
-                                        noc_indicator" value="5: Hastanın aktivite toleransı var">
+                                        noc_indicator" value="5">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">5: Hastanın aktivite toleransı var 
                                         </span>

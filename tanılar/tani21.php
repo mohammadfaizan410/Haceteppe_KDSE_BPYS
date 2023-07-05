@@ -92,32 +92,32 @@ if (isset($_GET['logout'])) {
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1: Hasta sürekli bulantısı olduğunu ifade ediyor">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">1: Hasta sürekli bulantısı olduğunu ifade ediyor</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2: Hasta sık sık bulantısı olduğunu ifade ediyor">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">2: 2: Hasta sık sık bulantısı olduğunu ifade ediyorr</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3: Hasta bazen bulantısı olduğunu ifade ediyor">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">3: Hasta bazen bulantısı olduğunu ifade ediyor</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4: Hasta nadiren bulantısı olduğunu ifade ediyor">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">4: Hasta nadiren bulantısı olduğunu ifade ediyor</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="
-                                        noc_indicator" value="5: Hasta bulantısı olmadığını ifade ediyor">
+                                        noc_indicator" value="5">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">5: Hasta bulantısı olmadığını ifade ediyor 
                                         </span>
@@ -292,32 +292,32 @@ if (isset($_GET['logout'])) {
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="1: Hasta sürekli bulantısı olduğunu ifade ediyor">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="1">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">1: Hasta sürekli bulantısı olduğunu ifade ediyor</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="2: Hasta sık sık bulantısı olduğunu ifade ediyor">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="2">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">2: 2: Hasta sık sık bulantısı olduğunu ifade ediyorr</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="3: Hasta bazen bulantısı olduğunu ifade ediyor">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="3">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">3: Hasta bazen bulantısı olduğunu ifade ediyor</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="4: Hasta nadiren bulantısı olduğunu ifade ediyor">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="4">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">4: Hasta nadiren bulantısı olduğunu ifade ediyor</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after" id="
-                                        noc_indicator" value="5: Hasta bulantısı olmadığını ifade ediyor">
+                                        noc_indicator" value="5">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">5: Hasta bulantısı olmadığını ifade ediyor 
                                         </span>

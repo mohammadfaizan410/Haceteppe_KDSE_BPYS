@@ -118,21 +118,21 @@ if ($result) {
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator"
-                                        id="noc_indicator" value="3: Hastada bazen sulu gaita çıkışı var ">
+                                        id="noc_indicator" value="3">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">3: Hastada bazen sulu gaita çıkışı var </span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator"
-                                        id="noc_indicator" value="4: Hastada nadiren sulu gaita çıkışı var ">
+                                        id="noc_indicator" value="4">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">4: Hastada nadiren sulu gaita çıkışı var </span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="
-                                        noc_indicator" value="5: Hastada yumuşak kıvamlı ve şekilli gaita çıkışı var">
+                                        noc_indicator" value="5">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">5: Hastada yumuşak kıvamlı ve şekilli gaita çıkışı
                                             var
@@ -153,7 +153,7 @@ if ($result) {
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_2"
-                                        id="noc_indicator2" value="1:Hastanın bağırsak seslerinde çok fazla artış var">
+                                        id="noc_indicator2" value="1">
                                     <label class="form-check-label" for="noc_indicator2">
                                         <span class="checkbox-header">1:Hastanın bağırsak seslerinde çok fazla artış
                                             var</span>
@@ -161,7 +161,7 @@ if ($result) {
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_2"
-                                        id="noc_indicator2" value="2:Hastanın bağırsak seslerinde fazla artış var">
+                                        id="noc_indicator2" value="2">
                                     <label class="form-check-label" for="noc_indicator2">
                                         <span class="checkbox-header">2:Hastanın bağırsak seslerinde fazla artış
                                             var</span>
@@ -170,7 +170,7 @@ if ($result) {
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_2"
                                         id="noc_indicator2"
-                                        value="3:Hastanın bağırsak seslerinde orta düzeyde artış var ">
+                                        value="3">
                                     <label class="form-check-label" for="noc_indicator2">
                                         <span class="checkbox-header">3:Hastanın bağırsak seslerinde orta düzeyde artış
                                             var</span>
@@ -179,7 +179,7 @@ if ($result) {
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_2"
                                         id="noc_indicator2"
-                                        value="4:Hastanın bağırsak seslerinde hafif düzeyde artış var ">
+                                        value="4">
                                     <label class="form-check-label" for="noc_indicator2">
                                         <span class="checkbox-header">4:Hastanın bağırsak seslerinde hafif düzeyde artış
                                             var </span>
@@ -187,7 +187,7 @@ if ($result) {
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_2" id="
-                                        noc_indicator2" value="5:Hastanın bağırsak sesleri normal (6-10/dk)">
+                                        noc_indicator2" value="5">
                                     <label class="form-check-label" for="noc_indicator2">
                                         <span class="checkbox-header">5:Hastanın bağırsak sesleri normal (6-10/dk)
                                         </span>
@@ -420,14 +420,14 @@ if ($result) {
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required name="noc_indicator_after"
-                                            id="noc_indicator_after" value="3: Hastada bazen sulu gaita çıkışı var ">
+                                            id="noc_indicator_after" value="3">
                                         <label class="form-check-label" for="noc_indicator_after">
                                             <span class="checkbox-header">3: Hastada bazen sulu gaita çıkışı var </span>
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required name="noc_indicator_after"
-                                            id="noc_indicator_after" value="4: Hastada nadiren sulu gaita çıkışı var ">
+                                            id="noc_indicator_after" value="4">
                                         <label class="form-check-label" for="noc_indicator_after">
                                             <span class="checkbox-header">4: Hastada nadiren sulu gaita çıkışı var
                                             </span>
@@ -437,7 +437,7 @@ if ($result) {
                                         <input class="form-check-input" type="radio" required name="noc_indicator_after"
                                             id="
                                         noc_indicator_after"
-                                            value="5: Hastada yumuşak kıvamlı ve şekilli gaita çıkışı var">
+                                            value="5">
                                         <label class="form-check-label" for="noc_indicator_after">
                                             <span class="checkbox-header">5: Hastada yumuşak kıvamlı ve şekilli gaita
                                                 çıkışı
@@ -460,7 +460,7 @@ if ($result) {
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required
                                             name="noc_indicator2_after" id="noc_indicator_after_2"
-                                            value="1:Hastanın bağırsak seslerinde çok fazla artış var">
+                                            value="1">
                                         <label class="form-check-label" for="noc_indicator2_after">
                                             <span class="checkbox-header">1:Hastanın bağırsak seslerinde çok fazla artış
                                                 var</span>
@@ -469,7 +469,7 @@ if ($result) {
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required
                                             name="noc_indicator_after_2" id="noc_indicator_after_2"
-                                            value="2:Hastanın bağırsak seslerinde fazla artış var">
+                                            value="2">
                                         <label class="form-check-label" for="noc_indicator2_after">
                                             <span class="checkbox-header">2:Hastanın bağırsak seslerinde fazla artış
                                                 var</span>
@@ -478,7 +478,7 @@ if ($result) {
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required
                                             name="noc_indicator_after_2" id="noc_indicator_after_2"
-                                            value="3:Hastanın bağırsak seslerinde orta düzeyde artış var ">
+                                            value="3">
                                         <label class="form-check-label" for="noc_indicator2_after">
                                             <span class="checkbox-header">3:Hastanın bağırsak seslerinde orta düzeyde
                                                 artış
@@ -488,7 +488,7 @@ if ($result) {
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required
                                             name="noc_indicator_after_2" id="noc_indicator_after_2"
-                                            value="4:Hastanın bağırsak seslerinde hafif düzeyde artış var ">
+                                            value="4">
                                         <label class="form-check-label" for="noc_indicator2_after">
                                             <span class="checkbox-header">4:Hastanın bağırsak seslerinde hafif düzeyde
                                                 artış
@@ -498,7 +498,7 @@ if ($result) {
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required
                                             name="noc_indicator_after_2" id="
-                                        noc_indicator2_after" value="5:Hastanın bağırsak sesleri normal (6-10/dk)">
+                                        noc_indicator2_after" value="5">
                                         <label class="form-check-label" for="noc_indicator2_after">
                                             <span class="checkbox-header">5:Hastanın bağırsak sesleri normal (6-10/dk)
                                             </span>
