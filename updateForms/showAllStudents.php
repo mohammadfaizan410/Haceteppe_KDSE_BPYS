@@ -121,8 +121,8 @@ if (isset($_GET['logout'])) {
         ?>
         <div class="send-patient">
             <div class="patients-table text-center rounded p-4" id="patients-table">
-                <div class="d-flex align-items-center justify-content-between mb-4">
-                    <p style="color : #333333; font-size: 20px" class="pb-2">Student List</p>
+            <div class="d-flex align-items-center justify-content-between mb-4">
+                    <p style="color : #333333; font-size: 20px" class="pb-2">Student Listesi / Öneriler</p>
 
                 </div>
 

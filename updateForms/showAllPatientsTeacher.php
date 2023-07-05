@@ -45,8 +45,6 @@ if (isset($_GET['logout'])) {
                 <div class="d-flex align-items-center justify-content-between mb-4">
                     <p style="color : #333333; font-size: 20px" class="pb-2">Hasta Listesi / Öneriler</p>
                     <p style="color : #333333; font-size: 20px" class="pb-2">Student: <?php echo $_GET['student_name']?></p>
-
-
                 </div>
 
                 <div class="table-responsive">
@@ -72,8 +70,8 @@ if (isset($_GET['logout'])) {
                                     <td scope="col" style="color: #333333;">' . $value['name'] . '</td>
                                     <td scope="col" style="color: #333333;">' . $value['surname'] . '</td>
                                     <td scope="col" style="color: #333333;">' . $value['age'] . '</td>
-                                    <td scope="col"><a style="color: white;" id="showSubmittedforms" class="showallforms btn btn-success p-3" href="#" data-student-name="'.$_GET['student_name'].'"  data-patient-id="' . $value['patient_id'] . '" data-patient-name="' . $fullName . '" >Submitted forms</a></td>
-                                    <td scope="col"><a style="color: white;" id="showSubmittedtanis" class="showallforms btn btn-success p-3" href="#" data-student-name="'.$_GET['student_name'].'" data-patient-id="' . $value['patient_id'] . '" data-patient-name="' . $fullName . '">Submitted tanis</a></td>
+                                    <td scope="col"><a style="color: white;" id="showSubmittedforms" class="showallforms btn btn-success" href="#" data-student-name="'.$_GET['student_name'].'"  data-patient-id="' . $value['patient_id'] . '" data-patient-name="' . $fullName . '" >Submitted forms</a></td>
+                                    <td scope="col"><a style="color: white;" id="showSubmittedtanis" class="showallforms btn btn-success" href="#" data-student-name="'.$_GET['student_name'].'" data-patient-id="' . $value['patient_id'] . '" data-patient-name="' . $fullName . '">Submitted tanis</a></td>
                                 </tr>';
                                 }
                             }

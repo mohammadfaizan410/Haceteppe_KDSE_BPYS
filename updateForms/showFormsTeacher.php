@@ -42,7 +42,9 @@ if (isset($_GET['logout'])) {
 </head>
 
 <body style="background-color:white">
-    <div class="container-fluid pt-4 px-4">
+    <div class="container-fluid p-4">
+    <span class='close closeBtn p-3' id='closeBtn1'>&times;</span>
+
         <?php
         require_once('../config-students.php');
         $patient_id = isset($_GET['patient_id']) ? $_GET['patient_id'] : null;
@@ -314,21 +316,13 @@ if (isset($_GET['logout'])) {
         ];
 
         ?>
-        <div class="send-patient">
-        <div class='row'>
-        <div class='col-lg-5' style="font-weight : bold; font-size: large;">
-        Patient:<?php echo $_GET['patient_name'] ?>
-            </div>
-            
-            <div class='col-lg-5' style="font-weight : bold; font-size: large;">
-            ID:<?php echo $_GET['patient_id'] ?>
-            </div>
-        </div>
-            <span class='close closeBtn' id='closeBtn1'>&times;</span>
+        <div class="send-patient p-5">
+            <div class="d-flex align-items-center justify-content-between mb-4">
+                    <p style="color : #333333; font-size: 20px" class="pb-2">Hasta Listesi / Öneriler</p>
+                    <p style="color : #333333; font-size: 20px" class="pb-2">Patient: <?php echo $_GET['patient_name']?></p>
+                </div>
             <div class="patients-save">
-        
-            </div>
-            <div class="text-center rounded p-4" style="background-color: " id="patients-table">
+                    <div class="text-center rounded p-4 w-100"  id="patients-table">
                 <div class="d-flex align-items-center justify-content-between mb-4">
                 </div>
                 <div class="table-responsive mb-4">
@@ -397,7 +391,7 @@ if (isset($_GET['logout'])) {
                                         $form_id = $form["form_id"];
                                         $root4_id = $form["form_id"];
                                         $update_date = $form["creation_date"];
-                                        $form_4_options .= '<li class="m-2 p-2">
+                                        $form_4_options .= '<li class="m-2 p-2 ">
                                         <div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3" style="color: white;" href="' . $base_url . '/formlar-review/Form4-review.php?display=0&form_id=' . $form_id . '&patient_id=' . $patient_id . '&patient_name=' . $patient_name . '&student_id=' . $student_id . '&student_name='.$student_name.'">
                                         <p class="entered-forms-p">Form4 Date: ' . $update_date . '</p>
                                         </a>
@@ -408,7 +402,7 @@ if (isset($_GET['logout'])) {
                                         $form_id = $form["form_id"];
                                         $root5_id = $form["form_id"];
                                         $update_date = $form["creation_date"];
-                                        $form_5_options .= '<li class="m-2 p-2"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3" style="color: white;" href="' . $base_url . '/formlar-review/Form5-review.php?display=0&form_id=' . $form_id . '&patient_id=' . $patient_id . '&patient_name=' . $patient_name . '&student_id=' . $student_id . '&student_name='.$student_name.'"><p class="entered-forms-p">Form5 Date: ' . $update_date . '</p></a></div></li>';
+                                        $form_5_options .= '<li class="m-2 p-2 "><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3" style="color: white;" href="' . $base_url . '/formlar-review/Form5-review.php?display=0&form_id=' . $form_id . '&patient_id=' . $patient_id . '&patient_name=' . $patient_name . '&student_id=' . $student_id . '&student_name='.$student_name.'"><p class="entered-forms-p">Form5 Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table5_data') {
                                         $form_id = $form["form_id"];
@@ -420,7 +414,7 @@ if (isset($_GET['logout'])) {
                                         $form_id = $form["form_id"];
                                         $root7_id = $form["form_id"];
                                         $update_date = $form["creation_date"];
-                                        $form_7_options .= '<li class="m-2 p-2"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3" style="color: white;"  href="' . $base_url . '/formlar-review/Form7-review.php?display=0&form_id=' . $form_id . '&patient_id=' . $patient_id . '&patient_name=' . $patient_name . '&student_id=' . $student_id . '&student_name='.$student_name.'"><p class="entered-forms-p">Form7 Date: ' . $update_date . '</p></a></div></li>';
+                                        $form_7_options .= '<li class="m-2 p-2 "><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3" style="color: white;"  href="' . $base_url . '/formlar-review/Form7-review.php?display=0&form_id=' . $form_id . '&patient_id=' . $patient_id . '&patient_name=' . $patient_name . '&student_id=' . $student_id . '&student_name='.$student_name.'"><p class="entered-forms-p">Form7 Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table7_data') {
                                         $form_id = $form["form_id"];
@@ -486,7 +480,7 @@ if (isset($_GET['logout'])) {
                                         $form_id = $form["form_id"];
                                         $root18_id = $form["form_id"];
                                         $update_date = $form["creation_date"];
-                                        $form_18_options .= '<li class="m-2 p-2 "><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-hereket-review.php?display=0&form_id=' . $form_id . '&patient_id=' . $patient_id . '&patient_name=' . $patient_name . '&student_id=' . $student_id . '&student_name='.$student_name.'"><p class="entered-forms-p">Form1 Hareket Date: ' . $update_date . '</p></a></div></li>';
+                                        $form_18_options .= '<li class="m-2 p-2"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-hereket-review.php?display=0&form_id=' . $form_id . '&patient_id=' . $patient_id . '&patient_name=' . $patient_name . '&student_id=' . $student_id . '&student_name='.$student_name.'"><p class="entered-forms-p">Form1 Hareket Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table18_data') {
                                         $form_id = $form["form_id"];
