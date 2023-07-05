@@ -104,31 +104,31 @@ if (isset($_GET['logout'])) {
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1: Hasta boşaltım ihtiyacını desteksiz ya da destekle karşılayamaz">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">1: Hasta boşaltım ihtiyacını desteksiz ya da destekle karşılayamaz</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2: Hasta boşaltım ihtiyacını desteksiz ya da destekle nadiren karşılar">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">2: Hasta boşaltım ihtiyacını desteksiz ya da destekle nadiren karşılar</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3: Hasta boşaltım ihtiyacını desteksiz ya da destekle bazen karşılar">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">3: Hasta boşaltım ihtiyacını desteksiz ya da destekle bazen karşılar</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4: Hasta boşaltım ihtiyacını desteksiz ya da destekle sık sık karşılar">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">4: Hasta boşaltım ihtiyacını desteksiz ya da destekle sık sık karşılar</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="5: Hasta boşaltım ihtiyacını desteksiz ya da destekle sürekli karşılar">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="5">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">5: Hasta boşaltım ihtiyacını desteksiz ya da destekle sürekli karşılar</span>
                                     </label>
@@ -299,31 +299,31 @@ if (isset($_GET['logout'])) {
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="1: Hasta boşaltım ihtiyacını desteksiz ya da destekle karşılayamaz">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="1">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">1: Hasta boşaltım ihtiyacını desteksiz ya da destekle karşılayamaz</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="2: Hasta boşaltım ihtiyacını desteksiz ya da destekle nadiren karşılar">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="2">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">2: Hasta boşaltım ihtiyacını desteksiz ya da destekle nadiren karşılar</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="3: Hasta boşaltım ihtiyacını desteksiz ya da destekle bazen karşılar">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="3">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">3: Hasta boşaltım ihtiyacını desteksiz ya da destekle bazen karşılar</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="4: Hasta boşaltım ihtiyacını desteksiz ya da destekle sık sık karşılar">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="4">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">4: Hasta boşaltım ihtiyacını desteksiz ya da destekle sık sık karşılar</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after5" value="5: Hasta boşaltım ihtiyacını desteksiz ya da destekle sürekli karşılar">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after5" value="5">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">5: Hasta boşaltım ihtiyacını desteksiz ya da destekle sürekli karşılar</span>
                                     </label>

@@ -86,7 +86,7 @@ if (isset($_GET['logout'])) {
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator"
-                                        id="noc_indicator" value="1: Hastanın periferik nabızları hiç hissedilmiyor">
+                                        id="noc_indicator" value="1">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">1: Hastanın periferik nabızları hiç hissedilmiyor
                                             var</span>
@@ -95,7 +95,7 @@ if (isset($_GET['logout'])) {
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator"
                                         id="noc_indicator"
-                                        value="2: Hastanın periferik nabızları büyük ölçüde hissedilmiyor">
+                                        value="2">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">2: Hastanın periferik nabızları büyük ölçüde
                                             hissedilmiyor</span>
@@ -103,7 +103,7 @@ if (isset($_GET['logout'])) {
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator"
-                                        id="noc_indicator" value="3: Hastanın periferik nabızları zor hissediliyor">
+                                        id="noc_indicator" value="3">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">3: Hastanın periferik nabızları zor
                                             hissediliyor</span>
@@ -112,7 +112,7 @@ if (isset($_GET['logout'])) {
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator"
                                         id="noc_indicator"
-                                        value="4: Hastanın periferik nabızları biraz zayıf hissediliyor">
+                                        value="4">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">4: Hastanın periferik nabızları biraz zayıf
                                             hissediliyor</span>
@@ -120,7 +120,7 @@ if (isset($_GET['logout'])) {
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="
-                                        noc_indicator" value="5: Hastanın periferik nabızları var  ">
+                                        noc_indicator" value="5">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">5: Hastanın periferik nabızları var
                                         </span>
@@ -492,7 +492,7 @@ if (isset($_GET['logout'])) {
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required name="noc_indicator_after"
                                             id="noc_indicator_after"
-                                            value="1: Hastanın periferik nabızları hiç hissedilmiyor">
+                                            value="1">
                                         <label class="form-check-label" for="noc_indicator_after">
                                             <span class="checkbox-header">1: Hastanın periferik nabızları hiç
                                                 hissedilmiyor
@@ -502,7 +502,7 @@ if (isset($_GET['logout'])) {
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required name="noc_indicator_after"
                                             id="noc_indicator_after"
-                                            value="2: Hastanın periferik nabızları büyük ölçüde hissedilmiyor">
+                                            value="2">
                                         <label class="form-check-label" for="noc_indicator_after">
                                             <span class="checkbox-header">2: Hastanın periferik nabızları büyük ölçüde
                                                 hissedilmiyor</span>
@@ -511,7 +511,7 @@ if (isset($_GET['logout'])) {
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required name="noc_indicator_after"
                                             id="noc_indicator_after"
-                                            value="3: Hastanın periferik nabızları zor hissediliyor">
+                                            value="3">
                                         <label class="form-check-label" for="noc_indicator_after">
                                             <span class="checkbox-header">3: Hastanın periferik nabızları zor
                                                 hissediliyor</span>
@@ -520,7 +520,7 @@ if (isset($_GET['logout'])) {
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required name="noc_indicator_after"
                                             id="noc_indicator_after"
-                                            value="4: Hastanın periferik nabızları biraz zayıf hissediliyor">
+                                            value="4">
                                         <label class="form-check-label" for="noc_indicator_after">
                                             <span class="checkbox-header">4: Hastanın periferik nabızları biraz zayıf
                                                 hissediliyor</span>
@@ -529,7 +529,7 @@ if (isset($_GET['logout'])) {
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required name="noc_indicator_after"
                                             id="
-                                        noc_indicator_after" value="5: Hastanın periferik nabızları var  ">
+                                        noc_indicator_after" value="5">
                                         <label class="form-check-label" for="noc_indicator_after">
                                             <span class="checkbox-header">5: Hastanın periferik nabızları var
                                             </span>

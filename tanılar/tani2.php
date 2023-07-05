@@ -87,28 +87,28 @@ if (isset($_GET['logout'])) {
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1:Hastanın solunum örüntüsünde çok şiddetli düzeyde bozulma var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">1:Hastanın solunum örüntüsünde çok şiddetli
                                             düzeyde bozulma var</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2:Hastanın solunum örüntüsünde önemli düzeyde bozulma var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">2:Hastanın solunum örüntüsünde önemli düzeyde
                                             bozulma var</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3:Hastanın solunum örüntüsünde orta düzeyde bozulma var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">3:Hastanın solunum örüntüsünde orta düzeyde
                                             bozulma var</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4:Hastanın solunum örüntüsünde hafif düzeyde bozulma var">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">4:Hastanın solunum örüntüsünde hafif düzeyde
                                             bozulma var</span>
@@ -116,7 +116,7 @@ if (isset($_GET['logout'])) {
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="
-                                        noc_indicator" value="5:Hastanın solunum örüntüsü normal">
+                                        noc_indicator" value="5">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">5:Hastanın solunum örüntüsü normal
                                         </span>
@@ -164,7 +164,7 @@ if (isset($_GET['logout'])) {
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_2" id="
-                                        noc_indicator2" value="5:Hastanın solunum örüntüsü normal">
+                                        noc_indicator2" value="5">
                                     <label class="form-check-label" for="noc_indicator2">
                                         <span class="checkbox-header">5:Hastanın solunum hızı ve ritmi normal
                                         </span>
@@ -364,28 +364,28 @@ if (isset($_GET['logout'])) {
                                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                                 <div class="form-check">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="1:Hastanın solunum örüntüsünde çok şiddetli düzeyde bozulma var">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="1">
                                         <label class="form-check-label" for="noc_indicator_after">
                                             <span class="checkbox-header">1:Hastanın solunum örüntüsünde çok şiddetli
                                                 düzeyde bozulma var</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="2:Hastanın solunum örüntüsünde önemli düzeyde bozulma var">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="2">
                                         <label class="form-check-label" for="noc_indicator_after">
                                             <span class="checkbox-header">2:Hastanın solunum örüntüsünde önemli düzeyde
                                                 bozulma var</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="3:Hastanın solunum örüntüsünde orta düzeyde bozulma var">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="3">
                                         <label class="form-check-label" for="noc_indicator_after">
                                             <span class="checkbox-header">3:Hastanın solunum örüntüsünde orta düzeyde
                                                 bozulma var</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="4:Hastanın solunum örüntüsünde hafif düzeyde bozulma var">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="4">
                                         <label class="form-check-label" for="noc_indicator_after">
                                             <span class="checkbox-header">4:Hastanın solunum örüntüsünde hafif düzeyde
                                                 bozulma var</span>
@@ -393,7 +393,7 @@ if (isset($_GET['logout'])) {
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required name="noc_indicator_after" id="
-                                        noc_indicator_after" value="5:Hastanın solunum örüntüsü normal">
+                                        noc_indicator_after" value="5">
                                         <label class="form-check-label" for="noc_indicator_after">
                                             <span class="checkbox-header">5:Hastanın solunum örüntüsü normal
                                             </span>
@@ -444,7 +444,7 @@ if (isset($_GET['logout'])) {
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="
-                                        noc_indicator2_after" value="5:Hastanın solunum örüntüsü normal">
+                                        noc_indicator2_after" value="5">
                                         <label class="form-check-label" for="noc_indicator2_after">
                                             <span class="checkbox-header">5:Hastanın solunum hızı ve ritmi normal
                                             </span>

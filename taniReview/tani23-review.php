@@ -110,31 +110,31 @@ if ($result) {
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                            <div class='form-check'>
                            <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1: Hastanın vücut sıcaklığı çok düşük">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">1: Hastanın vücut sıcaklığı çok düşük</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2: Hastanın vücut sıcaklığı ciddi düzeyde düşük">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">2: Hastanın vücut sıcaklığı ciddi düzeyde düşük</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3: Hastanın vücut sıcaklığı orta düzeyde düşük">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">3: Hastanın vücut sıcaklığı orta düzeyde düşük</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4: Hastanın vücut sıcaklığı hafif düzeyde düşük">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">4: Hastanın vücut sıcaklığı hafif düzeyde düşük</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="5: Hastanın vücut sıcaklığı normal (37 ± 0. 5 0C)">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="5">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">5: Hastanın vücut sıcaklığı normal (37 ± 0. 5 0C)</span>
                                     </label>
@@ -238,31 +238,31 @@ if ($result) {
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                            <div class='form-check'>
                            <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="1: Hastanın vücut sıcaklığı çok düşük">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="1">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">1: Hastanın vücut sıcaklığı çok düşük</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="2: Hastanın vücut sıcaklığı ciddi düzeyde düşük">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="2">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">2: Hastanın vücut sıcaklığı ciddi düzeyde düşük</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="3: Hastanın vücut sıcaklığı orta düzeyde düşük">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="3">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">3: Hastanın vücut sıcaklığı orta düzeyde düşük</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="4: Hastanın vücut sıcaklığı hafif düzeyde düşük">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="4">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">4: Hastanın vücut sıcaklığı hafif düzeyde düşük</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="5: Hastanın vücut sıcaklığı normal (37 ± 0. 5 0C)">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="5">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">5: Hastanın vücut sıcaklığı normal (37 ± 0. 5 0C)</span>
                                     </label>
