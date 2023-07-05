@@ -742,7 +742,6 @@ if ($result) {
             $('input[name="collaborative_apps"][value="' + element + '"]').prop('checked', true);
         });
 
-    });
     </script>
     <script>
     $(function() {
