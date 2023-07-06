@@ -452,7 +452,11 @@ düşüncelerin uyarılmasını sağlamak için; müzik, oyun, puzzle, ziyaret v
         $('input[name="noc_indicator_after_2"][value="<?php echo $tani[0]['noc_indicator_after_2']; ?>"]').prop('checked', true);
         $('input[name="noc_indicator_after_3"][value="<?php echo $tani[0]['noc_indicator_after_3']; ?>"]').prop('checked', true);
 
+<<<<<<< HEAD
         <?php echo json_encode($tani[0]['nurse_attempt'])?>.split('/').forEach(element => {
+=======
+        <?php echo json_encode($tani[0]['nurse_attempt']);?>.split('/').forEach(element => {
+>>>>>>> 2984548f7b6150e88391488a0b43df16f11fd8c7
             $('input[name="nurse_attempt"][value="' + element + '"]').prop('checked', true);
         });
         "<?php echo $tani[0]['nurse_education']?>".split('/').forEach(element => {

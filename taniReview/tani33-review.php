@@ -463,7 +463,6 @@ if ($result) {
                     $('[name="noc_indicator_after_3"]').first().closest('.input-section').find('.option-error').css('display', 'block');
                     return false;
                 }
-                console.log("submit clicked")
                 var id = <?php
                             $userid = $_SESSION['userlogin']['id'];
                             echo $userid
