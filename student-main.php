@@ -10,6 +10,11 @@ if (isset($_GET['logout'])) {
     unset($_SESSION);
     header("Location: main.php");
 }
+
+$userid = $_SESSION['userlogin']['id'];
+require_once('config-students.php');
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,10 +43,98 @@ if (isset($_GET['logout'])) {
 
     <!-- Template Stylesheet -->
     <link href="style.css" rel="stylesheet">
+    <style>
+    .notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 320px;
+    height: 85px;
+    background-color: white;
+    padding: 10px;
+    border: 3px solid darkslateblue;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: none;
+    }
 
+    .notification span {
+        padding: 3px;
+    }
+    .message {
+    font-size: 18px;
+    }
+
+    .close-btn {
+    position: absolute;
+    top: 0px;
+    right: 9px;
+    border: none;
+    background-color: transparent;
+    font-size: 35px;
+    color: red;
+    cursor: pointer;
+    }
+
+    </style>
 </head>
 
 <body class="stu-body">
+
+<?php
+
+    $sql = "SELECT * FROM patients WHERE id = " . $userid;
+    $smtmselect = $db->prepare($sql);
+    $result = $smtmselect->execute();
+    if ($result){
+        $patients = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($patients as $patient){
+            $sql = "SELECT * FROM tani WHERE patient_id = " . $patient['patient_id'] . " and root_id = 0";
+            $smtmselect = $db->prepare($sql);
+            $result = $smtmselect->execute();
+            if ($result){
+                $tanis = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+                foreach ($tanis as $tani){
+                    $sql = "SELECT * FROM tani WHERE root_id = " . $tani['tani_id'] . " ORDER BY tani_id";
+                    $smtmselect = $db->prepare($sql);
+                    $result = $smtmselect->execute();
+                    if ($result){
+                        $tanisTemp = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+                    } else {
+                        echo "error";
+                    }
+                    
+                    if ($tanisTemp){
+                        echo "<script>console.log('here')</script>";
+                        $last_tani = end($tanisTemp);
+                    } else {
+                        $last_tani = $tani;
+                    }
+
+                    echo "<script>console.log({$last_tani['creation_date']})</script>";
+                    $creation_date = new DateTime($last_tani['creation_date']);
+                    $today = new DateTime();
+                    $interval = $today->diff($creation_date);
+                    if ((($last_tani['noc_indicator_after_3'] != "null" && $last_tani['noc_indicator_after_3'] != "5") 
+                    || ($last_tani['noc_indicator_after_2'] != "null" && $last_tani['noc_indicator_after_2'] != "5")
+                    || $last_tani['noc_indicator_after'] != "5") && ($interval->days >= 1)) {
+                        echo "<script>console.log({$interval->days})</script>";
+                        echo '<div id="notification" class="notification">
+                                <span class="message">Tanıları güncellenmemiş hastalar var</span>
+                                <button id="closeBtnNotification" class="close-btn">&times;</button>
+                            </div>';
+                        break 2;
+                    }
+                }
+            } else {
+                echo "error";
+            }
+        }
+    } else {
+        echo "error";
+    }
+
+?>
     <div class="stu-body1" id="stu-body1">
         <div class="navigation-wrapper" id="navigation-wrapper">
             <div class="navigation-left">
@@ -100,41 +193,49 @@ if (isset($_GET['logout'])) {
     function hamburger() {
 
         const hamburger = document.getElementById('stu-hamburger');
-        console.log(hamburger);
         hamburger.classList.remove("d-block-resp");
         hamburger.classList.add("d-none-resp");
 
         const stubody1 = document.getElementById('stu-body1');
-        console.log(stubody1);
         stubody1.classList.remove("d-none-resp");
         stubody1.classList.add("d-block-resp");
 
         const navwrapper = document.getElementById('navigation-wrapper');
-        console.log(stubody1);
         navwrapper.classList.remove("d-none-resp");
         navwrapper.classList.add("d-block-resp");
 
         const closebtn = document.getElementById('closeBtn');
-        console.log(stubody1);
         closebtn.classList.remove("d-none-resp");
         closebtn.classList.add("d-block-resp");
     };
     $("#closeBtn").on("click", function(e) {
         const hamburger = document.getElementById('stu-hamburger');
-        console.log(hamburger);
         hamburger.classList.remove("d-none-resp");
         hamburger.classList.add("d-block-resp");
 
         const stubody1 = document.getElementById('stu-body1');
-        console.log(stubody1);
         stubody1.classList.remove("d-block-resp");
         stubody1.classList.add("d-none-resp");
 
         const navwrapper = document.getElementById('navigation-wrapper');
-        console.log(stubody1);
         navwrapper.classList.remove("d-block-resp");
         navwrapper.classList.add("d-none-resp");
     })
+    window.addEventListener('DOMContentLoaded', function() {
+        var notification = document.getElementById('notification');
+        var closeBtn = document.getElementById('closeBtnNotification');
+
+        notification.style.display = 'block';
+       
+        setTimeout(function() {
+            notification.style.opacity -= 0.3;
+            notification.style.pointerEvents = 'none';
+        }, 4000);
+
+        closeBtn.addEventListener('click', function() {
+            notification.style.display = 'none';
+        });
+    });
     </script>
     <script>
     $(function() {

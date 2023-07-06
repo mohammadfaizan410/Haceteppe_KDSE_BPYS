@@ -349,6 +349,7 @@ if (isset($_GET['logout'])) {
 
                                     if ($key === 'table1_data') {
                                         $form_id = $form["form_id"];
+                                        $root2_id = $form['form_id'];
                                         $update_date = $form["update_date"];
                                         $form_2_options .= '<li class="m-2 p-2 ">
                                         <div class="entered-forms align-items-center">
@@ -360,6 +361,7 @@ if (isset($_GET['logout'])) {
                                     }
                                     if ($key ===  'table2_data') {
                                         $form_id = $form["form_id"];
+                                        $root3_id = $form['form_id'];
                                         $update_date = $form["update_date"];
                                         $form_3_options .= '<li class="m-2 p-2">
                                         <div class="entered-forms align-items-center">
@@ -372,6 +374,7 @@ if (isset($_GET['logout'])) {
                                     }
                                     if ($key ===  'table3_data') {
                                         $form_id = $form["form_id"];
+                                        $root4_id = $form['form_id'];
                                         $update_date = $form["update_date"];
                                         $form_4_options .= '<li class="m-2 p-2">
                                         <div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3" style="color: white;" href="' . $base_url . '/formlar-review/Form4-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'">
@@ -383,109 +386,130 @@ if (isset($_GET['logout'])) {
                                     }
                                     if ($key ===  'table4_data') {
                                         $form_id = $form["form_id"];
+                                        $root5_id = $form['form_id'];
                                         $update_date = $form["update_date"];
                                         $form_5_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3" style="color: white;" href="' . $base_url . '/formlar-review/Form5-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form5 Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table5_data') {
                                         $form_id = $form["form_id"];
+                                        $root6_id = $form['form_id'];
                                         $update_date = $form["update_date"];
                                         $form_6_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3" style="color: white;" href="' . $base_url . '/formlar-review/Form6-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form6 Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table6_data') {
                                         $form_id = $form["form_id"];
+                                        $root7_id = $form['form_id'];
                                         $update_date = $form["update_date"];
                                         $form_7_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3" style="color: white;"  href="' . $base_url . '/formlar-review/Form7-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form7 Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table7_data') {
                                         $form_id = $form["form_id"];
+                                        $root8_id = $form['form_id'];
                                         $update_date = $form["update_date"];
                                         $form_8_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"  style="color: white;" href="' . $base_url . '/formlar-review/Form8-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form8 Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table8_data') {
                                         $form_id = $form["form_id"];
+                                        $root9_id = $form['form_id'];
                                         $update_date = $form["update_date"];
                                         $form_9_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"  style="color: white;" href="' . $base_url . '/formlar-review/Form9-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form9 Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table9_data') {
                                         $form_id = $form["form_id"];
+                                        $root10_id = $form['form_id'];
                                         $update_date = $form["update_date"];
                                         $form_10_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"  style="color: white;" href="' . $base_url . '/formlar-review/Form10-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form10 Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table10_data') {
                                         $form_id = $form["form_id"];
+                                        $root11_id = $form['form_id'];
                                         $update_date = $form["update_date"];
                                         $form_11_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"  style="color: white;" href="' . $base_url . '/formlar-review/Form11-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form11 Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table11_data') {
                                         $form_id = $form["form_id"];
+                                        $root12_id = $form['form_id'];
                                         $update_date = $form["update_date"];
                                         $form_12_options .= '<li class="m-2 p-2 w-100"><div class="entered-formsalign-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form12-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form12 Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table12_data') {
                                         $form_id = $form["form_id"];
+                                        $root13_id = $form['form_id'];
                                         $update_date = $form["update_date"];
                                         $form_13_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form13-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form13 Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table13_data') {
                                         $form_id = $form["form_id"];
+                                        $root14_id = $form['form_id'];
                                         $update_date = $form["update_date"];
                                         $form_14_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form14-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form14 Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table14_data') {
                                         $form_id = $form["form_id"];
+                                        $root15_id = $form['form_id'];
                                         $update_date = $form["update_date"];
                                         $form_15_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form15-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form15 Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table15_data') {
                                         $form_id = $form["form_id"];
+                                        $root16_id = $form['form_id'];
                                         $update_date = $form["update_date"];
                                         $form_16_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-ozgecmis-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form1 Ozgecmis Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table16_data') {
                                         $form_id = $form["form_id"];
+                                        $root17_id = $form['form_id'];
                                         $update_date = $form["updateDate"];
                                         $form_17_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Solunumgereksinimi-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form1 Solunum Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table17_data') {
                                         $form_id = $form["form_id"];
+                                        $root18_id = $form['form_id'];
                                         $update_date = $form["update_date"];
                                         $form_18_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-hereket-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form1 Hareket Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table18_data') {
                                         $form_id = $form["form_id"];
+                                        $root19_id = $form['form_id'];
                                         $update_date = $form["update_date"];
                                         $form_19_options .= '<li class="m-2 p-2  w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Vucudu-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form1 Vucut Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table19_data') {
                                         $form_id = $form["form_id"];
+                                        $root20_id = $form['form_id'];
                                         $update_date = $form["update_date"];
                                         $form_20_options .= '<li class="m-2 p-2  w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Katerer-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form1 Katerer Date: ' . $update_date . '</p></a></div></li>';                                    }
                                  
                                     if ($key ===  'table20_data') {
                                         $form_id = $form["form_id"];
+                                        $root21_id = $form['form_id'];
                                         $update_date = $form["update_date"];
                                         $form_21_options .= '<li class="m-2 p-2  w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Iletisim-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form1 Ilestim Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table21_data') {
                                         $form_id = $form["form_id"];
+                                        $root22_id = $form['form_id'];
                                         $update_date = $form["update_date"];
                                         $form_22_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Calisma-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form1 Calisma Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table23_data') {
                                         $form_id = $form["form_id"];
+                                        $root24_id = $form["form_id"];
                                         $update_date = $form["update_date"];
                                         $form_24_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"  style="color: white;" href="' . $base_url . '/formlar-review/Form1-bosaltim-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form1 Bosaltim Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table22_data') {
                                         $form_id = $form["form_id"];
+                                        $root23_id = $form["form_id"];
                                         $update_date = $form["update_date"];
                                         $form_23_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-egitim-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form1 Egitim Date: ' . $update_date . '</p></a></div></li>';
                                     }
-                                    // if ($key ===  'table24_data') {
-                                    //     $form_id = $form["form_id"];
-                                    //     $update_date = $form["update_date"];
-                                    //     $form_25_options .= '<li class="m-2 p-2 "><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-beslenme-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form1 Beslenme Date: ' . $update_date . '</p></a></div></li>';
-                                    // }
+                                    if ($key ===  'table24_data') {
+                                        $form_id = $form["form_id"];
+                                        $root25_id = $form["form_id"];
+                                        $update_date = $form["update_date"];
+                                        $form_25_options .= '<li class="m-2 p-2 "><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-beslenme-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form1 Beslenme Date: ' . $update_date . '</p></a></div></li>';
+                                    }
 
                                 };
                             };
@@ -500,55 +524,85 @@ if (isset($_GET['logout'])) {
                                 echo "<li class='m-2'><div class='w-75 m-auto'>
                                 <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form24_toggle'>Form1 Bosaltim <span id='form24_caret'>&#9660;<span></button>
                                 <ul class='entered-forms-ul' id='form_24_options' style='display:none'>" . $form_24_options . "</ul>
-                                </div></li>";}
+                                </div>
+                                <div class='entered-forms'><a class='nav-items review btn btn-success w-50' style='color : white; display: none' id='form24_add_extension'
+                                    href='" . $base_url . "/formlar-review/Form1-Bosaltim-review.php?form_id=" . $root24_id . "&display=1"."'>Add Extension</a></div>
+                                </li>";}
                             if($form_16_options!==""){
                                 echo "
                                 <li class='m-2'><div class='w-75 m-auto'>
                                 <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form16_toggle'>Form1 Ozgecmis <span id='form16_caret'>&#9660;<span></button>
                                 <ul class='entered-forms-ul' id='form_16_options' style='display:none'>" . $form_16_options . "</ul>
-                                </div></li>";
+                                </div>
+                                <div class='entered-forms'><a class='nav-items review btn btn-success w-50' style='color : white; display: none' id='form16_add_extension'
+                                    href='" . $base_url . "/formlar-review/Form1-ozgecmis-review.php?form_id=" . $root16_id . "&display=1"."'>Add Extension</a></div>
+                                </li>";
                             }
                             if($form_17_options!==""){
                             echo "<li class='m-2'><div class='w-75 m-auto'>
                                 <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form17_toggle'>Form1 Solunum <span id='form17_caret'>&#9660;<span></button>
                                 <ul class='entered-forms-ul' id='form_17_options' style='display:none'>" . $form_17_options . "</ul>
-                                </div></li>";
+                                </div>
+                                <div class='entered-forms'><a class='nav-items review btn btn-success w-50' style='color : white; display: none' id='form17_add_extension'
+                                    href='" . $base_url . "/formlar-review/Form1-Solunumgereksinimi-review.php?form_id=" . $root17_id . "&display=1"."'>Add Extension</a></div>
+                                </li>";
                             }
                             if($form_18_options!==""){
                             echo "<li class='m-2'><div class='w-75 m-auto'>
                              <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form18_toggle'>Form1 Hereket <span id='form18_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_18_options' style='display:none'>" . $form_18_options . "</ul>
-                            </div></li>";}
+                            </div>
+                            <div class='entered-forms'><a class='nav-items review btn btn-success w-50' style='color : white; display: none' id='form18_add_extension'
+                                    href='" . $base_url . "/formlar-review/Form1-hereket-review.php?form_id=" . $root18_id . "&display=1"."'>Add Extension</a></div>
+                            </li>";}
                             if($form_19_options!==""){
                             echo "<li class='m-2'><div class='w-75 m-auto'>
                             <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form19_toggle'>Form1 Vucut <span id='form19_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_19_options' style='display:none'>" . $form_19_options . "</ul>
-                            </div></li>";}
+                            </div>
+                            <div class='entered-forms'><a class='nav-items review btn btn-success w-50' style='color : white; display: none' id='form19_add_extension'
+                                    href='" . $base_url . "/formlar-review/Form1-Vucudu-review.php?form_id=" . $root19_id . "&display=1"."'>Add Extension</a></div>
+                            </li>";}
                             if($form_20_options!==""){
                             echo "<li class='m-2'><div class='w-75 m-auto'>
                             <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form20_toggle'>Form1 Katerer <span id='form20_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_20_options' style='display:none'>" . $form_20_options . "</ul>
-                            </div></li>";}
+                            </div>
+                            <div class='entered-forms'><a class='nav-items review btn btn-success w-50' style='color : white; display: none' id='form20_add_extension'
+                                    href='" . $base_url . "/formlar-review/Form1-Katerer-review.php?form_id=" . $root20_id . "&display=1"."'>Add Extension</a></div>
+                            </li>";}
                             if($form_21_options!==""){
                             echo "<li class='m-2'><div class='w-75 m-auto'>
                             <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form21_toggle'> Form1 Iletisim<span id='form21_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_21_options' style='display:none'>" . $form_21_options . "</ul>
-                            </div></li>";}
+                            </div>
+                            <div class='entered-forms'><a class='nav-items review btn btn-success w-50' style='color : white; display: none' id='form21_add_extension'
+                                    href='" . $base_url . "/formlar-review/Form1-Iletisim-review.php?form_id=" . $root21_id . "&display=1"."'>Add Extension</a></div>
+                            </li>";}
                             if($form_22_options!==""){
                             echo "<li class='m-2'><div class='w-75 m-auto'>
                             <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form22_toggle'>Form1 Calisma <span id='form22_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_22_options' style='display:none'>" . $form_22_options . "</ul>
-                            </div></li>";}
+                            </div>
+                            <div class='entered-forms'><a class='nav-items review btn btn-success w-50' style='color : white; display: none' id='form22_add_extension'
+                                    href='" . $base_url . "/formlar-review/Form1-Calisma-review.php?form_id=" . $root22_id . "&display=1"."'>Add Extension</a></div>
+                            </li>";}
                             if($form_23_options!==""){
                             echo "<li class='m-2'><div class='w-75 m-auto'>
                             <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form23_toggle'>Form1 Egitim <span id='form23_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_23_options' style='display:none'>" . $form_23_options . "</ul>
-                            </div></li>";}
+                            </div>
+                            <div class='entered-forms'><a class='nav-items review btn btn-success w-50' style='color : white; display: none' id='form23_add_extension'
+                                    href='" . $base_url . "/formlar-review/Form1-egitim-review.php?form_id=" . $root23_id . "&display=1"."'>Add Extension</a></div>
+                            </li>";}
                             if($form_25_options!==""){
                             echo "<li class='m-2'><div class='w-75 m-auto'>
                             <button class='entered-forms  btn btn-success w-50 m-auto align-items-center' id='form25_toggle'>Form1 Beslenme <span id='form25_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_25_options' style='display:none'>" . $form_25_options . "</ul>
-                            </div></li>";}
+                            </div>
+                            <div class='entered-forms'><a class='nav-items review btn btn-success w-50' style='color : white; display: none' id='form25_add_extension'
+                                    href='" . $base_url . "/formlar-review/Form1-beslenme-review.php?form_id=" . $root25_id . "&display=1"."'>Add Extension</a></div>
+                            </li>";}
                              echo "</ul>
                             </div>";
                             }
@@ -557,85 +611,127 @@ if (isset($_GET['logout'])) {
                                 echo "<div class='w-100 m-auto'>
                                 <button class='entered-forms  btn btn-success w-75 m-auto align-items-center' id='form2_toggle'>Form 2 <span id='form2_caret'>&#9660;</span></button>
                                 <ul class='entered-forms-ul ' id='form_2_options' style='display:none'>" . $form_2_options . "</ul>
-                                </div>";
+                                </div>
+                                <div class='entered-forms'><a class='nav-items review btn btn-success w-50' style='color : white; display: none' id='form2_add_extension'
+                                    href='" . $base_url . "/formlar-review/Form2-review.php?form_id=" . $root2_id . "&display=1"."'>Add Extension</a></div>
+                                ";
                             }
                             if($form_3_options !== ""){
                             echo "<div class='w-100 m-auto'>
                             <button class='entered-forms toggle_button btn btn-success w-75 m-auto align-items-center' id='form3_toggle'>Form 3 <span id='form3_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_3_options' style='display:none'>" . $form_3_options . "</ul>
-                            </div>";
+                            </div>
+                            <div class='entered-forms'><a class='nav-items review btn btn-success w-50' style='color : white; display: none' id='form3_add_extension'
+                                    href='" . $base_url . "/formlar-review/Form3-review.php?form_id=" . $root3_id . "&display=1"."'>Add Extension</a></div>";
                             }
                             if($form_4_options !== ""){
                             echo "<div class='w-100 m-auto'>
                             <button class='entered-forms toggle_button btn btn-success w-75 m-auto align-items-center' id='form4_toggle'>Form 4 <span id='form4_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_4_options' style='display:none'>" . $form_4_options . "</ul>
-                            </div>";
+                            </div>
+                            <div class='entered-forms'><a class='nav-items review btn btn-success w-50' style='color : white; display: none' id='form4_add_extension'
+                                    href='" . $base_url . "/formlar-review/Form4-review.php?form_id=" . $root4_id . "&display=1"."'>Add Extension</a></div>";
                             }
                             if($form_5_options !== ""){
                             echo "<div class='w-100 m-auto'>
                             <button class='entered-forms toggle_button btn btn-success w-75 m-auto align-items-center' id='form5_toggle'>Form 5 <span id='form5_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_5_options' style='display:none'>" . $form_5_options . "</ul>
-                            </div>";
+                            </div>
+                            <div class='entered-forms'><a class='nav-items review btn btn-success w-50' style='color : white; display: none' id='form5_add_extension'
+                                    href='" . $base_url . "/formlar-review/Form5-review.php?form_id=" . $root5_id . "&display=1"."'>Add Extension</a></div>";
                             }
                             if($form_6_options !== ""){
                             echo "<div class='w-100 m-auto'>
                             <button class='entered-forms toggle_button btn btn-success w-75 m-auto align-items-center' id='form6_toggle'>Form 6 <span id='form6_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_6_options' style='display:none'>" . $form_6_options . "</ul>
-                            </div>";
+                            </div>
+                            <div class='entered-forms'><a class='nav-items review btn btn-success w-50' style='color : white; display: none' id='form6_add_extension'
+                                    href='" . $base_url . "/formlar-review/Form6-review.php?form_id=" . $root6_id . "&display=1"."'>Add Extension</a></div>";
                             }
                             if($form_7_options !== ""){
                             echo "<div class='w-100 m-auto'>
                             <button class='entered-forms toggle_button btn btn-success w-75 m-auto align-items-center' id='form7_toggle'>Form 7 <span id='form7_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_7_options' style='display:none'>" . $form_7_options . "</ul>
-                            </div>";
+                            </div>
+                            <div class='entered-forms'><a class='nav-items review btn btn-success w-50' style='color : white; display: none' id='form7_add_extension'
+                                    href='" . $base_url . "/formlar-review/Form7-review.php?form_id=" . $root7_id . "&display=1"."'>Add Extension</a></div>";
                             }
                             if($form_8_options !== ""){
                             echo "<div class='w-100 m-auto'>
                             <button class='entered-forms toggle_button btn btn-success w-75 m-auto align-items-center' id='form8_toggle'>Form 8 <span id='form8_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_8_options' style='display:none'>" . $form_8_options . "</ul>
-                            </div>";
+                            </div>
+                            <div class='entered-forms'><a class='nav-items review btn btn-success w-50' style='color : white; display: none' id='form8_add_extension'
+                                    href='" . $base_url . "/formlar-review/Form8-review.php?form_id=" . $root8_id . "&display=1"."'>Add Extension</a></div>";
+                            
                             }
                             if($form_9_options !== ""){
                             echo "<div class='w-100 m-auto'>
                             <button class='entered-forms toggle_button btn btn-success w-75 m-auto align-items-center' id='form9_toggle'>Form 9 <span id='form9_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_9_options' style='display:none'>" . $form_9_options . "</ul>
-                            </div>";
+                            </div>
+                            <div class='entered-forms'><a class='nav-items review btn btn-success w-50' style='color : white; display: none' id='form9_add_extension'
+                                    href='" . $base_url . "/formlar-review/Form9-review.php?form_id=" . $root9_id . "&display=1"."'>Add Extension</a></div>";
+                            
                             }
                             if($form_10_options !== ""){
                             echo "<div class='w-100 m-auto'>
                             <button class='entered-forms toggle_button btn btn-success w-75 m-auto align-items-center' id='form10_toggle'>Form 10 <span id='form10_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_10_options' style='display:none'>" . $form_10_options . "</ul>
-                            </div>";
+                            </div>
+                            <div class='entered-forms'><a class='nav-items review btn btn-success w-50' style='color : white; display: none' id='form10_add_extension'
+                                    href='" . $base_url . "/formlar-review/Form10-review.php?form_id=" . $root10_id . "&display=1"."'>Add Extension</a></div>";
+                            
                             }
                             if($form_11_options !== ""){
                             echo "<div class='w-100 m-auto'>
                             <button class='entered-forms toggle_button btn btn-success w-75 m-auto align-items-center' id='form11_toggle'>Form 11 <span id='form11_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_11_options' style='display:none'>" . $form_11_options . "</ul>
-                            </div>";
+                            </div>
+                            <div class='entered-forms'><a class='nav-items review btn btn-success w-50' style='color : white; display: none' id='form11_add_extension'
+                                    href='" . $base_url . "/formlar-review/Form11-review.php?form_id=" . $root11_id . "&display=1"."'>Add Extension</a></div>";
+                            
+                            
                             }
                             if($form_12_options !== ""){
                             echo "<div class='w-100 m-auto'>
                             <button class='entered-forms toggle_button btn btn-success w-75 m-auto align-items-center'  id='form12_toggle'>Form 12 <span id='form12_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_12_options' style='display:none'>" . $form_12_options . "</ul>
-                            </div>";
+                            </div>
+                            <div class='entered-forms'><a class='nav-items review btn btn-success w-50' style='color : white; display: none' id='form12_add_extension'
+                                    href='" . $base_url . "/formlar-review/Form12-review.php?form_id=" . $root12_id . "&display=1"."'>Add Extension</a></div>";
+                            
                             }
                             if($form_13_options !== ""){
                             echo "<div class='w-100 m-auto'>
                             <button class='entered-forms toggle_button btn btn-success w-75 m-auto align-items-center'  id='form13_toggle'>Form 13 <span id='form13_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_13_options' style='display:none'>" . $form_13_options . "</ul>
-                            </div>";
+                            </div>
+                            <div class='entered-forms'><a class='nav-items review btn btn-success w-50' style='color : white; display: none' id='form13_add_extension'
+                                    href='" . $base_url . "/formlar-review/Form13-review.php?form_id=" . $root13_id . "&display=1"."'>Add Extension</a></div>";
+                            
+                            
                             }
                             if($form_14_options !== ""){
                             echo "<div class='w-100 m-auto'>
                             <button class='entered-forms toggle_button btn btn-success w-75 m-auto align-items-center'  id='form14_toggle'>Form 14 <span id='form14_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_14_options' style='display:none'>" . $form_14_options . "</ul>
-                            </div>";
+                            </div>
+                            <div class='entered-forms'><a class='nav-items review btn btn-success w-50' style='color : white; display: none' id='form14_add_extension'
+                                    href='" . $base_url . "/formlar-review/Form14-review.php?form_id=" . $root14_id . "&display=1"."'>Add Extension</a></div>";
+                            
+                            
                             }
                             if($form_15_options !== ""){
                             echo "<div class='w-100 m-auto'>
                             <button class='entered-forms toggle_button btn btn-success w-75 m-auto align-items-center'  id='form15_toggle'>Form 15 <span id='form15_caret'>&#9660;<span></button>
                             <ul class='entered-forms-ul' id='form_15_options' style='display:none'>" . $form_15_options . "</ul>
-                            </div>";
+                            </div>
+                            <div class='entered-forms'><a class='nav-items review btn btn-success w-50' style='color : white; display: none' id='form15_add_extension'
+                                    href='" . $base_url . "/formlar-review/Form15-review.php?form_id=" . $root15_id . "&display=1"."'>Add Extension</a></div>";
+                            
+                            
+                            
                             }
                         
                         ?>
@@ -702,10 +798,12 @@ $(function() {
                 $("#form_2_options").slideToggle('slow');
                 if($("#form2_caret").css("transform") === "none"){
                     $("#form2_caret").css("transform", "rotate(180deg)");
+                    $("#form2_add_extension").css("display", "block");
                     
                 }
                 else{
                     $("#form2_caret").css("transform", "");
+                    $("#form2_add_extension").css("display", "none");
                 }
                 $("#form_3_options").slideUp('slow');
                 $("#form3_caret").css("transform", "");
@@ -755,6 +853,8 @@ $(function() {
                 $("#form25_caret").css("transform", "");
                 $("#form1_sections_options").slideUp('slow');
                 $("#form1_caret").css("transform", "");
+                $("#form_26_options").slideUp('slow');
+                $("#form26_caret").css("transform", "");
 
             })
         });
@@ -764,9 +864,11 @@ $(function() {
                 $("#form_3_options").slideToggle('slow');
                 if($("#form3_caret").css("transform") === "none"){
                     $("#form3_caret").css("transform", "rotate(180deg)");
+                    $("#form3_add_extension").css("display", "block");
                 }
                 else{
                     $("#form3_caret").css("transform", "");
+                    $("#form3_add_extension").css("display", "none");
                 }
                 $("#form_2_options").slideUp('slow');
                 $("#form2_caret").css("transform", "");
@@ -816,6 +918,8 @@ $(function() {
                 $("#form25_caret").css("transform", "");
                 $("#form1_sections_options").slideUp('slow');
                 $("#form1_caret").css("transform", "");
+                $("#form_26_options").slideUp('slow');
+                $("#form26_caret").css("transform", "");
             })
         });
         $(function() {
@@ -824,9 +928,11 @@ $(function() {
                 $("#form_4_options").slideToggle('slow');
                 if($("#form4_caret").css("transform") === "none"){
                     $("#form4_caret").css("transform", "rotate(180deg)");
+                    $("#form4_add_extension").css("display", "block");
                 }
                 else{
                     $("#form4_caret").css("transform", "");
+                    $("#form4_add_extension").css("display", "none");
                 }
                 $("#form_2_options").slideUp('slow');
                 $("#form2_caret").css("transform", "");
@@ -876,6 +982,8 @@ $(function() {
                 $("#form25_caret").css("transform", "");
                 $("#form1_sections_options").slideUp('slow');
                 $("#form1_caret").css("transform", "");
+                $("#form_26_options").slideUp('slow');
+                $("#form26_caret").css("transform", "");
             })
         });
         $(function() {
@@ -884,9 +992,11 @@ $(function() {
                 $("#form_5_options").slideToggle('slow');
                 if($("#form5_caret").css("transform") === "none"){
                     $("#form5_caret").css("transform", "rotate(180deg)");
+                    $("#form5_add_extension").css("display", "block");
                 }
                 else{
                     $("#form5_caret").css("transform", "");
+                    $("#form5_add_extension").css("display", "none");
                 }
                 $("#form_2_options").slideUp('slow');
                 $("#form2_caret").css("transform", "");
@@ -936,6 +1046,8 @@ $(function() {
                 $("#form25_caret").css("transform", "");
                 $("#form1_sections_options").slideUp('slow');
                 $("#form1_caret").css("transform", "");
+                $("#form_26_options").slideUp('slow');
+                $("#form26_caret").css("transform", "");
             })
         });
         $(function() {
@@ -944,9 +1056,11 @@ $(function() {
                 $("#form_6_options").slideToggle('slow');
                 if($("#form6_caret").css("transform") === "none"){
                     $("#form6_caret").css("transform", "rotate(180deg)");
+                    $("#form6_add_extension").css("display", "block");
                 }
                 else{
                     $("#form6_caret").css("transform", "");
+                    $("#form6_add_extension").css("display", "none");
                 }
                 $("#form_2_options").slideUp('slow');
                 $("#form2_caret").css("transform", "");
@@ -996,6 +1110,8 @@ $(function() {
                 $("#form25_caret").css("transform", "");
                 $("#form1_sections_options").slideUp('slow');
                 $("#form1_caret").css("transform", "");
+                $("#form_26_options").slideUp('slow');
+                $("#form26_caret").css("transform", "");
             })
         });
         $(function() {
@@ -1004,9 +1120,11 @@ $(function() {
                 $("#form_7_options").slideToggle('slow');
                 if($("#form7_caret").css("transform") === "none"){
                     $("#form7_caret").css("transform", "rotate(180deg)");
+                    $("#form7_add_extension").css("display", "block");
                 }
                 else{
                     $("#form7_caret").css("transform", "");
+                    $("#form7_add_extension").css("display", "none");
                 }
                 $("#form_2_options").slideUp('slow');
                 $("#form2_caret").css("transform", "");
@@ -1056,6 +1174,8 @@ $(function() {
                 $("#form25_caret").css("transform", "");
                 $("#form1_sections_options").slideUp('slow');
                 $("#form1_caret").css("transform", "");
+                $("#form_26_options").slideUp('slow');
+                $("#form26_caret").css("transform", "");
             })
         });
         $(function() {
@@ -1064,9 +1184,11 @@ $(function() {
                 $("#form_8_options").slideToggle('slow');
                 if($("#form8_caret").css("transform") === "none"){
                     $("#form8_caret").css("transform", "rotate(180deg)");
+                    $("#form8_add_extension").css("display", "block");
                 }
                 else{
                     $("#form8_caret").css("transform", "");
+                    $("#form8_add_extension").css("display", "none");
                 }
                 $("#form_2_options").slideUp('slow');
                 $("#form2_caret").css("transform", "");
@@ -1116,6 +1238,8 @@ $(function() {
                 $("#form25_caret").css("transform", "");
                 $("#form1_sections_options").slideUp('slow');
                 $("#form1_caret").css("transform", "");
+                $("#form_26_options").slideUp('slow');
+                $("#form26_caret").css("transform", "");
             })
         });
         $(function() {
@@ -1124,9 +1248,11 @@ $(function() {
                 $("#form_9_options").slideToggle('slow');
                 if($("#form9_caret").css("transform") === "none"){
                     $("#form9_caret").css("transform", "rotate(180deg)");
+                    $("#form9_add_extension").css("display", "block");
                 }
                 else{
                     $("#form9_caret").css("transform", "");
+                    $("#form9_add_extension").css("display", "none");
                 }
                 $("#form_2_options").slideUp('slow');
                 $("#form2_caret").css("transform", "");
@@ -1176,6 +1302,8 @@ $(function() {
                 $("#form25_caret").css("transform", "");
                 $("#form1_sections_options").slideUp('slow');
                 $("#form1_caret").css("transform", "");
+                $("#form_26_options").slideUp('slow');
+                $("#form26_caret").css("transform", "");
             })
         });
         $(function() {
@@ -1184,9 +1312,11 @@ $(function() {
                 $("#form_10_options").slideToggle('slow');
                 if($("#form10_caret").css("transform") === "none"){
                     $("#form10_caret").css("transform", "rotate(180deg)");
+                    $("#form10_add_extension").css("display", "block");
                 }
                 else{
                     $("#form10_caret").css("transform", "");
+                    $("#form10_add_extension").css("display", "none");
                 }
                 $("#form_2_options").slideUp('slow');
                 $("#form2_caret").css("transform", "");
@@ -1236,6 +1366,8 @@ $(function() {
                 $("#form25_caret").css("transform", "");
                 $("#form1_sections_options").slideUp('slow');
                 $("#form1_caret").css("transform", "");
+                $("#form_26_options").slideUp('slow');
+                $("#form26_caret").css("transform", "");
             })
         });
         $(function() {
@@ -1244,9 +1376,11 @@ $(function() {
                 $("#form_11_options").slideToggle('slow');
                 if($("#form11_caret").css("transform") === "none"){
                     $("#form11_caret").css("transform", "rotate(180deg)");
+                    $("#form11_add_extension").css("display", "block");
                 }
                 else{
                     $("#form11_caret").css("transform", "");
+                    $("#form11_add_extension").css("display", "none");
                 }
                 $("#form_2_options").slideUp('slow');
                 $("#form2_caret").css("transform", "");
@@ -1296,6 +1430,8 @@ $(function() {
                 $("#form25_caret").css("transform", "");
                 $("#form1_sections_options").slideUp('slow');
                 $("#form1_caret").css("transform", "");
+                $("#form_26_options").slideUp('slow');
+                $("#form26_caret").css("transform", "");
             })
         });
         $(function() {
@@ -1304,9 +1440,11 @@ $(function() {
                 $("#form_12_options").slideToggle('slow');
                 if($("#form12_caret").css("transform") === "none"){
                     $("#form12_caret").css("transform", "rotate(180deg)");
+                    $("#form12_add_extension").css("display", "block");
                 }
                 else{
                     $("#form12_caret").css("transform", "");
+                    $("#form12_add_extension").css("display", "none");
                 }
                 $("#form_2_options").slideUp('slow');
                 $("#form2_caret").css("transform", "");
@@ -1356,6 +1494,8 @@ $(function() {
                 $("#form25_caret").css("transform", "");
                 $("#form1_sections_options").slideUp('slow');
                 $("#form1_caret").css("transform", "");
+                $("#form_26_options").slideUp('slow');
+                $("#form26_caret").css("transform", "");
             })
         });
         $(function() {
@@ -1364,9 +1504,11 @@ $(function() {
                 $("#form_13_options").slideToggle('slow');
                 if($("#form13_caret").css("transform") === "none"){
                     $("#form13_caret").css("transform", "rotate(180deg)");
+                    $("#form13_add_extension").css("display", "block");
                 }
                 else{
                     $("#form13_caret").css("transform", "");
+                    $("#form13_add_extension").css("display", "none");
                 }
                 $("#form_2_options").slideUp('slow');
                 $("#form2_caret").css("transform", "");
@@ -1416,6 +1558,8 @@ $(function() {
                 $("#form25_caret").css("transform", "");
                 $("#form1_sections_options").slideUp('slow');
                 $("#form1_caret").css("transform", "");
+                $("#form_26_options").slideUp('slow');
+                $("#form26_caret").css("transform", "");
             })
         });
         $(function() {
@@ -1424,9 +1568,11 @@ $(function() {
                 $("#form_14_options").slideToggle('slow');
                 if($("#form14_caret").css("transform") === "none"){
                     $("#form14_caret").css("transform", "rotate(180deg)");
+                    $("#form14_add_extension").css("display", "block");
                 }
                 else{
                     $("#form14_caret").css("transform", "");
+                    $("#form14_add_extension").css("display", "none");
                 }
                 $("#form_2_options").slideUp('slow');
                 $("#form2_caret").css("transform", "");
@@ -1476,6 +1622,8 @@ $(function() {
                 $("#form25_caret").css("transform", "");
                 $("#form1_sections_options").slideUp('slow');
                 $("#form1_caret").css("transform", "");
+                $("#form_26_options").slideUp('slow');
+                $("#form26_caret").css("transform", "");
             })
         });
         $(function() {
@@ -1484,9 +1632,11 @@ $(function() {
                 $("#form_15_options").slideToggle('slow');
                 if($("#form15_caret").css("transform") === "none"){
                     $("#form15_caret").css("transform", "rotate(180deg)");
+                    $("#form15_add_extension").css("display", "block");
                 }
                 else{
                     $("#form15_caret").css("transform", "");
+                    $("#form15_add_extension").css("display", "none");
                 }
                 $("#form_2_options").slideUp('slow');
                 $("#form2_caret").css("transform", "");
@@ -1536,6 +1686,8 @@ $(function() {
                 $("#form25_caret").css("transform", "");
                 $("#form1_sections_options").slideUp('slow');
                 $("#form1_caret").css("transform", "");
+                $("#form_26_options").slideUp('slow');
+                $("#form26_caret").css("transform", "");
             })
         });
         $(function() {
@@ -1544,9 +1696,11 @@ $(function() {
                 $("#form_16_options").slideToggle('slow');
                 if($("#form16_caret").css("transform") === "none"){
                     $("#form16_caret").css("transform", "rotate(180deg)");
+                    $("#form16_add_extension").css("display", "block");
                 }
                 else{
                     $("#form16_caret").css("transform", "");
+                    $("#form16_add_extension").css("display", "none");
                 }
                 $("#form_2_options").slideUp('slow');
                 $("#form2_caret").css("transform", "");
@@ -1594,6 +1748,8 @@ $(function() {
                 $("#form24_caret").css("transform", "");
                 $("#form_25_options").slideUp('slow');
                 $("#form25_caret").css("transform", "");
+                $("#form_26_options").slideUp('slow');
+                $("#form26_caret").css("transform", "");
             })
         });
         $(function() {
@@ -1602,9 +1758,11 @@ $(function() {
                 $("#form_17_options").slideToggle('slow');
                 if($("#form17_caret").css("transform") === "none"){
                     $("#form17_caret").css("transform", "rotate(180deg)");
+                    $("#form17_add_extension").css("display", "block");
                 }
                 else{
                     $("#form17_caret").css("transform", "");
+                    $("#form17_add_extension").css("display", "none");
                 }
                 $("#form_2_options").slideUp('slow');
                 $("#form2_caret").css("transform", "");
@@ -1652,6 +1810,8 @@ $(function() {
                 $("#form24_caret").css("transform", "");
                 $("#form_25_options").slideUp('slow');
                 $("#form25_caret").css("transform", "");
+                $("#form_26_options").slideUp('slow');
+                $("#form26_caret").css("transform", "");
             })
         });
         $(function() {
@@ -1660,9 +1820,11 @@ $(function() {
                 $("#form_18_options").slideToggle('slow');
                 if($("#form18_caret").css("transform") === "none"){
                     $("#form18_caret").css("transform", "rotate(180deg)");
+                    $("#form18_add_extension").css("display", "block");
                 }
                 else{
                     $("#form18_caret").css("transform", "");
+                    $("#form18_add_extension").css("display", "none");
                 }
                 $("#form_2_options").slideUp('slow');
                 $("#form2_caret").css("transform", "");
@@ -1710,6 +1872,8 @@ $(function() {
                 $("#form24_caret").css("transform", "");
                 $("#form_25_options").slideUp('slow');
                 $("#form25_caret").css("transform", "");
+                $("#form_26_options").slideUp('slow');
+                $("#form26_caret").css("transform", "");
             })
         });
         $(function() {
@@ -1718,9 +1882,11 @@ $(function() {
                 $("#form_19_options").slideToggle('slow');
                 if($("#form19_caret").css("transform") === "none"){
                     $("#form19_caret").css("transform", "rotate(180deg)");
+                    $("#form19_add_extension").css("display", "block");
                 }
                 else{
                     $("#form19_caret").css("transform", "");
+                    $("#form19_add_extension").css("display", "none");
                 }
                 $("#form_2_options").slideUp('slow');
                 $("#form2_caret").css("transform", "");
@@ -1768,6 +1934,8 @@ $(function() {
                 $("#form24_caret").css("transform", "");
                 $("#form_25_options").slideUp('slow');
                 $("#form25_caret").css("transform", "");
+                $("#form_26_options").slideUp('slow');
+                $("#form26_caret").css("transform", "");
             })
         });
         $(function() {
@@ -1776,9 +1944,11 @@ $(function() {
                 $("#form_20_options").slideToggle('slow');
                 if($("#form20_caret").css("transform") === "none"){
                     $("#form20_caret").css("transform", "rotate(180deg)");
+                    $("#form20_add_extension").css("display", "block");
                 }
                 else{
                     $("#form20_caret").css("transform", "");
+                    $("#form20_add_extension").css("display", "none");
                 }
                 $("#form_2_options").slideUp('slow');
                 $("#form2_caret").css("transform", "");
@@ -1826,6 +1996,8 @@ $(function() {
                 $("#form24_caret").css("transform", "");
                 $("#form_25_options").slideUp('slow');
                 $("#form25_caret").css("transform", "");
+                $("#form_26_options").slideUp('slow');
+                $("#form26_caret").css("transform", "");
             })
         });
         $(function() {
@@ -1834,9 +2006,11 @@ $(function() {
                 $("#form_21_options").slideToggle('slow');
                 if($("#form21_caret").css("transform") === "none"){
                     $("#form21_caret").css("transform", "rotate(180deg)");
+                    $("#form21_add_extension").css("display", "block");
                 }
                 else{
                     $("#form21_caret").css("transform", "");
+                    $("#form21_add_extension").css("display", "none");
                 }
                 $("#form_2_options").slideUp('slow');
                 $("#form2_caret").css("transform", "");
@@ -1884,6 +2058,8 @@ $(function() {
                 $("#form24_caret").css("transform", "");
                 $("#form_25_options").slideUp('slow');
                 $("#form25_caret").css("transform", "");
+                $("#form_26_options").slideUp('slow');
+                $("#form26_caret").css("transform", "");
             })
         });
         $(function() {
@@ -1892,9 +2068,11 @@ $(function() {
                 $("#form1_sections_options").slideToggle('slow');
                 if($("#form1_caret").css("transform") === "none"){
                     $("#form1_caret").css("transform", "rotate(180deg)");
+                    $("#form1_add_extension").css("display", "block");
                 }
                 else{
                     $("#form1_caret").css("transform", "");
+                    $("#form1_add_extension").css("display", "none");
                 }
                 $("#form_2_options").slideUp('slow');
                 $("#form2_caret").css("transform", "");
@@ -1944,6 +2122,8 @@ $(function() {
                 $("#form24_caret").css("transform", "");
                 $("#form_25_options").slideUp('slow');
                 $("#form25_caret").css("transform", "");
+                $("#form_26_options").slideUp('slow');
+                $("#form26_caret").css("transform", "");
             })
         });
         $(function() {
@@ -1952,9 +2132,11 @@ $(function() {
                 $("#form_22_options").slideToggle('slow');
                 if($("#form22_caret").css("transform") === "none"){
                     $("#form22_caret").css("transform", "rotate(180deg)");
+                    $("#form22_add_extension").css("display", "block");
                 }
                 else{
                     $("#form22_caret").css("transform", "");
+                    $("#form22_add_extension").css("display", "none");
                 }
                 $("#form_2_options").slideUp('slow');
                 $("#form2_caret").css("transform", "");
@@ -2002,6 +2184,8 @@ $(function() {
                 $("#form24_caret").css("transform", "");
                 $("#form_25_options").slideUp('slow');
                 $("#form25_caret").css("transform", "");
+                $("#form_26_options").slideUp('slow');
+                $("#form26_caret").css("transform", "");
             })
         });
         $(function() {
@@ -2010,9 +2194,11 @@ $(function() {
                 $("#form_23_options").slideToggle('slow');
                 if($("#form23_caret").css("transform") === "none"){
                     $("#form23_caret").css("transform", "rotate(180deg)");
+                    $("#form23_add_extension").css("display", "block");
                 }
                 else{
                     $("#form23_caret").css("transform", "");
+                    $("#form23_add_extension").css("display", "none");
                 }
                 $("#form_2_options").slideUp('slow');
                 $("#form2_caret").css("transform", "");
@@ -2060,6 +2246,8 @@ $(function() {
                 $("#form24_caret").css("transform", "");
                 $("#form_25_options").slideUp('slow');
                 $("#form25_caret").css("transform", "");
+                $("#form_26_options").slideUp('slow');
+                $("#form26_caret").css("transform", "");
             })
         });
         $(function() {
@@ -2068,9 +2256,11 @@ $(function() {
                 $("#form_24_options").slideToggle('slow');
                 if($("#form24_caret").css("transform") === "none"){
                     $("#form24_caret").css("transform", "rotate(180deg)");
+                    $("#form24_add_extension").css("display", "block");
                 }
                 else{
                     $("#form24_caret").css("transform", "");
+                    $("#form24_add_extension").css("display", "none");
                 }
                 $("#form_2_options").slideUp('slow');
                 $("#form2_caret").css("transform", "");
@@ -2118,6 +2308,8 @@ $(function() {
                 $("#form23_caret").css("transform", "");
                 $("#form_25_options").slideUp('slow');
                 $("#form25_caret").css("transform", "");
+                $("#form_26_options").slideUp('slow');
+                $("#form26_caret").css("transform", "");
             })
         });
         $(function() {
@@ -2126,9 +2318,11 @@ $(function() {
                 $("#form_25_options").slideToggle('slow');
                 if($("#form25_caret").css("transform") === "none"){
                     $("#form25_caret").css("transform", "rotate(180deg)");
+                    $("#form25_add_extension").css("display", "block");
                 }
                 else{
                     $("#form25_caret").css("transform", "");
+                    $("#form25_add_extension").css("display", "none");
                 }
                 $("#form_2_options").slideUp('slow');
                 $("#form2_caret").css("transform", "");
@@ -2176,6 +2370,70 @@ $(function() {
                 $("#form23_caret").css("transform", "");
                 $("#form_24_options").slideUp('slow');
                 $("#form24_caret").css("transform", "");
+                $("#form_26_options").slideUp('slow');
+                $("#form26_caret").css("transform", "");
+            })
+        });
+        $(function() {
+            $("button#form26_toggle").on("click", function(e) {
+                e.preventDefault();
+                $("#form_26_options").slideToggle('slow');
+                if($("#form26_caret").css("transform") === "none"){
+                    $("#form26_caret").css("transform", "rotate(180deg)");
+                    $("#form26_add_extension").css("display", "block");
+                }
+                else{
+                    $("#form25_caret").css("transform", "");
+                    $("#form25_add_extension").css("display", "none");
+                }
+                $("#form_2_options").slideUp('slow');
+                $("#form2_caret").css("transform", "");
+                $("#form_3_options").slideUp('slow');
+                $("#form3_caret").css("transform", "");
+                $("#form_4_options").slideUp('slow');
+                $("#form4_caret").css("transform", "");
+                $("#form_5_options").slideUp('slow');
+                $("#form5_caret").css("transform", "");
+                $("#form_6_options").slideUp('slow');
+                $("#form6_caret").css("transform", "");
+                $("#form_7_options").slideUp('slow');
+                $("#form7_caret").css("transform", "");
+                $("#form_8_options").slideUp('slow');
+                $("#form8_caret").css("transform", "");
+                $("#form_9_options").slideUp('slow');
+                $("#form9_caret").css("transform", "");
+                $("#form_10_options").slideUp('slow');
+                $("#form10_caret").css("transform", "");
+                $("#form_11_options").slideUp('slow');
+                $("#form11_caret").css("transform", "");
+                $("#form_12_options").slideUp('slow');
+                $("#form12_caret").css("transform", "");
+                $("#form_13_options").slideUp('slow');
+                $("#form13_caret").css("transform", "");
+                $("#form_14_options").slideUp('slow');
+                $("#form14_caret").css("transform", "");
+                $("#form_15_options").slideUp('slow');
+                $("#form15_caret").css("transform", "");
+                $("#form_16_options").slideUp('slow');
+                $("#form16_caret").css("transform", "");
+                $("#form_17_options").slideUp('slow');
+                $("#form17_caret").css("transform", "");
+                $("#form_18_options").slideUp('slow');
+                $("#form18_caret").css("transform", "");
+                $("#form_19_options").slideUp('slow');
+                $("#form19_caret").css("transform", "");
+                $("#form_20_options").slideUp('slow');
+                $("#form20_caret").css("transform", "");
+                $("#form_21_options").slideUp('slow');
+                $("#form21_caret").css("transform", "");
+                $("#form_22_options").slideUp('slow');
+                $("#form22_caret").css("transform", "");
+                $("#form_23_options").slideUp('slow');
+                $("#form23_caret").css("transform", "");
+                $("#form_24_options").slideUp('slow');
+                $("#form24_caret").css("transform", "");
+                $("#form_25_options").slideUp('slow');
+                $("#form25_caret").css("transform", "");
             })
         });
         //new_forms_toggle

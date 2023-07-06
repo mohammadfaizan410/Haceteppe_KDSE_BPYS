@@ -83,6 +83,9 @@ if (isset($_GET['logout'])) {
                             <tr class="darkcyan table-head">
                                 <th scope="col" style="font-weight : bold; font-size: large;"></th>
                             </tr>
+                            <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
+                                  href="<?php echo $base_url; ?>/tanılar/boshTani.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&root_id=0&parent_id=0">BoshTani</a>
+                            </div></td></tr>
                             <tr><td><div class="mt-3 entered-forms align-items-center"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;"
                                href="<?php echo $base_url; ?>/tanılar/tani1.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&root_id=0&parent_id=0">Tanı1</a><div></td></tr>
                           <tr><td> <div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;" 
@@ -276,6 +279,7 @@ if (isset($_GET['logout'])) {
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
                                   href="<?php echo $base_url; ?>/tanılar/tani49.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&root_id=0&parent_id=0">Tanı49</a>
                             </div></td></tr>
+                          
                            </thead>
                         <tbody>
                         </tbody>
