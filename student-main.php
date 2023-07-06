@@ -55,8 +55,7 @@ if (isset($_GET['logout'])) {
             </div>
             <div class=" navigation-right">
                 <div class="nav-items-wrapper">
-                    <a href="messaging.php" class="nav-link nav-items"><i class="fa fa-comments me-2"></i>Mesajlar</a>
-                    <a href="./broadcast.php" class="nav-link nav-items"><i class="fa fa-comments me-2"></i>Forum</a>
+                    <a href="./broadcastStudent.php" class="nav-link nav-items"><i class="fa fa-comments me-2"></i>Forum</a>
                     <a class="nav-link nav-items" href="./updateForms/showAllPatients.php"><i
                             class="fa fa-comments-patient me-2"></i>Tüm hastaları göster</a>
                     <a class="nav-link nav-items" href="./addNewPatient.php"><i
@@ -156,6 +155,7 @@ if (isset($_GET['logout'])) {
     });
     </script>
     <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/chart/chart.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
@@ -166,7 +166,7 @@ if (isset($_GET['logout'])) {
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
     <!-- Template Javascript -->
-    
+    <script src=""></script>
 </body>
 
 </html>

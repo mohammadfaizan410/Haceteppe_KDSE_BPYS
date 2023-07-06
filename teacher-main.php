@@ -56,6 +56,8 @@ if (isset($_GET['logout'])) {
             </div>
             <div class="navigation-right">
                 <div class="nav-items-wrapper">
+
+                <a href="./broadcastTeacher.php" class="nav-link nav-items"><i class="fa fa-comments me-2"></i>Forum</a>
                     <a href="./updateForms/showAllStudents.php" id="formlar" class="nav-link nav-items formlar"> <i class="fa fa-table me-2 "></i>Öğrenciler</a>
                 </div>
                 <div>

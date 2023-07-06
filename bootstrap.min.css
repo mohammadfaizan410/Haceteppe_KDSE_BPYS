@@ -3060,15 +3060,15 @@ textarea.form-control.is-invalid {
     }
 }
 
-.btn:hover {
+/* .btn:hover {
     color: #6C7293
-}
+} */
 
 .btn-check:focus+.btn,
-.btn:focus {
+/* .btn:focus {
     outline: 0;
     box-shadow: 0 0 0 .25rem rgba(235, 22, 22, 0.25)
-}
+} */
 
 .btn:disabled,
 .btn.disabled,
@@ -3079,21 +3079,21 @@ fieldset:disabled .btn {
 
 .btn-primary {
     color: #fff;
-    background-color: #246174 !important;
-    border-color: #246174 !important
+    background-color: #6E60AA !important;
+    border-color: #6E60AA !important
 }
 
 .btn-primary:hover {
     color: #fff;
-    background-color: #246174 !important;
-    border-color: #246174 !important
+    background-color: #6E60AA !important;
+    border-color: #6E60AA !important
 }
 
 .btn-check:focus+.btn-primary,
 .btn-primary:focus {
     color: #fff;
-    background-color: #246174 !important;
-    border-color: #246174 !important;
+    background-color: #6E60AA !important;
+    border-color: #6E60AA !important;
     box-shadow: 0 0 0 .25rem rgba(238, 57, 57, 0.5)
 }
 
@@ -3172,22 +3172,21 @@ fieldset:disabled .btn {
     background-color: #6E60AA;
     border-color: #6E60AA
 }
-
+/* 
 .btn-success:hover {
     color: #fff;
     background-color: #6E60AA;
     border-color: #6E60AA
-}
-
+} */
+/* 
 .btn-check:focus+.btn-success,
 .btn-success:focus {
     color: #fff;
     background-color: #6E60AA;
     border-color: #6E60AA;
-    box-shadow: 0 0 0 .25rem rgba(60, 153, 110, 0.5)
-}
+} */
 
-.btn-check:checked+.btn-success,
+/* .btn-check:checked+.btn-success,
 .btn-check:active+.btn-success,
 .btn-success:active,
 .btn-success.active,
@@ -3195,22 +3194,22 @@ fieldset:disabled .btn {
     color: #fff;
     background-color: #6E60AA;
     border-color: #6E60AA
-}
-
+} */
+/* 
 .btn-check:checked+.btn-success:focus,
 .btn-check:active+.btn-success:focus,
 .btn-success:active:focus,
 .btn-success.active:focus,
 .show>.btn-success.dropdown-toggle:focus {
     box-shadow: 0 0 0 .25rem #6E60AA
-}
+} */
 
-.btn-success:disabled,
+/* .btn-success:disabled,
 .btn-success.disabled {
     color: #fff;
     background-color: #198754;
     border-color: #198754
-}
+} */
 
 .btn-info {
     color: #000;
