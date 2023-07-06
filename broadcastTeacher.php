@@ -30,19 +30,18 @@ if (isset($_SESSION['userlogin'])) {
         echo '';
     }
     }
-    $sql = "SELECT * FROM messages WHERE FIND_IN_SET(:userid, reciever_list) ORDER BY id DESC";
-$stmt = $db->prepare($sql);
-$stmt->bindParam(':userid', $myUser, PDO::PARAM_STR);
-$stmt->execute();
-$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-if ($result) {
-    // The current ID exists in the receiver list
-    $all_messages = $result;
-} else {
-    // The current ID does not exist in the receiver list
-    echo '';
-}
+    $sql = "SELECT * FROM messages WHERE FIND_IN_SET(:userid, reciever_list) ORDER BY id DESC";
+    $stmt = $db->prepare($sql);
+    $stmt->bindParam(':userid', $myUser, PDO::PARAM_STR);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    if ($result) {
+        $all_messages = $result;
+    } else {
+        echo '';
+    }
 
 ?>
 
