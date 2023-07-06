@@ -88,14 +88,14 @@ if (isset($_GET['logout'])) {
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator"
-                                        id="noc_indicator" value="1: Hastada sürekli sulu gaita çıkışı var">
+                                        id="noc_indicator" value="1">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">1: Hastada sürekli sulu gaita çıkışı var</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator"
-                                        id="noc_indicator" value="2: Hastada sık sık sulu gaita çıkışı var ">
+                                        id="noc_indicator" value="2">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">2: Hastada sık sık sulu gaita çıkışı var </span>
                                     </label>
@@ -388,7 +388,7 @@ if (isset($_GET['logout'])) {
                                 <div class="form-check">
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required name="noc_indicator_after"
-                                            id="noc_indicator_after" value="1: Hastada sürekli sulu gaita çıkışı var">
+                                            id="noc_indicator_after" value="1">
                                         <label class="form-check-label" for="noc_indicator_after">
                                             <span class="checkbox-header">1: Hastada sürekli sulu gaita çıkışı
                                                 var</span>
@@ -396,7 +396,7 @@ if (isset($_GET['logout'])) {
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required name="noc_indicator_after"
-                                            id="noc_indicator_after" value="2: Hastada sık sık sulu gaita çıkışı var ">
+                                            id="noc_indicator_after" value="2">
                                         <label class="form-check-label" for="noc_indicator_after">
                                             <span class="checkbox-header">2: Hastada sık sık sulu gaita çıkışı var
                                             </span>

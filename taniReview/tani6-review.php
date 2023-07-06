@@ -166,35 +166,35 @@ if ($result) {
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio"  name="noc_indicator_2"
-                                        id="noc_indicator2" value="1: Hastanın idrarı ileri derecede yoğundur">
+                                        id="noc_indicator2" value="1">
                                     <label class="form-check-label" for="noc_indicator2">
                                         <span class="checkbox-header">1: Hastada şiddetli düzeyde ödem var </span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio"  name="noc_indicator_2"
-                                        id="noc_indicator2" value="2: Hastanın idrarı yoğundur">
+                                        id="noc_indicator2" value="2">
                                     <label class="form-check-label" for="noc_indicator2">
                                         <span class="checkbox-header">2: Hastada önemli düzeyde ödem var</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio"  name="noc_indicator_2"
-                                        id="noc_indicator2" value="3: Hastanın idrarı orta düzeyde yoğundur">
+                                        id="noc_indicator2" value="3">
                                     <label class="form-check-label" for="noc_indicator2">
                                         <span class="checkbox-header">3: Hastada orta düzeyde ödem var </span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio"  name="noc_indicator_2"
-                                        id="noc_indicator2" value="4: Hastada hafif düzeyde ödem var  ">
+                                        id="noc_indicator2" value="4">
                                     <label class="form-check-label" for="noc_indicator2">
                                         <span class="checkbox-header">4: Hastada hafif düzeyde ödem var </span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio"  name="noc_indicator_2" id="
-                                        noc_indicator2" value="5: Hastada ödem yok ">
+                                        noc_indicator2" value="5">
                                     <label class="form-check-label" for="noc_indicator2">
                                         <span class="checkbox-header">5: Hastada ödem yok </span>
                                     </label>
@@ -213,7 +213,7 @@ if ($result) {
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_3"
-                                        id="noc_indicator3" value="1: Hastanın kapiller dolum süresinde çok uzama var">
+                                        id="noc_indicator3" value="1">
                                     <label class="form-check-label" for="noc_indicator3">
                                         <span class="checkbox-header">1: Hastanın kapiller dolum süresinde çok uzama
                                             var</span>
@@ -222,7 +222,7 @@ if ($result) {
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_3"
                                         id="noc_indicator3"
-                                        value="2: Hastanın kapiller dolum süresinde büyük ölçüde uzama var">
+                                        value="2">
                                     <label class="form-check-label" for="noc_indicator3">
                                         <span class="checkbox-header">2: Hastanın kapiller dolum süresinde büyük ölçüde
                                             uzama var</span>
@@ -231,7 +231,7 @@ if ($result) {
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_3"
                                         id="noc_indicator3"
-                                        value="3: Hastanın kapiller dolum süresinde orta düzeyde uzama var">
+                                        value="3">
                                     <label class="form-check-label" for="noc_indicator3">
                                         <span class="checkbox-header">3: Hastanın kapiller dolum süresinde orta düzeyde
                                             uzama var</span>
@@ -240,7 +240,7 @@ if ($result) {
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_3"
                                         id="noc_indicator3"
-                                        value="4: Hastanın kapiller dolum süresinde biraz uzama var">
+                                        value="4">
                                     <label class="form-check-label" for="noc_indicator3">
                                         <span class="checkbox-header">4: Hastanın kapiller dolum süresinde biraz uzama
                                             var</span>
@@ -248,7 +248,7 @@ if ($result) {
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_3" id="
-                                        noc_indicator3" value="5: Hastanın kapiller dolum süresi normal (< 3 sn)">
+                                        noc_indicator3" value="5">
                                     <label class="form-check-label" for="noc_indicator3">
                                         <span class="checkbox-header">5: Hastanın kapiller dolum süresi normal (< 3
                                                 sn)</span>
@@ -577,7 +577,7 @@ if ($result) {
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required
                                             name="noc_indicator_after_2" id="noc_indicator_after_2"
-                                            value="1: Hastanın idrarı ileri derecede yoğundur">
+                                            value="1">
                                         <label class="form-check-label" for="noc_indicator2_after">
                                             <span class="checkbox-header">1: Hastada şiddetli düzeyde ödem var </span>
                                         </label>
@@ -585,7 +585,7 @@ if ($result) {
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required
                                             name="noc_indicator_after_2" id="noc_indicator_after_2"
-                                            value="2: Hastanın idrarı yoğundur">
+                                            value="2">
                                         <label class="form-check-label" for="noc_indicator2_after">
                                             <span class="checkbox-header">2: Hastada önemli düzeyde ödem var</span>
                                         </label>
@@ -593,7 +593,7 @@ if ($result) {
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required
                                             name="noc_indicator_after_2" id="noc_indicator_after_2"
-                                            value="3: Hastanın idrarı orta düzeyde yoğundur">
+                                            value="3">
                                         <label class="form-check-label" for="noc_indicator2_after">
                                             <span class="checkbox-header">3: Hastada orta düzeyde ödem var </span>
                                         </label>
@@ -601,7 +601,7 @@ if ($result) {
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required
                                             name="noc_indicator_after_2" id="noc_indicator_after_2"
-                                            value="4: Hastada hafif düzeyde ödem var  ">
+                                            value="4">
                                         <label class="form-check-label" for="noc_indicator2_after">
                                             <span class="checkbox-header">4: Hastada hafif düzeyde ödem var </span>
                                         </label>
@@ -609,7 +609,7 @@ if ($result) {
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required
                                             name="noc_indicator_after_2" id="
-                                        noc_indicator2_after" value="5: Hastada ödem yok ">
+                                        noc_indicator2_after" value="5">
                                         <label class="form-check-label" for="noc_indicator2_after">
                                             <span class="checkbox-header">5: Hastada ödem yok </span>
                                         </label>
@@ -630,7 +630,7 @@ if ($result) {
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required
                                             name="noc_indicator_after_3" id="noc_indicator3_after"
-                                            value="1: Hastanın kapiller dolum süresinde çok uzama var">
+                                            value="1">
                                         <label class="form-check-label" for="noc_indicator3_after">
                                             <span class="checkbox-header">1: Hastanın kapiller dolum süresinde çok uzama
                                                 var</span>
@@ -639,7 +639,7 @@ if ($result) {
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required
                                             name="noc_indicator_after_3" id="noc_indicator3_after"
-                                            value="2: Hastanın kapiller dolum süresinde büyük ölçüde uzama var">
+                                            value="2">
                                         <label class="form-check-label" for="noc_indicator3_after">
                                             <span class="checkbox-header">2: Hastanın kapiller dolum süresinde büyük
                                                 ölçüde
@@ -649,7 +649,7 @@ if ($result) {
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required
                                             name="noc_indicator_after_3" id="noc_indicator3_after"
-                                            value="3: Hastanın kapiller dolum süresinde orta düzeyde uzama var">
+                                            value="3">
                                         <label class="form-check-label" for="noc_indicator3_after">
                                             <span class="checkbox-header">3: Hastanın kapiller dolum süresinde orta
                                                 düzeyde
@@ -659,7 +659,7 @@ if ($result) {
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required
                                             name="noc_indicator_after_3" id="noc_indicator3_after"
-                                            value="4: Hastanın kapiller dolum süresinde biraz uzama var">
+                                            value="4">
                                         <label class="form-check-label" for="noc_indicator3_after">
                                             <span class="checkbox-header">4: Hastanın kapiller dolum süresinde biraz
                                                 uzama
@@ -670,7 +670,7 @@ if ($result) {
                                         <input class="form-check-input" type="radio" required
                                             name="noc_indicator_after_3" id="
                                         noc_indicator3_after"
-                                            value="5: Hastanın kapiller dolum süresi normal (< 3 sn)">
+                                            value="5">
                                         <label class="form-check-label" for="noc_indicator3_after">
                                             <span class="checkbox-header">5: Hastanın kapiller dolum süresi normal (< 3
                                                     sn)</span>

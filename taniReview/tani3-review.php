@@ -143,7 +143,7 @@ if ($result) {
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="
-                                        noc_indicator" value="5: Hastanın hava yolları tamamen açık">
+                                        noc_indicator" value="5">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">5: Hastanın hava yolları tamamen açık
                                         </span>
@@ -162,25 +162,25 @@ if ($result) {
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator2" value="1:  Hasta hiç balgam çıkartmıyor ">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator2" value="1">
                                     <label class="form-check-label" for="noc_indicator2">
                                         <span class="checkbox-header">1: Hasta hiç balgam çıkartmıyor </span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator2" value="2: Hasta nadiren balgam çıkartıyor">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator2" value="2">
                                     <label class="form-check-label" for="noc_indicator2">
                                         <span class="checkbox-header">2: Hasta nadiren balgam çıkartıyor</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator2" value="3. Hasta bazen balgam çıkartıyor">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator2" value="3">
                                     <label class="form-check-label" for="noc_indicator2">
                                         <span class="checkbox-header">3. Hasta bazen balgam çıkartıyor</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator2" value="4: Hasta sık sık balgam çıkartıyor">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator2" value="4">
                                     <label class="form-check-label" for="noc_indicator2">
                                         <span class="checkbox-header">4: Hasta sık sık balgam çıkartıyor</span>
                                     </label>
@@ -383,7 +383,7 @@ if ($result) {
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required name="noc_indicator_after" id="
-                                        noc_indicator_after" value="5: Hastanın hava yolları tamamen açık">
+                                        noc_indicator_after" value="5">
                                         <label class="form-check-label" for="noc_indicator_after">
                                             <span class="checkbox-header">5: Hastanın hava yolları tamamen açık
                                             </span>
@@ -402,25 +402,25 @@ if ($result) {
                                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                                 <div class="form-check">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator_after_2" value="1:  Hasta hiç balgam çıkartmıyor ">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator_after_2" value="1">
                                         <label class="form-check-label" for="noc_indicator_after_2">
                                             <span class="checkbox-header">1: Hasta hiç balgam çıkartmıyor </span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator_after_2" value="2: Hasta nadiren balgam çıkartıyor">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator_after_2" value="2">
                                         <label class="form-check-label" for="noc_indicator_after_2">
                                             <span class="checkbox-header">2: Hasta nadiren balgam çıkartıyor</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator_after_2" value="3. Hasta bazen balgam çıkartıyor">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator_after_2" value="3">
                                         <label class="form-check-label" for="noc_indicator_after_2">
                                             <span class="checkbox-header">3. Hasta bazen balgam çıkartıyor</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator_after_2" value="4: Hasta sık sık balgam çıkartıyor">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator_after_2" value="4">
                                         <label class="form-check-label" for="noc_indicator_after_2">
                                             <span class="checkbox-header">4: Hasta sık sık balgam çıkartıyor</span>
                                         </label>
