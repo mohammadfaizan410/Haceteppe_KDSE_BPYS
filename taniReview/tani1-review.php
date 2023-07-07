@@ -112,7 +112,6 @@ if($root_id == 0 && $parent_id == 0){
                         <div class="input-section" id="o2-delivery-container">
                             <p class="usernamelabel">NOC Gösterge: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                            <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator"
                                         id="noc_indicator"
@@ -158,7 +157,7 @@ if($root_id == 0 && $parent_id == 0){
                                     </label>
                                 </div>
 
-                            </div>
+                        
 
                         </div>
 
@@ -348,7 +347,6 @@ if($root_id == 0 && $parent_id == 0){
                         <div class="input-section" id="o2-delivery-container">
                             <p class="usernamelabel">NOC Gösterge: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                            <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after"
                                         id="noc_indicator_after"
@@ -394,7 +392,6 @@ if($root_id == 0 && $parent_id == 0){
                                     </label>
                                 </div>
 
-                            </div>
 
                         </div>
 

@@ -376,7 +376,6 @@ input[type="email"] {
     border: 2px solid #6E60AA;
     border-radius: 15px;
     padding: 20px;
-
 }
 
 .usernamelabel {
@@ -555,6 +554,9 @@ input[type="email"] {
     font-family: Arial;
 }
 
+#o2-delivery-container{
+    display: block;
+}
 
 
 .select-selected {
@@ -921,4 +923,5 @@ input[type="email"] {
         border-bottom: 1px solid #333333;
         font-weight: bold;
     }
+
 }

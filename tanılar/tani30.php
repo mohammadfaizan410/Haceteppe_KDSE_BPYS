@@ -100,7 +100,6 @@ if (isset($_GET['logout'])) {
                         <div class="input-section" id="o2-delivery-container">
                             <p id="tani_usernamelabel">NOC Gösterge: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                            <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1">
                                     <label class="form-check-label" for="noc_indicator">
@@ -132,7 +131,6 @@ if (isset($_GET['logout'])) {
                                     </label>
                                 </div>
 
-                            </div>
                         </div>
 
 
@@ -286,7 +284,6 @@ if (isset($_GET['logout'])) {
                         <div class="input-section" id="o2-delivery-container">
                             <p id="tani_usernamelabel">NOC Gösterge: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                            <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="1">
                                     <label class="form-check-label" for="noc_indicator">
@@ -321,7 +318,6 @@ if (isset($_GET['logout'])) {
                             </div>
                         </div>
 
-                        </div>
 
                         </div>
                                                                 <input type="submit" class="d-flex w-75 submit m-auto justify-content-center mb-5" name="submit" id="submit" value="Kaydet">              

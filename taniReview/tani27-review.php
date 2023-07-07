@@ -121,7 +121,6 @@ if ($result) {
                         <div class="input-section" id="o2-delivery-container">
                             <p id="tani_usernamelabel">NOC Gösterge: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                            <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1">
                                     <label class="form-check-label" for="noc_indicator">
@@ -153,7 +152,6 @@ if ($result) {
                                     </label>
                                 </div>
 
-                            </div>
                         </div>
 
                         <div class="input-section d-flex" style="flex-direction: column;">
@@ -316,7 +314,6 @@ if ($result) {
                         <div class="input-section" id="o2-delivery-container">
                             <p id="tani_usernamelabel">NOC Gösterge: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                            <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="1">
                                     <label class="form-check-label" for="noc_indicator">
@@ -348,7 +345,6 @@ if ($result) {
                                     </label>
                                 </div>
 
-                            </div>
                         </div>
 
                         </div>

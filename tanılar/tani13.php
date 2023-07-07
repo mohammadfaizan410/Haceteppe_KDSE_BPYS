@@ -100,7 +100,6 @@ $family_history = isset($_GET['family_history']) ? $_GET['family_history'] : 'Na
                             <p class="usernamelabel">NOC Gösterge: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
-                            <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1">
                                     <label class="form-check-label" for="noc_indicator">
@@ -134,7 +133,6 @@ $family_history = isset($_GET['family_history']) ? $_GET['family_history'] : 'Na
                                     </label>
                                 </div>
 
-                            </div>
                         </div>
 
                         <div class="input-section d-flex" style="flex-direction: column;">
@@ -254,8 +252,7 @@ $family_history = isset($_GET['family_history']) ? $_GET['family_history'] : 'Na
                             <p id="tani_usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hastanın günlük olarak izin verilen besinleri tüketmesi </p>
                         </div>
-                        <div class='input-section d-flex'>
-                            <div class="form-check">
+                        <div class='input-section '>
                                 <p class="usernamelabel">NOC Gösterge: </p>
                                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                                 <div class="form-check">
@@ -299,7 +296,6 @@ $family_history = isset($_GET['family_history']) ? $_GET['family_history'] : 'Na
                                     </label>
                                 </div>
 
-                            </div>
 
                             
                         </div>
