@@ -444,8 +444,6 @@ if (isset($_GET['logout'])) {
     });
 
     
-
-
     $(function() {
         $('#submit').click(function(e) {
             e.preventDefault()
@@ -458,9 +456,10 @@ if (isset($_GET['logout'])) {
             var age = $('#age').val();
             var not = $('#not').val();
             let form_num = 10;
-            let patient_name = "<?php
-                                    echo urldecode($_GET['patient_name']);
-                                    ?>";
+            let patient_name = <?php
+                                    echo json_encode($_GET['patient_name']);
+                                    ?>;
+            
             var patient_id = <?php
                                     $userid = $_GET['patient_id'];
                                     echo $userid
@@ -683,7 +682,7 @@ if (isset($_GET['logout'])) {
                         return false;
                     }
 
-
+                    console.log(patient_name)
             $.ajax({
                 type: 'POST',
                 url: '<?php echo $base_url; ?>/form-handlers/submitOrUpdateYasamsal_form10.php',

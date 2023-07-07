@@ -165,7 +165,7 @@ if($root_id == 0 && $parent_id == 0){
             let patient_name = "<?php
                                     echo urldecode($_GET['patient_name']);
                                     ?>";
-            var url = "<?php echo $base_url; ?>/updateForms/showAllTanis.php?patient_id=" + patient_id +
+            var url = "<?php echo $base_url; ?>/updateForms/showSubmittedTanis.php?patient_id=" + patient_id +
                 "&patient_name=" + encodeURIComponent(patient_name);
             $("#content").load(url);
         })
@@ -236,7 +236,6 @@ if($root_id == 0 && $parent_id == 0){
             var surname = $('#surname').val();
             var age = $('#age').val();
             var not = $('#not').val();
-            let form_num = 15;
             var patient_id = <?php
                                     $userid = $_GET['patient_id'];
                                     echo $userid
@@ -246,6 +245,7 @@ if($root_id == 0 && $parent_id == 0){
                                     ?>";
             let yourDate = new Date();
             let creationDate = yourDate.toISOString().split('T')[0];
+            let updateDate = yourDate.toISOString().split('T')[0];
             let taniDescription = $('#taniDescription').val();
             let nocCikti = $('#nocCikti').val();
             let nocCikti_after = $('#nocCikti_after').val();
@@ -261,6 +261,7 @@ if($root_id == 0 && $parent_id == 0){
                 type: 'POST',
                 url: '<?php echo $base_url; ?>/tani-handler/boshTaniHandler.php',
                 data: {
+                    tani_num: 0,
                     table: 'boshtani',
                     patient_id: patient_id,
                     patient_name: patient_name,
@@ -277,6 +278,8 @@ if($root_id == 0 && $parent_id == 0){
                     nurse_attempt: nurse_attempt,
                     nurse_education: nurse_education,
                     collaborative_apps: collaborative_apps,
+                    root_id : <?php echo $_GET['root_id']; ?>,
+                    parent_id : <?php echo $_GET['parent_id']; ?>,  
                                 },
                 success: function(data) {
                     alert(data)

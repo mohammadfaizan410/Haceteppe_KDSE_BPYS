@@ -377,10 +377,12 @@ $student_name = isset($_GET['student_name']) ? $_GET['student_name'] : '';
                     total: total
                 },
                 success: function(data) {
-                    let url =
-                        "<?php echo $base_url; ?>/updateForms/showSubmittedForms.php?patient_id=" +
-                        patient_id + "&patient_name=" + encodeURIComponent(patient_name);
-                        $("#tick-container").fadeIn(800);
+                    let patient_id = "<?php echo $form10[0]['patient_id']; ?>";
+                                let patient_name = "<?php echo $form10[0]['patient_name']; ?>";
+                                let url =
+                                    "<?php echo $base_url; ?>/updateForms/showSubmittedForms.php?patient_id=" +
+                                    patient_id + "&patient_name=" + encodeURIComponent(patient_name);
+                                    $("#tick-container").fadeIn(800);
                             // Change the tick background to the animated GIF
                             $("#tick").css("background-image", "url('./check-2.gif')");
 
@@ -391,7 +393,7 @@ $student_name = isset($_GET['student_name']) ? $_GET['student_name'] : '';
                             $("#tick-container").fadeOut(600);
                             // Hide the tick container
                             }, 1000);
-                },
+                            },
                 error: function(data) {
                     console.log(data);
                 }

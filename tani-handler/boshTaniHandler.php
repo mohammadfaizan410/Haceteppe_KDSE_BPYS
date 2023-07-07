@@ -6,7 +6,7 @@ $table_name = 'boshtani';
 if (isset($_POST["patient_name"])) {
     $stmt = $db->prepare("INSERT INTO $table_name (
             tani_num,
-            `patient-id`,
+            patient_id,
             patient_name,
             creation_date,
             update_date,

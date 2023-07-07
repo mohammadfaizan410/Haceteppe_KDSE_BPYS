@@ -879,7 +879,7 @@ taniString.split('/').forEach(function(item) {
       $('<div></div>').addClass('mt-3 entered-forms align-items-center').append(
         $('<a></a>').addClass('nav-items review btn btn-success w-50 p-3').attr({
           style: 'color: white;',
-          href: "<?php echo $base_url; ?>/tanılar/" + item + ".php?patient_id=" + patient_id + "&patient_name=" + patient_name + "&root_id=NULL&parent_id=NULL",
+          href: "<?php echo $base_url; ?>/tanılar/" + item + ".php?patient_id=" + patient_id + "&patient_name=" + patient_name + "&root_id=0&parent_id=0",
         }).text(item)
       )
     );

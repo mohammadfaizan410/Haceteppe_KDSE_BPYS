@@ -118,7 +118,7 @@ $student_name = isset($_GET['student_name']) ? $_GET['student_name'] : '';
                     <form action="" method="POST" class="patients-save-fields">
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Patient Name:</p>
-                            <input type="text" class="form-control" required value=<?php echo $form10[0]['patient_name']; ?> name="patient_name" id="diger" placeholder="Patient Name" disabled>
+                            <input type="text" class="form-control" required value=<?php echo json_encode($form10[0]['patient_name']); ?> name="patient_name" id="diger" placeholder="Patient Name" disabled>
                         </div>
                         <div class="input-section d-flex">
                             <p class="usernamelabel">Patient ID:</p>
@@ -362,11 +362,6 @@ $student_name = isset($_GET['student_name']) ? $_GET['student_name'] : '';
                         <div class="input-section d-flex" id="kilo_yapiliyor">
                             <p class="usernamelabel">Günlük Kilo Takibi:</p>
                             <input type="text" class="form-control" value="<?php echo $form10[0]['weight_input']; ?>" name="weight_input" id="diger" placeholder="Günlük Kilo Takibi">
-                        </div>
-                        <div class='tani1-warning' id="tani1-warning">
-                            <p>Girdileriniz Gaz Değişiminde Bozulma Tanısı ile uyuşuyor bu tanıyı eklemek ister misiniz?
-                            </p>
-                            <a class='addtanı' href='#'>Ekle</a>
                         </div>
                         <?php
                         if ($display == 1) {
@@ -665,7 +660,7 @@ $student_name = isset($_GET['student_name']) ? $_GET['student_name'] : '';
                             ?>;
                         var form_id = <?php echo $form_id ?>;
                         let form_num = 10;
-                        let patient_name = "<?php echo $form10[0]['patient_name']; ?>"
+                        let patient_name = <?php echo json_encode($form10[0]['patient_name']); ?>;
                         var patient_id = "<?php echo $form10[0]['patient_id']; ?>"
                         let yourDate = new Date()
                         let creationDate = yourDate.toISOString().split('T')[0];
