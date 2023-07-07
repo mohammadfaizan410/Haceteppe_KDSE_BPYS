@@ -293,36 +293,42 @@ if (isset($_GET['logout'])) {
                     let yourDate = new Date()
                     let creation_date = yourDate.toISOString().split('T')[0];
                     let updateDate = yourDate.toISOString().split('T')[0];
-                    let confusion_point = parseInt($("input[name='confusion_point']").val());
+                    let confusion_point = parseInt($("input[name='confusion_point']:checked").val()) ? parseInt($(
+                        "input[name='confusion_point']:checked").val()) : 0;
                     if (isNaN(confusion_point)) {
                         confusion_point = 0;
                     }
-                    let symtomatic_depression_point = parseInt($(
-                        "input[name='symtomatic_depression_point']").val());
+                    let symtomatic_depression_point = parseInt($("input[name='symtomatic_depression_point']:checked").val())  ? parseInt($(
+                        "input[name='symtomatic_depression_point']:checked").val()) : 0;
                     if (isNaN(symtomatic_depression_point)) {
                         symtomatic_depression_point = 0;
                     }
-                    let evacuation_trouble = parseInt($("input[name='evacuation_trouble']").val());
+                    let evacuation_trouble = parseInt($("input[name='evacuation_trouble']:checked").val()) ? parseInt($(
+                        "input[name='evacuation_trouble']:checked").val()) : 0;
                     if (isNaN(evacuation_trouble)) {
                         evacuation_trouble = 0;
                     }
-                    let dizziness_point = parseInt($("input[name='dizziness_point']").val());
+                    let dizziness_point = parseInt($("input[name='dizziness_point']:checked").val()) ? parseInt($(
+                        "input[name='dizziness_point']:checked").val()) : 0;
                     if (isNaN(dizziness_point)) {
                         dizziness_point = 0;
                     }
-                    let gender_point = parseInt($("input[name='gender_point']").val());
+                    let gender_point = parseInt($("input[name='gender_point']:checked").val()) ? parseInt($("input[name='gender_point']:checked").val()) : 0;
                     if (isNaN(gender_point)) {
                         gender_point = 0;
                     }
-                    let epilepsy_drug_point = parseInt($("input[name='epilepsy_drug_point']").val());
+                    let epilepsy_drug_point = parseInt($("input[name='epilepsy_drug_point']:checked").val()) ? parseInt($(
+                        "input[name='epilepsy_drug_point']:checked").val()) : 0;
                     if (isNaN(epilepsy_drug_point)) {
                         epilepsy_drug_point = 0;
                     }
-                    let benzo_drug_point = parseInt($("input[name='benzo_drug_point']").val());
+                    let benzo_drug_point = parseInt($("input[name='benzo_drug_point']:checked").val()) ? parseInt($(
+                        "input[name='benzo_drug_point']:checked").val()) : 0;
                     if (isNaN(benzo_drug_point)) {
                         benzo_drug_point = 0;
                     }
-                    let arm_chair_point = parseInt($("input[type='radio'][name='test']:checked").val());
+                    let arm_chair_point = parseInt($("input[type='radio'][name='test']:checked").val()) ? parseInt($(
+                        "input[type='radio'][name='test']:checked").val()) : 0;
                     if (isNaN(arm_chair_point)) {
                         arm_chair_point = 0;
                     }

@@ -427,15 +427,16 @@ if ($result) {
                 let yourDate = new Date()
                 let creation_date = yourDate.toISOString().split('T')[0];
                 let updateDate = yourDate.toISOString().split('T')[0];
-                let confusion_point = parseInt($("input[name='confusion_point']").val());
+                let confusion_point = parseInt($("input[name='confusion_point']:checked").val()) ? parseInt($("input[name='confusion_point']:checked").val()) : 0;
                 let symtomatic_depression_point = parseInt($(
-                    "input[name='symtomatic_depression_point']").val());
-                let evacuation_trouble = parseInt($("input[name='evacuation_trouble']").val());
-                let dizziness_point = parseInt($("input[name='dizziness_point']").val());
-                let gender_point = parseInt($("input[name='gender_point']").val());
-                let epilepsy_drug_point = parseInt($("input[name='epilepsy_drug_point']").val());
-                let benzo_drug_point = parseInt($("input[name='benzo_drug_point']").val());
-                let arm_chair_point = parseInt($("input[type='radio'][name='test']:checked").val());
+                    "input[name='symtomatic_depression_point']:checked").val()) ?  parseInt($(
+                    "input[name='symtomatic_depression_point']:checked").val()) : 0;
+                let evacuation_trouble = parseInt($("input[name='evacuation_trouble']:checked").val()) ? parseInt($("input[name='evacuation_trouble']:checked").val()) : 0;
+                let dizziness_point = parseInt($("input[name='dizziness_point']:checked").val()) ? parseInt($("input[name='dizziness_point']:checked").val()) : 0;
+                let gender_point = parseInt($("input[name='gender_point']:checked").val()) ? parseInt($("input[name='gender_point']:checked").val()) : 0;
+                let epilepsy_drug_point = parseInt($("input[name='epilepsy_drug_point']:checked").val()) ? parseInt($("input[name='epilepsy_drug_point']:checked").val()) : 0;
+                let benzo_drug_point = parseInt($("input[name='benzo_drug_point']:checked").val()) ? parseInt($("input[name='benzo_drug_point']:checked").val()) :0;
+                let arm_chair_point = parseInt($("input[type='radio'][name='test']:checked").val()) ? parseInt($("input[type='radio'][name='test']:checked").val()): 0;
                 let total = confusion_point + symtomatic_depression_point + evacuation_trouble +
                     dizziness_point + gender_point + epilepsy_drug_point + benzo_drug_point;
 

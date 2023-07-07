@@ -588,7 +588,7 @@ if ($result) {
                                 //stop function
                                 return false;
                             }
-                            if($('.form-check-input[name="movementProblem"]:checked').length !== 0 && $('.form-check-input[name="movementProblemDesc"]:checked').length === 0){
+                            if($('.form-check-input[name="movementProblem"]:checked').length > 0 && $('.form-check-input[name="movementProblem"]:checked').val()=='Var' && $('.form-check-input[name="movementProblemDesc"]:checked').length === 0){
                                 //scroll to movementProblem
                                 $('html, body').animate({
                                     scrollTop: $('.form-check-input[name="movementProblem"]').first().offset().top

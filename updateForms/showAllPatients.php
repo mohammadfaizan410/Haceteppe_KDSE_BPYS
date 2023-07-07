@@ -56,7 +56,7 @@ if (isset($_GET['logout'])) {
 
                                 <th scope="col" style="font-weight : bold; font-size: large;">İsim</th>
                                 <th scope="col" style="font-weight : bold; font-size: large;">Soyisim</th>
-                                <th scope="col" style="font-weight : bold; font-size: large;">Yaş</th>
+                                <th scope="col" style="font-weight : bold; font-size: large;">DOB</th>
                                 <th scope="col" style="font-weight : bold; font-size: large;">Detaylar</th>
 
                             </tr>

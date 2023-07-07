@@ -17,6 +17,7 @@ $student_id = isset($_GET['student_id']) ? $_GET['student_id'] : '';
 $student_name = isset($_GET['student_name']) ? $_GET['student_name'] : '';
 $userid = $_SESSION['userlogin']['id'];
 $form_id = $_GET['form_id'];
+echo $form_id, $patient_id, $patient_name, $student_id, $student_name, $userid;
 if (isset($_GET['display'])) {
     $display = $_GET['display'];
 } else {

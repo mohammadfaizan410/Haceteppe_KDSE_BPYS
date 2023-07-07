@@ -94,6 +94,7 @@ require_once('config-students.php');
             $result = $smtmselect->execute();
             if ($result){
                 $tanis = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+
                 foreach ($tanis as $tani){
                     $sql = "SELECT * FROM tani WHERE root_id = " . $tani['tani_id'] . " ORDER BY tani_id";
                     $smtmselect = $db->prepare($sql);
@@ -101,10 +102,10 @@ require_once('config-students.php');
                     if ($result){
                         $tanisTemp = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
                     } else {
-                        echo "error";
+                        echo $tanisTemp = "";
                     }
                     
-                    if ($tanisTemp){
+                    if ($tanisTemp != ""){
                         echo "<script>console.log('here')</script>";
                         $last_tani = end($tanisTemp);
                     } else {
@@ -124,15 +125,21 @@ require_once('config-students.php');
                                 <button id="closeBtnNotification" class="close-btn">&times;</button>
                             </div>';
                         break 2;
+                    }else{
+                        echo '<div id="notification" class="notification">
+                        <span class="message">Tanıları güncellenmemiş hastalar var</span>
+                        <button id="closeBtnNotification" class="close-btn">&times;</button>
+                    </div>';
                     }
                 }
             } else {
-                echo "error";
+                echo $tanis = "";
             }
         }
     } else {
         echo "error";
     }
+
 
 ?>
     <div class="stu-body1" id="stu-body1">
@@ -238,6 +245,16 @@ require_once('config-students.php');
     });
     </script>
     <script>
+    $(document).ready(function() {
+       $.ajax({
+        type: "get",
+        url: "./getAllMessages.php",
+        success: function (response) {
+            console.log(JSON.parse(response))   
+        }
+       });
+    })
+
     $(function() {
         $.ajaxSetup({
             cache: false

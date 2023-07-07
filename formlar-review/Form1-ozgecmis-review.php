@@ -17,6 +17,7 @@ $student_id = isset($_GET['student_id']) ? $_GET['student_id'] : '';
 $student_name = isset($_GET['student_name']) ? $_GET['student_name'] : '';
 $userid = $_SESSION['userlogin']['id'];
 $form_id = $_GET['form_id'];
+echo $form_id, $patient_id, $patient_name, $student_id, $student_name;
 if (isset($_GET['display'])) {
     $display = $_GET['display'];
 } else {
@@ -1151,10 +1152,10 @@ if ($result) {
                         <input type="text" class="form-control not"  name="medicalDiagnosis" id="medicalDiagnosis"
                         placeholder="Tıbbi Tanı" value="<?php echo $ozgecmisform1[0]['medicalDiagnosis'] ?>">
                     </div>
-                    <div class='d-flex'>    
+                    <div class='d-flex w-100'>    
                     <?php
                         if ($display == 1) {
-                            echo '<input type="submit" class="w-75 submit m-auto" name="submit" id="submit" value="Kaydet">';
+                            echo '<input type="submit " class="w-75 submit m-auto text-center" name="submit" id="submit" value="Kaydet">';
                         }
                         ?>
 </div>
@@ -1802,7 +1803,7 @@ if ($result) {
 
                             let patient_id = "<?php echo $ozgecmisform1[0]['patient_id']  ?>";
                              let patient_name = "<?php echo $ozgecmisform1[0]['patient_name']  ?>";
-                            let form_name = "ozgecmis";
+                             let form_name = "ozgecmis";
                             let yourDate = new Date()
                             let creation_date = yourDate.toISOString().split('T')[0];
                             let update_date = yourDate.toISOString().split('T')[0];
@@ -1824,7 +1825,6 @@ if ($result) {
                             let bloodGroup = $('#bloodGroup').val();
                             let transfusionStatus = $('.form-check-input[name="transfusionStatus"]:checked').val() === "Var" ? $('#transfusionStatusInput').val() : $('.form-check-input[name="transfusionStatus"]:checked').val();
                             let transfusionReaction = $('.form-check-input[name="transfusionReaction"]:checked').val() === "Var" ? $('#transfusionReactionInput').val() : $('.form-check-input[name="transfusionReaction"]:checked').val();
-                            let infoPerson = $('#infoPerson').val();
                             let infoStorageType = $('.form-check-input[name="infoStorageType"]:checked').val() === "Diger" ? $('#infoStorageTypeInput').val() : $('.form-check-input[name="infoStorageType"]:checked').val();
                             let kolbandi = $('input[name="kolbandi"]').val();
                             let relativeNameSurname = $('input[name="relativeNameSurname"]').val();
@@ -1853,6 +1853,7 @@ if ($result) {
                             // let sleepProblem = $('.form-check-input[name="sleepProblem"]:checked').val() === "Sorun Var" ? $("input[name='sleepProblemDesc']:checked").map(function() {
                             //     return $(this).val();
                             // }).get().join("/") : "Sorun Yok";
+                            let infoPerson = $('input[name="infoPerson"]').val() ? $('input[name="infoPerson"]').val() : "";
 
                             let aidTools = $('.form-check-input[name="aidTools"]:checked').val() === "Var" ? $("input[name='aidToolsDesc']:checked").map(function() {
                                 return $(this).val();

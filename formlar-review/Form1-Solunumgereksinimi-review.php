@@ -1870,8 +1870,8 @@ else if ($('[name="SolunumSistemiUygilamasi"][value="Diger"]').is(':checked') &&
                                     ?>;
                         var form_id = <?php echo $form_id ?>;
                         
-                        var patient_id = "<?php echo $solunumgereksinimi_form1['patient_id']; ?>";
-                        let patient_name = "<?php echo $solunumgereksinimi_form1['patient_name']; ?>";
+                        var patient_id = <?php echo $patient_id; ?>;
+                        let patient_name = "<?php echo $patient_name; ?>";
                         let form_name = "solunumgereksinimi";
                         let yourDate = new Date()
                         let creationDate = yourDate.toISOString().split('T')[0];
@@ -1962,6 +1962,8 @@ else if ($('[name="SolunumSistemiUygilamasi"][value="Diger"]').is(':checked') &&
                                 
                                 form_id: form_id,
                                 form_name: form_name,
+                                patient_id : patient_id,
+                                patient_name : patient_name,
                                 creationDate: creationDate,
                                 updateDate: updateDate,
                                 yatisdurumuradio: yatisdurumuradio,

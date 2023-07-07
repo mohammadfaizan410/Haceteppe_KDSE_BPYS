@@ -77,7 +77,7 @@ if (isset($_GET['logout'])) {
                             </div>
                             <div class="input-section d-flex" style="padding-top: 5%;">
                                 <p class="usernamelabel">Hasta Doğum Tarihi:</p>
-                                <input type="date" class="form-control" required name="age" id="date" placeholder="Hasta Doğum Tarihi">
+                                <input type="date" class="form-control" required name="age" id="date" placeholder="Hasta Doğum Tarihi" max="2020-10-10">
                             </div>
                             <input type="submit" class="w-75 submit m-auto" name="submit" id="submit" value="Kaydet">
                     </div>
@@ -122,20 +122,20 @@ if (isset($_GET['logout'])) {
                 let patient_surname = $("input[name='surname']").val();
                 let patient_id = parseInt($("input[name='patient_id']").val());
 
-                var today = new Date()
-                //Calculates age from given Birth Date in the form//
-
-                givenDate = new Date(today);
+                var today = new Date();
                 var dt1 = document.getElementById('date').value;
                 var birthDate = new Date(dt1);
-                var years = (givenDate.getFullYear() - birthDate.getFullYear());
+                var years = today.getFullYear() - birthDate.getFullYear();
 
-                //set all border to default
+                // Set all border to default
                 $(".form-control").css("border-color", "#ced4da");
-                if (givenDate.getMonth() < birthDate.getMonth() ||
-                    givenDate.getMonth() == birthDate.getMonth() && givenDate.getDate() < birthDate
-                    .getDate()) {
-                    years--;
+
+                // Compare birth month and day with the current month and day
+                if (
+                (today.getMonth() < birthDate.getMonth()) ||
+                (today.getMonth() === birthDate.getMonth() && today.getDate() < birthDate.getDate())
+                ) {
+                years--;
                 }
                 if(patient_name ==""){
                     //change patient name to red
@@ -154,7 +154,7 @@ if (isset($_GET['logout'])) {
 
                 console.log(years);
 
-                let patient_age = years
+                let patient_age = document.getElementById('date').value;
                 e.preventDefault()
 
                 $.ajax({

@@ -1482,7 +1482,7 @@ if (isset($_GET['logout'])) {
                             let allergyTherapy = $('input[name="allergyTherapy"]').val() ? $('input[name="allergyTherapy"]').val() : "";
                             let previousMedications = $('.form-check-input[name="previousMedications"]:checked').val();
                             let medicineName = $('input[name="medicineName"]').val() ? $('input[name="medicineName"]').val() : "";
-                            let prescriptionType = $('.form-check-input[name="prescriptionType"]:checked').val();
+                            let prescriptionType = $('.form-check-input[name="prescriptionType"]:checked').val() ? $('.form-check-input[name="prescriptionType"]:checked').val() : "";
                             let medicineFrequency = $('input[name="medicineFrequency"]').val() ? $('input[name="medicineFrequency"]').val() : "";
                             let medicineDose = $('input[name="medicineDose"]').val() ? $('input[name="medicineDose"]').val() : "";
                             let intakeMethod = $('input[name="intakeMethod"]').val() ? $('input[name="intakeMethod"]').val() : "";
@@ -1490,6 +1490,7 @@ if (isset($_GET['logout'])) {
                             // let sleepProblem = $('.form-check-input[name="sleepProblem"]:checked').val() === "Sorun Var" ? $("input[name='sleepProblemDesc']:checked").map(function() {
                             //     return $(this).val();
                             // }).get().join("/") : "Sorun Yok";
+                            let infoPerson = $('input[name="infoPerson"]').val() ? $('input[name="infoPerson"]').val() : "";
 
                             let aidTools = $('.form-check-input[name="aidTools"]:checked').val() === "Var" ? $("input[name='aidToolsDesc']:checked").map(function() {
                                 return $(this).val();
@@ -2211,6 +2212,7 @@ if (isset($_GET['logout'])) {
                             update_date : update_date,
                             nameSurname: nameSurname,
                             dob : dob,
+                            age : age,
                             gender: gender,
                             maritalStatus: maritalStatus,
                             profession: profession,
@@ -2246,7 +2248,9 @@ if (isset($_GET['logout'])) {
                             allergySymptoms: allergySymptoms,
                             allergyTherapy: allergyTherapy,
                             previousMedications: previousMedications,
+                            infoPerson: infoPerson,
                             medicineName: medicineName,
+                            prescriptionType : prescriptionType,
                             medicineFrequency: medicineFrequency,
                             medicineDose: medicineDose,
                             intakeMethod: intakeMethod,
@@ -2278,6 +2282,7 @@ if (isset($_GET['logout'])) {
                             
                         },
                         success: function(data) {
+                            alert(data);
                             let url =
                                 "<?php echo $base_url; ?>/updateForms/showAllForms1.php?patient_id=" +
                                 patient_id + "&patient_name=" + encodeURIComponent(
