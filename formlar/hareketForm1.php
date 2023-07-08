@@ -85,13 +85,11 @@ if (isset($_GET['logout'])) {
             <h1 class="form-header">HAREKET GEREKSİNİMİ</h1>
 
             <div class="input-section">
-                <div class="form-check form-check-inline d-flex">
-                    <input class="form-check-input" type="checkbox" id="exercisingHabit" value="exercisingHabit" name="exercisingHabit">
-                    <label class="form-check-label" for="HareketAliskanligi">
-                        Hastaneye yatmadan önceki düzenli egzersiz yapma alışkanlığı
-                    </label>
+                <label class="form-check-label pb-3" for="HareketAliskanligi">
+                    Hastaneye yatmadan önceki düzenli egzersiz yapma alışkanlığı
+                </label>
+                <input class="form-check-input" type="checkbox" id="exercisingHabit" value="exercisingHabit" name="exercisingHabit">
                     <input type="text" class="form-control" disabled name="exercisingHabitInput" id="exercisingHabitInput">
-                </div>
             </div>
 
             <div class="input-section">

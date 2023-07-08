@@ -103,27 +103,25 @@ if ($result) {
         <div class="send-patient ta-center">
             <span class='close closeBtn' id='closeBtn1'>&times;</span>
             <h1 class="form-header">HAREKET GEREKSİNİMİ</h1>
-            <div class="input-section d-flex">
-                    <p class="usernamelabel">Patient Name:</p>
+            <div class="input-section">
+                    <p class="usernamelabel pb-3">Patient Name:</p>
                     <input type="text" class="form-control" required name="patient_name" id="diger" placeholder="Patient Name" value="<?php echo $hareketform1[0]['patient_name']; ?>" disabled>
                 </div>
-                <div class="input-section d-flex">
-                    <p class="usernamelabel">Patient ID:</p>
+                <div class="input-section">
+                    <p class="usernamelabel pb-3">Patient ID:</p>
                     <input type="text" class="form-control" required name="patient_id" id="diger" placeholder="Patient ID" value="<?php echo $hareketform1[0]['patient_id']; ?>" disabled>
                 </div>
-            <div class="input-section d-flex">
-                <div class="form-check form-check-inline d-flex">
-                    <input class="form-check-input" type="checkbox" id="exercisingHabit" value="exercisingHabit" name="exercisingHabit">
-                    <label class="form-check-label" for="HareketAliskanligi">
-                        Hastaneye yatmadan önceki düzenli egzersiz yapma alışkanlığı
-                    </label>
+            <div class="input-section">
+                <label class="form-check-label pb-3" for="HareketAliskanligi">
+                    Hastaneye yatmadan önceki düzenli egzersiz yapma alışkanlığı
+                </label>
+                <input class="form-check-input" type="checkbox" id="exercisingHabit" value="exercisingHabit" name="exercisingHabit">
                     <input type="text" class="form-control" disabled name="exercisingHabitInput" id="exercisingHabitInput">
-                </div>
             </div>
 
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">Hastanede egzersiz yapma durumuz</p>
+                <p class="usernamelabel pb-3">Hastanede egzersiz yapma durumuz</p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
                 <div class="checkbox-wrapper d-flex">
@@ -171,9 +169,9 @@ if ($result) {
                     </div>
                 </div>
             </div>
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">Hareket etme isteği:</p>
+                <p class="usernamelabel pb-3">Hareket etme isteği:</p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
                 <div class="checkbox-wrapper d-flex">
@@ -247,9 +245,9 @@ if ($result) {
                     </div>
                 </div>
             </div>
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">Kıyafetlerini giyme ve çıkarmada</p>
+                <p class="usernamelabel pb-3">Kıyafetlerini giyme ve çıkarmada</p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
                 <div class="checkbox-wrapper d-flex">
@@ -278,9 +276,9 @@ if ($result) {
                     </div>
                 </div>
             </div>
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">Pozisyon değiştirmede </p>
+                <p class="usernamelabel pb-3">Pozisyon değiştirmede </p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
                 <div class="checkbox-wrapper d-flex">
@@ -309,9 +307,9 @@ if ($result) {
                     </div>
                 </div>
             </div>
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">Ayağa kalkmada </p>
+                <p class="usernamelabel pb-3">Ayağa kalkmada </p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
                 <div class="checkbox-wrapper d-flex">
@@ -340,9 +338,9 @@ if ($result) {
                     </div>
                 </div>
             </div>
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">Yürümede</p>
+                <p class="usernamelabel pb-3">Yürümede</p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes">

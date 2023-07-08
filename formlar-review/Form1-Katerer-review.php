@@ -104,22 +104,13 @@ if ($result) {
         <div class="send-patient ta-center">
             <span class='close closeBtn' id='closeBtn1'>&times;</span>
             <h1 class="form-header">KATETER / DREN</h1>
-
-
-            <div>
-
-                <div class="d-flex justify-content-around p-4">
-                    <p class="usernamelabel">Kateter / Dren</p>
-                    <p class="usernamelabel">Yeri</p>
-                    <p class="usernamelabel">Sayısı</p>
-                    <p class="usernamelabel">Takılma Tarihi</p>
-                </div>
+              
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 
                 <div class="d-flex justify-content-between">
-                    <div class="input-section d-flex">
-                        <div class="checkboxes w-25">
-                            <div class="form-check">
+                    <div class="input-section">
+                        <div class="checkboxes">
+                            <div class="checkboxes pb-3">
                                 <input class="form-check-input" type="radio" name="katererType" id="venöz_kateter"
                                     value="Periferik venöz kateter">
                                 <label class="form-check-label" for="venöz_kateter">
@@ -127,15 +118,15 @@ if ($result) {
                                 </label>
                             </div>
                         </div>
-                        <input type="number" class="form-control w-25" disabled name="peripheralKaterarAmount" id="peripheralKaterarAmount" value="<?php echo $katererform1[0]['peripheralKaterarAmount']; ?>">
-                        <input type="text" class="form-control w-25" disabled name="peripheralKaterarLocation" id="peripheralKaterarLocation" value="<?php echo $katererform1[0]['peripheralKaterarLocation']; ?>">
-                        <input type="date" class="form-control w-25" disabled name="peripheralKaterarDate" id="peripheralKaterarDate" value="<?php echo $katererform1[0]['peripheralKaterarDate']; ?>">
+                        <input type="number" placeholder="yeri" class="form-control mb-2" disabled name="peripheralKaterarAmount" id="peripheralKaterarAmount" value="<?php echo $katererform1[0]['peripheralKaterarAmount']; ?>">
+                        <input type="text" placeholder="sayisi" class="form-control mb-2" disabled name="peripheralKaterarLocation" id="peripheralKaterarLocation" value="<?php echo $katererform1[0]['peripheralKaterarLocation']; ?>">
+                        <input type="date" class="form-control mb-2" disabled name="peripheralKaterarDate" id="peripheralKaterarDate" value="<?php echo $katererform1[0]['peripheralKaterarDate']; ?>">
                     </div>
                 </div>
                 <div class="d-flex justify-content-between">
-                    <div class="input-section d-flex">
-                        <div class="checkboxes w-25">
-                            <div class="form-check">
+                    <div class="input-section">
+                        <div class="checkboxes">
+                            <div class="checkboxes pb-3">
                                 <input class="form-check-input" type="radio" name="katererType" id="venöz_kateter"
                                     value="Santral venöz kateter">
                                 <label class="form-check-label" for="venöz_kateter">
@@ -143,15 +134,15 @@ if ($result) {
                                 </label>
                             </div>
                         </div>
-                        <input type="number" class="form-control w-25" disabled name="centralKaterarNumber" id="centralKaterarNumber" value="<?php echo $katererform1[0]['centralKaterarNumber']; ?>">
-                        <input type="text" class="form-control w-25" disabled name="centralKaterarLocation" id="centralKaterarLocation" value="<?php echo $katererform1[0]['centralKaterarLocation']; ?>">
-                        <input type="date" class="form-control w-25" disabled name="centralKaterarDate" id="centralKaterarDate" value="<?php echo $katererform1[0]['centralKaterarDate']; ?>">
+                        <input type="number" placeholder="yeri" class="form-control mb-2" disabled name="centralKaterarNumber" id="centralKaterarNumber" value="<?php echo $katererform1[0]['centralKaterarNumber']; ?>">
+                        <input type="text" placeholder="sayisi" class="form-control mb-2" disabled name="centralKaterarLocation" id="centralKaterarLocation" value="<?php echo $katererform1[0]['centralKaterarLocation']; ?>">
+                        <input type="date" class="form-control mb-2" disabled name="centralKaterarDate" id="centralKaterarDate" value="<?php echo $katererform1[0]['centralKaterarDate']; ?>">
                     </div>
                 </div>
                 <div class="d-flex justify-content-between">
-                    <div class="input-section d-flex">
-                        <div class="checkboxes w-25">
-                            <div class="form-check ">
+                    <div class="input-section">
+                        <div class="checkboxes">
+                            <div class="form-check pb-3">
                                 <input class="form-check-input" type="radio" name="katererType" id="venöz_kateter"
                                     value="Dren">
                                 <label class="form-check-label" for="venöz_kateter">
@@ -159,15 +150,15 @@ if ($result) {
                                 </label>
                             </div>
                         </div>
-                        <input type="number" class="form-control w-25" disabled name="drainKatererAmount" id="drainKatererAmount" value="<?php echo $katererform1[0]['drainKatererAmount']; ?>">
-                        <input type="text" class="form-control w-25" disabled name="drainKatererLocation" id="drainKatererLocation" value="<?php echo $katererform1[0]['drainKatererLocation']; ?>">
-                        <input type="date" class="form-control w-25" disabled name="drainKatererDate" id="drainKatererDate" value="<?php echo $katererform1[0]['drainKatererDate']; ?>">
+                        <input type="number" placeholder="yeri" class="form-control mb-2" disabled name="drainKatererAmount" id="drainKatererAmount" value="<?php echo $katererform1[0]['drainKatererAmount']; ?>">
+                        <input type="text" placeholder="sayisi" class="form-control mb-2" disabled name="drainKatererLocation" id="drainKatererLocation" value="<?php echo $katererform1[0]['drainKatererLocation']; ?>">
+                        <input type="date" class="form-control mb-2" disabled name="drainKatererDate" id="drainKatererDate" value="<?php echo $katererform1[0]['drainKatererDate']; ?>">
                     </div>
                 </div>
                 <div class="d-flex justify-content-between">
-                    <div class="input-section d-flex">
-                        <div class="checkboxes w-25">
-                            <div class="form-check">
+                    <div class="input-section">
+                        <div class="checkboxes">
+                            <div class="checkboxes pb-3">
                                 <input class="form-check-input" type="radio" name="katererType" id="venöz_kateter"
                                     value="Diğer">
                                 <label class="form-check-label" for="venöz_kateter">
@@ -175,9 +166,9 @@ if ($result) {
                                 </label>
                             </div>
                         </div>
-                        <input type="number" class="form-control w-25" disabled name="otherKatereAmount" id="otherKatereAmount" value="<?php echo $katererform1[0]['otherKatereAmount']; ?>">
-                        <input type="text" class="form-control w-25" disabled name="otherKatereLocation" id="otherKatereLocation" value="<?php echo $katererform1[0]['otherKatereLocation']; ?>">
-                        <input type="date" class="form-control w-25" disabled name="otherKatereDate" id="otherKatereDate" value="<?php echo $katererform1[0]['otherKatereDate']; ?>">
+                        <input type="number" placeholder="yeri" class="form-control mb-2" disabled name="otherKatereAmount" id="otherKatereAmount" value="<?php echo $katererform1[0]['otherKatereAmount']; ?>">
+                        <input type="text" placeholder="sayisi" class="form-control mb-2" disabled name="otherKatereLocation" id="otherKatereLocation" value="<?php echo $katererform1[0]['otherKatereLocation']; ?>">
+                        <input type="date" class="form-control mb-2" disabled name="otherKatereDate" id="otherKatereDate" value="<?php echo $katererform1[0]['otherKatereDate']; ?>">
                     </div>
                 </div>
             </div>
