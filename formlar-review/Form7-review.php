@@ -146,15 +146,15 @@ if ($result) {
                             <div class="form-check">
                                 <div class="input-section d-flex">
                                     <p class="usernamelabel">Uzunluk:</p>
-                                    <input type="number" class="form-control" required name="length" id="length" placeholder="Uzunluk Giriniz" min="0" max="1000">
+                                    <input type="number" class="form-control" required name="length" value="<?php echo explode('/', $form7[0]['dimentions'])[0]; ?>" id="length" placeholder="Uzunluk Giriniz" min="0" max="1000">
                                 </div>
                                 <div class="input-section d-flex">
                                     <p class="usernamelabel">Genişlik:</p>
-                                    <input type="number" class="form-control" required name="width" id="width" placeholder="Genişlik Giriniz" min="0" max="1000">
+                                    <input type="number" class="form-control" required name="width" value="<?php echo explode('/', $form7[0]['dimentions'])[1]; ?>" id="width" placeholder="Genişlik Giriniz" min="0" max="1000">
                                 </div>
                                 <div class="input-section d-flex">
                                     <p class="usernamelabel">Derinlik:</p>
-                                    <input type="number" class="form-control" required name="depth" id="depth" placeholder="Derinlik Giriniz" min="0" max="1000">
+                                    <input type="number" class="form-control" required name="depth" value="<?php echo explode('/', $form7[0]['dimentions'])[2]; ?>" id="depth" placeholder="Derinlik Giriniz" min="0" max="1000">
                                 </div>
                             </div>
                         </div>
@@ -378,6 +378,7 @@ if ($result) {
         console.log(wound_apperance);
         document.getElementById('diger').setAttribute('checked', 'checked');
     }
+    
     </script>
 
     <script>
@@ -463,7 +464,6 @@ if ($result) {
                         healing_date: healingDate
                     }),
                     success: function(data) {
-                        alert(data)
                         let patient_id  = $("input[name='patient_id']").val();
                         let patient_name = $("input[name='patient_name']").val();
                          let url =

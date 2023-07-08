@@ -81,7 +81,60 @@ require_once('config-students.php');
 
 <body class="stu-body">
 
+<?php
 
+    $sql = "SELECT * FROM patients WHERE id = " . $userid;
+    $smtmselect = $db->prepare($sql);
+    $result = $smtmselect->execute();
+    if ($result){
+        $patients = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($patients as $patient){
+            $sql = "SELECT * FROM tani WHERE patient_id = " . $patient['patient_id'] . " and root_id = 0";
+            $smtmselect = $db->prepare($sql);
+            $result = $smtmselect->execute();
+            if ($result){
+                $tanis = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+                foreach ($tanis as $tani){
+                    $sql = "SELECT * FROM tani WHERE root_id = " . $tani['tani_id'] . " ORDER BY tani_id";
+                    $smtmselect = $db->prepare($sql);
+                    $result = $smtmselect->execute();
+                    if ($result){
+                        $tanisTemp = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+                    } else {
+                        echo "error";
+                    }
+                    
+                    if ($tanisTemp){
+                        echo "<script>console.log('here')</script>";
+                        $last_tani = end($tanisTemp);
+                    } else {
+                        $last_tani = $tani;
+                    }
+
+                    echo "<script>console.log({$last_tani['creation_date']})</script>";
+                    $creation_date = new DateTime($last_tani['creation_date']);
+                    $today = new DateTime();
+                    $interval = $today->diff($creation_date);
+                    if ((($last_tani['noc_indicator_after_3'] != "null" && $last_tani['noc_indicator_after_3'] != "5") 
+                    || ($last_tani['noc_indicator_after_2'] != "null" && $last_tani['noc_indicator_after_2'] != "5")
+                    || $last_tani['noc_indicator_after'] != "5") && ($interval->days >= 1)) {
+                        echo "<script>console.log({$interval->days})</script>";
+                        echo '<div id="notification" class="notification">
+                                <span class="message">Tanıları güncellenmemiş hastalar var</span>
+                                <button id="closeBtnNotification" class="close-btn">&times;</button>
+                            </div>';
+                        break 2;
+                    }
+                }
+            } else {
+                echo "error";
+            }
+        }
+    } else {
+        echo "error";
+    }
+
+?>
     <div class="stu-body1" id="stu-body1">
         <div class="navigation-wrapper" id="navigation-wrapper">
             <div class="navigation-left">
@@ -185,16 +238,6 @@ require_once('config-students.php');
     });
     </script>
     <script>
-    $(document).ready(function() {
-       $.ajax({
-        type: "get",
-        url: "./getAllMessages.php",
-        success: function (response) {
-            console.log(JSON.parse(response))   
-        }
-       });
-    })
-
     $(function() {
         $.ajaxSetup({
             cache: false
