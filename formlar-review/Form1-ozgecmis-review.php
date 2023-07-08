@@ -107,30 +107,27 @@ if ($result) {
             <h1 class="form-header">HASTA DEĞERLENDİRME FORMU</h1>
             <div class=" patients-save">
                 <form action="" method="" class="patients-save-fields p-3">
-                    <div class="input-section-wrapper">
-
-                        <div class="input-section-item">
-
-                            <div class="input-section d-flex">
-                                <p class="usernamelabel m-2">Hasta Adı Soyadı:</p>
+                            
+                        <div class="input-section">
+                                <p class="usernamelabel pb-3">Hasta Adı Soyadı:</p>
                                 <input type="text" class="form-control" name="nameSurname" id="nameSurname"
                                     placeholder="Hasta Adı Soyadı Giriniz" value="<?php echo $ozgecmisform1[0]['nameSurname'] ?>">
                             </div>
 
-                            <div class="input-section d-flex">
-                                <p class="usernamelabel m-2">Doğum Yeri:</p>
+                            <div class="input-section">
+                                <p class="usernamelabel pb-3">Doğum Yeri:</p>
                                 <input type="date" class="form-control" name="dob" id="dob"
                                     placeholder="Doğum Yeri Giriniz" value="<?php echo $ozgecmisform1[0]['dob'] ?>">
                             </div>
 
-                            <div class="input-section d-flex">
-                                <p class="usernamelabel m-2">Hasta Yaşı</p>
+                            <div class="input-section">
+                                <p class="usernamelabel pb-3">Hasta Yaşı</p>
                                 <input type="number" class="form-control" name="age" id="age"
                                     placeholder="Hasta Yaşı Giriniz" value="<?php echo $ozgecmisform1[0]['age'] ?>">
                             </div>
 
-                            <div class="input-section d-flex">
-                                <p class="usernamelabel m-2">Cinsiyeti:</p>
+                            <div class="input-section">
+                                <p class="usernamelabel pb-3">Cinsiyeti:</p>
                                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                                 <div class="checkbox-wrapper d-flex">
                                     <div class="checkboxes">
@@ -154,20 +151,20 @@ if ($result) {
                                 </div>
                             </div>
 
-                            <div class="input-section d-flex">
-                                <p class="usernamelabel m-2">Medeni Durumu:</p>
+                            <div class="input-section">
+                                <p class="usernamelabel pb-3">Medeni Durumu:</p>
                                 <input type="text" class="form-control"  name="maritalStatus" id="maritalStatus"
                                     placeholder="Medeni Durumu Giriniz" value="<?php echo $ozgecmisform1[0]['maritalStatus'] ?>">
                             </div>
 
-                            <div class="input-section d-flex">
-                                <p class="usernamelabel m-2">Mesleği:</p>
+                            <div class="input-section">
+                                <p class="usernamelabel pb-3">Mesleği:</p>
                                 <input type="text" class="form-control"  name="profession" id="profession"
                                     placeholder="Mesleği Durumu Giriniz" value="<?php echo $ozgecmisform1[0]['profession'] ?>">
                             </div>
 
-                            <div class="input-section d-flex">
-                                <p class="usernamelabel m-2">Eğitim Durumu:</p>
+                            <div class="input-section">
+                                <p class="usernamelabel pb-3">Eğitim Durumu:</p>
                                 <input type="text" class="form-control"  name="education" id="education"
                                     placeholder="Eğitim Durumu Giriniz" value="<?php echo $ozgecmisform1[0]['education'] ?>">
                             </div>
@@ -175,47 +172,47 @@ if ($result) {
                         </div>
 
                         <div class="input-section-item">
-                            <div class="input-section d-flex">
-                                <p class="usernamelabel m-2">Protokol/Dosya No:</p>
+                            <div class="input-section">
+                                <p class="usernamelabel pb-3">Protokol/Dosya No:</p>
                                 <input type="text" class="form-control"  name="protocol_file_no"
                                     id="protocol_file_no" placeholder="Protokol/Dosya No Giriniz" value="<?php echo $ozgecmisform1[0]['protocol_file_no'] ?>">
                             </div>
 
-                            <div class="input-section d-flex">
-                                <p class="usernamelabel m-2">Yatış Tarihi:</p>
+                            <div class="input-section">
+                                <p class="usernamelabel pb-3">Yatış Tarihi:</p>
                                 <input type="date" class="form-control"  name="admissionDate" id="admissionDate"
                                     placeholder="Protokol/Dosya No Giriniz" value="<?php echo $ozgecmisform1[0]['admissionDate'] ?>">
                             </div>
 
-                            <div class="input-section d-flex">
-                                <p class="usernamelabel m-2">Bölüm:</p>
+                            <div class="input-section">
+                                <p class="usernamelabel pb-3">Bölüm:</p>
                                 <input type="text" class="form-control"  name="department" id="department"
                                     placeholder="Bölüm Giriniz" value="<?php echo $ozgecmisform1[0]['department'] ?>">
                             </div>
 
-                            <div class="input-section d-flex">
-                                <p class="usernamelabel m-2">Tıbbi Tanı:</p>
+                            <div class="input-section">
+                                <p class="usernamelabel pb-3">Tıbbi Tanı:</p>
                                 <input type="text" class="form-control"  name="diagnosis" id="diagnosis"
                                     placeholder="Tıbbi Tanıyı Giriniz" value="<?php echo $ozgecmisform1[0]['diagnosis'] ?>">
                             </div>
 
-                            <div class="input-section d-flex">
-                                <p class="usernamelabel m-2">Doktor Adı Soyadı:</p>
+                            <div class="input-section">
+                                <p class="usernamelabel pb-3">Doktor Adı Soyadı:</p>
                                 <input type="text" class="form-control"  name="doctorName"
                                     id="doctorName" placeholder="Doktor Adı Soyadı Giriniz" value="<?php echo $ozgecmisform1[0]['doctorName'] ?>">
                             </div>
 
 
 
-                            <div class="input-section d-flex">
-                                <p class="usernamelabel m-2">Çocuk Sayısı:</p>
+                            <div class="input-section">
+                                <p class="usernamelabel pb-3">Çocuk Sayısı:</p>
                                 <input type="number" class="form-control"  name="numberOfChildren" id="numberOfChildren"
                                     placeholder="Çocuk Sayısı Giriniz" value="<?php echo $ozgecmisform1[0]['numberOfChildren'] ?>">
                             </div>
 
-                            <div class="input-section d-flex">
+                            <div class="input-section">
 
-                                <p class="usernamelabel m-2">Sosyal Güvencesi:</p>
+                                <p class="usernamelabel pb-3">Sosyal Güvencesi:</p>
                                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
                                 <div class="checkbox-wrapper d-flex">
@@ -250,17 +247,16 @@ if ($result) {
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="input-section d-flex">
-                        <p class="usernamelabel m-2">Dili:</p>
+                    <div class="input-section">
+                        <p class="usernamelabel pb-3">Dili:</p>
                         <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                         <input type="text" class="form-control"  name="language" id="language" placeholder="Dil Giriniz" value="<?php echo $ozgecmisform1[0]['language'] ?>">
                     </div>
 
-                    <div class="input-section d-flex">
+                    <div class="input-section">
 
-                        <p class="usernamelabel m-2">Tercüman Gereksinimi:</p>
+                        <p class="usernamelabel pb-3">Tercüman Gereksinimi:</p>
                         <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
                         <div class="checkbox-wrapper d-flex">
@@ -287,17 +283,17 @@ if ($result) {
                         </div>
                     </div>
 
-                    <div class="input-section d-flex">
+                    <div class="input-section">
 
-                        <p class="usernamelabel m-2">Kan Grubu</p>
+                        <p class="usernamelabel pb-3">Kan Grubu</p>
                         <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                         <input type="text" class="form-control not"  name="bloodGroup" id="bloodGroup"
                             placeholder="Kan Grubu giriniz" value="<?php echo $ozgecmisform1[0]['bloodGroup'] ?>">
                     </div>
 
-                    <div class="input-section d-flex">
+                    <div class="input-section">
 
-                        <p class="usernamelabel m-2">Daha Önce Kan Transfüzyonu Yaplıma Durumu:</p>
+                        <p class="usernamelabel pb-3">Daha Önce Kan Transfüzyonu Yaplıma Durumu:</p>
                         <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
                         <div class="checkbox-wrapper d-flex">
@@ -324,9 +320,9 @@ if ($result) {
                         </div>
                     </div>
 
-                    <div class="input-section d-flex">
+                    <div class="input-section">
 
-                        <p class="usernamelabel m-2">Transfüzyon Sonrası Reaksiyon Gelişme Durumu:</p>
+                        <p class="usernamelabel pb-3">Transfüzyon Sonrası Reaksiyon Gelişme Durumu:</p>
                         <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                         <div class="checkbox-wrapper d-flex">
                             <div class="checkboxes">
@@ -352,9 +348,9 @@ if ($result) {
                         </div>
                     </div>
 
-                    <div class="input-section d-flex">
+                    <div class="input-section">
 
-                        <p class="usernamelabel m-2">Bilgi Alınan Kişi:</p>
+                        <p class="usernamelabel pb-3">Bilgi Alınan Kişi:</p>
                         <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
                         <input type="text" class="form-control"  name="infoPerson" id="infoPerson"
@@ -389,41 +385,41 @@ if ($result) {
                         </div>
                     </div>
 
-                    <div class="input-section d-flex">
-                        <p class="usernamelabel m-2">Kol Bandı Rengi:</p>
+                    <div class="input-section">
+                        <p class="usernamelabel pb-3">Kol Bandı Rengi:</p>
                         <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                         <input type="text" class="form-control" name="kolbandi" id="kolbandi"
                             placeholder="Kol Bandı Rengi Giriniz" value="<?php echo $ozgecmisform1[0]['kolbandi'] ?>">
                     </div>
                     <h1 class="form-header">Gerektiğinde Ulaşılabilecek Yakını</h1>
 
-                    <div class="input-section d-flex">
-                        <p class="usernamelabel m-2">Adı Soyadı:</p>
+                    <div class="input-section">
+                        <p class="usernamelabel pb-3">Adı Soyadı:</p>
                         <input type="text" class="form-control"  name="relativeNameSurname" id="relativeNameSurname"
                             placeholder="Adı Soyadı" value="<?php echo $ozgecmisform1[0]['relativeNameSurname'] ?>">
                     </div>
-                    <div class="input-section d-flex">
-                        <p class="usernamelabel m-2">Yakınlık Derecesi:</p>
+                    <div class="input-section">
+                        <p class="usernamelabel pb-3">Yakınlık Derecesi:</p>
                         <input type="text" class="form-control"  name="relativeDistance" id="relativeDistance"
                             placeholder="Yakınlık Derecesi" value="<?php echo $ozgecmisform1[0]['relativeDistance'] ?>">
                     </div>
-                    <div class="input-section d-flex">
-                        <p class="usernamelabel m-2">Telefon:</p>
+                    <div class="input-section">
+                        <p class="usernamelabel pb-3">Telefon:</p>
                         <input type="text" class="form-control"  name="relativePhone" id="relativePhone"
                             placeholder="Telefon" value="<?php echo $ozgecmisform1[0]['relativePhone'] ?>">
                     </div>
-                    <div class="input-section d-flex">
+                    <div class="input-section">
 
-                        <p class="usernamelabel m-2">Adres</p>
+                        <p class="usernamelabel pb-3">Adres</p>
                         <input type="text" class="form-control not"  name="relativeAddress" id="relativeAddress"
                             placeholder="Adres giriniz" value="<?php echo $ozgecmisform1[0]['relativeAddress'] ?>">
                     </div>
 
                     <h1 class="form-header">Özgeçmiş</h1>
 
-                    <div class="input-section d-flex">
+                    <div class="input-section">
 
-                        <p class="usernamelabel m-2">Daha Önce Hastaneye Yatma Durumu:</p>
+                        <p class="usernamelabel pb-3">Daha Önce Hastaneye Yatma Durumu:</p>
                         <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
                         <div class="checkbox-wrapper d-flex">
@@ -446,29 +442,22 @@ if ($result) {
                                 </div>
                             </div>
                         </div>
+                        
+                        
+                        <p class="usernamelabel pb-2">Hastaneye Yatış Yılı</p>
+                        <input type="number" min="1950" max="2099" class="form-control"   name="hospitalization_year"
+                        id="hospitalization_year" placeholder="..." value="<?php echo $ozgecmisform1[0]['hospitalization_year']?>">
+                        <p class="usernamelabel pb-2">Hastanede Yatış Süresi</p>
+                        <input type="text" class="form-control"   name="hospitalization_location"
+                        id="hospitalization_location" placeholder="..." value="<?php echo $ozgecmisform1[0]['hospitalization_location']?>">
+                        <p class="usernamelabel pb-2">Hastaneye Yatış Nedeni</p>
+                        <input type="text" class="form-control"   name="hospitalization_reason"
+                        id="hospitalization_reason" placeholder="..." value="<?php echo $ozgecmisform1[0]['hospitalization_reason']?>">
                     </div>
 
-                    <table class="ozgecmistable-wrapper">
-                        <tbody>
-                            <tr>
-                                <th>Hastaneye Yatış Yılı</th>
-                                <th>Hastanede Yatış Süresi</th>
-                                <th>Hastaneye Yatış Nedeni</th>
+                    <div class="input-section">
 
-                            </tr>
-                            <tr>
-                                <td><input type="number" min="1950" max="2099" class="form-control ozgecmistable"   name="hospitalization_year"
-                                        id="hospitalization_year" placeholder="..." value="<?php echo $ozgecmisform1[0]['hospitalization_year']?>"></td>
-                                <td><input type="text" class="form-control ozgecmistable"   name="hospitalization_location"
-                                        id="hospitalization_location" placeholder="..." value="<?php echo $ozgecmisform1[0]['hospitalization_location']?>"></td>
-                                <td><input type="text" class="form-control ozgecmistable"   name="hospitalization_reason"
-                                        id="hospitalization_reason" placeholder="..." value="<?php echo $ozgecmisform1[0]['hospitalization_reason']?>"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="input-section d-flex">
-
-                        <p class="usernamelabel m-2">Geçirdiği Hastalıklar:</p>
+                        <p class="usernamelabel pb-3">Geçirdiği Hastalıklar:</p>
                         <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
                         <div class="checkbox-wrapper d-flex">
@@ -495,9 +484,9 @@ if ($result) {
                         </div>
                     </div>
 
-                    <div class="input-section d-flex">
+                    <div class="input-section">
 
-                        <p class="usernamelabel m-2">Geçirdiği Ameliyatlar:</p>
+                        <p class="usernamelabel pb-3">Geçirdiği Ameliyatlar:</p>
                         <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
                         <div class="checkbox-wrapper d-flex">
@@ -524,9 +513,9 @@ if ($result) {
                         </div>
                     </div>
 
-                    <div class="input-section d-flex">
+                    <div class="input-section">
 
-                        <p class="usernamelabel m-2">Geçirdiği Kazalar:</p>
+                        <p class="usernamelabel pb-3">Geçirdiği Kazalar:</p>
                         <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
                         <div class="checkbox-wrapper d-flex">
@@ -553,9 +542,9 @@ if ($result) {
                         </div>
                     </div>
 
-                    <div class="input-section d-flex">
+                    <div class="input-section">
 
-                        <p class="usernamelabel m-2">Bulaşıcı Hastalığı:</p>
+                        <p class="usernamelabel pb-3">Bulaşıcı Hastalığı:</p>
                         <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
                         <div class="checkbox-wrapper d-flex">
@@ -582,9 +571,9 @@ if ($result) {
                         </div>
                     </div>
 
-                    <div class="input-section d-flex">
+                    <div class="input-section">
 
-                        <p class="usernamelabel m-2">Allerjik Reaksiyon:</p>
+                        <p class="usernamelabel pb-3">Allerjik Reaksiyon:</p>
                         <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
                         <div class="checkbox-wrapper d-flex">
@@ -607,30 +596,23 @@ if ($result) {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        
+                        <p>Allerjen</p>
+                        <input type="text" class="form-control "  name="allergen"
+                                id="allergen" placeholder="..." disabled value="<?php echo $ozgecmisform1[0]['allergen'] ?>">
+                        <p>Belirtiler</p>
+                        <input type="text" class="form-control "  name="allergySymptoms"
+                                id="allergySymptoms" placeholder="..." disabled value="<?php echo $ozgecmisform1[0]['allergySymptoms'] ?>">
+                        <p>Tedavi</p>
+                        
+                                        <input type="text" class="form-control "  name="allergyTherapy"
+                                            id="allergyTherapy" placeholder="..." disabled value="<?php echo $ozgecmisform1[0]['allergyTherapy'] ?>">
+                                            
+                                        </div>
 
-                    <table class="ozgecmistable-wrapper">
-                        <tbody>
-                            <tr>
-                                <th>Allerjen</th>
-                                <th>Belirtiler</th>
-                                <th>Tedavi</th>
+                    <div class="input-section">
 
-                            </tr>
-                            <tr>
-                                <td><input type="text" class="form-control ozgecmistable"  name="allergen"
-                                        id="allergen" placeholder="..." disabled value="<?php echo $ozgecmisform1[0]['allergen'] ?>"></td >
-                                <td><input type="text" class="form-control ozgecmistable"  name="allergySymptoms"
-                                        id="allergySymptoms" placeholder="..." disabled value="<?php echo $ozgecmisform1[0]['allergySymptoms'] ?>"></td>
-                                <td><input type="text" class="form-control ozgecmistable"  name="allergyTherapy"
-                                        id="allergyTherapy" placeholder="..." disabled value="<?php echo $ozgecmisform1[0]['allergyTherapy'] ?>"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <div class="input-section d-flex">
-
-                        <p class="usernamelabel m-2">Hastaneye Yatmadan Önce Kullandığı İlaçlar:</p>
+                        <p class="usernamelabel pb-3">Hastaneye Yatmadan Önce Kullandığı İlaçlar:</p>
                         <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
                         <div class="checkbox-wrapper d-flex">
@@ -653,124 +635,57 @@ if ($result) {
                                 </div>
                             </div>
                         </div>
+                                    <p class="usernamelabel pb-2">İlacın Adı</p>
+                                    <input type="text" class="form-control " disabled name="medicineName"
+                                        id="medicineName" placeholder="..." value="<?php echo $ozgecmisform1[0]['allergyTherapy'] ?>">
+                                    <p class="usernamelabel pb-2">Reçete</p>
+                                    <div class="checkbox-wrapper d-flex">
+                                        <div class="checkboxes recetecheckbox">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" disabled name="prescriptionType"
+                                                    id="prescriptionType" value="R+">
+                                                <label class="form-check-label" for="prescriptionType">
+                                                    <span class="checkbox-header"> R+ </span>
+                                                </label>
+                                            </div>
+
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" disabled name="prescriptionType"
+                                                    id="prescriptionType" value="R-">
+                                                <label class="form-check-label" for="prescriptionType">
+                                                    <span class="checkbox-header"> R-
+                                                    </span>
+
+                                                </label>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                               
+                                    
+                                    
+                                    <p class="usernamelabel pb-2">Kullanım Süresi</p>
+                                    <input type="text" class="form-control " 
+                                    name="KullanimSuresi" id="KullanimSuresi" placeholder="...">
+                                    <p class="usernamelabel pb-2">Dozu</p>
+                                    <input type="text" class="form-control "  name="medicineDose"
+                                    id="medicineDose" placeholder="..." disabled value="<?php echo $ozgecmisform1[0]['allergyTherapy'] ?>">
+                                    <p class="usernamelabel pb-2">Sıklığı</p>
+                                    <input type="text" class="form-control "  name="medicineFrequency"
+                                    id="medicineFrequency" placeholder="..." disabled value="<?php echo $ozgecmisform1[0]['allergyTherapy'] ?>">
+                                    <p class="usernamelabel pb-2">Alınış Yolu</p>
+                                    <input type="text" class="form-control "  name="intakeMethod"
+                                    id="intakeMethod" placeholder="..." disabled value="<?php echo $ozgecmisform1[0]['allergyTherapy'] ?>">
+                                    <p class="usernamelabel pb-2">Saatleri</p>
+                                    <input type="text" class="form-control "  name="intakeTimes"
+                                            id="intakeTimes" placeholder="..." disabled value="<?php echo $ozgecmisform1[0]['allergyTherapy'] ?>">
+                              
                     </div>
-                    <div class="input-section d-flex">
 
-                        <table class="ozgecmistable-wrapper">
-                            <tbody>
-                                <tr>
-                                    <th>İlacın Adı</th>
-                                    <th>Reçete</th>
-                                    <th>Kullanım Süresi</th>
-                                    <th>Dozu</th>
-                                    <th>Sıklığı</th>
-                                    <th>Alınış Yolu</th>
-                                    <th>Saatleri</th>
 
-                                </tr>
-                                <tr>
-                                    <td><input type="text" class="form-control ozgecmistable" disabled name="medicineName"
-                                            id="medicineName" placeholder="..." value="<?php echo $ozgecmisform1[0]['allergyTherapy'] ?>"></td>
-                                    <td>
-                                        <div class="checkbox-wrapper d-flex">
-                                            <div class="checkboxes recetecheckbox">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" disabled name="prescriptionType"
-                                                        id="prescriptionType" value="R+">
-                                                    <label class="form-check-label" for="prescriptionType">
-                                                        <span class="checkbox-header"> R+ </span>
-                                                    </label>
-                                                </div>
 
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" disabled name="prescriptionType"
-                                                        id="prescriptionType" value="R-">
-                                                    <label class="form-check-label" for="prescriptionType">
-                                                        <span class="checkbox-header"> R-
-                                                        </span>
-
-                                                    </label>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td><input type="text" class="form-control ozgecmistable" 
-                                            name="KullanimSuresi" id="KullanimSuresi" placeholder="..."></td>
-                                    <td><input type="text" class="form-control ozgecmistable"  name="medicineDose"
-                                            id="medicineDose" placeholder="..." disabled value="<?php echo $ozgecmisform1[0]['allergyTherapy'] ?>"></td>
-                                    <td><input type="text" class="form-control ozgecmistable"  name="medicineFrequency"
-                                            id="medicineFrequency" placeholder="..." disabled value="<?php echo $ozgecmisform1[0]['allergyTherapy'] ?>"></td>
-                                    <td><input type="text" class="form-control ozgecmistable"  name="intakeMethod"
-                                            id="intakeMethod" placeholder="..." disabled value="<?php echo $ozgecmisform1[0]['allergyTherapy'] ?>"></td>
-                                    <td><input type="text" class="form-control ozgecmistable"  name="intakeTimes"
-                                            id="intakeTimes" placeholder="..." disabled value="<?php echo $ozgecmisform1[0]['allergyTherapy'] ?>"></td>
-                                </tr>
-                                <!--<tr>
-                                    <td><input type="text" class="form-control ozgecmistable"  name="ozgecmistable1" id="ozgecmistable1" placeholder="..."></td>
-                                    <td>
-                                        <div class="checkbox-wrapper d-flex">
-                                            <div class="checkboxes recetecheckbox">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio" value="option1">
-                                                    <label class="form-check-label" for="yatisdurumuradio">
-                                                        <span class="checkbox-header"> R+ </span>
-                                                    </label>
-                                                </div>
-
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio" value="option2">
-                                                    <label class="form-check-label" for="yatisdurumuradio">
-                                                        <span class="checkbox-header"> R-
-                                                        </span>
-
-                                                    </label>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td><input type="text" class="form-control ozgecmistable"  name="ozgecmistable1" id="ozgecmistable1" placeholder="..."></td>
-                                    <td><input type="text" class="form-control ozgecmistable"  name="ozgecmistable1" id="ozgecmistable1" placeholder="..."></td>
-                                    <td><input type="text" class="form-control ozgecmistable"  name="ozgecmistable1" id="ozgecmistable1" placeholder="..."></td>
-                                    <td><input type="text" class="form-control ozgecmistable"  name="ozgecmistable1" id="ozgecmistable1" placeholder="..."></td>
-                                    <td><input type="text" class="form-control ozgecmistable"  name="ozgecmistable1" id="ozgecmistable1" placeholder="..."></td>
-                                </tr>
-                                <tr>
-                                    <td><input type="text" class="form-control ozgecmistable"  name="ozgecmistable1" id="ozgecmistable1" placeholder="..."></td>
-                                    <td>
-                                        <div class="checkbox-wrapper d-flex">
-                                            <div class="checkboxes recetecheckbox">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio" value="option1">
-                                                    <label class="form-check-label" for="yatisdurumuradio">
-                                                        <span class="checkbox-header"> R+ </span>
-                                                    </label>
-                                                </div>
-
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="yatisdurumuradio" id="yatisdurumuradio" value="option2">
-                                                    <label class="form-check-label" for="yatisdurumuradio">
-                                                        <span class="checkbox-header"> R-
-                                                        </span>
-
-                                                    </label>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td><input type="text" class="form-control ozgecmistable"  name="ozgecmistable1" id="ozgecmistable1" placeholder="..."></td>
-                                    <td><input type="text" class="form-control ozgecmistable"  name="ozgecmistable1" id="ozgecmistable1" placeholder="..."></td>
-                                    <td><input type="text" class="form-control ozgecmistable"  name="ozgecmistable1" id="ozgecmistable1" placeholder="..."></td>
-                                    <td><input type="text" class="form-control ozgecmistable"  name="ozgecmistable1" id="ozgecmistable1" placeholder="..."></td>
-                                    <td><input type="text" class="form-control ozgecmistable"  name="ozgecmistable1" id="ozgecmistable1" placeholder="..."></td>-->
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="input-section d-flex justify-content-around">
-                        <p class="usernamelabel m-2">Kullandığı Araçlar/Protezler:</p>
+                    <div class="input-section">
+                        <p class="usernamelabel pb-3">Kullandığı Araçlar/Protezler:</p>
                         <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
                                     <div>
@@ -786,210 +701,156 @@ if ($result) {
                                         <label class="form-check-label" for="KullandigiAraclar">
                                             <span class="checkbox-header"> Var</span>
                                     </div>
-                    </div>
 
-                    <table class="ozgecmistable-wrapper">
-                        <tbody>
-                            <tr>
-                                <td class="protezlertable">
-                                    <div class="form-check form-check-inline">
+                                    <div class="form-check ">
                                         <input class="form-check-input" type="checkbox" disabled name="aidToolsDesc" id="aidToolsDesc"
                                             value="Gozluk">
                                         <label class="form-check-label" for="inlineCheckbox1">Gözlük </label>
                                     </div>
-                                </td>
-                                <td class="protezlertable">
-                                    <div class="form-check form-check-inline">
+                               
+                                    <div class="form-check ">
                                         <input class="form-check-input" type="checkbox" disabled name="aidToolsDesc"
                                             id="aidToolsDesc" value="Kontakt Lens">
                                         <label class="form-check-label" for="inlineCheckbox1">Kontakt Lens </label>
                                     </div>
-                                </td>
-                                <td class="protezlertable">
-                                    <div class="form-check form-check-inline">
+                               
+                                    <div class="form-check ">
                                         <input class="form-check-input" type="checkbox" disabled name="aidToolsDesc"
                                             id="aidToolsDesc" value="Isitme Cihazi">
                                         <label class="form-check-label" for="inlineCheckbox1">İşitme Cihazı </label>
                                     </div>
-                                    <div class="form-check form-check-inline">
+                                    <div class="form-check ">
                                         <input class="form-check-input" type="checkbox" disabled name="aidToolsDesc" id="aidToolsDesc" value="İşitme Cihazı (Sağ)">
                                         <label class="form-check-label" for="inlineCheckbox1">Sağ </label>
                                     </div>
-                                    <div class="form-check form-check-inline">
+                                    <div class="form-check ">
                                         <input class="form-check-input" type="checkbox" disabled name="aidToolsDesc" id="aidToolsDesc" value="İşitme Cihazı (Sol)">
                                         <label class="form-check-label" for="inlineCheckbox1">Sol</label>
                                     </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="protezlertable">
-                                    <div class="form-check form-check-inline">
+                          
+                                    <div class="form-check ">
                                         <input class="form-check-input" type="checkbox" disabled name="aidToolsDesc"
                                             id="aidToolsDesc" value="Dis Protezi">
                                         <label class="form-check-label" for="inlineCheckbox1">Diş Protez </label>
                                     </div>
-                                </td>
-                                <td class="protezlertable">
-                                    <div class="form-check form-check-inline">
+                              
+                                    <div class="form-check ">
                                         <input class="form-check-input" type="checkbox" disabled name="aidToolsDesc"
                                             id="aidToolsDesc" value="Tekerlekli Sandalye">
                                         <label class="form-check-label" for="inlineCheckbox1">Tekerlekli
                                             Sandalye</label>
                                     </div>
-                                </td>
-                                <td class="protezlertable">
-                                    <div class="form-check form-check-inline">
+                                
+                                    <div class="form-check ">
                                         <input class="form-check-input" type="checkbox" disabled name="aidToolsDesc" id="aidToolsDesc"
                                             value="Baston">
                                         <label class="form-check-label" for="inlineCheckbox1">Baston </label>
                                     </div>
-                                </td>
-                            </tr>
-                            <tr>
-
-                                <td class="protezlertable">
-                                    <div class="form-check form-check-inline">
+                              
+                                    <div class="form-check ">
                                         <input class="form-check-input" type="checkbox" disabled name="aidToolsDesc" id="aidToolsDesc"
                                             value="Yurutec">
                                         <label class="form-check-label" for="inlineCheckbox1">Yürüteç (Walker) </label>
                                     </div>
-                                </td>
-                                <td class="protezlertable">
-                                    <div class="form-check form-check-inline">
+                              
+                                    <div class="form-check ">
                                         <input class="form-check-input" type="checkbox" disabled name="aidToolsDesc"
                                             id="aidToolsDesc" value="Koltuk Degnegi">
                                         <label class="form-check-label" for="inlineCheckbox1">Koltuk Değneği</label>
                                     </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                            </div>
+                            
 
-                    <div class="input-section d-flex">
+                    <div class="input-section">
 
                         <p class="usernamelabel m-2 text-center">Alışkanlıklar:</p>
                         <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
-                    </div>
 
-                    <table class="ozgecmistable-wrapper">
-                        <tbody>
-                            <tr>
-                                <td class="protezlertable">
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" name="smoking" id="smoking"
+                                    <input class="form-check-input" type="checkbox" name="smoking" id="smoking"
                                             value="Sigara">
-                                        <label class="form-check-label" for="inlineCheckbox1">Sigara </label>
-                                    </div>
-                                </td>
-                                <td class="protezlertable">
-                                    <p class="usernamelabel m-2">Miktarı</p>
+                                        <label class="form-check-label" for="inlineCheckbox1">Sigara </label>                                
+                                    <p class="usernamelabel pb-3">Miktarı</p>
 
-                                    <input type="text" class="form-control ozgecmistable"  name="smokingAmount"
+                                    <input type="text" class="form-control "  name="smokingAmount"
                                         id="smokingAmount" disabled placeholder="...">
-                                </td>
-                                <td class="protezlertable">
-                                    <p class="usernamelabel m-2">Kullanım Süreci</p>
+                            
+                                    <p class="usernamelabel pb-3">Kullanım Süreci</p>
 
-                                    <input type="text" class="form-control ozgecmistable" 
+                                    <input type="text" class="form-control mb-5" 
                                         name="smokingTime" id="smokingTime" disabled placeholder="...">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="protezlertable">
-                                    <div class="form-check form-check-inline">
+                             
                                         <input class="form-check-input" type="checkbox" name="alcoholUsage" id="alcoholUsage"
                                             value="Alkol">
-                                        <label class="form-check-label" for="inlineCheckbox1">Alkol </label>
-                                    </div>
-                                </td>
-                                <td class="protezlertable">
-                                    <p class="usernamelabel m-2">Miktarı</p>
+                                        <label class="form-check-label" for="inlineCheckbox1">Alkol </label>                              
+                                          <p class="usernamelabel pb-3">Miktarı</p>
 
-                                    <input type="text" class="form-control ozgecmistable" disabled  name="alcoholAmount"
+                                    <input type="text" class="form-control " disabled  name="alcoholAmount"
                                         id="AMiktar" placeholder="...">
-                                </td>
-                                <td class="protezlertable">
-                                    <p class="usernamelabel m-2">Kullanım Süreci</p>
+                             
+                                    <p class="usernamelabel pb-3">Kullanım Süreci</p>
 
-                                    <input type="text" disabled class="form-control ozgecmistable" 
+                                    <input type="text" disabled class="form-control mb-5" 
                                         name="alcoholUsageTime" id="alcoholUsageTime" placeholder="...">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="protezlertable">
-                                    <div class="form-check form-check-inline">
+
                                         <input class="form-check-input" type="checkbox" name="teaUsage" id="teaUsage" value="Cay">
                                         <label class="form-check-label" for="inlineCheckbox1">Çay </label>
-                                    </div>
-                                </td>
-                                <td class="protezlertable">
-                                    <p class="usernamelabel m-2">Miktarı</p>
+                              
+                                    <p class="usernamelabel pb-3">Miktarı</p>
 
-                                    <input type="text" class="form-control ozgecmistable" disabled name="teaUsageAmount"
+                                    <input type="text" class="form-control " disabled name="teaUsageAmount"
                                         id="teaUsageAmount" placeholder="...">
-                                </td>
-                                <td class="protezlertable">
-                                    <p class="usernamelabel m-2">Kullanım Süreci</p>
+                             
+                                    <p class="usernamelabel pb-3">Kullanım Süreci</p>
 
-                                    <input type="text" class="form-control ozgecmistable" 
+                                    <input type="text" class="form-control mb-5" 
                                         name="teaUsageTime" id="teaUsageTime" placeholder="...">
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td class="protezlertable">
-                                    <div class="form-check form-check-inline">
+                         
                                         <input class="form-check-input" type="checkbox"  name="coffeeUsage" id="coffeeUsage"
                                             value="Kahve">
                                         <label class="form-check-label" for="inlineCheckbox1">Kahve </label>
-                                    </div>
-                                </td>
-                                <td class="protezlertable">
-                                    <p class="usernamelabel m-2">Miktarı</p>
+                              
+                                    <p class="usernamelabel pb-3">Miktarı</p>
 
-                                    <input type="text" class="form-control ozgecmistable" disabled name="coffeeUsageAmount"
+                                    <input type="text" class="form-control " disabled name="coffeeUsageAmount"
                                         id="coffeeUsageAmount" placeholder="...">
-                                </td>
-                                <td class="protezlertable">
-                                    <p class="usernamelabel m-2">Kullanım Süreci</p>
+                            
+                                    <p class="usernamelabel pb-3">Kullanım Süreci</p>
 
-                                    <input type="text" disabled class="form-control ozgecmistable" 
+                                    <input type="text" disabled class="form-control mb-5" 
                                         name="coffeeUsageTime" id="coffeeUsageTime" placeholder="...">
-                                </td>
-                            </tr>
-
-                            <tr>
-
-                                <td class="protezlertable">
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="otherHabits"
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                <label class="form-check-label" for="inlineCheckbox1">Diğer </label> 
+                                    <input class="form-check-input" type="checkbox" id="otherHabits"
                                             value="option2">
-                                        <label class="form-check-label" for="inlineCheckbox1">Diğer </label>
-                                        <input type="text" class="form-control ozgecmistable"  name="otherHabitsInput"
+                                            
+                                            <input type="text" class="form-control "  name="otherHabitsInput"
                                             id="otherHabitsInput" placeholder="...">
-                                    </div>
-                                </td>
-                                <td class="protezlertable">
-                                    <p class="usernamelabel m-2">Miktarı</p>
 
-                                    <input type="text" class="form-control ozgecmistable"  name="otherHabitsAmount"
+                                    <p class="usernamelabel pb-3">Miktarı</p>
+
+                                    <input type="text" class="form-control "  name="otherHabitsAmount"
                                         id="otherHabitsAmount" placeholder="...">
-                                </td>
-                                <td class="protezlertable">
-                                    <p class="usernamelabel m-2">Kullanım Süreci</p>
+                           
+                                    <p class="usernamelabel pb-3">Kullanım Süreci</p>
 
-                                    <input type="text" class="form-control ozgecmistable" 
+                                    <input type="text" class="form-control " 
                                         name="otherHabitsTime" id="otherHabitsTime" placeholder="...">
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    </div>
+
+                                                                
+
+
 
                     <h1 class="form-header">Soygeçmiş</h1>
+                    
                     <div class="input-section ">
-
-                        <p class="usernamelabel m-2">Ailesinde herhangi bir sağlık sorunu olan var mı?:</p>
+                    <p class="usernamelabel pb-3">Ailesinde herhangi bir sağlık sorunu olan var mı?:</p>
                         <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
                         <div class="checkbox-wrapper d-flex">
@@ -1012,36 +873,22 @@ if ($result) {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        
+                      
+                                    <p class="usernamelabel pb-3">Yakınlık Derecesi:  </p>
 
-                    <table class="ozgecmistable-wrapper d-flex flex-column">
-                        <tbody>
-                            <tr class="m-3">
-
-                                <td class="protezlertable">
-                                    <p class="usernamelabel m-2">Yakınlık Derecesi:  </p>
-
-                                </td>
-                                <td class="protezlertable">
-                                    <input type="text" class="form-control ozgecmistable" 
-                                        name="familyMemberRelation" disabled id="familyMemberRelation" placeholder="...">
-                                </td>
-                                
-                            </tr>
-                            <tr class="m-3">
-                            <td class="protezlertable">
-                                    <p class="usernamelabel m-2">Tanısı:  </p>
-
-                                </td>
-                                <td class="protezlertable">
-                                    <input type="text" class="form-control ozgecmistable"  name="familyMemberIllness"
-                                        id="familyMemberIllness" disabled placeholder="...">
-                                </td>
-
-                            </tr>
-                        </tbody>
-                    </table>
-
+                               
+                                    <input type="text" class="form-control " 
+                                    name="familyMemberRelation" disabled id="familyMemberRelation" placeholder="...">
+                              
+                                    <p class="usernamelabel pb-3">Tanısı:  </p>
+                                    
+                               
+                                    <input type="text" class="form-control "  name="familyMemberIllness"
+                                    id="familyMemberIllness" disabled placeholder="...">
+                            
+                    
+                </div>
                     <div class='input-section'>
                         <h1 class="form-header">Hastalık Öyküsü</h1>
                         
@@ -1050,7 +897,7 @@ if ($result) {
 
                         
                         <div class="checkbox-wrapper d-flex">
-                            <div class="checkboxes d-flex">
+                            <div class="checkboxes">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="arrivalFrom" id="arrivalFrom"
                                     value="Yogun Bakim">
@@ -1090,9 +937,9 @@ if ($result) {
                                     <span class="checkbox-header"> Diğer </span>
                                     
                                 </label>
-                                <input type="text" class="form-control" disabled name="arrivalFromInput" id="arrivalFromInput"
-                                placeholder="Diğer">
                             </div>
+                            <input type="text" class="form-control" disabled name="arrivalFromInput" id="arrivalFromInput"
+                            placeholder="Diğer">
                         </div>
                     </div>
                 </div>
@@ -1102,7 +949,7 @@ if ($result) {
                     <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
                     <div class="checkbox-wrapper d-flex">
-                        <div class="checkboxes d-flex">
+                        <div class="checkboxes">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="hospitalArrivalMethod" id="hospitalArrivalMethod"
                                     value="Yuruyerek">
@@ -1136,20 +983,21 @@ if ($result) {
                                     <span class="checkbox-header"> Diğer </span>
 
                                 </label>
-                                <input type="text" class="form-control"  name="hospitalArrivalMethodInput" id="hospitalArrivalMethodInput"
-                                    placeholder="Diğer">
                             </div>
+                            <input type="text" class="form-control"  name="hospitalArrivalMethodInput" id="hospitalArrivalMethodInput"
+                                placeholder="Diğer">
                         </div>
                     </div>
                     </div>
                     <div class="input-section">
                         
-                        <p class="usernamelabel m-2">Şikayetler</p>
-                        <input type="text" class="form-control not"  name="complaints" id="complaints"
+                        <p class="usernamelabel pb-3">Şikayetler</p>
+                        <input type="text" class="form-control"  name="complaints" id="complaints"
                         placeholder="Şikayetler" value="<?php echo $ozgecmisform1[0]['complaints'] ?>">
-                        
-                        <p class="usernamelabel m-2">Tıbbi Tanı</p>
-                        <input type="text" class="form-control not"  name="medicalDiagnosis" id="medicalDiagnosis"
+                    </div>
+                    <div class="input-section">
+                        <p class="usernamelabel pb-3">Tıbbi Tanı</p>
+                        <input type="text" class="form-control"  name="medicalDiagnosis" id="medicalDiagnosis"
                         placeholder="Tıbbi Tanı" value="<?php echo $ozgecmisform1[0]['medicalDiagnosis'] ?>">
                     </div>
                     <div class='d-flex w-100'>    

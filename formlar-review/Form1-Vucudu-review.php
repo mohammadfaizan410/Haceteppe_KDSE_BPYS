@@ -103,15 +103,15 @@ if ($result) {
             <span class='close closeBtn' id='closeBtn1'>&times;</span>
             <h1 class="form-header">VÜCUDU TEMİZ VE BAKIMLI TUTMA</h1>
 
-            <div class="input-section d-flex">
-                <p class="usernamelabel">En Son Banyo Yaptığı Tarih :</p>
+            <div class="input-section">
+                <p class="usernamelabel pb-3">En Son Banyo Yaptığı Tarih :</p>
                 <input type="date" class="form-control" name="bathDate" id="bathDate" value="<?php echo $vucudutemizform1[0]['bathDate']; ?>">
             </div>
 
 
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">Vücut temizliğini yapmada </p>
+                <p class="usernamelabel pb-3">Vücut temizliğini yapmada </p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
                 <div class="checkbox-wrapper d-flex">
@@ -141,14 +141,14 @@ if ($result) {
                 </div>
             </div>
 
-            <div class="input-section d-flex">
-                <p class="usernamelabel">Banyo Sıklığı: :</p>
+            <div class="input-section">
+                <p class="usernamelabel pb-3">Banyo Sıklığı: :</p>
                 <input type="number" class="form-control" name="bathingFrequency" id="bathingFrequency" value="<?php echo $vucudutemizform1[0]['bathingFrequency']; ?>" >
             </div>
 
-            <div class="input-section d-flex">
+            <div class="input-section">
         
-                <p class="usernamelabel">Şekli:</p>
+                <p class="usernamelabel pb-3">Şekli:</p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
                 <div class="checkbox-wrapper d-flex">
@@ -172,9 +172,9 @@ if ($result) {
 
 
 
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">Banyo Suyunun Sıcaklığı </p>
+                <p class="usernamelabel pb-3">Banyo Suyunun Sıcaklığı </p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
                 <div class="checkbox-wrapper d-flex">
@@ -203,9 +203,9 @@ if ($result) {
                     </div>
                 </div>
             </div>
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">Temizlik Ürünü </p>
+                <p class="usernamelabel pb-3">Temizlik Ürünü </p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
                 <div class="checkbox-wrapper d-flex">
@@ -234,9 +234,9 @@ if ($result) {
                     </div>
                 </div>
             </div>
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">Saç Temizlik Ürünü </p>
+                <p class="usernamelabel pb-3">Saç Temizlik Ürünü </p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
                 <div class="checkbox-wrapper d-flex">
@@ -266,9 +266,9 @@ if ($result) {
                     </div>
                 </div>
             </div>
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">Banyo Sonrası </p>
+                <p class="usernamelabel pb-3">Banyo Sonrası </p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
                 <div class="checkbox-wrapper d-flex">
@@ -315,354 +315,291 @@ if ($result) {
 
 
 
-            <div class="input-section d-flex">
                 
-                <p class="usernamelabel w-25">Uygulamalar </p>
-                <p class="usernamelabel w-25">Sıklığı/Zamanı</p>
-                <p class="usernamelabel w-25">Şekli</p>
-                <p class="usernamelabel w-25">Kullanılan Malzeme</p>
+                <p class="usernamelabel pb-3" style='font-size:large'>Uygulamalar </p>
+            <div class="input-section">
+                <p class="usernamelabel pb-3">Ağız bakımı (Diş protez bakımı) </p>
+                <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
+                <p class="usernamelabel pb-3">Sıklığı/Zamanı</p>
+                <input type="number" class="form-control" name="mouthCareFreq" id="mouthCareFreq" value="<?php echo $vucudutemizform1[0]['mouthCareFreq']; ?>">
+                <p class="usernamelabel pb-3">Şekli</p>
+                <input type="text" class="form-control" name="mouthCareMethod" id="mouthCareMethod" value="<?php echo $vucudutemizform1[0]['mouthCareMethod']; ?>">
+                <p class="usernamelabel pb-3">Kullanılan Malzeme</p>
+                <input type="text" class="form-control" name="mouthCareMaterial" id="mouthCareMethod" value="<?php echo $vucudutemizform1[0]['mouthCareMethod']; ?>">
             </div>
-            <div class="input-section d-flex">
-                <p class="usernamelabel">Ağız bakımı (Diş protez bakımı) </p>
+            <div class="input-section">
+                <p class="usernamelabel pb-3">Tırnak bakımı </p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
-                <input type="number" class="form-control w-25" name="mouthCareFreq" id="mouthCareFreq" value="<?php echo $vucudutemizform1[0]['mouthCareFreq']; ?>">
-                <input type="text" class="form-control w-25" name="mouthCareMethod" id="mouthCareMethod" value="<?php echo $vucudutemizform1[0]['mouthCareMethod']; ?>">
-                <input type="text" class="form-control w-25" name="mouthCareMaterial" id="mouthCareMethod" value="<?php echo $vucudutemizform1[0]['mouthCareMethod']; ?>">
+                <p class="usernamelabel pb-3">Sıklığı/Zamanı</p>
+                <input type="text" class="form-control" name="nailCareFreq" id="nailCareFreq" value="<?php echo $vucudutemizform1[0]['mouthCareFreq']; ?>">
+                <p class="usernamelabel pb-3">Şekli</p>
+                <input type="text" class="form-control" name="nailCareMethod" id="nailCareMethod" value="<?php echo $vucudutemizform1[0]['mouthCareFreq']; ?>">
+                <p class="usernamelabel pb-3">Kullanılan Malzeme</p>
+                <input type="text" class="form-control" name="nailCareMaterial" id="nailCareMaterial" value="<?php echo $vucudutemizform1[0]['mouthCareFreq']; ?>">
             </div>
-            <div class="input-section d-flex">
-                <p class="usernamelabel">Tırnak bakımı </p>
+            <div class="input-section">
+                <p class="usernamelabel pb-3">El yıkama alışkanlığı </p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-
-                <input type="text" class="form-control w-25" name="nailCareFreq" id="nailCareFreq" value="<?php echo $vucudutemizform1[0]['mouthCareFreq']; ?>">
-                <input type="text" class="form-control w-25" name="nailCareMethod" id="nailCareMethod" value="<?php echo $vucudutemizform1[0]['mouthCareFreq']; ?>">
-                <input type="text" class="form-control w-25" name="nailCareMaterial" id="nailCareMaterial" value="<?php echo $vucudutemizform1[0]['mouthCareFreq']; ?>">
+                <p class="usernamelabel pb-3">Sıklığı/Zamanı</p>
+                <input type="text" class="form-control" name="handWashingFreq" id="handWashingFreq" value="<?php echo $vucudutemizform1[0]['handWashingFreq']; ?>">
+                <p class="usernamelabel pb-3">Şekli</p>
+                <input type="text" class="form-control" name="handWashingMethod" id="handWashingMethod" value="<?php echo $vucudutemizform1[0]['handWashingMethod']; ?>">
+                <p class="usernamelabel pb-3">Kullanılan Malzeme</p>
+                <input type="text" class="form-control" name="handWashingMaterial" id="handWashingMaterial" value="<?php echo $vucudutemizform1[0]['handWashingMaterial']; ?>">
             </div>
-            <div class="input-section d-flex">
-                <p class="usernamelabel">El yıkama alışkanlığı </p>
+            <div class="input-section">
+                <p class="usernamelabel pb-3">Perine bakımı </p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-
-                <input type="text" class="form-control w-25" name="handWashingFreq" id="handWashingFreq" value="<?php echo $vucudutemizform1[0]['handWashingFreq']; ?>">
-                <input type="text" class="form-control w-25" name="handWashingMethod" id="handWashingMethod" value="<?php echo $vucudutemizform1[0]['handWashingMethod']; ?>">
-                <input type="text" class="form-control w-25" name="handWashingMaterial" id="handWashingMaterial" value="<?php echo $vucudutemizform1[0]['handWashingMaterial']; ?>">
-            </div>
-            <div class="input-section d-flex">
-                <p class="usernamelabel">Perine bakımı </p>
-                <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-
-                <input type="text" class="form-control w-25" name="periniumCareFreq" id="periniumCareFreq" value="<?php echo $vucudutemizform1[0]['periniumCareFreq']; ?>">
-                <input type="text" class="form-control w-25" name="periniumCareMethod" id="periniumCareMethod" value="<?php echo $vucudutemizform1[0]['periniumCareMethod']; ?>">
-                <input type="text" class="form-control w-25" name="periniumCareMaterial" id="periniumCareMaterial" value="<?php echo $vucudutemizform1[0]['periniumCareMaterial']; ?>">
+                <p class="usernamelabel pb-3">Sıklığı/Zamanı</p>
+                <input type="text" class="form-control" name="periniumCareFreq" id="periniumCareFreq" value="<?php echo $vucudutemizform1[0]['periniumCareFreq']; ?>">
+                <p class="usernamelabel pb-3">Şekli</p>
+                <input type="text" class="form-control" name="periniumCareMethod" id="periniumCareMethod" value="<?php echo $vucudutemizform1[0]['periniumCareMethod']; ?>">
+                <p class="usernamelabel pb-3">Kullanılan Malzeme</p>
+                <input type="text" class="form-control" name="periniumCareMaterial" id="periniumCareMaterial" value="<?php echo $vucudutemizform1[0]['periniumCareMaterial']; ?>">
             </div>
 
 
 
 
 
-            <div class="input-section d-flex">
-                <p class="usernamelabel">Menstrual Hijyen
+            <div class="input-section">
+                <p class="usernamelabel pb-3">Menstrual Hijyen
                 </p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
-                <div class="form-check">
                     <label class="form-check-label" for="beslenmeileradio">
                         <span class="checkbox-header">Son adet tarihi </span>
                     </label>
                     <input type="date" class="form-control" name="menstrualDate" id="menstrualDate" value="<?php echo $vucudutemizform1[0]['menstrualDate']; ?>">
-                </div>
-                <div class="form-check">
                     <label class="form-check-label" for="beslenmeileradio">
                         <span class="checkbox-header">Süresi </span>
                     </label>
                     <input type="text" class="form-control" name="mensturalTime" id="mensturalTime" value="<?php echo $vucudutemizform1[0]['menstrualDate']; ?>">
-                </div>
             </div>
 
 
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">Menstruasyonda kullandığı Ürün:</p>
+                <p class="usernamelabel pb-3">Menstruasyonda kullandığı Ürün:</p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
-                <div class="checkbox-wrapper d-flex align-items-center">
-                    <div class="checkboxes">
-                        <div class="form-check mb-5">
+                <div class="checkbox-wrapper">
+                        <div class="form-check ">
                             <input class="form-check-input" type="radio" name="menstrualProduct" id="menstrualProduct" value="Hazır ped">
                             <label class="form-check-label" for="MKUrun">
                                 <span class="checkbox-header">Hazır ped</span>
                             </label>
                         </div>
-
-                        <div class="form-check mb-5">
+                                <span class="checkbox-header">Değiştirme sıklığı (Gün) </span>
+                            <input type="text" class="form-control diger" name="padReplacementFreq" id="padReplacementFreq">
+                        <div class="form-check">
                             <input class="form-check-input" type="radio" name="menstrualProduct" id="menstrualProduct" value="Bez">
                             <label class="form-check-label" for="MKUrun">
                                 <span class="checkbox-header">Bez </span>
 
                             </label>
                         </div>
-                        <div class="form-check mb-5">
-                            <input class="form-check-input" type="radio" name="menstrualProduct" id="menstrualProduct" value="Diğer">
-                            <label class="form-check-label" for="MKUrun">
-                                <span class="checkbox-header">Diğer: </span>
-                                <input type="text" class="form-control" disabled name="menstrualProductDiger"  id="menstrualProductDiger">
-                            </label>
-                        </div>
-                    </div>
+                                    <span class="checkbox-header">Değiştirme sıklığı : </span>
+                                <input type="text" class="form-control diger"  name="bezReplacementFreq" id="bezReplacementFreq">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="menstrualProduct" id="menstrualProduct" value="Diğer">
+                                    <label class="form-check-label" for="MKUrun">
+                                        <span class="checkbox-header">Diğer: </span>
+                                    </label>
+                                </div>
+                                
+                                <input type="text" class="form-control" name="menstrualProductDiger" disabled id="menstrualProductDiger">
+                                <span class="checkbox-header">Değiştirme sıklığı(Gun) </span>
+                            <input type="text" class="form-control diger" name="digerReplacementFreq" id="digerReplacementFreq">
+                       
                 </div>
-                <div class="checkbox-wrapper d-flex">
-                    <div class="checkboxes">
-
-                        <div class="form-check">
-                            <label class="form-check-label" for="beslenmeileradio">
-                                <span class="checkbox-header">Değiştirme sıklığı : </span>
-
-                            </label>
-                            <input type="text" class="form-control diger" disabled name="padReplacementFreq" id="padReplacementFreq">
-                            <label class="form-check-label" for="beslenmeileradio">
-                                <span class="checkbox-header">/Gün </span>
-
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <label class="form-check-label" for="beslenmeileradio">
-                                <span class="checkbox-header">Değiştirme sıklığı : </span>
-                            </label>
-                            <input type="text" class="form-control diger" disabled  name="bezReplacementFreq" id="bezReplacementFreq">
-                            <label class="form-check-label" for="beslenmeileradio">
-                                <span class="checkbox-header">/Gün </span>
-
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <label class="form-check-label" for="beslenmeileradio" >
-                                <span class="checkbox-header">Değiştirme sıklığı : </span>
-                            </label>
-                            <input type="text" class="form-control diger" disabled name="digerReplacementFreq" id="digerReplacementFreq">
-                            <label class="form-check-label" for="beslenmeileradio">
-                                <span class="checkbox-header">/Gün </span>
-
-                            </label>
-                        </div>
-                    </div>
-                </div>
+               
+                      
+                    
             </div>
 
-            <div class="input-section d-flex border p-3" >
-                <p class="usernamelabel">Derinin Değerlendirilmesi </p>
-                <div class="w-50">
-                    <div class="input-section d-flex">
-                        <p class="usernamelabel ">Renk Değişimi </p>
-                        <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
+                <p class="usernamelabel pb-3" style="font-size: large;"">Derinin Değerlendirilmesi </p>
+                <div class="input-section">
+                    <p class="usernamelabel ">Renk Değişimi </p>
+                    <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
-                        <div class="checkbox-wrapper d-flex">
-                            <div class="checkboxes d-flex">
+                    <div class="checkbox-wrapper">
+                        <div class="checkboxes d-flex">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="skinColorProblem" id="skinColorProblem" value="Yok">
+                                <label class="form-check-label" for="DeriRenkDegisimi">
+                                    <span class="checkbox-header">Yok </span>
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="skinColorProblem" id="skinColorProblem" value="Var">
+                                <label class="form-check-label" for="DeriRenkDegisimi">
+                                    <span class="checkbox-header">Var</span>
+
+                                </label>
+                            </div>
+                        </div>
+                               
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" disabled name="skinColorProblemDesc" id="skinColorProblemDesc" value="Sari">
+                                                    <label class="form-check-label" for="Sari">Sarı
+                                                        Yeri… </label>
+                                                </div>
+                                          
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" disabled name="skinColorProblemDesc" id="skinColorProblemDesc" value="Soluk">
+                                                    <label class="form-check-label" for="Soluk1">Soluk
+                                                        Yeri</label>
+                                                </div>
+                                          
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" disabled name="skinColorProblemDesc" id="skinColorProblemDesc" value="Kızarıklık">
+                                                    <label class="form-check-label" for="Kızarıklık">Kızarıklık.
+                                                        Yeri</label>
+                                                </div>
+                                          
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" disabled name="skinColorProblemDesc" id="skinColorProblemDesc" value="Siyanoz">
+                                                    <label class="form-check-label" for="Siyanoz">Siyanoz.
+                                                        Yeri</label>
+                                                </div>
+                                         
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" disabled name="skinColorProblemDesc" id="skinColorProblemDesc" value="Renk kaybı">
+                                                    <label class="form-check-label" for="RenkKaybı">Renk
+                                                        kaybı</label>
+                                                </div>
+                                         
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" disabled name="skinColorProblemDesc" id="skinColorProblemDesc" value="Pigmentasyon artışı">
+                                                    <label class="form-check-label" for="PigmentasyonArtışı">Pigmentasyon artışı. Yeri</label>
+                                                </div>
+                                                </div>
+                                          
+                </div>
+                <div class="input-section">
+
+                    <p class="usernamelabel pb-3">Nemlilik </p>
+                    <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
+
+                    <div class="checkbox-wrapper">
+                        <div class="checkboxes">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="skinMoisture" id="skinMoisture" value="Sorun yok">
+                                <label class="form-check-label" for="Nemlilik">
+                                    <span class="checkbox-header">Sorun yok </span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="skinMoisture" id="skinMoisture" value="Var">
+                                <label class="form-check-label" for="Nemlilik">
+                                    <span class="checkbox-header">Var. Açıklayınız </span>
+                                </label>
+                            </div>
+                            <input type="text" class="form-control" disabled name="skinMoistureInput" id="skinMoistureInput">
+                        </div>
+                    </div>
+                </div>
+                <div class="input-section">
+
+                    <p class="usernamelabel pb-3">Isı değişimi </p>
+                    <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
+
+                    <div class="checkbox-wrapper">
+                        <div class="checkboxes">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="skinTemperature" id="skinTemperature" value="Sorun yok">
+                                <label class="form-check-label" for="IsiDegisimi">
+                                    <span class="checkbox-header">Sorun yok </span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="skinTemperature" id="skinTemperature" value="Var">
+                                <label class="form-check-label" for="IsiDegisimi">
+                                    <span class="checkbox-header">Var. Açıklayınız </span>
+                                </label>
+                            </div>
+                            <input type="text" class="form-control" disabled name="skinTemperatureInput">
+                        </div>
+                    </div>
+                </div>
+                <div class="input-section">
+
+                    <p class="usernamelabel pb-3">Derinin yapısı </p>
+                    <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
+
+                    <div class="checkbox-wrapper">
+                        <div class="checkboxes">
+                            <div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="skinColorProblem" id="skinColorProblem" value="Yok">
-                                    <label class="form-check-label" for="DeriRenkDegisimi">
-                                        <span class="checkbox-header">Yok </span>
+                                    <input class="form-check-input" type="radio" name="skinStructure" id="skinStructure" value="Normal">
+                                    <label class="form-check-label" for="DerininYapisi">
+                                        <span class="checkbox-header">Normal </span>
                                     </label>
                                 </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="skinStructure" id="skinStructure" value="Pürüzlü">
+                                    <label class="form-check-label" for="DerininYapisi">
+                                        <span class="checkbox-header">Pürüzlü</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div>
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="skinColorProblem" id="skinColorProblem" value="Var">
-                                    <label class="form-check-label" for="DeriRenkDegisimi">
-                                        <span class="checkbox-header">Var</span>
-
+                                    <input class="form-check-input" type="radio" name="skinStructure" id="skinStructure" value="Sert">
+                                    <label class="form-check-label" for="DerininYapisi">
+                                        <span class="checkbox-header">Sert</span>
                                     </label>
-                                    <table class="ozgecmistable-wrapper">
-                                        <tbody>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="skinStructure" id="skinStructure" value="Esnek">
+                                    <label class="form-check-label" for="DerininYapisi">
+                                        <span class="checkbox-header">Esnek</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div>
 
-                                            <tr>
-                                                <td class="protezlertable">
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="checkbox" disabled  name="skinColorProblemDesc" id="skinColorProblemDesc" value="Sari">
-                                                        <label class="form-check-label" for="Sari">Sarı
-                                                            Yeri… </label>
-                                                    </div>
-                                                </td>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="skinStructure" id="skinStructure" value="Buruşuk">
+                                    <label class="form-check-label" for="DerininYapisi">
+                                        <span class="checkbox-header">Buruşuk</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="skinStructure" id="skinStructure" value="İnce">
+                                    <label class="form-check-label" for="DerininYapisi">
+                                        <span class="checkbox-header">İnce</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div>
 
-                                            </tr>
-                                            <tr>
-                                                <td class="protezlertable">
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="checkbox" disabled  name="skinColorProblemDesc" id="skinColorProblemDesc" value="Soluk">
-                                                        <label class="form-check-label" for="Soluk1">Soluk
-                                                            Yeri</label>
-                                                    </div>
-                                                </td>
-
-                                            </tr>
-                                            <tr>
-                                                <td class="protezlertable">
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="checkbox" disabled  name="skinColorProblemDesc" id="skinColorProblemDesc" value="Kızarıklık">
-                                                        <label class="form-check-label" for="Kızarıklık">Kızarıklık.
-                                                            Yeri</label>
-                                                    </div>
-                                                </td>
-
-                                            </tr>
-                                            <tr>
-                                                <td class="protezlertable">
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="checkbox" disabled  name="skinColorProblemDesc" id="skinColorProblemDesc" value="Siyanoz">
-                                                        <label class="form-check-label" for="Siyanoz">Siyanoz.
-                                                            Yeri</label>
-                                                    </div>
-                                                </td>
-
-                                            </tr>
-
-                                            <tr>
-                                                <td class="protezlertable">
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="checkbox" disabled name="skinColorProblemDesc" id="skinColorProblemDesc" value="Renk kaybı">
-                                                        <label class="form-check-label" for="RenkKaybı">Renk
-                                                            kaybı</label>
-                                                    </div>
-                                                </td>
-
-                                            </tr>
-
-                                            <tr>
-                                                <td class="protezlertable">
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="checkbox" disabled  name="skinColorProblemDesc" id="skinColorProblemDesc" value="Pigmentasyon artışı">
-                                                        <label class="form-check-label" for="PigmentasyonArtışı">Pigmentasyon artışı. Yeri</label>
-                                                    </div>
-                                                </td>
-
-                                            </tr>
-
-
-                                        </tbody>
-                                    </table>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="skinStructure" id="skinStructure" value="Düz">
+                                    <label class="form-check-label" for="DerininYapisi">
+                                        <span class="checkbox-header">Düz</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="skinStructure" id="skinStructure" value="Kalın">
+                                    <label class="form-check-label" for="DerininYapisi">
+                                        <span class="checkbox-header">Kalın</span>
+                                    </label>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="input-section d-flex">
-
-                        <p class="usernamelabel">Nemlilik </p>
-                        <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-
-                        <div class="checkbox-wrapper d-flex">
-                            <div class="checkboxes d-flex">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="skinMoisture" id="skinMoisture" value="Sorun yok">
-                                    <label class="form-check-label" for="Nemlilik">
-                                        <span class="checkbox-header">Sorun yok </span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="skinMoisture" id="skinMoisture" value="Var">
-                                    <label class="form-check-label" for="Nemlilik">
-                                        <span class="checkbox-header">Var. Açıklayınız </span>
-                                        <input type="text" class="form-control diger" disabled  name="skinMoistureInput" id="skinMoistureInput">
-                                    </label>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="input-section d-flex">
-
-                        <p class="usernamelabel">Isı değişimi </p>
-                        <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-
-                        <div class="checkbox-wrapper d-flex">
-                            <div class="checkboxes d-flex">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="skinTemperature" id="skinTemperature" value="Sorun yok">
-                                    <label class="form-check-label" for="IsiDegisimi">
-                                        <span class="checkbox-header">Sorun yok </span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="skinTemperature" id="skinTemperature" value="Var">
-                                    <label class="form-check-label" for="IsiDegisimi">
-                                        <span class="checkbox-header">Var. Açıklayınız </span>
-                                        <input type="text" class="form-control diger" disabled  name="skinTemperatureInput">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="input-section d-flex">
-
-                        <p class="usernamelabel">Derinin yapısı </p>
-                        <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-
-                        <div class="checkbox-wrapper d-flex">
-                            <div class="checkboxes d-flex">
-                                <div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="skinStructure" id="skinStructure" value="Normal">
-                                        <label class="form-check-label" for="DerininYapisi">
-                                            <span class="checkbox-header">Normal </span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="skinStructure" id="skinStructure" value="Pürüzlü">
-                                        <label class="form-check-label" for="DerininYapisi">
-                                            <span class="checkbox-header">Pürüzlü</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div>
-
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="skinStructure" id="skinStructure" value="Sert">
-                                        <label class="form-check-label" for="DerininYapisi">
-                                            <span class="checkbox-header">Sert</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="skinStructure" id="skinStructure" value="Esnek">
-                                        <label class="form-check-label" for="DerininYapisi">
-                                            <span class="checkbox-header">Esnek</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div>
-
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="skinStructure" id="skinStructure" value="Buruşuk">
-                                        <label class="form-check-label" for="DerininYapisi">
-                                            <span class="checkbox-header">Buruşuk</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="skinStructure" id="skinStructure" value="İnce">
-                                        <label class="form-check-label" for="DerininYapisi">
-                                            <span class="checkbox-header">İnce</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div>
-
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="skinStructure" id="skinStructure" value="Düz">
-                                        <label class="form-check-label" for="DerininYapisi">
-                                            <span class="checkbox-header">Düz</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="skinStructure" id="skinStructure" value="Kalın">
-                                        <label class="form-check-label" for="DerininYapisi">
-                                            <span class="checkbox-header">Kalın</span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                </div>
 
 
 
-                    <div class="input-section d-flex">
+                    <div class="input-section">
 
-                        <p class="usernamelabel">Deri Turgoru </p>
+                        <p class="usernamelabel pb-3">Deri Turgoru </p>
                         <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
                         <div class="checkbox-wrapper d-flex">
@@ -684,12 +621,12 @@ if ($result) {
                         </div>
                     </div>
 
-                    <div class="input-section d-flex">
+                    <div class="input-section">
 
-                        <p class="usernamelabel">Deride Sorun </p>
+                        <p class="usernamelabel pb-3">Deride Sorun </p>
                         <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
-                        <div class="checkbox-wrapper d-flex">
+                        <div class="checkbox-wrapper">
                             <div class="checkboxes d-flex">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="skinProblem" id="skinProblem" value="Sorun Yok">
@@ -704,438 +641,311 @@ if ($result) {
                                         <span class="checkbox-header">Var</span>
 
                                     </label>
-                                    <table class="ozgecmistable-wrapper">
-                                        <tbody>
-
-                                            <tr>
-                                                <td class="protezlertable">
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input"  type="checkbox" disabled name="skinProblemDesc" id="skinProblemDesc" value="Makül">
+                                  
+                                </div>
+                            </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" disabled type="checkbox" name="skinProblemDesc" id="skinProblemDesc" value="Makül">
                                                         <label class="form-check-label" for="Makül">Makül
                                                         </label>
                                                     </div>
-                                                </td>
-
-                                            </tr>
-                                            <tr>
-                                                <td class="protezlertable">
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input"  type="checkbox" disabled name="skinProblemDesc" id="skinProblemDesc" value="Papül">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" disabled type="checkbox" name="skinProblemDesc" id="skinProblemDesc" value="Papül">
                                                         <label class="form-check-label" for="Papül">Papül
                                                         </label>
                                                     </div>
-                                                </td>
-
-                                            </tr>
-                                            <tr>
-                                                <td class="protezlertable">
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input"  type="checkbox" disabled name="skinProblemDesc" id="skinProblemDesc" value="Vezikül">
+                                                
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" disabled type="checkbox" name="skinProblemDesc" id="skinProblemDesc" value="Vezikül">
                                                         <label class="form-check-label" for="Vezikül">Vezikül
                                                         </label>
                                                     </div>
-                                                </td>
-
-                                            </tr>
-                                            <tr>
-                                                <td class="protezlertable">
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input"  type="checkbox" disabled name="skinProblemDesc" id="skinProblemDesc" value="Peteşi">
+                                              
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" disabled type="checkbox" name="skinProblemDesc" id="skinProblemDesc" value="Peteşi">
                                                         <label class="form-check-label" for="Peteşi">Peteşi</label>
                                                     </div>
-                                                </td>
-
-                                            </tr>
-
-                                            <tr>
-                                                <td class="protezlertable">
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input"  type="checkbox" disabled name="skinProblemDesc" id="skinProblemDesc" value="Purpura">
+                                                
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" disabled type="checkbox" name="skinProblemDesc" id="skinProblemDesc" value="Purpura">
                                                         <label class="form-check-label" for="Purpura">Purpura</label>
                                                     </div>
-                                                </td>
-
-                                            </tr>
-
-
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
+                                               
                     </div>
-                </div>
             </div>
 
 
 
 
 
-            <div class="input-section d-flex border p-3">
-                <p class="usernamelabel">Saç ve Vücut Kılları
-                </p>
-                
-                <div class="w-50">
-                    <div class="input-section d-flex">
-                        <p class="usernamelabel ">Yapısı </p>
-                        <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                        <div class="checkbox-wrapper d-flex">
-                            <div class="checkboxes d-flex">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="bodyHairStructure" id="bodyHairStructure" value="Sorun Yok">
-                                    <label class="form-check-label" for="SacKil">
-                                        <span class="checkbox-header">Sorun Yok </span>
-                                    </label>
-                                </div>
+            <p class="usernamelabel mb-5" style="font-size: large;">Saç ve Vücut Kılları
+            </p>
 
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="bodyHairStructure" id="bodyHairStructure" value="Var">
-                                    <label class="form-check-label" for="SacKil">
-                                        <span class="checkbox-header">Var</span>
+<div class="input-section">
+<p class="usernamelabel">Yapısı </p>
+<p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
+<div class="checkbox-wrapper">
+<div class="checkboxes d-flex">
+<div class="form-check">
+<input class="form-check-input" type="radio" name="bodyHairStructure" id="bodyHairStructure" value="Sorun Yok">
+<label class="form-check-label" for="SacKil">
+<span class="checkbox-header">Sorun Yok </span>
+</label>
+</div>
 
-                                    </label>
-                                    <table class="ozgecmistable-wrapper">
-                                        <tbody>
+<div class="form-check">
+<input class="form-check-input" type="radio" name="bodyHairStructure" id="bodyHairStructure" value="Var">
+<label class="form-check-label" for="SacKil">
+<span class="checkbox-header">Var</span>
 
-                                            <tr>
-                                                <td class="protezlertable">
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" disabled type="checkbox" name="bodyHairStructureDesc" id="bodyHairStructureDesc" value="Yağlı">
-                                                        <label class="form-check-label" for="Yağlı">Yağlı
-                                                        </label>
-                                                    </div>
-                                                </td>
+</label>
+</div>
+</div>
 
-                                            </tr>
-                                            <tr>
-                                                <td class="protezlertable">
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" disabled type="checkbox" name="bodyHairStructureDesc" id="bodyHairStructureDesc" value="Kuru">
-                                                        <label class="form-check-label" for="Kuru">Kuru
-                                                        </label>
-                                                    </div>
-                                                </td>
+<div class="form-check">
+<input class="form-check-input" disabled type="checkbox" name="bodyHairStructureDesc" id="bodyHairStructureDesc" value="Yağlı">
+<label class="form-check-label" for="Yağlı">Yağlı
+</label>
+</div>
 
-                                            </tr>
-                                            <tr>
-                                                <td class="protezlertable">
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" disabled type="checkbox" name="bodyHairStructureDesc" id="bodyHairStructureDesc" value="Sert">
-                                                        <label class="form-check-label" for="Sert">Sert
-                                                        </label>
-                                                    </div>
-                                                </td>
+<div class="form-check">
+<input class="form-check-input" disabled type="checkbox" name="bodyHairStructureDesc" id="bodyHairStructureDesc" value="Kuru">
+<label class="form-check-label" for="Kuru">Kuru
+</label>
+</div>
+</td>
 
-                                            </tr>
-                                            <tr>
-                                                <td class="protezlertable">
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" disabled type="checkbox" name="bodyHairStructureDesc" id="bodyHairStructureDesc" value="Yumuşak">
-                                                        <label class="form-check-label" for="Yumuşak">Yumuşak</label>
-                                                    </div>
-                                                </td>
 
-                                            </tr>
+<div class="form-check">
+<input class="form-check-input" disabled type="checkbox" name="bodyHairStructureDesc" id="bodyHairStructureDesc" value="Sert">
+<label class="form-check-label" for="Sert">Sert
+</label>
+</div>
 
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="input-section d-flex">
-                        <p class="usernamelabel ">Dağılımı </p>
-                        <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
+<div class="form-check">
+<input class="form-check-input" disabled type="checkbox" name="bodyHairStructureDesc" id="bodyHairStructureDesc" value="Yumuşak">
+<label class="form-check-label" for="Yumuşak">Yumuşak</label>
+</div>
+</div>
+</div>
+<div class="input-section">
+<p class="usernamelabel ">Dağılımı </p>
+<p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
-                        <div class="checkbox-wrapper d-flex">
-                            <div class="checkboxes d-flex">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="hairDistributionProblem" id="hairDistributionProblem" value="Sorun Yok">
-                                    <label class="form-check-label" for="Dağılımı">
-                                        <span class="checkbox-header">Sorun Yok </span>
-                                    </label>
-                                </div>
+<div class="checkbox-wrapper">
+<div class="checkboxes d-flex">
+<div class="form-check">
+<input class="form-check-input" type="radio" name="hairDistributionProblem" id="hairDistributionProblem" value="Sorun Yok">
+<label class="form-check-label" for="Dağılımı">
+<span class="checkbox-header">Sorun Yok </span>
+</label>
+</div>
 
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="hairDistributionProblem" id="hairDistributionProblem" value="Var">
-                                    <label class="form-check-label" for="Dağılımı">
-                                        <span class="checkbox-header">Var</span>
+<div class="form-check">
+<input class="form-check-input" type="radio" name="hairDistributionProblem" id="hairDistributionProblem" value="Var">
+<label class="form-check-label" for="Dağılımı">
+<span class="checkbox-header">Var</span>
 
-                                    </label>
-                                    <table class="ozgecmistable-wrapper">
-                                        <tbody>
+</label>
 
-                                            <tr>
-                                                <td class="protezlertable">
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" disabled type="checkbox" name="hairDistributionProblemDesc" id="hairDistributionProblemDesc" value="Alopesia">
-                                                        <label class="form-check-label" for="Alopesia">Alopesia</label>
-                                                    </div>
-                                                </td>
+</div>
+</div>
+<div class="form-check">
+<input class="form-check-input" disabled type="checkbox" name="hairDistributionProblemDesc" id="hairDistributionProblemDesc" value="Alopesia">
+<label class="form-check-label" for="Alopesia">Alopesia</label>
+</div>
 
-                                            </tr>
-                                            <tr>
-                                                <td class="protezlertable">
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" disabled type="checkbox" name="hairDistributionProblemDesc" id="hairDistributionProblemDesc" value="Seyrek">
-                                                        <label class="form-check-label" for="Seyrek">Seyrek
-                                                        </label>
-                                                    </div>
-                                                </td>
+<div class="form-check">
+<input class="form-check-input" disabled type="checkbox" name="hairDistributionProblemDesc" id="hairDistributionProblemDesc" value="Seyrek">
+<label class="form-check-label" for="Seyrek">Seyrek
+</label>
+</div>
 
-                                            </tr>
-                                            <tr>
-                                                <td class="protezlertable">
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" disabled type="checkbox" name="hairDistributionProblemDesc" id="hairDistributionProblemDesc" value="Tüylenmede">
-                                                        <label class="form-check-label" for="Tüylenmede">Tüylenmede
-                                                            Artış</label>
-                                                    </div>
-                                                </td>
+<div class="form-check">
+<input class="form-check-input" disabled type="checkbox" name="hairDistributionProblemDesc" id="hairDistributionProblemDesc" value="Tüylenmede">
+<label class="form-check-label" for="Tüylenmede">Tüylenmede
+    Artış</label>
+</div>
 
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="input-section d-flex">
-                        <p class="usernamelabel ">Saçlı deri </p>
-                        <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
+</div>
+</div>
+<div class="input-section">
+<p class="usernamelabel ">Saçlı deri </p>
+<p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
-                        <div class="checkbox-wrapper d-flex">
-                            <div class="checkboxes d-flex">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="scalpHairProblem" id="scalpHairProblem" value="Sorun Yok">
-                                    <label class="form-check-label" for="SacDeri">
-                                        <span class="checkbox-header">Sorun Yok </span>
-                                    </label>
-                                </div>
+<div class="checkbox-wrapper">
+<div class="checkboxes d-flex">
+<div class="form-check">
+<input class="form-check-input" type="radio" name="scalpHairProblem" id="scalpHairProblem" value="Sorun Yok">
+<label class="form-check-label" for="SacDeri">
+<span class="checkbox-header">Sorun Yok </span>
+</label>
+</div>
 
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="scalpHairProblem" id="scalpHairProblem" value="Var">
-                                    <label class="form-check-label" for="SacDeri">
-                                        <span class="checkbox-header">Var</span>
+<div class="form-check">
+<input class="form-check-input" type="radio" name="scalpHairProblem" id="scalpHairProblem" value="Var">
+<label class="form-check-label" for="SacDeri">
+<span class="checkbox-header">Var</span>
 
-                                    </label>
-                                    <table class="ozgecmistable-wrapper">
-                                        <tbody>
+</label>
 
-                                            <tr>
-                                                <td class="protezlertable">
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" disabled name="scalpHairProblemDesc" type="checkbox" id="scalpHairProblemDesc" value="Kuruma">
-                                                        <label class="form-check-label" for="Kuruma"> Kuruma
-                                                        </label>
-                                                    </div>
-                                                </td>
 
-                                            </tr>
-                                            <tr>
-                                                <td class="protezlertable">
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" disabled type="checkbox" name="scalpHairProblemDesc" id="scalpHairProblemDesc" value="Yağlanma">
-                                                        <label class="form-check-label" for="Yağlanma">Yağlanma
-                                                        </label>
-                                                    </div>
-                                                </td>
+</div>
+</div>
+<div class="form-check">
+<input class="form-check-input" disabled name="scalpHairProblemDesc" type="checkbox" id="scalpHairProblemDesc" value="Kuruma">
+<label class="form-check-label" for="Kuruma"> Kuruma
+</label>
+</div>
 
-                                            </tr>
-                                            <tr>
-                                                <td class="protezlertable">
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" disabled type="checkbox" name="scalpHairProblemDesc" id="scalpHairProblemDesc" value="Kepeklenme">
-                                                        <label class="form-check-label" for="Kepeklenme">Kepeklenme</label>
-                                                    </div>
-                                                </td>
+<div class="form-check">
+<input class="form-check-input" disabled type="checkbox" name="scalpHairProblemDesc" id="scalpHairProblemDesc" value="Yağlanma">
+<label class="form-check-label" for="Yağlanma">Yağlanma
+</label>
+</div>
+</td>
 
-                                            </tr>
-                                            <tr>
-                                                <td class="protezlertable">
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" disabled type="checkbox" name="scalpHairProblemDesc" id="scalpHairProblemDesc" value="Parazit">
-                                                        <label class="form-check-label" for="Parazit">Parazit</label>
-                                                    </div>
-                                                </td>
 
-                                            </tr>
-                                            <tr>
-                                                <td class="protezlertable">
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" disabled type="checkbox" name="scalpHairProblemDesc" id="scalpHairProblemDesc" value="Kitle">
-                                                        <label class="form-check-label" for="Kitle">Kitle.
-                                                            Açıklayınız</label>
-                                                    </div>
-                                                </td>
+<div class="form-check">
+<input class="form-check-input" disabled type="checkbox" name="scalpHairProblemDesc" id="scalpHairProblemDesc" value="Kepeklenme">
+<label class="form-check-label" for="Kepeklenme">Kepeklenme</label>
+</div>
 
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<div class="form-check">
+<input class="form-check-input" disabled type="checkbox" name="scalpHairProblemDesc" id="scalpHairProblemDesc" value="Parazit">
+<label class="form-check-label" for="Parazit">Parazit</label>
+</div>
+
+<div class="form-check">
+<input class="form-check-input" disabled type="checkbox" name="scalpHairProblemDesc" id="scalpHairProblemDesc" value="Kitle">
+<label class="form-check-label" for="Kitle">Kitle.
+    Açıklayınız</label>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<p class="usernamelabel mb-5" style="font-size: large;">Tırnaklar
+</p>
+
+    <div class="input-section">
+        <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
+        <p class="usernamelabel ">Rengi </p>
+        <div class="checkbox-wrapper">
+            <div class="checkboxes d-flex">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="nailColorProblem" id="nailColorProblem" value="Sorun Yok">
+                    <label class="form-check-label" for="TirnakRengi">
+                        <span class="checkbox-header">Sorun Yok </span>
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="nailColorProblem" id="nailColorProblem" value="Var">
+                    <label class="form-check-label" for="TirnakRengi">
+                        <span class="checkbox-header">Var</span>
+
+                    </label>
+                   
                 </div>
             </div>
-            <div class="input-section d-flex border p-3">
-                <p class="usernamelabel">Tırnaklar
-                </p>
-                
-                <div class="w-50">
-                    <div class="input-section d-flex">
-                        <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                        <p class="usernamelabel ">Rengi </p>
-                        <div class="checkbox-wrapper d-flex">
-                            <div class="checkboxes d-flex">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="nailColorProblem" id="nailColorProblem" value="Sorun Yok">
-                                    <label class="form-check-label" for="TirnakRengi">
-                                        <span class="checkbox-header">Sorun Yok </span>
-                                    </label>
-                                </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" disabled type="checkbox" name="nailColorProblemDesc" id="nailColorProblemDesc" value="Siyanotik">
+                                        <label class="form-check-label" for="Siyanotik"> Siyanotik
+                                        </label>
+                                    </div>
+                                
+                                    <div class="form-check">
+                                        <input class="form-check-input" disabled type="checkbox" name="nailColorProblemDesc" id="nailColorProblemDesc" value="Soluk">
+                                        <label class="form-check-label" for="Soluk">Soluk
+                                            beyaz</label>
+                                    </div>
+                             
+                                    <div class="form-check">
+                                        <input class="form-check-input" disabled type="checkbox" name="nailColorProblemDesc" id="nailColorProblemDesc" value="Sarı">
+                                        <label class="form-check-label" for="Sarı">Sarı
+                                        </label>
+                                    </div>
+                               
+        </div>
+    </div>
+    <div class="input-section">
+        <p class="usernamelabel ">Şekli </p>
+        <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="nailColorProblem" id="nailColorProblem" value="Var">
-                                    <label class="form-check-label" for="TirnakRengi">
-                                        <span class="checkbox-header">Var</span>
+        <div class="checkbox-wrapper">
+            <div class="checkboxes d-flex">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="nailStructureProblem" id="nailStructureProblem" value="Sorun Yok">
+                    <label class="form-check-label" for="sekli">
+                        <span class="checkbox-header">Sorun Yok </span>
+                    </label>
+                </div>
 
-                                    </label>
-                                    <table class="ozgecmistable-wrapper">
-                                        <tbody>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="nailStructureProblem" id="nailStructureProblem" value="Var">
+                    <label class="form-check-label" for="sekli">
+                        <span class="checkbox-header">Var</span>
 
-                                            <tr>
-                                                <td class="protezlertable">
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" disabled type="checkbox" name="nailColorProblemDesc" id="nailColorProblemDesc" value="Siyanotik">
-                                                        <label class="form-check-label" for="Siyanotik"> Siyanotik
-                                                        </label>
-                                                    </div>
-                                                </td>
-
-                                            </tr>
-                                            <tr>
-                                                <td class="protezlertable">
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" disabled type="checkbox" name="nailColorProblemDesc" id="nailColorProblemDesc" value="Soluk">
-                                                        <label class="form-check-label" for="Soluk">Soluk
-                                                            beyaz</label>
-                                                    </div>
-                                                </td>
-
-                                            </tr>
-                                            <tr>
-                                                <td class="protezlertable">
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" disabled type="checkbox" name="nailColorProblemDesc" id="nailColorProblemDesc" value="Sarı">
-                                                        <label class="form-check-label" for="Sarı">Sarı
-                                                        </label>
-                                                    </div>
-                                                </td>
-
-                                            </tr>
-
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="input-section d-flex">
-                        <p class="usernamelabel ">Şekli </p>
-                        <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-
-                        <div class="checkbox-wrapper d-flex">
-                            <div class="checkboxes d-flex">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="nailStructureProblem" id="nailStructureProblem" value="Sorun Yok">
-                                    <label class="form-check-label" for="sekli">
-                                        <span class="checkbox-header">Sorun Yok </span>
-                                    </label>
-                                </div>
-
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="nailStructureProblem" id="nailStructureProblem" value="Var">
-                                    <label class="form-check-label" for="sekli">
-                                        <span class="checkbox-header">Var</span>
-
-                                    </label>
-                                    <table class="ozgecmistable-wrapper">
-                                        <tbody>
-
-                                            <tr>
-                                                <td class="protezlertable">
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" disabled type="checkbox" name="nailStructureProblemDesc" id="nailStructureProblemDesc" value="Çomaklaşma">
-                                                        <label class="form-check-label" for="Çomaklaşma">
-                                                            Çomaklaşma </label>
-                                                    </div>
-                                                </td>
-
-                                            </tr>
-                                            <tr>
-                                                <td class="protezlertable">
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" disabled type="checkbox" id="nailStructureProblemDesc" name="nailStructureProblemDesc" value="Beyaz Lekeler">
-                                                        <label class="form-check-label" for="BeyazLekeler">Beyaz
-                                                            lekeler</label>
-                                                    </div>
-                                                </td>
-
-                                            </tr>
-                                            <tr>
-                                                <td class="protezlertable">
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" disabled type="checkbox" name="nailStructureProblemDesc" id="nailStructureProblemDesc" value="Paronişya">
-                                                        <label class="form-check-label" for="Paronişya">Paronişya
-                                                        </label>
-                                                    </div>
-                                                </td>
-
-                                            </tr>
-                                            <tr>
-                                                <td class="protezlertable">
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" disabled type="checkbox" name="nailStructureProblemDesc" id="nailStructureProblemDesc" value="Diğer">
-                                                        <label class="form-check-label" for="Diğer">Diğer
-                                                        </label>
-                                                    </div>
-                                                </td>
-
-                                            </tr>
-
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="input-section d-flex">
-                        <p class="usernamelabel ">Kapiller Dolum </p>
-                        <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-
-                        <div class="checkbox-wrapper d-flex">
-                            <div class="checkboxes d-flex">
-
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="capillaryFillingProblem" id="capillaryFillingProblem" value="Sorun Yok">
-                                    <label class="form-check-label" for="KapillerDolum">
-                                        <span class="checkbox-header">Sorun Yok</span>
-
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="capillaryFillingProblem" id="capillaryFillingProblem" value="Var">
-                                    <label class="form-check-label" for="KapillerDolum">
-                                        <span class="checkbox-header">Var. Açıklayınız </span>
-                                        <input type="number" class="form-control diger" disabled  name="capillaryFillingInput">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </label>
                 </div>
             </div>
+                    
+                                    <div class="form-check">
+                                        <input class="form-check-input" disabled type="checkbox" name="nailStructureProblemDesc" id="nailStructureProblemDesc" value="Çomaklaşma">
+                                        <label class="form-check-label" for="Çomaklaşma">
+                                            Çomaklaşma </label>
+                                    </div>
+                              
+                                    <div class="form-check">
+                                        <input class="form-check-input" disabled type="checkbox" id="nailStructureProblemDesc" name="nailStructureProblemDesc" value="Beyaz Lekeler">
+                                        <label class="form-check-label" for="BeyazLekeler">Beyaz
+                                            lekeler</label>
+                                    </div>
+                               
+                                    <div class="form-check">
+                                        <input class="form-check-input" disabled type="checkbox" name="nailStructureProblemDesc" id="nailStructureProblemDesc" value="Paronişya">
+                                        <label class="form-check-label" for="Paronişya">Paronişya
+                                        </label>
+                                    </div>
+                              
+                                    <div class="form-check">
+                                        <input class="form-check-input" disabled type="checkbox" name="nailStructureProblemDesc" id="nailStructureProblemDesc" value="Diğer">
+                                        <label class="form-check-label" for="Diğer">Diğer
+                                        </label>
+                                    </div>
+                              
+        </div>
+    </div>
+    <div class="input-section">
+        <p class="usernamelabel ">Kapiller Dolum </p>
+        <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
+
+        <div class="checkbox-wrapper">
+            <div class="checkboxes">
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="capillaryFillingProblem" id="capillaryFillingProblem" value="Sorun Yok">
+                    <label class="form-check-label" for="KapillerDolum">
+                        <span class="checkbox-header">Sorun Yok</span>
+
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="capillaryFillingProblem" id="capillaryFillingProblem" value="Var">
+                    <label class="form-check-label" for="KapillerDolum">
+                        <span class="checkbox-header">Var. Açıklayınız </span>
+                    </label>
+                </div>
+            </div>
+            <input type="number" class="form-control diger" disabled name="capillaryFillingInput" id="capillaryFillingInput">
+        </div>
+    </div>
+</div>
             <div class='d-flex'>    
             <?php
                         if ($display == 1) {
