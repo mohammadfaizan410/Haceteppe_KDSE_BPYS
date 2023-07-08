@@ -120,10 +120,9 @@ if (isset($_GET['logout'])) {
                             ?>;
                 let patient_name = $("input[name='name']").val();
                 let patient_surname = $("input[name='surname']").val();
-                let patient_id = parseInt($("input[name='patient_id']").val());
 
                 var today = new Date();
-                var dt1 = document.getElementById('date').value;
+                var dt1 = $('#date').val();
                 var birthDate = new Date(dt1);
                 var years = today.getFullYear() - birthDate.getFullYear();
 
@@ -151,10 +150,7 @@ if (isset($_GET['logout'])) {
                     $("input[name='date']").css("border-color", "red");
                     return false;
                 }
-
-                console.log(years);
-
-                let patient_age = document.getElementById('date').value;
+                
                 e.preventDefault()
 
                 $.ajax({
@@ -164,7 +160,7 @@ if (isset($_GET['logout'])) {
                         patient_name: patient_name,
                         patient_surname: patient_surname,
                         id: id,
-                        patient_age: patient_age
+                        patient_age: years
                     },
                     success: function(data) {
                         $("#tick-container").fadeIn(800);

@@ -1094,7 +1094,7 @@ if ($result) {
 
                 var breathingProblems = <?php echo $solunumgereksinimi_form1['breathingProblems']; ?>;
 
-                breathingProblems.forEach(function(value) {
+                breathingProblems.split('/').forEach(function(value) {
                     if (value === "Diğer") {
                         $('#breathing-not').attr('checked', true);
                         var breathingOther = "<?php echo $solunumgereksinimi_form1['solunum_diger']; ?>"
@@ -1252,7 +1252,7 @@ if ($result) {
                 $('[name="Aspirasyon_need"]').prop('disabled', false);
                 var aspirasyonNeeds = <?php echo $solunumgereksinimi_form1['aspirasyonNeeds']; ?>;
 
-                aspirasyonNeeds.forEach(function(value) {
+                aspirasyonNeeds.split('/').forEach(function(value) {
                     $('[name="Aspirasyon_need"][value="'+value+'"]').prop('checked', true);
                 })
 
@@ -1278,7 +1278,7 @@ if ($result) {
                 $('[name="NasalIssue"]').prop('disabled', false);
                 var nasalIssues = <?php echo $solunumgereksinimi_form1['nasalIssues']; ?>;
 
-                nasalIssues.forEach(function(value) {
+                nasalIssues.split('/').forEach(function(value) {
                     $('[name="NasalIssue"][value="'+value+'"]').prop('checked', true);
                     if (value === "Diger") {
                         var nasalOther = "<?php echo $solunumgereksinimi_form1['nazal_diger']; ?>";
@@ -1412,7 +1412,7 @@ if ($result) {
                 $('[name="SpinalDeformity"]').prop('disabled', false);
                 var spinalDeforms = <?php echo $solunumgereksinimi_form1['SpinalDeformities']; ?>;
 
-                spinalDeforms.forEach(function(value) {
+                spinalDeforms.split('/').forEach(function(value) {
                     $('[name="SpinalDeformity"][value="'+value+'"]').prop('checked', true);
                 })
 
@@ -1526,7 +1526,7 @@ if ($result) {
                 $('[name="DeformityType"]').prop('disabled', false);
                 var deformityTypes = <?php echo $solunumgereksinimi_form1['DeformityTypes']; ?>;
 
-                deformityTypes.forEach(function(value) {
+                deformityTypes.split('/').forEach(function(value) {
                     $('[name="DeformityType"][value="'+value+'"]').prop('checked', true);
                 })
 
@@ -1547,7 +1547,7 @@ if ($result) {
 
             var solunumSistemi = <?php echo $solunumgereksinimi_form1['SolunumSistemiUygilamasi']; ?>;
 
-            solunumSistemi.forEach(function(value) {
+            solunumSistemi.split('/').forEach(function(value) {
                 $('[name="SolunumSistemiUygilamasi"][value="'+value+'"]').prop('checked', true);
                 if (value === "Diger") {
                     var solunumSistemiOther = "<?php echo $solunumgereksinimi_form1['SolunumUygulamasi_diger']; ?>"
@@ -1879,12 +1879,9 @@ else if ($('[name="SolunumSistemiUygilamasi"][value="Diger"]').is(':checked') &&
                         let yatisdurumuradio = $("input[type='radio'][name='yatisdurumuradio']:checked").val();
                         let SolunumSorunu = $("input[name='SolunumSorunu']:checked").val();
                         // not to db
-                        var breathingProblemArr = [];
-                        $('[name="breathing-problem"]:checked').each(function(){
-                            breathingProblemArr.push($(this).val());
-                        });
-                        //
-                        let breathingProblems = JSON.stringify(breathingProblemArr);
+                        let breathingProblems = $('.form-check-input[name="SolunumSorunu"]:checked').val() === "Var" ? $("input[name='breathing-problem']:checked").map(function() {
+                                return $(this).val();
+                            }).get().join("/") : "Yok";
                         let solunum_diger = $("input[name='solunum_diger']").prop("disabled") ? null : $("input[name='solunum_diger']").val();
                         let SolunumYolu = $("input[name='SolunumYolu']:checked").val();
                         let airwayMethod = $('input[name="AirwayMethod"]').prop('disabled') ? '' : $('input[name="AirwayMethod"]:checked').val();
@@ -1896,20 +1893,14 @@ else if ($('[name="SolunumSistemiUygilamasi"][value="Diger"]').is(':checked') &&
                         let balgam_diger = $("input[name='balgam_diger']").attr('disabled') ? null : $("input[name='balgam_diger']").val();
                         let AspirasyonIhtiyaci = $("input[name='AspirasyonIhtiyaci']:checked").val();
                         // not to db
-                        var aspirasyonNeedsArr = [];
-                        $('[name="Aspirasyon_need"]:checked').each(function () {
-                            aspirasyonNeedsArr.push($(this).val());
-                        });
-                        //
-                        let aspirasyonNeeds = JSON.stringify(aspirasyonNeedsArr);
+                        let aspirasyonNeeds = $('.form-check-input[name="AspirasyonIhtiyaci"]:checked').val() === "Var" ? $("input[name='Aspirasyon_need']:checked").map(function() {
+                                return $(this).val();
+                            }).get().join("/") : "Yok";
                         let BurunMuayenesi = $("input[name='BurunMuayenesi']:checked").val();
                         // not to db
-                        var nasalIssuesArr = [];
-                        $('[name="NasalIssue"]:checked').each(function(){
-                            nasalIssuesArr.push($(this).val());
-                        });
-                        //
-                        let nasalIssues = JSON.stringify(nasalIssuesArr);
+                        let nasalIssues = $('.form-check-input[name="BurunMuayenesi"]:checked').val() === "Var" ? $("input[name='NasalIssue']:checked").map(function() {
+                                return $(this).val();
+                            }).get().join("/") : "Yok";
                         let nazal_diger = $("input[name='nazal_diger']").attr('disabled') ? null : $("input[name='nazal_diger']").val();
                         let TiroidBezi = $("input[name='TiroidBezi']:checked").val();
                         let tiroidIssue = $('input[name="ThyroidIssue"]').prop('disabled') ? null : $('input[name="ThyroidIssue"]:checked').val();
@@ -1922,12 +1913,9 @@ else if ($('[name="SolunumSistemiUygilamasi"][value="Diger"]').is(':checked') &&
                         let SkapulaSimatrikligi = $("input[name='SkapulaSimatrikligi']:checked").val();
                         let OmurgaDeform = $("input[name='OmurgaDeform']:checked").val();
                         // not to db
-                        var SpinalDeformitiesArr = [];
-                        $('[name="SpinalDeformity"]:checked').each(function(){
-                            SpinalDeformitiesArr.push($(this).val());
-                        });
-                        //
-                        let SpinalDeformities = JSON.stringify(SpinalDeformitiesArr);
+                        let SpinalDeformities = $('.form-check-input[name="OmurgaDeform"]:checked').val() === "Var" ? $("input[name='SpinalDeformity']:checked").map(function() {
+                                return $(this).val();
+                            }).get().join("/") : "Yok";
                         let GogusHareketleri = $("input[name='GogusHareketleri']:checked").val();
                         let GogusKafesinde = $("input[name='GogusKafesinde']:checked").val();
                         let Krepitasyon_Alani = $("input[name='Krepitasyon_Alani']").attr('disabled') ? null : $("input[name='Krepitasyon_Alani']").val();
@@ -1936,19 +1924,13 @@ else if ($('[name="SolunumSistemiUygilamasi"][value="Diger"]').is(':checked') &&
                         let Kitle_Diger = $("input[name='Kitle_Diger']").attr('disabled') ? null : $("input[name='Kitle_Diger']").val();
                         let GogusDeformitesi = $("input[name='GogusDeformitesi']:checked").val();
                         // not to db
-                        var DeformityTypesArr = [];
-                        $('input[name="DeformityType"]:checked').each(function(){
-                            DeformityTypesArr.push($(this).val());
-                        });
-                        //
-                        let DeformityTypes = JSON.stringify(DeformityTypesArr);
+                        let DeformityTypes = $('.form-check-input[name="GogusDeformitesi"]:checked').val() === "Var" ? $("input[name='DeformityType']:checked").map(function() {
+                                return $(this).val();
+                            }).get().join("/") : "Yok";
                         // not to db
-                        var SolunumSistemiUygilamasiArr = []
-                        $('input[name="SolunumSistemiUygilamasi"]:checked').each(function(){
-                            SolunumSistemiUygilamasiArr.push($(this).val());
-                        });
-                        //
-                        let SolunumSistemiUygilamasi = JSON.stringify(SolunumSistemiUygilamasiArr);
+                        let SolunumSistemiUygilamasi = $("input[name='SolunumSistemiUygilamasi']:checked").map(function() {
+                                return $(this).val();
+                            }).get().join("/");
                         let SolunumUygulamasi_diger = $("input[name='SolunumUygulamasi_diger']").attr('disabled') ? null : $("input[name='SolunumUygulamasi_diger']").val();           
 
                         e.preventDefault()
