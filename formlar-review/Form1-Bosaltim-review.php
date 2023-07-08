@@ -1145,48 +1145,36 @@ $('#submit').click(function(e) {
         let hospitalStoolEmptyingFrequency = $('[name="hospitalStoolEmptyingFrequency"]').val();
         let hospitalStoolEmptyingDate = $('[name="hospitalStoolEmptyingDate"]').val();
         let bosaltimSorun = $('[name="BoşaltımSorun"]:checked').val();
-        var excretionProblemsArr = [];
-                $('[name="excretionProblems"]:checked').each(function(){
-                    excretionProblemsArr.push($(this).val());
-                });
-        let excretionProblems = JSON.stringify(excretionProblemsArr);
+        let excretionProblems = $('.form-check-input[name="BoşaltımSorun"]:checked').val() === "Var" ? $("input[name='excretionProblems']:checked").map(function() {
+                                return $(this).val();
+                            }).get().join("/") : "Yok";
         let bagirsak_sesleri = $('[name="bagirsak_sesleri"]').val();
         let defekasyon_zamani = $('[name="defekasyon_zamani"]').val();
         let defekasyon_tekrari = $('[name="defekasyon_tekrari"]').val();
         let bosaltimSekli = $('[name="BoşaltımŞekli"]:checked').val();
         let excretionForm = $('[name="excretionForm"]').prop('disabled') ? null : $('[name="excretionForm"]:checked').val();
-        var kolostomExcretionFormArr = [];
-                $('[name="excretionForm1"]:checked').each(function(){
-                    kolostomExcretionFormArr.push($(this).val());
-                });
-        let kolostomExcretionForm = JSON.stringify(kolostomExcretionFormArr);
+        let kolostomExcretionForm = $('.form-check-input[name="excretionForm"]:checked').val() === "Kolostom" ? $("input[name='excretionForm1']:checked").map(function() {
+                                return $(this).val();
+                            }).get().join("/") : "Yok";
         let kolostomStomaninRengi = $('[name="StomaRengi"]').is('disabled') ? null : $('[name="StomaRengi"]').val();
-        var ileostomiExcretionFormArr = [];
-                $('[name="excretionForm2"]:checked').each(function(){
-                    ileostomiExcretionFormArr.push($(this).val());
-                });
-        let ileostomiExcretionForm = JSON.stringify(ileostomiExcretionFormArr);
+        let ileostomiExcretionForm = $('.form-check-input[name="excretionForm"]:checked').val() === "İleostomi" ? $("input[name='excretionForm2']:checked").map(function() {
+                                return $(this).val();
+                            }).get().join("/") : "Yok";
         let ileostomiStomaninRengi = $('[name="StomanınRengi"]').is('disabled') ? null : $('[name="StomanınRengi"]').val();
         let protezlertable = $("input[type='radio'][name='protezlertable2']:checked").val();
         let bosaltimdaSorun = $("input[name='BoşaltımdaSorun']:checked").val();
-        var excretionIssuesArr = [];
-                $('[name="excretionIssues"]:checked').each(function(){
-                    excretionIssuesArr.push($(this).val());
-                });
-        let excretionIssues = JSON.stringify(excretionIssuesArr);
+        let excretionIssues = $('.form-check-input[name="BoşaltımdaSorun"]:checked').val() === "Var" ? $("input[name='excretionIssues']:checked").map(function() {
+                                return $(this).val();
+                            }).get().join("/") : "Yok";
         let Mesane_kateterizasyonu = $("input[name='Mesane_kateterizasyonu']:checked").val();
         let mesane_takilma_tarihi = $("input[name='mesane_takilma_tarihi']").is('disabled') ? null : $("input[name='mesane_takilma_tarihi']").val();
-        var attachmentPurposeArr = [];
-                $('[name="attachmentPurpose"]:checked').each(function(){
-                    attachmentPurposeArr.push($(this).val());
-                });
-        let attachmentPurpose = JSON.stringify(attachmentPurposeArr);
+        let attachmentPurpose = $('.form-check-input[name="mesane_takilma_tarihi"]:checked').val() === "Var" ? $("input[name='attachmentPurpose']:checked").map(function() {
+                                return $(this).val();
+                            }).get().join("/") : "Yok";
         let ureterestomi = $("input[name='Üreterestomi']:checked").val();
-        var ureterArr = [];
-                $('[name="ureter"]:checked').each(function(){
-                    ureterArr.push($(this).val());
-                });
-        let ureter = JSON.stringify(ureterArr);
+        let ureter = $('.form-check-input[name="Üreterestomi"]:checked').val() === "Var" ? $("input[name='ureter']:checked").map(function() {
+                                return $(this).val();
+                            }).get().join("/") : "Yok";
         let Sistostomi = $("input[name='Sistostomi']:checked").val();
         let IdrarRengi = $("input[name='IdrarRengi']:checked").val();
         let IdrarBerrakligi = $("input[name='IdrarBerrakligi']:checked").val();

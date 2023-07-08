@@ -489,12 +489,9 @@ if (isset($_GET['logout'])) {
                 let roleInFamily = $('input[name="roleInFamily"]').val() ? $('input[name="roleInFamily"]').val() : '';
                 let hobbies = $('[name="hobbies"]').val();
                 // not to db
-                var hospitalSocialActivitiesArr = [];
-                        $('[name="hospitalSocialActivities"]:checked').each(function(){
-                            hospitalSocialActivitiesArr.push($(this).val());
-                        });
-                        //
-                let hospitalSocialActivities = JSON.stringify(hospitalSocialActivitiesArr);
+                let hospitalSocialActivities = $("input[name='hospitalSocialActivities']:checked").map(function() {
+                                return $(this).val();
+                            }).get().join("/");
                 let otherActivities = $('input[name="otherSocialActivities"]').val() ? $('input[name="otherSocialActivities"]').val() : '';
 
                 console.log("wprkStatus: ", workStatus, "workingTime: ", workingTime, "nonWorkingTime: ", nonWorkingTime, "workInterruption: ", workInterruption, "workRisk: ", workRisk, "familyMembers: ", familyMembers, "numberOfChildren: ", numberOfChildren, "roleInFamily: ", roleInFamily, "hobbies: ", hobbies)
