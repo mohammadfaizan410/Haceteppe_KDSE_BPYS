@@ -115,7 +115,7 @@ textarea::placeholder{
                         <?php 
                         if($student_list != 'none'){
                             foreach($student_list as $student){
-                                echo '<div class="d-flex align-items-center justify-content-end border-bottom"><p class="w-50">'.$student['email'].'</p><input type="checkbox" class="form-check-input" id="student-'.$student['id'].'"></div>';
+                                echo '<div class="d-flex align-items-center justify-content-end border-bottom"><p class="">'.$student['email'].'</p><input type="checkbox" class="form-check-input" id="student-'.$student['id'].'"></div>';
                             }
                         } else{
                             echo '<p>There is no student</p>';
@@ -143,7 +143,7 @@ textarea::placeholder{
                         <?php 
                         if($teacher_list != 'none'){
                             foreach($teacher_list as $teacher){
-                                echo '<div class="d-flex align-items-center justify-content-end border-bottom"><p class="w-50">'.$teacher['email'].'</p><input type="checkbox" class="form-check-input" id="teacher-'.$teacher['id'].'"></div>';
+                                echo '<div class="d-flex align-items-center justify-content-end border-bottom"><p class="">'.$teacher['email'].'</p><input type="checkbox" class="form-check-input" id="teacher-'.$teacher['id'].'"></div>';
                             }
                         } else{
                             echo '<p>There is no teacher</p>';

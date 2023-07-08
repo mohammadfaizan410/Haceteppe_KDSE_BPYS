@@ -77,8 +77,8 @@ if (isset($_GET['logout'])) {
             <span class='close closeBtn' id='closeBtn1'>&times;</span>
             <h1 class="form-header">ÇALIŞMA, ÜRETME, BOŞ ZAMANINI DEĞERLENDİRME GEREKSİNİMİ</h1>
 
-            <div class="input-section d-flex">
-                <p class="usernamelabel ">Düzenli bir işte çalışma durumu </p>
+            <div class="input-section">
+                <p class="usernamelabel  pb-3">Düzenli bir işte çalışma durumu </p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
@@ -116,8 +116,8 @@ if (isset($_GET['logout'])) {
                     </div>
                 </div>
             </div>
-            <div class="input-section d-flex">
-                <p class="usernamelabel ">Hastalığına bağlı iş yaşamına ara verme durumu </p>
+            <div class="input-section">
+                <p class="usernamelabel  pb-3">Hastalığına bağlı iş yaşamına ara verme durumu </p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
@@ -137,8 +137,8 @@ if (isset($_GET['logout'])) {
                     </div>
                 </div>
             </div>
-            <div class="input-section d-flex">
-                <p class="usernamelabel ">Sağlığı tehdit eden mesleki riskler </p>
+            <div class="input-section">
+                <p class="usernamelabel  pb-3">Sağlığı tehdit eden mesleki riskler </p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
@@ -160,8 +160,8 @@ if (isset($_GET['logout'])) {
                     </div>
                 </div>
             </div>
-            <div class="input-section d-flex">
-                <p class="usernamelabel ">Birlikte yaşadığı aile bireyleri </p>
+            <div class="input-section">
+                <p class="usernamelabel  pb-3">Birlikte yaşadığı aile bireyleri </p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
@@ -174,8 +174,8 @@ if (isset($_GET['logout'])) {
                     </div>
                 </div>
             </div>
-            <div class="input-section d-flex">
-                <p class="usernamelabel ">Çocuk sayısı:</p>
+            <div class="input-section">
+                <p class="usernamelabel  pb-3">Çocuk sayısı:</p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
@@ -188,16 +188,16 @@ if (isset($_GET['logout'])) {
                 </div>
             </div>
 
-            <div class="input-section d-flex">
+            <div class="input-section">
                 <p class="usernamelabel">Aile içindeki rolü:</p>
                 <input type="text" class="form-control" name="roleInFamily" id="AileRolu">
             </div>
 
-            <div class="input-section d-flex">
+            <div class="input-section">
                 <p class="usernamelabel">Hobileri (Belirtiniz) :</p>
                 <input type="text" class="form-control" name="hobbies" id="Hobi">
             </div>
-            <div class="input-section d-flex">
+            <div class="input-section">
                 <p class="usernamelabel">Hastane ortamındaki sosyal aktiviteleri:</p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 <div class="checkbox-wrapper d-flex">

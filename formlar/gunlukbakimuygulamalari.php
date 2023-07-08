@@ -94,17 +94,17 @@ if (isset($_GET['logout'])) {
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Uygulama Giriniz</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Uygulama Giriniz</p>
                             <input type="text" class="form-control" required name="applications" id="applications"
                                 placeholder="Uygulama Giriniz" maxlength="200">
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Saat :</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Saat :</p>
                             <input type="time" class="form-control" required name="hours" id="hours">
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Açıklama Giriniz</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Açıklama Giriniz</p>
                             <input type="text" class="form-control" required name="description" id="description"
                                 placeholder="Açıklama Giriniz" maxlength="2000">
                         </div>

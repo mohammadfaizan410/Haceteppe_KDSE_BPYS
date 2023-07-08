@@ -69,16 +69,16 @@ if (isset($_GET['logout'])) {
             <span class='close closeBtn' id='closeBtn1'>&times;</span>
             <h1 class="form-header">UYKU GEREKSİNİMİ</h1>
 
-            <div class="input-section d-flex">
-                <p class="usernamelabel">Ortalama uyku süresi:</p>
+            <div class="input-section">
+                <p class="usernamelabel pb-3">Ortalama uyku süresi:</p>
                 <input type="number" class="form-control" name="averageSleepDuration" id="averageSleepDuration">
             </div>
 
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">Uykuda Sorun </p>
+                <p class="usernamelabel pb-3">Uykuda Sorun </p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                <div class="checkbox-wrapper d-flex">
+                <div class="checkbox-wrapper">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="sleepProblem" id="sleepProblem" value="Sorun Yok">
@@ -93,70 +93,44 @@ if (isset($_GET['logout'])) {
                                 <span class="checkbox-header">Sorun Var</span>
 
                             </label>
-                            <table class="ozgecmistable-wrapper">
-                                <tbody>
-
-                                    <tr>
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                        </div>
+                    </div>
+                           
+                                            <div class="form-check">
                                                 <input class="form-check-input" disabled name="sleepProblemDesc" type="checkbox" id="sleepProblemDesc" value="Gündüz uykus">
                                                 <label class="form-check-label" for="GündüzUykusU">Gündüz uykus </label>
                                             </div>
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-                                        <td class=" protezlertable">
-                                                    <div class="form-check form-check-inline">
+                                     
+                                                    <div class="form-check">
                                                         <input class="form-check-input" disabled name="sleepProblemDesc" type="checkbox" id="UykudanYorgun" value="Uykudan yorgun kalkma">
                                                         <label class="form-check-label" for="UykudanYorgun">Uykudan yorgun kalkma</label>
                                                     </div>
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                                      
+                                            <div class="form-check">
                                                 <input class="form-check-input" disabled name="sleepProblemDesc" type="checkbox" id="UyumaGüçlüğü" value="Uyuma güçlüğü">
                                                 <label class="form-check-label" for="UyumaGüçlüğü">Uyuma güçlüğü</label>
                                             </div>
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                                       
+                                            <div class="form-check">
                                                 <input class="form-check-input" disabled name="sleepProblemDesc" type="checkbox" id="sleepProblemDesc" value="Uykunun Bölünmesi">
                                                 <label class="form-check-label" for="UykununBölünmesi">Uykunun Bölünmesi</label>
                                             </div>
-                                        </td>
 
-                                    </tr>
-
-                                    <tr>
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                                            <div class="form-check">
                                                 <input class="form-check-input" disabled name="sleepProblemDesc" type="checkbox" id="UykuSorunDiger" value="Diğer">
                                                 <label class="form-check-label" for="UykuSorunDiger">Diğer</label>
                                             </div>
-                                        </td>
-
-                                    </tr>
-
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                                       
                 </div>
             </div>
 
-            <div class="input-section d-flex">
-                <p class="usernamelabel">Uykuya dalmada yardımcı olan alışkanlıkları (kitap okuma, süt içme vb.)
+            <div class="input-section">
+                <p class="usernamelabel pb-3">Uykuya dalmada yardımcı olan alışkanlıkları (kitap okuma, süt içme vb.)
                     (Açıklayınız):</p>
                 <input type="text" class="form-control" name="sleepHelpHabits" id="UykuyaDalmaAliskanligi">
             </div>
-            <div class="input-section d-flex">
-                <p class="usernamelabel">Hastane ortamında uykusunu etkileyen faktörler: (Açıklayınız):</p>
+            <div class="input-section">
+                <p class="usernamelabel pb-3">Hastane ortamında uykusunu etkileyen faktörler: (Açıklayınız):</p>
                 <input type="text" class="form-control" name="hospitalFactorsAffectingSleep" id="UykuyuEtkileyenFaktorler">
             </div>
             <div class='d-flex'>    

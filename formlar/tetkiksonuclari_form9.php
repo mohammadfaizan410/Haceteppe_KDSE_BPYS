@@ -94,14 +94,13 @@ if (isset($_GET['logout'])) {
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
-                        <div class="input-section d-flex">
+                        <div class="input-section">
                             <p class="usernamelabel">Date:</p>
                             <input type="date" class="form-control" required name="date" id="date" placeholder="Tarih">
                         </div>
-                        <div class="input-section d-flex">
+                        <div class="input-section">
                             <p class="usernamelabel">Tetkik adı </p>
                             <p id="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                            <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="tektikOption" id="tektikOption" value="Tıbbi Biyokimya*">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
@@ -144,13 +143,12 @@ if (isset($_GET['logout'])) {
                                         <span class="checkbox-header">Kan Merkezi</span>
                                     </label>
                                 </div>
-                            </div>
                         </div>
-                        <div class="input-section d-flex">
+                        <div class="input-section">
                             <p class="usernamelabel">Tetkik Sonucu :</p>
                             <input type="text" class="form-control" required name="examination_result" id="examination_result" placeholder="Tetkik Sonucu" maxlength="2000">
                         </div>
-                        <div class="input-section d-flex">
+                        <div class="input-section">
                             <p class="usernamelabel">Referans Değeri :</p>
                             <input type="text" class="form-control" required name="referance_value" id="referance_value" placeholder="Referans Değeri" maxlength="200">
                         </div>

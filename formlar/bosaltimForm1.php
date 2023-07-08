@@ -65,10 +65,10 @@ if (isset($_GET['logout'])) {
         <form action="" method="" class="patients-save-fields">
 
             <h3>BAĞIRSAK BOŞALTIMI</h3>
-            <div class="input-section d-flex">
-                <p class="usernamelabel">Bağırsak boşaltımını karşılamada </p>
+            <div class="input-section">
+                <p class="usernamelabel p-3">Bağırsak boşaltımını karşılamada </p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                <div class="checkbox-wrapper d-flex">
+                <div class="checkbox-wrapper d-flex pb-3">
                     <div class="checkboxes d-flex">
 
                         <div class="form-check">
@@ -116,8 +116,8 @@ if (isset($_GET['logout'])) {
                     </div>
                 </div>
             </div>
-            <div class="input-section d-flex">
-                <p class="usernamelabel">Hastaneye yatmadan önceki bağırsak boşaltım:</p>
+            <div class="input-section">
+                <p class="usernamelabel p-3">Hastaneye yatmadan önceki bağırsak boşaltım:</p>
                 <div>
 
                     sıklığı: <input type="text" class=" form-control diger" required
@@ -127,11 +127,11 @@ if (isset($_GET['logout'])) {
                 </div>
             </div>
 
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">Boşaltımda Sorun:</p>
+                <p class="usernamelabel p-3">Boşaltımda Sorun:</p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                <div class="checkbox-wrapper d-flex">
+                <div class="checkbox-wrapper d-flex pb-3">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="BoşaltımSorun" id="BoşaltımSorun"
@@ -219,25 +219,25 @@ if (isset($_GET['logout'])) {
                     </div>
                 </div>
             </div>
-            <div class="input-section d-flex">
-                <p class="usernamelabel">Bağırsak sesleri(/dk)</p>
+            <div class="input-section">
+                <p class="usernamelabel p-3">Bağırsak sesleri(/dk)</p>
                 <input type="number" class="form-control" required name="bagirsak_sesleri" id="bagirsak_sesleri">
             </div>
-            <div class="input-section d-flex">
-                <p class="usernamelabel">En son ne zaman defekasyona çıktınız:</p>
+            <div class="input-section">
+                <p class="usernamelabel p-3">En son ne zaman defekasyona çıktınız:</p>
                 <input type="number" class="form-control" required name="defekasyon_zamani" id="defekasyon_zamani">
             </div>
-            <div class="input-section d-flex">
-                <p class="usernamelabel">Son 24 saat içinde kaç kez defekasyona çıktınız:</p>
+            <div class="input-section">
+                <p class="usernamelabel p-3">Son 24 saat içinde kaç kez defekasyona çıktınız:</p>
                 <input type="number" class="form-control" required name="defekasyon_tekrari" id="defekasyon_tekrari">
             </div>
 
 
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">Boşaltım Şekli :</p>
+                <p class="usernamelabel p-3">Boşaltım Şekli :</p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                <div class="checkbox-wrapper d-flex">
+                <div class="checkbox-wrapper d-flex pb-3">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="BoşaltımŞekli" id="BoşaltımŞekli"
@@ -247,14 +247,14 @@ if (isset($_GET['logout'])) {
                             </label>
                         </div>
                     </div>
+                    <div class="form-check d-flex ">
+                        <input class="form-check-input" type="radio" name="BoşaltımŞekli" id="BoşaltımŞekli" value="Var">
+                        <label class="form-check-label " for="BoşaltımŞekli">
+                            <span class="checkbox-header p-3">Sorun Var</span>
+                        </label>
+                    </div>
                 </div>
-                <div class="form-check d-flex ">
-                    <input class="form-check-input" type="radio" name="BoşaltımŞekli" id="BoşaltımŞekli" value="Var">
-                    <label class="form-check-label " for="BoşaltımŞekli">
-                        <span class="checkbox-header p-3">Sorun Var</span>
-                    </label>
-                </div>
-
+                    
                 <table class="ozgecmistable-wrapper p-2">
                     <tbody>
                         <tr>
@@ -345,10 +345,10 @@ if (isset($_GET['logout'])) {
 
 
             <h3>ÜRİNER BOŞALTIM</h3>
-            <div class="input-section d-flex">
-                <p class="usernamelabel">Üriner boşaltımını karşılamad</p>
+            <div class="input-section">
+                <p class="usernamelabel p-3">Üriner boşaltımını karşılamad</p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                <div class="checkbox-wrapper d-flex">
+                <div class="checkbox-wrapper d-flex pb-3">
                     <div class="checkboxes d-flex">
 
                         <div class="form-check">
@@ -399,11 +399,11 @@ if (isset($_GET['logout'])) {
 
 
 
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">Boşaltımda Sorun</p>
+                <p class="usernamelabel p-3">Boşaltımda Sorun</p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                <div class="checkbox-wrapper d-flex">
+                <div class="checkbox-wrapper d-flex pb-3">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="BoşaltımdaSorun" id="BoşaltımdaSorun"
@@ -459,11 +459,11 @@ if (isset($_GET['logout'])) {
                     </div>
                 </div>
             </div>
-            <div class="input-section d-flex">
-
-                <p class="usernamelabel">Mesane kateterizasyonu </p>
+            <div class="input-section">
+            <div class="input-section">
+                <p class="usernamelabel p-3">Mesane kateterizasyonu </p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                <div class="checkbox-wrapper d-flex">
+                <div class="checkbox-wrapper pb-3">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="Mesane_kateterizasyonu"
@@ -480,12 +480,14 @@ if (isset($_GET['logout'])) {
                                 <span class="checkbox-header"> Sorun Var</span>
 
                             </label>
-                            <div class="d-flex justify-content-start">
-                                <div class="form-check">
-                                    <label class="form-check-label" for="beslenmeileumuradio">
-                                        <span class="checkbox-header">Takılma Tarihi: </span>
-                                    </label>
-                                    <input type="text" class="form-control diger" required name="mesane_takilma_tarihi"
+                        </div>
+                    </div>
+                    </div>
+
+                    <div>
+                                <p>taklima tarihi:</p>
+                                <div class="form-check d-flex flex-row">
+                                    <input type="date" class="form-control" placeholder="Takılma Tarihi:" required name="mesane_takilma_tarihi"
                                         id="mesane_takilma_tarihi">
                                 </div>
                                 <div>
@@ -527,17 +529,14 @@ if (isset($_GET['logout'])) {
                                         </tbody>
                                     </table>
                                 </div>
-                            </div>
                         </div>
-                    </div>
-                </div>
             </div>
 
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">Üreterestomi</p>
+                <p class="usernamelabel p-3">Üreterestomi</p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                <div class="checkbox-wrapper d-flex">
+                <div class="checkbox-wrapper d-flex pb-3">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="Üreterestomi" id="Üreterestomi"
@@ -583,11 +582,11 @@ if (isset($_GET['logout'])) {
                     </div>
                 </div>
             </div>
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">Sistostomi </p>
+                <p class="usernamelabel p-3">Sistostomi </p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                <div class="checkbox-wrapper d-flex">
+                <div class="checkbox-wrapper d-flex pb-3">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="Sistostomi" id="Sistostomi" value="Yok">
@@ -606,11 +605,11 @@ if (isset($_GET['logout'])) {
                     </div>
                 </div>
             </div>
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">İdrarın rengi</p>
+                <p class="usernamelabel p-3">İdrarın rengi</p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                <div class="checkbox-wrapper d-flex">
+                <div class="checkbox-wrapper d-flex pb-3">
                     <div class="checkboxes">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="IdrarRengi" id="IdrarRengi"
@@ -647,11 +646,11 @@ if (isset($_GET['logout'])) {
                     </div>
                 </div>
             </div>
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">İdrarın berraklığı </p>
+                <p class="usernamelabel p-3">İdrarın berraklığı </p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                <div class="checkbox-wrapper d-flex">
+                <div class="checkbox-wrapper d-flex pb-3">
                     <div class="checkboxes">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="IdrarBerrakligi" id="IdrarBerrakligi"

@@ -88,8 +88,8 @@ if (isset($_GET['logout'])) {
 
 
 
-            <div class="input-section d-flex">
-                <p class="usernamelabel">İletişim kurmasına engel olan herhangi bir durum</p>
+            <div class="input-section">
+                <p class="usernamelabel pb-3">İletişim kurmasına engel olan herhangi bir durum</p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
@@ -102,6 +102,7 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="form-check">
+                            <div>
                             <input class="form-check-input" type="radio" name="communicationProblem" id="communicationProblem"
                                 value="Var">
                             <label class="form-check-label" for="IletisimEngeli">
@@ -110,11 +111,12 @@ if (isset($_GET['logout'])) {
                             <input type="text" class="form-control diger" disabled name="communicationProblemInput"
                                 id="communicationProblemInput">
                         </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="input-section d-flex">
-                <p class="usernamelabel">Refakatçisi</p>
+            <div class="input-section">
+                <p class="usernamelabel pb-3">Refakatçisi</p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
@@ -126,17 +128,19 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="form-check">
+                        <div>
                             <input class="form-check-input" type="radio" name="companion" id="companion" value="Var">
                             <label class="form-check-label" for="refakatci">
                                 <span class="checkbox-header">Var: (Açıklayınız)</span>
                             </label>
                             <input type="text" class="form-control diger" disabled name="companionInput" id="companionInput">
                         </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="input-section d-flex">
-                <p class="usernamelabel">Yakınlarına ulaşmada sıkıntısı</p>
+            <div class="input-section">
+                <p class="usernamelabel pb-3">Yakınlarına ulaşmada sıkıntısı</p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
                 <div class="checkbox-wrapper d-flex">
@@ -150,6 +154,7 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="form-check">
+                        <div>
                             <input class="form-check-input" type="radio" name="reachTrouble" id="reachTrouble"
                                 value="Var">
                             <label class="form-check-label" for="UlasmaSikinti">
@@ -158,11 +163,12 @@ if (isset($_GET['logout'])) {
                             <input type="text" class="form-control diger" name="reachTroubleInput" disabled
                                 id="reachTroubleInput">
                         </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="input-section d-flex">
-                <p class="usernamelabel">Sağlık personeli ile iletişime geçmede sorun</p>
+            <div class="input-section">
+                <p class="usernamelabel pb-3">Sağlık personeli ile iletişime geçmede sorun</p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
                 <div class="checkbox-wrapper d-flex">
@@ -176,6 +182,7 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="form-check">
+                        <div>
                             <input class="form-check-input" type="radio" name="contactingStaffTrouble"
                                 id="contactingStaffTrouble" value="Var">
                             <label class="form-check-label" for="PersonelleIletisim">
@@ -183,6 +190,7 @@ if (isset($_GET['logout'])) {
                             </label>
                             <input type="text" class="form-control diger" name="contactingStaffTroubleInput" disabled
                                 id="contactingStaffTroubleInput">
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -192,12 +200,12 @@ if (isset($_GET['logout'])) {
 
 
 
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">Bakıma katılma </p>
+                <p class="usernamelabel pb-3">Bakıma katılma </p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 <div class="checkbox-wrapper d-flex">
-                    <div class="checkboxes d-flex">
+                    <div class="checkboxes">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="careAcceptance" id="careAcceptance"
                                 value="Katılmıyor">
@@ -216,9 +224,6 @@ if (isset($_GET['logout'])) {
                                                 <label class="form-check-label"  for="İstekli1">İstekli </label>
                                             </div>
                                         </td>
-
-                                    </tr>
-                                    <tr>
                                         <td class="protezlertable">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="radio" id="İsteksiz1" disabled
@@ -226,7 +231,7 @@ if (isset($_GET['logout'])) {
                                                 <label class="form-check-label"  for="İsteksiz1">İsteksiz </label>
                                             </div>
                                         </td>
-
+                                       
                                     </tr>
                                 </tbody>
                             </table>
@@ -248,11 +253,7 @@ if (isset($_GET['logout'])) {
                                                     value="İstekli">
                                                 <label class="form-check-label"  for="İstekli">İstekli</label>
                                             </div>
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-                                        <td class="protezlertable">
+                                        </td> <td class="protezlertable">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" disabled name="careAcceptanceWilling" type="radio" id="İsteksiz"
                                                     value="İsteksiz">
@@ -261,7 +262,6 @@ if (isset($_GET['logout'])) {
                                         </td>
 
                                     </tr>
-
 
                                 </tbody>
                             </table>
@@ -274,11 +274,11 @@ if (isset($_GET['logout'])) {
 
 
 
-            <div class="input-section d-flex">
-                <p class="usernamelabel">Tedaviyi kabullenme </p>
+            <div class="input-section">
+                <p class="usernamelabel pb-3">Tedaviyi kabullenme </p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 <div class="checkbox-wrapper d-flex">
-                    <div class="checkboxes d-flex">
+                    <div class="checkboxes">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="treatmentAcceptance"
                                 id="TedaviyiKabullenme " value="Kabul ediyor">

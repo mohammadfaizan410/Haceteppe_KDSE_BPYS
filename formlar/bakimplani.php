@@ -85,33 +85,33 @@ if (isset($_GET['logout'])) {
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Sorunla İlişkili Veriler:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Sorunla İlişkili Veriler:</p>
                             <input type="text" class="form-control" required name="problem_info" id="problem_info"
                                 placeholder="Sorunla İlişkili Veriler" maxlength="5000">
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Hemşirelik Tanıları:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Hemşirelik Tanıları:</p>
                             <input type="text" class="form-control" required name="nurse_description" id="nurse_description"
                                 placeholder="Hemşirelik Tanıları" maxlength="5000">
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">NOC Çıktıları:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">NOC Çıktıları:</p>
                             <input type="text" class="form-control" required name="noc_output" id="noc_output"
                                 placeholder="NOC Çıktıları" maxlength="200">
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">NOC Gösterge:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">NOC Gösterge:</p>
                             <input type="text" class="form-control" required name="noc_indicator" id="noc_indicator"
                                 placeholder="NOC Gösterge" maxlength="200">
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Hemşirelik Girişimleri:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Hemşirelik Girişimleri:</p>
                             <input type="text" class="form-control" required name="nurse_attempt" id="nurse_attempt"
                                 placeholder="Hemşirelik Girişimleri" maxlength="200">
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Değerlendirme:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Değerlendirme:</p>
                             <input type="text" class="form-control" required name="evaluation" id="evaluation"
                                 placeholder="Değerlendirme" maxlength="200">
                         </div>

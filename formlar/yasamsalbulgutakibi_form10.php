@@ -93,19 +93,18 @@ if (isset($_GET['logout'])) {
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Saat:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Saat:</p>
                             <input type="time" class="form-control" required name="time" id="time" placeholder="Saat">
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Vücut Sıcaklığı:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Vücut Sıcaklığı:</p>
                             <input type="number" class="form-control" required name="body_temperature" id="body_temperature"
                                 placeholder="Vücut Sıcaklığı" min="0" max="100">
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Ölçüm yeri: </p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Ölçüm yeri: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                            <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="measurement_location"
                                         id="measurement_location" value="Timpanik*">
@@ -141,13 +140,11 @@ if (isset($_GET['logout'])) {
                                         <span class="checkbox-header">Temporal</span>
                                     </label>
                                 </div>
-                            </div>
                         </div>
 
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Nabız yeri: </p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Nabız yeri: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                            <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="heartrate_location"
                                         id="heartrate_location" value="Apikal">
@@ -162,20 +159,18 @@ if (isset($_GET['logout'])) {
                                         <span class="checkbox-header">Periferik</span>
                                     </label>
                                 </div>
-                            </div>
                         </div>
 
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Nabız hızı:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Nabız hızı:</p>
                             <input type="number" class="form-control" required name="heart_rate" id="heart_rate"
                                 placeholder="Nabız hızı" min="0" max="500">
                         </div>
 
 
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Nabız niteliği: </p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Nabız niteliği: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                            <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="heartrate_nature"
                                         id="heartrate_nature" value="Dolgun">
@@ -211,19 +206,17 @@ if (isset($_GET['logout'])) {
                                         <span class="checkbox-header">Yok</span>
                                     </label>
                                 </div>
-                            </div>
                         </div>
 
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Solunum sayısı:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Solunum sayısı:</p>
                             <input type="number" class="form-control" required name="respiratory_rate" id="respiratory_rate"
                                 placeholder="Solunum sayısı" min="0" max="1000">
                         </div>
 
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Solunum Özelliği: </p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Solunum Özelliği: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                            <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="respiratory_nature"
                                         id="respiratory_nature" value="Normal">
@@ -245,22 +238,20 @@ if (isset($_GET['logout'])) {
                                         <span class="checkbox-header">Yüzeyel</span>
                                     </label>
                                 </div>
-                            </div>
                         </div>
 
 
 
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Kan basıncı:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Kan basıncı:</p>
                             <input type="number" class="form-control" required name="blood_pressure" id="blood_pressure"
                                 placeholder="Tetkik Sonucu" maxlength="7">
                         </div>
 
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">KB Ölçüm yeri: </p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">KB Ölçüm yeri: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
-                            <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="bp_measurement_location"
                                         id="bp_measurement_location" value="Brakial(Sağ)">
@@ -289,13 +280,11 @@ if (isset($_GET['logout'])) {
                                         <span class="checkbox-header">Popliteal(Sol)</span>
                                     </label>
                                 </div>
-                            </div>
                         </div>
 
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">O2 verme durum: </p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">O2 verme durum: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                            <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="o2_status" id="o2_status_alm"
                                         value="Almıyor">
@@ -309,15 +298,12 @@ if (isset($_GET['logout'])) {
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">Aliyor</span>
                                     </label>
-                                </div>
                             </div>
 
                         </div>
-                        <div class="input-section d-flex" id="o2-delivery-container">
-                            <p class="usernamelabel">O2 verme Yöntemi: </p>
+                        <div class="input-section" id="o2-delivery-container">
+                            <p class="usernamelabel pb-3">O2 verme Yöntemi: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-
-                            <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="o2_method" id="o2_method_1"
                                         value="O2 maske">
@@ -338,24 +324,20 @@ if (isset($_GET['logout'])) {
                                     <label class="form-check-label" for="ÖdemŞiddeti">
                                         <span class="checkbox-header">Diğer</span>
                                     </label>
-                                    <div class="input-section d-flex">
                                         <input type="text" class="form-control" required name="o2_method_diger"
                                             id="o2_method_diger_input" placeholder="Yöntemi">
-                                    </div>
-                                </div>
                             </div>
 
                         </div>
 
 
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">SPO2 (%):</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">SPO2 (%):</p>
                             <input type="number" class="form-control" required name="spo2_percentage" id="spo2_percentage"
                                 placeholder="SPO2 (%)" min="0" max="100">
                         </div>
                         <div class="input-section d-flex" id="o2-delivery-container">
-                            <p class="usernamelabel">Günlük Günlük Kilo Takibi Yapiliyor mi?</p>
-                            <div class="form-check">
+                            <p class="usernamelabel pb-3">Günlük Günlük Kilo Takibi Yapiliyor mi?</p>
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="weight_input_toggle"
                                         value="O2 maske">
@@ -364,9 +346,8 @@ if (isset($_GET['logout'])) {
                                     </label>
                                 </div>
                             </div>
-                        </div>
                         <div class="input-section d-flex" id="kilo_yapiliyor">
-                            <p class="usernamelabel">Günlük Kilo Takibi:</p>
+                            <p class="usernamelabel pb-3">Günlük Kilo Takibi:</p>
                             <input type="text" class="form-control" name="weight_input" id="diger"
                                 placeholder="Günlük Kilo Takibi" maxlength="200">
                         </div>

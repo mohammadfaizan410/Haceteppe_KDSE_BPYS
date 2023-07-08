@@ -84,8 +84,8 @@ if (isset($_GET['logout'])) {
             <span class='close closeBtn' id='closeBtn1'>&times;</span>
 
             <h1 class="form-header">SOLUNUM GEREKSİNİMİ</h1>
-            <div class="input-section d-flex">
-                <p class="usernamelabel">Solunumda:</p>
+            <div class="input-section">
+                <p class="usernamelabel pb-3">Solunumda:</p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes">
@@ -118,12 +118,12 @@ if (isset($_GET['logout'])) {
                     </div>
                 </div>
             </div>
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">Solunumda sorun var mı?:</p>
+                <p class="usernamelabel pb-3">Solunumda sorun var mı?:</p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                <div class="checkbox-wrapper d-flex">
-                    <div class="checkboxes d-flex">
+                <div class="checkbox-wrapper">
+                    <div class="checkboxes d-flex mb-3">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="SolunumSorunu" id="SolunumSorunu"
                                 value="Yok">
@@ -139,104 +139,68 @@ if (isset($_GET['logout'])) {
                                 <span class="checkbox-header"> Sorun Var</span>
 
                             </label>
-                            <table class="ozgecmistable-wrapper">
-                                <tbody>
-                                    <tr>
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                        </div>
+                        </div>
+                           
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" id="Dispne" name="breathing-problem"
                                                     value="Dispne">
                                                 <label class="form-check-label" for="Dispne">Dispne </label>
                                             </div>
-                                        </td>
 
-                                    </tr>
-                                    <tr>
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" id="Hiperventilasyon" name="breathing-problem"
                                                     value="Hiperventilasyon">
                                                 <label class="form-check-label" for="Hiperventilasyon">Hiperventilasyon
                                                 </label>
                                             </div>
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                                    
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" id="Hipoventilasyon" name="breathing-problem"
                                                     value="Hipoventilasyon">
                                                 <label class="form-check-label" for="Hipoventilasyon">Hipoventilasyon
                                                 </label>
                                             </div>
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                                       
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" id="Takipne" name="breathing-problem"
                                                     value="Takipne">
                                                 <label class="form-check-label" for="Takipne">Takipne
                                                 </label>
                                             </div>
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                                       
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" id="Bradipne" name="breathing-problem"
                                                     value="Bradipne">
                                                 <label class="form-check-label" for="Bradipne">Bradipne
                                                 </label>
                                             </div>
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                                      
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" id="Siyanoz" name="breathing-problem"
                                                     value="Siyanoz">
                                                 <label class="form-check-label" for="Siyanoz">Siyanoz
                                                 </label>
                                             </div>
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                                       
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" id="breathing-not" name="breathing-problem"
                                                     value="Diğer">
                                                 <label class="form-check-label" for="Diğer">Diğer
                                                 </label>
-                                                <input type="text" class="form-control ozgecmistable" required
-                                                    name="solunum_diger" id="solunum_diger" placeholder="Diğer">
                                             </div>
-                                        </td>
+                                            <input type="text" class="form-control" required
+                                                name="solunum_diger" id="solunum_diger" placeholder="Diğer">
+                                       
 
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                    </div>
                 </div>
             </div>
 
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">Solunum yolu:</p>
+                <p class="usernamelabel pb-3">Solunum yolu:</p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                <div class="checkbox-wrapper d-flex">
+                <div class="checkbox-wrapper">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="SolunumYolu" id="SolunumYolu"
@@ -253,43 +217,30 @@ if (isset($_GET['logout'])) {
                                 <span class="checkbox-header"> Sorun Var</span>
 
                             </label>
-                            <table class="ozgecmistable-wrapper">
-                                <tbody>
-                                    <tr>
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                        </div>
+                    </div>
+                         
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="radio" name="AirwayMethod" id="Trakeostomi"
                                                     value="Trakeostomi">
                                                 <label class="form-check-label" for="Trakeostomi">Trakeostomi</label>
                                             </div>
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                                      
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="radio" name="AirwayMethod" id="EndotrakealTüp"
                                                     value="Endotrakeal Tüp">
                                                 <label class="form-check-label" for="EndotrakealTüp">Endotrakeal Tüp
                                                 </label>
                                             </div>
-                                        </td>
 
-                                    </tr>
-
-                                </tbody>
-                            </table>
-                        </div>
-
-                    </div>
                 </div>
             </div>
 
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">Öksürme:</p>
+                <p class="usernamelabel pb-3">Öksürme:</p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                <div class="checkbox-wrapper d-flex">
+                <div class="checkbox-wrapper">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="Oksurme" id="Oksurme" value="Yok">
@@ -304,46 +255,31 @@ if (isset($_GET['logout'])) {
                                 <span class="checkbox-header"> Sorun Var</span>
 
                             </label>
-                            <table class="ozgecmistable-wrapper">
-                                <tbody>
-                                    <tr>
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                        </div>
+                    </div>
+                           
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="radio" name="CoughOption" id="Etkisiz"
                                                     value="Etkisiz">
                                                 <label class="form-check-label" for="Etkisiz">Etkisiz</label>
                                             </div>
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="radio" name="CoughOption" id="OksurmeDiğer"
                                                     value="Diğer">
                                                 <label class="form-check-label" for="OksurmeDiğer">Diğer
                                                 </label>
-                                                <input type="text" class="form-control ozgecmistable" required
-                                                    name="oksurme_diger" id="oksurme_diger" placeholder="Diğer">
                                             </div>
-                                        </td>
+                                            <input type="text" class="form-control" required
+                                                name="oksurme_diger" id="oksurme_diger" placeholder="Diğer">
 
-                                    </tr>
-
-                                </tbody>
-                            </table>
-                        </div>
-
-                    </div>
                 </div>
             </div>
 
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">Balgam:</p>
+                <p class="usernamelabel pb-3">Balgam:</p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                <div class="checkbox-wrapper d-flex">
+                <div class="checkbox-wrapper">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="Balgam" id="Balgam" value="Yok">
@@ -358,69 +294,48 @@ if (isset($_GET['logout'])) {
                                 <span class="checkbox-header"> Sorun Var</span>
 
                             </label>
-                            <table class="ozgecmistable-wrapper">
-                                <tbody>
-                                    <tr>
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                        </div>
+                    </div>
+                          
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="radio" name="BalgamType" id="EtkisizBalgam"
                                                     value="Etkisiz balgam">
                                                 <label class="form-check-label" for="EtkisizBalgam">Etkisiz balgam
                                                     çıkartma</label>
                                             </div>
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                                    
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="radio" name="BalgamType" id="NormalBalgam"
                                                     value="Balgam">
                                                 <label class="form-check-label" for="NormalBalgam">Balgam
                                                     Çıkamama</label>
                                             </div>
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                                    
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="radio" name="BalgamType" id="AşırıKıvamlı"
                                                     value="Aşırı kıvamlı">
                                                 <label class="form-check-label" for="AşırıKıvamlı">Aşırı kıvamlı
                                                     balgam</label>
                                             </div>
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                                       
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="radio" name="BalgamType" id="BalgamDiğer"
                                                     value="Diğer">
                                                 <label class="form-check-label" for="BalgamDiğer">Diğer
                                                 </label>
-                                                <input type="text" class="form-control ozgecmistable" required
-                                                    name="balgam_diger" id="balgam_diger" placeholder="Diğer">
                                             </div>
-                                        </td>
+                                            <input type="text" class="form-control" required
+                                                name="balgam_diger" id="balgam_diger" placeholder="Diğer">
+                                        
 
-                                    </tr>
-
-                                </tbody>
-                            </table>
-                        </div>
-
-                    </div>
                 </div>
             </div>
 
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">Aspirasyon İhtiyacı:</p>
+                <p class="usernamelabel pb-3">Aspirasyon İhtiyacı:</p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                <div class="checkbox-wrapper d-flex">
+                <div class="checkbox-wrapper">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="AspirasyonIhtiyaci"
@@ -437,44 +352,31 @@ if (isset($_GET['logout'])) {
                                 <span class="checkbox-header"> Sorun Var</span>
 
                             </label>
-                            <table class="ozgecmistable-wrapper">
-                                <tbody>
-                                    <tr>
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                      
+                        </div>
+                        </div>
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" id="Oro_Nazofarengeal" name="Aspirasyon_need"
                                                     value="Oro_Nazofarengeal">
                                                 <label class="form-check-label" for="Oro_Nazofarengeal">Oro -
                                                     Nazofarengeal</label>
                                             </div>
-                                        </td>
 
-                                    </tr>
-                                    <tr>
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" id="Trakeal" name="Aspirasyon_need"
                                                     value="Trakeal">
                                                 <label class="form-check-label" for="Trakeal">Trakeal</label>
                                             </div>
-                                        </td>
+                                      
 
-                                    </tr>
-
-
-                                </tbody>
-                            </table>
-                        </div>
-
-                    </div>
                 </div>
             </div>
 
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">Burun Muayenesi:</p>
+                <p class="usernamelabel pb-3">Burun Muayenesi:</p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                <div class="checkbox-wrapper d-flex">
+                <div class="checkbox-wrapper">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="BurunMuayenesi" id="BurunMuayenesi"
@@ -491,91 +393,62 @@ if (isset($_GET['logout'])) {
                                 <span class="checkbox-header"> Sorun Var</span>
 
                             </label>
-                            <table class="ozgecmistable-wrapper">
-                                <tbody>
-                                    <tr>
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                        </div>
+                        
+                    </div>
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" id="NazalMukoza" name="NasalIssue"
                                                     value="Nazal Mukoza">
                                                 <label class="form-check-label" for="NazalMukoza">Nazal mukoza
                                                     hiperemik</label>
                                             </div>
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                                        
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" id="NazalSeptumda" name="NasalIssue"
                                                     value="Nazal Septumda">
                                                 <label class="form-check-label" for="NazalSeptumda">Nazal septumda
                                                     deviasyon</label>
                                             </div>
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                                     
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" id="NazalKanama" name="NasalIssue"
                                                     value="Nazal Kanama">
                                                 <label class="form-check-label" for="NazalKanama">Nazal kanama</label>
                                             </div>
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                                      
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" id="NazalLezyon" name="NasalIssue"
                                                     value="Nazal Lezyon">
                                                 <label class="form-check-label" for="NazalLezyon">Nazal lezyon
                                                 </label>
                                             </div>
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                                     
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" id="NazalAkinti" name="NasalIssue"
                                                     value="Nazal Akinti">
                                                 <label class="form-check-label" for="NazalAkinti">Nazal akıntı</label>
                                             </div>
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                                    
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" id="NazalDiger" name="NasalIssue"
                                                     value="Diger">
                                                 <label class="form-check-label" for="NazalDiger">Diğer
                                                 </label>
-                                                <input type="text" class="form-control ozgecmistable" required
-                                                    name="nazal_diger" disabled id="nazal_diger" placeholder="Diğer">
                                             </div>
-                                        </td>
+                                            <input type="text" class="form-control" required
+                                                name="nazal_diger" disabled id="nazal_diger" placeholder="Diğer">
+                                    
 
-                                    </tr>
-
-                                </tbody>
-                            </table>
-                        </div>
-
-                    </div>
                 </div>
             </div>
 
-            <p class="usernamelabel">Boyun:</p>
+            <p class="usernamelabel pb-3">Boyun:</p>
 
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">Tiroid bezi:</p>
+                <p class="usernamelabel pb-3">Tiroid bezi:</p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                <div class="checkbox-wrapper d-flex">
+                <div class="checkbox-wrapper">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="TiroidBezi" id="TiroidBezi" value="Yok">
@@ -588,53 +461,34 @@ if (isset($_GET['logout'])) {
                             <input class="form-check-input" type="radio" name="TiroidBezi" id="TiroidBezi" value="Var">
                             <label class="form-check-label" for="TiroidBezi">
                                 <span class="checkbox-header"> Sorun Var</span>
-
+                                
                             </label>
-                            <table class="ozgecmistable-wrapper">
-                                <tbody>
-                                    <tr>
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                        </div>
+                    </div>
+                           
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="radio" id="Sislik" name="ThyroidIssue"
                                                     value="Sislik">
                                                 <label class="form-check-label" for="Sislik">Şişlik</label>
                                             </div>
-                                        </td>
-
-                                    </tr>
-
-
-                                    <tr>
-
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                                       
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="radio" id="TiroidDiger" name="ThyroidIssue"
                                                     value="Diger">
                                                 <label class="form-check-label" for="TiroidDiger">Diğer
                                                 </label>
-                                                <p>Kitle
-                                                    <input type="text" class="form-control" required name="tiroid_diger"
-                                                        id="tiroid_diger" placeholder="Diğer">
-                                                    Özelliği
-                                                </p>
                                             </div>
-                                        </td>
+                                            <input type="text" class="form-control" required name="tiroid_diger"
+                                                id="tiroid_diger" placeholder="Diğer">
 
-                                    </tr>
-
-                                </tbody>
-                            </table>
-                        </div>
-
-                    </div>
                 </div>
             </div>
 
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">Trakea:</p>
+                <p class="usernamelabel pb-3">Trakea:</p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                <div class="checkbox-wrapper d-flex">
+                <div class="checkbox-wrapper">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="Trakea" id="Trakea" value="Yok">
@@ -649,44 +503,30 @@ if (isset($_GET['logout'])) {
                                 <span class="checkbox-header"> Sorun Var</span>
 
                             </label>
-                            <table class="ozgecmistable-wrapper">
-                                <tbody>
-                                    <tr>
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                           
+                        </div>
+                    </div>
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="radio" id="SagaKayma" name="Shift"
                                                     value="Sağa Kayma">
                                                 <label class="form-check-label" for="SagaKayma">Sağa Kayma</label>
                                             </div>
-                                        </td>
-
-                                    </tr>
-
-                                    <tr>
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                                     
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="radio" id="SolaKayma" name="Shift"
                                                     value="Sola Kayma">
                                                 <label class="form-check-label" for="SolaKayma">Sola Kayma</label>
                                             </div>
-                                        </td>
+                                      
 
-                                    </tr>
-
-
-                                </tbody>
-                            </table>
-                        </div>
-
-                    </div>
                 </div>
             </div>
 
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">Boyun lenf nodlarında büyüme:</p>
+                <p class="usernamelabel pb-3">Boyun lenf nodlarında büyüme:</p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                <div class="checkbox-wrapper d-flex">
+                <div class="checkbox-wrapper">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="LenfNodlari" id="LenfNodlari"
@@ -703,43 +543,31 @@ if (isset($_GET['logout'])) {
                                 <span class="checkbox-header"> Sorun Var</span>
 
                             </label>
-                            <table class="ozgecmistable-wrapper">
-                                <tbody>
-                                    <tr>
+                        </div>
+                    </div>
+                           
                                         <label class="form-check-label" for="Yeri">Yeri</label>
 
                                         <input type="text" class="form-control" required name="NodYeri" id="NodYeri"
                                             placeholder="Yeri">
 
-
-                                    </tr>
-
-
-
-
-                                </tbody>
-                            </table>
-                        </div>
-
-                    </div>
                 </div>
             </div>
 
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">Diğer:</p>
+                <p class="usernamelabel pb-3">Diğer:</p>
 
 
-                <input type="text" class="form-control not" required name="NodDiger" id="NodDiger" placeholder="Yeri">
+                <input type="text" class="form-control" required name="NodDiger" id="NodDiger" placeholder="Yeri">
 
             </div>
 
-            <p class="usernamelabel">Toraks:</p>
-            <p class="usernamelabel">Posterior Toraks:</p>
+            
+            <div class="input-section">
+                <p class="usernamelabel pb-3 text-center mb-3" style='font-size: large;'>Posterior Toraks</p>
 
-            <div class="input-section d-flex">
-
-                <p class="usernamelabel">Skapulaların simetrikliği:</p>
+                <p class="usernamelabel pb-3">Skapulaların simetrikliği:</p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
@@ -765,11 +593,11 @@ if (isset($_GET['logout'])) {
                 </div>
             </div>
 
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">Omurga deformitesi :</p>
+                <p class="usernamelabel pb-3">Omurga deformitesi :</p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                <div class="checkbox-wrapper d-flex">
+                <div class="checkbox-wrapper">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="OmurgaDeform" id="OmurgaDeform"
@@ -786,53 +614,36 @@ if (isset($_GET['logout'])) {
                                 <span class="checkbox-header"> Sorun Var</span>
 
                             </label>
-                            <table class="ozgecmistable-wrapper">
-                                <tbody>
-                                    <tr>
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                        </div>
+                          
+                    </div>
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" id="Kifoz" name="SpinalDeformity"
                                                     value="Kifoz">
                                                 <label class="form-check-label" for="Kifoz">Kifoz </label>
                                             </div>
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                                   
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" id="Lordoz" name="SpinalDeformity"
                                                     value="Lordoz">
                                                 <label class="form-check-label" for="Lordoz">Lordoz </label>
                                             </div>
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                                     
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" id="Skolyoz" name="SpinalDeformity"
                                                     value="Skolyoz">
                                                 <label class="form-check-label" for="Skolyoz">Skolyoz</label>
                                             </div>
-                                        </td>
+                                      
 
-                                    </tr>
-
-
-                                </tbody>
-                            </table>
-                        </div>
-
-                    </div>
                 </div>
             </div>
 
-            <p class="usernamelabel">Anterior Toraks:</p>
+            
+            <div class="input-section">
+                <p class="usernamelabel pb-3 mb-3 text-center" style="font-size: large;">Anterior Toraks</p>
 
-            <div class="input-section d-flex">
-
-                <p class="usernamelabel">Göğüs hareketleri :</p>
+                <p class="usernamelabel pb-3">Göğüs hareketleri :</p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
@@ -858,11 +669,11 @@ if (isset($_GET['logout'])) {
                 </div>
             </div>
 
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">Göğüs kafesinde :</p>
+                <p class="usernamelabel pb-3">Göğüs kafesinde :</p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                <div class="checkbox-wrapper d-flex">
+                <div class="checkbox-wrapper">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="GogusKafesinde" id="GogusKafesinde"
@@ -879,11 +690,10 @@ if (isset($_GET['logout'])) {
                                 <span class="checkbox-header"> Sorun Var</span>
 
                             </label>
-                            <table class="ozgecmistable-wrapper">
-                                <tbody>
-                                    <tr>
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                        </div>
+                    </div>
+                            
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" id="KrepitasyonAlani" name="ChestIssues"
                                                     value="Krepitasyon / Alanı">
                                                 <label class="form-check-label" for="KrepitasyonAlani">Krepitasyon /
@@ -892,23 +702,15 @@ if (isset($_GET['logout'])) {
                                                         name="Krepitasyon_Alani" id="Krepitasyon_Alani" placeholder="">
                                                 </label>
                                             </div>
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                                  
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" id="Hassasiyet" name="ChestIssues"
                                                     value="Hassasiyet">
                                                 <label class="form-check-label" for="Hassasiyet">Hassasiyet
                                                 </label>
                                             </div>
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                                    
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" id="KitleOzelligi" name="ChestIssues"
                                                     value="Kitle Ozelligi">
                                                 <label class="form-check-label" for="KitleOzelligi">Kitle/Özelliği
@@ -916,12 +718,8 @@ if (isset($_GET['logout'])) {
                                                         name="Kitle_Ozelligi" id="Kitle_Ozelligi" placeholder="">
                                                 </label>
                                             </div>
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                                    
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" id="KitleDiger" name="ChestIssues"
                                                     value="Diger">
                                                 <label class="form-check-label" for="KitleDiger">Diğer
@@ -929,23 +727,16 @@ if (isset($_GET['logout'])) {
                                                         id="Kitle_Diger" placeholder="">
                                                 </label>
                                             </div>
-                                        </td>
+                                   
 
-                                    </tr>
-
-                                </tbody>
-                            </table>
-                        </div>
-
-                    </div>
                 </div>
             </div>
 
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">Göğüs deformitesi :</p>
+                <p class="usernamelabel pb-3">Göğüs deformitesi :</p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                <div class="checkbox-wrapper d-flex">
+                <div class="checkbox-wrapper">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="GogusDeformitesi" id="GogusDeformitesi"
@@ -962,54 +753,36 @@ if (isset($_GET['logout'])) {
                                 <span class="checkbox-header"> Sorun Var</span>
 
                             </label>
-                            <table class="ozgecmistable-wrapper">
-                                <tbody>
-                                    <tr>
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                           
+                        </div>
+                        </div>
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" id="FiciGogus" name="DeformityType"
                                                     value="Fıçı Göğüs">
                                                 <label class="form-check-label" for="FiciGogus">Fıçı Göğüs
                                                 </label>
                                             </div>
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                                      
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" id="GuvercinGogus" name="DeformityType"
                                                     value="Güvercin Göğüs">
                                                 <label class="form-check-label" for="GuvercinGogus">Güvercin Göğüs
                                                 </label>
                                             </div>
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-                                        <td class="protezlertable">
-                                            <div class="form-check form-check-inline">
+                                      
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" id="Kunduracı" name="DeformityType"
                                                     value="Kunduracı">
                                                 <label class="form-check-label" for="Kunduracı">Kunduracı Göğsü</label>
                                             </div>
-                                        </td>
 
-                                    </tr>
-
-
-                                </tbody>
-                            </table>
-                        </div>
-
-                    </div>
                 </div>
             </div>
-<div class="input-section d-flex">
-            <p class="usernamelabel">Solunum sistemi uygulaması </p>
+<div class="input-section">
+            <p class="usernamelabel pb-3">Solunum sistemi uygulaması </p>
             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
             <div class="checkbox-wrapper d-flex">
-                <div class="checkboxes d-flex">
+                <div class="checkboxes">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" name="SolunumSistemiUygilamasi"
                             id="SolunumSistemiUygilamasi" value="Triflow / Spirometre">

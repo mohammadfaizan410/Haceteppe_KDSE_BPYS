@@ -84,7 +84,7 @@ if (isset($_GET['logout'])) {
             <span class='close closeBtn' id='closeBtn1'>&times;</span>
             <h1 class="form-header">HAREKET GEREKSİNİMİ</h1>
 
-            <div class="input-section d-flex">
+            <div class="input-section">
                 <div class="form-check form-check-inline d-flex">
                     <input class="form-check-input" type="checkbox" id="exercisingHabit" value="exercisingHabit" name="exercisingHabit">
                     <label class="form-check-label" for="HareketAliskanligi">
@@ -94,9 +94,9 @@ if (isset($_GET['logout'])) {
                 </div>
             </div>
 
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">Hastanede egzersiz yapma durumuz</p>
+                <p class="usernamelabel pb-3">Hastanede egzersiz yapma durumuz</p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
                 <div class="checkbox-wrapper d-flex">
@@ -144,9 +144,9 @@ if (isset($_GET['logout'])) {
                     </div>
                 </div>
             </div>
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">Hareket etme isteği:</p>
+                <p class="usernamelabel pb-3">Hareket etme isteği:</p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
                 <div class="checkbox-wrapper d-flex">
@@ -220,9 +220,9 @@ if (isset($_GET['logout'])) {
                     </div>
                 </div>
             </div>
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">Kıyafetlerini giyme ve çıkarmada</p>
+                <p class="usernamelabel pb-3">Kıyafetlerini giyme ve çıkarmada</p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
                 <div class="checkbox-wrapper d-flex">
@@ -251,9 +251,9 @@ if (isset($_GET['logout'])) {
                     </div>
                 </div>
             </div>
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">Pozisyon değiştirmede </p>
+                <p class="usernamelabel pb-3">Pozisyon değiştirmede </p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
                 <div class="checkbox-wrapper d-flex">
@@ -282,9 +282,9 @@ if (isset($_GET['logout'])) {
                     </div>
                 </div>
             </div>
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">Ayağa kalkmada </p>
+                <p class="usernamelabel pb-3">Ayağa kalkmada </p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
                 <div class="checkbox-wrapper d-flex">
@@ -313,9 +313,9 @@ if (isset($_GET['logout'])) {
                     </div>
                 </div>
             </div>
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">Yürümede</p>
+                <p class="usernamelabel pb-3">Yürümede</p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes">

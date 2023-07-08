@@ -94,28 +94,28 @@ if (isset($_GET['logout'])) {
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Saat:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Saat:</p>
                             <input type="time" class="form-control" required name="delivery_time" id="delivery_time"
                                 placeholder="Saat">
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">İlacın Adı:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">İlacın Adı:</p>
                             <input type="text" class="form-control" required name="medicine_name" id="medicine_name"
                                 placeholder="İlacın Adı" maxlength="200">
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">İlacın Dozu:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">İlacın Dozu:</p>
                             <input type="text" class="form-control" required name="medicine_dose" id="medicine_dose"
                                 placeholder="İlacın Dozu" maxlength="200">
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">İlacın Yolu:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">İlacın Yolu:</p>
                             <input type="text" class="form-control" required name="delivery_method" id="delivery_method"
                                 placeholder="İlacın Yolu" maxlength="200">
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Uygulama Zamanı:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Uygulama Zamanı:</p>
                             <input type="text" class="form-control" required name="treatment_timeRange" id="treatment_timeRange"
                                 placeholder="Uygulama Zamanı" maxlength="200">
                         </div>

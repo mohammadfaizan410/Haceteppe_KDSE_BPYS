@@ -72,9 +72,9 @@ if (isset($_GET['logout'])) {
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
                         <img src="./ağrı skalası.png"
-                            style="width:67%; height:auto;border: 1px solid;border-color: #246174; box-shadow:1px 1px 1px 1px #246174; border-radius: 20px;">
-                        <div class="input-section d-flex" style="padding-top: 5%;">
-                            <p class="usernamelabel">Ağrının Şiddeti:</p>
+                            style="width:67%; height:auto;border: 1px solid;border-color: #246174; box-shadow:1px 1px 1px 1px #246174; border-radius: 20px; margin-bottom: 20px;">
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Ağrının Şiddeti:</p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="AgriSiddeti" id="AgriSiddeti"
@@ -120,8 +120,8 @@ if (isset($_GET['logout'])) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Ağrının Süresi:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Ağrının Süresi:</p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="AgriSuresi" id="AgriSuresi"
@@ -139,32 +139,32 @@ if (isset($_GET['logout'])) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Ağrının Yeri:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Ağrının Yeri:</p>
                             <input type="text" class="form-control" required name="pain_location" id="pain_location"
                                 placeholder="Ağrının Yerini Giriniz" maxlength="100">
                         </div>
 
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Ağrının Karakteri:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Ağrının Karakteri:</p>
                             <input type="text" class="form-control" required name="pain_character" id="diger"
                                 placeholder="Ağrının Karakterini Giriniz" maxlength="500">
                         </div>
 
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Ağrının Sıklığı:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Ağrının Sıklığı:</p>
                             <input type="text" class="form-control" required name="pain_frequency" id="diger"
                                 placeholder="Ağrının Sıklığını Giriniz" maxlength="200">
                         </div>
 
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Ağrıyı Arttıran Durumlar:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Ağrıyı Arttıran Durumlar:</p>
                             <input type="text" class="form-control" required name="pain_increase_factors" id="diger"
                                 placeholder="Ağrıyı Arttıran Durumları Giriniz" maxlength="500">
                         </div>
 
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Ağrıyı Azaltan Durumlar:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Ağrıyı Azaltan Durumlar:</p>
                             <input type="text" class="form-control" required name="pain_decrease_factors" id="diger"
                                 placeholder="Ağrıyı Azaltan Durumları Giriniz" maxlength="500">
                         </div>

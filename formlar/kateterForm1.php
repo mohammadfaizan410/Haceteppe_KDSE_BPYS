@@ -88,18 +88,12 @@ if (isset($_GET['logout'])) {
 
             <div>
 
-                <div class="d-flex justify-content-around p-4">
-                    <p class="usernamelabel">Kateter / Dren</p>
-                    <p class="usernamelabel">Yeri</p>
-                    <p class="usernamelabel">Sayısı</p>
-                    <p class="usernamelabel">Takılma Tarihi</p>
-                </div>
+               
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 
-                <div class="d-flex justify-content-between">
-                    <div class="input-section d-flex">
-                        <div class="checkboxes w-25">
-                            <div class="form-check">
+                    <div class="input-section">
+                        <div class="checkboxes">
+                            <div class="form-check pb-3">
                                 <input class="form-check-input" type="radio" name="katererType" id="venöz_kateter"
                                     value="Periferik venöz kateter">
                                 <label class="form-check-label" for="venöz_kateter">
@@ -107,15 +101,14 @@ if (isset($_GET['logout'])) {
                                 </label>
                             </div>
                         </div>
-                        <input type="number" class="form-control w-25" disabled name="peripheralKaterarAmount" id="peripheralKaterarAmount">
-                        <input type="text" class="form-control w-25" disabled name="peripheralKaterarLocation" id="peripheralKaterarLocation">
-                        <input type="date" class="form-control w-25" disabled name="peripheralKaterarDate" id="peripheralKaterarDate">
+                        <input type="number" placeholder="yeri" class="form-control mb-2" disabled name="peripheralKaterarAmount" id="peripheralKaterarAmount">
+                        <input type="text" placeholder="sayisi" class="form-control mb-2" disabled name="peripheralKaterarLocation" id="peripheralKaterarLocation">
+                        <input type="date" class="form-control mb-2" disabled name="peripheralKaterarDate" id="peripheralKaterarDate">
                     </div>
-                </div>
                 <div class="d-flex justify-content-between">
-                    <div class="input-section d-flex">
-                        <div class="checkboxes w-25">
-                            <div class="form-check">
+                    <div class="input-section">
+                        <div class="checkboxes">
+                            <div class="form-check pb-3">
                                 <input class="form-check-input" type="radio" name="katererType" id="venöz_kateter"
                                     value="Santral venöz kateter">
                                 <label class="form-check-label" for="venöz_kateter">
@@ -123,14 +116,14 @@ if (isset($_GET['logout'])) {
                                 </label>
                             </div>
                         </div>
-                        <input type="number" class="form-control w-25" disabled name="centralKaterarNumber" id="centralKaterarNumber">
-                        <input type="text" class="form-control w-25" disabled name="centralKaterarLocation" id="centralKaterarLocation">
-                        <input type="date" class="form-control w-25" disabled name="centralKaterarDate" id="centralKaterarDate">
+                        <input type="number" placeholder="yeri" class="form-control mb-2" disabled name="centralKaterarNumber" id="centralKaterarNumber">
+                        <input type="text" placeholder="sayisi" class="form-control mb-2" disabled name="centralKaterarLocation" id="centralKaterarLocation">
+                        <input type="date" class="form-control mb-2" disabled name="centralKaterarDate" id="centralKaterarDate">
                     </div>
                 </div>
                 <div class="d-flex justify-content-between">
-                    <div class="input-section d-flex">
-                        <div class="checkboxes w-25">
+                    <div class="input-section">
+                        <div class="checkboxes">
                             <div class="form-check ">
                                 <input class="form-check-input" type="radio" name="katererType" id="venöz_kateter"
                                     value="Dren">
@@ -139,15 +132,15 @@ if (isset($_GET['logout'])) {
                                 </label>
                             </div>
                         </div>
-                        <input type="number" class="form-control w-25" disabled name="drainKatererAmount" id="drainKatererAmount">
-                        <input type="text" class="form-control w-25" disabled name="drainKatererLocation" id="drainKatererLocation">
-                        <input type="date" class="form-control w-25" disabled name="drainKatererDate" id="drainKatererDate">
+                        <input type="number" placeholder="yeri" class="form-control mb-2" disabled name="drainKatererAmount" id="drainKatererAmount">
+                        <input type="text" placeholder="sayisi" class="form-control mb-2" disabled name="drainKatererLocation" id="drainKatererLocation">
+                        <input type="date" class="form-control mb-2" disabled name="drainKatererDate" id="drainKatererDate">
                     </div>
                 </div>
                 <div class="d-flex justify-content-between">
-                    <div class="input-section d-flex">
-                        <div class="checkboxes w-25">
-                            <div class="form-check">
+                    <div class="input-section">
+                        <div class="checkboxes">
+                            <div class="form-check pb-3">
                                 <input class="form-check-input" type="radio" name="katererType" id="venöz_kateter"
                                     value="Diğer">
                                 <label class="form-check-label" for="venöz_kateter">
@@ -155,9 +148,9 @@ if (isset($_GET['logout'])) {
                                 </label>
                             </div>
                         </div>
-                        <input type="number" class="form-control w-25" disabled name="otherKatereAmount" id="otherKatereAmount">
-                        <input type="text" class="form-control w-25" disabled name="otherKatereLocation" id="otherKatereLocation">
-                        <input type="date" class="form-control w-25" disabled name="otherKatereDate" id="otherKatereDate">
+                        <input type="number" placeholder="yeri" class="form-control mb-2" disabled name="otherKatereAmount" id="otherKatereAmount">
+                        <input type="text" placeholder="sayisi" class="form-control mb-2" disabled name="otherKatereLocation" id="otherKatereLocation">
+                        <input type="date" class="form-control mb-2" disabled name="otherKatereDate" id="otherKatereDate">
                     </div>
                 </div>
             </div>

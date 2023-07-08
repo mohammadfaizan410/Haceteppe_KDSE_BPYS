@@ -77,16 +77,15 @@ if (isset($_GET['logout'])) {
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
-                        <img src="./ödem.png" style="width:67%; height:auto;border: 1px solid;border-color: #246174; box-shadow:1px 1px 1px 1px #246174; border-radius: 20px;">
-                        <div class="input-section d-flex" style="padding-top: 5%;">
-                            <p class="usernamelabel">Değerlendirilen Alan:</p>
+                        <img src="./ödem.png" style="width:40%; height:auto;border: 1px solid;border-color: #246174; box-shadow:1px 1px 1px 1px #246174; border-radius: 20px; margin-bottom: 20px;">
+                        <div class="input-section" >
+                            <p class="usernamelabel pb-3">Değerlendirilen Alan:</p>
                             <input type="text" class="form-control" required name="assessed_area" id="diger" placeholder="Değerlendirilen Alanı Giriniz" maxlength="2000">
                         </div>
 
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Ödemin Şiddeti:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Ödemin Şiddeti:</p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                            <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="ÖdemŞiddeti" id="ÖdemŞiddeti" value="Ödem Yok">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
@@ -117,7 +116,6 @@ if (isset($_GET['logout'])) {
                                         <span class="checkbox-header">+4</span>
                                     </label>
                                 </div>
-                            </div>
                         </div>
 
                                                                 <input type="submit" class="w-75 submit m-auto" name="submit" id="submit" value="Kaydet">

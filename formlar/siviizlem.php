@@ -94,28 +94,28 @@ if (isset($_GET['logout'])) {
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Sıvının Cinsi:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Sıvının Cinsi:</p>
                             <input type="text" class="form-control" required name="liquid_type" id="liquid_type"
                                 placeholder="Sıvının Cinsi" maxlength="200">
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Sıvının Hızı:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Sıvının Hızı:</p>
                             <input type="text" class="form-control" required name="liquid_velocity" id="liquid_velocity"
                                 placeholder="Sıvının Hızı" maxlength="200">
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Saat:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Saat:</p>
                             <input type="time" class="form-control" required name="delivery_time" id="delivery_time"
                                 placeholder="Saat">
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Seviye:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Seviye:</p>
                             <input type="text" class="form-control" required name="liquid_level" id="liquid_level"
                                 placeholder="Seviye" maxlength="200">
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Giden:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Giden:</p>
                             <input type="text" class="form-control" required name="liquid_sent" id="liquid_sent"
                                 placeholder="Giden" maxlength="200">
                         </div>

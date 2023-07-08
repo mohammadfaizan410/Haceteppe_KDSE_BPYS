@@ -91,10 +91,9 @@ if (isset($_GET['logout'])) {
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">zaman aralığını seçin: </p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">zaman aralığını seçin: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                            <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="time_range" id="time_range"
                                         value="08.00-16.00">
@@ -116,11 +115,10 @@ if (isset($_GET['logout'])) {
                                         <span class="checkbox-header">24.00-08.00</span>
                                     </label>
                                 </div>
-                            </div>
                         </div>
                         <h2 class="form-header">Aldığı</h2>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">IV:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">IV:</p>
                             <div class='d-flex flex-column w-75'>
                                 <input type="number" class="form-control mt-2" required name="iv_input1" id="iv_input1"
                                     placeholder="IV" min="0" max="10000">
@@ -132,8 +130,8 @@ if (isset($_GET['logout'])) {
                                     placeholder="IV" maxlength="5" min="0" max="10000">
                             </div>
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Kan Ürünü:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Kan Ürünü:</p>
                             <div class='d-flex flex-column w-75'>
                                 <input type="number" class="form-control mt-2" required name="blood_product1" id="blood_product1"
                                     placeholder="Kan Ürünü" maxlength="5" min="0" max="10000">
@@ -145,8 +143,8 @@ if (isset($_GET['logout'])) {
                                     placeholder="Kan Ürünü" maxlength="5" min="0" max="10000">
                             </div>
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Oral:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Oral:</p>
                             <div class='d-flex flex-column w-75'>
                                 <input type="number" class="form-control mt-2" required name="oral1" id="oral1"
                                     placeholder="Oral" maxlength="5" min="0" max="10000">
@@ -161,8 +159,8 @@ if (isset($_GET['logout'])) {
 
 
                         <h2 class="form-header">Çıkardığı</h2>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">İdrar:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">İdrar:</p>
                             <div class='d-flex flex-column w-75'>
                                 <input type="number" class="form-control mt-2" required name="idrar_input1" id="idrar_input1"
                                     placeholder="İdrar" maxlength="5" min="0" max="10000">
@@ -174,8 +172,8 @@ if (isset($_GET['logout'])) {
                                     placeholder="İdrar" maxlength="5" min="0" max="10000">
                             </div>
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Gaita :</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Gaita :</p>
                             <div class='d-flex flex-column w-75'>
                                 <input type="number" class="form-control mt-2" required name="gaita_input1" id="gaita_input1"
                                     placeholder="Gaita" maxlength="5" min="0" max="10000">

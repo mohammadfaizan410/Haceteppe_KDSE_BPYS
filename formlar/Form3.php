@@ -73,13 +73,13 @@ if (isset($_GET['logout'])) {
                         <!--<div class="input-section-wrapper">-->
 
                         <!--<div class="input-section-item">-->
-                        <div class="input-section d-flex" style="justify-content:space-between">
+                        <div class="input-section" style="justify-content:space-between">
                             <p class="usernamelabel" style="font-weight: bold;">Risk Faktörü</p>
                             <p class="usernamelabel" style="font-weight: bold;">Puan ( ≥ 5 Yüksek Risk )</p>
                         </div>
                         <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                        <div class="input-section d-flex" style="justify-content:space-between">
-                            <p class="usernamelabel">Konfüzyon / Dezoryantasyon: </p>
+                        <div class="input-section" style="justify-content:space-between">
+                            <p class="usernamelabel pb-3">Konfüzyon / Dezoryantasyon: </p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="confusion_point" id="RiskFactor"
                                     value="4">
@@ -89,8 +89,8 @@ if (isset($_GET['logout'])) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between">
-                            <p class="usernamelabel">Semptomatik Depresyon:</p>
+                        <div class="input-section" style="justify-content:space-between">
+                            <p class="usernamelabel pb-3">Semptomatik Depresyon:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="symtomatic_depression_point"
                                     id="RiskFactor" value="2">
@@ -100,8 +100,8 @@ if (isset($_GET['logout'])) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between">
-                            <p class="usernamelabel">Boşaltım ihtiyacında sorun:</p>
+                        <div class="input-section" style="justify-content:space-between">
+                            <p class="usernamelabel pb-3">Boşaltım ihtiyacında sorun:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="evacuation_trouble"
                                     id="RiskFactor" value="1">
@@ -111,8 +111,8 @@ if (isset($_GET['logout'])) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between">
-                            <p class="usernamelabel">Baş dönmesi:</p>
+                        <div class="input-section" style="justify-content:space-between">
+                            <p class="usernamelabel pb-3">Baş dönmesi:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="dizziness_point" id="RiskFactor"
                                     value="option1">
@@ -122,8 +122,8 @@ if (isset($_GET['logout'])) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between">
-                            <p class="usernamelabel">Cinsiyet (erkek):</p>
+                        <div class="input-section" style="justify-content:space-between">
+                            <p class="usernamelabel pb-3">Cinsiyet (erkek):</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="gender_point" id="RiskFactor"
                                     value="1">
@@ -133,8 +133,8 @@ if (isset($_GET['logout'])) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between">
-                            <p class="usernamelabel">Antiepileptik Grubu İlaç Alımı:</p>
+                        <div class="input-section" style="justify-content:space-between">
+                            <p class="usernamelabel pb-3">Antiepileptik Grubu İlaç Alımı:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="epilepsy_drug_point"
                                     id="RiskFactor" value="2">
@@ -144,8 +144,8 @@ if (isset($_GET['logout'])) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between">
-                            <p class="usernamelabel">Benzodiazepin Grubu İlaç Alımı:</p>
+                        <div class="input-section" style="justify-content:space-between">
+                            <p class="usernamelabel pb-3">Benzodiazepin Grubu İlaç Alımı:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="benzo_drug_point" id="RiskFactor"
                                     value="1">
@@ -159,13 +159,11 @@ if (isset($_GET['logout'])) {
 
                         <!--<div class="input-section-item">-->
 
-                        <div class="input-section d-flex" style="justify-content:space-around">
-                            <p class="usernamelabel" style="font-weight: bold;">Sandalyeden Kalkma Testi</p>
+                            <p class="usernamelabel" style="font-weight: bold; font-size: large;">Sandalyeden Kalkma Testi</p>
                             <p class="option-error1" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                        </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between">
-                            <p class="usernamelabel">Kollarını Kullanmadan Kalkabiliyor:</p>
+                        <div class="input-section" style="justify-content:space-between">
+                            <p class="usernamelabel pb-3">Kollarını Kullanmadan Kalkabiliyor:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="get_up_without_arm" id="test"
                                     value="0">
@@ -173,10 +171,8 @@ if (isset($_GET['logout'])) {
                                     <span class="checkbox-header">(0 puan)</span>
                                 </label>
                             </div>
-                        </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between">
-                            <p class="usernamelabel">Kalkmak için sandalye kolluğunu kullanıyor ancak tek denemede
+                            <p class="usernamelabel pb-3">Kalkmak için sandalye kolluğunu kullanıyor ancak tek denemede
                                 kalkabiliyor:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="get_up_without_arm" id="test"
@@ -185,10 +181,8 @@ if (isset($_GET['logout'])) {
                                     <span class="checkbox-header">(1 puan)</span>
                                 </label>
                             </div>
-                        </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between">
-                            <p class="usernamelabel">Kalkmak için sandalye kolluğunu kullanıyor ancak birden fazla
+                            <p class="usernamelabel pb-3">Kalkmak için sandalye kolluğunu kullanıyor ancak birden fazla
                                 denemede kalkabiliyor:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="get_up_without_arm" id="test"
@@ -197,10 +191,8 @@ if (isset($_GET['logout'])) {
                                     <span class="checkbox-header">(3 puan)</span>
                                 </label>
                             </div>
-                        </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between">
-                            <p class="usernamelabel">Yardım olmadan kalkamıyor:</p>
+                            <p class="usernamelabel pb-3">Yardım olmadan kalkamıyor:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="get_up_without_arm" id="test"
                                     value="4">
@@ -208,23 +200,21 @@ if (isset($_GET['logout'])) {
                                     <span class="checkbox-header">(4 puan)</span>
                                 </label>
                             </div>
-                        </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between">
                             <p class="usernamelabel" style="font-weight: bold;">Toplam:</p>
                             <div class="form-check">
                                 <output></output>
                             </div>
-                        </div>
                         <div class="input-section-item"></div>
 
                         <p style="padding-inline: 15% 15%;">*Alınan puan 5'den düşük ise haftada bir kez yeniden
                             değerlendirme yapılır. Alınan puan 5 veya üzeri ise gün aşırı yeniden değerlendirme yapılır.
                         </p>
-
+                        </div>
                         <!--</div>-->
 
                         <!--</div>-->
+
 
                                                                 <input type="submit" class="w-75 submit m-auto" name="submit" id="submit" value="Kaydet">
 

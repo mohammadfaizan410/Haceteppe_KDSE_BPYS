@@ -79,29 +79,29 @@ if (isset($_GET['logout'])) {
             <span class='close closeBtn' id='closeBtn1'>&times;</span>
             <h1 class="form-header">EĞİTİM GEREKSİNİMİ</h1>
 
-            <div class="input-section d-flex justify-content-between">
+            <div class="input-section">
                 <div>
                     <input type="checkbox" name="radio1">
                     <label for="radio1">Daha önce sağlık eğitimi</label>
                 </div>
             </div>
-            <div class="input-section d-flex ">
+            <div class="input-section">
                 <div>
-                    <p class="usernamelabel">Konusu</p>
+                    <p class="usernamelabel pb-3">Konusu</p>
                     <input type="text" class="form-control" disabled  name="Konu" id="Konu">
                 </div>
                 <div>
-                    <p class="usernamelabel">Kimden/Nereden aldı</p>
+                    <p class="usernamelabel pb-3">Kimden/Nereden aldı</p>
                     <input type="text" class="form-control " disabled name="Nerden" id="Nerden">
                 </div>
                 <div>
-                <p class="usernamelabel">Ne zaman aldı</p>
+                <p class="usernamelabel pb-3">Ne zaman aldı</p>
                     <input type="text" class="form-control" disabled name="NeZaman" id="NeZaman">
                 </div>
             </div>
 
-            <div class="input-section d-flex">
-                <p class="usernamelabel">Sağlığınız ile ilgili hangi konularda eğitim almak istersiniz:</p>
+            <div class="input-section">
+                <p class="usernamelabel pb-3">Sağlığınız ile ilgili hangi konularda eğitim almak istersiniz:</p>
                 <input type="text" class="form-control"  name="EgitimIstegi" id="EgitimIstegi">
             </div>
 
@@ -111,8 +111,8 @@ if (isset($_GET['logout'])) {
                     <label class="p-2" for="TedaviBasvurusu">Sağlık sorununuz olduğunda tıbbi tedavi ve bakım dışında
                         başvurduğunuz herhangi bir kurum ya da yöntem var mı?</label>
                 </div>
-                <div class="input-section d-flex">
-                    <p class="usernamelabel">Açıklayınız:</p>
+                <div class="input-section">
+                    <p class="usernamelabel pb-3">Açıklayınız:</p>
                     <input type="text" class="form-control" disabled  name="TedaviBasvurusuDiger"
                         id="TedaviBasvurusuDiger">
                 </div>

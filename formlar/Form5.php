@@ -80,13 +80,13 @@ if (isset($_GET['logout'])) {
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
                         <div class="input-section-item" style="justify-content:space-between; padding: 5%">
-                            <p class="usernamelabel" style="font-weight: bold;">Gözleri Açabilme</p>
+                            <p class="usernamelabel" style="font-weight: bold; font-size:large">Gözleri Açabilme</p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                         </div>
 
-                        <div class="input-section d-flex"
-                            style="justify-content:space-between; padding-inline: 15% 15%;">
-                            <p class="usernamelabel">Spontan Açabiliyor:</p>
+                        <div class="input-section"
+                            style="justify-content:space-between">
+                            <p class="usernamelabel pb-3">Spontan Açabiliyor:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="GözleriAçabilme" id="GözleriAçabilme"
                                     value="4">
@@ -96,9 +96,9 @@ if (isset($_GET['logout'])) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex"
-                            style="justify-content:space-between; padding-inline: 15% 15%;">
-                            <p class="usernamelabel">Sözel Emirle Açabiliyor:</p>
+                        <div class="input-section"
+                            style="justify-content:space-between; ">
+                            <p class="usernamelabel pb-3">Sözel Emirle Açabiliyor:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="GözleriAçabilme" id="GözleriAçabilme"
                                     value="3">
@@ -108,9 +108,9 @@ if (isset($_GET['logout'])) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex"
-                            style="justify-content:space-between; padding-inline: 15% 15%;">
-                            <p class="usernamelabel">Ağrılı Uyaranla Açabiliyor:</p>
+                        <div class="input-section"
+                            style="justify-content:space-between; ">
+                            <p class="usernamelabel pb-3">Ağrılı Uyaranla Açabiliyor:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="GözleriAçabilme" id="GözleriAçabilme"
                                     value="2">
@@ -120,9 +120,9 @@ if (isset($_GET['logout'])) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex"
-                            style="justify-content:space-between; padding-inline: 15% 15%;">
-                            <p class="usernamelabel">Açmıyor:</p>
+                        <div class="input-section"
+                            style="justify-content:space-between; ">
+                            <p class="usernamelabel pb-3">Açmıyor:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="GözleriAçabilme" id="GözleriAçabilme"
                                     value="1">
@@ -133,13 +133,13 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="input-section-item" style="justify-content:space-between; padding: 5%">
-                            <p class="usernamelabel" style="font-weight: bold;">Motor Cevap</p>
+                            <p class="usernamelabel" style="font-weight: bold; font-size:large">Motor Cevap</p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                         </div>
 
-                        <div class="input-section d-flex"
-                            style="justify-content:space-between; padding-inline: 15% 15%;">
-                            <p class="usernamelabel">Emirler Uyuyor:</p>
+                        <div class="input-section"
+                            style="justify-content:space-between; ">
+                            <p class="usernamelabel pb-3">Emirler Uyuyor:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="MotorCevap" id="MotorCevap"
                                     value="6">
@@ -149,9 +149,9 @@ if (isset($_GET['logout'])) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex"
-                            style="justify-content:space-between; padding-inline: 15% 15%;">
-                            <p class="usernamelabel">Ağrıya lokalize (Ağrılı uyaranı uzaklaştırmaya çalışıyor):</p>
+                        <div class="input-section"
+                            style="justify-content:space-between; ">
+                            <p class="usernamelabel pb-3">Ağrıya lokalize (Ağrılı uyaranı uzaklaştırmaya çalışıyor):</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="MotorCevap" id="MotorCevap"
                                     value="5">
@@ -161,9 +161,9 @@ if (isset($_GET['logout'])) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex"
-                            style="justify-content:space-between; padding-inline: 15% 15%;">
-                            <p class="usernamelabel">Çekme (Ekstremitesini ağrılı uyarandan uzaklaştırmaya/çekmeye
+                        <div class="input-section"
+                            style="justify-content:space-between; ">
+                            <p class="usernamelabel pb-3">Çekme (Ekstremitesini ağrılı uyarandan uzaklaştırmaya/çekmeye
                                 çalışıyor):</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="MotorCevap" id="MotorCevap"
@@ -174,9 +174,9 @@ if (isset($_GET['logout'])) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex"
-                            style="justify-content:space-between; padding-inline: 15% 15%;">
-                            <p class="usernamelabel">Fleksiyon (Dekortike duruş):</p>
+                        <div class="input-section"
+                            style="justify-content:space-between; ">
+                            <p class="usernamelabel pb-3">Fleksiyon (Dekortike duruş):</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="MotorCevap" id="MotorCevap"
                                     value="3">
@@ -186,9 +186,9 @@ if (isset($_GET['logout'])) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex"
-                            style="justify-content:space-between; padding-inline: 15% 15%;">
-                            <p class="usernamelabel">Ekstansiyon (Deserebre duruş):</p>
+                        <div class="input-section"
+                            style="justify-content:space-between; ">
+                            <p class="usernamelabel pb-3">Ekstansiyon (Deserebre duruş):</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="MotorCevap" id="MotorCevap"
                                     value="2">
@@ -198,9 +198,9 @@ if (isset($_GET['logout'])) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex"
-                            style="justify-content:space-between; padding-inline: 15% 15%;">
-                            <p class="usernamelabel">Tepki yok :</p>
+                        <div class="input-section"
+                            style="justify-content:space-between; ">
+                            <p class="usernamelabel pb-3">Tepki yok :</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="MotorCevap" id="MotorCevap"
                                     value="1">
@@ -211,13 +211,13 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="input-section-item" style="justify-content:space-between; padding: 5%">
-                            <p class="usernamelabel" style="font-weight: bold;">Sözel Tepki</p>
+                            <p class="usernamelabel" style="font-weight: bold; font-size:large">Sözel Tepki</p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                         </div>
 
-                        <div class="input-section d-flex"
-                            style="justify-content:space-between; padding-inline: 15% 15%;">
-                            <p class="usernamelabel">Oryante:</p>
+                        <div class="input-section"
+                            style="justify-content:space-between; ">
+                            <p class="usernamelabel pb-3">Oryante:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="SözelTepki" id="SözelTepki"
                                     value="5">
@@ -227,9 +227,9 @@ if (isset($_GET['logout'])) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex"
-                            style="justify-content:space-between; padding-inline: 15% 15%;">
-                            <p class="usernamelabel">Konfüze (Cümle kuruyor ancak yanıtlar yanlış):</p>
+                        <div class="input-section"
+                            style="justify-content:space-between; ">
+                            <p class="usernamelabel pb-3">Konfüze (Cümle kuruyor ancak yanıtlar yanlış):</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="SözelTepki" id="SözelTepki"
                                     value="4">
@@ -239,9 +239,9 @@ if (isset($_GET['logout'])) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex"
-                            style="justify-content:space-between; padding-inline: 15% 15%;">
-                            <p class="usernamelabel">Uygunsuz cümleler (Bir ya da daha fazla yanlış yanıt):</p>
+                        <div class="input-section"
+                            style="justify-content:space-between; ">
+                            <p class="usernamelabel pb-3">Uygunsuz cümleler (Bir ya da daha fazla yanlış yanıt):</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="SözelTepki" id="SözelTepki"
                                     value="3">
@@ -251,9 +251,9 @@ if (isset($_GET['logout'])) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex"
-                            style="justify-content:space-between; padding-inline: 15% 15%;">
-                            <p class="usernamelabel">Anlamsız sesler (Hasta mırıldanıyor, inliyor):</p>
+                        <div class="input-section"
+                            style="justify-content:space-between; ">
+                            <p class="usernamelabel pb-3">Anlamsız sesler (Hasta mırıldanıyor, inliyor):</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="SözelTepki" id="SözelTepki"
                                     value="2">
@@ -263,9 +263,9 @@ if (isset($_GET['logout'])) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex"
-                            style="justify-content:space-between; padding-inline: 15% 15%;">
-                            <p class="usernamelabel">Tepki yok:</p>
+                        <div class="input-section"
+                            style="justify-content:space-between; ">
+                            <p class="usernamelabel pb-3">Tepki yok:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="SözelTepki" id="SözelTepki"
                                     value="1">
@@ -275,15 +275,15 @@ if (isset($_GET['logout'])) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex"
-                            style="justify-content:space-between; padding-inline: 15% 15%;">
+                        <div class="input-section"
+                            style="justify-content:space-between; ">
                             <p class="usernamelabel" style="font-weight: bold;">Toplam:</p>
                             <div class="form-check">
                                 <output></output>
                             </div>
                         </div>
 
-                        <p style="padding-inline: 15% 15%;">*GKS: 15 (Oryante), 13-14 (Konfüze), 8-13 (Stubor), 3-8
+                        <p style="">*GKS: 15 (Oryante), 13-14 (Konfüze), 8-13 (Stubor), 3-8
                             (Prekoma), 3 (Koma)</p>
 
                                                                 <input type="submit" class="w-75 submit m-auto" name="submit" id="submit" value="Kaydet">
