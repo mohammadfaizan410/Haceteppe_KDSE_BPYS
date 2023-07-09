@@ -31,7 +31,7 @@ if (isset($_GET['logout'])) {
         <span class='close closeBtn' id='closeBtn1'>&times;</span>
         <div class='row'>
         <div class='col-lg-6' style="font-weight : bold; font-size: large;">
-        Patient:<?php echo $_GET['patient_name'] ?>
+        Hasta:<?php echo $_GET['patient_name'] ?>
             </div>
             
             <div class='col-lg-6' style="font-weight : bold; font-size: large;">
@@ -39,16 +39,16 @@ if (isset($_GET['logout'])) {
             </div>
 </div>
     <div class='patient-details'>
-        <h2 class='pb-5'>Tanilar</h2>
+        <h2 class='pb-5'>Tanı</h2>
         <div class='row pt-5 pb-3 border-bottom justify-content-center'>
   <div class='col-lg-3 btn btn-success m-3' id='showAllTanis'>
-    <a >Submit a Tani</a>
+    <a >Tanı gönderin</a>
   </div>
   <div class='col-lg-3 btn btn-success m-3' id='showSystemGeneratedTanis'>
-    <a >System Generated Tanis</a>
+    <a >Sistem tarafından oluşturulan tanılama</a>
   </div>
   <div class='col-lg-3 btn btn-success m-3' id='showSubmittedTanis'>
-    <a>Show tanis</a>
+    <a>Tanıyı görüntüleme</a>
   </div>
 </div>
 </div>

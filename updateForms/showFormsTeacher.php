@@ -318,8 +318,8 @@ if (isset($_GET['logout'])) {
         ?>
         <div class="send-patient p-5">
             <div class="d-flex align-items-center justify-content-between mb-4">
-                    <p style="color : #333333; font-size: 20px" class="pb-2">Hasta Listesi / Öneriler</p>
-                    <p style="color : #333333; font-size: 20px" class="pb-2">Patient: <?php echo $_GET['patient_name']?></p>
+                    <p style="color : #333333; font-size: 20px" class="pb-2">Formlar</p>
+                    <p style="color : #333333; font-size: 20px" class="pb-2">Hasta: <?php echo $_GET['patient_name']?></p>
                 </div>
             <div class="patients-save">
                     <div class="text-center rounded p-4 w-100"  id="patients-table">

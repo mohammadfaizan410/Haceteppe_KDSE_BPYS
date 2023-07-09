@@ -29,23 +29,23 @@ if (isset($_GET['logout'])) {
         <div class="patients-table text-center rounded p-5" id="patients-table">
             <span class="close closeBtn" id="closeBtn1">&times;</span>
             <div class="patient-details">
-                <h2 class="pb-5">Patient Details</h2>
+                <h2 class="pb-5">Hasta Detalar</h2>
                 <div class="row pt-5 pb-3 border-bottom">
                     <div class="col-lg-3 col-sm-6">
-                        <h4 style="text-align: left;">Patient ID:</h4>
+                        <h4 style="text-align: left;">Hasta ID:</h4>
                         <h4 style="text-align: left;"><?php echo $_GET['patient_id'] ?></h4>
                     </div>
                     <div class="col-lg-3 col-sm-6">
-                        <h4 style="text-align: left;">Patient Name:</h4>
-                        <h4 style="text-align: left;"><?php echo $_GET['patient_name'] ?></h4>
+                        <h4 style="text-align: left;">Hasta Adı:</h4>
+                        <h4 style="text-align: left; color:black"><?php echo $_GET['patient_name'] ?></h4>
                     </div>
                     <div class="col-lg-3 col-sm-6">
-                        <h4 style="text-align: left;">Patient Forms:</h4>
-                        <h4 style="text-align: left;"><a class="btn btn-success" id="formOptions">Show Forms</a></h4>
+                        <h4 style="text-align: left;">Hasta Formları:</h4>
+                        <h4 style="text-align: left;"><a class="btn btn-success" id="formOptions">Formları Görüntüleme</a></h4>
                     </div>
                     <div class="col-lg-3 col-sm-6">
-                        <h4 style="text-align: left;">Patient Diagnosis:</h4>
-                        <h4 style="text-align: left;"><a class="btn btn-success" id="taniOptions">Show tanis</a></h4>
+                        <h4 style="text-align: left;">Hasta Tanılar:</h4>
+                        <h4 style="text-align: left;"><a class="btn btn-success" id="taniOptions">Tanıyı Görüntüle</a></h4>
                     </div>
                 </div>
             </div>

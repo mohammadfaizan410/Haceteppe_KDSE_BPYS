@@ -44,7 +44,7 @@ if (isset($_GET['logout'])) {
             <div class="patients-table text-center rounded p-4" id="patients-table">
                 <div class="d-flex align-items-center justify-content-between mb-4">
                     <p style="color : #333333; font-size: 20px" class="pb-2">Hasta Listesi / Öneriler</p>
-                    <p style="color : #333333; font-size: 20px" class="pb-2">Student: <?php echo $_GET['student_name']?></p>
+                    <p style="color : #333333; font-size: 20px" class="pb-2">Öğrenci: <?php echo $_GET['student_name']?></p>
                 </div>
 
                 <div class="table-responsive">

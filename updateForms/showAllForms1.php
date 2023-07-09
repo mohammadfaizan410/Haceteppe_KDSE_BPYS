@@ -264,7 +264,7 @@ if ($result) {
         <span class='close closeBtn' id='closeBtn1'>&times;</span>
         <div class='row'>
         <div class='col-lg-6' style="font-weight : bold; font-size: large;">
-        Patient:<?php echo $_GET['patient_name'] ?>
+        Hasta:<?php echo $_GET['patient_name'] ?>
             </div>
             
             <div class='col-lg-6' style="font-weight : bold; font-size: large;">
@@ -273,7 +273,7 @@ if ($result) {
         </div>
             <div class="patients-table text-center rounded p-4" id="patients-table">
                 <div class="d-flex align-items-center justify-content-between mb-4">
-                    <p style="color : #333333; font-size: 20px" class="pb-2">Form List</p>
+                    <p style="color : #333333; font-size: 20px" class="pb-2">Yeni Formlar</p>
 
                 </div>
                 <div class="table-responsive">
@@ -340,60 +340,60 @@ if ($result) {
                         <?php endif; ?>
                         <?php if (count($values1) == 0): ?>
                         <tr><td> <div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color: white;"
-                                href="<?php echo $base_url; ?>/formlar/Form2.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form2</a></div></td></tr>
+                                href="<?php echo $base_url; ?>/formlar/Form2.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">EĞİTİM GEREKSİNİMİ</a></div></td></tr>
                         <?php endif; ?> 
                         <?php if (count($values2) == 0): ?>       
                         <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;"
-                                href="<?php echo $base_url; ?>/formlar/Form3.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form3
+                                href="<?php echo $base_url; ?>/formlar/Form3.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Düşme Riski Değerlendirmesi
                                 </a></div></td></tr>
                         <?php endif; ?> 
                         <?php if (count($values3) == 0): ?>
                         <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;"
-                                href="<?php echo $base_url; ?>/formlar/Form4.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form4</a></div></td></tr>
+                                href="<?php echo $base_url; ?>/formlar/Form4.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Düşme Bildirimi</a></div></td></tr>
                                 <?php endif; ?> 
                         <?php if (count($values4) == 0): ?>
                         <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;"
-                                href="<?php echo $base_url; ?>/formlar/Form5.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form5</a></div></td></tr>
+                                href="<?php echo $base_url; ?>/formlar/Form5.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Glaskow Koma Skalası</a></div></td></tr>
                                 <?php endif; ?> 
                         <?php if (count($values5) == 0): ?>
                                 <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;"
-                                href="<?php echo $base_url; ?>/formlar/Form6.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form6</a></div></td></tr>
+                                href="<?php echo $base_url; ?>/formlar/Form6.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Braden Bası Yarası Risk Değerlendirme Aracı</a></div></td></tr>
                                 <?php endif; ?> 
                         <?php if (count($values6) == 0): ?>
                                 <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;"
-                                href="<?php echo $base_url; ?>/formlar/Form7.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form7</a></div></td></tr>
+                                href="<?php echo $base_url; ?>/formlar/Form7.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Basınç Yarası Formu</a></div></td></tr>
                                 <?php endif; ?> 
                         <?php if (count($values7) == 0): ?>
                                 <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;"
-                                href="<?php echo $base_url; ?>/formlar/Form8.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form8</a></div></td></tr>
+                                href="<?php echo $base_url; ?>/formlar/Form8.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Ödem Değerlendirmesi</a></div></td></tr>
                                 <?php endif; ?> 
                         <?php if (count($values8) == 0): ?>
                                 <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;"
-                                href="<?php echo $base_url; ?>/formlar/tetkiksonuclari_form9.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form9</a></div></td></tr>
+                                href="<?php echo $base_url; ?>/formlar/tetkiksonuclari_form9.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">TETKİK SONUÇLARI GİRİŞİ</a></div></td></tr>
                                 <?php endif; ?> 
                         <?php if (count($values9) == 0): ?>
                                 <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;"
-                                href="<?php echo $base_url; ?>/formlar/yasamsalbulgutakibi_form10.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form10</a></div></td></tr>
+                                href="<?php echo $base_url; ?>/formlar/yasamsalbulgutakibi_form10.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">YAŞAMSAL BULGU TAKİBİİ   </a></div></td></tr>
                                 <?php endif; ?> 
                         <?php if (count($values10) == 0): ?>
                                 <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;"
-                                href="<?php echo $base_url; ?>/formlar/Form11.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form11</a></div></td></tr>
+                                href="<?php echo $base_url; ?>/formlar/Form11.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">ALDIĞI ÇIKARDIĞI İZLEMİ</a></div></td></tr>
                                 <?php endif; ?> 
                         <?php if (count($values11) == 0): ?>
                                 <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;"
-                                href="<?php echo $base_url; ?>/formlar/siviizlem.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form12</a></div></td></tr>
+                                href="<?php echo $base_url; ?>/formlar/siviizlem.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Sıvı İzlem</a></div></td></tr>
                                 <?php endif; ?> 
                         <?php if (count($values12) == 0): ?>
                                 <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;"
-                                href="<?php echo $base_url; ?>/formlar/medikaltedavi.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form13</a></div></td></tr>
+                                href="<?php echo $base_url; ?>/formlar/medikaltedavi.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Medikal Tedavi</a></div></td></tr>
                                 <?php endif; ?> 
                         <?php if (count($values13) == 0): ?>
                                 <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;"
-                                href="<?php echo $base_url; ?>/formlar/bakimplani.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form14</a></div></td></tr>
+                                href="<?php echo $base_url; ?>/formlar/bakimplani.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Bakım Planı</a></div></td></tr>
                                 <?php endif; ?> 
                         <?php if (count($values14) == 0): ?>
                                 <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;"
-                                href="<?php echo $base_url; ?>/formlar/gunlukbakimuygulamalari.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Form15</a></div></td></tr>
+                                href="<?php echo $base_url; ?>/formlar/gunlukbakimuygulamalari.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Günlük Bakım Planı</a></div></td></tr>
                         <?php endif; ?>
                         </thead>
                         <tbody>

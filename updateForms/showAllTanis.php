@@ -71,7 +71,7 @@ if (isset($_GET['logout'])) {
 </div>
             <div class="patients-table text-center rounded p-4" id="patients-table">
                 <div class="d-flex align-items-center justify-content-between mb-4">
-                    <p style="color : #333333; font-size: 20px" class="pb-2">Tani list</p>
+                    <p style="color : #333333; font-size: 20px" class="pb-2">Tanı listesi</p>
 
                 </div>
 
@@ -84,7 +84,7 @@ if (isset($_GET['logout'])) {
                                 <th scope="col" style="font-weight : bold; font-size: large;"></th>
                             </tr>
                             <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
-                                  href="<?php echo $base_url; ?>/tanılar/boshTani.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&root_id=0&parent_id=0">BoshTani</a>
+                                  href="<?php echo $base_url; ?>/tanılar/boshTani.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&root_id=0&parent_id=0">Bosh-Tanı</a>
                             </div></td></tr>
                             <tr><td><div class="mt-3 entered-forms align-items-center"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;"
                                href="<?php echo $base_url; ?>/tanılar/tani1.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&root_id=0&parent_id=0">Tanı1</a><div></td></tr>

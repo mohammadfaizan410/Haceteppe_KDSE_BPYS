@@ -309,7 +309,7 @@ if (isset($_GET['logout'])) {
                             </a>  ";
                         } else {
                             echo "<div class='col-lg-3' id='ozgecmisform1_no_submission' style='display: none;'>
-                                <p>No submission for ozgecmisform1</p>
+                                <p>Bu form için hiçbir gönderiminiz bulunmamaktadır</p>
                             </div>";
                         }
                         ?>
@@ -343,7 +343,7 @@ if (isset($_GET['logout'])) {
                                 </a>  ";
                             } else {
                                 echo "<div class='col-lg-3' id='solunumgereksinimi_form1_no_submission' style='display: none;'>
-                                    <p>No submission for SOLUNUM GEREKSİNİMİ
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır
                                     </p>
                                     </div>";
                                 }
@@ -377,7 +377,7 @@ if (isset($_GET['logout'])) {
                                 </a>  ";
                             } else {
                                 echo "<div class='col-lg-3' id='form1_beslenme_no_submission' style='display: none;'>
-                                    <p>No submission for BESLENME GEREKSİNİMİ
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır
                                     </p>
                                     </div>";
                                 }
@@ -411,7 +411,7 @@ if (isset($_GET['logout'])) {
                                 </a>  ";
                             } else {
                                 echo "<div class='col-lg-3' id='bosaltimform1_no_submission' style='display: none;'>
-                                    <p>No submission for BOŞALTIM GEREKSİNİMİ
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır
                                     </p>
                                     </div>";
                                 }
@@ -445,7 +445,7 @@ if (isset($_GET['logout'])) {
                                 </a>  ";
                             } else {
                                 echo "<div class='col-lg-3' id='hareketform1_no_submission' style='display: none;'>
-                                    <p>No submission for HAREKET GEREKSİNİMİ
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır
                                     </p>
                                     </div>";
                                 }
@@ -479,7 +479,7 @@ if (isset($_GET['logout'])) {
                                 </a>  ";
                             } else {
                                 echo "<div class='col-lg-3' id='form1_uyku_no_submission' style='display: none;'>
-                                    <p>No submission for UYKU GEREKSİNİMİ
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır
                                     </p>
                                     </div>";
                                 }
@@ -513,7 +513,7 @@ if (isset($_GET['logout'])) {
                                 </a>  ";
                             } else {
                                 echo "<div class='col-lg-3' id='vucudutemizform1_no_submission' style='display: none;'>
-                                    <p>No submission for VÜCUDU TEMİZ VE BAKIMLI TUTMA
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır
                                     </p>
                                     </div>";
                                 }
@@ -547,7 +547,7 @@ if (isset($_GET['logout'])) {
                                 </a>  ";
                             } else {
                                 echo "<div class='col-lg-3' id='katererform1_no_submission' style='display: none;'>
-                                    <p>No submission for KATETER / DREN
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır
                                     </p>
                                     </div>";
                                 }
@@ -581,7 +581,7 @@ if (isset($_GET['logout'])) {
                                 </a>  ";
                             } else {
                                 echo "<div class='col-lg-3' id='ilestimform1_no_submission' style='display: none;'>
-                                    <p>No submission for İLETİŞİM KURMA GEREKSİNİMİ
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır
                                     </p>
                                     </div>";
                                 }
@@ -615,7 +615,7 @@ if (isset($_GET['logout'])) {
                                 </a>  ";
                             } else {
                                 echo "<div class='col-lg-3' id='calismaform1_no_submission' style='display: none;'>
-                                    <p>No submission for ÇALIŞMA, ÜRETME, BOŞ ZAMANINI DEĞERLENDİRME GEREKSİNİMİ
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır
                                     </p>
                                     </div>";
                                 }
@@ -650,7 +650,7 @@ if (isset($_GET['logout'])) {
                                 </a>";
                             } else {
                                 echo "<div class='col-lg-3' id='egitimform1_no_submission' style='display: none;'>
-                                    <p>No submission for EĞİTİM GEREKSİNİMİ
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır
                                     </p>
                                     </div>";
                                 }
@@ -688,7 +688,7 @@ if (isset($_GET['logout'])) {
                                 </a>  ";
                             } else {
                                 echo "<div class='col-lg-3' id='form2_no_submission' style='display: none;'>
-                                    <p>No submission for form2</p>
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır</p>
                                 </div>";
                             }
                             ?>
@@ -722,7 +722,7 @@ if (isset($_GET['logout'])) {
                                 </a>  ";
                             } else {
                                 echo "<div class='col-lg-3' id='form3_no_submission' style='display: none;'>
-                                    <p>No submission for form3</p>
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır</p>
                                 </div>";
                             }
                             ?>
@@ -756,7 +756,7 @@ if (isset($_GET['logout'])) {
                                 </a>  ";
                             } else {
                                 echo "<div class='col-lg-3' id='form4_no_submission' style='display: none;'>
-                                    <p>No submission for form4</p>
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır</p>
                                 </div>";
                             }
                             ?>
@@ -790,7 +790,7 @@ if (isset($_GET['logout'])) {
                                 </a>  ";
                             } else {
                                 echo "<div class='col-lg-3' id='form5_no_submission' style='display: none;'>
-                                    <p>No submission for form5</p>
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır</p>
                                 </div>";
                             }
                             ?>
@@ -824,7 +824,7 @@ if (isset($_GET['logout'])) {
                                 </a>  ";
                             } else {
                                 echo "<div class='col-lg-3' id='form6_no_submission' style='display: none;'>
-                                    <p>No submission for form6</p>
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır</p>
                                 </div>";
                             }
                             ?>
@@ -858,7 +858,7 @@ if (isset($_GET['logout'])) {
                                 </a>  ";
                             } else {
                                 echo "<div class='col-lg-3' id='form7_no_submission' style='display: none;'>
-                                    <p>No submission for form7</p>
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır</p>
                                 </div>";
                             }
                             ?>
@@ -892,7 +892,7 @@ if (isset($_GET['logout'])) {
                                 </a>  ";
                             } else {
                                 echo "<div class='col-lg-3' id='form8_no_submission' style='display: none;'>
-                                    <p>No submission for form8</p>
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır</p>
                                 </div>";
                             }
                             ?>
@@ -927,7 +927,7 @@ if (isset($_GET['logout'])) {
                                 </a>  ";
                             } else {
                                 echo "<div class='col-lg-3' id='form9_no_submission' style='display: none;'>
-                                    <p>No submission for form9</p>
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır</p>
                                 </div>";
                             }
                             ?>
@@ -961,7 +961,7 @@ if (isset($_GET['logout'])) {
                                 </a>  ";
                             } else {
                                 echo "<div class='col-lg-3' id='form10_no_submission' style='display: none;'>
-                                    <p>No submission for form10</p>
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır</p>
                                 </div>";
                             }
                             ?>
@@ -995,7 +995,7 @@ if (isset($_GET['logout'])) {
                                 </a>";
                             } else {
                                 echo "<div class='col-lg-3' id='form11_no_submission' style='display: none;'>
-                                    <p>No submission for form11</p>
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır</p>
                                 </div>";
                             }
                             ?>
@@ -1028,7 +1028,7 @@ if (isset($_GET['logout'])) {
                                 </a>";
                             } else {
                                 echo "<div class='col-lg-3' id='form12_no_submission' style='display: none;'>
-                                    <p>No submission for form12</p>
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır</p>
                                 </div>";
                             }
                             ?>
@@ -1061,7 +1061,7 @@ if (isset($_GET['logout'])) {
                                 </a>";
                             } else {
                                 echo "<div class='col-lg-3' id='form13_no_submission' style='display: none;'>
-                                    <p>No submission for form13</p>
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır</p>
                                 </div>";
                             }
                             ?>
@@ -1094,7 +1094,7 @@ if (isset($_GET['logout'])) {
                                 </a>";
                             } else {
                                 echo "<div class='col-lg-3' id='form14_no_submission' style='display: none;'>
-                                    <p>No submission for form14</p>
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır</p>
                                 </div>";
                             }
                             ?>
@@ -1127,7 +1127,7 @@ if (isset($_GET['logout'])) {
                                 </a>";
                             } else {
                                 echo "<div class='col-lg-3' id='form15_no_submission' style='display: none;'>
-                                    <p>No submission for form15</p>
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır</p>
                                 </div>";
                             }
                             ?>

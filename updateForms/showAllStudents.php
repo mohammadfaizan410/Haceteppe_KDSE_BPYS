@@ -98,9 +98,9 @@ if (isset($_GET['logout'])) {
   <div id="tick"></div>
 </div>
 <div id="warning-container">
-  <div id="warning"><p>Are you sure you want to delete this student?</p>
+  <div id="warning"><p>Bu öğrenciyi silmek istediğinizden emin misiniz?</p>
   <button id='confirm-delete' class='warning-btn'>Evet</button>
-  <button id='cancel-delete' class='warning-btn' style='background-color: grey'>cancel</button>
+  <button id='cancel-delete' class='warning-btn' style='background-color: grey'>İptal</button>
   </div>
 </div>
     <div class="container-fluid pt-4 px-4">
@@ -122,7 +122,7 @@ if (isset($_GET['logout'])) {
         <div class="send-patient">
             <div class="patients-table text-center rounded p-4" id="patients-table">
             <div class="d-flex align-items-center justify-content-between mb-4">
-                    <p style="color : #333333; font-size: 20px" class="pb-2">Student Listesi / Öneriler</p>
+                    <p style="color : #333333; font-size: 20px" class="pb-2">Öğrenci Listesi / Öneriler</p>
 
                 </div>
 

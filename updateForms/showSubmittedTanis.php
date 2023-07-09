@@ -61,7 +61,7 @@ if (isset($_GET['logout'])) {
         <span class='close closeBtn' id='closeBtn1'>&times;</span>
                 <div class='row'>
         <div class='col-lg-5' style="font-weight : bold; font-size: large;">
-        Patient:<?php echo $_GET['patient_name'] ?>
+        Hasta:<?php echo $_GET['patient_name'] ?>
             </div>
             
             <div class='col-lg-5' style="font-weight : bold; font-size: large;">
@@ -70,7 +70,7 @@ if (isset($_GET['logout'])) {
         </div>
             <div class="patients-table text-center rounded p-4" id="patients-table">
                 <div class="d-flex align-items-center justify-content-between mb-4">
-                    <p style="color : #333333; font-size: 20px" class="pb-2">Submitted Tanis</p>
+                    <p style="color : #333333; font-size: 20px" class="pb-2">Sunulan Tanı</p>
 
                 </div>
 

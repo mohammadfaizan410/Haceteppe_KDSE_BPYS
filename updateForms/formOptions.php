@@ -26,28 +26,41 @@ if (isset($_GET['logout'])) {
 <body style="background-color:white">
     
 <div class="container-fluid pt-4 px-4">
-    <div class="patients-table text-center rounded p-5" id="patients-table" style='aspect-ratio : 4/2'>
+    <div class="send-patient" style="aspect-ratio: 4/1;">
         <span class='close closeBtn' id='closeBtn1'>&times;</span>
-        <div class='row'>
-        <div class='col-lg-6' style="font-weight : bold; font-size: large;">
-        Patient:<?php echo $_GET['patient_name'] ?>
+
+        <div class="patients-table text-center rounded p-4" id="patients-table">
+            <div class="d-flex align-items-center justify-content-between mb-4">
+                <p style="color : #333333; font-size: 20px" class="pb-2"></p>
+
             </div>
-            
-            <div class='col-lg-6' style="font-weight : bold; font-size: large;">
-            ID:<?php echo $_GET['patient_id'] ?>
+            <h2 class="pb-5">Hasta Formlar</h2>
+            <div class="table-responsive mt-5" style="overflow-x: hidden;">
+                    <table class="table text-start align-middle table-hover mb-0" id='dataTable'>
+                    <thead>
+                        <tr class="darkcyan table-head">
+                            <th scope="col" style="font-weight : bold;">ID</th>
+                            <th scope="col" style="font-weight : bold;">Hasta Ad</th>
+                            <th scope="col" style="font-weight : bold;">Form gönderin</th>
+                            <th scope="col" style="font-weight : bold;">Gönderilen Formlar</th>
+                        </tr>
+                                <tr class="">                            
+                                    <td scope="col" style="color: #333333" class="usernamelabel"><?php echo $_GET['patient_id'] ?></td>
+                                <td scope="col" style="color: #333333" class="usernamelabel"><?php echo $_GET['patient_name'] ?></td>
+                                <td scope="col" style="color: #333333;"><div class=' btn btn-success' id='showAllForms'>
+                                    Form gönderin
+                                  </div></td>
+                                <td scope="col"><div class=' btn btn-success' id='showSubmittedForms'>
+                                    Gönderilen Formlar
+                                  </div></td>
+                                </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
             </div>
-</div>
-    <div class='patient-details'>
-        <h2 class='pb-5'>Formlar</h2>
-        <div class='row pt-5 pb-3 border-bottom justify-content-center'>
-  <div class='col-lg-3 btn btn-success m-3' id='showAllForms'>
-    <a>Submit a form</a>
-  </div>
-  <div class='col-lg-3 btn btn-success m-3' id='showSubmittedForms'>
-    <a >Submitted Forms</a>
-  </div>
-</div>
-</div>
+        </div>
+    </div>
 </div>
         <script>      
             var patient_id = "<?php echo $_GET['patient_id']; ?>";
