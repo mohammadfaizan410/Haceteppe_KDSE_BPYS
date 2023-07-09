@@ -10,23 +10,41 @@ if (isset($_SESSION['userlogin'])) {
     $name = $_SESSION['userlogin']['name'];
     $surname = $_SESSION['userlogin']['surname'];
     $teacher_list = 'none';
+    $student_list = 'none';
     $all_messages = 'none';
 
-    $sql = "SELECT * FROM teachers where email != '$myEmail'";
-    $stmt = $db->prepare($sql);
-    $stmt->execute();
-    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    if ($result) {
-        $teacher_list = $result;
-    } else {
-        echo '';
-    }
-    }
-    $sql = "SELECT * FROM messages WHERE (FIND_IN_SET(:userid, reciever_list) OR FIND_IN_SET('all_students', reciever_list)) ORDER BY id ASC";
-    $stmt = $db->prepare($sql);
-    $stmt->bindParam(':userid', $myUser, PDO::PARAM_STR);
-    $stmt->execute();
-    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    if ($_SESSION['userlogin']['type'] == 'teacher'){
+        $sql = "SELECT * FROM teachers where email != '$myEmail'";
+        $stmt = $db->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if ($result) {
+            $teacher_list = $result;
+        } else {
+            echo '';
+        }
+        $sql = "SELECT * FROM messages WHERE (FIND_IN_SET(:userid, reciever_list) OR FIND_IN_SET('all_teachers', reciever_list)) ORDER BY id ASC";
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam(':userid', $myUser, PDO::PARAM_STR);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } else if ($_SESSION['userlogin']['type'] == 'student'){
+        $sql = "SELECT * FROM students where email != '$myEmail'";
+        $stmt = $db->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if ($result) {
+            $teacher_list = $result;
+        } else {
+            echo '';
+        }
+        $sql = "SELECT * FROM messages WHERE (FIND_IN_SET(:userid, reciever_list) OR FIND_IN_SET('all_students', reciever_list)) ORDER BY id ASC";
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam(':userid', $myUser, PDO::PARAM_STR);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+}
 
 if ($result) {
     // The current ID exists in the receiver list
