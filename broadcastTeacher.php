@@ -80,7 +80,7 @@ textarea::placeholder{
     <div class="container-fluid pt-4 px-4" style="overflow: hidden;">
         <div class="send-patient w-100" style="overflow: hidden;">
             <div class="w-100 p-4">
-                <button class="btn btn-success mb-3 w-50 p-3" id="show-all-messages">Show All Messages</button>
+                <button class="btn btn-success mb-3 w-50 p-3" id="show-all-messages">Tüm Mesajları Göster</button>
                 <div id="all-messages-container" class="input-section" style="display:none;">
                     <?php 
                     if($all_messages != 'none'){
@@ -98,18 +98,18 @@ textarea::placeholder{
                 </div>
             </div>
             <div class="w-100 p-4">
-                <button class="btn btn-success mb-3 w-50 p-3" id="send-to-student">Send a message to students</button>
+                <button class="btn btn-success mb-3 w-50 p-3" id="send-to-student">Öğrencilere mesaj gönderme</button>
                 <div id="send-to-student-dropdown" class="input-section" style="display: none;">
-                    <p>Enter Subject:</p>
+                    <p>Konu Girin:</p>
                     <input type="text" class="form-control w-100" name="student-subject" />
-                    <p>Enter Message:</p>
+                    <p>Mesaj Girin:</p>
                     <textarea class="form-control w-100" name="student-message" id="student-message" rows="10"></textarea> 
                     <div class="d-flex justify-content-around">
                         <div class="d-flex align-items-center">
-                            <p>Send to all?</p>
+                            <p>Herkese gönder?</p>
                             <input type="checkbox" class="form-check-input" id="broadcast-to-students">
                         </div>
-                        <button class="btn btn-success w-25 m-3" id="student-selection">Select Students</button>
+                        <button class="btn btn-success w-25 m-3" id="student-selection">Öğrenci Seç</button>
                     </div>
                     <div id="student_list_container" class="" style="display: none;">
                         <?php 
@@ -122,22 +122,22 @@ textarea::placeholder{
                         }
                         ?>
                     </div>
-                    <button class="btn btn-success w-100" id="send-message-students">Send</button>
+                    <button class="btn btn-success w-100" id="send-message-students">Gönder</button>
                 </div>
             </div>
             <div class="w-100 p-4">
-                <button class="btn btn-success mb-3 w-50 p-3" id="send-to-teacher">Send a message to teacher</button>
+                <button class="btn btn-success mb-3 w-50 p-3" id="send-to-teacher">Öğretmene mesaj gönderme</button>
                 <div id="send-to-teacher-dropdown" class="input-section" style="display: none;">
-                    <p>Enter Subject:</p>
+                    <p>Konu Girin:</p>
                     <input type="text" class="form-control w-100" name="teacher-subject" />
-                    <p>Enter Message:</p>
+                    <p>Mesaj Girin:</p>
                     <textarea class="form-control w-100" name="teacher-message" id="teacher-message" rows="10"></textarea> 
                     <div class="d-flex justify-content-around">
                         <div class="d-flex align-items-center">
-                            <p>Send to all?</p>
+                            <p>Herkese gönder?</p>
                             <input type="checkbox" class="form-check-input" id="broadcast-to-teachers">
                         </div>
-                        <button class="btn btn-success w-25 m-3" id="teacher-selection">Select Teacher</button>
+                        <button class="btn btn-success w-25 m-3" id="teacher-selection">Öğretmen Seç</button>
                     </div>
                     <div id="teacher_list_container" class="" style="display: none;">
                         <?php 
@@ -150,7 +150,7 @@ textarea::placeholder{
                         }
                         ?>
                     </div>
-                    <button class="btn btn-success w-100" id="send-message-teachers">Send</button>
+                    <button class="btn btn-success w-100" id="send-message-teachers">Gönder</button>
                 </div>
             </div>
         </div>
