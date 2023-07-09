@@ -11,6 +11,9 @@ if (isset($_GET['logout'])) {
     unset($_SESSION);
     header("Location: main.php");
 }
+
+require_once('config-students.php');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,10 +42,83 @@ if (isset($_GET['logout'])) {
 
     <!-- Template Stylesheet -->
     <link href="style.css" rel="stylesheet">
+    <style>
+    .notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 320px;
+    height: 85px;
+    background-color: white;
+    padding: 10px;
+    border: 3px solid darkslateblue;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: none;
+    }
 
+    .notification span {
+        padding: 3px;
+    }
+    .message {
+    font-size: 18px;
+    }
+
+    .close-btn {
+    position: absolute;
+    top: 0px;
+    right: 9px;
+    border: none;
+    background-color: transparent;
+    font-size: 35px;
+    color: red;
+    cursor: pointer;
+    }
+
+    </style>
 </head>
 
 <body class="stu-body">
+    <script>
+        var deleted = false;
+
+        setInterval(function() {
+            $.ajax({
+                url: 'getMessageNotification.php',
+                method: 'GET',
+                success: function(response) {
+
+                    if (response.sender_name != 'none' && deleted == false){
+                        $('.message').text('Yeni Mesaj: '+response.sender_name);
+                        $('#notification').css('display', 'block');
+
+                        $('.message').on('click', function() {
+                            window.location.href = 'broadcastTeacher.php';
+                        });
+
+                        $('.close-btn').on('click', function() {
+                            $('#notification').css('display', 'none')
+                            deleted = true;
+                        });
+                    } else if (response.sender_name == 'none') {
+                        $('#notification').css('display', 'none');
+                        deleted = false;
+                    }
+                    console.log(deleted);
+                    console.log(response.sender_name);
+                },
+                error: function() {
+                    console.log('Failed to make the AJAX request');
+                }
+            });
+        }, 3000);  // Repeat the AJAX call every 3 seconds (3000 milliseconds)
+
+    </script>
+   
+    <div id="notification" class="notification" style="display: none; opacity: 1">
+        <span class="message"></span>
+        <button id="closeBtnNotification" class="close-btn">&times;</button>
+    </div>
     <div class="stu-body1" id="stu-body1">
         <div class="navigation-wrapper" id="navigation-wrapper">
             <div class="navigation-left">

@@ -14,7 +14,6 @@ if (isset($_GET['logout'])) {
 $userid = $_SESSION['userlogin']['id'];
 require_once('config-students.php');
 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -81,6 +80,42 @@ require_once('config-students.php');
 
 <body class="stu-body">
 
+<script>
+        var deleted = false;
+
+        setInterval(function() {
+            $.ajax({
+                url: 'getMessageNotification.php',
+                method: 'GET',
+                success: function(response) {
+
+                    if (response.sender_name != 'none' && deleted == false){
+                        $('.message1').text('Yeni Mesaj: '+response.sender_name);
+                        $('#notification1').css('display', 'block');
+
+                        $('.message1').on('click', function() {
+                            window.location.href = 'broadcastTeacher.php';
+                        });
+
+                        $('.close-btn1').on('click', function() {
+                            $('#notification1').css('display', 'none')
+                            deleted = true;
+                        });
+                    } else if (response.sender_name == 'none') {
+                        $('#notification1').css('display', 'none');
+                        deleted = false;
+                    }
+                    console.log(deleted);
+                    console.log(response.sender_name);
+                },
+                error: function() {
+                    console.log('Failed to make the AJAX request');
+                }
+            });
+        }, 3000);  // Repeat the AJAX call every 3 seconds (3000 milliseconds)
+
+    </script>
+
 <?php
 
     $sql = "SELECT * FROM patients WHERE id = " . $userid;
@@ -135,6 +170,10 @@ require_once('config-students.php');
     }
 
 ?>
+    <div id="notification1" class="notification1">
+        <span class="message1"></span>
+        <button id="closeBtnNotification1" class="close-btn1">&times;</button>
+    </div>
     <div class="stu-body1" id="stu-body1">
         <div class="navigation-wrapper" id="navigation-wrapper">
             <div class="navigation-left">
