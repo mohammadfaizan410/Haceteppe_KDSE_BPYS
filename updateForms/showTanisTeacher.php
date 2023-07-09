@@ -46,9 +46,12 @@ if (isset($_GET['logout'])) {
 <body style="background-color:white">
     <div class="container-fluid pt-4 px-4">
         <?php
+
         require_once('../config-students.php');
         $userid = $_SESSION['userlogin']['id'];
         $patientId = $_GET['patient_id'];
+        $student_id = $_GET['student_id'];
+        $student_name = $_GET['student_name'];
         $sql = "SELECT * FROM tani WHERE patient_id = " . $patientId . " and root_id = 0 ORDER BY tani_num";
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
@@ -82,8 +85,6 @@ if (isset($_GET['logout'])) {
             ID:<?php echo $_GET['patient_id'] ?>
             </div>
     </div>
-    <p class='form-header'>Sunulan Tanı</p>
-
                 <?php
                 $i = 1;
                 foreach($allTanisStandalone as $standAloneTani){
@@ -114,7 +115,7 @@ if (isset($_GET['logout'])) {
                     }
 
                     $taniExtensions = "<div class='row mt-2 w-100 ".$i."_extention_container'  style='display:none'>
-                    <a class='tani-navigator' href='" . $base_url . "/taniReview/tani" . $standAloneTani['tani_num'] . "-review.php?patient_id=" . $standAloneTani['patient_id'] . "&patient_name=" . $standAloneTani['patient_name'] . "&evaluation=" . $standAloneTani['evaluation'] . "&tani_id=".$standAloneTani['tani_id']."&tani_num=".$standAloneTani['tani_num']."&root_id=".$standAloneTani['root_id']."&parent_id=".$standAloneTani['parent_id']."&display=0'>
+                    <a class='tani-navigator' href='" . $base_url . "/taniReview/tani" . $standAloneTani['tani_num'] . "-review.php?patient_id=" . $standAloneTani['patient_id'] . "&patient_name=" . $standAloneTani['patient_name'] . "&evaluation=" . $standAloneTani['evaluation'] . "&tani_id=".$standAloneTani['tani_id']."&tani_num=".$standAloneTani['tani_num']."&root_id=".$standAloneTani['root_id']."&parent_id=".$standAloneTani['parent_id']."&display=0&student_id=".$student_id."&student_name=".$student_name."'>
                     <div class='col-lg-8 m-auto'>
                         <div class='btn btn-success w-100 d-flex justify-content-around' 
                         id='".$i."_toggler'>
@@ -128,7 +129,7 @@ if (isset($_GET['logout'])) {
 
                     foreach($standAloneExtensions as $singleExtension){
                         $taniExtensions .= "<div class='row mt-2 w-100 ".$i ."_extention_container'  style='display:none'>
-                        <a class='tani-navigator' href='" . $base_url . "/taniReview/tani" . $singleExtension['tani_num'] . "-review.php?patient_id=" . $singleExtension['patient_id'] . "&patient_name=" . $singleExtension['patient_name'] . "&evaluation=" . $singleExtension['evaluation'] . "&tani_id=".$singleExtension['tani_id']."&tani_num=".$singleExtension['tani_num']."&root_id=".$standAloneTani['tani_id']."&parent_id=".$singleExtension['parent_id']."&display=0'>
+                        <a class='tani-navigator' href='" . $base_url . "/taniReview/tani" . $singleExtension['tani_num'] . "-review.php?patient_id=" . $singleExtension['patient_id'] . "&patient_name=" . $singleExtension['patient_name'] . "&evaluation=" . $singleExtension['evaluation'] . "&tani_id=".$singleExtension['tani_id']."&tani_num=".$singleExtension['tani_num']."&root_id=".$standAloneTani['tani_id']."&parent_id=".$singleExtension['parent_id']."&display=0student_id=".$student_id."&student_name=".$student_name."'>
                         <div class='col-lg-8 m-auto'>
                             <div class='btn btn-success w-100 d-flex justify-content-around' 
                             id='".$i ."_toggler'>
@@ -139,7 +140,23 @@ if (isset($_GET['logout'])) {
                             </div>
                             </a>
                             </div>";
-                    }                
+                    }
+
+                    echo $taniExtensions;
+
+                    // if (($last_extension['noc_indicator_after_3'] != "null" && $last_extension['noc_indicator_after_3'] != "5") || ($last_extension['noc_indicator_after_2'] != "null" && $last_extension['noc_indicator_after_2'] != "5")
+                    // || $last_extension['noc_indicator_after'] != "5") {
+                    //     echo "<div class='row mt-2 w-100 ".$i ."_extender_container' style='display:none'>
+                    //     <a class='tani-navigator' href='" . $base_url . "/taniReview/tani" . $last_extension['tani_num'] . "-review.php?patient_id=" . $last_extension['patient_id'] . "&patient_name=" . $last_extension['patient_name'] . "&evaluation=" . $last_extension['evaluation'] . "&tani_id=".$last_extension['tani_id']."&tani_num=".$last_extension['tani_num']."&root_id=".$standAloneTani['tani_id']."&parent_id=".$last_extension['parent_id']."&display=1'>
+                    //     <div class='col-lg-8 m-auto mb-3'>
+                    //     <div class='btn btn-success w-100 d-flex justify-content-around' style='border: 2px dotted black; background-color:white; color : black;'> 
+                    //     <span>Add Extension</span>
+                    //     </div>
+                    //     </div>
+                    //     </a>
+                    //     </div>";
+                    // } 
+                
                     echo "</div>";
                     $i++;
 
@@ -160,12 +177,11 @@ $(".tani-navigator").click(function(e){
     $('#content').load(this.href);
 })
 $(function() {
-    student_id = <?php echo $_GET['student_id'] ?>;
-    student_name = "<?php echo $_GET['student_name'] ?>";
-    patient_id = <?php echo $_GET['patient_id'] ?>;
-    patient_name = "<?php echo $_GET['patient_name'] ?>";
-
                 $("#closeBtn1").on("click", function(e) {
+                    var patient_id = <?php echo $patientId; ?>;
+                    var patient_name = "<?php echo $_GET['patient_name']; ?>";
+                    var student_id = <?php echo $student_id; ?>;
+                    var student_name = "<?php echo $_GET['student_name']; ?>";
                     var url =
                         "<?php echo $base_url; ?>/updateForms/showAllPatientsTeacher.php?patient_id=" +
                         patient_id + "&patient_name=" + encodeURIComponent(
