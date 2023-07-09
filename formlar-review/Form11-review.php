@@ -85,9 +85,9 @@ if (isset($_GET['logout'])) {
     <?php
     require_once('../config-students.php');
     $patient_id = isset($_GET['patient_id']) ? $_GET['patient_id'] : '';
-$patient_name = isset($_GET['patient_name']) ? $_GET['patient_name'] : '';
-$student_id = isset($_GET['student_id']) ? $_GET['student_id'] : '';
-$student_name = isset($_GET['student_name']) ? $_GET['student_name'] : '';
+    $patient_name = isset($_GET['patient_name']) ? $_GET['patient_name'] : '';
+    $student_id = isset($_GET['student_id']) ? $_GET['student_id'] : '';
+    $student_name = isset($_GET['student_name']) ? $_GET['student_name'] : '';
     $userid = $_SESSION['userlogin']['id'];
     $form_id = $_GET['form_id'];
     if (isset($_GET['display'])) {
@@ -111,20 +111,8 @@ $student_name = isset($_GET['student_name']) ? $_GET['student_name'] : '';
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Patient Name:</p>
-                            <input type="text" class="form-control" value="<?php echo $form11[0]['patient_name']; ?>"
-                                required name="patient_name" id="diger" placeholder="Patient Name" disabled>
-                        </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Patient ID:</p>
-                            <input type="text" class="form-control" value="<?php echo $form11[0]['patient_id']; ?>"
-                                required name="patient_id" id="diger" placeholder="Patient ID" disabled>
-                        </div>
-
-                        <div class="input-section d-flex">
+                        <div class="input-section">
                             <p class="usernamelabel">zaman aralığını seçin: </p>
-                            <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="time_range" id="time_range"
                                         value="08.00-16.00">
@@ -146,12 +134,10 @@ $student_name = isset($_GET['student_name']) ? $_GET['student_name'] : '';
                                         <span class="checkbox-header">24.00-08.00</span>
                                     </label>
                                 </div>
-                            </div>
                         </div>
                         <h2 class="form-header">Aldığı</h2>
-                        <div class="input-section d-flex">
+                        <div class="input-section">
                             <p class="usernamelabel">IV:</p>
-                            <div class='d-flex flex-column w-75'>
                                 <input type="number" class="form-control mt-2"
                                     value="<?php echo $form11[0]['iv_input1']; ?>" required name="iv_input1" id="diger"
                                     placeholder="IV input">
@@ -164,11 +150,9 @@ $student_name = isset($_GET['student_name']) ? $_GET['student_name'] : '';
                                 <input type="number" class="form-control mt-2"
                                     value="<?php echo $form11[0]['iv_input4']; ?>" required name="iv_input4" id="diger"
                                     placeholder="IV input">
-                            </div>
                         </div>
-                        <div class="input-section d-flex">
+                        <div class="input-section">
                             <p class="usernamelabel">Kan Ürünü:</p>
-                            <div class='d-flex flex-column w-75'>
                                 <input type="number" class="form-control mt-2"
                                     value="<?php echo $form11[0]['blood_product1']; ?>" required name="blood_product1"
                                     id="diger" placeholder="IV input">
@@ -182,10 +166,8 @@ $student_name = isset($_GET['student_name']) ? $_GET['student_name'] : '';
                                     value="<?php echo $form11[0]['blood_product4']; ?>" required name="blood_product4"
                                     id="diger" placeholder="IV input">
                             </div>
-                        </div>
-                        <div class="input-section d-flex">
+                        <div class="input-section">
                             <p class="usernamelabel">Oral:</p>
-                            <div class='d-flex flex-column w-75'>
                                 <input type="number" class="form-control mt-2"
                                     value="<?php echo $form11[0]['oral1']; ?>" required name="oral1" id="diger"
                                     placeholder="IV input">
@@ -198,14 +180,12 @@ $student_name = isset($_GET['student_name']) ? $_GET['student_name'] : '';
                                 <input type="number" class="form-control mt-2"
                                     value="<?php echo $form11[0]['oral4']; ?>" required name="oral4" id="diger"
                                     placeholder="IV input">
-                            </div>
                         </div>
 
 
                         <h2 class="form-header">Çıkardığı</h2>
-                        <div class="input-section d-flex">
+                        <div class="input-section">
                             <p class="usernamelabel">İdrar:</p>
-                            <div class='d-flex flex-column w-75'>
                                 <input type="number" class="form-control mt-2"
                                     value="<?php echo $form11[0]['idrar_input1']; ?>" required name="idrar_input1"
                                     id="diger" placeholder="IV input">
@@ -218,11 +198,9 @@ $student_name = isset($_GET['student_name']) ? $_GET['student_name'] : '';
                                 <input type="number" class="form-control mt-2"
                                     value="<?php echo $form11[0]['idrar_input4']; ?>" required name="idrar_input4"
                                     id="diger" placeholder="IV input">
-                            </div>
                         </div>
-                        <div class="input-section d-flex">
+                        <div class="input-section">
                             <p class="usernamelabel">Gaita :</p>
-                            <div class='d-flex flex-column w-75'>
                                 <input type="number" class="form-control mt-2"
                                     value="<?php echo $form11[0]['gaita_input1']; ?>" required name="gaita_input1"
                                     id="diger" placeholder="IV input">
@@ -235,7 +213,6 @@ $student_name = isset($_GET['student_name']) ? $_GET['student_name'] : '';
                                 <input type="number" class="form-control mt-2"
                                     value="<?php echo $form11[0]['gaita_input4']; ?>" required name="gaita_input4"
                                     id="diger" placeholder="IV input">
-                            </div>
                         </div>
                         <?php
                         if ($display == 1) {
@@ -377,8 +354,9 @@ $student_name = isset($_GET['student_name']) ? $_GET['student_name'] : '';
                     total: total
                 },
                 success: function(data) {
-                    let patient_id = "<?php echo $form10[0]['patient_id']; ?>";
-                                let patient_name = "<?php echo $form10[0]['patient_name']; ?>";
+                                let patient_id = "<?php echo $patient_id ?>";
+                                let patient_name = "<?php echo $patient_name  ?>";
+                                console.log(patient_id, patient_name)
                                 let url =
                                     "<?php echo $base_url; ?>/updateForms/showSubmittedForms.php?patient_id=" +
                                     patient_id + "&patient_name=" + encodeURIComponent(patient_name);

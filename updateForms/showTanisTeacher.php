@@ -89,17 +89,22 @@ $taniNames = array(
     <link href="style.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-
+    <style>
+        .entered-forms-ul-li{
+                border: 3px solid white;
+        }
+        </style>
 </head>
 
 <body style="background-color:white">
     <div class="container-fluid pt-4 px-4">
-    <span class='close closeBtn' style='margin-right : 20px; margin-bottom: 20px' id='closeBtn1'>&times;</span>
-
         <?php
+
         require_once('../config-students.php');
         $userid = $_SESSION['userlogin']['id'];
         $patientId = $_GET['patient_id'];
+        $student_id = $_GET['student_id'];
+        $student_name = $_GET['student_name'];
         $sql = "SELECT * FROM tani WHERE patient_id = " . $patientId . " and root_id = 0 ORDER BY tani_num";
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
@@ -110,7 +115,17 @@ $taniNames = array(
             echo 'error';
             $count = 0;
         }
-
+        $patientId = $_GET['patient_id'];
+        $sql = "SELECT * FROM boshtani WHERE patient_id = " . $patientId . " and root_id = 0 ORDER BY tani_id";
+        $smtmselect = $db->prepare($sql);
+        $result = $smtmselect->execute();
+        if ($result) {
+            $boshTanis = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+            $countBosh = count($boshTanis);
+        } else {
+            echo 'error';
+            $countBosh = 0;
+        }
         ?>
         <div class="send-patient">
         <div class="d-flex align-items-center justify-content-between mb-2">
@@ -166,80 +181,122 @@ foreach ($allTanisStandalone as $row) {
 
 ?>
 </div>
+        <span class='close closeBtn' id='closeBtn1'>&times;</span>
+    <div class='row mb-5'>
+        <div class='col-lg-5' style="font-weight : bold; font-size: large;">
+        Hasta:<?php echo $_GET['patient_name'] ?>
             </div>
-        </div>
-        <script>
-       
             
-            $(function() {
+            <div class='col-lg-5' style="font-weight : bold; font-size: large;">
+            ID:<?php echo $_GET['patient_id'] ?>
+            </div>
+    </div>
+                <?php
+                $i = 1;
+                foreach($allTanisStandalone as $standAloneTani){
+                    echo "<div style='border-bottom: 3px solid grey'>";
+                    echo "<div class='row mb-3 mt-3 w-100 tani_container ".$i."_container>";
+                    echo "<div class='col-lg-10 m-auto'>";
+                    echo "<div class='btn btn-success w-100 d-flex justify-content-around' 
+                        id='".$i."_toggler'>
+                        <span>Numara: ". $standAloneTani['tani_num']. "</span>
+                        <span>Tarih: ". $standAloneTani['creation_date']."</span>
+                        <span>Saat: ". $standAloneTani['time']."</span>
+                    </div>";
+                    echo "</div>";
+
+                    $sql = "SELECT * FROM tani WHERE patient_id = " . $patientId . " and root_id = " . $standAloneTani['tani_id'] . " ORDER BY tani_id ASC";
+                    $smtmselect = $db->prepare($sql);
+                    $result = $smtmselect->execute();
+                    if ($result) {
+                        $standAloneExtensions = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+                    } else {
+                        echo 'error';
+                    }
+
+                    if ($standAloneExtensions){
+                        $last_extension = end($standAloneExtensions);
+                    } else {
+                        $last_extension = $standAloneTani;
+                    }
+
+                    $taniExtensions = "<div class='row mt-2 w-100 ".$i."_extention_container'  style='display:none'>
+                    <a class='tani-navigator' href='" . $base_url . "/taniReview/tani" . $standAloneTani['tani_num'] . "-review.php?patient_id=" . $standAloneTani['patient_id'] . "&patient_name=" . $standAloneTani['patient_name'] . "&evaluation=" . $standAloneTani['evaluation'] . "&tani_id=".$standAloneTani['tani_id']."&tani_num=".$standAloneTani['tani_num']."&root_id=".$standAloneTani['root_id']."&parent_id=".$standAloneTani['parent_id']."&display=0&student_id=".$student_id."&student_name=".$student_name."'>
+                    <div class='col-lg-8 m-auto'>
+                        <div class='btn btn-success w-100 d-flex justify-content-around' 
+                        id='".$i."_toggler'>
+                        <span>Numara: ". $standAloneTani['tani_id']. "</span>
+                        <span>Tarih: ". $standAloneTani['creation_date']."</span>
+                        <span>Saat: ". $standAloneTani['time']."</span>
+                        </div>
+                        </div>
+                        </a>
+                        </div>";
+
+                    foreach($standAloneExtensions as $singleExtension){
+                        $taniExtensions .= "<div class='row mt-2 w-100 ".$i ."_extention_container'  style='display:none'>
+                        <a class='tani-navigator' href='" . $base_url . "/taniReview/tani" . $singleExtension['tani_num'] . "-review.php?patient_id=" . $singleExtension['patient_id'] . "&patient_name=" . $singleExtension['patient_name'] . "&evaluation=" . $singleExtension['evaluation'] . "&tani_id=".$singleExtension['tani_id']."&tani_num=".$singleExtension['tani_num']."&root_id=".$standAloneTani['tani_id']."&parent_id=".$singleExtension['parent_id']."&display=0student_id=".$student_id."&student_name=".$student_name."'>
+                        <div class='col-lg-8 m-auto'>
+                            <div class='btn btn-success w-100 d-flex justify-content-around' 
+                            id='".$i ."_toggler'>
+                            <span>Numara: ". $singleExtension['tani_id']. "</span>
+                            <span>Tarih: ". $singleExtension['creation_date']."</span>
+                            <span>Saat: ". $singleExtension['time']."</span>
+                            </div>
+                            </div>
+                            </a>
+                            </div>";
+                    }
+
+                    echo $taniExtensions;
+
+                    // if (($last_extension['noc_indicator_after_3'] != "null" && $last_extension['noc_indicator_after_3'] != "5") || ($last_extension['noc_indicator_after_2'] != "null" && $last_extension['noc_indicator_after_2'] != "5")
+                    // || $last_extension['noc_indicator_after'] != "5") {
+                    //     echo "<div class='row mt-2 w-100 ".$i ."_extender_container' style='display:none'>
+                    //     <a class='tani-navigator' href='" . $base_url . "/taniReview/tani" . $last_extension['tani_num'] . "-review.php?patient_id=" . $last_extension['patient_id'] . "&patient_name=" . $last_extension['patient_name'] . "&evaluation=" . $last_extension['evaluation'] . "&tani_id=".$last_extension['tani_id']."&tani_num=".$last_extension['tani_num']."&root_id=".$standAloneTani['tani_id']."&parent_id=".$last_extension['parent_id']."&display=1'>
+                    //     <div class='col-lg-8 m-auto mb-3'>
+                    //     <div class='btn btn-success w-100 d-flex justify-content-around' style='border: 2px dotted black; background-color:white; color : black;'> 
+                    //     <span>Add Extension</span>
+                    //     </div>
+                    //     </div>
+                    //     </a>
+                    //     </div>";
+                    // } 
                 
-                var patient_id = "<?php echo $_GET['patient_id']; ?>";
-                 var patient_name = "<?php echo $_GET['patient_name']; ?>";
-                 var student_id = "<?php echo $_GET['student_id']; ?>";
-                 console.log(student_id)
-                 $("a.nav-items").on("click", function(e) {
-                     e.preventDefault();
-                     $("#content").load(this.href);
-                    });
-                });
-                $(function() {
-                    
-                    var patient_id = "<?php echo $_GET['patient_id']; ?>";
-                    var patient_name = "<?php echo $_GET['patient_name']; ?>";
-                    var student_id = "<?php echo $_GET['student_id']; ?>";
-                    var student_name = "<?php echo $_GET['student_name']; ?>";
-                
+                    echo "</div>";
+                    $i++;
+
+                }
+                ?>
+    </div>
+    </div>
+    <script>
+   $(".tani_container").click(function (e) { 
+    e.preventDefault();
+    var tani_id = $(this).attr('class').split(' ')[5].split('_')[0];
+    console.log(tani_id)
+    $('.' + tani_id + '_extention_container').toggle('slow');
+    $('.' + tani_id + '_extender_container').toggle('slow');
+});
+$(".tani-navigator").click(function(e){
+    e.preventDefault();
+    $('#content').load(this.href);
+})
+$(function() {
                 $("#closeBtn1").on("click", function(e) {
-                    e.preventDefault();
+                    var patient_id = <?php echo $patientId; ?>;
+                    var patient_name = "<?php echo $_GET['patient_name']; ?>";
+                    var student_id = <?php echo $student_id; ?>;
+                    var student_name = "<?php echo $_GET['student_name']; ?>";
                     var url =
                         "<?php echo $base_url; ?>/updateForms/showAllPatientsTeacher.php?patient_id=" +
-                        patient_id + "&student_id=" + student_id + "&patient_name=" + encodeURIComponent(
-                            patient_name) + "&student_name=" + encodeURIComponent(student_name);
+                        patient_id + "&patient_name=" + encodeURIComponent(
+                            patient_name) + "&student_id=" + student_id + "&student_name=" + encodeURIComponent(student_name);
+                    e.preventDefault();
+                    taniString ='';
                     $("#content").load(url);
+
                 });
-            });   
+            });
         </script>
-        <script>
-            $(function(){
-                count = <?php echo $count; ?>;
-                console.log(count);
-                for (let i = 1; i < count + 1; i++) {
-                    $("button#tani"+i+"_toggle").on("click", function(e) {
-                        e.preventDefault();
-                        $("#tani"+i+"_options").slideToggle('slow');
-                        $("#tani"+i+"_add_extension").css('display','flex');
-                        if($("#tani"+i+"_caret").css("transform") === "none"){
-                            $("#tani"+i+"_caret").css("transform", "rotate(180deg)");
-                            
-                        }
-                        else{
-                            $("#tani"+i+"_caret").css("transform", "");
-                            $("#tani"+i+"_add_extension").css('display','none');
-                        }
-                    })
-                }
-            })
-
-            $(document).ready(function() {
-        $("#searchInput").on("input", function() {
-        var input, filter, container, tanis, i, txtValue;
-        input = $(this);
-        console.log(input.val());
-        filter = input.val().toUpperCase();
-        container = $("#taniContainer");
-        tanis = container.find(".root-tani");
-        for (i = 0; i < tanis.length; i++) {
-            txtValue = $(tanis[i]).text();
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                $(tanis[i]).show();
-            } else {
-                $(tanis[i]).hide();
-            }
-        }
-    });
-});
-        </script>
-
 </body>
-
-</html>

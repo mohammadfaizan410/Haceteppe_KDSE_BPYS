@@ -17,7 +17,6 @@ $student_id = isset($_GET['student_id']) ? $_GET['student_id'] : '';
 $student_name = isset($_GET['student_name']) ? $_GET['student_name'] : '';
 $userid = $_SESSION['userlogin']['id'];
 $form_id = $_GET['form_id'];
-echo $form_id, $patient_id, $patient_name, $student_id, $student_name;
 if (isset($_GET['display'])) {
     $display = $_GET['display'];
 } else {
@@ -1027,7 +1026,6 @@ if ($result) {
         <script>
         $(function(){
             $('.form-check-input[name="gender"]').each(function(){
-                console.log("<?php echo $ozgecmisform1[0]['gender'] ?>")
                 if($(this).val() === "<?php echo $ozgecmisform1[0]['gender'] ?>" ){
                     $(this).prop('checked', true);
                 }

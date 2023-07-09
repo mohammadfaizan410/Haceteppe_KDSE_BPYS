@@ -98,13 +98,13 @@ if ($result) {
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Patient Name:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Hasta Ad:</p>
                             <input type="text" class="form-control" required name="patient_name" id="diger"
                                 placeholder="Patient Name" value="<?php echo $form7[0]['patient_name']; ?>" disabled>
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Patient ID:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Hasta ID:</p>
                             <input type="text" class="form-control" required name="patient_id" id="diger"
                                 placeholder="Patient ID" value="<?php echo $form7[0]['patient_id']; ?>" disabled>
                         </div>
@@ -113,13 +113,13 @@ if ($result) {
                             <p class="usernamelabel" style="font-weight: bold;">Değerlendirme Kriterleri</p>
                         </div>
 
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Oluşma Tarihi:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Oluşma Tarihi:</p>
                             <input type="date" class="form-control" required name="occurance_date" id="diger"
                                 placeholder="OluşmaTarihi" value="<?php echo $form7[0]['occurance_date']; ?>">
                         </div>
 
-                        <div class="input-section d-flex">
+                        <div class="input-section">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="servis" id="serviceWound"
                                     value="yes">
@@ -129,44 +129,44 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Yeri:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Yeri:</p>
                             <input type="text" class="form-control" required name="location" id="location"
                                 placeholder="Yara Yerini Giriniz" value="<?php echo $form7[0]['location']; ?>">
                         </div>
 
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Evresi:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Evresi:</p>
                             <input type="text" class="form-control" required name="stage" id="stage"
                                 placeholder="Yara Evresini Giriniz" value="<?php echo $form7[0]['stage']; ?>">
                         </div>
 
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Boyut (cm):</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Boyut (cm):</p>
                             <div class="form-check">
-                                <div class="input-section d-flex">
-                                    <p class="usernamelabel">Uzunluk:</p>
+                                <div class="input-section">
+                                    <p class="usernamelabel pb-3">Uzunluk:</p>
                                     <input type="number" class="form-control" required name="length" value="<?php echo explode('/', $form7[0]['dimentions'])[0]; ?>" id="length" placeholder="Uzunluk Giriniz" min="0" max="1000">
                                 </div>
-                                <div class="input-section d-flex">
-                                    <p class="usernamelabel">Genişlik:</p>
+                                <div class="input-section">
+                                    <p class="usernamelabel pb-3">Genişlik:</p>
                                     <input type="number" class="form-control" required name="width" value="<?php echo explode('/', $form7[0]['dimentions'])[1]; ?>" id="width" placeholder="Genişlik Giriniz" min="0" max="1000">
                                 </div>
-                                <div class="input-section d-flex">
-                                    <p class="usernamelabel">Derinlik:</p>
+                                <div class="input-section">
+                                    <p class="usernamelabel pb-3">Derinlik:</p>
                                     <input type="number" class="form-control" required name="depth" value="<?php echo explode('/', $form7[0]['dimentions'])[2]; ?>" id="depth" placeholder="Derinlik Giriniz" min="0" max="1000">
                                 </div>
                             </div>
                         </div>
 
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Yara eksudası:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Yara eksudası:</p>
                             <input type="text" class="form-control" required name="diger" id="wound-exudate"
                                 placeholder="Yara Eksudasını Giriniz" value="<?php echo $form7[0]['wound_exudate']; ?>">
                         </div>
 
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Yara görünümü:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Yara görünümü:</p>
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="YaraGörünümü" id="Nekrotik"
@@ -222,8 +222,8 @@ if ($result) {
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="YaraGörünümü" id="YaraGörünümü"
                                         value="Diğer">
-                                    <div class="input-section d-flex">
-                                        <p class="usernamelabel">Diğer:</p>
+                                    <div class="input-section">
+                                        <p class="usernamelabel pb-3">Diğer:</p>
                                         <input type="text" class="form-control" required name="YaraGörünümüDiger"
                                             id="diger" placeholder="Diğer">
                                     </div>
@@ -231,71 +231,71 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Yarada koku :</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Yarada koku :</p>
                             <input type="text" class="form-control" required name="odor" id="odor"
                                 placeholder="Koku Durumunu Giriniz" value="<?php echo $form7[0]['odor']; ?>">
                         </div>
 
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Yarada tünelleşme:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Yarada tünelleşme:</p>
                             <input type="text" class="form-control" required name="tunnelling" id="tunnelling"
                                 placeholder="Tünelleşme Durumunu Giriniz"
                                 value="<?php echo $form7[0]['tunnelling']; ?>">
                         </div>
 
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Yarada ödem:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Yarada ödem:</p>
                             <input type="text" class="form-control" required name="edema" id="edema"
                                 placeholder="Ödem Durumunu Giriniz" value="<?php echo $form7[0]['edema']; ?>">
                         </div>
 
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Yara kenarında maserasyon:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Yara kenarında maserasyon:</p>
                             <input type="text" class="form-control" required name="maceration" id="maceration"
                                 placeholder="Maserasyon Durumunu Giriniz"
                                 value="<?php echo $form7[0]['maceration']; ?>">
                         </div>
 
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Yara kenarında eritem:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Yara kenarında eritem:</p>
                             <input type="text" class="form-control" required name="erythema" id="erythema"
                                 placeholder="Eritem Durumunu Giriniz" value="<?php echo $form7[0]['erythema']; ?>">
                         </div>
 
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Yara kenarı soyulmuş:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Yara kenarı soyulmuş:</p>
                             <input type="text" class="form-control" required name="peeling" id="peeling"
                                 placeholder="Soyulma Durumunu Giriniz" value="<?php echo $form7[0]['peeling']; ?>">
                         </div>
 
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Yara kenarı kuru:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Yara kenarı kuru:</p>
                             <input type="text" class="form-control" required name="dryness" id="dryness"
                                 placeholder="Kuruluk Durumunu Giriniz" value="<?php echo $form7[0]['dryness']; ?>">
                         </div>
 
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Yara bölgesinde ağrı:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Yara bölgesinde ağrı:</p>
                             <input type="text" class="form-control" required name="pain" id="pain"
                                 placeholder="Ağrı Durumunu Giriniz" value="<?php echo $form7[0]['pain']; ?>">
                         </div>
 
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Kullanılan Bakım Ürünleri:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Kullanılan Bakım Ürünleri:</p>
                             <input type="text" class="form-control" required name="careProducts" id="careProducts"
                                 placeholder="Kullanılan Ürünleri Giriniz"
                                 value="<?php echo $form7[0]['careProducts']; ?>">
                         </div>
 
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Sonuç:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Sonuç:</p>
                             <input type="text" class="form-control" required name="result" id="result"
                                 placeholder="Sonucu Giriniz" value="<?php echo $form7[0]['result']; ?>">
                         </div>
 
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">İyileşme Tarihi:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">İyileşme Tarihi:</p>
                             <input type="date" class="form-control" required name="healingDate" id="healingDate"
                                 placeholder="İyileşmeTarihi" value="<?php echo $form7[0]['healing_date']; ?>">
                         </div>

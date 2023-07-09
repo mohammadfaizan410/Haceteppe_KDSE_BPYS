@@ -100,12 +100,12 @@ if ($result) {
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Patient Name:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Hasta Ad:</p>
                             <input type="text" class="form-control" required name="patient_name" id="diger" placeholder="Patient Name" value="<?php echo $form6[0]['patient_name']; ?>" disabled>
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Patient ID:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Hasta ID:</p>
                             <input type="text" class="form-control" required name="patient_id" id="diger" placeholder="Patient ID" value="<?php echo $form6[0]['patient_id']; ?>" disabled>
                         </div>
 
@@ -115,8 +115,8 @@ if ($result) {
                                 basınca karşı oluşan rahatsızlığın algılanması)</p>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between;">
-                            <p class="usernamelabel">Tamamen yetersiz (Ağrılı uyaranlara yanıt vermiyor):</p>
+                        <div class="input-section" style="justify-content:space-between;">
+                            <p class="usernamelabel pb-3">Tamamen yetersiz (Ağrılı uyaranlara yanıt vermiyor):</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="RiskFaktörleri" id="RiskFaktörleri1" value="1">
                                 <label class="form-check-label" for="RiskFaktörleri">
@@ -125,8 +125,8 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between;">
-                            <p class="usernamelabel">Çok yetersiz (Yalnız ağrılı uyaranlara yanıt veriyor):</p>
+                        <div class="input-section" style="justify-content:space-between;">
+                            <p class="usernamelabel pb-3">Çok yetersiz (Yalnız ağrılı uyaranlara yanıt veriyor):</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="RiskFaktörleri" id="RiskFaktörleri2" value="2">
                                 <label class="form-check-label" for="RiskFaktörleri">
@@ -135,8 +135,8 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between;">
-                            <p class="usernamelabel">Biraz yeterli (Sözlü uyaranlara yanıt veriyor, sürekli iletişim
+                        <div class="input-section" style="justify-content:space-between;">
+                            <p class="usernamelabel pb-3">Biraz yeterli (Sözlü uyaranlara yanıt veriyor, sürekli iletişim
                                 kuramıyor, yatak içerisinde çevrilmesi gerekiyor):</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="RiskFaktörleri" id="RiskFaktörleri3" value="3">
@@ -146,8 +146,8 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between;">
-                            <p class="usernamelabel">Tamamen yeterli (Sözlü uyaranlara yanıt veriyor. Duyu kusuru yok):
+                        <div class="input-section" style="justify-content:space-between;">
+                            <p class="usernamelabel pb-3">Tamamen yeterli (Sözlü uyaranlara yanıt veriyor. Duyu kusuru yok):
                             </p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="RiskFaktörleri" id="RiskFaktörleri4" value="4">
@@ -161,8 +161,8 @@ if ($result) {
                             <p class="usernamelabel" style="font-weight: bold;">Nemlilik (Vücudun nemliliği)</p>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between;">
-                            <p class="usernamelabel">Sürekli ıslak (deri, ter, idrar, gaita ile sürekli ıslak):</p>
+                        <div class="input-section" style="justify-content:space-between;">
+                            <p class="usernamelabel pb-3">Sürekli ıslak (deri, ter, idrar, gaita ile sürekli ıslak):</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="nemlilik" id="nemlilik1" value="1">
                                 <label class="form-check-label" for="nemlilik">
@@ -171,8 +171,8 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between;">
-                            <p class="usernamelabel">Çok ıslak (Deri çoğu zaman ıslak, her şiftte çarşafların en az bir
+                        <div class="input-section" style="justify-content:space-between;">
+                            <p class="usernamelabel pb-3">Çok ıslak (Deri çoğu zaman ıslak, her şiftte çarşafların en az bir
                                 kez değiştirilmesi gerekiyor):</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="nemlilik" id="nemlilik2" value="2">
@@ -182,8 +182,8 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between;">
-                            <p class="usernamelabel">Bazen ıslak (Deri bazen ıslak, Çarşafların ıslandıkça
+                        <div class="input-section" style="justify-content:space-between;">
+                            <p class="usernamelabel pb-3">Bazen ıslak (Deri bazen ıslak, Çarşafların ıslandıkça
                                 değiştirilmesi gerekiyor):</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="nemlilik" id="nemlilik3" value="3">
@@ -193,8 +193,8 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between;">
-                            <p class="usernamelabel">Nadiren ıslak (Deri genellikle kuru, Çarşafların rutin değişimini
+                        <div class="input-section" style="justify-content:space-between;">
+                            <p class="usernamelabel pb-3">Nadiren ıslak (Deri genellikle kuru, Çarşafların rutin değişimini
                                 gerektirmekte):</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="nemlilik" id="nemlilik4" value="4">
@@ -209,8 +209,8 @@ if ($result) {
                             </p>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between;">
-                            <p class="usernamelabel">Yatağa bağımlı (Her türlü bakım gereksinimi yatakta karşılanıyor):
+                        <div class="input-section" style="justify-content:space-between;">
+                            <p class="usernamelabel pb-3">Yatağa bağımlı (Her türlü bakım gereksinimi yatakta karşılanıyor):
                             </p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="aktivite" id="aktivite1" value="1">
@@ -220,8 +220,8 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between;">
-                            <p class="usernamelabel">Sandalyeye bağımlı <br>(Çok az yürüyebiliyor, sandalyeye
+                        <div class="input-section" style="justify-content:space-between;">
+                            <p class="usernamelabel pb-3">Sandalyeye bağımlı <br>(Çok az yürüyebiliyor, sandalyeye
                                 oturabilmesi için yardım gerekiyor, kendi ağırlığını kaldırmakta güçlük çekiyor):</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="aktivite" id="aktivite2" value="2">
@@ -231,8 +231,8 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between;">
-                            <p class="usernamelabel">Bazen yürüyebiliyor <br>(Yardımla veya yardımsız kısa mesafede
+                        <div class="input-section" style="justify-content:space-between;">
+                            <p class="usernamelabel pb-3">Bazen yürüyebiliyor <br>(Yardımla veya yardımsız kısa mesafede
                                 yürüyebiliyor, çoğu zaman yatakta veya sandalyede oturuyor):</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="aktivite" id="aktivite3" value="3">
@@ -242,8 +242,8 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between;">
-                            <p class="usernamelabel">Sık sık yürüyebiliyor (Günde en az iki defa oda dışına çıkabiliyor,
+                        <div class="input-section" style="justify-content:space-between;">
+                            <p class="usernamelabel pb-3">Sık sık yürüyebiliyor (Günde en az iki defa oda dışına çıkabiliyor,
                                 oda içinde 2 saatte bir yürüyebiliyor):</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="aktivite" id="aktivite4" value="4">
@@ -258,8 +258,8 @@ if ($result) {
                                 kontrol edebilme)</p>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between;">
-                            <p class="usernamelabel">Tamamen hareketsiz (Yardımsız pozisyon değiştirebiliyor):</p>
+                        <div class="input-section" style="justify-content:space-between;">
+                            <p class="usernamelabel pb-3">Tamamen hareketsiz (Yardımsız pozisyon değiştirebiliyor):</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="hareket" id="hareket1" value="1">
                                 <label class="form-check-label" for="hareket">
@@ -268,8 +268,8 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between;">
-                            <p class="usernamelabel">Çok hareketsiz <br>(Vücut ve ekstremite pozisyonunda hafif
+                        <div class="input-section" style="justify-content:space-between;">
+                            <p class="usernamelabel pb-3">Çok hareketsiz <br>(Vücut ve ekstremite pozisyonunda hafif
                                 değişiklik yapabiliyor, kendiliğinden pozisyonunu değiştiremiyor):</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="hareket" id="hareket2" value="2">
@@ -279,8 +279,8 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between;">
-                            <p class="usernamelabel">Az hareketli (Vücut ve ekstremitelerinde sık ancak hafif değişiklik
+                        <div class="input-section" style="justify-content:space-between;">
+                            <p class="usernamelabel pb-3">Az hareketli (Vücut ve ekstremitelerinde sık ancak hafif değişiklik
                                 yapabiliyor):</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="hareket" id="hareket3" value="3">
@@ -290,8 +290,8 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between;">
-                            <p class="usernamelabel">Hareketli (Pozisyonunu yardımsız sıklıkla değiştirebiliyor):</p>
+                        <div class="input-section" style="justify-content:space-between;">
+                            <p class="usernamelabel pb-3">Hareketli (Pozisyonunu yardımsız sıklıkla değiştirebiliyor):</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="hareket" id="hareket4" value="4">
                                 <label class="form-check-label" for="hareket">
@@ -304,8 +304,8 @@ if ($result) {
                             <p class="usernamelabel" style="font-weight: bold;">Beslenme (Beslenme Alışkanlığı)</p>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between;">
-                            <p class="usernamelabel">Çok yetersiz (Asla öğünün tamamını yiyemiyor. Nadiren verilen
+                        <div class="input-section" style="justify-content:space-between;">
+                            <p class="usernamelabel pb-3">Çok yetersiz (Asla öğünün tamamını yiyemiyor. Nadiren verilen
                                 yemeğin 1/3’ünü yiyebiliyor.
                                 <br>İki öğün ya da daha az protein alabiliyor (Et ve süt ürünleri). Sıvı alımı az.
                                 <br>Ağızdan sıvı desteği alamıyor. 5 günden fazla süredir IV ve berrak diyet alıyor):
@@ -318,8 +318,8 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between;">
-                            <p class="usernamelabel">Yetersiz (Verilen yemeğin yarısını, nadiren tamamını yiyebiliyor.
+                        <div class="input-section" style="justify-content:space-between;">
+                            <p class="usernamelabel pb-3">Yetersiz (Verilen yemeğin yarısını, nadiren tamamını yiyebiliyor.
                                 <br>Günde 3 defa protein, bazen destekleyici ek gıda alabiliyor.
                                 <br>Uygun diyetin veya tüp ile verilen besinin birazını alabiliyor):
                             </p>
@@ -331,8 +331,8 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between;">
-                            <p class="usernamelabel">Yeterli (Verilen yemeğin yarısından fazlasını yiyebiliyor. Günde 4
+                        <div class="input-section" style="justify-content:space-between;">
+                            <p class="usernamelabel pb-3">Yeterli (Verilen yemeğin yarısından fazlasını yiyebiliyor. Günde 4
                                 kez protein alabiliyor.
                                 <br>Ara sıra yemeği reddediyor. Verilmişse ek diyeti yada TPN’İ alabiliyor):
                             </p>
@@ -344,8 +344,8 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between;">
-                            <p class="usernamelabel">Çok iyi (Yemeğini çoğunlukla yiyor. Öğünleri reddetmiyor. Günde 4
+                        <div class="input-section" style="justify-content:space-between;">
+                            <p class="usernamelabel pb-3">Çok iyi (Yemeğini çoğunlukla yiyor. Öğünleri reddetmiyor. Günde 4
                                 defa protein alabiliyor.
                                 <br>Genellikle öğün aralarında yiyor. Ek gıda gerekmiyor):
                             </p>
@@ -362,8 +362,8 @@ if ($result) {
                                 basınca karşı oluşan rahatsızlığın algılanması)</p>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between;">
-                            <p class="usernamelabel">Sorun
+                        <div class="input-section" style="justify-content:space-between;">
+                            <p class="usernamelabel pb-3">Sorun
                                 <br>(Hareket ederken çok fazla yardıma gereksinimi var. Çarşafta kaydırmaksızın tamamen
                                 kaldırılması olanaksız):
                             </p>
@@ -375,8 +375,8 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between;">
-                            <p class="usernamelabel">Olası sorun
+                        <div class="input-section" style="justify-content:space-between;">
+                            <p class="usernamelabel pb-3">Olası sorun
                                 <br>(Çok az yardımla az ve güçsüz hareket edebiliyor. Hareket sırasında deri; çarşafa,
                                 sandalyeye sürtünüyor):
                             </p>
@@ -388,8 +388,8 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between;">
-                            <p class="usernamelabel">Sorun yok (Yatakta ve sandalyede bağımsız hareket edebiliyor.
+                        <div class="input-section" style="justify-content:space-between;">
+                            <p class="usernamelabel pb-3">Sorun yok (Yatakta ve sandalyede bağımsız hareket edebiliyor.
                                 Kendini kaldırabilmek için yeterli kas gücü var):</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="SurtunmeTahris" id="SurtunmeTahris3" value="3">
@@ -399,7 +399,7 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between;">
+                        <div class="input-section" style="justify-content:space-between;">
                             <p class="usernamelabel" style="font-weight: bold;">Toplam:
                                 <?php echo $form6[0]['total']; ?> <?php echo $form6[0]['risk']; ?></p>
                             <div class="form-check">

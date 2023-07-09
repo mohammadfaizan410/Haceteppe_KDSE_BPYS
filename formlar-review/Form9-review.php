@@ -80,9 +80,9 @@ if (isset($_GET['logout'])) {
     <?php
     require_once('../config-students.php');
     $patient_id = isset($_GET['patient_id']) ? $_GET['patient_id'] : '';
-$patient_name = isset($_GET['patient_name']) ? $_GET['patient_name'] : '';
-$student_id = isset($_GET['student_id']) ? $_GET['student_id'] : '';
-$student_name = isset($_GET['student_name']) ? $_GET['student_name'] : '';
+    $patient_name = isset($_GET['patient_name']) ? $_GET['patient_name'] : '';
+    $student_id = isset($_GET['student_id']) ? $_GET['student_id'] : '';
+    $student_name = isset($_GET['student_name']) ? $_GET['student_name'] : '';
     $userid = $_SESSION['userlogin']['id'];
     $form_id = $_GET['form_id'];
     if (isset($_GET['display'])) {
@@ -111,23 +111,23 @@ $student_name = isset($_GET['student_name']) ? $_GET['student_name'] : '';
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Patient Name:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Hasta Ad:</p>
                             <input type="text" class="form-control" value=<?php echo $form9[0]['patient_name']; ?>
                                 required name="patient_name" id="diger" placeholder="Patient Name" disabled>
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Patient ID:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Hasta ID:</p>
                             <input type="text" class="form-control" value=<?php echo $form9[0]['patient_id']; ?>
                                 required name="patient_id" id="diger" placeholder="Patient ID" disabled>
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Date:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Date:</p>
                             <input type="date" class="form-control" value=<?php echo $form9[0]['date']; ?> required
                                 name="date" id="diger" placeholder="Patient ID">
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Tetkik adı </p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Tetkik adı </p>
                             <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="tektikOption" id="ÖdemŞiddeti"
@@ -181,14 +181,14 @@ $student_name = isset($_GET['student_name']) ? $_GET['student_name'] : '';
                             </div>
                         </div>
 
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Tetkik Sonucu :</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Tetkik Sonucu :</p>
                             <input type="text" class="form-control" required name="examination_result"
                                 value=<?php echo $form9[0]['examination_result']; ?> id="diger"
                                 placeholder="Tetkik Sonucu">
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Referans Değeri :</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Referans Değeri :</p>
                             <input type="text" class="form-control" required name="referance_value"
                                 value=<?php echo $form9[0]['referance_value']; ?> id="diger"
                                 placeholder="Referans Değeri">

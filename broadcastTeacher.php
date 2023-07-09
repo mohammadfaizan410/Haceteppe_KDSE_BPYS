@@ -86,9 +86,9 @@ textarea::placeholder{
                     if($all_messages != 'none'){
                         foreach($all_messages as $message){
                             echo '<div class="input-section d-flex flex-column justify-content-center border-bottom p-4">';
-                            echo '<div class="mb-2"><strong>Sender:</strong> '.$message['sender_name'].'</div>';
-                            echo '<div class="mb-2"><strong>Subject:</strong> '.$message['subject'].'</div>';
-                            echo '<div><strong>Message:<textarea class="w-100 input-section mt-4" disabled rows="5" placeholder="'.$message['message'].'"></textarea></div>';
+                            echo '<div class="mb-2"><strong>Gönderen:</strong> '.$message['sender_name'].'</div>';
+                            echo '<div class="mb-2"><strong>Konu</strong> '.$message['subject'].'</div>';
+                            echo '<div><strong>Mesaj:<textarea class="w-100 input-section mt-4" disabled rows="5" placeholder="'.$message['message'].'"></textarea></div>';
                             echo '</div>';
                         }
                     } else{

@@ -17,7 +17,6 @@ $student_id = isset($_GET['student_id']) ? $_GET['student_id'] : '';
 $student_name = isset($_GET['student_name']) ? $_GET['student_name'] : '';
 $userid = $_SESSION['userlogin']['id'];
 $form_id = $_GET['form_id'];
-echo $form_id, $patient_id, $patient_name, $student_id, $student_name, $userid;
 if (isset($_GET['display'])) {
     $display = $_GET['display'];
 } else {
@@ -139,17 +138,20 @@ if ($result) {
                     maxlength="100">
             </div>
 
-            <div class="input-section d-flex ">
+            <div class='input-section'>
                 <p class="usernamelabel p-2">Boy (cm): </p>
                 <input type="number" class="form-control" required name="Boy" id="Boy" maxlength="3">
-
+            </div>
+            <div class='input-section'>
                 <p class="usernamelabel p-2">Kilo :</p>
                 <input type="number" class="form-control" required name="Kilo" id="Kilo" maxlength="5">
-
+            </div>
+            
+            <div class='input-section'>
                 <p class="usernamelabel p-2">BKİ ( kg/m2 ):</p>
                 <input type="number" class="form-control" required name="BKI" id="BKI">
             </div>
-
+                
 
 
             <div class="input-section">

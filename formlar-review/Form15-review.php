@@ -113,29 +113,29 @@ if ($result) {
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Patient Name:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Hasta Ad:</p>
                             <input type="text" class="form-control" value="<?php echo $form15[0]['patient_name']; ?>"
                                 required name="patient_name" id="patient_name" placeholder="Patient Name" disabled>
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Patient ID:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Hasta ID:</p>
                             <input type="text" class="form-control" value="<?php echo $form15[0]['patient_id']; ?>"
                                 required name="patient_id" id="patient_id" placeholder="Patient ID" disabled>
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Uygulamalar</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Uygulamalar</p>
                             <input type="text" class="form-control" required name="applications" id="applications"
                                 placeholder="applications" maxlength="100"
                                 value="<?php echo $form15[0]['applications']; ?>">
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Saat :</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Saat :</p>
                             <input type="time" class="form-control" required name="hours" id="hours"
                                 value="<?php echo $form15[0]['hours']; ?>">
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Açıklama Giriniz</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Açıklama Giriniz</p>
                             <input type="text" class="form-control" required name="description" id="description"
                                 placeholder="Açıklama Giriniz" maxlength="250"
                                 value="<?php echo $form15[0]['description']; ?>">

@@ -617,19 +617,19 @@ if ($result) {
                 success: function(data) {
                     alert(data)
                     let tani_num = String(<?php echo $tani_num ?>)
-                    let url =
+                        let url =
                         "<?php echo $base_url; ?>/updateForms/showSubmittedTanis.php?patient_id=" +
                         patient_id + "&patient_name=" + encodeURIComponent(
                             patient_name);
                             $("#tick-container").fadeIn(800);
                             // Change the tick background to the animated GIF
                             $("#tick").css("background-image", "url('./check-2.gif')");
-
+                            
                             setTimeout(function() {
-                            // Load the content
-                            $("#content").load(url);
-                            $("#tick-container").fadeOut(600);
-                            // Hide the tick container
+                                // Load the content
+                                $("#content").load(url);
+                                $("#tick-container").fadeOut(600);
+                                // Hide the tick container
                             }, 1000);
 ;
                 },

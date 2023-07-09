@@ -70,16 +70,16 @@ textarea::placeholder{
 <body>
     <div class="container-fluid pt-4 px-4" style="overflow: hidden;">
         <div class="send-patient w-100" style="overflow: hidden;">
-            <div class="w-100 p-4">
+        <div class="w-100 p-4">
                 <button class="btn btn-success mb-3 w-50 p-3" id="show-all-messages">Tüm Mesajları Göster</button>
                 <div id="all-messages-container" class="input-section" style="display:none;">
                     <?php 
                     if($all_messages != 'none'){
                         foreach($all_messages as $message){
                             echo '<div class="input-section d-flex flex-column justify-content-center border-bottom p-4">';
-                            echo '<div class="mb-2"><strong>Sender:</strong> '.$message['sender_name'].'</div>';
-                            echo '<div class="mb-2"><strong>Subject:</strong> '.$message['subject'].'</div>';
-                            echo '<div><strong>Message:<textarea class="w-100 input-section mt-4" disabled rows="5" placeholder="'.$message['message'].'"></textarea></div>';
+                            echo '<div class="mb-2"><strong>Gönderen:</strong> '.$message['sender_name'].'</div>';
+                            echo '<div class="mb-2"><strong>Konu</strong> '.$message['subject'].'</div>';
+                            echo '<div><strong>Mesaj:<textarea class="w-100 input-section mt-4" disabled rows="5" placeholder="'.$message['message'].'"></textarea></div>';
                             echo '</div>';
                         }
                     } else{
@@ -87,7 +87,7 @@ textarea::placeholder{
                     }
                     ?>
                 </div>
-            </div>       
+            </div>
             <div class="w-100 p-4">
                 <button class="btn btn-success mb-3 w-50 p-3" id="send-to-teacher">Öğretmene mesaj gönderme</button>
                 <div id="send-to-teacher-dropdown" class="input-section" style="display: none;">

@@ -112,38 +112,38 @@ if ($result) {
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Patient Name:</p>
+                        <div class="input-section ">
+                            <p class="usernamelabel pb-3">Hasta Ad:</p>
                             <input type="text" class="form-control" value="<?php echo $form13[0]['patient_name']; ?>"
                                 required name="patient_name" id="patient_name" placeholder="Patient Name" disabled>
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Patient ID:</p>
+                        <div class="input-section ">
+                            <p class="usernamelabel pb-3">Hasta ID:</p>
                             <input type="text" class="form-control" value="<?php echo $form13[0]['patient_id']; ?>"
                                 required name="patient_id" id="patient_id" placeholder="Patient ID" disabled>
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Saat:</p>
+                        <div class="input-section ">
+                            <p class="usernamelabel pb-3">Saat:</p>
                             <input type="time" class="form-control" required name="delivery_time" id="delivery_time"
                                 placeholder="delivery_time" value="<?php echo $form13[0]['delivery_time']; ?>">
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">İlacın Adı:</p>
+                        <div class="input-section ">
+                            <p class="usernamelabel pb-3">İlacın Adı:</p>
                             <input type="text" class="form-control" required name="medicine_name" id="medicine_name"
                                 placeholder="medicine_name" value="<?php echo $form13[0]['medicine_name']; ?>">
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">İlacın Dozu:</p>
+                        <div class="input-section ">
+                            <p class="usernamelabel pb-3">İlacın Dozu:</p>
                             <input type="text" class="form-control" required name="medicine_dose" id="medicine_dose"
                                 placeholder="medicine_dose" value="<?php echo $form13[0]['medicine_dose']; ?>">
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">İlacın Yolu:</p>
+                        <div class="input-section ">
+                            <p class="usernamelabel pb-3">İlacın Yolu:</p>
                             <input type="text" class="form-control" required name="delivery_method" id="delivery_method"
                                 placeholder="delivery_method" value="<?php echo $form13[0]['delivery_method']; ?>">
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Uygulama Zamanı:</p>
+                        <div class="input-section ">
+                            <p class="usernamelabel pb-3">Uygulama Zamanı:</p>
                             <input type="text" class="form-control" required name="treatment_timeRange" id="treatment_timeRange"
                                 placeholder="treatment_timeRange"
                                 value="<?php echo $form13[0]['treatment_timeRange']; ?>">

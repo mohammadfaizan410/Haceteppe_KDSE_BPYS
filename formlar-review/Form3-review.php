@@ -100,24 +100,24 @@ if ($result) {
                         <!--<div class="input-section-wrapper">-->
 
                         <!--<div class="input-section-item">-->
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Patient Name:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Hasta Ad:</p>
                             <input type="text" class="form-control" required name="patient_name" id="diger"
                                 placeholder="Patient Name" value="<?php echo $form3[0]['patient_name']; ?>" disabled>
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Patient ID:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Hasta ID:</p>
                             <input type="text" class="form-control" required name="patient_id" id="diger"
                                 placeholder="Patient ID" value="<?php echo $form3[0]['patient_id']; ?>" disabled>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between">
+                        <div class="input-section" style="justify-content:space-between">
                             <p class="usernamelabel" style="font-weight: bold;">Risk Faktörü</p>
                             <p class="usernamelabel" style="font-weight: bold;">Puan ( ≥ 5 Yüksek Risk )</p>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between">
-                            <p class="usernamelabel">Konfüzyon / Dezoryantasyon: </p>
+                        <div class="input-section" style="justify-content:space-between">
+                            <p class="usernamelabel pb-3">Konfüzyon / Dezoryantasyon: </p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="confusion_point"
                                     id="confusionpoint" value="4">
@@ -127,8 +127,8 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between">
-                            <p class="usernamelabel">Semptomatik Depresyon:</p>
+                        <div class="input-section" style="justify-content:space-between">
+                            <p class="usernamelabel pb-3">Semptomatik Depresyon:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="symtomatic_depression_point"
                                     id="symtomatic_depression_point" value="2">
@@ -138,8 +138,8 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between">
-                            <p class="usernamelabel">Boşaltım ihtiyacında sorun:</p>
+                        <div class="input-section" style="justify-content:space-between">
+                            <p class="usernamelabel pb-3">Boşaltım ihtiyacında sorun:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="evacuation_trouble"
                                     id="evacuation_trouble" value="1">
@@ -149,8 +149,8 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between">
-                            <p class="usernamelabel">Baş dönmesi:</p>
+                        <div class="input-section" style="justify-content:space-between">
+                            <p class="usernamelabel pb-3">Baş dönmesi:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="dizziness_point"
                                     id="dizziness_point" value="1">
@@ -160,8 +160,8 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between">
-                            <p class="usernamelabel">Cinsiyet (erkek):</p>
+                        <div class="input-section" style="justify-content:space-between">
+                            <p class="usernamelabel pb-3">Cinsiyet (erkek):</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="gender_point" id="gender_point"
                                     value="1">
@@ -171,8 +171,8 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between">
-                            <p class="usernamelabel">Antiepileptik Grubu İlaç Alımı:</p>
+                        <div class="input-section" style="justify-content:space-between">
+                            <p class="usernamelabel pb-3">Antiepileptik Grubu İlaç Alımı:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="epilepsy_drug_point"
                                     id="epilepsy_drug_point" value="2">
@@ -182,8 +182,8 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between">
-                            <p class="usernamelabel">Benzodiazepin Grubu İlaç Alımı:</p>
+                        <div class="input-section" style="justify-content:space-between">
+                            <p class="usernamelabel pb-3">Benzodiazepin Grubu İlaç Alımı:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="benzo_drug_point"
                                     id="benzo_drug_point" value="1">
@@ -197,12 +197,12 @@ if ($result) {
 
                         <!--<div class="input-section-item">-->
 
-                        <div class="input-section d-flex" style="justify-content:space-around">
+                        <div class="input-section" style="justify-content:space-around">
                             <p class="usernamelabel" style="font-weight: bold;">Sandalyeden Kalkma Testi</p>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between">
-                            <p class="usernamelabel">Kollarını Kullanmadan Kalkabiliyor:</p>
+                        <div class="input-section" style="justify-content:space-between">
+                            <p class="usernamelabel pb-3">Kollarını Kullanmadan Kalkabiliyor:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="get_up_without_arm" id="chair1"
                                     value="0">
@@ -212,8 +212,8 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between">
-                            <p class="usernamelabel">Kalkmak için sandalye kolluğunu kullanıyor ancak tek denemede
+                        <div class="input-section" style="justify-content:space-between">
+                            <p class="usernamelabel pb-3">Kalkmak için sandalye kolluğunu kullanıyor ancak tek denemede
                                 kalkabiliyor:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="test" id="chair2" value="1">
@@ -223,8 +223,8 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between">
-                            <p class="usernamelabel">Kalkmak için sandalye kolluğunu kullanıyor ancak birden fazla
+                        <div class="input-section" style="justify-content:space-between">
+                            <p class="usernamelabel pb-3">Kalkmak için sandalye kolluğunu kullanıyor ancak birden fazla
                                 denemede kalkabiliyor:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="test" id="chair3" value="3">
@@ -234,8 +234,8 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between">
-                            <p class="usernamelabel">Yardım olmadan kalkamıyor:</p>
+                        <div class="input-section" style="justify-content:space-between">
+                            <p class="usernamelabel pb-3">Yardım olmadan kalkamıyor:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="test" id="chair4" value="4">
                                 <label class="form-check-label" for="test">
@@ -244,7 +244,7 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between">
+                        <div class="input-section" style="justify-content:space-between">
                             <p class="usernamelabel" style="font-weight: bold;">Toplam:
                                 "<?php echo $form3[0]['total']; ?>"</p>
                             <div class="form-check">
