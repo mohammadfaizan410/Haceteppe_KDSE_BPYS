@@ -12,6 +12,10 @@ if (isset($_GET['logout'])) {
 }
 require_once('../config-students.php');
 
+$patient_id = isset($_GET['patient_id']) ? $_GET['patient_id'] : '';
+$patient_name = isset($_GET['patient_name']) ? $_GET['patient_name'] : '';
+$student_id = isset($_GET['student_id']) ? $_GET['student_id'] : '';
+$student_name = isset($_GET['student_name']) ? $_GET['student_name'] : '';
 $userid = $_SESSION['userlogin']['id'];
 $form_id = $_GET['form_id'];
 if (isset($_GET['display'])) {
@@ -176,7 +180,7 @@ if ($result) {
     </script>
 
             <script>
-                 $(function() {
+                $(function() {
                 $('#closeBtn1').click(function(e) {
                     e.preventDefault();
                     console.log("close btn clicked");
@@ -197,7 +201,6 @@ if ($result) {
                     }
                 });
             });
-
                 $('.form-check-input[name="sleepProblem"]').change(function() {
                     if ($(this).val() == "Sorun Var") {
                         $('input[name="sleepProblemDesc"]').prop('disabled', false);

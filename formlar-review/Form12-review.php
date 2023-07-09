@@ -112,38 +112,38 @@ if ($result) {
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Patient Name:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Hasta Ad:</p>
                             <input type="text" class="form-control" value="<?php echo $form12[0]['patient_name']; ?>"
                                 required name="patient_name" id="diger" placeholder="Patient Name" disabled>
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Patient ID:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Hasta ID:</p>
                             <input type="text" class="form-control" value="<?php echo $form12[0]['patient_id']; ?>"
                                 required name="patient_id" id="diger" placeholder="Patient ID" disabled>
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Sıvının Cinsi:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Sıvının Cinsi:</p>
                             <input type="text" class="form-control" required name="liquid_type" id="liquid_type"
                                 placeholder="liquid_type" value="<?php echo $form12[0]['liquid_type']; ?>">
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Sıvının Hızı:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Sıvının Hızı:</p>
                             <input type="text" class="form-control" required name="liquid_velocity" id="liquid_velocity"
                                 placeholder="liquid_velocity" value="<?php echo $form12[0]['liquid_velocity']; ?>">
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Saat:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Saat:</p>
                             <input type="time" class="form-control" required name="delivery_time" id="delivery_time"
                                 placeholder="delivery_time" value="<?php echo $form12[0]['delivery_time']; ?>">
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Seviye:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Seviye:</p>
                             <input type="text" class="form-control" required name="liquid_level" id="liquid_level"
                                 placeholder="liquid_level" value="<?php echo $form12[0]['liquid_level']; ?>">
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Giden:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel pb-3">Giden:</p>
                             <input type="text" class="form-control" required name="liquid_sent" id="liquid_sent"
                                 placeholder="liquid_sent" value="<?php echo $form12[0]['liquid_sent']; ?>">
                         </div>

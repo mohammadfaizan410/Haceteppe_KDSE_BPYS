@@ -60,15 +60,6 @@ if (isset($_GET['logout'])) {
         ?>
         <div class="send-patient">
         <span class='close closeBtn' id='closeBtn1'>&times;</span>
-        <div class='row'>
-        <div class='col-lg-6' style="font-weight : bold; font-size: large;">
-        Patient:<?php echo $_GET['patient_name'] ?>
-            </div>
-            
-            <div class='col-lg-6' style="font-weight : bold; font-size: large;">
-            ID:<?php echo $_GET['patient_id'] ?>
-            </div>
-</div>
             <div class="patients-table text-center rounded p-4" id="patients-table">
                 <div class="d-flex align-items-center justify-content-between mb-4">
                     <p style="color : #333333; font-size: 20px" class="pb-2">Tanı listesi</p>
@@ -81,9 +72,9 @@ if (isset($_GET['logout'])) {
                     <table class="table text-start align-middle table-hover mb-0" id='dataTable'>
                         <thead>
                             <tr class="darkcyan table-head">
-                                <th scope="col" style="font-weight : bold; font-size: large;"></th>
+                                <th scope="col" style="font-weight : bold; font-size: large;">Hasta:<?php echo $_GET['patient_name'] ?></th>
                             </tr>
-                            <tr><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
+                            <tr     ><td><div class="mt-3 entered-forms"><a class="nav-items review btn btn-success w-50 p-3"
                                   href="<?php echo $base_url; ?>/tanılar/boshTani.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>&root_id=0&parent_id=0">Bosh-Tanı</a>
                             </div></td></tr>
                             <tr><td><div class="mt-3 entered-forms align-items-center"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;"

@@ -116,26 +116,25 @@ $student_name = isset($_GET['student_name']) ? $_GET['student_name'] : '';
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Patient Name:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel">Hasta Ad:</p>
                             <input type="text" class="form-control" required value=<?php echo json_encode($form10[0]['patient_name']); ?> name="patient_name" id="diger" placeholder="Patient Name" disabled>
                         </div>
-                        <div class="input-section d-flex">
-                            <p class="usernamelabel">Patient ID:</p>
+                        <div class="input-section">
+                            <p class="usernamelabel">Hasta ID:</p>
                             <input type="text" class="form-control" value=<?php echo $form10[0]['patient_id']; ?> required name="patient_id" id="diger" placeholder="Patient ID" disabled>
                         </div>
-                        <div class="input-section d-flex">
+                        <div class="input-section">
                             <p class="usernamelabel">Saat:</p>
                             <input type="time" class="form-control" value=<?php echo $form10[0]['time']; ?> required name="time" id="diger" placeholder="Saat">
                         </div>
 
-                        <div class="input-section d-flex">
+                        <div class="input-section">
                             <p class="usernamelabel">Vücut Sıcaklığı:</p>
                             <input type="text" class="form-control" required value=<?php echo $form10[0]['body_temperature']; ?> name="body_temperature" id="diger" placeholder="Vücut Sıcaklığı">
                         </div>
-                        <div class="input-section d-flex">
+                        <div class="input-section">
                             <p class="usernamelabel">Ölçüm yeri: </p>
-                            <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="measurement_location" id="measurement_location" value="Timpanik*">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
@@ -166,10 +165,9 @@ $student_name = isset($_GET['student_name']) ? $_GET['student_name'] : '';
                                         <span class="checkbox-header">Temporal</span>
                                     </label>
                                 </div>
-                            </div>
                         </div>
 
-                        <div class="input-section d-flex">
+                        <div class="input-section">
                             <p class="usernamelabel">Nabız yeri: </p>
                             <div class="form-check">
                                 <div class="form-check">
@@ -187,15 +185,14 @@ $student_name = isset($_GET['student_name']) ? $_GET['student_name'] : '';
                             </div>
                         </div>
 
-                        <div class="input-section d-flex">
+                        <div class="input-section">
                             <p class="usernamelabel">Nabız hızı:</p>
                             <input type="text" class="form-control" value=<?php echo $form10[0]['heart_rate']; ?> required name="heart_rate" id="diger" placeholder="Nabız hızı">
                         </div>
 
 
-                        <div class="input-section d-flex">
+                        <div class="input-section">
                             <p class="usernamelabel">Nabız niteliği: </p>
-                            <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="heartrate_nature" id="heartrate_nature" value="Dolgun">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
@@ -226,17 +223,15 @@ $student_name = isset($_GET['student_name']) ? $_GET['student_name'] : '';
                                         <span class="checkbox-header">Yok</span>
                                     </label>
                                 </div>
-                            </div>
                         </div>
 
-                        <div class="input-section d-flex">
+                        <div class="input-section">
                             <p class="usernamelabel">Solunum sayısı:</p>
                             <input type="text" class="form-control" value='<?php echo $form10[0]['respiratory_rate']; ?>' required name="respiratory_rate" id="diger" placeholder="Solunum sayısı">
                         </div>
 
-                        <div class="input-section d-flex">
+                        <div class="input-section">
                             <p class="usernamelabel">Solunum Özelliği: </p>
-                            <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="respiratory_nature" id="breathing_nature" value="Normal">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
@@ -255,19 +250,17 @@ $student_name = isset($_GET['student_name']) ? $_GET['student_name'] : '';
                                         <span class="checkbox-header">Yüzeyel</span>
                                     </label>
                                 </div>
-                            </div>
                         </div>
 
 
 
-                        <div class="input-section d-flex">
+                        <div class="input-section">
                             <p class="usernamelabel">Kan basıncı:</p>
                             <input type="number" class="form-control" required value=<?php echo $form10[0]['blood_pressure']; ?> name="blood_pressure" id="diger" placeholder="Tetkik Sonucu">
                         </div>
 
-                        <div class="input-section d-flex">
+                        <div class="input-section">
                             <p class="usernamelabel">KB Ölçüm yeri: </p>
-                            <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="bp_measurement_location" id="bp_measurement_location" value="Brakial(Sağ)">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
@@ -292,12 +285,10 @@ $student_name = isset($_GET['student_name']) ? $_GET['student_name'] : '';
                                         <span class="checkbox-header">Popliteal(Sol)</span>
                                     </label>
                                 </div>
-                            </div>
                         </div>
 
-                        <div class="input-section d-flex">
+                        <div class="input-section">
                             <p class="usernamelabel">O2 verme durum: </p>
-                            <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="o2_status" id="o2_status_alm" value="Almıyor">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
@@ -310,12 +301,9 @@ $student_name = isset($_GET['student_name']) ? $_GET['student_name'] : '';
                                         <span class="checkbox-header">Aliyor</span>
                                     </label>
                                 </div>
-                            </div>
-
                         </div>
-                        <div class="input-section d-flex" id="o2-delivery-container">
+                        <div class="input-section" id="o2-delivery-container">
                             <p class="usernamelabel">O2 verme Yöntemi: </p>
-                            <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="o2_method" id="o2_method_1" value="O2 maske">
                                     <label class="form-check-label" for="ÖdemŞiddeti">
@@ -328,27 +316,20 @@ $student_name = isset($_GET['student_name']) ? $_GET['student_name'] : '';
                                         <span class="checkbox-header">Nazal kanül</span>
                                     </label>
                                 </div>
-                                <div class="form-check">
-                                    <div class="">
-                                        <input class="form-check-input" type="radio" name="o2_method" id="o2_method_diger" value="Diğer">
+                                    <input class="form-check-input" type="radio" name="o2_method" id="o2_method_diger" value="Diğer">
                                         <label class="form-check-label" for="ÖdemŞiddeti">
                                             <span class="checkbox-header">Diğer</span>
                                         </label>
-                                    </div>
-                                    <div class="input-section d-flex">
                                         <input type="text" class="form-control" required disabled name="o2_method_diger" id="o2_method_diger_input" placeholder="Yöntemi">
                                     </div>
-                                </div>
-                            </div>
-
                         </div>
 
 
-                        <div class="input-section d-flex">
+                        <div class="input-section">
                             <p class="usernamelabel">SPO2 (%):</p>
                             <input type="text" class="form-control" required name="spo2_percentage" value=<?php echo $form10[0]['spo2_percentage']; ?> id="diger" placeholder="SPO2 (%)">
                         </div>
-                        <div class="input-section d-flex" id="o2-delivery-container">
+                        <div class="input-section" id="o2-delivery-container">
                             <p class="usernamelabel">Günlük Günlük Kilo Takibi Yapiliyor mi?</p>
                             <div class="form-check">
                                 <div class="form-check">
@@ -359,7 +340,7 @@ $student_name = isset($_GET['student_name']) ? $_GET['student_name'] : '';
                                 </div>
                             </div>
                         </div>
-                        <div class="input-section d-flex" id="kilo_yapiliyor">
+                        <div class="input-section" id="kilo_yapiliyor">
                             <p class="usernamelabel">Günlük Kilo Takibi:</p>
                             <input type="text" class="form-control" value="<?php echo $form10[0]['weight_input']; ?>" name="weight_input" id="diger" placeholder="Günlük Kilo Takibi">
                         </div>

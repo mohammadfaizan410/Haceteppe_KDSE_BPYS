@@ -73,9 +73,10 @@ if (isset($_GET['logout'])) {
         ?>
         <div class="send-patient">
         <span class='close closeBtn' id='closeBtn1'>&times;</span>
+        <p class='form-header'>Sunulan Tanı</p>
     <div class='row mb-5'>
         <div class='col-lg-5' style="font-weight : bold; font-size: large;">
-        Patient:<?php echo $_GET['patient_name'] ?>
+        Hasta:<?php echo $_GET['patient_name'] ?>
             </div>
             
             <div class='col-lg-5' style="font-weight : bold; font-size: large;">
@@ -176,5 +177,17 @@ $(".tani-navigator").click(function(e){
     e.preventDefault();
     $('#content').load(this.href);
 })
+$(function() {
+                $("#closeBtn1").on("click", function(e) {
+                    var url =
+                        "<?php echo $base_url; ?>/updateForms/taniOptions.php?patient_id=" +
+                        patient_id + "&patient_name=" + encodeURIComponent(
+                            patient_name);
+                    e.preventDefault();
+                    taniString ='';
+                    $("#content").load(url);
+
+                });
+            });
         </script>
 </body>

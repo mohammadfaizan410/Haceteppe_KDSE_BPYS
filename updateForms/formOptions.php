@@ -36,28 +36,31 @@ if (isset($_GET['logout'])) {
             </div>
             <h2 class="pb-5">Hasta Formlar</h2>
             <div class="table-responsive mt-5" style="overflow-x: hidden;">
-                    <table class="table text-start align-middle table-hover mb-0" id='dataTable'>
-                    <thead>
-                        <tr class="darkcyan table-head">
-                            <th scope="col" style="font-weight : bold;">ID</th>
-                            <th scope="col" style="font-weight : bold;">Hasta Ad</th>
-                            <th scope="col" style="font-weight : bold;">Form gönderin</th>
-                            <th scope="col" style="font-weight : bold;">Gönderilen Formlar</th>
-                        </tr>
-                                <tr class="">                            
-                                    <td scope="col" style="color: #333333" class="usernamelabel"><?php echo $_GET['patient_id'] ?></td>
-                                <td scope="col" style="color: #333333" class="usernamelabel"><?php echo $_GET['patient_name'] ?></td>
-                                <td scope="col" style="color: #333333;"><div class=' btn btn-success' id='showAllForms'>
-                                    Form gönderin
-                                  </div></td>
-                                <td scope="col"><div class=' btn btn-success' id='showSubmittedForms'>
+                  
+                    <div class="row" style="border-bottom: 1px solid grey; padding-bottom: 10px;">
+                        <div class="col-sm-6 col-lg-3">
+                            <h4 style="text-align: left;"> ID</h4>
+                            <h4 style="text-align: left;"><?php echo $_GET['patient_id'] ?></h4>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <h4 style="text-align: left;">Hasta Adı:</h4>
+                            <h4 style="text-align: left; color: #333333;"><?php echo $_GET['patient_name'] ?></h4>
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <h4 style="text-align: left;">Tüm Formlar</h4>
+                            <h4 style="text-align: left;"><div class=' btn btn-success' id='showAllForms'>
+                                    Tüm Formlar
+                                </div></h4></div>
+                        <div class="col-sm-6 col-lg-3">
+                            <h4 style="text-align: left;">Gönderilen Formlar</h4>
+                            <h4 style="text-align: left;"><div class=' btn btn-success' id='showSubmittedForms'>
                                     Gönderilen Formlar
-                                  </div></td>
-                                </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
+                                </div></h4>
+                        </div>
+                    </div>
+
+                      
+                  
             </div>
         </div>
     </div>
