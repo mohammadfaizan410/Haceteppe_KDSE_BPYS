@@ -378,7 +378,7 @@ if ($result) {
 </div>
             <div class="patients-table text-center rounded p-4" id="patients-table">
                 <div class="d-flex align-items-center justify-content-between mb-4">
-                    <p style="color : #333333; font-size: 20px" class="pb-2">System Generated Tanis</p>
+                    <p style="color : #333333; font-size: 20px" class="pb-2">Sistem tarafından oluşturulan tanılama</p>
 
                 </div>
 

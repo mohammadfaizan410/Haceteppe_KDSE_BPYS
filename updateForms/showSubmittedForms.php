@@ -2,7 +2,7 @@
 session_start();
 $base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
 if (!isset($_SESSION['userlogin'])) {
-    header("Location: main.php");
+    header("Location: login-student.php");
 }
 
 if (isset($_GET['logout'])) {
@@ -10,790 +10,1156 @@ if (isset($_GET['logout'])) {
     unset($_SESSION);
     header("Location: main.php");
 }
-?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <title>KDSE-BPYS</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
-
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
-
-
-    <!-- Icon Font Stylesheet -->
-
-    <!-- Libraries Stylesheet -->
-
-    
-     <!-- Icon Font Stylesheet -->
-     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-
-
-    <!-- Template Stylesheet -->
-
-</head>
-
-<body style="background-color:white">
-    <div class="container-fluid pt-4 px-4">
-        <?php
         require_once('../config-students.php');
         $patient_id = $_GET['patient_id'];
         $patient_name = $_GET['patient_name'];
         $sql = "SELECT * FROM  form2  WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
-        $values = [];
+        $form2 = '';
         if ($result) {
-            $values1 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+            $form2 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
         } else {
             echo 'error';
         };
         $sql = "SELECT * FROM  form3 WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
-        $values = [];
+        $form3 = [];
         if ($result) {
-            $values2 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+            $form3 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
         } else {
             echo 'error';
         };
         $sql = "SELECT * FROM  form4 WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
-        $values = [];
+        $form4 = [];
         if ($result) {
-            $values3 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+            $form4 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
         } else {
             echo 'error';
         };
         $sql = "SELECT * FROM  form5 WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
-        $values = [];
+        $form5 = [];
         if ($result) {
-            $values4 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+            $form5 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
         } else {
             echo 'error';
         };
         $sql = "SELECT * FROM  form6 WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
-        $values = [];
+        $form6 = [];
         if ($result) {
-            $values5 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+            $form6 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
         } else {
             echo 'error';
         };
         $sql = "SELECT * FROM  form7 WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
-        $values = [];
+        $form7 = [];
         if ($result) {
-            $values6 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+            $form7 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
         } else {
             echo 'error';
         };
         $sql = "SELECT * FROM  form8 WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
-        $values = [];
+        $form8 = [];
         if ($result) {
-            $values7 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+            $form8 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
         } else {
             echo 'error';
         };
         $sql = "SELECT * FROM  form9 WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
-        $values = [];
+        $form9 = [];
         if ($result) {
-            $values8 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+            $form9 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
         } else {
             echo 'error';
         };
         $sql = "SELECT * FROM  form10 WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
-        $values = [];
+        $form10 = [];
         if ($result) {
-            $values9 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+            $form10 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
         } else {
             echo 'error';
         };
         $sql = "SELECT * FROM  form11 WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
-        $values = [];
+        $form11 = [];
         if ($result) {
-            $values10 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
-        } else {
-            echo 'error';
-        };
-        $sql = "SELECT * FROM  form11 WHERE patient_id =" . $patient_id;
-        $smtmselect = $db->prepare($sql);
-        $result = $smtmselect->execute();
-        $values = [];
-        if ($result) {
-            $values10 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+            $form11 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
         } else {
             echo 'error';
         };
         $sql = "SELECT * FROM  form12 WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
-        $values = [];
+        $form12 = [];
         if ($result) {
-            $values11 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+            $form12 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
         } else {
             echo 'error';
         };
         $sql = "SELECT * FROM  form13 WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
-        $values = [];
+        $form13 = [];
         if ($result) {
-            $values12 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+            $form13 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
         } else {
             echo 'error';
         };
         $sql = "SELECT * FROM  form14 WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
-        $values = [];
+        $form14 = [];
         if ($result) {
-            $values13 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+            $form14 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
         } else {
             echo 'error';
         };
         $sql = "SELECT * FROM  form15 WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
-        $values = [];
+        $form15 = [];
         if ($result) {
-            $values14 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+            $form15 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
         } else {
             echo 'error';
         };
         $sql = "SELECT * FROM ozgecmisform1 WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
-        $values = [];
+        $ozgecmisform1 = [];
         if ($result) {
-            $values15 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+            $ozgecmisform1 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
         } else {
             echo 'error';
         };
         $sql = "SELECT * FROM solunumgereksinimi_form1  WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
-        $values = [];
+        $solunumgereksinimi_form1 = [];
         if ($result) {
-            $values16 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+            $solunumgereksinimi_form1 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
         } else {
             echo 'error';
         };
         $sql = "SELECT * FROM  hareketform1 WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
-        $values = [];
+        $hareketform1 = [];
         if ($result) {
-            $values17 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+            $hareketform1 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
         } else {
             echo 'error';
         };
         $sql = "SELECT * FROM vucudutemizform1 WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
-        $values = [];
+        $vucudutemizform1 = [];
         if ($result) {
-            $values18 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+            $vucudutemizform1 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
         } else {
             echo 'error';
         };
         $sql = "SELECT * FROM  katererform1  WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
-        $values = [];
+        $katererform1 = [];
         if ($result) {
-            $values19 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+            $katererform1 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
         } else {
             echo 'error';
         };
         $sql = "SELECT * FROM  ilestimform1  WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
-        $values = [];
+        $ilestimform1 = [];
         if ($result) {
-            $values20 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+            $ilestimform1 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
         } else {
             echo 'error';
         };
         $sql = "SELECT * FROM  calismaform1  WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
-        $values = [];
+        $calismaform1 = [];
         if ($result) {
-            $values21 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+            $calismaform1 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
         } else {
             echo 'error';
         };
         $sql = "SELECT * FROM  egitimform1  WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
-        $values = [];
+        $egitimform1 = [];
         if ($result) {
-            $values22 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+            $egitimform1 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
         } else {
             echo 'error';
         };
         $sql = "SELECT * FROM  bosaltimform1  WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
-        $values = [];
+        $bosaltimform1 = [];
         if ($result) {
-            $values23 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+            $bosaltimform1 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
         } else {
             echo 'error';
         };
         $sql = "SELECT * FROM  form1_beslenme  WHERE patient_id =" . $patient_id;
         $smtmselect = $db->prepare($sql);
         $result = $smtmselect->execute();
-        $values = [];
+        $form1_beslenme = [];
         if ($result) {
-            $values24 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+            $form1_beslenme = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
         } else {
             echo 'error';
         };
-
-
-        $allForms = [
-            'table1_data' => $values1,
-            'table2_data' => $values2,
-            'table3_data' => $values3,
-            'table4_data' => $values4,
-            'table5_data' => $values5,
-            'table6_data' => $values6,
-            'table7_data' => $values7,
-            'table8_data' => $values8,
-            'table9_data' => $values9,
-            'table10_data' => $values10,
-            'table11_data' => $values11,
-            'table12_data' => $values12,
-            'table13_data' => $values13,
-            'table14_data' => $values14,
-            'table15_data' => $values15,
-            'table16_data' => $values16,
-            'table17_data' => $values17,
-            'table18_data' => $values18,
-            'table19_data' => $values19,
-            'table20_data' => $values20,
-            'table21_data' => $values21,
-            'table22_data' => $values22,
-            'table23_data' => $values23,
-            'table24_data' => $values24,
-        ];
+        $sql = "SELECT * FROM  uyukuform1  WHERE patient_id =" . $patient_id;
+        $smtmselect = $db->prepare($sql);
+        $result = $smtmselect->execute();
+        $form1_uyku = [];
+        if($result){
+            $form1_uyku = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+        }else{
+            echo 'error';
+        };
 
         ?>
-        <div class="send-patient">
 
-            <span class='close closeBtn' id='closeBtn1'>&times;</span>
-            <div class="patients-save">
-                
-            <div class="text-center rounded p-4 w-100" style="background-color: " id="patients-table">
-                <div class="d-flex align-items-center justify-content-between mb-4">
-                </div>
-                <div class="table-responsive mb-4">
-                    <h1 class='mb-5' style="color: black">Doldurulmuş Formlar</h1>
-                    <div class="entered-forms-wrapper w-100">
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+            <style>
+                .add_extention {
+                    border: 1px dashed black;
+                    background-color: white;
+                    color: black;
+                }
+                .add_extention:hover {
+                    background-color: black;
+                    color: white;
+                }
+                .submissions{
+                    border: 3px solid white;
+                    margin-bottom: 10px;
+                }
+                .selected{
+                    background-color: rgb(206, 87, 107);
+                    border-top-right-radius: 50px;
+                    border-bottom-right-radius: 50px ;
+                }
+                .form-container{
+                    border-bottom: 3px solid grey;
+                    margin-bottom: 10px;
+                    padding: 20px;
+                }
+            </style>
+
+<body style="background-color:white">
+    <div id="tick-container">
+    <div id="tick"></div>
+    </div>
+        <div class="container-fluid pt-4 px-4">
+            <div class="container-fluid pt-4 px-4">
+                <div class="send-patient">
+                <span class='close closeBtn' id='closeBtn1'>&times;</span>
+                    <h1 class="form-header">Dordurmus Formlar</h1>
+                    <!-- ÖZGEÇMİŞ -->
+                    <div id="ozgecmisform1_container" class="row form-container">
+                        <div class="col-lg-3 btn btn-success mb-2" id="ozgecmisform1_toggler">
+                            <a><p>Özgeçmiş</p></a>
+                        </div>
                         <?php
-                        $form_1_options = '';
-                        $form_2_options = '';
-                        $form_3_options = '';
-                        $form_4_options = '';
-                        $form_5_options = '';
-                        $form_6_options = '';
-                        $form_7_options = '';
-                        $form_8_options = '';
-                        $form_9_options = '';
-                        $form_10_options = '';
-                        $form_11_options = '';
-                        $form_12_options = '';
-                        $form_13_options = '';
-                        $form_14_options = '';
-                        $form_15_options = '';
-                        $form_16_options = '';
-                        $form_17_options = '';
-                        $form_18_options = '';
-                        $form_19_options = '';
-                        $form_20_options = '';
-                        $form_21_options = '';
-                        $form_22_options = '';
-                        $form_23_options = '';
-                        $form_24_options = '';
-                        $form_25_options = '';
-
-
-
-                        if (isset($allForms)) {
-                            foreach ($allForms as $key => $currentTableAllForms) {
-                                foreach ($currentTableAllForms as $currentKey => $form) {
-
-                                    if ($key === 'table1_data') {
-                                        $form_id = $form["form_id"];
-                                        $root2_id = $form['form_id'];
-                                        $update_date = $form["update_date"];
-                                        $form_2_options .= '<li class="m-2 p-2 ">
-                                        <div class="entered-forms align-items-center">
-                                        <a class="nav-items review btn btn-success p-3" style="color: white;" href="' . $base_url . '/formlar-review/Form2-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'">
-                                        <p class="entered-forms-p">Form2 Date: ' . $update_date . '</p>
-                                        </a>
-                                        </div>
-                                        </li>';
-                                    }
-                                    if ($key ===  'table2_data') {
-                                        $form_id = $form["form_id"];
-                                        $root3_id = $form['form_id'];
-                                        $update_date = $form["update_date"];
-                                        $form_3_options .= '<li class="m-2 p-2">
-                                        <div class="entered-forms align-items-center">
-                                        <a class="nav-items review btn btn-success p-3" style="color: white;" href="' . $base_url . '/formlar-review/Form3-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'">
-                                        <p class="entered-forms-p">Form3 Date: ' . $update_date . '</p>
-                                        </a>
-                                       
-                                        </div>
-                                        </li>';
-                                    }
-                                    if ($key ===  'table3_data') {
-                                        $form_id = $form["form_id"];
-                                        $root4_id = $form['form_id'];
-                                        $update_date = $form["update_date"];
-                                        $form_4_options .= '<li class="m-2 p-2">
-                                        <div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3" style="color: white;" href="' . $base_url . '/formlar-review/Form4-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'">
-                                        <p class="entered-forms-p">Form4 Date: ' . $update_date . '</p>
-                                        </a>
-                                       
-                                        </div>
-                                        </li>';
-                                    }
-                                    if ($key ===  'table4_data') {
-                                        $form_id = $form["form_id"];
-                                        $root5_id = $form['form_id'];
-                                        $update_date = $form["update_date"];
-                                        $form_5_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3" style="color: white;" href="' . $base_url . '/formlar-review/Form5-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form5 Date: ' . $update_date . '</p></a></div></li>';
-                                    }
-                                    if ($key ===  'table5_data') {
-                                        $form_id = $form["form_id"];
-                                        $root6_id = $form['form_id'];
-                                        $update_date = $form["update_date"];
-                                        $form_6_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3" style="color: white;" href="' . $base_url . '/formlar-review/Form6-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form6 Date: ' . $update_date . '</p></a></div></li>';
-                                    }
-                                    if ($key ===  'table6_data') {
-                                        $form_id = $form["form_id"];
-                                        $root7_id = $form['form_id'];
-                                        $update_date = $form["update_date"];
-                                        $form_7_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3" style="color: white;"  href="' . $base_url . '/formlar-review/Form7-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form7 Date: ' . $update_date . '</p></a></div></li>';
-                                    }
-                                    if ($key ===  'table7_data') {
-                                        $form_id = $form["form_id"];
-                                        $root8_id = $form['form_id'];
-                                        $update_date = $form["update_date"];
-                                        $form_8_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"  style="color: white;" href="' . $base_url . '/formlar-review/Form8-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form8 Date: ' . $update_date . '</p></a></div></li>';
-                                    }
-                                    if ($key ===  'table8_data') {
-                                        $form_id = $form["form_id"];
-                                        $root9_id = $form['form_id'];
-                                        $update_date = $form["update_date"];
-                                        $form_9_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"  style="color: white;" href="' . $base_url . '/formlar-review/Form9-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form9 Date: ' . $update_date . '</p></a></div></li>';
-                                    }
-                                    if ($key ===  'table9_data') {
-                                        $form_id = $form["form_id"];
-                                        $root10_id = $form['form_id'];
-                                        $update_date = $form["update_date"];
-                                        $form_10_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"  style="color: white;" href="' . $base_url . '/formlar-review/Form10-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form10 Date: ' . $update_date . '</p></a></div></li>';
-                                    }
-                                    if ($key ===  'table10_data') {
-                                        $form_id = $form["form_id"];
-                                        $root11_id = $form['form_id'];
-                                        $update_date = $form["update_date"];
-                                        $form_11_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"  style="color: white;" href="' . $base_url . '/formlar-review/Form11-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form11 Date: ' . $update_date . '</p></a></div></li>';
-                                    }
-                                    if ($key ===  'table11_data') {
-                                        $form_id = $form["form_id"];
-                                        $root12_id = $form['form_id'];
-                                        $update_date = $form["update_date"];
-                                        $form_12_options .= '<li class="m-2 p-2 w-100"><div class="entered-formsalign-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form12-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form12 Date: ' . $update_date . '</p></a></div></li>';
-                                    }
-                                    if ($key ===  'table12_data') {
-                                        $form_id = $form["form_id"];
-                                        $root13_id = $form['form_id'];
-                                        $update_date = $form["update_date"];
-                                        $form_13_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form13-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form13 Date: ' . $update_date . '</p></a></div></li>';
-                                    }
-                                    if ($key ===  'table13_data') {
-                                        $form_id = $form["form_id"];
-                                        $root14_id = $form['form_id'];
-                                        $update_date = $form["update_date"];
-                                        $form_14_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form14-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form14 Date: ' . $update_date . '</p></a></div></li>';
-                                    }
-                                    if ($key ===  'table14_data') {
-                                        $form_id = $form["form_id"];
-                                        $root15_id = $form['form_id'];
-                                        $update_date = $form["update_date"];
-                                        $form_15_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form15-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form15 Date: ' . $update_date . '</p></a></div></li>';
-                                    }
-                                    if ($key ===  'table15_data') {
-                                        $form_id = $form["form_id"];
-                                        $root16_id = $form['form_id'];
-                                        $update_date = $form["update_date"];
-                                        $form_16_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-ozgecmis-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form1 Ozgecmis Date: ' . $update_date . '</p></a></div></li>';
-                                    }
-                                    if ($key ===  'table16_data') {
-                                        $form_id = $form["form_id"];
-                                        $root17_id = $form['form_id'];
-                                        $update_date = $form["updateDate"];
-                                        $form_17_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Solunumgereksinimi-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form1 Solunum Date: ' . $update_date . '</p></a></div></li>';
-                                    }
-                                    if ($key ===  'table17_data') {
-                                        $form_id = $form["form_id"];
-                                        $root18_id = $form['form_id'];
-                                        $update_date = $form["update_date"];
-                                        $form_18_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-hereket-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form1 Hareket Date: ' . $update_date . '</p></a></div></li>';
-                                    }
-                                    if ($key ===  'table18_data') {
-                                        $form_id = $form["form_id"];
-                                        $root19_id = $form['form_id'];
-                                        $update_date = $form["update_date"];
-                                        $form_19_options .= '<li class="m-2 p-2  w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Vucudu-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form1 Vucut Date: ' . $update_date . '</p></a></div></li>';
-                                    }
-                                    if ($key ===  'table19_data') {
-                                        $form_id = $form["form_id"];
-                                        $root20_id = $form['form_id'];
-                                        $update_date = $form["update_date"];
-                                        $form_20_options .= '<li class="m-2 p-2  w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Katerer-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form1 Katerer Date: ' . $update_date . '</p></a></div></li>';                                    }
-                                 
-                                    if ($key ===  'table20_data') {
-                                        $form_id = $form["form_id"];
-                                        $root21_id = $form['form_id'];
-                                        $update_date = $form["update_date"];
-                                        $form_21_options .= '<li class="m-2 p-2  w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Iletisim-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form1 Ilestim Date: ' . $update_date . '</p></a></div></li>';
-                                    }
-                                    if ($key ===  'table21_data') {
-                                        $form_id = $form["form_id"];
-                                        $root22_id = $form['form_id'];
-                                        $update_date = $form["update_date"];
-                                        $form_22_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-Calisma-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form1 Calisma Date: ' . $update_date . '</p></a></div></li>';
-                                    }
-                                    if ($key ===  'table23_data') {
-                                        $form_id = $form["form_id"];
-                                        $root24_id = $form["form_id"];
-                                        $update_date = $form["update_date"];
-                                        $form_24_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"  style="color: white;" href="' . $base_url . '/formlar-review/Form1-bosaltim-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form1 Bosaltim Date: ' . $update_date . '</p></a></div></li>';
-                                    }
-                                    if ($key ===  'table22_data') {
-                                        $form_id = $form["form_id"];
-                                        $root23_id = $form["form_id"];
-                                        $update_date = $form["update_date"];
-                                        $form_23_options .= '<li class="m-2 p-2 w-100"><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-egitim-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form1 Egitim Date: ' . $update_date . '</p></a></div></li>';
-                                    }
-                                    if ($key ===  'table24_data') {
-                                        $form_id = $form["form_id"];
-                                        $root25_id = $form["form_id"];
-                                        $update_date = $form["update_date"];
-                                        $form_25_options .= '<li class="m-2 p-2 "><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-beslenme-review.php?form_id=' . $form_id .'&patient_id=' . $patient_id .'&patient_name=' . $patient_name .'"><p class="entered-forms-p">Form1 Beslenme Date: ' . $update_date . '</p></a></div></li>';
-                                    }
-
-                                };
-                            };
-                        };
-                        
-                        
-                        if($form_16_options !== "" || $form_17_options !== "" || $form_18_options !== "" || $form_19_options !== "" ||  $form_20_options !== "" || $form_21_options !== "" || $form_22_options !== "" || $form_23_options !== "" || $form_24_options !== "" || $form_25_options !== "" ){
-                            echo "<div class='w-100 m-auto pb-5'>
-                            <button class='entered-forms  btn btn-success w-75 m-auto align-items-center'  id='form1_sections_toggle'>Form1 <span id='form1_caret'>&#9660;<span></button>
-                            <ul class='entered-forms-ul' id='form1_sections_options' style='display:none'>";
-                            if($form_24_options!==""){
-                                echo "<li class='m-2'><div class='w-75 m-auto'>
-                                <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form24_toggle'>Form1 Bosaltim <span id='form24_caret'>&#9660;<span></button>
-                                <ul class='entered-forms-ul' id='form_24_options' style='display:none'>" . $form_24_options . "</ul>
-                                </div>
-                                 <div class='entered-forms'>
-                                <a class='nav-items review btn btn-success w-25' style='color: black; display: none; border: 1px dashed black; background-color: white' id='form24_add_extension'
-                                    href='" . $base_url . "/formlar-review/Form1-Bosaltim-review.php?form_id=" . $root24_id . "&display=1&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "'>Add Extension
-                                </a>
-                                </div>;
-                                </li>";}
-                            if($form_16_options!==""){
+                        if (count($ozgecmisform1) > 0 && $ozgecmisform1 !== '') {
+                            $ozgecmisform1_last_column = end($ozgecmisform1);
+                            foreach ($ozgecmisform1 as $ozgecmisform1_columns) {
+                                $form_id = $ozgecmisform1_columns["form_id"];
+                                $date = $ozgecmisform1_columns["creation_date"];
+                                $display = 1;
                                 echo "
-                                <li class='m-2'><div class='w-75 m-auto'>
-                                <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form16_toggle'>Form1 Ozgecmis <span id='form16_caret'>&#9660;<span></button>
-                                <ul class='entered-forms-ul' id='form_16_options' style='display:none'>" . $form_16_options . "</ul>
-                                </div>
-                                <div class='entered-forms'>
-                                <a class='nav-items review btn btn-success w-25' style='color: black; display: none; border: 1px dashed black; background-color: white' id='form16_add_extension'
-                                    href='" . $base_url . "/formlar-review/Form1-ozgecmis-review.php?form_id=" . $root16_id . "&display=1&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "'>Add Extension
-                                </a>
-                            </div>
-                                </li>";
+                                    <a class='form-navigation col-lg-3 btn btn-success ozgecmisform1_view_submissions submissions' style='display: none;''
+                                    href='$base_url/formlar-review/Form1-ozgecmis-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
+                                    >
+                                    <p>Özgeçmiş</p>
+                                    <p>$date</p>
+                                    </a>";
                             }
-                            if($form_17_options!==""){
-                            echo "<li class='m-2'><div class='w-75 m-auto'>
-                                <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form17_toggle'>Form1 Solunum <span id='form17_caret'>&#9660;<span></button>
-                                <ul class='entered-forms-ul' id='form_17_options' style='display:none'>" . $form_17_options . "</ul>
-                                </div>
-                                <div class='entered-forms'>
-                                <a class='nav-items review btn btn-success w-25' style='color: black; display: none; border: 1px dashed black; background-color: white' id='form17_add_extension'
-                                    href='" . $base_url . "/formlar-review/Form1-Solunumgereksinimi-review.php?form_id=" . $root17_id . "&display=1&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "'>Add Extension
-                                </a>
-                            </div>
-                               
-                                </li>";
-                            }
-                            if($form_18_options!==""){
-                            echo "<li class='m-2'><div class='w-75 m-auto'>
-                             <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form18_toggle'>Form1 Hereket <span id='form18_caret'>&#9660;<span></button>
-                            <ul class='entered-forms-ul' id='form_18_options' style='display:none'>" . $form_18_options . "</ul>
-                            </div>
-                            <div class='entered-forms'>
-                            <a class='nav-items review btn btn-success w-25' style='color: black; display: none; border: 1px dashed black; background-color: white' id='form18_add_extension'
-                                href='" . $base_url . "/formlar-review/Form1-hereket-review.php?form_id=" . $root18_id . "&display=1&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "'>Add Extension
-                            </a>
-                        </div>
-                            </li>";}
-                            if($form_19_options!==""){
-                            echo "<li class='m-2'><div class='w-75 m-auto'>
-                            <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form19_toggle'>Form1 Vucut <span id='form19_caret'>&#9660;<span></button>
-                            <ul class='entered-forms-ul' id='form_19_options' style='display:none'>" . $form_19_options . "</ul>
-                            </div>
-                            <div class='entered-forms'>
-                            <a class='nav-items review btn btn-success w-25' style='color: black; display: none; border: 1px dashed black; background-color: white' id='form19_add_extension'
-                                href='" . $base_url . "/formlar-review/Form1-Vucudu-review.php?form_id=" . $root19_id . "&display=1&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "'>Add Extension
-                            </a>
-                        </div>
-                            </li>";}
-                            if($form_20_options!==""){
-                            echo "<li class='m-2'><div class='w-75 m-auto'>
-                            <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form20_toggle'>Form1 Katerer <span id='form20_caret'>&#9660;<span></button>
-                            <ul class='entered-forms-ul' id='form_20_options' style='display:none'>" . $form_20_options . "</ul>
-                            </div>
-                            <div class='entered-forms'>
-                            <a class='nav-items review btn btn-success w-25' style='color: black; display: none; border: 1px dashed black; background-color: white' id='form20_add_extension'
-                                href='" . $base_url . "/formlar-review/Form1-Katerer-review.php?form_id=" . $root20_id ."&display=1&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "'>Add Extension
-                            </a>
-                        </div>
-                            </li>";}
-                            if($form_21_options!==""){
-                            echo "<li class='m-2'><div class='w-75 m-auto'>
-                            <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form21_toggle'> Form1 Iletisim<span id='form21_caret'>&#9660;<span></button>
-                            <ul class='entered-forms-ul' id='form_21_options' style='display:none'>" . $form_21_options . "</ul>
-                            </div>
-                            <div class='entered-forms'>
-                            <a class='nav-items review btn btn-success w-25' style='color: black; display: none; border: 1px dashed black; background-color: white' id='form21_add_extension'
-                                href='" . $base_url . "/formlar-review/Form1-Iletisim-review.php?form_id=" . $root21_id . "&display=1&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "'>Add Extension
-                            </a>
-                        </div>
-                          
-                            </li>";}
-                            if($form_22_options!==""){
-                            echo "<li class='m-2'><div class='w-75 m-auto'>
-                            <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form22_toggle'>Form1 Calisma <span id='form22_caret'>&#9660;<span></button>
-                            <ul class='entered-forms-ul' id='form_22_options' style='display:none'>" . $form_22_options . "</ul>
-                            </div>
-                            <div class='entered-forms'>
-                            <a class='nav-items review btn btn-success w-25' style='color: black; display: none; border: 1px dashed black; background-color: white' id='form22_add_extension'
-                                href='" . $base_url . "/formlar-review/Form1-Calisma-review.php?form_id=" . $root22_id . "&display=1&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "'>Add Extension
-                            </a>
-                        </div>
-                           
-                            </li>";}
-                            if($form_23_options!==""){
-                            echo "<li class='m-2'><div class='w-75 m-auto'>
-                            <div class='w-75 m-auto'>
-                            <button class='entered-forms  btn btn-success w-50 m-auto align-items-center'  id='form23_toggle'>Form1 Egitim <span id='form23_caret'>&#9660;<span></button>
-                            <ul class='entered-forms-ul' id='form_23_options' style='display:none'>" . $form_23_options . "</ul>
-                            </div>
-                            <div class='entered-forms'><a class='nav-items review btn btn-success w-25' style='color : black; display: none;border: 1px dashed black;background-color:white' id='form23_add_extension'
-                                    href='" . $base_url . "/formlar-review/Form1-egitim-review.php?form_id=" . $root23_id . "&display=1&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "'>Add Extension</a></div>
-                            </li>";
-                        }
-                            if($form_25_options!==""){
-                                echo "<li class='m-2'>
-                                <div class='w-75 m-auto'>
-                                    <button class='entered-forms btn btn-success w-50 m-auto align-items-center' id='form25_toggle'>Form1 Beslenme <span id='form25_caret'>&#9660;</span></button>
-                                    <ul class='entered-forms-ul' id='form_25_options' style='display:none'>" . $form_25_options . "</ul>
-                                </div>
-                                <div class='entered-forms'>
-                                    <a class='nav-items review btn btn-success w-25' style='color: black; display: none; border: 1px dashed black; background-color: white' id='form25_add_extension' href='" . $base_url . "/formlar-review/Form1-beslenme-review.php?form_id=" . $root25_id . "&display=1&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "'>Add Extension</a>
-                                </div>
-                            </li>";
-                        echo "<div class='entered-forms w-50 btn btn-success m-5' style='display: none'></div>";
-                        echo "</ul>
+                            echo "
+                            <a class='form-navigation col-lg-3 btn btn-success ozgecmisform1_add_extension add_extention' style='display: none; height: 80%; align-self: auto; '
+                            href='" . $base_url . "/formlar-review/Form1-ozgecmis-review.php?form_id=" . $ozgecmisform1_last_column['form_id'] . "&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "&display=1'>
+                            <p>Add Extension</p>
+                            </a>  ";
+                        } else {
+                            echo "<div class='col-lg-3' id='ozgecmisform1_no_submission' style='display: none;'>
+                                <p>Bu form için hiçbir gönderiminiz bulunmamaktadır</p>
                             </div>";
-                            }
                         }
-
-                            if($form_2_options !== ""){
-                                echo "<div class='w-100 m-auto'>
-                                <button class='entered-forms  btn btn-success w-75 m-auto align-items-center' id='form2_toggle'>Form 2 <span id='form2_caret'>&#9660;</span></button>
-                                <ul class='entered-forms-ul ' id='form_2_options' style='display:none'>" . $form_2_options . "</ul>
-                                </div>
-                                <div class='entered-forms'><a class='nav-items review btn btn-success w-25' style='color : black; display: none;border: 1px dashed black;background-color:white' id='form2_add_extension'
-                                    href='" . $base_url . "/formlar-review/Form2-review.php?form_id=" . $root2_id . "&display=1&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "'>Add Extension</a></div>
-                                ";
-                            }
-                            if($form_3_options !== ""){
-                            echo "<div class='w-100 m-auto'>
-                            <button class='entered-forms toggle_button btn btn-success w-75 m-auto align-items-center' id='form3_toggle'>Form 3 <span id='form3_caret'>&#9660;<span></button>
-                            <ul class='entered-forms-ul' id='form_3_options' style='display:none'>" . $form_3_options . "</ul>
-                            </div>
-                            <div class='entered-forms'><a class='nav-items review btn btn-success w-25' style='color : black; display: none;border: 1px dashed black;background-color:white' id='form3_add_extension'
-                                    href='" . $base_url . "/formlar-review/Form3-review.php?form_id=" . $root3_id . "&display=1&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "'>Add Extension</a></div>";
-                            }
-                            if($form_4_options !== ""){
-                            echo "<div class='w-100 m-auto'>
-                            <button class='entered-forms toggle_button btn btn-success w-75 m-auto align-items-center' id='form4_toggle'>Form 4 <span id='form4_caret'>&#9660;<span></button>
-                            <ul class='entered-forms-ul' id='form_4_options' style='display:none'>" . $form_4_options . "</ul>
-                            </div>
-                            <div class='entered-forms'><a class='nav-items review btn btn-success w-25' style='color : black; display: none;border: 1px dashed black;background-color:white' id='form4_add_extension'
-                                    href='" . $base_url . "/formlar-review/Form4-review.php?form_id=" . $root4_id . "&display=1&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "'>Add Extension</a></div>";
-                            }
-                            if($form_5_options !== ""){
-                            echo "<div class='w-100 m-auto'>
-                            <button class='entered-forms toggle_button btn btn-success w-75 m-auto align-items-center' id='form5_toggle'>Form 5 <span id='form5_caret'>&#9660;<span></button>
-                            <ul class='entered-forms-ul' id='form_5_options' style='display:none'>" . $form_5_options . "</ul>
-                            </div>
-                            <div class='entered-forms'><a class='nav-items review btn btn-success w-25' style='color : black; display: none;border: 1px dashed black;background-color:white' id='form5_add_extension'
-                                    href='" . $base_url . "/formlar-review/Form5-review.php?form_id=" . $root5_id . "&display=1&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "'>Add Extension</a></div>";
-                            }
-                            if($form_6_options !== ""){
-                            echo "<div class='w-100 m-auto'>
-                            <button class='entered-forms toggle_button btn btn-success w-75 m-auto align-items-center' id='form6_toggle'>Form 6 <span id='form6_caret'>&#9660;<span></button>
-                            <ul class='entered-forms-ul' id='form_6_options' style='display:none'>" . $form_6_options . "</ul>
-                            </div>
-                            <div class='entered-forms'><a class='nav-items review btn btn-success w-25' style='color : black; display: none;border: 1px dashed black;background-color:white' id='form6_add_extension'
-                                    href='" . $base_url . "/formlar-review/Form6-review.php?form_id=" . $root6_id . "&display=1&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "'>Add Extension</a></div>";
-                            }
-                            if($form_7_options !== ""){
-                            echo "<div class='w-100 m-auto'>
-                            <button class='entered-forms toggle_button btn btn-success w-75 m-auto align-items-center' id='form7_toggle'>Form 7 <span id='form7_caret'>&#9660;<span></button>
-                            <ul class='entered-forms-ul' id='form_7_options' style='display:none'>" . $form_7_options . "</ul>
-                            </div>
-                            <div class='entered-forms'><a class='nav-items review btn btn-success w-25' style='color : black; display: none;border: 1px dashed black;background-color:white' id='form7_add_extension'
-                                    href='" . $base_url . "/formlar-review/Form7-review.php?form_id=" . $root7_id . "&display=1&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "'>Add Extension</a></div>";
-                            }
-                            if($form_8_options !== ""){
-                            echo "<div class='w-100 m-auto'>
-                            <button class='entered-forms toggle_button btn btn-success w-75 m-auto align-items-center' id='form8_toggle'>Form 8 <span id='form8_caret'>&#9660;<span></button>
-                            <ul class='entered-forms-ul' id='form_8_options' style='display:none'>" . $form_8_options . "</ul>
-                            </div>
-                            <div class='entered-forms'><a class='nav-items review btn btn-success w-25'style='color : black; display: none;border: 1px dashed black;background-color:white' id='form8_add_extension'
-                                    href='" . $base_url . "/formlar-review/Form8-review.php?form_id=" . $root8_id . "&display=1&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "'>Add Extension</a></div>";
-                            
-                            }
-                            if($form_9_options !== ""){
-                            echo "<div class='w-100 m-auto'>
-                            <button class='entered-forms toggle_button btn btn-success w-75 m-auto align-items-center' id='form9_toggle'>Form 9 <span id='form9_caret'>&#9660;<span></button>
-                            <ul class='entered-forms-ul' id='form_9_options' style='display:none'>" . $form_9_options . "</ul>
-                            </div>
-                            <div class='entered-forms'><a class='nav-items review btn btn-success w-25' style='color : black; display: none;border: 1px dashed black;background-color:white' id='form9_add_extension'
-                                    href='" . $base_url . "/formlar-review/Form9-review.php?form_id=" . $root9_id . "&display=1&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "'>Add Extension</a></div>";
-                            
-                            }
-                            if($form_10_options !== ""){
-                            echo "<div class='w-100 m-auto'>
-                            <button class='entered-forms toggle_button btn btn-success w-75 m-auto align-items-center' id='form10_toggle'>Form 10 <span id='form10_caret'>&#9660;<span></button>
-                            <ul class='entered-forms-ul' id='form_10_options' style='display:none'>" . $form_10_options . "</ul>
-                            </div>
-                            <div class='entered-forms'><a class='nav-items review btn btn-success w-25' style='color : black; display: none;border: 1px dashed black;background-color:white' id='form10_add_extension'
-                                    href='" . $base_url . "/formlar-review/Form10-review.php?form_id=" . $root10_id . "&display=1&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "'>Add Extension</a></div>";
-                            
-                            }
-                            if($form_11_options !== ""){
-                            echo "<div class='w-100 m-auto'>
-                            <button class='entered-forms toggle_button btn btn-success w-75 m-auto align-items-center' id='form11_toggle'>Form 11 <span id='form11_caret'>&#9660;<span></button>
-                            <ul class='entered-forms-ul' id='form_11_options' style='display:none'>" . $form_11_options . "</ul>
-                            </div>
-                            <div class='entered-forms'><a class='nav-items review btn btn-success w-25' style='color : black; display: none;border: 1px dashed black;background-color:white' id='form11_add_extension'
-                                    href='" . $base_url . "/formlar-review/Form11-review.php?form_id=" . $root11_id . "&display=1&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "'>Add Extension</a></div>";
-                            
-                            
-                            }
-                            if($form_12_options !== ""){
-                            echo "<div class='w-100 m-auto'>
-                            <button class='entered-forms toggle_button btn btn-success w-75 m-auto align-items-center'  id='form12_toggle'>Form 12 <span id='form12_caret'>&#9660;<span></button>
-                            <ul class='entered-forms-ul' id='form_12_options' style='display:none'>" . $form_12_options . "</ul>
-                            </div>
-                            <div class='entered-forms'><a class='nav-items review btn btn-success w-25' style='color : black; display: none;border: 1px dashed black;background-color:white' id='form12_add_extension'
-                                    href='" . $base_url . "/formlar-review/Form12-review.php?form_id=" . $root12_id . "&display=1&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "'>Add Extension</a></div>";
-                            
-                            }
-                            if($form_13_options !== ""){
-                            echo "<div class='w-100 m-auto'>
-                            <button class='entered-forms toggle_button btn btn-success w-75 m-auto align-items-center'  id='form13_toggle'>Form 13 <span id='form13_caret'>&#9660;<span></button>
-                            <ul class='entered-forms-ul' id='form_13_options' style='display:none'>" . $form_13_options . "</ul>
-                            </div>
-                            <div class='entered-forms'><a class='nav-items review btn btn-success w-25' style='color : black; display: none;border: 1px dashed black;background-color:white' id='form13_add_extension'
-                                    href='" . $base_url . "/formlar-review/Form13-review.php?form_id=" . $root13_id . "&display=1&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "'>Add Extension</a></div>";
-                            
-                            
-                            }
-                            if($form_14_options !== ""){
-                            echo "<div class='w-100 m-auto'>
-                            <button class='entered-forms toggle_button btn btn-success w-75 m-auto align-items-center'  id='form14_toggle'>Form 14 <span id='form14_caret'>&#9660;<span></button>
-                            <ul class='entered-forms-ul' id='form_14_options' style='display:none'>" . $form_14_options . "</ul>
-                            </div>
-                            <div class='entered-forms'><a class='nav-items review btn btn-success w-25' style='color : black; display: none;border: 1px dashed black;background-color:white' id='form14_add_extension'
-                                    href='" . $base_url . "/formlar-review/Form14-review.php?form_id=" . $root14_id . "&display=1&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "'>Add Extension</a></div>";
-                            
-                            
-                            }
-                            if($form_15_options !== ""){
-                            echo "<div class='w-100 m-auto'>
-                            <button class='entered-forms toggle_button btn btn-success w-75 m-auto align-items-center'  id='form15_toggle'>Form 15 <span id='form15_caret'>&#9660;<span></button>
-                            <ul class='entered-forms-ul' id='form_15_options' style='display:none'>" . $form_15_options . "</ul>
-                            </div>
-                            <div class='entered-forms'><a class='nav-items review w-25' style='color : black; display: none;border: 1px dashed black;background-color:white' id='form15_add_extension'
-                                    href='" . $base_url . "/formlar-review/Form15-review.php?form_id=" . $root15_id . "&display=1&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "'>Add Extension</a></div>";
-                            
-                            
-                            
-                            }
-                        
                         ?>
                     </div>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                    </table>
+                    <!-- ÖZGEÇMİŞ ends here -->
+
+                        <!-- SOLUNUM GEREKSİNİMİ -->
+                        <div id="solunumgereksinimi_form1_container" class="row form-container">
+                            <div class="col-lg-3 btn btn-success mb-2" id="solunumgereksinimi_form1_toggler">
+                                <a><p>Solunum Gereksinimi</p></a>
+                            </div>
+                            <?php
+                            if (count($solunumgereksinimi_form1) > 0 && $solunumgereksinimi_form1 !== '') {
+                                $solunumgereksinimi_form1_last_column = end($solunumgereksinimi_form1);
+                                foreach ($solunumgereksinimi_form1 as $solunumgereksinimi_form1_columns) {
+                                    $form_id = $solunumgereksinimi_form1_columns["form_id"];
+                                    $date = $solunumgereksinimi_form1_columns["creationDate"];
+                                    $display = 1;
+                                    echo "
+                                        <a class='form-navigation col-lg-3 btn btn-success solunumgereksinimi_form1_view_submissions submissions' style='display: none;''
+                                        href='$base_url/formlar-review/Form1-Solunumgereksinimi-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
+                                        >
+                                        <p>Solunum Gereksinimi</p>
+                                        <p>$date</p>
+                                        </a>";
+                                }
+                                echo "
+                                <a class='form-navigation col-lg-3 btn btn-success solunumgereksinimi_form1_add_extension add_extention' style='display: none; height: 80%; align-self: auto; '
+                                href='" . $base_url . "/formlar-review/Form1-Solunumgereksinimi-review.php?form_id=" . $solunumgereksinimi_form1_last_column['form_id'] . "&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "&display=1'>
+                                <p>Add Extension</p>
+                                </a>  ";
+                            } else {
+                                echo "<div class='col-lg-3' id='solunumgereksinimi_form1_no_submission' style='display: none;'>
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır
+                                    </p>
+                                    </div>";
+                                }
+                            ?>
+                        </div>
+                        <!-- SOLUNUM GEREKSİNİMİ ends here -->
+                        <!-- BESLENME GEREKSİNİMİ -->
+                        <div id="form1_beslenme_container" class="row form-container">
+                            <div class="col-lg-3 btn btn-success mb-2" id="form1_beslenme_toggler">
+                                <a><p>Beslenme Gereksinimi</p></a>
+                            </div>
+                            <?php
+                            if (count($form1_beslenme) > 0 && $form1_beslenme !== '') {
+                                $form1_beslenme_last_column = end($form1_beslenme);
+                                foreach ($form1_beslenme as $form1_beslenme_columns) {
+                                    $form_id = $form1_beslenme_columns["form_id"];
+                                    $date = $form1_beslenme_columns["creation_date"];
+                                    $display = 1;
+                                    echo "
+                                        <a class='form-navigation col-lg-3 btn btn-success form1_beslenme_view_submissions submissions' style='display: none;''
+                                        href='$base_url/formlar-review/Form1-beslenme-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
+                                        >
+                                        <p>Beslenme Gereksinimi</p>
+                                        <p>$date</p>
+                                        </a>";
+                                }
+                                echo "
+                                <a class='form-navigation col-lg-3 btn btn-success form1_beslenme_add_extension add_extention' style='display: none; height: 80%; align-self: auto; '
+                                href='" . $base_url . "/formlar-review/Form1-beslenme-review.php?form_id=" . $form1_beslenme_last_column['form_id'] . "&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "&display=1'>
+                                <p>Add Extension</p>
+                                </a>  ";
+                            } else {
+                                echo "<div class='col-lg-3' id='form1_beslenme_no_submission' style='display: none;'>
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır
+                                    </p>
+                                    </div>";
+                                }
+                            ?>
+                        </div>
+                        <!-- BESLENME GEREKSİNİMİ ends here -->
+                        <!-- BOŞALTIM GEREKSİNİMİ -->
+                        <div id="bosaltimform1_container" class="row form-container">
+                            <div class="col-lg-3 btn btn-success mb-2" id="bosaltimform1_toggler">
+                                <a><p>Boşaltım Gereksinimi</p></a>
+                            </div>
+                            <?php
+                            if (count($bosaltimform1) > 0 && $bosaltimform1 !== '') {
+                                $bosaltimform1_last_column = end($bosaltimform1);
+                                foreach ($bosaltimform1 as $bosaltimform1_columns) {
+                                    $form_id = $bosaltimform1_columns["form_id"];
+                                    $date = $bosaltimform1_columns["creation_date"];
+                                    $display = 1;
+                                    echo "
+                                        <a class='form-navigation col-lg-3 btn btn-success bosaltimform1_view_submissions submissions' style='display: none;''
+                                        href='$base_url/formlar-review/Form1-Bosaltim-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
+                                        >
+                                        <p>Boşaltım Gereksinimi</p>
+                                        <p>$date</p>
+                                        </a>";
+                                }
+                                echo "
+                                <a class='form-navigation col-lg-3 btn btn-success bosaltimform1_add_extension add_extention' style='display: none; height: 80%; align-self: auto; '
+                                href='" . $base_url . "/formlar-review/Form1-Bosaltim-review.php?form_id=" . $bosaltimform1_last_column['form_id'] . "&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "&display=1'>
+                                <p>Add Extension</p>
+                                </a>  ";
+                            } else {
+                                echo "<div class='col-lg-3' id='bosaltimform1_no_submission' style='display: none;'>
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır
+                                    </p>
+                                    </div>";
+                                }
+                            ?>
+                        </div>
+                        <!-- BOŞALTIM GEREKSİNİMİ ends here -->
+                        <!-- HAREKET GEREKSİNİMİ -->
+                        <div id="hareketform1_container" class="row form-container">
+                            <div class="col-lg-3 btn btn-success mb-2" id="hareketform1_toggler">
+                                <a><p>Hareket Gereksinimi</p></a>
+                            </div>
+                            <?php
+                            if (count($hareketform1) > 0 && $hareketform1 !== '') {
+                                $hareketform1_last_column = end($hareketform1);
+                                foreach ($hareketform1 as $hareketform1_columns) {
+                                    $form_id = $hareketform1_columns["form_id"];
+                                    $date = $hareketform1_columns["creation_date"];
+                                    $display = 1;
+                                    echo "
+                                        <a class='form-navigation col-lg-3 btn btn-success hareketform1_view_submissions submissions' style='display: none;''
+                                        href='$base_url/formlar-review/Form1-hereket-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
+                                        >
+                                        <p>Hareket Gereksinimi</p>
+                                        <p>$date</p>
+                                        </a>";
+                                }
+                                echo "
+                                <a class='form-navigation col-lg-3 btn btn-success hareketform1_add_extension add_extention' style='display: none; height: 80%; align-self: auto; '
+                                href='" . $base_url . "/formlar-review/Form1-hereket-review.php?form_id=" . $hareketform1_last_column['form_id'] . "&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "&display=1'>
+                                <p>Add Extension</p>
+                                </a>  ";
+                            } else {
+                                echo "<div class='col-lg-3' id='hareketform1_no_submission' style='display: none;'>
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır
+                                    </p>
+                                    </div>";
+                                }
+                            ?>
+                        </div>
+                        <!-- HAREKET GEREKSİNİMİ ends here -->
+                        <!-- UYKU GEREKSİNİMİ -->
+                        <div id="form1_uyku_container" class="row form-container">
+                            <div class="col-lg-3 btn btn-success mb-2" id="form1_uyku_toggler">
+                                <a><p>Uyku Gereksinimi</p></a>
+                            </div>
+                            <?php
+                            if (count($form1_uyku) > 0 && $form1_uyku !== '') {
+                                $form1_uyku_last_column = end($form1_uyku);
+                                foreach ($form1_uyku as $form1_uyku_columns) {
+                                    $form_id = $form1_uyku_columns["form_id"];
+                                    $date = $form1_uyku_columns["creation_date"];
+                                    $display = 1;
+                                    echo "
+                                        <a class='form-navigation col-lg-3 btn btn-success form1_uyku_view_submissions submissions' style='display: none;''
+                                        href='$base_url/formlar-review/Form1-uyku-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
+                                        >
+                                        <p>Uyku Gereksinimi</p>
+                                        <p>$date</p>
+                                        </a>";
+                                }
+                                echo "
+                                <a class='form-navigation col-lg-3 btn btn-success form1_uyku_add_extension add_extention' style='display: none; height: 80%; align-self: auto; '
+                                href='" . $base_url . "/formlar-review/Form1-uyku-review.php?form_id=" . $form1_uyku_last_column['form_id'] . "&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "&display=1'>
+                                <p>Add Extension</p>
+                                </a>  ";
+                            } else {
+                                echo "<div class='col-lg-3' id='form1_uyku_no_submission' style='display: none;'>
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır
+                                    </p>
+                                    </div>";
+                                }
+                            ?>
+                        </div>
+                        <!-- UYKU GEREKSİNİMİ ends here -->
+                        <!-- VÜCUDU TEMİZ VE BAKIMLI TUTMA -->
+                        <div id="vucudutemizform1_container" class="row form-container">
+                            <div class="col-lg-3 btn btn-success mb-2" id="vucudutemizform1_toggler">
+                                <a><p>Vücudunu Temiz ve Bakımlı Tutma</p></a>
+                            </div>
+                            <?php
+                            if (count($vucudutemizform1) > 0 && $vucudutemizform1 !== '') {
+                                $vucudutemizform1_last_column = end($vucudutemizform1);
+                                foreach ($vucudutemizform1 as $vucudutemizform1_columns) {
+                                    $form_id = $vucudutemizform1_columns["form_id"];
+                                    $date = $vucudutemizform1_columns["creation_date"];
+                                    $display = 1;
+                                    echo "
+                                        <a class='form-navigation col-lg-3 btn btn-success vucudutemizform1_view_submissions submissions' style='display: none;''
+                                        href='$base_url/formlar-review/Form1-Vucudu-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
+                                        >
+                                        <p>Vücudunu Temiz ve Bakımlı Tutma</p>
+                                        <p>$date</p>
+                                        </a>";
+                                }
+                                echo "
+                                <a class='form-navigation col-lg-3 btn btn-success vucudutemizform1_add_extension add_extention' style='display: none; height: 80%; align-self: auto; '
+                                href='" . $base_url . "/formlar-review/Form1-Vucudu-review.php?form_id=" . $vucudutemizform1_last_column['form_id'] . "&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "&display=1'>
+                                <p>Add Extension</p>
+                                </a>  ";
+                            } else {
+                                echo "<div class='col-lg-3' id='vucudutemizform1_no_submission' style='display: none;'>
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır
+                                    </p>
+                                    </div>";
+                                }
+                            ?>
+                        </div>
+                        <!-- VÜCUDU TEMİZ VE BAKIMLI TUTMA ends here -->
+                        <!-- KATETER / DREN -->
+                        <div id="katererform1_container" class="row form-container">
+                            <div class="col-lg-3 btn btn-success mb-2" id="katererform1_toggler">
+                                <a><p>Kateter / Dren</p></a>
+                            </div>
+                            <?php
+                            if (count($katererform1) > 0 && $katererform1 !== '') {
+                                $katererform1_last_column = end($katererform1);
+                                foreach ($katererform1 as $katererform1_columns) {
+                                    $form_id = $katererform1_columns["form_id"];
+                                    $date = $katererform1_columns["creation_date"];
+                                    $display = 1;
+                                    echo "
+                                        <a class='form-navigation col-lg-3 btn btn-success katererform1_view_submissions submissions' style='display: none;''
+                                        href='$base_url/formlar-review/Form1-Katerer-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
+                                        >
+                                        <p>Kateter / Dren</p>
+                                        <p>$date</p>
+                                        </a>";
+                                }
+                                echo "
+                                <a class='form-navigation col-lg-3 btn btn-success katererform1_add_extension add_extention' style='display: none; height: 80%; align-self: auto; '
+                                href='" . $base_url . "/formlar-review/Form1-Katerer-review.php?form_id=" . $katererform1_last_column['form_id'] . "&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "&display=1'>
+                                <p>Add Extension</p>
+                                </a>  ";
+                            } else {
+                                echo "<div class='col-lg-3' id='katererform1_no_submission' style='display: none;'>
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır
+                                    </p>
+                                    </div>";
+                                }
+                            ?>
+                        </div>
+                        <!-- KATETER / DREN ends here -->
+                        <!-- İLETİŞİM KURMA GEREKSİNİMİ -->
+                        <div id="ilestimform1_container" class="row form-container">
+                            <div class="col-lg-3 btn btn-success mb-2" id="ilestimform1_toggler">
+                                <a><p>İletişim Kurma Gereksinimi</p></a>
+                            </div>
+                            <?php
+                            if (count($ilestimform1) > 0 && $ilestimform1 !== '') {
+                                $ilestimform1_last_column = end($ilestimform1);
+                                foreach ($ilestimform1 as $ilestimform1_columns) {
+                                    $form_id = $ilestimform1_columns["form_id"];
+                                    $date = $ilestimform1_columns["creation_date"];
+                                    $display = 1;
+                                    echo "
+                                        <a class='form-navigation col-lg-3 btn btn-success ilestimform1_view_submissions submissions' style='display: none;''
+                                        href='$base_url/formlar-review/Form1-Iletisim-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
+                                        >
+                                        <p>İletişim Kurma Gereksinimi</p>
+                                        <p>$date</p>
+                                        </a>";
+                                }
+                                echo "
+                                <a class='form-navigation col-lg-3 btn btn-success ilestimform1_add_extension add_extention' style='display: none; height: 80%; align-self: auto; '
+                                href='" . $base_url . "/formlar-review/Form1-Iletisim-review.php?form_id=" . $ilestimform1_last_column['form_id'] . "&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "&display=1'>
+                                <p>Add Extension</p>
+                                </a>  ";
+                            } else {
+                                echo "<div class='col-lg-3' id='ilestimform1_no_submission' style='display: none;'>
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır
+                                    </p>
+                                    </div>";
+                                }
+                            ?>
+                        </div>
+                        <!-- İLETİŞİM KURMA GEREKSİNİMİ ends here -->
+                        <!-- ÇALIŞMA, ÜRETME, BOŞ ZAMANINI DEĞERLENDİRME GEREKSİNİMİ -->
+                        <div id="calismaform1_container" class="row form-container">
+                            <div class="col-lg-3 btn btn-success mb-2" id="calismaform1_toggler">
+                                <a><p>Çalışma, Üretme, Boş Zamanını Değerlendirme Gereksinimi</p></a>
+                            </div>
+                            <?php
+                            if (count($calismaform1) > 0 && $calismaform1 !== '') {
+                                $calismaform1_last_column = end($calismaform1);
+                                foreach ($calismaform1 as $calismaform1_columns) {
+                                    $form_id = $calismaform1_columns["form_id"];
+                                    $date = $calismaform1_columns["creation_date"];
+                                    $display = 1;
+                                    echo "
+                                        <a class='form-navigation col-lg-3 btn btn-success calismaform1_view_submissions submissions' style='display: none;''
+                                        href='$base_url/formlar-review/Form1-Calisma-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
+                                        >
+                                        <p>Çalışma, Üretme, Boş Zamanını Değerlendirme Gereksinimi</p>
+                                        <p>$date</p>
+                                        </a>";
+                                }
+                                echo "
+                                <a class='form-navigation col-lg-3 btn btn-success calismaform1_add_extension add_extention' style='display: none; height: 80%; align-self: auto; '
+                                href='" . $base_url . "/formlar-review/Form1-Calisma-review.php?form_id=" . $calismaform1_last_column['form_id'] . "&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "&display=1'>
+                                <p>Add Extension</p>
+                                </a>  ";
+                            } else {
+                                echo "<div class='col-lg-3' id='calismaform1_no_submission' style='display: none;'>
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır
+                                    </p>
+                                    </div>";
+                                }
+                            ?>
+                        </div>
+
+                        <!-- ÇALIŞMA, ÜRETME, BOŞ ZAMANINI DEĞERLENDİRME GEREKSİNİMİ ends here -->
+                        <!-- EĞİTİM GEREKSİNİMİ -->
+                        <div id="egitimform1_container" class="row form-container">
+                            <div class="col-lg-3 btn btn-success mb-2" id="egitimform1_toggler">
+                                <a><p>Eğitim Gereksinimi</p></a>
+                            </div>
+                            <?php
+                            if (count($egitimform1) > 0 && $egitimform1 !== '') {
+                                $egitimform1_last_column = end($egitimform1);
+                                foreach ($egitimform1 as $egitimform1_columns) {
+                                    $form_id = $egitimform1_columns["form_id"];
+                                    $date = $egitimform1_columns["creation_date"];
+                                    $display = 1;
+                                    echo "
+                                        <a class='form-navigation col-lg-3 btn btn-success egitimform1_view_submissions submissions' style='display: none;''
+                                        href='$base_url/formlar-review/Form1-egitim-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
+                                        >
+                                        <p>Eğitim Gereksinimi</p>
+                                        <p>$date</p>
+                                        </a>";
+                                }
+                                echo "
+                                <a class='form-navigation col-lg-3 btn btn-success egitimform1_add_extension add_extention' style='display: none; height: 80%; align-self: auto; '
+                                href='" . $base_url . "/formlar-review/Form1-egitim-review.php?form_id=" . $egitimform1_last_column['form_id'] . "&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "&display=1'>
+                                <p>Add Extension</p>
+                                </a>";
+                            } else {
+                                echo "<div class='col-lg-3' id='egitimform1_no_submission' style='display: none;'>
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır
+                                    </p>
+                                    </div>";
+                                }
+                            ?>
+                        </div>
+                        <!-- EĞİTİM GEREKSİNİMİ ends here -->
+                        
+
+
+
+                        <!-- form2 -->
+                        <div id="form2_container" class="row form-container">
+                            <div class="col-lg-3 btn btn-success mb-2" id="form2_toggler">
+                                <a><p>Ağrı Değerlendirmesi</p></a>
+                            </div>
+                            <?php
+                            if (count($form2) > 0 && $form2 !== '') {
+                                $form2_last_column = end($form2);
+                                foreach ($form2 as $form2_columns) {
+                                    $form_id = $form2_columns["form_id"];
+                                    $date = $form2_columns["creation_date"];
+                                    $display = 1;
+                                    echo "
+                                        <a class='form-navigation col-lg-3 btn btn-success form2_view_submissions submissions' style='display: none;''
+                                        href='$base_url/formlar-review/Form2-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
+                                        >
+                                        <p>Ağrı Değerlendirmesi</p>
+                                        <p>$date</p>
+                                        </a>";
+                                }
+                                echo "
+                                <a class='form-navigation col-lg-3 btn btn-success form2_add_extension add_extention' style='display: none; height: 80%; align-self: auto;'
+                                href='" . $base_url . "/formlar-review/Form2-review.php?form_id=" . $form2_last_column['form_id'] . "&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "&display=1'>
+                                <p>Add Extension</p>
+                                </a>  ";
+                            } else {
+                                echo "<div class='col-lg-3' id='form2_no_submission' style='display: none;'>
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır</p>
+                                </div>";
+                            }
+                            ?>
+                        </div>
+                        <!-- form2 ends here -->
+                        
+                        <!-- form3 -->
+                        <div id="form3_container" class="row form-container">
+                            <div class="col-lg-3 btn btn-success mb-2" id="form3_toggler">
+                                <a><p>Düşme Riski Değerlendirmesi</p></a>
+                            </div>
+                            <?php
+                            if (count($form3) > 0 && $form3 !== '') {
+                                $form3_last_column = end($form3);
+                                foreach ($form3 as $form3_columns) {
+                                    $form_id = $form3_columns["form_id"];
+                                    $date = $form3_columns["creation_date"];
+                                    $display = 1;
+                                    echo "
+                                        <a class='form-navigation col-lg-3 btn btn-success form3_view_submissions submissions' style='display: none;''
+                                        href='$base_url/formlar-review/Form3-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
+                                        >
+                                        <p>Düşme Riski Değerlendirmesi</p>
+                                        <p>$date</p>
+                                        </a>";
+                                }
+                                echo "
+                                <a class='form-navigation col-lg-3 btn btn-success form3_add_extension add_extention' style='display: none; height: 80%; align-self: auto;'
+                                href='" . $base_url . "/formlar-review/Form3-review.php?form_id=" . $form3_last_column['form_id'] . "&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "&display=1'>
+                                <p>Add Extension</p>
+                                </a>  ";
+                            } else {
+                                echo "<div class='col-lg-3' id='form3_no_submission' style='display: none;'>
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır</p>
+                                </div>";
+                            }
+                            ?>
+                            </div>
+                        <!-- form3 ends here -->
+
+                        <!-- form4 -->
+                        <div id="form4_container" class="row form-container">
+                            <div class="col-lg-3 btn btn-success mb-2" id="form4_toggler">
+                                <a><p>Düşme Bildirimi</p></a>
+                            </div>
+                            <?php
+                            if (count($form4) > 0 && $form4 !== '') {
+                                $form4_last_column = end($form4);
+                                foreach ($form4 as $form4_columns) {
+                                    $form_id = $form4_columns["form_id"];
+                                    $date = $form4_columns["creation_date"];
+                                    $display = 1;
+                                    echo "
+                                        <a class='form-navigation col-lg-3 btn btn-success form4_view_submissions submissions' style='display: none;''
+                                        href='$base_url/formlar-review/Form4-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
+                                        >
+                                        <p>Düşme Bildirimi</p>
+                                        <p>$date</p>
+                                        </a>";
+                                }
+                                echo "
+                                <a class='form-navigation col-lg-3 btn btn-success form4_add_extension add_extention' style='display: none; height: 80%; align-self: auto;'
+                                href='" . $base_url . "/formlar-review/Form4-review.php?form_id=" . $form4_last_column['form_id'] . "&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "&display=1'>
+                                <p>Add Extension</p>
+                                </a>  ";
+                            } else {
+                                echo "<div class='col-lg-3' id='form4_no_submission' style='display: none;'>
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır</p>
+                                </div>";
+                            }
+                            ?>
+                            </div>
+                        <!-- form4 ends here -->
+
+                        <!-- form5 -->
+                        <div id="form5_container" class="row form-container">
+                            <div class="col-lg-3 btn btn-success mb-2" id="form5_toggler">
+                                <a><p>Glaskow Koma Skalası</p></a>
+                            </div>
+                            <?php
+                            if (count($form5) > 0 && $form5 !== '') {
+                                $form5_last_column = end($form5);
+                                foreach ($form5 as $form5_columns) {
+                                    $form_id = $form5_columns["form_id"];
+                                    $date = $form5_columns["creation_date"];
+                                    $display = 1;
+                                    echo "
+                                        <a class='form-navigation col-lg-3 btn btn-success form5_view_submissions submissions' style='display: none;''
+                                        href='$base_url/formlar-review/Form5-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
+                                        >
+                                        <p>Glaskow Koma Skalası</p>
+                                        <p>$date</p>
+                                        </a>";
+                                }
+                                echo "
+                                <a class='form-navigation col-lg-3 btn btn-success form5_add_extension add_extention' style='display: none; height: 80%; align-self: auto;'
+                                href='" . $base_url . "/formlar-review/Form5-review.php?form_id=" . $form5_last_column['form_id'] . "&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "&display=1'>
+                                <p>Add Extension</p>
+                                </a>  ";
+                            } else {
+                                echo "<div class='col-lg-3' id='form5_no_submission' style='display: none;'>
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır</p>
+                                </div>";
+                            }
+                            ?>
+                            </div>
+                        <!-- form5 ends here -->
+
+                        <!-- form6 -->
+                        <div id="form6_container" class="row form-container">
+                            <div class="col-lg-3 btn btn-success mb-2" id="form6_toggler">
+                                <a><p>Braden Bası Yarası Risk Değerlendirme Aracı</p></a>
+                            </div>
+                            <?php
+                            if (count($form6) > 0 && $form6 !== '') {
+                                $form6_last_column = end($form6);
+                                foreach ($form6 as $form6_columns) {
+                                    $form_id = $form6_columns["form_id"];
+                                    $date = $form6_columns["creation_date"];
+                                    $display = 1;
+                                    echo "
+                                        <a class='form-navigation col-lg-3 btn btn-success form6_view_submissions submissions' style='display: none;''
+                                        href='$base_url/formlar-review/Form6-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
+                                        >
+                                        <p>Braden Bası Yarası Risk Değerlendirme Aracı</p>
+                                        <p>$date</p>
+                                        </a>";
+                                }
+                                echo "
+                                <a class='form-navigation col-lg-3 btn btn-success form6_add_extension add_extention' style='display: none; height: 80%; align-self: auto;'
+                                href='" . $base_url . "/formlar-review/Form6-review.php?form_id=" . $form6_last_column['form_id'] . "&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "&display=1'>
+                                <p>Add Extension</p>
+                                </a>  ";
+                            } else {
+                                echo "<div class='col-lg-3' id='form6_no_submission' style='display: none;'>
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır</p>
+                                </div>";
+                            }
+                            ?>
+                            </div>
+                        <!-- form6 ends here -->
+
+                        <!-- form7 -->
+                        <div id="form7_container" class="row form-container">
+                            <div class="col-lg-3 btn btn-success mb-2" id="form7_toggler">
+                                <a><p>Basınç Yarası Formu</p></a>
+                            </div>
+                            <?php
+                            if (count($form7) > 0 && $form7 !== '') {
+                                $form7_last_column = end($form7);
+                                foreach ($form7 as $form7_columns) {
+                                    $form_id = $form7_columns["form_id"];
+                                    $date = $form7_columns["creation_date"];
+                                    $display = 1;
+                                    echo "
+                                        <a class='form-navigation col-lg-3 btn btn-success form7_view_submissions submissions' style='display: none;''
+                                        href='$base_url/formlar-review/Form7-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
+                                        >
+                                        <p>Basınç Yarası Formu</p>
+                                        <p>$date</p>
+                                        </a>";
+                                }
+                                echo "
+                                <a class='form-navigation col-lg-3 btn btn-success form7_add_extension add_extention' style='display: none; height: 80%; align-self: auto;'
+                                href='" . $base_url . "/formlar-review/Form7-review.php?form_id=" . $form7_last_column['form_id'] . "&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "&display=1'>
+                                <p>Add Extension</p>
+                                </a>  ";
+                            } else {
+                                echo "<div class='col-lg-3' id='form7_no_submission' style='display: none;'>
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır</p>
+                                </div>";
+                            }
+                            ?>
+                            </div>
+                        <!-- form7 ends here -->
+
+                        <!-- form8 -->
+                        <div id="form8_container" class="row form-container">
+                            <div class="col-lg-3 btn btn-success mb-2" id="form8_toggler">
+                                <a><p>Ödem Değerlendirmesi</p></a>
+                            </div>
+                            <?php
+                            if (count($form8) > 0 && $form8 !== '') {
+                                $form8_last_column = end($form8);
+                                foreach ($form8 as $form8_columns) {
+                                    $form_id = $form8_columns["form_id"];
+                                    $date = $form8_columns["creation_date"];
+                                    $display = 1;
+                                    echo "
+                                        <a class='form-navigation col-lg-3 btn btn-success form8_view_submissions submissions' style='display: none;''
+                                        href='$base_url/formlar-review/Form8-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
+                                        >
+                                        <p>Ödem Değerlendirmesi</p>
+                                        <p>$date</p>
+                                        </a>";
+                                }
+                                echo "
+                                <a class='form-navigation col-lg-3 btn btn-success form8_add_extension add_extention' style='display: none; height: 80%; align-self: auto;'
+                                href='" . $base_url . "/formlar-review/Form8-review.php?form_id=" . $form8_last_column['form_id'] . "&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "&display=1'>
+                                <p>Add Extension</p>
+                                </a>  ";
+                            } else {
+                                echo "<div class='col-lg-3' id='form8_no_submission' style='display: none;'>
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır</p>
+                                </div>";
+                            }
+                            ?>
+                            </div>
+
+                        <!-- form8 ends here -->
+
+                        <!-- form9 -->
+                        <div id="form9_container" class="row form-container">
+                            <div class="col-lg-3 btn btn-success mb-2" id="form9_toggler">
+                                <a><p>TETKİK SONUÇLARI GİRİŞİ</p></a>
+                            </div>
+                            <?php
+                            if (count($form9) > 0 && $form9 !== '') {
+                                $form9_last_column = end($form9);
+                                foreach ($form9 as $form9_columns) {
+                                    $form_id = $form9_columns["form_id"];
+                                    $date = $form9_columns["creation_date"];
+                                    $display = 1;
+                                    echo "
+                                        <a class='form-navigation col-lg-3 btn btn-success form9_view_submissions submissions' style='display: none;''
+                                        href='$base_url/formlar-review/Form9-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
+                                        >
+                                        <p>TETKİK SONUÇLARI GİRİŞİ</p>
+                                        <p>$date</p>
+                                        </a>";
+                                }
+                                echo "
+                                <a class='form-navigation col-lg-3 btn btn-success form9_add_extension add_extention' style='display: none; height: 80%; align-self: auto;'
+                                href='" . $base_url . "/formlar-review/Form9-review.php?form_id=" . $form9_last_column['form_id'] . "&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "&display=1'>
+                                <p>Add Extension</p>
+                                </a>  ";
+                            } else {
+                                echo "<div class='col-lg-3' id='form9_no_submission' style='display: none;'>
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır</p>
+                                </div>";
+                            }
+                            ?>
+                            </div>
+                        <!-- form9 ends here -->
+
+                        <!-- form10 -->
+                        <div id="form10_container" class="row form-container">
+                            <div class="col-lg-3 btn btn-success mb-2" id="form10_toggler">
+                                <a><p>YAŞAMSAL BULGU TAKİBİİ</p></a>
+                            </div>
+                            <?php
+                            if (count($form10) > 0 && $form10 !== '') {
+                                $form10_last_column = end($form10);
+                                foreach ($form10 as $form10_columns) {
+                                    $form_id = $form10_columns["form_id"];
+                                    $date = $form10_columns["creation_date"];
+                                    $display = 1;
+                                    echo "
+                                        <a class='form-navigation col-lg-3 btn btn-success form10_view_submissions submissions' style='display: none;''
+                                        href='$base_url/formlar-review/Form10-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
+                                        >
+                                        <p>YAŞAMSAL BULGU TAKİBİİ</p>
+                                        <p>$date</p>
+                                        </a>";
+                                }
+                                echo "
+                                <a class='form-navigation col-lg-3 btn btn-success form10_add_extension add_extention' style='display: none; height: 80%; align-self: auto;'
+                                href='" . $base_url . "/formlar-review/Form10-review.php?form_id=" . $form10_last_column['form_id'] . "&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "&display=1'>
+                                <p>Add Extension</p>
+                                </a>  ";
+                            } else {
+                                echo "<div class='col-lg-3' id='form10_no_submission' style='display: none;'>
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır</p>
+                                </div>";
+                            }
+                            ?>
+                            </div>
+                        <!-- form10 ends here -->
+
+                        <!-- form11 -->
+                        <div id="form11_container" class="row form-container">
+                            <div class="col-lg-3 btn btn-success mb-2" id="form11_toggler">
+                                <a><p>ALDIĞI ÇIKARDIĞI İZLEMİ</p></a>
+                            </div>
+                            <?php
+                            if (count($form11) > 0 && $form11 !== '') {
+                                $form11_last_column = end($form11);
+                                foreach ($form11 as $form11_columns) {
+                                    $form_id = $form11_columns["form_id"];
+                                    $date = $form11_columns["creation_date"];
+                                    $display = 1;
+                                    echo "
+                                        <a class='form-navigation col-lg-3 btn btn-success form11_view_submissions submissions' style='display: none;''
+                                        href='$base_url/formlar-review/Form11-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
+                                        >
+                                        <p>ALDIĞI ÇIKARDIĞI İZLEMİ</p>
+                                        <p>$date</p>
+                                        </a>";
+                                }
+                                echo "
+                                <a class='form-navigation col-lg-3 btn btn-success form11_add_extension add_extention' style='display: none; height: 80%; align-self: auto;'
+                                href='" . $base_url . "/formlar-review/Form11-review.php?form_id=" . $form11_last_column['form_id'] . "&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "&display=1'>
+                                <p>Add Extension</p>
+                                </a>";
+                            } else {
+                                echo "<div class='col-lg-3' id='form11_no_submission' style='display: none;'>
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır</p>
+                                </div>";
+                            }
+                            ?>
+                            </div>
+                        <!-- form11 ends here -->
+                        
+                        <!-- form12 -->
+                        <div id="form12_container" class="row form-container">
+                            <div class="col-lg-3 btn btn-success mb-2" id="form12_toggler">
+                                <a><p>Sıvı İzlem</p></a>
+                            </div>
+                            <?php
+                            if (count($form12) > 0 && $form12 !== '') {
+                                $form12_last_column = end($form12);
+                                foreach ($form12 as $form12_columns) {
+                                    $form_id = $form12_columns["form_id"];
+                                    $date = $form12_columns["creation_date"];
+                                    $display = 1;
+                                    echo "
+                                        <a class='form-navigation col-lg-3 btn btn-success form12_view_submissions submissions' style='display: none;''
+                                        href='$base_url/formlar-review/Form12-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
+                                        >
+                                        <p>Sıvı İzlem</p>
+                                        <p>$date</p>
+                                        </a>";
+                                }
+                                echo "<a class='form-navigation col-lg-3 btn btn-success form12_add_extension add_extention' style='display: none; height: 80%; align-self: auto;'
+                                href='" . $base_url . "/formlar-review/Form12-review.php?form_id=" . $form12_last_column['form_id'] . "&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "&display=1'>
+                                <p>Add Extension</p>
+                                </a>";
+                            } else {
+                                echo "<div class='col-lg-3' id='form12_no_submission' style='display: none;'>
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır</p>
+                                </div>";
+                            }
+                            ?>
+                            </div>
+                        <!-- form12 ends here -->
+
+                        <!-- form13 -->
+                        <div id="form13_container" class="row form-container">
+                            <div class="col-lg-3 btn btn-success mb-2" id="form13_toggler">
+                                <a><p>Medikal Tedavi</p></a>
+                            </div>
+                            <?php
+                            if (count($form13) > 0 && $form13 !== '') {
+                                $form13_last_column = end($form13);
+                                foreach ($form13 as $form13_columns) {
+                                    $form_id = $form13_columns["form_id"];
+                                    $date = $form13_columns["creation_date"];
+                                    $display = 1;
+                                    echo "
+                                        <a class='form-navigation col-lg-3 btn btn-success form13_view_submissions submissions' style='display: none;''
+                                        href='$base_url/formlar-review/Form13-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
+                                        >
+                                        <p>Medikal Tedavi</p>
+                                        <p>$date</p>
+                                        </a>";
+                                } 
+                                echo "<a class='form-navigation col-lg-3 btn btn-success form13_add_extension add_extention' style='display: none; height: 80%; align-self: auto;'
+                                href='" . $base_url . "/formlar-review/Form13-review.php?form_id=" . $form13_last_column['form_id'] . "&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "&display=1'>
+                                <p>Add Extension</p>
+                                </a>";
+                            } else {
+                                echo "<div class='col-lg-3' id='form13_no_submission' style='display: none;'>
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır</p>
+                                </div>";
+                            }
+                            ?>
+                            </div>
+                        <!-- form13 ends here -->
+
+                        <!-- form14 -->
+                        <div id="form14_container" class="row form-container">
+                            <div class="col-lg-3 btn btn-success mb-2" id="form14_toggler">
+                                <a><p>Bakım Planı</p></a>
+                            </div>
+                            <?php
+                            if (count($form14) > 0 && $form14 !== '') {
+                                $form14_last_column = end($form14);
+                                foreach ($form14 as $form14_columns) {
+                                    $form_id = $form14_columns["form_id"];
+                                    $date = $form14_columns["creation_date"];
+                                    $display = 1;
+                                    echo "
+                                        <a class='form-navigation col-lg-3 btn btn-success form14_view_submissions submissions' style='display: none;''
+                                        href='$base_url/formlar-review/Form14-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
+                                        >
+                                        <p>Bakım Planı</p>
+                                        <p>$date</p>
+                                        </a>"; 
+                                }
+                                echo "<a class='form-navigation col-lg-3 btn btn-success form14_add_extension add_extention' style='display: none; height: 80%; align-self: auto;'
+                                href='" . $base_url . "/formlar-review/Form14-review.php?form_id=" . $form14_last_column['form_id'] . "&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "&display=1'>
+                                <p>Add Extension</p>
+                                </a>";
+                            } else {
+                                echo "<div class='col-lg-3' id='form14_no_submission' style='display: none;'>
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır</p>
+                                </div>";
+                            }
+                            ?>
+                            </div>
+                        <!-- form14 ends here -->
+
+                        <!-- form15 -->
+                        <div id="form15_container" class="row form-container">
+                            <div class="col-lg-3 btn btn-success mb-2" id="form15_toggler">
+                                <a><p>Günlük Bakım Planı</p></a>
+                            </div>
+                            <?php
+                            if (count($form15) > 0 && $form15 !== '') {
+                                $form15_last_column = end($form15);
+                                foreach ($form15 as $form15_columns) {
+                                    $form_id = $form15_columns["form_id"];
+                                    $date = $form15_columns["creation_date"];
+                                    $display = 1;
+                                    echo "
+                                        <a class='form-navigation col-lg-3 btn btn-success form15_view_submissions submissions' style='display: none;''
+                                        href='$base_url/formlar-review/Form15-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
+                                        >
+                                        <p>Günlük Bakım Planı</p> 
+                                        <p>$date</p>
+                                        </a>";
+                                }
+                                echo "<a class='form-navigation col-lg-3 btn btn-success form15_add_extension add_extention' style='display: none; height: 80%; align-self: auto;'
+                                href='" . $base_url . "/formlar-review/Form15-review.php?form_id=" . $form15_last_column['form_id'] . "&patient_id=" . $patient_id . "&patient_name=" . $patient_name . "&display=1'>
+                                <p>Add Extension</p>
+                                </a>";
+                            } else {
+                                echo "<div class='col-lg-3' id='form15_no_submission' style='display: none;'>
+                                    <p>Bu form için hiçbir gönderiminiz bulunmamaktadır</p>
+                                </div>";
+                            }
+                            ?>
+                            </div>
+                        <!-- form15 ends here -->
+                
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 </div>
-
-                    </div>
-                    </div>
-
-                    </thead>
-                    <tbody>
-                    </tbody>
-                    </table>
-                </div>
-               
-                    </div>
-
-                </div>
-
             </div>
         </div>
+    </body>
         <script>
             //closeBtn click
             var patient_id = "<?php echo $_GET['patient_id']; ?>";
-var patient_name = "<?php echo $_GET['patient_name']; ?>";
-console.log(patient_id, patient_name);
+            var patient_name = "<?php echo $_GET['patient_name']; ?>";
+            console.log(patient_id, patient_name);
 $(function() {
                 
                 $("#closeBtn1").on("click", function(e) {
@@ -804,2280 +1170,142 @@ $(function() {
                             patient_name);
                     $("#content").load(url);
                 });
-            });   
+            }); 
+        $(function() {
+            //form2
+            $('#form2_toggler').click(function() {
+            $('#form2_container').children().not('#form2_toggler').toggle('slow');
+            $(this).toggleClass('selected');
+            });
+            //form3
+            $('#form3_toggler').click(function() {
+            $('#form3_container').children().not('#form3_toggler').toggle('slow');
+            $(this).toggleClass('selected');
+            });
+            //form4
+            $('#form4_toggler').click(function() {
+            $('#form4_container').children().not('#form4_toggler').toggle('slow');
+            $(this).toggleClass('selected');
+            });
+            //form5
+            $('#form5_toggler').click(function() {
+            $('#form5_container').children().not('#form5_toggler').toggle('slow');
+            $(this).toggleClass('selected');
+            });
+            //form6
+            $('#form6_toggler').click(function() {
+            $('#form6_container').children().not('#form6_toggler').toggle('slow');
+            $(this).toggleClass('selected');
+            });
+            //form7
+            $('#form7_toggler').click(function() {
+            $('#form7_container').children().not('#form7_toggler').toggle('slow');
+            $(this).toggleClass('selected');
+            });
+            //form8
+            $('#form8_toggler').click(function() {
+            $('#form8_container').children().not('#form8_toggler').toggle('slow');
+            $(this).toggleClass('selected');
+            });
+            //form9
+            $('#form9_toggler').click(function() {
+            $('#form9_container').children().not('#form9_toggler').toggle('slow');
+            $(this).toggleClass('selected');
+            });
+            //form10
+            $('#form10_toggler').click(function() {
+            $('#form10_container').children().not('#form10_toggler').toggle('slow');
+            $(this).toggleClass('selected');
+            });
+            //form11
+            $('#form11_toggler').click(function() {
+            $('#form11_container').children().not('#form11_toggler').toggle('slow');
+            $(this).toggleClass('selected');
+            });
+            //form12
+            $('#form12_toggler').click(function() {
+            $('#form12_container').children().not('#form12_toggler').toggle('slow');
+            $(this).toggleClass('selected');
+            });
+            //form13
+            $('#form13_toggler').click(function() {
+            $('#form13_container').children().not('#form13_toggler').toggle('slow');
+            $(this).toggleClass('selected');
+            });
+            //form14
+            $('#form14_toggler').click(function() {
+            $('#form14_container').children().not('#form14_toggler').toggle('slow');
+            $(this).toggleClass('selected');
+            });
+            //form15
+            $('#form15_toggler').click(function() {
+            $('#form15_container').children().not('#form15_toggler').toggle('slow');
+            $(this).toggleClass('selected');
+            });
+            //ozgecmisform1
+            $('#ozgecmisform1_toggler').click(function() {
+            $('#ozgecmisform1_container').children().not('#ozgecmisform1_toggler').toggle('slow');
+            $(this).toggleClass('selected');
+            });
+            //solunumgereksinimi
+            $('#solunumgereksinimi_form1_toggler').click(function() {
+            $('#solunumgereksinimi_form1_container').children().not('#solunumgereksinimi_form1_toggler').toggle('slow');
+            $(this).toggleClass('selected');
+            });
+            //form1_beslenme
+            $('#form1_beslenme_toggler').click(function() {
+            $('#form1_beslenme_container').children().not('#form1_beslenme_toggler').toggle('slow');
+            $(this).toggleClass('selected');
+            });
+            // bosaltimform1
+            $('#bosaltimform1_toggler').click(function() {
+            $('#bosaltimform1_container').children().not('#bosaltimform1_toggler').toggle('slow');
+            $(this).toggleClass('selected');
+            });
+            //hareketform1
+            $('#hareketform1_toggler').click(function() {
+            $('#hareketform1_container').children().not('#hareketform1_toggler').toggle('slow');
+            $(this).toggleClass('selected');
+            });
+            //form1_uyku
+            $('#form1_uyku_toggler').click(function() {
+            $('#form1_uyku_container').children().not('#form1_uyku_toggler').toggle('slow');
+            $(this).toggleClass('selected');
+            });
+            // /vucudutemizform1
+            $('#vucudutemizform1_toggler').click(function() {
+            $('#vucudutemizform1_container').children().not('#vucudutemizform1_toggler').toggle('slow');
+            $(this).toggleClass('selected');
+            });
+            //katererform1
+            $('#katererform1_toggler').click(function() {
+            $('#katererform1_container').children().not('#katererform1_toggler').toggle('slow');
+            $(this).toggleClass('selected');
+            });
+            //ilestimform1
+            $('#ilestimform1_toggler').click(function() {
+            $('#ilestimform1_container').children().not('#ilestimform1_toggler').toggle('slow');
+            $(this).toggleClass('selected');
+            });
+            //calismaform1
+            $('#calismaform1_toggler').click(function() {
+            $('#calismaform1_container').children().not('#calismaform1_toggler').toggle('slow');
+            $(this).toggleClass('selected');
+            });
+            //egitimform1
+            $('#egitimform1_toggler').click(function() {
+            $('#egitimform1_container').children().not('#egitimform1_toggler').toggle('slow');
+            $(this).toggleClass('selected');
+            });
+            $('.form-navigation').click(function (e) { 
+                e.preventDefault();
 
-        $(function() {
-            $("a.review").on("click", function(e) {
-                e.preventDefault();
-                $("#content").load(this.href);
-            })
-        })
-        $(function() {
-            $("a.newForm").on("click", function(e) {
-                e.preventDefault();
-                $("#content").load(this.href);
-            })
-        });
-        $(function() {
-            $("a.entered-forms-button").on("click", function(e) {
-                e.preventDefault();
-                $("#content").load(this.href);
-            })
-        });
-        $(function() {
-            $("button#form2_toggle").on("click", function(e) {
-                e.preventDefault();
-                $("#form_2_options").slideToggle('slow');
-                if($("#form2_caret").css("transform") === "none"){
-                    $("#form2_caret").css("transform", "rotate(180deg)");
-                    $("#form2_add_extension").css("display", "block");
-                    
-                }
-                else{
-                    $("#form2_caret").css("transform", "");
-                    $("#form2_add_extension").css("display", "none");
-                }
-                $("#form_3_options").slideUp('slow');
-                $("#form3_caret").css("transform", "");
-                $("#form_4_options").slideUp('slow');
-                $("#form4_caret").css("transform", "");
-                $("#form_5_options").slideUp('slow');
-                $("#form5_caret").css("transform", "");
-                $("#form_6_options").slideUp('slow');
-                $("#form6_caret").css("transform", "");
-                $("#form_7_options").slideUp('slow');
-                $("#form7_caret").css("transform", "");
-                $("#form_8_options").slideUp('slow');
-                $("#form8_caret").css("transform", "");
-                $("#form_9_options").slideUp('slow');
-                $("#form9_caret").css("transform", "");
-                $("#form_10_options").slideUp('slow');
-                $("#form10_caret").css("transform", "");
-                $("#form_11_options").slideUp('slow');
-                $("#form11_caret").css("transform", "");
-                $("#form_12_options").slideUp('slow');
-                $("#form12_caret").css("transform", "");
-                $("#form_13_options").slideUp('slow');
-                $("#form13_caret").css("transform", "");
-                $("#form_14_options").slideUp('slow');
-                $("#form14_caret").css("transform", "");
-                $("#form_15_options").slideUp('slow');
-                $("#form15_caret").css("transform", "");
-                $("#form_16_options").slideUp('slow');
-                $("#form16_caret").css("transform", "");
-                $("#form_17_options").slideUp('slow');
-                $("#form17_caret").css("transform", "");
-                $("#form_18_options").slideUp('slow');
-                $("#form18_caret").css("transform", "");
-                $("#form_19_options").slideUp('slow');
-                $("#form19_caret").css("transform", "");
-                $("#form_20_options").slideUp('slow');
-                $("#form20_caret").css("transform", "");
-                $("#form_21_options").slideUp('slow');
-                $("#form21_caret").css("transform", "");
-                $("#form_22_options").slideUp('slow');
-                $("#form22_caret").css("transform", "");
-                $("#form_23_options").slideUp('slow');
-                $("#form23_caret").css("transform", "");
-                $("#form_24_options").slideUp('slow');
-                $("#form24_caret").css("transform", "");
-                $("#form_25_options").slideUp('slow');
-                $("#form25_caret").css("transform", "");
-                $("#form1_sections_options").slideUp('slow');
-                $("#form1_caret").css("transform", "");
-                $("#form_26_options").slideUp('slow');
-                $("#form26_caret").css("transform", "");
-                $("#form3_add_extension").css("display", "none");
-                $("#form4_add_extension").css("display", "none");
-                $("#form5_add_extension").css("display", "none");
-                $("#form6_add_extension").css("display", "none");
-                $("#form7_add_extension").css("display", "none");
-                $("#form8_add_extension").css("display", "none");
-                $("#form9_add_extension").css("display", "none");
-                $("#form10_add_extension").css("display", "none");
-                $("#form11_add_extension").css("display", "none");
-                $("#form12_add_extension").css("display", "none");
-                $("#form13_add_extension").css("display", "none");
-                $("#form14_add_extension").css("display", "none");
-                $("#form15_add_extension").css("display", "none");
-                $("#form16_add_extension").css("display", "none");
-                $("#form17_add_extension").css("display", "none");
-                $("#form18_add_extension").css("display", "none");
-                $("#form19_add_extension").css("display", "none");
-                $("#form20_add_extension").css("display", "none");
-                $("#form21_add_extension").css("display", "none");
-                $("#form22_add_extension").css("display", "none");
-                $("#form23_add_extension").css("display", "none");
-                $("#form24_add_extension").css("display", "none");
-                $("#form25_add_extension").css("display", "none");
+                $('#content').load(this.href);
+            });
 
-            })
         });
-        $(function() {
-            $("button#form3_toggle").on("click", function(e) {
-                e.preventDefault();
-                $("#form_3_options").slideToggle('slow');
-                if($("#form3_caret").css("transform") === "none"){
-                    $("#form3_caret").css("transform", "rotate(180deg)");
-                    $("#form3_add_extension").css("display", "block");
-                }
-                else{
-                    $("#form3_caret").css("transform", "");
-                    $("#form3_add_extension").css("display", "none");
-                }
-                $("#form_2_options").slideUp('slow');
-                $("#form2_caret").css("transform", "");
-                $("#form_4_options").slideUp('slow');
-                $("#form4_caret").css("transform", "");
-                $("#form_5_options").slideUp('slow');
-                $("#form5_caret").css("transform", "");
-                $("#form_6_options").slideUp('slow');
-                $("#form6_caret").css("transform", "");
-                $("#form_7_options").slideUp('slow');
-                $("#form7_caret").css("transform", "");
-                $("#form_8_options").slideUp('slow');
-                $("#form8_caret").css("transform", "");
-                $("#form_9_options").slideUp('slow');
-                $("#form9_caret").css("transform", "");
-                $("#form_10_options").slideUp('slow');
-                $("#form10_caret").css("transform", "");
-                $("#form_11_options").slideUp('slow');
-                $("#form11_caret").css("transform", "");
-                $("#form_12_options").slideUp('slow');
-                $("#form12_caret").css("transform", "");
-                $("#form_13_options").slideUp('slow');
-                $("#form13_caret").css("transform", "");
-                $("#form_14_options").slideUp('slow');
-                $("#form14_caret").css("transform", "");
-                $("#form_15_options").slideUp('slow');
-                $("#form15_caret").css("transform", "");
-                $("#form_16_options").slideUp('slow');
-                $("#form16_caret").css("transform", "");
-                $("#form_17_options").slideUp('slow');
-                $("#form17_caret").css("transform", "");
-                $("#form_18_options").slideUp('slow');
-                $("#form18_caret").css("transform", "");
-                $("#form_19_options").slideUp('slow');
-                $("#form19_caret").css("transform", "");
-                $("#form_20_options").slideUp('slow');
-                $("#form20_caret").css("transform", "");
-                $("#form_21_options").slideUp('slow');
-                $("#form21_caret").css("transform", "");
-                $("#form_22_options").slideUp('slow');
-                $("#form22_caret").css("transform", "");
-                $("#form_23_options").slideUp('slow');
-                $("#form23_caret").css("transform", "");
-                $("#form_24_options").slideUp('slow');
-                $("#form24_caret").css("transform", "");
-                $("#form_25_options").slideUp('slow');
-                $("#form25_caret").css("transform", "");
-                $("#form1_sections_options").slideUp('slow');
-                $("#form1_caret").css("transform", "");
-                $("#form_26_options").slideUp('slow');
-                $("#form26_caret").css("transform", "");
-                $("#form2_add_extension").css("display", "none");
-                $("#form4_add_extension").css("display", "none");
-                $("#form5_add_extension").css("display", "none");
-                $("#form6_add_extension").css("display", "none");
-                $("#form7_add_extension").css("display", "none");
-                $("#form8_add_extension").css("display", "none");
-                $("#form9_add_extension").css("display", "none");
-                $("#form10_add_extension").css("display", "none");
-                $("#form11_add_extension").css("display", "none");
-                $("#form12_add_extension").css("display", "none");
-                $("#form13_add_extension").css("display", "none");
-                $("#form14_add_extension").css("display", "none");
-                $("#form15_add_extension").css("display", "none");
-                $("#form16_add_extension").css("display", "none");
-                $("#form17_add_extension").css("display", "none");
-                $("#form18_add_extension").css("display", "none");
-                $("#form19_add_extension").css("display", "none");
-                $("#form20_add_extension").css("display", "none");
-                $("#form21_add_extension").css("display", "none");
-                $("#form22_add_extension").css("display", "none");
-                $("#form23_add_extension").css("display", "none");
-                $("#form24_add_extension").css("display", "none");
-                $("#form25_add_extension").css("display", "none");
-            })
-        });
-        $(function() {
-            $("button#form4_toggle").on("click", function(e) {
-                e.preventDefault();
-                $("#form_4_options").slideToggle('slow');
-                if($("#form4_caret").css("transform") === "none"){
-                    $("#form4_caret").css("transform", "rotate(180deg)");
-                    $("#form4_add_extension").css("display", "block");
-                }
-                else{
-                    $("#form4_caret").css("transform", "");
-                    $("#form4_add_extension").css("display", "none");
-                }
-                $("#form_2_options").slideUp('slow');
-                $("#form2_caret").css("transform", "");
-                $("#form_3_options").slideUp('slow');
-                $("#form3_caret").css("transform", "");
-                $("#form_5_options").slideUp('slow');
-                $("#form5_caret").css("transform", "");
-                $("#form_6_options").slideUp('slow');
-                $("#form6_caret").css("transform", "");
-                $("#form_7_options").slideUp('slow');
-                $("#form7_caret").css("transform", "");
-                $("#form_8_options").slideUp('slow');
-                $("#form8_caret").css("transform", "");
-                $("#form_9_options").slideUp('slow');
-                $("#form9_caret").css("transform", "");
-                $("#form_10_options").slideUp('slow');
-                $("#form10_caret").css("transform", "");
-                $("#form_11_options").slideUp('slow');
-                $("#form11_caret").css("transform", "");
-                $("#form_12_options").slideUp('slow');
-                $("#form12_caret").css("transform", "");
-                $("#form_13_options").slideUp('slow');
-                $("#form13_caret").css("transform", "");
-                $("#form_14_options").slideUp('slow');
-                $("#form14_caret").css("transform", "");
-                $("#form_15_options").slideUp('slow');
-                $("#form15_caret").css("transform", "");
-                $("#form_16_options").slideUp('slow');
-                $("#form16_caret").css("transform", "");
-                $("#form_17_options").slideUp('slow');
-                $("#form17_caret").css("transform", "");
-                $("#form_18_options").slideUp('slow');
-                $("#form18_caret").css("transform", "");
-                $("#form_19_options").slideUp('slow');
-                $("#form19_caret").css("transform", "");
-                $("#form_20_options").slideUp('slow');
-                $("#form20_caret").css("transform", "");
-                $("#form_21_options").slideUp('slow');
-                $("#form21_caret").css("transform", "");
-                $("#form_22_options").slideUp('slow');
-                $("#form22_caret").css("transform", "");
-                $("#form_23_options").slideUp('slow');
-                $("#form23_caret").css("transform", "");
-                $("#form_24_options").slideUp('slow');
-                $("#form24_caret").css("transform", "");
-                $("#form_25_options").slideUp('slow');
-                $("#form25_caret").css("transform", "");
-                $("#form1_sections_options").slideUp('slow');
-                $("#form1_caret").css("transform", "");
-                $("#form_26_options").slideUp('slow');
-                $("#form26_caret").css("transform", "");
-                $("#form3_add_extension").css("display", "none");
-                $("#form2_add_extension").css("display", "none");
-                $("#form5_add_extension").css("display", "none");
-                $("#form6_add_extension").css("display", "none");
-                $("#form7_add_extension").css("display", "none");
-                $("#form8_add_extension").css("display", "none");
-                $("#form9_add_extension").css("display", "none");
-                $("#form10_add_extension").css("display", "none");
-                $("#form11_add_extension").css("display", "none");
-                $("#form12_add_extension").css("display", "none");
-                $("#form13_add_extension").css("display", "none");
-                $("#form14_add_extension").css("display", "none");
-                $("#form15_add_extension").css("display", "none");
-                $("#form16_add_extension").css("display", "none");
-                $("#form17_add_extension").css("display", "none");
-                $("#form18_add_extension").css("display", "none");
-                $("#form19_add_extension").css("display", "none");
-                $("#form20_add_extension").css("display", "none");
-                $("#form21_add_extension").css("display", "none");
-                $("#form22_add_extension").css("display", "none");
-                $("#form23_add_extension").css("display", "none");
-                $("#form24_add_extension").css("display", "none");
-                $("#form25_add_extension").css("display", "none");
-            })
-        });
-        $(function() {
-            $("button#form5_toggle").on("click", function(e) {
-                e.preventDefault();
-                $("#form_5_options").slideToggle('slow');
-                if($("#form5_caret").css("transform") === "none"){
-                    $("#form5_caret").css("transform", "rotate(180deg)");
-                    $("#form5_add_extension").css("display", "block");
-                }
-                else{
-                    $("#form5_caret").css("transform", "");
-                    $("#form5_add_extension").css("display", "none");
-                }
-                $("#form_2_options").slideUp('slow');
-                $("#form2_caret").css("transform", "");
-                $("#form_3_options").slideUp('slow');
-                $("#form3_caret").css("transform", "");
-                $("#form_4_options").slideUp('slow');
-                $("#form4_caret").css("transform", "");
-                $("#form_6_options").slideUp('slow');
-                $("#form6_caret").css("transform", "");
-                $("#form_7_options").slideUp('slow');
-                $("#form7_caret").css("transform", "");
-                $("#form_8_options").slideUp('slow');
-                $("#form8_caret").css("transform", "");
-                $("#form_9_options").slideUp('slow');
-                $("#form9_caret").css("transform", "");
-                $("#form_10_options").slideUp('slow');
-                $("#form10_caret").css("transform", "");
-                $("#form_11_options").slideUp('slow');
-                $("#form11_caret").css("transform", "");
-                $("#form_12_options").slideUp('slow');
-                $("#form12_caret").css("transform", "");
-                $("#form_13_options").slideUp('slow');
-                $("#form13_caret").css("transform", "");
-                $("#form_14_options").slideUp('slow');
-                $("#form14_caret").css("transform", "");
-                $("#form_15_options").slideUp('slow');
-                $("#form15_caret").css("transform", "");
-                $("#form_16_options").slideUp('slow');
-                $("#form16_caret").css("transform", "");
-                $("#form_17_options").slideUp('slow');
-                $("#form17_caret").css("transform", "");
-                $("#form_18_options").slideUp('slow');
-                $("#form18_caret").css("transform", "");
-                $("#form_19_options").slideUp('slow');
-                $("#form19_caret").css("transform", "");
-                $("#form_20_options").slideUp('slow');
-                $("#form20_caret").css("transform", "");
-                $("#form_21_options").slideUp('slow');
-                $("#form21_caret").css("transform", "");
-                $("#form_22_options").slideUp('slow');
-                $("#form22_caret").css("transform", "");
-                $("#form_23_options").slideUp('slow');
-                $("#form23_caret").css("transform", "");
-                $("#form_24_options").slideUp('slow');
-                $("#form24_caret").css("transform", "");
-                $("#form_25_options").slideUp('slow');
-                $("#form25_caret").css("transform", "");
-                $("#form1_sections_options").slideUp('slow');
-                $("#form1_caret").css("transform", "");
-                $("#form_26_options").slideUp('slow');
-                $("#form26_caret").css("transform", "");
-                $("#form3_add_extension").css("display", "none");
-                $("#form4_add_extension").css("display", "none");
-                $("#form2_add_extension").css("display", "none");
-                $("#form6_add_extension").css("display", "none");
-                $("#form7_add_extension").css("display", "none");
-                $("#form8_add_extension").css("display", "none");
-                $("#form9_add_extension").css("display", "none");
-                $("#form10_add_extension").css("display", "none");
-                $("#form11_add_extension").css("display", "none");
-                $("#form12_add_extension").css("display", "none");
-                $("#form13_add_extension").css("display", "none");
-                $("#form14_add_extension").css("display", "none");
-                $("#form15_add_extension").css("display", "none");
-                $("#form16_add_extension").css("display", "none");
-                $("#form17_add_extension").css("display", "none");
-                $("#form18_add_extension").css("display", "none");
-                $("#form19_add_extension").css("display", "none");
-                $("#form20_add_extension").css("display", "none");
-                $("#form21_add_extension").css("display", "none");
-                $("#form22_add_extension").css("display", "none");
-                $("#form23_add_extension").css("display", "none");
-                $("#form24_add_extension").css("display", "none");
-                $("#form25_add_extension").css("display", "none");
-            })
-        });
-        $(function() {
-            $("button#form6_toggle").on("click", function(e) {
-                e.preventDefault();
-                $("#form_6_options").slideToggle('slow');
-                if($("#form6_caret").css("transform") === "none"){
-                    $("#form6_caret").css("transform", "rotate(180deg)");
-                    $("#form6_add_extension").css("display", "block");
-                }
-                else{
-                    $("#form6_caret").css("transform", "");
-                    $("#form6_add_extension").css("display", "none");
-                }
-                $("#form_2_options").slideUp('slow');
-                $("#form2_caret").css("transform", "");
-                $("#form_3_options").slideUp('slow');
-                $("#form3_caret").css("transform", "");
-                $("#form_4_options").slideUp('slow');
-                $("#form4_caret").css("transform", "");
-                $("#form_5_options").slideUp('slow');
-                $("#form5_caret").css("transform", "");
-                $("#form_7_options").slideUp('slow');
-                $("#form7_caret").css("transform", "");
-                $("#form_8_options").slideUp('slow');
-                $("#form8_caret").css("transform", "");
-                $("#form_9_options").slideUp('slow');
-                $("#form9_caret").css("transform", "");
-                $("#form_10_options").slideUp('slow');
-                $("#form10_caret").css("transform", "");
-                $("#form_11_options").slideUp('slow');
-                $("#form11_caret").css("transform", "");
-                $("#form_12_options").slideUp('slow');
-                $("#form12_caret").css("transform", "");
-                $("#form_13_options").slideUp('slow');
-                $("#form13_caret").css("transform", "");
-                $("#form_14_options").slideUp('slow');
-                $("#form14_caret").css("transform", "");
-                $("#form_15_options").slideUp('slow');
-                $("#form15_caret").css("transform", "");
-                $("#form_16_options").slideUp('slow');
-                $("#form16_caret").css("transform", "");
-                $("#form_17_options").slideUp('slow');
-                $("#form17_caret").css("transform", "");
-                $("#form_18_options").slideUp('slow');
-                $("#form18_caret").css("transform", "");
-                $("#form_19_options").slideUp('slow');
-                $("#form19_caret").css("transform", "");
-                $("#form_20_options").slideUp('slow');
-                $("#form20_caret").css("transform", "");
-                $("#form_21_options").slideUp('slow');
-                $("#form21_caret").css("transform", "");
-                $("#form_22_options").slideUp('slow');
-                $("#form22_caret").css("transform", "");
-                $("#form_23_options").slideUp('slow');
-                $("#form23_caret").css("transform", "");
-                $("#form_24_options").slideUp('slow');
-                $("#form24_caret").css("transform", "");
-                $("#form_25_options").slideUp('slow');
-                $("#form25_caret").css("transform", "");
-                $("#form1_sections_options").slideUp('slow');
-                $("#form1_caret").css("transform", "");
-                $("#form_26_options").slideUp('slow');
-                $("#form26_caret").css("transform", "");
-                $("#form3_add_extension").css("display", "none");
-                $("#form4_add_extension").css("display", "none");
-                $("#form5_add_extension").css("display", "none");
-                $("#form2_add_extension").css("display", "none");
-                $("#form7_add_extension").css("display", "none");
-                $("#form8_add_extension").css("display", "none");
-                $("#form9_add_extension").css("display", "none");
-                $("#form10_add_extension").css("display", "none");
-                $("#form11_add_extension").css("display", "none");
-                $("#form12_add_extension").css("display", "none");
-                $("#form13_add_extension").css("display", "none");
-                $("#form14_add_extension").css("display", "none");
-                $("#form15_add_extension").css("display", "none");
-                $("#form16_add_extension").css("display", "none");
-                $("#form17_add_extension").css("display", "none");
-                $("#form18_add_extension").css("display", "none");
-                $("#form19_add_extension").css("display", "none");
-                $("#form20_add_extension").css("display", "none");
-                $("#form21_add_extension").css("display", "none");
-                $("#form22_add_extension").css("display", "none");
-                $("#form23_add_extension").css("display", "none");
-                $("#form24_add_extension").css("display", "none");
-                $("#form25_add_extension").css("display", "none");
-            })
-        });
-        $(function() {
-            $("button#form7_toggle").on("click", function(e) {
-                e.preventDefault();
-                $("#form_7_options").slideToggle('slow');
-                if($("#form7_caret").css("transform") === "none"){
-                    $("#form7_caret").css("transform", "rotate(180deg)");
-                    $("#form7_add_extension").css("display", "block");
-                }
-                else{
-                    $("#form7_caret").css("transform", "");
-                    $("#form7_add_extension").css("display", "none");
-                }
-                $("#form_2_options").slideUp('slow');
-                $("#form2_caret").css("transform", "");
-                $("#form_3_options").slideUp('slow');
-                $("#form3_caret").css("transform", "");
-                $("#form_4_options").slideUp('slow');
-                $("#form4_caret").css("transform", "");
-                $("#form_5_options").slideUp('slow');
-                $("#form5_caret").css("transform", "");
-                $("#form_6_options").slideUp('slow');
-                $("#form6_caret").css("transform", "");
-                $("#form_8_options").slideUp('slow');
-                $("#form8_caret").css("transform", "");
-                $("#form_9_options").slideUp('slow');
-                $("#form9_caret").css("transform", "");
-                $("#form_10_options").slideUp('slow');
-                $("#form10_caret").css("transform", "");
-                $("#form_11_options").slideUp('slow');
-                $("#form11_caret").css("transform", "");
-                $("#form_12_options").slideUp('slow');
-                $("#form12_caret").css("transform", "");
-                $("#form_13_options").slideUp('slow');
-                $("#form13_caret").css("transform", "");
-                $("#form_14_options").slideUp('slow');
-                $("#form14_caret").css("transform", "");
-                $("#form_15_options").slideUp('slow');
-                $("#form15_caret").css("transform", "");
-                $("#form_16_options").slideUp('slow');
-                $("#form16_caret").css("transform", "");
-                $("#form_17_options").slideUp('slow');
-                $("#form17_caret").css("transform", "");
-                $("#form_18_options").slideUp('slow');
-                $("#form18_caret").css("transform", "");
-                $("#form_19_options").slideUp('slow');
-                $("#form19_caret").css("transform", "");
-                $("#form_20_options").slideUp('slow');
-                $("#form20_caret").css("transform", "");
-                $("#form_21_options").slideUp('slow');
-                $("#form21_caret").css("transform", "");
-                $("#form_22_options").slideUp('slow');
-                $("#form22_caret").css("transform", "");
-                $("#form_23_options").slideUp('slow');
-                $("#form23_caret").css("transform", "");
-                $("#form_24_options").slideUp('slow');
-                $("#form24_caret").css("transform", "");
-                $("#form_25_options").slideUp('slow');
-                $("#form25_caret").css("transform", "");
-                $("#form1_sections_options").slideUp('slow');
-                $("#form1_caret").css("transform", "");
-                $("#form_26_options").slideUp('slow');
-                $("#form26_caret").css("transform", "");
-                $("#form3_add_extension").css("display", "none");
-                $("#form4_add_extension").css("display", "none");
-                $("#form5_add_extension").css("display", "none");
-                $("#form6_add_extension").css("display", "none");
-                $("#form2_add_extension").css("display", "none");
-                $("#form8_add_extension").css("display", "none");
-                $("#form9_add_extension").css("display", "none");
-                $("#form10_add_extension").css("display", "none");
-                $("#form11_add_extension").css("display", "none");
-                $("#form12_add_extension").css("display", "none");
-                $("#form13_add_extension").css("display", "none");
-                $("#form14_add_extension").css("display", "none");
-                $("#form15_add_extension").css("display", "none");
-                $("#form16_add_extension").css("display", "none");
-                $("#form17_add_extension").css("display", "none");
-                $("#form18_add_extension").css("display", "none");
-                $("#form19_add_extension").css("display", "none");
-                $("#form20_add_extension").css("display", "none");
-                $("#form21_add_extension").css("display", "none");
-                $("#form22_add_extension").css("display", "none");
-                $("#form23_add_extension").css("display", "none");
-                $("#form24_add_extension").css("display", "none");
-                $("#form25_add_extension").css("display", "none");
-            })
-        });
-        $(function() {
-            $("button#form8_toggle").on("click", function(e) {
-                e.preventDefault();
-                $("#form_8_options").slideToggle('slow');
-                if($("#form8_caret").css("transform") === "none"){
-                    $("#form8_caret").css("transform", "rotate(180deg)");
-                    $("#form8_add_extension").css("display", "block");
-                }
-                else{
-                    $("#form8_caret").css("transform", "");
-                    $("#form8_add_extension").css("display", "none");
-                }
-                $("#form_2_options").slideUp('slow');
-                $("#form2_caret").css("transform", "");
-                $("#form_3_options").slideUp('slow');
-                $("#form3_caret").css("transform", "");
-                $("#form_4_options").slideUp('slow');
-                $("#form4_caret").css("transform", "");
-                $("#form_5_options").slideUp('slow');
-                $("#form5_caret").css("transform", "");
-                $("#form_6_options").slideUp('slow');
-                $("#form6_caret").css("transform", "");
-                $("#form_7_options").slideUp('slow');
-                $("#form7_caret").css("transform", "");
-                $("#form_9_options").slideUp('slow');
-                $("#form9_caret").css("transform", "");
-                $("#form_10_options").slideUp('slow');
-                $("#form10_caret").css("transform", "");
-                $("#form_11_options").slideUp('slow');
-                $("#form11_caret").css("transform", "");
-                $("#form_12_options").slideUp('slow');
-                $("#form12_caret").css("transform", "");
-                $("#form_13_options").slideUp('slow');
-                $("#form13_caret").css("transform", "");
-                $("#form_14_options").slideUp('slow');
-                $("#form14_caret").css("transform", "");
-                $("#form_15_options").slideUp('slow');
-                $("#form15_caret").css("transform", "");
-                $("#form_16_options").slideUp('slow');
-                $("#form16_caret").css("transform", "");
-                $("#form_17_options").slideUp('slow');
-                $("#form17_caret").css("transform", "");
-                $("#form_18_options").slideUp('slow');
-                $("#form18_caret").css("transform", "");
-                $("#form_19_options").slideUp('slow');
-                $("#form19_caret").css("transform", "");
-                $("#form_20_options").slideUp('slow');
-                $("#form20_caret").css("transform", "");
-                $("#form_21_options").slideUp('slow');
-                $("#form21_caret").css("transform", "");
-                $("#form_22_options").slideUp('slow');
-                $("#form22_caret").css("transform", "");
-                $("#form_23_options").slideUp('slow');
-                $("#form23_caret").css("transform", "");
-                $("#form_24_options").slideUp('slow');
-                $("#form24_caret").css("transform", "");
-                $("#form_25_options").slideUp('slow');
-                $("#form25_caret").css("transform", "");
-                $("#form1_sections_options").slideUp('slow');
-                $("#form1_caret").css("transform", "");
-                $("#form_26_options").slideUp('slow');
-                $("#form26_caret").css("transform", "");
-                $("#form3_add_extension").css("display", "none");
-                $("#form4_add_extension").css("display", "none");
-                $("#form5_add_extension").css("display", "none");
-                $("#form6_add_extension").css("display", "none");
-                $("#form7_add_extension").css("display", "none");
-                $("#form2_add_extension").css("display", "none");
-                $("#form9_add_extension").css("display", "none");
-                $("#form10_add_extension").css("display", "none");
-                $("#form11_add_extension").css("display", "none");
-                $("#form12_add_extension").css("display", "none");
-                $("#form13_add_extension").css("display", "none");
-                $("#form14_add_extension").css("display", "none");
-                $("#form15_add_extension").css("display", "none");
-                $("#form16_add_extension").css("display", "none");
-                $("#form17_add_extension").css("display", "none");
-                $("#form18_add_extension").css("display", "none");
-                $("#form19_add_extension").css("display", "none");
-                $("#form20_add_extension").css("display", "none");
-                $("#form21_add_extension").css("display", "none");
-                $("#form22_add_extension").css("display", "none");
-                $("#form23_add_extension").css("display", "none");
-                $("#form24_add_extension").css("display", "none");
-                $("#form25_add_extension").css("display", "none");
-            })
-        });
-        $(function() {
-            $("button#form9_toggle").on("click", function(e) {
-                e.preventDefault();
-                $("#form_9_options").slideToggle('slow');
-                if($("#form9_caret").css("transform") === "none"){
-                    $("#form9_caret").css("transform", "rotate(180deg)");
-                    $("#form9_add_extension").css("display", "block");
-                }
-                else{
-                    $("#form9_caret").css("transform", "");
-                    $("#form9_add_extension").css("display", "none");
-                }
-                $("#form_2_options").slideUp('slow');
-                $("#form2_caret").css("transform", "");
-                $("#form_3_options").slideUp('slow');
-                $("#form3_caret").css("transform", "");
-                $("#form_4_options").slideUp('slow');
-                $("#form4_caret").css("transform", "");
-                $("#form_5_options").slideUp('slow');
-                $("#form5_caret").css("transform", "");
-                $("#form_6_options").slideUp('slow');
-                $("#form6_caret").css("transform", "");
-                $("#form_7_options").slideUp('slow');
-                $("#form7_caret").css("transform", "");
-                $("#form_8_options").slideUp('slow');
-                $("#form8_caret").css("transform", "");
-                $("#form_10_options").slideUp('slow');
-                $("#form10_caret").css("transform", "");
-                $("#form_11_options").slideUp('slow');
-                $("#form11_caret").css("transform", "");
-                $("#form_12_options").slideUp('slow');
-                $("#form12_caret").css("transform", "");
-                $("#form_13_options").slideUp('slow');
-                $("#form13_caret").css("transform", "");
-                $("#form_14_options").slideUp('slow');
-                $("#form14_caret").css("transform", "");
-                $("#form_15_options").slideUp('slow');
-                $("#form15_caret").css("transform", "");
-                $("#form_16_options").slideUp('slow');
-                $("#form16_caret").css("transform", "");
-                $("#form_17_options").slideUp('slow');
-                $("#form17_caret").css("transform", "");
-                $("#form_18_options").slideUp('slow');
-                $("#form18_caret").css("transform", "");
-                $("#form_19_options").slideUp('slow');
-                $("#form19_caret").css("transform", "");
-                $("#form_20_options").slideUp('slow');
-                $("#form20_caret").css("transform", "");
-                $("#form_21_options").slideUp('slow');
-                $("#form21_caret").css("transform", "");
-                $("#form_22_options").slideUp('slow');
-                $("#form22_caret").css("transform", "");
-                $("#form_23_options").slideUp('slow');
-                $("#form23_caret").css("transform", "");
-                $("#form_24_options").slideUp('slow');
-                $("#form24_caret").css("transform", "");
-                $("#form_25_options").slideUp('slow');
-                $("#form25_caret").css("transform", "");
-                $("#form1_sections_options").slideUp('slow');
-                $("#form1_caret").css("transform", "");
-                $("#form_26_options").slideUp('slow');
-                $("#form26_caret").css("transform", "");
-                $("#form3_add_extension").css("display", "none");
-                $("#form4_add_extension").css("display", "none");
-                $("#form5_add_extension").css("display", "none");
-                $("#form6_add_extension").css("display", "none");
-                $("#form7_add_extension").css("display", "none");
-                $("#form8_add_extension").css("display", "none");
-                $("#form2_add_extension").css("display", "none");
-                $("#form10_add_extension").css("display", "none");
-                $("#form11_add_extension").css("display", "none");
-                $("#form12_add_extension").css("display", "none");
-                $("#form13_add_extension").css("display", "none");
-                $("#form14_add_extension").css("display", "none");
-                $("#form15_add_extension").css("display", "none");
-                $("#form16_add_extension").css("display", "none");
-                $("#form17_add_extension").css("display", "none");
-                $("#form18_add_extension").css("display", "none");
-                $("#form19_add_extension").css("display", "none");
-                $("#form20_add_extension").css("display", "none");
-                $("#form21_add_extension").css("display", "none");
-                $("#form22_add_extension").css("display", "none");
-                $("#form23_add_extension").css("display", "none");
-                $("#form24_add_extension").css("display", "none");
-                $("#form25_add_extension").css("display", "none");
-            })
-        });
-        $(function() {
-            $("button#form10_toggle").on("click", function(e) {
-                e.preventDefault();
-                $("#form_10_options").slideToggle('slow');
-                if($("#form10_caret").css("transform") === "none"){
-                    $("#form10_caret").css("transform", "rotate(180deg)");
-                    $("#form10_add_extension").css("display", "block");
-                }
-                else{
-                    $("#form10_caret").css("transform", "");
-                    $("#form10_add_extension").css("display", "none");
-                }
-                $("#form_2_options").slideUp('slow');
-                $("#form2_caret").css("transform", "");
-                $("#form_3_options").slideUp('slow');
-                $("#form3_caret").css("transform", "");
-                $("#form_4_options").slideUp('slow');
-                $("#form4_caret").css("transform", "");
-                $("#form_5_options").slideUp('slow');
-                $("#form5_caret").css("transform", "");
-                $("#form_6_options").slideUp('slow');
-                $("#form6_caret").css("transform", "");
-                $("#form_7_options").slideUp('slow');
-                $("#form7_caret").css("transform", "");
-                $("#form_8_options").slideUp('slow');
-                $("#form8_caret").css("transform", "");
-                $("#form_9_options").slideUp('slow');
-                $("#form9_caret").css("transform", "");
-                $("#form_11_options").slideUp('slow');
-                $("#form11_caret").css("transform", "");
-                $("#form_12_options").slideUp('slow');
-                $("#form12_caret").css("transform", "");
-                $("#form_13_options").slideUp('slow');
-                $("#form13_caret").css("transform", "");
-                $("#form_14_options").slideUp('slow');
-                $("#form14_caret").css("transform", "");
-                $("#form_15_options").slideUp('slow');
-                $("#form15_caret").css("transform", "");
-                $("#form_16_options").slideUp('slow');
-                $("#form16_caret").css("transform", "");
-                $("#form_17_options").slideUp('slow');
-                $("#form17_caret").css("transform", "");
-                $("#form_18_options").slideUp('slow');
-                $("#form18_caret").css("transform", "");
-                $("#form_19_options").slideUp('slow');
-                $("#form19_caret").css("transform", "");
-                $("#form_20_options").slideUp('slow');
-                $("#form20_caret").css("transform", "");
-                $("#form_21_options").slideUp('slow');
-                $("#form21_caret").css("transform", "");
-                $("#form_22_options").slideUp('slow');
-                $("#form22_caret").css("transform", "");
-                $("#form_23_options").slideUp('slow');
-                $("#form23_caret").css("transform", "");
-                $("#form_24_options").slideUp('slow');
-                $("#form24_caret").css("transform", "");
-                $("#form_25_options").slideUp('slow');
-                $("#form25_caret").css("transform", "");
-                $("#form1_sections_options").slideUp('slow');
-                $("#form1_caret").css("transform", "");
-                $("#form_26_options").slideUp('slow');
-                $("#form26_caret").css("transform", "");
-                $("#form3_add_extension").css("display", "none");
-                $("#form4_add_extension").css("display", "none");
-                $("#form5_add_extension").css("display", "none");
-                $("#form6_add_extension").css("display", "none");
-                $("#form7_add_extension").css("display", "none");
-                $("#form8_add_extension").css("display", "none");
-                $("#form9_add_extension").css("display", "none");
-                $("#form2_add_extension").css("display", "none");
-                $("#form11_add_extension").css("display", "none");
-                $("#form12_add_extension").css("display", "none");
-                $("#form13_add_extension").css("display", "none");
-                $("#form14_add_extension").css("display", "none");
-                $("#form15_add_extension").css("display", "none");
-                $("#form16_add_extension").css("display", "none");
-                $("#form17_add_extension").css("display", "none");
-                $("#form18_add_extension").css("display", "none");
-                $("#form19_add_extension").css("display", "none");
-                $("#form20_add_extension").css("display", "none");
-                $("#form21_add_extension").css("display", "none");
-                $("#form22_add_extension").css("display", "none");
-                $("#form23_add_extension").css("display", "none");
-                $("#form24_add_extension").css("display", "none");
-                $("#form25_add_extension").css("display", "none");
-            })
-        });
-        $(function() {
-            $("button#form11_toggle").on("click", function(e) {
-                e.preventDefault();
-                $("#form_11_options").slideToggle('slow');
-                if($("#form11_caret").css("transform") === "none"){
-                    $("#form11_caret").css("transform", "rotate(180deg)");
-                    $("#form11_add_extension").css("display", "block");
-                }
-                else{
-                    $("#form11_caret").css("transform", "");
-                    $("#form11_add_extension").css("display", "none");
-                }
-                $("#form_2_options").slideUp('slow');
-                $("#form2_caret").css("transform", "");
-                $("#form_3_options").slideUp('slow');
-                $("#form3_caret").css("transform", "");
-                $("#form_4_options").slideUp('slow');
-                $("#form4_caret").css("transform", "");
-                $("#form_5_options").slideUp('slow');
-                $("#form5_caret").css("transform", "");
-                $("#form_6_options").slideUp('slow');
-                $("#form6_caret").css("transform", "");
-                $("#form_7_options").slideUp('slow');
-                $("#form7_caret").css("transform", "");
-                $("#form_8_options").slideUp('slow');
-                $("#form8_caret").css("transform", "");
-                $("#form_9_options").slideUp('slow');
-                $("#form9_caret").css("transform", "");
-                $("#form_10_options").slideUp('slow');
-                $("#form10_caret").css("transform", "");
-                $("#form_12_options").slideUp('slow');
-                $("#form12_caret").css("transform", "");
-                $("#form_13_options").slideUp('slow');
-                $("#form13_caret").css("transform", "");
-                $("#form_14_options").slideUp('slow');
-                $("#form14_caret").css("transform", "");
-                $("#form_15_options").slideUp('slow');
-                $("#form15_caret").css("transform", "");
-                $("#form_16_options").slideUp('slow');
-                $("#form16_caret").css("transform", "");
-                $("#form_17_options").slideUp('slow');
-                $("#form17_caret").css("transform", "");
-                $("#form_18_options").slideUp('slow');
-                $("#form18_caret").css("transform", "");
-                $("#form_19_options").slideUp('slow');
-                $("#form19_caret").css("transform", "");
-                $("#form_20_options").slideUp('slow');
-                $("#form20_caret").css("transform", "");
-                $("#form_21_options").slideUp('slow');
-                $("#form21_caret").css("transform", "");
-                $("#form_22_options").slideUp('slow');
-                $("#form22_caret").css("transform", "");
-                $("#form_23_options").slideUp('slow');
-                $("#form23_caret").css("transform", "");
-                $("#form_24_options").slideUp('slow');
-                $("#form24_caret").css("transform", "");
-                $("#form_25_options").slideUp('slow');
-                $("#form25_caret").css("transform", "");
-                $("#form1_sections_options").slideUp('slow');
-                $("#form1_caret").css("transform", "");
-                $("#form_26_options").slideUp('slow');
-                $("#form26_caret").css("transform", "");
-                $("#form3_add_extension").css("display", "none");
-                $("#form4_add_extension").css("display", "none");
-                $("#form5_add_extension").css("display", "none");
-                $("#form6_add_extension").css("display", "none");
-                $("#form7_add_extension").css("display", "none");
-                $("#form8_add_extension").css("display", "none");
-                $("#form9_add_extension").css("display", "none");
-                $("#form10_add_extension").css("display", "none");
-                $("#form2_add_extension").css("display", "none");
-                $("#form12_add_extension").css("display", "none");
-                $("#form13_add_extension").css("display", "none");
-                $("#form14_add_extension").css("display", "none");
-                $("#form15_add_extension").css("display", "none");
-                $("#form16_add_extension").css("display", "none");
-                $("#form17_add_extension").css("display", "none");
-                $("#form18_add_extension").css("display", "none");
-                $("#form19_add_extension").css("display", "none");
-                $("#form20_add_extension").css("display", "none");
-                $("#form21_add_extension").css("display", "none");
-                $("#form22_add_extension").css("display", "none");
-                $("#form23_add_extension").css("display", "none");
-                $("#form24_add_extension").css("display", "none");
-                $("#form25_add_extension").css("display", "none");
-            })
-        });
-        $(function() {
-            $("button#form12_toggle").on("click", function(e) {
-                e.preventDefault();
-                $("#form_12_options").slideToggle('slow');
-                if($("#form12_caret").css("transform") === "none"){
-                    $("#form12_caret").css("transform", "rotate(180deg)");
-                    $("#form12_add_extension").css("display", "block");
-                }
-                else{
-                    $("#form12_caret").css("transform", "");
-                    $("#form12_add_extension").css("display", "none");
-                }
-                $("#form_2_options").slideUp('slow');
-                $("#form2_caret").css("transform", "");
-                $("#form_3_options").slideUp('slow');
-                $("#form3_caret").css("transform", "");
-                $("#form_4_options").slideUp('slow');
-                $("#form4_caret").css("transform", "");
-                $("#form_5_options").slideUp('slow');
-                $("#form5_caret").css("transform", "");
-                $("#form_6_options").slideUp('slow');
-                $("#form6_caret").css("transform", "");
-                $("#form_7_options").slideUp('slow');
-                $("#form7_caret").css("transform", "");
-                $("#form_8_options").slideUp('slow');
-                $("#form8_caret").css("transform", "");
-                $("#form_9_options").slideUp('slow');
-                $("#form9_caret").css("transform", "");
-                $("#form_10_options").slideUp('slow');
-                $("#form10_caret").css("transform", "");
-                $("#form_11_options").slideUp('slow');
-                $("#form11_caret").css("transform", "");
-                $("#form_13_options").slideUp('slow');
-                $("#form13_caret").css("transform", "");
-                $("#form_14_options").slideUp('slow');
-                $("#form14_caret").css("transform", "");
-                $("#form_15_options").slideUp('slow');
-                $("#form15_caret").css("transform", "");
-                $("#form_16_options").slideUp('slow');
-                $("#form16_caret").css("transform", "");
-                $("#form_17_options").slideUp('slow');
-                $("#form17_caret").css("transform", "");
-                $("#form_18_options").slideUp('slow');
-                $("#form18_caret").css("transform", "");
-                $("#form_19_options").slideUp('slow');
-                $("#form19_caret").css("transform", "");
-                $("#form_20_options").slideUp('slow');
-                $("#form20_caret").css("transform", "");
-                $("#form_21_options").slideUp('slow');
-                $("#form21_caret").css("transform", "");
-                $("#form_22_options").slideUp('slow');
-                $("#form22_caret").css("transform", "");
-                $("#form_23_options").slideUp('slow');
-                $("#form23_caret").css("transform", "");
-                $("#form_24_options").slideUp('slow');
-                $("#form24_caret").css("transform", "");
-                $("#form_25_options").slideUp('slow');
-                $("#form25_caret").css("transform", "");
-                $("#form1_sections_options").slideUp('slow');
-                $("#form1_caret").css("transform", "");
-                $("#form_26_options").slideUp('slow');
-                $("#form26_caret").css("transform", "");
-                $("#form3_add_extension").css("display", "none");
-                $("#form4_add_extension").css("display", "none");
-                $("#form5_add_extension").css("display", "none");
-                $("#form6_add_extension").css("display", "none");
-                $("#form7_add_extension").css("display", "none");
-                $("#form8_add_extension").css("display", "none");
-                $("#form9_add_extension").css("display", "none");
-                $("#form10_add_extension").css("display", "none");
-                $("#form11_add_extension").css("display", "none");
-                $("#form2_add_extension").css("display", "none");
-                $("#form13_add_extension").css("display", "none");
-                $("#form14_add_extension").css("display", "none");
-                $("#form15_add_extension").css("display", "none");
-                $("#form16_add_extension").css("display", "none");
-                $("#form17_add_extension").css("display", "none");
-                $("#form18_add_extension").css("display", "none");
-                $("#form19_add_extension").css("display", "none");
-                $("#form20_add_extension").css("display", "none");
-                $("#form21_add_extension").css("display", "none");
-                $("#form22_add_extension").css("display", "none");
-                $("#form23_add_extension").css("display", "none");
-                $("#form24_add_extension").css("display", "none");
-                $("#form25_add_extension").css("display", "none");
-            })
-        });
-        $(function() {
-            $("button#form13_toggle").on("click", function(e) {
-                e.preventDefault();
-                $("#form_13_options").slideToggle('slow');
-                if($("#form13_caret").css("transform") === "none"){
-                    $("#form13_caret").css("transform", "rotate(180deg)");
-                    $("#form13_add_extension").css("display", "block");
-                }
-                else{
-                    $("#form13_caret").css("transform", "");
-                    $("#form13_add_extension").css("display", "none");
-                }
-                $("#form_2_options").slideUp('slow');
-                $("#form2_caret").css("transform", "");
-                $("#form_3_options").slideUp('slow');
-                $("#form3_caret").css("transform", "");
-                $("#form_4_options").slideUp('slow');
-                $("#form4_caret").css("transform", "");
-                $("#form_5_options").slideUp('slow');
-                $("#form5_caret").css("transform", "");
-                $("#form_6_options").slideUp('slow');
-                $("#form6_caret").css("transform", "");
-                $("#form_7_options").slideUp('slow');
-                $("#form7_caret").css("transform", "");
-                $("#form_8_options").slideUp('slow');
-                $("#form8_caret").css("transform", "");
-                $("#form_9_options").slideUp('slow');
-                $("#form9_caret").css("transform", "");
-                $("#form_10_options").slideUp('slow');
-                $("#form10_caret").css("transform", "");
-                $("#form_11_options").slideUp('slow');
-                $("#form11_caret").css("transform", "");
-                $("#form_12_options").slideUp('slow');
-                $("#form12_caret").css("transform", "");
-                $("#form_14_options").slideUp('slow');
-                $("#form14_caret").css("transform", "");
-                $("#form_15_options").slideUp('slow');
-                $("#form15_caret").css("transform", "");
-                $("#form_16_options").slideUp('slow');
-                $("#form16_caret").css("transform", "");
-                $("#form_17_options").slideUp('slow');
-                $("#form17_caret").css("transform", "");
-                $("#form_18_options").slideUp('slow');
-                $("#form18_caret").css("transform", "");
-                $("#form_19_options").slideUp('slow');
-                $("#form19_caret").css("transform", "");
-                $("#form_20_options").slideUp('slow');
-                $("#form20_caret").css("transform", "");
-                $("#form_21_options").slideUp('slow');
-                $("#form21_caret").css("transform", "");
-                $("#form_22_options").slideUp('slow');
-                $("#form22_caret").css("transform", "");
-                $("#form_23_options").slideUp('slow');
-                $("#form23_caret").css("transform", "");
-                $("#form_24_options").slideUp('slow');
-                $("#form24_caret").css("transform", "");
-                $("#form_25_options").slideUp('slow');
-                $("#form25_caret").css("transform", "");
-                $("#form1_sections_options").slideUp('slow');
-                $("#form1_caret").css("transform", "");
-                $("#form_26_options").slideUp('slow');
-                $("#form26_caret").css("transform", "");
-                $("#form3_add_extension").css("display", "none");
-                $("#form4_add_extension").css("display", "none");
-                $("#form5_add_extension").css("display", "none");
-                $("#form6_add_extension").css("display", "none");
-                $("#form7_add_extension").css("display", "none");
-                $("#form8_add_extension").css("display", "none");
-                $("#form9_add_extension").css("display", "none");
-                $("#form10_add_extension").css("display", "none");
-                $("#form11_add_extension").css("display", "none");
-                $("#form12_add_extension").css("display", "none");
-                $("#form2_add_extension").css("display", "none");
-                $("#form14_add_extension").css("display", "none");
-                $("#form15_add_extension").css("display", "none");
-                $("#form16_add_extension").css("display", "none");
-                $("#form17_add_extension").css("display", "none");
-                $("#form18_add_extension").css("display", "none");
-                $("#form19_add_extension").css("display", "none");
-                $("#form20_add_extension").css("display", "none");
-                $("#form21_add_extension").css("display", "none");
-                $("#form22_add_extension").css("display", "none");
-                $("#form23_add_extension").css("display", "none");
-                $("#form24_add_extension").css("display", "none");
-                $("#form25_add_extension").css("display", "none");
-            })
-        });
-        $(function() {
-            $("button#form14_toggle").on("click", function(e) {
-                e.preventDefault();
-                $("#form_14_options").slideToggle('slow');
-                if($("#form14_caret").css("transform") === "none"){
-                    $("#form14_caret").css("transform", "rotate(180deg)");
-                    $("#form14_add_extension").css("display", "block");
-                }
-                else{
-                    $("#form14_caret").css("transform", "");
-                    $("#form14_add_extension").css("display", "none");
-                }
-                $("#form_2_options").slideUp('slow');
-                $("#form2_caret").css("transform", "");
-                $("#form_3_options").slideUp('slow');
-                $("#form3_caret").css("transform", "");
-                $("#form_4_options").slideUp('slow');
-                $("#form4_caret").css("transform", "");
-                $("#form_5_options").slideUp('slow');
-                $("#form5_caret").css("transform", "");
-                $("#form_6_options").slideUp('slow');
-                $("#form6_caret").css("transform", "");
-                $("#form_7_options").slideUp('slow');
-                $("#form7_caret").css("transform", "");
-                $("#form_8_options").slideUp('slow');
-                $("#form8_caret").css("transform", "");
-                $("#form_9_options").slideUp('slow');
-                $("#form9_caret").css("transform", "");
-                $("#form_10_options").slideUp('slow');
-                $("#form10_caret").css("transform", "");
-                $("#form_11_options").slideUp('slow');
-                $("#form11_caret").css("transform", "");
-                $("#form_12_options").slideUp('slow');
-                $("#form12_caret").css("transform", "");
-                $("#form_13_options").slideUp('slow');
-                $("#form13_caret").css("transform", "");
-                $("#form_15_options").slideUp('slow');
-                $("#form15_caret").css("transform", "");
-                $("#form_16_options").slideUp('slow');
-                $("#form16_caret").css("transform", "");
-                $("#form_17_options").slideUp('slow');
-                $("#form17_caret").css("transform", "");
-                $("#form_18_options").slideUp('slow');
-                $("#form18_caret").css("transform", "");
-                $("#form_19_options").slideUp('slow');
-                $("#form19_caret").css("transform", "");
-                $("#form_20_options").slideUp('slow');
-                $("#form20_caret").css("transform", "");
-                $("#form_21_options").slideUp('slow');
-                $("#form21_caret").css("transform", "");
-                $("#form_22_options").slideUp('slow');
-                $("#form22_caret").css("transform", "");
-                $("#form_23_options").slideUp('slow');
-                $("#form23_caret").css("transform", "");
-                $("#form_24_options").slideUp('slow');
-                $("#form24_caret").css("transform", "");
-                $("#form_25_options").slideUp('slow');
-                $("#form25_caret").css("transform", "");
-                $("#form1_sections_options").slideUp('slow');
-                $("#form1_caret").css("transform", "");
-                $("#form_26_options").slideUp('slow');
-                $("#form26_caret").css("transform", "");
-                $("#form3_add_extension").css("display", "none");
-                $("#form4_add_extension").css("display", "none");
-                $("#form5_add_extension").css("display", "none");
-                $("#form6_add_extension").css("display", "none");
-                $("#form7_add_extension").css("display", "none");
-                $("#form8_add_extension").css("display", "none");
-                $("#form9_add_extension").css("display", "none");
-                $("#form10_add_extension").css("display", "none");
-                $("#form11_add_extension").css("display", "none");
-                $("#form12_add_extension").css("display", "none");
-                $("#form13_add_extension").css("display", "none");
-                $("#form2_add_extension").css("display", "none");
-                $("#form15_add_extension").css("display", "none");
-                $("#form16_add_extension").css("display", "none");
-                $("#form17_add_extension").css("display", "none");
-                $("#form18_add_extension").css("display", "none");
-                $("#form19_add_extension").css("display", "none");
-                $("#form20_add_extension").css("display", "none");
-                $("#form21_add_extension").css("display", "none");
-                $("#form22_add_extension").css("display", "none");
-                $("#form23_add_extension").css("display", "none");
-                $("#form24_add_extension").css("display", "none");
-                $("#form25_add_extension").css("display", "none");
-            })
-        });
-        $(function() {
-            $("button#form15_toggle").on("click", function(e) {
-                e.preventDefault();
-                $("#form_15_options").slideToggle('slow');
-                if($("#form15_caret").css("transform") === "none"){
-                    $("#form15_caret").css("transform", "rotate(180deg)");
-                    $("#form15_add_extension").css("display", "block");
-                }
-                else{
-                    $("#form15_caret").css("transform", "");
-                    $("#form15_add_extension").css("display", "none");
-                }
-                $("#form_2_options").slideUp('slow');
-                $("#form2_caret").css("transform", "");
-                $("#form_3_options").slideUp('slow');
-                $("#form3_caret").css("transform", "");
-                $("#form_4_options").slideUp('slow');
-                $("#form4_caret").css("transform", "");
-                $("#form_5_options").slideUp('slow');
-                $("#form5_caret").css("transform", "");
-                $("#form_6_options").slideUp('slow');
-                $("#form6_caret").css("transform", "");
-                $("#form_7_options").slideUp('slow');
-                $("#form7_caret").css("transform", "");
-                $("#form_8_options").slideUp('slow');
-                $("#form8_caret").css("transform", "");
-                $("#form_9_options").slideUp('slow');
-                $("#form9_caret").css("transform", "");
-                $("#form_10_options").slideUp('slow');
-                $("#form10_caret").css("transform", "");
-                $("#form_11_options").slideUp('slow');
-                $("#form11_caret").css("transform", "");
-                $("#form_12_options").slideUp('slow');
-                $("#form12_caret").css("transform", "");
-                $("#form_13_options").slideUp('slow');
-                $("#form13_caret").css("transform", "");
-                $("#form_14_options").slideUp('slow');
-                $("#form14_caret").css("transform", "");
-                $("#form_16_options").slideUp('slow');
-                $("#form16_caret").css("transform", "");
-                $("#form_17_options").slideUp('slow');
-                $("#form17_caret").css("transform", "");
-                $("#form_18_options").slideUp('slow');
-                $("#form18_caret").css("transform", "");
-                $("#form_19_options").slideUp('slow');
-                $("#form19_caret").css("transform", "");
-                $("#form_20_options").slideUp('slow');
-                $("#form20_caret").css("transform", "");
-                $("#form_21_options").slideUp('slow');
-                $("#form21_caret").css("transform", "");
-                $("#form_22_options").slideUp('slow');
-                $("#form22_caret").css("transform", "");
-                $("#form_23_options").slideUp('slow');
-                $("#form23_caret").css("transform", "");
-                $("#form_24_options").slideUp('slow');
-                $("#form24_caret").css("transform", "");
-                $("#form_25_options").slideUp('slow');
-                $("#form25_caret").css("transform", "");
-                $("#form1_sections_options").slideUp('slow');
-                $("#form1_caret").css("transform", "");
-                $("#form_26_options").slideUp('slow');
-                $("#form26_caret").css("transform", "");
-                $("#form3_add_extension").css("display", "none");
-                $("#form4_add_extension").css("display", "none");
-                $("#form5_add_extension").css("display", "none");
-                $("#form6_add_extension").css("display", "none");
-                $("#form7_add_extension").css("display", "none");
-                $("#form8_add_extension").css("display", "none");
-                $("#form9_add_extension").css("display", "none");
-                $("#form10_add_extension").css("display", "none");
-                $("#form11_add_extension").css("display", "none");
-                $("#form12_add_extension").css("display", "none");
-                $("#form13_add_extension").css("display", "none");
-                $("#form14_add_extension").css("display", "none");
-                $("#form2_add_extension").css("display", "none");
-                $("#form16_add_extension").css("display", "none");
-                $("#form17_add_extension").css("display", "none");
-                $("#form18_add_extension").css("display", "none");
-                $("#form19_add_extension").css("display", "none");
-                $("#form20_add_extension").css("display", "none");
-                $("#form21_add_extension").css("display", "none");
-                $("#form22_add_extension").css("display", "none");
-                $("#form23_add_extension").css("display", "none");
-                $("#form24_add_extension").css("display", "none");
-                $("#form25_add_extension").css("display", "none");
-            })
-        });
-        $(function() {
-            $("button#form16_toggle").on("click", function(e) {
-                e.preventDefault();
-                $("#form_16_options").slideToggle('slow');
-                if($("#form16_caret").css("transform") === "none"){
-                    $("#form16_caret").css("transform", "rotate(180deg)");
-                    $("#form16_add_extension").css("display", "block");
-                }
-                else{
-                    $("#form16_caret").css("transform", "");
-                    $("#form16_add_extension").css("display", "none");
-                }
-                $("#form_2_options").slideUp('slow');
-                $("#form2_caret").css("transform", "");
-                $("#form_3_options").slideUp('slow');
-                $("#form3_caret").css("transform", "");
-                $("#form_4_options").slideUp('slow');
-                $("#form4_caret").css("transform", "");
-                $("#form_5_options").slideUp('slow');
-                $("#form5_caret").css("transform", "");
-                $("#form_6_options").slideUp('slow');
-                $("#form6_caret").css("transform", "");
-                $("#form_7_options").slideUp('slow');
-                $("#form7_caret").css("transform", "");
-                $("#form_8_options").slideUp('slow');
-                $("#form8_caret").css("transform", "");
-                $("#form_9_options").slideUp('slow');
-                $("#form9_caret").css("transform", "");
-                $("#form_10_options").slideUp('slow');
-                $("#form10_caret").css("transform", "");
-                $("#form_11_options").slideUp('slow');
-                $("#form11_caret").css("transform", "");
-                $("#form_12_options").slideUp('slow');
-                $("#form12_caret").css("transform", "");
-                $("#form_13_options").slideUp('slow');
-                $("#form13_caret").css("transform", "");
-                $("#form_14_options").slideUp('slow');
-                $("#form14_caret").css("transform", "");
-                $("#form_15_options").slideUp('slow');
-                $("#form15_caret").css("transform", "");
-                $("#form_17_options").slideUp('slow');
-                $("#form17_caret").css("transform", "");
-                $("#form_18_options").slideUp('slow');
-                $("#form18_caret").css("transform", "");
-                $("#form_19_options").slideUp('slow');
-                $("#form19_caret").css("transform", "");
-                $("#form_20_options").slideUp('slow');
-                $("#form20_caret").css("transform", "");
-                $("#form_21_options").slideUp('slow');
-                $("#form21_caret").css("transform", "");
-                $("#form_22_options").slideUp('slow');
-                $("#form22_caret").css("transform", "");
-                $("#form_23_options").slideUp('slow');
-                $("#form23_caret").css("transform", "");
-                $("#form_24_options").slideUp('slow');
-                $("#form24_caret").css("transform", "");
-                $("#form_25_options").slideUp('slow');
-                $("#form25_caret").css("transform", "");
-                $("#form_26_options").slideUp('slow');
-                $("#form26_caret").css("transform", "");
-                $("#form3_add_extension").css("display", "none");
-                $("#form4_add_extension").css("display", "none");
-                $("#form5_add_extension").css("display", "none");
-                $("#form6_add_extension").css("display", "none");
-                $("#form7_add_extension").css("display", "none");
-                $("#form8_add_extension").css("display", "none");
-                $("#form9_add_extension").css("display", "none");
-                $("#form10_add_extension").css("display", "none");
-                $("#form11_add_extension").css("display", "none");
-                $("#form12_add_extension").css("display", "none");
-                $("#form13_add_extension").css("display", "none");
-                $("#form14_add_extension").css("display", "none");
-                $("#form15_add_extension").css("display", "none");
-                $("#form2_add_extension").css("display", "none");
-                $("#form17_add_extension").css("display", "none");
-                $("#form18_add_extension").css("display", "none");
-                $("#form19_add_extension").css("display", "none");
-                $("#form20_add_extension").css("display", "none");
-                $("#form21_add_extension").css("display", "none");
-                $("#form22_add_extension").css("display", "none");
-                $("#form23_add_extension").css("display", "none");
-                $("#form24_add_extension").css("display", "none");
-                $("#form25_add_extension").css("display", "none");
-            })
-        });
-        $(function() {
-            $("button#form17_toggle").on("click", function(e) {
-                e.preventDefault();
-                $("#form_17_options").slideToggle('slow');
-                if($("#form17_caret").css("transform") === "none"){
-                    $("#form17_caret").css("transform", "rotate(180deg)");
-                    $("#form17_add_extension").css("display", "block");
-                }
-                else{
-                    $("#form17_caret").css("transform", "");
-                    $("#form17_add_extension").css("display", "none");
-                }
-                $("#form_2_options").slideUp('slow');
-                $("#form2_caret").css("transform", "");
-                $("#form_3_options").slideUp('slow');
-                $("#form3_caret").css("transform", "");
-                $("#form_4_options").slideUp('slow');
-                $("#form4_caret").css("transform", "");
-                $("#form_5_options").slideUp('slow');
-                $("#form5_caret").css("transform", "");
-                $("#form_6_options").slideUp('slow');
-                $("#form6_caret").css("transform", "");
-                $("#form_7_options").slideUp('slow');
-                $("#form7_caret").css("transform", "");
-                $("#form_8_options").slideUp('slow');
-                $("#form8_caret").css("transform", "");
-                $("#form_9_options").slideUp('slow');
-                $("#form9_caret").css("transform", "");
-                $("#form_10_options").slideUp('slow');
-                $("#form10_caret").css("transform", "");
-                $("#form_11_options").slideUp('slow');
-                $("#form11_caret").css("transform", "");
-                $("#form_12_options").slideUp('slow');
-                $("#form12_caret").css("transform", "");
-                $("#form_13_options").slideUp('slow');
-                $("#form13_caret").css("transform", "");
-                $("#form_14_options").slideUp('slow');
-                $("#form14_caret").css("transform", "");
-                $("#form_15_options").slideUp('slow');
-                $("#form15_caret").css("transform", "");
-                $("#form_16_options").slideUp('slow');
-                $("#form16_caret").css("transform", "");
-                $("#form_18_options").slideUp('slow');
-                $("#form18_caret").css("transform", "");
-                $("#form_19_options").slideUp('slow');
-                $("#form19_caret").css("transform", "");
-                $("#form_20_options").slideUp('slow');
-                $("#form20_caret").css("transform", "");
-                $("#form_21_options").slideUp('slow');
-                $("#form21_caret").css("transform", "");
-                $("#form_22_options").slideUp('slow');
-                $("#form22_caret").css("transform", "");
-                $("#form_23_options").slideUp('slow');
-                $("#form23_caret").css("transform", "");
-                $("#form_24_options").slideUp('slow');
-                $("#form24_caret").css("transform", "");
-                $("#form_25_options").slideUp('slow');
-                $("#form25_caret").css("transform", "");
-                $("#form_26_options").slideUp('slow');
-                $("#form26_caret").css("transform", "");
-                $("#form3_add_extension").css("display", "none");
-                $("#form4_add_extension").css("display", "none");
-                $("#form5_add_extension").css("display", "none");
-                $("#form6_add_extension").css("display", "none");
-                $("#form7_add_extension").css("display", "none");
-                $("#form8_add_extension").css("display", "none");
-                $("#form9_add_extension").css("display", "none");
-                $("#form10_add_extension").css("display", "none");
-                $("#form11_add_extension").css("display", "none");
-                $("#form12_add_extension").css("display", "none");
-                $("#form13_add_extension").css("display", "none");
-                $("#form14_add_extension").css("display", "none");
-                $("#form15_add_extension").css("display", "none");
-                $("#form16_add_extension").css("display", "none");
-                $("#form2_add_extension").css("display", "none");
-                $("#form18_add_extension").css("display", "none");
-                $("#form19_add_extension").css("display", "none");
-                $("#form20_add_extension").css("display", "none");
-                $("#form21_add_extension").css("display", "none");
-                $("#form22_add_extension").css("display", "none");
-                $("#form23_add_extension").css("display", "none");
-                $("#form24_add_extension").css("display", "none");
-                $("#form25_add_extension").css("display", "none");
-            })
-        });
-        $(function() {
-            $("button#form18_toggle").on("click", function(e) {
-                e.preventDefault();
-                $("#form_18_options").slideToggle('slow');
-                if($("#form18_caret").css("transform") === "none"){
-                    $("#form18_caret").css("transform", "rotate(180deg)");
-                    $("#form18_add_extension").css("display", "block");
-                }
-                else{
-                    $("#form18_caret").css("transform", "");
-                    $("#form18_add_extension").css("display", "none");
-                }
-                $("#form_2_options").slideUp('slow');
-                $("#form2_caret").css("transform", "");
-                $("#form_3_options").slideUp('slow');
-                $("#form3_caret").css("transform", "");
-                $("#form_4_options").slideUp('slow');
-                $("#form4_caret").css("transform", "");
-                $("#form_5_options").slideUp('slow');
-                $("#form5_caret").css("transform", "");
-                $("#form_6_options").slideUp('slow');
-                $("#form6_caret").css("transform", "");
-                $("#form_7_options").slideUp('slow');
-                $("#form7_caret").css("transform", "");
-                $("#form_8_options").slideUp('slow');
-                $("#form8_caret").css("transform", "");
-                $("#form_9_options").slideUp('slow');
-                $("#form9_caret").css("transform", "");
-                $("#form_10_options").slideUp('slow');
-                $("#form10_caret").css("transform", "");
-                $("#form_11_options").slideUp('slow');
-                $("#form11_caret").css("transform", "");
-                $("#form_12_options").slideUp('slow');
-                $("#form12_caret").css("transform", "");
-                $("#form_13_options").slideUp('slow');
-                $("#form13_caret").css("transform", "");
-                $("#form_14_options").slideUp('slow');
-                $("#form14_caret").css("transform", "");
-                $("#form_15_options").slideUp('slow');
-                $("#form15_caret").css("transform", "");
-                $("#form_16_options").slideUp('slow');
-                $("#form16_caret").css("transform", "");
-                $("#form_17_options").slideUp('slow');
-                $("#form17_caret").css("transform", "");
-                $("#form_19_options").slideUp('slow');
-                $("#form19_caret").css("transform", "");
-                $("#form_20_options").slideUp('slow');
-                $("#form20_caret").css("transform", "");
-                $("#form_21_options").slideUp('slow');
-                $("#form21_caret").css("transform", "");
-                $("#form_22_options").slideUp('slow');
-                $("#form22_caret").css("transform", "");
-                $("#form_23_options").slideUp('slow');
-                $("#form23_caret").css("transform", "");
-                $("#form_24_options").slideUp('slow');
-                $("#form24_caret").css("transform", "");
-                $("#form_25_options").slideUp('slow');
-                $("#form25_caret").css("transform", "");
-                $("#form_26_options").slideUp('slow');
-                $("#form26_caret").css("transform", "");
-                $("#form3_add_extension").css("display", "none");
-                $("#form4_add_extension").css("display", "none");
-                $("#form5_add_extension").css("display", "none");
-                $("#form6_add_extension").css("display", "none");
-                $("#form7_add_extension").css("display", "none");
-                $("#form8_add_extension").css("display", "none");
-                $("#form9_add_extension").css("display", "none");
-                $("#form10_add_extension").css("display", "none");
-                $("#form11_add_extension").css("display", "none");
-                $("#form12_add_extension").css("display", "none");
-                $("#form13_add_extension").css("display", "none");
-                $("#form14_add_extension").css("display", "none");
-                $("#form15_add_extension").css("display", "none");
-                $("#form16_add_extension").css("display", "none");
-                $("#form17_add_extension").css("display", "none");
-                $("#form2_add_extension").css("display", "none");
-                $("#form19_add_extension").css("display", "none");
-                $("#form20_add_extension").css("display", "none");
-                $("#form21_add_extension").css("display", "none");
-                $("#form22_add_extension").css("display", "none");
-                $("#form23_add_extension").css("display", "none");
-                $("#form24_add_extension").css("display", "none");
-                $("#form25_add_extension").css("display", "none");
-            })
-        });
-        $(function() {
-            $("button#form19_toggle").on("click", function(e) {
-                e.preventDefault();
-                $("#form_19_options").slideToggle('slow');
-                if($("#form19_caret").css("transform") === "none"){
-                    $("#form19_caret").css("transform", "rotate(180deg)");
-                    $("#form19_add_extension").css("display", "block");
-                }
-                else{
-                    $("#form19_caret").css("transform", "");
-                    $("#form19_add_extension").css("display", "none");
-                }
-                $("#form_2_options").slideUp('slow');
-                $("#form2_caret").css("transform", "");
-                $("#form_3_options").slideUp('slow');
-                $("#form3_caret").css("transform", "");
-                $("#form_4_options").slideUp('slow');
-                $("#form4_caret").css("transform", "");
-                $("#form_5_options").slideUp('slow');
-                $("#form5_caret").css("transform", "");
-                $("#form_6_options").slideUp('slow');
-                $("#form6_caret").css("transform", "");
-                $("#form_7_options").slideUp('slow');
-                $("#form7_caret").css("transform", "");
-                $("#form_8_options").slideUp('slow');
-                $("#form8_caret").css("transform", "");
-                $("#form_9_options").slideUp('slow');
-                $("#form9_caret").css("transform", "");
-                $("#form_10_options").slideUp('slow');
-                $("#form10_caret").css("transform", "");
-                $("#form_11_options").slideUp('slow');
-                $("#form11_caret").css("transform", "");
-                $("#form_12_options").slideUp('slow');
-                $("#form12_caret").css("transform", "");
-                $("#form_13_options").slideUp('slow');
-                $("#form13_caret").css("transform", "");
-                $("#form_14_options").slideUp('slow');
-                $("#form14_caret").css("transform", "");
-                $("#form_15_options").slideUp('slow');
-                $("#form15_caret").css("transform", "");
-                $("#form_16_options").slideUp('slow');
-                $("#form16_caret").css("transform", "");
-                $("#form_17_options").slideUp('slow');
-                $("#form17_caret").css("transform", "");
-                $("#form_18_options").slideUp('slow');
-                $("#form18_caret").css("transform", "");
-                $("#form_20_options").slideUp('slow');
-                $("#form20_caret").css("transform", "");
-                $("#form_21_options").slideUp('slow');
-                $("#form21_caret").css("transform", "");
-                $("#form_22_options").slideUp('slow');
-                $("#form22_caret").css("transform", "");
-                $("#form_23_options").slideUp('slow');
-                $("#form23_caret").css("transform", "");
-                $("#form_24_options").slideUp('slow');
-                $("#form24_caret").css("transform", "");
-                $("#form_25_options").slideUp('slow');
-                $("#form25_caret").css("transform", "");
-                $("#form_26_options").slideUp('slow');
-                $("#form26_caret").css("transform", "");
-                $("#form3_add_extension").css("display", "none");
-                $("#form4_add_extension").css("display", "none");
-                $("#form5_add_extension").css("display", "none");
-                $("#form6_add_extension").css("display", "none");
-                $("#form7_add_extension").css("display", "none");
-                $("#form8_add_extension").css("display", "none");
-                $("#form9_add_extension").css("display", "none");
-                $("#form10_add_extension").css("display", "none");
-                $("#form11_add_extension").css("display", "none");
-                $("#form12_add_extension").css("display", "none");
-                $("#form13_add_extension").css("display", "none");
-                $("#form14_add_extension").css("display", "none");
-                $("#form15_add_extension").css("display", "none");
-                $("#form16_add_extension").css("display", "none");
-                $("#form17_add_extension").css("display", "none");
-                $("#form18_add_extension").css("display", "none");
-                $("#form2_add_extension").css("display", "none");
-                $("#form20_add_extension").css("display", "none");
-                $("#form21_add_extension").css("display", "none");
-                $("#form22_add_extension").css("display", "none");
-                $("#form23_add_extension").css("display", "none");
-                $("#form24_add_extension").css("display", "none");
-                $("#form25_add_extension").css("display", "none");
-            })
-        });
-        $(function() {
-            $("button#form20_toggle").on("click", function(e) {
-                e.preventDefault();
-                $("#form_20_options").slideToggle('slow');
-                if($("#form20_caret").css("transform") === "none"){
-                    $("#form20_caret").css("transform", "rotate(180deg)");
-                    $("#form20_add_extension").css("display", "block");
-                }
-                else{
-                    $("#form20_caret").css("transform", "");
-                    $("#form20_add_extension").css("display", "none");
-                }
-                $("#form_2_options").slideUp('slow');
-                $("#form2_caret").css("transform", "");
-                $("#form_3_options").slideUp('slow');
-                $("#form3_caret").css("transform", "");
-                $("#form_4_options").slideUp('slow');
-                $("#form4_caret").css("transform", "");
-                $("#form_5_options").slideUp('slow');
-                $("#form5_caret").css("transform", "");
-                $("#form_6_options").slideUp('slow');
-                $("#form6_caret").css("transform", "");
-                $("#form_7_options").slideUp('slow');
-                $("#form7_caret").css("transform", "");
-                $("#form_8_options").slideUp('slow');
-                $("#form8_caret").css("transform", "");
-                $("#form_9_options").slideUp('slow');
-                $("#form9_caret").css("transform", "");
-                $("#form_10_options").slideUp('slow');
-                $("#form10_caret").css("transform", "");
-                $("#form_11_options").slideUp('slow');
-                $("#form11_caret").css("transform", "");
-                $("#form_12_options").slideUp('slow');
-                $("#form12_caret").css("transform", "");
-                $("#form_13_options").slideUp('slow');
-                $("#form13_caret").css("transform", "");
-                $("#form_14_options").slideUp('slow');
-                $("#form14_caret").css("transform", "");
-                $("#form_15_options").slideUp('slow');
-                $("#form15_caret").css("transform", "");
-                $("#form_16_options").slideUp('slow');
-                $("#form16_caret").css("transform", "");
-                $("#form_17_options").slideUp('slow');
-                $("#form17_caret").css("transform", "");
-                $("#form_18_options").slideUp('slow');
-                $("#form18_caret").css("transform", "");
-                $("#form_19_options").slideUp('slow');
-                $("#form19_caret").css("transform", "");
-                $("#form_21_options").slideUp('slow');
-                $("#form21_caret").css("transform", "");
-                $("#form_22_options").slideUp('slow');
-                $("#form22_caret").css("transform", "");
-                $("#form_23_options").slideUp('slow');
-                $("#form23_caret").css("transform", "");
-                $("#form_24_options").slideUp('slow');
-                $("#form24_caret").css("transform", "");
-                $("#form_25_options").slideUp('slow');
-                $("#form25_caret").css("transform", "");
-                $("#form_26_options").slideUp('slow');
-                $("#form26_caret").css("transform", "");
-                $("#form3_add_extension").css("display", "none");
-                $("#form4_add_extension").css("display", "none");
-                $("#form5_add_extension").css("display", "none");
-                $("#form6_add_extension").css("display", "none");
-                $("#form7_add_extension").css("display", "none");
-                $("#form8_add_extension").css("display", "none");
-                $("#form9_add_extension").css("display", "none");
-                $("#form10_add_extension").css("display", "none");
-                $("#form11_add_extension").css("display", "none");
-                $("#form12_add_extension").css("display", "none");
-                $("#form13_add_extension").css("display", "none");
-                $("#form14_add_extension").css("display", "none");
-                $("#form15_add_extension").css("display", "none");
-                $("#form16_add_extension").css("display", "none");
-                $("#form17_add_extension").css("display", "none");
-                $("#form18_add_extension").css("display", "none");
-                $("#form19_add_extension").css("display", "none");
-                $("#form2_add_extension").css("display", "none");
-                $("#form21_add_extension").css("display", "none");
-                $("#form22_add_extension").css("display", "none");
-                $("#form23_add_extension").css("display", "none");
-                $("#form24_add_extension").css("display", "none");
-                $("#form25_add_extension").css("display", "none");
-            })
-        });
-        $(function() {
-            $("button#form21_toggle").on("click", function(e) {
-                e.preventDefault();
-                $("#form_21_options").slideToggle('slow');
-                if($("#form21_caret").css("transform") === "none"){
-                    $("#form21_caret").css("transform", "rotate(180deg)");
-                    $("#form21_add_extension").css("display", "block");
-                }
-                else{
-                    $("#form21_caret").css("transform", "");
-                    $("#form21_add_extension").css("display", "none");
-                }
-                $("#form_2_options").slideUp('slow');
-                $("#form2_caret").css("transform", "");
-                $("#form_3_options").slideUp('slow');
-                $("#form3_caret").css("transform", "");
-                $("#form_4_options").slideUp('slow');
-                $("#form4_caret").css("transform", "");
-                $("#form_5_options").slideUp('slow');
-                $("#form5_caret").css("transform", "");
-                $("#form_6_options").slideUp('slow');
-                $("#form6_caret").css("transform", "");
-                $("#form_7_options").slideUp('slow');
-                $("#form7_caret").css("transform", "");
-                $("#form_8_options").slideUp('slow');
-                $("#form8_caret").css("transform", "");
-                $("#form_9_options").slideUp('slow');
-                $("#form9_caret").css("transform", "");
-                $("#form_10_options").slideUp('slow');
-                $("#form10_caret").css("transform", "");
-                $("#form_11_options").slideUp('slow');
-                $("#form11_caret").css("transform", "");
-                $("#form_12_options").slideUp('slow');
-                $("#form12_caret").css("transform", "");
-                $("#form_13_options").slideUp('slow');
-                $("#form13_caret").css("transform", "");
-                $("#form_14_options").slideUp('slow');
-                $("#form14_caret").css("transform", "");
-                $("#form_15_options").slideUp('slow');
-                $("#form15_caret").css("transform", "");
-                $("#form_16_options").slideUp('slow');
-                $("#form16_caret").css("transform", "");
-                $("#form_17_options").slideUp('slow');
-                $("#form17_caret").css("transform", "");
-                $("#form_18_options").slideUp('slow');
-                $("#form18_caret").css("transform", "");
-                $("#form_19_options").slideUp('slow');
-                $("#form19_caret").css("transform", "");
-                $("#form_20_options").slideUp('slow');
-                $("#form20_caret").css("transform", "");
-                $("#form_22_options").slideUp('slow');
-                $("#form22_caret").css("transform", "");
-                $("#form_23_options").slideUp('slow');
-                $("#form23_caret").css("transform", "");
-                $("#form_24_options").slideUp('slow');
-                $("#form24_caret").css("transform", "");
-                $("#form_25_options").slideUp('slow');
-                $("#form25_caret").css("transform", "");
-                $("#form_26_options").slideUp('slow');
-                $("#form26_caret").css("transform", "");
-                $("#form3_add_extension").css("display", "none");
-                $("#form4_add_extension").css("display", "none");
-                $("#form5_add_extension").css("display", "none");
-                $("#form6_add_extension").css("display", "none");
-                $("#form7_add_extension").css("display", "none");
-                $("#form8_add_extension").css("display", "none");
-                $("#form9_add_extension").css("display", "none");
-                $("#form10_add_extension").css("display", "none");
-                $("#form11_add_extension").css("display", "none");
-                $("#form12_add_extension").css("display", "none");
-                $("#form13_add_extension").css("display", "none");
-                $("#form14_add_extension").css("display", "none");
-                $("#form15_add_extension").css("display", "none");
-                $("#form16_add_extension").css("display", "none");
-                $("#form17_add_extension").css("display", "none");
-                $("#form18_add_extension").css("display", "none");
-                $("#form19_add_extension").css("display", "none");
-                $("#form20_add_extension").css("display", "none");
-                $("#form2_add_extension").css("display", "none");
-                $("#form22_add_extension").css("display", "none");
-                $("#form23_add_extension").css("display", "none");
-                $("#form24_add_extension").css("display", "none");
-                $("#form25_add_extension").css("display", "none");
-            })
-        });
-        $(function() {
-            $("button#form1_sections_toggle").on("click", function(e) {
-                e.preventDefault();
-                $("#form1_sections_options").slideToggle('slow');
-                if($("#form1_caret").css("transform") === "none"){
-                    $("#form1_caret").css("transform", "rotate(180deg)");
-                    $("#form1_add_extension").css("display", "block");
-                }
-                else{
-                    $("#form1_caret").css("transform", "");
-                    $("#form1_add_extension").css("display", "none");
-                }
-                $("#form_2_options").slideUp('slow');
-                $("#form2_caret").css("transform", "");
-                $("#form_3_options").slideUp('slow');
-                $("#form3_caret").css("transform", "");
-                $("#form_4_options").slideUp('slow');
-                $("#form4_caret").css("transform", "");
-                $("#form_5_options").slideUp('slow');
-                $("#form5_caret").css("transform", "");
-                $("#form_6_options").slideUp('slow');
-                $("#form6_caret").css("transform", "");
-                $("#form_7_options").slideUp('slow');
-                $("#form7_caret").css("transform", "");
-                $("#form_8_options").slideUp('slow');
-                $("#form8_caret").css("transform", "");
-                $("#form_9_options").slideUp('slow');
-                $("#form9_caret").css("transform", "");
-                $("#form_10_options").slideUp('slow');
-                $("#form10_caret").css("transform", "");
-                $("#form_11_options").slideUp('slow');
-                $("#form11_caret").css("transform", "");
-                $("#form_12_options").slideUp('slow');
-                $("#form12_caret").css("transform", "");
-                $("#form_13_options").slideUp('slow');
-                $("#form13_caret").css("transform", "");
-                $("#form_14_options").slideUp('slow');
-                $("#form14_caret").css("transform", "");
-                $("#form_15_options").slideUp('slow');
-                $("#form15_caret").css("transform", "");
-                $("#form_16_options").slideUp('slow');
-                $("#form16_caret").css("transform", "");
-                $("#form_17_options").slideUp('slow');
-                $("#form17_caret").css("transform", "");
-                $("#form_18_options").slideUp('slow');
-                $("#form18_caret").css("transform", "");
-                $("#form_19_options").slideUp('slow');
-                $("#form19_caret").css("transform", "");
-                $("#form_20_options").slideUp('slow');
-                $("#form20_caret").css("transform", "");
-                $("#form_21_options").slideUp('slow');
-                $("#form21_caret").css("transform", "");
-                $("#form_22_options").slideUp('slow');
-                $("#form22_caret").css("transform", "");
-                $("#form_23_options").slideUp('slow');
-                $("#form23_caret").css("transform", "");
-                $("#form_24_options").slideUp('slow');
-                $("#form24_caret").css("transform", "");
-                $("#form_25_options").slideUp('slow');
-                $("#form25_caret").css("transform", "");
-                $("#form_26_options").slideUp('slow');
-                $("#form26_caret").css("transform", "");
-                $("#form3_add_extension").css("display", "none");
-                $("#form2_add_extension").css("display", "none");
-                
-                $("#form4_add_extension").css("display", "none");
-                $("#form5_add_extension").css("display", "none");
-                $("#form6_add_extension").css("display", "none");
-                $("#form7_add_extension").css("display", "none");
-                $("#form8_add_extension").css("display", "none");
-                $("#form9_add_extension").css("display", "none");
-                $("#form10_add_extension").css("display", "none");
-                $("#form11_add_extension").css("display", "none");
-                $("#form12_add_extension").css("display", "none");
-                $("#form13_add_extension").css("display", "none");
-                $("#form14_add_extension").css("display", "none");
-                $("#form15_add_extension").css("display", "none");
-                $("#form16_add_extension").css("display", "none");
-                $("#form17_add_extension").css("display", "none");
-                $("#form18_add_extension").css("display", "none");
-                $("#form19_add_extension").css("display", "none");
-                $("#form20_add_extension").css("display", "none");
-                $("#form21_add_extension").css("display", "none");
-                $("#form22_add_extension").css("display", "none");
-                $("#form23_add_extension").css("display", "none");
-                $("#form24_add_extension").css("display", "none");
-                $("#form25_add_extension").css("display", "none");
-            })
-        });
-        $(function() {
-            $("button#form22_toggle").on("click", function(e) {
-                e.preventDefault();
-                $("#form_22_options").slideToggle('slow');
-                if($("#form22_caret").css("transform") === "none"){
-                    $("#form22_caret").css("transform", "rotate(180deg)");
-                    $("#form22_add_extension").css("display", "block");
-                }
-                else{
-                    $("#form22_caret").css("transform", "");
-                    $("#form22_add_extension").css("display", "none");
-                }
-                $("#form_2_options").slideUp('slow');
-                $("#form2_caret").css("transform", "");
-                $("#form_3_options").slideUp('slow');
-                $("#form3_caret").css("transform", "");
-                $("#form_4_options").slideUp('slow');
-                $("#form4_caret").css("transform", "");
-                $("#form_5_options").slideUp('slow');
-                $("#form5_caret").css("transform", "");
-                $("#form_6_options").slideUp('slow');
-                $("#form6_caret").css("transform", "");
-                $("#form_7_options").slideUp('slow');
-                $("#form7_caret").css("transform", "");
-                $("#form_8_options").slideUp('slow');
-                $("#form8_caret").css("transform", "");
-                $("#form_9_options").slideUp('slow');
-                $("#form9_caret").css("transform", "");
-                $("#form_10_options").slideUp('slow');
-                $("#form10_caret").css("transform", "");
-                $("#form_11_options").slideUp('slow');
-                $("#form11_caret").css("transform", "");
-                $("#form_12_options").slideUp('slow');
-                $("#form12_caret").css("transform", "");
-                $("#form_13_options").slideUp('slow');
-                $("#form13_caret").css("transform", "");
-                $("#form_14_options").slideUp('slow');
-                $("#form14_caret").css("transform", "");
-                $("#form_15_options").slideUp('slow');
-                $("#form15_caret").css("transform", "");
-                $("#form_16_options").slideUp('slow');
-                $("#form16_caret").css("transform", "");
-                $("#form_17_options").slideUp('slow');
-                $("#form17_caret").css("transform", "");
-                $("#form_18_options").slideUp('slow');
-                $("#form18_caret").css("transform", "");
-                $("#form_19_options").slideUp('slow');
-                $("#form19_caret").css("transform", "");
-                $("#form_20_options").slideUp('slow');
-                $("#form20_caret").css("transform", "");
-                $("#form_21_options").slideUp('slow');
-                $("#form21_caret").css("transform", "");
-                $("#form_23_options").slideUp('slow');
-                $("#form23_caret").css("transform", "");
-                $("#form_24_options").slideUp('slow');
-                $("#form24_caret").css("transform", "");
-                $("#form_25_options").slideUp('slow');
-                $("#form25_caret").css("transform", "");
-                $("#form_26_options").slideUp('slow');
-                $("#form26_caret").css("transform", "");
-                $("#form3_add_extension").css("display", "none");
-                $("#form4_add_extension").css("display", "none");
-                $("#form5_add_extension").css("display", "none");
-                $("#form6_add_extension").css("display", "none");
-                $("#form7_add_extension").css("display", "none");
-                $("#form8_add_extension").css("display", "none");
-                $("#form9_add_extension").css("display", "none");
-                $("#form10_add_extension").css("display", "none");
-                $("#form11_add_extension").css("display", "none");
-                $("#form12_add_extension").css("display", "none");
-                $("#form13_add_extension").css("display", "none");
-                $("#form14_add_extension").css("display", "none");
-                $("#form15_add_extension").css("display", "none");
-                $("#form16_add_extension").css("display", "none");
-                $("#form17_add_extension").css("display", "none");
-                $("#form18_add_extension").css("display", "none");
-                $("#form19_add_extension").css("display", "none");
-                $("#form20_add_extension").css("display", "none");
-                $("#form21_add_extension").css("display", "none");
-                $("#form2_add_extension").css("display", "none");
-                $("#form23_add_extension").css("display", "none");
-                $("#form24_add_extension").css("display", "none");
-                $("#form25_add_extension").css("display", "none");
-            })
-        });
-        $(function() {
-            $("button#form23_toggle").on("click", function(e) {
-                e.preventDefault();
-                $("#form_23_options").slideToggle('slow');
-                if($("#form23_caret").css("transform") === "none"){
-                    $("#form23_caret").css("transform", "rotate(180deg)");
-                    $("#form23_add_extension").css("display", "block");
-                }
-                else{
-                    $("#form23_caret").css("transform", "");
-                    $("#form23_add_extension").css("display", "none");
-                }
-                $("#form_2_options").slideUp('slow');
-                $("#form2_caret").css("transform", "");
-                $("#form_3_options").slideUp('slow');
-                $("#form3_caret").css("transform", "");
-                $("#form_4_options").slideUp('slow');
-                $("#form4_caret").css("transform", "");
-                $("#form_5_options").slideUp('slow');
-                $("#form5_caret").css("transform", "");
-                $("#form_6_options").slideUp('slow');
-                $("#form6_caret").css("transform", "");
-                $("#form_7_options").slideUp('slow');
-                $("#form7_caret").css("transform", "");
-                $("#form_8_options").slideUp('slow');
-                $("#form8_caret").css("transform", "");
-                $("#form_9_options").slideUp('slow');
-                $("#form9_caret").css("transform", "");
-                $("#form_10_options").slideUp('slow');
-                $("#form10_caret").css("transform", "");
-                $("#form_11_options").slideUp('slow');
-                $("#form11_caret").css("transform", "");
-                $("#form_12_options").slideUp('slow');
-                $("#form12_caret").css("transform", "");
-                $("#form_13_options").slideUp('slow');
-                $("#form13_caret").css("transform", "");
-                $("#form_14_options").slideUp('slow');
-                $("#form14_caret").css("transform", "");
-                $("#form_15_options").slideUp('slow');
-                $("#form15_caret").css("transform", "");
-                $("#form_16_options").slideUp('slow');
-                $("#form16_caret").css("transform", "");
-                $("#form_17_options").slideUp('slow');
-                $("#form17_caret").css("transform", "");
-                $("#form_18_options").slideUp('slow');
-                $("#form18_caret").css("transform", "");
-                $("#form_19_options").slideUp('slow');
-                $("#form19_caret").css("transform", "");
-                $("#form_20_options").slideUp('slow');
-                $("#form20_caret").css("transform", "");
-                $("#form_21_options").slideUp('slow');
-                $("#form21_caret").css("transform", "");
-                $("#form_22_options").slideUp('slow');
-                $("#form23_caret").css("transform", "");
-                $("#form_24_options").slideUp('slow');
-                $("#form24_caret").css("transform", "");
-                $("#form_25_options").slideUp('slow');
-                $("#form25_caret").css("transform", "");
-                $("#form_26_options").slideUp('slow');
-                $("#form26_caret").css("transform", "");
-                $("#form3_add_extension").css("display", "none");
-                $("#form4_add_extension").css("display", "none");
-                $("#form5_add_extension").css("display", "none");
-                $("#form6_add_extension").css("display", "none");
-                $("#form7_add_extension").css("display", "none");
-                $("#form8_add_extension").css("display", "none");
-                $("#form9_add_extension").css("display", "none");
-                $("#form10_add_extension").css("display", "none");
-                $("#form11_add_extension").css("display", "none");
-                $("#form12_add_extension").css("display", "none");
-                $("#form13_add_extension").css("display", "none");
-                $("#form14_add_extension").css("display", "none");
-                $("#form15_add_extension").css("display", "none");
-                $("#form16_add_extension").css("display", "none");
-                $("#form17_add_extension").css("display", "none");
-                $("#form18_add_extension").css("display", "none");
-                $("#form19_add_extension").css("display", "none");
-                $("#form20_add_extension").css("display", "none");
-                $("#form21_add_extension").css("display", "none");
-                $("#form22_add_extension").css("display", "none");
-                $("#form2_add_extension").css("display", "none");
-                $("#form24_add_extension").css("display", "none");
-                $("#form25_add_extension").css("display", "none");
-            })
-        });
-        $(function() {
-            $("button#form24_toggle").on("click", function(e) {
-                e.preventDefault();
-                $("#form_24_options").slideToggle('slow');
-                if($("#form24_caret").css("transform") === "none"){
-                    $("#form24_caret").css("transform", "rotate(180deg)");
-                    $("#form24_add_extension").css("display", "block");
-                }
-                else{
-                    $("#form24_caret").css("transform", "");
-                    $("#form24_add_extension").css("display", "none");
-                }
-                $("#form_2_options").slideUp('slow');
-                $("#form2_caret").css("transform", "");
-                $("#form_3_options").slideUp('slow');
-                $("#form3_caret").css("transform", "");
-                $("#form_4_options").slideUp('slow');
-                $("#form4_caret").css("transform", "");
-                $("#form_5_options").slideUp('slow');
-                $("#form5_caret").css("transform", "");
-                $("#form_6_options").slideUp('slow');
-                $("#form6_caret").css("transform", "");
-                $("#form_7_options").slideUp('slow');
-                $("#form7_caret").css("transform", "");
-                $("#form_8_options").slideUp('slow');
-                $("#form8_caret").css("transform", "");
-                $("#form_9_options").slideUp('slow');
-                $("#form9_caret").css("transform", "");
-                $("#form_10_options").slideUp('slow');
-                $("#form10_caret").css("transform", "");
-                $("#form_11_options").slideUp('slow');
-                $("#form11_caret").css("transform", "");
-                $("#form_12_options").slideUp('slow');
-                $("#form12_caret").css("transform", "");
-                $("#form_13_options").slideUp('slow');
-                $("#form13_caret").css("transform", "");
-                $("#form_14_options").slideUp('slow');
-                $("#form14_caret").css("transform", "");
-                $("#form_15_options").slideUp('slow');
-                $("#form15_caret").css("transform", "");
-                $("#form_16_options").slideUp('slow');
-                $("#form16_caret").css("transform", "");
-                $("#form_17_options").slideUp('slow');
-                $("#form17_caret").css("transform", "");
-                $("#form_18_options").slideUp('slow');
-                $("#form18_caret").css("transform", "");
-                $("#form_19_options").slideUp('slow');
-                $("#form19_caret").css("transform", "");
-                $("#form_20_options").slideUp('slow');
-                $("#form20_caret").css("transform", "");
-                $("#form_21_options").slideUp('slow');
-                $("#form21_caret").css("transform", "");
-                $("#form_22_options").slideUp('slow');
-                $("#form22_caret").css("transform", "");
-                $("#form_23_options").slideUp('slow');
-                $("#form23_caret").css("transform", "");
-                $("#form_25_options").slideUp('slow');
-                $("#form25_caret").css("transform", "");
-                $("#form_26_options").slideUp('slow');
-                $("#form26_caret").css("transform", "");
-                $("#form3_add_extension").css("display", "none");
-                $("#form4_add_extension").css("display", "none");
-                $("#form5_add_extension").css("display", "none");
-                $("#form6_add_extension").css("display", "none");
-                $("#form7_add_extension").css("display", "none");
-                $("#form8_add_extension").css("display", "none");
-                $("#form9_add_extension").css("display", "none");
-                $("#form10_add_extension").css("display", "none");
-                $("#form11_add_extension").css("display", "none");
-                $("#form12_add_extension").css("display", "none");
-                $("#form13_add_extension").css("display", "none");
-                $("#form14_add_extension").css("display", "none");
-                $("#form15_add_extension").css("display", "none");
-                $("#form16_add_extension").css("display", "none");
-                $("#form17_add_extension").css("display", "none");
-                $("#form18_add_extension").css("display", "none");
-                $("#form19_add_extension").css("display", "none");
-                $("#form20_add_extension").css("display", "none");
-                $("#form21_add_extension").css("display", "none");
-                $("#form22_add_extension").css("display", "none");
-                $("#form23_add_extension").css("display", "none");
-                $("#form2_add_extension").css("display", "none");
-                $("#form25_add_extension").css("display", "none");
-            })
-        });
-        $(function() {
-            $("button#form25_toggle").on("click", function(e) {
-                e.preventDefault();
-                $("#form_25_options").slideToggle('slow');
-                if($("#form25_caret").css("transform") === "none"){
-                    $("#form25_caret").css("transform", "rotate(180deg)");
-                    $("#form25_add_extension").css("display", "block");
-                }
-                else{
-                    $("#form25_caret").css("transform", "");
-                    $("#form25_add_extension").css("display", "none");
-                }
-                $("#form_2_options").slideUp('slow');
-                $("#form2_caret").css("transform", "");
-                $("#form_3_options").slideUp('slow');
-                $("#form3_caret").css("transform", "");
-                $("#form_4_options").slideUp('slow');
-                $("#form4_caret").css("transform", "");
-                $("#form_5_options").slideUp('slow');
-                $("#form5_caret").css("transform", "");
-                $("#form_6_options").slideUp('slow');
-                $("#form6_caret").css("transform", "");
-                $("#form_7_options").slideUp('slow');
-                $("#form7_caret").css("transform", "");
-                $("#form_8_options").slideUp('slow');
-                $("#form8_caret").css("transform", "");
-                $("#form_9_options").slideUp('slow');
-                $("#form9_caret").css("transform", "");
-                $("#form_10_options").slideUp('slow');
-                $("#form10_caret").css("transform", "");
-                $("#form_11_options").slideUp('slow');
-                $("#form11_caret").css("transform", "");
-                $("#form_12_options").slideUp('slow');
-                $("#form12_caret").css("transform", "");
-                $("#form_13_options").slideUp('slow');
-                $("#form13_caret").css("transform", "");
-                $("#form_14_options").slideUp('slow');
-                $("#form14_caret").css("transform", "");
-                $("#form_15_options").slideUp('slow');
-                $("#form15_caret").css("transform", "");
-                $("#form_16_options").slideUp('slow');
-                $("#form16_caret").css("transform", "");
-                $("#form_17_options").slideUp('slow');
-                $("#form17_caret").css("transform", "");
-                $("#form_18_options").slideUp('slow');
-                $("#form18_caret").css("transform", "");
-                $("#form_19_options").slideUp('slow');
-                $("#form19_caret").css("transform", "");
-                $("#form_20_options").slideUp('slow');
-                $("#form20_caret").css("transform", "");
-                $("#form_21_options").slideUp('slow');
-                $("#form21_caret").css("transform", "");
-                $("#form_22_options").slideUp('slow');
-                $("#form22_caret").css("transform", "");
-                $("#form_23_options").slideUp('slow');
-                $("#form23_caret").css("transform", "");
-                $("#form_24_options").slideUp('slow');
-                $("#form24_caret").css("transform", "");
-                $("#form_26_options").slideUp('slow');
-                $("#form26_caret").css("transform", "");
-                $("#form3_add_extension").css("display", "none");
-                $("#form4_add_extension").css("display", "none");
-                $("#form5_add_extension").css("display", "none");
-                $("#form6_add_extension").css("display", "none");
-                $("#form7_add_extension").css("display", "none");
-                $("#form8_add_extension").css("display", "none");
-                $("#form9_add_extension").css("display", "none");
-                $("#form10_add_extension").css("display", "none");
-                $("#form11_add_extension").css("display", "none");
-                $("#form12_add_extension").css("display", "none");
-                $("#form13_add_extension").css("display", "none");
-                $("#form14_add_extension").css("display", "none");
-                $("#form15_add_extension").css("display", "none");
-                $("#form16_add_extension").css("display", "none");
-                $("#form17_add_extension").css("display", "none");
-                $("#form18_add_extension").css("display", "none");
-                $("#form19_add_extension").css("display", "none");
-                $("#form20_add_extension").css("display", "none");
-                $("#form21_add_extension").css("display", "none");
-                $("#form22_add_extension").css("display", "none");
-                $("#form23_add_extension").css("display", "none");
-                $("#form24_add_extension").css("display", "none");
-                $("#form2_add_extension").css("display", "none");
-                
-            })
-        });
-        $(function() {
-            $("button#form26_toggle").on("click", function(e) {
-                e.preventDefault();
-                $("#form_26_options").slideToggle('slow');
-                if($("#form26_caret").css("transform") === "none"){
-                    $("#form26_caret").css("transform", "rotate(180deg)");
-                    $("#form26_add_extension").css("display", "block");
-                }
-                else{
-                    $("#form25_caret").css("transform", "");
-                    $("#form25_add_extension").css("display", "none");
-                }
-                $("#form_2_options").slideUp('slow');
-                $("#form2_caret").css("transform", "");
-                $("#form_3_options").slideUp('slow');
-                $("#form3_caret").css("transform", "");
-                $("#form_4_options").slideUp('slow');
-                $("#form4_caret").css("transform", "");
-                $("#form_5_options").slideUp('slow');
-                $("#form5_caret").css("transform", "");
-                $("#form_6_options").slideUp('slow');
-                $("#form6_caret").css("transform", "");
-                $("#form_7_options").slideUp('slow');
-                $("#form7_caret").css("transform", "");
-                $("#form_8_options").slideUp('slow');
-                $("#form8_caret").css("transform", "");
-                $("#form_9_options").slideUp('slow');
-                $("#form9_caret").css("transform", "");
-                $("#form_10_options").slideUp('slow');
-                $("#form10_caret").css("transform", "");
-                $("#form_11_options").slideUp('slow');
-                $("#form11_caret").css("transform", "");
-                $("#form_12_options").slideUp('slow');
-                $("#form12_caret").css("transform", "");
-                $("#form_13_options").slideUp('slow');
-                $("#form13_caret").css("transform", "");
-                $("#form_14_options").slideUp('slow');
-                $("#form14_caret").css("transform", "");
-                $("#form_15_options").slideUp('slow');
-                $("#form15_caret").css("transform", "");
-                $("#form_16_options").slideUp('slow');
-                $("#form16_caret").css("transform", "");
-                $("#form_17_options").slideUp('slow');
-                $("#form17_caret").css("transform", "");
-                $("#form_18_options").slideUp('slow');
-                $("#form18_caret").css("transform", "");
-                $("#form_19_options").slideUp('slow');
-                $("#form19_caret").css("transform", "");
-                $("#form_20_options").slideUp('slow');
-                $("#form20_caret").css("transform", "");
-                $("#form_21_options").slideUp('slow');
-                $("#form21_caret").css("transform", "");
-                $("#form_22_options").slideUp('slow');
-                $("#form22_caret").css("transform", "");
-                $("#form_23_options").slideUp('slow');
-                $("#form23_caret").css("transform", "");
-                $("#form_24_options").slideUp('slow');
-                $("#form24_caret").css("transform", "");
-                $("#form_25_options").slideUp('slow');
-                $("#form25_caret").css("transform", "");
-            })
-        });
-        //new_forms_toggle
-        $(function() {
-            $("button#new_forms_toggle").on("click", function(e) {
-                e.preventDefault();
-                $("#new_forms_options").slideToggle('slow');
-                $("#searchInputNewForms").slideToggle('slow');
-                $("#searchInputNewForms").val('');
-                var currentScroll = $(window).scrollTop();
-                var targetScroll = currentScroll + 500;
-                if($("#new_forms_caret").css("transform") === "none"){
-                   // Get the current scroll position
-
-                    // Calculate the target scroll position
-
-                    // Scroll to the target position
-                    $('html, body').animate({
-                    scrollTop: targetScroll
-                    }, 400);
-                }
-                else{
-                    $("#new_forms_caret").css("transform", "");
-                    $('html, body').animate({
-                        scrollTop : currentScroll - 500
-                    },0)
-                    resetSearch();
-                }
-            })
-        });
-
 
    
         </script>
-</body>
 
 </html>

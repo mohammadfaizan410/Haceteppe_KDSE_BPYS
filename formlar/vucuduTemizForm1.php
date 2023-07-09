@@ -1778,7 +1778,10 @@ if (isset($_GET['logout'])) {
                             $("#tick-container").fadeIn(800);
                             // Change the tick background to the animated GIF
                             $("#tick").css("background-image", "url('./check-2.gif')");
-
+                            let url =
+                                    "<?php echo $base_url; ?>/updateForms/showAllForms1.php?patient_id=" +
+                                    patient_id + "&patient_name=" + encodeURIComponent(
+                                        patient_name);
                             // Delay for 2 seconds (adjust the duration as needed)
                             setTimeout(function() {
                             // Load the content

@@ -115,12 +115,11 @@ if ($result) {
             <span class='close closeBtn' id='closeBtn1'>&times;</span>
             <h1 class="form-header">ÇALIŞMA, ÜRETME, BOŞ ZAMANINI DEĞERLENDİRME GEREKSİNİMİ</h1>
 
-            <div class="input-section d-flex">
-                <p class="usernamelabel ">Düzenli bir işte çalışma durumu </p>
+            <div class="input-section">
+                <p class="usernamelabel pb-3">Düzenli bir işte çalışma durumu </p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                <div class="checkbox-wrapper d-flex">
-                    <div class="checkboxes d-flex">
-                        <div class="form-check">
+                <div class="checkbox-wrapper">
+                    <div class="checkboxes">
                             <input class="form-check-input" type="radio" name="workStatus" id="DuzenliCalisma"
                                 value="Çalışmıyor">
                             <label class="form-check-label" for="DuzenliCalisma">
@@ -133,9 +132,7 @@ if ($result) {
                                 </label>
                                 <input type="text" class="form-control diger" name="nonWorkingTime" disabled id="CalismiyorSure">
                             </div>
-                        </div>
 
-                        <div class="form-check">
                             <input class="form-check-input" type="radio" name="workStatus" id="DuzenliCalisma"
                                 value="Çalışıyor">
                             <label class="form-check-label" for="DuzenliCalisma">
@@ -148,14 +145,11 @@ if ($result) {
                                 </label>
                                 <input type="text" class="form-control diger" name="workingTime" disabled id="CalisiyorSure">
                             </div>
-                        </div>
-
-
                     </div>
                 </div>
             </div>
-            <div class="input-section d-flex">
-                <p class="usernamelabel ">Hastalığına bağlı iş yaşamına ara verme durumu </p>
+            <div class="input-section">
+                <p class="usernamelabel pb-3">Hastalığına bağlı iş yaşamına ara verme durumu </p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
@@ -175,8 +169,8 @@ if ($result) {
                     </div>
                 </div>
             </div>
-            <div class="input-section d-flex">
-                <p class="usernamelabel ">Sağlığı tehdit eden mesleki riskler </p>
+            <div class="input-section">
+                <p class="usernamelabel pb-3">Sağlığı tehdit eden mesleki riskler </p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
@@ -198,8 +192,8 @@ if ($result) {
                     </div>
                 </div>
             </div>
-            <div class="input-section d-flex">
-                <p class="usernamelabel ">Birlikte yaşadığı aile bireyleri </p>
+            <div class="input-section">
+                <p class="usernamelabel pb-3">Birlikte yaşadığı aile bireyleri </p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
@@ -212,8 +206,8 @@ if ($result) {
                     </div>
                 </div>
             </div>
-            <div class="input-section d-flex">
-                <p class="usernamelabel ">Çocuk sayısı:</p>
+            <div class="input-section">
+                <p class="usernamelabel pb-3">Çocuk sayısı:</p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
@@ -226,17 +220,17 @@ if ($result) {
                 </div>
             </div>
 
-            <div class="input-section d-flex">
-                <p class="usernamelabel">Aile içindeki rolü:</p>
+            <div class="input-section">
+                <p class="usernamelabel pb-3">Aile içindeki rolü:</p>
                 <input type="text" class="form-control" name="roleInFamily" id="AileRolu">
             </div>
 
-            <div class="input-section d-flex">
-                <p class="usernamelabel">Hobileri (Belirtiniz) :</p>
+            <div class="input-section">
+                <p class="usernamelabel pb-3">Hobileri (Belirtiniz) :</p>
                 <input type="text" class="form-control" name="hobbies" id="Hobi">
             </div>
-            <div class="input-section d-flex">
-                <p class="usernamelabel">Hastane ortamındaki sosyal aktiviteleri:</p>
+            <div class="input-section">
+                <p class="usernamelabel pb-3">Hastane ortamındaki sosyal aktiviteleri:</p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes ">

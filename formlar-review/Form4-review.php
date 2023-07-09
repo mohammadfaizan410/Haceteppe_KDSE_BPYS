@@ -100,56 +100,56 @@ if ($result) {
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
 
-                        <div class="input-section d-flex">
+                        <div class="input-section">
                             <p class="usernamelabel">Patient Name:</p>
                             <input type="text" class="form-control" required name="patient_name" id="diger" placeholder="Patient Name" value="<?php echo $form4[0]['patient_name']; ?>" disabled>
                         </div>
-                        <div class="input-section d-flex">
+                        <div class="input-section">
                             <p class="usernamelabel">Patient ID:</p>
                             <input type="text" class="form-control" required name="patient_id" id="diger" placeholder="Patient ID" value="<?php echo $form4[0]['patient_id']; ?>" disabled>
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between">
+                        <div class="input-section" style="justify-content:space-between">
                             <p class="usernamelabel">Cinsiyet : </p>
                             <input type="text" class="form-control" required name="patient_gender" id="diger" placeholder="Hasta Cinsiyetini Giriniz" value="<?php echo $form4[0]['patient_gender']; ?>">
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between">
+                        <div class="input-section" style="justify-content:space-between">
                             <p class="usernamelabel">Tıbbi Tanı : </p>
                             <input type="text" class="form-control" required name="medical_diagnosis" id="diger" placeholder="Tıbbi Tanıyı Giriniz" value="<?php echo $form4[0]['medical_diagnosis']; ?>">
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between">
+                        <div class="input-section" style="justify-content:space-between">
                             <p class="usernamelabel">Düşülen Yer : </p>
                             <input type="text" class="form-control" required name="place_of_fall" id="diger" placeholder="Düşülen Yeri Giriniz" value="<?php echo $form4[0]['place_of_fall']; ?>">
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between">
+                        <div class="input-section" style="justify-content:space-between">
                             <p class="usernamelabel">Düşme Tarihi : </p>
                             <input type="date" class="form-control" required name="fall_date" id="diger" placeholder="Düşme Tarihini Giriniz" value="<?php echo $form4[0]['fall_date']; ?>">
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between">
+                        <div class="input-section" style="justify-content:space-between">
                             <p class="usernamelabel">Düşme Saati : </p>
                             <input type="time" class="form-control" required name="fall_time" id="diger" placeholder="Düşme Saatini Giriniz" value="<?php echo $form4[0]['fall_time']; ?>">
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between">
+                        <div class="input-section" style="justify-content:space-between">
                             <p class="usernamelabel">Son Düşme Risk Skoru : </p>
                             <input type="number" class="form-control" required name="last_fall_risk_score" id="diger" placeholder="Risk Skorunu Giriniz" value="<?php echo $form4[0]['last_fall_risk_score']; ?>">
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between">
+                        <div class="input-section" style="justify-content:space-between">
                             <p class="usernamelabel">Yaralanma Durumu : </p>
                             <input type="text" class="form-control" required name="injury_status" id="diger" placeholder="Yaralanma Durumunu Giriniz" value="<?php echo $form4[0]['injury_status']; ?>">
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between">
+                        <div class="input-section" style="justify-content:space-between">
                             <p class="usernamelabel">Yaralanma Şiddeti : </p>
                             <input type="text" class="form-control" required name="injury_severity" id="diger" placeholder="Yaralanma Şiddeti Giriniz" value="<?php echo $form4[0]['injury_severity']; ?>">
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between">
+                        <div class="input-section" style="justify-content:space-between">
                             <p class="usernamelabel">Düşme Nedeni : </p>
                             <div class="checkbox-wrapper">
                                 <div>
@@ -172,17 +172,17 @@ if ($result) {
                                 </div>
                             </div>
                         </div>
-                        <div class="input-section d-flex" style="justify-content:space-between">
+                        <div class="input-section" style="justify-content:space-between">
                             <p class="usernamelabel">Düşme Öncesi Alınan Önlemler : </p>
                             <input type="text" class="form-control" required name="pre_fall_precautions" id="diger" placeholder="Alınan Önlemleri Giriniz" value="<?php echo $form4[0]['pre_fall_precautions']; ?>">
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between">
+                        <div class="input-section" style="justify-content:space-between">
                             <p class="usernamelabel">Düşme Öncesi Genel Durumu : </p>
                             <input type="text" class="form-control" required name="pre_fall_general_condition" id="diger" placeholder="Genel Durumu Giriniz" value="<?php echo $form4[0]['pre_fall_general_condition']; ?>">
                         </div>
 
-                        <div class="input-section d-flex" style="justify-content:space-between">
+                        <div class="input-section" style="justify-content:space-between">
                             <p class="usernamelabel">Düşme Sonrası Genel Durumu : </p>
                             <input type="text" class="form-control" required name="post_fall_general_condition" id="diger" placeholder="Genel Durumu Giriniz" value="<?php echo $form4[0]['post_fall_general_condition']; ?>">
                         </div>

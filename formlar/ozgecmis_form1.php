@@ -1305,7 +1305,7 @@ if (isset($_GET['logout'])) {
                             let update_date = yourDate.toISOString().split('T')[0];
                             let nameSurname = $('#nameSurname').val();
                             let dob = $('#dob').val();
-                            let gender = $('.form-check-input[name= "gender"]').val();
+                            let gender = $('.form-check-input[name= "gender"]:checked').val();
                             let maritalStatus = $('[name="maritalStatus"]').val();
                             let profession = $('#profession').val();
                             let education = $('#education').val();
@@ -1358,7 +1358,7 @@ if (isset($_GET['logout'])) {
                             let smoking = $('input[name="smoking"]').is(':checked') ? $('input[name="smoking"]').val() : "Yok"; 
                             let smokingAmount = $('input[name="smokingAmount"]').val() ? $('input[name="smokingAmount"]').val() : "";
                             let smokingTime = $('input[name="smokingTime"]').val() ? $('input[name="smokingTime"]').val() : "";
-                            let alcoholUsage = $('input[name="alcoholUsage"]').val();
+                            let alcoholUsage = $('input[name="alcoholUsage"]').is(':checked') ? $('input[name="alcoholUsage"]').val() : "Yok";
                             let alcoholAmount = $('input[name="alcoholAmount"]').val() ? $('input[name="alcoholAmount"]').val() : "";
                             let alcoholUsageTime = $('input[name="alcoholUsageTime"]').val() ? $('input[name="alcoholUsageTime"]').val() : "";
                             let teaUsage = $('input[name="teaUsage"]').is(':checked') ? $('input[name="teaUsage"]').val() : "Yok";

@@ -460,7 +460,6 @@ if (isset($_GET['logout'])) {
                 </div>
             </div>
             <div class="input-section">
-            <div class="input-section">
                 <p class="usernamelabel p-3">Mesane kateterizasyonu </p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 <div class="checkbox-wrapper pb-3">

@@ -124,17 +124,17 @@ if ($result) {
             <span class='close closeBtn' id='closeBtn1'>&times;</span>
 
             <h1 class="form-header">BESLENME GEREKSİNİMİ</h1>
-            <div class="input-section d-flex">
-                <p class="usernamelabel">Günlük öğün sayısı/zamanı </p>
+            <div class="input-section">
+                <p class="usernamelabel pb-3">Günlük öğün sayısı/zamanı </p>
                 <input type="text" class="form-control" required name="OgunSayisi" id="OgunSayisi" maxlength="30">
             </div>
-            <div class="input-section d-flex">
-                <p class="usernamelabel">Ağırlıklı olarak tükettiğiniz besinler nelerdir?</p>
+            <div class="input-section">
+                <p class="usernamelabel pb-3">Ağırlıklı olarak tükettiğiniz besinler nelerdir?</p>
                 <input type="text" class="form-control" required name="TukettigiBesin" id="TukettigiBesin"
                     maxlength="100">
             </div>
-            <div class="input-section d-flex">
-                <p class="usernamelabel">Sıklıkla kullandığınız pişirme yöntemleri nelerdir? </p>
+            <div class="input-section">
+                <p class="usernamelabel pb-3">Sıklıkla kullandığınız pişirme yöntemleri nelerdir? </p>
                 <input type="text" class="form-control" required name="PisirmeYontemi" id="PisirmeYontemi"
                     maxlength="100">
             </div>
@@ -152,8 +152,8 @@ if ($result) {
 
 
 
-            <div class="input-section d-flex">
-                <p class="usernamelabel">Beslenme gereksinimini karşılamada </p>
+            <div class="input-section">
+                <p class="usernamelabel pb-3">Beslenme gereksinimini karşılamada </p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
 
@@ -202,8 +202,8 @@ if ($result) {
                     </div>
                 </div>
             </div>
-            <div class="input-section d-flex">
-                <p class="usernamelabel">Diyet</p>
+            <div class="input-section">
+                <p class="usernamelabel pb-3">Diyet</p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
 
@@ -243,8 +243,8 @@ if ($result) {
                     </div>
                 </div>
             </div>
-            <div class="input-section d-flex">
-                <p class="usernamelabel">Günlük olarak izin verilen besinlerin tüketimi </p>
+            <div class="input-section">
+                <p class="usernamelabel pb-3">Günlük olarak izin verilen besinlerin tüketimi </p>
                 <div class="form-check">
                     <input class="form-check-input food_consumption" type="radio" name="food-consumption"  value="Yok">
                     <label class="form-check-label" for="food-consumption-yok">
@@ -291,8 +291,8 @@ if ($result) {
                 </div>
                 
             </div>
-            <div class="input-section d-flex">
-                <p class="usernamelabel">Sıvı Tüketimi</p>
+            <div class="input-section">
+                <p class="usernamelabel pb-3">Sıvı Tüketimi</p>
                 <div>
                     Miktarı<input type="number" class="form-control" required name="SiviTuketimi" id="liquid_consumption"
                         maxlength="6">
@@ -300,9 +300,9 @@ if ($result) {
                 </div>
             </div>
 
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">
+                <p class="usernamelabel pb-3">
                     Beslenme şekli
                 </p>
                 <div class="checkbox-wrapper d-flex">
@@ -431,8 +431,8 @@ if ($result) {
                 </div>
             </div>
 
-            <div class="input-section d-flex">
-                <p class="usernamelabel">Gastrik Rezidü </p>
+            <div class="input-section">
+                <p class="usernamelabel pb-3">Gastrik Rezidü </p>
                 <div class="form-check">
                     <input class="form-check-input gastric_residue" type="radio" name="gastric_residue_yok" id="gastric_residue_yok"
                         value="Yok">
@@ -462,8 +462,8 @@ if ($result) {
             
             </div>
 
-            <div class="input-section d-flex">
-                <p class="usernamelabel">Nazogastrik dekompresyon</p>
+            <div class="input-section">
+                <p class="usernamelabel pb-3">Nazogastrik dekompresyon</p>
                 <div class="form-check">
                     <input class="form-check-input nazogastrik_decompression_radio" type="radio" name="NazogastrikRadio-var"
                         value="Var">
@@ -480,8 +480,8 @@ if ($result) {
                 </div>
 
             </div>
-            <div class="input-section d-flex">
-                <p class="usernamelabel">
+            <div class="input-section">
+                <p class="usernamelabel pb-3">
                     Çiğneme Yutma Güçlüğü
                 </p>
                 <div class="form-check">
@@ -498,8 +498,8 @@ if ($result) {
                 </div>
             </div>
 
-            <div class="input-section d-flex">
-                <p class="usernamelabel">Kilo kaybı </p>
+            <div class="input-section">
+                <p class="usernamelabel pb-3">Kilo kaybı </p>
                 <div class="form-check">
                     <input class="form-check-input weight_loss" type="radio" name="weight-loss-yok" value="Yok">
                     <label class="form-check-label" for="weight-loss-yok">
@@ -548,8 +548,8 @@ if ($result) {
             </div>
 
 
-            <div class="input-section d-flex">
-                <p class="usernamelabel">Kilo alma </p>
+            <div class="input-section">
+                <p class="usernamelabel pb-3">Kilo alma </p>
                 <div class="form-check">
                     <input class="form-check-input weight_gain" type="radio" name="weight-gain-yok"  value="Yok">
                     <label class="form-check-label" for="weight-gain-yok">
@@ -600,9 +600,9 @@ if ($result) {
 
 
 
-            <div class="input-section d-flex">
+            <div class="input-section">
 
-                <p class="usernamelabel">Beslenme ile ilgili :</p>
+                <p class="usernamelabel pb-3">Beslenme ile ilgili :</p>
                 <div class="checkbox-wrapper d-flex">
                     <div class="checkboxes d-flex">
                         <div class="form-check">
@@ -683,13 +683,13 @@ if ($result) {
             </div>
 
 
-            <div class="input-section d-flex">
-                <p class="usernamelabel">Ağız ve Ağız Boşluğunun Değerlendirilmesi</p>
+            <div class="input-section">
+                <p class="usernamelabel pb-3">Ağız ve Ağız Boşluğunun Değerlendirilmesi</p>
 
                 <div>
-                    <div class="input-section d-flex">
+                    <div class="input-section">
 
-                        <p class="usernamelabel">Dudakların rengi ve yapısı </p>
+                        <p class="usernamelabel pb-3">Dudakların rengi ve yapısı </p>
                         <div class="checkbox-wrapper d-flex">
                             <div class="checkboxes d-flex">
                                 <div class="form-check">
@@ -757,9 +757,9 @@ if ($result) {
                             </div>
                         </div>
                     </div>
-                    <div class="input-section d-flex">
+                    <div class="input-section">
 
-                        <p class="usernamelabel">Ağız mukozası </p>
+                        <p class="usernamelabel pb-3">Ağız mukozası </p>
                         <div class="checkbox-wrapper d-flex">
                             <div class="checkboxes d-flex">
                                 <div class="form-check">
@@ -850,9 +850,9 @@ if ($result) {
                             </div>
                         </div>
                     </div>
-                    <div class="input-section d-flex">
+                    <div class="input-section">
 
-                        <p class="usernamelabel">Dişler ve Diş Etleri </p>
+                        <p class="usernamelabel pb-3">Dişler ve Diş Etleri </p>
                         <div class="checkbox-wrapper d-flex">
                             <div class="checkboxes d-flex">
                                 <div class="form-check">
@@ -957,9 +957,9 @@ if ($result) {
                             </div>
                         </div>
                     </div>
-                    <div class="input-section d-flex">
+                    <div class="input-section">
 
-                        <p class="usernamelabel">Dil </p>
+                        <p class="usernamelabel pb-3">Dil </p>
                         <div class="checkbox-wrapper d-flex">
                             <div class="checkboxes d-flex">
                                 <div class="form-check">
@@ -1020,9 +1020,9 @@ if ($result) {
                             </div>
                         </div>
                     </div>
-                    <div class="input-section d-flex">
+                    <div class="input-section">
 
-                        <p class="usernamelabel">Farenks</p>
+                        <p class="usernamelabel pb-3">Farenks</p>
                         <div class="checkbox-wrapper d-flex">
                             <div class="checkboxes d-flex">
                                 <div class="form-check">
@@ -1092,9 +1092,9 @@ if ($result) {
                             </div>
                         </div>
                     </div>
-                    <div class="input-section d-flex">
+                    <div class="input-section">
 
-                        <p class="usernamelabel">Tonsila </p>
+                        <p class="usernamelabel pb-3">Tonsila </p>
                         <div class="checkbox-wrapper d-flex">
                             <div class="checkboxes d-flex">
                                 <div class="form-check">
@@ -1180,12 +1180,12 @@ if ($result) {
 
 
 
-            <div class="input-section d-flex">
-                <p class="usernamelabel">Abdominal Değerlendirme</p>
+            <div class="input-section">
+                <p class="usernamelabel pb-3">Abdominal Değerlendirme</p>
                 <div>
-                    <div class="input-section d-flex">
+                    <div class="input-section">
 
-                        <p class="usernamelabel">Abdominal Hassasiyet: </p>
+                        <p class="usernamelabel pb-3">Abdominal Hassasiyet: </p>
                         <div class="checkbox-wrapper d-flex">
                             <div class="checkboxes d-flex">
                                 <div class="form-check">
@@ -1207,9 +1207,9 @@ if ($result) {
                             </div>
                         </div>
                     </div>
-                    <div class="input-section d-flex">
+                    <div class="input-section">
 
-                        <p class="usernamelabel">Abdominal Kontür: </p>
+                        <p class="usernamelabel pb-3">Abdominal Kontür: </p>
 
                         <div class="checkbox-wrapper d-flex">
                             <div class="checkboxes d-flex">
@@ -1247,9 +1247,9 @@ if ($result) {
                             </div>
                         </div>
                     </div>
-                    <div class="input-section d-flex">
+                    <div class="input-section">
 
-                        <p class="usernamelabel">Herniasyon: </p>
+                        <p class="usernamelabel pb-3">Herniasyon: </p>
 
                         <div class="checkbox-wrapper d-flex">
                             <div class="checkboxes d-flex">
@@ -1273,9 +1273,9 @@ if ($result) {
                             </div>
                         </div>
                     </div>
-                    <div class="input-section d-flex">
+                    <div class="input-section">
 
-                        <p class="usernamelabel">Umbilikus: </p>
+                        <p class="usernamelabel pb-3">Umbilikus: </p>
 
                         <div class="checkbox-wrapper d-flex">
                             <div class="checkboxes d-flex">
@@ -1297,9 +1297,9 @@ if ($result) {
                             </div>
                         </div>
                     </div>
-                    <div class="input-section d-flex">
+                    <div class="input-section">
 
-                        <p class="usernamelabel">Abdomende Döküntü : </p>
+                        <p class="usernamelabel pb-3">Abdomende Döküntü : </p>
 
                         <div class="checkbox-wrapper d-flex">
                             <div class="checkboxes d-flex">
@@ -1321,9 +1321,9 @@ if ($result) {
                             </div>
                         </div>
                     </div>
-                    <div class="input-section d-flex">
+                    <div class="input-section">
 
-                        <p class="usernamelabel">Abdomende Asit : </p>
+                        <p class="usernamelabel pb-3">Abdomende Asit : </p>
 
                         <div class="checkbox-wrapper d-flex">
                             <div class="checkboxes d-flex">
@@ -1343,9 +1343,9 @@ if ($result) {
                             </div>
                         </div>
                     </div>
-                    <div class="input-section d-flex">
+                    <div class="input-section">
 
-                        <p class="usernamelabel">Abdomende Kitle:</p>
+                        <p class="usernamelabel pb-3">Abdomende Kitle:</p>
 
                         <div class="checkbox-wrapper d-flex abdominal_stuff_div">
                             <div class="checkboxes d-flex">
@@ -1374,9 +1374,9 @@ if ($result) {
                             </div>
                         </div>
                     </div>
-                    <div class="input-section d-flex">
+                    <div class="input-section">
 
-                        <p class="usernamelabel">Karın Derisi :</p>
+                        <p class="usernamelabel pb-3">Karın Derisi :</p>
 
                         <div>
                             <div class="checkbox-wrapper d-flex">

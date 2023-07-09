@@ -80,24 +80,22 @@ if (isset($_GET['logout'])) {
             <div class="input-section">
                 <p class="usernamelabel  pb-3">Düzenli bir işte çalışma durumu </p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                <div class="checkbox-wrapper d-flex">
-                    <div class="checkboxes d-flex">
-                        <div class="form-check">
+                <div class="checkbox-wrapper">
+                    <div class="checkboxes">
                             <input class="form-check-input" type="radio" name="workStatus" id="DuzenliCalisma"
                                 value="Çalışmıyor">
-                            <label class="form-check-label" for="DuzenliCalisma">
-                                <span class="checkbox-header">Çalışmıyor</span>
+                                <label class="form-check-label" for="DuzenliCalisma">
+                                    <span class="checkbox-header">Çalışmıyor</span>
                             </label>
                             <div>
-
                                 <label class="form-check-label" for="beslenmeileumuradio">
                                     <span class="checkbox-header">Süre:</span>
                                 </label>
                                 <input type="text" class="form-control diger" name="nonWorkingTime" disabled id="CalismiyorSure">
                             </div>
-                        </div>
-
-                        <div class="form-check">
+                    </div>
+                    
+                    <div class="checkboxes">
                             <input class="form-check-input" type="radio" name="workStatus" id="DuzenliCalisma"
                                 value="Çalışıyor">
                             <label class="form-check-label" for="DuzenliCalisma">
@@ -113,7 +111,6 @@ if (isset($_GET['logout'])) {
                         </div>
 
 
-                    </div>
                 </div>
             </div>
             <div class="input-section">
