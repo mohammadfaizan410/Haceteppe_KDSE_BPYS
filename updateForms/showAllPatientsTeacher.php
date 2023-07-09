@@ -89,7 +89,8 @@ if (isset($_GET['logout'])) {
                     let url = "<?php echo $base_url; ?>/updateForms/showAllStudents.php";
                     $('#content').load(url);
                 });
-                $("#showSubmittedforms").click(function() {
+                $("#showSubmittedforms").click(function(e) {
+                    e.preventDefault();
                     var patient_id = $(this).data("patient-id");
                     var patient_name = $(this).data("patient-name");
                     var student_name = $(this).data("student-name");
@@ -97,7 +98,8 @@ if (isset($_GET['logout'])) {
                     patient_id + "&patient_name=" + encodeURIComponent(patient_name) + "&student_id=" + <?php echo $_GET['student_id'] ?> + "&student_name=" + encodeURIComponent(<?php echo json_encode($_GET['student_name']) ?>);
                     $('#content').load(url);
                 });
-                $('#showSubmittedtanis').click(function() {
+                $('#showSubmittedtanis').click(function(e) {
+                    e.preventDefault();
                 var patient_id = $(this).data("patient-id");
                 var patient_name = $(this).data("patient-name");
                 console.log(patient_id, patient_name);
