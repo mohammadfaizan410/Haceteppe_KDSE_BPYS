@@ -58,7 +58,7 @@ if (isset($_GET['logout'])) {
                 $("#content").load(url);
             });
             $('#showSubmittedForms').click(function() {
-                var url = "<?php echo $base_url; ?>/updateForms/showSubmittedFormsStudent.php?patient_id=" +
+                var url = "<?php echo $base_url; ?>/updateForms/showSubmittedForms.php?patient_id=" +
                         patient_id + "&patient_name=" + encodeURIComponent(patient_name); 
                 $("#content").load(url);
             });
