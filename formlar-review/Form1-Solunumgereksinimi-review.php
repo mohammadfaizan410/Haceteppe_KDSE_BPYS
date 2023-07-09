@@ -1092,9 +1092,9 @@ if ($result) {
 
             if (solunumsorunu == "Var"){
 
-                var breathingProblems = <?php echo $solunumgereksinimi_form1['breathingProblems']; ?>;
+                var breathingProblems = "<?php echo $solunumgereksinimi_form1['breathingProblems']; ?>".split('/');
 
-                breathingProblems.split('/').forEach(function(value) {
+                breathingProblems.forEach(function(value) {
                     if (value === "Diğer") {
                         $('#breathing-not').attr('checked', true);
                         var breathingOther = "<?php echo $solunumgereksinimi_form1['solunum_diger']; ?>"
@@ -1129,7 +1129,7 @@ if ($result) {
                 } else {
                     $('[name="solunum_diger"]').attr('disabled', false);
                 }
-            })
+            });
 
             var solunumyolu = "<?php echo $solunumgereksinimi_form1['SolunumYolu']; ?>";
             $('[name="SolunumYolu"][value="'+ solunumyolu + '"]').prop('checked', true);
@@ -1164,6 +1164,8 @@ if ($result) {
                 if (coughOption === "Diğer"){
                     $('[name="CoughOption"][value="Diğer"]').prop('checked', true);
                     $('#oksurme_diger').val("<?php echo $solunumgereksinimi_form1['oksurme_diger']; ?>");
+                } else {
+                    $('[name="CoughOption"][value="'+ coughOption + '"]').prop('checked', true);
                 }
             } 
             else {
@@ -1243,16 +1245,15 @@ if ($result) {
                 }
             })
 
-
             var aspirasyonIhtiyaci = "<?php echo $solunumgereksinimi_form1['AspirasyonIhtiyaci']; ?>";
             $('[name="AspirasyonIhtiyaci"][value="'+ aspirasyonIhtiyaci + '"]').prop('checked', true);
 
             if (aspirasyonIhtiyaci == "Var"){
                 
                 $('[name="Aspirasyon_need"]').prop('disabled', false);
-                var aspirasyonNeeds = <?php echo $solunumgereksinimi_form1['aspirasyonNeeds']; ?>;
+                var aspirasyonNeeds = "<?php echo $solunumgereksinimi_form1['aspirasyonNeeds']; ?>".split('/');
 
-                aspirasyonNeeds.split('/').forEach(function(value) {
+                aspirasyonNeeds.forEach(function(value) {
                     $('[name="Aspirasyon_need"][value="'+value+'"]').prop('checked', true);
                 })
 
@@ -1276,9 +1277,9 @@ if ($result) {
 
             if (burunMuayenesi == "Var"){
                 $('[name="NasalIssue"]').prop('disabled', false);
-                var nasalIssues = <?php echo $solunumgereksinimi_form1['nasalIssues']; ?>;
+                var nasalIssues = "<?php echo $solunumgereksinimi_form1['nasalIssues']; ?>".split('/');
 
-                nasalIssues.split('/').forEach(function(value) {
+                nasalIssues.forEach(function(value) {
                     $('[name="NasalIssue"][value="'+value+'"]').prop('checked', true);
                     if (value === "Diger") {
                         var nasalOther = "<?php echo $solunumgereksinimi_form1['nazal_diger']; ?>";
@@ -1410,9 +1411,9 @@ if ($result) {
             if (omurgaDeform == "Var"){
 
                 $('[name="SpinalDeformity"]').prop('disabled', false);
-                var spinalDeforms = <?php echo $solunumgereksinimi_form1['SpinalDeformities']; ?>;
+                var spinalDeforms = "<?php echo $solunumgereksinimi_form1['SpinalDeformities']; ?>".split('/');
 
-                spinalDeforms.split('/').forEach(function(value) {
+                spinalDeforms.forEach(function(value) {
                     $('[name="SpinalDeformity"][value="'+value+'"]').prop('checked', true);
                 })
 
@@ -1524,9 +1525,9 @@ if ($result) {
             if (gogusDeformitesi == "Var"){
 
                 $('[name="DeformityType"]').prop('disabled', false);
-                var deformityTypes = <?php echo $solunumgereksinimi_form1['DeformityTypes']; ?>;
+                var deformityTypes = "<?php echo $solunumgereksinimi_form1['DeformityTypes']; ?>".split('/');
 
-                deformityTypes.split('/').forEach(function(value) {
+                deformityTypes.forEach(function(value) {
                     $('[name="DeformityType"][value="'+value+'"]').prop('checked', true);
                 })
 
@@ -1545,9 +1546,9 @@ if ($result) {
 
             })
 
-            var solunumSistemi = <?php echo $solunumgereksinimi_form1['SolunumSistemiUygilamasi']; ?>;
+            var solunumSistemi = "<?php echo $solunumgereksinimi_form1['SolunumSistemiUygilamasi']; ?>".split('/');
 
-            solunumSistemi.split('/').forEach(function(value) {
+            solunumSistemi.forEach(function(value) {
                 $('[name="SolunumSistemiUygilamasi"][value="'+value+'"]').prop('checked', true);
                 if (value === "Diger") {
                     var solunumSistemiOther = "<?php echo $solunumgereksinimi_form1['SolunumUygulamasi_diger']; ?>"
@@ -1566,8 +1567,6 @@ if ($result) {
                     $('[name="SolunumUygulamasi_diger"]').attr('disabled', false);
                 }
             })
-
-
 
         })
         </script>

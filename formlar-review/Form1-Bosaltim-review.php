@@ -756,7 +756,7 @@ if ($result) {
     $('[name="BoşaltımSorun"][value="'+BoşaltımSorun+'"]').attr('checked', true);
 
     if ($('[name="BoşaltımSorun"]:checked').val() === "Var"){
-        var excretionProblems = <?php echo $bosaltim['excretionProblems']; ?>;
+        var excretionProblems = "<?php echo $bosaltim['excretionProblems']; ?>".split('/');
         
         excretionProblems.forEach(function(value) {
                     $('[name="excretionProblems"][value="'+value+'"]').prop('checked', true);
@@ -796,7 +796,7 @@ if ($result) {
         var excretionForm = "<?php echo $bosaltim['excretionForm']; ?>";
         $('[name="excretionForm"][value="'+excretionForm+'"]').attr('checked', true);
         if (excretionForm == "Kolostom") {
-            var excretionForm1 = <?php echo $bosaltim['kolostomExcretionForm']; ?>;
+            var excretionForm1 = "<?php echo $bosaltim['kolostomExcretionForm']; ?>".split('/');
             var kolostomStomaninRengi = "<?php echo $bosaltim['kolostomStomaninRengi']; ?>";
             excretionForm1.forEach(function(value) {
                     $('[name="excretionForm1"][value="'+value+'"]').prop('checked', true);
@@ -806,7 +806,7 @@ if ($result) {
             $('[name="StomanınRengi"]').attr('disabled', true);
             $('[name="excretionForm2"]').prop('disabled', true);
         } else {
-            var excretionForm2 = <?php echo $bosaltim['ileostomiExcretionForm']; ?>;
+            var excretionForm2 = "<?php echo $bosaltim['ileostomiExcretionForm']; ?>".split('/');
             var ileostomiStomaninRengi = "<?php echo $bosaltim['ileostomiStomaninRengi']; ?>";
             excretionForm2.forEach(function(value) {
                     $('[name="excretionForm2"][value="'+value+'"]').prop('checked', true);
@@ -863,7 +863,7 @@ if ($result) {
     $('[name="BoşaltımdaSorun"][value="'+BoşaltımdaSorun+'"]').attr('checked', true);
 
     if (BoşaltımdaSorun === "Var"){
-        var excretionIssues = <?php echo $bosaltim['excretionIssues']; ?>;
+        var excretionIssues = "<?php echo $bosaltim['excretionIssues']; ?>".split('/');
         excretionIssues.forEach(function(value) {
                     $('[name="excretionIssues"][value="'+value+'"]').prop('checked', true);
                 })
@@ -887,7 +887,7 @@ if ($result) {
 
     if (Mesane_kateterizasyonu === "Var"){
         var mesane_takilma_tarihi = "<?php echo $bosaltim['mesane_takilma_tarihi']; ?>";
-        var attachmentPurpose = <?php echo $bosaltim['attachmentPurpose']; ?>;
+        var attachmentPurpose = "<?php echo $bosaltim['attachmentPurpose']; ?>".split('/');
         attachmentPurpose.forEach(function(value) {
                     $('[name="attachmentPurpose"][value="'+value+'"]').prop('checked', true);
                 })
@@ -916,7 +916,7 @@ if ($result) {
 
     if ($('[name="Üreterestomi"]:checked').val() === "Var"){
         $('[name="ureter"]').prop('disabled', false);
-        var ureter = <?php echo $bosaltim['ureter']; ?>;
+        var ureter = "<?php echo $bosaltim['ureter']; ?>".split("/");
         ureter.forEach(function(value) {
                     $('[name="ureter"][value="'+value+'"]').prop('checked', true);
                 })
@@ -1168,7 +1168,7 @@ $('#submit').click(function(e) {
                             }).get().join("/") : "Yok";
         let Mesane_kateterizasyonu = $("input[name='Mesane_kateterizasyonu']:checked").val();
         let mesane_takilma_tarihi = $("input[name='mesane_takilma_tarihi']").is('disabled') ? null : $("input[name='mesane_takilma_tarihi']").val();
-        let attachmentPurpose = $('.form-check-input[name="mesane_takilma_tarihi"]:checked').val() === "Var" ? $("input[name='attachmentPurpose']:checked").map(function() {
+        let attachmentPurpose = $('.form-check-input[name="Mesane_kateterizasyonu"]:checked').val() === "Var" ? $("input[name='attachmentPurpose']:checked").map(function() {
                                 return $(this).val();
                             }).get().join("/") : "Yok";
         let ureterestomi = $("input[name='Üreterestomi']:checked").val();
