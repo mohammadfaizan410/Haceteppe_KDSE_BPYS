@@ -904,7 +904,7 @@ if (isset($_GET['logout'])) {
                             </div>
                         <!-- form11 ends here -->
                         
-                        <!-- form12 -->
+                        <!-- form12 --> 
                         <div id="form12_container" class="row form-container">
                             <div class="col-lg-3 btn btn-success mb-2" id="form12_toggler">
                                 <a><p>Sıvı İzlem</p></a>
