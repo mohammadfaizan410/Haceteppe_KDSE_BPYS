@@ -59,16 +59,33 @@ session_start();
     <div id="tick-container">
   <div id="tick"></div>
 </div>
-<div id='change-password-container' class='login-box login-login' style="display: none;">
-    <p class="labels">E-Posta</p>
-    <input type="text" required name="email-search" id="email-search" placeholder="E-Posta Giriniz">
-    <p class="labels">Yeni Şifre</p>
-    <input type="password" name="reset-pass" id="reset-pass" required placeholder="Şifre Giriniz">
-    <p class="labels">Şifreyi tekrar girin</p>
-    <input type="password" name="reset-pass-confirm" id="reset-pass-confirm" required placeholder="Şifre Giriniz">
-    <input type="submit" name="submit" id="change-password" value="Şifreyi Sıfırla">
-    <div id="go-back" style="cursor: pointer;">iptal</div>
-</div>
+
+<div class="login-box" id="reset-password-container" style="display: none;">
+        <h1 class="header">KDSE-BPYS</h1>
+        <h2 class="login">Hemşire Girişi</h2>
+        <div id="check-email-validity">
+            <p class="labels">E-Posta</p>
+            <input type="text" required name="email" id="check-email" placeholder="E-Posta Giriniz">
+            <input  class="btn btn-success" type="submit" id="send-code-btn" value="Kod gönder" />
+        </div>
+
+        <div id="code-container" style="display: none;">
+            <p class="labels">Kodu Giriniz</p>
+            <input type="password" required name="kode" id="check-code" placeholder="Kodu Giriniz">
+            <input class="btn btn-success" value="Girmek" type="submit" id="check-code-btn" />
+        </div>
+
+        <div id="password-resetter" style="display: none;">
+            <p class="labels">Password </p>
+            <input type="password" required name="new-password" id="new-password" placeholder="Sifre Giriniz">
+            <p class="labels">Tekrar Password</p>
+            <input type="password" required name="new-password-confirm" id="new-password-confirm" placeholder="Sifre Giriniz">
+            <input class="btn btn-success" type="submit"value='Sıfırlama' id="reset-password-btn" />
+        </div>
+
+        <div id="close-reset-password" style="cursor: pointer;">Iptal</div>
+    </div>
+
     <div>
         <form action="" method="post">
             <div class="login-box login-login">
@@ -132,57 +149,88 @@ session_start();
         })
 
 
-        $('#go-back').click(function(){
-        $('.login-login').show('slow');
-        $('#change-password-container').hide('slow');
-        $('#email-search').val('')
-        $('#reset-pass').val('')
-        $('#reset-pass-confirm').val('')
+        $('#forgot-password').click(function(e) {
+        $('#reset-password-container').show('slow');
+        $('.login-login').hide('slow');
     })
 
-    $('#forgot-password').click(function(){
-        $('.login-login').hide('slow');
-        $('#change-password-container').show('slow');
-        $('#change-password').click(function(){
-            var email = $('#email-search').val();
-            var password = $('#reset-pass').val();
-            var passwordConfirm = $('#reset-pass-confirm').val();
-
-            $.ajax({
-                type: "POST",
-                url: "./checEmailAll.php",
+    $('#send-code-btn').click(function(e) {
+        var email = $('#check-email').val();
+        $.ajax({
+            type: 'POST',
+            url: './checkEmailTeacher.php',
             data: {
-                email : email
+                email: email,
             },
-            success: function (response) {
-                if(response == 'not-exists'){
-                    alert('E-Posta adresi bulunamadı.')
-                }else{
-                    if(password != passwordConfirm){
-                        alert('Şifreler uyuşmuyor.')
-                    }else{
-                        $.ajax({
-                            type: "POST",
-                            url: "./changePasswordTeacher.php",
-                            data: {
-                                email : email,
-                                password : password
-                            },
-                            success: function (response) {
-                                if(response == 'success'){
-                                    alert('Şifreniz başarıyla değiştirildi.')
-                                    $('.login-login').show('slow');
-                                    $('#change-password-container').hide('slow');
-                                }else{
-                                    alert('Bir hata oluştu.')
-                                }
-                            }
-                        });
+            success: function(data) {
+                if(data === 'exists'){
+                 $.ajax({
+                    type: "POST",
+                    url: "./sendEmailCode.php",
+                    data: {
+                        email: email,
+                    },
+                    success: function (response) {
+                        code = response;
                     }
+                 });
+                    $('#check-email-validity').hide('slow');
+                    $('#code-container').show('slow');
+                }else{
+                    alert('E-posta mevcut değil');
                 }
+            },
+            error: function(data) {
+                alert('error');
             }
         })
-        });
+    })
+
+
+    $('#check-code-btn').click(function(e) {
+        var codeEntered = $('#check-code').val();
+        if(codeEntered === code){
+            $('#code-container').hide('slow');
+            $('#password-resetter').show('slow');
+        }else{
+            alert('Kod doğru değil');
+        } 
+    })
+
+    $('#reset-password-btn').click(function(e) {
+        var password = $('#new-password').val();
+        var email = $('#check-email').val();
+        $.ajax({
+            type: 'POST',
+            url: './changePasswordTeacher.php',
+            data: {
+                email: email,
+                password: password
+            },
+            success: function(data) {
+                if(data === 'success'){
+                    alert('Şifre değiştirildi');
+                    $('#check-email-validity').show('slow');
+                    $('#code-container').hide('slow');
+                    $('#password-resetter').hide('slow');
+                    $('#reset-password-container').hide('slow');
+                    $('.login-login').show('slow');
+                }else{
+                    alert('Error');
+                }
+            },
+            error: function(data) {
+                alert('error');
+            }
+        })
+    })
+
+    $('#close-reset-password').click(function(e) {
+        $('#check-email-validity').show('slow');
+        $('#code-container').hide('slow');
+        $('#password-resetter').hide('slow');
+        $('#reset-password-container').hide('slow');
+        $('.login-login').show('slow');
     })
     </script>
 </body>
