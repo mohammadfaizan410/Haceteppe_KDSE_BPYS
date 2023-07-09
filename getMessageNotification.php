@@ -34,7 +34,7 @@ if (isset($_SESSION['userlogin'])) {
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if ($result) {
-            $teacher_list = $result;
+            $student_list = $result;
         } else {
             echo '';
         }
