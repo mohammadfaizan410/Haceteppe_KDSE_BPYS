@@ -36,7 +36,11 @@ if (isset($_GET['logout'])) {
     <link href="style.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-
+    <style>
+        .entered-forms-ul-li{
+                border: 3px solid white;
+        }
+        </style>
 </head>
 
 <body style="background-color:white">
@@ -55,139 +59,122 @@ if (isset($_GET['logout'])) {
             echo 'error';
             $count = 0;
         }
-
+        $patientId = $_GET['patient_id'];
+        $sql = "SELECT * FROM boshtani WHERE patient_id = " . $patientId . " and root_id = 0 ORDER BY tani_id";
+        $smtmselect = $db->prepare($sql);
+        $result = $smtmselect->execute();
+        if ($result) {
+            $boshTanis = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+            $countBosh = count($boshTanis);
+        } else {
+            echo 'error';
+            $countBosh = 0;
+        }
         ?>
         <div class="send-patient">
         <span class='close closeBtn' id='closeBtn1'>&times;</span>
-                <div class='row'>
+    <div class='row mb-5'>
         <div class='col-lg-5' style="font-weight : bold; font-size: large;">
-        Hasta:<?php echo $_GET['patient_name'] ?>
+        Patient:<?php echo $_GET['patient_name'] ?>
             </div>
             
             <div class='col-lg-5' style="font-weight : bold; font-size: large;">
             ID:<?php echo $_GET['patient_id'] ?>
             </div>
-        </div>
-            <div class="patients-table text-center rounded p-4" id="patients-table">
-                <div class="d-flex align-items-center justify-content-between mb-4">
-                    <p style="color : #333333; font-size: 20px" class="pb-2">Sunulan Tanı</p>
-
-                </div>
-
-                <input type="text" id="searchInput" class='form-control mb-5' placeholder="Search by date, number, time">
-<div id='taniContainer'>                
+    </div>
                 <?php
-$i = 1;
-foreach ($allTanisStandalone as $row) {
-    $sql = "SELECT * FROM tani WHERE root_id = " . $row['tani_id'] . " ORDER BY tani_id";
-    $smtmselect = $db->prepare($sql);
-    $result = $smtmselect->execute();
-    if ($result) {
-        $allExtensionTanis = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
-    } else {
-        echo 'error';
-    }
-    $taniOptions = "<div class='row mt-3 mb-2'><div class='col-lg-12'><div class='row searchable'><div class='col-lg-12 btn btn-success'><li><a class='nav-items col-lg-12 d-flex justify-content-around' style='color: white;'
-                        href='" . $base_url . "/taniReview/tani" . $row['tani_num'] . "-review.php?patient_id=" . $row['patient_id'] . "&patient_name=" . $row['patient_name'] . "&evaluation=" . $row['evaluation'] . "&tani_id=".$row['tani_id']."&tani_num=".$row['tani_num']."&root_id=".$row['root_id']."&parent_id=".$row['parent_id']."&display=0'><span>tani" . $row['tani_num'] . " </span><span>Date:".$row['creation_date']."</span><span>Time:".$row['time']."</span></a></li></div></div></div></div>";
+                $i = 1;
+                foreach($allTanisStandalone as $standAloneTani){
+                    echo "<div style='border-bottom: 3px solid grey'>";
+                    echo "<div class='row mb-3 mt-3 w-100 tani_container ".$i."_container>";
+                    echo "<div class='col-lg-10 m-auto'>";
+                    echo "<div class='btn btn-success w-100 d-flex justify-content-around' 
+                        id='".$i."_toggler'>
+                        <span>Numara: ". $standAloneTani['tani_num']. "</span>
+                        <span>Tarih: ". $standAloneTani['creation_date']."</span>
+                        <span>Saat: ". $standAloneTani['time']."</span>
+                    </div>";
+                    echo "</div>";
 
-    
+                    $sql = "SELECT * FROM tani WHERE patient_id = " . $patientId . " and root_id = " . $standAloneTani['tani_id'] . " ORDER BY tani_id ASC";
+                    $smtmselect = $db->prepare($sql);
+                    $result = $smtmselect->execute();
+                    if ($result) {
+                        $standAloneExtensions = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+                    } else {
+                        echo 'error';
+                    }
 
-    foreach ($allExtensionTanis as $row2) {
-        $taniOptions .= "<div class='row mb-2'><div class='col-lg-12'><div class='row searchable'><div class='col-lg-12 btn btn-success'><li class='entered-forms-ul-li'><a class='nav-items d-flex justify-content-around' style='color: white;'
-                            href='" . $base_url . "/taniReview/tani" . $row2['tani_num'] . "-review.php?patient_id=" . $row2['patient_id'] . "&patient_name=" . $row2['patient_name'] . "&evaluation=" . $row2['evaluation'] . "&tani_id=".$row2['tani_id']."&tani_num=".$row2['tani_num']."&root_id=".$row2['root_id']."&parent_id=".$row2['parent_id']."&display=0'><div>tani" . $row2['tani_num'] . " </div><div>Date:".$row2['creation_date']."</div><div>Time:".$row2['time']."</div></a></li></div></div></div></div>";
-    }
+                    if ($standAloneExtensions){
+                        $last_extension = end($standAloneExtensions);
+                    } else {
+                        $last_extension = $standAloneTani;
+                    }
 
-    if ($allExtensionTanis){
-        $lastExtension = end($allExtensionTanis);
-    } else {
-        $lastExtension = $row;
-    }
-    echo '<div class="row">';
-    echo "<div class='root-tani col-lg-12'>";
-    echo "<button class='entered-forms btn btn-success m-auto' id='tani".$i."_toggle'><span>Tani number: tani" . $row['tani_num'] . "</span><span>Date:".$lastExtension['creation_date']."</span><span>Time:".$lastExtension['time']."</div><div><span id='tani".$i."_caret'>&#9660;</span></span></button>";   
-    echo "<ul class='entered-forms-u align-items-center w-100 mt-3' id='tani".$i."_options' style='display:none; list-style-type: none;'>".$taniOptions."</ul>";
-    if (($lastExtension['noc_indicator_after_3'] != "null" && $lastExtension['noc_indicator_after_3'] != "5") || ($lastExtension['noc_indicator_after_2'] != "null" && $lastExtension['noc_indicator_after_2'] != "5")
-    || $lastExtension['noc_indicator_after'] != "5"){
-        echo "<div class='entered-forms '><a class='nav-items review btn btn-success w-50' style='color: #333333; display: none; background-color: white; border-style: dashed; text-align: center;' id='tani".$i."_add_extension' href='" . $base_url . "/taniReview/tani" . $lastExtension['tani_num'] . "-review.php?patient_id=" . $lastExtension['patient_id'] . "&patient_name=" . $lastExtension['patient_name'] . "&evaluation=" . $lastExtension['evaluation'] . "&tani_id=".$lastExtension['tani_id']."&tani_num=".$lastExtension['tani_num']."&root_id=".$row['tani_id']."&parent_id=".$lastExtension['parent_id']."&display=1'><span class='m-auto'>Add Extension</span></a></div>";
-    }
-    else{
-        echo "<div class='entered-forms '></div>";
-    }
-    echo "</div>";
-    echo '</div>';
-    echo '<div class="row">';
-    echo '<div class="col-lg-6" id="tani'.$row['tani_id'].'" style="display: none">';
-    echo '</div>';
-    echo '</div>';
-    $i++;
-}
+                    $taniExtensions = "<div class='row mt-2 w-100 ".$i."_extention_container'  style='display:none'>
+                    <a class='tani-navigator' href='" . $base_url . "/taniReview/tani" . $standAloneTani['tani_num'] . "-review.php?patient_id=" . $standAloneTani['patient_id'] . "&patient_name=" . $standAloneTani['patient_name'] . "&evaluation=" . $standAloneTani['evaluation'] . "&tani_id=".$standAloneTani['tani_id']."&tani_num=".$standAloneTani['tani_num']."&root_id=".$standAloneTani['root_id']."&parent_id=".$standAloneTani['parent_id']."&display=0'>
+                    <div class='col-lg-8 m-auto'>
+                        <div class='btn btn-success w-100 d-flex justify-content-around' 
+                        id='".$i."_toggler'>
+                        <span>Numara: ". $standAloneTani['tani_id']. "</span>
+                        <span>Tarih: ". $standAloneTani['creation_date']."</span>
+                        <span>Saat: ". $standAloneTani['time']."</span>
+                        </div>
+                        </div>
+                        </a>
+                        </div>";
 
-?>
-</div>
-            </div>
-        </div>
-        <script>
-       
-             var patient_id = "<?php echo $_GET['patient_id']; ?>";
-                 var patient_name = "<?php echo $_GET['patient_name']; ?>";
-            
-            $(function() {
-                $("a.nav-items").on("click", function(e) {
-                    e.preventDefault();
-                    $("#content").load(this.href);
-                });
-            });
-            $(function() {
+                    foreach($standAloneExtensions as $singleExtension){
+                        $taniExtensions .= "<div class='row mt-2 w-100 ".$i ."_extention_container'  style='display:none'>
+                        <a class='tani-navigator' href='" . $base_url . "/taniReview/tani" . $singleExtension['tani_num'] . "-review.php?patient_id=" . $singleExtension['patient_id'] . "&patient_name=" . $singleExtension['patient_name'] . "&evaluation=" . $singleExtension['evaluation'] . "&tani_id=".$singleExtension['tani_id']."&tani_num=".$singleExtension['tani_num']."&root_id=".$standAloneTani['tani_id']."&parent_id=".$singleExtension['parent_id']."&display=0'>
+                        <div class='col-lg-8 m-auto'>
+                            <div class='btn btn-success w-100 d-flex justify-content-around' 
+                            id='".$i ."_toggler'>
+                            <span>Numara: ". $singleExtension['tani_id']. "</span>
+                            <span>Tarih: ". $singleExtension['creation_date']."</span>
+                            <span>Saat: ". $singleExtension['time']."</span>
+                            </div>
+                            </div>
+                            </a>
+                            </div>";
+                    }
+
+                    echo $taniExtensions;
+
+                    if (($last_extension['noc_indicator_after_3'] != "null" && $last_extension['noc_indicator_after_3'] != "5") || ($last_extension['noc_indicator_after_2'] != "null" && $last_extension['noc_indicator_after_2'] != "5")
+                    || $last_extension['noc_indicator_after'] != "5") {
+                        echo "<script>console.log({$last_extension['noc_indicator_after_3']})</script>";
+                        echo "<script>console.log({$last_extension['noc_indicator_after_2']})</script>";
+                        echo "<script>console.log({$last_extension['noc_indicator_after']})</script>";
+                        echo "<div class='row mt-2 w-100 ".$i ."_extender_container' style='display:none'>
+                        <a class='tani-navigator' href='" . $base_url . "/taniReview/tani" . $last_extension['tani_num'] . "-review.php?patient_id=" . $last_extension['patient_id'] . "&patient_name=" . $last_extension['patient_name'] . "&evaluation=" . $last_extension['evaluation'] . "&tani_id=".$last_extension['tani_id']."&tani_num=".$last_extension['tani_num']."&root_id=".$standAloneTani['tani_id']."&parent_id=".$last_extension['parent_id']."&display=1'>
+                        <div class='col-lg-8 m-auto mb-3'>
+                        <div class='btn btn-success w-100 d-flex justify-content-around' style='border: 2px dotted black; background-color:white; color : black;'> 
+                        <span>Add Extension</span>
+                        </div>
+                        </div>
+                        </a>
+                        </div>";
+                    } 
                 
-                $("#closeBtn1").on("click", function(e) {
-                    e.preventDefault();
-                    var url =
-                        "<?php echo $base_url; ?>/updateForms/taniOptions.php?patient_id=" +
-                        patient_id + "&patient_name=" + encodeURIComponent(
-                            patient_name);
-                    $("#content").load(url);
-                });
-            });   
-        </script>
-        <script>
-            $(function(){
-                count = <?php echo $count; ?>;
-                for (let i = 1; i < count + 1; i++) {
-                    $("button#tani"+i+"_toggle").on("click", function(e) {
-                        e.preventDefault();
-                        $("#tani"+i+"_options").slideToggle('slow');
-                        $("#tani"+i+"_add_extension").css('display','flex');
-                        if($("#tani"+i+"_caret").css("transform") === "none"){
-                            $("#tani"+i+"_caret").css("transform", "rotate(180deg)");
-                            
-                        }
-                        else{
-                            $("#tani"+i+"_caret").css("transform", "");
-                            $("#tani"+i+"_add_extension").css('display','none');
-                        }
-                    })
+                    echo "</div>";
+                    $i++;
+
                 }
-            })
-
-            $(document).ready(function() {
-    $("#searchInput").on("input", function() {
-        var input, filter, container, tanis, i, txtValue;
-        input = $(this);
-        filter = input.val().toUpperCase();
-        container = $("#taniContainer");
-        tanis = container.find(".root-tani");
-        for (i = 0; i < tanis.length; i++) {
-            txtValue = $(tanis[i]).text();
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                $(tanis[i]).show();
-            } else {
-                $(tanis[i]).hide();
-            }
-        }
-    });
+                ?>
+    </div>
+    </div>
+    <script>
+   $(".tani_container").click(function (e) { 
+    e.preventDefault();
+    var tani_id = $(this).attr('class').split(' ')[5].split('_')[0];
+    console.log(tani_id)
+    $('.' + tani_id + '_extention_container').toggle('slow');
+    $('.' + tani_id + '_extender_container').toggle('slow');
 });
+$(".tani-navigator").click(function(e){
+    e.preventDefault();
+    $('#content').load(this.href);
+})
         </script>
-
 </body>
-
-</html>

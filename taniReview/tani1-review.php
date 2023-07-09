@@ -22,24 +22,13 @@ $patient_name = isset($_GET['patient_name']) ? $_GET['patient_name'] : '';
 $student_id = isset($_GET['student_id']) ? $_GET['student_id'] : '';
 $student_name = isset($_GET['student_name']) ? $_GET['student_name'] : '';
 $display = $_GET['display'];
-if($root_id == 0 && $parent_id == 0){
-    $sql = "SELECT * FROM tani where tani_id= $tani_id and tani_num=$tani_num";
-    $smtmselect = $db->prepare($sql);
-    $result = $smtmselect->execute();
-    if ($result) {
-        $tani1 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
-    } else {
-        echo 'error';
-    }
-}else{
-    $sql = "SELECT * FROM tani where parent_id= $parent_id and tani_num=$tani_num";
-    $smtmselect = $db->prepare($sql);
-    $result = $smtmselect->execute();
-    if ($result) {
-        $tani1 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
-    } else {
-        echo 'error';
-    }
+$sql = "SELECT * FROM tani where tani_id= $tani_id and tani_num=$tani_num";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+if ($result) {
+    $tani1 = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+} else {
+    echo 'error';
 }
 ?>
 <!DOCTYPE html>
