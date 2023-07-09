@@ -283,6 +283,12 @@ if (isset($_GET['logout'])) {
                 <span class='close closeBtn' id='closeBtn1'>&times;</span>
                     <h1 class="form-header">Dordurmus Formlar</h1>
                     <!-- ÖZGEÇMİŞ -->
+                    <div class='row mb-5'>
+        <div class='col-lg-12' style="font-weight : bold; font-size: large; border-bottom: 2px solid grey ">
+             Hasta: <span style='color:black;font-weight : bold; font-size: large;'><?php echo $_GET['patient_name'] ?></span>
+            </div>
+            </div>
+
                     <div id="ozgecmisform1_container" class="row form-container">
                         <div class="col-lg-3 btn btn-success mb-2" id="ozgecmisform1_toggler">
                             <a><p>Özgeçmiş</p></a>
