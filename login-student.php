@@ -61,6 +61,16 @@ if (isset($_SESSION['userlogin'])) {
 <div id="tick-container">
   <div id="tick"></div>
 </div>
+<div id='change-password-container' class='login-box login-login' style="display: none;">
+    <p class="labels">E-Posta</p>
+    <input type="text" required name="email-search" id="email-search" placeholder="E-Posta Giriniz">
+    <p class="labels">Yeni Şifre</p>
+    <input type="password" name="reset-pass" id="reset-pass" required placeholder="Şifre Giriniz">
+    <p class="labels">Şifreyi tekrar girin</p>
+    <input type="password" name="reset-pass-confirm" id="reset-pass-confirm" required placeholder="Şifre Giriniz">
+    <input type="submit" name="submit" id="change-password" value="Şifreyi Sıfırla">
+    <div id="go-back" style="cursor: pointer;">iptal</div>
+</div>
     <div>
         <form action="" method="post">
             <div class="login-box login-login">
@@ -73,6 +83,8 @@ if (isset($_SESSION['userlogin'])) {
                 <p class="labels">Şifre</p>
                 <input type="password" name="password" id="password" required placeholder="Şifre Giriniz">
                 <input type="submit" name="submit" id="login" value="Giriş Yap">
+                <div id='forgot-password' class="lower-buttons" style="padding-top:10px; cursor: pointer;"><i class="gg-arrow-left-o"
+                        style="margin-top: 10px;margin-bottom: 10px; margin-right: 20px;"></i> şifremi unuttum</div>
                 <a href="main.php" class="lower-buttons" style="padding-top:10px"><i class="gg-arrow-left-o"
                         style="margin: 0; margin-right: 20px;"></i>Ana Sayfaya Dön</a>
         </form>
@@ -124,6 +136,59 @@ if (isset($_SESSION['userlogin'])) {
 
         })
     });
+
+    $('#go-back').click(function(){
+        $('.login-login').show('slow');
+        $('#change-password-container').hide('slow');
+        $('#email-search').val('')
+        $('#reset-pass').val('')
+        $('#reset-pass-confirm').val('')
+    })
+
+    $('#forgot-password').click(function(){
+        $('.login-login').hide('slow');
+        $('#change-password-container').show('slow');
+        $('#change-password').click(function(){
+            var email = $('#email-search').val();
+            var password = $('#reset-pass').val();
+            var passwordConfirm = $('#reset-pass-confirm').val();
+
+            $.ajax({
+                type: "POST",
+                url: "./checEmailAll.php",
+            data: {
+                email : email
+            },
+            success: function (response) {
+                if(response == 'not-exists'){
+                    alert('E-Posta adresi bulunamadı.')
+                }else{
+                    if(password != passwordConfirm){
+                        alert('Şifreler uyuşmuyor.')
+                    }else{
+                        $.ajax({
+                            type: "POST",
+                            url: "./changePasswordStudent.php",
+                            data: {
+                                email : email,
+                                password : password
+                            },
+                            success: function (response) {
+                                if(response == 'success'){
+                                    alert('Şifreniz başarıyla değiştirildi.')
+                                    $('.login-login').show('slow');
+                                    $('#change-password-container').hide('slow');
+                                }else{
+                                    alert('Bir hata oluştu.')
+                                }
+                            }
+                        });
+                    }
+                }
+            }
+        })
+        });
+    })
     </script>
 </body>
 

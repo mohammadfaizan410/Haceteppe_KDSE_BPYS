@@ -20,7 +20,7 @@ if (isset($_SESSION['userlogin'])) {
         echo '';
     }
     }
-    $sql = "SELECT * FROM messages WHERE FIND_IN_SET(:userid, reciever_list) ORDER BY id DESC";
+    $sql = "SELECT * FROM messages WHERE (FIND_IN_SET(:userid, reciever_list) OR FIND_IN_SET('all_students', reciever_list)) ORDER BY id DESC";
     $stmt = $db->prepare($sql);
     $stmt->bindParam(':userid', $myUser, PDO::PARAM_STR);
     $stmt->execute();
@@ -162,7 +162,7 @@ $('#send-message-teachers').click(function (e){
                 },
                 success: function (response) {
                     if(response == 'success'){
-                        alert('message send');
+                        alert('Mesaj gonnderildi');
                         $('#send-to-teacher-dropdown').toggle('slow');
                         $('input[name="teacher-subject"]').val('');
                         $('input[name="teacher-message"]').val('');
@@ -198,7 +198,7 @@ $('#send-message-teachers').click(function (e){
                 },
                 success: function (response) {
                     if(response == 'success'){
-                        alert('message send');
+                        alert('Mesaj gonderildi');
                         $('#send-to-teacher-dropdown').toggle('slow');
                         $('input[name="teacher-subject"]').val('');
                         $('input[name="teacher-message"]').val('');

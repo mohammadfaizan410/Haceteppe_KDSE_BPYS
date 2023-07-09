@@ -31,7 +31,7 @@ if (isset($_SESSION['userlogin'])) {
     }
     }
     
-    $sql = "SELECT * FROM messages WHERE FIND_IN_SET(:userid, reciever_list) ORDER BY id DESC";
+    $sql = "SELECT * FROM messages WHERE (FIND_IN_SET(:userid, reciever_list) OR FIND_IN_SET('all_teachers', reciever_list)) ORDER BY id DESC";
     $stmt = $db->prepare($sql);
     $stmt->bindParam(':userid', $myUser, PDO::PARAM_STR);
     $stmt->execute();
@@ -85,9 +85,9 @@ textarea::placeholder{
                     <?php 
                     if($all_messages != 'none'){
                         foreach($all_messages as $message){
-                            echo '<div class="input-section d-flex flex-column justify-content-center border-bottom p-4">';
-                            echo '<div class="mb-2"><strong>Gönderen:</strong> '.$message['sender_name'].'</div>';
-                            echo '<div class="mb-2"><strong>Konu</strong> '.$message['subject'].'</div>';
+                            echo '<div class="input-section d-flex flex-column justify-content-center border-bottom p-4 text-sm">';
+                            echo '<div class="mb-2 text-sm"><strong>Gönderen:</strong> '.$message['sender_name'].'</div>';
+                            echo '<div class="mb-2 text-sm"><strong>Konu</strong> '.$message['subject'].'</div>';
                             echo '<div><strong>Mesaj:<textarea class="w-100 input-section mt-4" disabled rows="5" placeholder="'.$message['message'].'"></textarea></div>';
                             echo '</div>';
                         }
@@ -198,7 +198,7 @@ textarea::placeholder{
                 },
                 success: function (response) {
                     if(response == 'success'){
-                        alert('message send');
+                        alert('Mesaj gönderildi');
                         $('#send-to-student-dropdown').toggle('slow');
                         $('input[name="student-subject"]').val('');
                         $('input[name="student-message"]').val('');
@@ -236,7 +236,7 @@ textarea::placeholder{
                 success: function (response) {
                     console.log(response)
                     if(response == 'success'){
-                        alert('message send');
+                        alert('Mesaj gönderildi');
                         $('#send-to-student-dropdown').toggle('slow');
                         $('input[name="student-subject"]').val('');
                         $('input[name="student-message"]').val('');
