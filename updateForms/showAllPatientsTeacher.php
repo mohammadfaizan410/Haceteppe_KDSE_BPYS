@@ -70,8 +70,8 @@ if (isset($_GET['logout'])) {
                                     <td scope="col" style="color: #333333;">' . $value['name'] . '</td>
                                     <td scope="col" style="color: #333333;">' . $value['surname'] . '</td>
                                     <td scope="col" style="color: #333333;">' . $value['age'] . '</td>
-                                    <td scope="col"><a style="color: white;" id="showSubmittedforms" class="showallforms btn btn-success" href="#" data-student-name="'.$_GET['student_name'].'"  data-patient-id="' . $value['patient_id'] . '" data-patient-name="' . $fullName . '" >Submitted forms</a></td>
-                                    <td scope="col"><a style="color: white;" id="showSubmittedtanis" class="showallforms btn btn-success" href="#" data-student-name="'.$_GET['student_name'].'" data-patient-id="' . $value['patient_id'] . '" data-patient-name="' . $fullName . '">Submitted tanis</a></td>
+                                    <td scope="col"><a style="color: white;" id="showSubmittedforms" class="showallforms btn btn-success" href="'.$base_url.'/updateForms/showFormsTeacher.php?patient_id='.$value['patient_id'].'&patient_name='.$fullName.'&student_id='.$value['id'].'&student_name='.$_GET['student_name'].'" data-student-name="'.$_GET['student_name'].'"  data-patient-id="' . $value['patient_id'] . '" data-patient-name="' . $fullName . '" >Submitted forms</a></td>
+                                    <td scope="col"><a style="color: white;" id="showSubmittedtanis" class="showallforms btn btn-success" href="'.$base_url.'/updateForms/showTanisTeacher.php?patient_id='.$value['patient_id'].'&patient_name='.$fullName.'&student_id='.$value['id'].'&student_name='.$_GET['student_name'].'" data-student-name="'.$_GET['student_name'].'" data-patient-id="' . $value['patient_id'] . '" data-patient-name="' . $fullName . '">Submitted tanis</a></td>
                                 </tr>';
                                 }
                             }

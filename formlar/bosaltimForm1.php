@@ -791,6 +791,7 @@ if (isset($_GET['logout'])) {
 <script>
 
 $('#submit').click(function(e) {
+    e.preventDefault();
 
     if (!$('[name="stoolEmptyingHelp"]').is(':checked')) {
         $('.option-error').css('display', 'none');
@@ -806,6 +807,7 @@ $('#submit').click(function(e) {
                     }, 200);
                     //change border color
             $('[name="hospitalStoolEmptyingFrequency"]').css('border-color', 'red');
+            return false;
     } else if ($('[name="hospitalStoolEmptyingDate"]').val() === "") {
         $('.option-error').css('display', 'none');
             $('html, body').animate({
@@ -813,6 +815,7 @@ $('#submit').click(function(e) {
                     }, 200);
                     //change border color
             $('[name="hospitalStoolEmptyingDate"]').css('border-color', 'red');
+            return false;
     } else if (!$('[name="BoşaltımSorun"]').is(':checked')) {
         $('.option-error').css('display', 'none');
         $('html, body').animate({
@@ -826,6 +829,7 @@ $('#submit').click(function(e) {
                 scrollTop: $('[name="BoşaltımSorun"]').offset().top
             }, 200);
         $('[name="BoşaltımSorun"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+        return false;
     } else if ($('[name="bagirsak_sesleri"]').val() === "") {
         $('.option-error').css('display', 'none');
             $('html, body').animate({
@@ -833,6 +837,7 @@ $('#submit').click(function(e) {
                     }, 200);
                     //change border color
             $('[name="bagirsak_sesleri"]').css('border-color', 'red');
+            return false;
     } else if ($('[name="defekasyon_zamani"]').val() === "") {
         $('.option-error').css('display', 'none');
             $('html, body').animate({
@@ -840,6 +845,7 @@ $('#submit').click(function(e) {
                     }, 200);
                     //change border color
             $('[name="defekasyon_zamani"]').css('border-color', 'red');
+            return false;
     } else if ($('[name="defekasyon_tekrari"]').val() === "") {
         $('.option-error').css('display', 'none');
             $('html, body').animate({
@@ -847,6 +853,7 @@ $('#submit').click(function(e) {
                     }, 200);
                     //change border color
             $('[name="defekasyon_tekrari"]').css('border-color', 'red');
+            return false;
     } else if (!$('[name="BoşaltımŞekli"]').is(':checked')) {
         $('.option-error').css('display', 'none');
         $('html, body').animate({
@@ -869,6 +876,7 @@ $('#submit').click(function(e) {
                     }, 200);
                     //change border color
         $('[name="StomaRengi"]').css('border-color', 'red');
+        return false;
     } else if ($('[name="BoşaltımŞekli"]:checked').val() === "Var" && $('[name="excretionForm"]:checked').val() === "Kolostom"
         && $('[name="excretionForm1"]:checked').length === 0) {
         $('.option-error').css('display', 'none');
@@ -885,6 +893,7 @@ $('#submit').click(function(e) {
                     }, 200);
                     //change border color
         $('[name="StomanınRengi"]').css('border-color', 'red');
+        return false;
     } else if ($('[name="BoşaltımŞekli"]').is(':checked') && $('[name="excretionForm"]:checked').val() === "İleostomi"
         && $('[name="excretionForm2"]:checked').length === 0) {
         $('.option-error').css('display', 'none');
@@ -928,6 +937,7 @@ $('#submit').click(function(e) {
                     }, 200);
                     //change border color
         $('[name="mesane_takilma_tarihi"]').css('border-color', 'red');
+        return false;
     } else if ($('[name="Mesane_kateterizasyonu"]:checked').val() === "Var" && $('[name="attachmentPurpose"]:checked').length === 0){
         $('.option-error').css('display', 'none');
         $('html, body').animate({
@@ -970,7 +980,7 @@ $('#submit').click(function(e) {
             }, 200);
         $('[name="IdrarBerrakligi"]').first().closest('.input-section').find('.option-error').css('display', 'block');
         return false;
-    } else {
+    }
 
         e.preventDefault();
 
@@ -988,9 +998,6 @@ $('#submit').click(function(e) {
         let hospitalStoolEmptyingFrequency = $('[name="hospitalStoolEmptyingFrequency"]').val();
         let hospitalStoolEmptyingDate = $('[name="hospitalStoolEmptyingDate"]').val();
         let bosaltimSorun = $('[name="BoşaltımSorun"]:checked').val();
-        let excretionProblems = $('.form-check-input[name="BoşaltımSorun"]:checked').val() === "Var" ? $("input[name='excretionProblems']:checked").map(function() {
-                                return $(this).val();
-                            }).get().join("/") : "Yok";
         let excretionProblems = $('.form-check-input[name="BoşaltımSorun"]:checked').val() === "Var" ? $("input[name='excretionProblems']:checked").map(function() {
                                 return $(this).val();
                             }).get().join("/") : "Yok";
@@ -1014,7 +1021,7 @@ $('#submit').click(function(e) {
                             }).get().join("/") : "Yok";
         let Mesane_kateterizasyonu = $("input[name='Mesane_kateterizasyonu']:checked").val();
         let mesane_takilma_tarihi = $("input[name='mesane_takilma_tarihi']").is('disabled') ? null : $("input[name='mesane_takilma_tarihi']").val();
-        let attachmentPurpose = $('.form-check-input[name="mesane_takilma_tarihi"]:checked').val() === "Var" ? $("input[name='attachmentPurpose']:checked").map(function() {
+        let attachmentPurpose = $('.form-check-input[name="Mesane_kateterizasyonu"]:checked').val() === "Var" ? $("input[name='attachmentPurpose']:checked").map(function() {
                                 return $(this).val();
                             }).get().join("/") : "Yok";
         let ureterestomi = $("input[name='Üreterestomi']:checked").val();
@@ -1025,7 +1032,7 @@ $('#submit').click(function(e) {
         let IdrarRengi = $("input[name='IdrarRengi']:checked").val();
         let IdrarBerrakligi = $("input[name='IdrarBerrakligi']:checked").val();
 
-
+        console.log('button clicked');
         $.ajax({
             type: 'POST',
             url: '<?php echo $base_url; ?>/form-handlers/SubmitOrUpdateForm1_Bosaltim.php',
@@ -1075,7 +1082,7 @@ $('#submit').click(function(e) {
                             $("#content").load(url);
                             $("#tick-container").fadeOut(600);
                             // Hide the tick container
-                            }, 1000);            },
+                            }, 1000);},
             error: function(data) {
                 Swal.fire({
                     'title': 'Errors',
@@ -1085,7 +1092,7 @@ $('#submit').click(function(e) {
             }
         })
 
-    }
+    
 })
 
 </script>
