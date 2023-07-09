@@ -10,35 +10,23 @@ if (isset($_GET['logout'])) {
     unset($_SESSION);
     header("Location: main.php");
 }
-require_once("../config-students.php");
+require_once('../config-students.php');
+
 $userid = $_SESSION['userlogin']['id'];
 $tani_id = $_GET['tani_id'];
-$tani_num = $_GET['tani_num'];
 $root_id = $_GET['root_id'];
-$parent_id = $_GET['parent_id'];
 $patient_id = isset($_GET['patient_id']) ? $_GET['patient_id'] : '';
 $patient_name = isset($_GET['patient_name']) ? $_GET['patient_name'] : '';
 $student_id = isset($_GET['student_id']) ? $_GET['student_id'] : '';
 $student_name = isset($_GET['student_name']) ? $_GET['student_name'] : '';
 $display = $_GET['display'];
-if($root_id == 0 && $parent_id == 0){
-    $sql = "SELECT * FROM boshtani where tani_id= $tani_id";
-    $smtmselect = $db->prepare($sql);
-    $result = $smtmselect->execute();
-    if ($result) {
-        $tani = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
-    } else {
-        echo 'error';
-    }
-}else{
-    $sql = "SELECT * FROM boshtani where parent_id= $parent_id";
-    $smtmselect = $db->prepare($sql);
-    $result = $smtmselect->execute();
-    if ($result) {
-        $tani = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
-    } else {
-        echo 'error';
-    }
+$sql = "SELECT * FROM boshtani where tani_id= $tani_id";
+$smtmselect = $db->prepare($sql);
+$result = $smtmselect->execute();
+if ($result) {
+    $tani = $smtmselect->fetchAll(PDO::FETCH_ASSOC);
+} else {
+    echo 'error';
 }
 ?>
 <!DOCTYPE html>
@@ -104,46 +92,43 @@ if($root_id == 0 && $parent_id == 0){
                     <form action="" method="POST" class="patients-save-fields">
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
-                            <input type='text' class="tanıdescription form-control" id='taniDescription' placeholder='Hemşirelik Tanıları'  value=<?php echo json_encode($tani[0]['taniDescription']) ?>/>
+                            <input type='text' class="tanıdescription form-control" id='taniDescription' placeholder='Hemşirelik Tanıları' />
                         </div>
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                            <input type='text' class="nocCikti form-control" id='nocCikti' placeholder='NOC Çıktıları' value=<?php echo json_encode($tani[0]['nocCikti']) ?> />
+                            <input type='text' class="nocCikti form-control" id='nocCikti' placeholder='NOC Çıktıları' />
                         </div>
                         <div class="input-section" id="o2-delivery-container">
                             <p class="usernamelabel">NOC Gösterge: </p>
-                            <input type='text' class="nocGösterge form-control" id='nocGösterge' placeholder='NOC Gösterge'  value=<?php echo json_encode($tani[0]['nocGösterge']) ?>/>
+                            <input type='text' class="nocGösterge form-control" id='nocGösterge' placeholder='NOC Gösterge' />
 
                         </div>
 
                         <div class="input-section d-flex" style="flex-direction: column;">
                             <p class="usernamelabel">Hemşirelik Girişimleri:</p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                            <input type='text' class="nurseAttempt form-control" id='nurseAttempt' placeholder='Hemşirelik Girişimleri' value=<?php echo json_encode($tani[0]['nurse_attempt']) ?>/>
+                            <input type='text' class="nurseAttempt form-control" id='nurseAttempt' placeholder='Hemşirelik Girişimleri' />
                             <p class="usernamelabel">Eğitim:</p>
                             <p class="option-error1" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                            <input type='text' class="nurseEducation form-control"  id='nurseEducation' placeholder='Eğitim'value=<?php echo json_encode($tani[0]['nurse_education']) ?> />
+                            <input type='text' class="nurseEducation form-control"  id='nurseEducation' placeholder='Eğitim' />
                             <p class="option-error2" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <p class="usernamelabel">İŞ BİRLİĞİ GEREKTİREN UYGULAMALAR</p>
-                            <input type='text' class="form-control" id='collaborativeApps' placeholder='İŞ BİRLİĞİ GEREKTİREN UYGULAMALAR' value=<?php echo json_encode($tani[0]['collaborative_apps']) ?>/>
+                            <input type='text' class="form-control" id='collaborativeApps' placeholder='İŞ BİRLİĞİ GEREKTİREN UYGULAMALAR' />
                         </div>
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">Değerlendirme:</p>
-                            <input type='text' class="nocCikti form-control" id='değerlendirme' placeholder='Değerlendirme' value=<?php echo json_encode($tani[0]['değerlendirme']) ?>/>
+                            <input type='text' class="nocCikti form-control" id='değerlendirme' placeholder='Değerlendirme' />
                         </div>
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                            <input type='text' class="nocCikti form-control" id='nocCikti_after' placeholder='NOC Çıktıları'value=<?php echo json_encode($tani[0]['nocCikti_after']) ?> />
+                            <input type='text' class="nocCikti form-control" id='nocCikti_after' placeholder='NOC Çıktıları' />
                         </div>
                         <div class="input-section" id="o2-delivery-container">
                             <p class="usernamelabel">NOC Gösterge: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                            <input type='text' class="nocGösterge form-control" id='nocGösterge_after' placeholder='NOC Gösterge' value=<?php echo json_encode($tani[0]['nocGösterge_after']) ?>/>
+                            <input type='text' class="nocGösterge form-control" id='nocGösterge_after' placeholder='NOC Gösterge' />
                             </div>
-
                         </div>
-
-
                     </form>
                 </div>
             </div>
@@ -153,11 +138,9 @@ if($root_id == 0 && $parent_id == 0){
     </div>
 
     <script>
-        //prefilling
-
-
     $(function() {
         $('#closeBtn1').click(function(e) {
+            if("<?php echo $_SESSION['userlogin']['type']?>" === "student"){
             let patient_id = <?php
                                     $userid = $_GET['patient_id'];
                                     echo $userid
@@ -168,13 +151,38 @@ if($root_id == 0 && $parent_id == 0){
             var url = "<?php echo $base_url; ?>/updateForms/showSubmittedTanis.php?patient_id=" + patient_id +
                 "&patient_name=" + encodeURIComponent(patient_name);
             $("#content").load(url);
-        })
+            }else{
+                let patient_id = <?php
+                                    $userid = $_GET['patient_id'];
+                                    echo $userid
+                                    ?>;
+                let patient_name = "<?php echo urldecode($patient_name); ?>";
+                let student_id  = <?php echo $student_id ? $student_id : 0   ?>;
+                let student_name = "<?php echo urldecode($student_name); ?>";
+                var url = "<?php echo $base_url; ?>/updateForms/showTanisTeacher.php?patient_id=" + patient_id +
+                "&patient_name=" + encodeURIComponent(patient_name) + "&student_id=" + student_id + "&student_name=" + encodeURIComponent(student_name);
+                $("#content").load(url);
+        }
+    })
     });
-    if(<?php echo $display; ?> === 1){
+    if(<?php echo $_GET['display']; ?> === 1){
         $('form').append('<input type="submit" class="d-flex w-75 submit m-auto justify-content-center mb-5" style="display: block" name="submit" id="submit" value="Kaydet">');
-    }   
-
+        }
     </script>
+    <script>
+    $(document).ready(function(){
+        $('#taniDescription').val('<?php echo $tani[0]['tani_description']; ?>');
+        $('#nocCikti').val('<?php echo $tani[0]['noc_cikti']; ?>');
+        $('#nocGösterge').val('<?php echo $tani[0]['noc_indicator']; ?>');
+        $('#nurseAttempt').val('<?php echo $tani[0]['nurse_attempt']; ?>');
+        $('#nurseEducation').val('<?php echo $tani[0]['nurse_education']; ?>');
+        $('#collaborativeApps').val('<?php echo $tani[0]['collaborative_apps']; ?>');
+        $('#nocGösterge_after').val('<?php echo $tani[0]['noc_indicator_after']; ?>');
+        $('#değerlendirme').val('<?php echo $tani[0]['degerlendirme']; ?>');
+        $('#nocCikti_after').val('<?php echo $tani[0]['noc_cikti_after']; ?>');
+
+    })
+</script>
     <script>
     $(function() {
         $('#submit').click(function(e) {
@@ -188,11 +196,6 @@ if($root_id == 0 && $parent_id == 0){
                 alert("Lütfen bir NOC Çıktısı giriniz");
                 return;
             }
-            if($('#nocCikti_after').val() === ''){
-                alert("Lütfen bir NOC Çıktısı giriniz");
-                return;
-            }
-
             if($('#nocGösterge').val() === ''){
                 alert("Lütfen bir NOC Göstergesi giriniz");
                 return;
@@ -221,10 +224,6 @@ if($root_id == 0 && $parent_id == 0){
                 alert("Lütfen bir NOC Çıktısı giriniz");
                 return;
             }
-            if($('#nocGösterge_after').val() === ''){
-                alert("Lütfen bir NOC Göstergesi giriniz");
-                return;
-            }
             
 
 
@@ -236,6 +235,7 @@ if($root_id == 0 && $parent_id == 0){
             var surname = $('#surname').val();
             var age = $('#age').val();
             var not = $('#not').val();
+            let form_num = 15;
             var patient_id = <?php
                                     $userid = $_GET['patient_id'];
                                     echo $userid
@@ -246,22 +246,16 @@ if($root_id == 0 && $parent_id == 0){
             let yourDate = new Date();
             let creationDate = yourDate.toISOString().split('T')[0];
             let updateDate = yourDate.toISOString().split('T')[0];
-            let taniDescription = $('#taniDescription').val();
-            let nocCikti = $('#nocCikti').val();
-            let nocCikti_after = $('#nocCikti_after').val();
-            let nocGösterge = $('#nocGösterge').val();
             let nurse_attempt = $('#nurseAttempt').val();
             let nurse_education = $('#nurseEducation').val();
             let collaborative_apps = $('#collaborativeApps').val();
-            let değerlendirme = $('#değerlendirme').val();
             let noc_indicator = $('#nocGösterge').val();
             let noc_indicator_after = $('#nocGösterge_after').val();
-                  
+       
                 $.ajax({
                 type: 'POST',
                 url: '<?php echo $base_url; ?>/tani-handler/boshTaniHandler.php',
                 data: {
-                    tani_num: 0,
                     table: 'boshtani',
                     patient_id: patient_id,
                     patient_name: patient_name,
@@ -279,7 +273,6 @@ if($root_id == 0 && $parent_id == 0){
                     nurse_education: nurse_education,
                     collaborative_apps: collaborative_apps,
                     root_id : <?php echo $_GET['root_id']; ?>,
-                    parent_id : <?php echo $_GET['parent_id']; ?>,  
                                 },
                 success: function(data) {
                     alert(data)

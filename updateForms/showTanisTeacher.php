@@ -11,6 +11,59 @@ if (isset($_GET['logout'])) {
     unset($_SESSION);
     header("Location: main.php");
 }
+
+$taniNames = array(
+    1 => 'Gaz değişiminde bozulma',
+    2 => 'Etkisiz solunum örüntüsü',
+    3 => 'Etkisiz hava yolu temizliği ',
+    4 => 'Sıvı volüm eksikliği',
+    5 => 'Sıvı volüm fazlalığı',
+    6 => 'Etkisiz periferik doku perfüzyonu',
+    7 => 'Akut ağrı',
+    8 => 'Kronik ağrı',
+    9 => 'İdrar boşaltımında bozulma',
+    10 => 'İshal',
+    11 => 'Konstipasyon',
+    12 => 'Dengesiz beslenme: Beden gereksiniminden az beslenme',
+    13 => 'Fazla kilo',
+    14 => 'Obezite',
+    15 => 'Oral mukoz membranda bozulma',
+    16 => 'Uyku örüntüsünde bozulma',
+    17 => 'Konforda bozulma',
+    18 => 'Fiziksel mobilitede bozulma',
+    19 => 'Aktivite intoleransı',
+    20 => 'Yorgunluk',
+    21 => 'Bulantı',
+    22 => 'Hipertermi',
+    23 => 'Hipotermi',
+    24 => 'Banyo yapmada öz bakım yetersizliği',
+    25 => 'Beslenmede öz bakım yetersizliği',
+    26 => 'Beslenmede öz bakım yetersizliği',
+    27 => 'Giyinmede öz bakım yetersizliği',
+    28 => 'Tuvalet ihtiyacını karşılamada öz bakım yetersizliği',
+    29 => 'Deri bütünlüğünde bozulma',
+    30 => 'Doku bütünlüğünde bozulma',
+    31 => 'Sözel iletişimde bozulma',
+    32 => 'Umutsuzluk',
+    33 => 'Boş zaman aktivitelerinde yetersizlik',
+    34 => 'Etkisiz sağlık yönetimi',
+    35 => 'Anksiyete',
+    36 => 'Kanama riski',
+    37 => 'Düşme riski',
+    38 => 'Enfeksiyon riski',
+    39 => 'Aspirasyon riski',
+    40 => 'Travma riski',
+    41 => 'Oral mükoz membranda bozulma riski',
+    42 => 'Elektrolit dengesizliği riski',
+    43 => 'Sıvı volüm eksikliği riski',
+    44 => 'Alerjik yanıt riski',
+    45 => 'Vücut sıcaklığında dengesizlik riski',
+    46 => 'Kan şekeri düzeyinde dengesizlik riski',
+    47 => 'Gastrointestinal motilitede bozulma riski',
+    48 => 'Deri bütünlüğünde bozulma riski',
+    49 => 'Doku bütünlüğünde bozulma riski'
+);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -100,7 +153,7 @@ foreach ($allTanisStandalone as $row) {
     }
     echo '<div class="row mb-3 mt-2">';
     echo "<div class='root-tani col-lg-12 '>";
-    echo "<button class='entered-forms btn btn-success m-auto align-items-center d-flex justify-content-around m-2' id='tani".$i."_toggle'><div>Tani number: tani" . $row['tani_num'] . "</div><div>Date:".$lastExtension['creation_date']."</div><div>Time:".$lastExtension['time']."</div><div><span id='tani".$i."_caret'>&#9660;</span></div></button>";
+    echo "<button class='entered-forms btn btn-success m-auto align-items-center d-flex justify-content-around m-2' id='tani".$i."_toggle'><div>Tani: " . $taniNames[$row['tani_num']] . "</div><div>Date:".$lastExtension['creation_date']."</div><div>Time:".$lastExtension['time']."</div><div><span id='tani".$i."_caret'>&#9660;</span></div></button>";
     echo "<ul class='entered-forms-ul align-items-center w-75 mt-3 m-auto' id='tani".$i."_options' style='display:none; list-style-type: none;'>".$taniOptions."</ul>";
     echo "</div>";
     echo '</div>';

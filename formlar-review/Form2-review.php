@@ -101,12 +101,12 @@ if ($result) {
             <span class='close closeBtn' id='closeBtn1'>&times;</span>
             <h1 class="form-header">Ağrı Değerlendirmesi</h1>
             <div class="input-section-item">
-                <div class="input-section">
-                    <p class="usernamelabel pb-3">Patient Name:</p>
+                <div class="input-section d-flex">
+                    <p class="usernamelabel">Patient Name:</p>
                     <input type="text" class="form-control" required name="patient_name" id="diger" placeholder="Patient Name" value="<?php echo $form2[0]['patient_name']; ?>" disabled>
                 </div>
-                <div class="input-section">
-                    <p class="usernamelabel pb-3">Patient ID:</p>
+                <div class="input-section d-flex">
+                    <p class="usernamelabel">Patient ID:</p>
                     <input type="text" class="form-control" required name="patient_id" id="diger" placeholder="Patient ID" value="<?php echo $form2[0]['patient_id']; ?>" disabled>
                 </div>
 
@@ -115,7 +115,7 @@ if ($result) {
                     <form action="" method="POST" class="patients-save-fields">
                         <img src="./ağrı skalası.png" style="width:67%; height:auto;border: 1px solid;border-color: #246174; box-shadow:1px 1px 1px 1px #246174; border-radius: 20px;">
                         <div class="input-section d-flex" style="padding-top: 5%;">
-                            <p class="usernamelabel pb-3">Ağrının Şiddeti:</p>
+                            <p class="usernamelabel">Ağrının Şiddeti:</p>
                             <div class="checkbox-wrapper">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="AgriSiddeti" id="AgriSiddeti1" value="0. Yok">
@@ -156,8 +156,8 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section">
-                            <p class="usernamelabel pb-3">Ağrının Süresi:</p>
+                        <div class="input-section d-flex">
+                            <p class="usernamelabel">Ağrının Süresi:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="AgriSuresi" id="AgriSuresi1" value="option1">
                                 <label class="form-check-label" for="AgriSuresi">
@@ -172,28 +172,28 @@ if ($result) {
                             </div>
                         </div>
 
-                        <div class="input-section">
-                            <p class="usernamelabel pb-3">Ağrının Yeri:</p>
+                        <div class="input-section d-flex">
+                            <p class="usernamelabel">Ağrının Yeri:</p>
                             <input type="text" class="form-control" required name="pain_location" id="pain_location" placeholder="Ağrının Yerini Giriniz" value="<?php echo $form2[0]['pain_location']; ?>">
                         </div>
 
-                        <div class="input-section">
-                            <p class="usernamelabel pb-3">Ağrının Karakteri:</p>
+                        <div class="input-section d-flex">
+                            <p class="usernamelabel">Ağrının Karakteri:</p>
                             <input type="text" class="form-control" required name="pain_character" id="diger" placeholder="Ağrının Karakterini Giriniz" value="<?php echo $form2[0]['pain_character']; ?>">
                         </div>
 
-                        <div class="input-section">
-                            <p class="usernamelabel pb-3">Ağrının Sıklığı:</p>
+                        <div class="input-section d-flex">
+                            <p class="usernamelabel">Ağrının Sıklığı:</p>
                             <input type="text" class="form-control" required name="pain_frequency" id="diger" placeholder="Ağrının Sıklığını Giriniz" value="<?php echo $form2[0]['pain_frequency']; ?>">
                         </div>
 
-                        <div class="input-section">
-                            <p class="usernamelabel pb-3">Ağrıyı Arttıran Durumlar:</p>
+                        <div class="input-section d-flex">
+                            <p class="usernamelabel">Ağrıyı Arttıran Durumlar:</p>
                             <input type="text" class="form-control" required name="pain_increase_factors" id="diger" placeholder="Ağrıyı Arttıran Durumları Giriniz" value="<?php echo $form2[0]['pain_increase_factors']; ?>">
                         </div>
 
-                        <div class="input-section">
-                            <p class="usernamelabel pb-3">Ağrıyı Azaltan Durumlar:</p>
+                        <div class="input-section d-flex">
+                            <p class="usernamelabel">Ağrıyı Azaltan Durumlar:</p>
                             <input type="text" class="form-control" required name="pain_decrease_factors" id="diger" placeholder="Ağrıyı Azaltan Durumları Giriniz" value="<?php echo $form2[0]['pain_decrease_factors']; ?>">
                         </div>
                         <?php
@@ -216,12 +216,10 @@ if ($result) {
                     if("<?php echo $_SESSION['userlogin']['type']?>" === "student"){
                         let patient_id = <?php echo $patient_id ? $patient_id : 0   ?> ;
                 let patient_name = "<?php echo urldecode($patient_name); ?>";
-                    var url = "<?php echo $base_url; ?>/updateForms/showSubmittedForms.php?patient_id=" + patient_id +
-                        "&patient_name=" + encodeURIComponent(patient_name);
+                    var url = "<?php echo $base_url; ?>/updateForms/showSubmittedForms.php?patient_id=" + patient_id + "&patient_name=" + encodeURIComponent(patient_name);
                     $("#content").load(url);}
                     else{
                         let patient_id = <?php echo $patient_id ? $patient_id : 0   ?> ;
-                let patient_name = "<?php echo urldecode($patient_name); ?>";
                 let student_id  = <?php echo $student_id ? $student_id : 0   ?>;
                 let student_name = "<?php echo urldecode($student_name); ?>";
                 var url = "<?php echo $base_url; ?>/updateForms/showFormsTeacher.php?patient_id=" + patient_id +

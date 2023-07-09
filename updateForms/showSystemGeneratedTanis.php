@@ -378,7 +378,7 @@ if ($result) {
 </div>
             <div class="patients-table text-center rounded p-4" id="patients-table">
                 <div class="d-flex align-items-center justify-content-between mb-4">
-                    <p style="color : #333333; font-size: 20px" class="pb-2">Sistem tarafından oluşturulan tanılama</p>
+                    <p style="color : #333333; font-size: 20px" class="pb-2">System Generated Tanis</p>
 
                 </div>
 
@@ -748,7 +748,7 @@ if (
   (form1_beslenme ? form1_beslenme.food_consumption_var === "Daha Az" : false) ||
   (form1_beslenme ? form1_beslenme.diet_eating_process === "Parenteral" : false) ||
   (form1_beslenme ? form1_beslenme.diet_eating_process === "Sonda ile" : false) ||
-  (solunumgereksinimi_form1.aspirationNeeds != undefined ? solunumgereksinimi_form1.aspirationNeeds.split('/').includes('Oro_Nazofarengeal') : false)
+  (solunumgereksinimi_form1 != undefined ? solunumgereksinimi_form1.aspirasyonNeeds.split('/').includes('Oro_Nazofarengeal') : false)
 ) {
   taniString += 'tani40/';
 }
@@ -866,11 +866,57 @@ if (
   taniString += 'tani49/';
 }
 
-
-
-console.log(taniString)
-
-
+var taniNames = {
+    'tani1': 'Gaz değişiminde bozulma',
+    'tani2': 'Etkisiz solunum örüntüsü',
+    'tani3': 'Etkisiz hava yolu temizliği',
+    'tani4': 'Sıvı volüm eksikliği',
+    'tani5': 'Sıvı volüm fazlalığı',
+    'tani6': 'Etkisiz periferik doku perfüzyonu',
+    'tani7': 'Akut ağrı',
+    'tani8': 'Kronik ağrı',
+    'tani9': 'İdrar boşaltımında bozulma',
+    'tani10': 'İshal',
+    'tani11': 'Konstipasyon',
+    'tani12': 'Dengesiz beslenme: Beden gereksiniminden az beslenme',
+    'tani13': 'Fazla kilo',
+    'tani14': 'Obezite',
+    'tani15': 'Oral mukoz membranda bozulma',
+    'tani16': 'Uyku örüntüsünde bozulma',
+    'tani17': 'Konforda bozulma',
+    'tani18': 'Fiziksel mobilitede bozulma',
+    'tani19': 'Aktivite intoleransı',
+    'tani20': 'Yorgunluk',
+    'tani21': 'Bulantı',
+    'tani22': 'Hipertermi',
+    'tani23': 'Hipotermi',
+    'tani24': 'Banyo yapmada öz bakım yetersizliği',
+    'tani25': 'Beslenmede öz bakım yetersizliği',
+    'tani26': 'Beslenmede öz bakım yetersizliği',
+    'tani27': 'Giyinmede öz bakım yetersizliği',
+    'tani28': 'Tuvalet ihtiyacını karşılamada öz bakım yetersizliği',
+    'tani29': 'Deri bütünlüğünde bozulma',
+    'tani30': 'Doku bütünlüğünde bozulma',
+    'tani31': 'Sözel iletişimde bozulma',
+    'tani32': 'Umutsuzluk',
+    'tani33': 'Boş zaman aktivitelerinde yetersizlik',
+    'tani34': 'Etkisiz sağlık yönetimi',
+    'tani35': 'Anksiyete',
+    'tani36': 'Kanama riski',
+    'tani37': 'Düşme riski',
+    'tani38': 'Enfeksiyon riski',
+    'tani39': 'Aspirasyon riski',
+    'tani40': 'Travma riski',
+    'tani41': 'Oral mükoz membranda bozulma riski',
+    'tani42': 'Elektrolit dengesizliği riski',
+    'tani43': 'Sıvı volüm eksikliği riski',
+    'tani44': 'Alerjik yanıt riski',
+    'tani45': 'Vücut sıcaklığında dengesizlik riski',
+    'tani46': 'Kan şekeri düzeyinde dengesizlik riski',
+    'tani47': 'Gastrointestinal motilitede bozulma riski',
+    'tani48': 'Deri bütünlüğünde bozulma riski',
+    'tani49': 'Doku bütünlüğünde bozulma riski'
+};
 
 taniString.split('/').forEach(function(item) {
   if (item.trim() !== '') { // Check if item is not empty
@@ -880,7 +926,7 @@ taniString.split('/').forEach(function(item) {
         $('<a></a>').addClass('nav-items review btn btn-success w-50 p-3').attr({
           style: 'color: white;',
           href: "<?php echo $base_url; ?>/tanılar/" + item + ".php?patient_id=" + patient_id + "&patient_name=" + patient_name + "&root_id=0&parent_id=0",
-        }).text(item)
+        }).text(taniNames[item])
       )
     );
     row.append(cell);
