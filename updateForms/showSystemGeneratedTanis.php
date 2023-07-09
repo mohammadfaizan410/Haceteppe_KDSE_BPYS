@@ -367,18 +367,9 @@ if ($result) {
         ?>
         <div class="send-patient">
         <span class='close closeBtn' id='closeBtn1'>&times;</span>
-        <div class='row'>
-        <div class='col-lg-5' style="font-weight : bold; font-size: large;">
-        Patient:<?php echo $_GET['patient_name'] ?>
-            </div>
-            
-            <div class='col-lg-5' style="font-weight : bold; font-size: large;">
-            ID:<?php echo $_GET['patient_id'] ?>
-            </div>
-</div>
             <div class="patients-table text-center rounded p-4" id="patients-table">
                 <div class="d-flex align-items-center justify-content-between mb-4">
-                    <p style="color : #333333; font-size: 20px" class="pb-2">System Generated Tanis</p>
+                    <p style="color : #333333; font-size: 20px" class="form-header">Sistem tarafından oluşturulan tanılama</p>
 
                 </div>
 
@@ -386,8 +377,10 @@ if ($result) {
                 <input type="text" id="searchInput" class='form-control mb-5' placeholder="Tani Ad/numara göre ara">
 
                     <table class="table text-start align-middle table-hover mb-0" id='dataTable'>
-                        
                         <tbody>
+                        <tr class="darkcyan table-head">
+                                <th scope="col" style="font-weight : bold; font-size: large;">Hasta:<?php echo $_GET['patient_name'] ?></th>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -421,15 +414,15 @@ if ($result) {
             
         </script>
                     <script>
-          var input = document.getElementById("searchInput");
+       var input = document.getElementById("searchInput");
 var table = document.getElementById("dataTable");
 
 input.addEventListener("input", function() {
-  var filter = input.value.trim();
+  var filter = input.value.trim().toLowerCase();
 
   for (var i = 1; i < table.rows.length; i++) {
     var row = table.rows[i];
-    var name = row.cells[0].getElementsByTagName("a")[0].textContent
+    var name = row.cells[0].getElementsByTagName("a")[0].textContent.toLowerCase();
 
     if (name.includes(filter)) {
       row.style.display = "";

@@ -262,15 +262,6 @@ if ($result) {
     <div class="container-fluid pt-4 px-4">
         <div class="send-patient">
         <span class='close closeBtn' id='closeBtn1'>&times;</span>
-        <div class='row'>
-        <div class='col-lg-6' style="font-weight : bold; font-size: large;">
-        Hasta:<?php echo $_GET['patient_name'] ?>
-            </div>
-            
-            <div class='col-lg-6' style="font-weight : bold; font-size: large;">
-            ID:<?php echo $_GET['patient_id'] ?>
-            </div>
-        </div>
             <div class="patients-table text-center rounded p-4" id="patients-table">
                 <div class="d-flex align-items-center justify-content-between mb-4">
                     <p style="color : #333333; font-size: 20px" class="pb-2">Yeni Formlar</p>
@@ -281,8 +272,8 @@ if ($result) {
 
                     <table class="table text-start align-middle table-hover mb-0" id='dataTable'>
                         <thead>
-                            <tr class="darkcyan table-head">
-                                <th scope="col" style="font-weight : bold; font-size: large;"></th>
+                        <tr class="darkcyan table-head">
+                                <th scope="col" style="font-weight : bold; font-size: large;">Hasta:<?php echo $_GET['patient_name'] ?></th>
                             </tr>
                         <?php if (count($values24) == 0): ?>
                             <tr><td><div class="mt-3 entered-forms align-items-center"><a class="nav-items review btn btn-success w-50 p-3" style="color : white;"

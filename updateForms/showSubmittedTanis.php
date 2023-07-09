@@ -128,13 +128,10 @@ $taniNames = array(
         <span class='close closeBtn' id='closeBtn1'>&times;</span>
         <p class='form-header'>Sunulan Tanı</p>
     <div class='row mb-5'>
-        <div class='col-lg-5' style="font-weight : bold; font-size: large;">
-        Hasta:<?php echo $_GET['patient_name'] ?>
+        <div class='col-lg-12' style="font-weight : bold; font-size: large; border-bottom: 2px solid grey ">
+        Hasta: <span style='color:black;font-weight : bold; font-size: large;'><?php echo $_GET['patient_name'] ?></span>
             </div>
             
-            <div class='col-lg-5' style="font-weight : bold; font-size: large;">
-            ID:<?php echo $_GET['patient_id'] ?>
-            </div>
     </div>
                 <?php
                 $i = 1;
@@ -167,7 +164,7 @@ $taniNames = array(
 
                     $taniExtensions = "<div class='row mt-2 w-100 ".$i."_extention_container'  style='display:none'>
                     <a class='tani-navigator' href='" . $base_url . "/taniReview/tani" . $standAloneTani['tani_num'] . "-review.php?patient_id=" . $standAloneTani['patient_id'] . "&patient_name=" . $standAloneTani['patient_name'] . "&evaluation=" . $standAloneTani['evaluation'] . "&tani_id=".$standAloneTani['tani_id']."&tani_num=".$standAloneTani['tani_num']."&root_id=".$standAloneTani['root_id']."&parent_id=".$standAloneTani['parent_id']."&display=0'>
-                    <div class='col-lg-8 m-auto'>
+                    <div class='col-lg-8 m-auto mb-2'>
                         <div class='btn btn-success w-100 d-flex justify-content-around' 
                         id='".$i."_toggler'>
                         <span>Numara: ". $standAloneTani['tani_id']. "</span>
@@ -181,7 +178,7 @@ $taniNames = array(
                     foreach($standAloneExtensions as $singleExtension){
                         $taniExtensions .= "<div class='row mt-2 w-100 ".$i ."_extention_container'  style='display:none'>
                         <a class='tani-navigator' href='" . $base_url . "/taniReview/tani" . $singleExtension['tani_num'] . "-review.php?patient_id=" . $singleExtension['patient_id'] . "&patient_name=" . $singleExtension['patient_name'] . "&evaluation=" . $singleExtension['evaluation'] . "&tani_id=".$singleExtension['tani_id']."&tani_num=".$singleExtension['tani_num']."&root_id=".$standAloneTani['tani_id']."&parent_id=".$singleExtension['parent_id']."&display=0'>
-                        <div class='col-lg-8 m-auto'>
+                        <div class='col-lg-8 m-auto mb-2'>
                             <div class='btn btn-success w-100 d-flex justify-content-around' 
                             id='".$i ."_toggler'>
                             <span>Numara: ". $singleExtension['tani_id']. "</span>

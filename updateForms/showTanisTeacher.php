@@ -129,17 +129,11 @@ $taniNames = array(
             $countBosh = 0;
         }
         ?>
-        <div class="send-patient">
-        <div class="d-flex align-items-center justify-content-between mb-2">
-                    <p style="color : #333333; font-size: 20px" class="pb-2">Tani Listesi</p>
-                    <p style="color : #333333; font-size: 20px" class="pb-2">Hasta: <?php echo $_GET['patient_name']?></p>
-                </div>
-           
+        <div class="send-patient">           
             <div class="patients-table text-center rounded p-4" id="patients-table">
-                <div class="d-flex align-items-center justify-content-between mb-2">
-                    <p style="color : #333333; font-size: 20px" class="pb-2">Sunulan Tanı</p>
+                    <h2 class='form-header'>Sunulan Tanı</p>
+                    <div class='row'><div class='col-lg-12 text-start'><p style="color : black; font-size: 20px" class="pb-2">Hasta: <?php echo $_GET['patient_name']?></p></div></div>
 
-                </div>
                 <?php
                 $i = 1;
                 foreach($allTanisStandalone as $standAloneTani){

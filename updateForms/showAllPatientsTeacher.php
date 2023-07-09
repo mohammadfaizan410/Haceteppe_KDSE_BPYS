@@ -44,7 +44,6 @@ if (isset($_GET['logout'])) {
             <div class="patients-table text-center rounded p-4" id="patients-table">
                 <div class="d-flex align-items-center justify-content-between mb-4">
                     <p style="color : #333333; font-size: 20px" class="pb-2">Hasta Listesi / Öneriler</p>
-                    <p style="color : #333333; font-size: 20px" class="pb-2">Öğrenci: <?php echo $_GET['student_name']?></p>
                 </div>
 
                 <div class="table-responsive">
@@ -52,9 +51,10 @@ if (isset($_GET['logout'])) {
 
                     <table class="table text-start align-middle table-hover mb-0" id='dataTable'>
                         <thead>
-                            <tr class="darkcyan table-head">
+                            <tr class='mb-3'><td colspan='5'><p style="color : #333333; font-size: 20px" class="pb-2">Öğrenci: <?php echo $_GET['student_name']?></p><td></tr>
+                            <tr class="darkcyan table-head mt-5">
 
-                                <th scope="col" style="font-weight : bold; font-size: large;">İsim</th>
+                                <th scope="col" style="font-weight : bold; font-size: large;">Hasta İsim</th>
                                 <th scope="col" style="font-weight : bold; font-size: large;">Soyisim</th>
                                 <th scope="col" style="font-weight : bold; font-size: large;">Yaş</th>
                                 <th scope="col" style="font-weight : bold; font-size: large;">formlar</th>

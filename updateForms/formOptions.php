@@ -34,13 +34,13 @@ if (isset($_GET['logout'])) {
                 <p style="color : #333333; font-size: 20px" class="pb-2"></p>
 
             </div>
-            <h2 class="pb-5">Hasta Formlar</h2>
+            <h2 class="form-header">Hasta Formlar</h2>
             <div class="table-responsive mt-5" style="overflow-x: hidden;">
                   
                     <div class="row" style="border-bottom: 1px solid grey; padding-bottom: 10px;">
                         <div class="col-sm-6 col-lg-3">
                             <h4 style="text-align: left;"> ID</h4>
-                            <h4 style="text-align: left;"><?php echo $_GET['patient_id'] ?></h4>
+                            <h4 style="text-align: left;color:black"><?php echo $_GET['patient_id'] ?></h4>
                         </div>
                         <div class="col-lg-3 col-sm-6">
                             <h4 style="text-align: left;">Hasta Adı:</h4>

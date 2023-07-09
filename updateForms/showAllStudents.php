@@ -122,7 +122,7 @@ if (isset($_GET['logout'])) {
         <div class="send-patient">
             <div class="patients-table text-center rounded p-4" id="patients-table">
             <div class="d-flex align-items-center justify-content-between mb-4">
-                    <p style="color : #333333; font-size: 20px" class="pb-2">Öğrenci Listesi / Öneriler</p>
+                    <p style="color : #333333; font-size: 20px" class="pb-2"> Listesi / Öneriler</p>
 
                 </div>
 
@@ -133,7 +133,7 @@ if (isset($_GET['logout'])) {
                         <thead>
                             <tr class="darkcyan table-head">
 
-                                <th scope="col" style="font-weight : bold; font-size: large;">İsim</th>
+                                <th scope="col" style="font-weight : bold; font-size: large;">Öğrenci İsim</th>
                                 <th scope="col" style="font-weight : bold; font-size: large;">Soyisim</th>
                                 <th scope="col" style="font-weight : bold; font-size: large;">e-posta</th>
                                 <th scope="col" style="font-weight : bold; font-size: large;">Detaylar</th>

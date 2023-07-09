@@ -29,11 +29,11 @@ if (isset($_GET['logout'])) {
         <div class="patients-table text-center rounded p-5" id="patients-table">
             <span class="close closeBtn" id="closeBtn1">&times;</span>
             <div class="patient-details">
-                <h2 class="pb-5">Hasta Detalar</h2>
+                <h2 class="form-header">Hasta Detalar</h2>
                 <div class="row pt-5 pb-3 border-bottom">
                     <div class="col-lg-3 col-sm-6">
                         <h4 style="text-align: left;">Hasta ID:</h4>
-                        <h4 style="text-align: left;"><?php echo $_GET['patient_id'] ?></h4>
+                        <h4 style="text-align: left;color:black"><?php echo $_GET['patient_id'] ?></h4>
                     </div>
                     <div class="col-lg-3 col-sm-6">
                         <h4 style="text-align: left;">Hasta Adı:</h4>
