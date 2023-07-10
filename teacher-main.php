@@ -1,9 +1,8 @@
 <?php
 session_start();
 $base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
-
-if (!isset($_SESSION['userlogin'])) {
-    header("Location: login-student.php");
+if (!isset($_SESSION['userlogin']['id'])) {
+    header("Location: login-teacher.php");
 }
 
 if (isset($_GET['logout'])) {
@@ -75,6 +74,7 @@ require_once('config-students.php');
     cursor: pointer;
     }
 
+    
     </style>
 </head>
 
@@ -93,7 +93,7 @@ require_once('config-students.php');
                         $('#notification').css('display', 'block');
 
                         $('.message').on('click', function() {
-                            window.location.href = 'broadcastTeacher.php';
+                            let url = "<?php echo $base_url; ?>/broadcastTeacher.php"
                         });
 
                         $('.close-btn').on('click', function() {
@@ -104,18 +104,18 @@ require_once('config-students.php');
                         $('#notification').css('display', 'none');
                         deleted = false;
                     }
-                    console.log(deleted);
-                    console.log(response.sender_name);
+                    // console.log(deleted);
+                    // console.log(response.sender_name);
                 },
                 error: function() {
-                    console.log('Failed to make the AJAX request');
+                    console.log('Please Connect to the internet!');
                 }
             });
         }, 3000);  // Repeat the AJAX call every 3 seconds (3000 milliseconds)
 
     </script>
    
-    <div id="notification" class="notification" style="display: none; opacity: 1">
+    <div id="notification" class="notification" style="display: none; opacity: 1;cursor:pointer ">
         <span class="message"></span>
         <button id="closeBtnNotification" class="close-btn">&times;</button>
     </div>
