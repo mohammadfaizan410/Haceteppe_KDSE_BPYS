@@ -114,13 +114,8 @@ if ($result) {
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
                         <img src="./ağrı skalası.png" style="width:67%; height:auto;border: 1px solid;border-color: #246174; box-shadow:1px 1px 1px 1px #246174; border-radius: 20px;">
-<<<<<<< HEAD
                         <div class="input-section d-flex" style="padding-top: 5%;">
                             <p class="usernamelabel">Ağrının Şiddeti:</p>
-=======
-                        <div class="input-section" style="padding-top: 5%;">
-                            <p class="usernamelabel pb-3">Ağrının Şiddeti:</p>
->>>>>>> 91929a715d824bbb6c8f979ceb7f39c8e004acaa
                             <div class="checkbox-wrapper">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="AgriSiddeti" id="AgriSiddeti1" value="0. Yok">

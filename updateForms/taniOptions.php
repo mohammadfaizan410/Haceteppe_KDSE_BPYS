@@ -37,27 +37,27 @@ if (isset($_GET['logout'])) {
             <div class="table-responsive mt-5" style="overflow-x: hidden;">
                   
                     <div class="row" style="border-bottom: 1px solid grey; padding-bottom: 10px;">
-                        <div class="col-sm-6 col-lg-2">
+                        <div class="col-md-12 col-lg-2">
                             <h4 style="text-align: left;"> ID</h4>
                             <h4 style="text-align: left;"><?php echo $_GET['patient_id'] ?></h4>
                         </div>
 
-                        <div class="col-lg-2 col-sm-6">
+                        <div class="col-lg-2 col-md-12">
                             <h4 style="text-align: left;">Hasta Adı:</h4>
                             <h4 style="text-align: left; color: #333333;"><?php echo $_GET['patient_name'] ?></h4>
                         </div>
 
-                        <div class="col-sm-6 col-lg-2">
+                        <div class="col-md-12 col-lg-2">
                             <h4 style="text-align: left;">Tanı gönderin</h4>
                             <h4 style="text-align: left;">  <div class='btn btn-success' id='showAllTanis'>Tanı gönderin
                         </div></h4></div>
 
-                        <div class="col-sm-6 col-lg-3">
+                        <div class="col-md-12 col-lg-3">
                             <h4 style="text-align: left;">Sistem tarafından oluşturulan tanılama</h4>
                             <h4 style="text-align: left;">  <div class='btn btn-success' id='showSystemGeneratedTanis'>Sistem tarafından oluşturulan tanılama
                         </div></h4></div>
 
-                        <div class="col-sm-6 col-lg-3">
+                        <div class="col-md-12 col-lg-3">
                             <h4 style="text-align: left;">Tanıyı görüntüleme</h4>
                             <h4 style="text-align: left;"><div class='btn btn-success' id='showSubmittedTanis'>Tanıyı görüntüleme
                         </div></h4>

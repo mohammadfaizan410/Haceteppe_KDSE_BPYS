@@ -198,7 +198,7 @@ $taniNames = array(
                         <a class='tani-navigator' href='" . $base_url . "/taniReview/tani" . $last_extension['tani_num'] . "-review.php?patient_id=" . $last_extension['patient_id'] . "&patient_name=" . $last_extension['patient_name'] . "&evaluation=" . $last_extension['evaluation'] . "&tani_id=".$last_extension['tani_id']."&tani_num=".$last_extension['tani_num']."&root_id=".$standAloneTani['tani_id']."&parent_id=".$last_extension['parent_id']."&display=1'>
                         <div class='col-lg-8 m-auto mb-3'>
                         <div class='btn btn-success w-100 d-flex justify-content-around' style='border: 2px dotted black; background-color:white; color : black;'> 
-                        <span>Add Extension</span>
+                        <span>Uzantı Ekle</span>
                         </div>
                         </div>
                         </a>

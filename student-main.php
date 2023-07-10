@@ -1,7 +1,7 @@
 <?php
 session_start();
 $base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
-if (!isset($_SESSION['userlogin'])) {
+if (!isset($_SESSION['userlogin']['id'])) {
     header("Location: login-student.php");
 }
 
@@ -75,6 +75,26 @@ require_once('config-students.php');
     cursor: pointer;
     }
 
+    .notification1 {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 320px;
+    height: 85px;
+    background-color: white;
+    padding: 10px;
+    border: 3px solid darkslateblue;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: none;
+    }
+    .notification1 span {
+        padding: 3px;
+    }
+    .message1 {
+    font-size: 18px;
+    }
+
     </style>
 </head>
 
@@ -94,10 +114,11 @@ require_once('config-students.php');
                         $('#notification1').css('display', 'block');
 
                         $('.message1').on('click', function() {
-                            window.location.href = 'broadcastTeacher.php';
+                            let url = "<?php echo $base_url; ?>/broadcastStudent.php";
+                            $('#content').load(url)
                         });
 
-                        $('.close-btn1').on('click', function() {
+                        $('#closeBtnNotification1').on('click', function() {
                             $('#notification1').css('display', 'none')
                             deleted = true;
                         });
@@ -105,8 +126,6 @@ require_once('config-students.php');
                         $('#notification1').css('display', 'none');
                         deleted = false;
                     }
-                    console.log(deleted);
-                    console.log(response.sender_name);
                 },
                 error: function() {
                     console.log('Failed to make the AJAX request');
@@ -170,10 +189,11 @@ require_once('config-students.php');
     }
 
 ?>
-    <div id="notification1" class="notification1">
+    <div id="notification1" class="notification1" style='cursor:pointer'>
         <span class="message1"></span>
-        <button id="closeBtnNotification1" class="close-btn1">&times;</button>
+        <button id="closeBtnNotification1" class="close-btn" >&times;</button>
     </div>
+
     <div class="stu-body1" id="stu-body1">
         <div class="navigation-wrapper" id="navigation-wrapper">
             <div class="navigation-left">

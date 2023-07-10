@@ -208,8 +208,8 @@ if ($result) {
                 var age = $('#age').val();
                 var not = $('#not').val();
                 let form_num = 14;
-                let patient_name = $("input[name='patient_name']").val();
-                let patient_id = parseInt($("input[name='patient_id']").val());
+                let patient_name = <?php echo json_encode($patient_name); ?>;
+                let patient_id = <?php echo $patient_id ?>;
                 let yourDate = new Date();
                 let creationDate = yourDate.toISOString().split('T')[0];
                 let updateDate = yourDate.toISOString().split('T')[0];
@@ -307,10 +307,10 @@ if ($result) {
                         patient_name: patient_name,
                         creation_date: creationDate,
                         update_date: updateDate,
-         
-        
                         noc_output: noc_output,
                         noc_indicator: noc_indicator,
+                        problem_info: problem_info,
+                        nurse_description: nurse_description,
                         nurse_attempt: nurse_attempt,
                         evaluation: evaluation
                     },

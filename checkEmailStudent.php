@@ -2,10 +2,11 @@
 require_once("config-students.php");
 
 if (isset($_POST['email'])) {
+
     $email = $_POST['email'];
     $sql = "SELECT email FROM students WHERE email = ?";
     $stmt = $db->prepare($sql);
-    $stmt->execute([$email, $email]);
+    $stmt->execute([$email]);
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     if ($result) {
         echo 'exists';

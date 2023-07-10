@@ -392,8 +392,8 @@ if ($result) {
             var hobbies = "<?php echo $calismaform1['hobbies']; ?>";
             $('[name="hobbies"]').val(hobbies);
 
-            var hospitalSocialActivities = <?php echo $calismaform1['hospitalSocialActivities']; ?>;
-            hospitalSocialActivities.forEach(function(value) {
+            var hospitalSocialActivities = "<?php echo $calismaform1['hospitalSocialActivities']; ?>";
+            hospitalSocialActivities.split('/').forEach(function(value) {
                 $('[name="hospitalSocialActivities"][value="'+value+'"]').prop('checked', true);
                 if (value === "Diğer") {
                     var otherSocialActivities = "<?php echo $calismaform1['otherActivities']; ?>"

@@ -820,7 +820,7 @@ if (
   (form1_beslenme ? form1_beslenme.BKI < 18 : false) ||
   (form1_beslenme ? form1_beslenme.BKI > 35 : false) ||
   (vucudutemizform1 ? vucudutemizform1.skinColorProblem === "Soluk" : false) ||
-  (vucudutemizform1 ? vucudutemizform1.split('/').includes("Kızarıklık") : false) ||
+  (vucudutemizform1 ? vucudutemizform1.skinColorProblem.split('/').includes("Kızarıklık") : false) ||
   (vucudutemizform1 ? vucudutemizform1.skinColorProblem === "Pigmentasyon artışı" : false) ||
   (vucudutemizform1 ? vucudutemizform1.skinAge === "Zayıf" : false) ||
   (form10 ? form10.body_temperature > 38 : false) ||

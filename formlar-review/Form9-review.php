@@ -218,7 +218,7 @@ if (isset($_GET['logout'])) {
                     $("#content").load(url);}
                     else{
                         let patient_id = <?php echo $patient_id ? $patient_id : 0   ?> ;
-                let patient_name = "<?php echo urldecode($patient_name); ?>";
+                let patient_name = <?php echo json_encode($patient_name); ?>;
                 let student_id  = <?php echo $student_id ? $student_id : 0   ?>;
                 let student_name = "<?php echo urldecode($student_name); ?>";
                 var url = "<?php echo $base_url; ?>/updateForms/showFormsTeacher.php?patient_id=" + patient_id +
@@ -268,8 +268,8 @@ if (isset($_GET['logout'])) {
                 var age = $('#age').val();
                 var not = $('#not').val();
                 let form_num = 9;
-                let patient_name = $("input[name='patient_name']").val();
-                let patient_id = parseInt($("input[name='patient_id']").val());
+                let patient_name = <?php echo json_encode($patient_name);?>;
+                let patient_id = <?php echo json_encode($patient_id);?>;
                 let yourDate = new Date()
                 let creationDate = yourDate.toISOString().split('T')[0];
                 let updateDate = yourDate.toISOString().split('T')[0];

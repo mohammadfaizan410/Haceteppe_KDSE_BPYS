@@ -6,7 +6,6 @@ $base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
 <?php
 
 if (isset($_POST["patient_name"])) {
-
         $result =  $stmt = $db->prepare("INSERT INTO form14 (
                 form_num,
                 patient_name,

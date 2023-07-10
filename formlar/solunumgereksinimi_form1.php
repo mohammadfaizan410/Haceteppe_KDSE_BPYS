@@ -1654,7 +1654,7 @@ else if ($('[name="SolunumSistemiUygilamasi"][value="Diger"]').is(':checked') &&
                             success: function(data) {
                                     console.log(data);
                                     let url =
-                                        "<?php echo $base_url; ?>/updateForms/showAllForms1.php?patient_id=" +
+                                        "<?php echo $base_url; ?>/updateForms/showSubmittedForms.php?patient_id=" +
                                         patient_id + "&patient_name=" + encodeURIComponent(
                                             patient_name);
                                             $("#tick-container").fadeIn(800);

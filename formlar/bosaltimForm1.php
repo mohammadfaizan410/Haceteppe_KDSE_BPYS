@@ -1070,7 +1070,7 @@ $('#submit').click(function(e) {
             success: function(data) {
        
                 let url =
-                    "<?php echo $base_url; ?>/updateForms/showAllForms1.php?patient_id=" +
+                    "<?php echo $base_url; ?>/updateForms/showSubmittedForms.php?patient_id=" +
                     patient_id + "&patient_name=" + encodeURIComponent(patient_name);
                     $("#tick-container").fadeIn(800);
                             // Change the tick background to the animated GIF

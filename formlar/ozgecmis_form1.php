@@ -1954,7 +1954,7 @@ if (isset($_GET['logout'])) {
                                 return false;
 
                             }
-                            if( $('.form-check-input[name="aidTools"]:checked').val() === "Var" && $('.form-check-input[name="aidToolsDsc"]:checked').length() === 0){
+                            if( $('.form-check-input[name="aidTools"]:checked').val() === "Var" && $('.form-check-input[name="aidToolsDesc"]:checked').length === 0){
                                 //scroll to aidToolsInput
                                 $('html, body').animate({
                                     scrollTop: $('.form-check-input[name="aidTools"]').first().offset().top
@@ -2143,10 +2143,20 @@ if (isset($_GET['logout'])) {
                         success: function(data) {
                             alert(data);
                             let url =
-                                "<?php echo $base_url; ?>/updateForms/showAllForms1.php?patient_id=" +
-                                patient_id + "&patient_name=" + encodeURIComponent(
-                                    patient_name);
+                            "<?php echo $base_url; ?>/updateForms/showAllForms1.php?patient_id=" +
+                            patient_id + "&patient_name=" + encodeURIComponent(
+                                patient_name);
+                                $("#tick-container").fadeIn(800);
+                            // Change the tick background to the animated GIF
+                            $("#tick").css("background-image", "url('./check-2.gif')");
+
+                            // Delay for 2 seconds (adjust the duration as needed)
+                            setTimeout(function() {
+                            // Load the content
                             $("#content").load(url);
+                            $("#tick-container").fadeOut(600);
+                            // Hide the tick container
+                            }, 1000);
                         },
                         error: function(data) {
                             Swal.fire({
