@@ -191,7 +191,7 @@ $taniNames = array(
                     }
 
                     echo $taniExtensions;
-
+                    
                     if (($last_extension['noc_indicator_after_3'] != "null" && $last_extension['noc_indicator_after_3'] != "5") || ($last_extension['noc_indicator_after_2'] != "null" && $last_extension['noc_indicator_after_2'] != "5")
                     || $last_extension['noc_indicator_after'] != "5") {
                         echo "<div class='row mt-2 w-100 ".$i ."_extender_container' style='display:none'>

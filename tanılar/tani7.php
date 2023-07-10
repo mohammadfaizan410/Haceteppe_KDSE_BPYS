@@ -363,14 +363,6 @@ if (isset($_GET['logout'])) {
                     }, 200);
                 $('[name="nurse_education"]').first().closest('.input-section').find('.option-error1').css('display', 'block');
                 return false;
-            } else if ($('[name="collaborative_apps"]:checked').length === 0){
-                $('.option-error').css('display', 'none');
-                $('.option-error1').css('display', 'none');
-                $('html, body').animate({
-                        scrollTop: $('[name="collaborative_apps"]').offset().top
-                    }, 200);
-                $('[name="collaborative_apps"]').first().closest('.input-section').find('.option-error2').css('display', 'block');
-                return false;
             } else if (!$('[name="noc_indicator_after"]').is(':checked')) {
                 $('.option-error').css('display', 'none');
                 $('.option-error1').css('display', 'none');

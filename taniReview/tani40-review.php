@@ -323,7 +323,7 @@ if ($result) {
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after" id="
-                                        noc_indicator" value="5">
+                                        noc_indicator" value="5:">
                                     <label class="form-check-label" for="noc_indicator_after">
                                         <span class="checkbox-header">5: Hastanın muköz membran bütünlüğünde sorun yok, risk devam ediyor</span>
                                     </label>

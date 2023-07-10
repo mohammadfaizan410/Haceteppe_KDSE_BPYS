@@ -424,7 +424,7 @@ if (isset($_GET['logout'])) {
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="
-                                        noc_indicator" value="5">
+                                        noc_indicator" value="5:">
                                     <label class="form-check-label" for="noc_indicator_after_2">
                                         <span class="checkbox-header">5: Hastanın hidrasyon durumu normal, risk devam ediyor</span>
                                     </label>
