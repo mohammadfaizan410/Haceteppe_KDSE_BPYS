@@ -178,7 +178,7 @@ if (isset($_GET['logout'])) {
                     },
                     error: function(data) {
                         Swal.fire({
-                            'title': 'Errors',
+                            'title': 'Errors',  
                             'text': 'There were errors',
                             'type': 'error'
                         })

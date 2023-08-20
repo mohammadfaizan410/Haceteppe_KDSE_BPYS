@@ -1285,6 +1285,23 @@ if (isset($_GET['logout'])) {
                     <div class="input-section">
 
                         <p class="usernamelabel">Abdomende Kitle:</p>
+                        
+                        <div class="checkbox-wrapper">
+                            <div class="checkboxes d-flex">
+                                <div class="form-check">
+                                    <input class="form-check-input abdominal_kitle_toggler" type="radio" name="kitle" id="abdominal-kitle-yok" value="Yok">
+                                    <label class="form-check-label" for="kitle">
+                                        <span class="checkbox-header">Yok</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input abdominal_kitle_toggler" type="radio" name="kitle" id="abdominal-kitle-var" value="Var">
+                                    <label class="form-check-label" for="Asit">
+                                        <span class="checkbox-header"> Var</span>
+                                    </label>
+                                </div>
+
+                            </div>
 
                         <div class="checkbox-wrapper d-flex abdominal_stuff_div">
                             <div class="checkboxes d-flex">
@@ -1292,7 +1309,7 @@ if (isset($_GET['logout'])) {
                                     <label class="form-check-label" for="Kitle">
                                         <span class="checkbox-header">Yeri</span>
                                     </label>
-                                    <input type="text" class="form-control diger" name="Yeri" id="abdominal_mass_place"
+                                    <input type="text" class="form-control diger" name="Yeri" id="abdominal_mass_place" disabled
                                         maxlength="40">
                                 </div>
                                 <div class="form-check">
@@ -1300,17 +1317,18 @@ if (isset($_GET['logout'])) {
                                     <label class="form-check-label" for="Kitle">
                                         <span class="checkbox-header"> Büyüklüğü</span>
                                     </label>
-                                    <input type="text" class="form-control diger" name="Buyuklugu" id="abdominal_mass_size">
+                                    <input type="text" class="form-control diger" name="Buyuklugu" id="abdominal_mass_size" disabled>
                                 </div>
                                 <div class="form-check">
                                     
                                     <label class="form-check-label" for="Kitle">
                                         <span class="checkbox-header"> Özelliği</span>
                                     </label>
-                                    <input type="text" class="form-control diger" name="Ozelligi" id="abdominal_mass_description">
+                                    <input type="text" class="form-control diger" name="Ozelligi" id="abdominal_mass_description" disabled>
                                 </div>
 
                             </div>
+                        </div>
                         </div>
                     </div>
                     <div class="input-section">
@@ -1438,7 +1456,21 @@ if (isset($_GET['logout'])) {
 
             //Beslenme gereksinimini karşılamada 
             //?? missing, but works anyways???
+        
+            $('.abdominal_kitle_toggler').change(function(){
+                console.log('hello there');
+                if($(this).val() === "Var"){
+                    $('#abdominal_mass_place').prop('disabled', false);
+                    $('#abdominal_mass_size').prop('disabled', false);
+                    $('#abdominal_mass_description').prop('disabled', false);
 
+                }
+                else{
+                    $('#abdominal_mass_place').prop('disabled', true);
+                    $('#abdominal_mass_size').prop('disabled', true);
+                    $('#abdominal_mass_description').prop('disabled', true)
+                }
+            })
 
             //Diyet
             $('input[type=radio][id="diet"]').change(function() {
@@ -2347,7 +2379,6 @@ if (isset($_GET['logout'])) {
                 if ($('input#with_probe[value="Jejunostomi"]').is(':checked')){
                     if($('input#jejunostomi_input').val().trim() === ''){
                         scrollToInput('input#jejunostomi_input');
-
                         return false;
                     }
 
@@ -2546,6 +2577,10 @@ if (isset($_GET['logout'])) {
                     return false;
                 }
                 //Abdomende Kitle:
+                if($('input.abdominal_kitle_toggler:checked').length === 0 ){
+                    scrollToInput('input.abdominal_kitle_toggler');
+                    return false;
+                }
                 if (($('input#abdominal_mass_place').val() === "") || ($('input#abdominal_mass_size').val() === "") || ($('input#abdominal_mass_description').val() === "")  ){
                     scrollToInput('div.abdominal_stuff_div');
 

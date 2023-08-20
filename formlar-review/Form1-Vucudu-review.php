@@ -364,6 +364,8 @@ if ($result) {
 
 
             <div class="input-section">
+            <input type="checkbox" name='isMale' id='isMale' value='male'>
+                <label for="isMale">Erkek Hasta?</label>
                 <p class="usernamelabel pb-3">Menstrual Hijyen
                 </p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
@@ -1299,6 +1301,25 @@ if ($result) {
                         $(this).prop("checked", true);
                     }
                 });
+            }
+
+            let isMale = "<?php echo $vucudutemizform1[0]['isMale']; ?>";
+            if(isMale ==='male'){
+                $('#isMale').prop('checked', true);
+                $('#menstrualDate').prop('disabled', true);
+                        $('#menstrualDate').val("");
+                        $('#mensturalTime').prop('disabled', true);
+                        $('#mensturalTime').val("");
+                        $('input[name="menstrualProduct"]').prop('disabled', true);
+                        $('#menstrualProduct').val("");
+                        $('#menstrualProductDiger').prop('disabled', true);
+                        $('#menstrualProductDiger').val("");
+                        $('#padReplacementFreq').prop('disabled', true);
+                        $('#padReplacementFreq').val("");
+                        $('#bezReplacementFreq').prop('disabled', true);
+                        $('#bezReplacementFreq').val("");
+                        $('#digerReplacementFreq').prop('disabled', true);
+                        $('#digerReplacementFreq').val("");
             }
             //hairDistributionProblem
             let hairDistributionProblemArr = "<?php echo $vucudutemizform1[0]['hairDistributionProblem']; ?>".split("/");

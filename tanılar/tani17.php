@@ -10,6 +10,7 @@ if (isset($_GET['logout'])) {
     unset($_SESSION);
     header("Location: main.php");
 }
+$taniValidInputs = isset($_GET['taniValidInputs']) ? $_GET['taniValidInputs'] : '';
 
 // $tanı_respiratory_rate = $_GET['tanı_respiratory_rate'];
 // $tanı_heart_rate = $_GET['tanı_heart_rate'];
@@ -88,6 +89,20 @@ $pain_duration  = isset($_GET['pain_duration ']) ? $_GET['pain_duration '] : "Na
                             <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
                             <p class="tanıdescription">Konforda bozulma </p>
                         </div>
+                        <?php
+                            if($taniValidInputs !== '') {
+                                echo '<div class="input-section d-flex">
+                                    <p id="tani_usernamelabel">Algılanan Sorunlar:</p>';
+                                
+                                $fields = explode('/', $taniValidInputs);
+                                echo '<div>';
+                                foreach($fields as $field) {
+                                    echo '<p style="color:red">' . $field . '</p>';
+                                };
+                                echo '</div>';
+                                echo '</div>';
+                            }
+                            ?>
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hastanın rahat olduğunu ifade etmesi </p>
@@ -365,6 +380,10 @@ $pain_duration  = isset($_GET['pain_duration ']) ? $_GET['pain_duration '] : "Na
                                     ?>";
                 var url = "<?php echo $base_url; ?>/updateForms/showAllTanis.php?patient_id=" + patient_id +
                     "&patient_name=" + encodeURIComponent(patient_name);
+                    if(<?php echo isset($_GET['taniValidInputs']) ?>){
+                var url = "<?php echo $base_url; ?>/updateForms/showSystemGeneratedTanis.php?patient_id=" + patient_id +
+                "&patient_name=" + encodeURIComponent(patient_name);
+                    }
                 $("#content").load(url);
 
             })

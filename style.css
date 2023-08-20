@@ -826,7 +826,7 @@ input[type="email"] {
 
 @media screen and (max-width: 768px) {
     .table-head {
-        font-size: 14px;
+        font-size: 10px;
     }
 
     .stu-body1 {
@@ -852,6 +852,9 @@ input[type="email"] {
 
     .user-info {
         padding-left: 40px;
+    }
+    .showallformsContainer{
+        width: 100%;
     }
 }
 

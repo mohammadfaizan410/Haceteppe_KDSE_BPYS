@@ -68,6 +68,14 @@ if (isset($_GET['logout'])) {
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
+                        <div class='input-section'>
+                        <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
+                            <input type='radio' class='form-check-input' name='isDusme' id='dusmeYok' value='yok'>
+                            <label for="dusmeYok">Düşme Yok</label>
+                            <input type='radio' class='form-check-input' name='isDusme' id='dusmeVar' value='var'>
+                            <label for="dusmeVar">Düşme Var</label>
+        
+                        </div>
                         <div class="input-section" style="justify-content:space-between">
                             <p class="usernamelabel pb-3">Cinsiyet : </p>
                             <input type="text" class="form-control" required name="patient_gender" id="diger"
@@ -193,8 +201,15 @@ if (isset($_GET['logout'])) {
     <script>
     $(function() {
         $('#submit').click(function(e) {
-
-            if ($('[name="patient_gender"]').val() === "") {
+            if($('[name="isDusme"]:checked').length === 0){
+                $('html, body').animate({
+                            scrollTop: $('.option-error').first().offset().top
+                        }, 200);
+                        // Display error message
+                $('.option-error').css('display', 'block');
+                return false
+            }    
+            else if ($('[name="patient_gender"]').val() === "") {
                 $('html, body').animate({
                             scrollTop: $('[name="patient_gender"]').offset().top
                         }, 200);
@@ -297,6 +312,7 @@ if (isset($_GET['logout'])) {
                     let yourDate = new Date()
                     let creation_date = yourDate.toISOString().split('T')[0];
                     let updateDate = yourDate.toISOString().split('T')[0];
+                    let isDusme = $("input[type='radio'][name='isDusme']:checked").val();
                     let medical_diagnosis = $("input[name='medical_diagnosis']").val();
                     let place_of_fall = $("input[name='place_of_fall']").val();
                     let fall_date = $("input[name='fall_date']").val();
@@ -328,6 +344,7 @@ if (isset($_GET['logout'])) {
                             patient_gender: patient_gender,
                             update_date: updateDate,
                             creation_date: creation_date,
+                            isDusme : isDusme,
                             medical_diagnosis: medical_diagnosis,
                             place_of_fall: place_of_fall,
                             fall_date: fall_date,

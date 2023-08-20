@@ -11,13 +11,14 @@ if (isset($_POST["patient_name"])) {
                 creation_date,
                 update_date,
                 exercisingHabit,
+                exercisingHabitInput,
                 inHospitalExercise,
                 movementProblem,
                 wearingClothesDependence,
                 changingPositionDependence,
                 standingUpDependence,
                 walkingDependence
-            ) VALUES (?,    ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?)");
+            ) VALUES (?,    ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?,   ?)");
         $result = $stmt->execute([
             $_POST["form_name"],
             $_POST["patient_name"],
@@ -25,6 +26,7 @@ if (isset($_POST["patient_name"])) {
             $_POST["creation_date"],
             $_POST["update_date"],
             $_POST["exercisingHabit"],
+            $_POST["exercisingHabitInput"],
             $_POST["inHospitalExercise"],
             $_POST["movementProblem"],
             $_POST["wearingClothesDependence"],

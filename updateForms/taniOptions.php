@@ -48,13 +48,13 @@ if (isset($_GET['logout'])) {
                         </div>
 
                         <div class="col-md-12 col-lg-2">
-                            <h4 style="text-align: left;">Tanı gönderin</h4>
-                            <h4 style="text-align: left;">  <div class='btn btn-success' id='showAllTanis'>Tanı gönderin
+                            <h4 style="text-align: left;">Manuel Tanı Girişi</h4>
+                            <h4 style="text-align: left;">  <div class='btn btn-success' id='showAllTanis'>Manuel Tanı Girişi
                         </div></h4></div>
 
                         <div class="col-md-12 col-lg-3">
-                            <h4 style="text-align: left;">Sistem tarafından oluşturulan tanılama</h4>
-                            <h4 style="text-align: left;">  <div class='btn btn-success' id='showSystemGeneratedTanis'>Sistem tarafından oluşturulan tanılama
+                            <h4 style="text-align: left;">KDS’nin Önerdiği Tanılar</h4>
+                            <h4 style="text-align: left;">  <div class='btn btn-success' id='showSystemGeneratedTanis'>KDS’nin Önerdiği Tanılar
                         </div></h4></div>
 
                         <div class="col-md-12 col-lg-3">

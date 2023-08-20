@@ -90,7 +90,7 @@ if (isset($_GET['logout'])) {
     <div class="container-fluid pt-4 px-4">
         <div class="send-patient">
             <span class='close closeBtn' id='closeBtn1'>&times;</span>
-            <h1 class="form-header">Medikal Tedavi</h1>
+            <h1 class="form-header">İLAÇ ORDERI</h1>
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">

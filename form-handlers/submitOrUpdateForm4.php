@@ -9,6 +9,7 @@ if (isset($_POST["patient_name"])) {
                 patient_gender,
                 creation_date,
                 update_date,
+                isDusme,
                 medical_diagnosis,
                 place_of_fall,
                 fall_date,
@@ -20,7 +21,7 @@ if (isset($_POST["patient_name"])) {
                 pre_fall_precautions,
                 pre_fall_general_condition,
                 post_fall_general_condition
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
         $result = $stmt->execute([
             $_POST["patient_name"],
@@ -28,6 +29,7 @@ if (isset($_POST["patient_name"])) {
             $_POST["patient_gender"],
             $_POST["creation_date"],
             $_POST["update_date"],
+            $_POST["isDusme"],
             $_POST["medical_diagnosis"],
             $_POST["place_of_fall"],
             $_POST["fall_date"],

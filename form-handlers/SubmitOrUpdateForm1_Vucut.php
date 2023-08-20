@@ -30,6 +30,7 @@ if (isset($_POST["patient_name"])) {
                 periniumCareMethod,
                 periniumCareMaterial,
                 periniumCareFreq,
+                isMale,
                 menstrualDate,
                 mensturalTime,
                 mensturalProduct,
@@ -46,7 +47,7 @@ if (isset($_POST["patient_name"])) {
                 nailColorProblem,
                 nailStructureProblem,
                 capillaryFillingProblem
-            ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+            ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
         $result = $stmt->execute([
             $_POST["form_name"],
             $_POST["patient_name"],
@@ -73,6 +74,7 @@ if (isset($_POST["patient_name"])) {
             $_POST["periniumCareMethod"],
             $_POST["periniumCareMaterial"],
             $_POST["periniumCareFreq"],
+            $_POST["isMale"],
             $_POST["menstrualDate"],
             $_POST["mensturalTime"],
             $_POST["mensturalProduct"],

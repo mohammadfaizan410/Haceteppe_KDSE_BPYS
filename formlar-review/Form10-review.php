@@ -183,6 +183,7 @@ $student_name = isset($_GET['student_name']) ? $_GET['student_name'] : '';
                                     </label>
                                 </div>
                             </div>
+                            <input name='periferik_input' class='form-control' type='text' id='periferik_input' value=<?php echo json_encode($form10[0]['perifirek_input']); ?> disabled>
                         </div>
 
                         <div class="input-section">

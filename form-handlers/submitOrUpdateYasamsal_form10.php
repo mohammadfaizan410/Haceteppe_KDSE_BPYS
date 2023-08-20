@@ -22,8 +22,9 @@ if (isset($_POST["patient_name"])) {
                 o2_status,
                 o2_method,
                 spo2_percentage,
-                weight_input
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                weight_input,
+                perifirek_input
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         $result = $stmt->execute([
             $_POST["form_num"],
             $_POST["patient_name"],
@@ -44,6 +45,7 @@ if (isset($_POST["patient_name"])) {
             $_POST["o2_method"],
             $_POST["spo2_percentage"],
             $_POST["weight_input"],
+            $_POST["perifirek_input"]
         ]);
         if ($result) {
             echo "Ekleme Başarılı";

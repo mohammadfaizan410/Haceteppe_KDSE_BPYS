@@ -159,6 +159,7 @@ if (isset($_GET['logout'])) {
                                         <span class="checkbox-header">Periferik</span>
                                     </label>
                                 </div>
+                                <input name='periferik_input' class='form-control' type='text' id='periferik_input' disabled>
                         </div>
 
                         <div class="input-section">
@@ -243,9 +244,10 @@ if (isset($_GET['logout'])) {
 
 
                         <div class="input-section">
+                        <p class="option-error" style="color : red; display : none">160-80 arasında olmalıdır</p>
                             <p class="usernamelabel pb-3">Kan basıncı:</p>
                             <input type="number" class="form-control" required name="blood_pressure" id="blood_pressure"
-                                placeholder="Tetkik Sonucu" maxlength="7">
+                             placeholder="Tetkik Sonucu" maxlength="7" min="80" max="160">
                         </div>
 
                         <div class="input-section">
@@ -407,7 +409,19 @@ if (isset($_GET['logout'])) {
                 weightInput.val('').attr('disabled', true);
             }
         })
+
+       $('input[name="heartrate_location"]').change(function (e) { 
+        e.preventDefault();
+            if($(this).val() === "Periferik"){
+                $('#periferik_input').attr('disabled', false);
+            }
+            else{
+                $('#periferik_input').attr('disabled', true);
+            }
+       });    
     })
+
+
 
     $(function() {
         $('#closeBtn1').click(function(e) {
@@ -462,6 +476,7 @@ if (isset($_GET['logout'])) {
                 "input[type='radio'][name='bp_measurement_location']:checked").val();
             let o2_status = $("input[type='radio'][name='o2_status']:checked").val();
             let o2_method = '';
+            let perifirek_input = $("input[name='periferik_input']").val();
 
             if (o2_status === "Almıyor") {
                 o2_method = "Almıyor";
@@ -544,6 +559,17 @@ if (isset($_GET['logout'])) {
                         $('.form-check-input[name="heartrate_location"]').first().closest('.input-section').find('.option-error').css('display', 'block');
                         return false;
                     }
+                    if($('.form-check-input[name="heartrate_location"]:checked').val() === "Periferik" && $('#periferik_input').val() === ""){
+                        //scroll to periferik_input
+                        $('html, body').animate({
+                            scrollTop: $('#periferik_input').offset().top
+                        }, 200);
+                        //change border color
+                        $('#periferik_input').css('border-color', 'red');
+                        //stop function
+                        return false;
+                    }
+
 
                     if($('#heart_rate').val()=== "" ){
                         //scroll to heart_rate
@@ -600,6 +626,16 @@ if (isset($_GET['logout'])) {
                         return false;
                     }
 
+                    if($('#blood_pressure').val() >  160 || $('#blood_pressure').val() < 80  ){
+                        //scroll to blood_pressure
+                        $('html, body').animate({
+                            scrollTop: $("#blood_pressure").offset().top
+                        }, 200);
+                        //change border color
+                        $('#blood_pressure').css('border-color', 'red');
+                        //stop function
+                        return false;
+                    }
                     if($('.form-check-input[name="bp_measurement_location"]:checked').length === 0){
                         //scroll to bp_measurement_location
                         $('html, body').animate({
@@ -692,7 +728,8 @@ if (isset($_GET['logout'])) {
                     o2_status: o2_status,
                     o2_method: o2_method,
                     spo2_percentage: spo2_percentage,
-                    weight_input: weight_input
+                    weight_input: weight_input,
+                    perifirek_input: perifirek_input
                 },
                 success: function(data) {
                     let url =

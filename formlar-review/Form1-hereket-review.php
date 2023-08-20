@@ -111,14 +111,18 @@ if ($result) {
                     <p class="usernamelabel pb-3">Patient ID:</p>
                     <input type="text" class="form-control" required name="patient_id" id="diger" placeholder="Patient ID" value="<?php echo $hareketform1[0]['patient_id']; ?>" disabled>
                 </div>
-            <div class="input-section">
+         
+                <div class="input-section">
                 <label class="form-check-label pb-3" for="HareketAliskanligi">
                     Hastaneye yatmadan önceki düzenli egzersiz yapma alışkanlığı
                 </label>
-                <input class="form-check-input" type="checkbox" id="exercisingHabit" value="exercisingHabit" name="exercisingHabit">
+                <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
+                <input class="form-check-input" type="radio" id="exercisingHabitYok" value="yok" name="exercisingHabit">
+                <label for="exercisingHabitYok">Yok</label>
+                <input class="form-check-input" type="radio" id="exercisingHabitVar" value="var" name="exercisingHabit">
+                <label for="exercisingHabitVar">Var</label>
                     <input type="text" class="form-control" disabled name="exercisingHabitInput" id="exercisingHabitInput">
             </div>
-
             <div class="input-section">
 
                 <p class="usernamelabel pb-3">Hastanede egzersiz yapma durumuz</p>
@@ -384,7 +388,7 @@ if ($result) {
                     if("<?php echo $hareketform1[0]['exercisingHabit'] ?>" !== ""){
                         $('input[name="exercisingHabit"]').prop('checked', true);
                         $('input[name="exercisingHabitInput"]').prop('disabled', false);
-                        $('input[name="exercisingHabitInput"]').val("<?php echo $hareketform1[0]['exercisingHabit'] ?>");
+                        $('input[name="exercisingHabitInput"]').val("<?php echo $hareketform1[0]['exercisingHabitInput'] ?>");
                     }
                     if ("<?php echo $hareketform1[0]['inHospitalExercise'] ?>" !== "Hayir") {
                         $('input[name="inHospitalExercise"][value="Evet"]').prop('checked', true);
@@ -426,15 +430,7 @@ if ($result) {
 
             <script>
                 
-                $('input[name="exercisingHabit"]').change(function() {
-                    if (this.checked) {
-                        $('input[name="exercisingHabitInput"]').prop('disabled', false);
-                    } else {
-                        $('input[name="exercisingHabitInput"]').prop('disabled', true);
-                        $('input[name="exercisingHabitInput"]').val('')
-                    }
-                    });
-
+               $('input[name="exercisingHabit"]').val() === 'var' ? $('input[name="exercisingHabitInput"]').prop('disabled', false) : $('input[name="exercisingHabitInput"]').prop('disabled', true);
 
             $('.form-check-input[name="inHospitalExercise"]').change(function() {
                 if ($(this).val() === 'Evet') {

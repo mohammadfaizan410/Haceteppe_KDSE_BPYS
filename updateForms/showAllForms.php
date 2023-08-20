@@ -478,7 +478,7 @@ if (isset($_GET['logout'])) {
                                     if ($key ===  'table15_data') {
                                         $form_id = $form["form_id"];
                                         $update_date = $form["update_date"];
-                                        $form_16_options .= '<li class="m-2 p-2 "><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-ozgecmis-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Form1 Ozgecmis Date: ' . $update_date . '</p></a></div></li>';
+                                        $form_16_options .= '<li class="m-2 p-2 "><div class="entered-forms align-items-center"><a class="nav-items review btn btn-success p-3"   style="color: white;" href="' . $base_url . '/formlar-review/Form1-ozgecmis-review.php?form_id=' . $form_id . '"><p class="entered-forms-p">Hasta Değerlendirme Formu 1: Özgeçmiş, Soy geçmiş, Hastalık Öyküsü Date: ' . $update_date . '</p></a></div></li>';
                                     }
                                     if ($key ===  'table16_data') {
                                         $form_id = $form["form_id"];

@@ -94,7 +94,7 @@ if ($result) {
     <div class="container-fluid pt-4 px-4">
         <div class="send-patient">
             <span class='close closeBtn' id='closeBtn1'>&times;</span>
-            <h1 class="form-header">Basınç Yarası Formu</h1>
+            <h1 class="form-header">YARA FORMU</h1>
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
@@ -111,6 +111,21 @@ if ($result) {
 
                         <div class="input-section-item" style="justify-content:space-between; padding: 5%">
                             <p class="usernamelabel" style="font-weight: bold;">Değerlendirme Kriterleri</p>
+                        </div>
+                        
+                        <div class="input-section woundTypeToggler">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="typeOfWound" id="isServiceWound" value="service">
+                                <label class="form-check-label" for="servis">
+                                    <span class="checkbox-header">BASINÇ YARASI</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="typeOfWound" id="isOtherWound" value="other">
+                                <label class="form-check-label" for="servis">
+                                    <span class="checkbox-header">DİĞER YARA</span>
+                                </label>
+                            </div>
                         </div>
 
                         <div class="input-section">
@@ -336,6 +351,14 @@ if ($result) {
 
     var wound_apperance = "<?php echo $form7[0]['wound_appearance']; ?>"
     console.log($("#serviceWound").val())
+
+    if($('#isServiceWound').val() == "<?php echo $form7[0]['type_of_wound']; ?>"){
+        $('#isServiceWound').attr('checked', 'checked');
+    }
+    if($('#isOtherWound').val() == "<?php echo $form7[0]['type_of_wound']; ?>"){
+        $('#isOtherWound').attr('checked', 'checked');
+    }
+
     if ($("#serviceWound").val() == "<?php echo $form7[0]['service_wound']; ?>") {
         $("#serviceWound").attr("checked", "checked");
     }

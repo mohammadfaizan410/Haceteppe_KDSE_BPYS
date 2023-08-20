@@ -334,6 +334,9 @@ if (isset($_GET['logout'])) {
 
 
             <div class="input-section">
+                <input type="checkbox" name='isMale' id='isMale' value='male'>
+                <label for="isMale">Erkek Hasta?</label>
+
                 <p class="usernamelabel pb-3">Menstrual Hijyen
                 </p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
@@ -975,6 +978,32 @@ if (isset($_GET['logout'])) {
                     }
                 })
 
+                $('#isMale').change(function(){
+                    if(this.checked){
+                        $('#menstrualDate').prop('disabled', true);
+                        $('#menstrualDate').val("");
+                        $('#mensturalTime').prop('disabled', true);
+                        $('#mensturalTime').val("");
+                        $('input[name="menstrualProduct"]').prop('disabled', true);
+                        $('#menstrualProduct').val("");
+                        $('#menstrualProductDiger').prop('disabled', true);
+                        $('#menstrualProductDiger').val("");
+                        $('#padReplacementFreq').prop('disabled', true);
+                        $('#padReplacementFreq').val("");
+                        $('#bezReplacementFreq').prop('disabled', true);
+                        $('#bezReplacementFreq').val("");
+                        $('#digerReplacementFreq').prop('disabled', true);
+                        $('#digerReplacementFreq').val("");
+                    }else{
+                        $('#menstrualDate').prop('disabled', false);
+                        $('#mensturalTime').prop('disabled', false);
+                        $('input[name="menstrualProduct"]').prop('disabled', false);
+                        $('#padReplacementFreq').prop('disabled', false);
+                        $('#bezReplacementFreq').prop('disabled', false);
+                        $('#digerReplacementFreq').prop('disabled', false);
+                    }
+                })
+                
                 $('.form-check-input[name="menstrualProduct"]').change(function(){
                     console.log($(this).val())
                     if($(this).val() === "Diğer"){
@@ -1129,18 +1158,32 @@ if (isset($_GET['logout'])) {
             let periniumCareMethod = $("input[name='periniumCareMethod']").val();
             let periniumCareMaterial = $("input[name='periniumCareMaterial']").val();
             let periniumCareFreq = $("input[name='periniumCareFreq']").val();
-            let menstrualDate = $("input[name='menstrualDate']").val();
-            let mensturalTime = $("input[name='mensturalTime']").val();
-            let mensturalProduct = $("input[name='menstrualProduct']:checked").val() === "Diğer" ? $("input[name='menstrualProductDiger']").val() : $("input[name='menstrualProduct']:checked").val();
-            let mensturalProductReplacement = "";
-            if(mensturalProduct === "Hazır ped"){
-                mensturalProductReplacement = $("input[name='padReplacementFreq']").val(); 
-            }
-            else if(mensturalProduct === "Bez"){
-                mensturalProductReplacement = $("input[name='bezReplacementFreq']").val(); 
-            }
-            else{
-                mensturalProductReplacement = $('#digerReplacementFreq').val(); 
+            let isMale = $("input[name='isMale']").is(":checked") ? "male" : "female";
+            let menstrualDate = "";
+                let mensturalTime = "";
+                let mensturalProduct = "";
+                let mensturalProductReplacement = "";
+            if(isMale == 'male'){
+                console.log('male is checked');
+                 menstrualDate = "";
+                 mensturalTime = "";
+                 mensturalProduct = "";
+                 mensturalProductReplacement = "";
+            }else{   
+                console.log('male is not checked');
+                 menstrualDate = $("input[name='menstrualDate']").val();
+                 mensturalTime = $("input[name='mensturalTime']").val();
+                 mensturalProduct = $("input[name='menstrualProduct']:checked").val() === "Diğer" ? $("input[name='menstrualProductDiger']").val() : $("input[name='menstrualProduct']:checked").val();
+                 mensturalProductReplacement = "";
+                if(mensturalProduct === "Hazır ped"){
+                    mensturalProductReplacement = $("input[name='padReplacementFreq']").val(); 
+                }
+                else if(mensturalProduct === "Bez"){
+                    mensturalProductReplacement = $("input[name='bezReplacementFreq']").val(); 
+                }
+                else{
+                    mensturalProductReplacement = $('#digerReplacementFreq').val(); 
+                }
             }
             let skinColorProblem = $("input[name='skinColorProblem']:checked").val() === "Var" ? $("input[name='skinColorProblemDesc']:checked").map(function(){return $(this).val();}).get().join("/") : $("input[name='skinColorProblem']:checked").val();
             let skinMoisture = $("input[name='skinMoisture']:checked").val() === "Var" ? $("input[name='skinMoistureInput']").val() : "Sorun Yok";
@@ -1427,18 +1470,19 @@ if (isset($_GET['logout'])) {
                 }
 
                
+                if($("input[name='isMale']").is(":checked") === false){
 
-                if($("#menstrualDate").val() === ""){
-                    //scroll to menstrualDate
-                    $('html, body').animate({
-                        scrollTop: $("#menstrualDate").offset().top
-                    }, 200);
-                    //change border color
-                    $('#menstrualDate').css('border-color', 'red');
+                    if($("#menstrualDate").val() === ""){
+                        //scroll to menstrualDate
+                        $('html, body').animate({
+                            scrollTop: $("#menstrualDate").offset().top
+                        }, 200);
+                        //change border color
+                        $('#menstrualDate').css('border-color', 'red');
                     //stop function
                     return false;
                 }
-
+                
                 if($("#mensturalTime").val() === ""){
                     //scroll to menstrualTime
                     $('html, body').animate({
@@ -1499,6 +1543,7 @@ if (isset($_GET['logout'])) {
                     //stop function
                     return false;
                 }
+            }
 
                 if($('.form-check-input[name="skinColorProblem"]:checked').length === 0){
                     // Scroll to skinColorProblem
@@ -1712,17 +1757,6 @@ if (isset($_GET['logout'])) {
                     //stop function
                     return false;
                 }
-                
-
-
-                
-
-
-                console.log(mensturalProductReplacement)
-
-
-
-
 
                             $.ajax({
                                 type: 'POST',
@@ -1757,6 +1791,7 @@ if (isset($_GET['logout'])) {
                                     periniumCareMethod : periniumCareMethod,
                                     periniumCareMaterial : periniumCareMaterial,
                                     periniumCareFreq : periniumCareFreq,
+                                    isMale : isMale,
                                     menstrualDate: menstrualDate,
                                     mensturalTime : mensturalTime,
                                     mensturalProduct: mensturalProduct,

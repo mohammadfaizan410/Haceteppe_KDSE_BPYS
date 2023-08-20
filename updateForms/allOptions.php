@@ -40,12 +40,12 @@ if (isset($_GET['logout'])) {
                         <h4 style="text-align: left; color:black"><?php echo $_GET['patient_name'] ?></h4>
                     </div>
                     <div class="col-lg-3 col-sm-6">
-                        <h4 style="text-align: left;">Hasta Formları:</h4>
-                        <h4 style="text-align: left;"><a class="btn btn-success" id="formOptions">Formları Görüntüleme</a></h4>
+                        <h4 style="text-align: left;">Formlar:</h4>
+                        <h4 style="text-align: left;"><a class="btn btn-success" id="formOptions">Formları Görüntüle</a></h4>
                     </div>
                     <div class="col-lg-3 col-sm-6">
-                        <h4 style="text-align: left;">Hasta Tanılar:</h4>
-                        <h4 style="text-align: left;"><a class="btn btn-success" id="taniOptions">Tanıyı Görüntüle</a></h4>
+                        <h4 style="text-align: left;">Bakım Planı</h4>
+                        <h4 style="text-align: left;"><a class="btn btn-success" id="taniOptions">Bakım Planını Görüntüle</a></h4>
                     </div>
                 </div>
             </div>

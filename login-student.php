@@ -103,7 +103,7 @@ if (isset($_SESSION['userlogin'])) {
                 <input type="submit" name="submit" id="login" value="Giriş Yap">
                 <div id='forgot-password' class="lower-buttons" style="padding-top:10px; cursor: pointer;"><i class="gg-arrow-left-o"
                         style="margin-top: 10px;margin-bottom: 10px; margin-right: 20px;"></i> şifremi unuttum</div>
-                <a href="main.php" class="lower-buttons" style="padding-top:10px"><i class="gg-arrow-left-o"
+                <a href="stuLogin.php" class="lower-buttons" style="padding-top:10px"><i class="gg-arrow-left-o"
                         style="margin: 0; margin-right: 20px;"></i>Ana Sayfaya Dön</a>
         </form>
 

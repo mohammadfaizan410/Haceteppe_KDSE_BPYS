@@ -108,7 +108,14 @@ if ($result) {
                             <p class="usernamelabel pb-3">Hasta ID:</p>
                             <input type="text" class="form-control" required name="patient_id" id="diger" placeholder="Patient ID" value="<?php echo $form4[0]['patient_id']; ?>" disabled>
                         </div>
-
+                        <div class='input-section'>
+                        <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
+                            <input type='radio' class='form-check-input' name='isDusme' id='dusmeYok' value='yok'>
+                            <label for="dusmeYok">Düşme Yok</label>
+                            <input type='radio' class='form-check-input' name='isDusme' id='dusmeVar' value='var'>
+                            <label for="dusmeVar">Düşme Var</label>
+        
+                        </div>
                         <div class="input-section" style="justify-content:space-between">
                             <p class="usernamelabel pb-3">Cinsiyet : </p>
                             <input type="text" class="form-control" required name="patient_gender" id="diger" placeholder="Hasta Cinsiyetini Giriniz" value="<?php echo $form4[0]['patient_gender']; ?>">
@@ -220,6 +227,8 @@ if ($result) {
                     }
                 });
             });
+
+        $('input[type="radio"][name="isDusme"][value="<?php echo $form4[0]['isDusme']; ?>"]').attr('checked', 'checked');
 
         var fall_cause = "<?php echo $form4[0]['fall_cause']; ?>"
         if (fall_cause == "Bireysel") {

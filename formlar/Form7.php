@@ -72,15 +72,28 @@ if (isset($_GET['logout'])) {
     <div class="container-fluid pt-4 px-4">
         <div class="send-patient">
             <span class='close closeBtn' id='closeBtn1'>&times;</span>
-            <h1 class="form-header">Basınç Yarası Formu</h1>
+            <h1 class="form-header">YARA FORMU</h1>
             <div class="input-section-item">
                 <div class="patients-save">
                     <form action="" method="POST" class="patients-save-fields">
-
+                        
                         <div class="input-section-item" style="justify-content:space-between; padding: 5%">
                             <p class="usernamelabel" style="font-weight: bold;font-size:large">Değerlendirme Kriterleri</p>
                         </div>
-
+                        <div class="input-section woundTypeToggler">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="typeOfWound" id="isServiceWound" value="service">
+                                <label class="form-check-label" for="servis">
+                                    <span class="checkbox-header">BASINÇ YARASI</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="typeOfWound" id="isOtherWound" value="other">
+                                <label class="form-check-label" for="servis">
+                                    <span class="checkbox-header">DİĞER YARA</span>
+                                </label>
+                            </div>
+                        </div>
                         <div class="input-section">
                             <p class="usernamelabel pb-3">Oluşma Tarihi:</p>
                             <input type="date" class="form-control" required name="occurance_date" id="diger" placeholder="OluşmaTarihi">
@@ -276,8 +289,14 @@ if (isset($_GET['logout'])) {
 
             $('#submit').click(function(e) {
                 e.preventDefault();
-
-                if ($('[name="occurance_date"]').val() === "") {
+                if($('[name="typeOfWound"]:checked').length === 0){
+                    $('html, body').animate({
+                            scrollTop: $('#isServiceWound').offset().top - 100
+                        }, 200);
+                        //change border color
+                    $('#isServiceWound').css('border-color', 'red');
+                    $('#isOtherWound').css('border-color', 'red');
+                } else if ($('[name="occurance_date"]').val() === "") {
                     $('html, body').animate({
                             scrollTop: $('[name="occurance_date"]').offset().top
                         }, 200);
@@ -417,6 +436,7 @@ if (isset($_GET['logout'])) {
                     let yourDate = new Date()
                     let creationDate = yourDate.toISOString().split('T')[0];
                     let updateDate = yourDate.toISOString().split('T')[0];
+                    let typeOfWound = $("input[type='radio'][name='typeOfWound']:checked").val();
                     var occurance_date = $("input[name='occurance_date']").val();
                     var service_wound = $("input[name='servis']").val();
                     var location = $("input[name='location']").val();
@@ -453,6 +473,7 @@ if (isset($_GET['logout'])) {
                             creation_date: creationDate,
                             update_date: updateDate,
                             occurance_date: occurance_date,
+                            type_of_wound: typeOfWound,
                             service_wound: service_wound,
                             location: location,
                             stage: stage,

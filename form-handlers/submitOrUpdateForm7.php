@@ -15,6 +15,7 @@ if (isset($data["patient_name"])) {
                 patient_id,
                 creation_date,
                 update_date,
+                type_of_wound,
                 occurance_date,
                 service_wound ,
                 location,
@@ -33,7 +34,7 @@ if (isset($data["patient_name"])) {
                 careProducts,
                 result,
                 healing_date
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
         $result = $stmt->execute([
             $data["form_num"],
@@ -41,6 +42,7 @@ if (isset($data["patient_name"])) {
             $data["patient_id"],
             $data["creation_date"],
             $data["update_date"],
+            $data["type_of_wound"],
             $data["occurance_date"],
             $data["service_wound"],
             $data["location"],

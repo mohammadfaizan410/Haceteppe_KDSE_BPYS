@@ -88,7 +88,11 @@ if (isset($_GET['logout'])) {
                 <label class="form-check-label pb-3" for="HareketAliskanligi">
                     Hastaneye yatmadan önceki düzenli egzersiz yapma alışkanlığı
                 </label>
-                <input class="form-check-input" type="checkbox" id="exercisingHabit" value="exercisingHabit" name="exercisingHabit">
+                <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
+                <input class="form-check-input" type="radio" id="exercisingHabitYok" value="yok" name="exercisingHabit">
+                <label for="exercisingHabitYok">Yok</label>
+                <input class="form-check-input" type="radio" id="exercisingHabitVar" value="var" name="exercisingHabit">
+                <label for="exercisingHabitVar">Var</label>
                     <input type="text" class="form-control" disabled name="exercisingHabitInput" id="exercisingHabitInput">
             </div>
 
@@ -352,7 +356,7 @@ if (isset($_GET['logout'])) {
             <script>
                 
                 $('input[name="exercisingHabit"]').change(function() {
-                    if (this.checked) {
+                    if ($(this).val() === 'var') {
                         $('input[name="exercisingHabitInput"]').prop('disabled', false);
                     } else {
                         $('input[name="exercisingHabitInput"]').prop('disabled', true);
@@ -426,11 +430,8 @@ if (isset($_GET['logout'])) {
                             let yourDate = new Date()
                             let creationDate = yourDate.toISOString().split('T')[0];
                             let updateDate = yourDate.toISOString().split('T')[0];
-                            let exercisingHabit = $('input[name="exercisingHabit"]').val() ? $('input[name="exercisingHabit"]').val() : "Hayir";
-                            let exercisingHabitInput = "";
-                            if(exercisingHabit === "exercisingHabit"){
-                                exercisingHabit = $('input[name="exercisingHabitInput"]').val();
-                            }
+                            let exercisingHabit = $('input[name="exercisingHabit"]:checked').val();
+                            let exercisingHabitInput = $('input[name="exercisingHabitInput"]').val();
                             let inHospitalExercise = $('input[name="inHospitalExercise"]:checked').val() === "Evet" ? $('input[name="exerciseType"]:checked').val() : "Hayir";
                             let movementProblem = $('.form-check-input[name="movementProblem"]:checked').val() === "Var" ? $('.form-check-input[name="movementProblemDesc"]:checked').map(function() {
                                 return $(this).val();
@@ -466,9 +467,20 @@ if (isset($_GET['logout'])) {
                 //     // Display error message
                 //     $('.form-check-input[name="time_range"]').first().closest('.input-section').find('.option-error').css('display', 'block');
                 //     return false;
-                // }
+                // }        
+                if($('.form-check-input[name="exercisingHabit"]:checked').length === 0 ){
+                                //scroll to exercisingHabit
+                                      $('html, body').animate({
+                                    scrollTop: $('.form-check-input[name="exercisingHabit"]').first().offset().top
+                                }, 200);
+                                // Display error message
+                                $('.form-check-input[name="exercisingHabit"]').first().closest('.input-section').find('.option-error').css('display', 'block');
+                                //stop function
+                                return false;
+                }
 
-                            if($('.form-check-input[name="exercisingHabit"]:checked').length === 1 && $('input[name="exercisingHabitInput"]').val() === ""){
+
+                            if($('.form-check-input[name="exercisingHabit"]:checked').val() === 'var' && $('input[name="exercisingHabitInput"]').val() === ""){
                                 //scroll to exercisingHabit
                                       $('html, body').animate({
                                     scrollTop: $("#exercisingHabitInput").offset().top
@@ -584,6 +596,7 @@ if (isset($_GET['logout'])) {
                                     'creation_date': creationDate,
                                     'update_date': updateDate,
                                     'exercisingHabit': exercisingHabit,
+                                    'exercisingHabitInput': exercisingHabitInput,
                                     'inHospitalExercise': inHospitalExercise,
                                     'movementProblem': movementProblem,
                                     'wearingClothesDependence': wearingClothesDependence,

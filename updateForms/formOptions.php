@@ -52,7 +52,7 @@ if (isset($_GET['logout'])) {
                                     Tüm Formlar
                                 </div></h4></div>
                         <div class="col-sm-6 col-lg-3">
-                            <h4 style="text-align: left;">Gönderilen Formlar</h4>
+                            <h4 style="text-align: left;">Kaydedilen Formlar</h4>
                             <h4 style="text-align: left;"><div class=' btn btn-success' id='showSubmittedForms'>
                                     Gönderilen Formlar
                                 </div></h4>

@@ -99,7 +99,8 @@ if (isset($_GET['logout'])) {
                             <input type="date" class="form-control" required name="date" id="date" placeholder="Tarih">
                         </div>
                         <div class="input-section">
-                            <p class="usernamelabel">Tetkik adı </p>
+                            <h6>LABORATUVAR</h6>
+                            <p>Tetkik adı </p>
                             <p id="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="tektikOption" id="tektikOption" value="Tıbbi Biyokimya*">

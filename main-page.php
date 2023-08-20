@@ -35,11 +35,11 @@ $base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
         <h1 class="header">KDSE-BPYS</h1>
 
         <div class="buttons-wrapper">
-            <a class="buttons" style="color: white" href="./login-teacher.php">Öğretmen Girişi</a>
-            <a class="buttons" style="color: white" href="./login-student.php">Öğrenci Girişi</a>
+            <a class="buttons" style="color: white" href="./tLogin.php">Öğretmen Girişi</a>
+            <a class="buttons" style="color: white" href="./stuLogin.php">Öğrenci Girişi</a>
 
-            <a class="buttons" style="color: white" href="./registration-teacher.php">Öğretmen Kaydı</a>
-            <a class="buttons" style="color: white" href="./registration-student.php">Öğrenci Kaydı</a>
+            <!-- <a class="buttons" style="color: white" href="./registration-teacher.php">Öğretmen Kaydı</a>
+            <a class="buttons" style="color: white" href="./registration-student.php">Öğrenci Kaydı</a> -->
         </div>
     </div>
 

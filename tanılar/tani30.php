@@ -10,6 +10,9 @@ if (isset($_GET['logout'])) {
     unset($_SESSION);
     header("Location: main.php");
 }
+$taniValidInputs = isset($_GET['taniValidInputs']) ? $_GET['taniValidInputs'] : '';
+$taniValidInputs = isset($_GET['taniValidInputs']) ? $_GET['taniValidInputs'] : '';
+$taniValidInputs = isset($_GET['taniValidInputs']) ? $_GET['taniValidInputs'] : '';
 //Nausea, vomiting, lack of apetite
 ?>
 <!DOCTYPE html>
@@ -91,6 +94,20 @@ if (isset($_GET['logout'])) {
                             <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
                             <p class="tanıdescription">Sözel iletişimde bozulma </p>
                         </div>
+                        <?php
+                            if($taniValidInputs !== '') {
+                                echo '<div class="input-section d-flex">
+                                    <p id="tani_usernamelabel">Algılanan Sorunlar:</p>';
+                                
+                                $fields = explode('/', $taniValidInputs);
+                                echo '<div>';
+                                foreach($fields as $field) {
+                                    echo '<p style="color:red">' . $field . '</p>';
+                                };
+                                echo '</div>';
+                                echo '</div>';
+                            }
+                            ?>
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hastanın bakım verenleri ve sağlık profesyoneli ile iletişim kurması</p>
@@ -344,6 +361,10 @@ if (isset($_GET['logout'])) {
                                     ?>";
                 var url = "<?php echo $base_url; ?>/updateForms/showAllTanis.php?patient_id=" + patient_id +
                     "&patient_name=" + encodeURIComponent(patient_name);
+                    if(<?php echo isset($_GET['taniValidInputs']) ?>){
+                var url = "<?php echo $base_url; ?>/updateForms/showSystemGeneratedTanis.php?patient_id=" + patient_id +
+                "&patient_name=" + encodeURIComponent(patient_name);
+                    }
                 $("#content").load(url);
 
             })
