@@ -170,7 +170,10 @@ $taniNames = array(
                         <span>Numara: ". $standAloneTani['tani_id']. "</span>
                         <span>Tarih: ". $standAloneTani['creation_date']."</span>
                         <span>Saat: ". $standAloneTani['time']."</span>
+                        <span>Noc_indicator:". $standAloneTani['noc_indicator']." </span>
+                        <span>Noc After : ". $standAloneTani['noc_indicator_after']." </span>
                         </div>
+                       
                         </div>
                         </a>
                         </div>";
@@ -184,6 +187,8 @@ $taniNames = array(
                             <span>Numara: ". $singleExtension['tani_id']. "</span>
                             <span>Tarih: ". $singleExtension['creation_date']."</span>
                             <span>Saat: ". $singleExtension['time']."</span>
+                            <span>Noc_indicator:". $singleExtension['noc_indicator']." </span>
+                            <span>Noc After : ". $singleExtension['noc_indicator_after']." </span>
                             </div>
                             </div>
                             </a>

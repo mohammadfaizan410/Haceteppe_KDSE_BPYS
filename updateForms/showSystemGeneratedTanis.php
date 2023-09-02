@@ -429,6 +429,15 @@ if ($result) {
             tani38Inputs : '',
             tani39Inputs : '',
             tani40Inputs : '',
+            tani41Inputs : '',
+            tani42Inputs : '',
+            tani43Inputs : '',
+            tani44Inputs : '',
+            tani45Inputs : '',
+            tani46Inputs : '',
+            tani47Inputs : '',
+            tani48Inputs : '',
+            tani49Inputs : '',
            };
 
                 var patient_id = "<?php echo $_GET['patient_id']; ?>";
@@ -1952,7 +1961,7 @@ if (
 ) {
     if(form1_beslenme){
         if(form1_beslenme.BKI > 30){
-            taniValidInputs.tani44Inputs += 'BKI : ' + form1_beslenme.BKI + ' yerde ';
+            taniValidInputs.tani44Inputs += '/BKI : ' + form1_beslenme.BKI + ' yerde ';
         }
         if(form1_beslenme.liquid_consumption < 1000){
             taniValidInputs.tani44Inputs += '/Sıvı Tüketimi : ' + form1_beslenme.liquid_consumption + ' yerde ';

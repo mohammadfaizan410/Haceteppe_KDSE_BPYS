@@ -520,7 +520,7 @@ $taniValidInputs = isset($_GET['taniValidInputs']) ? $_GET['taniValidInputs'] : 
         </div>
 
 
-    </div>
+    </div>  
     
 
     <script>

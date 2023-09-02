@@ -98,6 +98,7 @@ $taniValidInputs = isset($_GET['taniValidInputs']) ? $_GET['taniValidInputs'] : 
                             <p class="tanıdescription">Vücut sıcaklığında dengesizlik riski</p>
                         </div>
                         <?php
+                        echo '<p>' . $taniValidInputs . '</p>';
                             if($taniValidInputs !== '') {
                                 echo '<div class="input-section d-flex">
                                     <p id="tani_usernamelabel">Algılanan Sorunlar:</p>';
@@ -192,7 +193,6 @@ $taniValidInputs = isset($_GET['taniValidInputs']) ? $_GET['taniValidInputs'] : 
                                     <span class="checkbox-header">Hipertermi için:</span>
                                 </label>
                             </div>
-                            <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="nurse_attempt" id="hyperthermia_val1"
                                         value="Sıcak günlerde yeterli miktarda sıvı alımı desteklenir">
@@ -214,7 +214,6 @@ $taniValidInputs = isset($_GET['taniValidInputs']) ? $_GET['taniValidInputs'] : 
                                         <span class="checkbox-header">Kıyafetlerin çevre sıcaklığına uygunluğu değerlendirilir, fazla olan kıyafetler çıkartılır</span>
                                     </label>
                                 </div>
-                            </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="nurse_attempt" id="hypothermia"
                                     value="Hipotermi için:">
@@ -222,7 +221,6 @@ $taniValidInputs = isset($_GET['taniValidInputs']) ? $_GET['taniValidInputs'] : 
                                     <span class="checkbox-header">Hipotermi için:</span>
                                 </label>
                             </div>
-                            <div class="form-check">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="nurse_attempt" id="hypothermia_val1"
                                         value="Hastanın tolere edebileceği düzeyde aktivitesi arttırılır">
@@ -244,7 +242,6 @@ $taniValidInputs = isset($_GET['taniValidInputs']) ? $_GET['taniValidInputs'] : 
                                         <span class="checkbox-header">Çevre sıcaklığına uygun kıyafetler giymesi sağlanır</span>
                                     </label>
                                 </div>
-                            </div>
                             <p id="tani_usernamelabel">Eğitim:</p>
                             <p class="option-error1" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                             <div class="form-check">

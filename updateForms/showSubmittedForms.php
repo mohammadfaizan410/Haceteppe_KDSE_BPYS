@@ -286,12 +286,12 @@ if (isset($_GET['logout'])) {
                     <div class='row mb-5'>
         <div class='col-lg-12' style="font-weight : bold; font-size: large; border-bottom: 2px solid grey ">
              Hasta: <span style='color:black;font-weight : bold; font-size: large;'><?php echo $_GET['patient_name'] ?></span>
-            </div>
+            </div> 
             </div>
 
                     <div id="ozgecmisform1_container" class="row form-container">
                         <div class="col-lg-3 btn btn-success mb-2" id="ozgecmisform1_toggler">
-                            <a><p>Özgeçmiş (<?php echo json_encode(count($ozgecmisform1));?>)</p></a>
+                            <a><p>Hasta Değerlendirme Formu 1: Özgeçmiş, Soy geçmiş, Hastalık Öyküsü (<?php echo json_encode(count($ozgecmisform1));?>)</p></a>
                         </div>
                         <?php
                         if (count($ozgecmisform1) > 0 && $ozgecmisform1 !== '') {
@@ -304,7 +304,7 @@ if (isset($_GET['logout'])) {
                                     <a class='form-navigation col-lg-3 btn btn-success ozgecmisform1_view_submissions submissions' style='display: none;''
                                     href='$base_url/formlar-review/Form1-ozgecmis-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
                                     >
-                                    <p>Özgeçmiş</p>
+                                    <p>Hasta Değerlendirme Formu 1: Özgeçmiş, Soy geçmiş, Hastalık Öyküsü</p>
                                     <p>$date</p>
                                     </a>";
                             }
@@ -325,7 +325,7 @@ if (isset($_GET['logout'])) {
                         <!-- SOLUNUM GEREKSİNİMİ -->
                         <div id="solunumgereksinimi_form1_container" class="row form-container">
                             <div class="col-lg-3 btn btn-success mb-2" id="solunumgereksinimi_form1_toggler">
-                                <a><p>Solunum Gereksinimi (<?php echo json_encode(count($solunumgereksinimi_form1));?>)</p></a>
+                                <a><p>Hasta Değerlendirme Formu 2: Solunum Gereksinimi (<?php echo json_encode(count($solunumgereksinimi_form1));?>)</p></a>
                             </div>
                             <?php
                             if (count($solunumgereksinimi_form1) > 0 && $solunumgereksinimi_form1 !== '') {
@@ -338,7 +338,7 @@ if (isset($_GET['logout'])) {
                                         <a class='form-navigation col-lg-3 btn btn-success solunumgereksinimi_form1_view_submissions submissions' style='display: none;''
                                         href='$base_url/formlar-review/Form1-Solunumgereksinimi-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
                                         >
-                                        <p>Solunum Gereksinimi</p>
+                                        <p>Hasta Değerlendirme Formu 2: Solunum Gereksinimi</p>
                                         <p>$date</p>
                                         </a>";
                                 }
@@ -359,7 +359,7 @@ if (isset($_GET['logout'])) {
                         <!-- BESLENME GEREKSİNİMİ -->
                         <div id="form1_beslenme_container" class="row form-container">
                             <div class="col-lg-3 btn btn-success mb-2" id="form1_beslenme_toggler">
-                                <a><p>Beslenme Gereksinimi (<?php echo json_encode(count($form1_beslenme));?>)</p></a>
+                                <a><p>Hasta Değerlendirme Formu 3: Beslenme Gereksinimi (<?php echo json_encode(count($form1_beslenme));?>)</p></a>
                             </div>
                             <?php
                             if (count($form1_beslenme) > 0 && $form1_beslenme !== '') {
@@ -372,7 +372,7 @@ if (isset($_GET['logout'])) {
                                         <a class='form-navigation col-lg-3 btn btn-success form1_beslenme_view_submissions submissions' style='display: none;''
                                         href='$base_url/formlar-review/Form1-beslenme-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
                                         >
-                                        <p>Beslenme Gereksinimi</p>
+                                        <p>Hasta Değerlendirme Formu 3: Beslenme Gereksinimi</p>
                                         <p>$date</p>
                                         </a>";
                                 }
@@ -393,7 +393,7 @@ if (isset($_GET['logout'])) {
                         <!-- BOŞALTIM GEREKSİNİMİ -->
                         <div id="bosaltimform1_container" class="row form-container">
                             <div class="col-lg-3 btn btn-success mb-2" id="bosaltimform1_toggler">
-                                <a><p>Boşaltım Gereksinimi (<?php echo json_encode(count($bosaltimform1));?>)</p></a>
+                                <a><p>Hasta Değerlendirme Formu 4: Boşaltım Gereksinimi (<?php echo json_encode(count($bosaltimform1));?>)</p></a>
                             </div>
                             <?php
                             if (count($bosaltimform1) > 0 && $bosaltimform1 !== '') {
@@ -406,7 +406,7 @@ if (isset($_GET['logout'])) {
                                         <a class='form-navigation col-lg-3 btn btn-success bosaltimform1_view_submissions submissions' style='display: none;''
                                         href='$base_url/formlar-review/Form1-Bosaltim-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
                                         >
-                                        <p>Boşaltım Gereksinimi</p>
+                                        <p>Hasta Değerlendirme Formu 4: Boşaltım Gereksinimi</p>
                                         <p>$date</p>
                                         </a>";
                                 }
@@ -427,7 +427,7 @@ if (isset($_GET['logout'])) {
                         <!-- HAREKET GEREKSİNİMİ -->
                         <div id="hareketform1_container" class="row form-container">
                             <div class="col-lg-3 btn btn-success mb-2" id="hareketform1_toggler">
-                                <a><p>Hareket Gereksinimi (<?php echo json_encode(count($hareketform1));?>)</p></a>
+                                <a><p>Hasta Değerlendirme Formu 5: Hareket Gereksinimi (<?php echo json_encode(count($hareketform1));?>)</p></a>
                             </div>
                             <?php
                             if (count($hareketform1) > 0 && $hareketform1 !== '') {
@@ -440,7 +440,7 @@ if (isset($_GET['logout'])) {
                                         <a class='form-navigation col-lg-3 btn btn-success hareketform1_view_submissions submissions' style='display: none;''
                                         href='$base_url/formlar-review/Form1-hereket-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
                                         >
-                                        <p>Hareket Gereksinimi</p>
+                                        <p>Hasta Değerlendirme Formu 5: Hareket Gereksinimi</p>
                                         <p>$date</p>
                                         </a>";
                                 }
@@ -461,7 +461,7 @@ if (isset($_GET['logout'])) {
                         <!-- UYKU GEREKSİNİMİ -->
                         <div id="form1_uyku_container" class="row form-container">
                             <div class="col-lg-3 btn btn-success mb-2" id="form1_uyku_toggler">
-                                <a><p>Uyku Gereksinimi (<?php echo json_encode(count($form1_uyku));?>)</p></a>
+                                <a><p>Hasta Değerlendirme Formu 6: Uyku Gereksinimi (<?php echo json_encode(count($form1_uyku));?>)</p></a>
                             </div>
                             <?php
                             if (count($form1_uyku) > 0 && $form1_uyku !== '') {
@@ -474,7 +474,7 @@ if (isset($_GET['logout'])) {
                                         <a class='form-navigation col-lg-3 btn btn-success form1_uyku_view_submissions submissions' style='display: none;''
                                         href='$base_url/formlar-review/Form1-uyku-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
                                         >
-                                        <p>Uyku Gereksinimi</p>
+                                        <p>Hasta Değerlendirme Formu 6: Uyku Gereksinimi</p>
                                         <p>$date</p>
                                         </a>";
                                 }
@@ -495,7 +495,7 @@ if (isset($_GET['logout'])) {
                         <!-- VÜCUDU TEMİZ VE BAKIMLI TUTMA -->
                         <div id="vucudutemizform1_container" class="row form-container">
                             <div class="col-lg-3 btn btn-success mb-2" id="vucudutemizform1_toggler">
-                                <a><p>Vücudunu Temiz ve Bakımlı Tutma (<?php echo json_encode(count($vucudutemizform1));?>)</p></a>
+                                <a><p>Hasta Değerlendirme Formu 7: Vücudu Temiz ve Bakımlı Tutma Gereksinim (<?php echo json_encode(count($vucudutemizform1));?>)</p></a>
                             </div>
                             <?php
                             if (count($vucudutemizform1) > 0 && $vucudutemizform1 !== '') {
@@ -508,7 +508,7 @@ if (isset($_GET['logout'])) {
                                         <a class='form-navigation col-lg-3 btn btn-success vucudutemizform1_view_submissions submissions' style='display: none;''
                                         href='$base_url/formlar-review/Form1-Vucudu-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
                                         >
-                                        <p>Vücudunu Temiz ve Bakımlı Tutma</p>
+                                        <p>Hasta Değerlendirme Formu 7: Vücudu Temiz ve Bakımlı Tutma Gereksinim</p>
                                         <p>$date</p>
                                         </a>";
                                 }
@@ -529,7 +529,7 @@ if (isset($_GET['logout'])) {
                         <!-- KATETER / DREN -->
                         <div id="katererform1_container" class="row form-container">
                             <div class="col-lg-3 btn btn-success mb-2" id="katererform1_toggler">
-                                <a><p>Kateter / Dren (<?php echo json_encode(count($katererform1));?>)</p></a>
+                                <a><p>Hasta Değerlendirme Formu 8: Katater/Dren (<?php echo json_encode(count($katererform1));?>)</p></a>
                             </div>
                             <?php
                             if (count($katererform1) > 0 && $katererform1 !== '') {
@@ -542,7 +542,7 @@ if (isset($_GET['logout'])) {
                                         <a class='form-navigation col-lg-3 btn btn-success katererform1_view_submissions submissions' style='display: none;''
                                         href='$base_url/formlar-review/Form1-Katerer-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
                                         >
-                                        <p>Kateter / Dren</p>
+                                        <p>Hasta Değerlendirme Formu 8: Katater/Dren</p>
                                         <p>$date</p>
                                         </a>";
                                 }
@@ -563,7 +563,7 @@ if (isset($_GET['logout'])) {
                         <!-- İLETİŞİM KURMA GEREKSİNİMİ -->
                         <div id="ilestimform1_container" class="row form-container">
                             <div class="col-lg-3 btn btn-success mb-2" id="ilestimform1_toggler">
-                                <a><p>İletişim Kurma Gereksinimi (<?php echo json_encode(count($ilestimform1));?>)</p></a>
+                                <a><p>Hasta Değerlendirme Formu 9: İletişim Kurma Gereksinimi (<?php echo json_encode(count($ilestimform1));?>)</p></a>
                             </div>
                             <?php
                             if (count($ilestimform1) > 0 && $ilestimform1 !== '') {
@@ -576,7 +576,7 @@ if (isset($_GET['logout'])) {
                                         <a class='form-navigation col-lg-3 btn btn-success ilestimform1_view_submissions submissions' style='display: none;''
                                         href='$base_url/formlar-review/Form1-Iletisim-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
                                         >
-                                        <p>İletişim Kurma Gereksinimi</p>
+                                        <p>Hasta Değerlendirme Formu 9: İletişim Kurma Gereksinimi</p>
                                         <p>$date</p>
                                         </a>";
                                 }
@@ -597,7 +597,7 @@ if (isset($_GET['logout'])) {
                         <!-- ÇALIŞMA, ÜRETME, BOŞ ZAMANINI DEĞERLENDİRME GEREKSİNİMİ -->
                         <div id="calismaform1_container" class="row form-container">
                             <div class="col-lg-3 btn btn-success mb-2" id="calismaform1_toggler">
-                                <a><p>Çalışma, Üretme, Boş Zamanını Değerlendirme Gereksinimi (<?php echo json_encode(count($calismaform1));?>)</p></a>
+                                <a><p>Hasta Değerlendirme Formu 10: Çalışma, Üretme, Boş Zamanını Değerlendirme Gereksinimi (<?php echo json_encode(count($calismaform1));?>)</p></a>
                             </div>
                             <?php
                             if (count($calismaform1) > 0 && $calismaform1 !== '') {
@@ -610,7 +610,7 @@ if (isset($_GET['logout'])) {
                                         <a class='form-navigation col-lg-3 btn btn-success calismaform1_view_submissions submissions' style='display: none;''
                                         href='$base_url/formlar-review/Form1-Calisma-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
                                         >
-                                        <p>Çalışma, Üretme, Boş Zamanını Değerlendirme Gereksinimi</p>
+                                        <p>Hasta Değerlendirme Formu 10: Çalışma, Üretme, Boş Zamanını Değerlendirme Gereksinimi</p>
                                         <p>$date</p>
                                         </a>";
                                 }
@@ -632,7 +632,7 @@ if (isset($_GET['logout'])) {
                         <!-- EĞİTİM GEREKSİNİMİ -->
                         <div id="egitimform1_container" class="row form-container">
                             <div class="col-lg-3 btn btn-success mb-2" id="egitimform1_toggler">
-                                <a><p>Eğitim Gereksinimi (<?php echo json_encode(count($egitimform1));?>)</p></a>
+                                <a><p>Hasta Değerlendirme Formu 11: Eğitim Gereksinimi (<?php echo json_encode(count($egitimform1));?>)</p></a>
                             </div>
                             <?php
                             if (count($egitimform1) > 0 && $egitimform1 !== '') {
@@ -645,7 +645,7 @@ if (isset($_GET['logout'])) {
                                         <a class='form-navigation col-lg-3 btn btn-success egitimform1_view_submissions submissions' style='display: none;''
                                         href='$base_url/formlar-review/Form1-egitim-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
                                         >
-                                        <p>Eğitim Gereksinimi</p>
+                                        <p>Hasta Değerlendirme Formu 11: Eğitim Gereksinimi</p>
                                         <p>$date</p>
                                         </a>";
                                 }
@@ -670,7 +670,7 @@ if (isset($_GET['logout'])) {
                         <!-- form2 -->
                         <div id="form2_container" class="row form-container">
                             <div class="col-lg-3 btn btn-success mb-2" id="form2_toggler">
-                                <a><p>Ağrı Değerlendirmesi (<?php echo json_encode(count($form2));?>)</p></a>
+                                <a><p>Hasta Değerlendirme Formu 12: Ağrı Tanılama (<?php echo json_encode(count($form2));?>)</p></a>
                             </div>
                             <?php
                             if (count($form2) > 0 && $form2 !== '') {
@@ -683,7 +683,7 @@ if (isset($_GET['logout'])) {
                                         <a class='form-navigation col-lg-3 btn btn-success form2_view_submissions submissions' style='display: none;''
                                         href='$base_url/formlar-review/Form2-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
                                         >
-                                        <p>Ağrı Değerlendirmesi</p>
+                                        <p>Hasta Değerlendirme Formu 12: Ağrı Tanılama</p>
                                         <p>$date</p>
                                         </a>";
                                 }
@@ -704,7 +704,7 @@ if (isset($_GET['logout'])) {
                         <!-- form3 -->
                         <div id="form3_container" class="row form-container">
                             <div class="col-lg-3 btn btn-success mb-2" id="form3_toggler">
-                                <a><p>Düşme Riski Değerlendirmesi (<?php echo json_encode(count($form3));?>)</p></a>
+                                <a><p>Hasta Değerlendirme Formu 13: Düşme Risk Değerlendirmesi (<?php echo json_encode(count($form3));?>)</p></a>
                             </div>
                             <?php
                             if (count($form3) > 0 && $form3 !== '') {
@@ -717,7 +717,7 @@ if (isset($_GET['logout'])) {
                                         <a class='form-navigation col-lg-3 btn btn-success form3_view_submissions submissions' style='display: none;''
                                         href='$base_url/formlar-review/Form3-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
                                         >
-                                        <p>Düşme Riski Değerlendirmesi</p>
+                                        <p>Hasta Değerlendirme Formu 13: Düşme Risk Değerlendirmesi</p>
                                         <p>$date</p>
                                         </a>";
                                 }
@@ -738,7 +738,7 @@ if (isset($_GET['logout'])) {
                         <!-- form4 -->
                         <div id="form4_container" class="row form-container">
                             <div class="col-lg-3 btn btn-success mb-2" id="form4_toggler">
-                                <a><p>Düşme Bildirimi (<?php echo json_encode(count($form4));?>)</p></a>
+                                <a><p>Hasta Değerlendirme Formu 14: Düşme Bildirimi (<?php echo json_encode(count($form4));?>)</p></a>
                             </div>
                             <?php
                             if (count($form4) > 0 && $form4 !== '') {
@@ -751,7 +751,7 @@ if (isset($_GET['logout'])) {
                                         <a class='form-navigation col-lg-3 btn btn-success form4_view_submissions submissions' style='display: none;''
                                         href='$base_url/formlar-review/Form4-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
                                         >
-                                        <p>Düşme Bildirimi</p>
+                                        <p>Hasta Değerlendirme Formu 14: Düşme Bildirimi</p>
                                         <p>$date</p>
                                         </a>";
                                 }
@@ -772,7 +772,7 @@ if (isset($_GET['logout'])) {
                         <!-- form5 -->
                         <div id="form5_container" class="row form-container">
                             <div class="col-lg-3 btn btn-success mb-2" id="form5_toggler">
-                                <a><p>Glaskow Koma Skalası (<?php echo json_encode(count($form5));?>)</p></a>
+                                <a><p>Hasta Değerlendirme Formu 15: Glaskow Koma Skalası (<?php echo json_encode(count($form5));?>)</p></a>
                             </div>
                             <?php
                             if (count($form5) > 0 && $form5 !== '') {
@@ -785,7 +785,7 @@ if (isset($_GET['logout'])) {
                                         <a class='form-navigation col-lg-3 btn btn-success form5_view_submissions submissions' style='display: none;''
                                         href='$base_url/formlar-review/Form5-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
                                         >
-                                        <p>Glaskow Koma Skalası</p>
+                                        <p>Hasta Değerlendirme Formu 15: Glaskow Koma Skalası</p>
                                         <p>$date</p>
                                         </a>";
                                 }
@@ -840,7 +840,7 @@ if (isset($_GET['logout'])) {
                         <!-- form7 -->
                         <div id="form7_container" class="row form-container">
                             <div class="col-lg-3 btn btn-success mb-2" id="form7_toggler">
-                                <a><p>Basınç Yarası Formu (<?php echo json_encode(count($form7));?>)</p></a>
+                                <a><p>Hasta Değerlendirme Formu 17: Yara ve Özellikleri Formu (<?php echo json_encode(count($form7));?>)</p></a>
                             </div>
                             <?php
                             if (count($form7) > 0 && $form7 !== '') {
@@ -853,7 +853,7 @@ if (isset($_GET['logout'])) {
                                         <a class='form-navigation col-lg-3 btn btn-success form7_view_submissions submissions' style='display: none;''
                                         href='$base_url/formlar-review/Form7-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
                                         >
-                                        <p>Basınç Yarası Formu</p>
+                                        <p>Hasta Değerlendirme Formu 17: Yara ve Özellikleri Formu</p>
                                         <p>$date</p>
                                         </a>";
                                 }
@@ -874,7 +874,7 @@ if (isset($_GET['logout'])) {
                         <!-- form8 -->
                         <div id="form8_container" class="row form-container">
                             <div class="col-lg-3 btn btn-success mb-2" id="form8_toggler">
-                                <a><p>Ödem Değerlendirmesi (<?php echo json_encode(count($form8));?>)</p></a>
+                                <a><p>Hasta Değerlendirme Formu 18: Ödem Değerlendirmesi (<?php echo json_encode(count($form8));?>)</p></a>
                             </div>
                             <?php
                             if (count($form8) > 0 && $form8 !== '') {
@@ -887,7 +887,7 @@ if (isset($_GET['logout'])) {
                                         <a class='form-navigation col-lg-3 btn btn-success form8_view_submissions submissions' style='display: none;''
                                         href='$base_url/formlar-review/Form8-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
                                         >
-                                        <p>Ödem Değerlendirmesi</p>
+                                        <p>Hasta Değerlendirme Formu 18: Ödem Değerlendirmesi</p>
                                         <p>$date</p>
                                         </a>";
                                 }
@@ -909,7 +909,7 @@ if (isset($_GET['logout'])) {
                         <!-- form9 -->
                         <div id="form9_container" class="row form-container">
                             <div class="col-lg-3 btn btn-success mb-2" id="form9_toggler">
-                                <a><p>TETKİK SONUÇLARI GİRİŞİ (<?php echo json_encode(count($form9));?>)</p></a>
+                                <a><p>Hasta Değerlendirme Formu 19: Tetkik Sonuçları Girişi (<?php echo json_encode(count($form9));?>)</p></a>
                             </div>
                             <?php
                             if (count($form9) > 0 && $form9 !== '') {
@@ -922,7 +922,7 @@ if (isset($_GET['logout'])) {
                                         <a class='form-navigation col-lg-3 btn btn-success form9_view_submissions submissions' style='display: none;''
                                         href='$base_url/formlar-review/Form9-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
                                         >
-                                        <p>TETKİK SONUÇLARI GİRİŞİ</p>
+                                        <p>Hasta Değerlendirme Formu 19: Tetkik Sonuçları Girişi</p>
                                         <p>$date</p>
                                         </a>";
                                 }
@@ -943,7 +943,7 @@ if (isset($_GET['logout'])) {
                         <!-- form10 -->
                         <div id="form10_container" class="row form-container">
                             <div class="col-lg-3 btn btn-success mb-2" id="form10_toggler">
-                                <a><p>YAŞAMSAL BULGU TAKİBİİ (<?php echo json_encode(count($form10));?>)</p></a>
+                                <a><p>Hasta Değerlendirme Formu 20: Yaşamsal Bulgu Takibi (<?php echo json_encode(count($form10));?>)</p></a>
                             </div>
                             <?php
                             if (count($form10) > 0 && $form10 !== '') {
@@ -956,7 +956,7 @@ if (isset($_GET['logout'])) {
                                         <a class='form-navigation col-lg-3 btn btn-success form10_view_submissions submissions' style='display: none;''
                                         href='$base_url/formlar-review/Form10-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
                                         >
-                                        <p>YAŞAMSAL BULGU TAKİBİİ</p>
+                                        <p>Hasta Değerlendirme Formu 20: Yaşamsal Bulgu Takibi</p>
                                         <p>$date</p>
                                         </a>";
                                 }
@@ -977,7 +977,7 @@ if (isset($_GET['logout'])) {
                         <!-- form11 -->
                         <div id="form11_container" class="row form-container">
                             <div class="col-lg-3 btn btn-success mb-2" id="form11_toggler">
-                                <a><p>ALDIĞI ÇIKARDIĞI İZLEMİ (<?php echo json_encode(count($form11));?>)</p></a>
+                                <a><p>Hasta Değerlendirme Formu 21: Aldığı/Çıkardığı İzlemi (<?php echo json_encode(count($form11));?>)</p></a>
                             </div>
                             <?php
                             if (count($form11) > 0 && $form11 !== '') {
@@ -990,7 +990,7 @@ if (isset($_GET['logout'])) {
                                         <a class='form-navigation col-lg-3 btn btn-success form11_view_submissions submissions' style='display: none;''
                                         href='$base_url/formlar-review/Form11-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
                                         >
-                                        <p>ALDIĞI ÇIKARDIĞI İZLEMİ</p>
+                                        <p>Hasta Değerlendirme Formu 21: Aldığı/Çıkardığı İzlemi</p>
                                         <p>$date</p>
                                         </a>";
                                 }
@@ -1011,7 +1011,7 @@ if (isset($_GET['logout'])) {
                         <!-- form12 -->
                         <div id="form12_container" class="row form-container">
                             <div class="col-lg-3 btn btn-success mb-2" id="form12_toggler">
-                                <a><p>Sıvı İzlem (<?php echo json_encode(count($form12));?>)</p></a>
+                                <a><p>Hasta Değerlendirme Formu 22: Sıvı İzlemi (<?php echo json_encode(count($form12));?>)</p></a>
                             </div>
                             <?php
                             if (count($form12) > 0 && $form12 !== '') {
@@ -1024,7 +1024,7 @@ if (isset($_GET['logout'])) {
                                         <a class='form-navigation col-lg-3 btn btn-success form12_view_submissions submissions' style='display: none;''
                                         href='$base_url/formlar-review/Form12-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
                                         >
-                                        <p>Sıvı İzlem</p>
+                                        <p>Hasta Değerlendirme Formu 22: Sıvı İzlemi</p>
                                         <p>$date</p>
                                         </a>";
                                 }
@@ -1044,7 +1044,7 @@ if (isset($_GET['logout'])) {
                         <!-- form13 -->
                         <div id="form13_container" class="row form-container">
                             <div class="col-lg-3 btn btn-success mb-2" id="form13_toggler">
-                                <a><p>Medikal Tedavi (<?php echo json_encode(count($form13));?>)</p></a>
+                                <a><p>Hasta Değerlendirme Formu 23: İlaç Orderı (<?php echo json_encode(count($form13));?>)</p></a>
                             </div>
                             <?php
                             if (count($form13) > 0 && $form13 !== '') {
@@ -1057,7 +1057,7 @@ if (isset($_GET['logout'])) {
                                         <a class='form-navigation col-lg-3 btn btn-success form13_view_submissions submissions' style='display: none;''
                                         href='$base_url/formlar-review/Form13-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
                                         >
-                                        <p>Medikal Tedavi</p>
+                                        <p>Hasta Değerlendirme Formu 23: İlaç Orderı</p>
                                         <p>$date</p>
                                         </a>";
                                 } 
@@ -1110,7 +1110,7 @@ if (isset($_GET['logout'])) {
                         <!-- form15 -->
                         <div id="form15_container" class="row form-container">
                             <div class="col-lg-3 btn btn-success mb-2" id="form15_toggler">
-                                <a><p>Günlük Bakım Planı (<?php echo json_encode(count($form15));?>)</p></a>
+                                <a><p>Hasta Değerlendirme Formu 24: Günlük Bakım Uygulamaları (<?php echo json_encode(count($form15));?>)</p></a>
                             </div>
                             <?php
                             if (count($form15) > 0 && $form15 !== '') {
@@ -1123,7 +1123,7 @@ if (isset($_GET['logout'])) {
                                         <a class='form-navigation col-lg-3 btn btn-success form15_view_submissions submissions' style='display: none;''
                                         href='$base_url/formlar-review/Form15-review.php?form_id=$form_id&patient_id=$patient_id&patient_name=$patient_name'
                                         >
-                                        <p>Günlük Bakım Planı</p> 
+                                        <p>Hasta Değerlendirme Formu 24: Günlük Bakım Uygulamaları</p> 
                                         <p>$date</p>
                                         </a>";
                                 }

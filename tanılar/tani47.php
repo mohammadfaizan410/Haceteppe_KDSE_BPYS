@@ -91,7 +91,7 @@ $taniValidInputs = isset($_GET['taniValidInputs']) ? $_GET['taniValidInputs'] : 
             <h1 class="form-header">Bakım Planı</h1>
             <div class="input-section-item">
                 <div class="patients-save">
-                   
+                    <form action="" method="POST" class="patients-save-fields">
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
                             <p class="tanıdescription">Deri bütünlüğünde bozulma riski</p>

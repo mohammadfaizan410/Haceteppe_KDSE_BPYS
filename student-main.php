@@ -8,7 +8,7 @@ if (!isset($_SESSION['userlogin']['id'])) {
 if (isset($_GET['logout'])) {
     session_destroy();
     unset($_SESSION);
-    header("Location: main.php");
+    header("Location: stuLogin.php");
 }
 
 $userid = $_SESSION['userlogin']['id'];

@@ -109,12 +109,10 @@ if (isset($_GET['logout'])) {
   // Set the top position of the container
   container.css('top', topPosition + 'px');
 });
-
-        $(function() {
+            $('#submit').unbind('click');
             $('#submit').click(function(e) {
                 e.preventDefault();
                 var id = <?php
-
                             $userid = $_SESSION['userlogin']['id'];
                             echo $userid
                             ?>;
@@ -151,8 +149,6 @@ if (isset($_GET['logout'])) {
                     return false;
                 }
                 
-                e.preventDefault()
-
                 $.ajax({
                     type: 'POST',
                     url: '<?php echo $base_url; ?>/processAddPatient.php/',
@@ -163,6 +159,7 @@ if (isset($_GET['logout'])) {
                         patient_age: years
                     },
                     success: function(data) {
+                        console.log(data);
                         $("#tick-container").fadeIn(800);
 
                         // Change the tick background to the animated GIF
@@ -190,7 +187,6 @@ if (isset($_GET['logout'])) {
 
             })
 
-        });
     </script>
 </body>
 
