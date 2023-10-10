@@ -1803,7 +1803,7 @@ input.addEventListener("input", function() {
         if(form5.verbal_response_points === 4){
             taniValidInputs.tani39Inputs += '/Bilinç Durumu : 4 ';
         }
-        if(fotm5.total >=3 || form5.total <= 13){
+        if(form5.total >=3 || form5.total <= 13){
             taniValidInputs.tani39Inputs += '/Bilinç Durumu : 3-13 ';
         }
     }
