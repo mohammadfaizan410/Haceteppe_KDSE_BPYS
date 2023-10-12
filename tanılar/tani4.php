@@ -92,7 +92,7 @@ $taniValidInputs = isset($_GET['taniValidInputs']) ? $_GET['taniValidInputs'] : 
                             ?>
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın 24 saatlik aldığı/çıkardığı sıvıların dengede olması</p>
+                            <p class="tanıdescription">Hastanın idrar konsantrasyonunun normal olması</p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
                             <p class="usernamelabel">NOC Gösterge: </p>
@@ -100,74 +100,31 @@ $taniValidInputs = isset($_GET['taniValidInputs']) ? $_GET['taniValidInputs'] : 
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">1: Hastada çok şiddetli düzeyde sıvı kaybı
-                                            var</span>
+                                        <span class="checkbox-header">1: Hastanın idrarı ileri derecede yoğundur</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">2: Hastada şiddetli düzeyde sıvı kaybı var </span>
+                                        <span class="checkbox-header">2: Hastanın idrarı yoğundur</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">3:Hastada orta düzeyde sıvı kaybı var </span>
+                                        <span class="checkbox-header">3: Hastanın idrarı orta düzeyde yoğundur</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">4:Hastada hafif düzeyde sıvı kaybı var</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="
-                                        noc_indicator" value="5">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">5:Hastanın aldığı/ çıkardığı sıvılar dengededir
-                                        </span>
-                                    </label>
-                                </div>
-
-
-                        </div>
-                        <div class="input-section d-flex">
-                            <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın idrar konsantrasyonunun normal olması</p>
-                        </div>
-                        <div class="input-section" id="o2-delivery-container">
-                            <p class="usernamelabel">NOC Gösterge: </p>
-                            <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator2" value="1">
-                                    <label class="form-check-label" for="noc_indicator2">
-                                        <span class="checkbox-header">1: Hastanın idrarı ileri derecede yoğundur</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator2" value="2">
-                                    <label class="form-check-label" for="noc_indicator2">
-                                        <span class="checkbox-header">2: Hastanın idrarı yoğundur</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator2" value="3">
-                                    <label class="form-check-label" for="noc_indicator2">
-                                        <span class="checkbox-header">3: Hastanın idrarı orta düzeyde yoğundur</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator2" value="4">
-                                    <label class="form-check-label" for="noc_indicator2">
                                         <span class="checkbox-header">4: Hastanın idrarı biraz yoğundur</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="
-                                        noc_indicator2" value="5">
-                                    <label class="form-check-label" for="noc_indicator2">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="
+                                    noc_indicator" value="5">
+                                    <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">5: Hastanın idrarı normaldir (1005< İdrar dansitesi < 1030) </span>
                                     </label>
                                 </div>
@@ -175,53 +132,7 @@ $taniValidInputs = isset($_GET['taniValidInputs']) ? $_GET['taniValidInputs'] : 
 
                         </div>
 
-                        <div class="input-section d-flex">
-                            <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın hidrasyon durumunun (derinin ve ağız mukozasının
-                                nemliliği, deri turgoru) normal olması</p>
-                        </div>
-                        <div class="input-section" id="o2-delivery-container">
-                            <p class="usernamelabel">NOC Gösterge: </p>
-                            <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_3" id="noc_indicator3" value="1">
-                                    <label class="form-check-label" for="noc_indicator3">
-                                        <span class="checkbox-header">1: Hastanın derisi ve ağız mukozası aşırı düzeyde
-                                            kuru; deri turgoru aşırı zayıflamıştır</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_3" id="noc_indicator3" value="2">
-                                    <label class="form-check-label" for="noc_indicator3">
-                                        <span class="checkbox-header">2: Hastanın derisi ve ağız mukozası çok kuru; deri
-                                            turgoru çok zayıflamıştır</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_3" id="noc_indicator3" value="3">
-                                    <label class="form-check-label" for="noc_indicator3">
-                                        <span class="checkbox-header">3: Hastanın derisi ve ağız mukozası oldukça kuru;
-                                            deri turgoru oldukça zayıflamıştır</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_3" id="noc_indicator3" value="4">
-                                    <label class="form-check-label" for="noc_indicator3">
-                                        <span class="checkbox-header">4: Hastanın derisi ve ağız mukozası biraz kuru;
-                                            deri turgoru biraz zayıflamıştır</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_3" id="
-                                        noc_indicator3" value="5">
-                                    <label class="form-check-label" for="noc_indicator3">
-                                        <span class="checkbox-header">5: Hastanın derisi ve ağız mukozasının nemliliği
-                                            ve deri turgoru normaldir</span>
-                                    </label>
-                                </div>
-
-
-                        </div>
+                        
 
                         <div class="input-section d-flex" style="flex-direction: column;">
                             <p class="usernamelabel">Hemşirelik Girişimleri:</p>
@@ -366,52 +277,7 @@ $taniValidInputs = isset($_GET['taniValidInputs']) ? $_GET['taniValidInputs'] : 
                                 5 gösterge seçildiyse; yeni günde bakım planına bu tanıyı taşımayacak
                             </p>
                         </div>
-                            <div class="input-section d-flex">
-                                <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                                <p class="tanıdescription">Hastanın 24 saatlik aldığı/çıkardığı sıvıların dengede olması
-                                </p>
-                            </div>
-                            <div class="input-section" id="o2-delivery-container">
-                                <p class="usernamelabel">NOC Gösterge: </p>
-                                <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="1">
-                                        <label class="form-check-label" for="noc_indicator_after">
-                                            <span class="checkbox-header">1: Hastada çok şiddetli düzeyde sıvı kaybı
-                                                var</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="2">
-                                        <label class="form-check-label" for="noc_indicator_after">
-                                            <span class="checkbox-header">2: Hastada şiddetli düzeyde sıvı kaybı var
-                                            </span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="3">
-                                        <label class="form-check-label" for="noc_indicator_after">
-                                            <span class="checkbox-header">3:Hastada orta düzeyde sıvı kaybı var </span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="4">
-                                        <label class="form-check-label" for="noc_indicator_after">
-                                            <span class="checkbox-header">4:Hastada hafif düzeyde sıvı kaybı var</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="
-                                        noc_indicator_after" value="5">
-                                        <label class="form-check-label" for="noc_indicator_after">
-                                            <span class="checkbox-header">5:Hastanın aldığı/ çıkardığı sıvılar
-                                                dengededir
-                                            </span>
-                                        </label>
-                                    </div>
-
-
-                            </div>
+                           
                             <div class="input-section d-flex">
                                 <p id="tani_usernamelabel">NOC Çıktıları:</p>
                                 <p class="tanıdescription">Hastanın idrar konsantrasyonunun normal olması</p>
@@ -420,35 +286,35 @@ $taniValidInputs = isset($_GET['taniValidInputs']) ? $_GET['taniValidInputs'] : 
                                 <p class="usernamelabel">NOC Gösterge: </p>
                                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator2_after" value="1">
-                                        <label class="form-check-label" for="noc_indicator2_after">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="1">
+                                        <label class="form-check-label" for="noc_indicator_after">
                                             <span class="checkbox-header">1: Hastanın idrarı ileri derecede
                                                 yoğundur</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator2_after" value="2">
-                                        <label class="form-check-label" for="noc_indicator2_after">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="2">
+                                        <label class="form-check-label" for="noc_indicator_after">
                                             <span class="checkbox-header">2: Hastanın idrarı yoğundur</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator2_after" value="3">
-                                        <label class="form-check-label" for="noc_indicator2_after">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="3">
+                                        <label class="form-check-label" for="noc_indicator_after">
                                             <span class="checkbox-header">3: Hastanın idrarı orta düzeyde
                                                 yoğundur</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator2_after" value="4">
-                                        <label class="form-check-label" for="noc_indicator2_after">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="4">
+                                        <label class="form-check-label" for="noc_indicator_after">
                                             <span class="checkbox-header">4: Hastanın idrarı biraz yoğundur</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="
-                                        noc_indicator2_after" value="5">
-                                        <label class="form-check-label" for="noc_indicator2_after">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="
+                                        noc_indicator_after" value="5">
+                                        <label class="form-check-label" for="noc_indicator_after">
                                             <span class="checkbox-header">5: Hastanın idrarı normaldir (1005< İdrar dansitesi < 1030) </span>
                                         </label>
                                     </div>
@@ -456,58 +322,7 @@ $taniValidInputs = isset($_GET['taniValidInputs']) ? $_GET['taniValidInputs'] : 
 
                             </div>
 
-                            <div class="input-section d-flex">
-                                <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                                <p class="tanıdescription">Hastanın hidrasyon durumunun (derinin ve ağız mukozasının
-                                    nemliliği, deri turgoru) normal olması</p>
-                            </div>
-                            <div class="input-section" id="o2-delivery-container">
-                                <p class="usernamelabel">NOC Gösterge: </p>
-                                <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_3" id="noc_indicator3_after" value="1">
-                                        <label class="form-check-label" for="noc_indicator3_after">
-                                            <span class="checkbox-header">1: Hastanın derisi ve ağız mukozası aşırı
-                                                düzeyde
-                                                kuru; deri turgoru aşırı zayıflamıştır</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_3" id="noc_indicator3_after" value="2">
-                                        <label class="form-check-label" for="noc_indicator3_after">
-                                            <span class="checkbox-header">2: Hastanın derisi ve ağız mukozası çok kuru;
-                                                deri
-                                                turgoru çok zayıflamıştır</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_3" id="noc_indicator3_after" value="3">
-                                        <label class="form-check-label" for="noc_indicator3_after">
-                                            <span class="checkbox-header">3: Hastanın derisi ve ağız mukozası oldukça
-                                                kuru;
-                                                deri turgoru oldukça zayıflamıştır</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_3" id="noc_indicator3_after" value="4">
-                                        <label class="form-check-label" for="noc_indicator3_after">
-                                            <span class="checkbox-header">4: Hastanın derisi ve ağız mukozası biraz
-                                                kuru;
-                                                deri turgoru biraz zayıflamıştır</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_3" id="
-                                        noc_indicator3_after" value="5">
-                                        <label class="form-check-label" for="noc_indicator3_after">
-                                            <span class="checkbox-header">5: Hastanın derisi ve ağız mukozasının
-                                                nemliliği
-                                                ve deri turgoru normaldir</span>
-                                        </label>
-                                    </div>
-
-
-                            </div>
+                            
                            
                         </div>
                                                                 <input type="submit" class="d-flex w-75 submit m-auto justify-content-center mb-5" name="submit" id="submit" value="Kaydet">              
@@ -535,7 +350,7 @@ $taniValidInputs = isset($_GET['taniValidInputs']) ? $_GET['taniValidInputs'] : 
                                     ?>";
                 var url = "<?php echo $base_url; ?>/updateForms/showAllTanis.php?patient_id=" + patient_id +
                     "&patient_name=" + encodeURIComponent(patient_name);
-                    if(<?php echo isset($_GET['taniValidInputs']) ?>){
+                    if("<?php echo isset($_GET['taniValidInputs']) ?>"){
                 var url = "<?php echo $base_url; ?>/updateForms/showSystemGeneratedTanis.php?patient_id=" + patient_id +
                 "&patient_name=" + encodeURIComponent(patient_name);
                     }

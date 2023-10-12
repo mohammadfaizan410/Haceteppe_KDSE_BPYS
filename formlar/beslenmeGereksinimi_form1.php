@@ -248,8 +248,7 @@ if (isset($_GET['logout'])) {
             <div class="input-section">
                 <p class="usernamelabel p-2">Sıvı Tüketimi:</p>
                 <div>
-                    Miktar/ml.<input type="number" class="form-control" required name="SiviTuketimi" id="liquid_consumption"
-                        maxlength="6">
+                    Miktar/ml.<input type="text" class="form-control" required name="SiviTuketimi" id="liquid_consumption">
                     
                 </div>
             </div>

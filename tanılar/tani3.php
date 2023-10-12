@@ -93,7 +93,7 @@ $taniValidInputs = isset($_GET['taniValidInputs']) ? $_GET['taniValidInputs'] : 
                             ?>
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın hava yollarının açıklığının sürdürülmesi</p>
+                            <p class="tanıdescription">Hastanın etkili bir şekilde balgam çıkarması</p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
                             <p class="usernamelabel">NOC Gösterge: </p>
@@ -101,77 +101,31 @@ $taniValidInputs = isset($_GET['taniValidInputs']) ? $_GET['taniValidInputs'] : 
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">1: Hastanın hava yollarında çok şiddetli düzeyde
-                                            tıkanıklık var</span>
+                                        <span class="checkbox-header">1:  Hasta hiç balgam çıkartmıyor </span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">2: Hastanın hava yollarında şiddetli düzeyde
-                                            tıkanıklık var </span>
+                                        <span class="checkbox-header">2: Hasta nadiren balgam çıkartıyor </span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">3: Hastanın hava yollarında orta düzeyde
-                                            tıkanıklık var</span>
+                                        <span class="checkbox-header">3. Hasta bazen balgam çıkartıyor</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">4: Hastanın hava yollarında hafif düzeyde
-                                            tıkanıklık var</span>
+                                        <span class="checkbox-header">4: Hasta sık sık balgam çıkartıyor</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="
                                         noc_indicator" value="5">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">5: Hastanın hava yolları tamamen açık
-                                        </span>
-                                    </label>
-                                </div>
-
-
-                        </div>
-                        <div class="input-section d-flex">
-                            <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın etkili bir şekilde balgam çıkarması</p>
-                        </div>
-                        <div class="input-section" id="o2-delivery-container">
-                            <p class="usernamelabel">NOC Gösterge: </p>
-                            <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator2" value="1">
-                                    <label class="form-check-label" for="noc_indicator2">
-                                        <span class="checkbox-header">1: Hasta hiç balgam çıkartmıyor </span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator2" value="2">
-                                    <label class="form-check-label" for="noc_indicator2">
-                                        <span class="checkbox-header">2: Hasta nadiren balgam çıkartıyor</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator2" value="3">
-                                    <label class="form-check-label" for="noc_indicator2">
-                                        <span class="checkbox-header">3. Hasta bazen balgam çıkartıyor</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator2" value="4">
-                                    <label class="form-check-label" for="noc_indicator2">
-                                        <span class="checkbox-header">4: Hasta sık sık balgam çıkartıyor</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="
-                                        noc_indicator2" value="5: Hasta etkili bir şekilde balgam çıkartıyor">
-                                    <label class="form-check-label" for="noc_indicator2">
                                         <span class="checkbox-header">5: Hasta etkili bir şekilde balgam çıkartıyor
                                         </span>
                                     </label>
@@ -179,6 +133,7 @@ $taniValidInputs = isset($_GET['taniValidInputs']) ? $_GET['taniValidInputs'] : 
 
 
                         </div>
+                        
 
                         <div class="input-section d-flex" style="flex-direction: column;">
                             <p class="usernamelabel">Hemşirelik Girişimleri:</p>
@@ -329,7 +284,7 @@ $taniValidInputs = isset($_GET['taniValidInputs']) ? $_GET['taniValidInputs'] : 
                         </div>
                             <div class="input-section d-flex">
                                 <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                                <p class="tanıdescription">Hastanın hava yollarının açıklığının sürdürülmesi</p>
+                                <p class="tanıdescription">Hastanın etkili bir şekilde balgam çıkarması</p>
                             </div>
                             <div class="input-section" id="o2-delivery-container">
                                 <p class="usernamelabel">NOC Gösterge: </p>
@@ -337,81 +292,39 @@ $taniValidInputs = isset($_GET['taniValidInputs']) ? $_GET['taniValidInputs'] : 
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="1">
                                         <label class="form-check-label" for="noc_indicator_after">
-                                            <span class="checkbox-header">1: Hastanın hava yollarında çok şiddetli
-                                                düzeyde tıkanıklık var</span>
+                                            <span class="checkbox-header">1:  Hasta hiç balgam çıkartmıyor</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="2">
                                         <label class="form-check-label" for="noc_indicator_after">
-                                            <span class="checkbox-header">2: Hastanın hava yollarında şiddetli düzeyde
-                                                tıkanıklık var </span>
+                                            <span class="checkbox-header">2: Hasta nadiren balgam çıkartıyor</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="3">
                                         <label class="form-check-label" for="noc_indicator_after">
-                                            <span class="checkbox-header">3: Hastanın hava yollarında orta düzeyde
-                                                tıkanıklık var</span>
+                                            <span class="checkbox-header">3. Hasta bazen balgam çıkartıyor</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="4">
                                         <label class="form-check-label" for="noc_indicator_after">
-                                            <span class="checkbox-header">4: Hastanın hava yollarında hafif düzeyde
-                                                tıkanıklık var</span>
+                                            <span class="checkbox-header">4: Hasta sık sık balgam çıkartıyor</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required name="noc_indicator_after" id="
                                         noc_indicator_after" value="5">
                                         <label class="form-check-label" for="noc_indicator_after">
-                                            <span class="checkbox-header">5: Hastanın hava yolları tamamen açık
-                                            </span>
-                                        </label>
-                                    </div>
-
-
-                            </div>
-                            <div class="input-section d-flex">
-                                <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                                <p class="tanıdescription">Hastanın etkili bir şekilde balgam çıkarması</p>
-                            </div>
-                            <div class="input-section" id="o2-delivery-container">
-                                <p class="usernamelabel">NOC Gösterge: </p>
-                                <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator_after_2" value="1">
-                                        <label class="form-check-label" for="noc_indicator_after_2">
-                                            <span class="checkbox-header">1: Hasta hiç balgam çıkartmıyor </span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator_after_2" value="2">
-                                        <label class="form-check-label" for="noc_indicator_after_2">
-                                            <span class="checkbox-header">2: Hasta nadiren balgam çıkartıyor</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator_after_2" value="3">
-                                        <label class="form-check-label" for="noc_indicator_after_2">
-                                            <span class="checkbox-header">3. Hasta bazen balgam çıkartıyor</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator_after_2" value="4">
-                                        <label class="form-check-label" for="noc_indicator_after_2">
-                                            <span class="checkbox-header">4: Hasta sık sık balgam çıkartıyor</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="
-                                        noc_indicator2_after2" value="5: Hasta etkili bir şekilde balgam çıkartıyor">
-                                        <label class="form-check-label" for="noc_indicator_after_2">
                                             <span class="checkbox-header">5: Hasta etkili bir şekilde balgam çıkartıyor
                                             </span>
                                         </label>
                                     </div>
+
+
+                            </div>
+                            
 
 
                             </div>
@@ -440,7 +353,7 @@ $taniValidInputs = isset($_GET['taniValidInputs']) ? $_GET['taniValidInputs'] : 
                                     ?>";
                 var url = "<?php echo $base_url; ?>/updateForms/showAllTanis.php?patient_id=" + patient_id +
                     "&patient_name=" + encodeURIComponent(patient_name);
-                    if(<?php echo isset($_GET['taniValidInputs']) ?>){
+                    if("<?php echo isset($_GET['taniValidInputs']) ?>"){
                 var url = "<?php echo $base_url; ?>/updateForms/showSystemGeneratedTanis.php?patient_id=" + patient_id +
                 "&patient_name=" + encodeURIComponent(patient_name);
                     }

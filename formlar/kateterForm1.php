@@ -101,7 +101,7 @@ if (isset($_GET['logout'])) {
                                 </label>
                             </div>
                         </div>
-                        <input type="number" placeholder="yeri" class="form-control mb-2" disabled name="peripheralKaterarAmount" id="peripheralKaterarAmount">
+                        <input type="text" placeholder="yeri" class="form-control mb-2" disabled name="peripheralKaterarAmount" id="peripheralKaterarAmount">
                         <input type="text" placeholder="sayisi" class="form-control mb-2" disabled name="peripheralKaterarLocation" id="peripheralKaterarLocation">
                         <input type="date" class="form-control mb-2" disabled name="peripheralKaterarDate" id="peripheralKaterarDate">
                     </div>
@@ -116,7 +116,7 @@ if (isset($_GET['logout'])) {
                                 </label>
                             </div>
                         </div>
-                        <input type="number" placeholder="yeri" class="form-control mb-2" disabled name="centralKaterarNumber" id="centralKaterarNumber">
+                        <input type="text" placeholder="yeri" class="form-control mb-2" disabled name="centralKaterarNumber" id="centralKaterarNumber">
                         <input type="text" placeholder="sayisi" class="form-control mb-2" disabled name="centralKaterarLocation" id="centralKaterarLocation">
                         <input type="date" class="form-control mb-2" disabled name="centralKaterarDate" id="centralKaterarDate">
                     </div>
@@ -132,7 +132,7 @@ if (isset($_GET['logout'])) {
                                 </label>
                             </div>
                         </div>
-                        <input type="number" placeholder="yeri" class="form-control mb-2" disabled name="drainKatererAmount" id="drainKatererAmount">
+                        <input type="text" placeholder="yeri" class="form-control mb-2" disabled name="drainKatererAmount" id="drainKatererAmount">
                         <input type="text" placeholder="sayisi" class="form-control mb-2" disabled name="drainKatererLocation" id="drainKatererLocation">
                         <input type="date" class="form-control mb-2" disabled name="drainKatererDate" id="drainKatererDate">
                     </div>
@@ -148,7 +148,7 @@ if (isset($_GET['logout'])) {
                                 </label>
                             </div>
                         </div>
-                        <input type="number" placeholder="yeri" class="form-control mb-2" disabled name="otherKatereAmount" id="otherKatereAmount">
+                        <input type="text" placeholder="yeri" class="form-control mb-2" disabled name="otherKatereAmount" id="otherKatereAmount">
                         <input type="text" placeholder="sayisi" class="form-control mb-2" disabled name="otherKatereLocation" id="otherKatereLocation">
                         <input type="date" class="form-control mb-2" disabled name="otherKatereDate" id="otherKatereDate">
                     </div>

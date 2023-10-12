@@ -379,10 +379,6 @@ if ($result) {
                                 <tr><td><div class="mt-3 entered-forms showallformsContainer"><a class="nav-items review btn btn-success w-100 p-3" style="color : white;"
                                 href="<?php echo $base_url; ?>/formlar/medikaltedavi.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Hasta Değerlendirme Formu 23: İlaç Orderı</a></div></td></tr>
                                 <?php endif; ?> 
-                        <?php if (count($values13) == 0): ?>
-                                <tr><td><div class="mt-3 entered-forms showallformsContainer"><a class="nav-items review btn btn-success w-100 p-3" style="color : white;"
-                                href="<?php echo $base_url; ?>/formlar/bakimplani.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Bakım Planı</a></div></td></tr>
-                                <?php endif; ?> 
                         <?php if (count($values14) == 0): ?>
                                 <tr><td><div class="mt-3 entered-forms showallformsContainer"><a class="nav-items review btn btn-success w-100 p-3" style="color : white;"
                                 href="<?php echo $base_url; ?>/formlar/gunlukbakimuygulamalari.php?patient_id=<?php echo $_GET['patient_id']; ?>&patient_name=<?php echo $_GET['patient_name']; ?>">Hasta Değerlendirme Formu 24: Günlük Bakım Uygulamaları</a></div></td></tr>

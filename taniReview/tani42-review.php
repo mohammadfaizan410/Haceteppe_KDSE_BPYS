@@ -120,9 +120,10 @@ if ($result) {
                             <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
                             <p class="tanıdescription">Sıvı volüm eksikliği riski</p>
                         </div>
+                        
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın 24 saatlik aldığı/çıkardığı sıvıların dengede olması</p>
+                            <p class="tanıdescription">Hastanın hidrasyon durumunun (derinin ve ağız mukozasının nemliliği, deri turgoru) normal olması</p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
                             <p id="tani_usernamelabel">NOC Gösterge: </p>
@@ -161,55 +162,6 @@ if ($result) {
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="
-                                        noc_indicator" value="5">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">5: Hastanın 24 saatlik aldığı/çıkardığı dengede, risk devam ediyor</span>
-                                    </label>
-                                </div>
-
-
-                        </div>
-                        <div class="input-section d-flex">
-                            <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın hidrasyon durumunun (derinin ve ağız mukozasının nemliliği, deri turgoru) normal olması</p>
-                        </div>
-                        <div class="input-section" id="o2-delivery-container">
-                            <p id="tani_usernamelabel">NOC Gösterge: </p>
-                            <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2"
-                                        id="noc_indicator"
-                                        value="1">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">1: Hastada şiddetli düzeyde risk var</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2"
-                                        id="noc_indicator"
-                                        value="2">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">2: Hastada önemli düzeyde risk var</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2"
-                                        id="noc_indicator"
-                                        value="3">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">3: Hastada orta düzeyde risk var</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2"
-                                        id="noc_indicator"
-                                        value="4">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">4: Hastada hafif düzeyde risk var</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="
                                         noc_indicator" value="5">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">5: Hastanın hidrasyon durumu normal, risk devam ediyor</span>
@@ -357,55 +309,7 @@ if ($result) {
                             <p class="tanıdescription">Risk devam ediyor: 1-5 gösterge seçildiyse; yeni günde bakım planında tanımlı tanı olacak.</p>
                             <p class="tanıdescription">Mevcut Tanı:Risk ortaya çıktıysa, gelişen durumla ilgili kayıt ve bakım planı yapılacak.</p>
                         </div>
-                        <div class="input-section d-flex">
-                            <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın 24 saatlik aldığı/çıkardığı sıvıların dengede olması</p>
-                        </div>
-                        <div class="input-section" id="o2-delivery-container">
-                            <p id="tani_usernamelabel">NOC Gösterge: </p>
-                            <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
-                                        id="noc_indicator"
-                                        value="1">
-                                    <label class="form-check-label" for="noc_indicator_after">
-                                        <span class="checkbox-header">1: Hastada şiddetli düzeyde risk var</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
-                                        id="noc_indicator"
-                                        value="2">
-                                    <label class="form-check-label" for="noc_indicator_after">
-                                        <span class="checkbox-header">2: Hastada önemli düzeyde risk var</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
-                                        id="noc_indicator"
-                                        value="3">
-                                    <label class="form-check-label" for="noc_indicator_after">
-                                        <span class="checkbox-header">3: Hastada orta düzeyde risk var</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
-                                        id="noc_indicator"
-                                        value="4">
-                                    <label class="form-check-label" for="noc_indicator_after">
-                                        <span class="checkbox-header">4: Hastada hafif düzeyde risk var</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="
-                                        noc_indicator" value="5">
-                                    <label class="form-check-label" for="noc_indicator_after">
-                                        <span class="checkbox-header">5: Hastanın 24 saatlik aldığı/çıkardığı dengede, risk devam ediyor</span>
-                                    </label>
-                                </div>
-
-
-                        </div>
+                        
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hastanın hidrasyon durumunun (derinin ve ağız mukozasının nemliliği, deri turgoru) normal olması</p>
@@ -414,7 +318,7 @@ if ($result) {
                             <p id="tani_usernamelabel">NOC Gösterge: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after_2"
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
                                         id="noc_indicator"
                                         value="1">
                                     <label class="form-check-label" for="noc_indicator_after_2">
@@ -422,7 +326,7 @@ if ($result) {
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after_2"
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
                                         id="noc_indicator"
                                         value="2">
                                     <label class="form-check-label" for="noc_indicator_after_2">
@@ -430,7 +334,7 @@ if ($result) {
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after_2"
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
                                         id="noc_indicator"
                                         value="3">
                                     <label class="form-check-label" for="noc_indicator_after_2">
@@ -438,7 +342,7 @@ if ($result) {
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after_2"
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
                                         id="noc_indicator"
                                         value="4">
                                     <label class="form-check-label" for="noc_indicator_after_2">
@@ -446,7 +350,7 @@ if ($result) {
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="
                                         noc_indicator" value="5:">
                                     <label class="form-check-label" for="noc_indicator_after_2">
                                         <span class="checkbox-header">5: Hastanın hidrasyon durumu normal, risk devam ediyor</span>

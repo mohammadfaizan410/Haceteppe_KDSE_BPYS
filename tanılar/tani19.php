@@ -390,7 +390,7 @@ $fatigue  = isset($_GET['fatigue ']) ? $_GET['fatigue '] : "NaN";
                                     ?>";
                 var url = "<?php echo $base_url; ?>/updateForms/showAllTanis.php?patient_id=" + patient_id +
                     "&patient_name=" + encodeURIComponent(patient_name);
-                    if(<?php echo isset($_GET['taniValidInputs']) ?>){
+                    if("<?php echo isset($_GET['taniValidInputs']) ?>"){
                 var url = "<?php echo $base_url; ?>/updateForms/showSystemGeneratedTanis.php?patient_id=" + patient_id +
                 "&patient_name=" + encodeURIComponent(patient_name);
                     }

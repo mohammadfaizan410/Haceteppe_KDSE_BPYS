@@ -115,47 +115,7 @@ if ($result) {
                             <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
                             <p class="tanıdescription">Boş zaman aktivitelerinde yetersizlik</p>
                         </div>
-                        <div class="input-section d-flex">
-                            <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın düzenlenen aktivitelere katılım göstermesi </p>
-                        </div>
-
-
-                        <div class="input-section" id="o2-delivery-container">
-                            <p id="tani_usernamelabel">NOC Gösterge: </p>
-                            <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">1: Hasta düzenlenen aktivitelere hiç katılım göstermez</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">2: Hasta düzenlenen aktivitelere sık sık katılım göstermez</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">3: Hasta düzenlenen aktivitelere bazen katılım göstermez</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">4: Hasta düzenlenen aktivitelere nadiren katılım göstermez</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="5">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">5: Hasta düzenlenen aktivitelere sürekli katılım gösterir</span>
-                                    </label>
-                                </div>
-
-                        </div>
+                       
 
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">Değerlendirme:</p>
@@ -175,31 +135,31 @@ if ($result) {
                             <p id="tani_usernamelabel">NOC Gösterge: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator" value="1">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">1:Hasta aktivite seçeneklerini hiç belirleyemez</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator" value="2">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">2:Hasta aktivite seçeneklerini sık sık belirleyemez</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator" value="3">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">3:Hasta aktivite seçeneklerini bazen belirleyemez</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator" value="4">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">4:Hasta aktivite seçeneklerini nadiren belirleyemez </span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator" value="5">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="5">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">5:Hasta aktivite seçeneklerini belirler</span>
                                     </label>
@@ -303,48 +263,7 @@ düşüncelerin uyarılmasını sağlamak için; müzik, oyun, puzzle, ziyaret v
                             
                              
                         
-                        <div class="input-section d-flex">
-                            <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                            <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın düzenlenen aktivitelere katılım göstermesi </p>
-                        </div>
-
-
-                        <div class="input-section" id="o2-delivery-container">
-                            <p id="tani_usernamelabel">NOC Gösterge: </p>
-                            <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="1">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">1: Hasta düzenlenen aktivitelere hiç katılım göstermez</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="2">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">2: Hasta düzenlenen aktivitelere sık sık katılım göstermez</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="3">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">3: Hasta düzenlenen aktivitelere bazen katılım göstermez</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="4">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">4: Hasta düzenlenen aktivitelere nadiren katılım göstermez</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="5">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">5: Hasta düzenlenen aktivitelere sürekli katılım gösterir</span>
-                                    </label>
-                                </div>
-
-                        </div>
+                        
 
 
                         <div class="input-section d-flex">
@@ -357,31 +276,31 @@ düşüncelerin uyarılmasını sağlamak için; müzik, oyun, puzzle, ziyaret v
                             <p id="tani_usernamelabel">NOC Gösterge: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator" value="1">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="1">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">1:Hasta aktivite seçeneklerini hiç belirleyemez</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator" value="2">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="2">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">2:Hasta aktivite seçeneklerini sık sık belirleyemez</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator" value="3">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="3">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">3:Hasta aktivite seçeneklerini bazen belirleyemez</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator" value="4">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="4">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">4:Hasta aktivite seçeneklerini nadiren belirleyemez </span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator" value="5">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator" value="5">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">5:Hasta aktivite seçeneklerini belirler</span>
                                     </label>

@@ -96,7 +96,7 @@ if (isset($_GET['logout'])) {
 
                             <div class="input-section">
                                 <p class="usernamelabel pb-3">Doğum Yeri:</p>
-                                <input type="date" class="form-control" name="dob" id="dob"
+                                <input type="text" class="form-control" name="dob" id="dob"
                                     placeholder="Doğum Yeri Giriniz">
                             </div>
 

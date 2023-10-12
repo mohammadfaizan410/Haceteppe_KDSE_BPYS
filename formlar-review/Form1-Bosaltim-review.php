@@ -258,7 +258,7 @@ if ($result) {
             </div>
             <div class="input-section">
                 <p class="usernamelabel">Bağırsak sesleri(/dk)</p>
-                <input type="number" class="form-control" required name="bagirsak_sesleri" id="bagirsak_sesleri">
+                <input type="text" class="form-control" required name="bagirsak_sesleri" id="bagirsak_sesleri">
             </div>
             <div class="input-section">
                 <p class="usernamelabel">En son ne zaman defekasyona çıktınız:</p>

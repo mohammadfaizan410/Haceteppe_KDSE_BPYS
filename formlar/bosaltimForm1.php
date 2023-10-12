@@ -221,7 +221,7 @@ if (isset($_GET['logout'])) {
             </div>
             <div class="input-section">
                 <p class="usernamelabel p-3">Bağırsak sesleri(/dk)</p>
-                <input type="number" class="form-control" required name="bagirsak_sesleri" id="bagirsak_sesleri">
+                <input type="text" class="form-control" required name="bagirsak_sesleri" id="bagirsak_sesleri">
             </div>
             <div class="input-section">
                 <p class="usernamelabel p-3">En son ne zaman defekasyona çıktınız:</p>

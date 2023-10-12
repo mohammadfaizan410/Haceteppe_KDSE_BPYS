@@ -244,10 +244,10 @@ if (isset($_GET['logout'])) {
 
 
                         <div class="input-section">
-                        <p class="option-error" style="color : red; display : none">160-80 arasında olmalıdır</p>
+                        <p class="option-error" style="color : red; display : none">120-80 arasında olmalıdır</p>
                             <p class="usernamelabel pb-3">Kan basıncı:</p>
                             <input type="number" class="form-control" required name="blood_pressure" id="blood_pressure"
-                             placeholder="Tetkik Sonucu" maxlength="7" min="80" max="160">
+                             placeholder="Tetkik Sonucu" maxlength="7" min="80" max="120">
                         </div>
 
                         <div class="input-section">

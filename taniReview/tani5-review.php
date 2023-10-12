@@ -108,7 +108,7 @@ if ($result) {
                         </div>
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın 24 saatlik aldığı/çıkardığı dengede olması</p>
+                            <p class="tanıdescription">Hastada ödem olmaması</p>
                         </div>
                         <div class="input-section" id="o2-delivery-container">
                             <p class="usernamelabel">NOC Gösterge: </p>
@@ -116,74 +116,31 @@ if ($result) {
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">1:Hastada çok şiddetli düzeyde sıvı yüklenmesi
-                                            var</span>
+                                        <span class="checkbox-header">1: Hastada şiddetli düzeyde ödem var </span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">2: Hastada şiddetli düzeyde sıvı kaybı var </span>
+                                        <span class="checkbox-header">2: Hastada önemli düzeyde ödem var</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">3:Hastada orta düzeyde sıvı yüklenmesi var</span>
+                                        <span class="checkbox-header">3: Hastada orta düzeyde ödem var </span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4">
                                     <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">4:Hastada hafif düzeyde sıvı yüklenmesi var</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="
-                                        noc_indicator" value="5">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">5:Hastanın aldığı/ çıkardığı sıvılar dengededir
-                                        </span>
-                                    </label>
-                                </div>
-
-
-                        </div>
-                        <div class="input-section d-flex">
-                            <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastada ödem olmaması</p>
-                        </div>
-                        <div class="input-section" id="o2-delivery-container">
-                            <p class="usernamelabel">NOC Gösterge: </p>
-                            <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator2" value="1">
-                                    <label class="form-check-label" for="noc_indicator2">
-                                        <span class="checkbox-header">1: Hastada şiddetli düzeyde ödem var </span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator2" value="2">
-                                    <label class="form-check-label" for="noc_indicator2">
-                                        <span class="checkbox-header">2: Hastada önemli düzeyde ödem var</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator2" value="3">
-                                    <label class="form-check-label" for="noc_indicator2">
-                                        <span class="checkbox-header">3: Hastada orta düzeyde ödem var </span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator2" value="4">
-                                    <label class="form-check-label" for="noc_indicator2">
                                         <span class="checkbox-header">4: Hastada hafif düzeyde ödem var </span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="
-                                        noc_indicator2" value="5">
-                                    <label class="form-check-label" for="noc_indicator2">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="
+                                    noc_indicator" value="5">
+                                    <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">5: Hastada ödem yok
                                         </span>
                                     </label>
@@ -338,53 +295,7 @@ if ($result) {
                                 5 gösterge seçildiyse; yeni günde bakım planına bu tanıyı taşımayacak
                             </p>
     </div>
-                            <div class="input-section d-flex">
-                                <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                                <p class="tanıdescription">Hastanın 24 saatlik aldığı/çıkardığı dengede olması</p>
-                            </div>
-                            <div class="input-section" id="o2-delivery-container">
-                                <p class="usernamelabel">NOC Gösterge: </p>
-                                <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="1">
-                                        <label class="form-check-label" for="noc_indicator_after">
-                                            <span class="checkbox-header">1:Hastada çok şiddetli düzeyde sıvı yüklenmesi
-                                                var</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="2">
-                                        <label class="form-check-label" for="noc_indicator_after">
-                                            <span class="checkbox-header">2: Hastada şiddetli düzeyde sıvı kaybı var
-                                            </span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="3">
-                                        <label class="form-check-label" for="noc_indicator_after">
-                                            <span class="checkbox-header">3:Hastada orta düzeyde sıvı yüklenmesi
-                                                var</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="4">
-                                        <label class="form-check-label" for="noc_indicator_after">
-                                            <span class="checkbox-header">4:Hastada hafif düzeyde sıvı yüklenmesi
-                                                var</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="
-                                        noc_indicator_after" value="5">
-                                        <label class="form-check-label" for="noc_indicator_after">
-                                            <span class="checkbox-header">5:Hastanın aldığı/ çıkardığı sıvılar
-                                                dengededir
-                                            </span>
-                                        </label>
-                                    </div>
-
-
-                            </div>
+                           
                             <div class="input-section d-flex">
                                 <p id="tani_usernamelabel">NOC Çıktıları:</p>
                                 <p class="tanıdescription">Hastada ödem olmaması</p>
@@ -393,33 +304,33 @@ if ($result) {
                                 <p class="usernamelabel">NOC Gösterge: </p>
                                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator2_after" value="1">
-                                        <label class="form-check-label" for="noc_indicator2_after">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="1">
+                                        <label class="form-check-label" for="noc_indicator_after">
                                             <span class="checkbox-header">1: Hastada şiddetli düzeyde ödem var </span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator2_after" value="2">
-                                        <label class="form-check-label" for="noc_indicator2_after">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="2">
+                                        <label class="form-check-label" for="noc_indicator_after">
                                             <span class="checkbox-header">2: Hastada önemli düzeyde ödem var</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator2_after" value="3">
-                                        <label class="form-check-label" for="noc_indicator2_after">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="3">
+                                        <label class="form-check-label" for="noc_indicator_after">
                                             <span class="checkbox-header">3: Hastada orta düzeyde ödem var </span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator2_after" value="4">
-                                        <label class="form-check-label" for="noc_indicator2_after">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="4">
+                                        <label class="form-check-label" for="noc_indicator_after">
                                             <span class="checkbox-header">4: Hastada hafif düzeyde ödem var </span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="
-                                        noc_indicator2_after" value="5">
-                                        <label class="form-check-label" for="noc_indicator2_after">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="
+                                        noc_indicator_after" value="5">
+                                        <label class="form-check-label" for="noc_indicator_after">
                                             <span class="checkbox-header">5: Hastada ödem yok
                                             </span>
                                         </label>

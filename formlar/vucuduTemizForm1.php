@@ -126,6 +126,7 @@ if (isset($_GET['logout'])) {
             <div class="input-section">
                 <p class="usernamelabel pb-3">Banyo Sıklığı: :</p>
                 <input type="number" class="form-control" name="bathingFrequency" id="bathingFrequency">
+
             </div>
 
             <div class="input-section">
@@ -301,7 +302,7 @@ if (isset($_GET['logout'])) {
                 <p class="usernamelabel pb-3">Ağız bakımı (Diş protez bakımı) </p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
-                <input type="number" class="form-control mb-2" placeholder="Sıklığı/Zamanı" name="mouthCareFreq" id="mouthCareFreq">
+                <input type="number" class="form-control mb-2" placeholder="Sıklığı/Zamanı" name="mouthCareFreq" id="mouthCareFreq"><p>/haftada</p>
                 <input type="text" class="form-control mb-2" placeholder="Şekli" name="mouthCareMethod" id="mouthCareMethod">
                 <input type="text" class="form-control mb-2" placeholder="Kullanılan Malzeme" name="mouthCareMaterial" id="mouthCareMaterial">
             </div>
@@ -309,7 +310,7 @@ if (isset($_GET['logout'])) {
                 <p class="usernamelabel pb-3">Tırnak bakımı </p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
-                <input type="number" class="form-control mb-2" placeholder="Sıklığı/Zamanı" name="nailCareFreq" id="nailCareFreq">
+                <input type="number" class="form-control mb-2" placeholder="Sıklığı/Zamanı" name="nailCareFreq" id="nailCareFreq"><p>/haftada</p>
                 <input type="text" class="form-control mb-2" placeholder="Şekli" name="nailCareMethod" id="nailCareMethod">
                 <input type="text" class="form-control mb-2" placeholder="Kullanılan Malzeme" name="nailCareMaterial" id="nailCareMaterial">
             </div>
@@ -317,7 +318,7 @@ if (isset($_GET['logout'])) {
                 <p class="usernamelabel pb-3">El yıkama alışkanlığı </p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
-                <input type="number" class="form-control mb-2" placeholder="Sıklığı/Zamanı" name="handWashingFreq" id="handWashingFreq">
+                <input type="number" class="form-control mb-2" placeholder="Sıklığı/Zamanı" name="handWashingFreq" id="handWashingFreq"><p>/haftada</p>
                 <input type="text" class="form-control mb-2" placeholder="Şekli" name="handWashingMethod" id="handWashingMethod">
                 <input type="text" class="form-control mb-2" placeholder="Kullanılan Malzeme" name="handWashingMaterial" id="handWashingMaterial">
             </div>
@@ -325,7 +326,7 @@ if (isset($_GET['logout'])) {
                 <p class="usernamelabel pb-3">Perine bakımı </p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
-                <input type="number" class="form-control mb-2" placeholder="Sıklığı/Zamanı" name="periniumCareFreq" id="periniumCareFreq">
+                <input type="number" class="form-control mb-2" placeholder="Sıklığı/Zamanı" name="periniumCareFreq" id="periniumCareFreq"><p>/haftada</p>
                 <input type="text" class="form-control mb-2" placeholder="Şekli" name="periniumCareMethod" id="periniumCareMethod">
                 <input type="text" class="form-control mb-2" placeholder="Kullanılan Malzeme" name="periniumCareMaterial" id="periniumCareMaterial">
             </div>

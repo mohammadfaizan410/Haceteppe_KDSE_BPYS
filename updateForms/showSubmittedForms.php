@@ -1075,7 +1075,7 @@ if (isset($_GET['logout'])) {
                         <!-- form13 ends here -->
 
                         <!-- form14 -->
-                        <div id="form14_container" class="row form-container">
+                        <!-- <div id="form14_container" class="row form-container">
                             <div class="col-lg-3 btn btn-success mb-2" id="form14_toggler">
                                 <a><p>Bakım Planı (<?php echo json_encode(count($form14));?>)</p></a>
                             </div>
@@ -1104,7 +1104,7 @@ if (isset($_GET['logout'])) {
                                 </div>";
                             }
                             ?>
-                            </div>
+                            </div> -->
                         <!-- form14 ends here -->
 
                         <!-- form15 -->

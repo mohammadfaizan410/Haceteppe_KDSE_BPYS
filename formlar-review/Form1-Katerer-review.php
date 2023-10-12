@@ -118,7 +118,7 @@ if ($result) {
                                 </label>
                             </div>
                         </div>
-                        <input type="number" placeholder="yeri" class="form-control mb-2" disabled name="peripheralKaterarAmount" id="peripheralKaterarAmount" value="<?php echo $katererform1[0]['peripheralKaterarAmount']; ?>">
+                        <input type="text" placeholder="yeri" class="form-control mb-2" disabled name="peripheralKaterarAmount" id="peripheralKaterarAmount" value="<?php echo $katererform1[0]['peripheralKaterarAmount']; ?>">
                         <input type="text" placeholder="sayisi" class="form-control mb-2" disabled name="peripheralKaterarLocation" id="peripheralKaterarLocation" value="<?php echo $katererform1[0]['peripheralKaterarLocation']; ?>">
                         <input type="date" class="form-control mb-2" disabled name="peripheralKaterarDate" id="peripheralKaterarDate" value="<?php echo $katererform1[0]['peripheralKaterarDate']; ?>">
                     </div>
@@ -134,7 +134,7 @@ if ($result) {
                                 </label>
                             </div>
                         </div>
-                        <input type="number" placeholder="yeri" class="form-control mb-2" disabled name="centralKaterarNumber" id="centralKaterarNumber" value="<?php echo $katererform1[0]['centralKaterarNumber']; ?>">
+                        <input type="text" placeholder="yeri" class="form-control mb-2" disabled name="centralKaterarNumber" id="centralKaterarNumber" value="<?php echo $katererform1[0]['centralKaterarNumber']; ?>">
                         <input type="text" placeholder="sayisi" class="form-control mb-2" disabled name="centralKaterarLocation" id="centralKaterarLocation" value="<?php echo $katererform1[0]['centralKaterarLocation']; ?>">
                         <input type="date" class="form-control mb-2" disabled name="centralKaterarDate" id="centralKaterarDate" value="<?php echo $katererform1[0]['centralKaterarDate']; ?>">
                     </div>
@@ -150,7 +150,7 @@ if ($result) {
                                 </label>
                             </div>
                         </div>
-                        <input type="number" placeholder="yeri" class="form-control mb-2" disabled name="drainKatererAmount" id="drainKatererAmount" value="<?php echo $katererform1[0]['drainKatererAmount']; ?>">
+                        <input type="text" placeholder="yeri" class="form-control mb-2" disabled name="drainKatererAmount" id="drainKatererAmount" value="<?php echo $katererform1[0]['drainKatererAmount']; ?>">
                         <input type="text" placeholder="sayisi" class="form-control mb-2" disabled name="drainKatererLocation" id="drainKatererLocation" value="<?php echo $katererform1[0]['drainKatererLocation']; ?>">
                         <input type="date" class="form-control mb-2" disabled name="drainKatererDate" id="drainKatererDate" value="<?php echo $katererform1[0]['drainKatererDate']; ?>">
                     </div>
@@ -166,7 +166,7 @@ if ($result) {
                                 </label>
                             </div>
                         </div>
-                        <input type="number" placeholder="yeri" class="form-control mb-2" disabled name="otherKatereAmount" id="otherKatereAmount" value="<?php echo $katererform1[0]['otherKatereAmount']; ?>">
+                        <input type="text" placeholder="yeri" class="form-control mb-2" disabled name="otherKatereAmount" id="otherKatereAmount" value="<?php echo $katererform1[0]['otherKatereAmount']; ?>">
                         <input type="text" placeholder="sayisi" class="form-control mb-2" disabled name="otherKatereLocation" id="otherKatereLocation" value="<?php echo $katererform1[0]['otherKatereLocation']; ?>">
                         <input type="date" class="form-control mb-2" disabled name="otherKatereDate" id="otherKatereDate" value="<?php echo $katererform1[0]['otherKatereDate']; ?>">
                     </div>

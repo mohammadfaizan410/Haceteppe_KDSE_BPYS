@@ -285,54 +285,7 @@ $taniValidInputs = isset($_GET['taniValidInputs']) ? $_GET['taniValidInputs'] : 
                                 5 gösterge seçildiyse; yeni günde bakım planına bu tanıyı taşımayacak
                             </p>
     </div>
-                            <div class="input-section d-flex">
-                                <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                                <p class="tanıdescription">Hastanın idrarını ağrı ve rahatsızlık olmadan yapması</p>
-                            </div>
-                            <div class="input-section" id="o2-delivery-container">
-                                <p class="usernamelabel">NOC Gösterge: </p>
-                                <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="1">
-                                        <label class="form-check-label" for="noc_indicator_after">
-                                            <span class="checkbox-header">1: Hastada idrar yapma sırasında sürekli ağrı
-                                                ve rahatsızlık var</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="2">
-                                        <label class="form-check-label" for="noc_indicator_after">
-                                            <span class="checkbox-header">2: Hastada idrar yapma sırasında sık sık ağrı
-                                                ve rahatsızlık var
-                                            </span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="3">
-                                        <label class="form-check-label" for="noc_indicator_after">
-                                            <span class="checkbox-header">3: Hastada idrar yapma sırasında bazen ağrı ve
-                                                rahatsızlık var</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="4">
-                                        <label class="form-check-label" for="noc_indicator_after">
-                                            <span class="checkbox-header">4: Hastada idrar yapma sırasında nadiren ağrı
-                                                ve rahatsızlık var</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="
-                                        noc_indicator_after" value="5">
-                                        <label class="form-check-label" for="noc_indicator_after">
-                                            <span class="checkbox-header">5: Hastada idrar yapma sırasında ağrı ve
-                                                rahatsızlık yok
-                                            </span>
-                                        </label>
-                                    </div>
-
-
-                            </div>
+                        
                             <div class="input-section d-flex">
                                 <p id="tani_usernamelabel">NOC Çıktıları:</p>
                                 <p class="tanıdescription">Hastanın idrar kontrolünü sürdürmesi</p>
@@ -341,33 +294,33 @@ $taniValidInputs = isset($_GET['taniValidInputs']) ? $_GET['taniValidInputs'] : 
                                 <p class="usernamelabel">NOC Gösterge: </p>
                                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator2_after" value="1">
-                                        <label class="form-check-label" for="noc_indicator2_after">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="1">
+                                        <label class="form-check-label" for="noc_indicator_after">
                                             <span class="checkbox-header">1: Hastada sürekli inkontinans var</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator2_after" value="2">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="2">
                                         <label class="form-check-label" for="noc_indicator2_after">
                                             <span class="checkbox-header">2: Hastada sık sık inkontinans var</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator2_after" value="3">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="3">
                                         <label class="form-check-label" for="noc_indicator2_after">
                                             <span class="checkbox-header">3: Hastada bazen inkontinans var</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="noc_indicator2_after" value="4">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="noc_indicator_after" value="4">
                                         <label class="form-check-label" for="noc_indicator2_after">
                                             <span class="checkbox-header">4: Hastada nadiren inkontinans var</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="
-                                        noc_indicator2_after" value="5">
-                                        <label class="form-check-label" for="noc_indicator2_after">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator_after" id="
+                                        noc_indicator_after" value="5">
+                                        <label class="form-check-label" for="noc_indicator_after">
                                             <span class="checkbox-header">5: Hasta hiç inkontinans yok
                                             </span>
                                         </label>
@@ -401,7 +354,7 @@ $taniValidInputs = isset($_GET['taniValidInputs']) ? $_GET['taniValidInputs'] : 
                                     ?>";
                 var url = "<?php echo $base_url; ?>/updateForms/showAllTanis.php?patient_id=" + patient_id +
                     "&patient_name=" + encodeURIComponent(patient_name);
-                    if(<?php echo isset($_GET['taniValidInputs']) ?>){
+                    if("<?php echo isset($_GET['taniValidInputs']) ?>"){
                 var url = "<?php echo $base_url; ?>/updateForms/showSystemGeneratedTanis.php?patient_id=" + patient_id +
                 "&patient_name=" + encodeURIComponent(patient_name);
                     }

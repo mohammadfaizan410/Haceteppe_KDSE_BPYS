@@ -97,53 +97,7 @@ if ($result) {
                             <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
                             <p class="tanıdescription">Konstipasyon</p>
                         </div>
-                        <div class="input-section d-flex">
-                            <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın gaitasının normal özellikte olması </p>
-                        </div>
-
-
-
-
-
-
-                        <div class="input-section" id="o2-delivery-container">
-                            <p class="usernamelabel">NOC Gösterge: </p>
-                            <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">1: Hastada hiç gaita çıkışı yok</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">2: Hastada çok kuru ve çok az miktarda gaita çıkışı var </span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">3: Hastada bazen kuru ve az miktarda gaita çıkışı var</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">4: Hastada nadiren kuru gaita çıkışı var</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="
-                                        noc_indicator" value="5">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">5: Hastada yumuşak kıvamlı ve şekilli gaita çıkışı var
-                                        </span>
-                                    </label>
-                                </div>
-
-                        </div>
+                        
 
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">NOC Çıktıları:</p>
@@ -162,31 +116,31 @@ if ($result) {
                                 <p class="usernamelabel">NOC Gösterge: </p>
                                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator" value="1">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1">
                                         <label class="form-check-label" for="noc_indicator2">
                                             <span class="checkbox-header">1:Hastanın bağırsak sesleri yok</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator" value="2">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2">
                                         <label class="form-check-label" for="noc_indicator2">
                                             <span class="checkbox-header">2:Hastanın bağırsak sesleri ciddi düzeyde azalmış</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator" value="3">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3">
                                         <label class="form-check-label" for="noc_indicator2">
                                             <span class="checkbox-header">3:Hastanın bağırsak seslerinde orta düzeyde azalmış</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator" value="4">
+                                        <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4">
                                         <label class="form-check-label" for="noc_indicator2">
                                             <span class="checkbox-header">4:Hastanın bağırsak seslerinde hafif düzeyde azalmış</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" required name="noc_indicator_2" id="
+                                        <input class="form-check-input" type="radio" required name="noc_indicator" id="
                                         noc_indicator" value="5">
                                         <label class="form-check-label" for="noc_indicator2">
                                             <span class="checkbox-header">5:Hastanın bağırsak sesleri normal (6-10/dk)
@@ -317,63 +271,7 @@ if ($result) {
     </div>
                             <div class="input-section d-flex">
                            
-                           <!--                              -->
-                            <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın gaitasının normal özellikte olması </p>
-                        </div>
-                        
-
- 
-
-
-
-                        <div class="input-section" id="o2-delivery-container">
-                            <p class="usernamelabel">NOC Gösterge: </p>
-                            <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
-                                        id="noc_indicator"
-                                        value="1">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">1: Hastada hiç gaita çıkışı yok</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
-                                        id="noc_indicator"
-                                        value="2">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">2: Hastada çok kuru ve çok az miktarda gaita çıkışı var </span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
-                                        id="noc_indicator"
-                                        value="3">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">3: Hastada bazen kuru ve az miktarda gaita çıkışı var</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
-                                        id="noc_indicator"
-                                        value="4">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">4: Hastada nadiren kuru gaita çıkışı var</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="
-                                        noc_indicator" value="5">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">5: Hastada yumuşak kıvamlı ve şekilli gaita çıkışı var
-                                        </span>
-                                    </label>
-
-                            </div>
-                        </div>  
-                           <!--                              -->
-
+                          
                            <div class="input-section d-flex">
                             <p id="tani_usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hastanın bağırsak seslerinin normal sınırlarda olması </p>
@@ -391,7 +289,7 @@ if ($result) {
                             <p class="usernamelabel">NOC Gösterge: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after_2"
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
                                         id="noc_indicator"
                                         value="1">
                                     <label class="form-check-label" for="noc_indicator_after2">
@@ -399,7 +297,7 @@ if ($result) {
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after_2"
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
                                         id="noc_indicator"
                                         value="2">
                                     <label class="form-check-label" for="noc_indicator_after2">
@@ -407,7 +305,7 @@ if ($result) {
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after_2"
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
                                         id="noc_indicator"
                                         value="3">
                                     <label class="form-check-label" for="noc_indicator_after2">
@@ -415,7 +313,7 @@ if ($result) {
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after_2"
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
                                         id="noc_indicator"
                                         value="4">
                                     <label class="form-check-label" for="noc_indicator_after2">
@@ -423,7 +321,7 @@ if ($result) {
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="
                                         noc_indicator" value="5">
                                     <label class="form-check-label" for="noc_indicator_after2">
                                         <span class="checkbox-header">5:Hastanın bağırsak sesleri normal (6-10/dk)

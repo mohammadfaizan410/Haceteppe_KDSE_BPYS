@@ -102,53 +102,7 @@ $hospital_environment_factors = isset($_GET['hospital_environment_factors']) ? $
                                 echo '</div>';
                             }
                             ?>
-                        <div class="input-section d-flex">
-                            <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın gece bölünmeden uyuduğunun gözlemlenmesi</p>
-                        </div>
-
-
-
-
-
-
-                        <div class="input-section" id="o2-delivery-container">
-                            <p class="usernamelabel">NOC Gösterge: </p>
-                            <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">1: Hastanın gece uykusunda sürekli bölünme var</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">2: Hastanın gece uykusunda sık sık bölünme var</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">3: Hastanın gece uykusunda bazen bölünme var</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">4: Hastanın gece uykusunda nadiren bölünme var</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="
-                                        noc_indicator" value="5">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">5: Hastanın gece uykusunda bölünme yok
-                                        </span>
-                                    </label>
-                                </div>
-
-                        </div>
+                        
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hasta gece iyi uyuduğunu ifade etmesi</p>
@@ -157,31 +111,31 @@ $hospital_environment_factors = isset($_GET['hospital_environment_factors']) ? $
                             <p class="usernamelabel">NOC Gösterge: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator" value="1">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="1">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">1: Hasta sürekli gece iyi uyumadığını ifade eder</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator" value="2">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="2">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">2: Hasta sık sık gece iyi uyumadığını ifade eder</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator" value="3">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="3">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">3: Hasta bazen gece iyi uyumadığını ifade eder</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="noc_indicator" value="4">
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="noc_indicator" value="4">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">4: Hasta nadiren gece iyi uyumadığını ifade eder</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_2" id="
+                                    <input class="form-check-input" type="radio" required name="noc_indicator" id="
                                         noc_indicator" value="5">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">5: Hasta gece iyi uyuduğunu ifade eder
@@ -295,61 +249,7 @@ $hospital_environment_factors = isset($_GET['hospital_environment_factors']) ? $
                                 5 gösterge seçildiyse; yeni günde bakım planına bu tanıyı taşımayacak
                             </p>
                         </div>
-                            <div class="input-section d-flex">
-                            <p id="tani_usernamelabel">NOC Çıktıları:</p>
-                            <p class="tanıdescription">Hastanın gece bölünmeden uyuduğunun gözlemlenmesi</p>
-                        </div>
-                        
-
- 
-
-
-
-                        <div class="input-section" id="o2-delivery-container">
-                            <p id="tani_usernamelabel">NOC Gösterge: </p>
-                            <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
-                                        id="noc_indicator"
-                                        value="1">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">1: Hastanın gece uykusunda sürekli bölünme var</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
-                                        id="noc_indicator"
-                                        value="2">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">2: Hastanın gece uykusunda sık sık bölünme var</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
-                                        id="noc_indicator"
-                                        value="3">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">3: Hastanın gece uykusunda bazen bölünme var</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
-                                        id="noc_indicator"
-                                        value="4">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">4: Hastanın gece uykusunda nadiren bölünme var</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="
-                                        noc_indicator" value="5">
-                                    <label class="form-check-label" for="noc_indicator">
-                                        <span class="checkbox-header">5: Hastanın gece uykusunda bölünme yok
-                                        </span>
-                                    </label>
-                                </div>
-
-                        </div>
+                           
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">NOC Çıktıları:</p>
                             <p class="tanıdescription">Hasta gece iyi uyuduğunu ifade etmesi</p>
@@ -358,7 +258,7 @@ $hospital_environment_factors = isset($_GET['hospital_environment_factors']) ? $
                             <p id="tani_usernamelabel">NOC Gösterge: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after_2"
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
                                         id="noc_indicator"
                                         value="1">
                                     <label class="form-check-label" for="noc_indicator">
@@ -366,7 +266,7 @@ $hospital_environment_factors = isset($_GET['hospital_environment_factors']) ? $
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after_2"
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
                                         id="noc_indicator"
                                         value="2">
                                     <label class="form-check-label" for="noc_indicator">
@@ -374,7 +274,7 @@ $hospital_environment_factors = isset($_GET['hospital_environment_factors']) ? $
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after_2"
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
                                         id="noc_indicator"
                                         value="3">
                                     <label class="form-check-label" for="noc_indicator">
@@ -382,7 +282,7 @@ $hospital_environment_factors = isset($_GET['hospital_environment_factors']) ? $
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after_2"
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after"
                                         id="noc_indicator"
                                         value="4">
                                     <label class="form-check-label" for="noc_indicator">
@@ -390,7 +290,7 @@ $hospital_environment_factors = isset($_GET['hospital_environment_factors']) ? $
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" required name="noc_indicator_after_2" id="
+                                    <input class="form-check-input" type="radio" required name="noc_indicator_after" id="
                                         noc_indicator" value="5">
                                     <label class="form-check-label" for="noc_indicator">
                                         <span class="checkbox-header">5: Hasta gece iyi uyuduğunu ifade eder 
@@ -427,7 +327,7 @@ $hospital_environment_factors = isset($_GET['hospital_environment_factors']) ? $
                                     ?>";
                 var url = "<?php echo $base_url; ?>/updateForms/showAllTanis.php?patient_id=" + patient_id +
                     "&patient_name=" + encodeURIComponent(patient_name);
-                    if(<?php echo isset($_GET['taniValidInputs']) ?>){
+                    if("<?php echo isset($_GET['taniValidInputs']) ?>"){
                 var url = "<?php echo $base_url; ?>/updateForms/showSystemGeneratedTanis.php?patient_id=" + patient_id +
                 "&patient_name=" + encodeURIComponent(patient_name);
                     }

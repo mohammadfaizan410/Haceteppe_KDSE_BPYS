@@ -296,7 +296,7 @@ if ($result) {
             <div class="input-section">
                 <p class="usernamelabel pb-3">Sıvı Tüketimi</p>
                 <div>
-                    Miktarı<input type="number" class="form-control" required name="SiviTuketimi" id="liquid_consumption"
+                    Miktarı<input type="text" class="form-control" required name="SiviTuketimi" id="liquid_consumption"
                         maxlength="6">
                     ml.
                 </div>
