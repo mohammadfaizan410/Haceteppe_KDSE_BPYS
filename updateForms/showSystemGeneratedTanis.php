@@ -2085,7 +2085,7 @@ if (
   (hareketform1 ? hareketform1.changingPositionDependence === "Yarı Bağımlı" : false) ||
   (hareketform1 ? hareketform1.changingPositionDependence === "Bağımlı" : false)
 ) {
-    if(form6){
+    if(form5){
         if(form5.total <=14){
             taniValidInputs.tani47Inputs += 'Braden Risk : Orta risk'
         }
