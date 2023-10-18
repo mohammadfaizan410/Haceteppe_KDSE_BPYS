@@ -101,7 +101,7 @@ require_once("config-students.php");
                 placeholder="Şifreyi Tekrar Girin" minlength="6">
             <span id="error" style="color: red;"></span>
             <input type="submit" name="submit" id="register" value="Kayıt Ol">
-            <a href="main.php" class="lower-buttons" style="padding-top:10px"><i class="gg-arrow-left-o"
+            <a href="stuLogin.php" class="lower-buttons" style="padding-top:10px"><i class="gg-arrow-left-o"
                     style="margin: 0; margin-right: 20px;"></i>Ana Sayfaya Dön</a>
         </div>
     </form>
