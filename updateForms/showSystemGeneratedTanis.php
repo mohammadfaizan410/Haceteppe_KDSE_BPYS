@@ -655,10 +655,10 @@ input.addEventListener("input", function() {
         taniString += 'tani3/'
     }
     
-    if((form10 ? form10.blood_pressure < 100 || form10.heart_rate > 100 || form10.heartrate_nature === 'Zayıf' : false) ||(vucudutemizform1 ? vucudutemizform1.skinAge === 'Zayıf' : false) ||(bosaltimform1 != undefined ?  bosaltimform1.IdrarRengi === 'Koyu sarı' : false) || (vucudutemizform1?  vucudutemizform1.skinMoisture === 'Kuru' : false) ||  (form1_beslenme ? form1_beslenme.oral_mucosa_issue_var.split(',').includes('Kuruma') : false) ||(form11 ? ((form11.cikardigi_total1 + form11.cikardigi_total2 + form11.cikardigi_total3 + form11.cikardigi_total4)-(form11.aldigi_total1 + form11.aldigi_total2 + form11.aldigi_total3 + form11.aldigi_total4)) > 0 : false)
+    if((form10 ? form10.blood_pressure.split('/')[0] < 100 || form10.heart_rate > 100 || form10.heartrate_nature === 'Zayıf' : false) ||(vucudutemizform1 ? vucudutemizform1.skinAge === 'Zayıf' : false) ||(bosaltimform1 != undefined ?  bosaltimform1.IdrarRengi === 'Koyu sarı' : false) || (vucudutemizform1?  vucudutemizform1.skinMoisture === 'Kuru' : false) ||  (form1_beslenme ? form1_beslenme.oral_mucosa_issue_var.split(',').includes('Kuruma') : false) ||(form11 ? ((form11.cikardigi_total1 + form11.cikardigi_total2 + form11.cikardigi_total3 + form11.cikardigi_total4)-(form11.aldigi_total1 + form11.aldigi_total2 + form11.aldigi_total3 + form11.aldigi_total4)) > 0 : false)
     ||(form5 ? form5.total > 3 : false)){
         if(form10){
-            if(form10.blood_pressure < 100){
+            if(form10.blood_pressure.split('/')[0] < 100){
                 taniValidInputs.tani4Inputs += 'Kan Basıncı < 100 ';
             }
             if(form10.heart_rate > 100){
@@ -699,11 +699,11 @@ input.addEventListener("input", function() {
 
         taniString += 'tani4/'
     }
-    if((form10 ? form10.blood_pressure > 139 || form10.heartrate_nature === 'Dolgun' : false)
+    if((form10 ? form10.blood_pressure.split('/')[0] > 139 || form10.heartrate_nature === 'Dolgun' : false)
     ||(hareketform1 ? hareketform1.movementProblem.split('/').includes('Anksiyete') : false) || (form11 ? ((form11.aldigi_total1 + form11.aldigi_total2 + form11.aldigi_total3 + form11.aldigi_total4)- (form11.cikardigi_total1 + form11.cikardigi_total2 + form11.cikardigi_total3 + form11.cikardigi_total4)) > 0 : false)
     ||(form8 ? form8.edema_severity > 1 : false)){
         if(form10){
-            if(form10.blood_pressure > 139){
+            if(form10.blood_pressure.split('/')[0] > 139){
                 taniValidInputs.tani5Inputs += 'Kan Basıncı > 139 ';
             }
             if(form10.heartrate_nature === 'Dolgun'){
@@ -758,7 +758,7 @@ input.addEventListener("input", function() {
     }
    
     if((form2 ? form2.pain_intensity === '3-4. Biraz Fazla' ||  form2.pain_intensity === '5-6. Çok' || form2.pain_intensity === '7-8. Fazla' || form2.pain_intensity === '9-10. Dayanılmaz' || form2.pain_location.length > 1 || form2.pain_frequency.length > 1 || form2.pain_duration === '6 Aydan Fazla' || form2.pain_character.length > 1 : false)
-    || (form10 ? form10.heart_rate > 100 || form10.blood_pressure > 139 || form10.respiratory_rate > 20  : false)||( form1_beslenme ? form1_beslenme.nutrition_issue_var.split(',').includes('Bulantı') || form1_beslenme.nutrition_issue_var.split(',').includes('Kusma') : false)
+    || (form10 ? form10.heart_rate > 100 || form10.blood_pressure.split('/')[0] > 139 || form10.respiratory_rate > 20  : false)||( form1_beslenme ? form1_beslenme.nutrition_issue_var.split(',').includes('Bulantı') || form1_beslenme.nutrition_issue_var.split(',').includes('Kusma') : false)
     ){
         if(form2){
             if(form2.pain_intensity === '3-4. Biraz Fazla'){
@@ -790,7 +790,7 @@ input.addEventListener("input", function() {
             if(form10.heart_rate > 100){
                 taniValidInputs.tani7Inputs += '/Nabız Hızı  > 100 ';
             }
-            if(form10.blood_pressure > 139){
+            if(form10.blood_pressure.split('/')[0] > 139){
                 taniValidInputs.tani7Inputs += '/Kan Basıncı > 139 ';
             }
             if(form10.respiratory_rate > 20){
@@ -1263,7 +1263,7 @@ input.addEventListener("input", function() {
         taniString += 'tani18/'
     }
     
-    if((solunumgereksinimi_form1 != undefined ? solunumgereksinimi_form1.breathingProblems.split('/').includes('Dispne'): false) || ( form10 ? form10.blood_pressure > 139 || form10.heart_rate > 100 : false)||(hareketform1 ? hareketform1.movementProblem.split('/').includes('Yorgunluk') : false)
+    if((solunumgereksinimi_form1 != undefined ? solunumgereksinimi_form1.breathingProblems.split('/').includes('Dispne'): false) || ( form10 ? form10.blood_pressure.split('/')[0] > 139 || form10.heart_rate > 100 : false)||(hareketform1 ? hareketform1.movementProblem.split('/').includes('Yorgunluk') : false)
     ||( hareketform1 ? hareketform1.movementProblem.split('/').includes('Halsizlik') : false)
     ){
         if(solunumgereksinimi_form1){
@@ -1272,7 +1272,7 @@ input.addEventListener("input", function() {
             }
         }
         if(form10){
-            if(form10.blood_pressure > 139){
+            if(form10.blood_pressure.split('/')[0] > 139){
                 taniValidInputs.tani19Inputs += '/Kan Basıncı : ' + form10.blood_pressure + ' yerde ';
             }
             if(form10.heart_rate > 100){
@@ -1350,7 +1350,7 @@ input.addEventListener("input", function() {
         taniString += 'tani22/'
      }
      if((form10 ? form10.heart_rate < 50 || form10.respiratory_nature === 'Yüzeyel' || form10.spo2_percentage < 95 || form10.body_temperature < 35 : false) ||(vucudutemizform1 ? vucudutemizform1.nailColorProblem.split('/').includes('Siyanotik') : false)
-     ||(form10 ? form10.blood_pressure > 139 : false)||( vucudutemizform1  ?  vucudutemizform1.capillaryFillingProblem > 3 : false)
+     ||(form10 ? form10.blood_pressure.split('/')[0] > 139 : false)||( vucudutemizform1  ?  vucudutemizform1.capillaryFillingProblem > 3 : false)
      ){ 
         if(form10){
             if(form10.heart_rate < 50){
@@ -1365,7 +1365,7 @@ input.addEventListener("input", function() {
             if(form10.body_temperature < 35){
                 taniValidInputs.tani23Inputs += '/Vücut Sıcaklığı : ' + form10.body_temperature + ' yerde ';
             }
-            if(form10.blood_pressure > 139){
+            if(form10.blood_pressure.split('/')[0] > 139){
                 taniValidInputs.tani23Inputs += '/Kan Basıncı : ' + form10.blood_pressure + ' yerde ';
             }
         }
@@ -1953,7 +1953,7 @@ if (
   (form10 ? form10.spo2_percentage < 95 : false) ||
   (form1_beslenme ? form1_beslenme.liquid_consumption < 1000 : false) ||
   (bosaltimform1 != undefined ? bosaltimform1.IdrarRengi === "Koyu sarı" : false) ||
-  (form10 ? form10.blood_pressure < 100 : false) ||
+  (form10 && form10.blood_pressure ? parseInt(form10.blood_pressure.split('/')[0]) < 100 : false) ||
   (form10 ? form10.heart_rate > 100 : false) ||
   (vucudutemizform1 ? vucudutemizform1.skinAge === "Zayıf" : false) ||
   (form5 ? form5.verbal_response_points === 4 : false) ||
@@ -1971,7 +1971,7 @@ if (
         if(form10.spo2_percentage < 95){
             taniValidInputs.tani44Inputs += '/SPO2 : ' + form10.spo2_percentage + ' yerde ';
         }
-        if(form10.blood_pressure < 100){
+        if(parseInt(form10.blood_pressure.split('/')[0]) < 100){
             taniValidInputs.tani44Inputs += '/Kan Basıncı : ' + form10.blood_pressure + ' yerde ';
         }
         if(form10.heart_rate > 100){

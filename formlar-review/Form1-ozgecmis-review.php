@@ -417,29 +417,9 @@ if ($result) {
                     <h1 class="form-header">Özgeçmiş</h1>
 
                     <div class="input-section">
-
                         <p class="usernamelabel pb-3">Daha Önce Hastaneye Yatma Durumu:</p>
-                        <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
-
-                        <div class="checkbox-wrapper d-flex">
-                            <div class="checkboxes">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="previousHospitalization" id="previousHospitalization"
-                                        value="Yok">
-                                    <label class="form-check-label" for="YatisDurumu">
-                                        <span class="checkbox-header"> Yok </span>
-                                    </label>
-                                </div>
-
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="previousHospitalization" id="previousHospitalization"
-                                        value="Var">
-                                    <label class="form-check-label" for="YatisDurumu">
-                                        <span class="checkbox-header"> Var </span>
-
-                                    </label>
-                                </div>
-                            </div>
+                        <input type="text" class="form-control"   name="previousHospitalization"
+                        id="hospitalization_year" placeholder="..." value="<?php echo $ozgecmisform1[0]['previousHospitalization']?>">
                         </div>
                         
                         
@@ -638,27 +618,10 @@ if ($result) {
                                     <input type="text" class="form-control " disabled name="medicineName"
                                         id="medicineName" placeholder="..." value="<?php echo $ozgecmisform1[0]['allergyTherapy'] ?>">
                                     <p class="usernamelabel pb-2">Reçete</p>
-                                    <div class="checkbox-wrapper d-flex">
-                                        <div class="checkboxes recetecheckbox">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" disabled name="prescriptionType"
-                                                    id="prescriptionType" value="R+">
-                                                <label class="form-check-label" for="prescriptionType">
-                                                    <span class="checkbox-header"> R+ </span>
-                                                </label>
-                                            </div>
-
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" disabled name="prescriptionType"
-                                                    id="prescriptionType" value="R-">
-                                                <label class="form-check-label" for="prescriptionType">
-                                                    <span class="checkbox-header"> R-
-                                                    </span>
-
-                                                </label>
-
-                                            </div>
-                                        </div>
+                                        <div class="checkbox-wrapper d-flex">
+                                           <input type="" class="form-control" disabled value="<?php echo $ozgecmisform1[0]['prescriptionType'] ?>" name="prescriptionType"
+                                            id="prescriptionType" placeholder="...">
+                                    
                                     </div>
                                
                                     
@@ -992,7 +955,7 @@ if ($result) {
                         
                         <p class="usernamelabel pb-3">Şikayetler</p>
                         <input type="text" class="form-control"  name="complaints" id="complaints"
-                        placeholder="Şikayetler" value="<?php echo $ozgecmisform1[0]['complaints'] ?>">
+                        placeholder="Şikayetler" value="<?php echo $ozgecmisform1[0]['complaints'] ?>"> 
                     </div>
                     <div class="input-section">
                         <p class="usernamelabel pb-3">Tıbbi Tanı</p>

@@ -244,10 +244,11 @@ if (isset($_GET['logout'])) {
 
 
                         <div class="input-section">
-                        <p class="option-error" style="color : red; display : none">120-80 arasında olmalıdır</p>
+                        <p id="blood_pressure_error" style="color : red; display : none"></p>
                             <p class="usernamelabel pb-3">Kan basıncı:</p>
-                            <input type="number" class="form-control" required name="blood_pressure" id="blood_pressure"
-                             placeholder="Tetkik Sonucu" maxlength="7" min="80" max="120">
+                            <p style="color : red; font-size: 10px">*Lütfen xx/xx formatında girin</p>
+                            <input type="text" class="form-control" required name="blood_pressure" id="blood_pressure" pattern="\d{2,3}/\d{2,3}" title="Enter in the format: number/number"
+                             placeholder="Tetkik Sonucu" maxlength="7" minlength="5">
                         </div>
 
                         <div class="input-section">
@@ -614,28 +615,43 @@ if (isset($_GET['logout'])) {
                         $('.form-check-input[name="respiratory_nature"]').first().closest('.input-section').find('.option-error').css('display', 'block');
                         return false;
                     }
+                    $('#blood_pressure_error').text('');
 
                     if($('#blood_pressure').val()=== "" ){
                         //scroll to blood_pressure
                         $('html, body').animate({
                             scrollTop: $("#blood_pressure").offset().top
                         }, 200);
-                        //change border color
                         $('#blood_pressure').css('border-color', 'red');
                         //stop function
                         return false;
                     }
 
-                    if($('#blood_pressure').val() >  160 || $('#blood_pressure').val() < 80  ){
+                    //bp regex 
+                    let regex = /^\d{2,3}\/\d{2,3}$/;
+
+                    if(!regex.test($('#blood_pressure').val())){
+                        //scroll to blood_pressure
+                        $('html, body').animate({
+                            scrollTop: $("#blood_pressure").offset().top
+                        }, 200);
+                        $('#blood_pressure_error').text('Lütfen geçerli bir değer giriniz. Örnek: 120/80').css('display', 'block');
+                        $('#blood_pressure').css('border-color', 'red');
+                        return false;
+                    }
+
+                    let bp = $('#blood_pressure').val().split('/');
+                    if(bp[0] < 60 || bp[0] > 250 || bp[1] < 30 || bp[1] > 170){
                         //scroll to blood_pressure
                         $('html, body').animate({
                             scrollTop: $("#blood_pressure").offset().top
                         }, 200);
                         //change border color
                         $('#blood_pressure').css('border-color', 'red');
-                        //stop function
+                        $('#blood_pressure_error').text('Lütfen geçerli bir değer giriniz. Örnek: 120/80').css('display', 'block');
                         return false;
                     }
+                    
                     if($('.form-check-input[name="bp_measurement_location"]:checked').length === 0){
                         //scroll to bp_measurement_location
                         $('html, body').animate({

@@ -256,9 +256,10 @@ $student_name = isset($_GET['student_name']) ? $_GET['student_name'] : '';
 
 
                         <div class="input-section">
-                            <p class="usernamelabel">Kan basıncı:</p>
-                            <p class="option-error" style="color : red; display : none">120-80 arasında olmalıdır</p>
-                            <input type="number" min="80" max="120" class="form-control" required value=<?php echo $form10[0]['blood_pressure']; ?> name="blood_pressure" id="diger" placeholder="Tetkik Sonucu">
+                        <p id="blood_pressure_error" style="color : red; display : none"></p>
+                            <p class="usernamelabel pb-3">Kan basıncı:</p>
+                            <input type="text" class="form-control" name="blood_pressure" id="blood_pressure" value=<?php echo $form10[0]['blood_pressure']; ?>
+                             placeholder="Tetkik Sonucu" maxlength="7" minlength="5">
                         </div>
 
                         <div class="input-section">

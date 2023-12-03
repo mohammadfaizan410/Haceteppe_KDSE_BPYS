@@ -400,34 +400,18 @@ if (isset($_GET['logout'])) {
                         <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
                         <div class="checkbox-wrapper d-flex">
-                            <div class="checkboxes">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="previousHospitalization" id="previousHospitalization"
-                                        value="Yok">
-                                    <label class="form-check-label" for="YatisDurumu">
-                                        <span class="checkbox-header"> Yok </span>
-                                    </label>
-                                </div>
-
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="previousHospitalization" id="previousHospitalization"
-                                        value="Var">
-                                    <label class="form-check-label" for="YatisDurumu">
-                                        <span class="checkbox-header"> Var </span>
-
-                                    </label>
-                                </div>
-                            </div>
+                        <input type="text" class="form-control" name="previousHospitalization"
+                                id="previousHospitalization" placeholder="...">
                         </div>
 
                                 <p>Hastaneye Yatış Yılı</p>
-                                <input type="number" min="1950" max="2099" class="form-control" disabled  name="hospitalization_year"
+                                <input type="number" min="1950" max="2099" class="form-control"   name="hospitalization_year"
                                     id="hospitalization_year" placeholder="...">
                                 <p>Hastanede Yatış Süresi</p>
-                                <input type="text" class="form-control" disabled  name="hospitalization_location"
+                                <input type="text" class="form-control"   name="hospitalization_location"
                                 id="hospitalization_location" placeholder="...">
                                 <p>Hastaneye Yatış Nedeni</p>
-                                        <input type="text" class="form-control" disabled  name="hospitalization_reason"
+                                        <input type="text" class="form-control"   name="hospitalization_reason"
                                             id="hospitalization_reason" placeholder="...">
                             </div>
                     <div class="input-section">
@@ -616,26 +600,8 @@ if (isset($_GET['logout'])) {
                                             id="medicineName" placeholder="...">
                                     <p>Reçete</p>
                                     <div class="checkbox-wrapper d-flex">
-                                        <div class="checkboxes recetecheckbox">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" disabled name="prescriptionType"
-                                                    id="prescriptionType" value="R+">
-                                                <label class="form-check-label" for="prescriptionType">
-                                                    <span class="checkbox-header"> R+ </span>
-                                                </label>
-                                            </div>
-
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" disabled name="prescriptionType"
-                                                    id="prescriptionType" value="R-">
-                                                <label class="form-check-label" for="prescriptionType">
-                                                    <span class="checkbox-header"> R-
-                                                    </span>
-
-                                                </label>
-
-                                            </div>
-                                        </div>
+                                           <input type="" class="form-control" disabled name="prescriptionType"
+                                            id="prescriptionType" placeholder="...">
                                     </div>
                                     
                                     <p>Kullanım Süresi</p>
@@ -1064,18 +1030,18 @@ if (isset($_GET['logout'])) {
             }
         })
 
-        $('.form-check-input[name="previousHospitalization"]').change(function(){
-            if($(this).val() === "Var"){
-                $('input[name="hospitalization_year"]').prop('disabled', false);
-                $('input[name="hospitalization_location"]').prop('disabled', false);
-                $('input[name="hospitalization_reason"]').prop('disabled', false);
-            }
-            else{
-                $('input[name="hospitalization_year"]').prop('disabled', true);
-                $('input[name="hospitalization_location"]').prop('disabled', true);
-                $('input[name="hospitalization_reason"]').prop('disabled', true);
-            }
-        })
+        // $('.form-check-input[name="previousHospitalization"]').change(function(){
+        //     if($(this).val() === "Var"){
+        //         $('input[name="hospitalization_year"]').prop('disabled', false);
+        //         $('input[name="hospitalization_location"]').prop('disabled', false);
+        //         $('input[name="hospitalization_reason"]').prop('disabled', false);
+        //     }
+        //     else{
+        //         $('input[name="hospitalization_year"]').prop('disabled', true);
+        //         $('input[name="hospitalization_location"]').prop('disabled', true);
+        //         $('input[name="hospitalization_reason"]').prop('disabled', true);
+        //     }
+        // })
 
         $('.form-check-input[name="diseases"]').change(function(){
             if($(this).val() === "Var"){
@@ -1327,7 +1293,7 @@ if (isset($_GET['logout'])) {
                             let relativePhone = $('input[name="relativePhone"]').val();
                             let relativeAddress = $('input[name="relativeAddress"]').val();
                             let relativeDistance = $('input[name="relativeDistance"]').val();
-                            let previousHospitalization = $('.form-check-input[name="previousHospitalization"]:checked').val();
+                            let previousHospitalization = $('input[name="previousHospitalization"]').val() ? $('input[name="previousHospitalization"]').val() : "";
                             let hospitalization_year = $('input[name="hospitalization_year"]').val() ? $('input[name="hospitalization_year"]').val() : "";
                             let hospitalization_location = $('input[name="hospitalization_location"]').val() ? $('input[name="hospitalization_location"]').val() : "";
                             let hospitalization_reason = $('input[name="hospitalization_reason"]').val() ? $('input[name="hospitalization_reason"]').val() : "";
@@ -1341,7 +1307,7 @@ if (isset($_GET['logout'])) {
                             let allergyTherapy = $('input[name="allergyTherapy"]').val() ? $('input[name="allergyTherapy"]').val() : "";
                             let previousMedications = $('.form-check-input[name="previousMedications"]:checked').val();
                             let medicineName = $('input[name="medicineName"]').val() ? $('input[name="medicineName"]').val() : "";
-                            let prescriptionType = $('.form-check-input[name="prescriptionType"]:checked').val() ? $('.form-check-input[name="prescriptionType"]:checked').val() : "";
+                            let prescriptionType = $('input[name="prescriptionType"]').val() ? $('input[name="prescriptionType"]').val() : "";
                             let medicineFrequency = $('input[name="medicineFrequency"]').val() ? $('input[name="medicineFrequency"]').val() : "";
                             let medicineDose = $('input[name="medicineDose"]').val() ? $('input[name="medicineDose"]').val() : "";
                             let intakeMethod = $('input[name="intakeMethod"]').val() ? $('input[name="intakeMethod"]').val() : "";
@@ -1724,18 +1690,18 @@ if (isset($_GET['logout'])) {
                             }
 
                            
-                            //previousHospitalization
-                            if($('.form-check-input[name="previousHospitalization"]:checked').length === 0) {
-                                // Scroll to previousHospitalization
-                                $('html, body').animate({
-                                    scrollTop: $('.form-check-input[name="previousHospitalization"]').first().offset().top
-                                }, 200);
-                                // Change border color
-                                $('.form-check-input[name="previousHospitalization"]').first().closest('.input-section').find('.option-error').css('display', 'block');
-                                return false;
+                          //previous_hospitalization
 
+                          if($('#previousHospitalization').val() == ""){
+                                //scroll to previousHospitalization
+                                $('html, body').animate({
+                                    scrollTop: $("#previousHospitalization").offset().top
+                                }, 200);
+                                //change border color
+                                $('#previousHospitalization').css('border-color', 'red');
+                                return false;
                             }
-                            if( $('.form-check-input[name="previousHospitalization"]:checked').val() === "Var" && $('#hospitalization_year').val() == ""){
+                            if( $('#hospitalization_year').val() == ""){
                                 //scroll to hospitalization_year
                                 $('html, body').animate({
                                     scrollTop: $("#hospitalization_year").offset().top
@@ -1744,7 +1710,7 @@ if (isset($_GET['logout'])) {
                                 $('#hospitalization_year').css('border-color', 'red');
                                 return false;
                             }
-                            if( $('.form-check-input[name="previousHospitalization"]:checked').val() === "Var" && $('#hospitalization_location').val() == ""){
+                            if($('#hospitalization_location').val() == ""){
                                 //scroll to hospitalization_location
                                 $('html, body').animate({
                                     scrollTop: $("#hospitalization_location").offset().top
@@ -1753,7 +1719,7 @@ if (isset($_GET['logout'])) {
                                 $('#hospitalization_location').css('border-color', 'red');
                                 return false;
                             }
-                            if( $('.form-check-input[name="previousHospitalization"]:checked').val() === "Var" && $('#hospitalization_reason').val() == ""){
+                            if($('#hospitalization_reason').val() == ""){
                                 //scroll to hospitalization_reason
                                 $('html, body').animate({
                                     scrollTop: $("#hospitalization_reason").offset().top

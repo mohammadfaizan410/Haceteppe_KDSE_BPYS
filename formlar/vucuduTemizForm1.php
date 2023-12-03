@@ -318,7 +318,7 @@ if (isset($_GET['logout'])) {
                 <p class="usernamelabel pb-3">El yıkama alışkanlığı </p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
-                <input type="number" class="form-control mb-2" placeholder="Sıklığı/Zamanı" name="handWashingFreq" id="handWashingFreq"><p>/haftada</p>
+                <input type="number" class="form-control mb-2" placeholder="Sıklığı/Zamanı" name="handWashingFreq" id="handWashingFreq"><p>/günlük</p>
                 <input type="text" class="form-control mb-2" placeholder="Şekli" name="handWashingMethod" id="handWashingMethod">
                 <input type="text" class="form-control mb-2" placeholder="Kullanılan Malzeme" name="handWashingMaterial" id="handWashingMaterial">
             </div>
@@ -326,7 +326,7 @@ if (isset($_GET['logout'])) {
                 <p class="usernamelabel pb-3">Perine bakımı </p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
 
-                <input type="number" class="form-control mb-2" placeholder="Sıklığı/Zamanı" name="periniumCareFreq" id="periniumCareFreq"><p>/haftada</p>
+                <input type="number" class="form-control mb-2" placeholder="Sıklığı/Zamanı" name="periniumCareFreq" id="periniumCareFreq"><p>/günlük</p>
                 <input type="text" class="form-control mb-2" placeholder="Şekli" name="periniumCareMethod" id="periniumCareMethod">
                 <input type="text" class="form-control mb-2" placeholder="Kullanılan Malzeme" name="periniumCareMaterial" id="periniumCareMaterial">
             </div>

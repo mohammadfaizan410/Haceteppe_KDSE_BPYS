@@ -343,7 +343,7 @@ if ($result) {
                 <p class="usernamelabel pb-3">El yıkama alışkanlığı </p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 <p class="usernamelabel pb-3">Sıklığı/Zamanı</p>
-                <input type="text" class="form-control" name="handWashingFreq" id="handWashingFreq" value="<?php echo $vucudutemizform1[0]['handWashingFreq']; ?>"><p>/haftada</p>
+                <input type="text" class="form-control" name="handWashingFreq" id="handWashingFreq" value="<?php echo $vucudutemizform1[0]['handWashingFreq']; ?>"><p>/günlük</p>
                 <p class="usernamelabel pb-3">Şekli</p>
                 <input type="text" class="form-control" name="handWashingMethod" id="handWashingMethod" value="<?php echo $vucudutemizform1[0]['handWashingMethod']; ?>">
                 <p class="usernamelabel pb-3">Kullanılan Malzeme</p>
@@ -353,7 +353,7 @@ if ($result) {
                 <p class="usernamelabel pb-3">Perine bakımı </p>
                 <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                 <p class="usernamelabel pb-3">Sıklığı/Zamanı</p>
-                <input type="text" class="form-control" name="periniumCareFreq" id="periniumCareFreq" value="<?php echo $vucudutemizform1[0]['periniumCareFreq']; ?>"><p>/haftada</p>
+                <input type="text" class="form-control" name="periniumCareFreq" id="periniumCareFreq" value="<?php echo $vucudutemizform1[0]['periniumCareFreq']; ?>"><p>/günlük</p>
                 <p class="usernamelabel pb-3">Şekli</p>
                 <input type="text" class="form-control" name="periniumCareMethod" id="periniumCareMethod" value="<?php echo $vucudutemizform1[0]['periniumCareMethod']; ?>">
                 <p class="usernamelabel pb-3">Kullanılan Malzeme</p>
