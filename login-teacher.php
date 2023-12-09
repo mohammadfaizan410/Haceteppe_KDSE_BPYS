@@ -1,8 +1,12 @@
 <?php
-require_once("config-teachers.php");
 $base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
-session_start();
-
+if(isset($_SESSION['userlogin'])){
+    if($_SESSION['userlogin']['type'] == "student"){
+        header("Location: student-main.php");
+    }else{
+        header("Location: teacher-main.php");
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

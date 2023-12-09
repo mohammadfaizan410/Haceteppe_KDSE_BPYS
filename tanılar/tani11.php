@@ -288,12 +288,8 @@ $nutrition_problem = isset($_GET['nutrition_problem']) ? $_GET['nutrition_proble
                         
 
 
-
-
-
-
-
-                            <div class="input-section" id="o2-delivery-container">
+                        
+                        <div class="input-section" id="o2-delivery-container">
                             <p class="usernamelabel">NOC Gösterge: </p>
                             <p class="option-error" style="color : red; display : none">Lütfen bir seçenek belirleyin</p>
                                 <div class="form-check">

@@ -1,17 +1,22 @@
 <?php
 session_start();
 $base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
+
+if(isset($_SESSION['userlogin'])){
+    if($_SESSION['userlogin']['type'] == "student"){
+        header("Location: student-main.php");
+    }
+}
 if (!isset($_SESSION['userlogin']['id'])) {
     header("Location: login-teacher.php");
 }
 
+
 if (isset($_GET['logout'])) {
     session_destroy();
     unset($_SESSION);
-    header("Location: main.php");
+    header("Location: main-page.php");
 }
-
-require_once('config-students.php');
 
 ?>
 <!DOCTYPE html>

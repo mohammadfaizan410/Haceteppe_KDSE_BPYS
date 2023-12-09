@@ -394,7 +394,7 @@ $taniValidInputs = isset($_GET['taniValidInputs']) ? $_GET['taniValidInputs'] : 
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" required
-                                            name="noc_indicator_after_2" id="
+                                            name="noc_indicator_after" id="
                                             noc_indicator_after" value="5">
                                         <label class="form-check-label" for="noc_indicator_after">
                                             <span class="checkbox-header">5:Hastanın bağırsak sesleri normal (6-10/dk)
@@ -558,7 +558,7 @@ $taniValidInputs = isset($_GET['taniValidInputs']) ? $_GET['taniValidInputs'] : 
 
 		        let noc_indicator_3 = $('.form-check-input[name="noc_indicator_3"]').length > 0 ? $('.form-check-input[name="noc_indicator_3"]:checked').val() : "null";
 
-                let noc_indicator_after = $('.form-check-input[name="noc_indicator_after"]:checked').val();
+                let noc_indicator_after = $('.form-check-input[name="noc_indicator_after"]:checked').length > 0 ? $('.form-check-input[name="noc_indicator_after"]:checked').val() : "null";
 		        let noc_indicator_after_2 = $('.form-check-input[name="noc_indicator_after_2"]').length > 0 ? $('.form-check-input[name="noc_indicator_after_2"]:checked').val() : "null";
 
         let noc_indicator_after_3 = $('.form-check-input[name="noc_indicator_after_3"]').length > 0 ? $('.form-check-input[name="noc_indicator_after_3"]:checked').val() : "null";

@@ -87,7 +87,7 @@ $feeding_problem = isset($_GET['feeding_problem']) ? $_GET['feeding_problem'] : 
                     <form action="" method="POST" class="patients-save-fields">
                         <div class="input-section d-flex">
                             <p id="tani_usernamelabel">Hemşirelik Tanıları:</p>
-                            <p class="tanıdescription">Konstipasyon</p>
+                            <p class="tanıdescription">Beden gereksiniminden az beslenme </p>
                         </div>
 
                         <?php

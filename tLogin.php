@@ -1,4 +1,12 @@
 <?php
+session_start();
+if(isset($_SESSION['userlogin'])){
+    if($_SESSION['userlogin']['type'] == "student"){
+        header("Location: student-main.php");
+    }else{
+        header("Location: teacher-main.php");
+    }
+}
 $base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/Hacettepe-KDSE-BPYS';
 
 ?>
